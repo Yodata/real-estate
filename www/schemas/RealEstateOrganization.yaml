@@ -1,0 +1,21 @@
+type: object
+x-kind: RealEstateOrganization
+allOf:
+  - $ref: Organization.yaml
+  - description: A real estate franchisor, broker or business.
+    properties:
+      type:
+        type: string
+        description: RealEstateOrganzation
+        enum:
+          - RealEstateOrganization
+
+      parentOrganization:
+        type: array
+        x-range: RealEstateOrganization
+        description:
+          A franchisor or affiliate network of which this organization plays a
+          membership role.
+        items:
+          type: string
+          format: uri

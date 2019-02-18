@@ -1,0 +1,32 @@
+title: Permit
+description: A permit issued by an organization to an individual or business.
+properties:
+  type:
+    type: string
+    description: Permit type.
+  name:
+    type: string
+    description: Common or display value of the Permit.
+  issuedBy:
+    $ref: Organization.yaml
+    description: The issuing authority
+    example:
+      type: GovernmentOrganization
+      name: California
+  issuedThrough:
+    x-range: Service
+    $ref: Service.yaml
+    example:
+      type: Service
+      name: Department of Real Estate
+  validIn:
+    $ref: Place.yaml
+    x-range: Place
+  validFrom:
+    type: string
+    format: date-time
+    description: start date
+  validUntil:
+    type: string
+    format: date-time
+    description: end date

@@ -1,0 +1,14 @@
+allOf:
+  - $ref: Action.yaml
+  - description: a Lead
+    properties:
+      type:
+        type: string
+        enum: ['Lead']
+      agent:
+        description: the lead provider (URI or Organization)
+        example:
+          id: https://broker.example.com/profile/card#me
+      object:
+        description: the lead
+        $ref: Person.yaml

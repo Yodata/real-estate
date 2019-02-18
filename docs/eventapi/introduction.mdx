@@ -1,0 +1,52 @@
+---
+name: Introduction
+route: /introduction
+---
+
+# Introduction
+
+## What
+
+Yodata Real Estate is a collaborative effort to normalize application data integration in and around the real estate domain.
+
+## Mission
+
+##
+
+
+## How does it work?
+
+Applications generate notifications about activities, interactions, and new information, which may be presented to the user or processed further.
+This allows for more modular systems, which decouple data storage from the applications which display or otherwise make use of the data.
+
+Senders, receivers and consumers are independently implemented and run on different technology stacks, 
+and share a common message schema which is developed by the community and hosted on Github as open-source.
+
+## Features
+
+- Maintain up-to-date data across a variety of systems in real-time
+- Be aware of data changes as they happen
+- Share data with other authorized parties
+- REflex leverages the latest in “pub/sub” event message bus technology
+  - When data changes in one system, the owner of that system will “publish” a data change event to the REflex “message bus”. 
+  - Authorized parties are allowed to “subscribe” to the REflex message bus, so that they are notified about:
+    - What data fields changed
+    - How the data values changed
+    - When the data was changed
+    - Who changed the data
+    - Other helpful metadata about the data event
+  - Examples:
+    - An Agent’s last name has changed in HSF’s CRM. Authorized vendors are notified of this event and can update their systems accordingly.
+    - A new customer lead has come through the website. Authorized vendors are notified of this event and can
+make the lead available in their systems for the Agent to work with.
+- Constantly evolving features/functionality:
+  - New types of vendors constantly added to the REflex ecosystem
+    - For example, CRM vendors, Marketing vendors, transaction data vendors, etc
+  - New data types constantly added to the REflex ecosystem
+    - For example, Agent roster data, Customer lead data, etc
+  - New security and data filtering/metadata capabilities constantly being evolved in the REflex ecosystem
+    - For example, establishing which vendors can access which types of data events from which sources
+    
+
+
+

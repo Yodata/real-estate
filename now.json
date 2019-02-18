@@ -1,0 +1,31 @@
+{
+    "version": 2,
+    "name": "@yodata/real-estate",
+    "env": {
+        "CLIENT_ID": "@real-estate-client-id"
+    },
+    "builds": [
+        {
+            "src": "static/*.json",
+            "use": "@now/static"
+        },
+        {
+            "src": "www/package.json",
+            "use": "@now/static-build"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/docs/(.*)",
+            "dest": "docs"
+        },
+        {
+            "src": "/(.*(?:json|rdf))",
+            "dest": "/static/$1"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/www/$1"
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+allOf:
+  - $ref: Organization.yaml
+  - description: Represents an agent or team.
+    properties:
+      type:
+        type: string
+        enum: ['RealEstateAgent']

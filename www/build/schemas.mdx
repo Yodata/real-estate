@@ -1,0 +1,323 @@
+# Schemas
+
+## Action
+
+The base model for events, based on https://schema.org/Action
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string&lt;regex&gt;! | override the type property to ensure Action is used  |
+| actionStatus | string | Indicates the current disposition of the Action.  |
+| agent |  | The direct performer or driver of the action (animate or inanimate). e.g. John wrote a book. <br/>RANGE: [Organization](/schemas#organization),[Person](/schemas#person) |
+| agent.1 | [Person](/schemas#person) | Person  |
+| endTime | string&lt;date-time&gt; | The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to December.  |
+| error | object | For failed actions, more information on the cause of the failure.  |
+| instrument | object | The object that helped the agent perform the action. e.g. John wrote a book with a pen.  |
+| location |  | The location of for example where the event is happening, an organization is located, or where an action takes place.  |
+| location.1 | object! | PostalAddress  |
+| location.2 | string |   |
+| object | object | The object upon the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read a book.  |
+| participant |  | Other co-agents that participated in the action indirectly. e.g. John wrote a book with Steve.  |
+| participant.1 | object! | Person  |
+| participant.2 | [undefined] |   |
+| participant.2.1 | object! | Person  |
+| result | object | The result produced in the action. e.g. John wrote a book.  |
+| startTime | string&lt;date-time&gt; | The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to December.  |
+| target | object | Indicates a target EntryPoint for an Action.  |
+
+```json
+{
+  "type": "string",
+  "actionStatus": "ActiveActionStatus",
+  "agent": {
+    "type": "Organization",
+    "telephone": "079.706.7065 x6341",
+    "email": "user@example.com",
+    "faxNumber": "(873) 271-4802",
+    "contactPoint": [
+      {
+        "type": "ContactPoint",
+        "name": "Work",
+        "telephone": "1-364-127-9618 x20418",
+        "faxNumber": "834.320.1602",
+        "email": "user@example.com"
+      }
+    ],
+    "parentOrganization": [
+      "http://example.com"
+    ]
+  },
+  "endTime": "2019-02-18T20:28:43Z",
+  "error": {
+    "type": "string"
+  },
+  "instrument": {
+    "type": "string"
+  },
+  "location": {
+    "type": "string"
+  },
+  "object": {
+    "type": "string"
+  },
+  "participant": {
+    "type": "string"
+  },
+  "result": {
+    "type": "string"
+  },
+  "startTime": "2019-02-18T20:28:43Z",
+  "target": {}
+}
+```
+## RealEstateOrganization
+
+A real estate franchisor, broker or business.
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! | RealEstateOrganzation  |
+| telephone | string | The primary phone number.  |
+| email | string&lt;email&gt; | Primary email address.  |
+| faxNumber | string | Primary fax number.  |
+| contactPoint | [[ContactPoint](/schemas#contactpoint)] | Department / role based contact info, i.e. 'Relocation'  |
+| parentOrganization | [string&lt;uri&gt;] | A franchisor or affiliate network of which this organization plays a membership role. <br/>RANGE: [RealEstateOrganization](/schemas#realestateorganization) |
+
+```json
+{
+  "type": "RealEstateOrganization",
+  "telephone": "079.706.7065 x6341",
+  "email": "user@example.com",
+  "faxNumber": "(873) 271-4802",
+  "contactPoint": [
+    {
+      "type": "ContactPoint",
+      "name": "Work",
+      "telephone": "1-364-127-9618 x20418",
+      "faxNumber": "834.320.1602",
+      "email": "user@example.com"
+    }
+  ],
+  "parentOrganization": [
+    "http://example.com"
+  ]
+}
+```
+## RealEstateOffice
+
+A real estate franchisor, broker or business.
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! | RealEstateOffice  |
+| telephone | string | The primary phone number.  |
+| email | string&lt;email&gt; | Primary email address.  |
+| faxNumber | string | Primary fax number.  |
+| contactPoint | [[ContactPoint](/schemas#contactpoint)] | department or role specific contact points, i.e. relocation.  |
+| parentOrganization | [string&lt;uri&gt;] | Office broker or franchisor. <br/>RANGE: [RealEstateOrganization](/schemas#realestateorganization) |
+| subOrganization | [string&lt;uri&gt;] | Agents and teams associated with the office. <br/>RANGE: [RealEstateAgent](/schemas#realestateagent) |
+
+```json
+{
+  "type": "RealEstateOffice",
+  "telephone": "079.706.7065 x6341",
+  "email": "user@example.com",
+  "faxNumber": "(873) 271-4802",
+  "contactPoint": [
+    {
+      "type": "ContactPoint",
+      "name": "Relocation",
+      "telephone": "1-245-880-8222",
+      "faxNumber": "958-530-3473",
+      "email": "relocation@example.com"
+    }
+  ],
+  "parentOrganization": [
+    "http://example.com"
+  ],
+  "subOrganization": [
+    "http://example.com"
+  ]
+}
+```
+## RealEstateAgent
+
+A real estate agent or team.
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! |   |
+| telephone | string | The primary phone number.  |
+| email | string&lt;email&gt; | Primary email address.  |
+| faxNumber | string | Primary fax number.  |
+| contactPoint | [[ContactPoint](/schemas#contactpoint)] | Department / role based contact info, i.e. 'Relocation'  |
+| parentOrganization | [string&lt;uri&gt;] | URI reference to the agent's office. For teams, this can be a reference to the team leader/primary profile. <br/>RANGE: [RealEstateOffice](/schemas#realestateoffice),[RealEstateAgent](/schemas#realestateagent) |
+| name | string |   |
+| subOrganization | [string&lt;uri&gt;] | for teams: URI reference to a team member <br/>RANGE: [RealEstateAgent](/schemas#realestateagent) |
+
+```json
+{
+  "type": "RealEstateAgent",
+  "telephone": "079.706.7065 x6341",
+  "email": "user@example.com",
+  "faxNumber": "(873) 271-4802",
+  "contactPoint": [
+    {
+      "type": "ContactPoint",
+      "name": "Work",
+      "telephone": "1-364-127-9618 x20418",
+      "faxNumber": "834.320.1602",
+      "email": "user@example.com"
+    }
+  ],
+  "parentOrganization": [
+    "http://office-real-estate.example.com/",
+    "http://batmanandrobinteam.example.com/"
+  ],
+  "name": "Batman & Robin",
+  "subOrganization": [
+    "http://example.com"
+  ]
+}
+```
+## Organization
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! |   |
+| telephone | string | The primary phone number.  |
+| email | string&lt;email&gt; | Primary email address.  |
+| faxNumber | string | Primary fax number.  |
+| contactPoint | [[ContactPoint](/schemas#contactpoint)] | Department / role based contact info, i.e. 'Relocation'  |
+| parentOrganization | [string&lt;uri&gt;] |   |
+
+```json
+{
+  "type": "Organization",
+  "telephone": "079.706.7065 x6341",
+  "email": "user@example.com",
+  "faxNumber": "(873) 271-4802",
+  "contactPoint": [
+    {
+      "type": "ContactPoint",
+      "name": "Work",
+      "telephone": "1-364-127-9618 x20418",
+      "faxNumber": "834.320.1602",
+      "email": "user@example.com"
+    }
+  ],
+  "parentOrganization": [
+    "http://example.com"
+  ]
+}
+```
+## OrganizationRole
+
+Provides additional information in member/memberOf relationships.
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! |   |
+| roleName | string | Buyer, Seller, Escrow Officer, RealEstateAgent, etc..  |
+| startDate | string&lt;date-time&gt; |   |
+| endDate | string&lt;date-time&gt; |   |
+
+```json
+{
+  "type": "OrganizationRole",
+  "roleName": "string",
+  "startDate": "2019-02-18T20:28:43Z",
+  "endDate": "2019-02-18T20:28:43Z"
+}
+```
+## MLSMembership
+
+Provides additional information in member/memberOf relationships.
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! |   |
+| roleName | string | Buyer, Seller, Escrow Officer, RealEstateAgent, etc..  |
+| startDate | string&lt;date-time&gt; |   |
+| endDate | string&lt;date-time&gt; |   |
+| memberOf | object |   |
+| member | [RealEstateAgent](/schemas#realestateagent) | A real estate agent or team.  |
+
+```json
+{
+  "type": "MLSMembership",
+  "roleName": "string",
+  "startDate": "2019-02-18T20:28:43Z",
+  "endDate": "2019-02-18T20:28:43Z",
+  "memberOf": {},
+  "member": {
+    "type": "RealEstateAgent",
+    "telephone": "079.706.7065 x6341",
+    "email": "user@example.com",
+    "faxNumber": "(873) 271-4802",
+    "contactPoint": [
+      {
+        "type": "ContactPoint",
+        "name": "Work",
+        "telephone": "1-364-127-9618 x20418",
+        "faxNumber": "834.320.1602",
+        "email": "user@example.com"
+      }
+    ],
+    "parentOrganization": [
+      "http://office-real-estate.example.com/",
+      "http://batmanandrobinteam.example.com/"
+    ],
+    "name": "Batman & Robin",
+    "subOrganization": [
+      "http://example.com"
+    ]
+  }
+}
+```
+## RealEstateLicense
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! | RealEstateLicense  |
+| name | string | display value, i.e. 'CA-DRE# 02068375'  |
+| issuedBy | [Organization](/schemas#organization) |   |
+| issuedThrough | [Organization](/schemas#organization) |   |
+| validFrom | string&lt;date-time&gt; | start date  |
+| validUntil | string&lt;date-time&gt; | end date  |
+
+```json
+{
+  "type": "RealEstateLicense",
+  "name": "CA-DRE# 02068375",
+  "issuedBy": {
+    "type": "Organization",
+    "telephone": "079.706.7065 x6341",
+    "email": "user@example.com",
+    "faxNumber": "(873) 271-4802",
+    "contactPoint": [
+      {
+        "type": "ContactPoint",
+        "name": "Work",
+        "telephone": "1-364-127-9618 x20418",
+        "faxNumber": "834.320.1602",
+        "email": "user@example.com"
+      }
+    ],
+    "parentOrganization": [
+      "http://example.com"
+    ]
+  },
+  "issuedThrough": {
+    "type": "GovernmentOrganization",
+    "name": "California Department of Real Estate"
+  },
+  "validFrom": "2019-02-18T20:28:43Z",
+  "validUntil": "2019-02-18T20:28:43Z"
+}
+```
+

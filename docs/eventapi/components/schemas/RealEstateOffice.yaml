@@ -1,0 +1,10 @@
+# RealEstateOrganization
+allOf:
+  - $ref: RealEstateOrganization.yaml
+  - description: A real estate office.
+    type: object
+    properties:
+      type:
+        type: string
+        enum:
+          - RealEstateOffice

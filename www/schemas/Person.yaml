@@ -1,0 +1,47 @@
+x-kind: Person
+allOf:
+  - $ref: Thing.yaml
+  - description: a person.
+    properties:
+      name:
+        type: string
+        description: Full name of the person.
+      givenName:
+        type: string
+        description: First Name
+        example: Bruce
+      familyName:
+        type: string
+        description: Last Name
+        example: Wayne
+      jobTitle:
+        type: string
+        description: The Job Title of the person.
+        example: Jefe
+      email:
+        type: string
+        description: Primary email address.
+        example: user@example.com
+      faxNumber:
+        description: Primary fax number.
+        type: string
+        example: '(498) 625-6456'
+      telephone:
+        description: Primary phone number.
+        type: string
+        example: 1-339-041-0306 x2866
+      contactPoint:
+        description: Named and grouped contacts points.
+        type: array
+        items:
+          $ref: ContactPoint.yaml
+      address:
+        type: array
+        items:
+          x-kind: PostalAddress
+          $ref: PostalAddress.yaml
+      birthDate:
+        type: string
+        format: date
+      birthPlace:
+        $ref: Place.yaml

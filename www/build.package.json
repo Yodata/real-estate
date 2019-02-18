@@ -1,0 +1,21 @@
+{
+  "name": "real-estate-interoperability-collective",
+  "description": ,
+  "version": "0.0.1",
+  "scripts": {
+    "generate": "ag asyncapi.yaml docz",
+    "dev": "docz dev",
+    "build": "docz build",
+    "now-build": "yarn build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/fork-ts-checker-webpack-plugin": "^0.4.5",
+    "@types/typescript": "^2.0.0",
+    "asyncapi-generator": "^0.6.2",
+    "docz": "^0.13.7",
+    "docz-theme-default": "^0.13.7",
+    "fork-ts-checker-webpack-plugin": "^0.5.2",
+    "typescript": "^3.3.3"
+  }
+}

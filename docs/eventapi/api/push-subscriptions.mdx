@@ -1,0 +1,89 @@
+
+REflex can push real-time notifications to your application via HTTP POST (web-hooks), SQS, SNS or AWS Lambda.
+
+## Enable push messaging
+To enable push messaging for your application, you need to let REflex know where you want to receive messages by publishing your application inbox location.
+
+https://schema.org/UpdateAction
+
+```http
+POST /inbox/ HTTP/1.1
+Host: application.ds.bhhsresource.com
+x-api-key: xxxxx
+Content-Type: application/json
+
+{
+    "type": "UpdateAction",
+    "object": {
+        "type":  "SoftwareApplication",
+        "id":    "https://application.example.com/profile/card#me",
+        "inbox": "https://application.example.com/inbox/"
+    }
+}
+```
+
+## Change push configuration
+To change where your application receives notifications, post an UpdateAction to your inbox
+
+https://schema.org/UpdateAction
+
+```http
+POST /inbox/ HTTP/1.1
+Host: application.ds.bhhsresource.com
+x-api-key: xxxxx
+Content-Type: application/json
+
+{
+    "type": "UpdateAction",
+    "object": {
+        "type":  "SoftwareApplication",
+        "id":    "https://application.example.com/profile/card#me",
+        "inbox": "arn:aws:lambda:{region}:{account}:function:{functionName}"
+    }
+}
+```
+
+## Stop receiving push messages
+To disable message push to your application, update your inbox URI to null.
+
+https://schema.org/UpdateAction
+
+```http
+POST /inbox/ HTTP/1.1
+Host: application.ds.bhhsresource.com
+x-api-key: xxxxx
+Content-Type: application/json
+
+{
+    "type": "UpdateAction",
+    "object": {
+        "type":  "SoftwareApplication",
+        "id":    "https://application.example.com/profile/card#me",
+        "inbox": null
+    }
+}
+``` 
+
+## Receiving updates with AWS services
+
+To receive updates from REflex users with an AWS service, use the service ARN as your applications "inbox" target.
+
+**Note: your target service must allow write/send capability to  ```arn:aws:iam::540541948463:role/Reflex_Message_Pusher```**
+
+```http
+POST /inbox/ HTTP/1.1
+Host: application.ds.bhhsresource.com
+x-api-key: xxxxx
+Content-Type: application/json
+
+
+{
+    "type": "UpdateAction",
+    "object": {
+        "type":  "SoftwareApplication",
+        "id":    Your application URI,
+        "inbox": "arn:aws:lambda:{region}:{account}:function:{functionName}"
+    }
+}
+```
+

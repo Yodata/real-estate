@@ -1,0 +1,35 @@
+type: object
+allOf:
+  - $ref: Thing.yaml
+  - x-kind: Organization
+  - x-hasSubclass:
+      - RealEstateOrganization
+      - RealEstateOffice
+      - RealEstateAgent
+  - x-subClassOf:
+      - https://schema.org/Organization
+    properties:
+      type:
+        type: string
+        enum: ['Organization']
+
+      telephone:
+        $ref: telephone.yaml
+
+      email:
+        $ref: email.yaml
+
+      faxNumber:
+        $ref: faxNumber.yaml
+
+      contactPoint:
+        type: array
+        description: Department / role based contact info, i.e. 'Relocation'
+        items:
+          $ref: ContactPoint.yaml
+
+      parentOrganization:
+        type: array
+        items:
+          type: string
+          format: uri

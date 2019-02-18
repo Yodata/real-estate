@@ -1,0 +1,38 @@
+type: object
+x-kind: RealEstateAgent
+allOf:
+  - $ref: Organization.yaml
+  - type: object
+    x-kind: RealEstateAgent
+    description: A real estate agent or team.
+    properties:
+      type:
+        type: string
+        enum: ['RealEstateAgent']
+
+      name:
+        type: string
+        example: Batman & Robin
+
+      subOrganization:
+        type: array
+        description: 'for teams: URI reference to a team member'
+        x-range: RealEstateAgent
+        items:
+          type: string
+          format: uri
+
+      parentOrganization:
+        x-range:
+          - RealEstateOffice
+          - RealEstateAgent
+        description:
+          URI reference to the agent's office. For teams, this can be a
+          reference to the team leader/primary profile.
+        type: array
+        items:
+          type: string
+          format: uri
+        example:
+          - http://office-real-estate.example.com/
+          - http://batmanandrobinteam.example.com/

@@ -1,0 +1,64 @@
+# notes:
+# 1. The documentation in ./build is generated from this file.
+# 2. the schema files are located in ./schemas/<name>.yaml
+#
+asyncapi: 1.2.0
+info:
+  title: Real Estate Interoperability Collective
+  version: '0.0.1'
+  contact:
+    name: Dave Duran
+    email: dave@yodata.io
+    url: 'https://yodata.io/real-estate'
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+topics:
+  profile:
+    subscribe:
+      oneOf:
+        - $ref: '#/components/messages/profile_added'
+        - $ref: '#/components/messages/profile_updated'
+
+components:
+  securitySchemes:
+    https:
+      name: api-key
+      type: httpApiKey
+      in: header
+
+  messages:
+    profile_added:
+      summary: a profile (agent, affiliate or office) was created
+      x-scope: profile:read
+      payload:
+        allOf:
+          - $ref: schemas/Notification.yaml
+          - properties:
+              topic:
+                example: profile
+              object:
+                $ref: schemas/AddAction.yaml
+
+    profile_updated:
+      summary: a profile (agent, affiliate or office) was updated
+      x-scope: profile:read
+      payload:
+        allOf:
+          - $ref: schemas/Notification.yaml
+          - properties:
+              topic:
+                example: profile
+              object:
+                $ref: schemas/UpdateAction.yaml
+
+  schemas:
+    Action: { $ref: schemas/Action.yaml }
+    RealEstateOrganization: { $ref: schemas/RealEstateOrganization.yaml }
+    RealEstateOffice: { $ref: schemas/RealEstateOffice.yaml }
+    RealEstateAgent: { $ref: schemas/RealEstateAgent.yaml }
+    Organization: { $ref: schemas/Organization.yaml }
+    OrganizationRole: { $ref: schemas/OrganizationRole.yaml }
+    MLSMembership: { $ref: schemas/MLSMembership.yaml }
+    RealEstateLicense: { $ref: schemas/RealEstateLicense.yaml }

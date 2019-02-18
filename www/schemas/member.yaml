@@ -1,0 +1,7 @@
+description:
+  A member of an Organization or a ProgramMembership. Organizations can be
+  members of organizations
+type: array
+items:
+  type: string
+  format: uri

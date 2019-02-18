@@ -1,0 +1,37 @@
+type: object
+x-kind: RealEstateLicense
+required:
+  - type
+properties:
+  type:
+    type: string
+    enum:
+      - RealEstateLicense
+    description: RealEstateLicense
+  name:
+    type: string
+    description: display value, i.e. 'CA-DRE# 02068375'
+    example: 'CA-DRE# 02068375'
+  issuedBy:
+    $ref: Organization.yaml
+    example:
+      type: GovernmentOrganization
+      name: California
+  issuedThrough:
+    type: object
+    x-kind: Organization
+    properties:
+      type:
+        type: string
+        example: GovernmentOrganization
+      name:
+        type: string
+        example: California Department of Real Estate
+  validFrom:
+    type: string
+    format: date-time
+    description: start date
+  validUntil:
+    type: string
+    format: date-time
+    description: end date

@@ -1,0 +1,9 @@
+# Contact
+allOf:
+  - $ref: Person.yaml
+  - description: pod owner's contacts
+    properties:
+      leadSource:
+        type: array
+        items:
+          $ref: Lead.yaml

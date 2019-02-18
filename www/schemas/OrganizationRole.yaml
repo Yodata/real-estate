@@ -1,0 +1,18 @@
+type: object
+description: Provides additional information in member/memberOf relationships.
+required:
+  - type
+properties:
+  type:
+    type: string
+    enum:
+      - OrganizationRole
+  roleName:
+    description: Buyer, Seller, Escrow Officer, RealEstateAgent, etc..
+    type: string
+  startDate:
+    type: string
+    format: date-time
+  endDate:
+    type: string
+    format: date-time

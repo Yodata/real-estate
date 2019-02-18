@@ -1,0 +1,8 @@
+Action: { $ref: Action.yaml }
+AddAction: { $ref: AddAction.yaml }
+UpdateAction: { $ref: UpdateAction.yaml }
+ContactPoint: { $ref: ContactPoint.yaml }
+PersonalProfileDocument: { $ref: Profile.yaml }
+RealEstateAgent: { $ref: RealEstateAgent.yaml }
+RealEstateOffice: { $ref: RealEstateOffice.yaml }
+RealEstateOrganization: { $ref: RealEstateOrganization.yaml }

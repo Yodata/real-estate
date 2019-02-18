@@ -1,0 +1,28 @@
+---
+name: Start
+route: /
+order: 1
+---
+## Real Estate Events API
+
+**version 0.0.1**
+
+A specification for describing real estate data and events in common way
+
+## Servers
+
+| Stage | Entrypoint |
+|:--  |:--          |
+| demo | https://real-estate.yodata.me/ |
+
+## Security
+
+SoftPro events will be authenticated by API Key in the http request header.
+
+API Key is not yet requred in development.
+
+```shell
+GET / HTTP/1.1
+Accept: */*
+x-api-key: xxxxx
+```

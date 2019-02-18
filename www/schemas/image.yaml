@@ -1,0 +1,7 @@
+description:
+  An image of the item. This can be a URL or a fully described ImageObject.
+oneOf:
+  - type: string
+    format: uri
+  - type: object
+    format: ImageObject

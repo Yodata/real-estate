@@ -1,0 +1,13 @@
+{
+  "name": "root",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.10.5",
+    "typedoc": "^0.14.2"
+  },
+  "dependencies": {
+    "@types/typescript": "^2.0.0",
+    "schema-dts": "^0.2.0",
+    "typescript": "^3.2.4"
+  }
+}

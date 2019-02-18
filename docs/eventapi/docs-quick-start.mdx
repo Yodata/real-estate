@@ -1,0 +1,140 @@
+---
+id: docs-quick-start
+name: Developer Quick-Start
+menu: Developer Quick-Start
+---
+
+## Accessing REflex
+
+You'll need your REflex API key to complete this walkthrough. REflex access is restricted to HSF technology partner program members.   
+
+To inquire about joining our partner program, please contact [Michael Fortes](michaelfortes@hsfranchise.com)
+
+
+
+## Setup
+
+### Configure your environment
+Add the following environment variables to your bash profile for local development and/or your .env or Dockerfile for production.
+
+```bash
+export REFLEX_API_KEY=...
+export REFLEX_APP_NAME=...
+export INBOX=https://${REFLEX_APP_NAME}.ds.bhhsresource.com/inbox/
+```
+
+### Install HTTPie CLI (optional)
+Shell examples require the HTTPie CLI.  Installation instructions can be found on [httpie.org](https://httpie.org).
+
+<div class="alert-info">
+    Note: If you can't or prefer not to install HTTPie, you can use Postman or CURL.
+</div>
+
+
+
+## Send & Receive Messages
+
+### Create an inbox
+
+You can create an inbox for your application by HTTP GET to a new inbox with your API key in the request header.
+
+Note: this first request may take up to 1 minute to return a response while your inbox is created.
+
+```bash
+http -v $INBOX x-api-key:$REFLEX_API_KEY
+```
+
+**RESPONSE**
+
+```http
+GET /inbox/ HTTP/1.1
+Accept: */*
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Host: ${REFLEX_APP_NAME}.ds.bhhsresource.com
+User-Agent: HTTPie/0.9.9
+x-api-key: xxxxx
+
+HTTP/1.1 200
+Connection: keep-alive
+Content-Length: 64
+Content-Type: application/json;charset=UTF-8
+Date: Mon, 10 Sep 2018 05:20:19 GMT
+X-Request-Id: 8bc56b7f-9733-4a7c-a02e-4cf746e7c9f9
+
+{
+    "contains": [],
+    "id": "https://${REFLEX_APP_NAME}.ds.bhhsresource.com/inbox/"
+}
+```
+
+
+
+### Send a message
+
+Publish inbox messages with HTTP POST.
+
+```bash
+http -v POST $INBOX x-api-key:$REFLEX_API_KEY foo=bar
+```
+
+**RESPONSE**
+
+```http
+POST /inbox/ HTTP/1.1
+Accept: application/json, */*
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Content-Length: 14
+Content-Type: application/json
+Host: dave.ds.bhhsresource.com
+User-Agent: HTTPie/0.9.9
+x-api-key: xxxxxxxx
+
+{
+    "foo": "bar"
+}
+
+HTTP/1.1 200 
+Connection: keep-alive
+Content-Length: 2
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 12 Sep 2018 13:40:16 GMT
+X-Request-Id: 2b0deb2e-6405-428d-a1c4-64004e03d922
+
+{}
+
+```
+
+
+
+### Get messages
+
+To retrieve inbox messages, HTTP GET the inbox URL
+
+note: the trailing slash on inbox/ is significant
+
+```bash
+http -v GET $INBOX x-api-key:$REFLEX_API_KEY
+```
+
+**RESPONSE**
+
+```json
+{
+    "id": "https://example.com/inbox/",
+    "contains": [
+        {
+            "id": "https://example.com/inbox/message-id",
+            "type": "Notification",
+            "timestamp": 1536555268275,
+            "instrument": "https://yodata.io/vendor/app",
+            "target": "https://example.com/inbox/",
+            "object": {
+              "foo": "bar"
+            }
+        }
+    ]
+}
+```
+

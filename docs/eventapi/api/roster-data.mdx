@@ -1,0 +1,59 @@
+
+## Roster Overview
+
+- HSF Affiliates is a real estate Franchisor having multiple real estate Franchisees (aka Companies, aka Brokers)
+- Each Franchisee can have one or more Offices
+- Each Office can have one or more Agents
+- Roster data includes such things as the names, addresses, and contact info of Franchisees, Offices, and Agents
+
+## Accessing Roster Data
+
+The roster data inbox provides real-time updates of HSF Franchisees, Offices, Agents, Logos and Agent Profile Images.
+
+To request access for your application, please contact [Michael Fortes](mailto:michaelfortes@hsfranchise.com)
+
+### Production data
+
+[https://roster-data.ds.bhhsresource.com/inbox/]()
+
+### Dev/Test data
+[https://roster-data-test-schemav5.ds.bhhsresource.com/inbox/]()
+
+
+
+---
+
+## Roster data schemas
+
+Follow the links before for schema definitions and examples 
+- [RealEstateOrganization](schema-real-estate-organization.md)
+- [RealEstateOffice](schema-real-estate-office.md)
+- [RealEstateAgent](schema-real-estate-agent.md)
+
+## Franchise relationship model
+Franchise / Franchisee and Franchisee office relationships use parentOrganization and subOrganization properties.
+
+```yaml
+# HSF Franchise
+type: Organization
+id: 'https://hsf.ds.bhhsresource.com/profile/card#me'
+name: Berkshire Hathaway Home Services
+subOrganization:
+  # Franchisee
+- type: Organization 
+  id: 'https://ct301.ds.bhhsresource.com/profile/card#me'
+  name: Berkshire Hathaway New England Properties
+   
+  parentOrganization:
+  - id: 'https://hsf.ds.bhhsresource.com/profile/card#me'
+ 
+  # Franchisee offices 
+  subOrganization:
+  - type: RealEstateOffice
+    id: 'https://ct301-002.ds.bhhsresource.com/profile/card#me'
+    
+    parentOrganization:
+    - type: Organziation
+      id: 'https://ct301.ds.bhhsresource.com/profile/card#me'
+    
+```

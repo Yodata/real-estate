@@ -1,9 +1,0 @@
-title: AddAction
-allOf:
-  - $ref: Action.yaml
-  - type: object
-    properties:
-      type:
-        type: string
-        enum:
-          - AddAction

@@ -1,9 +1,0 @@
-type: object
-properties:
-  type:
-    type: string
-    enum:
-      - OrganizationRole
-  roleName:
-    description: Buyer, Seller, Escrow Officer, RealEstateAgent, etc..
-    type: string

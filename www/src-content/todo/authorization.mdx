@@ -2,8 +2,6 @@
 menu: todo
 ---
 
-![Authorization Process](/hsf/img/auth-process.svg)
-
 ## Authorization Process
 
 ### 1. Initiation
@@ -14,78 +12,87 @@ REflex users initiate a pub/sub relationship through the [REflex AppStore](https
 
 ### 2. Authorization
 
-REflex AppStore publishes {AuthorizeAction}
+REflex AppStore publishes `AuthorizeAction` to the User's Pod Inbox.
 
 https://schema.org/AuthorizeAction
 
 ```http
 POST /inbox/ HTTP/1.1
-Host: application.example.com
-Content-Type: application/ld+json
+Host: user.example.com
+Content-Type: application/json
 
 {
-    "@context":   "https://context.yodata.io/yodata/realestate#",
-    "type":       "AuthorizeAction",
-    "agent": 	  "https://user.example.com/profile/card#me",
-    "instrument": "https://appstore.example.com/profile/card#me",
-	"object":     "https://user.example.com/inbox/",
-	"recipient":  "https://application.example.com/profile/card#me"
+  "type": "AuthorizeAction",
+  "object": "https://app.example.org/profile/card#me",
+  "context": {
+    "scope": [
+      "profile:read"
+    ]
+  }
 }
 ```
 
 ### 3. Subscription
 
-Application publishes SubscribeAction with actionStatus = PotentialActionStatus
+After performing any required provisioning, the User's Pod publishes `SubscribeAction` with `actionStatus` = `PotentialActionStatus`
+to the Application's Pod Inbox with the approved scopes.
 
 https://schema.org/SubscribeAction
 
 ```http
 POST /inbox/ HTTP/1.1
-Host: user.example.com
-Content-Type: application/ld+json
+Host: app.example.com
+Content-Type: application/json
 
 {
-	"@context": "https://yodata.io/yodata/realestate#",
-	"type": "SubscribeAction",
-	"actionStatus": "PotentialActionStatus",
-	"agent":  "https://application.example.com/profile/card#me",
-    "object": "https://user.example.com/inbox/"
+  "type": "SubscribeAction",
+  "actionStatus": "PotentialActionStatus",
+  "agent": "https://user.example.org/profile/card#me",
+  "object": "https://app.example.org/profile/card#me",
+  "context": {
+    "scope": [
+      "profile:read"
+    ]
+  }
 }
 ```
 
 ### 4. Confirmation
 
-User verifies and acknowledges the subscription by publishing a SubscribeAction with actionStatus = CompletedActionStatus.
+The application perform and required provisioning and acknowledges the subscription by publishing a `SubscribeAction` with
+`actionStatus` = `CompletedActionStatus` to the User's Pod Inbox
 
 ```http
 POST /inbox/ HTTP/1.1
-Host: application.example.com
-Content-Type: application/ld+json
+Host: user.example.com
+Content-Type: application/json
 
 {
-	"@context": "https://yodata.io/yodata/realestate#",
-	"type": "SubscribeAction",
-	"actionStatus": "ActiveActionStatus",
-	"agent":  "https://application.example.com/profile/card#me",
-    "object": "https://user.example.com/inbox/"
+  "type": "SubscribeAction",
+  "actionStatus": "ActiveActionStatus",
+  "agent": "https://app.example.org/profile/card#me",
+  "object": "https://app.example.org/profile/card#me"
 }
 ```
-
-
 
 ----
 
 ## Deauthorization
 
-When a user revokes your application's their inbox, your application will receive a RejectAction
+When a user revokes your application's their inbox, your application will receive a `RejectAction`
 
 https://schema.org/RejectAction
 
-```yaml
-type: RejectAction
-agent: 'https://user.example.com/profile/card#me'
-object: 'https://user.example.com/inbox/'
-recipient: 'https://application.example.com/profile/card#me'
+```http
+POST /inbox/ HTTP/1.1
+Host: app.example.com
+Content-Type: application/json
+
+{
+  "type": "RejectAction",
+  "object": "https://app.example.org/profile/card#me",
+  "target": "https://user.example.org/profile/card#me"
+}
 ```
 
 ---

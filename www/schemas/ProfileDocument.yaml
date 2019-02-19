@@ -1,0 +1,61 @@
+allOf:
+  - Thing.yaml
+  - type: object
+    description: a solid profile document
+    required:
+      - id
+      - type
+      - primaryTopic
+    properties:
+      id:
+        type: string
+        format: uri
+        example: https://user.example.com/profile/card#me
+      type:
+        type: string
+        enum:
+          - PersonalProfileDocument
+      primaryTopic:
+        type: string
+        default: '#me'
+      '#me':
+        type: object
+        required:
+          - type
+        properties:
+          type:
+            type: string
+            example: SoftwareApplication
+          inbox:
+            description: URI to your Linked-Data-Notifications Inbox
+            type: string
+            example: /inbox/
+            default: /inbox/
+          outbox:
+            description: URI to your Linked-Data-Notifications Outbox
+            type: string
+            example: /outbox/
+            default: /outbox/
+          storage:
+            description: URI to your storage root.
+            type: string
+            example: /
+            default: /
+          preferencesFile:
+            description: URI to shared application prefs.
+            type: string
+            example: /settings/prefs
+          account:
+            description: discoverable solid:account root
+            type: string
+            example: '/'
+          privateTypeIndex:
+            description: type index for your private use
+            type: string
+            example: '/settings/privateTypeIndex'
+          publicTypeIndex:
+            description: shared, discoverable type index
+            type: string
+            example: '/settings/publicTypeIndex'
+          permissions:
+            $ref: permissions.yaml

@@ -1,0 +1,16 @@
+{
+    "@context": {
+        "schema": "http://schema.org/",
+        "foaf": "http://xmlns.com/foaf/0.1/",
+        "solid": "http://www.w3.org/ns/solid/terms#",
+        "@vocab": "http://schema.org/",
+        "id": "@id",
+        "type": "@type",
+        "PersonalProfileDocument": "foaf:PersonalProfileDocument",
+        "Inbox": "solid:inbox",
+        "Outbox": "solid:outbox",
+        "TypeIndex": "solid:TypeIndex",
+        "TypeRegistration": "solid:TypeRegistration",
+        "Notification": "solid:Notification"
+    }
+}

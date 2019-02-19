@@ -1,18 +1,23 @@
-# Schemas
+---
+name: Object Types
+route: /schemas
+---
+
+# Object Types
 
 ## Action
 
-The base model for events, based on https://schema.org/Action
+an action performed by the `agent`.
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| type | string&lt;regex&gt;! | override the type property to ensure Action is used  |
+| type | string&lt;regex&gt;! | the type of action  |
 | actionStatus | string | Indicates the current disposition of the Action.  |
-| agent |  | The direct performer or driver of the action (animate or inanimate). e.g. John wrote a book. <br/>RANGE: [Organization](/schemas#organization),[Person](/schemas#person) |
-| agent.1 | [Person](/schemas#person) | Person  |
-| endTime | string&lt;date-time&gt; | The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to December.  |
-| error | object | For failed actions, more information on the cause of the failure.  |
-| instrument | object | The object that helped the agent perform the action. e.g. John wrote a book with a pen.  |
+| agent | object | The direct performer or driver of the action. <br/>RANGE: [Organization](/schemas#organization),[Person](/schemas#person) |
+| endTime | string&lt;date-time&gt; | The endTime of something.  |
+| error | object | For failed actions, more information on the cause of the failure. <br/>RANGE: [Thing](/schemas#thing) |
+| instrument |  | The object used by the agent to perform the action.  |
+| instrument.1 | object |   |
 | location |  | The location of for example where the event is happening, an organization is located, or where an action takes place.  |
 | location.1 | object! | PostalAddress  |
 | location.2 | string |   |
@@ -30,30 +35,12 @@ The base model for events, based on https://schema.org/Action
   "type": "string",
   "actionStatus": "ActiveActionStatus",
   "agent": {
-    "type": "Organization",
-    "telephone": "079.706.7065 x6341",
-    "email": "user@example.com",
-    "faxNumber": "(873) 271-4802",
-    "contactPoint": [
-      {
-        "type": "ContactPoint",
-        "name": "Work",
-        "telephone": "1-364-127-9618 x20418",
-        "faxNumber": "834.320.1602",
-        "email": "user@example.com"
-      }
-    ],
-    "parentOrganization": [
-      "http://example.com"
-    ]
+    "type": "RealEstateAgent",
+    "name": "Batman & Robin Real Estate"
   },
-  "endTime": "2019-02-18T20:28:43Z",
-  "error": {
-    "type": "string"
-  },
-  "instrument": {
-    "type": "string"
-  },
+  "endTime": "2019-02-19T07:53:37Z",
+  "error": {},
+  "instrument": "https://awesome-app.example.com/profile/card#me",
   "location": {
     "type": "string"
   },
@@ -66,7 +53,7 @@ The base model for events, based on https://schema.org/Action
   "result": {
     "type": "string"
   },
-  "startTime": "2019-02-18T20:28:43Z",
+  "startTime": "2019-02-19T07:53:37Z",
   "target": {}
 }
 ```
@@ -228,8 +215,8 @@ Provides additional information in member/memberOf relationships.
 {
   "type": "OrganizationRole",
   "roleName": "string",
-  "startDate": "2019-02-18T20:28:43Z",
-  "endDate": "2019-02-18T20:28:43Z"
+  "startDate": "2019-02-19T07:53:37Z",
+  "endDate": "2019-02-19T07:53:37Z"
 }
 ```
 ## MLSMembership
@@ -249,8 +236,8 @@ Provides additional information in member/memberOf relationships.
 {
   "type": "MLSMembership",
   "roleName": "string",
-  "startDate": "2019-02-18T20:28:43Z",
-  "endDate": "2019-02-18T20:28:43Z",
+  "startDate": "2019-02-19T07:53:37Z",
+  "endDate": "2019-02-19T07:53:37Z",
   "memberOf": {},
   "member": {
     "type": "RealEstateAgent",
@@ -316,8 +303,8 @@ Provides additional information in member/memberOf relationships.
     "type": "GovernmentOrganization",
     "name": "California Department of Real Estate"
   },
-  "validFrom": "2019-02-18T20:28:43Z",
-  "validUntil": "2019-02-18T20:28:43Z"
+  "validFrom": "2019-02-19T07:53:37Z",
+  "validUntil": "2019-02-19T07:53:37Z"
 }
 ```
 

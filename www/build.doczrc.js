@@ -1,5 +1,5 @@
 export default {
-  title: 'Real Estate Interoperability Collective',
+  title: 'Real Estate',
   description: '',
   themeConfig: {
     colors: {

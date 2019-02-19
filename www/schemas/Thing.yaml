@@ -4,3 +4,8 @@ required:
 properties:
   type:
     type: string
+    description: Linked-Data (@type)
+  id:
+    type: string
+    format: uri
+    description: Linked-Data URI (@id)

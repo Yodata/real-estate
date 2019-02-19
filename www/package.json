@@ -3,9 +3,10 @@
   "description": "A specification for describing real estate data and events in common way",
   "version": "0.0.1",
   "scripts": {
+    "clean": "rm -rf ./build/",
     "generate": "ag asyncapi.yaml docz",
-    "dev": "yarn generate && docz dev",
-    "build": "yarn generate && docz build",
+    "dev": "docz dev",
+    "build": "docz build",
     "now-build": "yarn build"
   },
   "dependencies": {},

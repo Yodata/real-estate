@@ -1,12 +1,15 @@
 title: Action
 type: object
-description: The base model for events, based on https://schema.org/Action
+description: an action performed by the `agent`.
+externalDocs:
+  description: schema.org/Action
+  url: https://schema.org/Action
 properties:
   type:
     type: string
     format: regex
     pattern: Action
-    description: override the type property to ensure Action is used
+    description: the type of action
   actionStatus:
     type: string
     description: Indicates the current disposition of the Action.
@@ -14,36 +17,32 @@ properties:
       - ActiveActionStatus
       - CompletedActionStatus
       - FailedActionStatus
-
   agent:
-    description:
-      The direct performer or driver of the action (animate or inanimate). e.g.
-      John wrote a book.
+    description: The direct performer or driver of the action.
+    type: object
     x-range:
       - Organization
       - Person
-    anyOf:
-      - $ref: Organization.yaml
-        description: Organization
-      - $ref: Person.yaml
-        description: Person
+    example:
+      type: RealEstateAgent
+      name: Batman & Robin Real Estate
   endTime:
     type: string
     format: date-time
-    description:
-      'The endTime of something. For a reserved event or service (e.g.
-      FoodEstablishmentReservation), the time that it is expected to end. For
-      actions that span a period of time, when the action was performed. e.g.
-      John wrote a book from January to December.'
+    description: The endTime of something.
   error:
-    $ref: Thing.yaml
+    type: object
+    x-range: Thing
     description:
-      'For failed actions, more information on the cause of the failure.'
+      For failed actions, more information on the cause of the failure.
   instrument:
-    $ref: Thing.yaml
-    description:
-      The object that helped the agent perform the action. e.g. John wrote a
-      book with a pen.
+    description: The object used by the agent to perform the action.
+    anyOf:
+      - type: string
+        format: uri
+      - type: object
+    example: https://awesome-app.example.com/profile/card#me
+
   location:
     description:
       'The location of for example where the event is happening, an organization

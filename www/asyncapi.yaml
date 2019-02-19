@@ -1,10 +1,8 @@
-# notes:
-# 1. The documentation in ./build is generated from this file.
-# 2. the schema files are located in ./schemas/<name>.yaml
-#
+# asyncapi spec: https://github.com/asyncapi/asyncapi/blob/master/versions/1.2.0/asyncapi.md
 asyncapi: 1.2.0
+
 info:
-  title: Real Estate Interoperability Collective
+  title: Real Estate
   version: '0.0.1'
   contact:
     name: Dave Duran
@@ -13,13 +11,50 @@ info:
   license:
     name: MIT
     url: https://opensource.org/licenses/MIT
+  x-topics-intro: |
+    ## Permission model
+
+    The Events API leverages existing object-driven OAuth scope system to
+    control access to events. For example, if your app has access to profiles
+    through the `profiles:read` scope, you can choose to subscribe to any or
+    none of the profile-related events like `profile_added` and
+    `profile_updated`.
+
+    You will only receive events from users who've authorized your app.
 
 topics:
   profile:
+    x-summary: Affiliate, Office, and Agent profile events
     subscribe:
       oneOf:
         - $ref: '#/components/messages/profile_added'
         - $ref: '#/components/messages/profile_updated'
+
+  contact:
+    x-summary: Contact / CRM events
+    subscribe:
+      oneOf:
+        - $ref: '#/components/messages/contact_added'
+        - $ref: '#/components/messages/contact_updated'
+        - $ref: '#/components/messages/contact_removed'
+
+  lead:
+    x-summary: Lead events
+    subscribe:
+      oneOf:
+        - $ref: '#/components/messages/lead_added'
+        - $ref: '#/components/messages/lead_updated'
+        - $ref: '#/components/messages/lead_assigned'
+        - $ref: '#/components/messages/lead_accepted'
+        - $ref: '#/components/messages/lead_returned'
+
+  website:
+    x-summary: Website events
+    subscribe:
+      oneOf:
+        - $ref: '#/components/messages/website_registration'
+        - $ref: '#/components/messages/website_question'
+        - $ref: '#/components/messages/website_appointment_requested'
 
 components:
   securitySchemes:
@@ -30,6 +65,7 @@ components:
 
   messages:
     profile_added:
+      x-title: profile_added
       summary: a profile (agent, affiliate or office) was created
       x-scope: profile:read
       payload:
@@ -42,6 +78,7 @@ components:
                 $ref: schemas/AddAction.yaml
 
     profile_updated:
+      x-title: profile_updated
       summary: a profile (agent, affiliate or office) was updated
       x-scope: profile:read
       payload:
@@ -52,6 +89,188 @@ components:
                 example: profile
               object:
                 $ref: schemas/UpdateAction.yaml
+
+    contact_added:
+      x-title: contact_added
+      summary: a crm contact was created
+      x-scope: contact
+      payload:
+        allOf:
+          - $ref: schemas/Notification.yaml
+          - properties:
+              topic:
+                example: contact
+              object:
+                $ref: schemas/AddAction.yaml
+
+    contact_updated:
+      x-title: contact_updated
+      summary: a crm contact was updated
+      x-scope: contact
+      payload:
+        allOf:
+          - $ref: schemas/Notification.yaml
+          - properties:
+              topic:
+                example: contact
+              object:
+                $ref: schemas/UpdateAction.yaml
+
+    contact_removed:
+      x-title: contact_removed
+      summary: a crm contact was removed
+      x-scope: contact
+      payload:
+        allOf:
+          - $ref: schemas/Notification.yaml
+          - properties:
+              topic:
+                example: contact
+              object:
+                $ref: schemas/RemoveAction.yaml
+
+    lead_added:
+      x-title: lead_added
+      summary: a crm lead was created
+      x-scope: lead
+      payload:
+        allOf:
+          - $ref: schemas/Notification.yaml
+          - properties:
+              topic:
+                example: lead
+              object:
+                $ref: schemas/AddAction.yaml
+
+    lead_updated:
+      x-title: lead_updated
+      summary: a crm lead was updated
+      x-scope: lead
+      payload:
+        allOf:
+          - $ref: schemas/Notification.yaml
+          - properties:
+              topic:
+                example: lead
+              object:
+                $ref: schemas/UpdateAction.yaml
+
+    lead_removed:
+      x-title: lead_removed
+      summary: a crm lead was removed
+      x-scope: lead
+      payload:
+        allOf:
+          - $ref: schemas/Notification.yaml
+          - properties:
+              topic:
+                example: lead
+              object:
+                $ref: schemas/RemoveAction.yaml
+
+    lead_assigned:
+      x-title: lead_assigned
+      summary: a crm lead was assigned
+      x-scope: lead
+      payload:
+        allOf:
+          - $ref: schemas/Notification.yaml
+          - properties:
+              topic:
+                example: lead
+              object:
+                $ref: schemas/Action.yaml
+
+    lead_accepted:
+      x-title: lead_accepted
+      summary: a crm lead was accepted
+      x-scope: lead
+      payload:
+        allOf:
+          - $ref: schemas/Notification.yaml
+          - properties:
+              topic:
+                example: lead
+              object:
+                $ref: schemas/Action.yaml
+
+    lead_rejected:
+      x-title: lead_rejected
+      summary: a crm lead was rejected
+      x-scope: lead
+      payload:
+        allOf:
+          - $ref: schemas/Notification.yaml
+          - properties:
+              topic:
+                example: lead
+              object:
+                $ref: schemas/Action.yaml
+
+    lead_returned:
+      x-title: lead_returned
+      summary: a crm lead was returned
+      x-scope: lead
+      payload:
+        allOf:
+          - $ref: schemas/Notification.yaml
+          - properties:
+              topic:
+                example: lead
+              object:
+                $ref: schemas/Action.yaml
+
+    website_registration:
+      x-title: website_registration
+      summary: a website vistor has registered
+      x-scope: website
+      payload:
+        allOf:
+          - $ref: schemas/Notification.yaml
+          - properties:
+              topic:
+                example: website
+              object:
+                $ref: schemas/Action.yaml
+
+    website_appointment_requested:
+      x-title: website_appointment_requested
+      summary: a website vistor has requested an appointment
+      x-scope: website
+      payload:
+        allOf:
+          - $ref: schemas/Notification.yaml
+          - properties:
+              topic:
+                example: website
+              object:
+                $ref: schemas/Action.yaml
+
+    website_showing_requested:
+      x-title: website_showing_requested
+      summary: a website visitor has requested a showing appointment
+      x-scope: website
+      payload:
+        allOf:
+          - $ref: schemas/Notification.yaml
+          - properties:
+              topic:
+                example: website,
+              object:
+                $ref: schemas/Action.yaml
+
+    website_question:
+      x-title: website_question
+      summary: a website visitor has asked a question
+      x-scope: website
+      payload:
+        allOf:
+          - $ref: schemas/Notification.yaml
+          - properties:
+              topic:
+                example: website,
+              object:
+                $ref: schemas/Action.yaml
 
   schemas:
     Action: { $ref: schemas/Action.yaml }

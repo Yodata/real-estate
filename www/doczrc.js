@@ -6,11 +6,11 @@ export default {
   },
   menu: [
     'Home',
-    'Data model',
-    'Topics',
-    'Messages',
-    'Schemas',
-    'Developer resources'
+    'Overview',
+    'Subscription Types',
+    'Event Types',
+    'Object Types',
+    'Developer Resources'
   ],
   dest: 'dist',
   plugins: [],

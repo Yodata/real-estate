@@ -1,5 +1,5 @@
-title: ContactPoint
 x-kind: ContactPoint
+title: ContactPoint
 type: object
 properties:
   type:

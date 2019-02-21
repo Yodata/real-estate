@@ -5,8 +5,8 @@ export default {
     linesToScrollEditor: 100
   },
   menu: [
-    'Home',
     'Overview',
+    'Authorization Process',
     'Subscription Types',
     'Event Types',
     'Object Types',

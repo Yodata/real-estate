@@ -1,15 +1,20 @@
+x-debug: false
 title: Action
 type: object
-description: an action performed by the `agent`.
-externalDocs:
-  description: schema.org/Action
-  url: https://schema.org/Action
 properties:
+  topic:
+    description: the subscription type(s) assigned to the action
+    type: array
+    items:
+      type: string
+      enum:
+        - profile:read
+        - lead
+        - contact
+        - listing
   type:
     type: string
-    format: regex
-    pattern: Action
-    description: the type of action
+
   actionStatus:
     type: string
     description: Indicates the current disposition of the Action.
@@ -17,77 +22,75 @@ properties:
       - ActiveActionStatus
       - CompletedActionStatus
       - FailedActionStatus
+    example: CompletedActionStatus
+
   agent:
-    description: The direct performer or driver of the action.
-    type: object
+    description: the direct performer or driver of the action.
     x-range:
-      - Organization
       - Person
-    example:
-      type: RealEstateAgent
-      name: Batman & Robin Real Estate
+      - Organization
+      - URI
+    oneOf:
+      - type: string
+        format: uri
+        example: http://user.example.com/profile/card#me
+      - type: object
+
+  instrument:
+    description: thing used by the agent to perform the action, i.e. an application or website that generated the message.
+    type: string
+    format: uri
+    example: http://app.example.com/profile/card#me
+
+  object:
+    description: The object upon the action is carried out, whose state is kept intact or changed.
+    oneOf:
+      - $ref: Thing.yaml
+      - type: string
+        format: uri
+
+  participant:
+    x-range:
+      - Person
+      - Organization
+    description: Other co-agents that participated in the action indirectly.
+    type: array
+    items:
+      type: object
+
+  location:
+    x-range:
+      - Place
+      - PostalAddress
+      - Text
+    description:
+      The location of for example where the event is happening, an organization
+      is located, or where an action takes place.
+    type: object
+
+  result:
+    x-range: Thing
+    type: object
+    description: a result produced in the action.
+
+  startTime:
+    type: string
+    format: date-time
+    description: the date & time when something begins
+
   endTime:
     type: string
     format: date-time
     description: The endTime of something.
-  error:
-    type: object
-    x-range: Thing
-    description:
-      For failed actions, more information on the cause of the failure.
-  instrument:
-    description: The object used by the agent to perform the action.
-    anyOf:
-      - type: string
-        format: uri
-      - type: object
-    example: https://awesome-app.example.com/profile/card#me
 
-  location:
-    description:
-      'The location of for example where the event is happening, an organization
-      is located, or where an action takes place.'
-    anyOf:
-      - $ref: Thing.yaml
-        description: Place
-      - $ref: Thing.yaml
-        description: PostalAddress
-      - type: string
-  object:
-    $ref: Thing.yaml
-    description:
-      "The object upon the action is carried out, whose state is kept intact or
-      changed. Also known as the semantic roles patient, affected or undergoer
-      (which change their state) or theme (which doesn't). e.g. John read a
-      book."
-  participant:
-    description:
-      Other co-agents that participated in the action indirectly. e.g. John
-      wrote a book with Steve.
-    anyOf:
-      - $ref: Thing.yaml
-        description: Organization
-      - $ref: Thing.yaml
-        description: Person
-      - type: array
-        anyOf:
-          - $ref: Thing.yaml
-            description: Organization
-          - $ref: Thing.yaml
-            description: Person
-  result:
-    $ref: Thing.yaml
-    description: The result produced in the action. e.g. John wrote a book.
-  startTime:
-    type: string
-    format: date-time
-    description:
-      'The startTime of something. For a reserved event or service (e.g.
-      FoodEstablishmentReservation), the time that it is expected to start. For
-      actions that span a period of time, when the action was performed. e.g.
-      John wrote a book from January to December.'
   target:
+    x-range: EntryPoint
     type: object
     description: Indicates a target EntryPoint for an Action.
+
+  error:
+    type: object
+    description: For failed actions, more information on the cause of the failure.
+
 required:
   - 'type'

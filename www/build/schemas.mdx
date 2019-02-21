@@ -7,72 +7,278 @@ route: /schemas
 
 ## Action
 
-an action performed by the `agent`.
+
+
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| type | string&lt;regex&gt;! | the type of action  |
+| topic | [string] | the subscription type(s) assigned to the action  |
+| type | string! |   |
 | actionStatus | string | Indicates the current disposition of the Action.  |
-| agent | object | The direct performer or driver of the action. <br/>RANGE: [Organization](/schemas#organization),[Person](/schemas#person) |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
+| object | object&#124;string&lt;uri&gt; | The object upon the action is carried out, whose state is kept intact or changed.  |
+| participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
+| location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
+| result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
+| startTime | string&lt;date-time&gt; | the date & time when something begins  |
 | endTime | string&lt;date-time&gt; | The endTime of something.  |
-| error | object | For failed actions, more information on the cause of the failure. <br/>RANGE: [Thing](/schemas#thing) |
-| instrument |  | The object used by the agent to perform the action.  |
-| instrument.1 | object |   |
-| location |  | The location of for example where the event is happening, an organization is located, or where an action takes place.  |
-| location.1 | object! | PostalAddress  |
-| location.2 | string |   |
-| object | object | The object upon the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read a book.  |
-| participant |  | Other co-agents that participated in the action indirectly. e.g. John wrote a book with Steve.  |
-| participant.1 | object! | Person  |
-| participant.2 | [undefined] |   |
-| participant.2.1 | object! | Person  |
-| result | object | The result produced in the action. e.g. John wrote a book.  |
-| startTime | string&lt;date-time&gt; | The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to December.  |
-| target | object | Indicates a target EntryPoint for an Action.  |
+| target | object | Indicates a target EntryPoint for an Action. <br/>RANGE: [EntryPoint](/schemas#entrypoint) |
+| error | object | For failed actions, more information on the cause of the failure.  |
 
 ```json
 {
+  "topic": [
+    "profile:read"
+  ],
   "type": "string",
-  "actionStatus": "ActiveActionStatus",
-  "agent": {
-    "type": "RealEstateAgent",
-    "name": "Batman & Robin Real Estate"
-  },
-  "endTime": "2019-02-19T07:53:37Z",
-  "error": {},
-  "instrument": "https://awesome-app.example.com/profile/card#me",
-  "location": {
-    "type": "string"
-  },
+  "actionStatus": "CompletedActionStatus",
+  "agent": "http://user.example.com/profile/card#me",
+  "instrument": "http://app.example.com/profile/card#me",
   "object": {
-    "type": "string"
+    "type": "Thing",
+    "id": "http://example.com/linked/data/uri"
   },
-  "participant": {
-    "type": "string"
-  },
-  "result": {
-    "type": "string"
-  },
-  "startTime": "2019-02-19T07:53:37Z",
-  "target": {}
+  "participant": [
+    {}
+  ],
+  "location": {},
+  "result": {},
+  "startTime": "2019-02-21T06:51:45Z",
+  "endTime": "2019-02-21T06:51:45Z",
+  "target": {},
+  "error": {}
 }
 ```
-## RealEstateOrganization
+## ApplicationProfile
 
-A real estate franchisor, broker or business.
+a solid profile document
+
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| type | string! | RealEstateOrganzation  |
-| telephone | string | The primary phone number.  |
-| email | string&lt;email&gt; | Primary email address.  |
-| faxNumber | string | Primary fax number.  |
-| contactPoint | [[ContactPoint](/schemas#contactpoint)] | Department / role based contact info, i.e. 'Relocation'  |
-| parentOrganization | [string&lt;uri&gt;] | A franchisor or affiliate network of which this organization plays a membership role. <br/>RANGE: [RealEstateOrganization](/schemas#realestateorganization) |
+| type | string! | Linked-Data (@type)  |
+| id | string&lt;uri&gt;! | Linked-Data URI (@id)  |
+| primaryTopic | string |   |
+| #me | object |   |
+| inbox | string! | discoverable uri to your LDN inbox  |
+| outbox | string! | discoverable uri to your LDN outbox  |
+| storage | string | uri to your linked-data storage root  |
+| preferencesFile | string | discoverable uri for shared application preferences  |
+| account | string | discoverable solid:account root  |
+| privateTypeIndex | string | type index for your private use  |
+| publicTypeIndex | string | shared, discoverable type index  |
+| permissions | [string] |   |
 
 ```json
 {
-  "type": "RealEstateOrganization",
+  "type": "SoftwareApplication",
+  "id": "https://user.example.com/profile/card#me",
+  "primaryTopic": "#me",
+  "#me": {
+    "type": "SoftwareApplication",
+    "inbox": "/inbox/",
+    "outbox": "/outbox/",
+    "storage": "/",
+    "preferencesFile": "/settings/prefs",
+    "account": "/",
+    "privateTypeIndex": "/settings/privateTypeIndex",
+    "publicTypeIndex": "/settings/publicTypeIndex",
+    "permissions": [
+      "profile:read"
+    ]
+  },
+  "inbox": "/inbox/",
+  "outbox": "/outbox/",
+  "storage": "/",
+  "preferencesFile": "/settings/prefs",
+  "account": "/",
+  "privateTypeIndex": "/settings/privateTypeIndex",
+  "publicTypeIndex": "/settings/publicTypeIndex",
+  "permissions": [
+    "profile:subscribe"
+  ]
+}
+```
+## Certification
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! |   |
+| name | string | the name of the thing  |
+
+```json
+{
+  "type": "Certification",
+  "name": "e-Agent Certified",
+  "validFrom": "1970-01-01T00:00:00.000Z"
+}
+```
+## Contact
+
+a contact
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! | Linked-Data (@type)  |
+| id | string&lt;uri&gt; | Linked-Data URI (@id)  |
+| name | string | Full name of the person.  |
+| givenName | string | First Name  |
+| familyName | string | Last Name  |
+| jobTitle | string | The Job Title of the person.  |
+| email | string | Primary email address.  |
+| faxNumber | string | Primary fax number.  |
+| telephone | string | Primary phone number.  |
+| contactPoint | [[ContactPoint](/schemas#contactpoint)] | Named and grouped contacts points.  |
+| address | [[PostalAddress](/schemas#postaladdress)] |   |
+| birthDate | string&lt;date&gt; | date of birth.  |
+| birthPlace | * |   |
+| leadSource | [*] |   |
+
+```json
+
+```
+## ContactPoint
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string |   |
+| name | string | a label for the contactPoint, i.e. 'Work', or 'Home'  |
+| telephone | string | a telephone number  |
+| faxNumber | string | a fax number  |
+| email | string&lt;email&gt; | an email address for the item.  |
+
+```json
+{
+  "type": "ContactPoint",
+  "name": "Work",
+  "telephone": "1-364-127-9618 x20418",
+  "faxNumber": "834.320.1602",
+  "email": "user@example.com"
+}
+```
+## DigitalDocument
+
+an electronic file.
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! | Linked-Data (@type)  |
+| id | string&lt;uri&gt; | Linked-Data URI (@id)  |
+| name | string | the FileName  |
+| encodingFormat | string | the MIME type  |
+| identifier | object | namespaced identifier  |
+| about | string&lt;uri&gt; | URI to the subject of the image or logo  |
+
+```json
+{
+  "type": "Thing",
+  "id": "http://user.example.com/public/logo/fileName.zip",
+  "name": "fileName.zip",
+  "encodingFormat": "application/zip",
+  "identifier": {},
+  "about": "http://user.example.com/profile/card#me"
+}
+```
+## Lead
+
+a lead offered or assigned by the agent to one or more recipients
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string |   |
+| id | string&lt;uri&gt; | the action URI  |
+| agent | string&lt;uri&gt; | the lead assignor's webid <br/>RANGE: [Organization](/schemas#organization),[Person](/schemas#person) |
+| recipient | string&lt;uri&gt; | the assignee's webid <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
+| object | * | the Lead <br/>RANGE: [Contact](/schemas#contact),[Person](/schemas#person),[Organization](/schemas#organization) |
+
+```json
+
+```
+## Notification
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string |   |
+| id | string&lt;uri&gt; | the notification uri  |
+| timestamp | string | the timestamp  |
+| agent | string&lt;uri&gt; | the user that is sending the event  |
+| instrument | string&lt;uri&gt; | the application that generated the event  |
+| topic | string | the subscription topic  |
+| object | object | the event payload <br/>RANGE: [Action](/schemas#action) |
+
+```json
+{
+  "type": "Notification",
+  "id": "https://you.example.com/inbox/12345",
+  "timestamp": 1550503972767,
+  "agent": "https://user.example.com/profile/card#me",
+  "instrument": "https://application.example.com/profile/card#me",
+  "topic": "contact",
+  "object": {}
+}
+```
+## MLSMembership
+
+Provides additional information in member/memberOf relationships.
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string |   |
+| roleName | string | A role played, performed or filled by a person or organization.  |
+| startDate | string&lt;date-time&gt; |   |
+| endDate | string&lt;date-time&gt; |   |
+| memberOf | object |   |
+| memberId | string |   |
+
+```json
+{
+  "type": "OrganizationRole",
+  "roleName": "MLSMember",
+  "startDate": "2019-02-21T06:51:45Z",
+  "endDate": "2019-02-21T06:51:45Z",
+  "memberOf": {
+    "type": "MultipleListingService",
+    "name": "GreatScottMLS"
+  },
+  "memberId": "memberid123"
+}
+```
+## Organization
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! | Linked-Data (@type)  |
+| id | string&lt;uri&gt; | Linked-Data URI (@id)  |
+| name | string | Name or DBA.  |
+| telephone | string | Primary phone number.  |
+| email | string&lt;email&gt; | Primary email address.  |
+| faxNumber | string | Primary fax number.  |
+| contactPoint | [[ContactPoint](/schemas#contactpoint)] | Additional contact points. Can be organized by role, location, etc...  |
+| logo | [object] | a logo associated with the organization. <br/>RANGE: [ImageObject](/schemas#imageobject),[DigitalDocument](/schemas#digitaldocument) |
+| parentOrganization | [string&lt;uri&gt;] |   |
+
+```json
+{
+  "type": "Thing",
+  "id": "http://example.com/linked/data/uri",
+  "name": "string",
   "telephone": "079.706.7065 x6341",
   "email": "user@example.com",
   "faxNumber": "(873) 271-4802",
@@ -85,28 +291,462 @@ A real estate franchisor, broker or business.
       "email": "user@example.com"
     }
   ],
+  "logo": [
+    {
+      "type": "DigitalDocument",
+      "id": "http://user.example.com/public/logo/fileName.zip",
+      "name": "fileName.zip",
+      "encodingFormat": "application/zip",
+      "identifier": {},
+      "about": "http://user.example.com/profile/card#me"
+    }
+  ],
   "parentOrganization": [
     "http://example.com"
   ]
+}
+```
+## OrganizationRole
+
+Provides additional information in member/memberOf relationships.
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string |   |
+| roleName | string | A role played, performed or filled by a person or organization.  |
+| startDate | string&lt;date-time&gt; |   |
+| endDate | string&lt;date-time&gt; |   |
+
+```json
+{
+  "type": "OrganizationRole",
+  "roleName": "MLSMember",
+  "startDate": "2019-02-21T06:51:45Z",
+  "endDate": "2019-02-21T06:51:45Z"
+}
+```
+## Permit
+
+A permit issued by an organization to an individual or business.
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string | Permit type.  |
+| name | string | Common or display value of the Permit.  |
+| issuedBy | [Organization](/schemas#organization) |   |
+| issuedThrough | [Service](/schemas#service) | A service provided by an organization. <br/>RANGE: [Service](/schemas#service) |
+| validIn | object |   |
+| validFrom | string&lt;date-time&gt; | start date  |
+| validUntil | string&lt;date-time&gt; | end date  |
+
+```json
+{
+  "type": "string",
+  "name": "string",
+  "issuedBy": {
+    "type": "Thing",
+    "id": "http://example.com/linked/data/uri",
+    "name": "string",
+    "telephone": "079.706.7065 x6341",
+    "email": "user@example.com",
+    "faxNumber": "(873) 271-4802",
+    "contactPoint": [
+      {
+        "type": "ContactPoint",
+        "name": "Work",
+        "telephone": "1-364-127-9618 x20418",
+        "faxNumber": "834.320.1602",
+        "email": "user@example.com"
+      }
+    ],
+    "logo": [
+      {
+        "type": "DigitalDocument",
+        "id": "http://user.example.com/public/logo/fileName.zip",
+        "name": "fileName.zip",
+        "encodingFormat": "application/zip",
+        "identifier": {},
+        "about": "http://user.example.com/profile/card#me"
+      }
+    ],
+    "parentOrganization": [
+      "http://example.com"
+    ]
+  },
+  "issuedThrough": {
+    "type": "Service",
+    "name": "Department of Real Estate"
+  },
+  "validIn": {
+    "type": "Thing",
+    "id": "http://example.com/linked/data/uri",
+    "address": {},
+    "aggregateRating": {},
+    "branchCode": "string",
+    "containedInPlace": [
+      "http://example.com"
+    ],
+    "containsPlace": [
+      "http://example.com"
+    ],
+    "event": {},
+    "faxNumber": "string",
+    "geo": {},
+    "hasMap": "http://example.com",
+    "logo": {},
+    "openingHoursSpecification": {},
+    "photo": [
+      {}
+    ],
+    "review": [
+      {}
+    ],
+    "smokingAllowed": true,
+    "specialOpeningHoursSpecification": [
+      {}
+    ],
+    "telephone": "string"
+  },
+  "validFrom": "2019-02-21T06:51:45Z",
+  "validUntil": "2019-02-21T06:51:45Z"
+}
+```
+## Person
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! | Linked-Data (@type)  |
+| id | string&lt;uri&gt; | Linked-Data URI (@id)  |
+| name | string | Full name of the person.  |
+| givenName | string | First Name  |
+| familyName | string | Last Name  |
+| jobTitle | string | The Job Title of the person.  |
+| email | string | Primary email address.  |
+| faxNumber | string | Primary fax number.  |
+| telephone | string | Primary phone number.  |
+| contactPoint | [[ContactPoint](/schemas#contactpoint)] | Named and grouped contacts points.  |
+| address | [[PostalAddress](/schemas#postaladdress)] |   |
+| birthDate | string&lt;date&gt; | date of birth.  |
+| birthPlace | object |   |
+
+```json
+{
+  "type": "Thing",
+  "id": "http://example.com/linked/data/uri",
+  "name": "string",
+  "givenName": "Bruce",
+  "familyName": "Wayne",
+  "jobTitle": "Jefe",
+  "email": "user@example.com",
+  "faxNumber": "(498) 625-6456",
+  "telephone": "1-339-041-0306 x2866",
+  "contactPoint": [
+    {
+      "type": "ContactPoint",
+      "name": "Work",
+      "telephone": "1-364-127-9618 x20418",
+      "faxNumber": "834.320.1602",
+      "email": "user@example.com"
+    }
+  ],
+  "address": [
+    {
+      "type": "PostalAddress",
+      "streetAddress": "1007 Mountain Gate Rd",
+      "postOfficeBoxNumber": "Box 1234",
+      "addressRegion": "New Jersey",
+      "addressLocality": "Gotham City",
+      "postalCode": "10010"
+    }
+  ],
+  "birthDate": "2019-02-21",
+  "birthPlace": {
+    "type": "Thing",
+    "id": "http://example.com/linked/data/uri",
+    "address": {},
+    "aggregateRating": {},
+    "branchCode": "string",
+    "containedInPlace": [
+      "http://example.com"
+    ],
+    "containsPlace": [
+      "http://example.com"
+    ],
+    "event": {},
+    "faxNumber": "string",
+    "geo": {},
+    "hasMap": "http://example.com",
+    "logo": {},
+    "openingHoursSpecification": {},
+    "photo": [
+      {}
+    ],
+    "review": [
+      {}
+    ],
+    "smokingAllowed": true,
+    "specialOpeningHoursSpecification": [
+      {}
+    ],
+    "telephone": "string"
+  }
+}
+```
+## Place
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! | Linked-Data (@type)  |
+| id | string&lt;uri&gt; | Linked-Data URI (@id)  |
+| address | object&#124;string |   |
+| aggregateRating | object | AggregateRating -- The overall rating, based on a collection of reviews or ratings, of the item.  |
+| branchCode | string | A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.  |
+| containedInPlace | [string&lt;uri&gt;] | Place  |
+| containsPlace | [string&lt;uri&gt;] | Place  |
+| event | [Event](/schemas#event) |   |
+| faxNumber | string | The fax number.  |
+| geo | object&#124;object | The geo coordinates of the place.  |
+| hasMap | string&lt;uri&gt;&#124;[Map](/schemas#map) | A URL to a map of the place. Supersedes map, maps.  |
+| logo | object&#124;string&lt;uri&gt; | An associated logo.  |
+| openingHoursSpecification | object | OpeningHoursSpecification  |
+| photo | array&#124;array | A photograph of this place. Supersedes photos.  |
+| review | [object] | A review of the item. Supersedes reviews.  |
+| smokingAllowed | boolean | Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.  |
+| specialOpeningHoursSpecification | [object] | The special opening hours of a certain place. Use this to explicitly override general opening hours brought in scope by openingHoursSpecification or openingHours.  |
+| telephone | string | The telephone number.  |
+
+```json
+{
+  "type": "Thing",
+  "id": "http://example.com/linked/data/uri",
+  "address": {},
+  "aggregateRating": {},
+  "branchCode": "string",
+  "containedInPlace": [
+    "http://example.com"
+  ],
+  "containsPlace": [
+    "http://example.com"
+  ],
+  "event": {},
+  "faxNumber": "string",
+  "geo": {},
+  "hasMap": "http://example.com",
+  "logo": {},
+  "openingHoursSpecification": {},
+  "photo": [
+    {}
+  ],
+  "review": [
+    {}
+  ],
+  "smokingAllowed": true,
+  "specialOpeningHoursSpecification": [
+    {}
+  ],
+  "telephone": "string"
+}
+```
+## PostalAddress
+
+A physical address.
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string |   |
+| streetAddress | string |   |
+| postOfficeBoxNumber | string |   |
+| addressRegion | string | State or Province.  |
+| addressLocality | string | City, Township.  |
+| postalCode | string | Zip/Post Code  |
+
+```json
+{
+  "type": "PostalAddress",
+  "streetAddress": "1007 Mountain Gate Rd",
+  "postOfficeBoxNumber": "Box 1234",
+  "addressRegion": "New Jersey",
+  "addressLocality": "Gotham City",
+  "postalCode": "10010"
+}
+```
+## PropertyValue
+
+a key/value pair, used for maintaining state outside of the current context
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! |   |
+| propertyID | string! |   |
+| value | string! |   |
+
+```json
+{
+  "type": "PropertyValue",
+  "propertyID": "UserID",
+  "value": "<userid-string>"
+}
+```
+## RealEstateAgent
+
+A real estate agent or team.
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! | RealEstateOrganzation  |
+| id | string&lt;uri&gt; | Linked-Data URI (@id)  |
+| name | string | Name or DBA.  |
+| telephone | string | Primary phone number.  |
+| email | string&lt;email&gt; | Primary email address.  |
+| faxNumber | string | Primary fax number.  |
+| contactPoint | [[ContactPoint](/schemas#contactpoint)] | Additional contact points. Can be organized by role, location, etc...  |
+| logo | [object] | a logo associated with the organization. <br/>RANGE: [ImageObject](/schemas#imageobject),[DigitalDocument](/schemas#digitaldocument) |
+| parentOrganization | [string&lt;uri&gt;] | URI reference to the agent's office. For teams, this can be a reference to the team leader/primary profile. <br/>RANGE: [RealEstateOffice](/schemas#realestateoffice),[RealEstateAgent](/schemas#realestateagent) |
+| subOrganization | [string&lt;uri&gt;] | for teams: URI reference to a team member <br/>RANGE: [RealEstateAgent](/schemas#realestateagent) |
+| member | [object] | A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals. <br/>RANGE: [OrganizationRole](/schemas#organizationrole) |
+| memberOf | [object] | An Organization (or ProgramMembership) to which this Person or Organization belongs. <br/>RANGE: [OrganizationRole](/schemas#organizationrole),[MLSMembership](/schemas#mlsmembership) |
+| permit | [object&#124;object] | permits issued to the person or organization <br/>RANGE: [Permit](/schemas#permit),[RealEstateLicense](/schemas#realestatelicense) |
+
+```json
+{
+  "type": "Thing",
+  "id": "http://example.com/linked/data/uri",
+  "name": "Batman & Robin",
+  "telephone": "079.706.7065 x6341",
+  "email": "user@example.com",
+  "faxNumber": "(873) 271-4802",
+  "contactPoint": [
+    {
+      "type": "ContactPoint",
+      "name": "Work",
+      "telephone": "1-364-127-9618 x20418",
+      "faxNumber": "834.320.1602",
+      "email": "user@example.com"
+    }
+  ],
+  "logo": [
+    {
+      "type": "DigitalDocument",
+      "id": "http://user.example.com/public/logo/fileName.zip",
+      "name": "fileName.zip",
+      "encodingFormat": "application/zip",
+      "identifier": {},
+      "about": "http://user.example.com/profile/card#me"
+    }
+  ],
+  "parentOrganization": [
+    "http://office-real-estate.example.com/",
+    "http://batmanandrobinteam.example.com/"
+  ],
+  "subOrganization": [
+    "http://org.example.com/profile/card#me"
+  ],
+  "member": [
+    {
+      "type": "OrganizationRole",
+      "roleName": "MLSMember",
+      "startDate": "2019-02-21T06:51:45Z",
+      "endDate": "2019-02-21T06:51:45Z"
+    }
+  ],
+  "memberOf": [
+    {
+      "type": "OrganizationRole",
+      "roleName": "MLSMember",
+      "startDate": "2019-02-21T06:51:45Z",
+      "endDate": "2019-02-21T06:51:45Z",
+      "memberOf": {
+        "type": "MultipleListingService",
+        "name": "GreatScottMLS"
+      },
+      "memberId": "memberid123"
+    }
+  ],
+  "permit": [
+    {
+      "type": "RealEstateLicense",
+      "name": "CA-DRE# 02068375",
+      "issuedBy": {
+        "type": "Organization",
+        "name": "California"
+      },
+      "issuedThrough": {
+        "type": "Service",
+        "name": "California Department of Real Estate"
+      },
+      "validFrom": "2019-02-21T06:51:45Z",
+      "validUntil": "2019-02-21T06:51:45Z"
+    }
+  ]
+}
+```
+## RealEstateLicense
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string | RealEstateLicense  |
+| name | string | display value, i.e. 'CA-DRE# 02068375'  |
+| issuedBy | object | the issuing organization or service <br/>RANGE: [Organization](/schemas#organization) |
+| issuedThrough | object |   |
+| validFrom | string&lt;date-time&gt; | start date  |
+| validUntil | string&lt;date-time&gt; | end date  |
+
+```json
+{
+  "type": "RealEstateLicense",
+  "name": "CA-DRE# 02068375",
+  "issuedBy": {
+    "type": "Organization",
+    "name": "California"
+  },
+  "issuedThrough": {
+    "type": "Service",
+    "name": "California Department of Real Estate"
+  },
+  "validFrom": "2019-02-21T06:51:45Z",
+  "validUntil": "2019-02-21T06:51:45Z"
 }
 ```
 ## RealEstateOffice
 
 A real estate franchisor, broker or business.
 
+
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
 | type | string! | RealEstateOffice  |
-| telephone | string | The primary phone number.  |
+| id | string&lt;uri&gt; | Linked-Data URI (@id)  |
+| name | string | Name or DBA.  |
+| telephone | string | Primary phone number.  |
 | email | string&lt;email&gt; | Primary email address.  |
 | faxNumber | string | Primary fax number.  |
 | contactPoint | [[ContactPoint](/schemas#contactpoint)] | department or role specific contact points, i.e. relocation.  |
+| logo | [object] | a logo associated with the organization. <br/>RANGE: [ImageObject](/schemas#imageobject),[DigitalDocument](/schemas#digitaldocument) |
 | parentOrganization | [string&lt;uri&gt;] | Office broker or franchisor. <br/>RANGE: [RealEstateOrganization](/schemas#realestateorganization) |
 | subOrganization | [string&lt;uri&gt;] | Agents and teams associated with the office. <br/>RANGE: [RealEstateAgent](/schemas#realestateagent) |
+| member | [object] | A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals. <br/>RANGE: [OrganizationRole](/schemas#organizationrole) |
+| memberOf | [object] | An Organization (or ProgramMembership) to which this Person or Organization belongs. <br/>RANGE: [OrganizationRole](/schemas#organizationrole),[MLSMembership](/schemas#mlsmembership) |
+| permit | [object&#124;object] | permits issued to the person or organization <br/>RANGE: [Permit](/schemas#permit),[RealEstateLicense](/schemas#realestatelicense) |
 
 ```json
 {
-  "type": "RealEstateOffice",
+  "type": "Thing",
+  "id": "http://example.com/linked/data/uri",
+  "name": "string",
   "telephone": "079.706.7065 x6341",
   "email": "user@example.com",
   "faxNumber": "(873) 271-4802",
@@ -119,32 +759,87 @@ A real estate franchisor, broker or business.
       "email": "relocation@example.com"
     }
   ],
+  "logo": [
+    {
+      "type": "DigitalDocument",
+      "id": "http://user.example.com/public/logo/fileName.zip",
+      "name": "fileName.zip",
+      "encodingFormat": "application/zip",
+      "identifier": {},
+      "about": "http://user.example.com/profile/card#me"
+    }
+  ],
   "parentOrganization": [
     "http://example.com"
   ],
   "subOrganization": [
-    "http://example.com"
+    "http://org.example.com/profile/card#me"
+  ],
+  "member": [
+    {
+      "type": "OrganizationRole",
+      "roleName": "MLSMember",
+      "startDate": "2019-02-21T06:51:45Z",
+      "endDate": "2019-02-21T06:51:45Z"
+    }
+  ],
+  "memberOf": [
+    {
+      "type": "OrganizationRole",
+      "roleName": "MLSMember",
+      "startDate": "2019-02-21T06:51:45Z",
+      "endDate": "2019-02-21T06:51:45Z",
+      "memberOf": {
+        "type": "MultipleListingService",
+        "name": "GreatScottMLS"
+      },
+      "memberId": "memberid123"
+    }
+  ],
+  "permit": [
+    {
+      "type": "RealEstateLicense",
+      "name": "CA-DRE# 02068375",
+      "issuedBy": {
+        "type": "Organization",
+        "name": "California"
+      },
+      "issuedThrough": {
+        "type": "Service",
+        "name": "California Department of Real Estate"
+      },
+      "validFrom": "2019-02-21T06:51:45Z",
+      "validUntil": "2019-02-21T06:51:45Z"
+    }
   ]
 }
 ```
-## RealEstateAgent
+## RealEstateOrganization
 
-A real estate agent or team.
+A real estate franchisor, broker or business.
+
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| type | string! |   |
-| telephone | string | The primary phone number.  |
+| type | string! | RealEstateOrganzation  |
+| id | string&lt;uri&gt; | Linked-Data URI (@id)  |
+| name | string | Name or DBA.  |
+| telephone | string | Primary phone number.  |
 | email | string&lt;email&gt; | Primary email address.  |
 | faxNumber | string | Primary fax number.  |
-| contactPoint | [[ContactPoint](/schemas#contactpoint)] | Department / role based contact info, i.e. 'Relocation'  |
-| parentOrganization | [string&lt;uri&gt;] | URI reference to the agent's office. For teams, this can be a reference to the team leader/primary profile. <br/>RANGE: [RealEstateOffice](/schemas#realestateoffice),[RealEstateAgent](/schemas#realestateagent) |
-| name | string |   |
-| subOrganization | [string&lt;uri&gt;] | for teams: URI reference to a team member <br/>RANGE: [RealEstateAgent](/schemas#realestateagent) |
+| contactPoint | [[ContactPoint](/schemas#contactpoint)] | Additional contact points. Can be organized by role, location, etc...  |
+| logo | [object] | a logo associated with the organization. <br/>RANGE: [ImageObject](/schemas#imageobject),[DigitalDocument](/schemas#digitaldocument) |
+| parentOrganization | [string&lt;uri&gt;] | A franchisor or affiliate network of which this organization plays a membership role. <br/>RANGE: [RealEstateOrganization](/schemas#realestateorganization) |
+| subOrganization | [string&lt;uri&gt;] | an organization member <br/>RANGE: [RealEstateOrganization](/schemas#realestateorganization) |
+| member | [object] | A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals. <br/>RANGE: [OrganizationRole](/schemas#organizationrole) |
+| memberOf | [object] | An Organization (or ProgramMembership) to which this Person or Organization belongs. <br/>RANGE: [OrganizationRole](/schemas#organizationrole),[MLSMembership](/schemas#mlsmembership) |
+| permit | [object&#124;object] | permits issued to the person or organization <br/>RANGE: [Permit](/schemas#permit),[RealEstateLicense](/schemas#realestatelicense) |
 
 ```json
 {
-  "type": "RealEstateAgent",
+  "type": "Thing",
+  "id": "http://example.com/linked/data/uri",
+  "name": "string",
   "telephone": "079.706.7065 x6341",
   "email": "user@example.com",
   "faxNumber": "(873) 271-4802",
@@ -157,154 +852,59 @@ A real estate agent or team.
       "email": "user@example.com"
     }
   ],
-  "parentOrganization": [
-    "http://office-real-estate.example.com/",
-    "http://batmanandrobinteam.example.com/"
-  ],
-  "name": "Batman & Robin",
-  "subOrganization": [
-    "http://example.com"
-  ]
-}
-```
-## Organization
-
-
-
-| Name/Type | Type | Description |
-|:--------- | :--- | :---------- |
-| type | string! |   |
-| telephone | string | The primary phone number.  |
-| email | string&lt;email&gt; | Primary email address.  |
-| faxNumber | string | Primary fax number.  |
-| contactPoint | [[ContactPoint](/schemas#contactpoint)] | Department / role based contact info, i.e. 'Relocation'  |
-| parentOrganization | [string&lt;uri&gt;] |   |
-
-```json
-{
-  "type": "Organization",
-  "telephone": "079.706.7065 x6341",
-  "email": "user@example.com",
-  "faxNumber": "(873) 271-4802",
-  "contactPoint": [
+  "logo": [
     {
-      "type": "ContactPoint",
-      "name": "Work",
-      "telephone": "1-364-127-9618 x20418",
-      "faxNumber": "834.320.1602",
-      "email": "user@example.com"
+      "type": "DigitalDocument",
+      "id": "http://user.example.com/public/logo/fileName.zip",
+      "name": "fileName.zip",
+      "encodingFormat": "application/zip",
+      "identifier": {},
+      "about": "http://user.example.com/profile/card#me"
     }
   ],
   "parentOrganization": [
     "http://example.com"
+  ],
+  "subOrganization": [
+    "http://org.example.com/profile/card#me"
+  ],
+  "member": [
+    {
+      "type": "OrganizationRole",
+      "roleName": "MLSMember",
+      "startDate": "2019-02-21T06:51:45Z",
+      "endDate": "2019-02-21T06:51:45Z"
+    }
+  ],
+  "memberOf": [
+    {
+      "type": "OrganizationRole",
+      "roleName": "MLSMember",
+      "startDate": "2019-02-21T06:51:45Z",
+      "endDate": "2019-02-21T06:51:45Z",
+      "memberOf": {
+        "type": "MultipleListingService",
+        "name": "GreatScottMLS"
+      },
+      "memberId": "memberid123"
+    }
+  ],
+  "permit": [
+    {
+      "type": "RealEstateLicense",
+      "name": "CA-DRE# 02068375",
+      "issuedBy": {
+        "type": "Organization",
+        "name": "California"
+      },
+      "issuedThrough": {
+        "type": "Service",
+        "name": "California Department of Real Estate"
+      },
+      "validFrom": "2019-02-21T06:51:45Z",
+      "validUntil": "2019-02-21T06:51:45Z"
+    }
   ]
-}
-```
-## OrganizationRole
-
-Provides additional information in member/memberOf relationships.
-
-| Name/Type | Type | Description |
-|:--------- | :--- | :---------- |
-| type | string! |   |
-| roleName | string | Buyer, Seller, Escrow Officer, RealEstateAgent, etc..  |
-| startDate | string&lt;date-time&gt; |   |
-| endDate | string&lt;date-time&gt; |   |
-
-```json
-{
-  "type": "OrganizationRole",
-  "roleName": "string",
-  "startDate": "2019-02-19T07:53:37Z",
-  "endDate": "2019-02-19T07:53:37Z"
-}
-```
-## MLSMembership
-
-Provides additional information in member/memberOf relationships.
-
-| Name/Type | Type | Description |
-|:--------- | :--- | :---------- |
-| type | string! |   |
-| roleName | string | Buyer, Seller, Escrow Officer, RealEstateAgent, etc..  |
-| startDate | string&lt;date-time&gt; |   |
-| endDate | string&lt;date-time&gt; |   |
-| memberOf | object |   |
-| member | [RealEstateAgent](/schemas#realestateagent) | A real estate agent or team.  |
-
-```json
-{
-  "type": "MLSMembership",
-  "roleName": "string",
-  "startDate": "2019-02-19T07:53:37Z",
-  "endDate": "2019-02-19T07:53:37Z",
-  "memberOf": {},
-  "member": {
-    "type": "RealEstateAgent",
-    "telephone": "079.706.7065 x6341",
-    "email": "user@example.com",
-    "faxNumber": "(873) 271-4802",
-    "contactPoint": [
-      {
-        "type": "ContactPoint",
-        "name": "Work",
-        "telephone": "1-364-127-9618 x20418",
-        "faxNumber": "834.320.1602",
-        "email": "user@example.com"
-      }
-    ],
-    "parentOrganization": [
-      "http://office-real-estate.example.com/",
-      "http://batmanandrobinteam.example.com/"
-    ],
-    "name": "Batman & Robin",
-    "subOrganization": [
-      "http://example.com"
-    ]
-  }
-}
-```
-## RealEstateLicense
-
-
-
-| Name/Type | Type | Description |
-|:--------- | :--- | :---------- |
-| type | string! | RealEstateLicense  |
-| name | string | display value, i.e. 'CA-DRE# 02068375'  |
-| issuedBy | [Organization](/schemas#organization) |   |
-| issuedThrough | [Organization](/schemas#organization) |   |
-| validFrom | string&lt;date-time&gt; | start date  |
-| validUntil | string&lt;date-time&gt; | end date  |
-
-```json
-{
-  "type": "RealEstateLicense",
-  "name": "CA-DRE# 02068375",
-  "issuedBy": {
-    "type": "Organization",
-    "telephone": "079.706.7065 x6341",
-    "email": "user@example.com",
-    "faxNumber": "(873) 271-4802",
-    "contactPoint": [
-      {
-        "type": "ContactPoint",
-        "name": "Work",
-        "telephone": "1-364-127-9618 x20418",
-        "faxNumber": "834.320.1602",
-        "email": "user@example.com"
-      }
-    ],
-    "parentOrganization": [
-      "http://example.com"
-    ]
-  },
-  "issuedThrough": {
-    "type": "GovernmentOrganization",
-    "name": "California Department of Real Estate"
-  },
-  "validFrom": "2019-02-19T07:53:37Z",
-  "validUntil": "2019-02-19T07:53:37Z"
 }
 ```
 

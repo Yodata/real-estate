@@ -1,0 +1,23 @@
+x-title: profile_added
+x-scope: profile:read
+summary: a profile (agent, affiliate or office) was created
+payload:
+  allOf:
+    - $ref: AddAction.yaml
+    - type: object
+      properties:
+        object:
+          type: object
+          x-kind: Profile
+          x-range:
+            - RealEstateAgent
+            - RealEstateOffice
+            - RealEstateOrganization
+          description: the profile object
+      example:
+        topic:
+          - profile:read
+        type: AddAction
+        object:
+          id: https://user.example.com/profile/card#me
+          type: RealEstateAgent

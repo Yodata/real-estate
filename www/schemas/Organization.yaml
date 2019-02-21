@@ -1,4 +1,3 @@
-type: object
 allOf:
   - $ref: Thing.yaml
   - x-kind: Organization
@@ -13,6 +12,10 @@ allOf:
         type: string
         enum: ['Organization']
 
+      name:
+        type: string
+        description: Name or DBA.
+
       telephone:
         $ref: telephone.yaml
 
@@ -24,9 +27,23 @@ allOf:
 
       contactPoint:
         type: array
-        description: Department / role based contact info, i.e. 'Relocation'
+        description: Additional contact points. Can be organized by role, location, etc...
         items:
+          type: object
           $ref: ContactPoint.yaml
+
+      logo:
+        description: a logo associated with the organization.
+        type: array
+        x-range:
+          - ImageObject
+          - DigitalDocument
+        items:
+          type: object
+          allOf:
+            - $ref: DigitalDocument.yaml
+            - type: object
+              description: an associated logo
 
       parentOrganization:
         type: array

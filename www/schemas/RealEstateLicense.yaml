@@ -1,7 +1,4 @@
 type: object
-x-kind: RealEstateLicense
-required:
-  - type
 properties:
   type:
     type: string
@@ -13,17 +10,18 @@ properties:
     description: display value, i.e. 'CA-DRE# 02068375'
     example: 'CA-DRE# 02068375'
   issuedBy:
-    $ref: Organization.yaml
+    type: object
+    description: the issuing organization or service
+    x-range: Organization
     example:
-      type: GovernmentOrganization
+      type: Organization
       name: California
   issuedThrough:
     type: object
-    x-kind: Organization
     properties:
       type:
         type: string
-        example: GovernmentOrganization
+        example: Service
       name:
         type: string
         example: California Department of Real Estate

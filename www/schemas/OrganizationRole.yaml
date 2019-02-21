@@ -1,15 +1,13 @@
 type: object
 description: Provides additional information in member/memberOf relationships.
-required:
-  - type
 properties:
   type:
     type: string
-    enum:
-      - OrganizationRole
+    example: OrganizationRole
   roleName:
-    description: Buyer, Seller, Escrow Officer, RealEstateAgent, etc..
+    description: A role played, performed or filled by a person or organization.
     type: string
+    example: MLSMember
   startDate:
     type: string
     format: date-time

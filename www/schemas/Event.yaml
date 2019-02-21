@@ -1,0 +1,14 @@
+allOf:
+  - type: object
+    properties:
+      topic:
+        description: indicates the subscription types that will receive the event.
+        type: array
+        items:
+          type: string
+          enum:
+            - profile:read
+            - lead
+            - contact
+            - listing
+  - $ref: Action.yaml

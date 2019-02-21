@@ -22,6 +22,12 @@ info:
 
     You will only receive events from users who've authorized your app.
 
+  x-messages-intro: |
+    ### NOTE
+
+    All events receieved from your inbox are wrapped inside [Notification](/schemas#Notification).  
+    The event is the located in the notification `.object` property.
+
 topics:
   profile:
     x-summary: Affiliate, Office, and Agent profile events
@@ -64,44 +70,21 @@ components:
       in: header
 
   messages:
-    profile_added:
-      x-title: profile_added
-      summary: a profile (agent, affiliate or office) was created
-      x-scope: profile:read
-      payload:
-        allOf:
-          - $ref: schemas/Notification.yaml
-          - properties:
-              topic:
-                example: profile
-              object:
-                $ref: schemas/AddAction.yaml
-
-    profile_updated:
-      x-title: profile_updated
-      summary: a profile (agent, affiliate or office) was updated
-      x-scope: profile:read
-      payload:
-        allOf:
-          - $ref: schemas/Notification.yaml
-          - properties:
-              topic:
-                example: profile
-              object:
-                $ref: schemas/UpdateAction.yaml
-
+    profile_added: { $ref: schemas/profile_added.yaml }
+    profile_updated: { $ref: schemas/profile_updated.yaml }
     contact_added:
       x-title: contact_added
-      summary: a crm contact was created
       x-scope: contact
+      summary: a crm contact was created
       payload:
         allOf:
-          - $ref: schemas/Notification.yaml
+          - $ref: schemas/AddAction.yaml
           - properties:
               topic:
-                example: contact
+                example:
+                  - contact
               object:
-                $ref: schemas/AddAction.yaml
+                $ref: schemas/Contact.yaml
 
     contact_updated:
       x-title: contact_updated
@@ -109,7 +92,7 @@ components:
       x-scope: contact
       payload:
         allOf:
-          - $ref: schemas/Notification.yaml
+          - $ref: schemas/UpdateAction.yaml
           - properties:
               topic:
                 example: contact
@@ -122,64 +105,68 @@ components:
       x-scope: contact
       payload:
         allOf:
-          - $ref: schemas/Notification.yaml
+          - $ref: schemas/RemoveAction.yaml
           - properties:
               topic:
+                type: string
                 example: contact
               object:
-                $ref: schemas/RemoveAction.yaml
+                $ref: schemas/Contact.yaml
 
     lead_added:
       x-title: lead_added
-      summary: a crm lead was created
       x-scope: lead
+      summary: a crm lead was created
       payload:
         allOf:
-          - $ref: schemas/Notification.yaml
+          - $ref: schemas/AddAction.yaml
           - properties:
               topic:
                 example: lead
               object:
-                $ref: schemas/AddAction.yaml
+                $ref: schemas/Lead.yaml
 
     lead_updated:
       x-title: lead_updated
-      summary: a crm lead was updated
       x-scope: lead
+      summary: a crm lead was updated
       payload:
         allOf:
-          - $ref: schemas/Notification.yaml
+          - $ref: schemas/UpdateAction.yaml
           - properties:
               topic:
                 example: lead
               object:
-                $ref: schemas/UpdateAction.yaml
+                $ref: schemas/Lead.yaml
 
     lead_removed:
       x-title: lead_removed
-      summary: a crm lead was removed
       x-scope: lead
+      summary: a lead was removed
       payload:
         allOf:
-          - $ref: schemas/Notification.yaml
+          - $ref: schemas/RemoveAction.yaml
           - properties:
               topic:
                 example: lead
               object:
-                $ref: schemas/RemoveAction.yaml
+                $ref: schemas/Lead.yaml
 
     lead_assigned:
       x-title: lead_assigned
-      summary: a crm lead was assigned
       x-scope: lead
+      summary: a lead was assigned
       payload:
         allOf:
-          - $ref: schemas/Notification.yaml
+          - $ref: schemas/Action.yaml
           - properties:
+              type:
+                type: string
+                enum:
+                  - AssignAction
               topic:
+                type: string
                 example: lead
-              object:
-                $ref: schemas/Action.yaml
 
     lead_accepted:
       x-title: lead_accepted
@@ -187,12 +174,16 @@ components:
       x-scope: lead
       payload:
         allOf:
-          - $ref: schemas/Notification.yaml
+          - $ref: schemas/Action.yaml
           - properties:
+              type:
+                type: string
+                enum:
+                  - AcceptAction
               topic:
                 example: lead
               object:
-                $ref: schemas/Action.yaml
+                $ref: schemas/Lead.yaml
 
     lead_rejected:
       x-title: lead_rejected
@@ -200,12 +191,16 @@ components:
       x-scope: lead
       payload:
         allOf:
-          - $ref: schemas/Notification.yaml
+          - $ref: schemas/Action.yaml
           - properties:
+              type:
+                type: string
+                enum:
+                  - RejectAction
               topic:
                 example: lead
               object:
-                $ref: schemas/Action.yaml
+                $ref: schemas/Lead.yaml
 
     lead_returned:
       x-title: lead_returned
@@ -213,12 +208,16 @@ components:
       x-scope: lead
       payload:
         allOf:
-          - $ref: schemas/Notification.yaml
+          - $ref: schemas/Action.yaml
           - properties:
+              type:
+                type: string
+                enum:
+                  - ReturnAction
               topic:
                 example: lead
               object:
-                $ref: schemas/Action.yaml
+                $ref: schemas/Lead.yaml
 
     website_registration:
       x-title: website_registration
@@ -239,7 +238,7 @@ components:
       x-scope: website
       payload:
         allOf:
-          - $ref: schemas/Notification.yaml
+          - $ref: schemas/Action.yaml
           - properties:
               topic:
                 example: website
@@ -252,12 +251,10 @@ components:
       x-scope: website
       payload:
         allOf:
-          - $ref: schemas/Notification.yaml
+          - $ref: schemas/Action.yaml
           - properties:
               topic:
                 example: website,
-              object:
-                $ref: schemas/Action.yaml
 
     website_question:
       x-title: website_question
@@ -265,19 +262,29 @@ components:
       x-scope: website
       payload:
         allOf:
-          - $ref: schemas/Notification.yaml
+          - $ref: schemas/Action.yaml
           - properties:
               topic:
-                example: website,
-              object:
-                $ref: schemas/Action.yaml
+                example: website
 
   schemas:
     Action: { $ref: schemas/Action.yaml }
-    RealEstateOrganization: { $ref: schemas/RealEstateOrganization.yaml }
-    RealEstateOffice: { $ref: schemas/RealEstateOffice.yaml }
-    RealEstateAgent: { $ref: schemas/RealEstateAgent.yaml }
+    ApplicationProfile: { $ref: schemas/ApplicationProfile.yaml }
+    Certification: { $ref: schemas/Certification.yaml }
+    Contact: { $ref: schemas/Contact.yaml }
+    ContactPoint: { $ref: schemas/ContactPoint.yaml }
+    DigitalDocument: { $ref: schemas/DigitalDocument.yaml }
+    Lead: { $ref: schemas/Lead.yaml }
+    Notification: { $ref: schemas/Notification.yaml }
+    MLSMembership: { $ref: schemas/MLSMembership.yaml }
     Organization: { $ref: schemas/Organization.yaml }
     OrganizationRole: { $ref: schemas/OrganizationRole.yaml }
-    MLSMembership: { $ref: schemas/MLSMembership.yaml }
+    Permit: { $ref: schemas/Permit.yaml }
+    Person: { $ref: schemas/Person.yaml }
+    Place: { $ref: schemas/Place.yaml }
+    PostalAddress: { $ref: schemas/PostalAddress.yaml }
+    PropertyValue: { $ref: schemas/PropertyValue.yaml }
+    RealEstateAgent: { $ref: schemas/RealEstateAgent.yaml }
     RealEstateLicense: { $ref: schemas/RealEstateLicense.yaml }
+    RealEstateOffice: { $ref: schemas/RealEstateOffice.yaml }
+    RealEstateOrganization: { $ref: schemas/RealEstateOrganization.yaml }

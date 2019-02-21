@@ -1,5 +1,5 @@
 allOf:
-  - ProfileDocument.yaml
+  - $ref: ProfileDocument.yaml
   - type: object
     required:
       - id

@@ -1,8 +1,12 @@
-x-kind: Person
+title: Person
+type: object
 allOf:
   - $ref: Thing.yaml
-  - description: a person.
+  - type: object
     properties:
+      type:
+        type: string
+        enum: ['Person']
       name:
         type: string
         description: Full name of the person.
@@ -43,5 +47,7 @@ allOf:
       birthDate:
         type: string
         format: date
+        description: date of birth.
       birthPlace:
         $ref: Place.yaml
+        description: place of birth.

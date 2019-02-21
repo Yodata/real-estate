@@ -1,13 +1,17 @@
-x-kind: MLSMembership
-description: an MLS Membership
+x-title: MLSMembership
+description: a membership relationship
+type: object
 allOf:
   - $ref: OrganizationRole.yaml
   - type: object
     properties:
-      type:
-        type: string
-        enum: ['MLSMembership']
+      roleName:
+        example: MLSMember
       memberOf:
         type: object
-      member:
-        $ref: RealEstateAgent.yaml
+        example:
+          type: MultipleListingService
+          name: GreatScottMLS
+      memberId:
+        type: string
+        example: memberid123

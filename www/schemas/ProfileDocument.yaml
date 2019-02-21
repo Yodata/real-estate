@@ -1,5 +1,5 @@
 allOf:
-  - Thing.yaml
+  - $ref: Thing.yaml
   - type: object
     description: a solid profile document
     required:

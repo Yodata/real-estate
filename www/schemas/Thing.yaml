@@ -3,9 +3,11 @@ required:
   - type
 properties:
   type:
-    type: string
     description: Linked-Data (@type)
+    type: string
+    example: Thing
   id:
+    description: Linked-Data URI (@id)
     type: string
     format: uri
-    description: Linked-Data URI (@id)
+    example: http://example.com/linked/data/uri

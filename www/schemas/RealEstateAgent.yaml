@@ -1,7 +1,6 @@
-type: object
-x-kind: RealEstateAgent
+x-title: RealEstateAgent
 allOf:
-  - $ref: Organization.yaml
+  - $ref: RealEstateOrganization.yaml
   - type: object
     x-kind: RealEstateAgent
     description: A real estate agent or team.

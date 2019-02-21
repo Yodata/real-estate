@@ -1,14 +1,34 @@
-allOf:
-  - $ref: Action.yaml
-  - description: a Lead
-    properties:
-      type:
-        type: string
-        enum: ['Lead']
-      agent:
-        description: the lead provider (URI or Organization)
-        example:
-          id: https://broker.example.com/profile/card#me
-      object:
-        description: the lead
-        $ref: Person.yaml
+title: Lead
+type: object
+description: a lead offered or assigned by the agent to one or more recipients
+properties:
+  type:
+    type: string
+    enum: ['AssignAction']
+  id:
+    type: string
+    format: uri
+    description: the action URI
+  agent:
+    x-range:
+      - Organization
+      - Person
+    type: string
+    format: uri
+    description: the lead assignor's webid
+    example: http://organization.example.com/profile/card#me
+  recipient:
+    x-range:
+      - Person
+      - Organization
+    type: string
+    format: uri
+    description: the assignee's webid
+    example: http://user.example.com/profile/card#me
+  object:
+    description: the Lead
+    x-range:
+      - Contact
+      - Person
+      - Organization
+    $ref: Contact.yaml

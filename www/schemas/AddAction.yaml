@@ -6,8 +6,3 @@ allOf:
         type: string
         enum:
           - AddAction
-    example:
-      type: AddAction
-      agent: https;//user.example.com/profile/card#me
-      object:
-        id: https://user.example.com/profile/card

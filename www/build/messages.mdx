@@ -1,439 +1,428 @@
 ---
 name: Event Types
-route: /messages
+route: /event-type
 ---
+
 # Event Types
+
+### NOTE
+
+All events receieved from your inbox are wrapped inside [Notification](/schemas#Notification).  
+The event is the located in the notification `.object` property.
+
+
 
 ## profile_added
 
 a profile (agent, affiliate or office) was created
 
+
 ```json
 {
-  "type": "Notification",
-  "id": "https://you.example.com/inbox/12345",
-  "timestamp": 1550503972767,
-  "agent": "https://user.example.com/profile/card#me",
-  "instrument": "https://application.example.com/profile/card#me",
-  "topic": "profile",
+  "topic": [
+    "profile:read"
+  ],
+  "type": "AddAction",
   "object": {
-    "type": "AddAction",
-    "agent": "https;//user.example.com/profile/card#me",
-    "object": {
-      "id": "https://user.example.com/profile/card"
-    }
+    "id": "https://user.example.com/profile/card#me",
+    "type": "RealEstateAgent"
   }
 }
-
 ```
+
+
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| topic | [string] | the subscription type(s) assigned to the action  |
+| type | string! |   |
+| actionStatus | string | Indicates the current disposition of the Action.  |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
+| object | [Profile](/schemas#profile) | the profile object <br/>RANGE: [RealEstateAgent](/schemas#realestateagent),[RealEstateOffice](/schemas#realestateoffice),[RealEstateOrganization](/schemas#realestateorganization) |
+| participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
+| location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
+| result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
+| startTime | string&lt;date-time&gt; | the date & time when something begins  |
+| endTime | string&lt;date-time&gt; | The endTime of something.  |
+| target | object | Indicates a target EntryPoint for an Action. <br/>RANGE: [EntryPoint](/schemas#entrypoint) |
+| error | object | For failed actions, more information on the cause of the failure.  |
+
 ## profile_updated
 
 a profile (agent, affiliate or office) was updated
 
+
 ```json
 {
-  "type": "Notification",
-  "id": "https://you.example.com/inbox/12345",
-  "timestamp": 1550503972767,
-  "agent": "https://user.example.com/profile/card#me",
-  "instrument": "https://application.example.com/profile/card#me",
-  "topic": "profile",
+  "topic": [
+    "profile:read"
+  ],
+  "type": "UpdateAction",
   "object": {
-    "type": "UpdateAction",
-    "actionStatus": "ActiveActionStatus",
-    "agent": {
-      "type": "RealEstateAgent",
-      "name": "Batman & Robin Real Estate"
-    },
-    "endTime": "2019-02-19T07:53:37Z",
-    "error": {},
-    "instrument": "https://awesome-app.example.com/profile/card#me",
-    "location": {
-      "type": "string"
-    },
-    "object": {
-      "type": "string"
-    },
-    "participant": {
-      "type": "string"
-    },
-    "result": {
-      "type": "string"
-    },
-    "startTime": "2019-02-19T07:53:37Z",
-    "target": {}
+    "id": "https://user.example.com/profile/card#me",
+    "type": "RealEstateAgent"
   }
 }
-
 ```
+
+
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| topic | [string] | the subscription type(s) assigned to the action  |
+| type | string! |   |
+| actionStatus | string | Indicates the current disposition of the Action.  |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
+| object | [Profile](/schemas#profile) | the updated profile object <br/>RANGE: [RealEstateAgent](/schemas#realestateagent),[RealEstateOffice](/schemas#realestateoffice),[RealEstateOrganization](/schemas#realestateorganization) |
+| participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
+| location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
+| result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
+| startTime | string&lt;date-time&gt; | the date & time when something begins  |
+| endTime | string&lt;date-time&gt; | The endTime of something.  |
+| target | object | Indicates a target EntryPoint for an Action. <br/>RANGE: [EntryPoint](/schemas#entrypoint) |
+| error | object | For failed actions, more information on the cause of the failure.  |
+
 ## contact_added
 
 a crm contact was created
 
+
 ```json
-{
-  "type": "Notification",
-  "id": "https://you.example.com/inbox/12345",
-  "timestamp": 1550503972767,
-  "agent": "https://user.example.com/profile/card#me",
-  "instrument": "https://application.example.com/profile/card#me",
-  "topic": "contact",
-  "object": {
-    "type": "AddAction",
-    "agent": "https;//user.example.com/profile/card#me",
-    "object": {
-      "id": "https://user.example.com/profile/card"
-    }
-  }
-}
 
 ```
+
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| topic | [string] | the subscription type(s) assigned to the action  |
+| type | string! |   |
+| actionStatus | string | Indicates the current disposition of the Action.  |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
+| object | object&#124;string&lt;uri&gt; | The object upon the action is carried out, whose state is kept intact or changed.  |
+| participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
+| location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
+| result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
+| startTime | string&lt;date-time&gt; | the date & time when something begins  |
+| endTime | string&lt;date-time&gt; | The endTime of something.  |
+| target | object | Indicates a target EntryPoint for an Action. <br/>RANGE: [EntryPoint](/schemas#entrypoint) |
+| error | object | For failed actions, more information on the cause of the failure.  |
+
 ## contact_updated
 
 a crm contact was updated
 
+
 ```json
 {
-  "type": "Notification",
-  "id": "https://you.example.com/inbox/12345",
-  "timestamp": 1550503972767,
-  "agent": "https://user.example.com/profile/card#me",
-  "instrument": "https://application.example.com/profile/card#me",
   "topic": "contact",
+  "type": "UpdateAction",
+  "actionStatus": "CompletedActionStatus",
+  "agent": "http://user.example.com/profile/card#me",
+  "instrument": "http://app.example.com/profile/card#me",
   "object": {
-    "type": "UpdateAction",
-    "actionStatus": "ActiveActionStatus",
-    "agent": {
-      "type": "RealEstateAgent",
-      "name": "Batman & Robin Real Estate"
-    },
-    "endTime": "2019-02-19T07:53:37Z",
-    "error": {},
-    "instrument": "https://awesome-app.example.com/profile/card#me",
-    "location": {
-      "type": "string"
-    },
-    "object": {
-      "type": "string"
-    },
-    "participant": {
-      "type": "string"
-    },
-    "result": {
-      "type": "string"
-    },
-    "startTime": "2019-02-19T07:53:37Z",
-    "target": {}
-  }
+    "type": "Thing",
+    "id": "http://example.com/linked/data/uri"
+  },
+  "participant": [
+    {}
+  ],
+  "location": {},
+  "result": {},
+  "startTime": "2019-02-21T06:51:45Z",
+  "endTime": "2019-02-21T06:51:45Z",
+  "target": {},
+  "error": {}
 }
-
 ```
+
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| topic | [string] | the subscription type(s) assigned to the action  |
+| type | string! |   |
+| actionStatus | string | Indicates the current disposition of the Action.  |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
+| object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
+| participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
+| location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
+| result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
+| startTime | string&lt;date-time&gt; | the date & time when something begins  |
+| endTime | string&lt;date-time&gt; | The endTime of something.  |
+| target | object | Indicates a target EntryPoint for an Action. <br/>RANGE: [EntryPoint](/schemas#entrypoint) |
+| error | object | For failed actions, more information on the cause of the failure.  |
+
 ## contact_removed
 
 a crm contact was removed
 
+
 ```json
-{
-  "type": "Notification",
-  "id": "https://you.example.com/inbox/12345",
-  "timestamp": 1550503972767,
-  "agent": "https://user.example.com/profile/card#me",
-  "instrument": "https://application.example.com/profile/card#me",
-  "topic": "contact",
-  "object": {
-    "type": "RemoveAction",
-    "actionStatus": "ActiveActionStatus",
-    "agent": {
-      "type": "RealEstateAgent",
-      "name": "Batman & Robin Real Estate"
-    },
-    "endTime": "2019-02-19T07:53:37Z",
-    "error": {},
-    "instrument": "https://awesome-app.example.com/profile/card#me",
-    "location": {
-      "type": "string"
-    },
-    "object": {
-      "type": "string"
-    },
-    "participant": {
-      "type": "string"
-    },
-    "result": {
-      "type": "string"
-    },
-    "startTime": "2019-02-19T07:53:37Z",
-    "target": {}
-  }
-}
 
 ```
+
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| topic | string | the subscription type(s) assigned to the action  |
+| type | string! |   |
+| actionStatus | string | Indicates the current disposition of the Action.  |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
+| object | object&#124;string&lt;uri&gt; | The object upon the action is carried out, whose state is kept intact or changed.  |
+| participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
+| location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
+| result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
+| startTime | string&lt;date-time&gt; | the date & time when something begins  |
+| endTime | string&lt;date-time&gt; | The endTime of something.  |
+| target | object | Indicates a target EntryPoint for an Action. <br/>RANGE: [EntryPoint](/schemas#entrypoint) |
+| error | object | For failed actions, more information on the cause of the failure.  |
+
 ## lead_added
 
 a crm lead was created
 
+
 ```json
-{
-  "type": "Notification",
-  "id": "https://you.example.com/inbox/12345",
-  "timestamp": 1550503972767,
-  "agent": "https://user.example.com/profile/card#me",
-  "instrument": "https://application.example.com/profile/card#me",
-  "topic": "lead",
-  "object": {
-    "type": "AddAction",
-    "agent": "https;//user.example.com/profile/card#me",
-    "object": {
-      "id": "https://user.example.com/profile/card"
-    }
-  }
-}
 
 ```
+
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| topic | [string] | the subscription type(s) assigned to the action  |
+| type | string! |   |
+| actionStatus | string | Indicates the current disposition of the Action.  |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
+| object | object&#124;string&lt;uri&gt; | The object upon the action is carried out, whose state is kept intact or changed.  |
+| participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
+| location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
+| result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
+| startTime | string&lt;date-time&gt; | the date & time when something begins  |
+| endTime | string&lt;date-time&gt; | The endTime of something.  |
+| target | object | Indicates a target EntryPoint for an Action. <br/>RANGE: [EntryPoint](/schemas#entrypoint) |
+| error | object | For failed actions, more information on the cause of the failure.  |
+
 ## lead_updated
 
 a crm lead was updated
 
+
 ```json
-{
-  "type": "Notification",
-  "id": "https://you.example.com/inbox/12345",
-  "timestamp": 1550503972767,
-  "agent": "https://user.example.com/profile/card#me",
-  "instrument": "https://application.example.com/profile/card#me",
-  "topic": "lead",
-  "object": {
-    "type": "UpdateAction",
-    "actionStatus": "ActiveActionStatus",
-    "agent": {
-      "type": "RealEstateAgent",
-      "name": "Batman & Robin Real Estate"
-    },
-    "endTime": "2019-02-19T07:53:37Z",
-    "error": {},
-    "instrument": "https://awesome-app.example.com/profile/card#me",
-    "location": {
-      "type": "string"
-    },
-    "object": {
-      "type": "string"
-    },
-    "participant": {
-      "type": "string"
-    },
-    "result": {
-      "type": "string"
-    },
-    "startTime": "2019-02-19T07:53:37Z",
-    "target": {}
-  }
-}
 
 ```
+
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| topic | [string] | the subscription type(s) assigned to the action  |
+| type | string! |   |
+| actionStatus | string | Indicates the current disposition of the Action.  |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
+| object | object&#124;string&lt;uri&gt; | The object upon the action is carried out, whose state is kept intact or changed.  |
+| participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
+| location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
+| result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
+| startTime | string&lt;date-time&gt; | the date & time when something begins  |
+| endTime | string&lt;date-time&gt; | The endTime of something.  |
+| target | object | Indicates a target EntryPoint for an Action. <br/>RANGE: [EntryPoint](/schemas#entrypoint) |
+| error | object | For failed actions, more information on the cause of the failure.  |
+
 ## lead_removed
 
-a crm lead was removed
+a lead was removed
+
 
 ```json
-{
-  "type": "Notification",
-  "id": "https://you.example.com/inbox/12345",
-  "timestamp": 1550503972767,
-  "agent": "https://user.example.com/profile/card#me",
-  "instrument": "https://application.example.com/profile/card#me",
-  "topic": "lead",
-  "object": {
-    "type": "RemoveAction",
-    "actionStatus": "ActiveActionStatus",
-    "agent": {
-      "type": "RealEstateAgent",
-      "name": "Batman & Robin Real Estate"
-    },
-    "endTime": "2019-02-19T07:53:37Z",
-    "error": {},
-    "instrument": "https://awesome-app.example.com/profile/card#me",
-    "location": {
-      "type": "string"
-    },
-    "object": {
-      "type": "string"
-    },
-    "participant": {
-      "type": "string"
-    },
-    "result": {
-      "type": "string"
-    },
-    "startTime": "2019-02-19T07:53:37Z",
-    "target": {}
-  }
-}
 
 ```
+
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| topic | [string] | the subscription type(s) assigned to the action  |
+| type | string! |   |
+| actionStatus | string | Indicates the current disposition of the Action.  |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
+| object | object&#124;string&lt;uri&gt; | The object upon the action is carried out, whose state is kept intact or changed.  |
+| participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
+| location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
+| result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
+| startTime | string&lt;date-time&gt; | the date & time when something begins  |
+| endTime | string&lt;date-time&gt; | The endTime of something.  |
+| target | object | Indicates a target EntryPoint for an Action. <br/>RANGE: [EntryPoint](/schemas#entrypoint) |
+| error | object | For failed actions, more information on the cause of the failure.  |
+
 ## lead_assigned
 
-a crm lead was assigned
+a lead was assigned
+
 
 ```json
 {
-  "type": "Notification",
-  "id": "https://you.example.com/inbox/12345",
-  "timestamp": 1550503972767,
-  "agent": "https://user.example.com/profile/card#me",
-  "instrument": "https://application.example.com/profile/card#me",
   "topic": "lead",
+  "type": "AssignAction",
+  "actionStatus": "CompletedActionStatus",
+  "agent": "http://user.example.com/profile/card#me",
+  "instrument": "http://app.example.com/profile/card#me",
   "object": {
-    "type": "string",
-    "actionStatus": "ActiveActionStatus",
-    "agent": {
-      "type": "RealEstateAgent",
-      "name": "Batman & Robin Real Estate"
-    },
-    "endTime": "2019-02-19T07:53:37Z",
-    "error": {},
-    "instrument": "https://awesome-app.example.com/profile/card#me",
-    "location": {
-      "type": "string"
-    },
-    "object": {
-      "type": "string"
-    },
-    "participant": {
-      "type": "string"
-    },
-    "result": {
-      "type": "string"
-    },
-    "startTime": "2019-02-19T07:53:37Z",
-    "target": {}
-  }
+    "type": "Thing",
+    "id": "http://example.com/linked/data/uri"
+  },
+  "participant": [
+    {}
+  ],
+  "location": {},
+  "result": {},
+  "startTime": "2019-02-21T06:51:45Z",
+  "endTime": "2019-02-21T06:51:45Z",
+  "target": {},
+  "error": {}
 }
-
 ```
+
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| topic | string | the subscription type(s) assigned to the action  |
+| type | string! |   |
+| actionStatus | string | Indicates the current disposition of the Action.  |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
+| object | object&#124;string&lt;uri&gt; | The object upon the action is carried out, whose state is kept intact or changed.  |
+| participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
+| location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
+| result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
+| startTime | string&lt;date-time&gt; | the date & time when something begins  |
+| endTime | string&lt;date-time&gt; | The endTime of something.  |
+| target | object | Indicates a target EntryPoint for an Action. <br/>RANGE: [EntryPoint](/schemas#entrypoint) |
+| error | object | For failed actions, more information on the cause of the failure.  |
+
 ## lead_accepted
 
 a crm lead was accepted
 
+
 ```json
-{
-  "type": "Notification",
-  "id": "https://you.example.com/inbox/12345",
-  "timestamp": 1550503972767,
-  "agent": "https://user.example.com/profile/card#me",
-  "instrument": "https://application.example.com/profile/card#me",
-  "topic": "lead",
-  "object": {
-    "type": "string",
-    "actionStatus": "ActiveActionStatus",
-    "agent": {
-      "type": "RealEstateAgent",
-      "name": "Batman & Robin Real Estate"
-    },
-    "endTime": "2019-02-19T07:53:37Z",
-    "error": {},
-    "instrument": "https://awesome-app.example.com/profile/card#me",
-    "location": {
-      "type": "string"
-    },
-    "object": {
-      "type": "string"
-    },
-    "participant": {
-      "type": "string"
-    },
-    "result": {
-      "type": "string"
-    },
-    "startTime": "2019-02-19T07:53:37Z",
-    "target": {}
-  }
-}
 
 ```
+
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| topic | [string] | the subscription type(s) assigned to the action  |
+| type | string! |   |
+| actionStatus | string | Indicates the current disposition of the Action.  |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
+| object | object&#124;string&lt;uri&gt; | The object upon the action is carried out, whose state is kept intact or changed.  |
+| participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
+| location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
+| result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
+| startTime | string&lt;date-time&gt; | the date & time when something begins  |
+| endTime | string&lt;date-time&gt; | The endTime of something.  |
+| target | object | Indicates a target EntryPoint for an Action. <br/>RANGE: [EntryPoint](/schemas#entrypoint) |
+| error | object | For failed actions, more information on the cause of the failure.  |
+
 ## lead_rejected
 
 a crm lead was rejected
 
+
 ```json
-{
-  "type": "Notification",
-  "id": "https://you.example.com/inbox/12345",
-  "timestamp": 1550503972767,
-  "agent": "https://user.example.com/profile/card#me",
-  "instrument": "https://application.example.com/profile/card#me",
-  "topic": "lead",
-  "object": {
-    "type": "string",
-    "actionStatus": "ActiveActionStatus",
-    "agent": {
-      "type": "RealEstateAgent",
-      "name": "Batman & Robin Real Estate"
-    },
-    "endTime": "2019-02-19T07:53:37Z",
-    "error": {},
-    "instrument": "https://awesome-app.example.com/profile/card#me",
-    "location": {
-      "type": "string"
-    },
-    "object": {
-      "type": "string"
-    },
-    "participant": {
-      "type": "string"
-    },
-    "result": {
-      "type": "string"
-    },
-    "startTime": "2019-02-19T07:53:37Z",
-    "target": {}
-  }
-}
 
 ```
+
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| topic | [string] | the subscription type(s) assigned to the action  |
+| type | string! |   |
+| actionStatus | string | Indicates the current disposition of the Action.  |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
+| object | object&#124;string&lt;uri&gt; | The object upon the action is carried out, whose state is kept intact or changed.  |
+| participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
+| location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
+| result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
+| startTime | string&lt;date-time&gt; | the date & time when something begins  |
+| endTime | string&lt;date-time&gt; | The endTime of something.  |
+| target | object | Indicates a target EntryPoint for an Action. <br/>RANGE: [EntryPoint](/schemas#entrypoint) |
+| error | object | For failed actions, more information on the cause of the failure.  |
+
 ## lead_returned
 
 a crm lead was returned
 
+
 ```json
-{
-  "type": "Notification",
-  "id": "https://you.example.com/inbox/12345",
-  "timestamp": 1550503972767,
-  "agent": "https://user.example.com/profile/card#me",
-  "instrument": "https://application.example.com/profile/card#me",
-  "topic": "lead",
-  "object": {
-    "type": "string",
-    "actionStatus": "ActiveActionStatus",
-    "agent": {
-      "type": "RealEstateAgent",
-      "name": "Batman & Robin Real Estate"
-    },
-    "endTime": "2019-02-19T07:53:37Z",
-    "error": {},
-    "instrument": "https://awesome-app.example.com/profile/card#me",
-    "location": {
-      "type": "string"
-    },
-    "object": {
-      "type": "string"
-    },
-    "participant": {
-      "type": "string"
-    },
-    "result": {
-      "type": "string"
-    },
-    "startTime": "2019-02-19T07:53:37Z",
-    "target": {}
-  }
-}
 
 ```
+
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| topic | [string] | the subscription type(s) assigned to the action  |
+| type | string! |   |
+| actionStatus | string | Indicates the current disposition of the Action.  |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
+| object | object&#124;string&lt;uri&gt; | The object upon the action is carried out, whose state is kept intact or changed.  |
+| participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
+| location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
+| result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
+| startTime | string&lt;date-time&gt; | the date & time when something begins  |
+| endTime | string&lt;date-time&gt; | The endTime of something.  |
+| target | object | Indicates a target EntryPoint for an Action. <br/>RANGE: [EntryPoint](/schemas#entrypoint) |
+| error | object | For failed actions, more information on the cause of the failure.  |
+
 ## website_registration
 
 a website vistor has registered
 
+
 ```json
 {
   "type": "Notification",
@@ -443,150 +432,185 @@ a website vistor has registered
   "instrument": "https://application.example.com/profile/card#me",
   "topic": "website",
   "object": {
+    "topic": [
+      "profile:read"
+    ],
     "type": "string",
-    "actionStatus": "ActiveActionStatus",
-    "agent": {
-      "type": "RealEstateAgent",
-      "name": "Batman & Robin Real Estate"
-    },
-    "endTime": "2019-02-19T07:53:37Z",
-    "error": {},
-    "instrument": "https://awesome-app.example.com/profile/card#me",
-    "location": {
-      "type": "string"
-    },
+    "actionStatus": "CompletedActionStatus",
+    "agent": "http://user.example.com/profile/card#me",
+    "instrument": "http://app.example.com/profile/card#me",
     "object": {
-      "type": "string"
+      "type": "Thing",
+      "id": "http://example.com/linked/data/uri"
     },
-    "participant": {
-      "type": "string"
-    },
-    "result": {
-      "type": "string"
-    },
-    "startTime": "2019-02-19T07:53:37Z",
-    "target": {}
+    "participant": [
+      {}
+    ],
+    "location": {},
+    "result": {},
+    "startTime": "2019-02-21T06:51:45Z",
+    "endTime": "2019-02-21T06:51:45Z",
+    "target": {},
+    "error": {}
   }
 }
-
 ```
+
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string |   |
+| id | string&lt;uri&gt; | the notification uri  |
+| timestamp | string | the timestamp  |
+| agent | string&lt;uri&gt; | the user that is sending the event  |
+| instrument | string&lt;uri&gt; | the application that generated the event  |
+| topic | string | the subscription topic  |
+| object | object | the event payload <br/>RANGE: [Action](/schemas#action) |
+
 ## website_appointment_requested
 
 a website vistor has requested an appointment
 
+
 ```json
 {
-  "type": "Notification",
-  "id": "https://you.example.com/inbox/12345",
-  "timestamp": 1550503972767,
-  "agent": "https://user.example.com/profile/card#me",
-  "instrument": "https://application.example.com/profile/card#me",
   "topic": "website",
+  "type": "string",
+  "actionStatus": "CompletedActionStatus",
+  "agent": "http://user.example.com/profile/card#me",
+  "instrument": "http://app.example.com/profile/card#me",
   "object": {
-    "type": "string",
-    "actionStatus": "ActiveActionStatus",
-    "agent": {
-      "type": "RealEstateAgent",
-      "name": "Batman & Robin Real Estate"
-    },
-    "endTime": "2019-02-19T07:53:37Z",
-    "error": {},
-    "instrument": "https://awesome-app.example.com/profile/card#me",
-    "location": {
-      "type": "string"
-    },
-    "object": {
-      "type": "string"
-    },
-    "participant": {
-      "type": "string"
-    },
-    "result": {
-      "type": "string"
-    },
-    "startTime": "2019-02-19T07:53:37Z",
-    "target": {}
-  }
+    "type": "Thing",
+    "id": "http://example.com/linked/data/uri"
+  },
+  "participant": [
+    {}
+  ],
+  "location": {},
+  "result": {},
+  "startTime": "2019-02-21T06:51:45Z",
+  "endTime": "2019-02-21T06:51:45Z",
+  "target": {},
+  "error": {}
 }
-
 ```
+
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| topic | [string] | the subscription type(s) assigned to the action  |
+| type | string! |   |
+| actionStatus | string | Indicates the current disposition of the Action.  |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
+| object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
+| participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
+| location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
+| result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
+| startTime | string&lt;date-time&gt; | the date & time when something begins  |
+| endTime | string&lt;date-time&gt; | The endTime of something.  |
+| target | object | Indicates a target EntryPoint for an Action. <br/>RANGE: [EntryPoint](/schemas#entrypoint) |
+| error | object | For failed actions, more information on the cause of the failure.  |
+
 ## website_showing_requested
 
 a website visitor has requested a showing appointment
 
+
 ```json
 {
-  "type": "Notification",
-  "id": "https://you.example.com/inbox/12345",
-  "timestamp": 1550503972767,
-  "agent": "https://user.example.com/profile/card#me",
-  "instrument": "https://application.example.com/profile/card#me",
   "topic": "website,",
+  "type": "string",
+  "actionStatus": "CompletedActionStatus",
+  "agent": "http://user.example.com/profile/card#me",
+  "instrument": "http://app.example.com/profile/card#me",
   "object": {
-    "type": "string",
-    "actionStatus": "ActiveActionStatus",
-    "agent": {
-      "type": "RealEstateAgent",
-      "name": "Batman & Robin Real Estate"
-    },
-    "endTime": "2019-02-19T07:53:37Z",
-    "error": {},
-    "instrument": "https://awesome-app.example.com/profile/card#me",
-    "location": {
-      "type": "string"
-    },
-    "object": {
-      "type": "string"
-    },
-    "participant": {
-      "type": "string"
-    },
-    "result": {
-      "type": "string"
-    },
-    "startTime": "2019-02-19T07:53:37Z",
-    "target": {}
-  }
+    "type": "Thing",
+    "id": "http://example.com/linked/data/uri"
+  },
+  "participant": [
+    {}
+  ],
+  "location": {},
+  "result": {},
+  "startTime": "2019-02-21T06:51:45Z",
+  "endTime": "2019-02-21T06:51:45Z",
+  "target": {},
+  "error": {}
 }
-
 ```
+
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| topic | [string] | the subscription type(s) assigned to the action  |
+| type | string! |   |
+| actionStatus | string | Indicates the current disposition of the Action.  |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
+| object | object&#124;string&lt;uri&gt; | The object upon the action is carried out, whose state is kept intact or changed.  |
+| participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
+| location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
+| result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
+| startTime | string&lt;date-time&gt; | the date & time when something begins  |
+| endTime | string&lt;date-time&gt; | The endTime of something.  |
+| target | object | Indicates a target EntryPoint for an Action. <br/>RANGE: [EntryPoint](/schemas#entrypoint) |
+| error | object | For failed actions, more information on the cause of the failure.  |
+
 ## website_question
 
 a website visitor has asked a question
 
+
 ```json
 {
-  "type": "Notification",
-  "id": "https://you.example.com/inbox/12345",
-  "timestamp": 1550503972767,
-  "agent": "https://user.example.com/profile/card#me",
-  "instrument": "https://application.example.com/profile/card#me",
-  "topic": "website,",
+  "topic": "website",
+  "type": "string",
+  "actionStatus": "CompletedActionStatus",
+  "agent": "http://user.example.com/profile/card#me",
+  "instrument": "http://app.example.com/profile/card#me",
   "object": {
-    "type": "string",
-    "actionStatus": "ActiveActionStatus",
-    "agent": {
-      "type": "RealEstateAgent",
-      "name": "Batman & Robin Real Estate"
-    },
-    "endTime": "2019-02-19T07:53:37Z",
-    "error": {},
-    "instrument": "https://awesome-app.example.com/profile/card#me",
-    "location": {
-      "type": "string"
-    },
-    "object": {
-      "type": "string"
-    },
-    "participant": {
-      "type": "string"
-    },
-    "result": {
-      "type": "string"
-    },
-    "startTime": "2019-02-19T07:53:37Z",
-    "target": {}
-  }
+    "type": "Thing",
+    "id": "http://example.com/linked/data/uri"
+  },
+  "participant": [
+    {}
+  ],
+  "location": {},
+  "result": {},
+  "startTime": "2019-02-21T06:51:45Z",
+  "endTime": "2019-02-21T06:51:45Z",
+  "target": {},
+  "error": {}
 }
-
 ```
+
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| topic | [string] | the subscription type(s) assigned to the action  |
+| type | string! |   |
+| actionStatus | string | Indicates the current disposition of the Action.  |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
+| object | object&#124;string&lt;uri&gt; | The object upon the action is carried out, whose state is kept intact or changed.  |
+| participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
+| location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
+| result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
+| startTime | string&lt;date-time&gt; | the date & time when something begins  |
+| endTime | string&lt;date-time&gt; | The endTime of something.  |
+| target | object | Indicates a target EntryPoint for an Action. <br/>RANGE: [EntryPoint](/schemas#entrypoint) |
+| error | object | For failed actions, more information on the cause of the failure.  |
+

@@ -1,14 +1,27 @@
 ---
 name: Event Types
-route: /event-type
----
 
+
+---
 # Event Types
 
 ### NOTE
 
-All events receieved from your inbox are wrapped inside [Notification](/schemas#Notification).  
-The event is the located in the notification `.object` property.
+Events are wrapped by a Notification object:
+
+```json
+{
+  "type": "Notification",
+  "id": "https://you.example.com/inbox/12345",
+  "timestamp": 1550503972767,
+  "agent": "https://user.example.com/profile/card#me",
+  "instrument": "https://application.example.com/profile/card#me",
+  "object": {
+    "type": "Action",
+    "topic": [ "profile:read" ]
+    }
+  }
+```
 
 
 
@@ -92,11 +105,32 @@ a profile (agent, affiliate or office) was updated
 
 ## contact_added
 
-a crm contact was created
+a contact was created
 
 
 ```json
-
+{
+  "topic": [
+    "contact"
+  ],
+  "type": "AddAction",
+  "actionStatus": "CompletedActionStatus",
+  "agent": "http://user.example.com/profile/card#me",
+  "instrument": "http://app.example.com/profile/card#me",
+  "object": {
+    "type": "Thing",
+    "id": "http://example.com/linked/data/uri"
+  },
+  "participant": [
+    {}
+  ],
+  "location": {},
+  "result": {},
+  "startTime": "2019-02-21T21:19:48Z",
+  "endTime": "2019-02-21T21:19:48Z",
+  "target": {},
+  "error": {}
+}
 ```
 
 
@@ -110,7 +144,7 @@ a crm contact was created
 | actionStatus | string | Indicates the current disposition of the Action.  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
-| object | object&#124;string&lt;uri&gt; | The object upon the action is carried out, whose state is kept intact or changed.  |
+| object | object | a contact  |
 | participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
 | location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
 | result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
@@ -140,8 +174,8 @@ a crm contact was updated
   ],
   "location": {},
   "result": {},
-  "startTime": "2019-02-21T06:51:45Z",
-  "endTime": "2019-02-21T06:51:45Z",
+  "startTime": "2019-02-21T21:19:48Z",
+  "endTime": "2019-02-21T21:19:48Z",
   "target": {},
   "error": {}
 }
@@ -158,7 +192,7 @@ a crm contact was updated
 | actionStatus | string | Indicates the current disposition of the Action.  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
-| object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
+| object | object | a contact  |
 | participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
 | location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
 | result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
@@ -173,7 +207,26 @@ a crm contact was removed
 
 
 ```json
-
+{
+  "topic": "contact",
+  "type": "RemoveAction",
+  "actionStatus": "CompletedActionStatus",
+  "agent": "http://user.example.com/profile/card#me",
+  "instrument": "http://app.example.com/profile/card#me",
+  "object": {
+    "type": "Thing",
+    "id": "http://example.com/linked/data/uri"
+  },
+  "participant": [
+    {}
+  ],
+  "location": {},
+  "result": {},
+  "startTime": "2019-02-21T21:19:48Z",
+  "endTime": "2019-02-21T21:19:48Z",
+  "target": {},
+  "error": {}
+}
 ```
 
 
@@ -187,7 +240,7 @@ a crm contact was removed
 | actionStatus | string | Indicates the current disposition of the Action.  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
-| object | object&#124;string&lt;uri&gt; | The object upon the action is carried out, whose state is kept intact or changed.  |
+| object | object | a contact  |
 | participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
 | location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
 | result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
@@ -202,7 +255,26 @@ a crm lead was created
 
 
 ```json
-
+{
+  "topic": "lead",
+  "type": "AddAction",
+  "actionStatus": "CompletedActionStatus",
+  "agent": "http://user.example.com/profile/card#me",
+  "instrument": "http://app.example.com/profile/card#me",
+  "object": {
+    "type": "Thing",
+    "id": "http://example.com/linked/data/uri"
+  },
+  "participant": [
+    {}
+  ],
+  "location": {},
+  "result": {},
+  "startTime": "2019-02-21T21:19:48Z",
+  "endTime": "2019-02-21T21:19:48Z",
+  "target": {},
+  "error": {}
+}
 ```
 
 
@@ -216,7 +288,7 @@ a crm lead was created
 | actionStatus | string | Indicates the current disposition of the Action.  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
-| object | object&#124;string&lt;uri&gt; | The object upon the action is carried out, whose state is kept intact or changed.  |
+| object | object | a lead offered or assigned by the agent to one or more recipients  |
 | participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
 | location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
 | result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
@@ -231,7 +303,26 @@ a crm lead was updated
 
 
 ```json
-
+{
+  "topic": "lead",
+  "type": "UpdateAction",
+  "actionStatus": "CompletedActionStatus",
+  "agent": "http://user.example.com/profile/card#me",
+  "instrument": "http://app.example.com/profile/card#me",
+  "object": {
+    "type": "Thing",
+    "id": "http://example.com/linked/data/uri"
+  },
+  "participant": [
+    {}
+  ],
+  "location": {},
+  "result": {},
+  "startTime": "2019-02-21T21:19:48Z",
+  "endTime": "2019-02-21T21:19:48Z",
+  "target": {},
+  "error": {}
+}
 ```
 
 
@@ -245,7 +336,7 @@ a crm lead was updated
 | actionStatus | string | Indicates the current disposition of the Action.  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
-| object | object&#124;string&lt;uri&gt; | The object upon the action is carried out, whose state is kept intact or changed.  |
+| object | object | a lead offered or assigned by the agent to one or more recipients  |
 | participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
 | location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
 | result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
@@ -260,7 +351,26 @@ a lead was removed
 
 
 ```json
-
+{
+  "topic": "lead",
+  "type": "RemoveAction",
+  "actionStatus": "CompletedActionStatus",
+  "agent": "http://user.example.com/profile/card#me",
+  "instrument": "http://app.example.com/profile/card#me",
+  "object": {
+    "type": "Thing",
+    "id": "http://example.com/linked/data/uri"
+  },
+  "participant": [
+    {}
+  ],
+  "location": {},
+  "result": {},
+  "startTime": "2019-02-21T21:19:48Z",
+  "endTime": "2019-02-21T21:19:48Z",
+  "target": {},
+  "error": {}
+}
 ```
 
 
@@ -274,7 +384,7 @@ a lead was removed
 | actionStatus | string | Indicates the current disposition of the Action.  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
-| object | object&#124;string&lt;uri&gt; | The object upon the action is carried out, whose state is kept intact or changed.  |
+| object | object | a lead offered or assigned by the agent to one or more recipients  |
 | participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
 | location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
 | result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
@@ -304,8 +414,8 @@ a lead was assigned
   ],
   "location": {},
   "result": {},
-  "startTime": "2019-02-21T06:51:45Z",
-  "endTime": "2019-02-21T06:51:45Z",
+  "startTime": "2019-02-21T21:19:48Z",
+  "endTime": "2019-02-21T21:19:48Z",
   "target": {},
   "error": {}
 }
@@ -337,7 +447,26 @@ a crm lead was accepted
 
 
 ```json
-
+{
+  "topic": "lead",
+  "type": "AcceptAction",
+  "actionStatus": "CompletedActionStatus",
+  "agent": "http://user.example.com/profile/card#me",
+  "instrument": "http://app.example.com/profile/card#me",
+  "object": {
+    "type": "Thing",
+    "id": "http://example.com/linked/data/uri"
+  },
+  "participant": [
+    {}
+  ],
+  "location": {},
+  "result": {},
+  "startTime": "2019-02-21T21:19:48Z",
+  "endTime": "2019-02-21T21:19:48Z",
+  "target": {},
+  "error": {}
+}
 ```
 
 
@@ -351,7 +480,7 @@ a crm lead was accepted
 | actionStatus | string | Indicates the current disposition of the Action.  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
-| object | object&#124;string&lt;uri&gt; | The object upon the action is carried out, whose state is kept intact or changed.  |
+| object | object | a lead offered or assigned by the agent to one or more recipients  |
 | participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
 | location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
 | result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
@@ -366,7 +495,26 @@ a crm lead was rejected
 
 
 ```json
-
+{
+  "topic": "lead",
+  "type": "RejectAction",
+  "actionStatus": "CompletedActionStatus",
+  "agent": "http://user.example.com/profile/card#me",
+  "instrument": "http://app.example.com/profile/card#me",
+  "object": {
+    "type": "Thing",
+    "id": "http://example.com/linked/data/uri"
+  },
+  "participant": [
+    {}
+  ],
+  "location": {},
+  "result": {},
+  "startTime": "2019-02-21T21:19:48Z",
+  "endTime": "2019-02-21T21:19:48Z",
+  "target": {},
+  "error": {}
+}
 ```
 
 
@@ -380,7 +528,7 @@ a crm lead was rejected
 | actionStatus | string | Indicates the current disposition of the Action.  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
-| object | object&#124;string&lt;uri&gt; | The object upon the action is carried out, whose state is kept intact or changed.  |
+| object | object | a lead offered or assigned by the agent to one or more recipients  |
 | participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
 | location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
 | result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
@@ -395,7 +543,26 @@ a crm lead was returned
 
 
 ```json
-
+{
+  "topic": "lead",
+  "type": "ReturnAction",
+  "actionStatus": "CompletedActionStatus",
+  "agent": "http://user.example.com/profile/card#me",
+  "instrument": "http://app.example.com/profile/card#me",
+  "object": {
+    "type": "Thing",
+    "id": "http://example.com/linked/data/uri"
+  },
+  "participant": [
+    {}
+  ],
+  "location": {},
+  "result": {},
+  "startTime": "2019-02-21T21:19:48Z",
+  "endTime": "2019-02-21T21:19:48Z",
+  "target": {},
+  "error": {}
+}
 ```
 
 
@@ -409,7 +576,7 @@ a crm lead was returned
 | actionStatus | string | Indicates the current disposition of the Action.  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
-| object | object&#124;string&lt;uri&gt; | The object upon the action is carried out, whose state is kept intact or changed.  |
+| object | object | a lead offered or assigned by the agent to one or more recipients  |
 | participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
 | location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
 | result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
@@ -430,7 +597,6 @@ a website vistor has registered
   "timestamp": 1550503972767,
   "agent": "https://user.example.com/profile/card#me",
   "instrument": "https://application.example.com/profile/card#me",
-  "topic": "website",
   "object": {
     "topic": [
       "profile:read"
@@ -448,11 +614,12 @@ a website vistor has registered
     ],
     "location": {},
     "result": {},
-    "startTime": "2019-02-21T06:51:45Z",
-    "endTime": "2019-02-21T06:51:45Z",
+    "startTime": "2019-02-21T21:19:48Z",
+    "endTime": "2019-02-21T21:19:48Z",
     "target": {},
     "error": {}
-  }
+  },
+  "topic": "website"
 }
 ```
 
@@ -467,8 +634,8 @@ a website vistor has registered
 | timestamp | string | the timestamp  |
 | agent | string&lt;uri&gt; | the user that is sending the event  |
 | instrument | string&lt;uri&gt; | the application that generated the event  |
-| topic | string | the subscription topic  |
-| object | object | the event payload <br/>RANGE: [Action](/schemas#action) |
+| object | object | the event payload  |
+| topic | * |   |
 
 ## website_appointment_requested
 
@@ -491,8 +658,8 @@ a website vistor has requested an appointment
   ],
   "location": {},
   "result": {},
-  "startTime": "2019-02-21T06:51:45Z",
-  "endTime": "2019-02-21T06:51:45Z",
+  "startTime": "2019-02-21T21:19:48Z",
+  "endTime": "2019-02-21T21:19:48Z",
   "target": {},
   "error": {}
 }
@@ -539,8 +706,8 @@ a website visitor has requested a showing appointment
   ],
   "location": {},
   "result": {},
-  "startTime": "2019-02-21T06:51:45Z",
-  "endTime": "2019-02-21T06:51:45Z",
+  "startTime": "2019-02-21T21:19:48Z",
+  "endTime": "2019-02-21T21:19:48Z",
   "target": {},
   "error": {}
 }
@@ -587,8 +754,8 @@ a website visitor has asked a question
   ],
   "location": {},
   "result": {},
-  "startTime": "2019-02-21T06:51:45Z",
-  "endTime": "2019-02-21T06:51:45Z",
+  "startTime": "2019-02-21T21:19:48Z",
+  "endTime": "2019-02-21T21:19:48Z",
   "target": {},
   "error": {}
 }

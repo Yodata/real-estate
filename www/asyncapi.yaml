@@ -4,29 +4,69 @@ asyncapi: 1.2.0
 info:
   title: Real Estate
   version: '0.0.1'
+  description: |
+    Reflex is intended to normalize the process of integrating applications and services
+    in the real estate domain in a user-centric, vendor agnostic and developer friendly
+    way.
+
+    The API is very simple, the only interactions are publish a message (HTTP POST) and get messages either pushed to your 
+    application or with HTTP GET.
+
+    The project is 100% open source and contributors are welcomed with open arms.
+
+    To get started you'll need to get yourself a POD that will provide your application's private message bus.
+
+    If you don't already have a pod, contact us and we'll get you setup.
+
   contact:
     name: Dave Duran
     email: dave@yodata.io
     url: 'https://yodata.io/real-estate'
+
   license:
     name: MIT
     url: https://opensource.org/licenses/MIT
-  x-topics-intro: |
-    ## Permission model
 
-    The Events API leverages existing object-driven OAuth scope system to
-    control access to events. For example, if your app has access to profiles
-    through the `profiles:read` scope, you can choose to subscribe to any or
-    none of the profile-related events like `profile_added` and
-    `profile_updated`.
+  x-info:
+    name: Introduction
+    route: /introduction
 
-    You will only receive events from users who've authorized your app.
+  x-topics:
+    name: Subscription Types
+    intro: |
+      ## Permission model
 
-  x-messages-intro: |
-    ### NOTE
+      The Events API leverages existing object-driven OAuth scope system to
+      control access to events. For example, if your app has access to profiles
+      through the `profiles:read` scope, you can choose to subscribe to any or
+      none of the profile-related events like `profile_added` and
+      `profile_updated`.
 
-    All events receieved from your inbox are wrapped inside [Notification](/schemas#Notification).  
-    The event is the located in the notification `.object` property.
+      You will only receive events from users who've authorized your app.
+
+  x-messages:
+    name: Event Types
+    intro: |
+      ### NOTE
+
+      Events are wrapped by a Notification object:
+
+      ```json
+      {
+        "type": "Notification",
+        "id": "https://you.example.com/inbox/12345",
+        "timestamp": 1550503972767,
+        "agent": "https://user.example.com/profile/card#me",
+        "instrument": "https://application.example.com/profile/card#me",
+        "object": {
+          "type": "Action",
+          "topic": [ "profile:read" ]
+          }
+        }
+      ```
+
+  x-schemas:
+    name: Object Types
 
 topics:
   profile:
@@ -72,24 +112,11 @@ components:
   messages:
     profile_added: { $ref: schemas/profile_added.yaml }
     profile_updated: { $ref: schemas/profile_updated.yaml }
-    contact_added:
-      x-title: contact_added
-      x-scope: contact
-      summary: a crm contact was created
-      payload:
-        allOf:
-          - $ref: schemas/AddAction.yaml
-          - properties:
-              topic:
-                example:
-                  - contact
-              object:
-                $ref: schemas/Contact.yaml
-
+    contact_added: { $ref: schemas/contact_added.yaml }
     contact_updated:
       x-title: contact_updated
-      summary: a crm contact was updated
       x-scope: contact
+      summary: a crm contact was updated
       payload:
         allOf:
           - $ref: schemas/UpdateAction.yaml
@@ -97,7 +124,7 @@ components:
               topic:
                 example: contact
               object:
-                $ref: schemas/UpdateAction.yaml
+                $ref: schemas/Contact.yaml
 
     contact_removed:
       x-title: contact_removed

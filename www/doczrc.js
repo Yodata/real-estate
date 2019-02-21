@@ -1,5 +1,5 @@
 export default {
-  title: 'Real Estate Events API',
+  title: 'Real Estate Standard Integration',
   description: 'A specification for describing real estate data and events in common way',
   themeConfig: {
     linesToScrollEditor: 100
@@ -13,6 +13,7 @@ export default {
     'Developer Resources'
   ],
   dest: 'dist',
+  base: '/docs/',
   plugins: [],
   propsParser: false
 }

@@ -1,9 +1,8 @@
-# Contact
+type: object
 allOf:
   - $ref: Person.yaml
   - description: a contact
     properties:
       leadSource:
-        type: array
-        items:
-          $ref: Lead.yaml
+        description: the Lead Provider
+        $ref: Organization.yaml

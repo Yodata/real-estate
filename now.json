@@ -16,8 +16,8 @@
     ],
     "routes": [
         {
-            "src": "/(.*(?:json|rdf))",
-            "dest": "/static/$1"
+            "src": "/context.json",
+            "dest": "/static/context.json"
         },
         {
             "src": "/(.*)",

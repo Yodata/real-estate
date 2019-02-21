@@ -25,14 +25,6 @@ properties:
     format: uri
     description: the application that generated the event
     example: https://application.example.com/profile/card#me
-  topic:
-    type: string
-    enum:
-      - contact
-      - profile
-      - lead
-    description: the subscription topic
   object:
-    type: object
-    x-range: Action
     description: the event payload
+    $ref: Action.yaml

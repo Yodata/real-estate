@@ -40,10 +40,11 @@ allOf:
         items:
           $ref: ContactPoint.yaml
       address:
+        description: mailing addresses.
         type: array
         items:
-          x-kind: PostalAddress
           $ref: PostalAddress.yaml
+
       birthDate:
         type: string
         format: date

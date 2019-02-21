@@ -1,9 +1,11 @@
 ---
 name: Object Types
-route: /schemas
----
 
+
+---
 # Object Types
+
+
 
 ## Action
 
@@ -44,8 +46,8 @@ route: /schemas
   ],
   "location": {},
   "result": {},
-  "startTime": "2019-02-21T06:51:45Z",
-  "endTime": "2019-02-21T06:51:45Z",
+  "startTime": "2019-02-21T21:19:48Z",
+  "endTime": "2019-02-21T21:19:48Z",
   "target": {},
   "error": {}
 }
@@ -134,13 +136,103 @@ a contact
 | faxNumber | string | Primary fax number.  |
 | telephone | string | Primary phone number.  |
 | contactPoint | [[ContactPoint](/schemas#contactpoint)] | Named and grouped contacts points.  |
-| address | [[PostalAddress](/schemas#postaladdress)] |   |
+| address | [object] | mailing addresses.  |
 | birthDate | string&lt;date&gt; | date of birth.  |
-| birthPlace | * |   |
-| leadSource | [*] |   |
+| birthPlace | object |   |
+| leadSource | [Organization](/schemas#organization) |   |
 
 ```json
-
+{
+  "type": "Thing",
+  "id": "http://example.com/linked/data/uri",
+  "name": "string",
+  "givenName": "Bruce",
+  "familyName": "Wayne",
+  "jobTitle": "Jefe",
+  "email": "user@example.com",
+  "faxNumber": "(498) 625-6456",
+  "telephone": "1-339-041-0306 x2866",
+  "contactPoint": [
+    {
+      "type": "ContactPoint",
+      "name": "Work",
+      "telephone": "1-364-127-9618 x20418",
+      "faxNumber": "834.320.1602",
+      "email": "user@example.com"
+    }
+  ],
+  "address": [
+    {
+      "type": "PostalAddress",
+      "streetAddress": "1007 Mountain Gate Rd",
+      "postOfficeBoxNumber": "Box 1234",
+      "addressRegion": "New Jersey",
+      "addressLocality": "Gotham City",
+      "postalCode": "10010"
+    }
+  ],
+  "birthDate": "2019-02-21",
+  "birthPlace": {
+    "type": "Thing",
+    "id": "http://example.com/linked/data/uri",
+    "address": {},
+    "aggregateRating": {},
+    "branchCode": "string",
+    "containedInPlace": [
+      "http://example.com"
+    ],
+    "containsPlace": [
+      "http://example.com"
+    ],
+    "event": {},
+    "faxNumber": "string",
+    "geo": {},
+    "hasMap": "http://example.com",
+    "logo": {},
+    "openingHoursSpecification": {},
+    "photo": [
+      {}
+    ],
+    "review": [
+      {}
+    ],
+    "smokingAllowed": true,
+    "specialOpeningHoursSpecification": [
+      {}
+    ],
+    "telephone": "string"
+  },
+  "leadSource": {
+    "type": "Thing",
+    "id": "http://example.com/linked/data/uri",
+    "name": "string",
+    "telephone": "079.706.7065 x6341",
+    "email": "user@example.com",
+    "faxNumber": "(873) 271-4802",
+    "contactPoint": [
+      {
+        "type": "ContactPoint",
+        "name": "Work",
+        "telephone": "1-364-127-9618 x20418",
+        "faxNumber": "834.320.1602",
+        "email": "user@example.com"
+      }
+    ],
+    "logo": [
+      {
+        "type": "DigitalDocument",
+        "id": "http://user.example.com/public/logo/fileName.zip",
+        "name": "fileName.zip",
+        "encodingFormat": "application/zip",
+        "identifier": {},
+        "about": "http://user.example.com/profile/card#me"
+      }
+    ],
+    "parentOrganization": [
+      "http://example.com"
+    ]
+  }
+}
 ```
 ## ContactPoint
 
@@ -199,10 +291,106 @@ a lead offered or assigned by the agent to one or more recipients
 | id | string&lt;uri&gt; | the action URI  |
 | agent | string&lt;uri&gt; | the lead assignor's webid <br/>RANGE: [Organization](/schemas#organization),[Person](/schemas#person) |
 | recipient | string&lt;uri&gt; | the assignee's webid <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
-| object | * | the Lead <br/>RANGE: [Contact](/schemas#contact),[Person](/schemas#person),[Organization](/schemas#organization) |
+| object | object | a contact  |
 
 ```json
-
+{
+  "type": "AssignAction",
+  "id": "http://example.com",
+  "agent": "http://organization.example.com/profile/card#me",
+  "recipient": "http://user.example.com/profile/card#me",
+  "object": {
+    "type": "Thing",
+    "id": "http://example.com/linked/data/uri",
+    "name": "string",
+    "givenName": "Bruce",
+    "familyName": "Wayne",
+    "jobTitle": "Jefe",
+    "email": "user@example.com",
+    "faxNumber": "(498) 625-6456",
+    "telephone": "1-339-041-0306 x2866",
+    "contactPoint": [
+      {
+        "type": "ContactPoint",
+        "name": "Work",
+        "telephone": "1-364-127-9618 x20418",
+        "faxNumber": "834.320.1602",
+        "email": "user@example.com"
+      }
+    ],
+    "address": [
+      {
+        "type": "PostalAddress",
+        "streetAddress": "1007 Mountain Gate Rd",
+        "postOfficeBoxNumber": "Box 1234",
+        "addressRegion": "New Jersey",
+        "addressLocality": "Gotham City",
+        "postalCode": "10010"
+      }
+    ],
+    "birthDate": "2019-02-21",
+    "birthPlace": {
+      "type": "Thing",
+      "id": "http://example.com/linked/data/uri",
+      "address": {},
+      "aggregateRating": {},
+      "branchCode": "string",
+      "containedInPlace": [
+        "http://example.com"
+      ],
+      "containsPlace": [
+        "http://example.com"
+      ],
+      "event": {},
+      "faxNumber": "string",
+      "geo": {},
+      "hasMap": "http://example.com",
+      "logo": {},
+      "openingHoursSpecification": {},
+      "photo": [
+        {}
+      ],
+      "review": [
+        {}
+      ],
+      "smokingAllowed": true,
+      "specialOpeningHoursSpecification": [
+        {}
+      ],
+      "telephone": "string"
+    },
+    "leadSource": {
+      "type": "Thing",
+      "id": "http://example.com/linked/data/uri",
+      "name": "string",
+      "telephone": "079.706.7065 x6341",
+      "email": "user@example.com",
+      "faxNumber": "(873) 271-4802",
+      "contactPoint": [
+        {
+          "type": "ContactPoint",
+          "name": "Work",
+          "telephone": "1-364-127-9618 x20418",
+          "faxNumber": "834.320.1602",
+          "email": "user@example.com"
+        }
+      ],
+      "logo": [
+        {
+          "type": "DigitalDocument",
+          "id": "http://user.example.com/public/logo/fileName.zip",
+          "name": "fileName.zip",
+          "encodingFormat": "application/zip",
+          "identifier": {},
+          "about": "http://user.example.com/profile/card#me"
+        }
+      ],
+      "parentOrganization": [
+        "http://example.com"
+      ]
+    }
+  }
+}
 ```
 ## Notification
 
@@ -216,8 +404,7 @@ a lead offered or assigned by the agent to one or more recipients
 | timestamp | string | the timestamp  |
 | agent | string&lt;uri&gt; | the user that is sending the event  |
 | instrument | string&lt;uri&gt; | the application that generated the event  |
-| topic | string | the subscription topic  |
-| object | object | the event payload <br/>RANGE: [Action](/schemas#action) |
+| object | object | the event payload  |
 
 ```json
 {
@@ -226,8 +413,28 @@ a lead offered or assigned by the agent to one or more recipients
   "timestamp": 1550503972767,
   "agent": "https://user.example.com/profile/card#me",
   "instrument": "https://application.example.com/profile/card#me",
-  "topic": "contact",
-  "object": {}
+  "object": {
+    "topic": [
+      "profile:read"
+    ],
+    "type": "string",
+    "actionStatus": "CompletedActionStatus",
+    "agent": "http://user.example.com/profile/card#me",
+    "instrument": "http://app.example.com/profile/card#me",
+    "object": {
+      "type": "Thing",
+      "id": "http://example.com/linked/data/uri"
+    },
+    "participant": [
+      {}
+    ],
+    "location": {},
+    "result": {},
+    "startTime": "2019-02-21T21:19:48Z",
+    "endTime": "2019-02-21T21:19:48Z",
+    "target": {},
+    "error": {}
+  }
 }
 ```
 ## MLSMembership
@@ -248,8 +455,8 @@ Provides additional information in member/memberOf relationships.
 {
   "type": "OrganizationRole",
   "roleName": "MLSMember",
-  "startDate": "2019-02-21T06:51:45Z",
-  "endDate": "2019-02-21T06:51:45Z",
+  "startDate": "2019-02-21T21:19:48Z",
+  "endDate": "2019-02-21T21:19:48Z",
   "memberOf": {
     "type": "MultipleListingService",
     "name": "GreatScottMLS"
@@ -322,8 +529,8 @@ Provides additional information in member/memberOf relationships.
 {
   "type": "OrganizationRole",
   "roleName": "MLSMember",
-  "startDate": "2019-02-21T06:51:45Z",
-  "endDate": "2019-02-21T06:51:45Z"
+  "startDate": "2019-02-21T21:19:48Z",
+  "endDate": "2019-02-21T21:19:48Z"
 }
 ```
 ## Permit
@@ -409,8 +616,8 @@ A permit issued by an organization to an individual or business.
     ],
     "telephone": "string"
   },
-  "validFrom": "2019-02-21T06:51:45Z",
-  "validUntil": "2019-02-21T06:51:45Z"
+  "validFrom": "2019-02-21T21:19:48Z",
+  "validUntil": "2019-02-21T21:19:48Z"
 }
 ```
 ## Person
@@ -430,7 +637,7 @@ A permit issued by an organization to an individual or business.
 | faxNumber | string | Primary fax number.  |
 | telephone | string | Primary phone number.  |
 | contactPoint | [[ContactPoint](/schemas#contactpoint)] | Named and grouped contacts points.  |
-| address | [[PostalAddress](/schemas#postaladdress)] |   |
+| address | [object] | mailing addresses.  |
 | birthDate | string&lt;date&gt; | date of birth.  |
 | birthPlace | object |   |
 
@@ -656,16 +863,16 @@ A real estate agent or team.
     {
       "type": "OrganizationRole",
       "roleName": "MLSMember",
-      "startDate": "2019-02-21T06:51:45Z",
-      "endDate": "2019-02-21T06:51:45Z"
+      "startDate": "2019-02-21T21:19:48Z",
+      "endDate": "2019-02-21T21:19:48Z"
     }
   ],
   "memberOf": [
     {
       "type": "OrganizationRole",
       "roleName": "MLSMember",
-      "startDate": "2019-02-21T06:51:45Z",
-      "endDate": "2019-02-21T06:51:45Z",
+      "startDate": "2019-02-21T21:19:48Z",
+      "endDate": "2019-02-21T21:19:48Z",
       "memberOf": {
         "type": "MultipleListingService",
         "name": "GreatScottMLS"
@@ -685,8 +892,8 @@ A real estate agent or team.
         "type": "Service",
         "name": "California Department of Real Estate"
       },
-      "validFrom": "2019-02-21T06:51:45Z",
-      "validUntil": "2019-02-21T06:51:45Z"
+      "validFrom": "2019-02-21T21:19:48Z",
+      "validUntil": "2019-02-21T21:19:48Z"
     }
   ]
 }
@@ -717,8 +924,8 @@ A real estate agent or team.
     "type": "Service",
     "name": "California Department of Real Estate"
   },
-  "validFrom": "2019-02-21T06:51:45Z",
-  "validUntil": "2019-02-21T06:51:45Z"
+  "validFrom": "2019-02-21T21:19:48Z",
+  "validUntil": "2019-02-21T21:19:48Z"
 }
 ```
 ## RealEstateOffice
@@ -779,16 +986,16 @@ A real estate franchisor, broker or business.
     {
       "type": "OrganizationRole",
       "roleName": "MLSMember",
-      "startDate": "2019-02-21T06:51:45Z",
-      "endDate": "2019-02-21T06:51:45Z"
+      "startDate": "2019-02-21T21:19:48Z",
+      "endDate": "2019-02-21T21:19:48Z"
     }
   ],
   "memberOf": [
     {
       "type": "OrganizationRole",
       "roleName": "MLSMember",
-      "startDate": "2019-02-21T06:51:45Z",
-      "endDate": "2019-02-21T06:51:45Z",
+      "startDate": "2019-02-21T21:19:48Z",
+      "endDate": "2019-02-21T21:19:48Z",
       "memberOf": {
         "type": "MultipleListingService",
         "name": "GreatScottMLS"
@@ -808,8 +1015,8 @@ A real estate franchisor, broker or business.
         "type": "Service",
         "name": "California Department of Real Estate"
       },
-      "validFrom": "2019-02-21T06:51:45Z",
-      "validUntil": "2019-02-21T06:51:45Z"
+      "validFrom": "2019-02-21T21:19:48Z",
+      "validUntil": "2019-02-21T21:19:48Z"
     }
   ]
 }
@@ -872,16 +1079,16 @@ A real estate franchisor, broker or business.
     {
       "type": "OrganizationRole",
       "roleName": "MLSMember",
-      "startDate": "2019-02-21T06:51:45Z",
-      "endDate": "2019-02-21T06:51:45Z"
+      "startDate": "2019-02-21T21:19:48Z",
+      "endDate": "2019-02-21T21:19:48Z"
     }
   ],
   "memberOf": [
     {
       "type": "OrganizationRole",
       "roleName": "MLSMember",
-      "startDate": "2019-02-21T06:51:45Z",
-      "endDate": "2019-02-21T06:51:45Z",
+      "startDate": "2019-02-21T21:19:48Z",
+      "endDate": "2019-02-21T21:19:48Z",
       "memberOf": {
         "type": "MultipleListingService",
         "name": "GreatScottMLS"
@@ -901,10 +1108,9 @@ A real estate franchisor, broker or business.
         "type": "Service",
         "name": "California Department of Real Estate"
       },
-      "validFrom": "2019-02-21T06:51:45Z",
-      "validUntil": "2019-02-21T06:51:45Z"
+      "validFrom": "2019-02-21T21:19:48Z",
+      "validUntil": "2019-02-21T21:19:48Z"
     }
   ]
 }
 ```
-

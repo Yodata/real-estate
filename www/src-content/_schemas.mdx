@@ -11,6 +11,7 @@ name: Object Types
 
 
 
+### Action properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
@@ -27,6 +28,8 @@ name: Object Types
 | endTime | string&lt;date-time&gt; | The endTime of something.  |
 | target | object | Indicates a target EntryPoint for an Action. <br/>RANGE: [EntryPoint](/schemas#entrypoint) |
 | error | object | For failed actions, more information on the cause of the failure.  |
+
+### Action example
 
 ```json
 {
@@ -46,8 +49,8 @@ name: Object Types
   ],
   "location": {},
   "result": {},
-  "startTime": "2019-02-21T21:19:48Z",
-  "endTime": "2019-02-21T21:19:48Z",
+  "startTime": "2019-02-22T18:05:32Z",
+  "endTime": "2019-02-22T18:05:32Z",
   "target": {},
   "error": {}
 }
@@ -56,6 +59,7 @@ name: Object Types
 
 a solid profile document
 
+### ApplicationProfile properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
@@ -70,7 +74,9 @@ a solid profile document
 | account | string | discoverable solid:account root  |
 | privateTypeIndex | string | type index for your private use  |
 | publicTypeIndex | string | shared, discoverable type index  |
-| permissions | [string] |   |
+| permissions | [string] | the subscription types required by your service.  |
+
+### ApplicationProfile example
 
 ```json
 {
@@ -98,7 +104,7 @@ a solid profile document
   "privateTypeIndex": "/settings/privateTypeIndex",
   "publicTypeIndex": "/settings/publicTypeIndex",
   "permissions": [
-    "profile:subscribe"
+    "profile:read"
   ]
 }
 ```
@@ -106,11 +112,14 @@ a solid profile document
 
 
 
+### Certification properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
 | type | string! |   |
 | name | string | the name of the thing  |
+
+### Certification example
 
 ```json
 {
@@ -123,6 +132,7 @@ a solid profile document
 
 a contact
 
+### Contact properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
@@ -140,6 +150,8 @@ a contact
 | birthDate | string&lt;date&gt; | date of birth.  |
 | birthPlace | object |   |
 | leadSource | [Organization](/schemas#organization) |   |
+
+### Contact example
 
 ```json
 {
@@ -171,7 +183,7 @@ a contact
       "postalCode": "10010"
     }
   ],
-  "birthDate": "2019-02-21",
+  "birthDate": "2019-02-22",
   "birthPlace": {
     "type": "Thing",
     "id": "http://example.com/linked/data/uri",
@@ -238,6 +250,7 @@ a contact
 
 
 
+### ContactPoint properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
@@ -246,6 +259,8 @@ a contact
 | telephone | string | a telephone number  |
 | faxNumber | string | a fax number  |
 | email | string&lt;email&gt; | an email address for the item.  |
+
+### ContactPoint example
 
 ```json
 {
@@ -260,6 +275,7 @@ a contact
 
 an electronic file.
 
+### DigitalDocument properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
@@ -269,6 +285,8 @@ an electronic file.
 | encodingFormat | string | the MIME type  |
 | identifier | object | namespaced identifier  |
 | about | string&lt;uri&gt; | URI to the subject of the image or logo  |
+
+### DigitalDocument example
 
 ```json
 {
@@ -284,6 +302,7 @@ an electronic file.
 
 a lead offered or assigned by the agent to one or more recipients
 
+### Lead properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
@@ -292,6 +311,8 @@ a lead offered or assigned by the agent to one or more recipients
 | agent | string&lt;uri&gt; | the lead assignor's webid <br/>RANGE: [Organization](/schemas#organization),[Person](/schemas#person) |
 | recipient | string&lt;uri&gt; | the assignee's webid <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
 | object | object | a contact  |
+
+### Lead example
 
 ```json
 {
@@ -328,7 +349,7 @@ a lead offered or assigned by the agent to one or more recipients
         "postalCode": "10010"
       }
     ],
-    "birthDate": "2019-02-21",
+    "birthDate": "2019-02-22",
     "birthPlace": {
       "type": "Thing",
       "id": "http://example.com/linked/data/uri",
@@ -396,6 +417,7 @@ a lead offered or assigned by the agent to one or more recipients
 
 
 
+### Notification properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
@@ -405,6 +427,8 @@ a lead offered or assigned by the agent to one or more recipients
 | agent | string&lt;uri&gt; | the user that is sending the event  |
 | instrument | string&lt;uri&gt; | the application that generated the event  |
 | object | object | the event payload  |
+
+### Notification example
 
 ```json
 {
@@ -430,8 +454,8 @@ a lead offered or assigned by the agent to one or more recipients
     ],
     "location": {},
     "result": {},
-    "startTime": "2019-02-21T21:19:48Z",
-    "endTime": "2019-02-21T21:19:48Z",
+    "startTime": "2019-02-22T18:05:32Z",
+    "endTime": "2019-02-22T18:05:32Z",
     "target": {},
     "error": {}
   }
@@ -441,6 +465,7 @@ a lead offered or assigned by the agent to one or more recipients
 
 Provides additional information in member/memberOf relationships.
 
+### MLSMembership properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
@@ -451,12 +476,14 @@ Provides additional information in member/memberOf relationships.
 | memberOf | object |   |
 | memberId | string |   |
 
+### MLSMembership example
+
 ```json
 {
   "type": "OrganizationRole",
   "roleName": "MLSMember",
-  "startDate": "2019-02-21T21:19:48Z",
-  "endDate": "2019-02-21T21:19:48Z",
+  "startDate": "2019-02-22T18:05:32Z",
+  "endDate": "2019-02-22T18:05:32Z",
   "memberOf": {
     "type": "MultipleListingService",
     "name": "GreatScottMLS"
@@ -468,6 +495,7 @@ Provides additional information in member/memberOf relationships.
 
 
 
+### Organization properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
@@ -480,6 +508,8 @@ Provides additional information in member/memberOf relationships.
 | contactPoint | [[ContactPoint](/schemas#contactpoint)] | Additional contact points. Can be organized by role, location, etc...  |
 | logo | [object] | a logo associated with the organization. <br/>RANGE: [ImageObject](/schemas#imageobject),[DigitalDocument](/schemas#digitaldocument) |
 | parentOrganization | [string&lt;uri&gt;] |   |
+
+### Organization example
 
 ```json
 {
@@ -517,6 +547,7 @@ Provides additional information in member/memberOf relationships.
 
 Provides additional information in member/memberOf relationships.
 
+### OrganizationRole properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
@@ -525,18 +556,21 @@ Provides additional information in member/memberOf relationships.
 | startDate | string&lt;date-time&gt; |   |
 | endDate | string&lt;date-time&gt; |   |
 
+### OrganizationRole example
+
 ```json
 {
   "type": "OrganizationRole",
   "roleName": "MLSMember",
-  "startDate": "2019-02-21T21:19:48Z",
-  "endDate": "2019-02-21T21:19:48Z"
+  "startDate": "2019-02-22T18:05:32Z",
+  "endDate": "2019-02-22T18:05:32Z"
 }
 ```
 ## Permit
 
 A permit issued by an organization to an individual or business.
 
+### Permit properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
@@ -547,6 +581,8 @@ A permit issued by an organization to an individual or business.
 | validIn | object |   |
 | validFrom | string&lt;date-time&gt; | start date  |
 | validUntil | string&lt;date-time&gt; | end date  |
+
+### Permit example
 
 ```json
 {
@@ -616,14 +652,15 @@ A permit issued by an organization to an individual or business.
     ],
     "telephone": "string"
   },
-  "validFrom": "2019-02-21T21:19:48Z",
-  "validUntil": "2019-02-21T21:19:48Z"
+  "validFrom": "2019-02-22T18:05:32Z",
+  "validUntil": "2019-02-22T18:05:32Z"
 }
 ```
 ## Person
 
 
 
+### Person properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
@@ -640,6 +677,8 @@ A permit issued by an organization to an individual or business.
 | address | [object] | mailing addresses.  |
 | birthDate | string&lt;date&gt; | date of birth.  |
 | birthPlace | object |   |
+
+### Person example
 
 ```json
 {
@@ -671,7 +710,7 @@ A permit issued by an organization to an individual or business.
       "postalCode": "10010"
     }
   ],
-  "birthDate": "2019-02-21",
+  "birthDate": "2019-02-22",
   "birthPlace": {
     "type": "Thing",
     "id": "http://example.com/linked/data/uri",
@@ -708,6 +747,7 @@ A permit issued by an organization to an individual or business.
 
 
 
+### Place properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
@@ -729,6 +769,8 @@ A permit issued by an organization to an individual or business.
 | smokingAllowed | boolean | Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.  |
 | specialOpeningHoursSpecification | [object] | The special opening hours of a certain place. Use this to explicitly override general opening hours brought in scope by openingHoursSpecification or openingHours.  |
 | telephone | string | The telephone number.  |
+
+### Place example
 
 ```json
 {
@@ -766,6 +808,7 @@ A permit issued by an organization to an individual or business.
 
 A physical address.
 
+### PostalAddress properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
@@ -775,6 +818,8 @@ A physical address.
 | addressRegion | string | State or Province.  |
 | addressLocality | string | City, Township.  |
 | postalCode | string | Zip/Post Code  |
+
+### PostalAddress example
 
 ```json
 {
@@ -790,12 +835,15 @@ A physical address.
 
 a key/value pair, used for maintaining state outside of the current context
 
+### PropertyValue properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
 | type | string! |   |
 | propertyID | string! |   |
 | value | string! |   |
+
+### PropertyValue example
 
 ```json
 {
@@ -808,6 +856,7 @@ a key/value pair, used for maintaining state outside of the current context
 
 A real estate agent or team.
 
+### RealEstateAgent properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
@@ -820,10 +869,13 @@ A real estate agent or team.
 | contactPoint | [[ContactPoint](/schemas#contactpoint)] | Additional contact points. Can be organized by role, location, etc...  |
 | logo | [object] | a logo associated with the organization. <br/>RANGE: [ImageObject](/schemas#imageobject),[DigitalDocument](/schemas#digitaldocument) |
 | parentOrganization | [string&lt;uri&gt;] | URI reference to the agent's office. For teams, this can be a reference to the team leader/primary profile. <br/>RANGE: [RealEstateOffice](/schemas#realestateoffice),[RealEstateAgent](/schemas#realestateagent) |
+| address | object | primary address <br/>RANGE: [PostalAddress](/schemas#postaladdress) |
 | subOrganization | [string&lt;uri&gt;] | for teams: URI reference to a team member <br/>RANGE: [RealEstateAgent](/schemas#realestateagent) |
-| member | [object] | A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals. <br/>RANGE: [OrganizationRole](/schemas#organizationrole) |
+| member | [object&#124;string&lt;uri&gt;] | describes members and roles for this organization. <br/>RANGE: [OrganizationRole](/schemas#organizationrole),[URI](/schemas#uri) |
 | memberOf | [object] | An Organization (or ProgramMembership) to which this Person or Organization belongs. <br/>RANGE: [OrganizationRole](/schemas#organizationrole),[MLSMembership](/schemas#mlsmembership) |
-| permit | [object&#124;object] | permits issued to the person or organization <br/>RANGE: [Permit](/schemas#permit),[RealEstateLicense](/schemas#realestatelicense) |
+| permit | [object] | permits issued to the person or organization <br/>RANGE: [Permit](/schemas#permit),[RealEstateLicense](/schemas#realestatelicense) |
+
+### RealEstateAgent example
 
 ```json
 {
@@ -856,6 +908,14 @@ A real estate agent or team.
     "http://office-real-estate.example.com/",
     "http://batmanandrobinteam.example.com/"
   ],
+  "address": {
+    "type": "PostalAddress",
+    "streetAddress": "1007 Mountain Gate Rd",
+    "postOfficeBoxNumber": "Box 1234",
+    "addressRegion": "New Jersey",
+    "addressLocality": "Gotham City",
+    "postalCode": "10010"
+  },
   "subOrganization": [
     "http://org.example.com/profile/card#me"
   ],
@@ -863,16 +923,16 @@ A real estate agent or team.
     {
       "type": "OrganizationRole",
       "roleName": "MLSMember",
-      "startDate": "2019-02-21T21:19:48Z",
-      "endDate": "2019-02-21T21:19:48Z"
+      "startDate": "2019-02-22T18:05:32Z",
+      "endDate": "2019-02-22T18:05:32Z"
     }
   ],
   "memberOf": [
     {
       "type": "OrganizationRole",
       "roleName": "MLSMember",
-      "startDate": "2019-02-21T21:19:48Z",
-      "endDate": "2019-02-21T21:19:48Z",
+      "startDate": "2019-02-22T18:05:32Z",
+      "endDate": "2019-02-22T18:05:32Z",
       "memberOf": {
         "type": "MultipleListingService",
         "name": "GreatScottMLS"
@@ -892,8 +952,8 @@ A real estate agent or team.
         "type": "Service",
         "name": "California Department of Real Estate"
       },
-      "validFrom": "2019-02-21T21:19:48Z",
-      "validUntil": "2019-02-21T21:19:48Z"
+      "validFrom": "2019-02-22T18:05:32Z",
+      "validUntil": "2019-02-22T18:05:32Z"
     }
   ]
 }
@@ -902,6 +962,7 @@ A real estate agent or team.
 
 
 
+### RealEstateLicense properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
@@ -911,6 +972,8 @@ A real estate agent or team.
 | issuedThrough | object |   |
 | validFrom | string&lt;date-time&gt; | start date  |
 | validUntil | string&lt;date-time&gt; | end date  |
+
+### RealEstateLicense example
 
 ```json
 {
@@ -924,14 +987,15 @@ A real estate agent or team.
     "type": "Service",
     "name": "California Department of Real Estate"
   },
-  "validFrom": "2019-02-21T21:19:48Z",
-  "validUntil": "2019-02-21T21:19:48Z"
+  "validFrom": "2019-02-22T18:05:32Z",
+  "validUntil": "2019-02-22T18:05:32Z"
 }
 ```
 ## RealEstateOffice
 
 A real estate franchisor, broker or business.
 
+### RealEstateOffice properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
@@ -944,10 +1008,13 @@ A real estate franchisor, broker or business.
 | contactPoint | [[ContactPoint](/schemas#contactpoint)] | department or role specific contact points, i.e. relocation.  |
 | logo | [object] | a logo associated with the organization. <br/>RANGE: [ImageObject](/schemas#imageobject),[DigitalDocument](/schemas#digitaldocument) |
 | parentOrganization | [string&lt;uri&gt;] | Office broker or franchisor. <br/>RANGE: [RealEstateOrganization](/schemas#realestateorganization) |
+| address | object | primary address <br/>RANGE: [PostalAddress](/schemas#postaladdress) |
 | subOrganization | [string&lt;uri&gt;] | Agents and teams associated with the office. <br/>RANGE: [RealEstateAgent](/schemas#realestateagent) |
-| member | [object] | A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals. <br/>RANGE: [OrganizationRole](/schemas#organizationrole) |
+| member | [object&#124;string&lt;uri&gt;] | describes members and roles for this organization. <br/>RANGE: [OrganizationRole](/schemas#organizationrole),[URI](/schemas#uri) |
 | memberOf | [object] | An Organization (or ProgramMembership) to which this Person or Organization belongs. <br/>RANGE: [OrganizationRole](/schemas#organizationrole),[MLSMembership](/schemas#mlsmembership) |
-| permit | [object&#124;object] | permits issued to the person or organization <br/>RANGE: [Permit](/schemas#permit),[RealEstateLicense](/schemas#realestatelicense) |
+| permit | [object] | permits issued to the person or organization <br/>RANGE: [Permit](/schemas#permit),[RealEstateLicense](/schemas#realestatelicense) |
+
+### RealEstateOffice example
 
 ```json
 {
@@ -979,6 +1046,14 @@ A real estate franchisor, broker or business.
   "parentOrganization": [
     "http://example.com"
   ],
+  "address": {
+    "type": "PostalAddress",
+    "streetAddress": "1007 Mountain Gate Rd",
+    "postOfficeBoxNumber": "Box 1234",
+    "addressRegion": "New Jersey",
+    "addressLocality": "Gotham City",
+    "postalCode": "10010"
+  },
   "subOrganization": [
     "http://org.example.com/profile/card#me"
   ],
@@ -986,16 +1061,16 @@ A real estate franchisor, broker or business.
     {
       "type": "OrganizationRole",
       "roleName": "MLSMember",
-      "startDate": "2019-02-21T21:19:48Z",
-      "endDate": "2019-02-21T21:19:48Z"
+      "startDate": "2019-02-22T18:05:32Z",
+      "endDate": "2019-02-22T18:05:32Z"
     }
   ],
   "memberOf": [
     {
       "type": "OrganizationRole",
       "roleName": "MLSMember",
-      "startDate": "2019-02-21T21:19:48Z",
-      "endDate": "2019-02-21T21:19:48Z",
+      "startDate": "2019-02-22T18:05:32Z",
+      "endDate": "2019-02-22T18:05:32Z",
       "memberOf": {
         "type": "MultipleListingService",
         "name": "GreatScottMLS"
@@ -1015,8 +1090,8 @@ A real estate franchisor, broker or business.
         "type": "Service",
         "name": "California Department of Real Estate"
       },
-      "validFrom": "2019-02-21T21:19:48Z",
-      "validUntil": "2019-02-21T21:19:48Z"
+      "validFrom": "2019-02-22T18:05:32Z",
+      "validUntil": "2019-02-22T18:05:32Z"
     }
   ]
 }
@@ -1025,6 +1100,7 @@ A real estate franchisor, broker or business.
 
 A real estate franchisor, broker or business.
 
+### RealEstateOrganization properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
@@ -1037,10 +1113,13 @@ A real estate franchisor, broker or business.
 | contactPoint | [[ContactPoint](/schemas#contactpoint)] | Additional contact points. Can be organized by role, location, etc...  |
 | logo | [object] | a logo associated with the organization. <br/>RANGE: [ImageObject](/schemas#imageobject),[DigitalDocument](/schemas#digitaldocument) |
 | parentOrganization | [string&lt;uri&gt;] | A franchisor or affiliate network of which this organization plays a membership role. <br/>RANGE: [RealEstateOrganization](/schemas#realestateorganization) |
+| address | object | primary address <br/>RANGE: [PostalAddress](/schemas#postaladdress) |
 | subOrganization | [string&lt;uri&gt;] | an organization member <br/>RANGE: [RealEstateOrganization](/schemas#realestateorganization) |
-| member | [object] | A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals. <br/>RANGE: [OrganizationRole](/schemas#organizationrole) |
+| member | [object&#124;string&lt;uri&gt;] | describes members and roles for this organization. <br/>RANGE: [OrganizationRole](/schemas#organizationrole),[URI](/schemas#uri) |
 | memberOf | [object] | An Organization (or ProgramMembership) to which this Person or Organization belongs. <br/>RANGE: [OrganizationRole](/schemas#organizationrole),[MLSMembership](/schemas#mlsmembership) |
-| permit | [object&#124;object] | permits issued to the person or organization <br/>RANGE: [Permit](/schemas#permit),[RealEstateLicense](/schemas#realestatelicense) |
+| permit | [object] | permits issued to the person or organization <br/>RANGE: [Permit](/schemas#permit),[RealEstateLicense](/schemas#realestatelicense) |
+
+### RealEstateOrganization example
 
 ```json
 {
@@ -1072,6 +1151,14 @@ A real estate franchisor, broker or business.
   "parentOrganization": [
     "http://example.com"
   ],
+  "address": {
+    "type": "PostalAddress",
+    "streetAddress": "1007 Mountain Gate Rd",
+    "postOfficeBoxNumber": "Box 1234",
+    "addressRegion": "New Jersey",
+    "addressLocality": "Gotham City",
+    "postalCode": "10010"
+  },
   "subOrganization": [
     "http://org.example.com/profile/card#me"
   ],
@@ -1079,16 +1166,16 @@ A real estate franchisor, broker or business.
     {
       "type": "OrganizationRole",
       "roleName": "MLSMember",
-      "startDate": "2019-02-21T21:19:48Z",
-      "endDate": "2019-02-21T21:19:48Z"
+      "startDate": "2019-02-22T18:05:32Z",
+      "endDate": "2019-02-22T18:05:32Z"
     }
   ],
   "memberOf": [
     {
       "type": "OrganizationRole",
       "roleName": "MLSMember",
-      "startDate": "2019-02-21T21:19:48Z",
-      "endDate": "2019-02-21T21:19:48Z",
+      "startDate": "2019-02-22T18:05:32Z",
+      "endDate": "2019-02-22T18:05:32Z",
       "memberOf": {
         "type": "MultipleListingService",
         "name": "GreatScottMLS"
@@ -1108,8 +1195,8 @@ A real estate franchisor, broker or business.
         "type": "Service",
         "name": "California Department of Real Estate"
       },
-      "validFrom": "2019-02-21T21:19:48Z",
-      "validUntil": "2019-02-21T21:19:48Z"
+      "validFrom": "2019-02-22T18:05:32Z",
+      "validUntil": "2019-02-22T18:05:32Z"
     }
   ]
 }

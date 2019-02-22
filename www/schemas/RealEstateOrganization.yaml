@@ -10,6 +10,11 @@ allOf:
           - RealEstateOffice
           - RealEstateAgent
 
+      address:
+        description: primary address
+        x-range: PostalAddress
+        $ref: PostalAddress.yaml
+
       parentOrganization:
         type: array
         x-range: RealEstateOrganization
@@ -31,12 +36,7 @@ allOf:
           example: http://org.example.com/profile/card#me
 
       member:
-        description: A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
-        type: array
-        x-range:
-          - OrganizationRole
-        items:
-          $ref: OrganizationRole.yaml
+        $ref: member.yaml
 
       memberOf:
         x-range:
@@ -54,6 +54,4 @@ allOf:
           - Permit
           - RealEstateLicense
         items:
-          anyOf:
-            - $ref: RealEstateLicense.yaml
-            - type: object
+          $ref: RealEstateLicense.yaml

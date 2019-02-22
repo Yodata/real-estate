@@ -43,15 +43,12 @@ allOf:
         type: string
         example: '/settings/publicTypeIndex'
       permissions:
+        description: the subscription types required by your service.
         type: array
         items:
           type: string
           enum:
-            - profile:subscribe
-            - profile:publish
-            - contact:subscribe
-            - contact:publish
-            - lead:subscribe
-            - lead:publish
-            - listing:subscribe
-            - listing:publish
+            - profile:read
+            - contact
+            - lead
+            - listing

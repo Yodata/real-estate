@@ -1,19 +1,20 @@
 export default {
-  title: 'Real Estate Standard Integration',
-  description: 'A specification for describing real estate data and events in common way',
+  title: 'Integrate Real Estate',
+  description: 'Open source integration solution for ambitious real estate software',
   themeConfig: {
     linesToScrollEditor: 100
   },
   menu: [
-    'Overview',
-    'Authorization Process',
+    'Introduction',
+    'API',
     'Subscription Types',
     'Event Types',
     'Object Types',
-    'Developer Resources'
+    'Developer Resources',
+    'Reference'
   ],
+  src: 'src-content',
   dest: 'dist',
-  base: '/docs/',
   plugins: [],
   propsParser: false
 }

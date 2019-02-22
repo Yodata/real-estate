@@ -1,7 +1,7 @@
 {
-  "name": "real-estate-events-api",
+  "name": "realestate-yodata-me",
   "description": "A specification for describing real estate data and events in common way",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "generate": "ag asyncapi.yaml -o src-content/ docz",
     "dev": "docz dev",

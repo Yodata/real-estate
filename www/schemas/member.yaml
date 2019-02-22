@@ -1,7 +1,10 @@
-description:
-  A member of an Organization or a ProgramMembership. Organizations can be
-  members of organizations
+description: describes members and roles for this organization.
 type: array
+x-range:
+  - OrganizationRole
+  - URI
 items:
-  type: string
-  format: uri
+  anyOf:
+    - $ref: OrganizationRole.yaml
+    - type: string
+      format: uri

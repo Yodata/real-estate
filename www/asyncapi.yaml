@@ -2,7 +2,7 @@
 asyncapi: 1.2.0
 
 info:
-  title: Real Estate
+  title: Let's Integrate Real Estate
   version: '0.0.1'
   description: |
     Reflex is intended to normalize the process of integrating applications and services
@@ -28,8 +28,7 @@ info:
     url: https://opensource.org/licenses/MIT
 
   x-info:
-    name: Introduction
-    route: /introduction
+    route: /
 
   x-topics:
     name: Subscription Types

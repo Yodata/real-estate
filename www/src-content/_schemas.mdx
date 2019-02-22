@@ -42,15 +42,23 @@ name: Object Types
   "instrument": "http://app.example.com/profile/card#me",
   "object": {
     "type": "Thing",
-    "id": "http://example.com/linked/data/uri"
+    "id": "http://example.com/linked/data/uri",
+    "additionalProperty": {
+      "@context": "http://example.com/context#",
+      "customProp": "value"
+    },
+    "identifier": {
+      "@context": "http://example.com/context#",
+      "ID": "value"
+    }
   },
   "participant": [
     {}
   ],
   "location": {},
   "result": {},
-  "startTime": "2019-02-22T18:05:32Z",
-  "endTime": "2019-02-22T18:05:32Z",
+  "startTime": "2019-02-22T19:41:22Z",
+  "endTime": "2019-02-22T19:41:22Z",
   "target": {},
   "error": {}
 }
@@ -65,6 +73,8 @@ a solid profile document
 |:--------- | :--- | :---------- |
 | type | string! | Linked-Data (@type)  |
 | id | string&lt;uri&gt;! | Linked-Data URI (@id)  |
+| additionalProperty | object | namespaced custom properties  |
+| identifier | object | a key value map of **namespaced** unique identifiers.  |
 | primaryTopic | string |   |
 | #me | object |   |
 | inbox | string! | discoverable uri to your LDN inbox  |
@@ -82,6 +92,14 @@ a solid profile document
 {
   "type": "SoftwareApplication",
   "id": "https://user.example.com/profile/card#me",
+  "additionalProperty": {
+    "@context": "http://example.com/context#",
+    "customProp": "value"
+  },
+  "identifier": {
+    "@context": "http://example.com/context#",
+    "ID": "value"
+  },
   "primaryTopic": "#me",
   "#me": {
     "type": "SoftwareApplication",
@@ -138,6 +156,8 @@ a contact
 |:--------- | :--- | :---------- |
 | type | string! | Linked-Data (@type)  |
 | id | string&lt;uri&gt; | Linked-Data URI (@id)  |
+| additionalProperty | object | namespaced custom properties  |
+| identifier | object | a key value map of **namespaced** unique identifiers.  |
 | name | string | Full name of the person.  |
 | givenName | string | First Name  |
 | familyName | string | Last Name  |
@@ -157,6 +177,14 @@ a contact
 {
   "type": "Thing",
   "id": "http://example.com/linked/data/uri",
+  "additionalProperty": {
+    "@context": "http://example.com/context#",
+    "customProp": "value"
+  },
+  "identifier": {
+    "@context": "http://example.com/context#",
+    "ID": "value"
+  },
   "name": "string",
   "givenName": "Bruce",
   "familyName": "Wayne",
@@ -187,6 +215,14 @@ a contact
   "birthPlace": {
     "type": "Thing",
     "id": "http://example.com/linked/data/uri",
+    "additionalProperty": {
+      "@context": "http://example.com/context#",
+      "customProp": "value"
+    },
+    "identifier": {
+      "@context": "http://example.com/context#",
+      "ID": "value"
+    },
     "address": {},
     "aggregateRating": {},
     "branchCode": "string",
@@ -217,6 +253,14 @@ a contact
   "leadSource": {
     "type": "Thing",
     "id": "http://example.com/linked/data/uri",
+    "additionalProperty": {
+      "@context": "http://example.com/context#",
+      "customProp": "value"
+    },
+    "identifier": {
+      "@context": "http://example.com/context#",
+      "ID": "value"
+    },
     "name": "string",
     "telephone": "079.706.7065 x6341",
     "email": "user@example.com",
@@ -234,12 +278,35 @@ a contact
       {
         "type": "DigitalDocument",
         "id": "http://user.example.com/public/logo/fileName.zip",
+        "additionalProperty": {
+          "@context": "http://example.com/context#",
+          "customProp": "value"
+        },
+        "identifier": {
+          "@context": "http://example.com/context#",
+          "ID": "value"
+        },
         "name": "fileName.zip",
         "encodingFormat": "application/zip",
-        "identifier": {},
         "about": "http://user.example.com/profile/card#me"
       }
     ],
+    "image": {
+      "type": "ImageObject",
+      "id": "http://user.example.com/public/logo/image.jpg",
+      "additionalProperty": {
+        "@context": "http://example.com/context#",
+        "customProp": "value"
+      },
+      "identifier": {
+        "@context": "http://example.com/context#",
+        "ID": "value"
+      },
+      "name": "image.jpg",
+      "encodingFormat": "image/jpeg",
+      "content": "string",
+      "about": "http://user.example.com/profile/card#me"
+    },
     "parentOrganization": [
       "http://example.com"
     ]
@@ -281,9 +348,10 @@ an electronic file.
 |:--------- | :--- | :---------- |
 | type | string! | Linked-Data (@type)  |
 | id | string&lt;uri&gt; | Linked-Data URI (@id)  |
+| additionalProperty | object | namespaced custom properties  |
+| identifier | object | namespaced identifier  |
 | name | string | the FileName  |
 | encodingFormat | string | the MIME type  |
-| identifier | object | namespaced identifier  |
 | about | string&lt;uri&gt; | URI to the subject of the image or logo  |
 
 ### DigitalDocument example
@@ -292,9 +360,53 @@ an electronic file.
 {
   "type": "Thing",
   "id": "http://user.example.com/public/logo/fileName.zip",
+  "additionalProperty": {
+    "@context": "http://example.com/context#",
+    "customProp": "value"
+  },
+  "identifier": {
+    "@context": "http://example.com/context#",
+    "ID": "value"
+  },
   "name": "fileName.zip",
   "encodingFormat": "application/zip",
-  "identifier": {},
+  "about": "http://user.example.com/profile/card#me"
+}
+```
+## ImageObject
+
+
+
+### ImageObject properties
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! | Linked-Data (@type)  |
+| id | string&lt;uri&gt; | the URL to access the item.  |
+| additionalProperty | object | namespaced custom properties  |
+| identifier | object | a key value map of **namespaced** unique identifiers.  |
+| name | string | the file name of the object.  |
+| encodingFormat | string | MIME type  |
+| content | string | base64 encoded content  |
+| about | string&lt;uri&gt; | URI to the subject of the image or logo  |
+
+### ImageObject example
+
+```json
+{
+  "type": "ImageObject",
+  "id": "http://user.example.com/public/logo/image.jpg",
+  "additionalProperty": {
+    "@context": "http://example.com/context#",
+    "customProp": "value"
+  },
+  "identifier": {
+    "@context": "http://example.com/context#",
+    "ID": "value"
+  },
+  "name": "image.jpg",
+  "encodingFormat": "image/jpeg",
+  "content": "string",
   "about": "http://user.example.com/profile/card#me"
 }
 ```
@@ -323,6 +435,14 @@ a lead offered or assigned by the agent to one or more recipients
   "object": {
     "type": "Thing",
     "id": "http://example.com/linked/data/uri",
+    "additionalProperty": {
+      "@context": "http://example.com/context#",
+      "customProp": "value"
+    },
+    "identifier": {
+      "@context": "http://example.com/context#",
+      "ID": "value"
+    },
     "name": "string",
     "givenName": "Bruce",
     "familyName": "Wayne",
@@ -353,6 +473,14 @@ a lead offered or assigned by the agent to one or more recipients
     "birthPlace": {
       "type": "Thing",
       "id": "http://example.com/linked/data/uri",
+      "additionalProperty": {
+        "@context": "http://example.com/context#",
+        "customProp": "value"
+      },
+      "identifier": {
+        "@context": "http://example.com/context#",
+        "ID": "value"
+      },
       "address": {},
       "aggregateRating": {},
       "branchCode": "string",
@@ -383,6 +511,14 @@ a lead offered or assigned by the agent to one or more recipients
     "leadSource": {
       "type": "Thing",
       "id": "http://example.com/linked/data/uri",
+      "additionalProperty": {
+        "@context": "http://example.com/context#",
+        "customProp": "value"
+      },
+      "identifier": {
+        "@context": "http://example.com/context#",
+        "ID": "value"
+      },
       "name": "string",
       "telephone": "079.706.7065 x6341",
       "email": "user@example.com",
@@ -400,12 +536,35 @@ a lead offered or assigned by the agent to one or more recipients
         {
           "type": "DigitalDocument",
           "id": "http://user.example.com/public/logo/fileName.zip",
+          "additionalProperty": {
+            "@context": "http://example.com/context#",
+            "customProp": "value"
+          },
+          "identifier": {
+            "@context": "http://example.com/context#",
+            "ID": "value"
+          },
           "name": "fileName.zip",
           "encodingFormat": "application/zip",
-          "identifier": {},
           "about": "http://user.example.com/profile/card#me"
         }
       ],
+      "image": {
+        "type": "ImageObject",
+        "id": "http://user.example.com/public/logo/image.jpg",
+        "additionalProperty": {
+          "@context": "http://example.com/context#",
+          "customProp": "value"
+        },
+        "identifier": {
+          "@context": "http://example.com/context#",
+          "ID": "value"
+        },
+        "name": "image.jpg",
+        "encodingFormat": "image/jpeg",
+        "content": "string",
+        "about": "http://user.example.com/profile/card#me"
+      },
       "parentOrganization": [
         "http://example.com"
       ]
@@ -447,18 +606,63 @@ a lead offered or assigned by the agent to one or more recipients
     "instrument": "http://app.example.com/profile/card#me",
     "object": {
       "type": "Thing",
-      "id": "http://example.com/linked/data/uri"
+      "id": "http://example.com/linked/data/uri",
+      "additionalProperty": {
+        "@context": "http://example.com/context#",
+        "customProp": "value"
+      },
+      "identifier": {
+        "@context": "http://example.com/context#",
+        "ID": "value"
+      }
     },
     "participant": [
       {}
     ],
     "location": {},
     "result": {},
-    "startTime": "2019-02-22T18:05:32Z",
-    "endTime": "2019-02-22T18:05:32Z",
+    "startTime": "2019-02-22T19:41:22Z",
+    "endTime": "2019-02-22T19:41:22Z",
     "target": {},
     "error": {}
   }
+}
+```
+## MediaObject
+
+
+
+### MediaObject properties
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! | Linked-Data (@type)  |
+| id | string&lt;uri&gt; | the URL to access the item.  |
+| additionalProperty | object | namespaced custom properties  |
+| identifier | object | a key value map of **namespaced** unique identifiers.  |
+| name | string | the file name of the object.  |
+| encodingFormat | string | MIME type  |
+| content | string | base64 encoded content  |
+| about | string&lt;uri&gt; | URI to the subject of the image or logo  |
+
+### MediaObject example
+
+```json
+{
+  "type": "Thing",
+  "id": "http://user.example.com/public/logo/fileName.zip",
+  "additionalProperty": {
+    "@context": "http://example.com/context#",
+    "customProp": "value"
+  },
+  "identifier": {
+    "@context": "http://example.com/context#",
+    "ID": "value"
+  },
+  "name": "fileName.zip",
+  "encodingFormat": "application/zip",
+  "content": "string",
+  "about": "http://user.example.com/profile/card#me"
 }
 ```
 ## MLSMembership
@@ -482,8 +686,8 @@ Provides additional information in member/memberOf relationships.
 {
   "type": "OrganizationRole",
   "roleName": "MLSMember",
-  "startDate": "2019-02-22T18:05:32Z",
-  "endDate": "2019-02-22T18:05:32Z",
+  "startDate": "2019-02-22T19:41:22Z",
+  "endDate": "2019-02-22T19:41:22Z",
   "memberOf": {
     "type": "MultipleListingService",
     "name": "GreatScottMLS"
@@ -501,12 +705,15 @@ Provides additional information in member/memberOf relationships.
 |:--------- | :--- | :---------- |
 | type | string! | Linked-Data (@type)  |
 | id | string&lt;uri&gt; | Linked-Data URI (@id)  |
+| additionalProperty | object | namespaced custom properties  |
+| identifier | object | a key value map of **namespaced** unique identifiers.  |
 | name | string | Name or DBA.  |
 | telephone | string | Primary phone number.  |
 | email | string&lt;email&gt; | Primary email address.  |
 | faxNumber | string | Primary fax number.  |
 | contactPoint | [[ContactPoint](/schemas#contactpoint)] | Additional contact points. Can be organized by role, location, etc...  |
 | logo | [object] | a logo associated with the organization. <br/>RANGE: [ImageObject](/schemas#imageobject),[DigitalDocument](/schemas#digitaldocument) |
+| image | object&#124;string&lt;uri&gt; | This can be a URL or a fully described ImageObject. <br/>RANGE: [ImageObject](/schemas#imageobject),[URI](/schemas#uri) |
 | parentOrganization | [string&lt;uri&gt;] |   |
 
 ### Organization example
@@ -515,6 +722,14 @@ Provides additional information in member/memberOf relationships.
 {
   "type": "Thing",
   "id": "http://example.com/linked/data/uri",
+  "additionalProperty": {
+    "@context": "http://example.com/context#",
+    "customProp": "value"
+  },
+  "identifier": {
+    "@context": "http://example.com/context#",
+    "ID": "value"
+  },
   "name": "string",
   "telephone": "079.706.7065 x6341",
   "email": "user@example.com",
@@ -532,12 +747,35 @@ Provides additional information in member/memberOf relationships.
     {
       "type": "DigitalDocument",
       "id": "http://user.example.com/public/logo/fileName.zip",
+      "additionalProperty": {
+        "@context": "http://example.com/context#",
+        "customProp": "value"
+      },
+      "identifier": {
+        "@context": "http://example.com/context#",
+        "ID": "value"
+      },
       "name": "fileName.zip",
       "encodingFormat": "application/zip",
-      "identifier": {},
       "about": "http://user.example.com/profile/card#me"
     }
   ],
+  "image": {
+    "type": "ImageObject",
+    "id": "http://user.example.com/public/logo/image.jpg",
+    "additionalProperty": {
+      "@context": "http://example.com/context#",
+      "customProp": "value"
+    },
+    "identifier": {
+      "@context": "http://example.com/context#",
+      "ID": "value"
+    },
+    "name": "image.jpg",
+    "encodingFormat": "image/jpeg",
+    "content": "string",
+    "about": "http://user.example.com/profile/card#me"
+  },
   "parentOrganization": [
     "http://example.com"
   ]
@@ -562,8 +800,8 @@ Provides additional information in member/memberOf relationships.
 {
   "type": "OrganizationRole",
   "roleName": "MLSMember",
-  "startDate": "2019-02-22T18:05:32Z",
-  "endDate": "2019-02-22T18:05:32Z"
+  "startDate": "2019-02-22T19:41:22Z",
+  "endDate": "2019-02-22T19:41:22Z"
 }
 ```
 ## Permit
@@ -591,6 +829,14 @@ A permit issued by an organization to an individual or business.
   "issuedBy": {
     "type": "Thing",
     "id": "http://example.com/linked/data/uri",
+    "additionalProperty": {
+      "@context": "http://example.com/context#",
+      "customProp": "value"
+    },
+    "identifier": {
+      "@context": "http://example.com/context#",
+      "ID": "value"
+    },
     "name": "string",
     "telephone": "079.706.7065 x6341",
     "email": "user@example.com",
@@ -608,12 +854,35 @@ A permit issued by an organization to an individual or business.
       {
         "type": "DigitalDocument",
         "id": "http://user.example.com/public/logo/fileName.zip",
+        "additionalProperty": {
+          "@context": "http://example.com/context#",
+          "customProp": "value"
+        },
+        "identifier": {
+          "@context": "http://example.com/context#",
+          "ID": "value"
+        },
         "name": "fileName.zip",
         "encodingFormat": "application/zip",
-        "identifier": {},
         "about": "http://user.example.com/profile/card#me"
       }
     ],
+    "image": {
+      "type": "ImageObject",
+      "id": "http://user.example.com/public/logo/image.jpg",
+      "additionalProperty": {
+        "@context": "http://example.com/context#",
+        "customProp": "value"
+      },
+      "identifier": {
+        "@context": "http://example.com/context#",
+        "ID": "value"
+      },
+      "name": "image.jpg",
+      "encodingFormat": "image/jpeg",
+      "content": "string",
+      "about": "http://user.example.com/profile/card#me"
+    },
     "parentOrganization": [
       "http://example.com"
     ]
@@ -625,6 +894,14 @@ A permit issued by an organization to an individual or business.
   "validIn": {
     "type": "Thing",
     "id": "http://example.com/linked/data/uri",
+    "additionalProperty": {
+      "@context": "http://example.com/context#",
+      "customProp": "value"
+    },
+    "identifier": {
+      "@context": "http://example.com/context#",
+      "ID": "value"
+    },
     "address": {},
     "aggregateRating": {},
     "branchCode": "string",
@@ -652,8 +929,8 @@ A permit issued by an organization to an individual or business.
     ],
     "telephone": "string"
   },
-  "validFrom": "2019-02-22T18:05:32Z",
-  "validUntil": "2019-02-22T18:05:32Z"
+  "validFrom": "2019-02-22T19:41:22Z",
+  "validUntil": "2019-02-22T19:41:22Z"
 }
 ```
 ## Person
@@ -666,6 +943,8 @@ A permit issued by an organization to an individual or business.
 |:--------- | :--- | :---------- |
 | type | string! | Linked-Data (@type)  |
 | id | string&lt;uri&gt; | Linked-Data URI (@id)  |
+| additionalProperty | object | namespaced custom properties  |
+| identifier | object | a key value map of **namespaced** unique identifiers.  |
 | name | string | Full name of the person.  |
 | givenName | string | First Name  |
 | familyName | string | Last Name  |
@@ -684,6 +963,14 @@ A permit issued by an organization to an individual or business.
 {
   "type": "Thing",
   "id": "http://example.com/linked/data/uri",
+  "additionalProperty": {
+    "@context": "http://example.com/context#",
+    "customProp": "value"
+  },
+  "identifier": {
+    "@context": "http://example.com/context#",
+    "ID": "value"
+  },
   "name": "string",
   "givenName": "Bruce",
   "familyName": "Wayne",
@@ -714,6 +1001,14 @@ A permit issued by an organization to an individual or business.
   "birthPlace": {
     "type": "Thing",
     "id": "http://example.com/linked/data/uri",
+    "additionalProperty": {
+      "@context": "http://example.com/context#",
+      "customProp": "value"
+    },
+    "identifier": {
+      "@context": "http://example.com/context#",
+      "ID": "value"
+    },
     "address": {},
     "aggregateRating": {},
     "branchCode": "string",
@@ -753,6 +1048,8 @@ A permit issued by an organization to an individual or business.
 |:--------- | :--- | :---------- |
 | type | string! | Linked-Data (@type)  |
 | id | string&lt;uri&gt; | Linked-Data URI (@id)  |
+| additionalProperty | object | namespaced custom properties  |
+| identifier | object | a key value map of **namespaced** unique identifiers.  |
 | address | object&#124;string |   |
 | aggregateRating | object | AggregateRating -- The overall rating, based on a collection of reviews or ratings, of the item.  |
 | branchCode | string | A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.  |
@@ -776,6 +1073,14 @@ A permit issued by an organization to an individual or business.
 {
   "type": "Thing",
   "id": "http://example.com/linked/data/uri",
+  "additionalProperty": {
+    "@context": "http://example.com/context#",
+    "customProp": "value"
+  },
+  "identifier": {
+    "@context": "http://example.com/context#",
+    "ID": "value"
+  },
   "address": {},
   "aggregateRating": {},
   "branchCode": "string",
@@ -862,12 +1167,15 @@ A real estate agent or team.
 |:--------- | :--- | :---------- |
 | type | string! | RealEstateOrganzation  |
 | id | string&lt;uri&gt; | Linked-Data URI (@id)  |
+| additionalProperty | object | namespaced custom properties  |
+| identifier | object | a key value map of **namespaced** unique identifiers.  |
 | name | string | Name or DBA.  |
 | telephone | string | Primary phone number.  |
 | email | string&lt;email&gt; | Primary email address.  |
 | faxNumber | string | Primary fax number.  |
 | contactPoint | [[ContactPoint](/schemas#contactpoint)] | Additional contact points. Can be organized by role, location, etc...  |
 | logo | [object] | a logo associated with the organization. <br/>RANGE: [ImageObject](/schemas#imageobject),[DigitalDocument](/schemas#digitaldocument) |
+| image | object&#124;string&lt;uri&gt; | This can be a URL or a fully described ImageObject. <br/>RANGE: [ImageObject](/schemas#imageobject),[URI](/schemas#uri) |
 | parentOrganization | [string&lt;uri&gt;] | URI reference to the agent's office. For teams, this can be a reference to the team leader/primary profile. <br/>RANGE: [RealEstateOffice](/schemas#realestateoffice),[RealEstateAgent](/schemas#realestateagent) |
 | address | object | primary address <br/>RANGE: [PostalAddress](/schemas#postaladdress) |
 | subOrganization | [string&lt;uri&gt;] | for teams: URI reference to a team member <br/>RANGE: [RealEstateAgent](/schemas#realestateagent) |
@@ -879,8 +1187,16 @@ A real estate agent or team.
 
 ```json
 {
-  "type": "Thing",
+  "type": "RealEstateOrganization",
   "id": "http://example.com/linked/data/uri",
+  "additionalProperty": {
+    "@context": "http://example.com/context#",
+    "customProp": "value"
+  },
+  "identifier": {
+    "@context": "http://example.com/context#",
+    "ID": "value"
+  },
   "name": "Batman & Robin",
   "telephone": "079.706.7065 x6341",
   "email": "user@example.com",
@@ -898,12 +1214,35 @@ A real estate agent or team.
     {
       "type": "DigitalDocument",
       "id": "http://user.example.com/public/logo/fileName.zip",
+      "additionalProperty": {
+        "@context": "http://example.com/context#",
+        "customProp": "value"
+      },
+      "identifier": {
+        "@context": "http://example.com/context#",
+        "ID": "value"
+      },
       "name": "fileName.zip",
       "encodingFormat": "application/zip",
-      "identifier": {},
       "about": "http://user.example.com/profile/card#me"
     }
   ],
+  "image": {
+    "type": "ImageObject",
+    "id": "http://user.example.com/public/logo/image.jpg",
+    "additionalProperty": {
+      "@context": "http://example.com/context#",
+      "customProp": "value"
+    },
+    "identifier": {
+      "@context": "http://example.com/context#",
+      "ID": "value"
+    },
+    "name": "image.jpg",
+    "encodingFormat": "image/jpeg",
+    "content": "string",
+    "about": "http://user.example.com/profile/card#me"
+  },
   "parentOrganization": [
     "http://office-real-estate.example.com/",
     "http://batmanandrobinteam.example.com/"
@@ -923,16 +1262,16 @@ A real estate agent or team.
     {
       "type": "OrganizationRole",
       "roleName": "MLSMember",
-      "startDate": "2019-02-22T18:05:32Z",
-      "endDate": "2019-02-22T18:05:32Z"
+      "startDate": "2019-02-22T19:41:22Z",
+      "endDate": "2019-02-22T19:41:22Z"
     }
   ],
   "memberOf": [
     {
       "type": "OrganizationRole",
       "roleName": "MLSMember",
-      "startDate": "2019-02-22T18:05:32Z",
-      "endDate": "2019-02-22T18:05:32Z",
+      "startDate": "2019-02-22T19:41:22Z",
+      "endDate": "2019-02-22T19:41:22Z",
       "memberOf": {
         "type": "MultipleListingService",
         "name": "GreatScottMLS"
@@ -952,8 +1291,8 @@ A real estate agent or team.
         "type": "Service",
         "name": "California Department of Real Estate"
       },
-      "validFrom": "2019-02-22T18:05:32Z",
-      "validUntil": "2019-02-22T18:05:32Z"
+      "validFrom": "2019-02-22T19:41:22Z",
+      "validUntil": "2019-02-22T19:41:22Z"
     }
   ]
 }
@@ -987,8 +1326,8 @@ A real estate agent or team.
     "type": "Service",
     "name": "California Department of Real Estate"
   },
-  "validFrom": "2019-02-22T18:05:32Z",
-  "validUntil": "2019-02-22T18:05:32Z"
+  "validFrom": "2019-02-22T19:41:22Z",
+  "validUntil": "2019-02-22T19:41:22Z"
 }
 ```
 ## RealEstateOffice
@@ -1001,12 +1340,15 @@ A real estate franchisor, broker or business.
 |:--------- | :--- | :---------- |
 | type | string! | RealEstateOffice  |
 | id | string&lt;uri&gt; | Linked-Data URI (@id)  |
+| additionalProperty | object | namespaced custom properties  |
+| identifier | object | a key value map of **namespaced** unique identifiers.  |
 | name | string | Name or DBA.  |
 | telephone | string | Primary phone number.  |
 | email | string&lt;email&gt; | Primary email address.  |
 | faxNumber | string | Primary fax number.  |
 | contactPoint | [[ContactPoint](/schemas#contactpoint)] | department or role specific contact points, i.e. relocation.  |
 | logo | [object] | a logo associated with the organization. <br/>RANGE: [ImageObject](/schemas#imageobject),[DigitalDocument](/schemas#digitaldocument) |
+| image | object&#124;string&lt;uri&gt; | This can be a URL or a fully described ImageObject. <br/>RANGE: [ImageObject](/schemas#imageobject),[URI](/schemas#uri) |
 | parentOrganization | [string&lt;uri&gt;] | Office broker or franchisor. <br/>RANGE: [RealEstateOrganization](/schemas#realestateorganization) |
 | address | object | primary address <br/>RANGE: [PostalAddress](/schemas#postaladdress) |
 | subOrganization | [string&lt;uri&gt;] | Agents and teams associated with the office. <br/>RANGE: [RealEstateAgent](/schemas#realestateagent) |
@@ -1018,8 +1360,16 @@ A real estate franchisor, broker or business.
 
 ```json
 {
-  "type": "Thing",
+  "type": "RealEstateOrganization",
   "id": "http://example.com/linked/data/uri",
+  "additionalProperty": {
+    "@context": "http://example.com/context#",
+    "customProp": "value"
+  },
+  "identifier": {
+    "@context": "http://example.com/context#",
+    "ID": "value"
+  },
   "name": "string",
   "telephone": "079.706.7065 x6341",
   "email": "user@example.com",
@@ -1037,12 +1387,35 @@ A real estate franchisor, broker or business.
     {
       "type": "DigitalDocument",
       "id": "http://user.example.com/public/logo/fileName.zip",
+      "additionalProperty": {
+        "@context": "http://example.com/context#",
+        "customProp": "value"
+      },
+      "identifier": {
+        "@context": "http://example.com/context#",
+        "ID": "value"
+      },
       "name": "fileName.zip",
       "encodingFormat": "application/zip",
-      "identifier": {},
       "about": "http://user.example.com/profile/card#me"
     }
   ],
+  "image": {
+    "type": "ImageObject",
+    "id": "http://user.example.com/public/logo/image.jpg",
+    "additionalProperty": {
+      "@context": "http://example.com/context#",
+      "customProp": "value"
+    },
+    "identifier": {
+      "@context": "http://example.com/context#",
+      "ID": "value"
+    },
+    "name": "image.jpg",
+    "encodingFormat": "image/jpeg",
+    "content": "string",
+    "about": "http://user.example.com/profile/card#me"
+  },
   "parentOrganization": [
     "http://example.com"
   ],
@@ -1061,16 +1434,16 @@ A real estate franchisor, broker or business.
     {
       "type": "OrganizationRole",
       "roleName": "MLSMember",
-      "startDate": "2019-02-22T18:05:32Z",
-      "endDate": "2019-02-22T18:05:32Z"
+      "startDate": "2019-02-22T19:41:22Z",
+      "endDate": "2019-02-22T19:41:22Z"
     }
   ],
   "memberOf": [
     {
       "type": "OrganizationRole",
       "roleName": "MLSMember",
-      "startDate": "2019-02-22T18:05:32Z",
-      "endDate": "2019-02-22T18:05:32Z",
+      "startDate": "2019-02-22T19:41:22Z",
+      "endDate": "2019-02-22T19:41:22Z",
       "memberOf": {
         "type": "MultipleListingService",
         "name": "GreatScottMLS"
@@ -1090,8 +1463,8 @@ A real estate franchisor, broker or business.
         "type": "Service",
         "name": "California Department of Real Estate"
       },
-      "validFrom": "2019-02-22T18:05:32Z",
-      "validUntil": "2019-02-22T18:05:32Z"
+      "validFrom": "2019-02-22T19:41:22Z",
+      "validUntil": "2019-02-22T19:41:22Z"
     }
   ]
 }
@@ -1106,12 +1479,15 @@ A real estate franchisor, broker or business.
 |:--------- | :--- | :---------- |
 | type | string! | RealEstateOrganzation  |
 | id | string&lt;uri&gt; | Linked-Data URI (@id)  |
+| additionalProperty | object | namespaced custom properties  |
+| identifier | object | a key value map of **namespaced** unique identifiers.  |
 | name | string | Name or DBA.  |
 | telephone | string | Primary phone number.  |
 | email | string&lt;email&gt; | Primary email address.  |
 | faxNumber | string | Primary fax number.  |
 | contactPoint | [[ContactPoint](/schemas#contactpoint)] | Additional contact points. Can be organized by role, location, etc...  |
 | logo | [object] | a logo associated with the organization. <br/>RANGE: [ImageObject](/schemas#imageobject),[DigitalDocument](/schemas#digitaldocument) |
+| image | object&#124;string&lt;uri&gt; | This can be a URL or a fully described ImageObject. <br/>RANGE: [ImageObject](/schemas#imageobject),[URI](/schemas#uri) |
 | parentOrganization | [string&lt;uri&gt;] | A franchisor or affiliate network of which this organization plays a membership role. <br/>RANGE: [RealEstateOrganization](/schemas#realestateorganization) |
 | address | object | primary address <br/>RANGE: [PostalAddress](/schemas#postaladdress) |
 | subOrganization | [string&lt;uri&gt;] | an organization member <br/>RANGE: [RealEstateOrganization](/schemas#realestateorganization) |
@@ -1123,8 +1499,16 @@ A real estate franchisor, broker or business.
 
 ```json
 {
-  "type": "Thing",
+  "type": "RealEstateOrganization",
   "id": "http://example.com/linked/data/uri",
+  "additionalProperty": {
+    "@context": "http://example.com/context#",
+    "customProp": "value"
+  },
+  "identifier": {
+    "@context": "http://example.com/context#",
+    "ID": "value"
+  },
   "name": "string",
   "telephone": "079.706.7065 x6341",
   "email": "user@example.com",
@@ -1142,12 +1526,35 @@ A real estate franchisor, broker or business.
     {
       "type": "DigitalDocument",
       "id": "http://user.example.com/public/logo/fileName.zip",
+      "additionalProperty": {
+        "@context": "http://example.com/context#",
+        "customProp": "value"
+      },
+      "identifier": {
+        "@context": "http://example.com/context#",
+        "ID": "value"
+      },
       "name": "fileName.zip",
       "encodingFormat": "application/zip",
-      "identifier": {},
       "about": "http://user.example.com/profile/card#me"
     }
   ],
+  "image": {
+    "type": "ImageObject",
+    "id": "http://user.example.com/public/logo/image.jpg",
+    "additionalProperty": {
+      "@context": "http://example.com/context#",
+      "customProp": "value"
+    },
+    "identifier": {
+      "@context": "http://example.com/context#",
+      "ID": "value"
+    },
+    "name": "image.jpg",
+    "encodingFormat": "image/jpeg",
+    "content": "string",
+    "about": "http://user.example.com/profile/card#me"
+  },
   "parentOrganization": [
     "http://example.com"
   ],
@@ -1166,16 +1573,16 @@ A real estate franchisor, broker or business.
     {
       "type": "OrganizationRole",
       "roleName": "MLSMember",
-      "startDate": "2019-02-22T18:05:32Z",
-      "endDate": "2019-02-22T18:05:32Z"
+      "startDate": "2019-02-22T19:41:22Z",
+      "endDate": "2019-02-22T19:41:22Z"
     }
   ],
   "memberOf": [
     {
       "type": "OrganizationRole",
       "roleName": "MLSMember",
-      "startDate": "2019-02-22T18:05:32Z",
-      "endDate": "2019-02-22T18:05:32Z",
+      "startDate": "2019-02-22T19:41:22Z",
+      "endDate": "2019-02-22T19:41:22Z",
       "memberOf": {
         "type": "MultipleListingService",
         "name": "GreatScottMLS"
@@ -1195,8 +1602,8 @@ A real estate franchisor, broker or business.
         "type": "Service",
         "name": "California Department of Real Estate"
       },
-      "validFrom": "2019-02-22T18:05:32Z",
-      "validUntil": "2019-02-22T18:05:32Z"
+      "validFrom": "2019-02-22T19:41:22Z",
+      "validUntil": "2019-02-22T19:41:22Z"
     }
   ]
 }

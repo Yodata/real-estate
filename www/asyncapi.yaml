@@ -300,8 +300,10 @@ components:
     Contact: { $ref: schemas/Contact.yaml }
     ContactPoint: { $ref: schemas/ContactPoint.yaml }
     DigitalDocument: { $ref: schemas/DigitalDocument.yaml }
+    ImageObject: { $ref: schemas/ImageObject.yaml }
     Lead: { $ref: schemas/Lead.yaml }
     Notification: { $ref: schemas/Notification.yaml }
+    MediaObject: { $ref: schemas/MediaObject.yaml }
     MLSMembership: { $ref: schemas/MLSMembership.yaml }
     Organization: { $ref: schemas/Organization.yaml }
     OrganizationRole: { $ref: schemas/OrganizationRole.yaml }

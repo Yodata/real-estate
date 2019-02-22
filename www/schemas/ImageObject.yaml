@@ -1,0 +1,17 @@
+title: ImageObject
+type: object
+x-subclassOf:
+  - MediaObject
+  - CreativeWork
+  - Thing
+allOf:
+  - $ref: MediaObject.yaml
+  - properties:
+      type:
+        example: ImageObject
+      id:
+        example: http://user.example.com/public/logo/image.jpg
+      name:
+        example: image.jpg
+      encodingFormat:
+        example: image/jpeg

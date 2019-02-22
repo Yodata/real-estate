@@ -1,7 +1,8 @@
-description:
-  An image of the item. This can be a URL or a fully described ImageObject.
+description: This can be a URL or a fully described ImageObject.
+x-range:
+  - ImageObject
+  - URI
 oneOf:
+  - $ref: ImageObject.yaml
   - type: string
     format: uri
-  - type: object
-    format: ImageObject

@@ -6,11 +6,19 @@
   },
   "builds": [
     {
+      "src": "static/*.json",
+      "use": "@now/static"
+    },
+    {
       "src": "www/package.json",
       "use": "@now/static-build"
     }
   ],
   "routes": [
+    {
+      "src": "/context.json",
+      "dest": "/static/context.json"
+    },
     {
       "src": "/(.*)",
       "dest": "/www/$1"

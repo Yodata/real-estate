@@ -44,6 +44,8 @@ allOf:
             - $ref: DigitalDocument.yaml
             - type: object
               description: an associated logo
+      image:
+        $ref: image.yaml
 
       parentOrganization:
         type: array

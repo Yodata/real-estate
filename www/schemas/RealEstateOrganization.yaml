@@ -9,6 +9,7 @@ allOf:
           - RealEstateOrganization
           - RealEstateOffice
           - RealEstateAgent
+        example: RealEstateOrganization
 
       address:
         description: primary address

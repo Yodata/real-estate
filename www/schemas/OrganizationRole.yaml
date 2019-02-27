@@ -4,13 +4,8 @@ properties:
   type:
     type: string
     example: OrganizationRole
+    description: OrganizationRole
   roleName:
     description: A role played, performed or filled by a person or organization.
     type: string
-    example: MLSMember
-  startDate:
-    type: string
-    format: date-time
-  endDate:
-    type: string
-    format: date-time
+    example: E-Team Certified

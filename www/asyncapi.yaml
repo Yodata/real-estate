@@ -296,7 +296,6 @@ components:
   schemas:
     Action: { $ref: schemas/Action.yaml }
     ApplicationProfile: { $ref: schemas/ApplicationProfile.yaml }
-    Certification: { $ref: schemas/Certification.yaml }
     Contact: { $ref: schemas/Contact.yaml }
     ContactPoint: { $ref: schemas/ContactPoint.yaml }
     DigitalDocument: { $ref: schemas/DigitalDocument.yaml }
@@ -305,9 +304,9 @@ components:
     Notification: { $ref: schemas/Notification.yaml }
     MediaObject: { $ref: schemas/MediaObject.yaml }
     MLSMembership: { $ref: schemas/MLSMembership.yaml }
+    MultipleListingService: { $ref: schemas/MultipleListingService.yaml }
     Organization: { $ref: schemas/Organization.yaml }
     OrganizationRole: { $ref: schemas/OrganizationRole.yaml }
-    Permit: { $ref: schemas/Permit.yaml }
     Person: { $ref: schemas/Person.yaml }
     Place: { $ref: schemas/Place.yaml }
     PostalAddress: { $ref: schemas/PostalAddress.yaml }
@@ -316,3 +315,4 @@ components:
     RealEstateLicense: { $ref: schemas/RealEstateLicense.yaml }
     RealEstateOffice: { $ref: schemas/RealEstateOffice.yaml }
     RealEstateOrganization: { $ref: schemas/RealEstateOrganization.yaml }
+    CustomProperties: { $ref: schemas/CustomProperties.yaml }

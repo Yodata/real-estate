@@ -1,4 +1,8 @@
 type: object
+description:
+  Real estate licenses, authorizations issued by state governments, give agents
+  and brokers the legal ability to represent a home seller or buyer in the
+  process of buying or selling real estate.
 properties:
   type:
     type: string
@@ -17,6 +21,8 @@ properties:
       type: Organization
       name: California
   issuedThrough:
+    x-range: Service
+    description: The service through with the permit was granted.
     type: object
     properties:
       type:
@@ -25,6 +31,15 @@ properties:
       name:
         type: string
         example: California Department of Real Estate
+  validIn:
+    x-range:
+      - Place
+      - AdministrativeArea
+    description: The geographic area where the permit is valid.
+    type: object
+    example:
+      type: AdministrativeArea
+      name: New York
   validFrom:
     type: string
     format: date-time

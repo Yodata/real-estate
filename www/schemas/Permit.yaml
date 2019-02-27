@@ -8,7 +8,8 @@ properties:
     type: string
     description: Common or display value of the Permit.
   issuedBy:
-    $ref: Organization.yaml
+    x-range: Organization
+    type: object
     description: The issuing authority
     example:
       type: GovernmentOrganization
@@ -20,8 +21,8 @@ properties:
       type: Service
       name: Department of Real Estate
   validIn:
-    $ref: Place.yaml
     x-range: Place
+    $ref: Place.yaml
   validFrom:
     type: string
     format: date-time

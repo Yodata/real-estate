@@ -11,7 +11,7 @@ name: Object Types
 
 
 
-### Action properties
+#### Action properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
@@ -29,8 +29,7 @@ name: Object Types
 | target | object | Indicates a target EntryPoint for an Action. <br/>RANGE: [EntryPoint](/schemas#entrypoint) |
 | error | object | For failed actions, more information on the cause of the failure.  |
 
-### Action example
-
+#### Action example
 ```json
 {
   "topic": [
@@ -42,39 +41,31 @@ name: Object Types
   "instrument": "http://app.example.com/profile/card#me",
   "object": {
     "type": "Thing",
-    "id": "http://example.com/linked/data/uri",
-    "additionalProperty": {
-      "@context": "http://example.com/context#",
-      "customProp": "value"
-    },
-    "identifier": {
-      "@context": "http://example.com/context#",
-      "ID": "value"
-    }
+    "id": "http://example.com/linked/data/uri"
   },
   "participant": [
     {}
   ],
   "location": {},
   "result": {},
-  "startTime": "2019-02-22T19:44:12Z",
-  "endTime": "2019-02-22T19:44:12Z",
+  "startTime": "2019-02-27T08:10:11Z",
+  "endTime": "2019-02-27T08:10:11Z",
   "target": {},
   "error": {}
 }
 ```
+
+
 ## ApplicationProfile
 
 a solid profile document
 
-### ApplicationProfile properties
+#### ApplicationProfile properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
 | type | string! | Linked-Data (@type)  |
 | id | string&lt;uri&gt;! | Linked-Data URI (@id)  |
-| additionalProperty | object | namespaced custom properties  |
-| identifier | object | a key value map of **namespaced** unique identifiers.  |
 | primaryTopic | string |   |
 | #me | object |   |
 | inbox | string! | discoverable uri to your LDN inbox  |
@@ -86,20 +77,11 @@ a solid profile document
 | publicTypeIndex | string | shared, discoverable type index  |
 | permissions | [string] | the subscription types required by your service.  |
 
-### ApplicationProfile example
-
+#### ApplicationProfile example
 ```json
 {
   "type": "SoftwareApplication",
   "id": "https://user.example.com/profile/card#me",
-  "additionalProperty": {
-    "@context": "http://example.com/context#",
-    "customProp": "value"
-  },
-  "identifier": {
-    "@context": "http://example.com/context#",
-    "ID": "value"
-  },
   "primaryTopic": "#me",
   "#me": {
     "type": "SoftwareApplication",
@@ -126,38 +108,18 @@ a solid profile document
   ]
 }
 ```
-## Certification
 
 
-
-### Certification properties
-
-| Name/Type | Type | Description |
-|:--------- | :--- | :---------- |
-| type | string! |   |
-| name | string | the name of the thing  |
-
-### Certification example
-
-```json
-{
-  "type": "Certification",
-  "name": "e-Agent Certified",
-  "validFrom": "1970-01-01T00:00:00.000Z"
-}
-```
 ## Contact
 
 a contact
 
-### Contact properties
+#### Contact properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| type | string! | Linked-Data (@type)  |
+| type | string! | Person  |
 | id | string&lt;uri&gt; | Linked-Data URI (@id)  |
-| additionalProperty | object | namespaced custom properties  |
-| identifier | object | a key value map of **namespaced** unique identifiers.  |
 | name | string | Full name of the person.  |
 | givenName | string | First Name  |
 | familyName | string | Last Name  |
@@ -165,26 +127,17 @@ a contact
 | email | string | Primary email address.  |
 | faxNumber | string | Primary fax number.  |
 | telephone | string | Primary phone number.  |
-| contactPoint | [[ContactPoint](/schemas#contactpoint)] | Named and grouped contacts points.  |
-| address | [object] | mailing addresses.  |
+| contactPoint | [object] | Named and grouped contacts points. <br/>RANGE: [ContactPoint](/schemas#contactpoint) |
+| address | [object] | mailing addresses. <br/>RANGE: [PostalAddress](/schemas#postaladdress) |
 | birthDate | string&lt;date&gt; | date of birth.  |
-| birthPlace | object |   |
+| birthPlace | object | place of birth. <br/>RANGE: [Place](/schemas#place) |
 | leadSource | [Organization](/schemas#organization) |   |
 
-### Contact example
-
+#### Contact example
 ```json
 {
   "type": "Thing",
   "id": "http://example.com/linked/data/uri",
-  "additionalProperty": {
-    "@context": "http://example.com/context#",
-    "customProp": "value"
-  },
-  "identifier": {
-    "@context": "http://example.com/context#",
-    "ID": "value"
-  },
   "name": "string",
   "givenName": "Bruce",
   "familyName": "Wayne",
@@ -211,60 +164,16 @@ a contact
       "postalCode": "10010"
     }
   ],
-  "birthDate": "2019-02-22",
-  "birthPlace": {
-    "type": "Thing",
-    "id": "http://example.com/linked/data/uri",
-    "additionalProperty": {
-      "@context": "http://example.com/context#",
-      "customProp": "value"
-    },
-    "identifier": {
-      "@context": "http://example.com/context#",
-      "ID": "value"
-    },
-    "address": {},
-    "aggregateRating": {},
-    "branchCode": "string",
-    "containedInPlace": [
-      "http://example.com"
-    ],
-    "containsPlace": [
-      "http://example.com"
-    ],
-    "event": {},
-    "faxNumber": "string",
-    "geo": {},
-    "hasMap": "http://example.com",
-    "logo": {},
-    "openingHoursSpecification": {},
-    "photo": [
-      {}
-    ],
-    "review": [
-      {}
-    ],
-    "smokingAllowed": true,
-    "specialOpeningHoursSpecification": [
-      {}
-    ],
-    "telephone": "string"
-  },
+  "birthDate": "2019-02-27",
+  "birthPlace": {},
   "leadSource": {
     "type": "Thing",
     "id": "http://example.com/linked/data/uri",
-    "additionalProperty": {
-      "@context": "http://example.com/context#",
-      "customProp": "value"
-    },
-    "identifier": {
-      "@context": "http://example.com/context#",
-      "ID": "value"
-    },
     "name": "string",
     "telephone": "079.706.7065 x6341",
     "email": "user@example.com",
     "faxNumber": "(873) 271-4802",
+    "branchCode": "CA301-001",
     "contactPoint": [
       {
         "type": "ContactPoint",
@@ -278,30 +187,15 @@ a contact
       {
         "type": "DigitalDocument",
         "id": "http://user.example.com/public/logo/fileName.zip",
-        "additionalProperty": {
-          "@context": "http://example.com/context#",
-          "customProp": "value"
-        },
-        "identifier": {
-          "@context": "http://example.com/context#",
-          "ID": "value"
-        },
         "name": "fileName.zip",
         "encodingFormat": "application/zip",
+        "identifier": {},
         "about": "http://user.example.com/profile/card#me"
       }
     ],
     "image": {
       "type": "ImageObject",
       "id": "http://user.example.com/public/logo/image.jpg",
-      "additionalProperty": {
-        "@context": "http://example.com/context#",
-        "customProp": "value"
-      },
-      "identifier": {
-        "@context": "http://example.com/context#",
-        "ID": "value"
-      },
       "name": "image.jpg",
       "encodingFormat": "image/jpeg",
       "content": "string",
@@ -313,22 +207,23 @@ a contact
   }
 }
 ```
+
+
 ## ContactPoint
 
+A contact point—for example, a Customer Complaints department.
 
-
-### ContactPoint properties
+#### ContactPoint properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| type | string |   |
+| type | string | ContactPoint  |
 | name | string | a label for the contactPoint, i.e. 'Work', or 'Home'  |
 | telephone | string | a telephone number  |
 | faxNumber | string | a fax number  |
 | email | string&lt;email&gt; | an email address for the item.  |
 
-### ContactPoint example
-
+#### ContactPoint example
 ```json
 {
   "type": "ContactPoint",
@@ -338,83 +233,69 @@ a contact
   "email": "user@example.com"
 }
 ```
+
+
 ## DigitalDocument
 
 an electronic file.
 
-### DigitalDocument properties
+#### DigitalDocument properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
 | type | string! | Linked-Data (@type)  |
 | id | string&lt;uri&gt; | Linked-Data URI (@id)  |
-| additionalProperty | object | namespaced custom properties  |
-| identifier | object | namespaced identifier  |
 | name | string | the FileName  |
 | encodingFormat | string | the MIME type  |
+| identifier | object | namespaced identifier  |
 | about | string&lt;uri&gt; | URI to the subject of the image or logo  |
 
-### DigitalDocument example
-
+#### DigitalDocument example
 ```json
 {
   "type": "Thing",
   "id": "http://user.example.com/public/logo/fileName.zip",
-  "additionalProperty": {
-    "@context": "http://example.com/context#",
-    "customProp": "value"
-  },
-  "identifier": {
-    "@context": "http://example.com/context#",
-    "ID": "value"
-  },
   "name": "fileName.zip",
   "encodingFormat": "application/zip",
+  "identifier": {},
   "about": "http://user.example.com/profile/card#me"
 }
 ```
+
+
 ## ImageObject
 
 
 
-### ImageObject properties
+#### ImageObject properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
 | type | string! | Linked-Data (@type)  |
 | id | string&lt;uri&gt; | the URL to access the item.  |
-| additionalProperty | object | namespaced custom properties  |
-| identifier | object | a key value map of **namespaced** unique identifiers.  |
 | name | string | the file name of the object.  |
 | encodingFormat | string | MIME type  |
 | content | string | base64 encoded content  |
 | about | string&lt;uri&gt; | URI to the subject of the image or logo  |
 
-### ImageObject example
-
+#### ImageObject example
 ```json
 {
   "type": "ImageObject",
   "id": "http://user.example.com/public/logo/image.jpg",
-  "additionalProperty": {
-    "@context": "http://example.com/context#",
-    "customProp": "value"
-  },
-  "identifier": {
-    "@context": "http://example.com/context#",
-    "ID": "value"
-  },
   "name": "image.jpg",
   "encodingFormat": "image/jpeg",
   "content": "string",
   "about": "http://user.example.com/profile/card#me"
 }
 ```
+
+
 ## Lead
 
 a lead offered or assigned by the agent to one or more recipients
 
-### Lead properties
+#### Lead properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
@@ -424,8 +305,7 @@ a lead offered or assigned by the agent to one or more recipients
 | recipient | string&lt;uri&gt; | the assignee's webid <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
 | object | object | a contact  |
 
-### Lead example
-
+#### Lead example
 ```json
 {
   "type": "AssignAction",
@@ -435,14 +315,6 @@ a lead offered or assigned by the agent to one or more recipients
   "object": {
     "type": "Thing",
     "id": "http://example.com/linked/data/uri",
-    "additionalProperty": {
-      "@context": "http://example.com/context#",
-      "customProp": "value"
-    },
-    "identifier": {
-      "@context": "http://example.com/context#",
-      "ID": "value"
-    },
     "name": "string",
     "givenName": "Bruce",
     "familyName": "Wayne",
@@ -469,60 +341,16 @@ a lead offered or assigned by the agent to one or more recipients
         "postalCode": "10010"
       }
     ],
-    "birthDate": "2019-02-22",
-    "birthPlace": {
-      "type": "Thing",
-      "id": "http://example.com/linked/data/uri",
-      "additionalProperty": {
-        "@context": "http://example.com/context#",
-        "customProp": "value"
-      },
-      "identifier": {
-        "@context": "http://example.com/context#",
-        "ID": "value"
-      },
-      "address": {},
-      "aggregateRating": {},
-      "branchCode": "string",
-      "containedInPlace": [
-        "http://example.com"
-      ],
-      "containsPlace": [
-        "http://example.com"
-      ],
-      "event": {},
-      "faxNumber": "string",
-      "geo": {},
-      "hasMap": "http://example.com",
-      "logo": {},
-      "openingHoursSpecification": {},
-      "photo": [
-        {}
-      ],
-      "review": [
-        {}
-      ],
-      "smokingAllowed": true,
-      "specialOpeningHoursSpecification": [
-        {}
-      ],
-      "telephone": "string"
-    },
+    "birthDate": "2019-02-27",
+    "birthPlace": {},
     "leadSource": {
       "type": "Thing",
       "id": "http://example.com/linked/data/uri",
-      "additionalProperty": {
-        "@context": "http://example.com/context#",
-        "customProp": "value"
-      },
-      "identifier": {
-        "@context": "http://example.com/context#",
-        "ID": "value"
-      },
       "name": "string",
       "telephone": "079.706.7065 x6341",
       "email": "user@example.com",
       "faxNumber": "(873) 271-4802",
+      "branchCode": "CA301-001",
       "contactPoint": [
         {
           "type": "ContactPoint",
@@ -536,30 +364,15 @@ a lead offered or assigned by the agent to one or more recipients
         {
           "type": "DigitalDocument",
           "id": "http://user.example.com/public/logo/fileName.zip",
-          "additionalProperty": {
-            "@context": "http://example.com/context#",
-            "customProp": "value"
-          },
-          "identifier": {
-            "@context": "http://example.com/context#",
-            "ID": "value"
-          },
           "name": "fileName.zip",
           "encodingFormat": "application/zip",
+          "identifier": {},
           "about": "http://user.example.com/profile/card#me"
         }
       ],
       "image": {
         "type": "ImageObject",
         "id": "http://user.example.com/public/logo/image.jpg",
-        "additionalProperty": {
-          "@context": "http://example.com/context#",
-          "customProp": "value"
-        },
-        "identifier": {
-          "@context": "http://example.com/context#",
-          "ID": "value"
-        },
         "name": "image.jpg",
         "encodingFormat": "image/jpeg",
         "content": "string",
@@ -572,11 +385,13 @@ a lead offered or assigned by the agent to one or more recipients
   }
 }
 ```
+
+
 ## Notification
 
 
 
-### Notification properties
+#### Notification properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
@@ -587,8 +402,7 @@ a lead offered or assigned by the agent to one or more recipients
 | instrument | string&lt;uri&gt; | the application that generated the event  |
 | object | object | the event payload  |
 
-### Notification example
-
+#### Notification example
 ```json
 {
   "type": "Notification",
@@ -606,88 +420,68 @@ a lead offered or assigned by the agent to one or more recipients
     "instrument": "http://app.example.com/profile/card#me",
     "object": {
       "type": "Thing",
-      "id": "http://example.com/linked/data/uri",
-      "additionalProperty": {
-        "@context": "http://example.com/context#",
-        "customProp": "value"
-      },
-      "identifier": {
-        "@context": "http://example.com/context#",
-        "ID": "value"
-      }
+      "id": "http://example.com/linked/data/uri"
     },
     "participant": [
       {}
     ],
     "location": {},
     "result": {},
-    "startTime": "2019-02-22T19:44:12Z",
-    "endTime": "2019-02-22T19:44:12Z",
+    "startTime": "2019-02-27T08:10:11Z",
+    "endTime": "2019-02-27T08:10:11Z",
     "target": {},
     "error": {}
   }
 }
 ```
+
+
 ## MediaObject
 
 
 
-### MediaObject properties
+#### MediaObject properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
 | type | string! | Linked-Data (@type)  |
 | id | string&lt;uri&gt; | the URL to access the item.  |
-| additionalProperty | object | namespaced custom properties  |
-| identifier | object | a key value map of **namespaced** unique identifiers.  |
 | name | string | the file name of the object.  |
 | encodingFormat | string | MIME type  |
 | content | string | base64 encoded content  |
 | about | string&lt;uri&gt; | URI to the subject of the image or logo  |
 
-### MediaObject example
-
+#### MediaObject example
 ```json
 {
   "type": "Thing",
   "id": "http://user.example.com/public/logo/fileName.zip",
-  "additionalProperty": {
-    "@context": "http://example.com/context#",
-    "customProp": "value"
-  },
-  "identifier": {
-    "@context": "http://example.com/context#",
-    "ID": "value"
-  },
   "name": "fileName.zip",
   "encodingFormat": "application/zip",
   "content": "string",
   "about": "http://user.example.com/profile/card#me"
 }
 ```
+
+
 ## MLSMembership
 
 Provides additional information in member/memberOf relationships.
 
-### MLSMembership properties
+#### MLSMembership properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| type | string |   |
+| type | string | an MLS member relationship  |
 | roleName | string | A role played, performed or filled by a person or organization.  |
-| startDate | string&lt;date-time&gt; |   |
-| endDate | string&lt;date-time&gt; |   |
-| memberOf | object |   |
-| memberId | string |   |
+| memberOf | object |  <br/>RANGE: [MultipleListingService](/schemas#multiplelistingservice) |
+| memberId | string | the user's MLSID  |
 
-### MLSMembership example
-
+#### MLSMembership example
 ```json
 {
-  "type": "OrganizationRole",
+  "type": "MLSMembership",
   "roleName": "MLSMember",
-  "startDate": "2019-02-22T19:44:12Z",
-  "endDate": "2019-02-22T19:44:12Z",
   "memberOf": {
     "type": "MultipleListingService",
     "name": "GreatScottMLS"
@@ -695,45 +489,67 @@ Provides additional information in member/memberOf relationships.
   "memberId": "memberid123"
 }
 ```
+
+
+## MultipleListingService
+
+an MLS
+
+#### MultipleListingService properties
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! | MultipleListingService  |
+| id | string&lt;uri&gt; | Linked-Data URI (@id)  |
+| name | string | Name or DBA.  |
+| telephone | string | Primary phone number.  |
+| email | string&lt;email&gt; | Primary email address.  |
+| faxNumber | string | Primary fax number.  |
+| branchCode | string | A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.  |
+| contactPoint | [object] | Additional contact points. Can be organized by role, location, etc...  |
+| logo | [object] | a logo associated with the organization. <br/>RANGE: [ImageObject](/schemas#imageobject),[DigitalDocument](/schemas#digitaldocument) |
+| image | object&#124;string&lt;uri&gt; | This can be a URL or a fully described ImageObject. <br/>RANGE: [ImageObject](/schemas#imageobject),[URI](/schemas#uri) |
+| parentOrganization | [string&lt;uri&gt;] |   |
+
+#### MultipleListingService example
+```json
+{
+  "type": "MultipleListingService",
+  "name": "GreatScott MLS"
+}
+```
+
+
 ## Organization
 
 
 
-### Organization properties
+#### Organization properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
 | type | string! | Linked-Data (@type)  |
 | id | string&lt;uri&gt; | Linked-Data URI (@id)  |
-| additionalProperty | object | namespaced custom properties  |
-| identifier | object | a key value map of **namespaced** unique identifiers.  |
 | name | string | Name or DBA.  |
 | telephone | string | Primary phone number.  |
 | email | string&lt;email&gt; | Primary email address.  |
 | faxNumber | string | Primary fax number.  |
-| contactPoint | [[ContactPoint](/schemas#contactpoint)] | Additional contact points. Can be organized by role, location, etc...  |
+| branchCode | string | A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.  |
+| contactPoint | [object] | Additional contact points. Can be organized by role, location, etc...  |
 | logo | [object] | a logo associated with the organization. <br/>RANGE: [ImageObject](/schemas#imageobject),[DigitalDocument](/schemas#digitaldocument) |
 | image | object&#124;string&lt;uri&gt; | This can be a URL or a fully described ImageObject. <br/>RANGE: [ImageObject](/schemas#imageobject),[URI](/schemas#uri) |
 | parentOrganization | [string&lt;uri&gt;] |   |
 
-### Organization example
-
+#### Organization example
 ```json
 {
   "type": "Thing",
   "id": "http://example.com/linked/data/uri",
-  "additionalProperty": {
-    "@context": "http://example.com/context#",
-    "customProp": "value"
-  },
-  "identifier": {
-    "@context": "http://example.com/context#",
-    "ID": "value"
-  },
   "name": "string",
   "telephone": "079.706.7065 x6341",
   "email": "user@example.com",
   "faxNumber": "(873) 271-4802",
+  "branchCode": "CA301-001",
   "contactPoint": [
     {
       "type": "ContactPoint",
@@ -747,30 +563,15 @@ Provides additional information in member/memberOf relationships.
     {
       "type": "DigitalDocument",
       "id": "http://user.example.com/public/logo/fileName.zip",
-      "additionalProperty": {
-        "@context": "http://example.com/context#",
-        "customProp": "value"
-      },
-      "identifier": {
-        "@context": "http://example.com/context#",
-        "ID": "value"
-      },
       "name": "fileName.zip",
       "encodingFormat": "application/zip",
+      "identifier": {},
       "about": "http://user.example.com/profile/card#me"
     }
   ],
   "image": {
     "type": "ImageObject",
     "id": "http://user.example.com/public/logo/image.jpg",
-    "additionalProperty": {
-      "@context": "http://example.com/context#",
-      "customProp": "value"
-    },
-    "identifier": {
-      "@context": "http://example.com/context#",
-      "ID": "value"
-    },
     "name": "image.jpg",
     "encodingFormat": "image/jpeg",
     "content": "string",
@@ -781,170 +582,38 @@ Provides additional information in member/memberOf relationships.
   ]
 }
 ```
+
+
 ## OrganizationRole
 
 Provides additional information in member/memberOf relationships.
 
-### OrganizationRole properties
+#### OrganizationRole properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| type | string |   |
+| type | string | OrganizationRole  |
 | roleName | string | A role played, performed or filled by a person or organization.  |
-| startDate | string&lt;date-time&gt; |   |
-| endDate | string&lt;date-time&gt; |   |
 
-### OrganizationRole example
-
+#### OrganizationRole example
 ```json
 {
   "type": "OrganizationRole",
-  "roleName": "MLSMember",
-  "startDate": "2019-02-22T19:44:12Z",
-  "endDate": "2019-02-22T19:44:12Z"
+  "roleName": "E-Team Certified"
 }
 ```
-## Permit
 
-A permit issued by an organization to an individual or business.
 
-### Permit properties
-
-| Name/Type | Type | Description |
-|:--------- | :--- | :---------- |
-| type | string | Permit type.  |
-| name | string | Common or display value of the Permit.  |
-| issuedBy | [Organization](/schemas#organization) |   |
-| issuedThrough | [Service](/schemas#service) | A service provided by an organization. <br/>RANGE: [Service](/schemas#service) |
-| validIn | object |   |
-| validFrom | string&lt;date-time&gt; | start date  |
-| validUntil | string&lt;date-time&gt; | end date  |
-
-### Permit example
-
-```json
-{
-  "type": "string",
-  "name": "string",
-  "issuedBy": {
-    "type": "Thing",
-    "id": "http://example.com/linked/data/uri",
-    "additionalProperty": {
-      "@context": "http://example.com/context#",
-      "customProp": "value"
-    },
-    "identifier": {
-      "@context": "http://example.com/context#",
-      "ID": "value"
-    },
-    "name": "string",
-    "telephone": "079.706.7065 x6341",
-    "email": "user@example.com",
-    "faxNumber": "(873) 271-4802",
-    "contactPoint": [
-      {
-        "type": "ContactPoint",
-        "name": "Work",
-        "telephone": "1-364-127-9618 x20418",
-        "faxNumber": "834.320.1602",
-        "email": "user@example.com"
-      }
-    ],
-    "logo": [
-      {
-        "type": "DigitalDocument",
-        "id": "http://user.example.com/public/logo/fileName.zip",
-        "additionalProperty": {
-          "@context": "http://example.com/context#",
-          "customProp": "value"
-        },
-        "identifier": {
-          "@context": "http://example.com/context#",
-          "ID": "value"
-        },
-        "name": "fileName.zip",
-        "encodingFormat": "application/zip",
-        "about": "http://user.example.com/profile/card#me"
-      }
-    ],
-    "image": {
-      "type": "ImageObject",
-      "id": "http://user.example.com/public/logo/image.jpg",
-      "additionalProperty": {
-        "@context": "http://example.com/context#",
-        "customProp": "value"
-      },
-      "identifier": {
-        "@context": "http://example.com/context#",
-        "ID": "value"
-      },
-      "name": "image.jpg",
-      "encodingFormat": "image/jpeg",
-      "content": "string",
-      "about": "http://user.example.com/profile/card#me"
-    },
-    "parentOrganization": [
-      "http://example.com"
-    ]
-  },
-  "issuedThrough": {
-    "type": "Service",
-    "name": "Department of Real Estate"
-  },
-  "validIn": {
-    "type": "Thing",
-    "id": "http://example.com/linked/data/uri",
-    "additionalProperty": {
-      "@context": "http://example.com/context#",
-      "customProp": "value"
-    },
-    "identifier": {
-      "@context": "http://example.com/context#",
-      "ID": "value"
-    },
-    "address": {},
-    "aggregateRating": {},
-    "branchCode": "string",
-    "containedInPlace": [
-      "http://example.com"
-    ],
-    "containsPlace": [
-      "http://example.com"
-    ],
-    "event": {},
-    "faxNumber": "string",
-    "geo": {},
-    "hasMap": "http://example.com",
-    "logo": {},
-    "openingHoursSpecification": {},
-    "photo": [
-      {}
-    ],
-    "review": [
-      {}
-    ],
-    "smokingAllowed": true,
-    "specialOpeningHoursSpecification": [
-      {}
-    ],
-    "telephone": "string"
-  },
-  "validFrom": "2019-02-22T19:44:12Z",
-  "validUntil": "2019-02-22T19:44:12Z"
-}
-```
 ## Person
 
 
 
-### Person properties
+#### Person properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| type | string! | Linked-Data (@type)  |
+| type | string! | Person  |
 | id | string&lt;uri&gt; | Linked-Data URI (@id)  |
-| additionalProperty | object | namespaced custom properties  |
-| identifier | object | a key value map of **namespaced** unique identifiers.  |
 | name | string | Full name of the person.  |
 | givenName | string | First Name  |
 | familyName | string | Last Name  |
@@ -952,25 +621,16 @@ A permit issued by an organization to an individual or business.
 | email | string | Primary email address.  |
 | faxNumber | string | Primary fax number.  |
 | telephone | string | Primary phone number.  |
-| contactPoint | [[ContactPoint](/schemas#contactpoint)] | Named and grouped contacts points.  |
-| address | [object] | mailing addresses.  |
+| contactPoint | [object] | Named and grouped contacts points. <br/>RANGE: [ContactPoint](/schemas#contactpoint) |
+| address | [object] | mailing addresses. <br/>RANGE: [PostalAddress](/schemas#postaladdress) |
 | birthDate | string&lt;date&gt; | date of birth.  |
-| birthPlace | object |   |
+| birthPlace | object | place of birth. <br/>RANGE: [Place](/schemas#place) |
 
-### Person example
-
+#### Person example
 ```json
 {
   "type": "Thing",
   "id": "http://example.com/linked/data/uri",
-  "additionalProperty": {
-    "@context": "http://example.com/context#",
-    "customProp": "value"
-  },
-  "identifier": {
-    "@context": "http://example.com/context#",
-    "ID": "value"
-  },
   "name": "string",
   "givenName": "Bruce",
   "familyName": "Wayne",
@@ -997,90 +657,39 @@ A permit issued by an organization to an individual or business.
       "postalCode": "10010"
     }
   ],
-  "birthDate": "2019-02-22",
-  "birthPlace": {
-    "type": "Thing",
-    "id": "http://example.com/linked/data/uri",
-    "additionalProperty": {
-      "@context": "http://example.com/context#",
-      "customProp": "value"
-    },
-    "identifier": {
-      "@context": "http://example.com/context#",
-      "ID": "value"
-    },
-    "address": {},
-    "aggregateRating": {},
-    "branchCode": "string",
-    "containedInPlace": [
-      "http://example.com"
-    ],
-    "containsPlace": [
-      "http://example.com"
-    ],
-    "event": {},
-    "faxNumber": "string",
-    "geo": {},
-    "hasMap": "http://example.com",
-    "logo": {},
-    "openingHoursSpecification": {},
-    "photo": [
-      {}
-    ],
-    "review": [
-      {}
-    ],
-    "smokingAllowed": true,
-    "specialOpeningHoursSpecification": [
-      {}
-    ],
-    "telephone": "string"
-  }
+  "birthDate": "2019-02-27",
+  "birthPlace": {}
 }
 ```
+
+
 ## Place
 
 
 
-### Place properties
+#### Place properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
 | type | string! | Linked-Data (@type)  |
 | id | string&lt;uri&gt; | Linked-Data URI (@id)  |
-| additionalProperty | object | namespaced custom properties  |
-| identifier | object | a key value map of **namespaced** unique identifiers.  |
-| address | object&#124;string |   |
+| address | object | PostalAddress <br/>RANGE: [PostalAddress](/schemas#postaladdress) |
 | aggregateRating | object | AggregateRating -- The overall rating, based on a collection of reviews or ratings, of the item.  |
 | branchCode | string | A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.  |
 | containedInPlace | [string&lt;uri&gt;] | Place  |
 | containsPlace | [string&lt;uri&gt;] | Place  |
-| event | [Event](/schemas#event) |   |
-| faxNumber | string | The fax number.  |
 | geo | object&#124;object | The geo coordinates of the place.  |
 | hasMap | string&lt;uri&gt;&#124;[Map](/schemas#map) | A URL to a map of the place. Supersedes map, maps.  |
-| logo | object&#124;string&lt;uri&gt; | An associated logo.  |
 | openingHoursSpecification | object | OpeningHoursSpecification  |
-| photo | array&#124;array | A photograph of this place. Supersedes photos.  |
+| photo | [string&lt;uri&gt;&#124;object] | A photograph of this place. Supersedes photos. <br/>RANGE: [ImageObject](/schemas#imageobject) |
 | review | [object] | A review of the item. Supersedes reviews.  |
-| smokingAllowed | boolean | Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.  |
 | specialOpeningHoursSpecification | [object] | The special opening hours of a certain place. Use this to explicitly override general opening hours brought in scope by openingHoursSpecification or openingHours.  |
-| telephone | string | The telephone number.  |
 
-### Place example
-
+#### Place example
 ```json
 {
   "type": "Thing",
   "id": "http://example.com/linked/data/uri",
-  "additionalProperty": {
-    "@context": "http://example.com/context#",
-    "customProp": "value"
-  },
-  "identifier": {
-    "@context": "http://example.com/context#",
-    "ID": "value"
-  },
   "address": {},
   "aggregateRating": {},
   "branchCode": "string",
@@ -1090,30 +699,27 @@ A permit issued by an organization to an individual or business.
   "containsPlace": [
     "http://example.com"
   ],
-  "event": {},
-  "faxNumber": "string",
   "geo": {},
   "hasMap": "http://example.com",
-  "logo": {},
   "openingHoursSpecification": {},
   "photo": [
-    {}
+    "http://example.com"
   ],
   "review": [
     {}
   ],
-  "smokingAllowed": true,
   "specialOpeningHoursSpecification": [
     {}
-  ],
-  "telephone": "string"
+  ]
 }
 ```
+
+
 ## PostalAddress
 
 A physical address.
 
-### PostalAddress properties
+#### PostalAddress properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
@@ -1124,8 +730,7 @@ A physical address.
 | addressLocality | string | City, Township.  |
 | postalCode | string | Zip/Post Code  |
 
-### PostalAddress example
-
+#### PostalAddress example
 ```json
 {
   "type": "PostalAddress",
@@ -1136,11 +741,13 @@ A physical address.
   "postalCode": "10010"
 }
 ```
+
+
 ## PropertyValue
 
 a key/value pair, used for maintaining state outside of the current context
 
-### PropertyValue properties
+#### PropertyValue properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
@@ -1148,8 +755,7 @@ a key/value pair, used for maintaining state outside of the current context
 | propertyID | string! |   |
 | value | string! |   |
 
-### PropertyValue example
-
+#### PropertyValue example
 ```json
 {
   "type": "PropertyValue",
@@ -1157,23 +763,24 @@ a key/value pair, used for maintaining state outside of the current context
   "value": "<userid-string>"
 }
 ```
+
+
 ## RealEstateAgent
 
 A real estate agent or team.
 
-### RealEstateAgent properties
+#### RealEstateAgent properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
 | type | string! | RealEstateOrganzation  |
 | id | string&lt;uri&gt; | Linked-Data URI (@id)  |
-| additionalProperty | object | namespaced custom properties  |
-| identifier | object | a key value map of **namespaced** unique identifiers.  |
 | name | string | Name or DBA.  |
 | telephone | string | Primary phone number.  |
 | email | string&lt;email&gt; | Primary email address.  |
 | faxNumber | string | Primary fax number.  |
-| contactPoint | [[ContactPoint](/schemas#contactpoint)] | Additional contact points. Can be organized by role, location, etc...  |
+| branchCode | string | A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.  |
+| contactPoint | [object] | Additional contact points. Can be organized by role, location, etc...  |
 | logo | [object] | a logo associated with the organization. <br/>RANGE: [ImageObject](/schemas#imageobject),[DigitalDocument](/schemas#digitaldocument) |
 | image | object&#124;string&lt;uri&gt; | This can be a URL or a fully described ImageObject. <br/>RANGE: [ImageObject](/schemas#imageobject),[URI](/schemas#uri) |
 | parentOrganization | [string&lt;uri&gt;] | URI reference to the agent's office. For teams, this can be a reference to the team leader/primary profile. <br/>RANGE: [RealEstateOffice](/schemas#realestateoffice),[RealEstateAgent](/schemas#realestateagent) |
@@ -1183,24 +790,16 @@ A real estate agent or team.
 | memberOf | [object] | An Organization (or ProgramMembership) to which this Person or Organization belongs. <br/>RANGE: [OrganizationRole](/schemas#organizationrole),[MLSMembership](/schemas#mlsmembership) |
 | permit | [object] | permits issued to the person or organization <br/>RANGE: [Permit](/schemas#permit),[RealEstateLicense](/schemas#realestatelicense) |
 
-### RealEstateAgent example
-
+#### RealEstateAgent example
 ```json
 {
   "type": "RealEstateOrganization",
   "id": "http://example.com/linked/data/uri",
-  "additionalProperty": {
-    "@context": "http://example.com/context#",
-    "customProp": "value"
-  },
-  "identifier": {
-    "@context": "http://example.com/context#",
-    "ID": "value"
-  },
   "name": "Batman & Robin",
   "telephone": "079.706.7065 x6341",
   "email": "user@example.com",
   "faxNumber": "(873) 271-4802",
+  "branchCode": "CA301-001",
   "contactPoint": [
     {
       "type": "ContactPoint",
@@ -1214,30 +813,15 @@ A real estate agent or team.
     {
       "type": "DigitalDocument",
       "id": "http://user.example.com/public/logo/fileName.zip",
-      "additionalProperty": {
-        "@context": "http://example.com/context#",
-        "customProp": "value"
-      },
-      "identifier": {
-        "@context": "http://example.com/context#",
-        "ID": "value"
-      },
       "name": "fileName.zip",
       "encodingFormat": "application/zip",
+      "identifier": {},
       "about": "http://user.example.com/profile/card#me"
     }
   ],
   "image": {
     "type": "ImageObject",
     "id": "http://user.example.com/public/logo/image.jpg",
-    "additionalProperty": {
-      "@context": "http://example.com/context#",
-      "customProp": "value"
-    },
-    "identifier": {
-      "@context": "http://example.com/context#",
-      "ID": "value"
-    },
     "name": "image.jpg",
     "encodingFormat": "image/jpeg",
     "content": "string",
@@ -1261,17 +845,13 @@ A real estate agent or team.
   "member": [
     {
       "type": "OrganizationRole",
-      "roleName": "MLSMember",
-      "startDate": "2019-02-22T19:44:12Z",
-      "endDate": "2019-02-22T19:44:12Z"
+      "roleName": "E-Team Certified"
     }
   ],
   "memberOf": [
     {
-      "type": "OrganizationRole",
+      "type": "MLSMembership",
       "roleName": "MLSMember",
-      "startDate": "2019-02-22T19:44:12Z",
-      "endDate": "2019-02-22T19:44:12Z",
       "memberOf": {
         "type": "MultipleListingService",
         "name": "GreatScottMLS"
@@ -1291,29 +871,35 @@ A real estate agent or team.
         "type": "Service",
         "name": "California Department of Real Estate"
       },
-      "validFrom": "2019-02-22T19:44:12Z",
-      "validUntil": "2019-02-22T19:44:12Z"
+      "validIn": {
+        "type": "AdministrativeArea",
+        "name": "New York"
+      },
+      "validFrom": "2019-02-27T08:10:11Z",
+      "validUntil": "2019-02-27T08:10:11Z"
     }
   ]
 }
 ```
+
+
 ## RealEstateLicense
 
+Real estate licenses, authorizations issued by state governments, give agents and brokers the legal ability to represent a home seller or buyer in the process of buying or selling real estate.
 
-
-### RealEstateLicense properties
+#### RealEstateLicense properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
 | type | string | RealEstateLicense  |
 | name | string | display value, i.e. 'CA-DRE# 02068375'  |
 | issuedBy | object | the issuing organization or service <br/>RANGE: [Organization](/schemas#organization) |
-| issuedThrough | object |   |
+| issuedThrough | object | The service through with the permit was granted. <br/>RANGE: [Service](/schemas#service) |
+| validIn | object | The geographic area where the permit is valid. <br/>RANGE: [Place](/schemas#place),[AdministrativeArea](/schemas#administrativearea) |
 | validFrom | string&lt;date-time&gt; | start date  |
 | validUntil | string&lt;date-time&gt; | end date  |
 
-### RealEstateLicense example
-
+#### RealEstateLicense example
 ```json
 {
   "type": "RealEstateLicense",
@@ -1326,27 +912,32 @@ A real estate agent or team.
     "type": "Service",
     "name": "California Department of Real Estate"
   },
-  "validFrom": "2019-02-22T19:44:12Z",
-  "validUntil": "2019-02-22T19:44:12Z"
+  "validIn": {
+    "type": "AdministrativeArea",
+    "name": "New York"
+  },
+  "validFrom": "2019-02-27T08:10:11Z",
+  "validUntil": "2019-02-27T08:10:11Z"
 }
 ```
+
+
 ## RealEstateOffice
 
 A real estate franchisor, broker or business.
 
-### RealEstateOffice properties
+#### RealEstateOffice properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
 | type | string! | RealEstateOffice  |
 | id | string&lt;uri&gt; | Linked-Data URI (@id)  |
-| additionalProperty | object | namespaced custom properties  |
-| identifier | object | a key value map of **namespaced** unique identifiers.  |
 | name | string | Name or DBA.  |
 | telephone | string | Primary phone number.  |
 | email | string&lt;email&gt; | Primary email address.  |
 | faxNumber | string | Primary fax number.  |
-| contactPoint | [[ContactPoint](/schemas#contactpoint)] | department or role specific contact points, i.e. relocation.  |
+| branchCode | string | A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.  |
+| contactPoint | [object] | department or role specific contact points, i.e. relocation.  |
 | logo | [object] | a logo associated with the organization. <br/>RANGE: [ImageObject](/schemas#imageobject),[DigitalDocument](/schemas#digitaldocument) |
 | image | object&#124;string&lt;uri&gt; | This can be a URL or a fully described ImageObject. <br/>RANGE: [ImageObject](/schemas#imageobject),[URI](/schemas#uri) |
 | parentOrganization | [string&lt;uri&gt;] | Office broker or franchisor. <br/>RANGE: [RealEstateOrganization](/schemas#realestateorganization) |
@@ -1356,24 +947,16 @@ A real estate franchisor, broker or business.
 | memberOf | [object] | An Organization (or ProgramMembership) to which this Person or Organization belongs. <br/>RANGE: [OrganizationRole](/schemas#organizationrole),[MLSMembership](/schemas#mlsmembership) |
 | permit | [object] | permits issued to the person or organization <br/>RANGE: [Permit](/schemas#permit),[RealEstateLicense](/schemas#realestatelicense) |
 
-### RealEstateOffice example
-
+#### RealEstateOffice example
 ```json
 {
   "type": "RealEstateOrganization",
   "id": "http://example.com/linked/data/uri",
-  "additionalProperty": {
-    "@context": "http://example.com/context#",
-    "customProp": "value"
-  },
-  "identifier": {
-    "@context": "http://example.com/context#",
-    "ID": "value"
-  },
   "name": "string",
   "telephone": "079.706.7065 x6341",
   "email": "user@example.com",
   "faxNumber": "(873) 271-4802",
+  "branchCode": "CA301-001",
   "contactPoint": [
     {
       "type": "ContactPoint",
@@ -1387,30 +970,15 @@ A real estate franchisor, broker or business.
     {
       "type": "DigitalDocument",
       "id": "http://user.example.com/public/logo/fileName.zip",
-      "additionalProperty": {
-        "@context": "http://example.com/context#",
-        "customProp": "value"
-      },
-      "identifier": {
-        "@context": "http://example.com/context#",
-        "ID": "value"
-      },
       "name": "fileName.zip",
       "encodingFormat": "application/zip",
+      "identifier": {},
       "about": "http://user.example.com/profile/card#me"
     }
   ],
   "image": {
     "type": "ImageObject",
     "id": "http://user.example.com/public/logo/image.jpg",
-    "additionalProperty": {
-      "@context": "http://example.com/context#",
-      "customProp": "value"
-    },
-    "identifier": {
-      "@context": "http://example.com/context#",
-      "ID": "value"
-    },
     "name": "image.jpg",
     "encodingFormat": "image/jpeg",
     "content": "string",
@@ -1433,17 +1001,13 @@ A real estate franchisor, broker or business.
   "member": [
     {
       "type": "OrganizationRole",
-      "roleName": "MLSMember",
-      "startDate": "2019-02-22T19:44:12Z",
-      "endDate": "2019-02-22T19:44:12Z"
+      "roleName": "E-Team Certified"
     }
   ],
   "memberOf": [
     {
-      "type": "OrganizationRole",
+      "type": "MLSMembership",
       "roleName": "MLSMember",
-      "startDate": "2019-02-22T19:44:12Z",
-      "endDate": "2019-02-22T19:44:12Z",
       "memberOf": {
         "type": "MultipleListingService",
         "name": "GreatScottMLS"
@@ -1463,29 +1027,34 @@ A real estate franchisor, broker or business.
         "type": "Service",
         "name": "California Department of Real Estate"
       },
-      "validFrom": "2019-02-22T19:44:12Z",
-      "validUntil": "2019-02-22T19:44:12Z"
+      "validIn": {
+        "type": "AdministrativeArea",
+        "name": "New York"
+      },
+      "validFrom": "2019-02-27T08:10:11Z",
+      "validUntil": "2019-02-27T08:10:11Z"
     }
   ]
 }
 ```
+
+
 ## RealEstateOrganization
 
 A real estate franchisor, broker or business.
 
-### RealEstateOrganization properties
+#### RealEstateOrganization properties
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
 | type | string! | RealEstateOrganzation  |
 | id | string&lt;uri&gt; | Linked-Data URI (@id)  |
-| additionalProperty | object | namespaced custom properties  |
-| identifier | object | a key value map of **namespaced** unique identifiers.  |
 | name | string | Name or DBA.  |
 | telephone | string | Primary phone number.  |
 | email | string&lt;email&gt; | Primary email address.  |
 | faxNumber | string | Primary fax number.  |
-| contactPoint | [[ContactPoint](/schemas#contactpoint)] | Additional contact points. Can be organized by role, location, etc...  |
+| branchCode | string | A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.  |
+| contactPoint | [object] | Additional contact points. Can be organized by role, location, etc...  |
 | logo | [object] | a logo associated with the organization. <br/>RANGE: [ImageObject](/schemas#imageobject),[DigitalDocument](/schemas#digitaldocument) |
 | image | object&#124;string&lt;uri&gt; | This can be a URL or a fully described ImageObject. <br/>RANGE: [ImageObject](/schemas#imageobject),[URI](/schemas#uri) |
 | parentOrganization | [string&lt;uri&gt;] | A franchisor or affiliate network of which this organization plays a membership role. <br/>RANGE: [RealEstateOrganization](/schemas#realestateorganization) |
@@ -1495,24 +1064,16 @@ A real estate franchisor, broker or business.
 | memberOf | [object] | An Organization (or ProgramMembership) to which this Person or Organization belongs. <br/>RANGE: [OrganizationRole](/schemas#organizationrole),[MLSMembership](/schemas#mlsmembership) |
 | permit | [object] | permits issued to the person or organization <br/>RANGE: [Permit](/schemas#permit),[RealEstateLicense](/schemas#realestatelicense) |
 
-### RealEstateOrganization example
-
+#### RealEstateOrganization example
 ```json
 {
   "type": "RealEstateOrganization",
   "id": "http://example.com/linked/data/uri",
-  "additionalProperty": {
-    "@context": "http://example.com/context#",
-    "customProp": "value"
-  },
-  "identifier": {
-    "@context": "http://example.com/context#",
-    "ID": "value"
-  },
   "name": "string",
   "telephone": "079.706.7065 x6341",
   "email": "user@example.com",
   "faxNumber": "(873) 271-4802",
+  "branchCode": "CA301-001",
   "contactPoint": [
     {
       "type": "ContactPoint",
@@ -1526,30 +1087,15 @@ A real estate franchisor, broker or business.
     {
       "type": "DigitalDocument",
       "id": "http://user.example.com/public/logo/fileName.zip",
-      "additionalProperty": {
-        "@context": "http://example.com/context#",
-        "customProp": "value"
-      },
-      "identifier": {
-        "@context": "http://example.com/context#",
-        "ID": "value"
-      },
       "name": "fileName.zip",
       "encodingFormat": "application/zip",
+      "identifier": {},
       "about": "http://user.example.com/profile/card#me"
     }
   ],
   "image": {
     "type": "ImageObject",
     "id": "http://user.example.com/public/logo/image.jpg",
-    "additionalProperty": {
-      "@context": "http://example.com/context#",
-      "customProp": "value"
-    },
-    "identifier": {
-      "@context": "http://example.com/context#",
-      "ID": "value"
-    },
     "name": "image.jpg",
     "encodingFormat": "image/jpeg",
     "content": "string",
@@ -1572,17 +1118,13 @@ A real estate franchisor, broker or business.
   "member": [
     {
       "type": "OrganizationRole",
-      "roleName": "MLSMember",
-      "startDate": "2019-02-22T19:44:12Z",
-      "endDate": "2019-02-22T19:44:12Z"
+      "roleName": "E-Team Certified"
     }
   ],
   "memberOf": [
     {
-      "type": "OrganizationRole",
+      "type": "MLSMembership",
       "roleName": "MLSMember",
-      "startDate": "2019-02-22T19:44:12Z",
-      "endDate": "2019-02-22T19:44:12Z",
       "memberOf": {
         "type": "MultipleListingService",
         "name": "GreatScottMLS"
@@ -1602,9 +1144,50 @@ A real estate franchisor, broker or business.
         "type": "Service",
         "name": "California Department of Real Estate"
       },
-      "validFrom": "2019-02-22T19:44:12Z",
-      "validUntil": "2019-02-22T19:44:12Z"
+      "validIn": {
+        "type": "AdministrativeArea",
+        "name": "New York"
+      },
+      "validFrom": "2019-02-27T08:10:11Z",
+      "validUntil": "2019-02-27T08:10:11Z"
     }
   ]
 }
 ```
+
+
+## CustomProperties
+
+`additionalProperty` and `identifier` provide a standard way to share non-standard 
+information as a namespaced key/value map.
+
+Producers MUST 
+- add a '@context' reference when passing values in `additionalProperty` or `identifier`
+
+Consumers MUST
+- consider values in either of these maps as **unstable**.
+- treat keys and values in these maps as namespaced key/values.
+
+
+#### CustomProperties properties
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| additionalProperty | object | Property names and values are only valid in the provided `@context`.  For example if `@context http://example.com/context#`. the property with key `ID` should be represented locally as `http;//example.com/context#ID`  |
+| identifier | object | a key value map of **namespaced** unique identifiers.  |
+
+#### CustomProperties example
+```json
+{
+  "additionalProperty": {
+    "@context": "http://example.com/context#",
+    "customProp": "value"
+  },
+  "identifier": {
+    "@context": "http://example.com/context#",
+    "ID": "value"
+  }
+}
+```
+
+

@@ -11,17 +11,3 @@ properties:
     type: string
     format: uri
     example: http://example.com/linked/data/uri
-  additionalProperty:
-    type: object
-    description: namespaced custom properties
-    x-help: Property names and values are only valid in the provided `@context`.  For example if `@context http://example.com/context#`. the property with key `ID` should be represented locally as `http;//example.com/context#ID`
-    example:
-      '@context': 'http://example.com/context#'
-      customProp: value
-  identifier:
-    type: object
-    description: a key value map of **namespaced** unique identifiers.
-    x-help: Property names and values are only valid in the provided `@context`.  For example if `@context http://example.com/context#`. the property with key `ID` should be represented locally as `http;//example.com/context#ID`
-    example:
-      '@context': 'http://example.com/context#'
-      ID: value

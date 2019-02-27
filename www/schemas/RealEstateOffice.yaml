@@ -1,9 +1,8 @@
+description: A real estate office / place of business.
 type: object
-x-kind: RealEstateOffice
 allOf:
   - $ref: RealEstateOrganization.yaml
-  - x-kind: RealEstateOffice
-    properties:
+  - properties:
       type:
         type: string
         description: RealEstateOffice
@@ -11,8 +10,7 @@ allOf:
           - RealEstateOffice
 
       contactPoint:
-        description:
-          department or role specific contact points, i.e. relocation.
+        description: department or role specific contact points, i.e. relocation.
         example:
           - type: ContactPoint
             name: Relocation

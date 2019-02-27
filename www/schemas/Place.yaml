@@ -2,22 +2,23 @@ allOf:
   - $ref: Thing.yaml
   - properties:
       address:
-        oneOf:
-          - type: object
-            description: PostalAddress
-          - type: string
-            description: Physical address of the item.
+        type: object
+        x-range: PostalAddress
+        description: PostalAddress
+
       aggregateRating:
         type: object
         description:
           'AggregateRating -- The overall rating, based on a collection of
           reviews or ratings, of the item.'
+
       branchCode:
         type: string
         description:
           'A short textual code (also called "store code") that uniquely
           identifies a place of business. The code is typically assigned by the
           parentOrganization and used in structured URLs.'
+
       containedInPlace:
         type: array
         x-kind: Place
@@ -25,6 +26,7 @@ allOf:
           type: string
           format: uri
         description: Place
+
       containsPlace:
         type: array
         x-kind: Place
@@ -32,12 +34,7 @@ allOf:
           type: string
           format: uri
         description: Place
-      event:
-        type: object
-        x-kind: Event
-      faxNumber:
-        type: string
-        description: The fax number.
+
       geo:
         description: The geo coordinates of the place.
         oneOf:
@@ -53,38 +50,28 @@ allOf:
           - type: object
             x-kind: Map
             description: Map
-      logo:
-        description: An associated logo.
-        oneOf:
-          - type: object
-            description: ImageObject
-          - type: string
-            format: uri
       openingHoursSpecification:
         type: object
         description: OpeningHoursSpecification
+
       photo:
         description: A photograph of this place. Supersedes photos.
-        anyOf:
-          - type: array
-            items:
-              type: object
-              description: ImageObject
-          - type: array
-            items:
-              type: object
-              description: Photograph
+        type: array
+        x-range:
+          - ImageObject
+        items:
+          anyOf:
+            - type: string
+              format: uri
+            - type: object
+
       review:
         description: A review of the item. Supersedes reviews.
         type: array
         items:
           type: object
           description: Review
-      smokingAllowed:
-        type: boolean
-        description:
-          'Indicates whether it is allowed to smoke in the place, e.g. in the
-          restaurant, hotel or hotel room.'
+
       specialOpeningHoursSpecification:
         description:
           The special opening hours of a certain place. Use this to explicitly
@@ -94,6 +81,3 @@ allOf:
         items:
           type: object
           description: OpeningHoursSpecification
-      telephone:
-        type: string
-        description: The telephone number.

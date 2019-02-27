@@ -1,8 +1,9 @@
-x-kind: ContactPoint
 title: ContactPoint
+description: A contact point—for example, a Customer Complaints department.
 type: object
 properties:
   type:
+    description: ContactPoint
     type: string
     enum:
       - ContactPoint

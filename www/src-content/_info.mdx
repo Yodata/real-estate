@@ -9,7 +9,22 @@ route: /
 
 **Version: 0.0.1**
 
-Reflex is intended to normalize the process of integrating applications and services
+## Servers
+
+| Stage | Entrypoint |
+|:--  |:--          |
+
+## Security
+
+SoftPro events will be authenticated by API Key in the http request header.
+
+API Key is not yet requred in development.
+
+```shell
+GET / HTTP/1.1
+Accept: */*
+x-api-key: xxxxx
+```Reflex is intended to normalize the process of integrating applications and services
 in the real estate domain in a user-centric, vendor agnostic and developer friendly
 way.
 

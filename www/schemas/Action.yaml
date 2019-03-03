@@ -3,26 +3,13 @@ title: Action
 type: object
 properties:
   topic:
-    description: the subscription type(s) assigned to the action
+    description: the subscription event type(s) assigned to the action
     type: array
     items:
       type: string
-      enum:
-        - profile:read
-        - lead
-        - contact
-        - listing
+
   type:
     type: string
-
-  actionStatus:
-    type: string
-    description: Indicates the current disposition of the Action.
-    enum:
-      - ActiveActionStatus
-      - CompletedActionStatus
-      - FailedActionStatus
-    example: CompletedActionStatus
 
   agent:
     description: the direct performer or driver of the action.
@@ -36,61 +23,13 @@ properties:
         example: http://user.example.com/profile/card#me
       - type: object
 
-  instrument:
-    description: thing used by the agent to perform the action, i.e. an application or website that generated the message.
-    type: string
-    format: uri
-    example: http://app.example.com/profile/card#me
-
   object:
     description: The object upon the action is carried out, whose state is kept intact or changed.
-    oneOf:
-      - $ref: Thing.yaml
-      - type: string
-        format: uri
-
-  participant:
-    x-range:
-      - Person
-      - Organization
-    description: Other co-agents that participated in the action indirectly.
-    type: array
-    items:
-      type: object
-
-  location:
-    x-range:
-      - Place
-      - PostalAddress
-      - Text
-    description:
-      The location of for example where the event is happening, an organization
-      is located, or where an action takes place.
     type: object
 
   result:
-    x-range: Thing
-    type: object
     description: a result produced in the action.
-
-  startTime:
-    type: string
-    format: date-time
-    description: the date & time when something begins
-
-  endTime:
-    type: string
-    format: date-time
-    description: The endTime of something.
-
-  target:
-    x-range: EntryPoint
     type: object
-    description: Indicates a target EntryPoint for an Action.
-
-  error:
-    type: object
-    description: For failed actions, more information on the cause of the failure.
 
 required:
   - 'type'

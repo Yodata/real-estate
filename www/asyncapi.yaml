@@ -82,6 +82,7 @@ topics:
         - $ref: '#/components/messages/contact_added'
         - $ref: '#/components/messages/contact_updated'
         - $ref: '#/components/messages/contact_removed'
+        - $ref: '#/components/messages/CommentAction'
 
   lead:
     x-summary: Lead events
@@ -138,6 +139,28 @@ components:
                 example: contact
               object:
                 $ref: schemas/Contact.yaml
+
+    CommentAction:
+      x-title: CommentAction
+      summary: a comment was created by the agent about a subject `about`
+      x-scope:
+        - contact
+      payload:
+        allOf:
+          - $ref: schemas/CommentAction.yaml
+          - properties:
+              agent:
+                type: object
+                description: the commentor
+                x-range:
+                  - Person
+                  - Organization
+                example:
+                  type: Person
+                  name: Charlie Commentor
+              object:
+                type: object
+                $ref: schemas/Comment.yaml
 
     lead_added:
       x-title: lead_added
@@ -297,6 +320,8 @@ components:
     Action: { $ref: schemas/Action.yaml }
     ApplicationProfile: { $ref: schemas/ApplicationProfile.yaml }
     Contact: { $ref: schemas/Contact.yaml }
+    Comment: { $ref: schemas/Comment.yaml }
+    CommentAction: { $ref: schemas/CommentAction.yaml }
     ContactPoint: { $ref: schemas/ContactPoint.yaml }
     DigitalDocument: { $ref: schemas/DigitalDocument.yaml }
     ImageObject: { $ref: schemas/ImageObject.yaml }

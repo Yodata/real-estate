@@ -46,19 +46,11 @@ a profile (agent, affiliate or office) was created
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | [string] | the subscription type(s) assigned to the action  |
+| topic | [string] | the subscription event type(s) assigned to the action  |
 | type | string! |   |
-| actionStatus | string | Indicates the current disposition of the Action.  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
 | object | [Profile](/schemas#profile) | the profile object <br/>RANGE: [RealEstateAgent](/schemas#realestateagent),[RealEstateOffice](/schemas#realestateoffice),[RealEstateOrganization](/schemas#realestateorganization) |
-| participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
-| location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
-| result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
-| startTime | string&lt;date-time&gt; | the date & time when something begins  |
-| endTime | string&lt;date-time&gt; | The endTime of something.  |
-| target | object | Indicates a target EntryPoint for an Action. <br/>RANGE: [EntryPoint](/schemas#entrypoint) |
-| error | object | For failed actions, more information on the cause of the failure.  |
+| result | object | a result produced in the action.  |
 
 ## profile_updated
 
@@ -81,19 +73,11 @@ a profile (agent, affiliate or office) was updated
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | [string] | the subscription type(s) assigned to the action  |
-| type | string! |   |
-| actionStatus | string | Indicates the current disposition of the Action.  |
+| topic | [string] | the subscription event type(s) assigned to the action  |
+| type | string! | UpdateAction  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
 | object | [Profile](/schemas#profile) | the updated profile object <br/>RANGE: [RealEstateAgent](/schemas#realestateagent),[RealEstateOffice](/schemas#realestateoffice),[RealEstateOrganization](/schemas#realestateorganization) |
-| participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
-| location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
-| result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
-| startTime | string&lt;date-time&gt; | the date & time when something begins  |
-| endTime | string&lt;date-time&gt; | The endTime of something.  |
-| target | object | Indicates a target EntryPoint for an Action. <br/>RANGE: [EntryPoint](/schemas#entrypoint) |
-| error | object | For failed actions, more information on the cause of the failure.  |
+| result | object | a result produced in the action.  |
 
 ## contact_added
 
@@ -106,22 +90,85 @@ a contact was created
     "contact"
   ],
   "type": "AddAction",
-  "actionStatus": "CompletedActionStatus",
   "agent": "http://user.example.com/profile/card#me",
-  "instrument": "http://app.example.com/profile/card#me",
   "object": {
-    "type": "Thing",
-    "id": "http://example.com/linked/data/uri"
+    "type": "Person",
+    "id": "http://example.com",
+    "name": "string",
+    "givenName": "Bruce",
+    "familyName": "Wayne",
+    "jobTitle": "Jefe",
+    "email": "user@example.com",
+    "faxNumber": "(498) 625-6456",
+    "telephone": "1-339-041-0306 x2866",
+    "contactPoint": [
+      {
+        "type": "ContactPoint",
+        "name": "Work",
+        "telephone": "1-364-127-9618 x20418",
+        "faxNumber": "834.320.1602",
+        "email": "user@example.com"
+      }
+    ],
+    "address": [
+      {
+        "type": "PostalAddress",
+        "streetAddress": "1007 Mountain Gate Rd",
+        "postOfficeBoxNumber": "Box 1234",
+        "addressRegion": "New Jersey",
+        "addressLocality": "Gotham City",
+        "postalCode": "10010"
+      }
+    ],
+    "birthDate": "2019-03-03",
+    "birthPlace": {},
+    "leadSource": {
+      "type": "Organization",
+      "id": "http://example.com",
+      "name": "string",
+      "telephone": "079.706.7065 x6341",
+      "faxNumber": "(873) 271-4802",
+      "email": "user@example.com",
+      "url": "http://example.com",
+      "availableLanguage": [],
+      "branchCode": "CA301-001",
+      "contactPoint": [
+        {
+          "type": "ContactPoint",
+          "name": "Work",
+          "telephone": "1-364-127-9618 x20418",
+          "faxNumber": "834.320.1602",
+          "email": "user@example.com"
+        }
+      ],
+      "logo": [
+        {
+          "type": "DigitalDocument",
+          "id": "http://user.example.com/public/logo/fileName.zip",
+          "name": "fileName.zip",
+          "encodingFormat": "application/zip",
+          "identifier": {},
+          "about": "http://user.example.com/profile/card#me"
+        }
+      ],
+      "image": [
+        [
+          {
+            "type": "ImageObject",
+            "id": "http://user.example.com/public/logo/image.jpg",
+            "name": "image.jpg",
+            "encodingFormat": "image/jpeg",
+            "content": "string",
+            "about": "http://user.example.com/profile/card#me"
+          }
+        ]
+      ],
+      "parentOrganization": [
+        "http://example.com"
+      ]
+    }
   },
-  "participant": [
-    {}
-  ],
-  "location": {},
-  "result": {},
-  "startTime": "2019-02-27T08:10:11Z",
-  "endTime": "2019-02-27T08:10:11Z",
-  "target": {},
-  "error": {}
+  "result": {}
 }
 ```
 
@@ -129,19 +176,11 @@ a contact was created
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | [string] | the subscription type(s) assigned to the action  |
+| topic | [string] | the subscription event type(s) assigned to the action  |
 | type | string! |   |
-| actionStatus | string | Indicates the current disposition of the Action.  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
 | object | object | a contact  |
-| participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
-| location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
-| result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
-| startTime | string&lt;date-time&gt; | the date & time when something begins  |
-| endTime | string&lt;date-time&gt; | The endTime of something.  |
-| target | object | Indicates a target EntryPoint for an Action. <br/>RANGE: [EntryPoint](/schemas#entrypoint) |
-| error | object | For failed actions, more information on the cause of the failure.  |
+| result | object | a result produced in the action.  |
 
 ## contact_updated
 
@@ -152,22 +191,85 @@ a crm contact was updated
 {
   "topic": "contact",
   "type": "UpdateAction",
-  "actionStatus": "CompletedActionStatus",
   "agent": "http://user.example.com/profile/card#me",
-  "instrument": "http://app.example.com/profile/card#me",
   "object": {
-    "type": "Thing",
-    "id": "http://example.com/linked/data/uri"
+    "type": "Person",
+    "id": "http://example.com",
+    "name": "string",
+    "givenName": "Bruce",
+    "familyName": "Wayne",
+    "jobTitle": "Jefe",
+    "email": "user@example.com",
+    "faxNumber": "(498) 625-6456",
+    "telephone": "1-339-041-0306 x2866",
+    "contactPoint": [
+      {
+        "type": "ContactPoint",
+        "name": "Work",
+        "telephone": "1-364-127-9618 x20418",
+        "faxNumber": "834.320.1602",
+        "email": "user@example.com"
+      }
+    ],
+    "address": [
+      {
+        "type": "PostalAddress",
+        "streetAddress": "1007 Mountain Gate Rd",
+        "postOfficeBoxNumber": "Box 1234",
+        "addressRegion": "New Jersey",
+        "addressLocality": "Gotham City",
+        "postalCode": "10010"
+      }
+    ],
+    "birthDate": "2019-03-03",
+    "birthPlace": {},
+    "leadSource": {
+      "type": "Organization",
+      "id": "http://example.com",
+      "name": "string",
+      "telephone": "079.706.7065 x6341",
+      "faxNumber": "(873) 271-4802",
+      "email": "user@example.com",
+      "url": "http://example.com",
+      "availableLanguage": [],
+      "branchCode": "CA301-001",
+      "contactPoint": [
+        {
+          "type": "ContactPoint",
+          "name": "Work",
+          "telephone": "1-364-127-9618 x20418",
+          "faxNumber": "834.320.1602",
+          "email": "user@example.com"
+        }
+      ],
+      "logo": [
+        {
+          "type": "DigitalDocument",
+          "id": "http://user.example.com/public/logo/fileName.zip",
+          "name": "fileName.zip",
+          "encodingFormat": "application/zip",
+          "identifier": {},
+          "about": "http://user.example.com/profile/card#me"
+        }
+      ],
+      "image": [
+        [
+          {
+            "type": "ImageObject",
+            "id": "http://user.example.com/public/logo/image.jpg",
+            "name": "image.jpg",
+            "encodingFormat": "image/jpeg",
+            "content": "string",
+            "about": "http://user.example.com/profile/card#me"
+          }
+        ]
+      ],
+      "parentOrganization": [
+        "http://example.com"
+      ]
+    }
   },
-  "participant": [
-    {}
-  ],
-  "location": {},
-  "result": {},
-  "startTime": "2019-02-27T08:10:11Z",
-  "endTime": "2019-02-27T08:10:11Z",
-  "target": {},
-  "error": {}
+  "result": {}
 }
 ```
 
@@ -175,19 +277,11 @@ a crm contact was updated
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | [string] | the subscription type(s) assigned to the action  |
-| type | string! |   |
-| actionStatus | string | Indicates the current disposition of the Action.  |
+| topic | [string] | the subscription event type(s) assigned to the action  |
+| type | string! | UpdateAction  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
 | object | object | a contact  |
-| participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
-| location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
-| result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
-| startTime | string&lt;date-time&gt; | the date & time when something begins  |
-| endTime | string&lt;date-time&gt; | The endTime of something.  |
-| target | object | Indicates a target EntryPoint for an Action. <br/>RANGE: [EntryPoint](/schemas#entrypoint) |
-| error | object | For failed actions, more information on the cause of the failure.  |
+| result | object | a result produced in the action.  |
 
 ## contact_removed
 
@@ -198,22 +292,85 @@ a crm contact was removed
 {
   "topic": "contact",
   "type": "RemoveAction",
-  "actionStatus": "CompletedActionStatus",
   "agent": "http://user.example.com/profile/card#me",
-  "instrument": "http://app.example.com/profile/card#me",
   "object": {
-    "type": "Thing",
-    "id": "http://example.com/linked/data/uri"
+    "type": "Person",
+    "id": "http://example.com",
+    "name": "string",
+    "givenName": "Bruce",
+    "familyName": "Wayne",
+    "jobTitle": "Jefe",
+    "email": "user@example.com",
+    "faxNumber": "(498) 625-6456",
+    "telephone": "1-339-041-0306 x2866",
+    "contactPoint": [
+      {
+        "type": "ContactPoint",
+        "name": "Work",
+        "telephone": "1-364-127-9618 x20418",
+        "faxNumber": "834.320.1602",
+        "email": "user@example.com"
+      }
+    ],
+    "address": [
+      {
+        "type": "PostalAddress",
+        "streetAddress": "1007 Mountain Gate Rd",
+        "postOfficeBoxNumber": "Box 1234",
+        "addressRegion": "New Jersey",
+        "addressLocality": "Gotham City",
+        "postalCode": "10010"
+      }
+    ],
+    "birthDate": "2019-03-03",
+    "birthPlace": {},
+    "leadSource": {
+      "type": "Organization",
+      "id": "http://example.com",
+      "name": "string",
+      "telephone": "079.706.7065 x6341",
+      "faxNumber": "(873) 271-4802",
+      "email": "user@example.com",
+      "url": "http://example.com",
+      "availableLanguage": [],
+      "branchCode": "CA301-001",
+      "contactPoint": [
+        {
+          "type": "ContactPoint",
+          "name": "Work",
+          "telephone": "1-364-127-9618 x20418",
+          "faxNumber": "834.320.1602",
+          "email": "user@example.com"
+        }
+      ],
+      "logo": [
+        {
+          "type": "DigitalDocument",
+          "id": "http://user.example.com/public/logo/fileName.zip",
+          "name": "fileName.zip",
+          "encodingFormat": "application/zip",
+          "identifier": {},
+          "about": "http://user.example.com/profile/card#me"
+        }
+      ],
+      "image": [
+        [
+          {
+            "type": "ImageObject",
+            "id": "http://user.example.com/public/logo/image.jpg",
+            "name": "image.jpg",
+            "encodingFormat": "image/jpeg",
+            "content": "string",
+            "about": "http://user.example.com/profile/card#me"
+          }
+        ]
+      ],
+      "parentOrganization": [
+        "http://example.com"
+      ]
+    }
   },
-  "participant": [
-    {}
-  ],
-  "location": {},
-  "result": {},
-  "startTime": "2019-02-27T08:10:11Z",
-  "endTime": "2019-02-27T08:10:11Z",
-  "target": {},
-  "error": {}
+  "result": {}
 }
 ```
 
@@ -221,19 +378,46 @@ a crm contact was removed
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | string | the subscription type(s) assigned to the action  |
+| topic | string | the subscription event type(s) assigned to the action  |
 | type | string! |   |
-| actionStatus | string | Indicates the current disposition of the Action.  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
 | object | object | a contact  |
-| participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
-| location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
-| result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
-| startTime | string&lt;date-time&gt; | the date & time when something begins  |
-| endTime | string&lt;date-time&gt; | The endTime of something.  |
-| target | object | Indicates a target EntryPoint for an Action. <br/>RANGE: [EntryPoint](/schemas#entrypoint) |
-| error | object | For failed actions, more information on the cause of the failure.  |
+| result | object | a result produced in the action.  |
+
+## CommentAction
+
+a comment was created by the agent about a subject &#x60;about&#x60;
+
+
+```json
+{
+  "topic": [
+    "contact"
+  ],
+  "type": "CommentAction",
+  "agent": {
+    "type": "Person",
+    "name": "Charlie Commentor"
+  },
+  "object": {
+    "type": "Comment",
+    "id": "http://example.com",
+    "about": "http://user.example.com/profile/card#me",
+    "text": "Commodi ratione vel qui ullam ea ut."
+  },
+  "result": {}
+}
+```
+
+#### CommentAction properties
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| topic | [string] | the subscription event type(s) assigned to the action  |
+| type | string! | CommentAction  |
+| agent | object | the commentor <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| object | object | A comment on an item.  |
+| result | object | a result produced in the action.  |
 
 ## lead_added
 
@@ -244,22 +428,91 @@ a crm lead was created
 {
   "topic": "lead",
   "type": "AddAction",
-  "actionStatus": "CompletedActionStatus",
   "agent": "http://user.example.com/profile/card#me",
-  "instrument": "http://app.example.com/profile/card#me",
   "object": {
-    "type": "Thing",
-    "id": "http://example.com/linked/data/uri"
+    "type": "AssignAction",
+    "id": "http://example.com",
+    "agent": "http://organization.example.com/profile/card#me",
+    "recipient": "http://user.example.com/profile/card#me",
+    "object": {
+      "type": "Person",
+      "id": "http://example.com",
+      "name": "string",
+      "givenName": "Bruce",
+      "familyName": "Wayne",
+      "jobTitle": "Jefe",
+      "email": "user@example.com",
+      "faxNumber": "(498) 625-6456",
+      "telephone": "1-339-041-0306 x2866",
+      "contactPoint": [
+        {
+          "type": "ContactPoint",
+          "name": "Work",
+          "telephone": "1-364-127-9618 x20418",
+          "faxNumber": "834.320.1602",
+          "email": "user@example.com"
+        }
+      ],
+      "address": [
+        {
+          "type": "PostalAddress",
+          "streetAddress": "1007 Mountain Gate Rd",
+          "postOfficeBoxNumber": "Box 1234",
+          "addressRegion": "New Jersey",
+          "addressLocality": "Gotham City",
+          "postalCode": "10010"
+        }
+      ],
+      "birthDate": "2019-03-03",
+      "birthPlace": {},
+      "leadSource": {
+        "type": "Organization",
+        "id": "http://example.com",
+        "name": "string",
+        "telephone": "079.706.7065 x6341",
+        "faxNumber": "(873) 271-4802",
+        "email": "user@example.com",
+        "url": "http://example.com",
+        "availableLanguage": [],
+        "branchCode": "CA301-001",
+        "contactPoint": [
+          {
+            "type": "ContactPoint",
+            "name": "Work",
+            "telephone": "1-364-127-9618 x20418",
+            "faxNumber": "834.320.1602",
+            "email": "user@example.com"
+          }
+        ],
+        "logo": [
+          {
+            "type": "DigitalDocument",
+            "id": "http://user.example.com/public/logo/fileName.zip",
+            "name": "fileName.zip",
+            "encodingFormat": "application/zip",
+            "identifier": {},
+            "about": "http://user.example.com/profile/card#me"
+          }
+        ],
+        "image": [
+          [
+            {
+              "type": "ImageObject",
+              "id": "http://user.example.com/public/logo/image.jpg",
+              "name": "image.jpg",
+              "encodingFormat": "image/jpeg",
+              "content": "string",
+              "about": "http://user.example.com/profile/card#me"
+            }
+          ]
+        ],
+        "parentOrganization": [
+          "http://example.com"
+        ]
+      }
+    }
   },
-  "participant": [
-    {}
-  ],
-  "location": {},
-  "result": {},
-  "startTime": "2019-02-27T08:10:11Z",
-  "endTime": "2019-02-27T08:10:11Z",
-  "target": {},
-  "error": {}
+  "result": {}
 }
 ```
 
@@ -267,19 +520,11 @@ a crm lead was created
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | [string] | the subscription type(s) assigned to the action  |
+| topic | [string] | the subscription event type(s) assigned to the action  |
 | type | string! |   |
-| actionStatus | string | Indicates the current disposition of the Action.  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
 | object | object | a lead offered or assigned by the agent to one or more recipients  |
-| participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
-| location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
-| result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
-| startTime | string&lt;date-time&gt; | the date & time when something begins  |
-| endTime | string&lt;date-time&gt; | The endTime of something.  |
-| target | object | Indicates a target EntryPoint for an Action. <br/>RANGE: [EntryPoint](/schemas#entrypoint) |
-| error | object | For failed actions, more information on the cause of the failure.  |
+| result | object | a result produced in the action.  |
 
 ## lead_updated
 
@@ -290,22 +535,91 @@ a crm lead was updated
 {
   "topic": "lead",
   "type": "UpdateAction",
-  "actionStatus": "CompletedActionStatus",
   "agent": "http://user.example.com/profile/card#me",
-  "instrument": "http://app.example.com/profile/card#me",
   "object": {
-    "type": "Thing",
-    "id": "http://example.com/linked/data/uri"
+    "type": "AssignAction",
+    "id": "http://example.com",
+    "agent": "http://organization.example.com/profile/card#me",
+    "recipient": "http://user.example.com/profile/card#me",
+    "object": {
+      "type": "Person",
+      "id": "http://example.com",
+      "name": "string",
+      "givenName": "Bruce",
+      "familyName": "Wayne",
+      "jobTitle": "Jefe",
+      "email": "user@example.com",
+      "faxNumber": "(498) 625-6456",
+      "telephone": "1-339-041-0306 x2866",
+      "contactPoint": [
+        {
+          "type": "ContactPoint",
+          "name": "Work",
+          "telephone": "1-364-127-9618 x20418",
+          "faxNumber": "834.320.1602",
+          "email": "user@example.com"
+        }
+      ],
+      "address": [
+        {
+          "type": "PostalAddress",
+          "streetAddress": "1007 Mountain Gate Rd",
+          "postOfficeBoxNumber": "Box 1234",
+          "addressRegion": "New Jersey",
+          "addressLocality": "Gotham City",
+          "postalCode": "10010"
+        }
+      ],
+      "birthDate": "2019-03-03",
+      "birthPlace": {},
+      "leadSource": {
+        "type": "Organization",
+        "id": "http://example.com",
+        "name": "string",
+        "telephone": "079.706.7065 x6341",
+        "faxNumber": "(873) 271-4802",
+        "email": "user@example.com",
+        "url": "http://example.com",
+        "availableLanguage": [],
+        "branchCode": "CA301-001",
+        "contactPoint": [
+          {
+            "type": "ContactPoint",
+            "name": "Work",
+            "telephone": "1-364-127-9618 x20418",
+            "faxNumber": "834.320.1602",
+            "email": "user@example.com"
+          }
+        ],
+        "logo": [
+          {
+            "type": "DigitalDocument",
+            "id": "http://user.example.com/public/logo/fileName.zip",
+            "name": "fileName.zip",
+            "encodingFormat": "application/zip",
+            "identifier": {},
+            "about": "http://user.example.com/profile/card#me"
+          }
+        ],
+        "image": [
+          [
+            {
+              "type": "ImageObject",
+              "id": "http://user.example.com/public/logo/image.jpg",
+              "name": "image.jpg",
+              "encodingFormat": "image/jpeg",
+              "content": "string",
+              "about": "http://user.example.com/profile/card#me"
+            }
+          ]
+        ],
+        "parentOrganization": [
+          "http://example.com"
+        ]
+      }
+    }
   },
-  "participant": [
-    {}
-  ],
-  "location": {},
-  "result": {},
-  "startTime": "2019-02-27T08:10:11Z",
-  "endTime": "2019-02-27T08:10:11Z",
-  "target": {},
-  "error": {}
+  "result": {}
 }
 ```
 
@@ -313,19 +627,11 @@ a crm lead was updated
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | [string] | the subscription type(s) assigned to the action  |
-| type | string! |   |
-| actionStatus | string | Indicates the current disposition of the Action.  |
+| topic | [string] | the subscription event type(s) assigned to the action  |
+| type | string! | UpdateAction  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
 | object | object | a lead offered or assigned by the agent to one or more recipients  |
-| participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
-| location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
-| result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
-| startTime | string&lt;date-time&gt; | the date & time when something begins  |
-| endTime | string&lt;date-time&gt; | The endTime of something.  |
-| target | object | Indicates a target EntryPoint for an Action. <br/>RANGE: [EntryPoint](/schemas#entrypoint) |
-| error | object | For failed actions, more information on the cause of the failure.  |
+| result | object | a result produced in the action.  |
 
 ## lead_removed
 
@@ -336,22 +642,91 @@ a lead was removed
 {
   "topic": "lead",
   "type": "RemoveAction",
-  "actionStatus": "CompletedActionStatus",
   "agent": "http://user.example.com/profile/card#me",
-  "instrument": "http://app.example.com/profile/card#me",
   "object": {
-    "type": "Thing",
-    "id": "http://example.com/linked/data/uri"
+    "type": "AssignAction",
+    "id": "http://example.com",
+    "agent": "http://organization.example.com/profile/card#me",
+    "recipient": "http://user.example.com/profile/card#me",
+    "object": {
+      "type": "Person",
+      "id": "http://example.com",
+      "name": "string",
+      "givenName": "Bruce",
+      "familyName": "Wayne",
+      "jobTitle": "Jefe",
+      "email": "user@example.com",
+      "faxNumber": "(498) 625-6456",
+      "telephone": "1-339-041-0306 x2866",
+      "contactPoint": [
+        {
+          "type": "ContactPoint",
+          "name": "Work",
+          "telephone": "1-364-127-9618 x20418",
+          "faxNumber": "834.320.1602",
+          "email": "user@example.com"
+        }
+      ],
+      "address": [
+        {
+          "type": "PostalAddress",
+          "streetAddress": "1007 Mountain Gate Rd",
+          "postOfficeBoxNumber": "Box 1234",
+          "addressRegion": "New Jersey",
+          "addressLocality": "Gotham City",
+          "postalCode": "10010"
+        }
+      ],
+      "birthDate": "2019-03-03",
+      "birthPlace": {},
+      "leadSource": {
+        "type": "Organization",
+        "id": "http://example.com",
+        "name": "string",
+        "telephone": "079.706.7065 x6341",
+        "faxNumber": "(873) 271-4802",
+        "email": "user@example.com",
+        "url": "http://example.com",
+        "availableLanguage": [],
+        "branchCode": "CA301-001",
+        "contactPoint": [
+          {
+            "type": "ContactPoint",
+            "name": "Work",
+            "telephone": "1-364-127-9618 x20418",
+            "faxNumber": "834.320.1602",
+            "email": "user@example.com"
+          }
+        ],
+        "logo": [
+          {
+            "type": "DigitalDocument",
+            "id": "http://user.example.com/public/logo/fileName.zip",
+            "name": "fileName.zip",
+            "encodingFormat": "application/zip",
+            "identifier": {},
+            "about": "http://user.example.com/profile/card#me"
+          }
+        ],
+        "image": [
+          [
+            {
+              "type": "ImageObject",
+              "id": "http://user.example.com/public/logo/image.jpg",
+              "name": "image.jpg",
+              "encodingFormat": "image/jpeg",
+              "content": "string",
+              "about": "http://user.example.com/profile/card#me"
+            }
+          ]
+        ],
+        "parentOrganization": [
+          "http://example.com"
+        ]
+      }
+    }
   },
-  "participant": [
-    {}
-  ],
-  "location": {},
-  "result": {},
-  "startTime": "2019-02-27T08:10:11Z",
-  "endTime": "2019-02-27T08:10:11Z",
-  "target": {},
-  "error": {}
+  "result": {}
 }
 ```
 
@@ -359,19 +734,11 @@ a lead was removed
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | [string] | the subscription type(s) assigned to the action  |
+| topic | [string] | the subscription event type(s) assigned to the action  |
 | type | string! |   |
-| actionStatus | string | Indicates the current disposition of the Action.  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
 | object | object | a lead offered or assigned by the agent to one or more recipients  |
-| participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
-| location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
-| result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
-| startTime | string&lt;date-time&gt; | the date & time when something begins  |
-| endTime | string&lt;date-time&gt; | The endTime of something.  |
-| target | object | Indicates a target EntryPoint for an Action. <br/>RANGE: [EntryPoint](/schemas#entrypoint) |
-| error | object | For failed actions, more information on the cause of the failure.  |
+| result | object | a result produced in the action.  |
 
 ## lead_assigned
 
@@ -382,22 +749,9 @@ a lead was assigned
 {
   "topic": "lead",
   "type": "AssignAction",
-  "actionStatus": "CompletedActionStatus",
   "agent": "http://user.example.com/profile/card#me",
-  "instrument": "http://app.example.com/profile/card#me",
-  "object": {
-    "type": "Thing",
-    "id": "http://example.com/linked/data/uri"
-  },
-  "participant": [
-    {}
-  ],
-  "location": {},
-  "result": {},
-  "startTime": "2019-02-27T08:10:11Z",
-  "endTime": "2019-02-27T08:10:11Z",
-  "target": {},
-  "error": {}
+  "object": {},
+  "result": {}
 }
 ```
 
@@ -405,19 +759,11 @@ a lead was assigned
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | string | the subscription type(s) assigned to the action  |
+| topic | string | the subscription event type(s) assigned to the action  |
 | type | string! |   |
-| actionStatus | string | Indicates the current disposition of the Action.  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
-| object | object&#124;string&lt;uri&gt; | The object upon the action is carried out, whose state is kept intact or changed.  |
-| participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
-| location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
-| result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
-| startTime | string&lt;date-time&gt; | the date & time when something begins  |
-| endTime | string&lt;date-time&gt; | The endTime of something.  |
-| target | object | Indicates a target EntryPoint for an Action. <br/>RANGE: [EntryPoint](/schemas#entrypoint) |
-| error | object | For failed actions, more information on the cause of the failure.  |
+| object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
+| result | object | a result produced in the action.  |
 
 ## lead_accepted
 
@@ -428,22 +774,91 @@ a crm lead was accepted
 {
   "topic": "lead",
   "type": "AcceptAction",
-  "actionStatus": "CompletedActionStatus",
   "agent": "http://user.example.com/profile/card#me",
-  "instrument": "http://app.example.com/profile/card#me",
   "object": {
-    "type": "Thing",
-    "id": "http://example.com/linked/data/uri"
+    "type": "AssignAction",
+    "id": "http://example.com",
+    "agent": "http://organization.example.com/profile/card#me",
+    "recipient": "http://user.example.com/profile/card#me",
+    "object": {
+      "type": "Person",
+      "id": "http://example.com",
+      "name": "string",
+      "givenName": "Bruce",
+      "familyName": "Wayne",
+      "jobTitle": "Jefe",
+      "email": "user@example.com",
+      "faxNumber": "(498) 625-6456",
+      "telephone": "1-339-041-0306 x2866",
+      "contactPoint": [
+        {
+          "type": "ContactPoint",
+          "name": "Work",
+          "telephone": "1-364-127-9618 x20418",
+          "faxNumber": "834.320.1602",
+          "email": "user@example.com"
+        }
+      ],
+      "address": [
+        {
+          "type": "PostalAddress",
+          "streetAddress": "1007 Mountain Gate Rd",
+          "postOfficeBoxNumber": "Box 1234",
+          "addressRegion": "New Jersey",
+          "addressLocality": "Gotham City",
+          "postalCode": "10010"
+        }
+      ],
+      "birthDate": "2019-03-03",
+      "birthPlace": {},
+      "leadSource": {
+        "type": "Organization",
+        "id": "http://example.com",
+        "name": "string",
+        "telephone": "079.706.7065 x6341",
+        "faxNumber": "(873) 271-4802",
+        "email": "user@example.com",
+        "url": "http://example.com",
+        "availableLanguage": [],
+        "branchCode": "CA301-001",
+        "contactPoint": [
+          {
+            "type": "ContactPoint",
+            "name": "Work",
+            "telephone": "1-364-127-9618 x20418",
+            "faxNumber": "834.320.1602",
+            "email": "user@example.com"
+          }
+        ],
+        "logo": [
+          {
+            "type": "DigitalDocument",
+            "id": "http://user.example.com/public/logo/fileName.zip",
+            "name": "fileName.zip",
+            "encodingFormat": "application/zip",
+            "identifier": {},
+            "about": "http://user.example.com/profile/card#me"
+          }
+        ],
+        "image": [
+          [
+            {
+              "type": "ImageObject",
+              "id": "http://user.example.com/public/logo/image.jpg",
+              "name": "image.jpg",
+              "encodingFormat": "image/jpeg",
+              "content": "string",
+              "about": "http://user.example.com/profile/card#me"
+            }
+          ]
+        ],
+        "parentOrganization": [
+          "http://example.com"
+        ]
+      }
+    }
   },
-  "participant": [
-    {}
-  ],
-  "location": {},
-  "result": {},
-  "startTime": "2019-02-27T08:10:11Z",
-  "endTime": "2019-02-27T08:10:11Z",
-  "target": {},
-  "error": {}
+  "result": {}
 }
 ```
 
@@ -451,19 +866,11 @@ a crm lead was accepted
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | [string] | the subscription type(s) assigned to the action  |
+| topic | [string] | the subscription event type(s) assigned to the action  |
 | type | string! |   |
-| actionStatus | string | Indicates the current disposition of the Action.  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
 | object | object | a lead offered or assigned by the agent to one or more recipients  |
-| participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
-| location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
-| result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
-| startTime | string&lt;date-time&gt; | the date & time when something begins  |
-| endTime | string&lt;date-time&gt; | The endTime of something.  |
-| target | object | Indicates a target EntryPoint for an Action. <br/>RANGE: [EntryPoint](/schemas#entrypoint) |
-| error | object | For failed actions, more information on the cause of the failure.  |
+| result | object | a result produced in the action.  |
 
 ## lead_rejected
 
@@ -474,22 +881,91 @@ a crm lead was rejected
 {
   "topic": "lead",
   "type": "RejectAction",
-  "actionStatus": "CompletedActionStatus",
   "agent": "http://user.example.com/profile/card#me",
-  "instrument": "http://app.example.com/profile/card#me",
   "object": {
-    "type": "Thing",
-    "id": "http://example.com/linked/data/uri"
+    "type": "AssignAction",
+    "id": "http://example.com",
+    "agent": "http://organization.example.com/profile/card#me",
+    "recipient": "http://user.example.com/profile/card#me",
+    "object": {
+      "type": "Person",
+      "id": "http://example.com",
+      "name": "string",
+      "givenName": "Bruce",
+      "familyName": "Wayne",
+      "jobTitle": "Jefe",
+      "email": "user@example.com",
+      "faxNumber": "(498) 625-6456",
+      "telephone": "1-339-041-0306 x2866",
+      "contactPoint": [
+        {
+          "type": "ContactPoint",
+          "name": "Work",
+          "telephone": "1-364-127-9618 x20418",
+          "faxNumber": "834.320.1602",
+          "email": "user@example.com"
+        }
+      ],
+      "address": [
+        {
+          "type": "PostalAddress",
+          "streetAddress": "1007 Mountain Gate Rd",
+          "postOfficeBoxNumber": "Box 1234",
+          "addressRegion": "New Jersey",
+          "addressLocality": "Gotham City",
+          "postalCode": "10010"
+        }
+      ],
+      "birthDate": "2019-03-03",
+      "birthPlace": {},
+      "leadSource": {
+        "type": "Organization",
+        "id": "http://example.com",
+        "name": "string",
+        "telephone": "079.706.7065 x6341",
+        "faxNumber": "(873) 271-4802",
+        "email": "user@example.com",
+        "url": "http://example.com",
+        "availableLanguage": [],
+        "branchCode": "CA301-001",
+        "contactPoint": [
+          {
+            "type": "ContactPoint",
+            "name": "Work",
+            "telephone": "1-364-127-9618 x20418",
+            "faxNumber": "834.320.1602",
+            "email": "user@example.com"
+          }
+        ],
+        "logo": [
+          {
+            "type": "DigitalDocument",
+            "id": "http://user.example.com/public/logo/fileName.zip",
+            "name": "fileName.zip",
+            "encodingFormat": "application/zip",
+            "identifier": {},
+            "about": "http://user.example.com/profile/card#me"
+          }
+        ],
+        "image": [
+          [
+            {
+              "type": "ImageObject",
+              "id": "http://user.example.com/public/logo/image.jpg",
+              "name": "image.jpg",
+              "encodingFormat": "image/jpeg",
+              "content": "string",
+              "about": "http://user.example.com/profile/card#me"
+            }
+          ]
+        ],
+        "parentOrganization": [
+          "http://example.com"
+        ]
+      }
+    }
   },
-  "participant": [
-    {}
-  ],
-  "location": {},
-  "result": {},
-  "startTime": "2019-02-27T08:10:11Z",
-  "endTime": "2019-02-27T08:10:11Z",
-  "target": {},
-  "error": {}
+  "result": {}
 }
 ```
 
@@ -497,19 +973,11 @@ a crm lead was rejected
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | [string] | the subscription type(s) assigned to the action  |
+| topic | [string] | the subscription event type(s) assigned to the action  |
 | type | string! |   |
-| actionStatus | string | Indicates the current disposition of the Action.  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
 | object | object | a lead offered or assigned by the agent to one or more recipients  |
-| participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
-| location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
-| result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
-| startTime | string&lt;date-time&gt; | the date & time when something begins  |
-| endTime | string&lt;date-time&gt; | The endTime of something.  |
-| target | object | Indicates a target EntryPoint for an Action. <br/>RANGE: [EntryPoint](/schemas#entrypoint) |
-| error | object | For failed actions, more information on the cause of the failure.  |
+| result | object | a result produced in the action.  |
 
 ## lead_returned
 
@@ -520,22 +988,91 @@ a crm lead was returned
 {
   "topic": "lead",
   "type": "ReturnAction",
-  "actionStatus": "CompletedActionStatus",
   "agent": "http://user.example.com/profile/card#me",
-  "instrument": "http://app.example.com/profile/card#me",
   "object": {
-    "type": "Thing",
-    "id": "http://example.com/linked/data/uri"
+    "type": "AssignAction",
+    "id": "http://example.com",
+    "agent": "http://organization.example.com/profile/card#me",
+    "recipient": "http://user.example.com/profile/card#me",
+    "object": {
+      "type": "Person",
+      "id": "http://example.com",
+      "name": "string",
+      "givenName": "Bruce",
+      "familyName": "Wayne",
+      "jobTitle": "Jefe",
+      "email": "user@example.com",
+      "faxNumber": "(498) 625-6456",
+      "telephone": "1-339-041-0306 x2866",
+      "contactPoint": [
+        {
+          "type": "ContactPoint",
+          "name": "Work",
+          "telephone": "1-364-127-9618 x20418",
+          "faxNumber": "834.320.1602",
+          "email": "user@example.com"
+        }
+      ],
+      "address": [
+        {
+          "type": "PostalAddress",
+          "streetAddress": "1007 Mountain Gate Rd",
+          "postOfficeBoxNumber": "Box 1234",
+          "addressRegion": "New Jersey",
+          "addressLocality": "Gotham City",
+          "postalCode": "10010"
+        }
+      ],
+      "birthDate": "2019-03-03",
+      "birthPlace": {},
+      "leadSource": {
+        "type": "Organization",
+        "id": "http://example.com",
+        "name": "string",
+        "telephone": "079.706.7065 x6341",
+        "faxNumber": "(873) 271-4802",
+        "email": "user@example.com",
+        "url": "http://example.com",
+        "availableLanguage": [],
+        "branchCode": "CA301-001",
+        "contactPoint": [
+          {
+            "type": "ContactPoint",
+            "name": "Work",
+            "telephone": "1-364-127-9618 x20418",
+            "faxNumber": "834.320.1602",
+            "email": "user@example.com"
+          }
+        ],
+        "logo": [
+          {
+            "type": "DigitalDocument",
+            "id": "http://user.example.com/public/logo/fileName.zip",
+            "name": "fileName.zip",
+            "encodingFormat": "application/zip",
+            "identifier": {},
+            "about": "http://user.example.com/profile/card#me"
+          }
+        ],
+        "image": [
+          [
+            {
+              "type": "ImageObject",
+              "id": "http://user.example.com/public/logo/image.jpg",
+              "name": "image.jpg",
+              "encodingFormat": "image/jpeg",
+              "content": "string",
+              "about": "http://user.example.com/profile/card#me"
+            }
+          ]
+        ],
+        "parentOrganization": [
+          "http://example.com"
+        ]
+      }
+    }
   },
-  "participant": [
-    {}
-  ],
-  "location": {},
-  "result": {},
-  "startTime": "2019-02-27T08:10:11Z",
-  "endTime": "2019-02-27T08:10:11Z",
-  "target": {},
-  "error": {}
+  "result": {}
 }
 ```
 
@@ -543,19 +1080,11 @@ a crm lead was returned
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | [string] | the subscription type(s) assigned to the action  |
+| topic | [string] | the subscription event type(s) assigned to the action  |
 | type | string! |   |
-| actionStatus | string | Indicates the current disposition of the Action.  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
 | object | object | a lead offered or assigned by the agent to one or more recipients  |
-| participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
-| location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
-| result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
-| startTime | string&lt;date-time&gt; | the date & time when something begins  |
-| endTime | string&lt;date-time&gt; | The endTime of something.  |
-| target | object | Indicates a target EntryPoint for an Action. <br/>RANGE: [EntryPoint](/schemas#entrypoint) |
-| error | object | For failed actions, more information on the cause of the failure.  |
+| result | object | a result produced in the action.  |
 
 ## website_registration
 
@@ -571,25 +1100,12 @@ a website vistor has registered
   "instrument": "https://application.example.com/profile/card#me",
   "object": {
     "topic": [
-      "profile:read"
+      "string"
     ],
     "type": "string",
-    "actionStatus": "CompletedActionStatus",
     "agent": "http://user.example.com/profile/card#me",
-    "instrument": "http://app.example.com/profile/card#me",
-    "object": {
-      "type": "Thing",
-      "id": "http://example.com/linked/data/uri"
-    },
-    "participant": [
-      {}
-    ],
-    "location": {},
-    "result": {},
-    "startTime": "2019-02-27T08:10:11Z",
-    "endTime": "2019-02-27T08:10:11Z",
-    "target": {},
-    "error": {}
+    "object": {},
+    "result": {}
   },
   "topic": "website"
 }
@@ -616,22 +1132,17 @@ a website vistor has requested an appointment
 {
   "topic": "website",
   "type": "string",
-  "actionStatus": "CompletedActionStatus",
   "agent": "http://user.example.com/profile/card#me",
-  "instrument": "http://app.example.com/profile/card#me",
   "object": {
-    "type": "Thing",
-    "id": "http://example.com/linked/data/uri"
+    "topic": [
+      "string"
+    ],
+    "type": "string",
+    "agent": "http://user.example.com/profile/card#me",
+    "object": {},
+    "result": {}
   },
-  "participant": [
-    {}
-  ],
-  "location": {},
-  "result": {},
-  "startTime": "2019-02-27T08:10:11Z",
-  "endTime": "2019-02-27T08:10:11Z",
-  "target": {},
-  "error": {}
+  "result": {}
 }
 ```
 
@@ -639,19 +1150,11 @@ a website vistor has requested an appointment
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | [string] | the subscription type(s) assigned to the action  |
+| topic | [string] | the subscription event type(s) assigned to the action  |
 | type | string! |   |
-| actionStatus | string | Indicates the current disposition of the Action.  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
 | object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
-| participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
-| location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
-| result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
-| startTime | string&lt;date-time&gt; | the date & time when something begins  |
-| endTime | string&lt;date-time&gt; | The endTime of something.  |
-| target | object | Indicates a target EntryPoint for an Action. <br/>RANGE: [EntryPoint](/schemas#entrypoint) |
-| error | object | For failed actions, more information on the cause of the failure.  |
+| result | object | a result produced in the action.  |
 
 ## website_showing_requested
 
@@ -662,22 +1165,9 @@ a website visitor has requested a showing appointment
 {
   "topic": "website,",
   "type": "string",
-  "actionStatus": "CompletedActionStatus",
   "agent": "http://user.example.com/profile/card#me",
-  "instrument": "http://app.example.com/profile/card#me",
-  "object": {
-    "type": "Thing",
-    "id": "http://example.com/linked/data/uri"
-  },
-  "participant": [
-    {}
-  ],
-  "location": {},
-  "result": {},
-  "startTime": "2019-02-27T08:10:11Z",
-  "endTime": "2019-02-27T08:10:11Z",
-  "target": {},
-  "error": {}
+  "object": {},
+  "result": {}
 }
 ```
 
@@ -685,19 +1175,11 @@ a website visitor has requested a showing appointment
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | [string] | the subscription type(s) assigned to the action  |
+| topic | [string] | the subscription event type(s) assigned to the action  |
 | type | string! |   |
-| actionStatus | string | Indicates the current disposition of the Action.  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
-| object | object&#124;string&lt;uri&gt; | The object upon the action is carried out, whose state is kept intact or changed.  |
-| participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
-| location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
-| result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
-| startTime | string&lt;date-time&gt; | the date & time when something begins  |
-| endTime | string&lt;date-time&gt; | The endTime of something.  |
-| target | object | Indicates a target EntryPoint for an Action. <br/>RANGE: [EntryPoint](/schemas#entrypoint) |
-| error | object | For failed actions, more information on the cause of the failure.  |
+| object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
+| result | object | a result produced in the action.  |
 
 ## website_question
 
@@ -708,22 +1190,9 @@ a website visitor has asked a question
 {
   "topic": "website",
   "type": "string",
-  "actionStatus": "CompletedActionStatus",
   "agent": "http://user.example.com/profile/card#me",
-  "instrument": "http://app.example.com/profile/card#me",
-  "object": {
-    "type": "Thing",
-    "id": "http://example.com/linked/data/uri"
-  },
-  "participant": [
-    {}
-  ],
-  "location": {},
-  "result": {},
-  "startTime": "2019-02-27T08:10:11Z",
-  "endTime": "2019-02-27T08:10:11Z",
-  "target": {},
-  "error": {}
+  "object": {},
+  "result": {}
 }
 ```
 
@@ -731,17 +1200,9 @@ a website visitor has asked a question
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | [string] | the subscription type(s) assigned to the action  |
+| topic | [string] | the subscription event type(s) assigned to the action  |
 | type | string! |   |
-| actionStatus | string | Indicates the current disposition of the Action.  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| instrument | string&lt;uri&gt; | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
-| object | object&#124;string&lt;uri&gt; | The object upon the action is carried out, whose state is kept intact or changed.  |
-| participant | [object] | Other co-agents that participated in the action indirectly. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
-| location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
-| result | object | a result produced in the action. <br/>RANGE: [Thing](/schemas#thing) |
-| startTime | string&lt;date-time&gt; | the date & time when something begins  |
-| endTime | string&lt;date-time&gt; | The endTime of something.  |
-| target | object | Indicates a target EntryPoint for an Action. <br/>RANGE: [EntryPoint](/schemas#entrypoint) |
-| error | object | For failed actions, more information on the cause of the failure.  |
+| object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
+| result | object | a result produced in the action.  |
 

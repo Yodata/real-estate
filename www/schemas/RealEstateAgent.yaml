@@ -1,21 +1,24 @@
-x-title: RealEstateAgent
+type: object
+description: a real estate agent or team.
 allOf:
   - $ref: RealEstateOrganization.yaml
   - type: object
-    x-kind: RealEstateAgent
     description: A real estate agent or team.
     properties:
       type:
         type: string
-        enum: ['RealEstateAgent']
+        enum:
+          - RealEstateAgent
+        example: RealEstateAgent
+        description: RealEstateAgent
 
       name:
         type: string
         example: Batman & Robin
 
       subOrganization:
-        type: array
         description: 'for teams: URI reference to a team member'
+        type: array
         x-range: RealEstateAgent
         items:
           type: string

@@ -5,9 +5,7 @@ properties:
   type:
     description: Linked-Data (@type)
     type: string
-    example: Thing
   id:
     description: Linked-Data URI (@id)
     type: string
     format: uri
-    example: http://example.com/linked/data/uri

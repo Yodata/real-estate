@@ -3,6 +3,7 @@ allOf:
   - type: object
     properties:
       type:
+        description: UpdateAction
         type: string
         enum:
           - UpdateAction

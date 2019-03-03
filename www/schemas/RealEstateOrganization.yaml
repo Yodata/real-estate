@@ -52,7 +52,6 @@ allOf:
         description: permits issued to the person or organization
         type: array
         x-range:
-          - Permit
           - RealEstateLicense
         items:
           $ref: RealEstateLicense.yaml

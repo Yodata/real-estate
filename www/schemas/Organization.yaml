@@ -19,11 +19,20 @@ allOf:
       telephone:
         $ref: telephone.yaml
 
+      faxNumber:
+        $ref: faxNumber.yaml
+
       email:
         $ref: email.yaml
 
-      faxNumber:
-        $ref: faxNumber.yaml
+      url:
+        type: string
+        format: uri
+        description: primary website/url for the entity.
+
+      availableLanguage:
+        description: A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard.
+        type: array
 
       branchCode:
         description: A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.
@@ -50,7 +59,10 @@ allOf:
             - type: object
               description: an associated logo
       image:
-        $ref: image.yaml
+        description: an ImageObject or URI reference to an image of the entity on the web.
+        type: array
+        items:
+          $ref: image.yaml
 
       parentOrganization:
         type: array

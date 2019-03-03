@@ -1,8 +1,11 @@
-description: This can be a URL or a fully described ImageObject.
 x-range:
   - ImageObject
   - URI
-oneOf:
-  - $ref: ImageObject.yaml
-  - type: string
-    format: uri
+description: an ImageObject or URI reference to an image on the web.
+type: array
+items:
+  oneOf:
+    - type: object
+      $ref: ImageObject.yaml
+    - type: string
+      format: uri

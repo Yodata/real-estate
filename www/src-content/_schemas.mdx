@@ -143,7 +143,7 @@ a contact
       "postalCode": "10010"
     }
   ],
-  "birthDate": "2019-03-03",
+  "birthDate": "2019-03-08",
   "birthPlace": {},
   "leadSource": {
     "type": "Organization",
@@ -153,7 +153,13 @@ a contact
     "faxNumber": "(873) 271-4802",
     "email": "user@example.com",
     "url": "http://example.com",
-    "availableLanguage": [],
+    "availableLanguage": [
+      {
+        "type": "Language",
+        "name": "English",
+        "additionalName": "en"
+      }
+    ],
     "branchCode": "CA301-001",
     "contactPoint": [
       {
@@ -175,16 +181,15 @@ a contact
       }
     ],
     "image": [
-      [
-        {
-          "type": "ImageObject",
-          "id": "http://user.example.com/public/logo/image.jpg",
-          "name": "image.jpg",
-          "encodingFormat": "image/jpeg",
-          "content": "string",
-          "about": "http://user.example.com/profile/card#me"
-        }
-      ]
+      {
+        "type": "ImageObject",
+        "id": "http://user.example.com/public/logo/image.jpg",
+        "name": "image.jpg",
+        "encodingFormat": "image/jpeg",
+        "content": "string",
+        "about": "http://user.example.com/profile/card#me",
+        "url": "http://user.example.com/public/profile/image.jpg"
+      }
     ],
     "parentOrganization": [
       "http://example.com"
@@ -322,6 +327,7 @@ an electronic file.
 | encodingFormat | string | MIME type  |
 | content | string | base64 encoded content  |
 | about | string&lt;uri&gt; | URI to the subject of the image or logo  |
+| url | string&lt;uri&gt; | URL of the image content  |
 
 #### ImageObject example
 ```json
@@ -331,7 +337,8 @@ an electronic file.
   "name": "image.jpg",
   "encodingFormat": "image/jpeg",
   "content": "string",
-  "about": "http://user.example.com/profile/card#me"
+  "about": "http://user.example.com/profile/card#me",
+  "url": "http://user.example.com/public/profile/image.jpg"
 }
 ```
 
@@ -386,7 +393,7 @@ a lead offered or assigned by the agent to one or more recipients
         "postalCode": "10010"
       }
     ],
-    "birthDate": "2019-03-03",
+    "birthDate": "2019-03-08",
     "birthPlace": {},
     "leadSource": {
       "type": "Organization",
@@ -396,7 +403,13 @@ a lead offered or assigned by the agent to one or more recipients
       "faxNumber": "(873) 271-4802",
       "email": "user@example.com",
       "url": "http://example.com",
-      "availableLanguage": [],
+      "availableLanguage": [
+        {
+          "type": "Language",
+          "name": "English",
+          "additionalName": "en"
+        }
+      ],
       "branchCode": "CA301-001",
       "contactPoint": [
         {
@@ -418,16 +431,15 @@ a lead offered or assigned by the agent to one or more recipients
         }
       ],
       "image": [
-        [
-          {
-            "type": "ImageObject",
-            "id": "http://user.example.com/public/logo/image.jpg",
-            "name": "image.jpg",
-            "encodingFormat": "image/jpeg",
-            "content": "string",
-            "about": "http://user.example.com/profile/card#me"
-          }
-        ]
+        {
+          "type": "ImageObject",
+          "id": "http://user.example.com/public/logo/image.jpg",
+          "name": "image.jpg",
+          "encodingFormat": "image/jpeg",
+          "content": "string",
+          "about": "http://user.example.com/profile/card#me",
+          "url": "http://user.example.com/public/profile/image.jpg"
+        }
       ],
       "parentOrganization": [
         "http://example.com"
@@ -488,6 +500,7 @@ a lead offered or assigned by the agent to one or more recipients
 | encodingFormat | string | MIME type  |
 | content | string | base64 encoded content  |
 | about | string&lt;uri&gt; | URI to the subject of the image or logo  |
+| url | string&lt;uri&gt; | URL of the image content  |
 
 #### MediaObject example
 ```json
@@ -497,7 +510,8 @@ a lead offered or assigned by the agent to one or more recipients
   "name": "fileName.zip",
   "encodingFormat": "application/zip",
   "content": "string",
-  "about": "http://user.example.com/profile/card#me"
+  "about": "http://user.example.com/profile/card#me",
+  "url": "http://user.example.com/public/profile/image.jpg"
 }
 ```
 
@@ -544,11 +558,11 @@ an MLS
 | faxNumber | string | Primary fax number.  |
 | email | string&lt;email&gt; | Primary email address.  |
 | url | string&lt;uri&gt; | primary website/url for the entity.  |
-| availableLanguage | [undefined] | A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard.  |
+| availableLanguage | [object] | A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard. <br/>RANGE: [Language](/schemas#language) |
 | branchCode | string | A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.  |
 | contactPoint | [object] | Additional contact points. Can be organized by role, location, etc...  |
 | logo | [object] | a logo associated with the organization. <br/>RANGE: [ImageObject](/schemas#imageobject),[DigitalDocument](/schemas#digitaldocument) |
-| image | [array] | an ImageObject or URI reference to an image of the entity on the web.  |
+| image | [object&#124;string&lt;uri&gt;] | an ImageObject or URI reference to an image of the entity on the web. <br/>RANGE: [ImageObject](/schemas#imageobject),[URI](/schemas#uri) |
 | parentOrganization | [string&lt;uri&gt;] |   |
 
 #### MultipleListingService example
@@ -575,11 +589,11 @@ an MLS
 | faxNumber | string | Primary fax number.  |
 | email | string&lt;email&gt; | Primary email address.  |
 | url | string&lt;uri&gt; | primary website/url for the entity.  |
-| availableLanguage | [undefined] | A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard.  |
+| availableLanguage | [object] | A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard. <br/>RANGE: [Language](/schemas#language) |
 | branchCode | string | A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.  |
 | contactPoint | [object] | Additional contact points. Can be organized by role, location, etc...  |
 | logo | [object] | a logo associated with the organization. <br/>RANGE: [ImageObject](/schemas#imageobject),[DigitalDocument](/schemas#digitaldocument) |
-| image | [array] | an ImageObject or URI reference to an image of the entity on the web.  |
+| image | [object&#124;string&lt;uri&gt;] | an ImageObject or URI reference to an image of the entity on the web. <br/>RANGE: [ImageObject](/schemas#imageobject),[URI](/schemas#uri) |
 | parentOrganization | [string&lt;uri&gt;] |   |
 
 #### Organization example
@@ -592,7 +606,13 @@ an MLS
   "faxNumber": "(873) 271-4802",
   "email": "user@example.com",
   "url": "http://example.com",
-  "availableLanguage": [],
+  "availableLanguage": [
+    {
+      "type": "Language",
+      "name": "English",
+      "additionalName": "en"
+    }
+  ],
   "branchCode": "CA301-001",
   "contactPoint": [
     {
@@ -614,16 +634,15 @@ an MLS
     }
   ],
   "image": [
-    [
-      {
-        "type": "ImageObject",
-        "id": "http://user.example.com/public/logo/image.jpg",
-        "name": "image.jpg",
-        "encodingFormat": "image/jpeg",
-        "content": "string",
-        "about": "http://user.example.com/profile/card#me"
-      }
-    ]
+    {
+      "type": "ImageObject",
+      "id": "http://user.example.com/public/logo/image.jpg",
+      "name": "image.jpg",
+      "encodingFormat": "image/jpeg",
+      "content": "string",
+      "about": "http://user.example.com/profile/card#me",
+      "url": "http://user.example.com/public/profile/image.jpg"
+    }
   ],
   "parentOrganization": [
     "http://example.com"
@@ -705,7 +724,7 @@ Provides additional information in member/memberOf relationships.
       "postalCode": "10010"
     }
   ],
-  "birthDate": "2019-03-03",
+  "birthDate": "2019-03-08",
   "birthPlace": {}
 }
 ```
@@ -828,11 +847,11 @@ A real estate agent or team.
 | faxNumber | string | Primary fax number.  |
 | email | string&lt;email&gt; | Primary email address.  |
 | url | string&lt;uri&gt; | primary website/url for the entity.  |
-| availableLanguage | [undefined] | A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard.  |
+| availableLanguage | [object] | A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard. <br/>RANGE: [Language](/schemas#language) |
 | branchCode | string | A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.  |
 | contactPoint | [object] | Additional contact points. Can be organized by role, location, etc...  |
 | logo | [object] | a logo associated with the organization. <br/>RANGE: [ImageObject](/schemas#imageobject),[DigitalDocument](/schemas#digitaldocument) |
-| image | [array] | an ImageObject or URI reference to an image of the entity on the web.  |
+| image | [object&#124;string&lt;uri&gt;] | an ImageObject or URI reference to an image of the entity on the web. <br/>RANGE: [ImageObject](/schemas#imageobject),[URI](/schemas#uri) |
 | parentOrganization | [string&lt;uri&gt;] | URI reference to the agent's office. For teams, this can be a reference to the team leader/primary profile. <br/>RANGE: [RealEstateOffice](/schemas#realestateoffice),[RealEstateAgent](/schemas#realestateagent) |
 | address | object | primary address <br/>RANGE: [PostalAddress](/schemas#postaladdress) |
 | subOrganization | [string&lt;uri&gt;] | for teams: URI reference to a team member <br/>RANGE: [RealEstateAgent](/schemas#realestateagent) |
@@ -850,7 +869,13 @@ A real estate agent or team.
   "faxNumber": "(873) 271-4802",
   "email": "user@example.com",
   "url": "http://example.com",
-  "availableLanguage": [],
+  "availableLanguage": [
+    {
+      "type": "Language",
+      "name": "English",
+      "additionalName": "en"
+    }
+  ],
   "branchCode": "CA301-001",
   "contactPoint": [
     {
@@ -872,16 +897,15 @@ A real estate agent or team.
     }
   ],
   "image": [
-    [
-      {
-        "type": "ImageObject",
-        "id": "http://user.example.com/public/logo/image.jpg",
-        "name": "image.jpg",
-        "encodingFormat": "image/jpeg",
-        "content": "string",
-        "about": "http://user.example.com/profile/card#me"
-      }
-    ]
+    {
+      "type": "ImageObject",
+      "id": "http://user.example.com/public/logo/image.jpg",
+      "name": "image.jpg",
+      "encodingFormat": "image/jpeg",
+      "content": "string",
+      "about": "http://user.example.com/profile/card#me",
+      "url": "http://user.example.com/public/profile/image.jpg"
+    }
   ],
   "parentOrganization": [
     "http://office-real-estate.example.com/",
@@ -931,8 +955,8 @@ A real estate agent or team.
         "type": "AdministrativeArea",
         "name": "New York"
       },
-      "validFrom": "2019-03-03T18:32:53Z",
-      "validUntil": "2019-03-03T18:32:53Z"
+      "validFrom": "2019-03-08T11:39:34Z",
+      "validUntil": "2019-03-08T11:39:34Z"
     }
   ]
 }
@@ -972,8 +996,8 @@ Real estate licenses, authorizations issued by state governments, give agents an
     "type": "AdministrativeArea",
     "name": "New York"
   },
-  "validFrom": "2019-03-03T18:32:53Z",
-  "validUntil": "2019-03-03T18:32:53Z"
+  "validFrom": "2019-03-08T11:39:34Z",
+  "validUntil": "2019-03-08T11:39:34Z"
 }
 ```
 
@@ -993,11 +1017,11 @@ A real estate franchisor, broker or business.
 | faxNumber | string | Primary fax number.  |
 | email | string&lt;email&gt; | Primary email address.  |
 | url | string&lt;uri&gt; | primary website/url for the entity.  |
-| availableLanguage | [undefined] | A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard.  |
+| availableLanguage | [object] | A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard. <br/>RANGE: [Language](/schemas#language) |
 | branchCode | string | A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.  |
 | contactPoint | [object] | department or role specific contact points, i.e. relocation.  |
 | logo | [object] | a logo associated with the organization. <br/>RANGE: [ImageObject](/schemas#imageobject),[DigitalDocument](/schemas#digitaldocument) |
-| image | [array] | an ImageObject or URI reference to an image of the entity on the web.  |
+| image | [object&#124;string&lt;uri&gt;] | an ImageObject or URI reference to an image of the entity on the web. <br/>RANGE: [ImageObject](/schemas#imageobject),[URI](/schemas#uri) |
 | parentOrganization | [string&lt;uri&gt;] | Office broker or franchisor. <br/>RANGE: [RealEstateOrganization](/schemas#realestateorganization) |
 | address | object | primary address <br/>RANGE: [PostalAddress](/schemas#postaladdress) |
 | subOrganization | [string&lt;uri&gt;] | Agents and teams associated with the office. <br/>RANGE: [RealEstateAgent](/schemas#realestateagent) |
@@ -1015,7 +1039,13 @@ A real estate franchisor, broker or business.
   "faxNumber": "(873) 271-4802",
   "email": "user@example.com",
   "url": "http://example.com",
-  "availableLanguage": [],
+  "availableLanguage": [
+    {
+      "type": "Language",
+      "name": "English",
+      "additionalName": "en"
+    }
+  ],
   "branchCode": "CA301-001",
   "contactPoint": [
     {
@@ -1037,16 +1067,15 @@ A real estate franchisor, broker or business.
     }
   ],
   "image": [
-    [
-      {
-        "type": "ImageObject",
-        "id": "http://user.example.com/public/logo/image.jpg",
-        "name": "image.jpg",
-        "encodingFormat": "image/jpeg",
-        "content": "string",
-        "about": "http://user.example.com/profile/card#me"
-      }
-    ]
+    {
+      "type": "ImageObject",
+      "id": "http://user.example.com/public/logo/image.jpg",
+      "name": "image.jpg",
+      "encodingFormat": "image/jpeg",
+      "content": "string",
+      "about": "http://user.example.com/profile/card#me",
+      "url": "http://user.example.com/public/profile/image.jpg"
+    }
   ],
   "parentOrganization": [
     "http://example.com"
@@ -1095,8 +1124,8 @@ A real estate franchisor, broker or business.
         "type": "AdministrativeArea",
         "name": "New York"
       },
-      "validFrom": "2019-03-03T18:32:53Z",
-      "validUntil": "2019-03-03T18:32:53Z"
+      "validFrom": "2019-03-08T11:39:34Z",
+      "validUntil": "2019-03-08T11:39:34Z"
     }
   ]
 }
@@ -1118,11 +1147,11 @@ A real estate franchisor, broker or business.
 | faxNumber | string | Primary fax number.  |
 | email | string&lt;email&gt; | Primary email address.  |
 | url | string&lt;uri&gt; | primary website/url for the entity.  |
-| availableLanguage | [undefined] | A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard.  |
+| availableLanguage | [object] | A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard. <br/>RANGE: [Language](/schemas#language) |
 | branchCode | string | A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.  |
 | contactPoint | [object] | Additional contact points. Can be organized by role, location, etc...  |
 | logo | [object] | a logo associated with the organization. <br/>RANGE: [ImageObject](/schemas#imageobject),[DigitalDocument](/schemas#digitaldocument) |
-| image | [array] | an ImageObject or URI reference to an image of the entity on the web.  |
+| image | [object&#124;string&lt;uri&gt;] | an ImageObject or URI reference to an image of the entity on the web. <br/>RANGE: [ImageObject](/schemas#imageobject),[URI](/schemas#uri) |
 | parentOrganization | [string&lt;uri&gt;] | A franchisor or affiliate network of which this organization plays a membership role. <br/>RANGE: [RealEstateOrganization](/schemas#realestateorganization) |
 | address | object | primary address <br/>RANGE: [PostalAddress](/schemas#postaladdress) |
 | subOrganization | [string&lt;uri&gt;] | an organization member <br/>RANGE: [RealEstateOrganization](/schemas#realestateorganization) |
@@ -1140,7 +1169,13 @@ A real estate franchisor, broker or business.
   "faxNumber": "(873) 271-4802",
   "email": "user@example.com",
   "url": "http://example.com",
-  "availableLanguage": [],
+  "availableLanguage": [
+    {
+      "type": "Language",
+      "name": "English",
+      "additionalName": "en"
+    }
+  ],
   "branchCode": "CA301-001",
   "contactPoint": [
     {
@@ -1162,16 +1197,15 @@ A real estate franchisor, broker or business.
     }
   ],
   "image": [
-    [
-      {
-        "type": "ImageObject",
-        "id": "http://user.example.com/public/logo/image.jpg",
-        "name": "image.jpg",
-        "encodingFormat": "image/jpeg",
-        "content": "string",
-        "about": "http://user.example.com/profile/card#me"
-      }
-    ]
+    {
+      "type": "ImageObject",
+      "id": "http://user.example.com/public/logo/image.jpg",
+      "name": "image.jpg",
+      "encodingFormat": "image/jpeg",
+      "content": "string",
+      "about": "http://user.example.com/profile/card#me",
+      "url": "http://user.example.com/public/profile/image.jpg"
+    }
   ],
   "parentOrganization": [
     "http://example.com"
@@ -1220,8 +1254,8 @@ A real estate franchisor, broker or business.
         "type": "AdministrativeArea",
         "name": "New York"
       },
-      "validFrom": "2019-03-03T18:32:53Z",
-      "validUntil": "2019-03-03T18:32:53Z"
+      "validFrom": "2019-03-08T11:39:34Z",
+      "validUntil": "2019-03-08T11:39:34Z"
     }
   ]
 }

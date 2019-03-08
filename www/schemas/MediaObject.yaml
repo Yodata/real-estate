@@ -31,3 +31,8 @@ allOf:
         format: uri
         description: URI to the subject of the image or logo
         example: http://user.example.com/profile/card#me
+      url:
+        type: string
+        format: uri
+        description: URL of the image content
+        example: http://user.example.com/public/profile/image.jpg

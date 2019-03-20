@@ -20,15 +20,11 @@ properties:
     oneOf:
       - type: string
         format: uri
-        example: http://user.example.com/profile/card#me
+        example: http://user.example.com/profile/card
       - type: object
 
   object:
     description: The object upon the action is carried out, whose state is kept intact or changed.
-    type: object
-
-  result:
-    description: a result produced in the action.
     type: object
 
 required:

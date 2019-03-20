@@ -9,3 +9,5 @@ properties:
     description: A role played, performed or filled by a person or organization.
     type: string
     example: E-Team Certified
+  memberOf:
+    description: relationship roles

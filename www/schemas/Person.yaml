@@ -62,8 +62,3 @@ allOf:
         type: string
         format: date
         description: date of birth.
-
-      birthPlace:
-        x-range: Place
-        description: place of birth.
-        type: object

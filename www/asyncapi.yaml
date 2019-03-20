@@ -102,14 +102,18 @@ topics:
         - $ref: '#/components/messages/website_question'
         - $ref: '#/components/messages/website_appointment_requested'
 
-components:
-  securitySchemes:
-    https:
-      name: api-key
-      type: httpApiKey
-      in: header
+  marketing:
+    x-summary: Marketing events.
+    subscribe:
+      oneOf:
+        - $ref: '#/components/messages/MarketingProgramMemberAdd'
+        - $ref: '#/components/messages/MarketingProgramMemberRemove'
 
+components:
   messages:
+    MarketingProgramMemberAdd: { $ref: schemas/MarketingProgramMemberAdd.yaml }
+    MarketingProgramMemberRemove:
+      { $ref: schemas/MarketingProgramMemberRemove.yaml }
     profile_added: { $ref: schemas/profile_added.yaml }
     profile_updated: { $ref: schemas/profile_updated.yaml }
     contact_added: { $ref: schemas/contact_added.yaml }
@@ -303,7 +307,7 @@ components:
           - $ref: schemas/Action.yaml
           - properties:
               topic:
-                example: website,
+                example: website
 
     website_question:
       x-title: website_question
@@ -329,15 +333,23 @@ components:
     Notification: { $ref: schemas/Notification.yaml }
     MediaObject: { $ref: schemas/MediaObject.yaml }
     MLSMembership: { $ref: schemas/MLSMembership.yaml }
+    MarketingProgram: { $ref: schemas/MarketingProgram.yaml }
     MultipleListingService: { $ref: schemas/MultipleListingService.yaml }
     Organization: { $ref: schemas/Organization.yaml }
     OrganizationRole: { $ref: schemas/OrganizationRole.yaml }
     Person: { $ref: schemas/Person.yaml }
     Place: { $ref: schemas/Place.yaml }
     PostalAddress: { $ref: schemas/PostalAddress.yaml }
+    ProgramMembership: { $ref: schemas/ProgramMembership.yaml }
     PropertyValue: { $ref: schemas/PropertyValue.yaml }
     RealEstateAgent: { $ref: schemas/RealEstateAgent.yaml }
     RealEstateLicense: { $ref: schemas/RealEstateLicense.yaml }
     RealEstateOffice: { $ref: schemas/RealEstateOffice.yaml }
     RealEstateOrganization: { $ref: schemas/RealEstateOrganization.yaml }
     CustomProperties: { $ref: schemas/CustomProperties.yaml }
+
+  securitySchemes:
+    https:
+      name: api-key
+      type: httpApiKey
+      in: header

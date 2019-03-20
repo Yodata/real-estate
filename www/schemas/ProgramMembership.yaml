@@ -1,0 +1,44 @@
+x-title: ProgramMembership
+description: describes membership relation between a member (Person) and a MarketingProgram
+type: object
+allOf:
+  - $ref: OrganizationRole.yaml
+  - type: object
+    properties:
+      type:
+        type: string
+        description: ProgramMembership
+        enum:
+          - ProgramMembership
+        example: ProgramMembership
+      id:
+        type: string
+        format: uri
+        description: id for the specific instance of the relationship between the member and the Program
+      member:
+        type: string
+        format: uri
+        description: reference to the member
+        x-range:
+          - Person
+          - Organization
+        example: http://user.example.com/profile/card
+      memberOf:
+        type: string
+        format: uri
+        description: reference to the MarketingProgram
+        x-range: MarketingProgram
+      memberId:
+        type: string
+        description: the member identifier for the program
+      startDate:
+        type: string
+        format: date-time
+        description: the date the member started the program
+      endDate:
+        type: string
+        format: date-time
+        description: the date the program membership ended
+      roleName:
+        description: not used
+        example: null

@@ -108,9 +108,21 @@ topics:
       oneOf:
         - $ref: '#/components/messages/MarketingProgramMemberAdd'
         - $ref: '#/components/messages/MarketingProgramMemberRemove'
+        - $ref: '#/components/messages/MarketingProgramCreate'
+        - $ref: '#/components/messages/EmailAction'
 
 components:
   messages:
+    MarketingProgramCreate:
+      x-title: MarketingProgramCreate
+      x-scope: marketing
+      summary: a MarketingProgram was created
+      payload: { $ref: schemas/MarketingProgramCreate.yaml }
+    EmailAction:
+      x-title: EmailAction
+      x-scope: marketing
+      summary: an EmailMessage was sent
+      payload: { $ref: schemas/EmailAction.yaml }
     MarketingProgramMemberAdd: { $ref: schemas/MarketingProgramMemberAdd.yaml }
     MarketingProgramMemberRemove:
       { $ref: schemas/MarketingProgramMemberRemove.yaml }

@@ -14,6 +14,7 @@ allOf:
       name:
         type: string
         description: name of the work.
+        example: Market Report 1008 Mountain Gate Road
 
       description:
         type: string
@@ -21,16 +22,17 @@ allOf:
         example: Dolor accusamus rerum nemo non omnis. Nam labore pariatur eius omnis sit.
 
       creator:
+        description: creator / author of the work
         type: string
         format: uri
-        description: creator / author of the work
+        example: http://user.example.com/profile/card
 
       dateCreated:
+        description: The date on which the CreativeWork was created or the item was added to a DataFeed.
         type: string
         format: date-time
-        description: The date on which the CreativeWork was created or the item was added to a DataFeed.
 
       dateModified:
+        description: The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
         type: string
         format: date-time
-        description: The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.

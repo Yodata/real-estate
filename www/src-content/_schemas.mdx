@@ -311,6 +311,65 @@ an electronic file.
 ```
 
 
+## EmailMessage
+
+
+
+#### EmailMessage properties
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! | EmailMessage  |
+| id | string&lt;uri&gt; | Linked-Data URI (@id)  |
+| name | string | name of the work.  |
+| description | string | description of the item  |
+| creator | string&lt;uri&gt; | creator / author of the work  |
+| dateCreated | string&lt;date-time&gt; | The date on which the CreativeWork was created or the item was added to a DataFeed.  |
+| dateModified | string&lt;date-time&gt; | The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.  |
+| toRecipient | [string] | direct recipient of the message  |
+| ccRecipient | [string] | direct recipient of the message  |
+| bccRecipient | [string] | direct recipient of the message  |
+| dateSent | string&lt;date-time&gt; | The date/time at which the message was sent.  |
+| dateRead | string&lt;date-time&gt; | The date/time at which the message was first viewed  |
+| sender | string&lt;uri&gt; | ref to the sender  |
+| messageAttachment | [[DigitalDocument](/schemas#digitaldocument)] | message attachments <br/>RANGE: [DigitalDocument](/schemas#digitaldocument) |
+
+#### EmailMessage example
+```json
+{
+  "type": "EmailMessage",
+  "id": "https://example.com/collection/1",
+  "name": "Market Report 1008 Mountain Gate Road",
+  "description": "Dolor accusamus rerum nemo non omnis. Nam labore pariatur eius omnis sit.",
+  "creator": "http://user.example.com/profile/card",
+  "dateCreated": "2019-03-20T06:12:08Z",
+  "dateModified": "2019-03-20T06:12:08Z",
+  "toRecipient": [
+    "user@example.com"
+  ],
+  "ccRecipient": [
+    "user@example.com"
+  ],
+  "bccRecipient": [
+    "user@example.com"
+  ],
+  "dateSent": "2019-03-20T06:12:08Z",
+  "dateRead": "2019-03-20T06:12:08Z",
+  "sender": "http://user.example.com/profile/card",
+  "messageAttachment": [
+    {
+      "type": "DigitalDocument",
+      "id": "http://user.example.com/public/logo/fileName.zip",
+      "name": "fileName.zip",
+      "encodingFormat": "application/zip",
+      "identifier": {},
+      "about": "http://user.example.com/profile/card#me"
+    }
+  ]
+}
+```
+
+
 ## ImageObject
 
 
@@ -561,13 +620,13 @@ Provides additional information in member/memberOf relationships.
 #### MarketingProgram example
 ```json
 {
-  "type": "MLSMembership",
+  "type": "MarketingProgram",
   "id": "https://example.com/collection/1",
-  "name": "string",
+  "name": "Market Report 1008 Mountain Gate Road",
   "description": "Dolor accusamus rerum nemo non omnis. Nam labore pariatur eius omnis sit.",
-  "creator": "http://example.com",
-  "dateCreated": "2019-03-20T05:32:57Z",
-  "dateModified": "2019-03-20T05:32:57Z",
+  "creator": "http://user.example.com/profile/card",
+  "dateCreated": "2019-03-20T06:12:08Z",
+  "dateModified": "2019-03-20T06:12:08Z",
   "member": [
     "https://user.example.com/profile/card"
   ]
@@ -870,8 +929,8 @@ Provides additional information in member/memberOf relationships.
   "id": "http://example.com",
   "member": "http://user.example.com/profile/card",
   "memberId": "string",
-  "startDate": "2019-03-20T05:32:57Z",
-  "endDate": "2019-03-20T05:32:57Z"
+  "startDate": "2019-03-20T06:12:08Z",
+  "endDate": "2019-03-20T06:12:08Z"
 }
 ```
 
@@ -1023,8 +1082,8 @@ A real estate agent or team.
         "type": "AdministrativeArea",
         "name": "New York"
       },
-      "validFrom": "2019-03-20T05:32:57Z",
-      "validUntil": "2019-03-20T05:32:57Z"
+      "validFrom": "2019-03-20T06:12:08Z",
+      "validUntil": "2019-03-20T06:12:08Z"
     }
   ]
 }
@@ -1064,8 +1123,8 @@ Real estate licenses, authorizations issued by state governments, give agents an
     "type": "AdministrativeArea",
     "name": "New York"
   },
-  "validFrom": "2019-03-20T05:32:57Z",
-  "validUntil": "2019-03-20T05:32:57Z"
+  "validFrom": "2019-03-20T06:12:08Z",
+  "validUntil": "2019-03-20T06:12:08Z"
 }
 ```
 
@@ -1193,8 +1252,8 @@ A real estate franchisor, broker or business.
         "type": "AdministrativeArea",
         "name": "New York"
       },
-      "validFrom": "2019-03-20T05:32:57Z",
-      "validUntil": "2019-03-20T05:32:57Z"
+      "validFrom": "2019-03-20T06:12:08Z",
+      "validUntil": "2019-03-20T06:12:08Z"
     }
   ]
 }
@@ -1325,8 +1384,8 @@ A real estate franchisor, broker or business.
         "type": "AdministrativeArea",
         "name": "New York"
       },
-      "validFrom": "2019-03-20T05:32:57Z",
-      "validUntil": "2019-03-20T05:32:57Z"
+      "validFrom": "2019-03-20T06:12:08Z",
+      "validUntil": "2019-03-20T06:12:08Z"
     }
   ]
 }

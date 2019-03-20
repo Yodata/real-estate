@@ -43,6 +43,8 @@ allOf:
         description: ref to the sender
         example: http://user.example.com/profile/card
       messageAttachment:
-        type: object
+        description: message attachments
         x-range: DigitalDocument
-        $ref: DigitalDocument.yaml
+        type: array
+        items:
+          $ref: DigitalDocument.yaml

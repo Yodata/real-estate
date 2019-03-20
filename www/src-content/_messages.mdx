@@ -25,6 +25,97 @@ Events are wrapped by a Notification object:
 
 
 
+## MarketingProgramCreate
+
+a MarketingProgram was created
+
+
+```json
+{
+  "topic": [
+    "string"
+  ],
+  "type": "CreateAction",
+  "agent": "http://user.example.com/profile/card",
+  "object": {
+    "type": "MarketingProgram",
+    "id": "https://example.com/collection/1",
+    "name": "Market Report 1008 Mountain Gate Road",
+    "description": "Dolor accusamus rerum nemo non omnis. Nam labore pariatur eius omnis sit.",
+    "creator": "http://user.example.com/profile/card",
+    "dateCreated": "2019-03-20T06:12:08Z",
+    "dateModified": "2019-03-20T06:12:08Z",
+    "member": [
+      "https://user.example.com/profile/card"
+    ]
+  }
+}
+```
+
+#### MarketingProgramCreate properties
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| topic | [string] | the subscription event type(s) assigned to the action  |
+| type | string! | CreateAction  |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
+
+## EmailAction
+
+an EmailMessage was sent
+
+
+```json
+{
+  "topic": [
+    "string"
+  ],
+  "type": "EmailAction",
+  "agent": "http://user.example.com/profile/card",
+  "object": {
+    "type": "EmailMessage",
+    "id": "https://example.com/collection/1",
+    "name": "Market Report 1008 Mountain Gate Road",
+    "description": "Dolor accusamus rerum nemo non omnis. Nam labore pariatur eius omnis sit.",
+    "creator": "http://user.example.com/profile/card",
+    "dateCreated": "2019-03-20T06:12:08Z",
+    "dateModified": "2019-03-20T06:12:08Z",
+    "toRecipient": [
+      "user@example.com"
+    ],
+    "ccRecipient": [
+      "user@example.com"
+    ],
+    "bccRecipient": [
+      "user@example.com"
+    ],
+    "dateSent": "2019-03-20T06:12:08Z",
+    "dateRead": "2019-03-20T06:12:08Z",
+    "sender": "http://user.example.com/profile/card",
+    "messageAttachment": [
+      {
+        "type": "DigitalDocument",
+        "id": "http://user.example.com/public/logo/fileName.zip",
+        "name": "fileName.zip",
+        "encodingFormat": "application/zip",
+        "identifier": {},
+        "about": "http://user.example.com/profile/card#me"
+      }
+    ]
+  }
+}
+```
+
+#### EmailAction properties
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| topic | [string] | the subscription event type(s) assigned to the action  |
+| type | string! | EmailAction  |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
+
 ## MarketingProgramMemberAdd
 
 a program member was added by the agent (Work In Progress)

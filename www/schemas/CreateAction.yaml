@@ -1,0 +1,10 @@
+allOf:
+  - $ref: Action.yaml
+  - type: object
+    description: the object was created by the agent
+    properties:
+      type:
+        type: string
+        description: CreateAction
+        enum:
+          - CreateAction

@@ -10,7 +10,7 @@ allOf:
         description: MarketingProgram
         enum:
           - MarketingProgram
-        example: MLSMembership
+        example: MarketingProgram
       member:
         type: array
         x-range: ProgramMembership

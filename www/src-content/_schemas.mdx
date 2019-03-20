@@ -19,7 +19,6 @@ name: Object Types
 | type | string! |   |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
-| result | object | a result produced in the action.  |
 
 #### Action example
 ```json
@@ -28,9 +27,8 @@ name: Object Types
     "string"
   ],
   "type": "string",
-  "agent": "http://user.example.com/profile/card#me",
-  "object": {},
-  "result": {}
+  "agent": "http://user.example.com/profile/card",
+  "object": {}
 }
 ```
 
@@ -109,14 +107,13 @@ a contact
 | contactPoint | [object] | Named and grouped contacts points. <br/>RANGE: [ContactPoint](/schemas#contactpoint) |
 | address | [object] | mailing addresses. <br/>RANGE: [PostalAddress](/schemas#postaladdress) |
 | birthDate | string&lt;date&gt; | date of birth.  |
-| birthPlace | object | place of birth. <br/>RANGE: [Place](/schemas#place) |
 | leadSource | [Organization](/schemas#organization) |   |
 
 #### Contact example
 ```json
 {
   "type": "Person",
-  "id": "http://example.com",
+  "id": "https://example.com/collection/1",
   "name": "string",
   "givenName": "Bruce",
   "familyName": "Wayne",
@@ -130,7 +127,8 @@ a contact
       "name": "Work",
       "telephone": "1-364-127-9618 x20418",
       "faxNumber": "834.320.1602",
-      "email": "user@example.com"
+      "email": "user@example.com",
+      "url": "https://www.facebook.com/hallandoates"
     }
   ],
   "address": [
@@ -143,11 +141,10 @@ a contact
       "postalCode": "10010"
     }
   ],
-  "birthDate": "2019-03-08",
-  "birthPlace": {},
+  "birthDate": "2019-03-20",
   "leadSource": {
     "type": "Organization",
-    "id": "http://example.com",
+    "id": "https://example.com/collection/1",
     "name": "string",
     "telephone": "079.706.7065 x6341",
     "faxNumber": "(873) 271-4802",
@@ -167,7 +164,8 @@ a contact
         "name": "Work",
         "telephone": "1-364-127-9618 x20418",
         "faxNumber": "834.320.1602",
-        "email": "user@example.com"
+        "email": "user@example.com",
+        "url": "https://www.facebook.com/hallandoates"
       }
     ],
     "logo": [
@@ -216,7 +214,7 @@ A comment on an item.
 ```json
 {
   "type": "Comment",
-  "id": "http://example.com",
+  "id": "https://example.com/collection/1",
   "about": "http://user.example.com/profile/card#me",
   "text": "Commodi ratione vel qui ullam ea ut."
 }
@@ -235,7 +233,6 @@ A comment on an item.
 | type | string! | CommentAction  |
 | agent | string&lt;uri&gt;&#124;object | the commentor <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | A comment on an item.  |
-| result | object | a result produced in the action.  |
 
 #### CommentAction example
 ```json
@@ -250,11 +247,10 @@ A comment on an item.
   },
   "object": {
     "type": "Comment",
-    "id": "http://example.com",
+    "id": "https://example.com/collection/1",
     "about": "http://user.example.com/profile/card#me",
     "text": "Commodi ratione vel qui ullam ea ut."
-  },
-  "result": {}
+  }
 }
 ```
 
@@ -272,6 +268,7 @@ A contact point—for example, a Customer Complaints department.
 | telephone | string | a telephone number  |
 | faxNumber | string | a fax number  |
 | email | string&lt;email&gt; | an email address for the item.  |
+| url | string&lt;uri&gt; | primary URL for the item.  |
 
 #### ContactPoint example
 ```json
@@ -280,7 +277,8 @@ A contact point—for example, a Customer Complaints department.
   "name": "Work",
   "telephone": "1-364-127-9618 x20418",
   "faxNumber": "834.320.1602",
-  "email": "user@example.com"
+  "email": "user@example.com",
+  "url": "https://www.facebook.com/hallandoates"
 }
 ```
 
@@ -366,7 +364,7 @@ a lead offered or assigned by the agent to one or more recipients
   "recipient": "http://user.example.com/profile/card#me",
   "object": {
     "type": "Person",
-    "id": "http://example.com",
+    "id": "https://example.com/collection/1",
     "name": "string",
     "givenName": "Bruce",
     "familyName": "Wayne",
@@ -380,7 +378,8 @@ a lead offered or assigned by the agent to one or more recipients
         "name": "Work",
         "telephone": "1-364-127-9618 x20418",
         "faxNumber": "834.320.1602",
-        "email": "user@example.com"
+        "email": "user@example.com",
+        "url": "https://www.facebook.com/hallandoates"
       }
     ],
     "address": [
@@ -393,11 +392,10 @@ a lead offered or assigned by the agent to one or more recipients
         "postalCode": "10010"
       }
     ],
-    "birthDate": "2019-03-08",
-    "birthPlace": {},
+    "birthDate": "2019-03-20",
     "leadSource": {
       "type": "Organization",
-      "id": "http://example.com",
+      "id": "https://example.com/collection/1",
       "name": "string",
       "telephone": "079.706.7065 x6341",
       "faxNumber": "(873) 271-4802",
@@ -417,7 +415,8 @@ a lead offered or assigned by the agent to one or more recipients
           "name": "Work",
           "telephone": "1-364-127-9618 x20418",
           "faxNumber": "834.320.1602",
-          "email": "user@example.com"
+          "email": "user@example.com",
+          "url": "https://www.facebook.com/hallandoates"
         }
       ],
       "logo": [
@@ -478,9 +477,8 @@ a lead offered or assigned by the agent to one or more recipients
       "string"
     ],
     "type": "string",
-    "agent": "http://user.example.com/profile/card#me",
-    "object": {},
-    "result": {}
+    "agent": "http://user.example.com/profile/card",
+    "object": {}
   }
 }
 ```
@@ -526,7 +524,7 @@ Provides additional information in member/memberOf relationships.
 |:--------- | :--- | :---------- |
 | type | string | an MLS member relationship  |
 | roleName | string | A role played, performed or filled by a person or organization.  |
-| memberOf | object |  <br/>RANGE: [MultipleListingService](/schemas#multiplelistingservice) |
+| memberOf | object | relationship roles <br/>RANGE: [MultipleListingService](/schemas#multiplelistingservice) |
 | memberId | string | the user's MLSID  |
 
 #### MLSMembership example
@@ -539,6 +537,40 @@ Provides additional information in member/memberOf relationships.
     "name": "GreatScottMLS"
   },
   "memberId": "memberid123"
+}
+```
+
+
+## MarketingProgram
+
+
+
+#### MarketingProgram properties
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! | MarketingProgram  |
+| id | string&lt;uri&gt; | Linked-Data URI (@id)  |
+| name | string | name of the work.  |
+| description | string | description of the item  |
+| creator | string&lt;uri&gt; | creator / author of the work  |
+| dateCreated | string&lt;date-time&gt; | The date on which the CreativeWork was created or the item was added to a DataFeed.  |
+| dateModified | string&lt;date-time&gt; | The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.  |
+| member | [string&lt;uri&gt;] | member relationship objects <br/>RANGE: [ProgramMembership](/schemas#programmembership) |
+
+#### MarketingProgram example
+```json
+{
+  "type": "MLSMembership",
+  "id": "https://example.com/collection/1",
+  "name": "string",
+  "description": "Dolor accusamus rerum nemo non omnis. Nam labore pariatur eius omnis sit.",
+  "creator": "http://example.com",
+  "dateCreated": "2019-03-20T05:32:57Z",
+  "dateModified": "2019-03-20T05:32:57Z",
+  "member": [
+    "https://user.example.com/profile/card"
+  ]
 }
 ```
 
@@ -600,7 +632,7 @@ an MLS
 ```json
 {
   "type": "Organization",
-  "id": "http://example.com",
+  "id": "https://example.com/collection/1",
   "name": "string",
   "telephone": "079.706.7065 x6341",
   "faxNumber": "(873) 271-4802",
@@ -620,7 +652,8 @@ an MLS
       "name": "Work",
       "telephone": "1-364-127-9618 x20418",
       "faxNumber": "834.320.1602",
-      "email": "user@example.com"
+      "email": "user@example.com",
+      "url": "https://www.facebook.com/hallandoates"
     }
   ],
   "logo": [
@@ -661,12 +694,14 @@ Provides additional information in member/memberOf relationships.
 |:--------- | :--- | :---------- |
 | type | string | OrganizationRole  |
 | roleName | string | A role played, performed or filled by a person or organization.  |
+| memberOf | * | relationship roles  |
 
 #### OrganizationRole example
 ```json
 {
   "type": "OrganizationRole",
-  "roleName": "E-Team Certified"
+  "roleName": "E-Team Certified",
+  "memberOf": null
 }
 ```
 
@@ -691,13 +726,12 @@ Provides additional information in member/memberOf relationships.
 | contactPoint | [object] | Named and grouped contacts points. <br/>RANGE: [ContactPoint](/schemas#contactpoint) |
 | address | [object] | mailing addresses. <br/>RANGE: [PostalAddress](/schemas#postaladdress) |
 | birthDate | string&lt;date&gt; | date of birth.  |
-| birthPlace | object | place of birth. <br/>RANGE: [Place](/schemas#place) |
 
 #### Person example
 ```json
 {
   "type": "Person",
-  "id": "http://example.com",
+  "id": "https://example.com/collection/1",
   "name": "string",
   "givenName": "Bruce",
   "familyName": "Wayne",
@@ -711,7 +745,8 @@ Provides additional information in member/memberOf relationships.
       "name": "Work",
       "telephone": "1-364-127-9618 x20418",
       "faxNumber": "834.320.1602",
-      "email": "user@example.com"
+      "email": "user@example.com",
+      "url": "https://www.facebook.com/hallandoates"
     }
   ],
   "address": [
@@ -724,8 +759,7 @@ Provides additional information in member/memberOf relationships.
       "postalCode": "10010"
     }
   ],
-  "birthDate": "2019-03-08",
-  "birthPlace": {}
+  "birthDate": "2019-03-20"
 }
 ```
 
@@ -756,7 +790,7 @@ Provides additional information in member/memberOf relationships.
 ```json
 {
   "type": "string",
-  "id": "http://example.com",
+  "id": "https://example.com/collection/1",
   "address": {},
   "aggregateRating": {},
   "branchCode": "string",
@@ -806,6 +840,38 @@ A physical address.
   "addressRegion": "New Jersey",
   "addressLocality": "Gotham City",
   "postalCode": "10010"
+}
+```
+
+
+## ProgramMembership
+
+Provides additional information in member/memberOf relationships.
+
+#### ProgramMembership properties
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string | ProgramMembership  |
+| roleName | string | not used  |
+| memberOf | string&lt;uri&gt; | reference to the MarketingProgram <br/>RANGE: [MarketingProgram](/schemas#marketingprogram) |
+| id | string&lt;uri&gt; | id for the specific instance of the relationship between the member and the Program  |
+| member | string&lt;uri&gt; | reference to the member <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
+| memberId | string | the member identifier for the program  |
+| startDate | string&lt;date-time&gt; | the date the member started the program  |
+| endDate | string&lt;date-time&gt; | the date the program membership ended  |
+
+#### ProgramMembership example
+```json
+{
+  "type": "ProgramMembership",
+  "roleName": null,
+  "memberOf": "http://example.com",
+  "id": "http://example.com",
+  "member": "http://user.example.com/profile/card",
+  "memberId": "string",
+  "startDate": "2019-03-20T05:32:57Z",
+  "endDate": "2019-03-20T05:32:57Z"
 }
 ```
 
@@ -863,7 +929,7 @@ A real estate agent or team.
 ```json
 {
   "type": "RealEstateAgent",
-  "id": "http://example.com",
+  "id": "https://example.com/collection/1",
   "name": "Batman & Robin",
   "telephone": "079.706.7065 x6341",
   "faxNumber": "(873) 271-4802",
@@ -883,7 +949,8 @@ A real estate agent or team.
       "name": "Work",
       "telephone": "1-364-127-9618 x20418",
       "faxNumber": "834.320.1602",
-      "email": "user@example.com"
+      "email": "user@example.com",
+      "url": "https://www.facebook.com/hallandoates"
     }
   ],
   "logo": [
@@ -925,7 +992,8 @@ A real estate agent or team.
   "member": [
     {
       "type": "OrganizationRole",
-      "roleName": "E-Team Certified"
+      "roleName": "E-Team Certified",
+      "memberOf": null
     }
   ],
   "memberOf": [
@@ -955,8 +1023,8 @@ A real estate agent or team.
         "type": "AdministrativeArea",
         "name": "New York"
       },
-      "validFrom": "2019-03-08T11:39:34Z",
-      "validUntil": "2019-03-08T11:39:34Z"
+      "validFrom": "2019-03-20T05:32:57Z",
+      "validUntil": "2019-03-20T05:32:57Z"
     }
   ]
 }
@@ -996,8 +1064,8 @@ Real estate licenses, authorizations issued by state governments, give agents an
     "type": "AdministrativeArea",
     "name": "New York"
   },
-  "validFrom": "2019-03-08T11:39:34Z",
-  "validUntil": "2019-03-08T11:39:34Z"
+  "validFrom": "2019-03-20T05:32:57Z",
+  "validUntil": "2019-03-20T05:32:57Z"
 }
 ```
 
@@ -1033,7 +1101,7 @@ A real estate franchisor, broker or business.
 ```json
 {
   "type": "RealEstateOrganization",
-  "id": "http://example.com",
+  "id": "https://example.com/collection/1",
   "name": "string",
   "telephone": "079.706.7065 x6341",
   "faxNumber": "(873) 271-4802",
@@ -1094,7 +1162,8 @@ A real estate franchisor, broker or business.
   "member": [
     {
       "type": "OrganizationRole",
-      "roleName": "E-Team Certified"
+      "roleName": "E-Team Certified",
+      "memberOf": null
     }
   ],
   "memberOf": [
@@ -1124,8 +1193,8 @@ A real estate franchisor, broker or business.
         "type": "AdministrativeArea",
         "name": "New York"
       },
-      "validFrom": "2019-03-08T11:39:34Z",
-      "validUntil": "2019-03-08T11:39:34Z"
+      "validFrom": "2019-03-20T05:32:57Z",
+      "validUntil": "2019-03-20T05:32:57Z"
     }
   ]
 }
@@ -1163,7 +1232,7 @@ A real estate franchisor, broker or business.
 ```json
 {
   "type": "RealEstateOrganization",
-  "id": "http://example.com",
+  "id": "https://example.com/collection/1",
   "name": "string",
   "telephone": "079.706.7065 x6341",
   "faxNumber": "(873) 271-4802",
@@ -1183,7 +1252,8 @@ A real estate franchisor, broker or business.
       "name": "Work",
       "telephone": "1-364-127-9618 x20418",
       "faxNumber": "834.320.1602",
-      "email": "user@example.com"
+      "email": "user@example.com",
+      "url": "https://www.facebook.com/hallandoates"
     }
   ],
   "logo": [
@@ -1224,7 +1294,8 @@ A real estate franchisor, broker or business.
   "member": [
     {
       "type": "OrganizationRole",
-      "roleName": "E-Team Certified"
+      "roleName": "E-Team Certified",
+      "memberOf": null
     }
   ],
   "memberOf": [
@@ -1254,8 +1325,8 @@ A real estate franchisor, broker or business.
         "type": "AdministrativeArea",
         "name": "New York"
       },
-      "validFrom": "2019-03-08T11:39:34Z",
-      "validUntil": "2019-03-08T11:39:34Z"
+      "validFrom": "2019-03-20T05:32:57Z",
+      "validUntil": "2019-03-20T05:32:57Z"
     }
   ]
 }

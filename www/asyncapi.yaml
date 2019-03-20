@@ -328,6 +328,7 @@ components:
     CommentAction: { $ref: schemas/CommentAction.yaml }
     ContactPoint: { $ref: schemas/ContactPoint.yaml }
     DigitalDocument: { $ref: schemas/DigitalDocument.yaml }
+    EmailMessage: { $ref: schemas/EmailMessage.yaml }
     ImageObject: { $ref: schemas/ImageObject.yaml }
     Lead: { $ref: schemas/Lead.yaml }
     Notification: { $ref: schemas/Notification.yaml }

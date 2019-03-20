@@ -25,6 +25,122 @@ Events are wrapped by a Notification object:
 
 
 
+## MarketingProgramMemberAdd
+
+a program member was added by the agent (Work In Progress)
+
+
+```json
+{
+  "topic": [
+    "marketing"
+  ],
+  "type": "MarketingProgramMemberAdd",
+  "agent": "http://user.example.com/profile/card",
+  "object": {
+    "type": "Person",
+    "id": "https://example.com/collection/1",
+    "name": "string",
+    "givenName": "Bruce",
+    "familyName": "Wayne",
+    "jobTitle": "Jefe",
+    "email": "user@example.com",
+    "faxNumber": "(498) 625-6456",
+    "telephone": "1-339-041-0306 x2866",
+    "contactPoint": [
+      {
+        "type": "ContactPoint",
+        "name": "Work",
+        "telephone": "1-364-127-9618 x20418",
+        "faxNumber": "834.320.1602",
+        "email": "user@example.com",
+        "url": "https://www.facebook.com/hallandoates"
+      }
+    ],
+    "address": [
+      {
+        "type": "PostalAddress",
+        "streetAddress": "1007 Mountain Gate Rd",
+        "postOfficeBoxNumber": "Box 1234",
+        "addressRegion": "New Jersey",
+        "addressLocality": "Gotham City",
+        "postalCode": "10010"
+      }
+    ],
+    "birthDate": "2019-03-20"
+  },
+  "targetCollection": "http://example.com"
+}
+```
+
+#### MarketingProgramMemberAdd properties
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| topic | [string] | the subscription event type(s) assigned to the action  |
+| type | string! | MarketingProgramMemberAdd  |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
+| targetCollection | string&lt;uri&gt; | ref to the marketing program receiving the new member <br/>RANGE: [ProgramMembership](/schemas#programmembership) |
+
+## MarketingProgramMemberRemove
+
+a member was removed by the agent (Work In Progress)
+
+
+```json
+{
+  "topic": [
+    "marketing"
+  ],
+  "type": "MarketingProgramMemberRemove",
+  "agent": "http://user.example.com/profile/card",
+  "object": {
+    "type": "Person",
+    "id": "https://example.com/collection/1",
+    "name": "string",
+    "givenName": "Bruce",
+    "familyName": "Wayne",
+    "jobTitle": "Jefe",
+    "email": "user@example.com",
+    "faxNumber": "(498) 625-6456",
+    "telephone": "1-339-041-0306 x2866",
+    "contactPoint": [
+      {
+        "type": "ContactPoint",
+        "name": "Work",
+        "telephone": "1-364-127-9618 x20418",
+        "faxNumber": "834.320.1602",
+        "email": "user@example.com",
+        "url": "https://www.facebook.com/hallandoates"
+      }
+    ],
+    "address": [
+      {
+        "type": "PostalAddress",
+        "streetAddress": "1007 Mountain Gate Rd",
+        "postOfficeBoxNumber": "Box 1234",
+        "addressRegion": "New Jersey",
+        "addressLocality": "Gotham City",
+        "postalCode": "10010"
+      }
+    ],
+    "birthDate": "2019-03-20"
+  },
+  "targetCollection": "http://example.com"
+}
+```
+
+#### MarketingProgramMemberRemove properties
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| topic | [string] | the subscription event type(s) assigned to the action  |
+| type | string! | MarketingProgramMemberRemove  |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
+| targetCollection | string&lt;uri&gt; | ref to the marketing program receiving the new member <br/>RANGE: [ProgramMembership](/schemas#programmembership) |
+
 ## profile_added
 
 a profile (agent, affiliate or office) was created
@@ -50,7 +166,6 @@ a profile (agent, affiliate or office) was created
 | type | string! |   |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | [Profile](/schemas#profile) | the profile object <br/>RANGE: [RealEstateAgent](/schemas#realestateagent),[RealEstateOffice](/schemas#realestateoffice),[RealEstateOrganization](/schemas#realestateorganization) |
-| result | object | a result produced in the action.  |
 
 ## profile_updated
 
@@ -77,7 +192,6 @@ a profile (agent, affiliate or office) was updated
 | type | string! | UpdateAction  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | [Profile](/schemas#profile) | the updated profile object <br/>RANGE: [RealEstateAgent](/schemas#realestateagent),[RealEstateOffice](/schemas#realestateoffice),[RealEstateOrganization](/schemas#realestateorganization) |
-| result | object | a result produced in the action.  |
 
 ## contact_added
 
@@ -90,10 +204,10 @@ a contact was created
     "contact"
   ],
   "type": "AddAction",
-  "agent": "http://user.example.com/profile/card#me",
+  "agent": "http://user.example.com/profile/card",
   "object": {
     "type": "Person",
-    "id": "http://example.com",
+    "id": "https://example.com/collection/1",
     "name": "string",
     "givenName": "Bruce",
     "familyName": "Wayne",
@@ -107,7 +221,8 @@ a contact was created
         "name": "Work",
         "telephone": "1-364-127-9618 x20418",
         "faxNumber": "834.320.1602",
-        "email": "user@example.com"
+        "email": "user@example.com",
+        "url": "https://www.facebook.com/hallandoates"
       }
     ],
     "address": [
@@ -120,11 +235,10 @@ a contact was created
         "postalCode": "10010"
       }
     ],
-    "birthDate": "2019-03-08",
-    "birthPlace": {},
+    "birthDate": "2019-03-20",
     "leadSource": {
       "type": "Organization",
-      "id": "http://example.com",
+      "id": "https://example.com/collection/1",
       "name": "string",
       "telephone": "079.706.7065 x6341",
       "faxNumber": "(873) 271-4802",
@@ -144,7 +258,8 @@ a contact was created
           "name": "Work",
           "telephone": "1-364-127-9618 x20418",
           "faxNumber": "834.320.1602",
-          "email": "user@example.com"
+          "email": "user@example.com",
+          "url": "https://www.facebook.com/hallandoates"
         }
       ],
       "logo": [
@@ -172,8 +287,7 @@ a contact was created
         "http://example.com"
       ]
     }
-  },
-  "result": {}
+  }
 }
 ```
 
@@ -185,7 +299,6 @@ a contact was created
 | type | string! |   |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | a contact  |
-| result | object | a result produced in the action.  |
 
 ## contact_updated
 
@@ -196,10 +309,10 @@ a crm contact was updated
 {
   "topic": "contact",
   "type": "UpdateAction",
-  "agent": "http://user.example.com/profile/card#me",
+  "agent": "http://user.example.com/profile/card",
   "object": {
     "type": "Person",
-    "id": "http://example.com",
+    "id": "https://example.com/collection/1",
     "name": "string",
     "givenName": "Bruce",
     "familyName": "Wayne",
@@ -213,7 +326,8 @@ a crm contact was updated
         "name": "Work",
         "telephone": "1-364-127-9618 x20418",
         "faxNumber": "834.320.1602",
-        "email": "user@example.com"
+        "email": "user@example.com",
+        "url": "https://www.facebook.com/hallandoates"
       }
     ],
     "address": [
@@ -226,11 +340,10 @@ a crm contact was updated
         "postalCode": "10010"
       }
     ],
-    "birthDate": "2019-03-08",
-    "birthPlace": {},
+    "birthDate": "2019-03-20",
     "leadSource": {
       "type": "Organization",
-      "id": "http://example.com",
+      "id": "https://example.com/collection/1",
       "name": "string",
       "telephone": "079.706.7065 x6341",
       "faxNumber": "(873) 271-4802",
@@ -250,7 +363,8 @@ a crm contact was updated
           "name": "Work",
           "telephone": "1-364-127-9618 x20418",
           "faxNumber": "834.320.1602",
-          "email": "user@example.com"
+          "email": "user@example.com",
+          "url": "https://www.facebook.com/hallandoates"
         }
       ],
       "logo": [
@@ -278,8 +392,7 @@ a crm contact was updated
         "http://example.com"
       ]
     }
-  },
-  "result": {}
+  }
 }
 ```
 
@@ -291,7 +404,6 @@ a crm contact was updated
 | type | string! | UpdateAction  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | a contact  |
-| result | object | a result produced in the action.  |
 
 ## contact_removed
 
@@ -302,10 +414,10 @@ a crm contact was removed
 {
   "topic": "contact",
   "type": "RemoveAction",
-  "agent": "http://user.example.com/profile/card#me",
+  "agent": "http://user.example.com/profile/card",
   "object": {
     "type": "Person",
-    "id": "http://example.com",
+    "id": "https://example.com/collection/1",
     "name": "string",
     "givenName": "Bruce",
     "familyName": "Wayne",
@@ -319,7 +431,8 @@ a crm contact was removed
         "name": "Work",
         "telephone": "1-364-127-9618 x20418",
         "faxNumber": "834.320.1602",
-        "email": "user@example.com"
+        "email": "user@example.com",
+        "url": "https://www.facebook.com/hallandoates"
       }
     ],
     "address": [
@@ -332,11 +445,10 @@ a crm contact was removed
         "postalCode": "10010"
       }
     ],
-    "birthDate": "2019-03-08",
-    "birthPlace": {},
+    "birthDate": "2019-03-20",
     "leadSource": {
       "type": "Organization",
-      "id": "http://example.com",
+      "id": "https://example.com/collection/1",
       "name": "string",
       "telephone": "079.706.7065 x6341",
       "faxNumber": "(873) 271-4802",
@@ -356,7 +468,8 @@ a crm contact was removed
           "name": "Work",
           "telephone": "1-364-127-9618 x20418",
           "faxNumber": "834.320.1602",
-          "email": "user@example.com"
+          "email": "user@example.com",
+          "url": "https://www.facebook.com/hallandoates"
         }
       ],
       "logo": [
@@ -384,8 +497,7 @@ a crm contact was removed
         "http://example.com"
       ]
     }
-  },
-  "result": {}
+  }
 }
 ```
 
@@ -397,7 +509,6 @@ a crm contact was removed
 | type | string! |   |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | a contact  |
-| result | object | a result produced in the action.  |
 
 ## CommentAction
 
@@ -416,11 +527,10 @@ a comment was created by the agent about a subject &#x60;about&#x60;
   },
   "object": {
     "type": "Comment",
-    "id": "http://example.com",
+    "id": "https://example.com/collection/1",
     "about": "http://user.example.com/profile/card#me",
     "text": "Commodi ratione vel qui ullam ea ut."
-  },
-  "result": {}
+  }
 }
 ```
 
@@ -432,7 +542,6 @@ a comment was created by the agent about a subject &#x60;about&#x60;
 | type | string! | CommentAction  |
 | agent | object | the commentor <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | A comment on an item.  |
-| result | object | a result produced in the action.  |
 
 ## lead_added
 
@@ -443,7 +552,7 @@ a crm lead was created
 {
   "topic": "lead",
   "type": "AddAction",
-  "agent": "http://user.example.com/profile/card#me",
+  "agent": "http://user.example.com/profile/card",
   "object": {
     "type": "AssignAction",
     "id": "http://example.com",
@@ -451,7 +560,7 @@ a crm lead was created
     "recipient": "http://user.example.com/profile/card#me",
     "object": {
       "type": "Person",
-      "id": "http://example.com",
+      "id": "https://example.com/collection/1",
       "name": "string",
       "givenName": "Bruce",
       "familyName": "Wayne",
@@ -465,7 +574,8 @@ a crm lead was created
           "name": "Work",
           "telephone": "1-364-127-9618 x20418",
           "faxNumber": "834.320.1602",
-          "email": "user@example.com"
+          "email": "user@example.com",
+          "url": "https://www.facebook.com/hallandoates"
         }
       ],
       "address": [
@@ -478,11 +588,10 @@ a crm lead was created
           "postalCode": "10010"
         }
       ],
-      "birthDate": "2019-03-08",
-      "birthPlace": {},
+      "birthDate": "2019-03-20",
       "leadSource": {
         "type": "Organization",
-        "id": "http://example.com",
+        "id": "https://example.com/collection/1",
         "name": "string",
         "telephone": "079.706.7065 x6341",
         "faxNumber": "(873) 271-4802",
@@ -502,7 +611,8 @@ a crm lead was created
             "name": "Work",
             "telephone": "1-364-127-9618 x20418",
             "faxNumber": "834.320.1602",
-            "email": "user@example.com"
+            "email": "user@example.com",
+            "url": "https://www.facebook.com/hallandoates"
           }
         ],
         "logo": [
@@ -531,8 +641,7 @@ a crm lead was created
         ]
       }
     }
-  },
-  "result": {}
+  }
 }
 ```
 
@@ -544,7 +653,6 @@ a crm lead was created
 | type | string! |   |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | a lead offered or assigned by the agent to one or more recipients  |
-| result | object | a result produced in the action.  |
 
 ## lead_updated
 
@@ -555,7 +663,7 @@ a crm lead was updated
 {
   "topic": "lead",
   "type": "UpdateAction",
-  "agent": "http://user.example.com/profile/card#me",
+  "agent": "http://user.example.com/profile/card",
   "object": {
     "type": "AssignAction",
     "id": "http://example.com",
@@ -563,7 +671,7 @@ a crm lead was updated
     "recipient": "http://user.example.com/profile/card#me",
     "object": {
       "type": "Person",
-      "id": "http://example.com",
+      "id": "https://example.com/collection/1",
       "name": "string",
       "givenName": "Bruce",
       "familyName": "Wayne",
@@ -577,7 +685,8 @@ a crm lead was updated
           "name": "Work",
           "telephone": "1-364-127-9618 x20418",
           "faxNumber": "834.320.1602",
-          "email": "user@example.com"
+          "email": "user@example.com",
+          "url": "https://www.facebook.com/hallandoates"
         }
       ],
       "address": [
@@ -590,11 +699,10 @@ a crm lead was updated
           "postalCode": "10010"
         }
       ],
-      "birthDate": "2019-03-08",
-      "birthPlace": {},
+      "birthDate": "2019-03-20",
       "leadSource": {
         "type": "Organization",
-        "id": "http://example.com",
+        "id": "https://example.com/collection/1",
         "name": "string",
         "telephone": "079.706.7065 x6341",
         "faxNumber": "(873) 271-4802",
@@ -614,7 +722,8 @@ a crm lead was updated
             "name": "Work",
             "telephone": "1-364-127-9618 x20418",
             "faxNumber": "834.320.1602",
-            "email": "user@example.com"
+            "email": "user@example.com",
+            "url": "https://www.facebook.com/hallandoates"
           }
         ],
         "logo": [
@@ -643,8 +752,7 @@ a crm lead was updated
         ]
       }
     }
-  },
-  "result": {}
+  }
 }
 ```
 
@@ -656,7 +764,6 @@ a crm lead was updated
 | type | string! | UpdateAction  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | a lead offered or assigned by the agent to one or more recipients  |
-| result | object | a result produced in the action.  |
 
 ## lead_removed
 
@@ -667,7 +774,7 @@ a lead was removed
 {
   "topic": "lead",
   "type": "RemoveAction",
-  "agent": "http://user.example.com/profile/card#me",
+  "agent": "http://user.example.com/profile/card",
   "object": {
     "type": "AssignAction",
     "id": "http://example.com",
@@ -675,7 +782,7 @@ a lead was removed
     "recipient": "http://user.example.com/profile/card#me",
     "object": {
       "type": "Person",
-      "id": "http://example.com",
+      "id": "https://example.com/collection/1",
       "name": "string",
       "givenName": "Bruce",
       "familyName": "Wayne",
@@ -689,7 +796,8 @@ a lead was removed
           "name": "Work",
           "telephone": "1-364-127-9618 x20418",
           "faxNumber": "834.320.1602",
-          "email": "user@example.com"
+          "email": "user@example.com",
+          "url": "https://www.facebook.com/hallandoates"
         }
       ],
       "address": [
@@ -702,11 +810,10 @@ a lead was removed
           "postalCode": "10010"
         }
       ],
-      "birthDate": "2019-03-08",
-      "birthPlace": {},
+      "birthDate": "2019-03-20",
       "leadSource": {
         "type": "Organization",
-        "id": "http://example.com",
+        "id": "https://example.com/collection/1",
         "name": "string",
         "telephone": "079.706.7065 x6341",
         "faxNumber": "(873) 271-4802",
@@ -726,7 +833,8 @@ a lead was removed
             "name": "Work",
             "telephone": "1-364-127-9618 x20418",
             "faxNumber": "834.320.1602",
-            "email": "user@example.com"
+            "email": "user@example.com",
+            "url": "https://www.facebook.com/hallandoates"
           }
         ],
         "logo": [
@@ -755,8 +863,7 @@ a lead was removed
         ]
       }
     }
-  },
-  "result": {}
+  }
 }
 ```
 
@@ -768,7 +875,6 @@ a lead was removed
 | type | string! |   |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | a lead offered or assigned by the agent to one or more recipients  |
-| result | object | a result produced in the action.  |
 
 ## lead_assigned
 
@@ -779,9 +885,8 @@ a lead was assigned
 {
   "topic": "lead",
   "type": "AssignAction",
-  "agent": "http://user.example.com/profile/card#me",
-  "object": {},
-  "result": {}
+  "agent": "http://user.example.com/profile/card",
+  "object": {}
 }
 ```
 
@@ -793,7 +898,6 @@ a lead was assigned
 | type | string! |   |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
-| result | object | a result produced in the action.  |
 
 ## lead_accepted
 
@@ -804,7 +908,7 @@ a crm lead was accepted
 {
   "topic": "lead",
   "type": "AcceptAction",
-  "agent": "http://user.example.com/profile/card#me",
+  "agent": "http://user.example.com/profile/card",
   "object": {
     "type": "AssignAction",
     "id": "http://example.com",
@@ -812,7 +916,7 @@ a crm lead was accepted
     "recipient": "http://user.example.com/profile/card#me",
     "object": {
       "type": "Person",
-      "id": "http://example.com",
+      "id": "https://example.com/collection/1",
       "name": "string",
       "givenName": "Bruce",
       "familyName": "Wayne",
@@ -826,7 +930,8 @@ a crm lead was accepted
           "name": "Work",
           "telephone": "1-364-127-9618 x20418",
           "faxNumber": "834.320.1602",
-          "email": "user@example.com"
+          "email": "user@example.com",
+          "url": "https://www.facebook.com/hallandoates"
         }
       ],
       "address": [
@@ -839,11 +944,10 @@ a crm lead was accepted
           "postalCode": "10010"
         }
       ],
-      "birthDate": "2019-03-08",
-      "birthPlace": {},
+      "birthDate": "2019-03-20",
       "leadSource": {
         "type": "Organization",
-        "id": "http://example.com",
+        "id": "https://example.com/collection/1",
         "name": "string",
         "telephone": "079.706.7065 x6341",
         "faxNumber": "(873) 271-4802",
@@ -863,7 +967,8 @@ a crm lead was accepted
             "name": "Work",
             "telephone": "1-364-127-9618 x20418",
             "faxNumber": "834.320.1602",
-            "email": "user@example.com"
+            "email": "user@example.com",
+            "url": "https://www.facebook.com/hallandoates"
           }
         ],
         "logo": [
@@ -892,8 +997,7 @@ a crm lead was accepted
         ]
       }
     }
-  },
-  "result": {}
+  }
 }
 ```
 
@@ -905,7 +1009,6 @@ a crm lead was accepted
 | type | string! |   |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | a lead offered or assigned by the agent to one or more recipients  |
-| result | object | a result produced in the action.  |
 
 ## lead_rejected
 
@@ -916,7 +1019,7 @@ a crm lead was rejected
 {
   "topic": "lead",
   "type": "RejectAction",
-  "agent": "http://user.example.com/profile/card#me",
+  "agent": "http://user.example.com/profile/card",
   "object": {
     "type": "AssignAction",
     "id": "http://example.com",
@@ -924,7 +1027,7 @@ a crm lead was rejected
     "recipient": "http://user.example.com/profile/card#me",
     "object": {
       "type": "Person",
-      "id": "http://example.com",
+      "id": "https://example.com/collection/1",
       "name": "string",
       "givenName": "Bruce",
       "familyName": "Wayne",
@@ -938,7 +1041,8 @@ a crm lead was rejected
           "name": "Work",
           "telephone": "1-364-127-9618 x20418",
           "faxNumber": "834.320.1602",
-          "email": "user@example.com"
+          "email": "user@example.com",
+          "url": "https://www.facebook.com/hallandoates"
         }
       ],
       "address": [
@@ -951,11 +1055,10 @@ a crm lead was rejected
           "postalCode": "10010"
         }
       ],
-      "birthDate": "2019-03-08",
-      "birthPlace": {},
+      "birthDate": "2019-03-20",
       "leadSource": {
         "type": "Organization",
-        "id": "http://example.com",
+        "id": "https://example.com/collection/1",
         "name": "string",
         "telephone": "079.706.7065 x6341",
         "faxNumber": "(873) 271-4802",
@@ -975,7 +1078,8 @@ a crm lead was rejected
             "name": "Work",
             "telephone": "1-364-127-9618 x20418",
             "faxNumber": "834.320.1602",
-            "email": "user@example.com"
+            "email": "user@example.com",
+            "url": "https://www.facebook.com/hallandoates"
           }
         ],
         "logo": [
@@ -1004,8 +1108,7 @@ a crm lead was rejected
         ]
       }
     }
-  },
-  "result": {}
+  }
 }
 ```
 
@@ -1017,7 +1120,6 @@ a crm lead was rejected
 | type | string! |   |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | a lead offered or assigned by the agent to one or more recipients  |
-| result | object | a result produced in the action.  |
 
 ## lead_returned
 
@@ -1028,7 +1130,7 @@ a crm lead was returned
 {
   "topic": "lead",
   "type": "ReturnAction",
-  "agent": "http://user.example.com/profile/card#me",
+  "agent": "http://user.example.com/profile/card",
   "object": {
     "type": "AssignAction",
     "id": "http://example.com",
@@ -1036,7 +1138,7 @@ a crm lead was returned
     "recipient": "http://user.example.com/profile/card#me",
     "object": {
       "type": "Person",
-      "id": "http://example.com",
+      "id": "https://example.com/collection/1",
       "name": "string",
       "givenName": "Bruce",
       "familyName": "Wayne",
@@ -1050,7 +1152,8 @@ a crm lead was returned
           "name": "Work",
           "telephone": "1-364-127-9618 x20418",
           "faxNumber": "834.320.1602",
-          "email": "user@example.com"
+          "email": "user@example.com",
+          "url": "https://www.facebook.com/hallandoates"
         }
       ],
       "address": [
@@ -1063,11 +1166,10 @@ a crm lead was returned
           "postalCode": "10010"
         }
       ],
-      "birthDate": "2019-03-08",
-      "birthPlace": {},
+      "birthDate": "2019-03-20",
       "leadSource": {
         "type": "Organization",
-        "id": "http://example.com",
+        "id": "https://example.com/collection/1",
         "name": "string",
         "telephone": "079.706.7065 x6341",
         "faxNumber": "(873) 271-4802",
@@ -1087,7 +1189,8 @@ a crm lead was returned
             "name": "Work",
             "telephone": "1-364-127-9618 x20418",
             "faxNumber": "834.320.1602",
-            "email": "user@example.com"
+            "email": "user@example.com",
+            "url": "https://www.facebook.com/hallandoates"
           }
         ],
         "logo": [
@@ -1116,8 +1219,7 @@ a crm lead was returned
         ]
       }
     }
-  },
-  "result": {}
+  }
 }
 ```
 
@@ -1129,7 +1231,6 @@ a crm lead was returned
 | type | string! |   |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | a lead offered or assigned by the agent to one or more recipients  |
-| result | object | a result produced in the action.  |
 
 ## website_registration
 
@@ -1148,9 +1249,8 @@ a website vistor has registered
       "string"
     ],
     "type": "string",
-    "agent": "http://user.example.com/profile/card#me",
-    "object": {},
-    "result": {}
+    "agent": "http://user.example.com/profile/card",
+    "object": {}
   },
   "topic": "website"
 }
@@ -1177,17 +1277,15 @@ a website vistor has requested an appointment
 {
   "topic": "website",
   "type": "string",
-  "agent": "http://user.example.com/profile/card#me",
+  "agent": "http://user.example.com/profile/card",
   "object": {
     "topic": [
       "string"
     ],
     "type": "string",
-    "agent": "http://user.example.com/profile/card#me",
-    "object": {},
-    "result": {}
-  },
-  "result": {}
+    "agent": "http://user.example.com/profile/card",
+    "object": {}
+  }
 }
 ```
 
@@ -1199,7 +1297,6 @@ a website vistor has requested an appointment
 | type | string! |   |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
-| result | object | a result produced in the action.  |
 
 ## website_showing_requested
 
@@ -1208,11 +1305,10 @@ a website visitor has requested a showing appointment
 
 ```json
 {
-  "topic": "website,",
+  "topic": "website",
   "type": "string",
-  "agent": "http://user.example.com/profile/card#me",
-  "object": {},
-  "result": {}
+  "agent": "http://user.example.com/profile/card",
+  "object": {}
 }
 ```
 
@@ -1224,7 +1320,6 @@ a website visitor has requested a showing appointment
 | type | string! |   |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
-| result | object | a result produced in the action.  |
 
 ## website_question
 
@@ -1235,9 +1330,8 @@ a website visitor has asked a question
 {
   "topic": "website",
   "type": "string",
-  "agent": "http://user.example.com/profile/card#me",
-  "object": {},
-  "result": {}
+  "agent": "http://user.example.com/profile/card",
+  "object": {}
 }
 ```
 
@@ -1249,5 +1343,4 @@ a website visitor has asked a question
 | type | string! |   |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
-| result | object | a result produced in the action.  |
 

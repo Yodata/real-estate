@@ -47,4 +47,4 @@ allOf:
         x-range: DigitalDocument
         type: array
         items:
-          $ref: DigitalDocument.yaml
+          $ref: DigitalDocument.yam

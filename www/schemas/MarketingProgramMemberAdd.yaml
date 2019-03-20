@@ -1,0 +1,24 @@
+x-title: MarketingProgramMemberAdd
+x-scope: marketing
+summary: a program member was added by the agent (Work In Progress)
+payload:
+  allOf:
+    - $ref: AddAction.yaml
+    - type: object
+      properties:
+        topic:
+          example:
+            - marketing
+        type:
+          type: string
+          enum:
+            - MarketingProgramMemberAdd
+          example: MarketingProgramMemberAdd
+          description: MarketingProgramMemberAdd
+        object:
+          $ref: Person.yaml
+        targetCollection:
+          type: string
+          format: uri
+          x-range: ProgramMembership
+          description: ref to the marketing program receiving the new member

@@ -9,3 +9,4 @@ properties:
     description: Linked-Data URI (@id)
     type: string
     format: uri
+    example: https://example.com/collection/1

@@ -101,6 +101,7 @@ topics:
         - $ref: '#/components/messages/website_registration'
         - $ref: '#/components/messages/website_question'
         - $ref: '#/components/messages/website_appointment_requested'
+        - $ref: '#/components/messages/OfferAction'
 
   marketing:
     x-summary: Marketing events.
@@ -113,6 +114,11 @@ topics:
 
 components:
   messages:
+    OfferAction:
+      x-title: OfferAction
+      x-scope: website
+      summary: an offer to buy/bid on a property is made
+      payload: { $ref: schemas/OfferAction.yaml }
     MarketingProgramCreate:
       x-title: MarketingProgramCreate
       x-scope: marketing

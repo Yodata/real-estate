@@ -25,6 +25,56 @@ Events are wrapped by a Notification object:
 
 
 
+## OfferAction
+
+an offer to buy/bid on a property is made
+
+
+```json
+{
+  "type": "OfferAction",
+  "agent": {
+    "type": "Person",
+    "name": "Bob",
+    "email": "bob@example.com"
+  },
+  "object": {
+    "type": "RealEstateListing",
+    "id": "http://example.com/12345"
+  },
+  "additionalProperty": {
+    "@context": "https://application.example.com/context#",
+    "customProp": "custom-prop-value"
+  },
+  "identifier": {
+    "@context": "http://example.com/context#",
+    "ID": "value"
+  },
+  "recipient": {
+    "id": "http://user.example.com/profile/card#me"
+  },
+  "offerPrice": {
+    "type": "PriceSpecification",
+    "minPrice": 0,
+    "maxPrice": 0,
+    "price": 0,
+    "priceCurrency": "USD"
+  }
+}
+```
+
+#### OfferAction properties
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! | OfferAction  |
+| agent | object | the agent making the offer <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| object | object | reference to the item on which the offer is being made <br/>RANGE: [string](/schemas#string),[Thing](/schemas#thing) |
+| additionalProperty | object | Property names and values are only valid in the provided `@context`.  For example if `@context http://example.com/context#`. the property with key `ID` should be represented locally as `http;//example.com/context#ID`  |
+| identifier | object | a key value map of **namespaced** unique identifiers.  |
+| recipient | object | the offer recipient <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
+| offerPrice | object | describes the price offered <br/>RANGE: [PriceSpecification](/schemas#pricespecification) |
+
 ## MarketingProgramCreate
 
 a MarketingProgram was created
@@ -32,9 +82,6 @@ a MarketingProgram was created
 
 ```json
 {
-  "topic": [
-    "string"
-  ],
   "type": "CreateAction",
   "agent": "http://user.example.com/profile/card",
   "object": {
@@ -43,8 +90,8 @@ a MarketingProgram was created
     "name": "Market Report 1008 Mountain Gate Road",
     "description": "Dolor accusamus rerum nemo non omnis. Nam labore pariatur eius omnis sit.",
     "creator": "http://user.example.com/profile/card",
-    "dateCreated": "2019-03-20T06:12:08Z",
-    "dateModified": "2019-03-20T06:12:08Z",
+    "dateCreated": "2019-03-26T21:15:39Z",
+    "dateModified": "2019-03-26T21:15:39Z",
     "member": [
       "https://user.example.com/profile/card"
     ]
@@ -56,7 +103,6 @@ a MarketingProgram was created
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | [string] | the subscription event type(s) assigned to the action  |
 | type | string! | CreateAction  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
@@ -68,9 +114,6 @@ an EmailMessage was sent
 
 ```json
 {
-  "topic": [
-    "string"
-  ],
   "type": "EmailAction",
   "agent": "http://user.example.com/profile/card",
   "object": {
@@ -79,8 +122,8 @@ an EmailMessage was sent
     "name": "Market Report 1008 Mountain Gate Road",
     "description": "Dolor accusamus rerum nemo non omnis. Nam labore pariatur eius omnis sit.",
     "creator": "http://user.example.com/profile/card",
-    "dateCreated": "2019-03-20T06:12:08Z",
-    "dateModified": "2019-03-20T06:12:08Z",
+    "dateCreated": "2019-03-26T21:15:39Z",
+    "dateModified": "2019-03-26T21:15:39Z",
     "toRecipient": [
       "user@example.com"
     ],
@@ -90,8 +133,8 @@ an EmailMessage was sent
     "bccRecipient": [
       "user@example.com"
     ],
-    "dateSent": "2019-03-20T06:12:08Z",
-    "dateRead": "2019-03-20T06:12:08Z",
+    "dateSent": "2019-03-26T21:15:39Z",
+    "dateRead": "2019-03-26T21:15:39Z",
     "sender": "http://user.example.com/profile/card",
     "messageAttachment": [
       {
@@ -111,7 +154,6 @@ an EmailMessage was sent
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | [string] | the subscription event type(s) assigned to the action  |
 | type | string! | EmailAction  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
@@ -123,9 +165,6 @@ a program member was added by the agent (Work In Progress)
 
 ```json
 {
-  "topic": [
-    "marketing"
-  ],
   "type": "MarketingProgramMemberAdd",
   "agent": "http://user.example.com/profile/card",
   "object": {
@@ -158,8 +197,11 @@ a program member was added by the agent (Work In Progress)
         "postalCode": "10010"
       }
     ],
-    "birthDate": "2019-03-20"
+    "birthDate": "2019-03-26"
   },
+  "topic": [
+    "marketing"
+  ],
   "targetCollection": "http://example.com"
 }
 ```
@@ -168,10 +210,10 @@ a program member was added by the agent (Work In Progress)
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | [string] | the subscription event type(s) assigned to the action  |
 | type | string! | MarketingProgramMemberAdd  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
+| topic | * |   |
 | targetCollection | string&lt;uri&gt; | ref to the marketing program receiving the new member <br/>RANGE: [ProgramMembership](/schemas#programmembership) |
 
 ## MarketingProgramMemberRemove
@@ -181,9 +223,6 @@ a member was removed by the agent (Work In Progress)
 
 ```json
 {
-  "topic": [
-    "marketing"
-  ],
   "type": "MarketingProgramMemberRemove",
   "agent": "http://user.example.com/profile/card",
   "object": {
@@ -216,8 +255,11 @@ a member was removed by the agent (Work In Progress)
         "postalCode": "10010"
       }
     ],
-    "birthDate": "2019-03-20"
+    "birthDate": "2019-03-26"
   },
+  "topic": [
+    "marketing"
+  ],
   "targetCollection": "http://example.com"
 }
 ```
@@ -226,10 +268,10 @@ a member was removed by the agent (Work In Progress)
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | [string] | the subscription event type(s) assigned to the action  |
 | type | string! | MarketingProgramMemberRemove  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
+| topic | * |   |
 | targetCollection | string&lt;uri&gt; | ref to the marketing program receiving the new member <br/>RANGE: [ProgramMembership](/schemas#programmembership) |
 
 ## profile_added
@@ -253,7 +295,6 @@ a profile (agent, affiliate or office) was created
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | [string] | the subscription event type(s) assigned to the action  |
 | type | string! |   |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | [Profile](/schemas#profile) | the profile object <br/>RANGE: [RealEstateAgent](/schemas#realestateagent),[RealEstateOffice](/schemas#realestateoffice),[RealEstateOrganization](/schemas#realestateorganization) |
@@ -279,7 +320,6 @@ a profile (agent, affiliate or office) was updated
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | [string] | the subscription event type(s) assigned to the action  |
 | type | string! | UpdateAction  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | [Profile](/schemas#profile) | the updated profile object <br/>RANGE: [RealEstateAgent](/schemas#realestateagent),[RealEstateOffice](/schemas#realestateoffice),[RealEstateOrganization](/schemas#realestateorganization) |
@@ -291,9 +331,6 @@ a contact was created
 
 ```json
 {
-  "topic": [
-    "contact"
-  ],
   "type": "AddAction",
   "agent": "http://user.example.com/profile/card",
   "object": {
@@ -326,7 +363,7 @@ a contact was created
         "postalCode": "10010"
       }
     ],
-    "birthDate": "2019-03-20",
+    "birthDate": "2019-03-26",
     "leadSource": {
       "type": "Organization",
       "id": "https://example.com/collection/1",
@@ -378,7 +415,10 @@ a contact was created
         "http://example.com"
       ]
     }
-  }
+  },
+  "topic": [
+    "contact"
+  ]
 }
 ```
 
@@ -386,10 +426,10 @@ a contact was created
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | [string] | the subscription event type(s) assigned to the action  |
 | type | string! |   |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | a contact  |
+| topic | * |   |
 
 ## contact_updated
 
@@ -398,7 +438,6 @@ a crm contact was updated
 
 ```json
 {
-  "topic": "contact",
   "type": "UpdateAction",
   "agent": "http://user.example.com/profile/card",
   "object": {
@@ -431,7 +470,7 @@ a crm contact was updated
         "postalCode": "10010"
       }
     ],
-    "birthDate": "2019-03-20",
+    "birthDate": "2019-03-26",
     "leadSource": {
       "type": "Organization",
       "id": "https://example.com/collection/1",
@@ -483,7 +522,8 @@ a crm contact was updated
         "http://example.com"
       ]
     }
-  }
+  },
+  "topic": "contact"
 }
 ```
 
@@ -491,10 +531,10 @@ a crm contact was updated
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | [string] | the subscription event type(s) assigned to the action  |
 | type | string! | UpdateAction  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | a contact  |
+| topic | * |   |
 
 ## contact_removed
 
@@ -503,7 +543,6 @@ a crm contact was removed
 
 ```json
 {
-  "topic": "contact",
   "type": "RemoveAction",
   "agent": "http://user.example.com/profile/card",
   "object": {
@@ -536,7 +575,7 @@ a crm contact was removed
         "postalCode": "10010"
       }
     ],
-    "birthDate": "2019-03-20",
+    "birthDate": "2019-03-26",
     "leadSource": {
       "type": "Organization",
       "id": "https://example.com/collection/1",
@@ -588,7 +627,8 @@ a crm contact was removed
         "http://example.com"
       ]
     }
-  }
+  },
+  "topic": "contact"
 }
 ```
 
@@ -596,10 +636,10 @@ a crm contact was removed
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | string | the subscription event type(s) assigned to the action  |
 | type | string! |   |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | a contact  |
+| topic | string |   |
 
 ## CommentAction
 
@@ -608,9 +648,6 @@ a comment was created by the agent about a subject &#x60;about&#x60;
 
 ```json
 {
-  "topic": [
-    "contact"
-  ],
   "type": "CommentAction",
   "agent": {
     "type": "Person",
@@ -621,7 +658,10 @@ a comment was created by the agent about a subject &#x60;about&#x60;
     "id": "https://example.com/collection/1",
     "about": "http://user.example.com/profile/card#me",
     "text": "Commodi ratione vel qui ullam ea ut."
-  }
+  },
+  "topic": [
+    "contact"
+  ]
 }
 ```
 
@@ -629,10 +669,10 @@ a comment was created by the agent about a subject &#x60;about&#x60;
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | [string] | the subscription event type(s) assigned to the action  |
 | type | string! | CommentAction  |
 | agent | object | the commentor <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | A comment on an item.  |
+| topic | * |   |
 
 ## lead_added
 
@@ -641,7 +681,6 @@ a crm lead was created
 
 ```json
 {
-  "topic": "lead",
   "type": "AddAction",
   "agent": "http://user.example.com/profile/card",
   "object": {
@@ -679,7 +718,7 @@ a crm lead was created
           "postalCode": "10010"
         }
       ],
-      "birthDate": "2019-03-20",
+      "birthDate": "2019-03-26",
       "leadSource": {
         "type": "Organization",
         "id": "https://example.com/collection/1",
@@ -732,7 +771,8 @@ a crm lead was created
         ]
       }
     }
-  }
+  },
+  "topic": "lead"
 }
 ```
 
@@ -740,10 +780,10 @@ a crm lead was created
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | [string] | the subscription event type(s) assigned to the action  |
 | type | string! |   |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | a lead offered or assigned by the agent to one or more recipients  |
+| topic | * |   |
 
 ## lead_updated
 
@@ -752,7 +792,6 @@ a crm lead was updated
 
 ```json
 {
-  "topic": "lead",
   "type": "UpdateAction",
   "agent": "http://user.example.com/profile/card",
   "object": {
@@ -790,7 +829,7 @@ a crm lead was updated
           "postalCode": "10010"
         }
       ],
-      "birthDate": "2019-03-20",
+      "birthDate": "2019-03-26",
       "leadSource": {
         "type": "Organization",
         "id": "https://example.com/collection/1",
@@ -843,7 +882,8 @@ a crm lead was updated
         ]
       }
     }
-  }
+  },
+  "topic": "lead"
 }
 ```
 
@@ -851,10 +891,10 @@ a crm lead was updated
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | [string] | the subscription event type(s) assigned to the action  |
 | type | string! | UpdateAction  |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | a lead offered or assigned by the agent to one or more recipients  |
+| topic | * |   |
 
 ## lead_removed
 
@@ -863,7 +903,6 @@ a lead was removed
 
 ```json
 {
-  "topic": "lead",
   "type": "RemoveAction",
   "agent": "http://user.example.com/profile/card",
   "object": {
@@ -901,7 +940,7 @@ a lead was removed
           "postalCode": "10010"
         }
       ],
-      "birthDate": "2019-03-20",
+      "birthDate": "2019-03-26",
       "leadSource": {
         "type": "Organization",
         "id": "https://example.com/collection/1",
@@ -954,7 +993,8 @@ a lead was removed
         ]
       }
     }
-  }
+  },
+  "topic": "lead"
 }
 ```
 
@@ -962,10 +1002,10 @@ a lead was removed
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | [string] | the subscription event type(s) assigned to the action  |
 | type | string! |   |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | a lead offered or assigned by the agent to one or more recipients  |
+| topic | * |   |
 
 ## lead_assigned
 
@@ -974,10 +1014,10 @@ a lead was assigned
 
 ```json
 {
-  "topic": "lead",
   "type": "AssignAction",
   "agent": "http://user.example.com/profile/card",
-  "object": {}
+  "object": {},
+  "topic": "lead"
 }
 ```
 
@@ -985,10 +1025,10 @@ a lead was assigned
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | string | the subscription event type(s) assigned to the action  |
 | type | string! |   |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
+| topic | string |   |
 
 ## lead_accepted
 
@@ -997,7 +1037,6 @@ a crm lead was accepted
 
 ```json
 {
-  "topic": "lead",
   "type": "AcceptAction",
   "agent": "http://user.example.com/profile/card",
   "object": {
@@ -1035,7 +1074,7 @@ a crm lead was accepted
           "postalCode": "10010"
         }
       ],
-      "birthDate": "2019-03-20",
+      "birthDate": "2019-03-26",
       "leadSource": {
         "type": "Organization",
         "id": "https://example.com/collection/1",
@@ -1088,7 +1127,8 @@ a crm lead was accepted
         ]
       }
     }
-  }
+  },
+  "topic": "lead"
 }
 ```
 
@@ -1096,10 +1136,10 @@ a crm lead was accepted
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | [string] | the subscription event type(s) assigned to the action  |
 | type | string! |   |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | a lead offered or assigned by the agent to one or more recipients  |
+| topic | * |   |
 
 ## lead_rejected
 
@@ -1108,7 +1148,6 @@ a crm lead was rejected
 
 ```json
 {
-  "topic": "lead",
   "type": "RejectAction",
   "agent": "http://user.example.com/profile/card",
   "object": {
@@ -1146,7 +1185,7 @@ a crm lead was rejected
           "postalCode": "10010"
         }
       ],
-      "birthDate": "2019-03-20",
+      "birthDate": "2019-03-26",
       "leadSource": {
         "type": "Organization",
         "id": "https://example.com/collection/1",
@@ -1199,7 +1238,8 @@ a crm lead was rejected
         ]
       }
     }
-  }
+  },
+  "topic": "lead"
 }
 ```
 
@@ -1207,10 +1247,10 @@ a crm lead was rejected
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | [string] | the subscription event type(s) assigned to the action  |
 | type | string! |   |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | a lead offered or assigned by the agent to one or more recipients  |
+| topic | * |   |
 
 ## lead_returned
 
@@ -1219,7 +1259,6 @@ a crm lead was returned
 
 ```json
 {
-  "topic": "lead",
   "type": "ReturnAction",
   "agent": "http://user.example.com/profile/card",
   "object": {
@@ -1257,7 +1296,7 @@ a crm lead was returned
           "postalCode": "10010"
         }
       ],
-      "birthDate": "2019-03-20",
+      "birthDate": "2019-03-26",
       "leadSource": {
         "type": "Organization",
         "id": "https://example.com/collection/1",
@@ -1310,7 +1349,8 @@ a crm lead was returned
         ]
       }
     }
-  }
+  },
+  "topic": "lead"
 }
 ```
 
@@ -1318,10 +1358,10 @@ a crm lead was returned
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | [string] | the subscription event type(s) assigned to the action  |
 | type | string! |   |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | a lead offered or assigned by the agent to one or more recipients  |
+| topic | * |   |
 
 ## website_registration
 
@@ -1332,18 +1372,15 @@ a website vistor has registered
 {
   "type": "Notification",
   "id": "https://you.example.com/inbox/12345",
+  "topic": "website",
   "timestamp": 1550503972767,
   "agent": "https://user.example.com/profile/card#me",
   "instrument": "https://application.example.com/profile/card#me",
   "object": {
-    "topic": [
-      "string"
-    ],
     "type": "string",
     "agent": "http://user.example.com/profile/card",
     "object": {}
-  },
-  "topic": "website"
+  }
 }
 ```
 
@@ -1353,11 +1390,11 @@ a website vistor has registered
 |:--------- | :--- | :---------- |
 | type | string |   |
 | id | string&lt;uri&gt; | the notification uri  |
-| timestamp | string | the timestamp  |
-| agent | string&lt;uri&gt; | the user that is sending the event  |
-| instrument | string&lt;uri&gt; | the application that generated the event  |
-| object | object | the event payload  |
-| topic | * |   |
+| topic | [string] | subscription scopes that will recieve the notification  |
+| timestamp | string | the time the notification was created  |
+| agent | string&lt;uri&gt; | the user/source that generated the notification  |
+| instrument | string&lt;uri&gt; | application or service that delivereted the notification  |
+| object | object | the event payload <br/>RANGE: [Action](/schemas#action) |
 
 ## website_appointment_requested
 
@@ -1366,17 +1403,14 @@ a website vistor has requested an appointment
 
 ```json
 {
-  "topic": "website",
   "type": "string",
   "agent": "http://user.example.com/profile/card",
   "object": {
-    "topic": [
-      "string"
-    ],
     "type": "string",
     "agent": "http://user.example.com/profile/card",
     "object": {}
-  }
+  },
+  "topic": "website"
 }
 ```
 
@@ -1384,10 +1418,10 @@ a website vistor has requested an appointment
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | [string] | the subscription event type(s) assigned to the action  |
 | type | string! |   |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
+| topic | * |   |
 
 ## website_showing_requested
 
@@ -1396,10 +1430,10 @@ a website visitor has requested a showing appointment
 
 ```json
 {
-  "topic": "website",
   "type": "string",
   "agent": "http://user.example.com/profile/card",
-  "object": {}
+  "object": {},
+  "topic": "website"
 }
 ```
 
@@ -1407,10 +1441,10 @@ a website visitor has requested a showing appointment
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | [string] | the subscription event type(s) assigned to the action  |
 | type | string! |   |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
+| topic | * |   |
 
 ## website_question
 
@@ -1419,10 +1453,10 @@ a website visitor has asked a question
 
 ```json
 {
-  "topic": "website",
   "type": "string",
   "agent": "http://user.example.com/profile/card",
-  "object": {}
+  "object": {},
+  "topic": "website"
 }
 ```
 
@@ -1430,8 +1464,8 @@ a website visitor has asked a question
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | [string] | the subscription event type(s) assigned to the action  |
 | type | string! |   |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
+| topic | * |   |
 

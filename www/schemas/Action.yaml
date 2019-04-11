@@ -1,13 +1,6 @@
-x-debug: false
 title: Action
 type: object
 properties:
-  topic:
-    description: the subscription event type(s) assigned to the action
-    type: array
-    items:
-      type: string
-
   type:
     type: string
 

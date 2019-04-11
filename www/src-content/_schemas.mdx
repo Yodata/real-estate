@@ -15,7 +15,6 @@ name: Object Types
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | [string] | the subscription event type(s) assigned to the action  |
 | type | string! |   |
 | agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
@@ -23,9 +22,6 @@ name: Object Types
 #### Action example
 ```json
 {
-  "topic": [
-    "string"
-  ],
   "type": "string",
   "agent": "http://user.example.com/profile/card",
   "object": {}
@@ -141,7 +137,7 @@ a contact
       "postalCode": "10010"
     }
   ],
-  "birthDate": "2019-03-20",
+  "birthDate": "2019-03-26",
   "leadSource": {
     "type": "Organization",
     "id": "https://example.com/collection/1",
@@ -229,17 +225,14 @@ A comment on an item.
 
 | Name/Type | Type | Description |
 |:--------- | :--- | :---------- |
-| topic | [string] | the subscription event type(s) assigned to the action  |
 | type | string! | CommentAction  |
 | agent | string&lt;uri&gt;&#124;object | the commentor <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
 | object | object | A comment on an item.  |
+| topic | * |   |
 
 #### CommentAction example
 ```json
 {
-  "topic": [
-    "contact"
-  ],
   "type": "CommentAction",
   "agent": {
     "type": "RealEstateAgent",
@@ -250,7 +243,10 @@ A comment on an item.
     "id": "https://example.com/collection/1",
     "about": "http://user.example.com/profile/card#me",
     "text": "Commodi ratione vel qui ullam ea ut."
-  }
+  },
+  "topic": [
+    "contact"
+  ]
 }
 ```
 
@@ -342,8 +338,8 @@ an electronic file.
   "name": "Market Report 1008 Mountain Gate Road",
   "description": "Dolor accusamus rerum nemo non omnis. Nam labore pariatur eius omnis sit.",
   "creator": "http://user.example.com/profile/card",
-  "dateCreated": "2019-03-20T06:12:08Z",
-  "dateModified": "2019-03-20T06:12:08Z",
+  "dateCreated": "2019-03-26T21:15:39Z",
+  "dateModified": "2019-03-26T21:15:39Z",
   "toRecipient": [
     "user@example.com"
   ],
@@ -353,8 +349,8 @@ an electronic file.
   "bccRecipient": [
     "user@example.com"
   ],
-  "dateSent": "2019-03-20T06:12:08Z",
-  "dateRead": "2019-03-20T06:12:08Z",
+  "dateSent": "2019-03-26T21:15:39Z",
+  "dateRead": "2019-03-26T21:15:39Z",
   "sender": "http://user.example.com/profile/card",
   "messageAttachment": [
     {
@@ -451,7 +447,7 @@ a lead offered or assigned by the agent to one or more recipients
         "postalCode": "10010"
       }
     ],
-    "birthDate": "2019-03-20",
+    "birthDate": "2019-03-26",
     "leadSource": {
       "type": "Organization",
       "id": "https://example.com/collection/1",
@@ -518,23 +514,24 @@ a lead offered or assigned by the agent to one or more recipients
 |:--------- | :--- | :---------- |
 | type | string |   |
 | id | string&lt;uri&gt; | the notification uri  |
-| timestamp | string | the timestamp  |
-| agent | string&lt;uri&gt; | the user that is sending the event  |
-| instrument | string&lt;uri&gt; | the application that generated the event  |
-| object | object | the event payload  |
+| topic | [string] | subscription scopes that will recieve the notification  |
+| timestamp | string | the time the notification was created  |
+| agent | string&lt;uri&gt; | the user/source that generated the notification  |
+| instrument | string&lt;uri&gt; | application or service that delivereted the notification  |
+| object | object | the event payload <br/>RANGE: [Action](/schemas#action) |
 
 #### Notification example
 ```json
 {
   "type": "Notification",
   "id": "https://you.example.com/inbox/12345",
+  "topic": [
+    "lead"
+  ],
   "timestamp": 1550503972767,
   "agent": "https://user.example.com/profile/card#me",
   "instrument": "https://application.example.com/profile/card#me",
   "object": {
-    "topic": [
-      "string"
-    ],
     "type": "string",
     "agent": "http://user.example.com/profile/card",
     "object": {}
@@ -625,8 +622,8 @@ Provides additional information in member/memberOf relationships.
   "name": "Market Report 1008 Mountain Gate Road",
   "description": "Dolor accusamus rerum nemo non omnis. Nam labore pariatur eius omnis sit.",
   "creator": "http://user.example.com/profile/card",
-  "dateCreated": "2019-03-20T06:12:08Z",
-  "dateModified": "2019-03-20T06:12:08Z",
+  "dateCreated": "2019-03-26T21:15:39Z",
+  "dateModified": "2019-03-26T21:15:39Z",
   "member": [
     "https://user.example.com/profile/card"
   ]
@@ -818,7 +815,7 @@ Provides additional information in member/memberOf relationships.
       "postalCode": "10010"
     }
   ],
-  "birthDate": "2019-03-20"
+  "birthDate": "2019-03-26"
 }
 ```
 
@@ -929,8 +926,8 @@ Provides additional information in member/memberOf relationships.
   "id": "http://example.com",
   "member": "http://user.example.com/profile/card",
   "memberId": "string",
-  "startDate": "2019-03-20T06:12:08Z",
-  "endDate": "2019-03-20T06:12:08Z"
+  "startDate": "2019-03-26T21:15:39Z",
+  "endDate": "2019-03-26T21:15:39Z"
 }
 ```
 
@@ -1082,8 +1079,8 @@ A real estate agent or team.
         "type": "AdministrativeArea",
         "name": "New York"
       },
-      "validFrom": "2019-03-20T06:12:08Z",
-      "validUntil": "2019-03-20T06:12:08Z"
+      "validFrom": "2019-03-26T21:15:39Z",
+      "validUntil": "2019-03-26T21:15:39Z"
     }
   ]
 }
@@ -1123,8 +1120,8 @@ Real estate licenses, authorizations issued by state governments, give agents an
     "type": "AdministrativeArea",
     "name": "New York"
   },
-  "validFrom": "2019-03-20T06:12:08Z",
-  "validUntil": "2019-03-20T06:12:08Z"
+  "validFrom": "2019-03-26T21:15:39Z",
+  "validUntil": "2019-03-26T21:15:39Z"
 }
 ```
 
@@ -1252,8 +1249,8 @@ A real estate franchisor, broker or business.
         "type": "AdministrativeArea",
         "name": "New York"
       },
-      "validFrom": "2019-03-20T06:12:08Z",
-      "validUntil": "2019-03-20T06:12:08Z"
+      "validFrom": "2019-03-26T21:15:39Z",
+      "validUntil": "2019-03-26T21:15:39Z"
     }
   ]
 }
@@ -1384,8 +1381,8 @@ A real estate franchisor, broker or business.
         "type": "AdministrativeArea",
         "name": "New York"
       },
-      "validFrom": "2019-03-20T06:12:08Z",
-      "validUntil": "2019-03-20T06:12:08Z"
+      "validFrom": "2019-03-26T21:15:39Z",
+      "validUntil": "2019-03-26T21:15:39Z"
     }
   ]
 }

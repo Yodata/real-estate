@@ -1,0 +1,37 @@
+{
+	"meta": {
+		"topic": [
+			"marketing"
+		]
+	},
+	"recipient": [
+		"https://bhhs.hsfaffiliates.com/profile/card#me"
+	],
+	"payload": {
+		"type": "CreateAction",
+		"agent": {
+		  "type": "Person",
+		  "email": "brian.preston@foxroach.com",
+		"givenName": "Brian",
+		"familyName": "Preston",
+		"identifier": 49461
+		},
+		"object": {
+			"type": "MarketingProgram",
+			"id": "5781dbaedcfa44a7bf4d2a655f511260",
+			"name": "Market Activity Report for 430 Foulke Ln",
+			"about": "430 Foulke Ln, Springfield, PA 19064",
+			"dateCreated": "2019-03-26T17:40:00Z",
+			"dateModified": "2019-03-26T17:40:00Z",
+			"member": [
+				{
+					"type": "Person",
+					"email": "joeconsumer@getbuyside.com",
+					"givenName": "Joe",
+					"familyName": "Consumer",
+					"identifier": 33
+				}
+			]
+		}
+	}
+}

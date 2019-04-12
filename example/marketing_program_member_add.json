@@ -9,6 +9,7 @@
 	],
 	"payload": {
 		"type": "MarketingProgramMemberAdd",
+		"id": "5781dbaedcfa44a7bf4d2a655f511260",
 		"agent": {
 		  	"type": "Person",
 		  	"email": "brian.preston@foxroach.com",

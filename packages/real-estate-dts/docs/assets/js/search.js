@@ -1,3 +1,0 @@
-var typedoc = typedoc || {};
-            typedoc.search = typedoc.search || {};
-            typedoc.search.data = {"kinds":{"1":"External module","4194304":"Type alias"},"rows":[{"id":0,"kind":1,"name":"\"index\"","url":"modules/_index_.html","classes":"tsd-kind-external-module"},{"id":1,"kind":4194304,"name":"RealEstateOrganization","url":"modules/_index_.html#realestateorganization","classes":"tsd-kind-type-alias tsd-parent-kind-external-module","parent":"\"index\""}]};

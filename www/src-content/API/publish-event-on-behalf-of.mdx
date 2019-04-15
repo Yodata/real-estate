@@ -45,3 +45,37 @@ The format mandates that:
 - The `topic` key is mandatory and will be used in the entity pod to compute the right container.
 
 If the publish is successful, the event will be deleted from the `/publish/` container. Processing can range from instant to several minutes.
+
+The following keys will be added to the event to make it compliant with the pubsub system:
+
+- `agent` with the entity's identity
+- `instrument` with the publisher's identity
+- `timestamp` as a millisecond Epoch timestamp
+- `time` as an ISO formatted date
+
+## Outcome
+
+Once published, the event will appear in the appropriate event container on the entity pod. Following the **Usage** example, the event would be stored under `https://entity.example.com/event/topic/realestate/example/`.
+
+If the generated ID was `abcde12345`, the event would be available at:
+
+```http
+GET /event/topic/realestate/example/abcde12345 HTTP/1.1
+Host: entity.example.com
+
+Content-Type: application/json
+
+{
+    "agent": "https://entity.example.com/profile/card#me",
+    "instrument": https://publisher.example.com/profile/card#me",
+    "timestamp": 1555097126000,
+    "time": "2019-04-12T19:25:26Z",
+    "topic": "realestate/example#action",
+    "datacontenttype": "application/json",
+    "data": {
+        "type": "test",
+        "hello": "world"
+    }
+}
+```
+

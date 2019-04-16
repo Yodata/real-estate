@@ -4,8 +4,8 @@ identifier:
   smarter-agent:actionId: '4746861905023846710'
   refAgentID: '11413100001000010000'
   recipientBrandingID: '11413100431000010000'
-  
-actor:  <= renamed from 'agent'
+
+actor:
   type: Person
   id: 'https://api.smarteragent.com/1.0/prospects/4746861905023846710'
   givenName: Shawn
@@ -18,19 +18,15 @@ actor:  <= renamed from 'agent'
 
 about:
   type: RealEstateListing
-  
+
   # These properties should be namespaced
-  identifier:  
+  identifier:
     listingID: '7080011'
     listingKey: '121253510232'
     propertyID: '2099991775'
 
-
-
 description: "Shawn Van der poel a mobile app user would like more information about a \_EMAIL Lead"
 
-
-    
 instrument:
   - type: MobileApplication
     name: BHHS Mobile APP
@@ -41,9 +37,9 @@ instrument:
     identifier:
       - name: deviceGUID
         value: 3ad07835-7a03-4376-97f2-e765ef869245,3ad07835-7a03-4376-97f2-e765ef869244
-  
+
 location:
-  type: Place # @type => type, place => Place 
+  type: Place # @type => type, place => Place
   address:
     type: PostalAddress
     streetAddress: 681-87 N Broad St
@@ -51,18 +47,15 @@ location:
     addressRegion: PA
     postalCode: '19123'
 
-
-    
   price: '2300000.0'
   '@url': 'https://api.smarteranget.com/1.0/properties/2099991775'
   beds: '0.0'
-  
+
   baths: 0. 0
 startTime: '2017-12-06T15:07:15Z'
 ' listingAgent':
   '@type': RealEstateAgent
-  
-  
+
   refCompanyID: CORPRLTY
 recipient:
   name: 'Fox & Roach, REALTORS'
@@ -81,4 +74,3 @@ recipient:
   '@type': RealEstateAgent
 listingOffice:
   '@type': organization
-  

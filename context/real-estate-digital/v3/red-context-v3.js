@@ -1,4 +1,4 @@
-const { Context, loadContext, defaultValues } = require('../../../src')
+const { loadContext, defaultValues } = require('@yodata/transform')
 const context = loadContext('./red-cdef-v3.yaml').use(defaultValues)
 
 
@@ -24,14 +24,14 @@ const mapContactPoints = last => {
 		last.contact.contactPoint.forEach(point => {
 			if (point) {
 				switch (point.name) {
-					case 'Home':
-						homeLocation.push(point)
-						break
-					case 'Work':
-						workLocation.push(point)
-						break
-					default:
-						contactPoint.push(point)
+				case 'Home':
+					homeLocation.push(point)
+					break
+				case 'Work':
+					workLocation.push(point)
+					break
+				default:
+					contactPoint.push(point)
 				}
 			}
 		})

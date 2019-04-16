@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+// @ts-nocheck
 const input = require('./input.v3')
 const output = require('./output.v3')
 const context = require('./red-context-v3')

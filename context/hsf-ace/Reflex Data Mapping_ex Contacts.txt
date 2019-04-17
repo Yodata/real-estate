@@ -1,3 +1,46 @@
+#Contact fields
+Stage__c
+LeadSource
+Phone #
+Email
+Birthdate
+Name
+Name
+Contact_Type__c #
+Last_Activity_Date__c #
+AccountId
+Transaction_Type__c
+Lifestyle_Interests__c
+Other_Transaction_Type__c
+Other_Lifestyle_Interest__c
+Engagement_Plan_Opt_Out__c
+MobilePhone #
+DoNotCall
+HasOptedOutOfEmail
+MailingAddress
+OtherAddress
+Rent_Own__c
+Target_Close_Date__c
+Pre_Approved_Amount__c
+Pre_Qualfied__c
+Pre_approved__c
+Employer__c
+Work_Phone__c
+Position__c #
+Annual_Salary__c #
+Languages__c #
+Net_Worth__c
+Recreation_Interests__c
+Home_Purchase_Anniversary__c
+Wedding_Anniversary__c
+Facebook_Username__c
+LinkedIn_Username__c
+Twitter_Username__c
+Instagram_Username__c
+YouTube_Username__c
+Pinterest_Username__c
+CreatedById
+LastModifiedById #End Contact fields#
 Name
 Status
 OwnerId

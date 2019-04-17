@@ -1,11 +1,11 @@
-Stage__c:
-LeadSource: 
+Stage__c
+LeadSource
 Phone
 
 Email
 Birthdate
 Name
-Name 
+Name
 Contact_Type__c
 
 Last_Activity_Date__c

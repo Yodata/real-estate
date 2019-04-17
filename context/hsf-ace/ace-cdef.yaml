@@ -40,9 +40,9 @@ Instagram_Username__c
 YouTube_Username__c
 Pinterest_Username__c
 CreatedById
-LastModifiedById
-Name #End Contact fields
+LastModifiedById #End Contact fields
 
+Name
 Status
 OwnerId
 Company

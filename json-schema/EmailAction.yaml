@@ -1,0 +1,13 @@
+allOf:
+  - $ref: Action.yaml
+  - type: object
+    description: an email was sent
+    properties:
+      type:
+        type: string
+        description: EmailAction
+        enum:
+          - EmailAction
+      object:
+        x-range: EmailMessage
+        $ref: EmailMessage.yaml

@@ -1,0 +1,72 @@
+allOf:
+  - $ref: Thing.yaml
+  - x-kind: Organization
+  - x-hasSubclass:
+      - RealEstateOrganization
+      - RealEstateOffice
+      - RealEstateAgent
+  - x-subClassOf:
+      - https://schema.org/Organization
+    properties:
+      type:
+        type: string
+        enum: ['Organization']
+
+      name:
+        type: string
+        description: Name or DBA.
+
+      telephone:
+        $ref: telephone.yaml
+
+      faxNumber:
+        $ref: faxNumber.yaml
+
+      email:
+        $ref: email.yaml
+
+      url:
+        type: string
+        format: uri
+        description: primary website/url for the entity.
+
+      availableLanguage:
+        description: A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard.
+        type: array
+        x-range: Language
+        items:
+          $ref: Language.yaml
+
+      branchCode:
+        description: A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.
+        type: string
+        example: CA301-001
+
+      contactPoint:
+        type: array
+        description: Additional contact points. Can be organized by role, location, etc...
+        items:
+          type: object
+          $ref: ContactPoint.yaml
+
+      logo:
+        description: a logo associated with the organization.
+        type: array
+        x-range:
+          - ImageObject
+          - DigitalDocument
+        items:
+          type: object
+          allOf:
+            - $ref: DigitalDocument.yaml
+            - type: object
+              description: an associated logo
+      image:
+        description: an ImageObject or URI reference to an image of the entity on the web.
+        $ref: image.yaml
+
+      parentOrganization:
+        type: array
+        items:
+          type: string
+          format: uri

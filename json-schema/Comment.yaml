@@ -1,0 +1,17 @@
+type: object
+allOf:
+  - $ref: Thing.yaml
+  - type: object
+    description: A comment on an item.
+    properties:
+      type:
+        description: Comment
+        type: string
+        enum:
+          - Comment
+      about:
+        $ref: about.yaml
+      text:
+        description: the comment content
+        type: string
+        example: Commodi ratione vel qui ullam ea ut.

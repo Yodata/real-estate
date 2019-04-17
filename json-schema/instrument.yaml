@@ -1,0 +1,6 @@
+description: thing used by the agent to perform the action, i.e. an application or website that generated the message.
+oneOf:
+  - type: string
+    format: uri
+    example: http://user.example.com/profile/card#me
+  - type: object

@@ -1,0 +1,38 @@
+title: MediaObject
+description: an image, video or document availble for download
+x-subclass:
+  - ImageObject
+  - DigitalDocument
+allOf:
+  - $ref: Thing.yaml
+  - properties:
+      type:
+        type: string
+        enum:
+          - MediaObject
+          - ImageObject
+          - DigitalDocument
+      id:
+        description: the URL to access the item.
+        example: http://user.example.com/public/logo/fileName.zip
+      name:
+        type: string
+        description: the file name of the object.
+        example: fileName.zip
+      encodingFormat:
+        type: string
+        description: MIME type
+        example: application/zip
+      content:
+        type: string
+        description: base64 encoded content
+      about:
+        type: string
+        format: uri
+        description: URI to the subject of the image or logo
+        example: http://user.example.com/profile/card#me
+      url:
+        type: string
+        format: uri
+        description: URL of the image content
+        example: http://user.example.com/public/profile/image.jpg

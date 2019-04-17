@@ -1,0 +1,8 @@
+type: object
+allOf:
+  - $ref: Person.yaml
+  - description: a contact
+    properties:
+      leadSource:
+        description: the Lead Provider
+        $ref: Organization.yaml

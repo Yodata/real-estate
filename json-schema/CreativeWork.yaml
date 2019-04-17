@@ -1,0 +1,38 @@
+title: CreativeWork
+type: object
+description: A creative work, including books, movies, photographs, software programs, etc.
+allOf:
+  - $ref: Thing.yaml
+  - type: object
+    properties:
+      type:
+        type: string
+        description: CreativeWork
+        enum:
+          - CreativeWork
+
+      name:
+        type: string
+        description: name of the work.
+        example: Market Report 1008 Mountain Gate Road
+
+      description:
+        type: string
+        description: description of the item
+        example: Dolor accusamus rerum nemo non omnis. Nam labore pariatur eius omnis sit.
+
+      creator:
+        description: creator / author of the work
+        type: string
+        format: uri
+        example: http://user.example.com/profile/card
+
+      dateCreated:
+        description: The date on which the CreativeWork was created or the item was added to a DataFeed.
+        type: string
+        format: date-time
+
+      dateModified:
+        description: The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
+        type: string
+        format: date-time

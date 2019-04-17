@@ -1,0 +1,82 @@
+---
+name: Subscription Types
+
+
+---
+# Subscription Types
+
+## Permission model
+
+The Events API leverages existing object-driven OAuth scope system to
+control access to events. For example, if your app has access to profiles
+through the `profiles:read` scope, you can choose to subscribe to any or
+none of the profile-related events like `profile_added` and
+`profile_updated`.
+
+You will only receive events from users who've authorized your app.
+
+
+## profile
+
+Affiliate, Office, and Agent profile events
+
+
+#### Subscriber receives the following events
+
+| Event | Description | Scope |
+| :---- | :---------- | :---- |
+| [profile_added](/messages#profile_added) | a profile (agent, affiliate or office) was created | profile:read |
+| [profile_updated](/messages#profile_updated) | a profile (agent, affiliate or office) was updated | profile:read |
+## contact
+
+Contact / CRM events
+
+
+#### Subscriber receives the following events
+
+| Event | Description | Scope |
+| :---- | :---------- | :---- |
+| [contact_added](/messages#contact_added) | a contact was created | contact |
+| [contact_updated](/messages#contact_updated) | a crm contact was updated | contact |
+| [contact_removed](/messages#contact_removed) | a crm contact was removed | contact |
+| [CommentAction](/messages#CommentAction) | a comment was created by the agent about a subject &#x60;about&#x60; | contact |
+## lead
+
+Lead events
+
+
+#### Subscriber receives the following events
+
+| Event | Description | Scope |
+| :---- | :---------- | :---- |
+| [lead_added](/messages#lead_added) | a crm lead was created | lead |
+| [lead_updated](/messages#lead_updated) | a crm lead was updated | lead |
+| [lead_assigned](/messages#lead_assigned) | a lead was assigned | lead |
+| [lead_accepted](/messages#lead_accepted) | a crm lead was accepted | lead |
+| [lead_returned](/messages#lead_returned) | a crm lead was returned | lead |
+## website
+
+Website events
+
+
+#### Subscriber receives the following events
+
+| Event | Description | Scope |
+| :---- | :---------- | :---- |
+| [website_registration](/messages#website_registration) | a website vistor has registered | website |
+| [website_question](/messages#website_question) | a website visitor has asked a question | website |
+| [website_appointment_requested](/messages#website_appointment_requested) | a website vistor has requested an appointment | website |
+| [OfferAction](/messages#OfferAction) | an offer to buy/bid on a property is made | website |
+## marketing
+
+Marketing events.
+
+
+#### Subscriber receives the following events
+
+| Event | Description | Scope |
+| :---- | :---------- | :---- |
+| [MarketingProgramMemberAdd](/messages#MarketingProgramMemberAdd) | a program member was added by the agent (Work In Progress) | marketing |
+| [MarketingProgramMemberRemove](/messages#MarketingProgramMemberRemove) | a member was removed by the agent (Work In Progress) | marketing |
+| [MarketingProgramCreate](/messages#MarketingProgramCreate) | a MarketingProgram was created | marketing |
+| [EmailAction](/messages#EmailAction) | an EmailMessage was sent | marketing |

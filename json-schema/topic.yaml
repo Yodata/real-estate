@@ -1,0 +1,9 @@
+description: the subscription type(s) assigned to the action
+type: array
+items:
+  type: string
+  enum:
+    - profile:read
+    - lead
+    - contact
+    - listing

@@ -1,0 +1,50 @@
+x-subClassOf: http://schema.org/CreativeWork
+description: an email message
+type: object
+allOf:
+  - $ref: CreativeWork.yaml
+  - type: object
+    properties:
+      type:
+        type: string
+        description: EmailMessage
+        enum:
+          - EmailMessage
+        example: EmailMessage
+      toRecipient:
+        type: array
+        description: direct recipient of the message
+        items:
+          type: string
+          example: user@example.com
+      ccRecipient:
+        type: array
+        description: direct recipient of the message
+        items:
+          type: string
+          example: user@example.com
+      bccRecipient:
+        type: array
+        description: direct recipient of the message
+        items:
+          type: string
+          example: user@example.com
+      dateSent:
+        type: string
+        format: date-time
+        description: The date/time at which the message was sent.
+      dateRead:
+        type: string
+        format: date-time
+        description: The date/time at which the message was first viewed
+      sender:
+        type: string
+        format: uri
+        description: ref to the sender
+        example: http://user.example.com/profile/card
+      messageAttachment:
+        description: message attachments
+        x-range: DigitalDocument
+        type: array
+        items:
+          $ref: DigitalDocument.yaml

@@ -1,0 +1,8 @@
+x-title: participant
+x-range:
+  - Person
+  - Organization
+description: Other co-agents that participated in the action indirectly.
+type: array
+items:
+  type: object

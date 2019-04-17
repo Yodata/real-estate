@@ -1,0 +1,14 @@
+type: object
+description: an MLS
+allOf:
+  - $ref: Organization.yaml
+  - description: an MLS
+    properties:
+      type:
+        description: MultipleListingService
+        type: string
+        enum:
+          - MultipleListingService
+    example:
+      type: MultipleListingService
+      name: GreatScott MLS

@@ -1,0 +1,8 @@
+x-range:
+  - Place
+  - PostalAddress
+  - Text
+description:
+  The location of for example where the event is happening, an organization
+  is located, or where an action takes place.
+type: object

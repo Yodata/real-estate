@@ -1,0 +1,373 @@
+# asyncapi spec: https://github.com/asyncapi/asyncapi/blob/master/versions/1.2.0/asyncapi.md
+asyncapi: 1.2.0
+
+info:
+  title: Let's Integrate Real Estate
+  version: '0.0.1'
+  description: |
+    Reflex is intended to normalize the process of integrating applications and services
+    in the real estate domain in a user-centric, vendor agnostic and developer friendly
+    way.
+
+    The API is very simple, the only interactions are publish a message (HTTP POST) and get messages either pushed to your 
+    application or with HTTP GET.
+
+    The project is 100% open source and contributors are welcomed with open arms.
+
+    To get started you'll need to get yourself a POD that will provide your application's private message bus.
+
+    If you don't already have a pod, contact us and we'll get you setup.
+
+  contact:
+    name: Dave Duran
+    email: dave@yodata.io
+    url: 'https://yodata.io/real-estate'
+
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+  x-info:
+    route: /
+
+  x-topics:
+    name: Subscription Types
+    intro: |
+      ## Permission model
+
+      The Events API leverages existing object-driven OAuth scope system to
+      control access to events. For example, if your app has access to profiles
+      through the `profiles:read` scope, you can choose to subscribe to any or
+      none of the profile-related events like `profile_added` and
+      `profile_updated`.
+
+      You will only receive events from users who've authorized your app.
+
+  x-messages:
+    name: Event Types
+    intro: |
+      ### NOTE
+
+      Events are wrapped by a Notification object:
+
+      ```json
+      {
+        "type": "Notification",
+        "id": "https://you.example.com/inbox/12345",
+        "timestamp": 1550503972767,
+        "agent": "https://user.example.com/profile/card#me",
+        "instrument": "https://application.example.com/profile/card#me",
+        "object": {
+          "type": "Action",
+          "topic": [ "profile:read" ]
+          }
+        }
+      ```
+
+  x-schemas:
+    name: Object Types
+
+topics:
+  profile:
+    x-summary: Affiliate, Office, and Agent profile events
+    subscribe:
+      oneOf:
+        - $ref: '#/components/messages/profile_added'
+        - $ref: '#/components/messages/profile_updated'
+
+  contact:
+    x-summary: Contact / CRM events
+    subscribe:
+      oneOf:
+        - $ref: '#/components/messages/contact_added'
+        - $ref: '#/components/messages/contact_updated'
+        - $ref: '#/components/messages/contact_removed'
+        - $ref: '#/components/messages/CommentAction'
+
+  lead:
+    x-summary: Lead events
+    subscribe:
+      oneOf:
+        - $ref: '#/components/messages/lead_added'
+        - $ref: '#/components/messages/lead_updated'
+        - $ref: '#/components/messages/lead_assigned'
+        - $ref: '#/components/messages/lead_accepted'
+        - $ref: '#/components/messages/lead_returned'
+
+  website:
+    x-summary: Website events
+    subscribe:
+      oneOf:
+        - $ref: '#/components/messages/website_registration'
+        - $ref: '#/components/messages/website_question'
+        - $ref: '#/components/messages/website_appointment_requested'
+        - $ref: '#/components/messages/OfferAction'
+
+  marketing:
+    x-summary: Marketing events.
+    subscribe:
+      oneOf:
+        - $ref: '#/components/messages/MarketingProgramMemberAdd'
+        - $ref: '#/components/messages/MarketingProgramMemberRemove'
+        - $ref: '#/components/messages/MarketingProgramCreate'
+        - $ref: '#/components/messages/EmailAction'
+
+components:
+  messages:
+    OfferAction:
+      x-title: OfferAction
+      x-scope: website
+      summary: an offer to buy/bid on a property is made
+      payload: { $ref: OfferAction.yaml }
+    MarketingProgramCreate:
+      x-title: MarketingProgramCreate
+      x-scope: marketing
+      summary: a MarketingProgram was created
+      payload: { $ref: MarketingProgramCreate.yaml }
+    EmailAction:
+      x-title: EmailAction
+      x-scope: marketing
+      summary: an EmailMessage was sent
+      payload: { $ref: EmailAction.yaml }
+    MarketingProgramMemberAdd: { $ref: MarketingProgramMemberAdd.yaml }
+    MarketingProgramMemberRemove: { $ref: MarketingProgramMemberRemove.yaml }
+    profile_added: { $ref: profile_added.yaml }
+    profile_updated: { $ref: profile_updated.yaml }
+    contact_added: { $ref: contact_added.yaml }
+    contact_updated:
+      x-title: contact_updated
+      x-scope: contact
+      summary: a crm contact was updated
+      payload:
+        allOf:
+          - $ref: UpdateAction.yaml
+          - properties:
+              topic:
+                example: contact
+              object:
+                $ref: Contact.yaml
+
+    contact_removed:
+      x-title: contact_removed
+      summary: a crm contact was removed
+      x-scope: contact
+      payload:
+        allOf:
+          - $ref: RemoveAction.yaml
+          - properties:
+              topic:
+                type: string
+                example: contact
+              object:
+                $ref: Contact.yaml
+
+    CommentAction:
+      x-title: CommentAction
+      summary: a comment was created by the agent about a subject `about`
+      x-scope:
+        - contact
+      payload:
+        allOf:
+          - $ref: CommentAction.yaml
+          - properties:
+              agent:
+                type: object
+                description: the commentor
+                x-range:
+                  - Person
+                  - Organization
+                example:
+                  type: Person
+                  name: Charlie Commentor
+              object:
+                type: object
+                $ref: Comment.yaml
+
+    lead_added:
+      x-title: lead_added
+      x-scope: lead
+      summary: a crm lead was created
+      payload:
+        allOf:
+          - $ref: AddAction.yaml
+          - properties:
+              topic:
+                example: lead
+              object:
+                $ref: Lead.yaml
+
+    lead_updated:
+      x-title: lead_updated
+      x-scope: lead
+      summary: a crm lead was updated
+      payload:
+        allOf:
+          - $ref: UpdateAction.yaml
+          - properties:
+              topic:
+                example: lead
+              object:
+                $ref: Lead.yaml
+
+    lead_removed:
+      x-title: lead_removed
+      x-scope: lead
+      summary: a lead was removed
+      payload:
+        allOf:
+          - $ref: RemoveAction.yaml
+          - properties:
+              topic:
+                example: lead
+              object:
+                $ref: Lead.yaml
+
+    lead_assigned:
+      x-title: lead_assigned
+      x-scope: lead
+      summary: a lead was assigned
+      payload:
+        allOf:
+          - $ref: Action.yaml
+          - properties:
+              type:
+                type: string
+                enum:
+                  - AssignAction
+              topic:
+                type: string
+                example: lead
+
+    lead_accepted:
+      x-title: lead_accepted
+      summary: a crm lead was accepted
+      x-scope: lead
+      payload:
+        allOf:
+          - $ref: Action.yaml
+          - properties:
+              type:
+                type: string
+                enum:
+                  - AcceptAction
+              topic:
+                example: lead
+              object:
+                $ref: Lead.yaml
+
+    lead_rejected:
+      x-title: lead_rejected
+      summary: a crm lead was rejected
+      x-scope: lead
+      payload:
+        allOf:
+          - $ref: Action.yaml
+          - properties:
+              type:
+                type: string
+                enum:
+                  - RejectAction
+              topic:
+                example: lead
+              object:
+                $ref: Lead.yaml
+
+    lead_returned:
+      x-title: lead_returned
+      summary: a crm lead was returned
+      x-scope: lead
+      payload:
+        allOf:
+          - $ref: Action.yaml
+          - properties:
+              type:
+                type: string
+                enum:
+                  - ReturnAction
+              topic:
+                example: lead
+              object:
+                $ref: Lead.yaml
+
+    website_registration:
+      x-title: website_registration
+      summary: a website vistor has registered
+      x-scope: website
+      payload:
+        allOf:
+          - $ref: Notification.yaml
+          - properties:
+              topic:
+                example: website
+              object:
+                $ref: Action.yaml
+
+    website_appointment_requested:
+      x-title: website_appointment_requested
+      summary: a website vistor has requested an appointment
+      x-scope: website
+      payload:
+        allOf:
+          - $ref: Action.yaml
+          - properties:
+              topic:
+                example: website
+              object:
+                $ref: Action.yaml
+
+    website_showing_requested:
+      x-title: website_showing_requested
+      summary: a website visitor has requested a showing appointment
+      x-scope: website
+      payload:
+        allOf:
+          - $ref: Action.yaml
+          - properties:
+              topic:
+                example: website
+
+    website_question:
+      x-title: website_question
+      summary: a website visitor has asked a question
+      x-scope: website
+      payload:
+        allOf:
+          - $ref: Action.yaml
+          - properties:
+              topic:
+                example: website
+
+  schemas:
+    Action: { $ref: Action.yaml }
+    ApplicationProfile: { $ref: ApplicationProfile.yaml }
+    Contact: { $ref: Contact.yaml }
+    Comment: { $ref: Comment.yaml }
+    CommentAction: { $ref: CommentAction.yaml }
+    ContactPoint: { $ref: ContactPoint.yaml }
+    DigitalDocument: { $ref: DigitalDocument.yaml }
+    EmailMessage: { $ref: EmailMessage.yaml }
+    ImageObject: { $ref: ImageObject.yaml }
+    Lead: { $ref: Lead.yaml }
+    Notification: { $ref: Notification.yaml }
+    MediaObject: { $ref: MediaObject.yaml }
+    MLSMembership: { $ref: MLSMembership.yaml }
+    MarketingProgram: { $ref: MarketingProgram.yaml }
+    MultipleListingService: { $ref: MultipleListingService.yaml }
+    Organization: { $ref: Organization.yaml }
+    OrganizationRole: { $ref: OrganizationRole.yaml }
+    Person: { $ref: Person.yaml }
+    Place: { $ref: Place.yaml }
+    PostalAddress: { $ref: PostalAddress.yaml }
+    ProgramMembership: { $ref: ProgramMembership.yaml }
+    PropertyValue: { $ref: PropertyValue.yaml }
+    RealEstateAgent: { $ref: RealEstateAgent.yaml }
+    RealEstateLicense: { $ref: RealEstateLicense.yaml }
+    RealEstateOffice: { $ref: RealEstateOffice.yaml }
+    RealEstateOrganization: { $ref: RealEstateOrganization.yaml }
+    CustomProperties: { $ref: CustomProperties.yaml }
+
+  securitySchemes:
+    https:
+      name: api-key
+      type: httpApiKey
+      in: header

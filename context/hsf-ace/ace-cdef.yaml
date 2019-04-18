@@ -39,12 +39,12 @@ Pre_approved__c: 'Pre_approved__c'
 Employer__c: worksFor
 Work_Phone__c: telphone #contactPoint / contactType (?)
 
-Position__c
+Position__c: jobTitle #or hasOccupation (?)
 
-Annual_Salary__c
+Annual_Salary__c: 'Annual_Salary__c'
 
-Languages__c
-Net_Worth__c
+Languages__c: knowsLanguage
+Net_Worth__c: netWorth
 Recreation_Interests__c
 Home_Purchase_Anniversary__c
 Wedding_Anniversary__c

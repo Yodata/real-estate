@@ -89,20 +89,20 @@ WhatId: relatedTo #(?) Ace field name = Related to (used for family relation in 
 #Begin Campaign Member fields
 CampaignID: identifier #or name (?)
 City: addressLocality
-CompanyORAccount: memberOf #or affiliation (?)
+CompanyORAccount: memberOf #or affiliation or Thing / Organization (?)
 ContactId: member
 
 Country: addressCountry
 CreatedById: creator
-CreatedDate
-Description
+CreatedDate: dateCreated
+Description: description #from Thing
 
-DoNotCall
+DoNotCall: 'DoNotCall'
 
-Email
-HasOptedOutOfEmail
-Fax
-HasOptedOutOfFax
+Email: email
+HasOptedOutOfEmail: 'HasOptedOutOfEmail'
+Fax: faxNumber
+HasOptedOutOfFax: 'HasOptedOutOfFax'
 FirstName
 FirstRespondedDate
 LastModifiedById

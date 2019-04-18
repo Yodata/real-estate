@@ -9,20 +9,27 @@ Birthdate: birthDate
 Name: additionalName #or alternateName (Contact Name)
 Name: givenName + ' ' + familyName #Full Name
 
-Contact_Type__c: contactType #property of ContactPoint; or additionalType(?)
+Contact_Type__c: contactType #property of ContactPoint; or additionalType (?)
 
 Last_Activity_Date__c: 'Last_Activity_Date__c'
 AccountId: identifier #Household
 Transaction_Type__c: 'Transaction_Type__c'
-Lifestyle_Interests__c
-Other_Transaction_Type__c
-Other_Lifestyle_Interest__c
-Engagement_Plan_Opt_Out__c
+Lifestyle_Interests__c: 'Lifestyle_Interests__c' #description (?)
+Other_Transaction_Type__c: 'Other_Transaction_Type__c'
+Other_Lifestyle_Interest__c: 'Other_Lifestyle_Interest__c'
+Engagement_Plan_Opt_Out__c: 'Engagement_Plan_Opt_Out__c'
 
-MobilePhone
-DoNotCall
-HasOptedOutOfEmail
-MailingAddress
+MobilePhone: telephone #contactPoint / contactType (?)
+DoNotCall: 'DoNotCall'
+HasOptedOutOfEmail: 'HasOptedOutOfEmail'
+MailingAddress: PostalAddress
+  #from contactPoint / PostalAddress
+  #addressCountry
+  #addressLocality
+  #addressRegion
+  #postOfficeBoxNumber
+  #postalCode
+  #streetAddress
 OtherAddress
 Rent_Own__c
 Target_Close_Date__c

@@ -30,14 +30,14 @@ MailingAddress: PostalAddress
   #postOfficeBoxNumber
   #postalCode
   #streetAddress
-OtherAddress
-Rent_Own__c
-Target_Close_Date__c
-Pre_Approved_Amount__c
-Pre_Qualfied__c
-Pre_approved__c
-Employer__c
-Work_Phone__c
+OtherAddress: PostalAddress #see above
+Rent_Own__c: 'Rent_Own__c'
+Target_Close_Date__c: 'Target_Close_Date__c'
+Pre_Approved_Amount__c: 'Pre_Approved_Amount__c'
+Pre_Qualfied__c: 'Pre_Qualfied__c'
+Pre_approved__c: 'Pre_approved__c'
+Employer__c: worksFor
+Work_Phone__c: telphone #contactPoint / contactType (?)
 
 Position__c
 

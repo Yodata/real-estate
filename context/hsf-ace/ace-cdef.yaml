@@ -59,3 +59,30 @@ Pinterest_Username__c: 'Pinterest_Username__c' #contactPoint / contactType (?)
 CreatedById: identifier #(?)
 LastModifiedById: identifier #(?)
 #End Contact fields
+#Begin Lead fields
+Name: givenName + ' ' + familyName #full name
+Status: 'Status' #called 'Stage__c' in Contact
+OwnerId: identifier #(?)
+Company: worksFor
+Email: email
+Phone: telephone #contactPoint / contactType (?): Ace field name = Business Phone
+Address: PostalAddress
+  #addressCountry
+  #addressLocality
+  #addressRegion
+  #postOfficeBoxNumber
+  #postalCode
+  #streetAddress
+LeadSource
+Comments__c
+Other_Lead_Source__c
+CreatedById
+LastModifiedById
+#End Lead fields
+#Begin Tasks fields
+Subject
+OwnerId
+ActivityDate
+WhoId
+WhatId
+#End Tasks fields

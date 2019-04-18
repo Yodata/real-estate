@@ -7,7 +7,7 @@ Phone: telephone #contactPoint / contactType (?): Ace field name = Business Phon
 Email: email
 Birthdate: birthDate
 Name: additionalName #or alternateName (?) (Ace field name = Contact Name)
-Name: givenName + ' ' + familyName #Ace field name = Full Name
+Name: givenName + ' ' + familyName #or just name (?) Ace field name = Full Name
 
 Contact_Type__c: contactType #property of ContactPoint; or additionalType (?)
 
@@ -90,7 +90,7 @@ WhatId: relatedTo #(?) Ace field name = Related to (used for family relation in 
 CampaignID: identifier #or name (?)
 City: addressLocality
 CompanyORAccount: memberOf #or affiliation or Thing / Organization (?)
-ContactId: member
+ContactId: member #or name (?)
 
 Country: addressCountry
 CreatedById: creator
@@ -103,22 +103,22 @@ Email: email
 HasOptedOutOfEmail: 'HasOptedOutOfEmail'
 Fax: faxNumber
 HasOptedOutOfFax: 'HasOptedOutOfFax'
-FirstName
-FirstRespondedDate
-LastModifiedById
-LastModifiedDate
-LastName
-LeadId
-LeadSource
-MobilePhone
-Phone
-HasResponded
-Salutation
+FirstName: givenName
+FirstRespondedDate: 'FirstRespondedDate'
+LastModifiedById: identifier #or name (?)
+LastModifiedDate: dateModified
+LastName: familyName
+LeadId: member #or name (?)
+LeadSource: 'LeadSource'
+MobilePhone: telephone #contactPoint / contactType (?)
+Phone: telephone #contactPoint / contactType (?)
+HasResponded: 'HasResponded'
+Salutation: 'Salutation'
 State: addressRegion
-Status
+Status: 'Status'
 
-Street: #streetAddress
-Title
+Street: streetAddress
+Title: jobTitle
 
 PostalCode: postalCode
 #End Campaign Member fields

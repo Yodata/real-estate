@@ -1,12 +1,12 @@
 
 # Start Contact fields
-Stage__c: 'Stage__c' #Status (Ace)
+Stage__c: 'Stage__c' #Ace field name = Status (Ace)
 LeadSource: 'LeadSource'
 
 Phone: telephone #contactPoint / contactType (?): Ace field name = Business Phone
 Email: email
 Birthdate: birthDate
-Name: additionalName #or alternateName (Ace field name = Contact Name)
+Name: additionalName #or alternateName (?) (Ace field name = Contact Name)
 Name: givenName + ' ' + familyName #Ace field name = Full Name
 
 Contact_Type__c: contactType #property of ContactPoint; or additionalType (?)

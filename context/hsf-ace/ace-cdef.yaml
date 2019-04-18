@@ -3,16 +3,16 @@
 Stage__c: 'Stage__c' #Status (Ace)
 LeadSource: 'LeadSource'
 
-Phone: telephone #Business Phone
+Phone: telephone #contactPoint / contactType (?): Ace field name = Business Phone
 Email: email
 Birthdate: birthDate
-Name: additionalName #or alternateName (Contact Name)
-Name: givenName + ' ' + familyName #Full Name
+Name: additionalName #or alternateName (Ace field name = Contact Name)
+Name: givenName + ' ' + familyName #Ace field name = Full Name
 
 Contact_Type__c: contactType #property of ContactPoint; or additionalType (?)
 
 Last_Activity_Date__c: 'Last_Activity_Date__c'
-AccountId: identifier #Household
+AccountId: identifier #(?) Ace field name = Household
 Transaction_Type__c: 'Transaction_Type__c'
 Lifestyle_Interests__c: 'Lifestyle_Interests__c' #description (?)
 Other_Transaction_Type__c: 'Other_Transaction_Type__c'
@@ -56,6 +56,6 @@ Instagram_Username__c: 'Instagram_Username__c' #contactPoint / contactType (?)
 YouTube_Username__c: 'YouTube_Username__c' #contactPoint / contactType (?)
 Pinterest_Username__c: 'Pinterest_Username__c' #contactPoint / contactType (?)
 
-CreatedById
-LastModifiedById
+CreatedById: identifier #(?)
+LastModifiedById: identifier #(?)
 #End Contact fields

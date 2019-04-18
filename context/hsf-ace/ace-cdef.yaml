@@ -45,15 +45,17 @@ Annual_Salary__c: 'Annual_Salary__c'
 
 Languages__c: knowsLanguage
 Net_Worth__c: netWorth
-Recreation_Interests__c
-Home_Purchase_Anniversary__c
-Wedding_Anniversary__c
-Facebook_Username__c
-LinkedIn_Username__c
-Twitter_Username__c
-Instagram_Username__c
-YouTube_Username__c
-Pinterest_Username__c
+Recreation_Interests__c: 'Recreation_Interests__c'
+Home_Purchase_Anniversary__c: 'Home_Purchase_Anniversary__c'
+Wedding_Anniversary__c: 'Wedding_Anniversary__c'
+
+Facebook_Username__c: 'Facebook_Username__c' #contactPoint / contactType (?)
+LinkedIn_Username__c: 'LinkedIn_Username__c' #contactPoint / contactType (?)
+Twitter_Username__c: 'Twitter_Username__c' #contactPoint / contactType (?)
+Instagram_Username__c: 'Instagram_Username__c' #contactPoint / contactType (?)
+YouTube_Username__c: 'YouTube_Username__c' #contactPoint / contactType (?)
+Pinterest_Username__c: 'Pinterest_Username__c' #contactPoint / contactType (?)
+
 CreatedById
 LastModifiedById
 #End Contact fields

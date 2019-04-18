@@ -30,7 +30,7 @@ MailingAddress: PostalAddress
   #postOfficeBoxNumber
   #postalCode
   #streetAddress
-OtherAddress: PostalAddress #see above
+OtherAddress: 'OtherAddress' #see PostalAddress
 Rent_Own__c: 'Rent_Own__c'
 Target_Close_Date__c: 'Target_Close_Date__c'
 Pre_Approved_Amount__c: 'Pre_Approved_Amount__c'
@@ -41,7 +41,7 @@ Work_Phone__c: telphone #contactPoint / contactType (?)
 
 Position__c: jobTitle #or hasOccupation (?)
 
-Annual_Salary__c: 'Annual_Salary__c'
+Annual_Salary__c: baseSalary #from Thing
 
 Languages__c: knowsLanguage
 Net_Worth__c: netWorth
@@ -56,7 +56,7 @@ Instagram_Username__c: 'Instagram_Username__c' #contactPoint / contactType (?)
 YouTube_Username__c: 'YouTube_Username__c' #contactPoint / contactType (?)
 Pinterest_Username__c: 'Pinterest_Username__c' #contactPoint / contactType (?)
 
-CreatedById: identifier #or name (?)
+CreatedById: creator
 LastModifiedById: identifier #or name (?)
 #End Contact fields
 #Begin Lead fields
@@ -74,14 +74,14 @@ Address: PostalAddress
   #postalCode
   #streetAddress
 LeadSource: 'LeadSource'
-Comments__c: commentText #(?) from Thing /...UserComments
+Comments__c: commentText # from Thing /...UserComments
 Other_Lead_Source__c: 'Other_Lead_Source__c'
-CreatedById: identifier #or name (?)
+CreatedById: creator
 LastModifiedById: identifier #or name (?)
 #End Lead fields
 #Begin Tasks fields
 Subject: additionalType #(?) Ace field name = Task Type
-OwnerId: identifier #(?) #Ace field name = Assigned To
+OwnerId: identifier #or name (?) #Ace field name = Assigned To
 ActivityDate: 'ActivityDate'
 WhoId: givenName + ' ' + familyName #(?) Ace field name = Name
 WhatId: relatedTo #(?) Ace field name = Related to (used for family relation in schema.org)

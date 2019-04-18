@@ -56,8 +56,8 @@ Instagram_Username__c: 'Instagram_Username__c' #contactPoint / contactType (?)
 YouTube_Username__c: 'YouTube_Username__c' #contactPoint / contactType (?)
 Pinterest_Username__c: 'Pinterest_Username__c' #contactPoint / contactType (?)
 
-CreatedById: identifier #(?)
-LastModifiedById: identifier #(?)
+CreatedById: identifier #or name (?)
+LastModifiedById: identifier #or name (?)
 #End Contact fields
 #Begin Lead fields
 Name: givenName + ' ' + familyName #full name
@@ -74,15 +74,51 @@ Address: PostalAddress
   #postalCode
   #streetAddress
 LeadSource: 'LeadSource'
-Comments__c: commentText # (?) from Thing /...UserComments
+Comments__c: commentText #(?) from Thing /...UserComments
 Other_Lead_Source__c: 'Other_Lead_Source__c'
-CreatedById: identifier #(?)
-LastModifiedById: identifier #(?)
+CreatedById: identifier #or name (?)
+LastModifiedById: identifier #or name (?)
 #End Lead fields
 #Begin Tasks fields
-Subject
-OwnerId
-ActivityDate
-WhoId
-WhatId
+Subject: additionalType #(?) Ace field name = Task Type
+OwnerId: identifier #(?) #Ace field name = Assigned To
+ActivityDate: 'ActivityDate'
+WhoId: givenName + ' ' + familyName #(?) Ace field name = Name
+WhatId: relatedTo #(?) Ace field name = Related to (used for family relation in schema.org)
 #End Tasks fields
+#Begin Campaign Member fields
+CampaignID: identifier #or name (?)
+City: addressLocality
+CompanyORAccount: memberOf #or affiliation (?)
+ContactId: member
+
+Country: addressCountry
+CreatedById: creator
+CreatedDate
+Description
+
+DoNotCall
+
+Email
+HasOptedOutOfEmail
+Fax
+HasOptedOutOfFax
+FirstName
+FirstRespondedDate
+LastModifiedById
+LastModifiedDate
+LastName
+LeadId
+LeadSource
+MobilePhone
+Phone
+HasResponded
+Salutation
+State: addressRegion
+Status
+
+Street: #streetAddress
+Title
+
+PostalCode: postalCode
+#End Campaign Member fields

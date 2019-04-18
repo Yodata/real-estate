@@ -1,4 +1,4 @@
-#Contact fields
+#Begin Contact fields
 Stage__c
 LeadSource
 Phone #
@@ -6,15 +6,15 @@ Email
 Birthdate
 Name
 Name
-Contact_Type__c #
-Last_Activity_Date__c #
+Contact_Type__c
+Last_Activity_Date__c
 AccountId
 Transaction_Type__c
 Lifestyle_Interests__c
 Other_Transaction_Type__c
 Other_Lifestyle_Interest__c
 Engagement_Plan_Opt_Out__c
-MobilePhone #
+MobilePhone
 DoNotCall
 HasOptedOutOfEmail
 MailingAddress
@@ -26,9 +26,9 @@ Pre_Qualfied__c
 Pre_approved__c
 Employer__c
 Work_Phone__c
-Position__c #
-Annual_Salary__c #
-Languages__c #
+Position__c
+Annual_Salary__c
+Languages__c
 Net_Worth__c
 Recreation_Interests__c
 Home_Purchase_Anniversary__c
@@ -40,7 +40,9 @@ Instagram_Username__c
 YouTube_Username__c
 Pinterest_Username__c
 CreatedById
-LastModifiedById #End Contact fields
+LastModifiedById
+#End Contact fields
+#Begin Lead fields
 Name
 Status
 OwnerId
@@ -53,12 +55,15 @@ Comments__c
 Other_Lead_Source__c
 CreatedById
 LastModifiedById
+#End Lead fields
+#Begin Tasks fields
 Subject
 OwnerId
 ActivityDate
 WhoId
 WhatId
-
+#End Tasks fields
+#Begin Campaign Member fields
 CampaignID
 City
 CompanyORAccount
@@ -93,6 +98,8 @@ Street
 Title
 
 PostalCode
+#End Campaign Member fields
+#Begin Campaign fields
 IsActive
 ActualCost
 HierarchyActualCost

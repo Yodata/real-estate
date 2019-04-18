@@ -1,3 +1,4 @@
-# Yodata Real Estate Monorepo
+# yodata/real-estate
 
-see: https://real-estate.yodata.me
+A community powered initiative working to develop a standard event integration model for real estate applications.
+

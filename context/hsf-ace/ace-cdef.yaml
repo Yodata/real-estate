@@ -1,46 +1,19 @@
-'@default':
-  object.type: Contact
-
-contactEvent:
-  id: type
-  value: ($lookup(primaryEvent))
-  '@context':
-    Accepted: AcceptAction
-    ExternalCreate: AddAction
-    ExternalUpdate: UpdateAction
-    Created: AddAction
-    Assigned: AssignAction
-    Associated: AssignAction
-    AutoAccepted: AssignAction
-    AutoAssigned: AssignAction
-    AssignedToSelf: AssignAction
-    Deleted: RemoveAction
-    Registered: RegisterAction
-    Declined: RejectAction
-    LeadActivity: UpdateAction
-    DuplicateCreated: UpdateAction
-    AdminUpdate: UpdateAction
-    CRMSync: UpdateAction
-    NoteAdded: UpdateAction
-    Updated: UpdateAction
-    Retracted: UnAssignAction
-    Unassigned: UnAssignAction
 
 # Start Contact fields
-Stage__c: 'Stage__c'
+Stage__c: 'Stage__c' #Status (Ace)
 LeadSource: 'LeadSource'
 
-Phone: telephone
+Phone: telephone #Business Phone
 Email: email
 Birthdate: birthDate
-Name: additionalName # or alternateName (Contact Name)
+Name: additionalName #or alternateName (Contact Name)
 Name: givenName + ' ' + familyName #Full Name
 
-Contact_Type__c
+Contact_Type__c: contactType #property of ContactPoint; or additionalType(?)
 
-Last_Activity_Date__c
-AccountId
-Transaction_Type__c
+Last_Activity_Date__c: 'Last_Activity_Date__c'
+AccountId: identifier #Household
+Transaction_Type__c: 'Transaction_Type__c'
 Lifestyle_Interests__c
 Other_Transaction_Type__c
 Other_Lifestyle_Interest__c

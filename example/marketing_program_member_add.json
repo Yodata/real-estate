@@ -1,0 +1,29 @@
+{
+	"meta": {
+		"topic": [
+			"marketing"
+		]
+	},
+	"recipient": [
+		"https://bhhs.hsfaffiliates.com/profile/card#me"
+	],
+	"payload": {
+		"type": "MarketingProgramMemberAdd",
+		"id": "5781dbaedcfa44a7bf4d2a655f511260",
+		"agent": {
+		  	"type": "Person",
+		  	"email": "brian.preston@foxroach.com",
+			"givenName": "Brian",
+			"familyName": "Preston",
+			"identifier": 49461
+		  },
+		  "object": {
+		    "type": "Person",
+		    "id": "34",
+		    "givenName": "Sally",
+		    "familyName": "Seller",
+		    "email": "sallyseller@getbuyside.com"
+		  },
+		"targetCollection": "http://example.com"
+	}
+}

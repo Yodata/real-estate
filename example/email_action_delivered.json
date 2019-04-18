@@ -1,0 +1,31 @@
+{
+  	"meta": {
+		"topic": [
+			"marketing"
+		]
+	},
+	"type": "DeliveryEvent",
+	"agent": {
+	  "type": "Person",
+	  "email": "brian.preston@foxroach.com",
+	"givenName": "Brian",
+	"familyName": "Preston",
+	"identifier": 49461
+	},
+	"object": {
+		"type": "EmailMessage",
+		"id": "45",
+		"name": "Market Activity Report for 430 Foulke Ln",
+		"dateCreated": "2019-03-26T19:44:00Z",
+		"dateModified": "2019-03-26T19:44:00Z",
+		"toRecipient": [
+		  "joeconsumer@getbuyside.com"
+		],
+		"ccRecipient": [
+		  "brian.preston@foxroach.com"
+		],
+		"dateSent": "2019-03-26T19:44:00Z",
+		"dateRead": "2019-03-25T21:25:23Z",
+		"sender": "http://bhhs.getbuyside.com"
+	}
+}

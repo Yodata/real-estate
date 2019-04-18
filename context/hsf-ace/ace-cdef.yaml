@@ -73,11 +73,11 @@ Address: PostalAddress
   #postOfficeBoxNumber
   #postalCode
   #streetAddress
-LeadSource
-Comments__c
-Other_Lead_Source__c
-CreatedById
-LastModifiedById
+LeadSource: 'LeadSource'
+Comments__c: commentText # (?) from Thing /...UserComments
+Other_Lead_Source__c: 'Other_Lead_Source__c'
+CreatedById: identifier #(?)
+LastModifiedById: identifier #(?)
 #End Lead fields
 #Begin Tasks fields
 Subject

@@ -1,0 +1,32 @@
+---
+# bob emails alice about a listing.
+type: SendAction
+agent: http://bob.example.com/profile/card#me
+object:
+  type: EmailMessage
+  identifier:
+    supercrm:id: 123
+  dateSent: '2019-03-26T19:44:00Z'
+  sender:
+    - type: RealEstateAgent
+      id: http://bob.example.com/profile/card#me
+  toRecipient:
+    - type: Person
+      name: alice
+      email: alice@example.com
+  about:
+    type: RealEstateListing
+    id: https://realestate.example.com/1007-Mountain-Drive
+
+---
+# alice opens the email
+type: ViewAction
+agent:
+  type: Person
+  name: alice
+  email: alice@example.com
+object:
+  type: EmailMessage
+  identifier:
+    supercrm:id: 123
+  dateRead: '2019-03-26T19:44:00Z'

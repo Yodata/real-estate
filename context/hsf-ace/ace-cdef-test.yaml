@@ -1,0 +1,7 @@
+AccountId:
+  id: identifier
+  value:
+    type: PropertyValue
+    name: 'ace:AccountId'
+    value: $value
+Contact_Type__c: type

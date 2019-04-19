@@ -1,13 +1,10 @@
-# send action
-# The act of physically/electronically dispatching an object for transfer from an origin to a destination.
-# Related actions:
-# ReceiveAction
-type: SendAction
-# the sender
-agent: https://user.example.com/profile/card#me
+type: ViewAction
+# agent is the actor so this would be the email address
+agent:
+  type: Person
+  email: joeconsumer@getbuyside.com
 object:
   type: EmailMessage
-  # if not a uri, use identifier key
   id: '45'
   name: Market Activity Report for 430 Foulke Ln
   dateCreated: '2019-03-26T19:44:00Z'

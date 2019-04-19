@@ -1,23 +1,22 @@
 
 # Start Contact fields
-Stage__c: 'Stage__c' #Ace field name = Status (Ace)
+Stage__c: 'StageC' #Ace field name = Status (Ace)
 LeadSource: 'LeadSource'
 
 Phone: telephone #contactPoint / contactType (?): Ace field name = Business Phone
 Email: email
 Birthdate: birthDate
-Name: additionalName #or alternateName (?) (Ace field name = Contact Name)
-Name: givenName + ' ' + familyName #or just name (?) Ace field name = Full Name
+Name: name #additionalName #or alternateName (?) (Ace field names = Contact Name, Full Name)
 
 Contact_Type__c: contactType #property of ContactPoint; or additionalType (?)
 
-Last_Activity_Date__c: 'Last_Activity_Date__c'
+Last_Activity_Date__c: 'LastActivityDate'
 AccountId: identifier #(?) Ace field name = Household
-Transaction_Type__c: 'Transaction_Type__c'
-Lifestyle_Interests__c: 'Lifestyle_Interests__c' #description (?)
-Other_Transaction_Type__c: 'Other_Transaction_Type__c'
-Other_Lifestyle_Interest__c: 'Other_Lifestyle_Interest__c'
-Engagement_Plan_Opt_Out__c: 'Engagement_Plan_Opt_Out__c'
+Transaction_Type__c: 'TransactionType'
+Lifestyle_Interests__c: 'LifestyleInterests' #description (?)
+Other_Transaction_Type__c: 'OtherTransactionType'
+Other_Lifestyle_Interest__c: 'OtherLifestyleInterest'
+Engagement_Plan_Opt_Out__c: 'EngagementPlanOptOut'
 
 MobilePhone: telephone #contactPoint / contactType (?)
 DoNotCall: 'DoNotCall'
@@ -31,11 +30,11 @@ MailingAddress: PostalAddress
   #postalCode
   #streetAddress
 OtherAddress: 'OtherAddress' #see PostalAddress
-Rent_Own__c: 'Rent_Own__c'
-Target_Close_Date__c: 'Target_Close_Date__c'
-Pre_Approved_Amount__c: 'Pre_Approved_Amount__c'
-Pre_Qualfied__c: 'Pre_Qualfied__c'
-Pre_approved__c: 'Pre_approved__c'
+Rent_Own__c: 'RentOwn'
+Target_Close_Date__c: 'TargetCloseDate'
+Pre_Approved_Amount__c: 'PreApprovedAmount'
+Pre_Qualfied__c: 'PreQualfied'
+Pre_approved__c: 'PreApproved'
 Employer__c: worksFor
 Work_Phone__c: telphone #contactPoint / contactType (?)
 
@@ -45,16 +44,16 @@ Annual_Salary__c: baseSalary #from Thing
 
 Languages__c: knowsLanguage
 Net_Worth__c: netWorth
-Recreation_Interests__c: 'Recreation_Interests__c'
-Home_Purchase_Anniversary__c: 'Home_Purchase_Anniversary__c'
-Wedding_Anniversary__c: 'Wedding_Anniversary__c'
+Recreation_Interests__c: 'RecreationInterests'
+Home_Purchase_Anniversary__c: 'HomePurchaseAnniversary'
+Wedding_Anniversary__c: 'WeddingAnniversary'
 
-Facebook_Username__c: 'Facebook_Username__c' #contactPoint / contactType (?)
-LinkedIn_Username__c: 'LinkedIn_Username__c' #contactPoint / contactType (?)
-Twitter_Username__c: 'Twitter_Username__c' #contactPoint / contactType (?)
-Instagram_Username__c: 'Instagram_Username__c' #contactPoint / contactType (?)
-YouTube_Username__c: 'YouTube_Username__c' #contactPoint / contactType (?)
-Pinterest_Username__c: 'Pinterest_Username__c' #contactPoint / contactType (?)
+Facebook_Username__c: 'FacebookUsername' #contactPoint / contactType (?)
+LinkedIn_Username__c: 'LinkedInUsername' #contactPoint / contactType (?)
+Twitter_Username__c: 'TwitterUsername' #contactPoint / contactType (?)
+Instagram_Username__c: 'InstagramUsername' #contactPoint / contactType (?)
+YouTube_Username__c: 'YouTubeUsername' #contactPoint / contactType (?)
+Pinterest_Username__c: 'PinterestUsername' #contactPoint / contactType (?)
 
 CreatedById: creator
 LastModifiedById: identifier #or name (?)
@@ -75,7 +74,7 @@ Address: PostalAddress
   #streetAddress
 LeadSource: 'LeadSource'
 Comments__c: commentText # from Thing /...UserComments
-Other_Lead_Source__c: 'Other_Lead_Source__c'
+Other_Lead_Source__c: 'OtherLeadSource'
 CreatedById: creator
 LastModifiedById: identifier #or name (?)
 #End Lead fields

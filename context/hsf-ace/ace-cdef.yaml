@@ -3,22 +3,39 @@
 Stage__c: 'StageC' #Ace field name = Status (Ace)
 LeadSource: 'LeadSource'
 
-Phone: telephone #contactPoint / contactType (?): Ace field name = Business Phone
+Phone:          #(?) Ace field name = Business Phone
+  id: telephone
+  value:
+    type: Text
+    name: 'ace:Phone'
+    value: $value
 Email: email
 Birthdate: birthDate
 Name: name #additionalName #or alternateName (?) (Ace field names = Contact Name, Full Name)
 
-Contact_Type__c: contactType #property of ContactPoint; or additionalType (?)
+Contact_Type__c: contactType #(?)
 
 Last_Activity_Date__c: 'LastActivityDate'
-AccountId: identifier #(?) Ace field name = Household
+AccountId:        #Ace field name = Household
+  id: identifier
+  value:
+    type: PropertyValue
+    name: 'ace:AccountId'
+    value: $value
 Transaction_Type__c: 'TransactionType'
 Lifestyle_Interests__c: 'LifestyleInterests' #description (?)
 Other_Transaction_Type__c: 'OtherTransactionType'
 Other_Lifestyle_Interest__c: 'OtherLifestyleInterest'
 Engagement_Plan_Opt_Out__c: 'EngagementPlanOptOut'
 
-MobilePhone: telephone #contactPoint / contactType (?)
+MobilePhone:    #(?)
+  id: telephone
+  value:
+    type: Text
+    name: 'ace:MobilePhone'
+    value: $value
+  
+  telephone #contactPoint / contactType (?)
 DoNotCall: 'DoNotCall'
 HasOptedOutOfEmail: 'HasOptedOutOfEmail'
 MailingAddress: PostalAddress

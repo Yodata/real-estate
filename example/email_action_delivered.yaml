@@ -1,0 +1,17 @@
+# sendaction with actionStatus
+type: SendAction
+actionStatus: CompletedActionStatus
+agent: https://user.example.com/profile/card#me
+object:
+  type: EmailMessage
+  identifier:
+  name: Market Activity Report for 430 Foulke Ln
+  dateCreated: '2019-03-26T19: 44: 00Z'
+  dateModified: '2019-03-26T19: 44: 00Z'
+  toRecipient:
+    - joeconsumer@getbuyside.com
+  ccRecipient:
+    - brian.preston@foxroach.com
+  dateSent: '2019-03-26T19: 44: 00Z'
+  dateRead: '2019-03-25T21: 25: 23Z'
+  sender: 'http: //bhhs.getbuyside.com'

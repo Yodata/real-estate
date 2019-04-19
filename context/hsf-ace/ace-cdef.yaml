@@ -34,8 +34,6 @@ MobilePhone:    #(?)
     type: Text
     name: 'ace:MobilePhone'
     value: $value
-  
-  telephone #contactPoint / contactType (?)
 DoNotCall: 'DoNotCall'
 HasOptedOutOfEmail: 'HasOptedOutOfEmail'
 MailingAddress: PostalAddress

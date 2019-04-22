@@ -6,7 +6,7 @@ LeadSource: 'LeadSource'
 Phone: telephone         #(?) Ace field name = Business Phone
 Email: email
 Birthdate: birthDate
-Name: name #additionalName #or alternateName (?) (Ace field names = Contact Name, Full Name)
+Name: name #Ace field names = Contact Name, Full Name
 
 Contact_Type__c: contactType #(?)
 
@@ -18,7 +18,7 @@ AccountId:        #Ace field name = Household
     name: 'ace:AccountId'
     value: $value
 Transaction_Type__c: 'TransactionType'
-Lifestyle_Interests__c: 'LifestyleInterests' #description (?)
+Lifestyle_Interests__c: 'LifestyleInterests'
 Other_Transaction_Type__c: 'OtherTransactionType'
 Other_Lifestyle_Interest__c: 'OtherLifestyleInterest'
 Engagement_Plan_Opt_Out__c: 'EngagementPlanOptOut'
@@ -26,7 +26,7 @@ Engagement_Plan_Opt_Out__c: 'EngagementPlanOptOut'
 MobilePhone: telephone   #(?)
 DoNotCall: 'DoNotCall'
 HasOptedOutOfEmail: 'HasOptedOutOfEmail'
-MailingAddress: PostalAddress
+MailingAddress: PostalAddress #(?)
   #from contactPoint / PostalAddress
   #addressCountry
   #addressLocality
@@ -45,7 +45,7 @@ Work_Phone__c: telephone   #(?)
 
 Position__c: jobTitle #or hasOccupation (?)
 
-Annual_Salary__c: baseSalary #from Thing
+Annual_Salary__c: baseSalary
 
 Languages__c: knowsLanguage
 Net_Worth__c: netWorth
@@ -53,19 +53,29 @@ Recreation_Interests__c: 'RecreationInterests'
 Home_Purchase_Anniversary__c: 'HomePurchaseAnniversary'
 Wedding_Anniversary__c: 'WeddingAnniversary'
 
-Facebook_Username__c: 'FacebookUsername' #contactPoint / contactType (?)
-LinkedIn_Username__c: 'LinkedInUsername' #contactPoint / contactType (?)
-Twitter_Username__c: 'TwitterUsername' #contactPoint / contactType (?)
-Instagram_Username__c: 'InstagramUsername' #contactPoint / contactType (?)
-YouTube_Username__c: 'YouTubeUsername' #contactPoint / contactType (?)
-Pinterest_Username__c: 'PinterestUsername' #contactPoint / contactType (?)
+Facebook_Username__c: 'FacebookUsername' 
+LinkedIn_Username__c: 'LinkedInUsername' 
+Twitter_Username__c: 'TwitterUsername' 
+Instagram_Username__c: 'InstagramUsername' 
+YouTube_Username__c: 'YouTubeUsername' 
+Pinterest_Username__c: 'PinterestUsername'
 
 CreatedById: creator
-LastModifiedById: identifier #or name (?)
+LastModifiedById: 
+  id: identifier
+  value:
+    type: PropertyValue
+    name: 'ace:LastModifiedById'
+    value: $value
 #End Contact fields
 #Begin Lead fields
 Status: 'Status' #called 'Stage__c' in Contact
-OwnerId: identifier #(?)
+OwnerId:
+  id: identifier
+  value:
+    type: PropertyValue
+    name: 'ace:OwnerId'
+    value: $value
 Company: worksFor
 Address: PostalAddress
   #addressCountry
@@ -84,10 +94,20 @@ WhoId: givenName + ' ' + familyName #(?) Ace field name = Name
 WhatId: relatedTo #(?) Ace field name = Related to (used for family relation in schema.org)
 #End Tasks fields
 #Begin Campaign Member fields
-CampaignID: identifier #or name (?)
+CampaignID:
+  id: identifier
+  value:
+    type: PropertyValue
+    name: 'ace:CampaignID'
+    value: $value
 City: addressLocality
 CompanyORAccount: memberOf #or affiliation or Thing / Organization (?)
-ContactId: member #or name (?)
+ContactId: # or member (?)
+  id: identifier
+  value:
+    type: PropertyValue
+    name: 'ace:ContactId'
+    value: $value
 
 Country: addressCountry
 CreatedDate: dateCreated

@@ -3,12 +3,7 @@
 Stage__c: 'StageC' #Ace field name = Status (Ace)
 LeadSource: 'LeadSource'
 
-Phone:          #(?) Ace field name = Business Phone
-  id: telephone
-  value:
-    type: Text
-    name: 'ace:Phone'
-    value: $value
+Phone: telephone         #(?) Ace field name = Business Phone
 Email: email
 Birthdate: birthDate
 Name: name #additionalName #or alternateName (?) (Ace field names = Contact Name, Full Name)
@@ -28,12 +23,7 @@ Other_Transaction_Type__c: 'OtherTransactionType'
 Other_Lifestyle_Interest__c: 'OtherLifestyleInterest'
 Engagement_Plan_Opt_Out__c: 'EngagementPlanOptOut'
 
-MobilePhone:    #(?)
-  id: telephone
-  value:
-    type: Text
-    name: 'ace:MobilePhone'
-    value: $value
+MobilePhone: telephone   #(?)
 DoNotCall: 'DoNotCall'
 HasOptedOutOfEmail: 'HasOptedOutOfEmail'
 MailingAddress: PostalAddress
@@ -51,7 +41,7 @@ Pre_Approved_Amount__c: 'PreApprovedAmount'
 Pre_Qualfied__c: 'PreQualfied'
 Pre_approved__c: 'PreApproved'
 Employer__c: worksFor
-Work_Phone__c: telphone #contactPoint / contactType (?)
+Work_Phone__c: telephone   #(?)
 
 Position__c: jobTitle #or hasOccupation (?)
 
@@ -74,12 +64,9 @@ CreatedById: creator
 LastModifiedById: identifier #or name (?)
 #End Contact fields
 #Begin Lead fields
-Name: givenName + ' ' + familyName #full name
 Status: 'Status' #called 'Stage__c' in Contact
 OwnerId: identifier #(?)
 Company: worksFor
-Email: email
-Phone: telephone #contactPoint / contactType (?): Ace field name = Business Phone
 Address: PostalAddress
   #addressCountry
   #addressLocality
@@ -87,15 +74,11 @@ Address: PostalAddress
   #postOfficeBoxNumber
   #postalCode
   #streetAddress
-LeadSource: 'LeadSource'
 Comments__c: commentText # from Thing /...UserComments
-Other_Lead_Source__c: 'OtherLeadSource'
-CreatedById: creator
-LastModifiedById: identifier #or name (?)
+# Other_Lead_Source__c: 'OtherLeadSource'
 #End Lead fields
 #Begin Tasks fields
 Subject: additionalType #(?) Ace field name = Task Type
-OwnerId: identifier #or name (?) #Ace field name = Assigned To
 ActivityDate: 'ActivityDate'
 WhoId: givenName + ' ' + familyName #(?) Ace field name = Name
 WhatId: relatedTo #(?) Ace field name = Related to (used for family relation in schema.org)
@@ -107,29 +90,19 @@ CompanyORAccount: memberOf #or affiliation or Thing / Organization (?)
 ContactId: member #or name (?)
 
 Country: addressCountry
-CreatedById: creator
 CreatedDate: dateCreated
 Description: description #from Thing
 
-DoNotCall: 'DoNotCall'
-
-Email: email
-HasOptedOutOfEmail: 'HasOptedOutOfEmail'
 Fax: faxNumber
 HasOptedOutOfFax: 'HasOptedOutOfFax'
 FirstName: givenName
 FirstRespondedDate: 'FirstRespondedDate'
-LastModifiedById: identifier #or name (?)
 LastModifiedDate: dateModified
 LastName: familyName
 LeadId: member #or name (?)
-LeadSource: 'LeadSource'
-MobilePhone: telephone #contactPoint / contactType (?)
-Phone: telephone #contactPoint / contactType (?)
 HasResponded: 'HasResponded'
 Salutation: 'Salutation'
 State: addressRegion
-Status: 'Status'
 
 Street: streetAddress
 Title: jobTitle

@@ -1,7 +1,7 @@
 
 # Start Contact fields
-Stage__c: 'StageC' #Ace field name = Status (Ace)
-LeadSource: 'LeadSource'
+Stage__c: 'stage' #Ace field name = Status (Ace)
+LeadSource: 'leadSource'
 
 Phone: telephone         #(?) Ace field name = Business Phone
 Email: email
@@ -10,23 +10,23 @@ Name: name #Ace field names = Contact Name, Full Name
 
 Contact_Type__c: contactType #(?)
 
-Last_Activity_Date__c: 'LastActivityDate'
+Last_Activity_Date__c: 'lastActivityDate'
 AccountId:        #Ace field name = Household
   id: identifier
   value:
     type: PropertyValue
     name: 'ace:AccountId'
     value: $value
-Transaction_Type__c: 'TransactionType'
-Lifestyle_Interests__c: 'LifestyleInterests'
-Other_Transaction_Type__c: 'OtherTransactionType'
-Other_Lifestyle_Interest__c: 'OtherLifestyleInterest'
-Engagement_Plan_Opt_Out__c: 'EngagementPlanOptOut'
+Transaction_Type__c: 'transactionType'
+Lifestyle_Interests__c: 'lifestyleInterests'
+Other_Transaction_Type__c: 'otherTransactionType'
+Other_Lifestyle_Interest__c: 'otherLifestyleInterest'
+Engagement_Plan_Opt_Out__c: 'engagementPlanOptOut'
 
 MobilePhone: telephone   #(?)
-DoNotCall: 'DoNotCall'
-HasOptedOutOfEmail: 'HasOptedOutOfEmail'
-MailingAddress: PostalAddress #(?)
+DoNotCall: 'doNotCall'
+HasOptedOutOfEmail: 'hasOptedOutOfEmail'
+MailingAddress: #(?)
   #from contactPoint / PostalAddress
   #addressCountry
   #addressLocality
@@ -34,12 +34,12 @@ MailingAddress: PostalAddress #(?)
   #postOfficeBoxNumber
   #postalCode
   #streetAddress
-OtherAddress: 'OtherAddress' #see PostalAddress
-Rent_Own__c: 'RentOwn'
-Target_Close_Date__c: 'TargetCloseDate'
-Pre_Approved_Amount__c: 'PreApprovedAmount'
-Pre_Qualfied__c: 'PreQualfied'
-Pre_approved__c: 'PreApproved'
+OtherAddress: #see PostalAddress
+Rent_Own__c: 'rentOwn'
+Target_Close_Date__c: 'targetCloseDate'
+Pre_Approved_Amount__c: 'preApprovedAmount'
+Pre_Qualfied__c: 'preQualfied'
+Pre_approved__c: 'preApproved'
 Employer__c: worksFor
 Work_Phone__c: telephone   #(?)
 
@@ -49,16 +49,16 @@ Annual_Salary__c: baseSalary
 
 Languages__c: knowsLanguage
 Net_Worth__c: netWorth
-Recreation_Interests__c: 'RecreationInterests'
-Home_Purchase_Anniversary__c: 'HomePurchaseAnniversary'
-Wedding_Anniversary__c: 'WeddingAnniversary'
+Recreation_Interests__c: 'recreationInterests'
+Home_Purchase_Anniversary__c: 'homePurchaseAnniversary'
+Wedding_Anniversary__c: 'weddingAnniversary'
 
-Facebook_Username__c: 'FacebookUsername' 
-LinkedIn_Username__c: 'LinkedInUsername' 
-Twitter_Username__c: 'TwitterUsername' 
-Instagram_Username__c: 'InstagramUsername' 
-YouTube_Username__c: 'YouTubeUsername' 
-Pinterest_Username__c: 'PinterestUsername'
+Facebook_Username__c: 'facebookUsername' 
+LinkedIn_Username__c: 'linkedInUsername' 
+Twitter_Username__c: 'twitterUsername' 
+Instagram_Username__c: 'instagramUsername' 
+YouTube_Username__c: 'youTubeUsername' 
+Pinterest_Username__c: 'pinterestUsername'
 
 CreatedById: creator
 LastModifiedById: 
@@ -69,7 +69,7 @@ LastModifiedById:
     value: $value
 #End Contact fields
 #Begin Lead fields
-Status: 'Status' #called 'Stage__c' in Contact
+Status: 'status'
 OwnerId:
   id: identifier
   value:
@@ -77,20 +77,14 @@ OwnerId:
     name: 'ace:OwnerId'
     value: $value
 Company: worksFor
-Address: PostalAddress # (?)
-  #addressCountry
-  #addressLocality
-  #addressRegion
-  #postOfficeBoxNumber
-  #postalCode
-  #streetAddress
+Address: # See MailingAddress
 Comments__c: commentText # from Thing /...UserComments
 # Other_Lead_Source__c: 'OtherLeadSource'
 #End Lead fields
 #Begin Tasks fields
 Subject: additionalType #(?) Ace field name = Task Type
-ActivityDate: 'ActivityDate'
-WhoId: givenName + ' ' + familyName #(?) Ace field name = Name
+ActivityDate: 'activityDate'
+WhoId: name # or identity (?) Ace field name = Name
 WhatId: relatedTo #(?) Ace field name = Related to (used for family relation in schema.org)
 #End Tasks fields
 #Begin Campaign Member fields
@@ -114,9 +108,9 @@ CreatedDate: dateCreated
 Description: description #from Thing
 
 Fax: faxNumber
-HasOptedOutOfFax: 'HasOptedOutOfFax'
+HasOptedOutOfFax: 'hasOptedOutOfFax'
 FirstName: givenName
-FirstRespondedDate: 'FirstRespondedDate'
+FirstRespondedDate: 'firstRespondedDate'
 LastModifiedDate: dateModified
 LastName: familyName
 LeadId:
@@ -135,68 +129,73 @@ Title: jobTitle
 PostalCode: postalCode
 #End Campaign Member fields
 #Begin Campaign fields
-IsActive: 'IsActive'
-ActualCost: 'ActualCost'
-HierarchyActualCost: 'HierarchyActualCost'
-BudgetedCost: 'BudgetedCost'
-HierarchyBudgetedCost: 'HierarchyBudgetedCost'
-CampaignImageId: 'CampaignImageId'
-CampaignMemberRecordTypeId: 'CampaignMemberRecordTypeId'
+IsActive: 'isActive'
+ActualCost: 'actualCost' # cost (?)
+HierarchyActualCost: 'hierarchyActualCost'
+BudgetedCost: 'budgetedCost'
+HierarchyBudgetedCost: 'hierarchyBudgetedCost'
+CampaignImageId: 'campaignImageId'
+CampaignMemberRecordTypeId: 'campaignMemberRecordTypeId'
 
-Name
-OwnerId
-NumberOfContacts
-HierarchyNumberOfContacts
-NumberOfConvertedLeads
-HierarchyNumberOfConvertedLeads
+NumberOfContacts: 'numberOfContacts' # value / number (?)
+HierarchyNumberOfContacts: 'hierarchyNumberOfContacts'
+NumberOfConvertedLeads: 'numberOfConvertedLeads'
+HierarchyNumberOfConvertedLeads: 'hierarchyNumberOfConvertedLeads'
 
-CreatedById
-Description
-EndDate
-ExpectedResponse
-ExpectedRevenue
-HierarchyExpectedRevenue
-LastModifiedById
-NumberOfLeads
-HierarchyNumberOfLeads
-Legacy_ID__c
-Legacy_Information__c
-Legacy_Owner__c
-NumberSent
-HierarchyNumberSent
-NumberOfOpportunities
-HierarchyNumberOfOpportunities
-ParentId
-NumberOfResponses
-HierarchyNumberOfResponses
+EndDate: endDate
+ExpectedResponse: 'expectedResponse'
+ExpectedRevenue: 'expectedRevenue'
+HierarchyExpectedRevenue: 'hierarchyExpectedRevenue'
+NumberOfLeads: 'numberOfLeads'
+HierarchyNumberOfLeads: 'hierarchyNumberOfLeads'
+Legacy_ID__c:
+  ParentId: 
+  id: identifier
+  value:
+    type: PropertyValue
+    name: 'ace:Legacy_ID__c'
+    value: $value
+Legacy_Information__c: 'legacy_Information'
+Legacy_Owner__c: 'legacyOwner'
+NumberSent: 'numberSent'
+HierarchyNumberSent: 'hierarchyNumberSent'
+NumberOfOpportunities: 'numberOfOpportunities'
+HierarchyNumberOfOpportunities: 'hierarchyNumberOfOpportunities:'
+ParentId: 
+  id: identifier
+  value:
+    type: PropertyValue
+    name: 'ace:ParentId'
+    value: $value
+NumberOfResponses:
+HierarchyNumberOfResponses: 'hierarchyNumberOfResponses'
 
-StartDate
-Status
-TotalEmailsDelivered
-HierarchyTotalEmailsDelivered
+StartDate: startDate
+TotalEmailsDelivered: 'totalEmailsDelivered'
+HierarchyTotalEmailsDelivered: 'hierarchyTotalEmailsDelivered'
 
-TotalFormSubmissions
-HierarchyTotalFormSubmissions
-TotalFormViews
+TotalFormSubmissions: 'totalFormSubmissions'
+HierarchyTotalFormSubmissions: 'hierarchyTotalFormSubmissions'
+TotalFormViews: 'totalFormViews'
 
-HierarchyTotalFormViews
-TotalLandingPageFormSubmissions
-HierarchyTotalLandingPageFormSubmissions
-TotalLandingPageViews
-HierarchyTotalLandingPageViews
-Type
-UniqueEmailTrackedLinkClicks
-HierarchyUniqueEmailTrackedLinkClicks
-UniqueEmailOpens
+HierarchyTotalFormViews: 'hierarchyTotalFormViews'
+TotalLandingPageFormSubmissions: 'totalLandingPageFormSubmissions:'
+HierarchyTotalLandingPageFormSubmissions: 'hierarchyTotalLandingPageFormSubmissions'
+TotalLandingPageViews: 'totalLandingPageViews'
+HierarchyTotalLandingPageViews: 'hierarchyTotalLandingPageViews'
+Type: type #(?)
+UniqueEmailTrackedLinkClicks: 'uniqueEmailTrackedLinkClicks'
+HierarchyUniqueEmailTrackedLinkClicks: 'hierarchyUniqueEmailTrackedLinkClicks'
+UniqueEmailOpens: 'uniqueEmailOpens'
 
-HierarchyUniqueEmailOpens
-UniqueMarketingLinkClicks
-HierarchyUniqueMarketingLinkClicks
-AmountAllOpportunities
-HierarchyAmountAllOpportunities
-AmountWonOpportunities
+HierarchyUniqueEmailOpens: 'hierarchyUniqueEmailOpens'
+UniqueMarketingLinkClicks: 'uniqueMarketingLinkClicks'
+HierarchyUniqueMarketingLinkClicks: 'hierarchyUniqueMarketingLinkClicks'
+AmountAllOpportunities: 'amountAllOpportunities'
+HierarchyAmountAllOpportunities: 'hierarchyAmountAllOpportunities'
+AmountWonOpportunities: 'amountWonOpportunities'
 
-HierarchyAmountWonOpportunities
-NumberOfWonOpportunities
-HierarchyNumberOfWonOpportunities
+HierarchyAmountWonOpportunities: 'hierarchyAmountWonOpportunities'
+NumberOfWonOpportunities: 'numberOfWonOpportunities'
+HierarchyNumberOfWonOpportunities: 'hierarchyNumberOfWonOpportunities'
 # End Campaign fields

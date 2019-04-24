@@ -1,0 +1,5 @@
+type: object
+x-kind: Person
+example:
+  type: Person
+  name: Paul Person

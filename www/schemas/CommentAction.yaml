@@ -1,27 +1,11 @@
 description: The act of generating a comment about a subject.
-type: object
 allOf:
   - $ref: Action.yaml
   - type: object
     properties:
-      topic:
-        example:
-          - contact
       type:
-        description: CommentAction
         type: string
         enum:
           - CommentAction
-      agent:
-        description: the commentor
-        x-range:
-          - Person
-          - Organization
-        example:
-          type: RealEstateAgent
-          name: Casey Commentor
       object:
         $ref: Comment.yaml
-        description: the comment or note
-        x-range: Comment
-        type: object

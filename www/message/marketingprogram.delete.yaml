@@ -1,0 +1,16 @@
+x-title: marketingprogram#delete
+x-scope: realestate
+summary: a marketing program was deleted
+payload:
+  allOf:
+    - $ref: Event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/marketingprogram#delete
+        data:
+          allOf:
+            - $ref: ../schemas/DeleteAction.yaml
+            - properties:
+                object:
+                  $ref: ../schemas/MarketingProgram.yaml

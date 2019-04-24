@@ -1,64 +1,52 @@
-title: Offer
-
 allOf:
   - $ref: Thing.yaml
-  - type: object
+  - description: an agent makes an offer to buy the object
     properties:
       type:
         type: string
-        description: Person
+        description: Offer
         enum:
+          - Offer
+
+      identifier:
+        $ref: identifier.yaml
+      object:
+        type: object
+        x-range:
+          - string
+          - Thing
+        description: reference to the item on which the offer is being made
+        example:
+          type: RealEstateListing
+          id: http://example.com/12345
+      recipient:
+        type: object
+        x-range:
           - Person
-
-      name:
-        type: string
-        description: Full name of the person.
-
-      givenName:
-        type: string
-        description: First Name
-        example: Bruce
-
-      familyName:
-        type: string
-        description: Last Name
-        example: Wayne
-
-      jobTitle:
-        type: string
-        description: The Job Title of the person.
-        example: Jefe
-
-      email:
-        type: string
-        description: Primary email address.
-        example: user@example.com
-
-      faxNumber:
-        description: Primary fax number.
-        type: string
-        example: '(498) 625-6456'
-
-      telephone:
-        description: Primary phone number.
-        type: string
-        example: 1-339-041-0306 x2866
-
-      contactPoint:
-        x-range: ContactPoint
-        description: Named and grouped contacts points.
-        type: array
-        items:
-          $ref: ContactPoint.yaml
-
-      address:
-        x-range: PostalAddress
-        description: mailing addresses.
-        type: array
-        items:
-          $ref: PostalAddress.yaml
-
-      birthDate:
-        type: string
-        format: date
-        description: date of birth.
+          - Organization
+        description: the offer recipient
+        example:
+          id: http://user.example.com/profile/card#me
+      offerPrice:
+        type: object
+        x-range: PriceSpecification
+        description: describes the price offered
+        properties:
+          type:
+            type: string
+            description: PriceSpecification
+            enum:
+              - PriceSpecification
+          minPrice:
+            type: number
+            description: the lowest value if the price is a range
+          maxPrice:
+            type: number
+            description: the high price offered if the price is a range
+          price:
+            type: number
+            description: the price
+          priceCurrency:
+            type: string
+            description: use ISO4217
+            example: USD

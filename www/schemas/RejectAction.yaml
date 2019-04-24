@@ -1,0 +1,9 @@
+allOf:
+  - $ref: Action.yaml
+  - properties:
+      type:
+        type: string
+        enum:
+          - RejectAction
+      object:
+        $ref: Lead.yaml

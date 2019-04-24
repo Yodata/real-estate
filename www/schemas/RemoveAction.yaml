@@ -6,3 +6,7 @@ allOf:
         type: string
         enum:
           - RemoveAction
+      object:
+        description: the item removed
+      targetCollection:
+        description: the collection from which the item is being removed

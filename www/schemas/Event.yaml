@@ -1,14 +1,32 @@
-allOf:
-  - type: object
-    properties:
-      topic:
-        description: indicates the subscription types that will receive the event.
-        type: array
-        items:
-          type: string
-          enum:
-            - profile:read
-            - lead
-            - contact
-            - listing
-  - $ref: Action.yaml
+title: Event
+description: message metadata based on cloudevents.io
+type: object
+properties:
+  topic:
+    type: string
+    description: the message subscription id
+    example: 'realestate/{topic}#{event}'
+  source:
+    type: string
+    format: uri
+    description: message publisher, typically the pod owner
+    example: http://{user}.example.com/profile/card#me
+  instrument:
+    type: string
+    format: uri
+    description: application or service which produced the message
+  time:
+    type: string
+    format: date-time
+    description: the time the event was first published
+  contenttype:
+    type: string
+    description: mime-type of the message data, default is application/json
+    example: null
+  '@context':
+    type: string
+    format: uri
+    example: http://realestate.yodate.me/context/v1.json
+    description: uri to context resource to be applied to normalizing / denormalizing the message
+  data:
+    type: object

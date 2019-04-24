@@ -1,0 +1,12 @@
+x-title: lead#add
+x-scope: realestate
+summary: a crm lead was created
+payload:
+  allOf:
+    - $ref: Event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/lead#add
+        data:
+          $ref: ../schemas/AddAction.yaml

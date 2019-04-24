@@ -1,0 +1,13 @@
+allOf:
+  - $ref: Action.yaml
+  - description: The act of committing to/adopting an object.
+  - properties:
+      type:
+        enum:
+          - AcceptAction
+      agent:
+        example: https://{user}.example.com/profile/card#me
+      object:
+        example:
+          type: Lead
+          name: Lianna Stark

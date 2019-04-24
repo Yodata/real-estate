@@ -3,11 +3,28 @@ description: Provides additional information in member/memberOf relationships.
 properties:
   type:
     type: string
+    description: a role played by the member in the memberOf group
+    enum:
+      - OrganizationRole
     example: OrganizationRole
-    description: OrganizationRole
   roleName:
-    description: A role played, performed or filled by a person or organization.
     type: string
-    example: E-Team Certified
+    example: Owner
+  member:
+    description: member object or id
+    x-range:
+      - Person
+      - Organization
+    example:
+      type: Person
+      email: bob@example.com
   memberOf:
-    description: relationship roles
+    description: reference to the MarketingProgram
+  startDate:
+    type: string
+    format: date-time
+    description: the date the member started the program
+  endDate:
+    type: string
+    format: date-time
+    description: the date the program membership ended

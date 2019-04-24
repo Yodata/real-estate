@@ -1,0 +1,12 @@
+x-title: contact#comment
+x-scope: realestate
+summary: a comment was made by or assoicated with the contact
+payload:
+  allOf:
+    - $ref: Event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/contact#comment
+        data:
+          $ref: ../schemas/Comment.yaml

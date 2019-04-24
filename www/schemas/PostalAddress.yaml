@@ -24,3 +24,7 @@ properties:
     type: string
     description: Zip/Post Code
     example: '10010'
+  addressCountry:
+    type: string
+    description: country
+    example: usa

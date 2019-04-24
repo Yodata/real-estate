@@ -1,0 +1,1307 @@
+---
+name: Event Types
+
+
+---
+# Event Types
+
+### NOTE
+
+Events are wrapped with a metadata object:
+
+```json
+{
+  "topic": "realestate/contact#addaction"
+  "id": "{ event uri }",
+  "time": "2019-04-19T19:06:24Z"
+  "agent": "https://user.example.com/profile/card#me",
+  "instrument": "https://supercrm.example.com/profile/card#me",
+  "object": {
+    "type": "ActionType",
+    }
+  }
+```
+
+
+
+## profile.add
+
+a profile (agent, affiliate or office) was created
+
+
+```json
+{
+  "topic": "realestate/profile#addaction",
+  "data": {
+    "topic": "realestate/profile#addaction",
+    "data": {
+      "type": "AddAction",
+      "object": {
+        "id": "https://user.example.com/profile/card#me",
+        "type": "RealEstateAgent"
+      }
+    }
+  }
+}
+```
+
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| topic | string |   |
+| data | object |   |
+
+## profile.update
+
+a profile (agent, affiliate or office) was updated
+
+
+```json
+{
+  "topic": [
+    "profile:read"
+  ],
+  "type": "UpdateAction",
+  "object": {
+    "id": "https://user.example.com/profile/card#me",
+    "type": "RealEstateAgent"
+  }
+}
+```
+
+
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! | UpdateAction  |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| object | [Profile](/schemas#profile) | the updated profile object <br/>RANGE: [RealEstateAgent](/schemas#realestateagent),[RealEstateOffice](/schemas#realestateoffice),[RealEstateOrganization](/schemas#realestateorganization) |
+
+## contact.add
+
+a contact was created
+
+
+```json
+{
+  "type": "AddAction",
+  "agent": "http://user.example.com/profile/card",
+  "object": {},
+  "topic": "realestate/contact#add",
+  "data": {
+    "type": "Person",
+    "id": "https://example.com/collection/1",
+    "name": "string",
+    "givenName": "Bruce",
+    "familyName": "Wayne",
+    "jobTitle": "Jefe",
+    "email": "user@example.com",
+    "faxNumber": "(498) 625-6456",
+    "telephone": "1-339-041-0306 x2866",
+    "contactPoint": [
+      {
+        "type": "ContactPoint",
+        "name": "Work",
+        "telephone": "1-364-127-9618 x20418",
+        "faxNumber": "834.320.1602",
+        "email": "user@example.com",
+        "url": "https://www.facebook.com/hallandoates"
+      }
+    ],
+    "address": [
+      {
+        "type": "PostalAddress",
+        "streetAddress": "1007 Mountain Gate Rd",
+        "postOfficeBoxNumber": "Box 1234",
+        "addressRegion": "New Jersey",
+        "addressLocality": "Gotham City",
+        "postalCode": "10010"
+      }
+    ],
+    "birthDate": "2019-04-21",
+    "leadSource": {
+      "type": "Organization",
+      "id": "https://example.com/collection/1",
+      "name": "string",
+      "telephone": "079.706.7065 x6341",
+      "faxNumber": "(873) 271-4802",
+      "email": "user@example.com",
+      "url": "http://example.com",
+      "availableLanguage": [
+        {
+          "type": "Language",
+          "name": "English",
+          "additionalName": "en"
+        }
+      ],
+      "branchCode": "CA301-001",
+      "contactPoint": [
+        {
+          "type": "ContactPoint",
+          "name": "Work",
+          "telephone": "1-364-127-9618 x20418",
+          "faxNumber": "834.320.1602",
+          "email": "user@example.com",
+          "url": "https://www.facebook.com/hallandoates"
+        }
+      ],
+      "logo": [
+        {
+          "type": "DigitalDocument",
+          "id": "http://user.example.com/public/logo/fileName.zip",
+          "name": "fileName.zip",
+          "encodingFormat": "application/zip",
+          "identifier": {},
+          "about": "http://user.example.com/profile/card#me"
+        }
+      ],
+      "image": [
+        {
+          "type": "ImageObject",
+          "id": "http://user.example.com/public/logo/image.jpg",
+          "name": "image.jpg",
+          "encodingFormat": "image/jpeg",
+          "content": "string",
+          "about": "http://user.example.com/profile/card#me",
+          "url": "http://user.example.com/public/profile/image.jpg"
+        }
+      ],
+      "parentOrganization": [
+        "http://example.com"
+      ]
+    }
+  }
+}
+```
+
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! |   |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
+| topic | * |   |
+| data | object | a contact  |
+
+## contact.comment
+
+an agent comments about an object
+
+
+```json
+{
+  "type": "CommentAction",
+  "agent": {
+    "type": "Person",
+    "name": "Charlie Commentor"
+  },
+  "object": {
+    "type": "Comment",
+    "id": "https://example.com/collection/1",
+    "about": "http://user.example.com/profile/card#me",
+    "text": "Commodi ratione vel qui ullam ea ut."
+  },
+  "topic": [
+    "contact"
+  ]
+}
+```
+
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! | CommentAction  |
+| agent | object | the commentor <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| object | object | A comment on an item.  |
+| topic | * |   |
+
+## contact.remove
+
+a crm contact was remove
+
+
+```json
+{
+  "type": "RemoveAction",
+  "agent": "http://user.example.com/profile/card",
+  "object": {
+    "type": "Person",
+    "id": "https://example.com/collection/1",
+    "name": "string",
+    "givenName": "Bruce",
+    "familyName": "Wayne",
+    "jobTitle": "Jefe",
+    "email": "user@example.com",
+    "faxNumber": "(498) 625-6456",
+    "telephone": "1-339-041-0306 x2866",
+    "contactPoint": [
+      {
+        "type": "ContactPoint",
+        "name": "Work",
+        "telephone": "1-364-127-9618 x20418",
+        "faxNumber": "834.320.1602",
+        "email": "user@example.com",
+        "url": "https://www.facebook.com/hallandoates"
+      }
+    ],
+    "address": [
+      {
+        "type": "PostalAddress",
+        "streetAddress": "1007 Mountain Gate Rd",
+        "postOfficeBoxNumber": "Box 1234",
+        "addressRegion": "New Jersey",
+        "addressLocality": "Gotham City",
+        "postalCode": "10010"
+      }
+    ],
+    "birthDate": "2019-04-21",
+    "leadSource": {
+      "type": "Organization",
+      "id": "https://example.com/collection/1",
+      "name": "string",
+      "telephone": "079.706.7065 x6341",
+      "faxNumber": "(873) 271-4802",
+      "email": "user@example.com",
+      "url": "http://example.com",
+      "availableLanguage": [
+        {
+          "type": "Language",
+          "name": "English",
+          "additionalName": "en"
+        }
+      ],
+      "branchCode": "CA301-001",
+      "contactPoint": [
+        {
+          "type": "ContactPoint",
+          "name": "Work",
+          "telephone": "1-364-127-9618 x20418",
+          "faxNumber": "834.320.1602",
+          "email": "user@example.com",
+          "url": "https://www.facebook.com/hallandoates"
+        }
+      ],
+      "logo": [
+        {
+          "type": "DigitalDocument",
+          "id": "http://user.example.com/public/logo/fileName.zip",
+          "name": "fileName.zip",
+          "encodingFormat": "application/zip",
+          "identifier": {},
+          "about": "http://user.example.com/profile/card#me"
+        }
+      ],
+      "image": [
+        {
+          "type": "ImageObject",
+          "id": "http://user.example.com/public/logo/image.jpg",
+          "name": "image.jpg",
+          "encodingFormat": "image/jpeg",
+          "content": "string",
+          "about": "http://user.example.com/profile/card#me",
+          "url": "http://user.example.com/public/profile/image.jpg"
+        }
+      ],
+      "parentOrganization": [
+        "http://example.com"
+      ]
+    }
+  },
+  "topic": "contact"
+}
+```
+
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! |   |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| object | object | a contact  |
+| topic | * |   |
+
+## contact.update
+
+a crm contact was updated
+
+
+```json
+{
+  "type": "UpdateAction",
+  "agent": "http://user.example.com/profile/card",
+  "object": {
+    "type": "Person",
+    "id": "https://example.com/collection/1",
+    "name": "string",
+    "givenName": "Bruce",
+    "familyName": "Wayne",
+    "jobTitle": "Jefe",
+    "email": "user@example.com",
+    "faxNumber": "(498) 625-6456",
+    "telephone": "1-339-041-0306 x2866",
+    "contactPoint": [
+      {
+        "type": "ContactPoint",
+        "name": "Work",
+        "telephone": "1-364-127-9618 x20418",
+        "faxNumber": "834.320.1602",
+        "email": "user@example.com",
+        "url": "https://www.facebook.com/hallandoates"
+      }
+    ],
+    "address": [
+      {
+        "type": "PostalAddress",
+        "streetAddress": "1007 Mountain Gate Rd",
+        "postOfficeBoxNumber": "Box 1234",
+        "addressRegion": "New Jersey",
+        "addressLocality": "Gotham City",
+        "postalCode": "10010"
+      }
+    ],
+    "birthDate": "2019-04-21",
+    "leadSource": {
+      "type": "Organization",
+      "id": "https://example.com/collection/1",
+      "name": "string",
+      "telephone": "079.706.7065 x6341",
+      "faxNumber": "(873) 271-4802",
+      "email": "user@example.com",
+      "url": "http://example.com",
+      "availableLanguage": [
+        {
+          "type": "Language",
+          "name": "English",
+          "additionalName": "en"
+        }
+      ],
+      "branchCode": "CA301-001",
+      "contactPoint": [
+        {
+          "type": "ContactPoint",
+          "name": "Work",
+          "telephone": "1-364-127-9618 x20418",
+          "faxNumber": "834.320.1602",
+          "email": "user@example.com",
+          "url": "https://www.facebook.com/hallandoates"
+        }
+      ],
+      "logo": [
+        {
+          "type": "DigitalDocument",
+          "id": "http://user.example.com/public/logo/fileName.zip",
+          "name": "fileName.zip",
+          "encodingFormat": "application/zip",
+          "identifier": {},
+          "about": "http://user.example.com/profile/card#me"
+        }
+      ],
+      "image": [
+        {
+          "type": "ImageObject",
+          "id": "http://user.example.com/public/logo/image.jpg",
+          "name": "image.jpg",
+          "encodingFormat": "image/jpeg",
+          "content": "string",
+          "about": "http://user.example.com/profile/card#me",
+          "url": "http://user.example.com/public/profile/image.jpg"
+        }
+      ],
+      "parentOrganization": [
+        "http://example.com"
+      ]
+    }
+  },
+  "topic": "contact"
+}
+```
+
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! | UpdateAction  |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| object | object | a contact  |
+| topic | * |   |
+
+## listing.offer
+
+An offer made by the action.agent to purchase a listing
+
+
+```json
+{
+  "type": "OfferAction",
+  "agent": {
+    "type": "Person",
+    "name": "Bob",
+    "email": "bob@example.com"
+  },
+  "object": {
+    "type": "RealEstateListing",
+    "id": "http://example.com/12345"
+  },
+  "additionalProperty": {
+    "@context": "https://application.example.com/context#",
+    "customProp": "custom-prop-value"
+  },
+  "identifier": {
+    "@context": "http://example.com/context#",
+    "ID": "value"
+  },
+  "recipient": {
+    "id": "http://user.example.com/profile/card#me"
+  },
+  "offerPrice": {
+    "type": "PriceSpecification",
+    "minPrice": 0,
+    "maxPrice": 0,
+    "price": 0,
+    "priceCurrency": "USD"
+  }
+}
+```
+
+
+the agent makes an offer to buy the object
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! | OfferAction  |
+| agent | object | the agent making the offer <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| object | object | reference to the item on which the offer is being made <br/>RANGE: [string](/schemas#string),[Thing](/schemas#thing) |
+| additionalProperty | object | Property names and values are only valid in the provided `@context`.  For example if `@context http://example.com/context#`. the property with key `ID` should be represented locally as `http;//example.com/context#ID`  |
+| identifier | object | a key value map of **namespaced** unique identifiers.  |
+| recipient | object | the offer recipient <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
+| offerPrice | object | describes the price offered <br/>RANGE: [PriceSpecification](/schemas#pricespecification) |
+
+## marketingprogram.create
+
+a marketing program has been created
+
+
+```json
+{
+  "type": "CreateAction",
+  "agent": "http://user.example.com/profile/card",
+  "object": {}
+}
+```
+
+
+the object was created by the agent
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! | CreateAction  |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
+
+## marketingprogram.memberadd
+
+a program member was added by the agent (Work In Progress)
+
+
+```json
+{
+  "type": "MarketingProgramMemberAdd",
+  "agent": "http://user.example.com/profile/card",
+  "object": {
+    "type": "Person",
+    "id": "https://example.com/collection/1",
+    "name": "string",
+    "givenName": "Bruce",
+    "familyName": "Wayne",
+    "jobTitle": "Jefe",
+    "email": "user@example.com",
+    "faxNumber": "(498) 625-6456",
+    "telephone": "1-339-041-0306 x2866",
+    "contactPoint": [
+      {
+        "type": "ContactPoint",
+        "name": "Work",
+        "telephone": "1-364-127-9618 x20418",
+        "faxNumber": "834.320.1602",
+        "email": "user@example.com",
+        "url": "https://www.facebook.com/hallandoates"
+      }
+    ],
+    "address": [
+      {
+        "type": "PostalAddress",
+        "streetAddress": "1007 Mountain Gate Rd",
+        "postOfficeBoxNumber": "Box 1234",
+        "addressRegion": "New Jersey",
+        "addressLocality": "Gotham City",
+        "postalCode": "10010"
+      }
+    ],
+    "birthDate": "2019-04-21"
+  },
+  "topic": [
+    "marketing"
+  ],
+  "targetCollection": "http://example.com"
+}
+```
+
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! | MarketingProgramMemberAdd  |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
+| topic | * |   |
+| targetCollection | string&lt;uri&gt; | ref to the marketing program receiving the new member <br/>RANGE: [ProgramMembership](/schemas#programmembership) |
+
+## marketingprogram.memberremove
+
+a member was removed by the agent (Work In Progress)
+
+
+```json
+{
+  "type": "MarketingProgramMemberRemove",
+  "agent": "http://user.example.com/profile/card",
+  "object": {
+    "type": "Person",
+    "id": "https://example.com/collection/1",
+    "name": "string",
+    "givenName": "Bruce",
+    "familyName": "Wayne",
+    "jobTitle": "Jefe",
+    "email": "user@example.com",
+    "faxNumber": "(498) 625-6456",
+    "telephone": "1-339-041-0306 x2866",
+    "contactPoint": [
+      {
+        "type": "ContactPoint",
+        "name": "Work",
+        "telephone": "1-364-127-9618 x20418",
+        "faxNumber": "834.320.1602",
+        "email": "user@example.com",
+        "url": "https://www.facebook.com/hallandoates"
+      }
+    ],
+    "address": [
+      {
+        "type": "PostalAddress",
+        "streetAddress": "1007 Mountain Gate Rd",
+        "postOfficeBoxNumber": "Box 1234",
+        "addressRegion": "New Jersey",
+        "addressLocality": "Gotham City",
+        "postalCode": "10010"
+      }
+    ],
+    "birthDate": "2019-04-21"
+  },
+  "topic": [
+    "marketing"
+  ],
+  "targetCollection": "http://example.com"
+}
+```
+
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! | MarketingProgramMemberRemove  |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
+| topic | * |   |
+| targetCollection | string&lt;uri&gt; | ref to the marketing program receiving the new member <br/>RANGE: [ProgramMembership](/schemas#programmembership) |
+
+## lead.accept
+
+a crm lead was accepted
+
+
+```json
+{
+  "type": "AcceptAction",
+  "agent": "http://user.example.com/profile/card",
+  "object": {
+    "type": "AssignAction",
+    "id": "http://example.com",
+    "agent": "http://organization.example.com/profile/card#me",
+    "recipient": "http://user.example.com/profile/card#me",
+    "object": {
+      "type": "Person",
+      "id": "https://example.com/collection/1",
+      "name": "string",
+      "givenName": "Bruce",
+      "familyName": "Wayne",
+      "jobTitle": "Jefe",
+      "email": "user@example.com",
+      "faxNumber": "(498) 625-6456",
+      "telephone": "1-339-041-0306 x2866",
+      "contactPoint": [
+        {
+          "type": "ContactPoint",
+          "name": "Work",
+          "telephone": "1-364-127-9618 x20418",
+          "faxNumber": "834.320.1602",
+          "email": "user@example.com",
+          "url": "https://www.facebook.com/hallandoates"
+        }
+      ],
+      "address": [
+        {
+          "type": "PostalAddress",
+          "streetAddress": "1007 Mountain Gate Rd",
+          "postOfficeBoxNumber": "Box 1234",
+          "addressRegion": "New Jersey",
+          "addressLocality": "Gotham City",
+          "postalCode": "10010"
+        }
+      ],
+      "birthDate": "2019-04-21",
+      "leadSource": {
+        "type": "Organization",
+        "id": "https://example.com/collection/1",
+        "name": "string",
+        "telephone": "079.706.7065 x6341",
+        "faxNumber": "(873) 271-4802",
+        "email": "user@example.com",
+        "url": "http://example.com",
+        "availableLanguage": [
+          {
+            "type": "Language",
+            "name": "English",
+            "additionalName": "en"
+          }
+        ],
+        "branchCode": "CA301-001",
+        "contactPoint": [
+          {
+            "type": "ContactPoint",
+            "name": "Work",
+            "telephone": "1-364-127-9618 x20418",
+            "faxNumber": "834.320.1602",
+            "email": "user@example.com",
+            "url": "https://www.facebook.com/hallandoates"
+          }
+        ],
+        "logo": [
+          {
+            "type": "DigitalDocument",
+            "id": "http://user.example.com/public/logo/fileName.zip",
+            "name": "fileName.zip",
+            "encodingFormat": "application/zip",
+            "identifier": {},
+            "about": "http://user.example.com/profile/card#me"
+          }
+        ],
+        "image": [
+          {
+            "type": "ImageObject",
+            "id": "http://user.example.com/public/logo/image.jpg",
+            "name": "image.jpg",
+            "encodingFormat": "image/jpeg",
+            "content": "string",
+            "about": "http://user.example.com/profile/card#me",
+            "url": "http://user.example.com/public/profile/image.jpg"
+          }
+        ],
+        "parentOrganization": [
+          "http://example.com"
+        ]
+      }
+    }
+  },
+  "topic": "lead"
+}
+```
+
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! |   |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| object | object | a lead offered or assigned by the agent to one or more recipients  |
+| topic | * |   |
+
+## lead.reject
+
+a crm lead was accepted
+
+
+```json
+{
+  "type": "AcceptAction",
+  "agent": "http://user.example.com/profile/card",
+  "object": {
+    "type": "AssignAction",
+    "id": "http://example.com",
+    "agent": "http://organization.example.com/profile/card#me",
+    "recipient": "http://user.example.com/profile/card#me",
+    "object": {
+      "type": "Person",
+      "id": "https://example.com/collection/1",
+      "name": "string",
+      "givenName": "Bruce",
+      "familyName": "Wayne",
+      "jobTitle": "Jefe",
+      "email": "user@example.com",
+      "faxNumber": "(498) 625-6456",
+      "telephone": "1-339-041-0306 x2866",
+      "contactPoint": [
+        {
+          "type": "ContactPoint",
+          "name": "Work",
+          "telephone": "1-364-127-9618 x20418",
+          "faxNumber": "834.320.1602",
+          "email": "user@example.com",
+          "url": "https://www.facebook.com/hallandoates"
+        }
+      ],
+      "address": [
+        {
+          "type": "PostalAddress",
+          "streetAddress": "1007 Mountain Gate Rd",
+          "postOfficeBoxNumber": "Box 1234",
+          "addressRegion": "New Jersey",
+          "addressLocality": "Gotham City",
+          "postalCode": "10010"
+        }
+      ],
+      "birthDate": "2019-04-21",
+      "leadSource": {
+        "type": "Organization",
+        "id": "https://example.com/collection/1",
+        "name": "string",
+        "telephone": "079.706.7065 x6341",
+        "faxNumber": "(873) 271-4802",
+        "email": "user@example.com",
+        "url": "http://example.com",
+        "availableLanguage": [
+          {
+            "type": "Language",
+            "name": "English",
+            "additionalName": "en"
+          }
+        ],
+        "branchCode": "CA301-001",
+        "contactPoint": [
+          {
+            "type": "ContactPoint",
+            "name": "Work",
+            "telephone": "1-364-127-9618 x20418",
+            "faxNumber": "834.320.1602",
+            "email": "user@example.com",
+            "url": "https://www.facebook.com/hallandoates"
+          }
+        ],
+        "logo": [
+          {
+            "type": "DigitalDocument",
+            "id": "http://user.example.com/public/logo/fileName.zip",
+            "name": "fileName.zip",
+            "encodingFormat": "application/zip",
+            "identifier": {},
+            "about": "http://user.example.com/profile/card#me"
+          }
+        ],
+        "image": [
+          {
+            "type": "ImageObject",
+            "id": "http://user.example.com/public/logo/image.jpg",
+            "name": "image.jpg",
+            "encodingFormat": "image/jpeg",
+            "content": "string",
+            "about": "http://user.example.com/profile/card#me",
+            "url": "http://user.example.com/public/profile/image.jpg"
+          }
+        ],
+        "parentOrganization": [
+          "http://example.com"
+        ]
+      }
+    }
+  },
+  "topic": "lead"
+}
+```
+
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! |   |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| object | object | a lead offered or assigned by the agent to one or more recipients  |
+| topic | * |   |
+
+## lead.add
+
+a crm lead was created
+
+
+```json
+{
+  "type": "AddAction",
+  "agent": "http://user.example.com/profile/card",
+  "object": {
+    "type": "AssignAction",
+    "id": "http://example.com",
+    "agent": "http://organization.example.com/profile/card#me",
+    "recipient": "http://user.example.com/profile/card#me",
+    "object": {
+      "type": "Person",
+      "id": "https://example.com/collection/1",
+      "name": "string",
+      "givenName": "Bruce",
+      "familyName": "Wayne",
+      "jobTitle": "Jefe",
+      "email": "user@example.com",
+      "faxNumber": "(498) 625-6456",
+      "telephone": "1-339-041-0306 x2866",
+      "contactPoint": [
+        {
+          "type": "ContactPoint",
+          "name": "Work",
+          "telephone": "1-364-127-9618 x20418",
+          "faxNumber": "834.320.1602",
+          "email": "user@example.com",
+          "url": "https://www.facebook.com/hallandoates"
+        }
+      ],
+      "address": [
+        {
+          "type": "PostalAddress",
+          "streetAddress": "1007 Mountain Gate Rd",
+          "postOfficeBoxNumber": "Box 1234",
+          "addressRegion": "New Jersey",
+          "addressLocality": "Gotham City",
+          "postalCode": "10010"
+        }
+      ],
+      "birthDate": "2019-04-21",
+      "leadSource": {
+        "type": "Organization",
+        "id": "https://example.com/collection/1",
+        "name": "string",
+        "telephone": "079.706.7065 x6341",
+        "faxNumber": "(873) 271-4802",
+        "email": "user@example.com",
+        "url": "http://example.com",
+        "availableLanguage": [
+          {
+            "type": "Language",
+            "name": "English",
+            "additionalName": "en"
+          }
+        ],
+        "branchCode": "CA301-001",
+        "contactPoint": [
+          {
+            "type": "ContactPoint",
+            "name": "Work",
+            "telephone": "1-364-127-9618 x20418",
+            "faxNumber": "834.320.1602",
+            "email": "user@example.com",
+            "url": "https://www.facebook.com/hallandoates"
+          }
+        ],
+        "logo": [
+          {
+            "type": "DigitalDocument",
+            "id": "http://user.example.com/public/logo/fileName.zip",
+            "name": "fileName.zip",
+            "encodingFormat": "application/zip",
+            "identifier": {},
+            "about": "http://user.example.com/profile/card#me"
+          }
+        ],
+        "image": [
+          {
+            "type": "ImageObject",
+            "id": "http://user.example.com/public/logo/image.jpg",
+            "name": "image.jpg",
+            "encodingFormat": "image/jpeg",
+            "content": "string",
+            "about": "http://user.example.com/profile/card#me",
+            "url": "http://user.example.com/public/profile/image.jpg"
+          }
+        ],
+        "parentOrganization": [
+          "http://example.com"
+        ]
+      }
+    }
+  },
+  "topic": "lead"
+}
+```
+
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! |   |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| object | object | a lead offered or assigned by the agent to one or more recipients  |
+| topic | * |   |
+
+## lead.assign
+
+a lead was assigned
+
+
+```json
+{
+  "type": "AssignAction",
+  "agent": "http://user.example.com/profile/card",
+  "object": {},
+  "topic": "lead"
+}
+```
+
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! |   |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
+| topic | string |   |
+
+## lead.remove
+
+a lead was removed
+
+
+```json
+{
+  "type": "RemoveAction",
+  "agent": "http://user.example.com/profile/card",
+  "object": {
+    "type": "AssignAction",
+    "id": "http://example.com",
+    "agent": "http://organization.example.com/profile/card#me",
+    "recipient": "http://user.example.com/profile/card#me",
+    "object": {
+      "type": "Person",
+      "id": "https://example.com/collection/1",
+      "name": "string",
+      "givenName": "Bruce",
+      "familyName": "Wayne",
+      "jobTitle": "Jefe",
+      "email": "user@example.com",
+      "faxNumber": "(498) 625-6456",
+      "telephone": "1-339-041-0306 x2866",
+      "contactPoint": [
+        {
+          "type": "ContactPoint",
+          "name": "Work",
+          "telephone": "1-364-127-9618 x20418",
+          "faxNumber": "834.320.1602",
+          "email": "user@example.com",
+          "url": "https://www.facebook.com/hallandoates"
+        }
+      ],
+      "address": [
+        {
+          "type": "PostalAddress",
+          "streetAddress": "1007 Mountain Gate Rd",
+          "postOfficeBoxNumber": "Box 1234",
+          "addressRegion": "New Jersey",
+          "addressLocality": "Gotham City",
+          "postalCode": "10010"
+        }
+      ],
+      "birthDate": "2019-04-21",
+      "leadSource": {
+        "type": "Organization",
+        "id": "https://example.com/collection/1",
+        "name": "string",
+        "telephone": "079.706.7065 x6341",
+        "faxNumber": "(873) 271-4802",
+        "email": "user@example.com",
+        "url": "http://example.com",
+        "availableLanguage": [
+          {
+            "type": "Language",
+            "name": "English",
+            "additionalName": "en"
+          }
+        ],
+        "branchCode": "CA301-001",
+        "contactPoint": [
+          {
+            "type": "ContactPoint",
+            "name": "Work",
+            "telephone": "1-364-127-9618 x20418",
+            "faxNumber": "834.320.1602",
+            "email": "user@example.com",
+            "url": "https://www.facebook.com/hallandoates"
+          }
+        ],
+        "logo": [
+          {
+            "type": "DigitalDocument",
+            "id": "http://user.example.com/public/logo/fileName.zip",
+            "name": "fileName.zip",
+            "encodingFormat": "application/zip",
+            "identifier": {},
+            "about": "http://user.example.com/profile/card#me"
+          }
+        ],
+        "image": [
+          {
+            "type": "ImageObject",
+            "id": "http://user.example.com/public/logo/image.jpg",
+            "name": "image.jpg",
+            "encodingFormat": "image/jpeg",
+            "content": "string",
+            "about": "http://user.example.com/profile/card#me",
+            "url": "http://user.example.com/public/profile/image.jpg"
+          }
+        ],
+        "parentOrganization": [
+          "http://example.com"
+        ]
+      }
+    }
+  },
+  "topic": "lead"
+}
+```
+
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! |   |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| object | object | a lead offered or assigned by the agent to one or more recipients  |
+| topic | * |   |
+
+## lead.update
+
+a crm lead was updated
+
+
+```json
+{
+  "type": "UpdateAction",
+  "agent": "http://user.example.com/profile/card",
+  "object": {
+    "type": "AssignAction",
+    "id": "http://example.com",
+    "agent": "http://organization.example.com/profile/card#me",
+    "recipient": "http://user.example.com/profile/card#me",
+    "object": {
+      "type": "Person",
+      "id": "https://example.com/collection/1",
+      "name": "string",
+      "givenName": "Bruce",
+      "familyName": "Wayne",
+      "jobTitle": "Jefe",
+      "email": "user@example.com",
+      "faxNumber": "(498) 625-6456",
+      "telephone": "1-339-041-0306 x2866",
+      "contactPoint": [
+        {
+          "type": "ContactPoint",
+          "name": "Work",
+          "telephone": "1-364-127-9618 x20418",
+          "faxNumber": "834.320.1602",
+          "email": "user@example.com",
+          "url": "https://www.facebook.com/hallandoates"
+        }
+      ],
+      "address": [
+        {
+          "type": "PostalAddress",
+          "streetAddress": "1007 Mountain Gate Rd",
+          "postOfficeBoxNumber": "Box 1234",
+          "addressRegion": "New Jersey",
+          "addressLocality": "Gotham City",
+          "postalCode": "10010"
+        }
+      ],
+      "birthDate": "2019-04-21",
+      "leadSource": {
+        "type": "Organization",
+        "id": "https://example.com/collection/1",
+        "name": "string",
+        "telephone": "079.706.7065 x6341",
+        "faxNumber": "(873) 271-4802",
+        "email": "user@example.com",
+        "url": "http://example.com",
+        "availableLanguage": [
+          {
+            "type": "Language",
+            "name": "English",
+            "additionalName": "en"
+          }
+        ],
+        "branchCode": "CA301-001",
+        "contactPoint": [
+          {
+            "type": "ContactPoint",
+            "name": "Work",
+            "telephone": "1-364-127-9618 x20418",
+            "faxNumber": "834.320.1602",
+            "email": "user@example.com",
+            "url": "https://www.facebook.com/hallandoates"
+          }
+        ],
+        "logo": [
+          {
+            "type": "DigitalDocument",
+            "id": "http://user.example.com/public/logo/fileName.zip",
+            "name": "fileName.zip",
+            "encodingFormat": "application/zip",
+            "identifier": {},
+            "about": "http://user.example.com/profile/card#me"
+          }
+        ],
+        "image": [
+          {
+            "type": "ImageObject",
+            "id": "http://user.example.com/public/logo/image.jpg",
+            "name": "image.jpg",
+            "encodingFormat": "image/jpeg",
+            "content": "string",
+            "about": "http://user.example.com/profile/card#me",
+            "url": "http://user.example.com/public/profile/image.jpg"
+          }
+        ],
+        "parentOrganization": [
+          "http://example.com"
+        ]
+      }
+    }
+  },
+  "topic": "lead"
+}
+```
+
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! | UpdateAction  |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| object | object | a lead offered or assigned by the agent to one or more recipients  |
+| topic | * |   |
+
+## website.appointmentrequest
+
+a website vistor has requested an appointment
+
+
+```json
+{
+  "type": "string",
+  "agent": "http://user.example.com/profile/card",
+  "object": {
+    "type": "string",
+    "agent": "http://user.example.com/profile/card",
+    "object": {}
+  },
+  "topic": "website"
+}
+```
+
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! |   |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
+| topic | * |   |
+
+## website.showingrequest
+
+a website visitor has requested a showing appointment
+
+
+```json
+{
+  "type": "string",
+  "agent": "http://user.example.com/profile/card",
+  "object": {},
+  "topic": "website"
+}
+```
+
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! |   |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
+| topic | * |   |
+
+## website.question
+
+a website visitor has asked a question
+
+
+```json
+{
+  "type": "string",
+  "agent": "http://user.example.com/profile/card",
+  "object": {},
+  "topic": "website"
+}
+```
+
+
+
+
+
+| Name/Type | Type | Description |
+|:--------- | :--- | :---------- |
+| type | string! |   |
+| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
+| object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
+| topic | * |   |
+

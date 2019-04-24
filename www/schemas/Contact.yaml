@@ -3,6 +3,14 @@ allOf:
   - $ref: Person.yaml
   - description: a contact
     properties:
+      type:
+        enum:
+          - Contact
+        example: Contact
+        description: Contact
       leadSource:
         description: the Lead Provider
-        $ref: Organization.yaml
+        type: object
+        example:
+          type: RealEstateOrganization
+          id: https://{affiliate}.example.com/profile/card#me

@@ -5,1467 +5,560 @@ name: Event Types
 ---
 # Event Types
 
-### NOTE
 
-Events are wrapped by a Notification object:
+
+## contact#add
+
+a contact was added/created.
+
 
 ```json
 {
-  "type": "Notification",
-  "id": "https://you.example.com/inbox/12345",
-  "timestamp": 1550503972767,
-  "agent": "https://user.example.com/profile/card#me",
-  "instrument": "https://application.example.com/profile/card#me",
-  "object": {
-    "type": "Action",
-    "topic": [ "profile:read" ]
+  "topic": "realestate/contact#add",
+  "source": "http://{user}.example.com/profile/card#me",
+  "@context": "http://realestate.yodata.me/context/v1.json",
+  "data": {
+    "type": "AddAction",
+    "actionStatus": "CompletedActionStatus",
+    "agent": "http://{user}.example.com/profile/card#me",
+    "instrument": "http://{app}.example.com/profile/card#me",
+    "object": {
+      "type": "Contact",
+      "name": "Adam Addme"
+    },
+    "targetCollection": {
+      "type": "Collection",
+      "id": "https://{user}.example.com/data/contact/"
     }
   }
-```
-
-
-
-## OfferAction
-
-an offer to buy/bid on a property is made
-
-
-```json
-{
-  "type": "OfferAction",
-  "agent": {
-    "type": "Person",
-    "name": "Bob",
-    "email": "bob@example.com"
-  },
-  "object": {
-    "type": "RealEstateListing",
-    "id": "http://example.com/12345"
-  },
-  "additionalProperty": {
-    "@context": "https://application.example.com/context#",
-    "customProp": "custom-prop-value"
-  },
-  "identifier": {
-    "@context": "http://example.com/context#",
-    "ID": "value"
-  },
-  "recipient": {
-    "id": "http://user.example.com/profile/card#me"
-  },
-  "offerPrice": {
-    "type": "PriceSpecification",
-    "minPrice": 0,
-    "maxPrice": 0,
-    "price": 0,
-    "priceCurrency": "USD"
-  }
 }
 ```
 
-#### OfferAction properties
 
-| Name/Type | Type | Description |
-|:--------- | :--- | :---------- |
-| type | string! | OfferAction  |
-| agent | object | the agent making the offer <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| object | object | reference to the item on which the offer is being made <br/>RANGE: [string](/schemas#string),[Thing](/schemas#thing) |
-| additionalProperty | object | Property names and values are only valid in the provided `@context`.  For example if `@context http://example.com/context#`. the property with key `ID` should be represented locally as `http;//example.com/context#ID`  |
-| identifier | object | a key value map of **namespaced** unique identifiers.  |
-| recipient | object | the offer recipient <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
-| offerPrice | object | describes the price offered <br/>RANGE: [PriceSpecification](/schemas#pricespecification) |
+## contact#comment
 
-## MarketingProgramCreate
-
-a MarketingProgram was created
+a comment was made by or assoicated with the contact
 
 
 ```json
 {
-  "type": "CreateAction",
-  "agent": "http://user.example.com/profile/card",
-  "object": {
-    "type": "MarketingProgram",
-    "id": "https://example.com/collection/1",
-    "name": "Market Report 1008 Mountain Gate Road",
-    "description": "Dolor accusamus rerum nemo non omnis. Nam labore pariatur eius omnis sit.",
-    "creator": "http://user.example.com/profile/card",
-    "dateCreated": "2019-04-16T16:57:38Z",
-    "dateModified": "2019-04-16T16:57:38Z",
-    "member": [
-      "https://user.example.com/profile/card"
-    ]
-  }
-}
-```
-
-#### MarketingProgramCreate properties
-
-| Name/Type | Type | Description |
-|:--------- | :--- | :---------- |
-| type | string! | CreateAction  |
-| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
-
-## EmailAction
-
-an EmailMessage was sent
-
-
-```json
-{
-  "type": "EmailAction",
-  "agent": "http://user.example.com/profile/card",
-  "object": {
-    "type": "EmailMessage",
-    "id": "https://example.com/collection/1",
-    "name": "Market Report 1008 Mountain Gate Road",
-    "description": "Dolor accusamus rerum nemo non omnis. Nam labore pariatur eius omnis sit.",
-    "creator": "http://user.example.com/profile/card",
-    "dateCreated": "2019-04-16T16:57:38Z",
-    "dateModified": "2019-04-16T16:57:38Z",
-    "toRecipient": [
-      "user@example.com"
-    ],
-    "ccRecipient": [
-      "user@example.com"
-    ],
-    "bccRecipient": [
-      "user@example.com"
-    ],
-    "dateSent": "2019-04-16T16:57:38Z",
-    "dateRead": "2019-04-16T16:57:38Z",
-    "sender": "http://user.example.com/profile/card",
-    "messageAttachment": [
-      {
-        "type": "DigitalDocument",
-        "id": "http://user.example.com/public/logo/fileName.zip",
-        "name": "fileName.zip",
-        "encodingFormat": "application/zip",
-        "identifier": {},
-        "about": "http://user.example.com/profile/card#me"
-      }
-    ]
-  }
-}
-```
-
-#### EmailAction properties
-
-| Name/Type | Type | Description |
-|:--------- | :--- | :---------- |
-| type | string! | EmailAction  |
-| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
-
-## MarketingProgramMemberAdd
-
-a program member was added by the agent (Work In Progress)
-
-
-```json
-{
-  "type": "MarketingProgramMemberAdd",
-  "agent": "http://user.example.com/profile/card",
-  "object": {
-    "type": "Person",
-    "id": "https://example.com/collection/1",
-    "name": "string",
-    "givenName": "Bruce",
-    "familyName": "Wayne",
-    "jobTitle": "Jefe",
-    "email": "user@example.com",
-    "faxNumber": "(498) 625-6456",
-    "telephone": "1-339-041-0306 x2866",
-    "contactPoint": [
-      {
-        "type": "ContactPoint",
-        "name": "Work",
-        "telephone": "1-364-127-9618 x20418",
-        "faxNumber": "834.320.1602",
-        "email": "user@example.com",
-        "url": "https://www.facebook.com/hallandoates"
-      }
-    ],
-    "address": [
-      {
-        "type": "PostalAddress",
-        "streetAddress": "1007 Mountain Gate Rd",
-        "postOfficeBoxNumber": "Box 1234",
-        "addressRegion": "New Jersey",
-        "addressLocality": "Gotham City",
-        "postalCode": "10010"
-      }
-    ],
-    "birthDate": "2019-04-16"
-  },
-  "topic": [
-    "marketing"
-  ],
-  "targetCollection": "http://example.com"
-}
-```
-
-#### MarketingProgramMemberAdd properties
-
-| Name/Type | Type | Description |
-|:--------- | :--- | :---------- |
-| type | string! | MarketingProgramMemberAdd  |
-| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
-| topic | * |   |
-| targetCollection | string&lt;uri&gt; | ref to the marketing program receiving the new member <br/>RANGE: [ProgramMembership](/schemas#programmembership) |
-
-## MarketingProgramMemberRemove
-
-a member was removed by the agent (Work In Progress)
-
-
-```json
-{
-  "type": "MarketingProgramMemberRemove",
-  "agent": "http://user.example.com/profile/card",
-  "object": {
-    "type": "Person",
-    "id": "https://example.com/collection/1",
-    "name": "string",
-    "givenName": "Bruce",
-    "familyName": "Wayne",
-    "jobTitle": "Jefe",
-    "email": "user@example.com",
-    "faxNumber": "(498) 625-6456",
-    "telephone": "1-339-041-0306 x2866",
-    "contactPoint": [
-      {
-        "type": "ContactPoint",
-        "name": "Work",
-        "telephone": "1-364-127-9618 x20418",
-        "faxNumber": "834.320.1602",
-        "email": "user@example.com",
-        "url": "https://www.facebook.com/hallandoates"
-      }
-    ],
-    "address": [
-      {
-        "type": "PostalAddress",
-        "streetAddress": "1007 Mountain Gate Rd",
-        "postOfficeBoxNumber": "Box 1234",
-        "addressRegion": "New Jersey",
-        "addressLocality": "Gotham City",
-        "postalCode": "10010"
-      }
-    ],
-    "birthDate": "2019-04-16"
-  },
-  "topic": [
-    "marketing"
-  ],
-  "targetCollection": "http://example.com"
-}
-```
-
-#### MarketingProgramMemberRemove properties
-
-| Name/Type | Type | Description |
-|:--------- | :--- | :---------- |
-| type | string! | MarketingProgramMemberRemove  |
-| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
-| topic | * |   |
-| targetCollection | string&lt;uri&gt; | ref to the marketing program receiving the new member <br/>RANGE: [ProgramMembership](/schemas#programmembership) |
-
-## profile_added
-
-a profile (agent, affiliate or office) was created
-
-
-```json
-{
-  "topic": [
-    "profile:read"
-  ],
-  "type": "AddAction",
-  "object": {
-    "id": "https://user.example.com/profile/card#me",
-    "type": "RealEstateAgent"
-  }
-}
-```
-#### profile_added properties
-
-| Name/Type | Type | Description |
-|:--------- | :--- | :---------- |
-| type | string! |   |
-| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| object | [Profile](/schemas#profile) | the profile object <br/>RANGE: [RealEstateAgent](/schemas#realestateagent),[RealEstateOffice](/schemas#realestateoffice),[RealEstateOrganization](/schemas#realestateorganization) |
-
-## profile_updated
-
-a profile (agent, affiliate or office) was updated
-
-
-```json
-{
-  "topic": [
-    "profile:read"
-  ],
-  "type": "UpdateAction",
-  "object": {
-    "id": "https://user.example.com/profile/card#me",
-    "type": "RealEstateAgent"
-  }
-}
-```
-#### profile_updated properties
-
-| Name/Type | Type | Description |
-|:--------- | :--- | :---------- |
-| type | string! | UpdateAction  |
-| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| object | [Profile](/schemas#profile) | the updated profile object <br/>RANGE: [RealEstateAgent](/schemas#realestateagent),[RealEstateOffice](/schemas#realestateoffice),[RealEstateOrganization](/schemas#realestateorganization) |
-
-## contact_added
-
-a contact was created
-
-
-```json
-{
-  "type": "AddAction",
-  "agent": "http://user.example.com/profile/card",
-  "object": {
-    "type": "Person",
-    "id": "https://example.com/collection/1",
-    "name": "string",
-    "givenName": "Bruce",
-    "familyName": "Wayne",
-    "jobTitle": "Jefe",
-    "email": "user@example.com",
-    "faxNumber": "(498) 625-6456",
-    "telephone": "1-339-041-0306 x2866",
-    "contactPoint": [
-      {
-        "type": "ContactPoint",
-        "name": "Work",
-        "telephone": "1-364-127-9618 x20418",
-        "faxNumber": "834.320.1602",
-        "email": "user@example.com",
-        "url": "https://www.facebook.com/hallandoates"
-      }
-    ],
-    "address": [
-      {
-        "type": "PostalAddress",
-        "streetAddress": "1007 Mountain Gate Rd",
-        "postOfficeBoxNumber": "Box 1234",
-        "addressRegion": "New Jersey",
-        "addressLocality": "Gotham City",
-        "postalCode": "10010"
-      }
-    ],
-    "birthDate": "2019-04-16",
-    "leadSource": {
-      "type": "Organization",
-      "id": "https://example.com/collection/1",
-      "name": "string",
-      "telephone": "079.706.7065 x6341",
-      "faxNumber": "(873) 271-4802",
-      "email": "user@example.com",
-      "url": "http://example.com",
-      "availableLanguage": [
-        {
-          "type": "Language",
-          "name": "English",
-          "additionalName": "en"
-        }
-      ],
-      "branchCode": "CA301-001",
-      "contactPoint": [
-        {
-          "type": "ContactPoint",
-          "name": "Work",
-          "telephone": "1-364-127-9618 x20418",
-          "faxNumber": "834.320.1602",
-          "email": "user@example.com",
-          "url": "https://www.facebook.com/hallandoates"
-        }
-      ],
-      "logo": [
-        {
-          "type": "DigitalDocument",
-          "id": "http://user.example.com/public/logo/fileName.zip",
-          "name": "fileName.zip",
-          "encodingFormat": "application/zip",
-          "identifier": {},
-          "about": "http://user.example.com/profile/card#me"
-        }
-      ],
-      "image": [
-        {
-          "type": "ImageObject",
-          "id": "http://user.example.com/public/logo/image.jpg",
-          "name": "image.jpg",
-          "encodingFormat": "image/jpeg",
-          "content": "string",
-          "about": "http://user.example.com/profile/card#me",
-          "url": "http://user.example.com/public/profile/image.jpg"
-        }
-      ],
-      "parentOrganization": [
-        "http://example.com"
-      ]
+  "topic": "realestate/contact#comment",
+  "source": "http://{user}.example.com/profile/card#me",
+  "@context": "http://realestate.yodata.me/context/v1.json",
+  "data": {
+    "type": "Comment",
+    "text": "Winter is coming",
+    "author": {
+      "type": "Person",
+      "email": "user@example.com"
+    },
+    "about": {
+      "type": "RealEstateListing",
+      "id": "http://example.com/listing/1"
     }
-  },
-  "topic": [
-    "contact"
-  ]
+  }
 }
 ```
 
-#### contact_added properties
 
-| Name/Type | Type | Description |
-|:--------- | :--- | :---------- |
-| type | string! |   |
-| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| object | object | a contact  |
-| topic | * |   |
+## contact#delete
 
-## contact_updated
+a contact was removed from a collection
+
+
+```json
+{
+  "topic": "realestate/contact#delete",
+  "source": "http://{user}.example.com/profile/card#me",
+  "@context": "http://realestate.yodata.me/context/v1.json",
+  "data": {
+    "type": "DeleteAction",
+    "actionStatus": "CompletedActionStatus",
+    "agent": "https://{ideleteyou}.example.com/profile/card#me",
+    "instrument": "https://{delete-o-matic2K}.example.com/profile/card#me",
+    "object": {
+      "type": "Contact",
+      "name": "Delete Me"
+    },
+    "targetCollection": {
+      "type": "Collection",
+      "name": "targetcollection"
+    }
+  }
+}
+```
+
+
+## contact#update
 
 a crm contact was updated
 
 
 ```json
 {
-  "type": "UpdateAction",
-  "agent": "http://user.example.com/profile/card",
-  "object": {
-    "type": "Person",
-    "id": "https://example.com/collection/1",
-    "name": "string",
-    "givenName": "Bruce",
-    "familyName": "Wayne",
-    "jobTitle": "Jefe",
-    "email": "user@example.com",
-    "faxNumber": "(498) 625-6456",
-    "telephone": "1-339-041-0306 x2866",
-    "contactPoint": [
-      {
-        "type": "ContactPoint",
-        "name": "Work",
-        "telephone": "1-364-127-9618 x20418",
-        "faxNumber": "834.320.1602",
-        "email": "user@example.com",
-        "url": "https://www.facebook.com/hallandoates"
-      }
-    ],
-    "address": [
-      {
-        "type": "PostalAddress",
-        "streetAddress": "1007 Mountain Gate Rd",
-        "postOfficeBoxNumber": "Box 1234",
-        "addressRegion": "New Jersey",
-        "addressLocality": "Gotham City",
-        "postalCode": "10010"
-      }
-    ],
-    "birthDate": "2019-04-16",
-    "leadSource": {
-      "type": "Organization",
-      "id": "https://example.com/collection/1",
-      "name": "string",
-      "telephone": "079.706.7065 x6341",
-      "faxNumber": "(873) 271-4802",
-      "email": "user@example.com",
-      "url": "http://example.com",
-      "availableLanguage": [
-        {
-          "type": "Language",
-          "name": "English",
-          "additionalName": "en"
-        }
-      ],
-      "branchCode": "CA301-001",
-      "contactPoint": [
-        {
-          "type": "ContactPoint",
-          "name": "Work",
-          "telephone": "1-364-127-9618 x20418",
-          "faxNumber": "834.320.1602",
-          "email": "user@example.com",
-          "url": "https://www.facebook.com/hallandoates"
-        }
-      ],
-      "logo": [
-        {
-          "type": "DigitalDocument",
-          "id": "http://user.example.com/public/logo/fileName.zip",
-          "name": "fileName.zip",
-          "encodingFormat": "application/zip",
-          "identifier": {},
-          "about": "http://user.example.com/profile/card#me"
-        }
-      ],
-      "image": [
-        {
-          "type": "ImageObject",
-          "id": "http://user.example.com/public/logo/image.jpg",
-          "name": "image.jpg",
-          "encodingFormat": "image/jpeg",
-          "content": "string",
-          "about": "http://user.example.com/profile/card#me",
-          "url": "http://user.example.com/public/profile/image.jpg"
-        }
-      ],
-      "parentOrganization": [
-        "http://example.com"
-      ]
+  "topic": "realestate/contact#update",
+  "source": "http://{user}.example.com/profile/card#me",
+  "@context": "http://realestate.yodata.me/context/v1.json",
+  "data": {
+    "type": "UpdateAction",
+    "actionStatus": "CompletedActionStatus",
+    "agent": "http://{user}.example.com/profile/card#me",
+    "instrument": "http://user.example.com/profile/card#me",
+    "object": {
+      "type": "Contact",
+      "name": "the updated contact"
+    },
+    "targetCollection": {
+      "type": "Collection",
+      "name": "targetcollection"
     }
-  },
-  "topic": "contact"
+  }
 }
 ```
 
-#### contact_updated properties
 
-| Name/Type | Type | Description |
-|:--------- | :--- | :---------- |
-| type | string! | UpdateAction  |
-| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| object | object | a contact  |
-| topic | * |   |
+## lead#accept
 
-## contact_removed
-
-a crm contact was removed
+a lead (object) was accepted by the agent
 
 
 ```json
 {
-  "type": "RemoveAction",
-  "agent": "http://user.example.com/profile/card",
-  "object": {
-    "type": "Person",
-    "id": "https://example.com/collection/1",
-    "name": "string",
-    "givenName": "Bruce",
-    "familyName": "Wayne",
-    "jobTitle": "Jefe",
-    "email": "user@example.com",
-    "faxNumber": "(498) 625-6456",
-    "telephone": "1-339-041-0306 x2866",
-    "contactPoint": [
-      {
-        "type": "ContactPoint",
-        "name": "Work",
-        "telephone": "1-364-127-9618 x20418",
-        "faxNumber": "834.320.1602",
-        "email": "user@example.com",
-        "url": "https://www.facebook.com/hallandoates"
-      }
-    ],
-    "address": [
-      {
-        "type": "PostalAddress",
-        "streetAddress": "1007 Mountain Gate Rd",
-        "postOfficeBoxNumber": "Box 1234",
-        "addressRegion": "New Jersey",
-        "addressLocality": "Gotham City",
-        "postalCode": "10010"
-      }
-    ],
-    "birthDate": "2019-04-16",
-    "leadSource": {
-      "type": "Organization",
-      "id": "https://example.com/collection/1",
-      "name": "string",
-      "telephone": "079.706.7065 x6341",
-      "faxNumber": "(873) 271-4802",
-      "email": "user@example.com",
-      "url": "http://example.com",
-      "availableLanguage": [
-        {
-          "type": "Language",
-          "name": "English",
-          "additionalName": "en"
-        }
-      ],
-      "branchCode": "CA301-001",
-      "contactPoint": [
-        {
-          "type": "ContactPoint",
-          "name": "Work",
-          "telephone": "1-364-127-9618 x20418",
-          "faxNumber": "834.320.1602",
-          "email": "user@example.com",
-          "url": "https://www.facebook.com/hallandoates"
-        }
-      ],
-      "logo": [
-        {
-          "type": "DigitalDocument",
-          "id": "http://user.example.com/public/logo/fileName.zip",
-          "name": "fileName.zip",
-          "encodingFormat": "application/zip",
-          "identifier": {},
-          "about": "http://user.example.com/profile/card#me"
-        }
-      ],
-      "image": [
-        {
-          "type": "ImageObject",
-          "id": "http://user.example.com/public/logo/image.jpg",
-          "name": "image.jpg",
-          "encodingFormat": "image/jpeg",
-          "content": "string",
-          "about": "http://user.example.com/profile/card#me",
-          "url": "http://user.example.com/public/profile/image.jpg"
-        }
-      ],
-      "parentOrganization": [
-        "http://example.com"
-      ]
+  "topic": "realestate/lead#accept",
+  "source": "http://{user}.example.com/profile/card#me",
+  "@context": "http://realestate.yodata.me/context/v1.json",
+  "data": {
+    "type": "AcceptAction",
+    "actionStatus": "CompletedActionStatus",
+    "agent": "https://{user}.example.com/profile/card#me",
+    "instrument": "http://user.example.com/profile/card#me",
+    "object": {
+      "type": "Lead",
+      "name": "Lianna Stark"
     }
-  },
-  "topic": "contact"
+  }
 }
 ```
 
-#### contact_removed properties
 
-| Name/Type | Type | Description |
-|:--------- | :--- | :---------- |
-| type | string! |   |
-| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| object | object | a contact  |
-| topic | string |   |
-
-## CommentAction
-
-a comment was created by the agent about a subject &#x60;about&#x60;
-
-
-```json
-{
-  "type": "CommentAction",
-  "agent": {
-    "type": "Person",
-    "name": "Charlie Commentor"
-  },
-  "object": {
-    "type": "Comment",
-    "id": "https://example.com/collection/1",
-    "about": "http://user.example.com/profile/card#me",
-    "text": "Commodi ratione vel qui ullam ea ut."
-  },
-  "topic": [
-    "contact"
-  ]
-}
-```
-
-#### CommentAction properties
-
-| Name/Type | Type | Description |
-|:--------- | :--- | :---------- |
-| type | string! | CommentAction  |
-| agent | object | the commentor <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| object | object | A comment on an item.  |
-| topic | * |   |
-
-## lead_added
+## lead#add
 
 a crm lead was created
 
 
 ```json
 {
-  "type": "AddAction",
-  "agent": "http://user.example.com/profile/card",
-  "object": {
-    "type": "AssignAction",
-    "id": "http://example.com",
-    "agent": "http://organization.example.com/profile/card#me",
-    "recipient": "http://user.example.com/profile/card#me",
+  "topic": "realestate/lead#add",
+  "source": "http://{user}.example.com/profile/card#me",
+  "@context": "http://realestate.yodata.me/context/v1.json",
+  "data": {
+    "type": "AddAction",
+    "actionStatus": "CompletedActionStatus",
+    "agent": "http://{user}.example.com/profile/card#me",
+    "instrument": "http://{app}.example.com/profile/card#me",
     "object": {
-      "type": "Person",
-      "id": "https://example.com/collection/1",
-      "name": "string",
-      "givenName": "Bruce",
-      "familyName": "Wayne",
-      "jobTitle": "Jefe",
-      "email": "user@example.com",
-      "faxNumber": "(498) 625-6456",
-      "telephone": "1-339-041-0306 x2866",
-      "contactPoint": [
-        {
-          "type": "ContactPoint",
-          "name": "Work",
-          "telephone": "1-364-127-9618 x20418",
-          "faxNumber": "834.320.1602",
-          "email": "user@example.com",
-          "url": "https://www.facebook.com/hallandoates"
-        }
-      ],
-      "address": [
-        {
-          "type": "PostalAddress",
-          "streetAddress": "1007 Mountain Gate Rd",
-          "postOfficeBoxNumber": "Box 1234",
-          "addressRegion": "New Jersey",
-          "addressLocality": "Gotham City",
-          "postalCode": "10010"
-        }
-      ],
-      "birthDate": "2019-04-16",
-      "leadSource": {
-        "type": "Organization",
-        "id": "https://example.com/collection/1",
-        "name": "string",
-        "telephone": "079.706.7065 x6341",
-        "faxNumber": "(873) 271-4802",
-        "email": "user@example.com",
-        "url": "http://example.com",
-        "availableLanguage": [
-          {
-            "type": "Language",
-            "name": "English",
-            "additionalName": "en"
-          }
-        ],
-        "branchCode": "CA301-001",
-        "contactPoint": [
-          {
-            "type": "ContactPoint",
-            "name": "Work",
-            "telephone": "1-364-127-9618 x20418",
-            "faxNumber": "834.320.1602",
-            "email": "user@example.com",
-            "url": "https://www.facebook.com/hallandoates"
-          }
-        ],
-        "logo": [
-          {
-            "type": "DigitalDocument",
-            "id": "http://user.example.com/public/logo/fileName.zip",
-            "name": "fileName.zip",
-            "encodingFormat": "application/zip",
-            "identifier": {},
-            "about": "http://user.example.com/profile/card#me"
-          }
-        ],
-        "image": [
-          {
-            "type": "ImageObject",
-            "id": "http://user.example.com/public/logo/image.jpg",
-            "name": "image.jpg",
-            "encodingFormat": "image/jpeg",
-            "content": "string",
-            "about": "http://user.example.com/profile/card#me",
-            "url": "http://user.example.com/public/profile/image.jpg"
-          }
-        ],
-        "parentOrganization": [
-          "http://example.com"
-        ]
-      }
+      "type": "Contact",
+      "name": "Adam Addme"
+    },
+    "targetCollection": {
+      "type": "Collection",
+      "id": "https://{user}.example.com/data/contact/"
     }
-  },
-  "topic": "lead"
+  }
 }
 ```
 
-#### lead_added properties
 
-| Name/Type | Type | Description |
-|:--------- | :--- | :---------- |
-| type | string! |   |
-| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| object | object | a lead offered or assigned by the agent to one or more recipients  |
-| topic | * |   |
-
-## lead_updated
-
-a crm lead was updated
-
-
-```json
-{
-  "type": "UpdateAction",
-  "agent": "http://user.example.com/profile/card",
-  "object": {
-    "type": "AssignAction",
-    "id": "http://example.com",
-    "agent": "http://organization.example.com/profile/card#me",
-    "recipient": "http://user.example.com/profile/card#me",
-    "object": {
-      "type": "Person",
-      "id": "https://example.com/collection/1",
-      "name": "string",
-      "givenName": "Bruce",
-      "familyName": "Wayne",
-      "jobTitle": "Jefe",
-      "email": "user@example.com",
-      "faxNumber": "(498) 625-6456",
-      "telephone": "1-339-041-0306 x2866",
-      "contactPoint": [
-        {
-          "type": "ContactPoint",
-          "name": "Work",
-          "telephone": "1-364-127-9618 x20418",
-          "faxNumber": "834.320.1602",
-          "email": "user@example.com",
-          "url": "https://www.facebook.com/hallandoates"
-        }
-      ],
-      "address": [
-        {
-          "type": "PostalAddress",
-          "streetAddress": "1007 Mountain Gate Rd",
-          "postOfficeBoxNumber": "Box 1234",
-          "addressRegion": "New Jersey",
-          "addressLocality": "Gotham City",
-          "postalCode": "10010"
-        }
-      ],
-      "birthDate": "2019-04-16",
-      "leadSource": {
-        "type": "Organization",
-        "id": "https://example.com/collection/1",
-        "name": "string",
-        "telephone": "079.706.7065 x6341",
-        "faxNumber": "(873) 271-4802",
-        "email": "user@example.com",
-        "url": "http://example.com",
-        "availableLanguage": [
-          {
-            "type": "Language",
-            "name": "English",
-            "additionalName": "en"
-          }
-        ],
-        "branchCode": "CA301-001",
-        "contactPoint": [
-          {
-            "type": "ContactPoint",
-            "name": "Work",
-            "telephone": "1-364-127-9618 x20418",
-            "faxNumber": "834.320.1602",
-            "email": "user@example.com",
-            "url": "https://www.facebook.com/hallandoates"
-          }
-        ],
-        "logo": [
-          {
-            "type": "DigitalDocument",
-            "id": "http://user.example.com/public/logo/fileName.zip",
-            "name": "fileName.zip",
-            "encodingFormat": "application/zip",
-            "identifier": {},
-            "about": "http://user.example.com/profile/card#me"
-          }
-        ],
-        "image": [
-          {
-            "type": "ImageObject",
-            "id": "http://user.example.com/public/logo/image.jpg",
-            "name": "image.jpg",
-            "encodingFormat": "image/jpeg",
-            "content": "string",
-            "about": "http://user.example.com/profile/card#me",
-            "url": "http://user.example.com/public/profile/image.jpg"
-          }
-        ],
-        "parentOrganization": [
-          "http://example.com"
-        ]
-      }
-    }
-  },
-  "topic": "lead"
-}
-```
-
-#### lead_updated properties
-
-| Name/Type | Type | Description |
-|:--------- | :--- | :---------- |
-| type | string! | UpdateAction  |
-| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| object | object | a lead offered or assigned by the agent to one or more recipients  |
-| topic | * |   |
-
-## lead_removed
-
-a lead was removed
-
-
-```json
-{
-  "type": "RemoveAction",
-  "agent": "http://user.example.com/profile/card",
-  "object": {
-    "type": "AssignAction",
-    "id": "http://example.com",
-    "agent": "http://organization.example.com/profile/card#me",
-    "recipient": "http://user.example.com/profile/card#me",
-    "object": {
-      "type": "Person",
-      "id": "https://example.com/collection/1",
-      "name": "string",
-      "givenName": "Bruce",
-      "familyName": "Wayne",
-      "jobTitle": "Jefe",
-      "email": "user@example.com",
-      "faxNumber": "(498) 625-6456",
-      "telephone": "1-339-041-0306 x2866",
-      "contactPoint": [
-        {
-          "type": "ContactPoint",
-          "name": "Work",
-          "telephone": "1-364-127-9618 x20418",
-          "faxNumber": "834.320.1602",
-          "email": "user@example.com",
-          "url": "https://www.facebook.com/hallandoates"
-        }
-      ],
-      "address": [
-        {
-          "type": "PostalAddress",
-          "streetAddress": "1007 Mountain Gate Rd",
-          "postOfficeBoxNumber": "Box 1234",
-          "addressRegion": "New Jersey",
-          "addressLocality": "Gotham City",
-          "postalCode": "10010"
-        }
-      ],
-      "birthDate": "2019-04-16",
-      "leadSource": {
-        "type": "Organization",
-        "id": "https://example.com/collection/1",
-        "name": "string",
-        "telephone": "079.706.7065 x6341",
-        "faxNumber": "(873) 271-4802",
-        "email": "user@example.com",
-        "url": "http://example.com",
-        "availableLanguage": [
-          {
-            "type": "Language",
-            "name": "English",
-            "additionalName": "en"
-          }
-        ],
-        "branchCode": "CA301-001",
-        "contactPoint": [
-          {
-            "type": "ContactPoint",
-            "name": "Work",
-            "telephone": "1-364-127-9618 x20418",
-            "faxNumber": "834.320.1602",
-            "email": "user@example.com",
-            "url": "https://www.facebook.com/hallandoates"
-          }
-        ],
-        "logo": [
-          {
-            "type": "DigitalDocument",
-            "id": "http://user.example.com/public/logo/fileName.zip",
-            "name": "fileName.zip",
-            "encodingFormat": "application/zip",
-            "identifier": {},
-            "about": "http://user.example.com/profile/card#me"
-          }
-        ],
-        "image": [
-          {
-            "type": "ImageObject",
-            "id": "http://user.example.com/public/logo/image.jpg",
-            "name": "image.jpg",
-            "encodingFormat": "image/jpeg",
-            "content": "string",
-            "about": "http://user.example.com/profile/card#me",
-            "url": "http://user.example.com/public/profile/image.jpg"
-          }
-        ],
-        "parentOrganization": [
-          "http://example.com"
-        ]
-      }
-    }
-  },
-  "topic": "lead"
-}
-```
-
-#### lead_removed properties
-
-| Name/Type | Type | Description |
-|:--------- | :--- | :---------- |
-| type | string! |   |
-| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| object | object | a lead offered or assigned by the agent to one or more recipients  |
-| topic | * |   |
-
-## lead_assigned
+## lead#assign
 
 a lead was assigned
 
 
 ```json
 {
-  "type": "AssignAction",
-  "agent": "http://user.example.com/profile/card",
-  "object": {},
-  "topic": "lead"
+  "topic": "realestate/lead#assign",
+  "source": "http://{user}.example.com/profile/card#me",
+  "@context": "http://realestate.yodata.me/context/v1.json",
+  "data": {
+    "type": "AssignAction",
+    "actionStatus": "CompletedActionStatus",
+    "agent": "http://{user}.example.com/profile/card#me",
+    "instrument": "http://user.example.com/profile/card#me",
+    "object": {
+      "type": "Person",
+      "id": "http://example.com",
+      "name": "string",
+      "additionalProperty": {
+        "supercrmuserid": 1234
+      },
+      "givenName": "Bruce",
+      "familyName": "Wayne",
+      "jobTitle": "Jefe",
+      "email": "user@example.com",
+      "faxNumber": "(498) 625-6456",
+      "telephone": "1-339-041-0306 x2866",
+      "contactPoint": [
+        {
+          "type": "ContactPoint",
+          "name": "Work",
+          "telephone": "1-364-127-9618 x20418",
+          "faxNumber": "834.320.1602",
+          "email": "user@example.com",
+          "url": "https://www.facebook.com/hallandoates"
+        }
+      ],
+      "address": [
+        {
+          "type": "PostalAddress",
+          "streetAddress": "1007 Mountain Gate Rd",
+          "postOfficeBoxNumber": "Box 1234",
+          "addressRegion": "New Jersey",
+          "addressLocality": "Gotham City",
+          "postalCode": "10010",
+          "addressCountry": "usa"
+        }
+      ],
+      "birthDate": "2019-04-24"
+    },
+    "targetCollection": {
+      "type": "Collection",
+      "name": "targetcollection"
+    }
+  }
 }
 ```
 
-#### lead_assigned properties
 
-| Name/Type | Type | Description |
-|:--------- | :--- | :---------- |
-| type | string! |   |
-| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
-| topic | string |   |
-
-## lead_accepted
+## lead#reject
 
 a crm lead was accepted
 
 
 ```json
 {
-  "type": "AcceptAction",
-  "agent": "http://user.example.com/profile/card",
-  "object": {
-    "type": "AssignAction",
-    "id": "http://example.com",
-    "agent": "http://organization.example.com/profile/card#me",
-    "recipient": "http://user.example.com/profile/card#me",
+  "topic": "realestate/lead#reject",
+  "source": "http://{user}.example.com/profile/card#me",
+  "@context": "http://realestate.yodata.me/context/v1.json",
+  "data": {
+    "type": "RejectAction",
+    "actionStatus": "CompletedActionStatus",
+    "agent": "http://{user}.example.com/profile/card#me",
+    "instrument": "http://user.example.com/profile/card#me",
     "object": {
-      "type": "Person",
-      "id": "https://example.com/collection/1",
-      "name": "string",
-      "givenName": "Bruce",
-      "familyName": "Wayne",
-      "jobTitle": "Jefe",
-      "email": "user@example.com",
-      "faxNumber": "(498) 625-6456",
-      "telephone": "1-339-041-0306 x2866",
-      "contactPoint": [
+      "type": "Lead",
+      "object": {
+        "type": "Person",
+        "name": "Larry Lead",
+        "email": "larry@example.com"
+      },
+      "recipient": "http://{user}.example.com/profile/card#me",
+      "sender": "http://{provider}.example.com/profile/card#me",
+      "dateSent": "2019-04-24T06:01:15Z",
+      "activity": [
         {
-          "type": "ContactPoint",
-          "name": "Work",
-          "telephone": "1-364-127-9618 x20418",
-          "faxNumber": "834.320.1602",
-          "email": "user@example.com",
-          "url": "https://www.facebook.com/hallandoates"
+          "type": "string",
+          "actionStatus": "CompletedActionStatus",
+          "agent": "http://{user}.example.com/profile/card#me",
+          "instrument": "http://user.example.com/profile/card#me",
+          "object": null
         }
-      ],
-      "address": [
-        {
-          "type": "PostalAddress",
-          "streetAddress": "1007 Mountain Gate Rd",
-          "postOfficeBoxNumber": "Box 1234",
-          "addressRegion": "New Jersey",
-          "addressLocality": "Gotham City",
-          "postalCode": "10010"
-        }
-      ],
-      "birthDate": "2019-04-16",
-      "leadSource": {
-        "type": "Organization",
-        "id": "https://example.com/collection/1",
-        "name": "string",
-        "telephone": "079.706.7065 x6341",
-        "faxNumber": "(873) 271-4802",
-        "email": "user@example.com",
-        "url": "http://example.com",
-        "availableLanguage": [
-          {
-            "type": "Language",
-            "name": "English",
-            "additionalName": "en"
-          }
-        ],
-        "branchCode": "CA301-001",
-        "contactPoint": [
-          {
-            "type": "ContactPoint",
-            "name": "Work",
-            "telephone": "1-364-127-9618 x20418",
-            "faxNumber": "834.320.1602",
-            "email": "user@example.com",
-            "url": "https://www.facebook.com/hallandoates"
-          }
-        ],
-        "logo": [
-          {
-            "type": "DigitalDocument",
-            "id": "http://user.example.com/public/logo/fileName.zip",
-            "name": "fileName.zip",
-            "encodingFormat": "application/zip",
-            "identifier": {},
-            "about": "http://user.example.com/profile/card#me"
-          }
-        ],
-        "image": [
-          {
-            "type": "ImageObject",
-            "id": "http://user.example.com/public/logo/image.jpg",
-            "name": "image.jpg",
-            "encodingFormat": "image/jpeg",
-            "content": "string",
-            "about": "http://user.example.com/profile/card#me",
-            "url": "http://user.example.com/public/profile/image.jpg"
-          }
-        ],
-        "parentOrganization": [
-          "http://example.com"
-        ]
-      }
+      ]
     }
-  },
-  "topic": "lead"
-}
-```
-
-#### lead_accepted properties
-
-| Name/Type | Type | Description |
-|:--------- | :--- | :---------- |
-| type | string! |   |
-| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| object | object | a lead offered or assigned by the agent to one or more recipients  |
-| topic | * |   |
-
-## lead_rejected
-
-a crm lead was rejected
-
-
-```json
-{
-  "type": "RejectAction",
-  "agent": "http://user.example.com/profile/card",
-  "object": {
-    "type": "AssignAction",
-    "id": "http://example.com",
-    "agent": "http://organization.example.com/profile/card#me",
-    "recipient": "http://user.example.com/profile/card#me",
-    "object": {
-      "type": "Person",
-      "id": "https://example.com/collection/1",
-      "name": "string",
-      "givenName": "Bruce",
-      "familyName": "Wayne",
-      "jobTitle": "Jefe",
-      "email": "user@example.com",
-      "faxNumber": "(498) 625-6456",
-      "telephone": "1-339-041-0306 x2866",
-      "contactPoint": [
-        {
-          "type": "ContactPoint",
-          "name": "Work",
-          "telephone": "1-364-127-9618 x20418",
-          "faxNumber": "834.320.1602",
-          "email": "user@example.com",
-          "url": "https://www.facebook.com/hallandoates"
-        }
-      ],
-      "address": [
-        {
-          "type": "PostalAddress",
-          "streetAddress": "1007 Mountain Gate Rd",
-          "postOfficeBoxNumber": "Box 1234",
-          "addressRegion": "New Jersey",
-          "addressLocality": "Gotham City",
-          "postalCode": "10010"
-        }
-      ],
-      "birthDate": "2019-04-16",
-      "leadSource": {
-        "type": "Organization",
-        "id": "https://example.com/collection/1",
-        "name": "string",
-        "telephone": "079.706.7065 x6341",
-        "faxNumber": "(873) 271-4802",
-        "email": "user@example.com",
-        "url": "http://example.com",
-        "availableLanguage": [
-          {
-            "type": "Language",
-            "name": "English",
-            "additionalName": "en"
-          }
-        ],
-        "branchCode": "CA301-001",
-        "contactPoint": [
-          {
-            "type": "ContactPoint",
-            "name": "Work",
-            "telephone": "1-364-127-9618 x20418",
-            "faxNumber": "834.320.1602",
-            "email": "user@example.com",
-            "url": "https://www.facebook.com/hallandoates"
-          }
-        ],
-        "logo": [
-          {
-            "type": "DigitalDocument",
-            "id": "http://user.example.com/public/logo/fileName.zip",
-            "name": "fileName.zip",
-            "encodingFormat": "application/zip",
-            "identifier": {},
-            "about": "http://user.example.com/profile/card#me"
-          }
-        ],
-        "image": [
-          {
-            "type": "ImageObject",
-            "id": "http://user.example.com/public/logo/image.jpg",
-            "name": "image.jpg",
-            "encodingFormat": "image/jpeg",
-            "content": "string",
-            "about": "http://user.example.com/profile/card#me",
-            "url": "http://user.example.com/public/profile/image.jpg"
-          }
-        ],
-        "parentOrganization": [
-          "http://example.com"
-        ]
-      }
-    }
-  },
-  "topic": "lead"
-}
-```
-
-#### lead_rejected properties
-
-| Name/Type | Type | Description |
-|:--------- | :--- | :---------- |
-| type | string! |   |
-| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| object | object | a lead offered or assigned by the agent to one or more recipients  |
-| topic | * |   |
-
-## lead_returned
-
-a crm lead was returned
-
-
-```json
-{
-  "type": "ReturnAction",
-  "agent": "http://user.example.com/profile/card",
-  "object": {
-    "type": "AssignAction",
-    "id": "http://example.com",
-    "agent": "http://organization.example.com/profile/card#me",
-    "recipient": "http://user.example.com/profile/card#me",
-    "object": {
-      "type": "Person",
-      "id": "https://example.com/collection/1",
-      "name": "string",
-      "givenName": "Bruce",
-      "familyName": "Wayne",
-      "jobTitle": "Jefe",
-      "email": "user@example.com",
-      "faxNumber": "(498) 625-6456",
-      "telephone": "1-339-041-0306 x2866",
-      "contactPoint": [
-        {
-          "type": "ContactPoint",
-          "name": "Work",
-          "telephone": "1-364-127-9618 x20418",
-          "faxNumber": "834.320.1602",
-          "email": "user@example.com",
-          "url": "https://www.facebook.com/hallandoates"
-        }
-      ],
-      "address": [
-        {
-          "type": "PostalAddress",
-          "streetAddress": "1007 Mountain Gate Rd",
-          "postOfficeBoxNumber": "Box 1234",
-          "addressRegion": "New Jersey",
-          "addressLocality": "Gotham City",
-          "postalCode": "10010"
-        }
-      ],
-      "birthDate": "2019-04-16",
-      "leadSource": {
-        "type": "Organization",
-        "id": "https://example.com/collection/1",
-        "name": "string",
-        "telephone": "079.706.7065 x6341",
-        "faxNumber": "(873) 271-4802",
-        "email": "user@example.com",
-        "url": "http://example.com",
-        "availableLanguage": [
-          {
-            "type": "Language",
-            "name": "English",
-            "additionalName": "en"
-          }
-        ],
-        "branchCode": "CA301-001",
-        "contactPoint": [
-          {
-            "type": "ContactPoint",
-            "name": "Work",
-            "telephone": "1-364-127-9618 x20418",
-            "faxNumber": "834.320.1602",
-            "email": "user@example.com",
-            "url": "https://www.facebook.com/hallandoates"
-          }
-        ],
-        "logo": [
-          {
-            "type": "DigitalDocument",
-            "id": "http://user.example.com/public/logo/fileName.zip",
-            "name": "fileName.zip",
-            "encodingFormat": "application/zip",
-            "identifier": {},
-            "about": "http://user.example.com/profile/card#me"
-          }
-        ],
-        "image": [
-          {
-            "type": "ImageObject",
-            "id": "http://user.example.com/public/logo/image.jpg",
-            "name": "image.jpg",
-            "encodingFormat": "image/jpeg",
-            "content": "string",
-            "about": "http://user.example.com/profile/card#me",
-            "url": "http://user.example.com/public/profile/image.jpg"
-          }
-        ],
-        "parentOrganization": [
-          "http://example.com"
-        ]
-      }
-    }
-  },
-  "topic": "lead"
-}
-```
-
-#### lead_returned properties
-
-| Name/Type | Type | Description |
-|:--------- | :--- | :---------- |
-| type | string! |   |
-| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| object | object | a lead offered or assigned by the agent to one or more recipients  |
-| topic | * |   |
-
-## website_registration
-
-a website vistor has registered
-
-
-```json
-{
-  "type": "Notification",
-  "id": "https://you.example.com/inbox/12345",
-  "topic": "website",
-  "timestamp": 1550503972767,
-  "agent": "https://user.example.com/profile/card#me",
-  "instrument": "https://application.example.com/profile/card#me",
-  "object": {
-    "type": "string",
-    "agent": "http://user.example.com/profile/card",
-    "object": {}
   }
 }
 ```
 
-#### website_registration properties
 
-| Name/Type | Type | Description |
-|:--------- | :--- | :---------- |
-| type | string |   |
-| id | string&lt;uri&gt; | the notification uri  |
-| topic | [string] | subscription scopes that will recieve the notification  |
-| timestamp | string | the time the notification was created  |
-| agent | string&lt;uri&gt; | the user/source that generated the notification  |
-| instrument | string&lt;uri&gt; | application or service that delivereted the notification  |
-| object | object | the event payload <br/>RANGE: [Action](/schemas#action) |
+## lead#delete
 
-## website_appointment_requested
+a lead was deleted
+
+
+```json
+{
+  "topic": "realestate/lead#delete",
+  "source": "http://{user}.example.com/profile/card#me",
+  "@context": "http://realestate.yodata.me/context/v1.json",
+  "data": {
+    "type": "DeleteAction",
+    "actionStatus": "CompletedActionStatus",
+    "agent": "https://{ideleteyou}.example.com/profile/card#me",
+    "instrument": "https://{delete-o-matic2K}.example.com/profile/card#me",
+    "object": null,
+    "targetCollection": {}
+  }
+}
+```
+
+
+## lead#update
+
+a crm lead was updated
+
+
+```json
+{
+  "topic": "realestate/lead#update",
+  "source": "http://{user}.example.com/profile/card#me",
+  "@context": "http://realestate.yodata.me/context/v1.json",
+  "data": {
+    "type": "UpdateAction",
+    "object": {
+      "type": "Lead"
+    }
+  }
+}
+```
+
+
+## listing#offer
+
+An offer made by the action.agent to purchase a listing
+
+
+```json
+{
+  "topic": "realestate/listing#offer",
+  "source": "http://{user}.example.com/profile/card#me",
+  "@context": "http://realestate.yodata.me/context/v1.json",
+  "data": {
+    "type": "OfferAction",
+    "actionStatus": "CompletedActionStatus",
+    "agent": {
+      "type": "Person",
+      "name": "Bob",
+      "email": "bob@example.com"
+    },
+    "instrument": "http://user.example.com/profile/card#me",
+    "object": {
+      "type": "RealEstateListing",
+      "id": "http://example.com/12345"
+    },
+    "additionalProperty": {
+      "@context": "https://application.example.com/context#",
+      "customProp": "custom-prop-value"
+    },
+    "identifier": {
+      "@context": "http://example.com/context#",
+      "ID": "value"
+    },
+    "recipient": {
+      "id": "http://user.example.com/profile/card#me"
+    },
+    "offerPrice": {
+      "type": "PriceSpecification",
+      "minPrice": 0,
+      "maxPrice": 0,
+      "price": 0,
+      "priceCurrency": "USD"
+    }
+  }
+}
+```
+
+
+## marketingprogram#create
+
+a marketing program has been created
+
+
+```json
+{
+  "topic": "realestate/marketingprogram#create",
+  "source": "http://{user}.example.com/profile/card#me",
+  "@context": "http://realestate.yodata.me/context/v1.json",
+  "data": {
+    "type": "CreateAction",
+    "actionStatus": "CompletedActionStatus",
+    "agent": "http://{user}.example.com/profile/card#me",
+    "instrument": "http://user.example.com/profile/card#me",
+    "object": null
+  }
+}
+```
+
+
+## marketingprogram#delete
+
+a marketing program was deleted
+
+
+```json
+{
+  "topic": "realestate/marketingprogram#delete",
+  "source": "http://{user}.example.com/profile/card#me",
+  "@context": "http://realestate.yodata.me/context/v1.json",
+  "data": {
+    "type": "DeleteAction",
+    "actionStatus": "CompletedActionStatus",
+    "agent": "https://{ideleteyou}.example.com/profile/card#me",
+    "instrument": "https://{delete-o-matic2K}.example.com/profile/card#me",
+    "object": {
+      "type": "MarketingProgram",
+      "name": "My Marketing Program"
+    },
+    "targetCollection": {}
+  }
+}
+```
+
+
+## marketingprogram#memberadd
+
+a program member was added by the agent (Work In Progress)
+
+
+```json
+{
+  "topic": "realestate/marketingprogram#memberadd",
+  "source": "http://{user}.example.com/profile/card#me",
+  "@context": "http://realestate.yodata.me/context/v1.json",
+  "data": {
+    "type": "AddAction",
+    "object": {
+      "type": "ProgramMembership",
+      "roleName": "Owner",
+      "member": {
+        "type": "Person",
+        "email": "bob@example.com"
+      },
+      "memberOf": null,
+      "startDate": "2019-04-24T06:01:15Z",
+      "endDate": "2019-04-24T06:01:15Z"
+    }
+  }
+}
+```
+
+
+## marketingprogram#memberremove
+
+a member was removed by the agent
+
+
+```json
+{
+  "topic": "realestate/marketingprogram#memberremove",
+  "source": "http://{user}.example.com/profile/card#me",
+  "@context": "http://realestate.yodata.me/context/v1.json",
+  "data": {
+    "type": "RemoveAction",
+    "object": {
+      "type": "ProgramMembership",
+      "roleName": "Owner",
+      "member": {
+        "type": "Person",
+        "email": "bob@example.com"
+      },
+      "memberOf": null,
+      "startDate": "2019-04-24T06:01:15Z",
+      "endDate": "2019-04-24T06:01:15Z"
+    },
+    "targetCollection": {
+      "type": "MarketingProgram",
+      "name": "My Marketing Program"
+    }
+  }
+}
+```
+
+
+## profile#add
+
+a user profile was updated
+
+
+```json
+{
+  "topic": "realestate/profile#add",
+  "source": "http://{user}.example.com/profile/card#me",
+  "@context": "http://realestate.yodata.me/context/v1.json",
+  "data": {
+    "type": "AddAction",
+    "object": {
+      "type": "RealEstateAgent",
+      "name": "Arya Stark"
+    }
+  }
+}
+```
+
+
+## profile#update
+
+profile was updated.
+
+
+```json
+{
+  "topic": "string",
+  "source": "http://{user}.example.com/profile/card#me",
+  "@context": "http://realestate.yodata.me/context/v1.json",
+  "data": {
+    "type": "UpdateAction",
+    "object": {
+      "type": "RealEstateAgent",
+      "name": "Arya Stark"
+    }
+  }
+}
+```
+
+
+## website#appointmentrequest
 
 a website vistor has requested an appointment
 
 
 ```json
 {
-  "type": "string",
-  "agent": "http://user.example.com/profile/card",
-  "object": {
-    "type": "string",
-    "agent": "http://user.example.com/profile/card",
-    "object": {}
-  },
-  "topic": "website"
+  "topic": "realestate/website#appointmentrequest",
+  "source": "http://{user}.example.com/profile/card#me",
+  "@context": "http://realestate.yodata.me/context/v1.json",
+  "data": {}
 }
 ```
 
-#### website_appointment_requested properties
 
-| Name/Type | Type | Description |
-|:--------- | :--- | :---------- |
-| type | string! |   |
-| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
-| topic | * |   |
-
-## website_showing_requested
-
-a website visitor has requested a showing appointment
-
-
-```json
-{
-  "type": "string",
-  "agent": "http://user.example.com/profile/card",
-  "object": {},
-  "topic": "website"
-}
-```
-
-#### website_showing_requested properties
-
-| Name/Type | Type | Description |
-|:--------- | :--- | :---------- |
-| type | string! |   |
-| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
-| topic | * |   |
-
-## website_question
+## website#question
 
 a website visitor has asked a question
 
 
 ```json
 {
-  "type": "string",
-  "agent": "http://user.example.com/profile/card",
-  "object": {},
-  "topic": "website"
+  "topic": "string",
+  "source": "http://{user}.example.com/profile/card#me",
+  "@context": "http://realestate.yodata.me/context/v1.json",
+  "data": {
+    "type": "AddAction",
+    "object": {
+      "type": "RealEstateAgent",
+      "name": "Arya Stark"
+    }
+  }
 }
 ```
 
-#### website_question properties
 
-| Name/Type | Type | Description |
-|:--------- | :--- | :---------- |
-| type | string! |   |
-| agent | string&lt;uri&gt;&#124;object | the direct performer or driver of the action. <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization),[URI](/schemas#uri) |
-| object | object | The object upon the action is carried out, whose state is kept intact or changed.  |
-| topic | * |   |
+## website#showingrequest
+
+a website visitor has requested a showing appointment
+
+
+```json
+{
+  "topic": "string",
+  "source": "http://{user}.example.com/profile/card#me",
+  "@context": "http://realestate.yodata.me/context/v1.json",
+  "data": {
+    "type": "AddAction",
+    "object": {
+      "type": "RealEstateAgent",
+      "name": "Arya Stark"
+    }
+  }
+}
+```
+
 

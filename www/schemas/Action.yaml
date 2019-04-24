@@ -1,24 +1,17 @@
-title: Action
+externalDocs:
+  description: foo
+  url: https://schema.org/Action
 type: object
+required:
+  - 'type'
 properties:
   type:
     type: string
-
+  actionStatus:
+    $ref: actionStatus.yaml
   agent:
-    description: the direct performer or driver of the action.
-    x-range:
-      - Person
-      - Organization
-      - URI
-    oneOf:
-      - type: string
-        format: uri
-        example: http://user.example.com/profile/card
-      - type: object
-
+    $ref: agent.yaml
+  instrument:
+    $ref: instrument.yaml
   object:
-    description: The object upon the action is carried out, whose state is kept intact or changed.
-    type: object
-
-required:
-  - 'type'
+    description: The object upon which the action is carried out

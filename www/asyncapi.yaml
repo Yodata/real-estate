@@ -1,4 +1,3 @@
-# asyncapi spec: https://github.com/asyncapi/asyncapi/blob/master/versions/1.2.0/asyncapi.md
 asyncapi: 1.2.0
 
 info:
@@ -21,7 +20,6 @@ info:
   contact:
     name: Dave Duran
     email: dave@yodata.io
-    url: 'https://yodata.io/real-estate'
 
   license:
     name: MIT
@@ -32,6 +30,8 @@ info:
 
   x-topics:
     name: Subscription Types
+    hideProps: true
+    hideExample: true
     intro: |
       ## Permission model
 
@@ -45,327 +45,63 @@ info:
 
   x-messages:
     name: Event Types
-    intro: |
-      ### NOTE
-
-      Events are wrapped by a Notification object:
-
-      ```json
-      {
-        "type": "Notification",
-        "id": "https://you.example.com/inbox/12345",
-        "timestamp": 1550503972767,
-        "agent": "https://user.example.com/profile/card#me",
-        "instrument": "https://application.example.com/profile/card#me",
-        "object": {
-          "type": "Action",
-          "topic": [ "profile:read" ]
-          }
-        }
-      ```
+    hideProps: true
+    hideExample: false
 
   x-schemas:
     name: Object Types
 
-topics:
-  profile:
-    x-summary: Affiliate, Office, and Agent profile events
-    subscribe:
-      oneOf:
-        - $ref: '#/components/messages/profile_added'
-        - $ref: '#/components/messages/profile_updated'
+baseTopic: realestate
 
+topics:
   contact:
     x-summary: Contact / CRM events
     subscribe:
       oneOf:
-        - $ref: '#/components/messages/contact_added'
-        - $ref: '#/components/messages/contact_updated'
-        - $ref: '#/components/messages/contact_removed'
-        - $ref: '#/components/messages/CommentAction'
+        - $ref: '#/components/messages/contact#add'
+        - $ref: '#/components/messages/contact#update'
+        - $ref: '#/components/messages/contact#delete'
+        - $ref: '#/components/messages/contact#comment'
 
   lead:
     x-summary: Lead events
     subscribe:
       oneOf:
-        - $ref: '#/components/messages/lead_added'
-        - $ref: '#/components/messages/lead_updated'
-        - $ref: '#/components/messages/lead_assigned'
-        - $ref: '#/components/messages/lead_accepted'
-        - $ref: '#/components/messages/lead_returned'
+        - $ref: '#/components/messages/lead#add'
+        - $ref: '#/components/messages/lead#update'
+        - $ref: '#/components/messages/lead#assign'
+        - $ref: '#/components/messages/lead#accept'
+        - $ref: '#/components/messages/lead#reject'
+
+  marketing:
+    x-summary: Marketing events
+    subscribe:
+      oneOf:
+        - $ref: message/marketingprogram.create.yaml
+        - $ref: message/marketingprogram.memberadd.yaml
+        - $ref: message/marketingprogram.memberremove.yaml
+
+  profile:
+    x-summary: Affiliate, Office, and Agent profile events
+    subscribe:
+      oneOf:
+        - $ref: '#/components/messages/profile#add'
+        - $ref: '#/components/messages/profile#update'
 
   website:
     x-summary: Website events
     subscribe:
       oneOf:
-        - $ref: '#/components/messages/website_registration'
-        - $ref: '#/components/messages/website_question'
-        - $ref: '#/components/messages/website_appointment_requested'
-        - $ref: '#/components/messages/OfferAction'
-
-  marketing:
-    x-summary: Marketing events.
-    subscribe:
-      oneOf:
-        - $ref: '#/components/messages/MarketingProgramMemberAdd'
-        - $ref: '#/components/messages/MarketingProgramMemberRemove'
-        - $ref: '#/components/messages/MarketingProgramCreate'
-        - $ref: '#/components/messages/EmailAction'
+        - $ref: '#/components/messages/website#appointmentrequest'
+        - $ref: '#/components/messages/website#question'
+        - $ref: '#/components/messages/website#showingrequest'
 
 components:
   messages:
-    OfferAction:
-      x-title: OfferAction
-      x-scope: website
-      summary: an offer to buy/bid on a property is made
-      payload: { $ref: schemas/OfferAction.yaml }
-    MarketingProgramCreate:
-      x-title: MarketingProgramCreate
-      x-scope: marketing
-      summary: a MarketingProgram was created
-      payload: { $ref: schemas/MarketingProgramCreate.yaml }
-    EmailAction:
-      x-title: EmailAction
-      x-scope: marketing
-      summary: an EmailMessage was sent
-      payload: { $ref: schemas/EmailAction.yaml }
-    MarketingProgramMemberAdd: { $ref: schemas/MarketingProgramMemberAdd.yaml }
-    MarketingProgramMemberRemove:
-      { $ref: schemas/MarketingProgramMemberRemove.yaml }
-    profile_added: { $ref: schemas/profile_added.yaml }
-    profile_updated: { $ref: schemas/profile_updated.yaml }
-    contact_added: { $ref: schemas/contact_added.yaml }
-    contact_updated:
-      x-title: contact_updated
-      x-scope: contact
-      summary: a crm contact was updated
-      payload:
-        allOf:
-          - $ref: schemas/UpdateAction.yaml
-          - properties:
-              topic:
-                example: contact
-              object:
-                $ref: schemas/Contact.yaml
-
-    contact_removed:
-      x-title: contact_removed
-      summary: a crm contact was removed
-      x-scope: contact
-      payload:
-        allOf:
-          - $ref: schemas/RemoveAction.yaml
-          - properties:
-              topic:
-                type: string
-                example: contact
-              object:
-                $ref: schemas/Contact.yaml
-
-    CommentAction:
-      x-title: CommentAction
-      summary: a comment was created by the agent about a subject `about`
-      x-scope:
-        - contact
-      payload:
-        allOf:
-          - $ref: schemas/CommentAction.yaml
-          - properties:
-              agent:
-                type: object
-                description: the commentor
-                x-range:
-                  - Person
-                  - Organization
-                example:
-                  type: Person
-                  name: Charlie Commentor
-              object:
-                type: object
-                $ref: schemas/Comment.yaml
-
-    lead_added:
-      x-title: lead_added
-      x-scope: lead
-      summary: a crm lead was created
-      payload:
-        allOf:
-          - $ref: schemas/AddAction.yaml
-          - properties:
-              topic:
-                example: lead
-              object:
-                $ref: schemas/Lead.yaml
-
-    lead_updated:
-      x-title: lead_updated
-      x-scope: lead
-      summary: a crm lead was updated
-      payload:
-        allOf:
-          - $ref: schemas/UpdateAction.yaml
-          - properties:
-              topic:
-                example: lead
-              object:
-                $ref: schemas/Lead.yaml
-
-    lead_removed:
-      x-title: lead_removed
-      x-scope: lead
-      summary: a lead was removed
-      payload:
-        allOf:
-          - $ref: schemas/RemoveAction.yaml
-          - properties:
-              topic:
-                example: lead
-              object:
-                $ref: schemas/Lead.yaml
-
-    lead_assigned:
-      x-title: lead_assigned
-      x-scope: lead
-      summary: a lead was assigned
-      payload:
-        allOf:
-          - $ref: schemas/Action.yaml
-          - properties:
-              type:
-                type: string
-                enum:
-                  - AssignAction
-              topic:
-                type: string
-                example: lead
-
-    lead_accepted:
-      x-title: lead_accepted
-      summary: a crm lead was accepted
-      x-scope: lead
-      payload:
-        allOf:
-          - $ref: schemas/Action.yaml
-          - properties:
-              type:
-                type: string
-                enum:
-                  - AcceptAction
-              topic:
-                example: lead
-              object:
-                $ref: schemas/Lead.yaml
-
-    lead_rejected:
-      x-title: lead_rejected
-      summary: a crm lead was rejected
-      x-scope: lead
-      payload:
-        allOf:
-          - $ref: schemas/Action.yaml
-          - properties:
-              type:
-                type: string
-                enum:
-                  - RejectAction
-              topic:
-                example: lead
-              object:
-                $ref: schemas/Lead.yaml
-
-    lead_returned:
-      x-title: lead_returned
-      summary: a crm lead was returned
-      x-scope: lead
-      payload:
-        allOf:
-          - $ref: schemas/Action.yaml
-          - properties:
-              type:
-                type: string
-                enum:
-                  - ReturnAction
-              topic:
-                example: lead
-              object:
-                $ref: schemas/Lead.yaml
-
-    website_registration:
-      x-title: website_registration
-      summary: a website vistor has registered
-      x-scope: website
-      payload:
-        allOf:
-          - $ref: schemas/Notification.yaml
-          - properties:
-              topic:
-                example: website
-              object:
-                $ref: schemas/Action.yaml
-
-    website_appointment_requested:
-      x-title: website_appointment_requested
-      summary: a website vistor has requested an appointment
-      x-scope: website
-      payload:
-        allOf:
-          - $ref: schemas/Action.yaml
-          - properties:
-              topic:
-                example: website
-              object:
-                $ref: schemas/Action.yaml
-
-    website_showing_requested:
-      x-title: website_showing_requested
-      summary: a website visitor has requested a showing appointment
-      x-scope: website
-      payload:
-        allOf:
-          - $ref: schemas/Action.yaml
-          - properties:
-              topic:
-                example: website
-
-    website_question:
-      x-title: website_question
-      summary: a website visitor has asked a question
-      x-scope: website
-      payload:
-        allOf:
-          - $ref: schemas/Action.yaml
-          - properties:
-              topic:
-                example: website
+    $ref: message/index.yaml
 
   schemas:
-    Action: { $ref: schemas/Action.yaml }
-    ApplicationProfile: { $ref: schemas/ApplicationProfile.yaml }
-    Contact: { $ref: schemas/Contact.yaml }
-    Comment: { $ref: schemas/Comment.yaml }
-    CommentAction: { $ref: schemas/CommentAction.yaml }
-    ContactPoint: { $ref: schemas/ContactPoint.yaml }
-    DigitalDocument: { $ref: schemas/DigitalDocument.yaml }
-    EmailMessage: { $ref: schemas/EmailMessage.yaml }
-    ImageObject: { $ref: schemas/ImageObject.yaml }
-    Lead: { $ref: schemas/Lead.yaml }
-    Notification: { $ref: schemas/Notification.yaml }
-    MediaObject: { $ref: schemas/MediaObject.yaml }
-    MLSMembership: { $ref: schemas/MLSMembership.yaml }
-    MarketingProgram: { $ref: schemas/MarketingProgram.yaml }
-    MultipleListingService: { $ref: schemas/MultipleListingService.yaml }
-    Organization: { $ref: schemas/Organization.yaml }
-    OrganizationRole: { $ref: schemas/OrganizationRole.yaml }
-    Person: { $ref: schemas/Person.yaml }
-    Place: { $ref: schemas/Place.yaml }
-    PostalAddress: { $ref: schemas/PostalAddress.yaml }
-    ProgramMembership: { $ref: schemas/ProgramMembership.yaml }
-    PropertyValue: { $ref: schemas/PropertyValue.yaml }
-    RealEstateAgent: { $ref: schemas/RealEstateAgent.yaml }
-    RealEstateLicense: { $ref: schemas/RealEstateLicense.yaml }
-    RealEstateOffice: { $ref: schemas/RealEstateOffice.yaml }
-    RealEstateOrganization: { $ref: schemas/RealEstateOrganization.yaml }
-    CustomProperties: { $ref: schemas/CustomProperties.yaml }
+    $ref: schemas/realestate.yaml
 
   securitySchemes:
     https:

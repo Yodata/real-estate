@@ -1,0 +1,33 @@
+AppointmentRequest: { $ref: AppointmentRequest.yaml }
+Contact: { $ref: Contact.yaml }
+Language: { $ref: Language.yaml }
+Lead: { $ref: Lead.yaml }
+MarketingProgram: { $ref: MarketingProgram.yaml }
+MediaObject: { $ref: MediaObject.yaml }
+MLSMembership: { $ref: MLSMembership.yaml }
+MultipleListingService: { $ref: MultipleListingService.yaml }
+Offer: { $ref: Offer.yaml }
+Organization: { $ref: Organization.yaml }
+OrganizationRole: { $ref: OrganizationRole.yaml }
+Permit: { $ref: Permit.yaml }
+Person: { $ref: Person.yaml }
+Place: { $ref: Place.yaml }
+PostalAddress: { $ref: PostalAddress.yaml }
+Profile: { $ref: Profile.yaml }
+ProgramMembership: { $ref: ProgramMembership.yaml }
+PropertyValue: { $ref: PropertyValue.yaml }
+RealEstateAgent: { $ref: RealEstateAgent.yaml }
+RealEstateOffice: { $ref: RealEstateOffice.yaml }
+RealEstateOrganization: { $ref: RealEstateOrganization.yaml }
+Service: { $ref: Service.yaml }
+Thing: { $ref: Thing.yaml }
+
+AcceptAction: { $ref: AcceptAction.yaml }
+Action: { $ref: Action.yaml }
+AddAction: { $ref: AddAction.yaml }
+OfferAction: { $ref: OfferAction.yaml }
+RejectAction: { $ref: RejectAction.yaml }
+RemoveAction: { $ref: RemoveAction.yaml }
+UpdateAction: { $ref: UpdateAction.yaml }
+
+ApplicationProfile: { $ref: ApplicationProfile.yaml }

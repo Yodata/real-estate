@@ -1,34 +1,31 @@
 title: Lead
-type: object
+x-kind: Lead
 description: a lead offered or assigned by the agent to one or more recipients
 properties:
   type:
     type: string
-    enum: ['AssignAction']
-  id:
-    type: string
-    format: uri
-    description: the action URI
-  agent:
-    x-range:
-      - Organization
-      - Person
-    type: string
-    format: uri
-    description: the lead assignor's webid
-    example: http://organization.example.com/profile/card#me
-  recipient:
-    x-range:
-      - Person
-      - Organization
-    type: string
-    format: uri
-    description: the assignee's webid
-    example: http://user.example.com/profile/card#me
+    enum: ['Lead']
+    description: Lead
   object:
-    description: the Lead
-    x-range:
-      - Contact
-      - Person
-      - Organization
-    $ref: Contact.yaml
+    type: object
+    description: a Contact (Person/Organization)
+    example:
+      type: Person
+      name: Larry Lead
+      email: larry@example.com
+  recipient:
+    description: the lead recipient
+    example: http://{user}.example.com/profile/card#me
+  sender:
+    description: the lead provider
+    type: string
+    format: uri
+    example: http://{provider}.example.com/profile/card#me
+  dateSent:
+    description: the date the lead was sent
+    type: string
+    format: date-time
+  activity:
+    type: array
+    items:
+      $ref: Action.yaml

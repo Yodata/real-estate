@@ -16,67 +16,65 @@ none of the profile-related events like `profile_added` and
 You will only receive events from users who've authorized your app.
 
 
-## profile
-
-Affiliate, Office, and Agent profile events
-
-
-#### Subscriber receives the following events
-
-| Event | Description | Scope |
-| :---- | :---------- | :---- |
-| [profile_added](/messages#profile_added) | a profile (agent, affiliate or office) was created | profile:read |
-| [profile_updated](/messages#profile_updated) | a profile (agent, affiliate or office) was updated | profile:read |
-## contact
+## realestate.contact
 
 Contact / CRM events
 
 
-#### Subscriber receives the following events
+#### realestate.contact subscriptions receive
 
-| Event | Description | Scope |
-| :---- | :---------- | :---- |
-| [contact_added](/messages#contact_added) | a contact was created | contact |
-| [contact_updated](/messages#contact_updated) | a crm contact was updated | contact |
-| [contact_removed](/messages#contact_removed) | a crm contact was removed | contact |
-| [CommentAction](/messages#CommentAction) | a comment was created by the agent about a subject &#x60;about&#x60; | contact |
-## lead
+| Event | Description |
+| :---- | :---------- |
+| [realestate/contact#add](/messages#contactadd) | a contact was added/created. |
+| [realestate/contact#update](/messages#contactupdate) | a crm contact was updated |
+| [realestate/contact#delete](/messages#contactdelete) | a contact was removed from a collection |
+| [realestate/contact#comment](/messages#contactcomment) | a comment was made by or assoicated with the contact |
+## realestate.lead
 
 Lead events
 
 
-#### Subscriber receives the following events
+#### realestate.lead subscriptions receive
 
-| Event | Description | Scope |
-| :---- | :---------- | :---- |
-| [lead_added](/messages#lead_added) | a crm lead was created | lead |
-| [lead_updated](/messages#lead_updated) | a crm lead was updated | lead |
-| [lead_assigned](/messages#lead_assigned) | a lead was assigned | lead |
-| [lead_accepted](/messages#lead_accepted) | a crm lead was accepted | lead |
-| [lead_returned](/messages#lead_returned) | a crm lead was returned | lead |
-## website
+| Event | Description |
+| :---- | :---------- |
+| [realestate/lead#add](/messages#leadadd) | a crm lead was created |
+| [realestate/lead#update](/messages#leadupdate) | a crm lead was updated |
+| [realestate/lead#asssign](/messages#leadasssign) | a lead was assigned |
+| [realestate/lead#accept](/messages#leadaccept) | a lead (object) was accepted by the agent |
+| [realestate/lead#reject](/messages#leadreject) | a crm lead was accepted |
+## realestate.marketing
+
+Marketing events
+
+
+#### realestate.marketing subscriptions receive
+
+| Event | Description |
+| :---- | :---------- |
+| [realestate/marketingprogram#create](/messages#marketingprogramcreate) | a marketing program has been created |
+| [realestate/marketingprogram#memberadd](/messages#marketingprogrammemberadd) | a program member was added by the agent (Work In Progress) |
+| [realestate/marketingprogram#memberremove](/messages#marketingprogrammemberremove) | a member was removed by the agent |
+## realestate.profile
+
+Affiliate, Office, and Agent profile events
+
+
+#### realestate.profile subscriptions receive
+
+| Event | Description |
+| :---- | :---------- |
+| [realestate/profile#add](/messages#profileadd) | a user profile was updated |
+| [realestate/profile#update](/messages#profileupdate) | profile was updated. |
+## realestate.website
 
 Website events
 
 
-#### Subscriber receives the following events
+#### realestate.website subscriptions receive
 
-| Event | Description | Scope |
-| :---- | :---------- | :---- |
-| [website_registration](/messages#website_registration) | a website vistor has registered | website |
-| [website_question](/messages#website_question) | a website visitor has asked a question | website |
-| [website_appointment_requested](/messages#website_appointment_requested) | a website vistor has requested an appointment | website |
-| [OfferAction](/messages#OfferAction) | an offer to buy/bid on a property is made | website |
-## marketing
-
-Marketing events.
-
-
-#### Subscriber receives the following events
-
-| Event | Description | Scope |
-| :---- | :---------- | :---- |
-| [MarketingProgramMemberAdd](/messages#MarketingProgramMemberAdd) | a program member was added by the agent (Work In Progress) | marketing |
-| [MarketingProgramMemberRemove](/messages#MarketingProgramMemberRemove) | a member was removed by the agent (Work In Progress) | marketing |
-| [MarketingProgramCreate](/messages#MarketingProgramCreate) | a MarketingProgram was created | marketing |
-| [EmailAction](/messages#EmailAction) | an EmailMessage was sent | marketing |
+| Event | Description |
+| :---- | :---------- |
+| [realestate/website#appointmentrequest](/messages#websiteappointmentrequest) | a website vistor has requested an appointment |
+| [realestate/website#question](/messages#websitequestion) | a website visitor has asked a question |
+| [realestate/website#showingrequest](/messages#websiteshowingrequest) | a website visitor has requested a showing appointment |

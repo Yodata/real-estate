@@ -14,8 +14,8 @@ allOf:
       member:
         type: array
         x-range: ProgramMembership
-        description: member relationship objects
         items:
-          type: string
-          format: uri
-          example: https://user.example.com/profile/card
+          $ref: ProgramMembership.yaml
+    example:
+      type: MarketingProgram
+      name: My Marketing Program

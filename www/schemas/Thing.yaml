@@ -3,10 +3,14 @@ required:
   - type
 properties:
   type:
-    description: Linked-Data (@type)
     type: string
+    description: Linked-Data (@type)
   id:
-    description: Linked-Data URI (@id)
     type: string
     format: uri
-    example: https://example.com/collection/1
+    description: Linked-Data uri
+  name:
+    type: string
+    description: the name of the item.
+  additionalProperty:
+    $ref: additionalProperty.yaml

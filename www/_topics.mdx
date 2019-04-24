@@ -1,0 +1,79 @@
+---
+name: Subscription Types
+
+
+---
+# Subscription Types
+
+## Permission model
+
+The Events API leverages existing object-driven OAuth scope system to
+control access to events. For example, if your app has access to profiles
+through the `profiles:read` scope, you can choose to subscribe to any or
+none of the profile-related events like `profile_added` and
+`profile_updated`.
+
+You will only receive events from users who've authorized your app.
+
+
+## profile
+
+Affiliate, Office, and Agent profile events
+
+
+#### Subscriber receives the following events
+
+| Event | Description | Scope |
+| :---- | :---------- | :---- |
+| [addaction](/messages#addaction) | a profile (agent, affiliate or office) was created | realestate/profile# |
+| [profile_updated](/messages#profile_updated) | a profile (agent, affiliate or office) was updated | profile:read |
+## contact
+
+Contact / CRM events
+
+
+#### Subscriber receives the following events
+
+| Event | Description | Scope |
+| :---- | :---------- | :---- |
+| [contact#add](/messages#contact#add) | a contact was created | realestate |
+| [contact#add](/messages#contact#add) | a crm contact was updated | realestate |
+| [contact#remove](/messages#contact#remove) | a crm contact was remove | realestate |
+| [contact#comment](/messages#contact#comment) | an agent comments about an object |  |
+## lead
+
+Lead events
+
+
+#### Subscriber receives the following events
+
+| Event | Description | Scope |
+| :---- | :---------- | :---- |
+| [lead_added](/messages#lead_added) | a crm lead was created | lead |
+| [lead_updated](/messages#lead_updated) | a crm lead was updated | lead |
+| [lead#asssign](/messages#lead#asssign) | a lead was assigned | realestate |
+| [lead#accept](/messages#lead#accept) | a crm lead was accepted | realestate |
+| [lead#reject](/messages#lead#reject) | a crm lead was accepted | realestate |
+## website
+
+Website events
+
+
+#### Subscriber receives the following events
+
+| Event | Description | Scope |
+| :---- | :---------- | :---- |
+| [website#question](/messages#website#question) | a website visitor has asked a question | realestate |
+| [website#appointmentrequest](/messages#website#appointmentrequest) | a website vistor has requested an appointment | realestate |
+## marketing
+
+Marketing events.
+
+
+#### Subscriber receives the following events
+
+| Event | Description | Scope |
+| :---- | :---------- | :---- |
+| [marketingprogram#create](/messages#marketingprogram#create) | a marketing program has been created | realestate |
+| [MarketingProgramMemberAdd](/messages#MarketingProgramMemberAdd) | a program member was added by the agent (Work In Progress) | marketing |
+| [MarketingProgramMemberRemove](/messages#MarketingProgramMemberRemove) | a member was removed by the agent (Work In Progress) | marketing |

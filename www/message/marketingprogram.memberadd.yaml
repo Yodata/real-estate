@@ -1,0 +1,19 @@
+x-title: marketingprogram#memberadd
+x-scope: realestate
+summary: a program member was added by the agent (Work In Progress)
+payload:
+  allOf:
+    - $ref: Event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/marketingprogram#memberadd
+        data:
+          type: object
+          properties:
+            type:
+              type: string
+              enum:
+                - AddAction
+            object:
+              $ref: ../schemas/ProgramMembership.yaml

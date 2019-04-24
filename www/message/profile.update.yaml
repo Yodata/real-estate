@@ -1,0 +1,27 @@
+x-title: profile#update
+x-scope: realestate
+summary: profile was updated.
+payload:
+  allOf:
+    - $ref: Event.yaml
+    - properties:
+        data:
+          type: object
+          description: the message payload
+          properties:
+            type:
+              type: string
+              enum:
+                - UpdateAction
+              description: UpdateAction
+            object:
+              type: object
+              description: content of the profile which was added
+              x-range:
+                - RealEstateOrganization
+                - RealEstateOffice
+                - RealEstateAgent
+                - Person
+              example:
+                type: RealEstateAgent
+                name: Arya Stark

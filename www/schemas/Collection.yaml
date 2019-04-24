@@ -1,0 +1,9 @@
+type: object
+description: target collection
+properties:
+  type:
+    type: string
+    example: Collection
+  name:
+    type: string
+    example: targetcollection

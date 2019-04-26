@@ -1,0 +1,4 @@
+$schema: '{{projectSchema}}'
+$id: '{{podURL}}/public/{{projectName}}.yaml'
+$view:
+  TYPE: (type)

@@ -18,3 +18,20 @@ $ npx create-yodata-context
 
 ### context development
 
+A main context yaml file describes a transformation that takes a JSON input and returns the transformed JSON output.
+
+The transformation is both semantic (maps keys to JSON-LD contexts) and data shape that supports
+moving, renaming, processing and removing/redacting keys from the input.
+
+The transform is non-destructive.
+
+Create your context by editing the .yaml file in your context root directory.
+
+```javascript
+// file: {projectroot}/{contextname}.yaml
+
+$schema: 'https://realestate.yodata.me/ns/v1/schema.yaml'
+$id: 'https://{yourpod}/public/{version}/{contextname}.yaml'
+$view:
+  TYPE: (type)
+```

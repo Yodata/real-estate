@@ -1,33 +1,37 @@
 #!/usr/bin/env node
 const inquirer = require('inquirer')
-const copyFiles = require('./copy-files')
+const copyFiles = require('./generate-project')
 const kebabCase = require('lodash/kebabCase')
 const logger = require('./logger')
 const showHelp = require('./show-help')
 
-const { POD_URL, POD_SECRET } = process.env
+const { YODATA_POD_URL, YODATA_POD_SECRET } = process.env
 
 inquirer
 	.prompt([
 		{
-			name: 'projectSchema',
-			default: 'https://realestate.yodata.me/ns/v1/schema.yaml'
-		},
-		{
-			name: 'projectName',
+			name: 'sourceContext',
 			message: 'context name:',
 			default: 'my-context',
 			filter: kebabCase
 		},
 		{
+			name: 'validationSchema',
+			default: 'https://realestate.yodata.me/context/v1/schema.yaml'
+		},
+		{
 			name: 'podURL',
-			message: 'URL of the pod to host your context',
-			default: POD_URL
+			message: '',
+			default: function () {
+				return YODATA_POD_URL || 'https://user.yodata.me'
+			}
 		},
 		{
 			name: 'podSecret',
 			message: 'pod secret or api-key',
-			default: POD_SECRET
+			default: function () {
+				return YODATA_POD_SECRET || 'secret'
+			}
 		}
 	])
 	.then(copyFiles({ source: './defaultTemplate' }))

@@ -1,0 +1,3 @@
+module.exports = {
+	TYPE: 'Example'
+}

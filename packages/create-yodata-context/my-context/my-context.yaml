@@ -1,4 +1,0 @@
-$schema: 'https://realestate.yodata.me/ns/v1/schema.yaml'
-$id: 'http://dave.yodata.io/public/my-context.yaml'
-$view:
-  TYPE: (type)

@@ -1,0 +1,8 @@
+{
+  "name": "hsf-ace-context",
+  "private": true,
+  "devDependencies": {
+    "@types/jest": "^24.0.11",
+    "@yodata/transform": "^0.2.17"
+  }
+}

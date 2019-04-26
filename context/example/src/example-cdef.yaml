@@ -1,0 +1,57 @@
+# example context
+$id: https://{mypod}/public/context/{name}.yaml
+$schema: https://realestate.yodata.me/context/transform/v1.yaml
+'@view': |
+  {
+    "type": type,
+    "object": {
+      "type": Object,
+      "id": "https://" & Account.HSF_ID__c & "." & inbox & "/profile/card#me",
+      "name": Account.Name,
+      "telephone": $boolean(Account.Primary_Phone__c)? Account.Primary_Phone__c : "",
+      "faxNumber": $boolean(Account.Fax)? Account.Fax : "",
+      "email": $boolean(Account.Primary_Email__c)? Account.Primary_Email__c : "",
+      "url": $boolean(Account.Primary_Website__r.Name)? Account.Primary_Website__r.Name : "",
+      "address": 
+      {
+        "type": "PostalAddress",
+        "streetAddress": $boolean(Account.BillingAddress.street)? $trim(Account.BillingAddress.street) : "",
+        "addressLocality": $boolean(Account.BillingAddress.city)? Account.BillingAddress.city : "",
+        "addressRegion": $boolean(Account.BillingAddress.state)? Account.BillingAddress.state : "",
+        "postalCode": $boolean(Account.BillingAddress.postalCode)? Account.BillingAddress.postalCode : ""
+      },
+      "additionalProperty":
+      {
+        "status": $boolean(Account.Status__c)? Account.Status__c : "",
+        "isDisplayed": $boolean(Account.Is_Displayed__c)? Account.Is_Displayed__c : "",
+        "franchiseCommitment": $boolean(Account.Franchise_Commitment__c)? Account.Franchise_Commitment__c : "",
+        "franchiseCode": $boolean(Account.Franchise_Code__c)? Account.Franchise_Code__c : ""
+      },
+      "contactPoint": 
+      [
+        {
+          "type": "ContactPoint",
+          "name": "Relocation",
+          "url": $boolean(Account.Relocation_Website__r.Name)? Account.Relocation_Website__r.Name : "" ,
+          "telephone": $boolean(Account.Relocation_Phone__c)? Account.Relocation_Phone__c : "",
+          "faxNumber": $boolean(Account.Relocation_Fax__c)? Account.Relocation_Fax__c : ""
+        },
+        {
+          "type": "ContactPoint",
+          "name": "Consumer",
+          "email": $boolean(Account.Consumer_Email__c)? Account.Consumer_Email__c : "",
+          "telephone": $boolean(Account.Consumer_Phone__c)? Account.Consumer_Phone__c : ""
+        },
+        {
+          "type": "ContactPoint",
+          "name": "TollFreePhone",
+          "telephone": $boolean(Account.Toll_Free__c)? Account.Toll_Free__c : ""
+        },
+        {
+          "type": "ContactPoint",
+          "name": "RelocationTollFreePhone",
+          "telephone": $boolean(Account.Relocation_Toll_Free__c)? Account.Relocation_Toll_Free__c : ""
+        }
+      ]
+    }
+  }

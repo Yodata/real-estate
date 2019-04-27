@@ -38,6 +38,6 @@ inquirer
 			}
 		}
 	])
-	.then(generateProject({ source: './defaultTemplate' }))
+	.then(generateProject({ source: './template' }))
 	.then(showHelp)
 	.catch(logger.error)

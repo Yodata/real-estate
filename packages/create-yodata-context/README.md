@@ -1,9 +1,5 @@
 # create-yodata-context
 
-> a monorepo for nve work
-
-TODO: Fill out this long description.
-
 ## Table of Contents
 
 - [Install](#install)

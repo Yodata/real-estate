@@ -2,8 +2,6 @@
 
 > standard schema &amp; events for integrating real estate software
 
-TODO: Fill out this long description.
-
 - [Background](#background)
 - [Install](#install)
 - [Usage](#usage)

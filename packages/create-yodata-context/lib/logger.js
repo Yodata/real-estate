@@ -1,8 +1,11 @@
 /* eslint-disable no-console */
-const chalk = require('chalk')
+const chalk = require('chalk').default
 
 const Logger = {
 	log(...msg) {
+		return console.log(...msg)
+	},
+	info(...msg) {
 		return console.log(chalk.green('[Info]'), ...msg)
 	},
 	error(...msg) {

@@ -1,3 +1,3 @@
 module.exports = {
-	TYPE: 'Example'
+	'@type': 'Example'
 }

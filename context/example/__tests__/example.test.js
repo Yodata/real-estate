@@ -1,11 +1,10 @@
-/* eslint-disable no-undef */
+require('dotenv').config()
 const { loadContext } = require('@yodata/transform')
 
 test('example', () => {
-	const context = loadContext('../src/example-cdef.yaml')
-	const input = require('../__testdata__/input')
-	// @ts-ignore
+	const context = loadContext('../example.yaml')
+	const input = require('../__testdata__/input.js')
+	const output = require('../__testdata__/output.js')
 	const result = context.map(input)
-	const output = require('../__testdata__/output')
 	expect(result).toEqual(output)
 })

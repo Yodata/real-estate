@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const inquirer = require('inquirer')
-const copyFiles = require('./generate-project')
+const generateProject = require('./generate-project')
 const kebabCase = require('lodash/kebabCase')
 const logger = require('./logger')
 const showHelp = require('./show-help')
@@ -11,9 +11,13 @@ inquirer
 	.prompt([
 		{
 			name: 'sourceContext',
-			message: 'context name:',
+			message: 'project name',
 			default: 'my-context',
 			filter: kebabCase
+		},
+		{
+			name: 'sourceDescription',
+			message: 'project description'
 		},
 		{
 			name: 'validationSchema',
@@ -21,19 +25,19 @@ inquirer
 		},
 		{
 			name: 'podURL',
-			message: '',
+			message: 'service pod URL',
 			default: function () {
-				return YODATA_POD_URL || 'https://user.yodata.me'
+				return YODATA_POD_URL || 'https://supercrm.yodata.me'
 			}
 		},
 		{
 			name: 'podSecret',
-			message: 'pod secret or api-key',
+			message: 'pod secret (x-api-key)',
 			default: function () {
 				return YODATA_POD_SECRET || 'secret'
 			}
 		}
 	])
-	.then(copyFiles({ source: './defaultTemplate' }))
+	.then(generateProject({ source: './defaultTemplate' }))
 	.then(showHelp)
 	.catch(logger.error)

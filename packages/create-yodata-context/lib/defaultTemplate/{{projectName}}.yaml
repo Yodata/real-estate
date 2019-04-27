@@ -1,4 +1,0 @@
-$schema: '{{validationSchema}}'
-$id: '{{podURL}}/public/{{sourceContext}}.yaml'
-$view:
-  TYPE: (type)

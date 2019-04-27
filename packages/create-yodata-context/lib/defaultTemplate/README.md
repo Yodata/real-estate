@@ -1,16 +1,16 @@
-# example
+# {{sourceContext}}
 
-an example yodata transformation context
+{{sourceDescription}}
 
 ## development
 
-example.yaml defines a transformation from a JSON input to a JSON output
+{{sourceContext}}.yaml defines a transformation from a JSON input to a JSON output
 
 ```javascript
-// file: example.yaml
+// file: {{sourceContext}}.yaml
 
 $schema: 'https://realestate.yodata.me/ns/v1/schema.yaml'
-$id: 'https://dave.dev.yodata.io/public/context/v1/example.yaml'
+$id: '{{podURL}}/public/context/v1/{{sourceContext}}.yaml'
 $view:
   TYPE: (type)
 ```

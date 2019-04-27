@@ -4,8 +4,6 @@ scaffold and manage a data context for yodata/realestate (reflex)
 
 ## usage
 
-### create a new context
-
 ```bash
 $ npx create-yodata-context
 

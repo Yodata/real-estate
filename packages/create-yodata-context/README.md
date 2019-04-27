@@ -1,35 +1,39 @@
 # create-yodata-context
 
-scaffold and manage a data context for yodata/realestate (reflex)
+> a monorepo for nve work
 
-## usage
+TODO: Fill out this long description.
 
-```bash
-$ npx create-yodata-context
+## Table of Contents
 
-? validationSchema: https://realestate.yodata.me/ns/v1/schema.yaml
-? context name: my-context
-? URL of the pod to host your context https://user.example.com
-? pod secret or api-key abc123
+- [Install](#install)
+- [Usage](#usage)
+- [Maintainers](#maintainers)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Install
 
 ```
-
-### context development
-
-A main context yaml file describes a transformation that takes a JSON input and returns the transformed JSON output.
-
-The transformation is both semantic (maps keys to JSON-LD contexts) and data shape that supports
-moving, renaming, processing and removing/redacting keys from the input.
-
-The transform is non-destructive.
-
-Create your context by editing the .yaml file in your context root directory.
-
-```javascript
-// file: {projectroot}/{contextname}.yaml
-
-$schema: 'https://realestate.yodata.me/ns/v1/schema.yaml'
-$id: 'https://{yourpod}/public/{version}/{contextname}.yaml'
-$view:
-  TYPE: (type)
 ```
+
+## Usage
+
+```
+```
+
+## Maintainers
+
+[@yodaveduran](https://github.com/yodaveduran)
+
+## Contributing
+
+See [the contributing file](contributing.md)!
+
+PRs accepted.
+
+Small note: If editing the README, please conform to the [standard-readme](https://github.com/RichardLitt/standard-readme) specification.
+
+## License
+
+MIT © 2019 Dave Duran

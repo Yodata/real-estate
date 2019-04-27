@@ -1,0 +1,4 @@
+$schema: '{{validationSchema}}'
+$id: '{{podURL}}/public/context/{{sourceContext}}.cdef.yaml'
+view:
+  type: 'RealEstateAgent'

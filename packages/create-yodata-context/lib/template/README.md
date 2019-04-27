@@ -4,13 +4,13 @@
 
 ## development
 
-{{sourceContext}}.yaml defines a transformation from a JSON input to a JSON output
+{{sourceContext}}.cdef.yaml defines a 
 
 ```javascript
 // file: {{sourceContext}}.yaml
 
 $schema: 'https://realestate.yodata.me/ns/v1/schema.yaml'
-$id: '{{podURL}}/public/context/v1/{{sourceContext}}.yaml'
+$id: '{{podURL}}/public/context/{{sourceContext}}.yaml'
 $view:
   TYPE: (type)
 ```

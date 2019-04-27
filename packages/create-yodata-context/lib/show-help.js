@@ -11,10 +11,10 @@ const EXAMPLE_MESSAGE = JSON.stringify({
 module.exports = ({ sourceContext, podURL }) => {
 	logger.log(chalk`
   
-  {whiteBright.bold Nicely done!}
+  {whiteBright.bold Nice! What next?}
   
   {blue - edit your context:}
-    {greenBright open ${sourceContext}/${sourceContext}.yaml}
+    {greenBright open ${sourceContext}/${sourceContext}.cdef.yaml}
 
   {blue - update example input and ouput:}
     {greenBright open ${sourceContext}/__testdata__/input.js}

@@ -20,7 +20,7 @@
 
 ## Maintainers
 
-[@yodaveduran](https://github.com/yodaveduran)
+[@dduran1967](https://github.com/dduran1967)
 
 ## Contributing
 

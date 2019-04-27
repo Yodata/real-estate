@@ -13,7 +13,7 @@
 
 ## Install
 
-- [create-yodata-context](packages/create-yodata-context/README.md)
+- [create-yodata-context](packages/create-yodata-context)
 
 ## Usage
 

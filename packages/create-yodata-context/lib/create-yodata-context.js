@@ -4,6 +4,7 @@ const generateProject = require('./generate-project')
 const kebabCase = require('lodash/kebabCase')
 const logger = require('./logger')
 const showHelp = require('./show-help')
+const installDependencies = require('./install-dependencies')
 
 const { YODATA_POD_URL, YODATA_POD_SECRET } = process.env
 
@@ -39,5 +40,6 @@ inquirer
 		}
 	])
 	.then(generateProject({ source: './template' }))
+	.then(installDependencies)
 	.then(showHelp)
 	.catch(logger.error)

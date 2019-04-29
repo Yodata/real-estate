@@ -19,10 +19,10 @@
   resolved "https://registry.yarnpkg.com/@types/normalize-package-data/-/normalize-package-data-2.4.0.tgz#e486d0d97396d79beedd0a6e33f4534ff6b4973e"
   integrity sha512-f5j5b/Gf71L+dbqxIpQ4Z2WlmI/mPJ0fOkGGmFgtb6sAu97EPczzbS3/tJKxmcYDj55OX6ssqwDAWOHIYDRDGA==
 
-"@yodata/context-sdk@^0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@yodata/context-sdk/-/context-sdk-0.2.2.tgz#6a2e3a71cffd9352abd6ddc46aae4895e4713685"
-  integrity sha512-Q+Oy5MwY5qbzRXvl4AEeQj5wiGkXZ0dJ1DLZdfmGD4LTQYxZ4n8z4zhBvi5U44+wsCkhcJ3Dw7LVyFQg9tAx+g==
+"@yodata/context-sdk@^0.2.4":
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/@yodata/context-sdk/-/context-sdk-0.2.5.tgz#0030c17daa69dbaa1b6ede9eeebef3c9067f5984"
+  integrity sha512-+tOR5gYrArG0qiVtURIgFP+RdQ81SAubua2lnbBDgzxA4Vm23Uf2AlikfoqzZvX3pjDAVU0/yAHGXt2Hjr+SBA==
   dependencies:
     "@yodata/solid-tools" "^0.0.8"
     "@yodata/transform" "^0.2.18"

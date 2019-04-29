@@ -20,9 +20,9 @@
   integrity sha512-f5j5b/Gf71L+dbqxIpQ4Z2WlmI/mPJ0fOkGGmFgtb6sAu97EPczzbS3/tJKxmcYDj55OX6ssqwDAWOHIYDRDGA==
 
 "@yodata/context-sdk@^0.2.4":
-  version "0.2.5"
-  resolved "https://registry.yarnpkg.com/@yodata/context-sdk/-/context-sdk-0.2.5.tgz#0030c17daa69dbaa1b6ede9eeebef3c9067f5984"
-  integrity sha512-+tOR5gYrArG0qiVtURIgFP+RdQ81SAubua2lnbBDgzxA4Vm23Uf2AlikfoqzZvX3pjDAVU0/yAHGXt2Hjr+SBA==
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/@yodata/context-sdk/-/context-sdk-0.2.6.tgz#f795b289d2e608dfffd6e45d129104755aba208e"
+  integrity sha512-xXYWWolp7UWoG+cKC1N/mQtYF2HqcYW1GfeNoYMw96yvBaVUKcO0iDH/bEIuC/e1BlVPGSudBXwguSS1jXzlOw==
   dependencies:
     "@yodata/solid-tools" "^0.0.8"
     "@yodata/transform" "^0.2.18"

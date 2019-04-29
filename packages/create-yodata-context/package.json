@@ -47,6 +47,6 @@
     "url": "https://github.com/Yodata/real-estate/issues"
   },
   "dependencies": {
-    "@yodata/context-sdk": "^0.2.2-alpha.0"
+    "@yodata/context-sdk": "^0.2.2"
   }
 }

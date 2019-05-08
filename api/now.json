@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "scope": "yodata",
+  "builds": [
+    {
+      "src": "**/*.js",
+      "use": "now-micro"
+    }
+  ]
+}

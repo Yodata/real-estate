@@ -98,10 +98,10 @@ topics:
 
 components:
   messages:
-    $ref: message/index.yaml
+    $ref: 'message/index.yaml'
 
   schemas:
-    $ref: schemas/realestate.yaml
+    $ref: 'schemas/realestate.yaml'
 
   securitySchemes:
     https:

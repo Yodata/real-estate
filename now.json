@@ -3,22 +3,18 @@
   "name": "@yodata/real-estate",
   "builds": [
     {
-      "src": "static/*.json",
-      "use": "@now/static"
-    },
-    {
       "src": "www/package.json",
       "use": "@now/static-build"
     }
   ],
   "routes": [
     {
-      "src": "/context.json",
-      "dest": "/static/context.json"
+      "src": "/static/(.*)",
+      "dest": "/www/static/$1"
     },
     {
-      "src": "/(.*)",
-      "dest": "/www/$1"
+      "src": "/.*",
+      "dest": "/www/index.html"
     }
   ]
 }

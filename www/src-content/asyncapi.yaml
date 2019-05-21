@@ -1,0 +1,89 @@
+asyncapi: 1.2.0
+
+info:
+  title: Let's Integrate Real Estate
+  version: '0.0.2'
+  description: |
+    Reflex is intended to normalize the process of integrating applications and services
+    in the real estate domain in a user-centric, vendor agnostic and developer friendly
+    way.
+
+    The API is very simple, the only interactions are publish a message (HTTP POST) and get messages either pushed to your 
+    application or with HTTP GET.
+
+    The project is 100% open source and contributors are welcomed with open arms.
+
+    To get started you'll need to get yourself a POD that will provide your application's private message bus.
+
+    If you don't already have a pod, contact us and we'll get you setup.
+
+  contact:
+    name: Dave Duran
+    email: dave@yodata.io
+
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+  x-info:
+    route: /
+
+  x-topics:
+    name: Topics
+    hideProps: false
+    hideExample: false
+    intro: |
+      ## Permission model
+
+      The Events API leverages existing object-driven OAuth scope system to
+      control access to events. For example, if your app has access to profiles
+      through the `profiles:read` scope, you can choose to subscribe to any or
+      none of the profile-related events like `profile_added` and
+      `profile_updated`.
+
+      You will only receive events from users who've authorized your app.
+
+  x-messages:
+    name: Events
+    hideProps: false
+    hideExample: false
+
+  x-schemas:
+    name: Objects
+
+# baseTopic: realestate
+
+topics:
+  contact:
+    $ref: schemas/contact/topic.yaml
+
+  lead:
+    $ref: schemas/lead/topic.yaml
+
+  marketing:
+    x-summary: Marketing events
+    subscribe:
+      oneOf:
+        - $ref: message/marketingprogram.create.yaml
+        - $ref: message/marketingprogram.memberadd.yaml
+        - $ref: message/marketingprogram.memberremove.yaml
+
+  profile:
+    x-summary: Affiliate, Office, and Agent profile events
+    subscribe:
+      oneOf:
+        - $ref: message/profile.add.yaml
+        - $ref: message/profile.update.yaml
+  
+  website:
+    $ref: schemas/website/topic.yaml
+
+components:
+  schemas: { $ref: 'schemas/realestate.yaml' }
+      
+
+  securitySchemes:
+    https:
+      name: api-key
+      type: httpApiKey
+      in: header

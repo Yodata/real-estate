@@ -151,7 +151,7 @@ a lead offered or assigned by the agent to one or more recipients
   },
   "recipient": "http://{user}.example.com/profile/card#me",
   "sender": "http://{provider}.example.com/profile/card#me",
-  "dateSent": "2019-05-21T03:08:48Z",
+  "dateSent": "2019-05-21T03:26:03Z",
   "activity": [
     {
       "type": "string",
@@ -239,8 +239,8 @@ Provides additional information in member/memberOf relationships.
     "type": "MultipleListingService",
     "name": "GreatScottMLS"
   },
-  "startDate": "2019-05-21T03:08:48Z",
-  "endDate": "2019-05-21T03:08:48Z",
+  "startDate": "2019-05-21T03:26:03Z",
+  "endDate": "2019-05-21T03:26:03Z",
   "memberId": "memberid123"
 }
 ```
@@ -428,8 +428,8 @@ Provides additional information in member/memberOf relationships.
     "email": "bob@example.com"
   },
   "memberOf": null,
-  "startDate": "2019-05-21T03:08:48Z",
-  "endDate": "2019-05-21T03:08:48Z"
+  "startDate": "2019-05-21T03:26:03Z",
+  "endDate": "2019-05-21T03:26:03Z"
 }
 ```
 
@@ -485,8 +485,8 @@ A permit issued by an organization to an individual or business.
       {}
     ]
   },
-  "validFrom": "2019-05-21T03:08:48Z",
-  "validUntil": "2019-05-21T03:08:48Z"
+  "validFrom": "2019-05-21T03:26:03Z",
+  "validUntil": "2019-05-21T03:26:03Z"
 }
 ```
 
@@ -757,9 +757,9 @@ a real estate property listed for sale
     "postalCode": "10010",
     "addressCountry": "usa"
   },
-  "dateListed": "2019-05-21T03:08:48Z",
-  "dateSold": "2019-05-21T03:08:48Z",
-  "dateClosed": "2019-05-21T03:08:48Z",
+  "dateListed": "2019-05-21T03:26:03Z",
+  "dateSold": "2019-05-21T03:26:03Z",
+  "dateClosed": "2019-05-21T03:26:03Z",
   "listingPrice": {
     "type": "PriceSpecification",
     "minPrice": 0,
@@ -843,8 +843,8 @@ a real estate property listed for sale
           "email": "bob@example.com"
         },
         "memberOf": null,
-        "startDate": "2019-05-21T03:08:48Z",
-        "endDate": "2019-05-21T03:08:48Z"
+        "startDate": "2019-05-21T03:26:03Z",
+        "endDate": "2019-05-21T03:26:03Z"
       }
     ],
     "memberOf": [
@@ -859,8 +859,8 @@ a real estate property listed for sale
           "type": "MultipleListingService",
           "name": "GreatScottMLS"
         },
-        "startDate": "2019-05-21T03:08:48Z",
-        "endDate": "2019-05-21T03:08:48Z",
+        "startDate": "2019-05-21T03:26:03Z",
+        "endDate": "2019-05-21T03:26:03Z",
         "memberId": "memberid123"
       }
     ],
@@ -880,8 +880,8 @@ a real estate property listed for sale
           "type": "AdministrativeArea",
           "name": "New York"
         },
-        "validFrom": "2019-05-21T03:08:48Z",
-        "validUntil": "2019-05-21T03:08:48Z"
+        "validFrom": "2019-05-21T03:26:03Z",
+        "validUntil": "2019-05-21T03:26:03Z"
       }
     ]
   },
@@ -993,7 +993,15 @@ a real estate property listed for sale
       "unitCode": "string",
       "unitText": "string"
     },
-    "location": {}
+    "location": {
+      "type": "PostalAddress",
+      "streetAddress": "1007 Mountain Gate Rd",
+      "postOfficeBoxNumber": "Box 1234",
+      "addressRegion": "New Jersey",
+      "addressLocality": "Gotham City",
+      "postalCode": "10010",
+      "addressCountry": "usa"
+    }
   },
   "agent": {
     "type": "Person",
@@ -1042,7 +1050,15 @@ a real estate property listed for sale
     "unitCode": "string",
     "unitText": "string"
   },
-  "location": {}
+  "location": {
+    "type": "PostalAddress",
+    "streetAddress": "1007 Mountain Gate Rd",
+    "postOfficeBoxNumber": "Box 1234",
+    "addressRegion": "New Jersey",
+    "addressLocality": "Gotham City",
+    "postalCode": "10010",
+    "addressCountry": "usa"
+  }
 }
 ```
 
@@ -1069,6 +1085,7 @@ a real estate property listed for sale
 | bathrooms.unitCode | string |   |
 | bathrooms.unitText | string |   |
 | location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
+| location.1 | * |   |
 
 ## RealEstateAgent
 A real estate agent or team.
@@ -1147,8 +1164,8 @@ A real estate agent or team.
         "email": "bob@example.com"
       },
       "memberOf": null,
-      "startDate": "2019-05-21T03:08:48Z",
-      "endDate": "2019-05-21T03:08:48Z"
+      "startDate": "2019-05-21T03:26:03Z",
+      "endDate": "2019-05-21T03:26:03Z"
     }
   ],
   "memberOf": [
@@ -1163,8 +1180,8 @@ A real estate agent or team.
         "type": "MultipleListingService",
         "name": "GreatScottMLS"
       },
-      "startDate": "2019-05-21T03:08:48Z",
-      "endDate": "2019-05-21T03:08:48Z",
+      "startDate": "2019-05-21T03:26:03Z",
+      "endDate": "2019-05-21T03:26:03Z",
       "memberId": "memberid123"
     }
   ],
@@ -1184,8 +1201,8 @@ A real estate agent or team.
         "type": "AdministrativeArea",
         "name": "New York"
       },
-      "validFrom": "2019-05-21T03:08:48Z",
-      "validUntil": "2019-05-21T03:08:48Z"
+      "validFrom": "2019-05-21T03:26:03Z",
+      "validUntil": "2019-05-21T03:26:03Z"
     }
   ]
 }
@@ -1311,8 +1328,8 @@ A real estate franchisor, broker or business.
         "email": "bob@example.com"
       },
       "memberOf": null,
-      "startDate": "2019-05-21T03:08:48Z",
-      "endDate": "2019-05-21T03:08:48Z"
+      "startDate": "2019-05-21T03:26:03Z",
+      "endDate": "2019-05-21T03:26:03Z"
     }
   ],
   "memberOf": [
@@ -1327,8 +1344,8 @@ A real estate franchisor, broker or business.
         "type": "MultipleListingService",
         "name": "GreatScottMLS"
       },
-      "startDate": "2019-05-21T03:08:48Z",
-      "endDate": "2019-05-21T03:08:48Z",
+      "startDate": "2019-05-21T03:26:03Z",
+      "endDate": "2019-05-21T03:26:03Z",
       "memberId": "memberid123"
     }
   ],
@@ -1348,8 +1365,8 @@ A real estate franchisor, broker or business.
         "type": "AdministrativeArea",
         "name": "New York"
       },
-      "validFrom": "2019-05-21T03:08:48Z",
-      "validUntil": "2019-05-21T03:08:48Z"
+      "validFrom": "2019-05-21T03:26:03Z",
+      "validUntil": "2019-05-21T03:26:03Z"
     }
   ]
 }
@@ -1476,8 +1493,8 @@ A real estate franchisor, broker or business.
         "email": "bob@example.com"
       },
       "memberOf": null,
-      "startDate": "2019-05-21T03:08:48Z",
-      "endDate": "2019-05-21T03:08:48Z"
+      "startDate": "2019-05-21T03:26:03Z",
+      "endDate": "2019-05-21T03:26:03Z"
     }
   ],
   "memberOf": [
@@ -1492,8 +1509,8 @@ A real estate franchisor, broker or business.
         "type": "MultipleListingService",
         "name": "GreatScottMLS"
       },
-      "startDate": "2019-05-21T03:08:48Z",
-      "endDate": "2019-05-21T03:08:48Z",
+      "startDate": "2019-05-21T03:26:03Z",
+      "endDate": "2019-05-21T03:26:03Z",
       "memberId": "memberid123"
     }
   ],
@@ -1513,8 +1530,8 @@ A real estate franchisor, broker or business.
         "type": "AdministrativeArea",
         "name": "New York"
       },
-      "validFrom": "2019-05-21T03:08:48Z",
-      "validUntil": "2019-05-21T03:08:48Z"
+      "validFrom": "2019-05-21T03:26:03Z",
+      "validUntil": "2019-05-21T03:26:03Z"
     }
   ]
 }
@@ -1739,7 +1756,6 @@ agent makes an offer to buy or sell the object
 ```json
 {
   "type": "OfferAction",
-  "agent": {},
   "object": {
     "type": "OfferAction",
     "id": "http://example.com",
@@ -1760,6 +1776,7 @@ agent makes an offer to buy or sell the object
       "priceCurrency": "USD"
     }
   },
+  "agent": {},
   "instrument": "https://{app}.example.com/profile/card#me"
 }
 ```
@@ -1768,7 +1785,6 @@ agent makes an offer to buy or sell the object
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | type | string! | OfferAction  |
-| agent | object | the entity making the offer <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
 | object | object | an agent makes an offer to buy the object  |
 | object.type | string! | OfferAction  |
 | object.id | string&lt;uri&gt; | Linked-Data uri  |
@@ -1777,6 +1793,7 @@ agent makes an offer to buy or sell the object
 | object.object | * | reference to the item on which the offer is being made  |
 | object.recipient | object | the offer recipient <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
 | object.offerPrice | object | a price offered for transfer of ownership of an item <br/>RANGE: [PriceSpecification](/schemas#pricespecification) |
+| agent | object | the entity making the offer <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
 | instrument | * | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
 
 ## RejectAction
@@ -1793,7 +1810,7 @@ agent makes an offer to buy or sell the object
     },
     "recipient": "http://{user}.example.com/profile/card#me",
     "sender": "http://{provider}.example.com/profile/card#me",
-    "dateSent": "2019-05-21T03:08:48Z",
+    "dateSent": "2019-05-21T03:26:03Z",
     "activity": [
       {
         "type": "string",

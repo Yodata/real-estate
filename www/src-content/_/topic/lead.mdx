@@ -28,17 +28,17 @@ a lead (object) was accepted by the agent
   "topic": "realestate/lead#accept",
   "data": {
     "type": "AcceptAction",
-    "agent": "https://{user}.example.com/profile/card#me",
     "object": {
       "type": "Lead",
       "name": "Lianna Stark"
     },
+    "agent": "https://{user}.example.com/profile/card#me",
     "instrument": "https://{app}.example.com/profile/card#me",
     "actionStatus": "CompletedActionStatus"
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-21T03:08:48Z",
+  "time": "2019-05-21T03:26:03Z",
   "contenttype": "application/json",
   "@context": "http://realestate.yodata.me/context/v1.json"
 }
@@ -50,8 +50,8 @@ a lead (object) was accepted by the agent
 | topic | string! | realestate/lead#accept  |
 | data | object! | The act of committing to/adopting an object.  |
 | data.type | string! | the action type  |
-| data.agent | * | the direct performer of the action  |
 | data.object | [Lead](/schemas#lead) | a lead offered or assigned by the agent to one or more recipients  |
+| data.agent | string,object | the direct performer of the action  |
 | data.instrument | * | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
 | data.actionStatus | string | disposition of the Action when the event was created  |
 | source | string&lt;uri&gt;! | the event origin, typically a user  |
@@ -71,11 +71,11 @@ a crm lead was created
   "topic": "realestate/lead#add",
   "data": {
     "type": "AddAction",
-    "agent": "http://{user}.example.com/profile/card#me",
     "object": {
       "type": "Contact",
       "name": "Adam Addme"
     },
+    "agent": "http://{user}.example.com/profile/card#me",
     "instrument": "http://{app}.example.com/profile/card#me",
     "actionStatus": "CompletedActionStatus",
     "targetCollection": {
@@ -85,7 +85,7 @@ a crm lead was created
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-21T03:08:48Z",
+  "time": "2019-05-21T03:26:03Z",
   "contenttype": "application/json",
   "@context": "http://realestate.yodata.me/context/v1.json"
 }
@@ -97,8 +97,8 @@ a crm lead was created
 | topic | string! | {domain}/{topic}#{event}  |
 | data | object! | the event payload  |
 | data.type | string! | AddAction  |
-| data.agent | * | the direct performer of the action  |
 | data.object | object | the added item  |
+| data.agent | string,object | the direct performer of the action  |
 | data.instrument | * | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
 | data.actionStatus | string | disposition of the Action when the event was created  |
 | data.targetCollection | * | the collection receiving the added object  |
@@ -119,7 +119,6 @@ a lead was assigned
   "topic": "realestate/lead#assign",
   "data": {
     "type": "AssignAction",
-    "agent": null,
     "object": {
       "type": "Person",
       "id": "http://example.com",
@@ -154,6 +153,7 @@ a lead was assigned
       ],
       "birthDate": "2019-05-21"
     },
+    "agent": null,
     "instrument": "https://{app}.example.com/profile/card#me",
     "actionStatus": "CompletedActionStatus",
     "targetCollection": {
@@ -163,7 +163,7 @@ a lead was assigned
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-21T03:08:48Z",
+  "time": "2019-05-21T03:26:03Z",
   "contenttype": "application/json",
   "@context": "http://realestate.yodata.me/context/v1.json"
 }
@@ -175,8 +175,8 @@ a lead was assigned
 | topic | string! | {domain}/{topic}#{event}  |
 | data | object! | the event payload  |
 | data.type | string! | the action type  |
-| data.agent | * | the direct performer of the action  |
 | data.object | object | The object upon which the action is carried out  |
+| data.agent | string,object | the direct performer of the action  |
 | data.instrument | * | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
 | data.actionStatus | string | disposition of the Action when the event was created  |
 | data.targetCollection | object | target collection  |
@@ -197,15 +197,15 @@ a crm lead was updated
   "topic": "realestate/lead#update",
   "data": {
     "type": "UpdateAction",
-    "agent": null,
     "object": {
       "type": "Lead"
     },
+    "agent": null,
     "instrument": "https://{app}.example.com/profile/card#me"
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-21T03:08:48Z",
+  "time": "2019-05-21T03:26:03Z",
   "contenttype": "application/json",
   "@context": "http://realestate.yodata.me/context/v1.json"
 }
@@ -217,8 +217,8 @@ a crm lead was updated
 | topic | string! | {domain}/{topic}#{event}  |
 | data | object! | the event payload  |
 | data.type | string! | the action type  |
-| data.agent | * | the direct performer of the action  |
 | data.object | [Lead](/schemas#lead) | a lead offered or assigned by the agent to one or more recipients  |
+| data.agent | string,object | the direct performer of the action  |
 | data.instrument | * | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
 | source | string&lt;uri&gt;! | the event origin, typically a user  |
 | instrument | string&lt;uri&gt; | event producer, typically an app or service  |
@@ -237,7 +237,6 @@ a crm lead was accepted
   "topic": "realestate/lead#reject",
   "data": {
     "type": "RejectAction",
-    "agent": null,
     "object": {
       "type": "Lead",
       "object": {
@@ -247,7 +246,7 @@ a crm lead was accepted
       },
       "recipient": "http://{user}.example.com/profile/card#me",
       "sender": "http://{provider}.example.com/profile/card#me",
-      "dateSent": "2019-05-21T03:08:48Z",
+      "dateSent": "2019-05-21T03:26:03Z",
       "activity": [
         {
           "type": "string",
@@ -258,12 +257,13 @@ a crm lead was accepted
         }
       ]
     },
+    "agent": null,
     "instrument": "https://{app}.example.com/profile/card#me",
     "actionStatus": "CompletedActionStatus"
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-21T03:08:48Z",
+  "time": "2019-05-21T03:26:03Z",
   "contenttype": "application/json",
   "@context": "http://realestate.yodata.me/context/v1.json"
 }
@@ -275,8 +275,8 @@ a crm lead was accepted
 | topic | string! | {domain}/{topic}#{event}  |
 | data | object! | the event payload  |
 | data.type | string! | the action type  |
-| data.agent | * | the direct performer of the action  |
 | data.object | [Lead](/schemas#lead) | a lead offered or assigned by the agent to one or more recipients  |
+| data.agent | string,object | the direct performer of the action  |
 | data.instrument | * | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
 | data.actionStatus | string | disposition of the Action when the event was created  |
 | source | string&lt;uri&gt;! | the event origin, typically a user  |

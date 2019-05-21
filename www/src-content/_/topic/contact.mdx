@@ -25,13 +25,13 @@ a contact was added/created.
   "topic": "realestate/contact#add",
   "data": {
     "type": "AddAction",
-    "agent": null,
     "object": {},
+    "agent": null,
     "instrument": "https://{app}.example.com/profile/card#me"
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-21T03:08:48Z",
+  "time": "2019-05-21T03:26:03Z",
   "contenttype": "application/json",
   "@context": "http://realestate.yodata.me/context/v1.json"
 }
@@ -43,8 +43,8 @@ a contact was added/created.
 | topic | string! | {domain}/{topic}#{event}  |
 | data | object! | the event payload  |
 | data.type | string! | the action type  |
-| data.agent | * | the direct performer of the action  |
 | data.object | [Contact](/schemas#contact) | The object upon which the action is carried out <br/>RANGE: [Contact](/schemas#contact) |
+| data.agent | string,object | the direct performer of the action  |
 | data.instrument | * | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
 | source | string&lt;uri&gt;! | the event origin, typically a user  |
 | instrument | string&lt;uri&gt; | event producer, typically an app or service  |
@@ -63,11 +63,11 @@ a crm contact was updated
   "topic": "realestate/contact#update",
   "data": {
     "type": "UpdateAction",
-    "agent": null,
     "object": {
       "type": "Contact",
       "name": "the updated contact"
     },
+    "agent": null,
     "instrument": "https://{app}.example.com/profile/card#me",
     "actionStatus": "CompletedActionStatus",
     "targetCollection": {
@@ -77,7 +77,7 @@ a crm contact was updated
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-21T03:08:48Z",
+  "time": "2019-05-21T03:26:03Z",
   "contenttype": "application/json",
   "@context": "http://realestate.yodata.me/context/v1.json"
 }
@@ -89,8 +89,8 @@ a crm contact was updated
 | topic | string! | {domain}/{topic}#{event}  |
 | data | object! | the event payload  |
 | data.type | string! | UpdateAction  |
-| data.agent | * | the direct performer of the action  |
 | data.object | object | The object upon which the action is carried out  |
+| data.agent | string,object | the direct performer of the action  |
 | data.instrument | * | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
 | data.actionStatus | string | disposition of the Action when the event was created  |
 | data.targetCollection | object | target collection  |

@@ -6,3 +6,6 @@ description:
   The location of for example where the event is happening, an organization
   is located, or where an action takes place.
 type: object
+oneOf:
+- $ref: PostalAddress.yaml
+- $ref: Place.yaml

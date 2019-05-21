@@ -1,6 +1,9 @@
 {
   "version": 2,
   "name": "@yodata/real-estate",
+  "alias": [
+    "realestate.yodata.me"
+  ],
   "builds": [
     {
       "src": "www/package.json",

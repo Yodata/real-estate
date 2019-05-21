@@ -1,0 +1,10 @@
+{
+	"topic": "realestate/contact#add",
+	"data": {
+		"type": "AddAction",
+		"object": {
+			"type": "Contact",
+			"name": "Cody Contact"
+		}
+	}
+}

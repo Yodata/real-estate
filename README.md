@@ -7,28 +7,22 @@
 - [Usage](#usage)
 - [Maintainers](#maintainers)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Background
 
+todo
+
 ## Install
 
-- [create-yodata-context](packages/create-yodata-context)
-
-## Usage
-
-```
-```
+todo
 
 ## Maintainers
 
-[@dduran1967](https://github.com/dduran1967)
+[@yodata](https://github.com/yodata)
 
 ## Contributing
 
-See [the contributing file](contributing.md)!
-
-PRs accepted.
+[ ] create contributing.md file
 
 ## License
 

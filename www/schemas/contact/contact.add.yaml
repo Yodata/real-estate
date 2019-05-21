@@ -1,0 +1,18 @@
+x-title: add
+x-scope: realestate/contact#
+summary: a contact was added/created.
+payload:
+  allOf:
+    - $ref: base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/contact#add
+        data:
+          properties:
+            type:
+              enum:
+              - AddAction
+            object:
+              x-kind: Contact
+              x-range: Contact

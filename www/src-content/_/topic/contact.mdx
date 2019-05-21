@@ -1,0 +1,103 @@
+---
+menu: Topics
+route: /topic/contact
+---
+# contact
+
+Contact events
+
+
+### contact Events
+
+| Event | Description |
+| :---- | :---------- |
+| [realestate/contact#add](#add) | a contact was added/created. |
+| [realestate/contact#update](#update) | a crm contact was updated |
+
+
+## add
+
+a contact was added/created.
+
+
+```json
+{
+  "topic": "realestate/contact#add",
+  "data": {
+    "type": "AddAction",
+    "agent": null,
+    "object": {},
+    "instrument": "https://{app}.example.com/profile/card#me"
+  },
+  "source": "http://{user}.example.com/profile/card#me",
+  "instrument": "http://{supercrm}.example.com/profile/card#me",
+  "time": "2019-05-21T01:05:11Z",
+  "contenttype": "application/json",
+  "@context": "http://realestate.yodata.me/context/v1.json"
+}
+```
+
+
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | {domain}/{topic}#{event}  |
+| data | object! |   |
+| data.type | string! | the action type  |
+| data.agent | * | the direct performer of the action  |
+| data.object | [Contact](/schemas#contact) | The object upon which the action is carried out <br/>RANGE: [Contact](/schemas#contact) |
+| data.instrument | * | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
+| source | string&lt;uri&gt;! | the event origin, typically a user  |
+| instrument | string&lt;uri&gt; | event producer, typically an app or service  |
+| time | string&lt;date-time&gt; | when the event was published  |
+| contenttype | string | mimetype of the data property.  default=application/json  |
+| @context | string&lt;uri&gt; | message context used for transforming message content  |
+
+
+## update
+
+a crm contact was updated
+
+
+```json
+{
+  "topic": "realestate/contact#update",
+  "data": {
+    "type": "UpdateAction",
+    "agent": null,
+    "object": {
+      "type": "Contact",
+      "name": "the updated contact"
+    },
+    "instrument": "https://{app}.example.com/profile/card#me",
+    "actionStatus": "CompletedActionStatus",
+    "targetCollection": {
+      "type": "Collection",
+      "name": "targetcollection"
+    }
+  },
+  "source": "http://{user}.example.com/profile/card#me",
+  "instrument": "http://{supercrm}.example.com/profile/card#me",
+  "time": "2019-05-21T01:05:11Z",
+  "contenttype": "application/json",
+  "@context": "http://realestate.yodata.me/context/v1.json"
+}
+```
+
+
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | {domain}/{topic}#{event}  |
+| data | object! |   |
+| data.type | string! | UpdateAction  |
+| data.agent | * | the direct performer of the action  |
+| data.object | object | The object upon which the action is carried out  |
+| data.instrument | * | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
+| data.actionStatus | string | disposition of the Action when the event was created  |
+| data.targetCollection | object | target collection  |
+| source | string&lt;uri&gt;! | the event origin, typically a user  |
+| instrument | string&lt;uri&gt; | event producer, typically an app or service  |
+| time | string&lt;date-time&gt; | when the event was published  |
+| contenttype | string | mimetype of the data property.  default=application/json  |
+| @context | string&lt;uri&gt; | message context used for transforming message content  |
+
+

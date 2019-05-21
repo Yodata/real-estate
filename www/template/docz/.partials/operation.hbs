@@ -1,0 +1,50 @@
+{{#if operation.x-title}}
+#### {{operation.x-title}}
+{{/if}}
+
+{{#if operation.summary}}
+{{{operation.summary}}}
+
+{{/if}}
+
+{{#if operation.tags}}
+### Tags
+{{> tags tags=operation.tags}}
+{{/if}}
+
+{{#if operation.description}}
+
+{{{operation.description}}}
+
+{{/if}}
+
+{{#if operation.headers}}
+##### Headers
+/
+{{> schema schema=operation.headers schemaName='Message Headers' hideTitle=true}}
+
+
+
+{{#if operation.generatedHeadersExample}}
+###### Example of headers _(generated)_
+
+```json
+{{{operation.generatedHeadersExample}}}
+```
+{{/if}}
+
+{{/if}}
+
+{{#if operation.payload.example}}
+### Payload
+
+```json
+{{{operation.formattedExample}}}
+```
+{{else}}
+{{#if operation.generatedPayloadExample}}
+```json
+{{{operation.generatedPayloadExample}}}
+```
+{{/if}}
+{{/if}}

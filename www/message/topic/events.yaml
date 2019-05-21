@@ -1,0 +1,5 @@
+x-summary: topic events
+subscribe:
+  oneOf:
+  - $ref: eventa.yaml
+  - $ref: eventb.yaml

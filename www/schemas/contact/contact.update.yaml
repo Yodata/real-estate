@@ -1,0 +1,20 @@
+x-title: update
+x-scope: realestate/contact#
+summary: a crm contact was updated
+payload:
+  allOf:
+    - $ref: base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/contact#update
+        data:
+          allOf:
+            - $ref: ../UpdateAction.yaml
+            - properties:
+                object:
+                  example:
+                    type: Contact
+                    name: the updated contact
+                targetCollection:
+                  $ref: ../Collection.yaml

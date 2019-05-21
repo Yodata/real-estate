@@ -1,0 +1,91 @@
+---
+menu: Topics
+route: /topic/profile
+---
+# profile
+
+Affiliate, Office, and Agent profile events
+
+
+### profile Events
+
+| Event | Description |
+| :---- | :---------- |
+| [realestateprofile#add](#profile#add) | a user profile was updated |
+| [realestateprofile#update](#profile#update) | profile was updated. |
+
+
+## profile#add
+
+a user profile was updated
+
+
+```json
+{
+  "topic": "realestate/profile#add",
+  "data": {
+    "type": "AddAction",
+    "object": {
+      "type": "RealEstateAgent",
+      "name": "Arya Stark"
+    }
+  },
+  "source": "http://{user}.example.com/profile/card#me",
+  "instrument": "http://{supercrm}.example.com/profile/card#me",
+  "time": "2019-05-21T01:05:11Z",
+  "contenttype": "application/json",
+  "@context": "http://realestate.yodata.me/context/v1.json"
+}
+```
+
+
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | realestate/profile#add  |
+| data | object! | the message payload  |
+| data.type | string | AddAction  |
+| data.object | object | content of the profile which was added <br/>RANGE: [RealEstateOrganization](/schemas#realestateorganization),[RealEstateOffice](/schemas#realestateoffice),[RealEstateAgent](/schemas#realestateagent),[Person](/schemas#person) |
+| source | string&lt;uri&gt;! | the event origin, typically a user  |
+| instrument | string&lt;uri&gt; | event producer, typically an app or service  |
+| time | string&lt;date-time&gt; | when the event was published  |
+| contenttype | string | mimetype of the data property.  default=application/json  |
+| @context | string&lt;uri&gt; | message context used for transforming message content  |
+
+
+## profile#update
+
+profile was updated.
+
+
+```json
+{
+  "topic": "string",
+  "data": {
+    "type": "UpdateAction",
+    "object": {
+      "type": "RealEstateAgent",
+      "name": "Arya Stark"
+    }
+  },
+  "source": "http://{user}.example.com/profile/card#me",
+  "instrument": "http://{supercrm}.example.com/profile/card#me",
+  "time": "2019-05-21T01:05:11Z",
+  "contenttype": "application/json",
+  "@context": "http://realestate.yodata.me/context/v1.json"
+}
+```
+
+
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | {domain}/{topic}#{event}  |
+| data | object! | the message payload  |
+| data.type | string | UpdateAction  |
+| data.object | object | content of the profile which was added <br/>RANGE: [RealEstateOrganization](/schemas#realestateorganization),[RealEstateOffice](/schemas#realestateoffice),[RealEstateAgent](/schemas#realestateagent),[Person](/schemas#person) |
+| source | string&lt;uri&gt;! | the event origin, typically a user  |
+| instrument | string&lt;uri&gt; | event producer, typically an app or service  |
+| time | string&lt;date-time&gt; | when the event was published  |
+| contenttype | string | mimetype of the data property.  default=application/json  |
+| @context | string&lt;uri&gt; | message context used for transforming message content  |
+
+

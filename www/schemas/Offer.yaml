@@ -4,17 +4,10 @@ allOf:
     properties:
       type:
         type: string
-        description: Offer
+        description: OfferAction
         enum:
-          - Offer
-
-      identifier:
-        $ref: identifier.yaml
+          - OfferAction
       object:
-        type: object
-        x-range:
-          - string
-          - Thing
         description: reference to the item on which the offer is being made
         example:
           type: RealEstateListing
@@ -28,25 +21,4 @@ allOf:
         example:
           id: http://user.example.com/profile/card#me
       offerPrice:
-        type: object
-        x-range: PriceSpecification
-        description: describes the price offered
-        properties:
-          type:
-            type: string
-            description: PriceSpecification
-            enum:
-              - PriceSpecification
-          minPrice:
-            type: number
-            description: the lowest value if the price is a range
-          maxPrice:
-            type: number
-            description: the high price offered if the price is a range
-          price:
-            type: number
-            description: the price
-          priceCurrency:
-            type: string
-            description: use ISO4217
-            example: USD
+        $ref: PriceSpecification.yaml

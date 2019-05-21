@@ -1,0 +1,108 @@
+---
+
+
+
+---
+# Topics
+
+## Permission model
+
+The Events API leverages existing object-driven OAuth scope system to
+control access to events. For example, if your app has access to profiles
+through the `profiles:read` scope, you can choose to subscribe to any or
+none of the profile-related events like `profile_added` and
+`profile_updated`.
+
+You will only receive events from users who've authorized your app.
+
+
+## contact
+
+
+Contact events
+
+
+### contact subscriptions receive
+
+| Event | Description |
+| :---- | :---------- |
+| [realestate/contact#add](#add) | a contact was added/created. |
+| [realestate/contact#update](#update) | a crm contact was updated |
+## 
+
+
+
+## lead
+
+
+Lead events
+
+
+### lead subscriptions receive
+
+| Event | Description |
+| :---- | :---------- |
+| [realestate/lead#accept](#accept) | a lead (object) was accepted by the agent |
+| [realestate/lead#add](#add) | a crm lead was created |
+| [realestate/lead#asssign](#asssign) | a lead was assigned |
+| [realestate/lead#update](#update) | a crm lead was updated |
+| [realestate/lead#reject](#reject) | a crm lead was accepted |
+## 
+
+
+
+## marketing
+
+
+Marketing events
+
+
+### marketing subscriptions receive
+
+| Event | Description |
+| :---- | :---------- |
+| [realestatemarketingprogram#create](#marketingprogram#create) | a marketing program has been created |
+| [realestatemarketingprogram#memberadd](#marketingprogram#memberadd) | a program member was added by the agent (Work In Progress) |
+| [realestatemarketingprogram#memberremove](#marketingprogram#memberremove) | a member was removed by the agent |
+## 
+
+
+
+## profile
+
+
+Affiliate, Office, and Agent profile events
+
+
+### profile subscriptions receive
+
+| Event | Description |
+| :---- | :---------- |
+| [realestateprofile#add](#profile#add) | a user profile was updated |
+| [realestateprofile#update](#profile#update) | profile was updated. |
+## 
+
+
+
+## website
+
+
+Website events
+
+
+### website subscriptions receive
+
+| Event | Description |
+| :---- | :---------- |
+| [realestate/website#appointmentrequest](#appointmentrequest) | a website vistor has requested an appointment |
+| [realestate/website#propertyoffer](#propertyoffer) | website user makes an offer on a property listing |
+| [realestate/website#propertysearch](#propertysearch) | website visitor (agent) has searched for properties on |
+| [realestate/website#propertyshare](#propertyshare) | agent shared object with recipient |
+| [realestate/website#propertyview](#propertyview) | website user (agent) viewed an (object) on website (instrument) |
+| [realestate/website#question](#question) | a website visitor has asked a question |
+| [realestate/website#register](#register) | a website visitor has registered |
+| [realestate/website#showingrequest](#showingrequest) | a website visitor has requested a property showing |
+## 
+
+
+

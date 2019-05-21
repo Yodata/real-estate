@@ -9,7 +9,6 @@ allOf:
         description: Person
         enum:
           - Person
-
       name:
         type: string
         description: Full name of the person.
@@ -23,12 +22,10 @@ allOf:
         type: string
         description: Last Name
         example: Wayne
-
       jobTitle:
         type: string
         description: The Job Title of the person.
         example: Jefe
-
       email:
         type: string
         description: Primary email address.

@@ -1,0 +1,16 @@
+x-title: todo
+x-scope: realestate/website#
+summary: todo
+payload:
+  allOf:
+    - $ref: base.event.yaml
+    - properties:
+        topic:
+          enum:
+          - realestate/website#todo
+        data:
+          allOf:
+          - $ref: ../schemas/action/Action.yaml
+          - properties:
+              agent:
+                $ref: example.websitevisitor.yaml

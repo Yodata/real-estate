@@ -1,0 +1,10 @@
+type: object
+description: a website user/visitor
+x-range: Person
+example:
+  type: Person
+  name: Bob
+  email: bob@example.com
+  telephone: '1+000-867-5309'
+  identifier:
+    vendornameuserid: 'abc123'

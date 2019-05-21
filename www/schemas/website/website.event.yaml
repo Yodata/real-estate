@@ -1,0 +1,7 @@
+allOf:
+- $ref: ../base.event.yaml
+- properties:
+    data:
+      properties:
+        agent:
+          $ref: website.visitor.yaml

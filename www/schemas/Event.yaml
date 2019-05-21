@@ -29,4 +29,6 @@ properties:
     example: http://realestate.yodate.me/context/v1.json
     description: uri to context resource to be applied to normalizing / denormalizing the message
   data:
+    x-range: Action
+    description: an Action
     type: object

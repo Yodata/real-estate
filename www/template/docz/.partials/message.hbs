@@ -1,0 +1,19 @@
+## {{x-title}}
+
+{{message.summary}}
+
+{{#if message.tags}}
+{{> tags tags=message.tags}}
+
+{{/if}}
+{{#if message.headers}}
+HEADERS:
+
+{{>schema schema=message.headers schemaName=@key generatedExample=message.generatedHeadersExample options=this.options }}
+
+{{/if}}
+{{#if message.payload}}
+
+{{>schema schema=message.payload schemaName=@key generatedExample=message.generatedPayloadExample hideTitle=true options=this.options }}
+
+{{/if}}

@@ -2,7 +2,7 @@ asyncapi: 1.2.0
 
 info:
   title: Let's Integrate Real Estate
-  version: '0.0.1'
+  version: '0.0.2'
   description: |
     Reflex is intended to normalize the process of integrating applications and services
     in the real estate domain in a user-centric, vendor agnostic and developer friendly
@@ -29,9 +29,9 @@ info:
     route: /
 
   x-topics:
-    name: Subscription Types
-    hideProps: true
-    hideExample: true
+    name: Topics
+    hideProps: false
+    hideExample: false
     intro: |
       ## Permission model
 
@@ -44,34 +44,21 @@ info:
       You will only receive events from users who've authorized your app.
 
   x-messages:
-    name: Event Types
-    hideProps: true
+    name: Events
+    hideProps: false
     hideExample: false
 
   x-schemas:
-    name: Object Types
+    name: Objects
 
-baseTopic: realestate
+# baseTopic: realestate
 
 topics:
   contact:
-    x-summary: Contact / CRM events
-    subscribe:
-      oneOf:
-        - $ref: '#/components/messages/contact#add'
-        - $ref: '#/components/messages/contact#update'
-        - $ref: '#/components/messages/contact#delete'
-        - $ref: '#/components/messages/contact#comment'
+    $ref: schemas/contact/topic.yaml
 
   lead:
-    x-summary: Lead events
-    subscribe:
-      oneOf:
-        - $ref: '#/components/messages/lead#add'
-        - $ref: '#/components/messages/lead#update'
-        - $ref: '#/components/messages/lead#assign'
-        - $ref: '#/components/messages/lead#accept'
-        - $ref: '#/components/messages/lead#reject'
+    $ref: schemas/lead/topic.yaml
 
   marketing:
     x-summary: Marketing events
@@ -85,23 +72,15 @@ topics:
     x-summary: Affiliate, Office, and Agent profile events
     subscribe:
       oneOf:
-        - $ref: '#/components/messages/profile#add'
-        - $ref: '#/components/messages/profile#update'
-
+        - $ref: message/profile.add.yaml
+        - $ref: message/profile.update.yaml
+  
   website:
-    x-summary: Website events
-    subscribe:
-      oneOf:
-        - $ref: '#/components/messages/website#appointmentrequest'
-        - $ref: '#/components/messages/website#question'
-        - $ref: '#/components/messages/website#showingrequest'
+    $ref: schemas/website/topic.yaml
 
 components:
-  messages:
-    $ref: 'message/index.yaml'
-
-  schemas:
-    $ref: 'schemas/realestate.yaml'
+  schemas: { $ref: 'schemas/realestate.yaml' }
+      
 
   securitySchemes:
     https:

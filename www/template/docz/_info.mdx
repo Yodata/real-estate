@@ -1,0 +1,28 @@
+{{#asyncapi.info.x-info}}
+---
+{{#if name}}name: {{name}}{{/if}}
+{{#if route}}route: {{route}}{{/if}}
+{{#if menu}}menu: {{menu}}{{/if}}
+---
+{{#if name}}# {{name}}{{/if}}
+{{/asyncapi.info.x-info}}
+
+{{#asyncapi.info}}
+# {{title}}
+
+{{#if version}}
+**Version: {{version}}**
+
+{{/if}}
+{{#if description}}
+{{{description}}}
+
+{{/if}}
+{{>contact}}
+{{>license}}
+{{#if termsOfService}}
+## Terms of service
+[{{termsOfService}}]({{termsOfService}})
+
+{{/if}}
+{{/asyncapi.info}}

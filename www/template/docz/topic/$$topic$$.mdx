@@ -1,0 +1,44 @@
+---
+menu: Topics
+route: /topic/{{topicName}}
+---
+# {{topicName}}
+{{~#if topic.deprecated}} (**deprecated**){{~/if}}
+
+{{#if topic.x-summary}}
+{{topic.x-summary}}
+{{/if}}
+
+{{#if topic.parameters}}
+{{~> parameters params=topic.parameters topicName=topicName ~}}
+{{/if}}
+
+{{#if topic.publish}}
+{{~#if topic.publish.oneOf}}
+### {{topicName}} Operations
+
+| Topic | Description |
+| :---- | :---------- |
+{{#each topic.publish.oneOf as |op index| }}
+{{~> operationSummary operation=op ~}}
+{{/each}}
+{{else}}
+{{> operation operation=topic.publish}}
+{{/if}}
+
+{{/if}}
+{{#if topic.subscribe}}
+{{#if topic.subscribe.oneOf}}
+### {{topicName}} Events
+
+| Event | Description |
+| :---- | :---------- |
+{{#each topic.subscribe.oneOf as |op index|}}
+{{~> operationSummary operation=op ~}}
+{{/each}}
+{{else}}{{> operation operation=topic.subscribe}}{{/if}}
+
+{{#each topic.subscribe.oneOf}}
+{{>message message=. messageName=@key options=../asyncapi.info.x-messages}}
+{{/each}}
+{{/if}}

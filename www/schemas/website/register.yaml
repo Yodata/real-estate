@@ -1,0 +1,10 @@
+  x-title: register
+  x-scope: realestate/website#
+  summary: a website visitor has registered
+  payload:
+    allOf:
+    - $ref: website.event.yaml
+    - properties:
+        topic:
+          enum:
+          - realestate/website#register

@@ -1,0 +1,17 @@
+x-title: accept
+x-scope: realestate/lead#
+summary: a lead (object) was accepted by the agent
+payload:
+  allOf:
+    - $ref: ../base.event.yaml
+    - properties:
+        topic:
+          description: realestate/lead#accept
+          enum:
+            - realestate/lead#accept
+        data:
+          allOf:
+            - $ref: ../AcceptAction.yaml
+            - properties:
+                object:
+                  $ref: ../Lead.yaml

@@ -16,9 +16,13 @@ PostalAddress: { $ref: PostalAddress.yaml }
 Profile: { $ref: Profile.yaml }
 ProgramMembership: { $ref: ProgramMembership.yaml }
 PropertyValue: { $ref: PropertyValue.yaml }
+PropertyListing: { $ref: PropertyListing.yaml }
+PropertySearch: { $ref: PropertySearch.yaml }
+PropertySearchArguments: { $ref: PropertySearchArguments.yaml }
 RealEstateAgent: { $ref: RealEstateAgent.yaml }
 RealEstateOffice: { $ref: RealEstateOffice.yaml }
 RealEstateOrganization: { $ref: RealEstateOrganization.yaml }
+RealEstateWebsite: { $ref: RealEstateWebsite.yaml }
 Service: { $ref: Service.yaml }
 Thing: { $ref: Thing.yaml }
 

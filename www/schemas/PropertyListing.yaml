@@ -1,0 +1,45 @@
+title: PropertyListing
+x-range: PropertyListing
+description: a real estate property listed for sale
+type: object
+properties:
+  type:
+    type: string
+    enum:
+    - PropertyListing
+  address:
+    $ref: PostalAddress.yaml
+  dateListed:
+    type: string
+    format: date-time
+  dateSold:
+    type: string
+    format: date-time
+  dateClosed:
+    type: string
+    format: date-time
+  listingPrice:
+    $ref: PriceSpecification.yaml
+  listingStatus:
+    type: string
+    enum:
+    - Active
+    - Pending
+    - Sold
+    - Cancelled
+    - Prelisted
+    - OffMarket
+    - Private
+  listingAgent:
+    allOf:
+    - $ref: RealEstateAgent.yaml
+    - example:
+        type: RealEstateAgent
+        id: https://user.example.com/profile/card#me
+  listingOffice:
+    $ref: RealEstateOffice.yaml
+  image:
+    $ref: image.yaml
+  url:
+    $ref: url.yaml
+  

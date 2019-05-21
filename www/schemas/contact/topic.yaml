@@ -1,0 +1,6 @@
+x-title:
+x-summary: Contact events
+subscribe:
+  oneOf:
+    - $ref: contact.add.yaml
+    - $ref: contact.update.yaml

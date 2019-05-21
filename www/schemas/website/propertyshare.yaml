@@ -1,0 +1,16 @@
+x-title: propertyshare
+x-scope: realestate/website#
+summary: agent shared object with recipient
+payload:
+  allOf:
+  - $ref: website.event.yaml
+  - properties:
+      topic:
+        description: realestate/website#propertyshare
+        enum:
+        - realestate/website#propertyshare
+      data:
+        properties:
+          type:
+            enum:
+            - ShareAction

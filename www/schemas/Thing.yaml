@@ -12,5 +12,7 @@ properties:
   name:
     type: string
     description: the name of the item.
-  additionalProperty:
-    $ref: additionalProperty.yaml
+  url:
+    type: string
+    format: uri
+    description: a public href that is clearly and uniquely associated with the item. 

@@ -1,17 +1,20 @@
-externalDocs:
-  description: foo
-  url: https://schema.org/Action
 type: object
 required:
   - 'type'
 properties:
   type:
+    description: the action type
     type: string
-  actionStatus:
-    $ref: actionStatus.yaml
   agent:
-    $ref: agent.yaml
-  instrument:
-    $ref: instrument.yaml
+    description: the direct performer of the action
   object:
     description: The object upon which the action is carried out
+    type: object
+  instrument:
+    description: thing used by the agent to perform the action, i.e. an application or website that generated the message.
+    example: https://{app}.example.com/profile/card#me
+  actionStatus:
+    $ref: actionStatus.yaml
+externalDocs:
+  description: schema.org/Action
+  url: https://schema.org/Action

@@ -1,0 +1,8 @@
+allOf:
+- $ref: Thing.yaml
+- properties:
+    type:
+      enum:
+      - RealEstateWebsite
+    url:
+      example: https://www.example.com

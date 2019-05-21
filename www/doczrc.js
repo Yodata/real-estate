@@ -7,10 +7,8 @@ export default {
   menu: [
     'Introduction',
     'API',
-    'Subscription Types',
-    'Event Types',
-    'Object Types',
-    'Developer Resources',
+    'Topics',
+    'Objects',
     'Reference'
   ],
   src: 'src-content',

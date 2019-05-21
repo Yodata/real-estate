@@ -1,0 +1,16 @@
+title: PropertySearch
+type: object
+allOf:
+  - $ref: Thing.yaml
+  - properties:
+      type:
+        enum:
+        - SearchAction
+      object:
+        $ref: PropertySearchArguments.yaml
+      agent:
+        type: object
+        x-range: Person
+        example:
+          type: Person
+          email: bob@example.com

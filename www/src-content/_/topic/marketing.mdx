@@ -1,0 +1,151 @@
+---
+menu: Topics
+route: /topic/marketing
+---
+# marketing
+
+Marketing events
+
+
+### marketing Events
+
+| Event | Description |
+| :---- | :---------- |
+| [realestatemarketingprogram#create](#marketingprogram#create) | a marketing program has been created |
+| [realestatemarketingprogram#memberadd](#marketingprogram#memberadd) | a program member was added by the agent (Work In Progress) |
+| [realestatemarketingprogram#memberremove](#marketingprogram#memberremove) | a member was removed by the agent |
+
+
+## marketingprogram#create
+
+a marketing program has been created
+
+
+```json
+{
+  "topic": "realestate/marketingprogram#create",
+  "data": {
+    "type": "CreateAction",
+    "agent": null,
+    "object": {},
+    "instrument": "https://{app}.example.com/profile/card#me",
+    "actionStatus": "CompletedActionStatus"
+  },
+  "source": "http://{user}.example.com/profile/card#me",
+  "instrument": "http://{supercrm}.example.com/profile/card#me",
+  "time": "2019-05-21T01:05:11Z",
+  "contenttype": "application/json",
+  "@context": "http://realestate.yodata.me/context/v1.json"
+}
+```
+
+
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | {domain}/{topic}#{event}  |
+| data | object! | the object was created by the agent  |
+| data.type | string! | CreateAction  |
+| data.agent | * | the direct performer of the action  |
+| data.object | object | The object upon which the action is carried out  |
+| data.instrument | * | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
+| data.actionStatus | string | disposition of the Action when the event was created  |
+| source | string&lt;uri&gt;! | the event origin, typically a user  |
+| instrument | string&lt;uri&gt; | event producer, typically an app or service  |
+| time | string&lt;date-time&gt; | when the event was published  |
+| contenttype | string | mimetype of the data property.  default=application/json  |
+| @context | string&lt;uri&gt; | message context used for transforming message content  |
+
+
+## marketingprogram#memberadd
+
+a program member was added by the agent (Work In Progress)
+
+
+```json
+{
+  "topic": "realestate/marketingprogram#memberadd",
+  "data": {
+    "type": "AddAction",
+    "object": {
+      "type": "ProgramMembership",
+      "roleName": "Owner",
+      "member": {
+        "type": "Person",
+        "email": "bob@example.com"
+      },
+      "memberOf": null,
+      "startDate": "2019-05-21T01:05:11Z",
+      "endDate": "2019-05-21T01:05:11Z"
+    }
+  },
+  "source": "http://{user}.example.com/profile/card#me",
+  "instrument": "http://{supercrm}.example.com/profile/card#me",
+  "time": "2019-05-21T01:05:11Z",
+  "contenttype": "application/json",
+  "@context": "http://realestate.yodata.me/context/v1.json"
+}
+```
+
+
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | {domain}/{topic}#{event}  |
+| data | object! | the message payload  |
+| data.type | string |   |
+| data.object | object | describes membership relation between a member (Person) and a MarketingProgram  |
+| source | string&lt;uri&gt;! | the event origin, typically a user  |
+| instrument | string&lt;uri&gt; | event producer, typically an app or service  |
+| time | string&lt;date-time&gt; | when the event was published  |
+| contenttype | string | mimetype of the data property.  default=application/json  |
+| @context | string&lt;uri&gt; | message context used for transforming message content  |
+
+
+## marketingprogram#memberremove
+
+a member was removed by the agent
+
+
+```json
+{
+  "topic": "realestate/marketingprogram#memberremove",
+  "data": {
+    "type": "RemoveAction",
+    "object": {
+      "type": "ProgramMembership",
+      "roleName": "Owner",
+      "member": {
+        "type": "Person",
+        "email": "bob@example.com"
+      },
+      "memberOf": null,
+      "startDate": "2019-05-21T01:05:11Z",
+      "endDate": "2019-05-21T01:05:11Z"
+    },
+    "targetCollection": {
+      "type": "MarketingProgram",
+      "name": "My Marketing Program"
+    }
+  },
+  "source": "http://{user}.example.com/profile/card#me",
+  "instrument": "http://{supercrm}.example.com/profile/card#me",
+  "time": "2019-05-21T01:05:11Z",
+  "contenttype": "application/json",
+  "@context": "http://realestate.yodata.me/context/v1.json"
+}
+```
+
+
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | {domain}/{topic}#{event}  |
+| data | object! | the message payload  |
+| data.type | * |   |
+| data.object | object | describes membership relation between a member (Person) and a MarketingProgram  |
+| data.targetCollection | * |   |
+| source | string&lt;uri&gt;! | the event origin, typically a user  |
+| instrument | string&lt;uri&gt; | event producer, typically an app or service  |
+| time | string&lt;date-time&gt; | when the event was published  |
+| contenttype | string | mimetype of the data property.  default=application/json  |
+| @context | string&lt;uri&gt; | message context used for transforming message content  |
+
+

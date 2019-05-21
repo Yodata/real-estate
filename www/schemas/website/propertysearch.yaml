@@ -1,0 +1,27 @@
+x-title: propertysearch
+x-scope: realestate/website#
+summary: website visitor (agent) has searched for properties on 
+payload:
+  allOf:
+  - $ref: website.event.yaml
+  - properties:
+      topic:
+        description: realestate/website#propertysearch
+        enum:
+        - realestate/website#propertysearch
+      data:
+        properties:
+          type:
+            enum:
+            - SearchAction      
+          object:
+            $ref: ../PropertySearchArguments.yaml
+          instrument:
+            type: object
+            properties:
+              query:
+                type: string
+                description: text search input
+                
+
+    

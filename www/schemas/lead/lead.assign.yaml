@@ -1,0 +1,12 @@
+x-title: asssign
+x-scope: realestate/lead#
+summary: a lead was assigned
+payload:
+  allOf:
+    - $ref: ../base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/lead#assign
+        data:
+          $ref: ../AssignAction.yaml

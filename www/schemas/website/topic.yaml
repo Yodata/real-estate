@@ -1,0 +1,11 @@
+x-summary: Website events
+subscribe:
+  oneOf:
+  - $ref: appointmentrequest.yaml
+  - $ref: propertyoffer.yaml
+  - $ref: propertysearch.yaml
+  - $ref: propertyshare.yaml
+  - $ref: propertyview.yaml
+  - $ref: question.yaml
+  - $ref: register.yaml
+  - $ref: showingrequest.yaml

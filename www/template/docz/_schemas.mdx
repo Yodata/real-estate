@@ -1,0 +1,19 @@
+{{#asyncapi.info.x-schemas}}
+---
+{{#if name}}name: {{name}}{{/if}}
+{{#if route}}route: {{route}}{{/if}}
+{{#if menu}}menu: {{menu}}{{/if}}
+---
+{{#if name}}# {{name}}{{/if}}
+
+{{#if intro}}
+{{{intro}}}
+{{/if}}
+
+{{/asyncapi.info.x-schemas}}
+
+{{#unless asyncapi.__noSchemas}}
+{{#each asyncapi.components.schemas}}
+{{~>schema schema=. schemaName=@key~}}
+{{/each}}
+{{/unless}}

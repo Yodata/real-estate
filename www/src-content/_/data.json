@@ -4,7 +4,7 @@
     "info": {
       "title": "Let's Integrate Real Estate",
       "version": "0.0.2",
-      "description": "Reflex is intended to normalize the process of integrating applications and services\nin the real estate domain in a user-centric, vendor agnostic and developer friendly\nway.\n\nThe API is very simple, the only interactions are publish a message (HTTP POST) and get messages either pushed to your \napplication or with HTTP GET.\n\nThe project is 100% open source and contributors are welcomed with open arms.\n\nTo get started you'll need to get yourself a POD that will provide your application's private message bus.\n\nIf you don't already have a pod, contact us and we'll get you setup.\n",
+      "description": "## WHAT\nYodata/Real-Estate is an open source collaborative effort between real estate technology brokers, \nagents and technolgy providers working to normalize data and application integrations.\n\n## HOW\nApplications connect to a shared event bus controlled by the user (customer of the vendor).\nThe event models are stored in Github and maintained by the community of developers and partners.\n",
       "contact": {
         "name": "Dave Duran",
         "email": "dave@yodata.io"
@@ -30,7 +30,7 @@
       "x-schemas": {
         "name": "Objects"
       },
-      "descriptionAsHTML": "<p>Reflex is intended to normalize the process of integrating applications and services\nin the real estate domain in a user-centric, vendor agnostic and developer friendly\nway.</p>\n<p>The API is very simple, the only interactions are publish a message (HTTP POST) and get messages either pushed to your\napplication or with HTTP GET.</p>\n<p>The project is 100% open source and contributors are welcomed with open arms.</p>\n<p>To get started you'll need to get yourself a POD that will provide your application's private message bus.</p>\n<p>If you don't already have a pod, contact us and we'll get you setup.</p>\n"
+      "descriptionAsHTML": "<h2>WHAT</h2>\n<p>Yodata/Real-Estate is an open source collaborative effort between real estate technology brokers,\nagents and technolgy providers working to normalize data and application integrations.</p>\n<h2>HOW</h2>\n<p>Applications connect to a shared event bus controlled by the user (customer of the vendor).\nThe event models are stored in Github and maintained by the community of developers and partners.</p>\n"
     },
     "topics": {
       "contact": {
@@ -92,7 +92,9 @@
                     "externalDocs": {
                       "description": "schema.org/Action",
                       "url": "https://schema.org/Action"
-                    }
+                    },
+                    "description": "the event payload",
+                    "descriptionAsHTML": "<p>the event payload</p>\n"
                   },
                   "source": {
                     "description": "the event origin, typically a user",
@@ -131,7 +133,7 @@
               },
               "summaryAsHTML": "<p>a contact was added/created.</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/contact#add\",\n  \"data\": {\n    \"type\": \"AddAction\",\n    \"agent\": null,\n    \"object\": {},\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/contact#add\",\n  \"data\": {\n    \"type\": \"AddAction\",\n    \"agent\": null,\n    \"object\": {},\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             },
             {
               "x-title": "update",
@@ -214,7 +216,9 @@
                     "externalDocs": {
                       "description": "schema.org/Action",
                       "url": "https://schema.org/Action"
-                    }
+                    },
+                    "description": "the event payload",
+                    "descriptionAsHTML": "<p>the event payload</p>\n"
                   },
                   "source": {
                     "description": "the event origin, typically a user",
@@ -253,7 +257,7 @@
               },
               "summaryAsHTML": "<p>a crm contact was updated</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/contact#update\",\n  \"data\": {\n    \"type\": \"UpdateAction\",\n    \"agent\": null,\n    \"object\": {\n      \"type\": \"Contact\",\n      \"name\": \"the updated contact\"\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"actionStatus\": \"CompletedActionStatus\",\n    \"targetCollection\": {\n      \"type\": \"Collection\",\n      \"name\": \"targetcollection\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/contact#update\",\n  \"data\": {\n    \"type\": \"UpdateAction\",\n    \"agent\": null,\n    \"object\": {\n      \"type\": \"Contact\",\n      \"name\": \"the updated contact\"\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"actionStatus\": \"CompletedActionStatus\",\n    \"targetCollection\": {\n      \"type\": \"Collection\",\n      \"name\": \"targetcollection\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             }
           ],
           "summaryAsHTML": "",
@@ -451,7 +455,7 @@
               },
               "summaryAsHTML": "<p>a lead (object) was accepted by the agent</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#accept\",\n  \"data\": {\n    \"type\": \"AcceptAction\",\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"object\": {\n      \"type\": \"Lead\",\n      \"name\": \"Lianna Stark\"\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"actionStatus\": \"CompletedActionStatus\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#accept\",\n  \"data\": {\n    \"type\": \"AcceptAction\",\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"object\": {\n      \"type\": \"Lead\",\n      \"name\": \"Lianna Stark\"\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"actionStatus\": \"CompletedActionStatus\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             },
             {
               "x-title": "add",
@@ -529,7 +533,9 @@
                     "externalDocs": {
                       "description": "schema.org/Action",
                       "url": "https://schema.org/Action"
-                    }
+                    },
+                    "description": "the event payload",
+                    "descriptionAsHTML": "<p>the event payload</p>\n"
                   },
                   "source": {
                     "description": "the event origin, typically a user",
@@ -568,7 +574,7 @@
               },
               "summaryAsHTML": "<p>a crm lead was created</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#add\",\n  \"data\": {\n    \"type\": \"AddAction\",\n    \"agent\": \"http://{user}.example.com/profile/card#me\",\n    \"object\": {\n      \"type\": \"Contact\",\n      \"name\": \"Adam Addme\"\n    },\n    \"instrument\": \"http://{app}.example.com/profile/card#me\",\n    \"actionStatus\": \"CompletedActionStatus\",\n    \"targetCollection\": {\n      \"type\": \"Collection\",\n      \"id\": \"https://{user}.example.com/data/contact/\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#add\",\n  \"data\": {\n    \"type\": \"AddAction\",\n    \"agent\": \"http://{user}.example.com/profile/card#me\",\n    \"object\": {\n      \"type\": \"Contact\",\n      \"name\": \"Adam Addme\"\n    },\n    \"instrument\": \"http://{app}.example.com/profile/card#me\",\n    \"actionStatus\": \"CompletedActionStatus\",\n    \"targetCollection\": {\n      \"type\": \"Collection\",\n      \"id\": \"https://{user}.example.com/data/contact/\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             },
             {
               "x-title": "asssign",
@@ -813,7 +819,9 @@
                     "externalDocs": {
                       "description": "schema.org/Action",
                       "url": "https://schema.org/Action"
-                    }
+                    },
+                    "description": "the event payload",
+                    "descriptionAsHTML": "<p>the event payload</p>\n"
                   },
                   "source": {
                     "description": "the event origin, typically a user",
@@ -852,7 +860,7 @@
               },
               "summaryAsHTML": "<p>a lead was assigned</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#assign\",\n  \"data\": {\n    \"type\": \"AssignAction\",\n    \"agent\": null,\n    \"object\": {\n      \"type\": \"Person\",\n      \"id\": \"http://example.com\",\n      \"name\": \"string\",\n      \"url\": \"http://example.com\",\n      \"givenName\": \"Bruce\",\n      \"familyName\": \"Wayne\",\n      \"jobTitle\": \"Jefe\",\n      \"email\": \"user@example.com\",\n      \"faxNumber\": \"(498) 625-6456\",\n      \"telephone\": \"1-339-041-0306 x2866\",\n      \"contactPoint\": [\n        {\n          \"type\": \"ContactPoint\",\n          \"name\": \"Work\",\n          \"telephone\": \"1-364-127-9618 x20418\",\n          \"faxNumber\": \"834.320.1602\",\n          \"email\": \"user@example.com\",\n          \"url\": \"https://www.facebook.com/hallandoates\"\n        }\n      ],\n      \"address\": [\n        {\n          \"type\": \"PostalAddress\",\n          \"streetAddress\": \"1007 Mountain Gate Rd\",\n          \"postOfficeBoxNumber\": \"Box 1234\",\n          \"addressRegion\": \"New Jersey\",\n          \"addressLocality\": \"Gotham City\",\n          \"postalCode\": \"10010\",\n          \"addressCountry\": \"usa\"\n        }\n      ],\n      \"birthDate\": \"2019-05-21\"\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"actionStatus\": \"CompletedActionStatus\",\n    \"targetCollection\": {\n      \"type\": \"Collection\",\n      \"name\": \"targetcollection\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#assign\",\n  \"data\": {\n    \"type\": \"AssignAction\",\n    \"agent\": null,\n    \"object\": {\n      \"type\": \"Person\",\n      \"id\": \"http://example.com\",\n      \"name\": \"string\",\n      \"url\": \"http://example.com\",\n      \"givenName\": \"Bruce\",\n      \"familyName\": \"Wayne\",\n      \"jobTitle\": \"Jefe\",\n      \"email\": \"user@example.com\",\n      \"faxNumber\": \"(498) 625-6456\",\n      \"telephone\": \"1-339-041-0306 x2866\",\n      \"contactPoint\": [\n        {\n          \"type\": \"ContactPoint\",\n          \"name\": \"Work\",\n          \"telephone\": \"1-364-127-9618 x20418\",\n          \"faxNumber\": \"834.320.1602\",\n          \"email\": \"user@example.com\",\n          \"url\": \"https://www.facebook.com/hallandoates\"\n        }\n      ],\n      \"address\": [\n        {\n          \"type\": \"PostalAddress\",\n          \"streetAddress\": \"1007 Mountain Gate Rd\",\n          \"postOfficeBoxNumber\": \"Box 1234\",\n          \"addressRegion\": \"New Jersey\",\n          \"addressLocality\": \"Gotham City\",\n          \"postalCode\": \"10010\",\n          \"addressCountry\": \"usa\"\n        }\n      ],\n      \"birthDate\": \"2019-05-21\"\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"actionStatus\": \"CompletedActionStatus\",\n    \"targetCollection\": {\n      \"type\": \"Collection\",\n      \"name\": \"targetcollection\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             },
             {
               "x-title": "update",
@@ -989,7 +997,9 @@
                     "externalDocs": {
                       "description": "schema.org/Action",
                       "url": "https://schema.org/Action"
-                    }
+                    },
+                    "description": "the event payload",
+                    "descriptionAsHTML": "<p>the event payload</p>\n"
                   },
                   "source": {
                     "description": "the event origin, typically a user",
@@ -1028,7 +1038,7 @@
               },
               "summaryAsHTML": "<p>a crm lead was updated</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#update\",\n  \"data\": {\n    \"type\": \"UpdateAction\",\n    \"agent\": null,\n    \"object\": {\n      \"type\": \"Lead\"\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#update\",\n  \"data\": {\n    \"type\": \"UpdateAction\",\n    \"agent\": null,\n    \"object\": {\n      \"type\": \"Lead\"\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             },
             {
               "x-title": "reject",
@@ -1171,7 +1181,9 @@
                     "externalDocs": {
                       "description": "schema.org/Action",
                       "url": "https://schema.org/Action"
-                    }
+                    },
+                    "description": "the event payload",
+                    "descriptionAsHTML": "<p>the event payload</p>\n"
                   },
                   "source": {
                     "description": "the event origin, typically a user",
@@ -1210,7 +1222,7 @@
               },
               "summaryAsHTML": "<p>a crm lead was accepted</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#reject\",\n  \"data\": {\n    \"type\": \"RejectAction\",\n    \"agent\": null,\n    \"object\": {\n      \"type\": \"Lead\",\n      \"object\": {\n        \"type\": \"Person\",\n        \"name\": \"Larry Lead\",\n        \"email\": \"larry@example.com\"\n      },\n      \"recipient\": \"http://{user}.example.com/profile/card#me\",\n      \"sender\": \"http://{provider}.example.com/profile/card#me\",\n      \"dateSent\": \"2019-05-21T01:05:11Z\",\n      \"activity\": [\n        {\n          \"type\": \"string\",\n          \"agent\": null,\n          \"object\": {},\n          \"instrument\": \"https://{app}.example.com/profile/card#me\",\n          \"actionStatus\": \"CompletedActionStatus\"\n        }\n      ]\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"actionStatus\": \"CompletedActionStatus\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#reject\",\n  \"data\": {\n    \"type\": \"RejectAction\",\n    \"agent\": null,\n    \"object\": {\n      \"type\": \"Lead\",\n      \"object\": {\n        \"type\": \"Person\",\n        \"name\": \"Larry Lead\",\n        \"email\": \"larry@example.com\"\n      },\n      \"recipient\": \"http://{user}.example.com/profile/card#me\",\n      \"sender\": \"http://{provider}.example.com/profile/card#me\",\n      \"dateSent\": \"2019-05-21T03:08:48Z\",\n      \"activity\": [\n        {\n          \"type\": \"string\",\n          \"agent\": null,\n          \"object\": {},\n          \"instrument\": \"https://{app}.example.com/profile/card#me\",\n          \"actionStatus\": \"CompletedActionStatus\"\n        }\n      ]\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"actionStatus\": \"CompletedActionStatus\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             }
           ],
           "summaryAsHTML": "",
@@ -1324,7 +1336,7 @@
               },
               "summaryAsHTML": "<p>a marketing program has been created</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/marketingprogram#create\",\n  \"data\": {\n    \"type\": \"CreateAction\",\n    \"agent\": null,\n    \"object\": {},\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"actionStatus\": \"CompletedActionStatus\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/marketingprogram#create\",\n  \"data\": {\n    \"type\": \"CreateAction\",\n    \"agent\": null,\n    \"object\": {},\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"actionStatus\": \"CompletedActionStatus\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             },
             {
               "x-title": "marketingprogram#memberadd",
@@ -1456,7 +1468,7 @@
               },
               "summaryAsHTML": "<p>a program member was added by the agent (Work In Progress)</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/marketingprogram#memberadd\",\n  \"data\": {\n    \"type\": \"AddAction\",\n    \"object\": {\n      \"type\": \"ProgramMembership\",\n      \"roleName\": \"Owner\",\n      \"member\": {\n        \"type\": \"Person\",\n        \"email\": \"bob@example.com\"\n      },\n      \"memberOf\": null,\n      \"startDate\": \"2019-05-21T01:05:11Z\",\n      \"endDate\": \"2019-05-21T01:05:11Z\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/marketingprogram#memberadd\",\n  \"data\": {\n    \"type\": \"AddAction\",\n    \"object\": {\n      \"type\": \"ProgramMembership\",\n      \"roleName\": \"Owner\",\n      \"member\": {\n        \"type\": \"Person\",\n        \"email\": \"bob@example.com\"\n      },\n      \"memberOf\": null,\n      \"startDate\": \"2019-05-21T03:08:48Z\",\n      \"endDate\": \"2019-05-21T03:08:48Z\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             },
             {
               "x-title": "marketingprogram#memberremove",
@@ -1591,7 +1603,7 @@
               },
               "summaryAsHTML": "<p>a member was removed by the agent</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/marketingprogram#memberremove\",\n  \"data\": {\n    \"type\": \"RemoveAction\",\n    \"object\": {\n      \"type\": \"ProgramMembership\",\n      \"roleName\": \"Owner\",\n      \"member\": {\n        \"type\": \"Person\",\n        \"email\": \"bob@example.com\"\n      },\n      \"memberOf\": null,\n      \"startDate\": \"2019-05-21T01:05:11Z\",\n      \"endDate\": \"2019-05-21T01:05:11Z\"\n    },\n    \"targetCollection\": {\n      \"type\": \"MarketingProgram\",\n      \"name\": \"My Marketing Program\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/marketingprogram#memberremove\",\n  \"data\": {\n    \"type\": \"RemoveAction\",\n    \"object\": {\n      \"type\": \"ProgramMembership\",\n      \"roleName\": \"Owner\",\n      \"member\": {\n        \"type\": \"Person\",\n        \"email\": \"bob@example.com\"\n      },\n      \"memberOf\": null,\n      \"startDate\": \"2019-05-21T03:08:48Z\",\n      \"endDate\": \"2019-05-21T03:08:48Z\"\n    },\n    \"targetCollection\": {\n      \"type\": \"MarketingProgram\",\n      \"name\": \"My Marketing Program\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             }
           ],
           "summaryAsHTML": "",
@@ -1603,9 +1615,9 @@
         "subscribe": {
           "oneOf": [
             {
-              "x-title": "profile#add",
-              "x-scope": "realestate",
-              "summary": "a user profile was updated",
+              "x-title": "add",
+              "x-scope": "realestate/profile#",
+              "summary": "an agent, office or organization profile was added",
               "payload": {
                 "type": "object",
                 "required": [
@@ -1623,20 +1635,27 @@
                     "descriptionAsHTML": "<p>realestate/profile#add</p>\n"
                   },
                   "data": {
-                    "description": "the message payload",
                     "type": "object",
+                    "required": [
+                      "type"
+                    ],
                     "properties": {
                       "type": {
+                        "description": "AddAction",
                         "type": "string",
                         "enum": [
                           "AddAction"
                         ],
-                        "description": "AddAction",
                         "descriptionAsHTML": "<p>AddAction</p>\n"
                       },
+                      "agent": {
+                        "description": "the direct performer of the action",
+                        "example": "http://{user}.example.com/profile/card#me",
+                        "descriptionAsHTML": "<p>the direct performer of the action</p>\n"
+                      },
                       "object": {
+                        "description": "the updated profile",
                         "type": "object",
-                        "description": "content of the profile which was added",
                         "x-range": [
                           "RealEstateOrganization",
                           "RealEstateOffice",
@@ -1645,12 +1664,24 @@
                         ],
                         "example": {
                           "type": "RealEstateAgent",
-                          "name": "Arya Stark"
+                          "name": "Arya Stark",
+                          "email": "arya@example.com"
                         },
-                        "descriptionAsHTML": "<p>content of the profile which was added</p>\n"
+                        "descriptionAsHTML": "<p>the updated profile</p>\n"
+                      },
+                      "instrument": {
+                        "description": "thing used by the agent to perform the action, i.e. an application or website that generated the message.",
+                        "example": "https://{app}.example.com/profile/card#me",
+                        "descriptionAsHTML": "<p>thing used by the agent to perform the action, i.e. an application or website that generated the message.</p>\n"
                       }
                     },
-                    "descriptionAsHTML": "<p>the message payload</p>\n"
+                    "externalDocs": {
+                      "description": "schema.org/Action",
+                      "url": "https://schema.org/Action"
+                    },
+                    "description": "the event payload",
+                    "x-range": "AddAction",
+                    "descriptionAsHTML": "<p>the event payload</p>\n"
                   },
                   "source": {
                     "description": "the event origin, typically a user",
@@ -1687,14 +1718,14 @@
                   }
                 }
               },
-              "summaryAsHTML": "<p>a user profile was updated</p>\n",
+              "summaryAsHTML": "<p>an agent, office or organization profile was added</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/profile#add\",\n  \"data\": {\n    \"type\": \"AddAction\",\n    \"object\": {\n      \"type\": \"RealEstateAgent\",\n      \"name\": \"Arya Stark\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/profile#add\",\n  \"data\": {\n    \"type\": \"AddAction\",\n    \"agent\": \"http://{user}.example.com/profile/card#me\",\n    \"object\": {\n      \"type\": \"RealEstateAgent\",\n      \"name\": \"Arya Stark\",\n      \"email\": \"arya@example.com\"\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             },
             {
-              "x-title": "profile#update",
-              "x-scope": "realestate",
-              "summary": "profile was updated.",
+              "x-title": "update",
+              "x-scope": "realestate/profile#",
+              "summary": "an agent, office or organization profile was updated",
               "payload": {
                 "type": "object",
                 "required": [
@@ -1709,20 +1740,27 @@
                     "descriptionAsHTML": "<p>{domain}/{topic}#{event}</p>\n"
                   },
                   "data": {
-                    "description": "the message payload",
                     "type": "object",
+                    "required": [
+                      "type"
+                    ],
                     "properties": {
                       "type": {
+                        "description": "UpdateAction",
                         "type": "string",
                         "enum": [
                           "UpdateAction"
                         ],
-                        "description": "UpdateAction",
                         "descriptionAsHTML": "<p>UpdateAction</p>\n"
                       },
+                      "agent": {
+                        "description": "the direct performer of the action",
+                        "example": "http://{user}.example.com/profile/card#me",
+                        "descriptionAsHTML": "<p>the direct performer of the action</p>\n"
+                      },
                       "object": {
+                        "description": "the updated profile",
                         "type": "object",
-                        "description": "content of the profile which was added",
                         "x-range": [
                           "RealEstateOrganization",
                           "RealEstateOffice",
@@ -1731,12 +1769,24 @@
                         ],
                         "example": {
                           "type": "RealEstateAgent",
-                          "name": "Arya Stark"
+                          "name": "Arya Stark",
+                          "email": "arya@example.com"
                         },
-                        "descriptionAsHTML": "<p>content of the profile which was added</p>\n"
+                        "descriptionAsHTML": "<p>the updated profile</p>\n"
+                      },
+                      "instrument": {
+                        "description": "thing used by the agent to perform the action, i.e. an application or website that generated the message.",
+                        "example": "https://{app}.example.com/profile/card#me",
+                        "descriptionAsHTML": "<p>thing used by the agent to perform the action, i.e. an application or website that generated the message.</p>\n"
                       }
                     },
-                    "descriptionAsHTML": "<p>the message payload</p>\n"
+                    "externalDocs": {
+                      "description": "schema.org/Action",
+                      "url": "https://schema.org/Action"
+                    },
+                    "description": "the event payload",
+                    "x-range": "UpdateAction",
+                    "descriptionAsHTML": "<p>the event payload</p>\n"
                   },
                   "source": {
                     "description": "the event origin, typically a user",
@@ -1773,9 +1823,9 @@
                   }
                 }
               },
-              "summaryAsHTML": "<p>profile was updated.</p>\n",
+              "summaryAsHTML": "<p>an agent, office or organization profile was updated</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"string\",\n  \"data\": {\n    \"type\": \"UpdateAction\",\n    \"object\": {\n      \"type\": \"RealEstateAgent\",\n      \"name\": \"Arya Stark\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"string\",\n  \"data\": {\n    \"type\": \"UpdateAction\",\n    \"agent\": \"http://{user}.example.com/profile/card#me\",\n    \"object\": {\n      \"type\": \"RealEstateAgent\",\n      \"name\": \"Arya Stark\",\n      \"email\": \"arya@example.com\"\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             }
           ],
           "summaryAsHTML": "",
@@ -1933,7 +1983,9 @@
                     "externalDocs": {
                       "description": "schema.org/Action",
                       "url": "https://schema.org/Action"
-                    }
+                    },
+                    "description": "the event payload",
+                    "descriptionAsHTML": "<p>the event payload</p>\n"
                   },
                   "source": {
                     "description": "the event origin, typically a user",
@@ -1972,7 +2024,7 @@
               },
               "summaryAsHTML": "<p>a website vistor has requested an appointment</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#appointmentrequest\",\n  \"data\": {\n    \"type\": \"AppointmentRequest\",\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"object\": {\n      \"type\": \"Comment\",\n      \"id\": \"http://example.com\",\n      \"name\": \"string\",\n      \"url\": \"http://example.com\",\n      \"text\": \"Winter is coming\",\n      \"author\": {\n        \"type\": \"Person\",\n        \"email\": \"user@example.com\"\n      },\n      \"about\": {\n        \"type\": \"RealEstateListing\",\n        \"id\": \"http://example.com/listing/1\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"recipient\": \"http://{agent}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#appointmentrequest\",\n  \"data\": {\n    \"type\": \"AppointmentRequest\",\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"object\": {\n      \"type\": \"Comment\",\n      \"id\": \"http://example.com\",\n      \"name\": \"string\",\n      \"url\": \"http://example.com\",\n      \"text\": \"Winter is coming\",\n      \"author\": {\n        \"type\": \"Person\",\n        \"email\": \"user@example.com\"\n      },\n      \"about\": {\n        \"type\": \"RealEstateListing\",\n        \"id\": \"http://example.com/listing/1\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"recipient\": \"http://{agent}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             },
             {
               "x-title": "propertyoffer",
@@ -2149,7 +2201,7 @@
               },
               "summaryAsHTML": "<p>website user makes an offer on a property listing</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertyoffer\",\n  \"data\": {\n    \"type\": \"OfferAction\",\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"object\": {\n      \"type\": \"RealEstateListing\",\n      \"id\": \"http://example.com/12345\"\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"id\": \"http://example.com\",\n    \"name\": \"string\",\n    \"url\": \"http://example.com\",\n    \"recipient\": {\n      \"id\": \"http://user.example.com/profile/card#me\"\n    },\n    \"offerPrice\": {\n      \"type\": \"PriceSpecification\",\n      \"minPrice\": 0,\n      \"maxPrice\": 0,\n      \"price\": 0,\n      \"priceCurrency\": \"USD\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertyoffer\",\n  \"data\": {\n    \"type\": \"OfferAction\",\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"object\": {\n      \"type\": \"RealEstateListing\",\n      \"id\": \"http://example.com/12345\"\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"id\": \"http://example.com\",\n    \"name\": \"string\",\n    \"url\": \"http://example.com\",\n    \"recipient\": {\n      \"id\": \"http://user.example.com/profile/card#me\"\n    },\n    \"offerPrice\": {\n      \"type\": \"PriceSpecification\",\n      \"minPrice\": 0,\n      \"maxPrice\": 0,\n      \"price\": 0,\n      \"priceCurrency\": \"USD\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             },
             {
               "x-title": "propertysearch",
@@ -2308,7 +2360,9 @@
                     "externalDocs": {
                       "description": "schema.org/Action",
                       "url": "https://schema.org/Action"
-                    }
+                    },
+                    "description": "the event payload",
+                    "descriptionAsHTML": "<p>the event payload</p>\n"
                   },
                   "source": {
                     "description": "the event origin, typically a user",
@@ -2347,7 +2401,7 @@
               },
               "summaryAsHTML": "<p>website visitor (agent) has searched for properties on</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertysearch\",\n  \"data\": {\n    \"type\": \"SearchAction\",\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"object\": {\n      \"type\": \"PropertySearchArguments\",\n      \"price\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"bedrooms\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"bathrooms\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"location\": {}\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertysearch\",\n  \"data\": {\n    \"type\": \"SearchAction\",\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"object\": {\n      \"type\": \"PropertySearchArguments\",\n      \"price\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"bedrooms\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"bathrooms\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"location\": {}\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             },
             {
               "x-title": "propertyshare",
@@ -2412,7 +2466,9 @@
                     "externalDocs": {
                       "description": "schema.org/Action",
                       "url": "https://schema.org/Action"
-                    }
+                    },
+                    "description": "the event payload",
+                    "descriptionAsHTML": "<p>the event payload</p>\n"
                   },
                   "source": {
                     "description": "the event origin, typically a user",
@@ -2451,7 +2507,7 @@
               },
               "summaryAsHTML": "<p>agent shared object with recipient</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertyshare\",\n  \"data\": {\n    \"type\": \"ShareAction\",\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"object\": {},\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertyshare\",\n  \"data\": {\n    \"type\": \"ShareAction\",\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"object\": {},\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             },
             {
               "x-title": "propertyview",
@@ -2516,7 +2572,9 @@
                     "externalDocs": {
                       "description": "schema.org/Action",
                       "url": "https://schema.org/Action"
-                    }
+                    },
+                    "description": "the event payload",
+                    "descriptionAsHTML": "<p>the event payload</p>\n"
                   },
                   "source": {
                     "description": "the event origin, typically a user",
@@ -2555,7 +2613,7 @@
               },
               "summaryAsHTML": "<p>website user (agent) viewed an (object) on website (instrument)</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertyview\",\n  \"data\": {\n    \"type\": \"ViewAction\",\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"object\": {},\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertyview\",\n  \"data\": {\n    \"type\": \"ViewAction\",\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"object\": {},\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             },
             {
               "x-title": "question",
@@ -2620,7 +2678,9 @@
                     "externalDocs": {
                       "description": "schema.org/Action",
                       "url": "https://schema.org/Action"
-                    }
+                    },
+                    "description": "the event payload",
+                    "descriptionAsHTML": "<p>the event payload</p>\n"
                   },
                   "source": {
                     "description": "the event origin, typically a user",
@@ -2659,7 +2719,7 @@
               },
               "summaryAsHTML": "<p>a website visitor has asked a question</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#question\",\n  \"data\": {\n    \"type\": \"Action\",\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"object\": {},\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#question\",\n  \"data\": {\n    \"type\": \"Action\",\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"object\": {},\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             },
             {
               "x-title": "register",
@@ -2724,7 +2784,9 @@
                     "externalDocs": {
                       "description": "schema.org/Action",
                       "url": "https://schema.org/Action"
-                    }
+                    },
+                    "description": "the event payload",
+                    "descriptionAsHTML": "<p>the event payload</p>\n"
                   },
                   "source": {
                     "description": "the event origin, typically a user",
@@ -2763,7 +2825,7 @@
               },
               "summaryAsHTML": "<p>a website visitor has registered</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#register\",\n  \"data\": {\n    \"type\": \"Action\",\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"object\": {},\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#register\",\n  \"data\": {\n    \"type\": \"Action\",\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"object\": {},\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             },
             {
               "x-title": "showingrequest",
@@ -2828,7 +2890,9 @@
                     "externalDocs": {
                       "description": "schema.org/Action",
                       "url": "https://schema.org/Action"
-                    }
+                    },
+                    "description": "the event payload",
+                    "descriptionAsHTML": "<p>the event payload</p>\n"
                   },
                   "source": {
                     "description": "the event origin, typically a user",
@@ -2867,7 +2931,7 @@
               },
               "summaryAsHTML": "<p>a website visitor has requested a property showing</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#showingrequest\",\n  \"data\": {\n    \"type\": \"Action\",\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"object\": {},\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#showingrequest\",\n  \"data\": {\n    \"type\": \"Action\",\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"object\": {},\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             }
           ],
           "summaryAsHTML": "",
@@ -3274,7 +3338,7 @@
               }
             }
           },
-          "generatedExample": "{\n  \"type\": \"Lead\",\n  \"object\": {\n    \"type\": \"Person\",\n    \"name\": \"Larry Lead\",\n    \"email\": \"larry@example.com\"\n  },\n  \"recipient\": \"http://{user}.example.com/profile/card#me\",\n  \"sender\": \"http://{provider}.example.com/profile/card#me\",\n  \"dateSent\": \"2019-05-21T01:05:11Z\",\n  \"activity\": [\n    {\n      \"type\": \"string\",\n      \"agent\": null,\n      \"object\": {},\n      \"instrument\": \"https://{app}.example.com/profile/card#me\",\n      \"actionStatus\": \"CompletedActionStatus\"\n    }\n  ]\n}"
+          "generatedExample": "{\n  \"type\": \"Lead\",\n  \"object\": {\n    \"type\": \"Person\",\n    \"name\": \"Larry Lead\",\n    \"email\": \"larry@example.com\"\n  },\n  \"recipient\": \"http://{user}.example.com/profile/card#me\",\n  \"sender\": \"http://{provider}.example.com/profile/card#me\",\n  \"dateSent\": \"2019-05-21T03:08:48Z\",\n  \"activity\": [\n    {\n      \"type\": \"string\",\n      \"agent\": null,\n      \"object\": {},\n      \"instrument\": \"https://{app}.example.com/profile/card#me\",\n      \"actionStatus\": \"CompletedActionStatus\"\n    }\n  ]\n}"
         },
         "MarketingProgram": {
           "type": "object",
@@ -3519,7 +3583,7 @@
               "descriptionAsHTML": "<p>the user's MLSID</p>\n"
             }
           },
-          "generatedExample": "{\n  \"type\": \"MLSMembership\",\n  \"roleName\": \"MLSMember\",\n  \"member\": {\n    \"type\": \"Person\",\n    \"email\": \"bob@example.com\"\n  },\n  \"memberOf\": {\n    \"type\": \"MultipleListingService\",\n    \"name\": \"GreatScottMLS\"\n  },\n  \"startDate\": \"2019-05-21T01:05:11Z\",\n  \"endDate\": \"2019-05-21T01:05:11Z\",\n  \"memberId\": \"memberid123\"\n}"
+          "generatedExample": "{\n  \"type\": \"MLSMembership\",\n  \"roleName\": \"MLSMember\",\n  \"member\": {\n    \"type\": \"Person\",\n    \"email\": \"bob@example.com\"\n  },\n  \"memberOf\": {\n    \"type\": \"MultipleListingService\",\n    \"name\": \"GreatScottMLS\"\n  },\n  \"startDate\": \"2019-05-21T03:08:48Z\",\n  \"endDate\": \"2019-05-21T03:08:48Z\",\n  \"memberId\": \"memberid123\"\n}"
         },
         "MultipleListingService": {
           "type": "object",
@@ -4377,7 +4441,7 @@
               "descriptionAsHTML": "<p>the date the program membership ended</p>\n"
             }
           },
-          "generatedExample": "{\n  \"type\": \"OrganizationRole\",\n  \"roleName\": \"Owner\",\n  \"member\": {\n    \"type\": \"Person\",\n    \"email\": \"bob@example.com\"\n  },\n  \"memberOf\": null,\n  \"startDate\": \"2019-05-21T01:05:11Z\",\n  \"endDate\": \"2019-05-21T01:05:11Z\"\n}"
+          "generatedExample": "{\n  \"type\": \"OrganizationRole\",\n  \"roleName\": \"Owner\",\n  \"member\": {\n    \"type\": \"Person\",\n    \"email\": \"bob@example.com\"\n  },\n  \"memberOf\": null,\n  \"startDate\": \"2019-05-21T03:08:48Z\",\n  \"endDate\": \"2019-05-21T03:08:48Z\"\n}"
         },
         "Permit": {
           "title": "Permit",
@@ -4708,7 +4772,7 @@
               "descriptionAsHTML": "<p>end date</p>\n"
             }
           },
-          "generatedExample": "{\n  \"type\": \"string\",\n  \"name\": \"string\",\n  \"issuedBy\": {\n    \"type\": \"GovernmentOrganization\",\n    \"name\": \"California\"\n  },\n  \"issuedThrough\": {\n    \"type\": \"Service\",\n    \"name\": \"Department of Real Estate\"\n  },\n  \"validIn\": {\n    \"type\": \"string\",\n    \"id\": \"http://example.com\",\n    \"name\": \"string\",\n    \"url\": \"http://example.com\",\n    \"address\": {},\n    \"aggregateRating\": {},\n    \"branchCode\": \"string\",\n    \"containedInPlace\": [\n      \"http://example.com\"\n    ],\n    \"containsPlace\": [\n      \"http://example.com\"\n    ],\n    \"geo\": {},\n    \"hasMap\": \"http://example.com\",\n    \"openingHoursSpecification\": {},\n    \"photo\": [\n      \"http://example.com\"\n    ],\n    \"review\": [\n      {}\n    ],\n    \"specialOpeningHoursSpecification\": [\n      {}\n    ]\n  },\n  \"validFrom\": \"2019-05-21T01:05:11Z\",\n  \"validUntil\": \"2019-05-21T01:05:11Z\"\n}"
+          "generatedExample": "{\n  \"type\": \"string\",\n  \"name\": \"string\",\n  \"issuedBy\": {\n    \"type\": \"GovernmentOrganization\",\n    \"name\": \"California\"\n  },\n  \"issuedThrough\": {\n    \"type\": \"Service\",\n    \"name\": \"Department of Real Estate\"\n  },\n  \"validIn\": {\n    \"type\": \"string\",\n    \"id\": \"http://example.com\",\n    \"name\": \"string\",\n    \"url\": \"http://example.com\",\n    \"address\": {},\n    \"aggregateRating\": {},\n    \"branchCode\": \"string\",\n    \"containedInPlace\": [\n      \"http://example.com\"\n    ],\n    \"containsPlace\": [\n      \"http://example.com\"\n    ],\n    \"geo\": {},\n    \"hasMap\": \"http://example.com\",\n    \"openingHoursSpecification\": {},\n    \"photo\": [\n      \"http://example.com\"\n    ],\n    \"review\": [\n      {}\n    ],\n    \"specialOpeningHoursSpecification\": [\n      {}\n    ]\n  },\n  \"validFrom\": \"2019-05-21T03:08:48Z\",\n  \"validUntil\": \"2019-05-21T03:08:48Z\"\n}"
         },
         "Person": {
           "type": "object",
@@ -6767,7 +6831,7 @@
               "descriptionAsHTML": "<p>URL of the item.</p>\n"
             }
           },
-          "generatedExample": "{\n  \"type\": \"PropertyListing\",\n  \"address\": {\n    \"type\": \"PostalAddress\",\n    \"streetAddress\": \"1007 Mountain Gate Rd\",\n    \"postOfficeBoxNumber\": \"Box 1234\",\n    \"addressRegion\": \"New Jersey\",\n    \"addressLocality\": \"Gotham City\",\n    \"postalCode\": \"10010\",\n    \"addressCountry\": \"usa\"\n  },\n  \"dateListed\": \"2019-05-21T01:05:11Z\",\n  \"dateSold\": \"2019-05-21T01:05:11Z\",\n  \"dateClosed\": \"2019-05-21T01:05:11Z\",\n  \"listingPrice\": {\n    \"type\": \"PriceSpecification\",\n    \"minPrice\": 0,\n    \"maxPrice\": 0,\n    \"price\": 0,\n    \"priceCurrency\": \"USD\"\n  },\n  \"listingStatus\": \"Active\",\n  \"listingAgent\": {\n    \"type\": \"RealEstateAgent\",\n    \"id\": \"https://user.example.com/profile/card#me\"\n  },\n  \"listingOffice\": {\n    \"type\": \"RealEstateOrganization\",\n    \"id\": \"http://example.com\",\n    \"name\": \"string\",\n    \"url\": \"http://example.com\",\n    \"telephone\": \"079.706.7065 x6341\",\n    \"faxNumber\": \"(873) 271-4802\",\n    \"email\": \"user@example.com\",\n    \"availableLanguage\": [\n      {\n        \"type\": \"Language\",\n        \"name\": \"English\",\n        \"additionalName\": \"en\"\n      }\n    ],\n    \"branchCode\": \"CA301-001\",\n    \"contactPoint\": [\n      {\n        \"type\": \"ContactPoint\",\n        \"name\": \"Relocation\",\n        \"telephone\": \"1-245-880-8222\",\n        \"faxNumber\": \"958-530-3473\",\n        \"email\": \"relocation@example.com\"\n      }\n    ],\n    \"logo\": [\n      {\n        \"type\": \"DigitalDocument\",\n        \"id\": \"http://user.example.com/public/logo/fileName.zip\",\n        \"name\": \"fileName.zip\",\n        \"url\": \"http://example.com\",\n        \"encodingFormat\": \"application/zip\",\n        \"identifier\": {},\n        \"about\": \"http://user.example.com/profile/card#me\"\n      }\n    ],\n    \"image\": [\n      {\n        \"type\": \"ImageObject\",\n        \"id\": \"http://user.example.com/public/logo/image.jpg\",\n        \"name\": \"image.jpg\",\n        \"url\": \"http://user.example.com/public/profile/image.jpg\",\n        \"encodingFormat\": \"image/jpeg\",\n        \"content\": \"string\",\n        \"about\": \"http://user.example.com/profile/card#me\"\n      }\n    ],\n    \"parentOrganization\": [\n      \"http://example.com\"\n    ],\n    \"address\": {\n      \"type\": \"PostalAddress\",\n      \"streetAddress\": \"1007 Mountain Gate Rd\",\n      \"postOfficeBoxNumber\": \"Box 1234\",\n      \"addressRegion\": \"New Jersey\",\n      \"addressLocality\": \"Gotham City\",\n      \"postalCode\": \"10010\",\n      \"addressCountry\": \"usa\"\n    },\n    \"subOrganization\": [\n      \"http://org.example.com/profile/card#me\"\n    ],\n    \"member\": [\n      {\n        \"type\": \"OrganizationRole\",\n        \"roleName\": \"Owner\",\n        \"member\": {\n          \"type\": \"Person\",\n          \"email\": \"bob@example.com\"\n        },\n        \"memberOf\": null,\n        \"startDate\": \"2019-05-21T01:05:11Z\",\n        \"endDate\": \"2019-05-21T01:05:11Z\"\n      }\n    ],\n    \"memberOf\": [\n      {\n        \"type\": \"MLSMembership\",\n        \"roleName\": \"MLSMember\",\n        \"member\": {\n          \"type\": \"Person\",\n          \"email\": \"bob@example.com\"\n        },\n        \"memberOf\": {\n          \"type\": \"MultipleListingService\",\n          \"name\": \"GreatScottMLS\"\n        },\n        \"startDate\": \"2019-05-21T01:05:11Z\",\n        \"endDate\": \"2019-05-21T01:05:11Z\",\n        \"memberId\": \"memberid123\"\n      }\n    ],\n    \"permit\": [\n      {\n        \"type\": \"RealEstateLicense\",\n        \"name\": \"CA-DRE# 02068375\",\n        \"issuedBy\": {\n          \"type\": \"Organization\",\n          \"name\": \"California\"\n        },\n        \"issuedThrough\": {\n          \"type\": \"Service\",\n          \"name\": \"California Department of Real Estate\"\n        },\n        \"validIn\": {\n          \"type\": \"AdministrativeArea\",\n          \"name\": \"New York\"\n        },\n        \"validFrom\": \"2019-05-21T01:05:11Z\",\n        \"validUntil\": \"2019-05-21T01:05:11Z\"\n      }\n    ]\n  },\n  \"image\": [\n    {\n      \"type\": \"ImageObject\",\n      \"id\": \"http://user.example.com/public/logo/image.jpg\",\n      \"name\": \"image.jpg\",\n      \"url\": \"http://user.example.com/public/profile/image.jpg\",\n      \"encodingFormat\": \"image/jpeg\",\n      \"content\": \"string\",\n      \"about\": \"http://user.example.com/profile/card#me\"\n    }\n  ],\n  \"url\": \"http://example.com\"\n}"
+          "generatedExample": "{\n  \"type\": \"PropertyListing\",\n  \"address\": {\n    \"type\": \"PostalAddress\",\n    \"streetAddress\": \"1007 Mountain Gate Rd\",\n    \"postOfficeBoxNumber\": \"Box 1234\",\n    \"addressRegion\": \"New Jersey\",\n    \"addressLocality\": \"Gotham City\",\n    \"postalCode\": \"10010\",\n    \"addressCountry\": \"usa\"\n  },\n  \"dateListed\": \"2019-05-21T03:08:48Z\",\n  \"dateSold\": \"2019-05-21T03:08:48Z\",\n  \"dateClosed\": \"2019-05-21T03:08:48Z\",\n  \"listingPrice\": {\n    \"type\": \"PriceSpecification\",\n    \"minPrice\": 0,\n    \"maxPrice\": 0,\n    \"price\": 0,\n    \"priceCurrency\": \"USD\"\n  },\n  \"listingStatus\": \"Active\",\n  \"listingAgent\": {\n    \"type\": \"RealEstateAgent\",\n    \"id\": \"https://user.example.com/profile/card#me\"\n  },\n  \"listingOffice\": {\n    \"type\": \"RealEstateOrganization\",\n    \"id\": \"http://example.com\",\n    \"name\": \"string\",\n    \"url\": \"http://example.com\",\n    \"telephone\": \"079.706.7065 x6341\",\n    \"faxNumber\": \"(873) 271-4802\",\n    \"email\": \"user@example.com\",\n    \"availableLanguage\": [\n      {\n        \"type\": \"Language\",\n        \"name\": \"English\",\n        \"additionalName\": \"en\"\n      }\n    ],\n    \"branchCode\": \"CA301-001\",\n    \"contactPoint\": [\n      {\n        \"type\": \"ContactPoint\",\n        \"name\": \"Relocation\",\n        \"telephone\": \"1-245-880-8222\",\n        \"faxNumber\": \"958-530-3473\",\n        \"email\": \"relocation@example.com\"\n      }\n    ],\n    \"logo\": [\n      {\n        \"type\": \"DigitalDocument\",\n        \"id\": \"http://user.example.com/public/logo/fileName.zip\",\n        \"name\": \"fileName.zip\",\n        \"url\": \"http://example.com\",\n        \"encodingFormat\": \"application/zip\",\n        \"identifier\": {},\n        \"about\": \"http://user.example.com/profile/card#me\"\n      }\n    ],\n    \"image\": [\n      {\n        \"type\": \"ImageObject\",\n        \"id\": \"http://user.example.com/public/logo/image.jpg\",\n        \"name\": \"image.jpg\",\n        \"url\": \"http://user.example.com/public/profile/image.jpg\",\n        \"encodingFormat\": \"image/jpeg\",\n        \"content\": \"string\",\n        \"about\": \"http://user.example.com/profile/card#me\"\n      }\n    ],\n    \"parentOrganization\": [\n      \"http://example.com\"\n    ],\n    \"address\": {\n      \"type\": \"PostalAddress\",\n      \"streetAddress\": \"1007 Mountain Gate Rd\",\n      \"postOfficeBoxNumber\": \"Box 1234\",\n      \"addressRegion\": \"New Jersey\",\n      \"addressLocality\": \"Gotham City\",\n      \"postalCode\": \"10010\",\n      \"addressCountry\": \"usa\"\n    },\n    \"subOrganization\": [\n      \"http://org.example.com/profile/card#me\"\n    ],\n    \"member\": [\n      {\n        \"type\": \"OrganizationRole\",\n        \"roleName\": \"Owner\",\n        \"member\": {\n          \"type\": \"Person\",\n          \"email\": \"bob@example.com\"\n        },\n        \"memberOf\": null,\n        \"startDate\": \"2019-05-21T03:08:48Z\",\n        \"endDate\": \"2019-05-21T03:08:48Z\"\n      }\n    ],\n    \"memberOf\": [\n      {\n        \"type\": \"MLSMembership\",\n        \"roleName\": \"MLSMember\",\n        \"member\": {\n          \"type\": \"Person\",\n          \"email\": \"bob@example.com\"\n        },\n        \"memberOf\": {\n          \"type\": \"MultipleListingService\",\n          \"name\": \"GreatScottMLS\"\n        },\n        \"startDate\": \"2019-05-21T03:08:48Z\",\n        \"endDate\": \"2019-05-21T03:08:48Z\",\n        \"memberId\": \"memberid123\"\n      }\n    ],\n    \"permit\": [\n      {\n        \"type\": \"RealEstateLicense\",\n        \"name\": \"CA-DRE# 02068375\",\n        \"issuedBy\": {\n          \"type\": \"Organization\",\n          \"name\": \"California\"\n        },\n        \"issuedThrough\": {\n          \"type\": \"Service\",\n          \"name\": \"California Department of Real Estate\"\n        },\n        \"validIn\": {\n          \"type\": \"AdministrativeArea\",\n          \"name\": \"New York\"\n        },\n        \"validFrom\": \"2019-05-21T03:08:48Z\",\n        \"validUntil\": \"2019-05-21T03:08:48Z\"\n      }\n    ]\n  },\n  \"image\": [\n    {\n      \"type\": \"ImageObject\",\n      \"id\": \"http://user.example.com/public/logo/image.jpg\",\n      \"name\": \"image.jpg\",\n      \"url\": \"http://user.example.com/public/profile/image.jpg\",\n      \"encodingFormat\": \"image/jpeg\",\n      \"content\": \"string\",\n      \"about\": \"http://user.example.com/profile/card#me\"\n    }\n  ],\n  \"url\": \"http://example.com\"\n}"
         },
         "PropertySearch": {
           "type": "object",
@@ -7635,7 +7699,7 @@
             "https://schema.org/Organization"
           ],
           "description": "A real estate agent or team.",
-          "generatedExample": "{\n  \"type\": \"RealEstateAgent\",\n  \"id\": \"http://example.com\",\n  \"name\": \"Batman & Robin\",\n  \"url\": \"http://example.com\",\n  \"telephone\": \"079.706.7065 x6341\",\n  \"faxNumber\": \"(873) 271-4802\",\n  \"email\": \"user@example.com\",\n  \"availableLanguage\": [\n    {\n      \"type\": \"Language\",\n      \"name\": \"English\",\n      \"additionalName\": \"en\"\n    }\n  ],\n  \"branchCode\": \"CA301-001\",\n  \"contactPoint\": [\n    {\n      \"type\": \"ContactPoint\",\n      \"name\": \"Work\",\n      \"telephone\": \"1-364-127-9618 x20418\",\n      \"faxNumber\": \"834.320.1602\",\n      \"email\": \"user@example.com\",\n      \"url\": \"https://www.facebook.com/hallandoates\"\n    }\n  ],\n  \"logo\": [\n    {\n      \"type\": \"DigitalDocument\",\n      \"id\": \"http://user.example.com/public/logo/fileName.zip\",\n      \"name\": \"fileName.zip\",\n      \"url\": \"http://example.com\",\n      \"encodingFormat\": \"application/zip\",\n      \"identifier\": {},\n      \"about\": \"http://user.example.com/profile/card#me\"\n    }\n  ],\n  \"image\": [\n    {\n      \"type\": \"ImageObject\",\n      \"id\": \"http://user.example.com/public/logo/image.jpg\",\n      \"name\": \"image.jpg\",\n      \"url\": \"http://user.example.com/public/profile/image.jpg\",\n      \"encodingFormat\": \"image/jpeg\",\n      \"content\": \"string\",\n      \"about\": \"http://user.example.com/profile/card#me\"\n    }\n  ],\n  \"parentOrganization\": [\n    \"http://office-real-estate.example.com/\",\n    \"http://batmanandrobinteam.example.com/\"\n  ],\n  \"address\": {\n    \"type\": \"PostalAddress\",\n    \"streetAddress\": \"1007 Mountain Gate Rd\",\n    \"postOfficeBoxNumber\": \"Box 1234\",\n    \"addressRegion\": \"New Jersey\",\n    \"addressLocality\": \"Gotham City\",\n    \"postalCode\": \"10010\",\n    \"addressCountry\": \"usa\"\n  },\n  \"subOrganization\": [\n    \"http://org.example.com/profile/card#me\"\n  ],\n  \"member\": [\n    {\n      \"type\": \"OrganizationRole\",\n      \"roleName\": \"Owner\",\n      \"member\": {\n        \"type\": \"Person\",\n        \"email\": \"bob@example.com\"\n      },\n      \"memberOf\": null,\n      \"startDate\": \"2019-05-21T01:05:11Z\",\n      \"endDate\": \"2019-05-21T01:05:11Z\"\n    }\n  ],\n  \"memberOf\": [\n    {\n      \"type\": \"MLSMembership\",\n      \"roleName\": \"MLSMember\",\n      \"member\": {\n        \"type\": \"Person\",\n        \"email\": \"bob@example.com\"\n      },\n      \"memberOf\": {\n        \"type\": \"MultipleListingService\",\n        \"name\": \"GreatScottMLS\"\n      },\n      \"startDate\": \"2019-05-21T01:05:11Z\",\n      \"endDate\": \"2019-05-21T01:05:11Z\",\n      \"memberId\": \"memberid123\"\n    }\n  ],\n  \"permit\": [\n    {\n      \"type\": \"RealEstateLicense\",\n      \"name\": \"CA-DRE# 02068375\",\n      \"issuedBy\": {\n        \"type\": \"Organization\",\n        \"name\": \"California\"\n      },\n      \"issuedThrough\": {\n        \"type\": \"Service\",\n        \"name\": \"California Department of Real Estate\"\n      },\n      \"validIn\": {\n        \"type\": \"AdministrativeArea\",\n        \"name\": \"New York\"\n      },\n      \"validFrom\": \"2019-05-21T01:05:11Z\",\n      \"validUntil\": \"2019-05-21T01:05:11Z\"\n    }\n  ]\n}"
+          "generatedExample": "{\n  \"type\": \"RealEstateAgent\",\n  \"id\": \"http://example.com\",\n  \"name\": \"Batman & Robin\",\n  \"url\": \"http://example.com\",\n  \"telephone\": \"079.706.7065 x6341\",\n  \"faxNumber\": \"(873) 271-4802\",\n  \"email\": \"user@example.com\",\n  \"availableLanguage\": [\n    {\n      \"type\": \"Language\",\n      \"name\": \"English\",\n      \"additionalName\": \"en\"\n    }\n  ],\n  \"branchCode\": \"CA301-001\",\n  \"contactPoint\": [\n    {\n      \"type\": \"ContactPoint\",\n      \"name\": \"Work\",\n      \"telephone\": \"1-364-127-9618 x20418\",\n      \"faxNumber\": \"834.320.1602\",\n      \"email\": \"user@example.com\",\n      \"url\": \"https://www.facebook.com/hallandoates\"\n    }\n  ],\n  \"logo\": [\n    {\n      \"type\": \"DigitalDocument\",\n      \"id\": \"http://user.example.com/public/logo/fileName.zip\",\n      \"name\": \"fileName.zip\",\n      \"url\": \"http://example.com\",\n      \"encodingFormat\": \"application/zip\",\n      \"identifier\": {},\n      \"about\": \"http://user.example.com/profile/card#me\"\n    }\n  ],\n  \"image\": [\n    {\n      \"type\": \"ImageObject\",\n      \"id\": \"http://user.example.com/public/logo/image.jpg\",\n      \"name\": \"image.jpg\",\n      \"url\": \"http://user.example.com/public/profile/image.jpg\",\n      \"encodingFormat\": \"image/jpeg\",\n      \"content\": \"string\",\n      \"about\": \"http://user.example.com/profile/card#me\"\n    }\n  ],\n  \"parentOrganization\": [\n    \"http://office-real-estate.example.com/\",\n    \"http://batmanandrobinteam.example.com/\"\n  ],\n  \"address\": {\n    \"type\": \"PostalAddress\",\n    \"streetAddress\": \"1007 Mountain Gate Rd\",\n    \"postOfficeBoxNumber\": \"Box 1234\",\n    \"addressRegion\": \"New Jersey\",\n    \"addressLocality\": \"Gotham City\",\n    \"postalCode\": \"10010\",\n    \"addressCountry\": \"usa\"\n  },\n  \"subOrganization\": [\n    \"http://org.example.com/profile/card#me\"\n  ],\n  \"member\": [\n    {\n      \"type\": \"OrganizationRole\",\n      \"roleName\": \"Owner\",\n      \"member\": {\n        \"type\": \"Person\",\n        \"email\": \"bob@example.com\"\n      },\n      \"memberOf\": null,\n      \"startDate\": \"2019-05-21T03:08:48Z\",\n      \"endDate\": \"2019-05-21T03:08:48Z\"\n    }\n  ],\n  \"memberOf\": [\n    {\n      \"type\": \"MLSMembership\",\n      \"roleName\": \"MLSMember\",\n      \"member\": {\n        \"type\": \"Person\",\n        \"email\": \"bob@example.com\"\n      },\n      \"memberOf\": {\n        \"type\": \"MultipleListingService\",\n        \"name\": \"GreatScottMLS\"\n      },\n      \"startDate\": \"2019-05-21T03:08:48Z\",\n      \"endDate\": \"2019-05-21T03:08:48Z\",\n      \"memberId\": \"memberid123\"\n    }\n  ],\n  \"permit\": [\n    {\n      \"type\": \"RealEstateLicense\",\n      \"name\": \"CA-DRE# 02068375\",\n      \"issuedBy\": {\n        \"type\": \"Organization\",\n        \"name\": \"California\"\n      },\n      \"issuedThrough\": {\n        \"type\": \"Service\",\n        \"name\": \"California Department of Real Estate\"\n      },\n      \"validIn\": {\n        \"type\": \"AdministrativeArea\",\n        \"name\": \"New York\"\n      },\n      \"validFrom\": \"2019-05-21T03:08:48Z\",\n      \"validUntil\": \"2019-05-21T03:08:48Z\"\n    }\n  ]\n}"
         },
         "RealEstateOffice": {
           "type": "object",
@@ -8283,7 +8347,7 @@
             "https://schema.org/Organization"
           ],
           "description": "A real estate franchisor, broker or business.",
-          "generatedExample": "{\n  \"type\": \"RealEstateOrganization\",\n  \"id\": \"http://example.com\",\n  \"name\": \"string\",\n  \"url\": \"http://example.com\",\n  \"telephone\": \"079.706.7065 x6341\",\n  \"faxNumber\": \"(873) 271-4802\",\n  \"email\": \"user@example.com\",\n  \"availableLanguage\": [\n    {\n      \"type\": \"Language\",\n      \"name\": \"English\",\n      \"additionalName\": \"en\"\n    }\n  ],\n  \"branchCode\": \"CA301-001\",\n  \"contactPoint\": [\n    {\n      \"type\": \"ContactPoint\",\n      \"name\": \"Relocation\",\n      \"telephone\": \"1-245-880-8222\",\n      \"faxNumber\": \"958-530-3473\",\n      \"email\": \"relocation@example.com\"\n    }\n  ],\n  \"logo\": [\n    {\n      \"type\": \"DigitalDocument\",\n      \"id\": \"http://user.example.com/public/logo/fileName.zip\",\n      \"name\": \"fileName.zip\",\n      \"url\": \"http://example.com\",\n      \"encodingFormat\": \"application/zip\",\n      \"identifier\": {},\n      \"about\": \"http://user.example.com/profile/card#me\"\n    }\n  ],\n  \"image\": [\n    {\n      \"type\": \"ImageObject\",\n      \"id\": \"http://user.example.com/public/logo/image.jpg\",\n      \"name\": \"image.jpg\",\n      \"url\": \"http://user.example.com/public/profile/image.jpg\",\n      \"encodingFormat\": \"image/jpeg\",\n      \"content\": \"string\",\n      \"about\": \"http://user.example.com/profile/card#me\"\n    }\n  ],\n  \"parentOrganization\": [\n    \"http://example.com\"\n  ],\n  \"address\": {\n    \"type\": \"PostalAddress\",\n    \"streetAddress\": \"1007 Mountain Gate Rd\",\n    \"postOfficeBoxNumber\": \"Box 1234\",\n    \"addressRegion\": \"New Jersey\",\n    \"addressLocality\": \"Gotham City\",\n    \"postalCode\": \"10010\",\n    \"addressCountry\": \"usa\"\n  },\n  \"subOrganization\": [\n    \"http://org.example.com/profile/card#me\"\n  ],\n  \"member\": [\n    {\n      \"type\": \"OrganizationRole\",\n      \"roleName\": \"Owner\",\n      \"member\": {\n        \"type\": \"Person\",\n        \"email\": \"bob@example.com\"\n      },\n      \"memberOf\": null,\n      \"startDate\": \"2019-05-21T01:05:11Z\",\n      \"endDate\": \"2019-05-21T01:05:11Z\"\n    }\n  ],\n  \"memberOf\": [\n    {\n      \"type\": \"MLSMembership\",\n      \"roleName\": \"MLSMember\",\n      \"member\": {\n        \"type\": \"Person\",\n        \"email\": \"bob@example.com\"\n      },\n      \"memberOf\": {\n        \"type\": \"MultipleListingService\",\n        \"name\": \"GreatScottMLS\"\n      },\n      \"startDate\": \"2019-05-21T01:05:11Z\",\n      \"endDate\": \"2019-05-21T01:05:11Z\",\n      \"memberId\": \"memberid123\"\n    }\n  ],\n  \"permit\": [\n    {\n      \"type\": \"RealEstateLicense\",\n      \"name\": \"CA-DRE# 02068375\",\n      \"issuedBy\": {\n        \"type\": \"Organization\",\n        \"name\": \"California\"\n      },\n      \"issuedThrough\": {\n        \"type\": \"Service\",\n        \"name\": \"California Department of Real Estate\"\n      },\n      \"validIn\": {\n        \"type\": \"AdministrativeArea\",\n        \"name\": \"New York\"\n      },\n      \"validFrom\": \"2019-05-21T01:05:11Z\",\n      \"validUntil\": \"2019-05-21T01:05:11Z\"\n    }\n  ]\n}"
+          "generatedExample": "{\n  \"type\": \"RealEstateOrganization\",\n  \"id\": \"http://example.com\",\n  \"name\": \"string\",\n  \"url\": \"http://example.com\",\n  \"telephone\": \"079.706.7065 x6341\",\n  \"faxNumber\": \"(873) 271-4802\",\n  \"email\": \"user@example.com\",\n  \"availableLanguage\": [\n    {\n      \"type\": \"Language\",\n      \"name\": \"English\",\n      \"additionalName\": \"en\"\n    }\n  ],\n  \"branchCode\": \"CA301-001\",\n  \"contactPoint\": [\n    {\n      \"type\": \"ContactPoint\",\n      \"name\": \"Relocation\",\n      \"telephone\": \"1-245-880-8222\",\n      \"faxNumber\": \"958-530-3473\",\n      \"email\": \"relocation@example.com\"\n    }\n  ],\n  \"logo\": [\n    {\n      \"type\": \"DigitalDocument\",\n      \"id\": \"http://user.example.com/public/logo/fileName.zip\",\n      \"name\": \"fileName.zip\",\n      \"url\": \"http://example.com\",\n      \"encodingFormat\": \"application/zip\",\n      \"identifier\": {},\n      \"about\": \"http://user.example.com/profile/card#me\"\n    }\n  ],\n  \"image\": [\n    {\n      \"type\": \"ImageObject\",\n      \"id\": \"http://user.example.com/public/logo/image.jpg\",\n      \"name\": \"image.jpg\",\n      \"url\": \"http://user.example.com/public/profile/image.jpg\",\n      \"encodingFormat\": \"image/jpeg\",\n      \"content\": \"string\",\n      \"about\": \"http://user.example.com/profile/card#me\"\n    }\n  ],\n  \"parentOrganization\": [\n    \"http://example.com\"\n  ],\n  \"address\": {\n    \"type\": \"PostalAddress\",\n    \"streetAddress\": \"1007 Mountain Gate Rd\",\n    \"postOfficeBoxNumber\": \"Box 1234\",\n    \"addressRegion\": \"New Jersey\",\n    \"addressLocality\": \"Gotham City\",\n    \"postalCode\": \"10010\",\n    \"addressCountry\": \"usa\"\n  },\n  \"subOrganization\": [\n    \"http://org.example.com/profile/card#me\"\n  ],\n  \"member\": [\n    {\n      \"type\": \"OrganizationRole\",\n      \"roleName\": \"Owner\",\n      \"member\": {\n        \"type\": \"Person\",\n        \"email\": \"bob@example.com\"\n      },\n      \"memberOf\": null,\n      \"startDate\": \"2019-05-21T03:08:48Z\",\n      \"endDate\": \"2019-05-21T03:08:48Z\"\n    }\n  ],\n  \"memberOf\": [\n    {\n      \"type\": \"MLSMembership\",\n      \"roleName\": \"MLSMember\",\n      \"member\": {\n        \"type\": \"Person\",\n        \"email\": \"bob@example.com\"\n      },\n      \"memberOf\": {\n        \"type\": \"MultipleListingService\",\n        \"name\": \"GreatScottMLS\"\n      },\n      \"startDate\": \"2019-05-21T03:08:48Z\",\n      \"endDate\": \"2019-05-21T03:08:48Z\",\n      \"memberId\": \"memberid123\"\n    }\n  ],\n  \"permit\": [\n    {\n      \"type\": \"RealEstateLicense\",\n      \"name\": \"CA-DRE# 02068375\",\n      \"issuedBy\": {\n        \"type\": \"Organization\",\n        \"name\": \"California\"\n      },\n      \"issuedThrough\": {\n        \"type\": \"Service\",\n        \"name\": \"California Department of Real Estate\"\n      },\n      \"validIn\": {\n        \"type\": \"AdministrativeArea\",\n        \"name\": \"New York\"\n      },\n      \"validFrom\": \"2019-05-21T03:08:48Z\",\n      \"validUntil\": \"2019-05-21T03:08:48Z\"\n    }\n  ]\n}"
         },
         "RealEstateOrganization": {
           "type": "object",
@@ -8924,7 +8988,7 @@
             "https://schema.org/Organization"
           ],
           "description": "A real estate franchisor, broker or business.",
-          "generatedExample": "{\n  \"type\": \"RealEstateOrganization\",\n  \"id\": \"http://example.com\",\n  \"name\": \"string\",\n  \"url\": \"http://example.com\",\n  \"telephone\": \"079.706.7065 x6341\",\n  \"faxNumber\": \"(873) 271-4802\",\n  \"email\": \"user@example.com\",\n  \"availableLanguage\": [\n    {\n      \"type\": \"Language\",\n      \"name\": \"English\",\n      \"additionalName\": \"en\"\n    }\n  ],\n  \"branchCode\": \"CA301-001\",\n  \"contactPoint\": [\n    {\n      \"type\": \"ContactPoint\",\n      \"name\": \"Work\",\n      \"telephone\": \"1-364-127-9618 x20418\",\n      \"faxNumber\": \"834.320.1602\",\n      \"email\": \"user@example.com\",\n      \"url\": \"https://www.facebook.com/hallandoates\"\n    }\n  ],\n  \"logo\": [\n    {\n      \"type\": \"DigitalDocument\",\n      \"id\": \"http://user.example.com/public/logo/fileName.zip\",\n      \"name\": \"fileName.zip\",\n      \"url\": \"http://example.com\",\n      \"encodingFormat\": \"application/zip\",\n      \"identifier\": {},\n      \"about\": \"http://user.example.com/profile/card#me\"\n    }\n  ],\n  \"image\": [\n    {\n      \"type\": \"ImageObject\",\n      \"id\": \"http://user.example.com/public/logo/image.jpg\",\n      \"name\": \"image.jpg\",\n      \"url\": \"http://user.example.com/public/profile/image.jpg\",\n      \"encodingFormat\": \"image/jpeg\",\n      \"content\": \"string\",\n      \"about\": \"http://user.example.com/profile/card#me\"\n    }\n  ],\n  \"parentOrganization\": [\n    \"http://example.com\"\n  ],\n  \"address\": {\n    \"type\": \"PostalAddress\",\n    \"streetAddress\": \"1007 Mountain Gate Rd\",\n    \"postOfficeBoxNumber\": \"Box 1234\",\n    \"addressRegion\": \"New Jersey\",\n    \"addressLocality\": \"Gotham City\",\n    \"postalCode\": \"10010\",\n    \"addressCountry\": \"usa\"\n  },\n  \"subOrganization\": [\n    \"http://org.example.com/profile/card#me\"\n  ],\n  \"member\": [\n    {\n      \"type\": \"OrganizationRole\",\n      \"roleName\": \"Owner\",\n      \"member\": {\n        \"type\": \"Person\",\n        \"email\": \"bob@example.com\"\n      },\n      \"memberOf\": null,\n      \"startDate\": \"2019-05-21T01:05:11Z\",\n      \"endDate\": \"2019-05-21T01:05:11Z\"\n    }\n  ],\n  \"memberOf\": [\n    {\n      \"type\": \"MLSMembership\",\n      \"roleName\": \"MLSMember\",\n      \"member\": {\n        \"type\": \"Person\",\n        \"email\": \"bob@example.com\"\n      },\n      \"memberOf\": {\n        \"type\": \"MultipleListingService\",\n        \"name\": \"GreatScottMLS\"\n      },\n      \"startDate\": \"2019-05-21T01:05:11Z\",\n      \"endDate\": \"2019-05-21T01:05:11Z\",\n      \"memberId\": \"memberid123\"\n    }\n  ],\n  \"permit\": [\n    {\n      \"type\": \"RealEstateLicense\",\n      \"name\": \"CA-DRE# 02068375\",\n      \"issuedBy\": {\n        \"type\": \"Organization\",\n        \"name\": \"California\"\n      },\n      \"issuedThrough\": {\n        \"type\": \"Service\",\n        \"name\": \"California Department of Real Estate\"\n      },\n      \"validIn\": {\n        \"type\": \"AdministrativeArea\",\n        \"name\": \"New York\"\n      },\n      \"validFrom\": \"2019-05-21T01:05:11Z\",\n      \"validUntil\": \"2019-05-21T01:05:11Z\"\n    }\n  ]\n}"
+          "generatedExample": "{\n  \"type\": \"RealEstateOrganization\",\n  \"id\": \"http://example.com\",\n  \"name\": \"string\",\n  \"url\": \"http://example.com\",\n  \"telephone\": \"079.706.7065 x6341\",\n  \"faxNumber\": \"(873) 271-4802\",\n  \"email\": \"user@example.com\",\n  \"availableLanguage\": [\n    {\n      \"type\": \"Language\",\n      \"name\": \"English\",\n      \"additionalName\": \"en\"\n    }\n  ],\n  \"branchCode\": \"CA301-001\",\n  \"contactPoint\": [\n    {\n      \"type\": \"ContactPoint\",\n      \"name\": \"Work\",\n      \"telephone\": \"1-364-127-9618 x20418\",\n      \"faxNumber\": \"834.320.1602\",\n      \"email\": \"user@example.com\",\n      \"url\": \"https://www.facebook.com/hallandoates\"\n    }\n  ],\n  \"logo\": [\n    {\n      \"type\": \"DigitalDocument\",\n      \"id\": \"http://user.example.com/public/logo/fileName.zip\",\n      \"name\": \"fileName.zip\",\n      \"url\": \"http://example.com\",\n      \"encodingFormat\": \"application/zip\",\n      \"identifier\": {},\n      \"about\": \"http://user.example.com/profile/card#me\"\n    }\n  ],\n  \"image\": [\n    {\n      \"type\": \"ImageObject\",\n      \"id\": \"http://user.example.com/public/logo/image.jpg\",\n      \"name\": \"image.jpg\",\n      \"url\": \"http://user.example.com/public/profile/image.jpg\",\n      \"encodingFormat\": \"image/jpeg\",\n      \"content\": \"string\",\n      \"about\": \"http://user.example.com/profile/card#me\"\n    }\n  ],\n  \"parentOrganization\": [\n    \"http://example.com\"\n  ],\n  \"address\": {\n    \"type\": \"PostalAddress\",\n    \"streetAddress\": \"1007 Mountain Gate Rd\",\n    \"postOfficeBoxNumber\": \"Box 1234\",\n    \"addressRegion\": \"New Jersey\",\n    \"addressLocality\": \"Gotham City\",\n    \"postalCode\": \"10010\",\n    \"addressCountry\": \"usa\"\n  },\n  \"subOrganization\": [\n    \"http://org.example.com/profile/card#me\"\n  ],\n  \"member\": [\n    {\n      \"type\": \"OrganizationRole\",\n      \"roleName\": \"Owner\",\n      \"member\": {\n        \"type\": \"Person\",\n        \"email\": \"bob@example.com\"\n      },\n      \"memberOf\": null,\n      \"startDate\": \"2019-05-21T03:08:48Z\",\n      \"endDate\": \"2019-05-21T03:08:48Z\"\n    }\n  ],\n  \"memberOf\": [\n    {\n      \"type\": \"MLSMembership\",\n      \"roleName\": \"MLSMember\",\n      \"member\": {\n        \"type\": \"Person\",\n        \"email\": \"bob@example.com\"\n      },\n      \"memberOf\": {\n        \"type\": \"MultipleListingService\",\n        \"name\": \"GreatScottMLS\"\n      },\n      \"startDate\": \"2019-05-21T03:08:48Z\",\n      \"endDate\": \"2019-05-21T03:08:48Z\",\n      \"memberId\": \"memberid123\"\n    }\n  ],\n  \"permit\": [\n    {\n      \"type\": \"RealEstateLicense\",\n      \"name\": \"CA-DRE# 02068375\",\n      \"issuedBy\": {\n        \"type\": \"Organization\",\n        \"name\": \"California\"\n      },\n      \"issuedThrough\": {\n        \"type\": \"Service\",\n        \"name\": \"California Department of Real Estate\"\n      },\n      \"validIn\": {\n        \"type\": \"AdministrativeArea\",\n        \"name\": \"New York\"\n      },\n      \"validFrom\": \"2019-05-21T03:08:48Z\",\n      \"validUntil\": \"2019-05-21T03:08:48Z\"\n    }\n  ]\n}"
         },
         "RealEstateWebsite": {
           "type": "object",
@@ -9552,7 +9616,7 @@
             "description": "schema.org/Action",
             "url": "https://schema.org/Action"
           },
-          "generatedExample": "{\n  \"type\": \"RejectAction\",\n  \"agent\": null,\n  \"object\": {\n    \"type\": \"Lead\",\n    \"object\": {\n      \"type\": \"Person\",\n      \"name\": \"Larry Lead\",\n      \"email\": \"larry@example.com\"\n    },\n    \"recipient\": \"http://{user}.example.com/profile/card#me\",\n    \"sender\": \"http://{provider}.example.com/profile/card#me\",\n    \"dateSent\": \"2019-05-21T01:05:11Z\",\n    \"activity\": [\n      {\n        \"type\": \"string\",\n        \"agent\": null,\n        \"object\": {},\n        \"instrument\": \"https://{app}.example.com/profile/card#me\",\n        \"actionStatus\": \"CompletedActionStatus\"\n      }\n    ]\n  },\n  \"instrument\": \"https://{app}.example.com/profile/card#me\",\n  \"actionStatus\": \"CompletedActionStatus\"\n}"
+          "generatedExample": "{\n  \"type\": \"RejectAction\",\n  \"agent\": null,\n  \"object\": {\n    \"type\": \"Lead\",\n    \"object\": {\n      \"type\": \"Person\",\n      \"name\": \"Larry Lead\",\n      \"email\": \"larry@example.com\"\n    },\n    \"recipient\": \"http://{user}.example.com/profile/card#me\",\n    \"sender\": \"http://{provider}.example.com/profile/card#me\",\n    \"dateSent\": \"2019-05-21T03:08:48Z\",\n    \"activity\": [\n      {\n        \"type\": \"string\",\n        \"agent\": null,\n        \"object\": {},\n        \"instrument\": \"https://{app}.example.com/profile/card#me\",\n        \"actionStatus\": \"CompletedActionStatus\"\n      }\n    ]\n  },\n  \"instrument\": \"https://{app}.example.com/profile/card#me\",\n  \"actionStatus\": \"CompletedActionStatus\"\n}"
         },
         "RemoveAction": {
           "type": "object",
@@ -9913,7 +9977,9 @@
                     "externalDocs": {
                       "description": "schema.org/Action",
                       "url": "https://schema.org/Action"
-                    }
+                    },
+                    "description": "the event payload",
+                    "descriptionAsHTML": "<p>the event payload</p>\n"
                   },
                   "source": {
                     "description": "the event origin, typically a user",
@@ -9952,7 +10018,7 @@
               },
               "summaryAsHTML": "<p>a contact was added/created.</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/contact#add\",\n  \"data\": {\n    \"type\": \"AddAction\",\n    \"agent\": null,\n    \"object\": {},\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/contact#add\",\n  \"data\": {\n    \"type\": \"AddAction\",\n    \"agent\": null,\n    \"object\": {},\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             },
             {
               "x-title": "update",
@@ -10035,7 +10101,9 @@
                     "externalDocs": {
                       "description": "schema.org/Action",
                       "url": "https://schema.org/Action"
-                    }
+                    },
+                    "description": "the event payload",
+                    "descriptionAsHTML": "<p>the event payload</p>\n"
                   },
                   "source": {
                     "description": "the event origin, typically a user",
@@ -10074,7 +10142,7 @@
               },
               "summaryAsHTML": "<p>a crm contact was updated</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/contact#update\",\n  \"data\": {\n    \"type\": \"UpdateAction\",\n    \"agent\": null,\n    \"object\": {\n      \"type\": \"Contact\",\n      \"name\": \"the updated contact\"\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"actionStatus\": \"CompletedActionStatus\",\n    \"targetCollection\": {\n      \"type\": \"Collection\",\n      \"name\": \"targetcollection\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/contact#update\",\n  \"data\": {\n    \"type\": \"UpdateAction\",\n    \"agent\": null,\n    \"object\": {\n      \"type\": \"Contact\",\n      \"name\": \"the updated contact\"\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"actionStatus\": \"CompletedActionStatus\",\n    \"targetCollection\": {\n      \"type\": \"Collection\",\n      \"name\": \"targetcollection\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             }
           ],
           "summaryAsHTML": "",
@@ -10272,7 +10340,7 @@
               },
               "summaryAsHTML": "<p>a lead (object) was accepted by the agent</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#accept\",\n  \"data\": {\n    \"type\": \"AcceptAction\",\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"object\": {\n      \"type\": \"Lead\",\n      \"name\": \"Lianna Stark\"\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"actionStatus\": \"CompletedActionStatus\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#accept\",\n  \"data\": {\n    \"type\": \"AcceptAction\",\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"object\": {\n      \"type\": \"Lead\",\n      \"name\": \"Lianna Stark\"\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"actionStatus\": \"CompletedActionStatus\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             },
             {
               "x-title": "add",
@@ -10350,7 +10418,9 @@
                     "externalDocs": {
                       "description": "schema.org/Action",
                       "url": "https://schema.org/Action"
-                    }
+                    },
+                    "description": "the event payload",
+                    "descriptionAsHTML": "<p>the event payload</p>\n"
                   },
                   "source": {
                     "description": "the event origin, typically a user",
@@ -10389,7 +10459,7 @@
               },
               "summaryAsHTML": "<p>a crm lead was created</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#add\",\n  \"data\": {\n    \"type\": \"AddAction\",\n    \"agent\": \"http://{user}.example.com/profile/card#me\",\n    \"object\": {\n      \"type\": \"Contact\",\n      \"name\": \"Adam Addme\"\n    },\n    \"instrument\": \"http://{app}.example.com/profile/card#me\",\n    \"actionStatus\": \"CompletedActionStatus\",\n    \"targetCollection\": {\n      \"type\": \"Collection\",\n      \"id\": \"https://{user}.example.com/data/contact/\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#add\",\n  \"data\": {\n    \"type\": \"AddAction\",\n    \"agent\": \"http://{user}.example.com/profile/card#me\",\n    \"object\": {\n      \"type\": \"Contact\",\n      \"name\": \"Adam Addme\"\n    },\n    \"instrument\": \"http://{app}.example.com/profile/card#me\",\n    \"actionStatus\": \"CompletedActionStatus\",\n    \"targetCollection\": {\n      \"type\": \"Collection\",\n      \"id\": \"https://{user}.example.com/data/contact/\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             },
             {
               "x-title": "asssign",
@@ -10634,7 +10704,9 @@
                     "externalDocs": {
                       "description": "schema.org/Action",
                       "url": "https://schema.org/Action"
-                    }
+                    },
+                    "description": "the event payload",
+                    "descriptionAsHTML": "<p>the event payload</p>\n"
                   },
                   "source": {
                     "description": "the event origin, typically a user",
@@ -10673,7 +10745,7 @@
               },
               "summaryAsHTML": "<p>a lead was assigned</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#assign\",\n  \"data\": {\n    \"type\": \"AssignAction\",\n    \"agent\": null,\n    \"object\": {\n      \"type\": \"Person\",\n      \"id\": \"http://example.com\",\n      \"name\": \"string\",\n      \"url\": \"http://example.com\",\n      \"givenName\": \"Bruce\",\n      \"familyName\": \"Wayne\",\n      \"jobTitle\": \"Jefe\",\n      \"email\": \"user@example.com\",\n      \"faxNumber\": \"(498) 625-6456\",\n      \"telephone\": \"1-339-041-0306 x2866\",\n      \"contactPoint\": [\n        {\n          \"type\": \"ContactPoint\",\n          \"name\": \"Work\",\n          \"telephone\": \"1-364-127-9618 x20418\",\n          \"faxNumber\": \"834.320.1602\",\n          \"email\": \"user@example.com\",\n          \"url\": \"https://www.facebook.com/hallandoates\"\n        }\n      ],\n      \"address\": [\n        {\n          \"type\": \"PostalAddress\",\n          \"streetAddress\": \"1007 Mountain Gate Rd\",\n          \"postOfficeBoxNumber\": \"Box 1234\",\n          \"addressRegion\": \"New Jersey\",\n          \"addressLocality\": \"Gotham City\",\n          \"postalCode\": \"10010\",\n          \"addressCountry\": \"usa\"\n        }\n      ],\n      \"birthDate\": \"2019-05-21\"\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"actionStatus\": \"CompletedActionStatus\",\n    \"targetCollection\": {\n      \"type\": \"Collection\",\n      \"name\": \"targetcollection\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#assign\",\n  \"data\": {\n    \"type\": \"AssignAction\",\n    \"agent\": null,\n    \"object\": {\n      \"type\": \"Person\",\n      \"id\": \"http://example.com\",\n      \"name\": \"string\",\n      \"url\": \"http://example.com\",\n      \"givenName\": \"Bruce\",\n      \"familyName\": \"Wayne\",\n      \"jobTitle\": \"Jefe\",\n      \"email\": \"user@example.com\",\n      \"faxNumber\": \"(498) 625-6456\",\n      \"telephone\": \"1-339-041-0306 x2866\",\n      \"contactPoint\": [\n        {\n          \"type\": \"ContactPoint\",\n          \"name\": \"Work\",\n          \"telephone\": \"1-364-127-9618 x20418\",\n          \"faxNumber\": \"834.320.1602\",\n          \"email\": \"user@example.com\",\n          \"url\": \"https://www.facebook.com/hallandoates\"\n        }\n      ],\n      \"address\": [\n        {\n          \"type\": \"PostalAddress\",\n          \"streetAddress\": \"1007 Mountain Gate Rd\",\n          \"postOfficeBoxNumber\": \"Box 1234\",\n          \"addressRegion\": \"New Jersey\",\n          \"addressLocality\": \"Gotham City\",\n          \"postalCode\": \"10010\",\n          \"addressCountry\": \"usa\"\n        }\n      ],\n      \"birthDate\": \"2019-05-21\"\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"actionStatus\": \"CompletedActionStatus\",\n    \"targetCollection\": {\n      \"type\": \"Collection\",\n      \"name\": \"targetcollection\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             },
             {
               "x-title": "update",
@@ -10810,7 +10882,9 @@
                     "externalDocs": {
                       "description": "schema.org/Action",
                       "url": "https://schema.org/Action"
-                    }
+                    },
+                    "description": "the event payload",
+                    "descriptionAsHTML": "<p>the event payload</p>\n"
                   },
                   "source": {
                     "description": "the event origin, typically a user",
@@ -10849,7 +10923,7 @@
               },
               "summaryAsHTML": "<p>a crm lead was updated</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#update\",\n  \"data\": {\n    \"type\": \"UpdateAction\",\n    \"agent\": null,\n    \"object\": {\n      \"type\": \"Lead\"\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#update\",\n  \"data\": {\n    \"type\": \"UpdateAction\",\n    \"agent\": null,\n    \"object\": {\n      \"type\": \"Lead\"\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             },
             {
               "x-title": "reject",
@@ -10992,7 +11066,9 @@
                     "externalDocs": {
                       "description": "schema.org/Action",
                       "url": "https://schema.org/Action"
-                    }
+                    },
+                    "description": "the event payload",
+                    "descriptionAsHTML": "<p>the event payload</p>\n"
                   },
                   "source": {
                     "description": "the event origin, typically a user",
@@ -11031,7 +11107,7 @@
               },
               "summaryAsHTML": "<p>a crm lead was accepted</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#reject\",\n  \"data\": {\n    \"type\": \"RejectAction\",\n    \"agent\": null,\n    \"object\": {\n      \"type\": \"Lead\",\n      \"object\": {\n        \"type\": \"Person\",\n        \"name\": \"Larry Lead\",\n        \"email\": \"larry@example.com\"\n      },\n      \"recipient\": \"http://{user}.example.com/profile/card#me\",\n      \"sender\": \"http://{provider}.example.com/profile/card#me\",\n      \"dateSent\": \"2019-05-21T01:05:11Z\",\n      \"activity\": [\n        {\n          \"type\": \"string\",\n          \"agent\": null,\n          \"object\": {},\n          \"instrument\": \"https://{app}.example.com/profile/card#me\",\n          \"actionStatus\": \"CompletedActionStatus\"\n        }\n      ]\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"actionStatus\": \"CompletedActionStatus\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#reject\",\n  \"data\": {\n    \"type\": \"RejectAction\",\n    \"agent\": null,\n    \"object\": {\n      \"type\": \"Lead\",\n      \"object\": {\n        \"type\": \"Person\",\n        \"name\": \"Larry Lead\",\n        \"email\": \"larry@example.com\"\n      },\n      \"recipient\": \"http://{user}.example.com/profile/card#me\",\n      \"sender\": \"http://{provider}.example.com/profile/card#me\",\n      \"dateSent\": \"2019-05-21T03:08:48Z\",\n      \"activity\": [\n        {\n          \"type\": \"string\",\n          \"agent\": null,\n          \"object\": {},\n          \"instrument\": \"https://{app}.example.com/profile/card#me\",\n          \"actionStatus\": \"CompletedActionStatus\"\n        }\n      ]\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"actionStatus\": \"CompletedActionStatus\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             }
           ],
           "summaryAsHTML": "",
@@ -11145,7 +11221,7 @@
               },
               "summaryAsHTML": "<p>a marketing program has been created</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/marketingprogram#create\",\n  \"data\": {\n    \"type\": \"CreateAction\",\n    \"agent\": null,\n    \"object\": {},\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"actionStatus\": \"CompletedActionStatus\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/marketingprogram#create\",\n  \"data\": {\n    \"type\": \"CreateAction\",\n    \"agent\": null,\n    \"object\": {},\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"actionStatus\": \"CompletedActionStatus\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             },
             {
               "x-title": "marketingprogram#memberadd",
@@ -11277,7 +11353,7 @@
               },
               "summaryAsHTML": "<p>a program member was added by the agent (Work In Progress)</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/marketingprogram#memberadd\",\n  \"data\": {\n    \"type\": \"AddAction\",\n    \"object\": {\n      \"type\": \"ProgramMembership\",\n      \"roleName\": \"Owner\",\n      \"member\": {\n        \"type\": \"Person\",\n        \"email\": \"bob@example.com\"\n      },\n      \"memberOf\": null,\n      \"startDate\": \"2019-05-21T01:05:11Z\",\n      \"endDate\": \"2019-05-21T01:05:11Z\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/marketingprogram#memberadd\",\n  \"data\": {\n    \"type\": \"AddAction\",\n    \"object\": {\n      \"type\": \"ProgramMembership\",\n      \"roleName\": \"Owner\",\n      \"member\": {\n        \"type\": \"Person\",\n        \"email\": \"bob@example.com\"\n      },\n      \"memberOf\": null,\n      \"startDate\": \"2019-05-21T03:08:48Z\",\n      \"endDate\": \"2019-05-21T03:08:48Z\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             },
             {
               "x-title": "marketingprogram#memberremove",
@@ -11412,7 +11488,7 @@
               },
               "summaryAsHTML": "<p>a member was removed by the agent</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/marketingprogram#memberremove\",\n  \"data\": {\n    \"type\": \"RemoveAction\",\n    \"object\": {\n      \"type\": \"ProgramMembership\",\n      \"roleName\": \"Owner\",\n      \"member\": {\n        \"type\": \"Person\",\n        \"email\": \"bob@example.com\"\n      },\n      \"memberOf\": null,\n      \"startDate\": \"2019-05-21T01:05:11Z\",\n      \"endDate\": \"2019-05-21T01:05:11Z\"\n    },\n    \"targetCollection\": {\n      \"type\": \"MarketingProgram\",\n      \"name\": \"My Marketing Program\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/marketingprogram#memberremove\",\n  \"data\": {\n    \"type\": \"RemoveAction\",\n    \"object\": {\n      \"type\": \"ProgramMembership\",\n      \"roleName\": \"Owner\",\n      \"member\": {\n        \"type\": \"Person\",\n        \"email\": \"bob@example.com\"\n      },\n      \"memberOf\": null,\n      \"startDate\": \"2019-05-21T03:08:48Z\",\n      \"endDate\": \"2019-05-21T03:08:48Z\"\n    },\n    \"targetCollection\": {\n      \"type\": \"MarketingProgram\",\n      \"name\": \"My Marketing Program\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             }
           ],
           "summaryAsHTML": "",
@@ -11424,9 +11500,9 @@
         "subscribe": {
           "oneOf": [
             {
-              "x-title": "profile#add",
-              "x-scope": "realestate",
-              "summary": "a user profile was updated",
+              "x-title": "add",
+              "x-scope": "realestate/profile#",
+              "summary": "an agent, office or organization profile was added",
               "payload": {
                 "type": "object",
                 "required": [
@@ -11444,20 +11520,27 @@
                     "descriptionAsHTML": "<p>realestate/profile#add</p>\n"
                   },
                   "data": {
-                    "description": "the message payload",
                     "type": "object",
+                    "required": [
+                      "type"
+                    ],
                     "properties": {
                       "type": {
+                        "description": "AddAction",
                         "type": "string",
                         "enum": [
                           "AddAction"
                         ],
-                        "description": "AddAction",
                         "descriptionAsHTML": "<p>AddAction</p>\n"
                       },
+                      "agent": {
+                        "description": "the direct performer of the action",
+                        "example": "http://{user}.example.com/profile/card#me",
+                        "descriptionAsHTML": "<p>the direct performer of the action</p>\n"
+                      },
                       "object": {
+                        "description": "the updated profile",
                         "type": "object",
-                        "description": "content of the profile which was added",
                         "x-range": [
                           "RealEstateOrganization",
                           "RealEstateOffice",
@@ -11466,12 +11549,24 @@
                         ],
                         "example": {
                           "type": "RealEstateAgent",
-                          "name": "Arya Stark"
+                          "name": "Arya Stark",
+                          "email": "arya@example.com"
                         },
-                        "descriptionAsHTML": "<p>content of the profile which was added</p>\n"
+                        "descriptionAsHTML": "<p>the updated profile</p>\n"
+                      },
+                      "instrument": {
+                        "description": "thing used by the agent to perform the action, i.e. an application or website that generated the message.",
+                        "example": "https://{app}.example.com/profile/card#me",
+                        "descriptionAsHTML": "<p>thing used by the agent to perform the action, i.e. an application or website that generated the message.</p>\n"
                       }
                     },
-                    "descriptionAsHTML": "<p>the message payload</p>\n"
+                    "externalDocs": {
+                      "description": "schema.org/Action",
+                      "url": "https://schema.org/Action"
+                    },
+                    "description": "the event payload",
+                    "x-range": "AddAction",
+                    "descriptionAsHTML": "<p>the event payload</p>\n"
                   },
                   "source": {
                     "description": "the event origin, typically a user",
@@ -11508,14 +11603,14 @@
                   }
                 }
               },
-              "summaryAsHTML": "<p>a user profile was updated</p>\n",
+              "summaryAsHTML": "<p>an agent, office or organization profile was added</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/profile#add\",\n  \"data\": {\n    \"type\": \"AddAction\",\n    \"object\": {\n      \"type\": \"RealEstateAgent\",\n      \"name\": \"Arya Stark\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/profile#add\",\n  \"data\": {\n    \"type\": \"AddAction\",\n    \"agent\": \"http://{user}.example.com/profile/card#me\",\n    \"object\": {\n      \"type\": \"RealEstateAgent\",\n      \"name\": \"Arya Stark\",\n      \"email\": \"arya@example.com\"\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             },
             {
-              "x-title": "profile#update",
-              "x-scope": "realestate",
-              "summary": "profile was updated.",
+              "x-title": "update",
+              "x-scope": "realestate/profile#",
+              "summary": "an agent, office or organization profile was updated",
               "payload": {
                 "type": "object",
                 "required": [
@@ -11530,20 +11625,27 @@
                     "descriptionAsHTML": "<p>{domain}/{topic}#{event}</p>\n"
                   },
                   "data": {
-                    "description": "the message payload",
                     "type": "object",
+                    "required": [
+                      "type"
+                    ],
                     "properties": {
                       "type": {
+                        "description": "UpdateAction",
                         "type": "string",
                         "enum": [
                           "UpdateAction"
                         ],
-                        "description": "UpdateAction",
                         "descriptionAsHTML": "<p>UpdateAction</p>\n"
                       },
+                      "agent": {
+                        "description": "the direct performer of the action",
+                        "example": "http://{user}.example.com/profile/card#me",
+                        "descriptionAsHTML": "<p>the direct performer of the action</p>\n"
+                      },
                       "object": {
+                        "description": "the updated profile",
                         "type": "object",
-                        "description": "content of the profile which was added",
                         "x-range": [
                           "RealEstateOrganization",
                           "RealEstateOffice",
@@ -11552,12 +11654,24 @@
                         ],
                         "example": {
                           "type": "RealEstateAgent",
-                          "name": "Arya Stark"
+                          "name": "Arya Stark",
+                          "email": "arya@example.com"
                         },
-                        "descriptionAsHTML": "<p>content of the profile which was added</p>\n"
+                        "descriptionAsHTML": "<p>the updated profile</p>\n"
+                      },
+                      "instrument": {
+                        "description": "thing used by the agent to perform the action, i.e. an application or website that generated the message.",
+                        "example": "https://{app}.example.com/profile/card#me",
+                        "descriptionAsHTML": "<p>thing used by the agent to perform the action, i.e. an application or website that generated the message.</p>\n"
                       }
                     },
-                    "descriptionAsHTML": "<p>the message payload</p>\n"
+                    "externalDocs": {
+                      "description": "schema.org/Action",
+                      "url": "https://schema.org/Action"
+                    },
+                    "description": "the event payload",
+                    "x-range": "UpdateAction",
+                    "descriptionAsHTML": "<p>the event payload</p>\n"
                   },
                   "source": {
                     "description": "the event origin, typically a user",
@@ -11594,9 +11708,9 @@
                   }
                 }
               },
-              "summaryAsHTML": "<p>profile was updated.</p>\n",
+              "summaryAsHTML": "<p>an agent, office or organization profile was updated</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"string\",\n  \"data\": {\n    \"type\": \"UpdateAction\",\n    \"object\": {\n      \"type\": \"RealEstateAgent\",\n      \"name\": \"Arya Stark\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"string\",\n  \"data\": {\n    \"type\": \"UpdateAction\",\n    \"agent\": \"http://{user}.example.com/profile/card#me\",\n    \"object\": {\n      \"type\": \"RealEstateAgent\",\n      \"name\": \"Arya Stark\",\n      \"email\": \"arya@example.com\"\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             }
           ],
           "summaryAsHTML": "",
@@ -11754,7 +11868,9 @@
                     "externalDocs": {
                       "description": "schema.org/Action",
                       "url": "https://schema.org/Action"
-                    }
+                    },
+                    "description": "the event payload",
+                    "descriptionAsHTML": "<p>the event payload</p>\n"
                   },
                   "source": {
                     "description": "the event origin, typically a user",
@@ -11793,7 +11909,7 @@
               },
               "summaryAsHTML": "<p>a website vistor has requested an appointment</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#appointmentrequest\",\n  \"data\": {\n    \"type\": \"AppointmentRequest\",\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"object\": {\n      \"type\": \"Comment\",\n      \"id\": \"http://example.com\",\n      \"name\": \"string\",\n      \"url\": \"http://example.com\",\n      \"text\": \"Winter is coming\",\n      \"author\": {\n        \"type\": \"Person\",\n        \"email\": \"user@example.com\"\n      },\n      \"about\": {\n        \"type\": \"RealEstateListing\",\n        \"id\": \"http://example.com/listing/1\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"recipient\": \"http://{agent}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#appointmentrequest\",\n  \"data\": {\n    \"type\": \"AppointmentRequest\",\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"object\": {\n      \"type\": \"Comment\",\n      \"id\": \"http://example.com\",\n      \"name\": \"string\",\n      \"url\": \"http://example.com\",\n      \"text\": \"Winter is coming\",\n      \"author\": {\n        \"type\": \"Person\",\n        \"email\": \"user@example.com\"\n      },\n      \"about\": {\n        \"type\": \"RealEstateListing\",\n        \"id\": \"http://example.com/listing/1\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"recipient\": \"http://{agent}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             },
             {
               "x-title": "propertyoffer",
@@ -11970,7 +12086,7 @@
               },
               "summaryAsHTML": "<p>website user makes an offer on a property listing</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertyoffer\",\n  \"data\": {\n    \"type\": \"OfferAction\",\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"object\": {\n      \"type\": \"RealEstateListing\",\n      \"id\": \"http://example.com/12345\"\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"id\": \"http://example.com\",\n    \"name\": \"string\",\n    \"url\": \"http://example.com\",\n    \"recipient\": {\n      \"id\": \"http://user.example.com/profile/card#me\"\n    },\n    \"offerPrice\": {\n      \"type\": \"PriceSpecification\",\n      \"minPrice\": 0,\n      \"maxPrice\": 0,\n      \"price\": 0,\n      \"priceCurrency\": \"USD\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertyoffer\",\n  \"data\": {\n    \"type\": \"OfferAction\",\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"object\": {\n      \"type\": \"RealEstateListing\",\n      \"id\": \"http://example.com/12345\"\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"id\": \"http://example.com\",\n    \"name\": \"string\",\n    \"url\": \"http://example.com\",\n    \"recipient\": {\n      \"id\": \"http://user.example.com/profile/card#me\"\n    },\n    \"offerPrice\": {\n      \"type\": \"PriceSpecification\",\n      \"minPrice\": 0,\n      \"maxPrice\": 0,\n      \"price\": 0,\n      \"priceCurrency\": \"USD\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             },
             {
               "x-title": "propertysearch",
@@ -12129,7 +12245,9 @@
                     "externalDocs": {
                       "description": "schema.org/Action",
                       "url": "https://schema.org/Action"
-                    }
+                    },
+                    "description": "the event payload",
+                    "descriptionAsHTML": "<p>the event payload</p>\n"
                   },
                   "source": {
                     "description": "the event origin, typically a user",
@@ -12168,7 +12286,7 @@
               },
               "summaryAsHTML": "<p>website visitor (agent) has searched for properties on</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertysearch\",\n  \"data\": {\n    \"type\": \"SearchAction\",\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"object\": {\n      \"type\": \"PropertySearchArguments\",\n      \"price\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"bedrooms\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"bathrooms\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"location\": {}\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertysearch\",\n  \"data\": {\n    \"type\": \"SearchAction\",\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"object\": {\n      \"type\": \"PropertySearchArguments\",\n      \"price\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"bedrooms\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"bathrooms\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"location\": {}\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             },
             {
               "x-title": "propertyshare",
@@ -12233,7 +12351,9 @@
                     "externalDocs": {
                       "description": "schema.org/Action",
                       "url": "https://schema.org/Action"
-                    }
+                    },
+                    "description": "the event payload",
+                    "descriptionAsHTML": "<p>the event payload</p>\n"
                   },
                   "source": {
                     "description": "the event origin, typically a user",
@@ -12272,7 +12392,7 @@
               },
               "summaryAsHTML": "<p>agent shared object with recipient</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertyshare\",\n  \"data\": {\n    \"type\": \"ShareAction\",\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"object\": {},\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertyshare\",\n  \"data\": {\n    \"type\": \"ShareAction\",\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"object\": {},\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             },
             {
               "x-title": "propertyview",
@@ -12337,7 +12457,9 @@
                     "externalDocs": {
                       "description": "schema.org/Action",
                       "url": "https://schema.org/Action"
-                    }
+                    },
+                    "description": "the event payload",
+                    "descriptionAsHTML": "<p>the event payload</p>\n"
                   },
                   "source": {
                     "description": "the event origin, typically a user",
@@ -12376,7 +12498,7 @@
               },
               "summaryAsHTML": "<p>website user (agent) viewed an (object) on website (instrument)</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertyview\",\n  \"data\": {\n    \"type\": \"ViewAction\",\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"object\": {},\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertyview\",\n  \"data\": {\n    \"type\": \"ViewAction\",\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"object\": {},\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             },
             {
               "x-title": "question",
@@ -12441,7 +12563,9 @@
                     "externalDocs": {
                       "description": "schema.org/Action",
                       "url": "https://schema.org/Action"
-                    }
+                    },
+                    "description": "the event payload",
+                    "descriptionAsHTML": "<p>the event payload</p>\n"
                   },
                   "source": {
                     "description": "the event origin, typically a user",
@@ -12480,7 +12604,7 @@
               },
               "summaryAsHTML": "<p>a website visitor has asked a question</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#question\",\n  \"data\": {\n    \"type\": \"Action\",\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"object\": {},\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#question\",\n  \"data\": {\n    \"type\": \"Action\",\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"object\": {},\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             },
             {
               "x-title": "register",
@@ -12545,7 +12669,9 @@
                     "externalDocs": {
                       "description": "schema.org/Action",
                       "url": "https://schema.org/Action"
-                    }
+                    },
+                    "description": "the event payload",
+                    "descriptionAsHTML": "<p>the event payload</p>\n"
                   },
                   "source": {
                     "description": "the event origin, typically a user",
@@ -12584,7 +12710,7 @@
               },
               "summaryAsHTML": "<p>a website visitor has registered</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#register\",\n  \"data\": {\n    \"type\": \"Action\",\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"object\": {},\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#register\",\n  \"data\": {\n    \"type\": \"Action\",\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"object\": {},\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             },
             {
               "x-title": "showingrequest",
@@ -12649,7 +12775,9 @@
                     "externalDocs": {
                       "description": "schema.org/Action",
                       "url": "https://schema.org/Action"
-                    }
+                    },
+                    "description": "the event payload",
+                    "descriptionAsHTML": "<p>the event payload</p>\n"
                   },
                   "source": {
                     "description": "the event origin, typically a user",
@@ -12688,7 +12816,7 @@
               },
               "summaryAsHTML": "<p>a website visitor has requested a property showing</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#showingrequest\",\n  \"data\": {\n    \"type\": \"Action\",\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"object\": {},\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T01:05:11Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#showingrequest\",\n  \"data\": {\n    \"type\": \"Action\",\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"object\": {},\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-21T03:08:48Z\",\n  \"contenttype\": \"application/json\",\n  \"@context\": \"http://realestate.yodata.me/context/v1.json\"\n}"
             }
           ],
           "summaryAsHTML": "",

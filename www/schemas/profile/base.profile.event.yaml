@@ -1,0 +1,20 @@
+allOf:
+- $ref: ../base.event.yaml
+- properties:
+    data:
+      properties:
+        agent:
+          example: http://{user}.example.com/profile/card#me
+        object:
+          type: object
+          description: the updated profile
+          x-range:
+            - RealEstateOrganization
+            - RealEstateOffice
+            - RealEstateAgent
+            - Person
+          example:
+            type: RealEstateAgent
+            name: Arya Stark
+            email: arya@example.com
+            

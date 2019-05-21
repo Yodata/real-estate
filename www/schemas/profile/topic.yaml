@@ -1,0 +1,5 @@
+x-summary: Affiliate, Office, and Agent profile events
+subscribe:
+  oneOf:
+    - $ref: profile.add.yaml
+    - $ref: profile.update.yaml

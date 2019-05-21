@@ -8,7 +8,9 @@ properties:
     description: '{domain}/{topic}#{event}'
     type: string
   data:
-    $ref: action/Action.yaml
+    allOf:
+    - $ref: action/Action.yaml
+    - description: the event payload
   source:
     description: the event origin, typically a user
     type: string

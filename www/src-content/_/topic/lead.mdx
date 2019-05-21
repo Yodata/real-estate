@@ -38,7 +38,7 @@ a lead (object) was accepted by the agent
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-21T01:05:11Z",
+  "time": "2019-05-21T03:08:48Z",
   "contenttype": "application/json",
   "@context": "http://realestate.yodata.me/context/v1.json"
 }
@@ -85,7 +85,7 @@ a crm lead was created
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-21T01:05:11Z",
+  "time": "2019-05-21T03:08:48Z",
   "contenttype": "application/json",
   "@context": "http://realestate.yodata.me/context/v1.json"
 }
@@ -95,7 +95,7 @@ a crm lead was created
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | topic | string! | {domain}/{topic}#{event}  |
-| data | object! |   |
+| data | object! | the event payload  |
 | data.type | string! | AddAction  |
 | data.agent | * | the direct performer of the action  |
 | data.object | object | the added item  |
@@ -163,7 +163,7 @@ a lead was assigned
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-21T01:05:11Z",
+  "time": "2019-05-21T03:08:48Z",
   "contenttype": "application/json",
   "@context": "http://realestate.yodata.me/context/v1.json"
 }
@@ -173,7 +173,7 @@ a lead was assigned
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | topic | string! | {domain}/{topic}#{event}  |
-| data | object! |   |
+| data | object! | the event payload  |
 | data.type | string! | the action type  |
 | data.agent | * | the direct performer of the action  |
 | data.object | object | The object upon which the action is carried out  |
@@ -205,7 +205,7 @@ a crm lead was updated
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-21T01:05:11Z",
+  "time": "2019-05-21T03:08:48Z",
   "contenttype": "application/json",
   "@context": "http://realestate.yodata.me/context/v1.json"
 }
@@ -215,7 +215,7 @@ a crm lead was updated
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | topic | string! | {domain}/{topic}#{event}  |
-| data | object! |   |
+| data | object! | the event payload  |
 | data.type | string! | the action type  |
 | data.agent | * | the direct performer of the action  |
 | data.object | [Lead](/schemas#lead) | a lead offered or assigned by the agent to one or more recipients  |
@@ -247,7 +247,7 @@ a crm lead was accepted
       },
       "recipient": "http://{user}.example.com/profile/card#me",
       "sender": "http://{provider}.example.com/profile/card#me",
-      "dateSent": "2019-05-21T01:05:11Z",
+      "dateSent": "2019-05-21T03:08:48Z",
       "activity": [
         {
           "type": "string",
@@ -263,7 +263,7 @@ a crm lead was accepted
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-21T01:05:11Z",
+  "time": "2019-05-21T03:08:48Z",
   "contenttype": "application/json",
   "@context": "http://realestate.yodata.me/context/v1.json"
 }
@@ -273,7 +273,7 @@ a crm lead was accepted
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | topic | string! | {domain}/{topic}#{event}  |
-| data | object! |   |
+| data | object! | the event payload  |
 | data.type | string! | the action type  |
 | data.agent | * | the direct performer of the action  |
 | data.object | [Lead](/schemas#lead) | a lead offered or assigned by the agent to one or more recipients  |

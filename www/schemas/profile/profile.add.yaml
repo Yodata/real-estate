@@ -1,0 +1,19 @@
+x-title: add
+x-scope: realestate/profile#
+summary: an agent, office or organization profile was added
+payload:
+  allOf:
+    - $ref: base.profile.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/profile#add
+          description: realestate/profile#add
+        data:
+          x-range: AddAction
+          properties:
+            type:
+              description: AddAction
+              enum:
+                - AddAction
+            

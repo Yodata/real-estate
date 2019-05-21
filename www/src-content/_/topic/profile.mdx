@@ -11,13 +11,13 @@ Affiliate, Office, and Agent profile events
 
 | Event | Description |
 | :---- | :---------- |
-| [realestateprofile#add](#profile#add) | a user profile was updated |
-| [realestateprofile#update](#profile#update) | profile was updated. |
+| [realestate/profile#add](#add) | an agent, office or organization profile was added |
+| [realestate/profile#update](#update) | an agent, office or organization profile was updated |
 
 
-## profile#add
+## add
 
-a user profile was updated
+an agent, office or organization profile was added
 
 
 ```json
@@ -25,14 +25,17 @@ a user profile was updated
   "topic": "realestate/profile#add",
   "data": {
     "type": "AddAction",
+    "agent": "http://{user}.example.com/profile/card#me",
     "object": {
       "type": "RealEstateAgent",
-      "name": "Arya Stark"
-    }
+      "name": "Arya Stark",
+      "email": "arya@example.com"
+    },
+    "instrument": "https://{app}.example.com/profile/card#me"
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-21T01:05:11Z",
+  "time": "2019-05-21T03:08:48Z",
   "contenttype": "application/json",
   "@context": "http://realestate.yodata.me/context/v1.json"
 }
@@ -42,9 +45,11 @@ a user profile was updated
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | topic | string! | realestate/profile#add  |
-| data | object! | the message payload  |
-| data.type | string | AddAction  |
-| data.object | object | content of the profile which was added <br/>RANGE: [RealEstateOrganization](/schemas#realestateorganization),[RealEstateOffice](/schemas#realestateoffice),[RealEstateAgent](/schemas#realestateagent),[Person](/schemas#person) |
+| data | object! | the event payload <br/>RANGE: [AddAction](/schemas#addaction) |
+| data.type | string! | AddAction  |
+| data.agent | * | the direct performer of the action  |
+| data.object | object | the updated profile <br/>RANGE: [RealEstateOrganization](/schemas#realestateorganization),[RealEstateOffice](/schemas#realestateoffice),[RealEstateAgent](/schemas#realestateagent),[Person](/schemas#person) |
+| data.instrument | * | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
 | source | string&lt;uri&gt;! | the event origin, typically a user  |
 | instrument | string&lt;uri&gt; | event producer, typically an app or service  |
 | time | string&lt;date-time&gt; | when the event was published  |
@@ -52,9 +57,9 @@ a user profile was updated
 | @context | string&lt;uri&gt; | message context used for transforming message content  |
 
 
-## profile#update
+## update
 
-profile was updated.
+an agent, office or organization profile was updated
 
 
 ```json
@@ -62,14 +67,17 @@ profile was updated.
   "topic": "string",
   "data": {
     "type": "UpdateAction",
+    "agent": "http://{user}.example.com/profile/card#me",
     "object": {
       "type": "RealEstateAgent",
-      "name": "Arya Stark"
-    }
+      "name": "Arya Stark",
+      "email": "arya@example.com"
+    },
+    "instrument": "https://{app}.example.com/profile/card#me"
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-21T01:05:11Z",
+  "time": "2019-05-21T03:08:48Z",
   "contenttype": "application/json",
   "@context": "http://realestate.yodata.me/context/v1.json"
 }
@@ -79,9 +87,11 @@ profile was updated.
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | topic | string! | {domain}/{topic}#{event}  |
-| data | object! | the message payload  |
-| data.type | string | UpdateAction  |
-| data.object | object | content of the profile which was added <br/>RANGE: [RealEstateOrganization](/schemas#realestateorganization),[RealEstateOffice](/schemas#realestateoffice),[RealEstateAgent](/schemas#realestateagent),[Person](/schemas#person) |
+| data | object! | the event payload <br/>RANGE: [UpdateAction](/schemas#updateaction) |
+| data.type | string! | UpdateAction  |
+| data.agent | * | the direct performer of the action  |
+| data.object | object | the updated profile <br/>RANGE: [RealEstateOrganization](/schemas#realestateorganization),[RealEstateOffice](/schemas#realestateoffice),[RealEstateAgent](/schemas#realestateagent),[Person](/schemas#person) |
+| data.instrument | * | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
 | source | string&lt;uri&gt;! | the event origin, typically a user  |
 | instrument | string&lt;uri&gt; | event producer, typically an app or service  |
 | time | string&lt;date-time&gt; | when the event was published  |

@@ -4,18 +4,13 @@ info:
   title: Let's Integrate Real Estate
   version: '0.0.2'
   description: |
-    Reflex is intended to normalize the process of integrating applications and services
-    in the real estate domain in a user-centric, vendor agnostic and developer friendly
-    way.
+    ## WHAT
+    Yodata/Real-Estate is an open source collaborative effort between real estate technology brokers, 
+    agents and technolgy providers working to normalize data and application integrations.
 
-    The API is very simple, the only interactions are publish a message (HTTP POST) and get messages either pushed to your 
-    application or with HTTP GET.
-
-    The project is 100% open source and contributors are welcomed with open arms.
-
-    To get started you'll need to get yourself a POD that will provide your application's private message bus.
-
-    If you don't already have a pod, contact us and we'll get you setup.
+    ## HOW
+    Applications connect to a shared event bus controlled by the user (customer of the vendor).
+    The event models are stored in Github and maintained by the community of developers and partners.
 
   contact:
     name: Dave Duran
@@ -69,11 +64,7 @@ topics:
         - $ref: message/marketingprogram.memberremove.yaml
 
   profile:
-    x-summary: Affiliate, Office, and Agent profile events
-    subscribe:
-      oneOf:
-        - $ref: message/profile.add.yaml
-        - $ref: message/profile.update.yaml
+    $ref: schemas/profile/topic.yaml
   
   website:
     $ref: schemas/website/topic.yaml

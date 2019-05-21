@@ -1,0 +1,15 @@
+x-title: update
+x-scope: realestate/profile#
+summary: an agent, office or organization profile was updated
+payload:
+  allOf:
+    - $ref: base.profile.event.yaml
+    - properties:
+        data:
+          x-range: UpdateAction
+          properties:
+            type:
+              type: string
+              enum:
+                - UpdateAction
+              description: UpdateAction

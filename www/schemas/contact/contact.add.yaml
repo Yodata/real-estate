@@ -11,12 +11,17 @@ payload:
         data:
           allOf:
           - $ref: ../AddAction.yaml
+          - x-range: AddAction
           - properties:
               object:
                 $ref: ../Contact.yaml
           - properties:
               object:
+                x-range:
+                - Person
                 example:
                   type: Contact
                   name: Bruce Wayne
                   email: batman@example.com
+                  identifier:
+                    sourcevendorid: xxxx

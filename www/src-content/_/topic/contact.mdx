@@ -28,9 +28,12 @@ a contact was added/created.
     "object": {
       "type": "Contact",
       "name": "Bruce Wayne",
-      "email": "batman@example.com"
+      "email": "batman@example.com",
+      "identifier": {
+        "sourcevendorid": "xxxx"
+      }
     },
-    "agent": null,
+    "agent": "https://{user}.example.com/profile/card#me",
     "instrument": "https://{app}.example.com/profile/card#me",
     "targetCollection": {
       "type": "Collection",
@@ -39,7 +42,7 @@ a contact was added/created.
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-22T13:21:33Z"
+  "time": "2019-05-22T13:59:57Z"
 }
 ```
 
@@ -47,9 +50,9 @@ a contact was added/created.
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | topic | string! | the message id, equivalent to cloudevents type.  |
-| data | object! |   |
+| data | object! | the message payload <br/>RANGE: [AddAction](/schemas#addaction) |
 | data.type | string! | the action type  |
-| data.object | object | a user contact record.  |
+| data.object | object | a user contact record. <br/>RANGE: [Person](/schemas#person) |
 | data.agent | * | the direct performer of the action  |
 | data.instrument | string&lt;uri&gt; | something used by the agent to perform the action, i.e. an application or website that generated the message.  |
 | data.targetCollection | * | the collection receiving the added object  |
@@ -70,9 +73,12 @@ a crm contact was updated
     "type": "UpdateAction",
     "object": {
       "type": "Contact",
-      "name": "the updated contact"
+      "name": "the updated contact",
+      "identifier": {
+        "vendornameid": 1234
+      }
     },
-    "agent": null,
+    "agent": "https://{user}.example.com/profile/card#me",
     "instrument": "https://{app}.example.com/profile/card#me",
     "targetCollection": {
       "type": "Collection",
@@ -81,7 +87,7 @@ a crm contact was updated
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-22T13:21:33Z"
+  "time": "2019-05-22T13:59:57Z"
 }
 ```
 
@@ -89,9 +95,9 @@ a crm contact was updated
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | topic | string! | the message id, equivalent to cloudevents type.  |
-| data | object! |   |
+| data | object! | the message payload <br/>RANGE: [UpdateAction](/schemas#updateaction) |
 | data.type | string! | the action type  |
-| data.object | object | the object upon which the action is carried out  |
+| data.object | object | the updated contact <br/>RANGE: [Contact](/schemas#contact) |
 | data.agent | * | the direct performer of the action  |
 | data.instrument | string&lt;uri&gt; | something used by the agent to perform the action, i.e. an application or website that generated the message.  |
 | data.targetCollection | object | target collection  |

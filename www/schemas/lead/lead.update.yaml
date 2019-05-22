@@ -9,14 +9,9 @@ payload:
           enum:
             - realestate/lead#update
         data:
-          type: object
-          properties:
-            type:
-              type: string
-              enum:
-                - UpdateAction
-              example: UpdateAction
-            object:
-              $ref: ../Lead.yaml
-              example:
-                type: Lead
+          allOf:
+          - $ref: ../UpdateAction.yaml
+          - x-range: UpdateAction
+            properties:
+              object:
+                $ref: ../Lead.yaml

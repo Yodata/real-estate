@@ -1,8 +1,10 @@
 allOf:
   - $ref: Action.yaml
   - description: The act of committing to/adopting an object.
-  - properties:
+  - x-range: AcceptAction
+    properties:
       type:
+        description: AcceptAction
         enum:
           - AcceptAction
       agent:

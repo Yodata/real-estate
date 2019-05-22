@@ -10,3 +10,8 @@ payload:
             - realestate/lead#assign
         data:
           $ref: ../AssignAction.yaml
+    - properties:
+        data:
+          properties:
+            object:
+              $ref: ../Lead.yaml

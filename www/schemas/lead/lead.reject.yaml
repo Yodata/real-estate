@@ -1,6 +1,6 @@
 x-title: reject
 x-scope: realestate/lead#
-summary: a crm lead was accepted
+summary: a crm lead was rejected
 payload:
   allOf:
     - $ref: ../base.event.yaml
@@ -9,4 +9,8 @@ payload:
           enum:
             - realestate/lead#reject
         data:
-          $ref: ../RejectAction.yaml
+          allOf:
+          - $ref: ../RejectAction.yaml
+          - properties:
+              object:
+                $ref: ../Lead.yaml

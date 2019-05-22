@@ -9,9 +9,16 @@ properties:
     type: string
   data:
     type: object
+    description: the message payload
     properties:
       type:
         type: string
+      object:
+        type: object
+      agent:
+        example: https://{user}.example.com/profile/card#me
+      instrument:
+        example: https://{app}.example.com/profile/card#me
   source:
     description: the subscription source
     type: string

@@ -11,6 +11,4 @@ allOf:
           - AssignAction
         example: AssignAction
       object:
-        $ref: Person.yaml
-      targetCollection:
-        $ref: Collection.yaml
+        type: object

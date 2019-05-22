@@ -11,7 +11,8 @@
     "@yodata/transform": "^0.4.1",
     "eslint": "^5.16.0",
     "json-schema-ref-parser": "^6.1.0",
-    "lerna": "^3.13.2"
+    "lerna": "^3.14.1",
+    "tar": "^4.4.8"
   },
   "dependencies": {
     "asyncapi-generator": "^0.6.5"

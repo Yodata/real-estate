@@ -5,14 +5,3 @@ properties:
   type:
     type: string
     description: Linked-Data (@type)
-  id:
-    type: string
-    format: uri
-    description: Linked-Data uri
-  name:
-    type: string
-    description: the name of the item.
-  url:
-    type: string
-    format: uri
-    description: a public href that is clearly and uniquely associated with the item. 

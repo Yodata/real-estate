@@ -1,11 +1,10 @@
-x-title: ProgramMembership
-description: describes membership relation between a member (Person) and a MarketingProgram
-type: object
 allOf:
-  - $ref: OrganizationRole.yaml
-  - example:
-      type: ProgramMembership
-      roleName: Owner
-      member:
-        type: Person
-        email: bob@example.com
+- $ref: OrganizationRole.yaml
+- x-title: ProgramMembership
+  description: describes membership relation between a member (Person) and a MarketingProgram
+  properties:
+    type:
+      enum:
+      - ProgramMembership
+    memberOf:
+      x-range: MarketingProgram

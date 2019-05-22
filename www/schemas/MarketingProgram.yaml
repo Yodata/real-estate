@@ -1,21 +1,32 @@
-x-subClassOf: http://schema.org/CreativeWork
+title: MarketingProgram
 description: A collection of pre-defined activities which take place over a period of time or in a regular, ongoing schedule.
-type: object
 allOf:
-  - $ref: CreativeWork.yaml
-  - type: object
+  - $ref: Thing.yaml
+  - x-subClassOf: Organization
     properties:
       type:
-        type: string
-        description: MarketingProgram
         enum:
           - MarketingProgram
-        example: MarketingProgram
+      
+      name:
+        type: string
+        description: name of the item
+        example: Market Activity Report 508 Homewood Ave
+      
       member:
-        type: array
         x-range: ProgramMembership
+        type: array
         items:
           $ref: ProgramMembership.yaml
-    example:
-      type: MarketingProgram
-      name: My Marketing Program
+
+      creator:
+        description: creator / author of the item
+        type: string
+        format: uri
+        example: http://{user}.example.com/profile/card#me
+
+      dateCreated:
+        $ref: dateCreated.yaml
+
+      dateModified:
+        $ref: dateModified.yaml

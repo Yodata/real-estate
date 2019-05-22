@@ -9,3 +9,5 @@ subscribe:
   - $ref: question.yaml
   - $ref: register.yaml
   - $ref: showingrequest.yaml
+  - $ref: propertysave.yaml
+  - $ref: propertysearchsave.yaml

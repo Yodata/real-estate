@@ -1,0 +1,22 @@
+x-title: memberadd
+x-scope: realestate/marketingprogram#
+summary: a program member was added by the agent
+payload:
+  allOf:
+    - $ref: ../base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/marketingprogram#memberadd
+        data:
+          allOf:
+          - $ref: ../AddAction.yaml
+          - properties:
+              object:
+                $ref: ../ProgramMembership.yaml
+              targetCollection:
+                example:
+                  type: MarketingProgram
+                  id: null
+                  identifier:
+                    vendornameid: 1234

@@ -25,19 +25,16 @@ an agent, office or organization profile was added
   "topic": "realestate/profile#add",
   "data": {
     "type": "AddAction",
+    "agent": "http://{user}.example.com/profile/card#me",
     "object": {
       "type": "RealEstateAgent",
       "name": "Arya Stark",
       "email": "arya@example.com"
-    },
-    "agent": "http://{user}.example.com/profile/card#me",
-    "instrument": "https://{app}.example.com/profile/card#me"
+    }
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-21T03:26:03Z",
-  "contenttype": "application/json",
-  "@context": "http://realestate.yodata.me/context/v1.json"
+  "time": "2019-05-22T02:19:48Z"
 }
 ```
 
@@ -45,16 +42,13 @@ an agent, office or organization profile was added
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | topic | string! | realestate/profile#add  |
-| data | object! | the event payload <br/>RANGE: [AddAction](/schemas#addaction) |
-| data.type | string! | AddAction  |
+| data | object! |  <br/>RANGE: [AddAction](/schemas#addaction) |
+| data.type | string | AddAction  |
+| data.agent | * |   |
 | data.object | object | the updated profile <br/>RANGE: [RealEstateOrganization](/schemas#realestateorganization),[RealEstateOffice](/schemas#realestateoffice),[RealEstateAgent](/schemas#realestateagent),[Person](/schemas#person) |
-| data.agent | string,object | the direct performer of the action  |
-| data.instrument | * | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
 | source | string&lt;uri&gt;! | the event origin, typically a user  |
 | instrument | string&lt;uri&gt; | event producer, typically an app or service  |
 | time | string&lt;date-time&gt; | when the event was published  |
-| contenttype | string | mimetype of the data property.  default=application/json  |
-| @context | string&lt;uri&gt; | message context used for transforming message content  |
 
 
 ## update
@@ -67,19 +61,16 @@ an agent, office or organization profile was updated
   "topic": "string",
   "data": {
     "type": "UpdateAction",
+    "agent": "http://{user}.example.com/profile/card#me",
     "object": {
       "type": "RealEstateAgent",
       "name": "Arya Stark",
       "email": "arya@example.com"
-    },
-    "agent": "http://{user}.example.com/profile/card#me",
-    "instrument": "https://{app}.example.com/profile/card#me"
+    }
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-21T03:26:03Z",
-  "contenttype": "application/json",
-  "@context": "http://realestate.yodata.me/context/v1.json"
+  "time": "2019-05-22T02:19:48Z"
 }
 ```
 
@@ -87,15 +78,12 @@ an agent, office or organization profile was updated
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | topic | string! | {domain}/{topic}#{event}  |
-| data | object! | the event payload <br/>RANGE: [UpdateAction](/schemas#updateaction) |
-| data.type | string! | UpdateAction  |
+| data | object! |  <br/>RANGE: [UpdateAction](/schemas#updateaction) |
+| data.type | string | UpdateAction  |
+| data.agent | * |   |
 | data.object | object | the updated profile <br/>RANGE: [RealEstateOrganization](/schemas#realestateorganization),[RealEstateOffice](/schemas#realestateoffice),[RealEstateAgent](/schemas#realestateagent),[Person](/schemas#person) |
-| data.agent | string,object | the direct performer of the action  |
-| data.instrument | * | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
 | source | string&lt;uri&gt;! | the event origin, typically a user  |
 | instrument | string&lt;uri&gt; | event producer, typically an app or service  |
 | time | string&lt;date-time&gt; | when the event was published  |
-| contenttype | string | mimetype of the data property.  default=application/json  |
-| @context | string&lt;uri&gt; | message context used for transforming message content  |
 
 

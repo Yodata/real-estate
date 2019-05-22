@@ -37,7 +37,11 @@ properties:
         type: RealEstateAgent
         id: https://user.example.com/profile/card#me
   listingOffice:
-    $ref: RealEstateOffice.yaml
+    allOf:
+    - $ref: RealEstateOffice.yaml
+    - example:
+        type: RealEstateOffice
+        id: https://{office}.example.com/profile/card#me
   image:
     $ref: image.yaml
   url:

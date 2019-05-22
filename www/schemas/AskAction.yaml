@@ -1,26 +1,17 @@
-type: object
-properties:
-  type:
-    type: string
-    enum:
-      - AskAction
-  agent:
-    type: object
-    example:
-      type: Person
-      description: the website visitor
-      name: Charlie Consumer
-      identifier:
-        smarteragentid: 1234
-        salesforceid: 5678
-      email: bob@example.com
-  recipient:
-    type: object
-    example:
-      type: RealEstateAgent
-      id: https://{id}.example.com/profile/card#me
-      description: the one being asked
-      name: Andy Agent
-  text:
-    type: string
-    example: 'What is the meaning of Life?'
+allOf:
+- properties:
+    question:
+      type: object
+      example:
+        type: Question
+        text: What is the meaning of life?
+    recipient:
+      type: string
+      example: https://{user}.example.com/profile/card#me
+- $ref: Action.yaml
+- properties:
+    type:
+      enum:
+        - AskAction
+    
+    

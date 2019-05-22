@@ -13,12 +13,14 @@ Website events
 | :---- | :---------- |
 | [realestate/website#appointmentrequest](#appointmentrequest) | a website vistor has requested an appointment |
 | [realestate/website#propertyoffer](#propertyoffer) | website user makes an offer on a property listing |
-| [realestate/website#propertysearch](#propertysearch) | website visitor (agent) has searched for properties on |
+| [realestate/website#propertysearch](#propertysearch) | a website user has performed a property search |
 | [realestate/website#propertyshare](#propertyshare) | agent shared object with recipient |
 | [realestate/website#propertyview](#propertyview) | website user (agent) viewed an (object) on website (instrument) |
 | [realestate/website#question](#question) | a website visitor has asked a question |
 | [realestate/website#register](#register) | a website visitor has registered |
 | [realestate/website#showingrequest](#showingrequest) | a website visitor has requested a property showing |
+| [realestate/website#propertysave](#propertysave) | website user (agent) saved a property |
+| [realestate/website#propertysearchsave](#propertysearchsave) | website user (agent) saved a propertysearch (object) |
 
 
 ## appointmentrequest
@@ -31,11 +33,17 @@ a website vistor has requested an appointment
   "topic": "realestate/website#appointmentrequest",
   "data": {
     "type": "AppointmentRequest",
+    "agent": {
+      "type": "Person",
+      "name": "Bob",
+      "email": "bob@example.com",
+      "telephone": "1+000-867-5309",
+      "identifier": {
+        "vendornameuserid": "abc123"
+      }
+    },
     "object": {
       "type": "Comment",
-      "id": "http://example.com",
-      "name": "string",
-      "url": "http://example.com",
       "text": "Winter is coming",
       "author": {
         "type": "Person",
@@ -46,23 +54,11 @@ a website vistor has requested an appointment
         "id": "http://example.com/listing/1"
       }
     },
-    "agent": {
-      "type": "Person",
-      "name": "Bob",
-      "email": "bob@example.com",
-      "telephone": "1+000-867-5309",
-      "identifier": {
-        "vendornameuserid": "abc123"
-      }
-    },
-    "instrument": "https://{app}.example.com/profile/card#me",
     "recipient": "http://{agent}.example.com/profile/card#me"
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-21T03:26:03Z",
-  "contenttype": "application/json",
-  "@context": "http://realestate.yodata.me/context/v1.json"
+  "time": "2019-05-22T02:19:48Z"
 }
 ```
 
@@ -70,17 +66,14 @@ a website vistor has requested an appointment
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | topic | string! | realestate/website#appointmentrequest  |
-| data | object! | the event payload  |
-| data.type | string! | the action type  |
-| data.object | object | The object upon which the action is carried out  |
+| data | object! |   |
+| data.type | string |   |
 | data.agent | object | a website user/visitor <br/>RANGE: [Person](/schemas#person) |
-| data.instrument | * | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
+| data.object | * |   |
 | data.recipient | * | the request recipient <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
 | source | string&lt;uri&gt;! | the event origin, typically a user  |
 | instrument | string&lt;uri&gt; | event producer, typically an app or service  |
 | time | string&lt;date-time&gt; | when the event was published  |
-| contenttype | string | mimetype of the data property.  default=application/json  |
-| @context | string&lt;uri&gt; | message context used for transforming message content  |
 
 
 ## propertyoffer
@@ -93,10 +86,6 @@ website user makes an offer on a property listing
   "topic": "realestate/website#propertyoffer",
   "data": {
     "type": "OfferAction",
-    "object": {
-      "type": "RealEstateListing",
-      "id": "http://example.com/12345"
-    },
     "agent": {
       "type": "Person",
       "name": "Bob",
@@ -106,10 +95,10 @@ website user makes an offer on a property listing
         "vendornameuserid": "abc123"
       }
     },
-    "instrument": "https://{app}.example.com/profile/card#me",
-    "id": "http://example.com",
-    "name": "string",
-    "url": "http://example.com",
+    "object": {
+      "type": "RealEstateListing",
+      "id": "http://example.com/12345"
+    },
     "recipient": {
       "id": "http://user.example.com/profile/card#me"
     },
@@ -123,9 +112,7 @@ website user makes an offer on a property listing
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-21T03:26:03Z",
-  "contenttype": "application/json",
-  "@context": "http://realestate.yodata.me/context/v1.json"
+  "time": "2019-05-22T02:19:48Z"
 }
 ```
 
@@ -135,24 +122,18 @@ website user makes an offer on a property listing
 | topic | string! | realestate/website#propertyoffer  |
 | data | object! | an agent makes an offer to buy the object  |
 | data.type | string! | OfferAction  |
-| data.object | object | reference to the item on which the offer is being made  |
 | data.agent | object | a website user/visitor <br/>RANGE: [Person](/schemas#person) |
-| data.instrument | * | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
-| data.id | string&lt;uri&gt; | Linked-Data uri  |
-| data.name | string | the name of the item.  |
-| data.url | string&lt;uri&gt; | a public href that is clearly and uniquely associated with the item.  |
+| data.object | * | reference to the item on which the offer is being made  |
 | data.recipient | object | the offer recipient <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
 | data.offerPrice | object | a price offered for transfer of ownership of an item <br/>RANGE: [PriceSpecification](/schemas#pricespecification) |
 | source | string&lt;uri&gt;! | the event origin, typically a user  |
 | instrument | string&lt;uri&gt; | event producer, typically an app or service  |
 | time | string&lt;date-time&gt; | when the event was published  |
-| contenttype | string | mimetype of the data property.  default=application/json  |
-| @context | string&lt;uri&gt; | message context used for transforming message content  |
 
 
 ## propertysearch
 
-website visitor (agent) has searched for properties on
+a website user has performed a property search
 
 
 ```json
@@ -160,6 +141,15 @@ website visitor (agent) has searched for properties on
   "topic": "realestate/website#propertysearch",
   "data": {
     "type": "SearchAction",
+    "agent": {
+      "type": "Person",
+      "name": "Bob",
+      "email": "bob@example.com",
+      "telephone": "1+000-867-5309",
+      "identifier": {
+        "vendornameuserid": "abc123"
+      }
+    },
     "object": {
       "type": "PropertySearchArguments",
       "price": {
@@ -192,23 +182,11 @@ website visitor (agent) has searched for properties on
         "postalCode": "10010",
         "addressCountry": "usa"
       }
-    },
-    "agent": {
-      "type": "Person",
-      "name": "Bob",
-      "email": "bob@example.com",
-      "telephone": "1+000-867-5309",
-      "identifier": {
-        "vendornameuserid": "abc123"
-      }
-    },
-    "instrument": "https://{app}.example.com/profile/card#me"
+    }
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-21T03:26:03Z",
-  "contenttype": "application/json",
-  "@context": "http://realestate.yodata.me/context/v1.json"
+  "time": "2019-05-22T02:19:48Z"
 }
 ```
 
@@ -216,16 +194,13 @@ website visitor (agent) has searched for properties on
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | topic | string! | realestate/website#propertysearch  |
-| data | object! | the event payload  |
-| data.type | string! | the action type  |
-| data.object | object | The object upon which the action is carried out <br/>RANGE: [PropertySearchArguments](/schemas#propertysearcharguments) |
+| data | object! |   |
+| data.type | string! | Linked-Data (@type)  |
 | data.agent | object | a website user/visitor <br/>RANGE: [Person](/schemas#person) |
-| data.instrument | object | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
+| data.object | object |  <br/>RANGE: [PropertySearchArguments](/schemas#propertysearcharguments) |
 | source | string&lt;uri&gt;! | the event origin, typically a user  |
 | instrument | string&lt;uri&gt; | event producer, typically an app or service  |
 | time | string&lt;date-time&gt; | when the event was published  |
-| contenttype | string | mimetype of the data property.  default=application/json  |
-| @context | string&lt;uri&gt; | message context used for transforming message content  |
 
 
 ## propertyshare
@@ -238,7 +213,6 @@ agent shared object with recipient
   "topic": "realestate/website#propertyshare",
   "data": {
     "type": "ShareAction",
-    "object": {},
     "agent": {
       "type": "Person",
       "name": "Bob",
@@ -248,13 +222,14 @@ agent shared object with recipient
         "vendornameuserid": "abc123"
       }
     },
-    "instrument": "https://{app}.example.com/profile/card#me"
+    "object": {
+      "type": "RealEstateListing",
+      "url": "http://example.com/listing/122"
+    }
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-21T03:26:03Z",
-  "contenttype": "application/json",
-  "@context": "http://realestate.yodata.me/context/v1.json"
+  "time": "2019-05-22T02:19:48Z"
 }
 ```
 
@@ -262,16 +237,13 @@ agent shared object with recipient
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | topic | string! | realestate/website#propertyshare  |
-| data | object! | the event payload  |
-| data.type | string! | the action type  |
-| data.object | object | The object upon which the action is carried out  |
+| data | object! |   |
+| data.type | string |   |
 | data.agent | object | a website user/visitor <br/>RANGE: [Person](/schemas#person) |
-| data.instrument | * | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
+| data.object | * |  <br/>RANGE: [RealEstateListing](/schemas#realestatelisting) |
 | source | string&lt;uri&gt;! | the event origin, typically a user  |
 | instrument | string&lt;uri&gt; | event producer, typically an app or service  |
 | time | string&lt;date-time&gt; | when the event was published  |
-| contenttype | string | mimetype of the data property.  default=application/json  |
-| @context | string&lt;uri&gt; | message context used for transforming message content  |
 
 
 ## propertyview
@@ -284,7 +256,6 @@ website user (agent) viewed an (object) on website (instrument)
   "topic": "realestate/website#propertyview",
   "data": {
     "type": "ViewAction",
-    "object": {},
     "agent": {
       "type": "Person",
       "name": "Bob",
@@ -293,14 +264,11 @@ website user (agent) viewed an (object) on website (instrument)
       "identifier": {
         "vendornameuserid": "abc123"
       }
-    },
-    "instrument": "https://{app}.example.com/profile/card#me"
+    }
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-21T03:26:03Z",
-  "contenttype": "application/json",
-  "@context": "http://realestate.yodata.me/context/v1.json"
+  "time": "2019-05-22T02:19:48Z"
 }
 ```
 
@@ -308,16 +276,12 @@ website user (agent) viewed an (object) on website (instrument)
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | topic | string! | realestate/website#propertyview  |
-| data | object! | the event payload  |
-| data.type | string! | the action type  |
-| data.object | object | The object upon which the action is carried out  |
+| data | object! |   |
+| data.type | string |   |
 | data.agent | object | a website user/visitor <br/>RANGE: [Person](/schemas#person) |
-| data.instrument | * | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
 | source | string&lt;uri&gt;! | the event origin, typically a user  |
 | instrument | string&lt;uri&gt; | event producer, typically an app or service  |
 | time | string&lt;date-time&gt; | when the event was published  |
-| contenttype | string | mimetype of the data property.  default=application/json  |
-| @context | string&lt;uri&gt; | message context used for transforming message content  |
 
 
 ## question
@@ -329,8 +293,7 @@ a website visitor has asked a question
 {
   "topic": "realestate/website#question",
   "data": {
-    "type": "Action",
-    "object": {},
+    "type": "AskAction",
     "agent": {
       "type": "Person",
       "name": "Bob",
@@ -338,15 +301,19 @@ a website visitor has asked a question
       "telephone": "1+000-867-5309",
       "identifier": {
         "vendornameuserid": "abc123"
-      }
+      },
+      "id": "http://{user}.example.com/profile/card#me"
     },
-    "instrument": "https://{app}.example.com/profile/card#me"
+    "question": {
+      "type": "Question",
+      "text": "What is the meaning of life?"
+    },
+    "recipient": "https://{user}.example.com/profile/card#me",
+    "object": {}
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-21T03:26:03Z",
-  "contenttype": "application/json",
-  "@context": "http://realestate.yodata.me/context/v1.json"
+  "time": "2019-05-22T02:19:48Z"
 }
 ```
 
@@ -354,16 +321,15 @@ a website visitor has asked a question
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | topic | string! | {domain}/{topic}#{event}  |
-| data | object! | the event payload  |
+| data | object! |   |
 | data.type | string! | the action type  |
+| data.agent | object | the direct performer of the action <br/>RANGE: [Person](/schemas#person) |
+| data.question | object |   |
+| data.recipient | string |   |
 | data.object | object | The object upon which the action is carried out  |
-| data.agent | object | a website user/visitor <br/>RANGE: [Person](/schemas#person) |
-| data.instrument | * | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
 | source | string&lt;uri&gt;! | the event origin, typically a user  |
 | instrument | string&lt;uri&gt; | event producer, typically an app or service  |
 | time | string&lt;date-time&gt; | when the event was published  |
-| contenttype | string | mimetype of the data property.  default=application/json  |
-| @context | string&lt;uri&gt; | message context used for transforming message content  |
 
 
 ## register
@@ -375,8 +341,7 @@ a website visitor has registered
 {
   "topic": "realestate/website#register",
   "data": {
-    "type": "Action",
-    "object": {},
+    "type": "string",
     "agent": {
       "type": "Person",
       "name": "Bob",
@@ -385,14 +350,11 @@ a website visitor has registered
       "identifier": {
         "vendornameuserid": "abc123"
       }
-    },
-    "instrument": "https://{app}.example.com/profile/card#me"
+    }
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-21T03:26:03Z",
-  "contenttype": "application/json",
-  "@context": "http://realestate.yodata.me/context/v1.json"
+  "time": "2019-05-22T02:19:48Z"
 }
 ```
 
@@ -400,16 +362,12 @@ a website visitor has registered
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | topic | string! | {domain}/{topic}#{event}  |
-| data | object! | the event payload  |
-| data.type | string! | the action type  |
-| data.object | object | The object upon which the action is carried out  |
+| data | object! |   |
+| data.type | string |   |
 | data.agent | object | a website user/visitor <br/>RANGE: [Person](/schemas#person) |
-| data.instrument | * | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
 | source | string&lt;uri&gt;! | the event origin, typically a user  |
 | instrument | string&lt;uri&gt; | event producer, typically an app or service  |
 | time | string&lt;date-time&gt; | when the event was published  |
-| contenttype | string | mimetype of the data property.  default=application/json  |
-| @context | string&lt;uri&gt; | message context used for transforming message content  |
 
 
 ## showingrequest
@@ -421,8 +379,45 @@ a website visitor has requested a property showing
 {
   "topic": "realestate/website#showingrequest",
   "data": {
-    "type": "Action",
-    "object": {},
+    "type": "string",
+    "agent": {
+      "type": "Person",
+      "name": "Bob",
+      "email": "bob@example.com",
+      "telephone": "1+000-867-5309",
+      "identifier": {
+        "vendornameuserid": "abc123"
+      }
+    }
+  },
+  "source": "http://{user}.example.com/profile/card#me",
+  "instrument": "http://{supercrm}.example.com/profile/card#me",
+  "time": "2019-05-22T02:19:48Z"
+}
+```
+
+
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | {domain}/{topic}#{event}  |
+| data | object! |   |
+| data.type | string |   |
+| data.agent | object | a website user/visitor <br/>RANGE: [Person](/schemas#person) |
+| source | string&lt;uri&gt;! | the event origin, typically a user  |
+| instrument | string&lt;uri&gt; | event producer, typically an app or service  |
+| time | string&lt;date-time&gt; | when the event was published  |
+
+
+## propertysave
+
+website user (agent) saved a property
+
+
+```json
+{
+  "topic": "realestate/website#propertysave",
+  "data": {
+    "type": "SaveAction",
     "agent": {
       "type": "Person",
       "name": "Bob",
@@ -432,29 +427,99 @@ a website visitor has requested a property showing
         "vendornameuserid": "abc123"
       }
     },
-    "instrument": "https://{app}.example.com/profile/card#me"
+    "object": {
+      "type": "PropertyListing",
+      "url": "http://example.com/property/123"
+    }
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-21T03:26:03Z",
-  "contenttype": "application/json",
-  "@context": "http://realestate.yodata.me/context/v1.json"
+  "time": "2019-05-22T02:19:48Z"
 }
 ```
 
 
 | Name | Type | Description |
 |:-----| :--- | :---------- |
-| topic | string! | {domain}/{topic}#{event}  |
-| data | object! | the event payload  |
-| data.type | string! | the action type  |
-| data.object | object | The object upon which the action is carried out  |
+| topic | string! | realestate/website#propertysave  |
+| data | object! |   |
+| data.type | string |   |
 | data.agent | object | a website user/visitor <br/>RANGE: [Person](/schemas#person) |
-| data.instrument | * | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
+| data.object | object | a real estate property listed for sale <br/>RANGE: [PropertyListing](/schemas#propertylisting) |
 | source | string&lt;uri&gt;! | the event origin, typically a user  |
 | instrument | string&lt;uri&gt; | event producer, typically an app or service  |
 | time | string&lt;date-time&gt; | when the event was published  |
-| contenttype | string | mimetype of the data property.  default=application/json  |
-| @context | string&lt;uri&gt; | message context used for transforming message content  |
+
+
+## propertysearchsave
+
+website user (agent) saved a propertysearch (object)
+
+
+```json
+{
+  "topic": "realestate/website#propertysearchsave",
+  "data": {
+    "type": "SaveAction",
+    "agent": {
+      "type": "Person",
+      "name": "Bob",
+      "email": "bob@example.com",
+      "telephone": "1+000-867-5309",
+      "identifier": {
+        "vendornameuserid": "abc123"
+      }
+    },
+    "object": {
+      "type": "PropertySearchArguments",
+      "price": {
+        "value": 0,
+        "minValue": 0,
+        "maxValue": 0,
+        "unitCode": "string",
+        "unitText": "string"
+      },
+      "bedrooms": {
+        "value": 0,
+        "minValue": 0,
+        "maxValue": 0,
+        "unitCode": "string",
+        "unitText": "string"
+      },
+      "bathrooms": {
+        "value": 0,
+        "minValue": 0,
+        "maxValue": 0,
+        "unitCode": "string",
+        "unitText": "string"
+      },
+      "location": {
+        "type": "PostalAddress",
+        "streetAddress": "1007 Mountain Gate Rd",
+        "postOfficeBoxNumber": "Box 1234",
+        "addressRegion": "New Jersey",
+        "addressLocality": "Gotham City",
+        "postalCode": "10010",
+        "addressCountry": "usa"
+      }
+    }
+  },
+  "source": "http://{user}.example.com/profile/card#me",
+  "instrument": "http://{supercrm}.example.com/profile/card#me",
+  "time": "2019-05-22T02:19:48Z"
+}
+```
+
+
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | realestate/website#propertysearchsave  |
+| data | object! |   |
+| data.type | string |   |
+| data.agent | object | a website user/visitor <br/>RANGE: [Person](/schemas#person) |
+| data.object | object |  <br/>RANGE: [PropertySearchArguments](/schemas#propertysearcharguments) |
+| source | string&lt;uri&gt;! | the event origin, typically a user  |
+| instrument | string&lt;uri&gt; | event producer, typically an app or service  |
+| time | string&lt;date-time&gt; | when the event was published  |
 
 

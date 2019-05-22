@@ -4,11 +4,11 @@
   "version": "0.0.2",
   "main": "dist",
   "scripts": {
-    "clean": "rm -rf src-content/_/",
     "generate": "npx ag -t template -o src-content/_/ src-content/asyncapi.yaml docz",
     "dev": "yarn generate && docz dev",
     "build": "docz build",
-    "now-build": "yarn build"
+    "now-build": "yarn build",
+    "clean": "rm -rf src-content/_/"
   },
   "dependencies": {},
   "devDependencies": {

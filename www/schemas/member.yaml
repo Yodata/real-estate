@@ -1,4 +1,5 @@
-description: describes members and roles for this organization.
+title: member
+description: A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
 type: array
 x-range:
   - OrganizationRole

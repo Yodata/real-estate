@@ -56,13 +56,8 @@ topics:
     $ref: schemas/lead/topic.yaml
 
   marketing:
-    x-summary: Marketing events
-    subscribe:
-      oneOf:
-        - $ref: message/marketingprogram.create.yaml
-        - $ref: message/marketingprogram.memberadd.yaml
-        - $ref: message/marketingprogram.memberremove.yaml
-
+    $ref: schemas/marketing/topic.yaml
+    
   profile:
     $ref: schemas/profile/topic.yaml
   

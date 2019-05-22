@@ -8,3 +8,5 @@ payload:
       topic:
         enum:
         - realestate/website#question
+      data:
+        $ref: ../AskAction.yaml

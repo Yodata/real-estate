@@ -1,0 +1,23 @@
+x-title: create
+x-scope: realestate/marketingprogram#
+summary: a marketing program has been created
+payload:
+  allOf:
+    - $ref: ../base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/marketingprogram#create
+        data:
+          allOf:
+          - $ref: ../CreateAction.yaml
+          - properties:
+              object:
+                $ref: ../MarketingProgram.yaml
+                example:
+                  type: MarketingProgram
+                  name: my awesome marketing program
+              agent:
+                type: string
+                example: http://{agent}.example.com/profile/card#me
+          

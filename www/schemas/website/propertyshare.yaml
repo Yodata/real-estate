@@ -14,3 +14,8 @@ payload:
           type:
             enum:
             - ShareAction
+          object:
+            x-range: RealEstateListing
+            example:
+              type: RealEstateListing
+              url: http://example.com/listing/122

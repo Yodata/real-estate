@@ -1,0 +1,25 @@
+x-title: memberremove
+x-scope: realestate/marketingprogram#
+summary: a program member was removed by the agent
+payload:
+  allOf:
+    - $ref: ../base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/marketingprogram#memberremove
+        data:
+          allOf:
+          - $ref: ../RemoveAction.yaml
+          - properties:
+              object:
+                $ref: ../ProgramMembership.yaml
+              targetCollection:
+                example:
+                  type: MarketingProgram
+                  identifier:
+                    vendornameid: abc123
+              agent:
+                example:
+                  type: RealEstateAgent
+                  id: http://{user}.example.com/profile/card#me

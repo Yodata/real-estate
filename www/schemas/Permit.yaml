@@ -4,22 +4,25 @@ properties:
   type:
     type: string
     description: Permit type.
+    enum:
+    - Permit
   name:
     type: string
     description: Common or display value of the Permit.
+    example: License to Kill
   issuedBy:
-    x-range: Organization
     type: object
+    x-range: Organization
     description: The issuing authority
     example:
       type: GovernmentOrganization
-      name: California
+      name: United Kingdom
   issuedThrough:
-    x-range: Service
-    $ref: Service.yaml
+    type: object
+    description: the service through which the permit was granted
     example:
       type: Service
-      name: Department of Real Estate
+      name: MI6
   validIn:
     x-range: Place
     $ref: Place.yaml

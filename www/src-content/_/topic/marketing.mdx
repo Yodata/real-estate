@@ -11,12 +11,12 @@ Marketing events
 
 | Event | Description |
 | :---- | :---------- |
-| [realestatemarketingprogram#create](#marketingprogram#create) | a marketing program has been created |
-| [realestatemarketingprogram#memberadd](#marketingprogram#memberadd) | a program member was added by the agent (Work In Progress) |
-| [realestatemarketingprogram#memberremove](#marketingprogram#memberremove) | a member was removed by the agent |
+| [realestate/marketingprogram#create](#create) | a marketing program has been created |
+| [realestate/marketingprogram#memberadd](#memberadd) | a program member was added by the agent |
+| [realestate/marketingprogram#memberremove](#memberremove) | a program member was removed by the agent |
 
 
-## marketingprogram#create
+## create
 
 a marketing program has been created
 
@@ -26,16 +26,31 @@ a marketing program has been created
   "topic": "realestate/marketingprogram#create",
   "data": {
     "type": "CreateAction",
-    "agent": null,
-    "object": {},
-    "instrument": "https://{app}.example.com/profile/card#me",
-    "actionStatus": "CompletedActionStatus"
+    "object": {
+      "type": "MarketingProgram",
+      "name": "Market Activity Report 508 Homewood Ave",
+      "member": [
+        {
+          "type": "ProgramMembership",
+          "roleName": "Owner",
+          "memberOf": null,
+          "member": {
+            "type": "Person",
+            "id": "http://{user}.example.com/profile/card#me"
+          },
+          "startDate": "2019-05-22T02:19:48Z",
+          "endDate": "2019-05-22T02:19:48Z"
+        }
+      ],
+      "creator": "http://{user}.example.com/profile/card#me",
+      "dateCreated": "2019-05-22T02:19:48Z",
+      "dateModified": "2019-05-22T02:19:48Z"
+    },
+    "agent": "http://{agent}.example.com/profile/card#me"
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-21T03:26:03Z",
-  "contenttype": "application/json",
-  "@context": "http://realestate.yodata.me/context/v1.json"
+  "time": "2019-05-22T02:19:48Z"
 }
 ```
 
@@ -45,20 +60,16 @@ a marketing program has been created
 | topic | string! | {domain}/{topic}#{event}  |
 | data | object! | the object was created by the agent  |
 | data.type | string! | CreateAction  |
-| data.agent | * | the direct performer of the action  |
 | data.object | object | The object upon which the action is carried out  |
-| data.instrument | * | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
-| data.actionStatus | string | disposition of the Action when the event was created  |
+| data.agent | string | the direct performer of the action  |
 | source | string&lt;uri&gt;! | the event origin, typically a user  |
 | instrument | string&lt;uri&gt; | event producer, typically an app or service  |
 | time | string&lt;date-time&gt; | when the event was published  |
-| contenttype | string | mimetype of the data property.  default=application/json  |
-| @context | string&lt;uri&gt; | message context used for transforming message content  |
 
 
-## marketingprogram#memberadd
+## memberadd
 
-a program member was added by the agent (Work In Progress)
+a program member was added by the agent
 
 
 ```json
@@ -67,22 +78,22 @@ a program member was added by the agent (Work In Progress)
   "data": {
     "type": "AddAction",
     "object": {
-      "type": "ProgramMembership",
-      "roleName": "Owner",
-      "member": {
-        "type": "Person",
-        "email": "bob@example.com"
-      },
-      "memberOf": null,
-      "startDate": "2019-05-21T03:26:03Z",
-      "endDate": "2019-05-21T03:26:03Z"
+      "type": "Contact",
+      "name": "Adam Addme"
+    },
+    "agent": "http://{user}.example.com/profile/card#me",
+    "instrument": "http://{app}.example.com/profile/card#me",
+    "targetCollection": {
+      "type": "MarketingProgram",
+      "id": null,
+      "identifier": {
+        "vendornameid": 1234
+      }
     }
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-21T03:26:03Z",
-  "contenttype": "application/json",
-  "@context": "http://realestate.yodata.me/context/v1.json"
+  "time": "2019-05-22T02:19:48Z"
 }
 ```
 
@@ -90,19 +101,20 @@ a program member was added by the agent (Work In Progress)
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | topic | string! | {domain}/{topic}#{event}  |
-| data | object! | the message payload  |
-| data.type | string |   |
+| data | object! |   |
+| data.type | string! | AddAction  |
 | data.object | object | describes membership relation between a member (Person) and a MarketingProgram  |
+| data.agent | * | the direct performer of the action  |
+| data.instrument | * |   |
+| data.targetCollection | * | the collection receiving the added object  |
 | source | string&lt;uri&gt;! | the event origin, typically a user  |
 | instrument | string&lt;uri&gt; | event producer, typically an app or service  |
 | time | string&lt;date-time&gt; | when the event was published  |
-| contenttype | string | mimetype of the data property.  default=application/json  |
-| @context | string&lt;uri&gt; | message context used for transforming message content  |
 
 
-## marketingprogram#memberremove
+## memberremove
 
-a member was removed by the agent
+a program member was removed by the agent
 
 
 ```json
@@ -113,24 +125,28 @@ a member was removed by the agent
     "object": {
       "type": "ProgramMembership",
       "roleName": "Owner",
+      "memberOf": "https://{organization}.example.com",
       "member": {
         "type": "Person",
-        "email": "bob@example.com"
+        "id": "http://{user}.example.com/profile/card#me"
       },
-      "memberOf": null,
-      "startDate": "2019-05-21T03:26:03Z",
-      "endDate": "2019-05-21T03:26:03Z"
+      "startDate": "2019-05-22T02:19:48Z",
+      "endDate": "2019-05-22T02:19:48Z"
+    },
+    "agent": {
+      "type": "RealEstateAgent",
+      "id": "http://{user}.example.com/profile/card#me"
     },
     "targetCollection": {
       "type": "MarketingProgram",
-      "name": "My Marketing Program"
+      "identifier": {
+        "vendornameid": "abc123"
+      }
     }
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-21T03:26:03Z",
-  "contenttype": "application/json",
-  "@context": "http://realestate.yodata.me/context/v1.json"
+  "time": "2019-05-22T02:19:48Z"
 }
 ```
 
@@ -138,14 +154,13 @@ a member was removed by the agent
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | topic | string! | {domain}/{topic}#{event}  |
-| data | object! | the message payload  |
-| data.type | * |   |
+| data | object! |   |
+| data.type | string! | the action type  |
 | data.object | object | describes membership relation between a member (Person) and a MarketingProgram  |
-| data.targetCollection | * |   |
+| data.agent | * | the direct performer of the action  |
+| data.targetCollection | * | the collection from which the item is being removed  |
 | source | string&lt;uri&gt;! | the event origin, typically a user  |
 | instrument | string&lt;uri&gt; | event producer, typically an app or service  |
 | time | string&lt;date-time&gt; | when the event was published  |
-| contenttype | string | mimetype of the data property.  default=application/json  |
-| @context | string&lt;uri&gt; | message context used for transforming message content  |
 
 

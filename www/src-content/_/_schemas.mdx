@@ -11,7 +11,6 @@ name: Objects
 ```json
 {
   "type": "AppointmentRequest",
-  "agent": null,
   "object": {
     "type": "Comment",
     "text": "Winter is coming",
@@ -24,8 +23,10 @@ name: Objects
       "id": "http://example.com/listing/1"
     }
   },
-  "instrument": "https://{app}.example.com/profile/card#me",
-  "actionStatus": "CompletedActionStatus"
+  "agent": {
+    "type": "Person",
+    "id": "http://{user}.example.com/profile/card#me"
+  }
 }
 ```
 
@@ -33,17 +34,12 @@ name: Objects
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | type | string! | the action type  |
-| agent | * | the direct performer of the action  |
 | object | object | A comment on an item.  |
 | object.type | string! | Comment  |
-| object.id | string&lt;uri&gt; | Linked-Data uri  |
-| object.name | string | the name of the item.  |
-| object.url | string&lt;uri&gt; | a public href that is clearly and uniquely associated with the item.  |
 | object.author | [Person](/schemas#person) |   |
 | object.text | string | the comment content  |
 | object.about | object | the subject of the item  |
-| instrument | * | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
-| actionStatus | string | disposition of the Action when the event was created  |
+| agent | * | the direct performer of the action  |
 
 ## Contact
 a contact
@@ -51,9 +47,7 @@ a contact
 ```json
 {
   "type": "Contact",
-  "id": "http://example.com",
   "name": "string",
-  "url": "http://example.com",
   "givenName": "Bruce",
   "familyName": "Wayne",
   "jobTitle": "Jefe",
@@ -81,7 +75,7 @@ a contact
       "addressCountry": "usa"
     }
   ],
-  "birthDate": "2019-05-21",
+  "birthDate": "2019-05-22",
   "leadSource": {
     "type": "RealEstateOrganization",
     "id": "https://{affiliate}.example.com/profile/card#me"
@@ -93,9 +87,7 @@ a contact
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | type | string! | Contact  |
-| id | string&lt;uri&gt; | Linked-Data uri  |
 | name | string | Full name of the person.  |
-| url | string&lt;uri&gt; | a public href that is clearly and uniquely associated with the item.  |
 | givenName | string | First Name  |
 | familyName | string | Last Name  |
 | jobTitle | string | The Job Title of the person.  |
@@ -151,14 +143,15 @@ a lead offered or assigned by the agent to one or more recipients
   },
   "recipient": "http://{user}.example.com/profile/card#me",
   "sender": "http://{provider}.example.com/profile/card#me",
-  "dateSent": "2019-05-21T03:26:03Z",
+  "dateSent": "2019-05-22T02:19:48Z",
   "activity": [
     {
-      "type": "string",
-      "agent": null,
+      "type": "Action",
       "object": {},
-      "instrument": "https://{app}.example.com/profile/card#me",
-      "actionStatus": "CompletedActionStatus"
+      "agent": {
+        "type": "Person",
+        "id": "http://{user}.example.com/profile/card#me"
+      }
     }
   ]
 }
@@ -174,42 +167,30 @@ a lead offered or assigned by the agent to one or more recipients
 | dateSent | string&lt;date-time&gt; | the date the lead was sent  |
 | activity | [object] |   |
 | activity.type | string! | the action type  |
-| activity.agent | * | the direct performer of the action  |
 | activity.object | object | The object upon which the action is carried out  |
-| activity.instrument | * | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
-| activity.actionStatus | string | disposition of the Action when the event was created  |
+| activity.agent | * | the direct performer of the action  |
 
 ## MarketingProgram
 ```json
 {
   "type": "MarketingProgram",
-  "name": "My Marketing Program"
-}
-```
-
-
-| Name | Type | Description |
-|:-----| :--- | :---------- |
-| type | string! | MarketingProgram  |
-| id | string&lt;uri&gt; | Linked-Data uri  |
-| name | string | name of the work.  |
-| url | string&lt;uri&gt; | a public href that is clearly and uniquely associated with the item.  |
-| description | string | description of the item  |
-| creator | string&lt;uri&gt; | creator / author of the work  |
-| dateCreated | string&lt;date-time&gt; | The date on which the CreativeWork was created or the item was added to a DataFeed.  |
-| dateModified | string&lt;date-time&gt; | The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.  |
-| member | [object] |  <br/>RANGE: [ProgramMembership](/schemas#programmembership) |
-
-## MediaObject
-```json
-{
-  "type": "MediaObject",
-  "id": "http://user.example.com/public/logo/fileName.zip",
-  "name": "fileName.zip",
-  "url": "http://user.example.com/public/profile/image.jpg",
-  "encodingFormat": "application/zip",
-  "content": "string",
-  "about": "http://user.example.com/profile/card#me"
+  "name": "Market Activity Report 508 Homewood Ave",
+  "member": [
+    {
+      "type": "ProgramMembership",
+      "roleName": "Owner",
+      "memberOf": null,
+      "member": {
+        "type": "Person",
+        "id": "http://{user}.example.com/profile/card#me"
+      },
+      "startDate": "2019-05-22T02:19:48Z",
+      "endDate": "2019-05-22T02:19:48Z"
+    }
+  ],
+  "creator": "http://{user}.example.com/profile/card#me",
+  "dateCreated": "2019-05-22T02:19:48Z",
+  "dateModified": "2019-05-22T02:19:48Z"
 }
 ```
 
@@ -217,30 +198,53 @@ a lead offered or assigned by the agent to one or more recipients
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | type | string! | Linked-Data (@type)  |
-| id | string&lt;uri&gt; | the URL to access the item.  |
+| name | string | name of the item  |
+| member | [*] |  <br/>RANGE: [ProgramMembership](/schemas#programmembership) |
+| creator | string&lt;uri&gt; | creator / author of the item  |
+| dateCreated | string&lt;date-time&gt; | The date on which the item was created.  |
+| dateModified | string&lt;date-time&gt; | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed.  |
+
+## MediaObject
+```json
+{
+  "type": "MediaObject",
+  "id": "http://user.example.com/public/logo/fileName.zip",
+  "name": "fileName.zip",
+  "encodingFormat": "application/zip",
+  "content": "string",
+  "about": "http://user.example.com/profile/card#me",
+  "url": "http://user.example.com/public/profile/image.jpg"
+}
+```
+
+
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| type | string! | Linked-Data (@type)  |
+| id | * | the URL to access the item.  |
 | name | string | the file name of the object.  |
-| url | string&lt;uri&gt; | URL of the image content  |
 | encodingFormat | string | MIME type  |
 | content | string | base64 encoded content  |
 | about | string&lt;uri&gt; | URI to the subject of the image or logo  |
+| url | string&lt;uri&gt; | URL of the image content  |
 
 ## MLSMembership
-Provides additional information in member/memberOf relationships.
+describes a role played by a member and a group or organization.
 
 ```json
 {
   "type": "MLSMembership",
   "roleName": "MLSMember",
-  "member": {
-    "type": "Person",
-    "email": "bob@example.com"
-  },
   "memberOf": {
     "type": "MultipleListingService",
     "name": "GreatScottMLS"
   },
-  "startDate": "2019-05-21T03:26:03Z",
-  "endDate": "2019-05-21T03:26:03Z",
+  "member": {
+    "type": "Person",
+    "id": "http://{user}.example.com/profile/card#me"
+  },
+  "startDate": "2019-05-22T02:19:48Z",
+  "endDate": "2019-05-22T02:19:48Z",
   "memberId": "memberid123"
 }
 ```
@@ -249,11 +253,11 @@ Provides additional information in member/memberOf relationships.
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | type | string | an MLS member relationship  |
-| roleName | string |   |
-| member | * | member object or id <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
-| memberOf | object | reference to the MarketingProgram <br/>RANGE: [MultipleListingService](/schemas#multiplelistingservice) |
-| startDate | string&lt;date-time&gt; | the date the member started the program  |
-| endDate | string&lt;date-time&gt; | the date the program membership ended  |
+| roleName | string | the role name  |
+| memberOf | object | the organization to which the role applies <br/>RANGE: [MultipleListingService](/schemas#multiplelistingservice) |
+| member | string,object | member object or id  |
+| startDate | string&lt;date-time&gt; | date the member began performing this role  |
+| endDate | string&lt;date-time&gt; | date the member stopped performing the role  |
 | memberId | string | the user's MLSID  |
 
 ## MultipleListingService
@@ -270,12 +274,11 @@ an MLS
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | type | string! | MultipleListingService  |
-| id | string&lt;uri&gt; | Linked-Data uri  |
 | name | string | Name or DBA.  |
-| url | string&lt;uri&gt; | primary website/url for the entity.  |
 | telephone | string | Primary phone number.  |
 | faxNumber | string | Primary fax number.  |
 | email | string&lt;email&gt; | Primary email address.  |
+| url | string&lt;uri&gt; | primary website/url for the entity.  |
 | availableLanguage | [object] | A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard. <br/>RANGE: [Language](/schemas#language) |
 | availableLanguage.type | string | Lanuguage  |
 | availableLanguage.name | string | the name of the language  |
@@ -298,9 +301,6 @@ an agent makes an offer to buy the object
 ```json
 {
   "type": "OfferAction",
-  "id": "http://example.com",
-  "name": "string",
-  "url": "http://example.com",
   "object": {
     "type": "RealEstateListing",
     "id": "http://example.com/12345"
@@ -322,9 +322,6 @@ an agent makes an offer to buy the object
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | type | string! | OfferAction  |
-| id | string&lt;uri&gt; | Linked-Data uri  |
-| name | string | the name of the item.  |
-| url | string&lt;uri&gt; | a public href that is clearly and uniquely associated with the item.  |
 | object | * | reference to the item on which the offer is being made  |
 | recipient | object | the offer recipient <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
 | offerPrice | object | a price offered for transfer of ownership of an item <br/>RANGE: [PriceSpecification](/schemas#pricespecification) |
@@ -338,12 +335,11 @@ an agent makes an offer to buy the object
 ```json
 {
   "type": "Organization",
-  "id": "http://example.com",
   "name": "string",
-  "url": "http://example.com",
   "telephone": "079.706.7065 x6341",
   "faxNumber": "(873) 271-4802",
   "email": "user@example.com",
+  "url": "http://example.com",
   "availableLanguage": [
     {
       "type": "Language",
@@ -367,7 +363,6 @@ an agent makes an offer to buy the object
       "type": "DigitalDocument",
       "id": "http://user.example.com/public/logo/fileName.zip",
       "name": "fileName.zip",
-      "url": "http://example.com",
       "encodingFormat": "application/zip",
       "identifier": {},
       "about": "http://user.example.com/profile/card#me"
@@ -378,10 +373,10 @@ an agent makes an offer to buy the object
       "type": "ImageObject",
       "id": "http://user.example.com/public/logo/image.jpg",
       "name": "image.jpg",
-      "url": "http://user.example.com/public/profile/image.jpg",
       "encodingFormat": "image/jpeg",
       "content": "string",
-      "about": "http://user.example.com/profile/card#me"
+      "about": "http://user.example.com/profile/card#me",
+      "url": "http://user.example.com/public/profile/image.jpg"
     }
   ],
   "parentOrganization": [
@@ -394,12 +389,11 @@ an agent makes an offer to buy the object
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | type | string! | Linked-Data (@type)  |
-| id | string&lt;uri&gt; | Linked-Data uri  |
 | name | string | Name or DBA.  |
-| url | string&lt;uri&gt; | primary website/url for the entity.  |
 | telephone | string | Primary phone number.  |
 | faxNumber | string | Primary fax number.  |
 | email | string&lt;email&gt; | Primary email address.  |
+| url | string&lt;uri&gt; | primary website/url for the entity.  |
 | availableLanguage | [object] | A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard. <br/>RANGE: [Language](/schemas#language) |
 | availableLanguage.type | string | Lanuguage  |
 | availableLanguage.name | string | the name of the language  |
@@ -417,19 +411,19 @@ an agent makes an offer to buy the object
 | parentOrganization | [string&lt;uri&gt;] |   |
 
 ## OrganizationRole
-Provides additional information in member/memberOf relationships.
+describes a role played by a member and a group or organization.
 
 ```json
 {
   "type": "OrganizationRole",
   "roleName": "Owner",
+  "memberOf": "https://{organization}.example.com",
   "member": {
     "type": "Person",
-    "email": "bob@example.com"
+    "id": "http://{user}.example.com/profile/card#me"
   },
-  "memberOf": null,
-  "startDate": "2019-05-21T03:26:03Z",
-  "endDate": "2019-05-21T03:26:03Z"
+  "startDate": "2019-05-22T02:19:48Z",
+  "endDate": "2019-05-22T02:19:48Z"
 }
 ```
 
@@ -437,32 +431,29 @@ Provides additional information in member/memberOf relationships.
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | type | string | a role played by the member in the memberOf group  |
-| roleName | string |   |
-| member | * | member object or id <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
-| memberOf | * | reference to the MarketingProgram  |
-| startDate | string&lt;date-time&gt; | the date the member started the program  |
-| endDate | string&lt;date-time&gt; | the date the program membership ended  |
+| roleName | string | the role name  |
+| memberOf | string,object | the organization to which the role applies  |
+| member | string,object | member object or id  |
+| startDate | string&lt;date-time&gt; | date the member began performing this role  |
+| endDate | string&lt;date-time&gt; | date the member stopped performing the role  |
 
 ## Permit
 A permit issued by an organization to an individual or business.
 
 ```json
 {
-  "type": "string",
-  "name": "string",
+  "type": "Permit",
+  "name": "License to Kill",
   "issuedBy": {
     "type": "GovernmentOrganization",
-    "name": "California"
+    "name": "United Kingdom"
   },
   "issuedThrough": {
     "type": "Service",
-    "name": "Department of Real Estate"
+    "name": "MI6"
   },
   "validIn": {
     "type": "string",
-    "id": "http://example.com",
-    "name": "string",
-    "url": "http://example.com",
     "address": {},
     "aggregateRating": {},
     "branchCode": "string",
@@ -485,8 +476,8 @@ A permit issued by an organization to an individual or business.
       {}
     ]
   },
-  "validFrom": "2019-05-21T03:26:03Z",
-  "validUntil": "2019-05-21T03:26:03Z"
+  "validFrom": "2019-05-22T02:19:48Z",
+  "validUntil": "2019-05-22T02:19:48Z"
 }
 ```
 
@@ -496,15 +487,9 @@ A permit issued by an organization to an individual or business.
 | type | string | Permit type.  |
 | name | string | Common or display value of the Permit.  |
 | issuedBy | object | The issuing authority <br/>RANGE: [Organization](/schemas#organization) |
-| issuedThrough | [Service](/schemas#service) | A service provided by an organization. <br/>RANGE: [Service](/schemas#service) |
-| issuedThrough.type | string |   |
-| issuedThrough.name | string | name of the service.  |
-| issuedThrough.areaServed | * |   |
+| issuedThrough | object | the service through which the permit was granted  |
 | validIn | object |   |
 | validIn.type | string! | Linked-Data (@type)  |
-| validIn.id | string&lt;uri&gt; | Linked-Data uri  |
-| validIn.name | string | the name of the item.  |
-| validIn.url | string&lt;uri&gt; | a public href that is clearly and uniquely associated with the item.  |
 | validIn.address | object | PostalAddress <br/>RANGE: [PostalAddress](/schemas#postaladdress) |
 | validIn.aggregateRating | object | AggregateRating -- The overall rating, based on a collection of reviews or ratings, of the item.  |
 | validIn.branchCode | string | A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.  |
@@ -523,9 +508,7 @@ A permit issued by an organization to an individual or business.
 ```json
 {
   "type": "Person",
-  "id": "http://example.com",
   "name": "string",
-  "url": "http://example.com",
   "givenName": "Bruce",
   "familyName": "Wayne",
   "jobTitle": "Jefe",
@@ -553,7 +536,7 @@ A permit issued by an organization to an individual or business.
       "addressCountry": "usa"
     }
   ],
-  "birthDate": "2019-05-21"
+  "birthDate": "2019-05-22"
 }
 ```
 
@@ -561,9 +544,7 @@ A permit issued by an organization to an individual or business.
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | type | string! | Person  |
-| id | string&lt;uri&gt; | Linked-Data uri  |
 | name | string | Full name of the person.  |
-| url | string&lt;uri&gt; | a public href that is clearly and uniquely associated with the item.  |
 | givenName | string | First Name  |
 | familyName | string | Last Name  |
 | jobTitle | string | The Job Title of the person.  |
@@ -591,9 +572,6 @@ A permit issued by an organization to an individual or business.
 ```json
 {
   "type": "string",
-  "id": "http://example.com",
-  "name": "string",
-  "url": "http://example.com",
   "address": {},
   "aggregateRating": {},
   "branchCode": "string",
@@ -622,9 +600,6 @@ A permit issued by an organization to an individual or business.
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | type | string! | Linked-Data (@type)  |
-| id | string&lt;uri&gt; | Linked-Data uri  |
-| name | string | the name of the item.  |
-| url | string&lt;uri&gt; | a public href that is clearly and uniquely associated with the item.  |
 | address | object | PostalAddress <br/>RANGE: [PostalAddress](/schemas#postaladdress) |
 | aggregateRating | object | AggregateRating -- The overall rating, based on a collection of reviews or ratings, of the item.  |
 | branchCode | string | A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.  |
@@ -701,16 +676,19 @@ A physical address.
 | #me.publicTypeIndex | string | shared, discoverable type index  |
 
 ## ProgramMembership
-Provides additional information in member/memberOf relationships.
+describes membership relation between a member (Person) and a MarketingProgram
 
 ```json
 {
   "type": "ProgramMembership",
   "roleName": "Owner",
+  "memberOf": "https://{organization}.example.com",
   "member": {
     "type": "Person",
-    "email": "bob@example.com"
-  }
+    "id": "http://{user}.example.com/profile/card#me"
+  },
+  "startDate": "2019-05-22T02:19:48Z",
+  "endDate": "2019-05-22T02:19:48Z"
 }
 ```
 
@@ -718,11 +696,11 @@ Provides additional information in member/memberOf relationships.
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | type | string | a role played by the member in the memberOf group  |
-| roleName | string |   |
-| member | * | member object or id <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
-| memberOf | * | reference to the MarketingProgram  |
-| startDate | string&lt;date-time&gt; | the date the member started the program  |
-| endDate | string&lt;date-time&gt; | the date the program membership ended  |
+| roleName | string | the role name  |
+| memberOf | string,object | the organization to which the role applies <br/>RANGE: [MarketingProgram](/schemas#marketingprogram) |
+| member | string,object | member object or id  |
+| startDate | string&lt;date-time&gt; | date the member began performing this role  |
+| endDate | string&lt;date-time&gt; | date the member stopped performing the role  |
 
 ## PropertyValue
 a key/value pair, used for maintaining state outside of the current context
@@ -757,9 +735,9 @@ a real estate property listed for sale
     "postalCode": "10010",
     "addressCountry": "usa"
   },
-  "dateListed": "2019-05-21T03:26:03Z",
-  "dateSold": "2019-05-21T03:26:03Z",
-  "dateClosed": "2019-05-21T03:26:03Z",
+  "dateListed": "2019-05-22T02:19:48Z",
+  "dateSold": "2019-05-22T02:19:48Z",
+  "dateClosed": "2019-05-22T02:19:48Z",
   "listingPrice": {
     "type": "PriceSpecification",
     "minPrice": 0,
@@ -773,127 +751,18 @@ a real estate property listed for sale
     "id": "https://user.example.com/profile/card#me"
   },
   "listingOffice": {
-    "type": "RealEstateOrganization",
-    "id": "http://example.com",
-    "name": "string",
-    "url": "http://example.com",
-    "telephone": "079.706.7065 x6341",
-    "faxNumber": "(873) 271-4802",
-    "email": "user@example.com",
-    "availableLanguage": [
-      {
-        "type": "Language",
-        "name": "English",
-        "additionalName": "en"
-      }
-    ],
-    "branchCode": "CA301-001",
-    "contactPoint": [
-      {
-        "type": "ContactPoint",
-        "name": "Relocation",
-        "telephone": "1-245-880-8222",
-        "faxNumber": "958-530-3473",
-        "email": "relocation@example.com"
-      }
-    ],
-    "logo": [
-      {
-        "type": "DigitalDocument",
-        "id": "http://user.example.com/public/logo/fileName.zip",
-        "name": "fileName.zip",
-        "url": "http://example.com",
-        "encodingFormat": "application/zip",
-        "identifier": {},
-        "about": "http://user.example.com/profile/card#me"
-      }
-    ],
-    "image": [
-      {
-        "type": "ImageObject",
-        "id": "http://user.example.com/public/logo/image.jpg",
-        "name": "image.jpg",
-        "url": "http://user.example.com/public/profile/image.jpg",
-        "encodingFormat": "image/jpeg",
-        "content": "string",
-        "about": "http://user.example.com/profile/card#me"
-      }
-    ],
-    "parentOrganization": [
-      "http://example.com"
-    ],
-    "address": {
-      "type": "PostalAddress",
-      "streetAddress": "1007 Mountain Gate Rd",
-      "postOfficeBoxNumber": "Box 1234",
-      "addressRegion": "New Jersey",
-      "addressLocality": "Gotham City",
-      "postalCode": "10010",
-      "addressCountry": "usa"
-    },
-    "subOrganization": [
-      "http://org.example.com/profile/card#me"
-    ],
-    "member": [
-      {
-        "type": "OrganizationRole",
-        "roleName": "Owner",
-        "member": {
-          "type": "Person",
-          "email": "bob@example.com"
-        },
-        "memberOf": null,
-        "startDate": "2019-05-21T03:26:03Z",
-        "endDate": "2019-05-21T03:26:03Z"
-      }
-    ],
-    "memberOf": [
-      {
-        "type": "MLSMembership",
-        "roleName": "MLSMember",
-        "member": {
-          "type": "Person",
-          "email": "bob@example.com"
-        },
-        "memberOf": {
-          "type": "MultipleListingService",
-          "name": "GreatScottMLS"
-        },
-        "startDate": "2019-05-21T03:26:03Z",
-        "endDate": "2019-05-21T03:26:03Z",
-        "memberId": "memberid123"
-      }
-    ],
-    "permit": [
-      {
-        "type": "RealEstateLicense",
-        "name": "CA-DRE# 02068375",
-        "issuedBy": {
-          "type": "Organization",
-          "name": "California"
-        },
-        "issuedThrough": {
-          "type": "Service",
-          "name": "California Department of Real Estate"
-        },
-        "validIn": {
-          "type": "AdministrativeArea",
-          "name": "New York"
-        },
-        "validFrom": "2019-05-21T03:26:03Z",
-        "validUntil": "2019-05-21T03:26:03Z"
-      }
-    ]
+    "type": "RealEstateOffice",
+    "id": "https://{office}.example.com/profile/card#me"
   },
   "image": [
     {
       "type": "ImageObject",
       "id": "http://user.example.com/public/logo/image.jpg",
       "name": "image.jpg",
-      "url": "http://user.example.com/public/profile/image.jpg",
       "encodingFormat": "image/jpeg",
       "content": "string",
-      "about": "http://user.example.com/profile/card#me"
+      "about": "http://user.example.com/profile/card#me",
+      "url": "http://user.example.com/public/profile/image.jpg"
     }
   ],
   "url": "http://example.com"
@@ -924,12 +793,11 @@ a real estate property listed for sale
 | listingStatus | string |   |
 | listingAgent | [Organization](/schemas#organization) | A real estate agent or team.  |
 | listingAgent.type | string! | RealEstateAgent  |
-| listingAgent.id | string&lt;uri&gt; | Linked-Data uri  |
 | listingAgent.name | string | Name or DBA.  |
-| listingAgent.url | string&lt;uri&gt; | primary website/url for the entity.  |
 | listingAgent.telephone | string | Primary phone number.  |
 | listingAgent.faxNumber | string | Primary fax number.  |
 | listingAgent.email | string&lt;email&gt; | Primary email address.  |
+| listingAgent.url | string&lt;uri&gt; | primary website/url for the entity.  |
 | listingAgent.availableLanguage | [object] | A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard. <br/>RANGE: [Language](/schemas#language) |
 | listingAgent.branchCode | string | A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.  |
 | listingAgent.contactPoint | [object] | Additional contact points. Can be organized by role, location, etc...  |
@@ -938,17 +806,16 @@ a real estate property listed for sale
 | listingAgent.parentOrganization | [string&lt;uri&gt;] | URI reference to the agent's office. For teams, this can be a reference to the team leader/primary profile. <br/>RANGE: [RealEstateOffice](/schemas#realestateoffice),[RealEstateAgent](/schemas#realestateagent) |
 | listingAgent.address | object | primary address <br/>RANGE: [PostalAddress](/schemas#postaladdress) |
 | listingAgent.subOrganization | [string&lt;uri&gt;] | for teams: URI reference to a team member <br/>RANGE: [RealEstateAgent](/schemas#realestateagent) |
-| listingAgent.member | [object&#124;string&lt;uri&gt;] | describes members and roles for this organization. <br/>RANGE: [OrganizationRole](/schemas#organizationrole),[URI](/schemas#uri) |
+| listingAgent.member | [object&#124;string&lt;uri&gt;] | A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals. <br/>RANGE: [OrganizationRole](/schemas#organizationrole),[URI](/schemas#uri) |
 | listingAgent.memberOf | [object] | An Organization (or ProgramMembership) to which this Person or Organization belongs. <br/>RANGE: [OrganizationRole](/schemas#organizationrole),[MLSMembership](/schemas#mlsmembership) |
 | listingAgent.permit | [object] | permits issued to the person or organization <br/>RANGE: [RealEstateLicense](/schemas#realestatelicense) |
 | listingOffice | [Organization](/schemas#organization) | A real estate franchisor, broker or business.  |
 | listingOffice.type | string! | RealEstateOffice  |
-| listingOffice.id | string&lt;uri&gt; | Linked-Data uri  |
 | listingOffice.name | string | Name or DBA.  |
-| listingOffice.url | string&lt;uri&gt; | primary website/url for the entity.  |
 | listingOffice.telephone | string | Primary phone number.  |
 | listingOffice.faxNumber | string | Primary fax number.  |
 | listingOffice.email | string&lt;email&gt; | Primary email address.  |
+| listingOffice.url | string&lt;uri&gt; | primary website/url for the entity.  |
 | listingOffice.availableLanguage | [object] | A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard. <br/>RANGE: [Language](/schemas#language) |
 | listingOffice.branchCode | string | A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.  |
 | listingOffice.contactPoint | [object] | department or role specific contact points, i.e. relocation.  |
@@ -957,7 +824,7 @@ a real estate property listed for sale
 | listingOffice.parentOrganization | [string&lt;uri&gt;] | Office broker or franchisor. <br/>RANGE: [RealEstateOrganization](/schemas#realestateorganization) |
 | listingOffice.address | object | primary address <br/>RANGE: [PostalAddress](/schemas#postaladdress) |
 | listingOffice.subOrganization | [string&lt;uri&gt;] | Agents and teams associated with the office. <br/>RANGE: [RealEstateAgent](/schemas#realestateagent) |
-| listingOffice.member | [object&#124;string&lt;uri&gt;] | describes members and roles for this organization. <br/>RANGE: [OrganizationRole](/schemas#organizationrole),[URI](/schemas#uri) |
+| listingOffice.member | [object&#124;string&lt;uri&gt;] | A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals. <br/>RANGE: [OrganizationRole](/schemas#organizationrole),[URI](/schemas#uri) |
 | listingOffice.memberOf | [object] | An Organization (or ProgramMembership) to which this Person or Organization belongs. <br/>RANGE: [OrganizationRole](/schemas#organizationrole),[MLSMembership](/schemas#mlsmembership) |
 | listingOffice.permit | [object] | permits issued to the person or organization <br/>RANGE: [RealEstateLicense](/schemas#realestatelicense) |
 | image | [object&#124;string&lt;uri&gt;] | an ImageObject or URI reference to an image on the web. <br/>RANGE: [ImageObject](/schemas#imageobject),[URI](/schemas#uri) |
@@ -967,9 +834,6 @@ a real estate property listed for sale
 ```json
 {
   "type": "SearchAction",
-  "id": "http://example.com",
-  "name": "string",
-  "url": "http://example.com",
   "object": {
     "type": "PropertySearchArguments",
     "price": {
@@ -1014,9 +878,6 @@ a real estate property listed for sale
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | type | string! | Linked-Data (@type)  |
-| id | string&lt;uri&gt; | Linked-Data uri  |
-| name | string | the name of the item.  |
-| url | string&lt;uri&gt; | a public href that is clearly and uniquely associated with the item.  |
 | object | object |  <br/>RANGE: [PropertySearchArguments](/schemas#propertysearcharguments) |
 | object.type | string |   |
 | object.price | object | A point value or interval.  |
@@ -1093,12 +954,11 @@ A real estate agent or team.
 ```json
 {
   "type": "RealEstateAgent",
-  "id": "http://example.com",
   "name": "Batman & Robin",
-  "url": "http://example.com",
   "telephone": "079.706.7065 x6341",
   "faxNumber": "(873) 271-4802",
   "email": "user@example.com",
+  "url": "http://example.com",
   "availableLanguage": [
     {
       "type": "Language",
@@ -1122,7 +982,6 @@ A real estate agent or team.
       "type": "DigitalDocument",
       "id": "http://user.example.com/public/logo/fileName.zip",
       "name": "fileName.zip",
-      "url": "http://example.com",
       "encodingFormat": "application/zip",
       "identifier": {},
       "about": "http://user.example.com/profile/card#me"
@@ -1133,10 +992,10 @@ A real estate agent or team.
       "type": "ImageObject",
       "id": "http://user.example.com/public/logo/image.jpg",
       "name": "image.jpg",
-      "url": "http://user.example.com/public/profile/image.jpg",
       "encodingFormat": "image/jpeg",
       "content": "string",
-      "about": "http://user.example.com/profile/card#me"
+      "about": "http://user.example.com/profile/card#me",
+      "url": "http://user.example.com/public/profile/image.jpg"
     }
   ],
   "parentOrganization": [
@@ -1159,29 +1018,29 @@ A real estate agent or team.
     {
       "type": "OrganizationRole",
       "roleName": "Owner",
+      "memberOf": "https://{organization}.example.com",
       "member": {
         "type": "Person",
-        "email": "bob@example.com"
+        "id": "http://{user}.example.com/profile/card#me"
       },
-      "memberOf": null,
-      "startDate": "2019-05-21T03:26:03Z",
-      "endDate": "2019-05-21T03:26:03Z"
+      "startDate": "2019-05-22T02:19:48Z",
+      "endDate": "2019-05-22T02:19:48Z"
     }
   ],
   "memberOf": [
     {
       "type": "MLSMembership",
       "roleName": "MLSMember",
-      "member": {
-        "type": "Person",
-        "email": "bob@example.com"
-      },
       "memberOf": {
         "type": "MultipleListingService",
         "name": "GreatScottMLS"
       },
-      "startDate": "2019-05-21T03:26:03Z",
-      "endDate": "2019-05-21T03:26:03Z",
+      "member": {
+        "type": "Person",
+        "id": "http://{user}.example.com/profile/card#me"
+      },
+      "startDate": "2019-05-22T02:19:48Z",
+      "endDate": "2019-05-22T02:19:48Z",
       "memberId": "memberid123"
     }
   ],
@@ -1201,8 +1060,8 @@ A real estate agent or team.
         "type": "AdministrativeArea",
         "name": "New York"
       },
-      "validFrom": "2019-05-21T03:26:03Z",
-      "validUntil": "2019-05-21T03:26:03Z"
+      "validFrom": "2019-05-22T02:19:48Z",
+      "validUntil": "2019-05-22T02:19:48Z"
     }
   ]
 }
@@ -1212,12 +1071,11 @@ A real estate agent or team.
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | type | string! | RealEstateAgent  |
-| id | string&lt;uri&gt; | Linked-Data uri  |
 | name | string | Name or DBA.  |
-| url | string&lt;uri&gt; | primary website/url for the entity.  |
 | telephone | string | Primary phone number.  |
 | faxNumber | string | Primary fax number.  |
 | email | string&lt;email&gt; | Primary email address.  |
+| url | string&lt;uri&gt; | primary website/url for the entity.  |
 | availableLanguage | [object] | A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard. <br/>RANGE: [Language](/schemas#language) |
 | availableLanguage.type | string | Lanuguage  |
 | availableLanguage.name | string | the name of the language  |
@@ -1242,7 +1100,7 @@ A real estate agent or team.
 | address.postalCode | string | Zip/Post Code  |
 | address.addressCountry | string | country  |
 | subOrganization | [string&lt;uri&gt;] | for teams: URI reference to a team member <br/>RANGE: [RealEstateAgent](/schemas#realestateagent) |
-| member | [object&#124;string&lt;uri&gt;] | describes members and roles for this organization. <br/>RANGE: [OrganizationRole](/schemas#organizationrole),[URI](/schemas#uri) |
+| member | [object&#124;string&lt;uri&gt;] | A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals. <br/>RANGE: [OrganizationRole](/schemas#organizationrole),[URI](/schemas#uri) |
 | memberOf | [object] | An Organization (or ProgramMembership) to which this Person or Organization belongs. <br/>RANGE: [OrganizationRole](/schemas#organizationrole),[MLSMembership](/schemas#mlsmembership) |
 | permit | [object] | permits issued to the person or organization <br/>RANGE: [RealEstateLicense](/schemas#realestatelicense) |
 | permit.type | string | RealEstateLicense  |
@@ -1259,12 +1117,11 @@ A real estate franchisor, broker or business.
 ```json
 {
   "type": "RealEstateOrganization",
-  "id": "http://example.com",
   "name": "string",
-  "url": "http://example.com",
   "telephone": "079.706.7065 x6341",
   "faxNumber": "(873) 271-4802",
   "email": "user@example.com",
+  "url": "http://example.com",
   "availableLanguage": [
     {
       "type": "Language",
@@ -1287,7 +1144,6 @@ A real estate franchisor, broker or business.
       "type": "DigitalDocument",
       "id": "http://user.example.com/public/logo/fileName.zip",
       "name": "fileName.zip",
-      "url": "http://example.com",
       "encodingFormat": "application/zip",
       "identifier": {},
       "about": "http://user.example.com/profile/card#me"
@@ -1298,10 +1154,10 @@ A real estate franchisor, broker or business.
       "type": "ImageObject",
       "id": "http://user.example.com/public/logo/image.jpg",
       "name": "image.jpg",
-      "url": "http://user.example.com/public/profile/image.jpg",
       "encodingFormat": "image/jpeg",
       "content": "string",
-      "about": "http://user.example.com/profile/card#me"
+      "about": "http://user.example.com/profile/card#me",
+      "url": "http://user.example.com/public/profile/image.jpg"
     }
   ],
   "parentOrganization": [
@@ -1323,29 +1179,29 @@ A real estate franchisor, broker or business.
     {
       "type": "OrganizationRole",
       "roleName": "Owner",
+      "memberOf": "https://{organization}.example.com",
       "member": {
         "type": "Person",
-        "email": "bob@example.com"
+        "id": "http://{user}.example.com/profile/card#me"
       },
-      "memberOf": null,
-      "startDate": "2019-05-21T03:26:03Z",
-      "endDate": "2019-05-21T03:26:03Z"
+      "startDate": "2019-05-22T02:19:48Z",
+      "endDate": "2019-05-22T02:19:48Z"
     }
   ],
   "memberOf": [
     {
       "type": "MLSMembership",
       "roleName": "MLSMember",
-      "member": {
-        "type": "Person",
-        "email": "bob@example.com"
-      },
       "memberOf": {
         "type": "MultipleListingService",
         "name": "GreatScottMLS"
       },
-      "startDate": "2019-05-21T03:26:03Z",
-      "endDate": "2019-05-21T03:26:03Z",
+      "member": {
+        "type": "Person",
+        "id": "http://{user}.example.com/profile/card#me"
+      },
+      "startDate": "2019-05-22T02:19:48Z",
+      "endDate": "2019-05-22T02:19:48Z",
       "memberId": "memberid123"
     }
   ],
@@ -1365,8 +1221,8 @@ A real estate franchisor, broker or business.
         "type": "AdministrativeArea",
         "name": "New York"
       },
-      "validFrom": "2019-05-21T03:26:03Z",
-      "validUntil": "2019-05-21T03:26:03Z"
+      "validFrom": "2019-05-22T02:19:48Z",
+      "validUntil": "2019-05-22T02:19:48Z"
     }
   ]
 }
@@ -1376,12 +1232,11 @@ A real estate franchisor, broker or business.
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | type | string! | RealEstateOffice  |
-| id | string&lt;uri&gt; | Linked-Data uri  |
 | name | string | Name or DBA.  |
-| url | string&lt;uri&gt; | primary website/url for the entity.  |
 | telephone | string | Primary phone number.  |
 | faxNumber | string | Primary fax number.  |
 | email | string&lt;email&gt; | Primary email address.  |
+| url | string&lt;uri&gt; | primary website/url for the entity.  |
 | availableLanguage | [object] | A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard. <br/>RANGE: [Language](/schemas#language) |
 | availableLanguage.type | string | Lanuguage  |
 | availableLanguage.name | string | the name of the language  |
@@ -1406,7 +1261,7 @@ A real estate franchisor, broker or business.
 | address.postalCode | string | Zip/Post Code  |
 | address.addressCountry | string | country  |
 | subOrganization | [string&lt;uri&gt;] | Agents and teams associated with the office. <br/>RANGE: [RealEstateAgent](/schemas#realestateagent) |
-| member | [object&#124;string&lt;uri&gt;] | describes members and roles for this organization. <br/>RANGE: [OrganizationRole](/schemas#organizationrole),[URI](/schemas#uri) |
+| member | [object&#124;string&lt;uri&gt;] | A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals. <br/>RANGE: [OrganizationRole](/schemas#organizationrole),[URI](/schemas#uri) |
 | memberOf | [object] | An Organization (or ProgramMembership) to which this Person or Organization belongs. <br/>RANGE: [OrganizationRole](/schemas#organizationrole),[MLSMembership](/schemas#mlsmembership) |
 | permit | [object] | permits issued to the person or organization <br/>RANGE: [RealEstateLicense](/schemas#realestatelicense) |
 | permit.type | string | RealEstateLicense  |
@@ -1423,12 +1278,11 @@ A real estate franchisor, broker or business.
 ```json
 {
   "type": "RealEstateOrganization",
-  "id": "http://example.com",
   "name": "string",
-  "url": "http://example.com",
   "telephone": "079.706.7065 x6341",
   "faxNumber": "(873) 271-4802",
   "email": "user@example.com",
+  "url": "http://example.com",
   "availableLanguage": [
     {
       "type": "Language",
@@ -1452,7 +1306,6 @@ A real estate franchisor, broker or business.
       "type": "DigitalDocument",
       "id": "http://user.example.com/public/logo/fileName.zip",
       "name": "fileName.zip",
-      "url": "http://example.com",
       "encodingFormat": "application/zip",
       "identifier": {},
       "about": "http://user.example.com/profile/card#me"
@@ -1463,10 +1316,10 @@ A real estate franchisor, broker or business.
       "type": "ImageObject",
       "id": "http://user.example.com/public/logo/image.jpg",
       "name": "image.jpg",
-      "url": "http://user.example.com/public/profile/image.jpg",
       "encodingFormat": "image/jpeg",
       "content": "string",
-      "about": "http://user.example.com/profile/card#me"
+      "about": "http://user.example.com/profile/card#me",
+      "url": "http://user.example.com/public/profile/image.jpg"
     }
   ],
   "parentOrganization": [
@@ -1488,29 +1341,29 @@ A real estate franchisor, broker or business.
     {
       "type": "OrganizationRole",
       "roleName": "Owner",
+      "memberOf": "https://{organization}.example.com",
       "member": {
         "type": "Person",
-        "email": "bob@example.com"
+        "id": "http://{user}.example.com/profile/card#me"
       },
-      "memberOf": null,
-      "startDate": "2019-05-21T03:26:03Z",
-      "endDate": "2019-05-21T03:26:03Z"
+      "startDate": "2019-05-22T02:19:48Z",
+      "endDate": "2019-05-22T02:19:48Z"
     }
   ],
   "memberOf": [
     {
       "type": "MLSMembership",
       "roleName": "MLSMember",
-      "member": {
-        "type": "Person",
-        "email": "bob@example.com"
-      },
       "memberOf": {
         "type": "MultipleListingService",
         "name": "GreatScottMLS"
       },
-      "startDate": "2019-05-21T03:26:03Z",
-      "endDate": "2019-05-21T03:26:03Z",
+      "member": {
+        "type": "Person",
+        "id": "http://{user}.example.com/profile/card#me"
+      },
+      "startDate": "2019-05-22T02:19:48Z",
+      "endDate": "2019-05-22T02:19:48Z",
       "memberId": "memberid123"
     }
   ],
@@ -1530,8 +1383,8 @@ A real estate franchisor, broker or business.
         "type": "AdministrativeArea",
         "name": "New York"
       },
-      "validFrom": "2019-05-21T03:26:03Z",
-      "validUntil": "2019-05-21T03:26:03Z"
+      "validFrom": "2019-05-22T02:19:48Z",
+      "validUntil": "2019-05-22T02:19:48Z"
     }
   ]
 }
@@ -1541,12 +1394,11 @@ A real estate franchisor, broker or business.
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | type | string! | RealEstateOrganzation  |
-| id | string&lt;uri&gt; | Linked-Data uri  |
 | name | string | Name or DBA.  |
-| url | string&lt;uri&gt; | primary website/url for the entity.  |
 | telephone | string | Primary phone number.  |
 | faxNumber | string | Primary fax number.  |
 | email | string&lt;email&gt; | Primary email address.  |
+| url | string&lt;uri&gt; | primary website/url for the entity.  |
 | availableLanguage | [object] | A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard. <br/>RANGE: [Language](/schemas#language) |
 | availableLanguage.type | string | Lanuguage  |
 | availableLanguage.name | string | the name of the language  |
@@ -1571,7 +1423,7 @@ A real estate franchisor, broker or business.
 | address.postalCode | string | Zip/Post Code  |
 | address.addressCountry | string | country  |
 | subOrganization | [string&lt;uri&gt;] | an organization member <br/>RANGE: [RealEstateOrganization](/schemas#realestateorganization) |
-| member | [object&#124;string&lt;uri&gt;] | describes members and roles for this organization. <br/>RANGE: [OrganizationRole](/schemas#organizationrole),[URI](/schemas#uri) |
+| member | [object&#124;string&lt;uri&gt;] | A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals. <br/>RANGE: [OrganizationRole](/schemas#organizationrole),[URI](/schemas#uri) |
 | memberOf | [object] | An Organization (or ProgramMembership) to which this Person or Organization belongs. <br/>RANGE: [OrganizationRole](/schemas#organizationrole),[MLSMembership](/schemas#mlsmembership) |
 | permit | [object] | permits issued to the person or organization <br/>RANGE: [RealEstateLicense](/schemas#realestatelicense) |
 | permit.type | string | RealEstateLicense  |
@@ -1586,8 +1438,6 @@ A real estate franchisor, broker or business.
 ```json
 {
   "type": "RealEstateWebsite",
-  "id": "http://example.com",
-  "name": "string",
   "url": "https://www.example.com"
 }
 ```
@@ -1596,9 +1446,7 @@ A real estate franchisor, broker or business.
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | type | string! | Linked-Data (@type)  |
-| id | string&lt;uri&gt; | Linked-Data uri  |
-| name | string | the name of the item.  |
-| url | string&lt;uri&gt; | a public href that is clearly and uniquely associated with the item.  |
+| url | * |   |
 
 ## Service
 A service provided by an organization.
@@ -1609,9 +1457,6 @@ A service provided by an organization.
   "name": "string",
   "areaServed": {
     "type": "string",
-    "id": "http://example.com",
-    "name": "string",
-    "url": "http://example.com",
     "address": {},
     "aggregateRating": {},
     "branchCode": "string",
@@ -1644,9 +1489,6 @@ A service provided by an organization.
 | name | string | name of the service.  |
 | areaServed | object |   |
 | areaServed.type | string! | Linked-Data (@type)  |
-| areaServed.id | string&lt;uri&gt; | Linked-Data uri  |
-| areaServed.name | string | the name of the item.  |
-| areaServed.url | string&lt;uri&gt; | a public href that is clearly and uniquely associated with the item.  |
 | areaServed.address | object | PostalAddress <br/>RANGE: [PostalAddress](/schemas#postaladdress) |
 | areaServed.aggregateRating | object | AggregateRating -- The overall rating, based on a collection of reviews or ratings, of the item.  |
 | areaServed.branchCode | string | A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.  |
@@ -1662,10 +1504,7 @@ A service provided by an organization.
 ## Thing
 ```json
 {
-  "type": "string",
-  "id": "http://example.com",
-  "name": "string",
-  "url": "http://example.com"
+  "type": "string"
 }
 ```
 
@@ -1673,215 +1512,6 @@ A service provided by an organization.
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | type | string! | Linked-Data (@type)  |
-| id | string&lt;uri&gt; | Linked-Data uri  |
-| name | string | the name of the item.  |
-| url | string&lt;uri&gt; | a public href that is clearly and uniquely associated with the item.  |
-
-## AcceptAction
-The act of committing to/adopting an object.
-
-```json
-{
-  "type": "AcceptAction",
-  "agent": "https://{user}.example.com/profile/card#me",
-  "object": {
-    "type": "Lead",
-    "name": "Lianna Stark"
-  },
-  "instrument": "https://{app}.example.com/profile/card#me",
-  "actionStatus": "CompletedActionStatus"
-}
-```
-
-
-| Name | Type | Description |
-|:-----| :--- | :---------- |
-| type | string! | the action type  |
-| agent | * | the direct performer of the action  |
-| object | object | The object upon which the action is carried out  |
-| instrument | * | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
-| actionStatus | string | disposition of the Action when the event was created  |
-
-## Action
-```json
-{
-  "type": "string",
-  "agent": null,
-  "object": {},
-  "instrument": "https://{app}.example.com/profile/card#me",
-  "actionStatus": "CompletedActionStatus"
-}
-```
-
-
-| Name | Type | Description |
-|:-----| :--- | :---------- |
-| type | string! | the action type  |
-| agent | * | the direct performer of the action  |
-| object | object | The object upon which the action is carried out  |
-| instrument | * | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
-| actionStatus | string | disposition of the Action when the event was created  |
-
-## AddAction
-```json
-{
-  "type": "AddAction",
-  "agent": "http://{user}.example.com/profile/card#me",
-  "object": {
-    "type": "Contact",
-    "name": "Adam Addme"
-  },
-  "instrument": "http://{app}.example.com/profile/card#me",
-  "actionStatus": "CompletedActionStatus",
-  "targetCollection": {
-    "type": "Collection",
-    "id": "https://{user}.example.com/data/contact/"
-  }
-}
-```
-
-
-| Name | Type | Description |
-|:-----| :--- | :---------- |
-| type | string! | AddAction  |
-| agent | * | the direct performer of the action  |
-| object | object | the added item  |
-| instrument | * | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
-| actionStatus | string | disposition of the Action when the event was created  |
-| targetCollection | * | the collection receiving the added object  |
-
-## OfferAction
-agent makes an offer to buy or sell the object
-
-```json
-{
-  "type": "OfferAction",
-  "object": {
-    "type": "OfferAction",
-    "id": "http://example.com",
-    "name": "string",
-    "url": "http://example.com",
-    "object": {
-      "type": "RealEstateListing",
-      "id": "http://example.com/12345"
-    },
-    "recipient": {
-      "id": "http://user.example.com/profile/card#me"
-    },
-    "offerPrice": {
-      "type": "PriceSpecification",
-      "minPrice": 0,
-      "maxPrice": 0,
-      "price": 0,
-      "priceCurrency": "USD"
-    }
-  },
-  "agent": {},
-  "instrument": "https://{app}.example.com/profile/card#me"
-}
-```
-
-
-| Name | Type | Description |
-|:-----| :--- | :---------- |
-| type | string! | OfferAction  |
-| object | object | an agent makes an offer to buy the object  |
-| object.type | string! | OfferAction  |
-| object.id | string&lt;uri&gt; | Linked-Data uri  |
-| object.name | string | the name of the item.  |
-| object.url | string&lt;uri&gt; | a public href that is clearly and uniquely associated with the item.  |
-| object.object | * | reference to the item on which the offer is being made  |
-| object.recipient | object | the offer recipient <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
-| object.offerPrice | object | a price offered for transfer of ownership of an item <br/>RANGE: [PriceSpecification](/schemas#pricespecification) |
-| agent | object | the entity making the offer <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
-| instrument | * | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
-
-## RejectAction
-```json
-{
-  "type": "RejectAction",
-  "agent": null,
-  "object": {
-    "type": "Lead",
-    "object": {
-      "type": "Person",
-      "name": "Larry Lead",
-      "email": "larry@example.com"
-    },
-    "recipient": "http://{user}.example.com/profile/card#me",
-    "sender": "http://{provider}.example.com/profile/card#me",
-    "dateSent": "2019-05-21T03:26:03Z",
-    "activity": [
-      {
-        "type": "string",
-        "agent": null,
-        "object": {},
-        "instrument": "https://{app}.example.com/profile/card#me",
-        "actionStatus": "CompletedActionStatus"
-      }
-    ]
-  },
-  "instrument": "https://{app}.example.com/profile/card#me",
-  "actionStatus": "CompletedActionStatus"
-}
-```
-
-
-| Name | Type | Description |
-|:-----| :--- | :---------- |
-| type | string! | the action type  |
-| agent | * | the direct performer of the action  |
-| object | [Lead](/schemas#lead) | a lead offered or assigned by the agent to one or more recipients  |
-| object.type | string | Lead  |
-| object.object | object | a Contact (Person/Organization)  |
-| object.recipient | * | the lead recipient  |
-| object.sender | string&lt;uri&gt; | the lead provider  |
-| object.dateSent | string&lt;date-time&gt; | the date the lead was sent  |
-| object.activity | [object] |   |
-| instrument | * | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
-| actionStatus | string | disposition of the Action when the event was created  |
-
-## RemoveAction
-```json
-{
-  "type": "RemoveAction",
-  "agent": null,
-  "object": {},
-  "instrument": "https://{app}.example.com/profile/card#me",
-  "actionStatus": "CompletedActionStatus",
-  "targetCollection": null
-}
-```
-
-
-| Name | Type | Description |
-|:-----| :--- | :---------- |
-| type | string! | the action type  |
-| agent | * | the direct performer of the action  |
-| object | object | the item removed  |
-| instrument | * | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
-| actionStatus | string | disposition of the Action when the event was created  |
-| targetCollection | * | the collection from which the item is being removed  |
-
-## UpdateAction
-```json
-{
-  "type": "UpdateAction",
-  "agent": null,
-  "object": {},
-  "instrument": "https://{app}.example.com/profile/card#me",
-  "actionStatus": "CompletedActionStatus"
-}
-```
-
-
-| Name | Type | Description |
-|:-----| :--- | :---------- |
-| type | string! | UpdateAction  |
-| agent | * | the direct performer of the action  |
-| object | object | The object upon which the action is carried out  |
-| instrument | * | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
-| actionStatus | string | disposition of the Action when the event was created  |
 
 ## ApplicationProfile
 a solid profile document
@@ -1890,8 +1520,6 @@ a solid profile document
 {
   "type": "SoftwareApplication",
   "id": "https://user.example.com/profile/card#me",
-  "name": "string",
-  "url": "http://example.com",
   "primaryTopic": "#me",
   "#me": {
     "type": "SoftwareApplication",
@@ -1923,9 +1551,7 @@ a solid profile document
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | type | string! | Linked-Data (@type)  |
-| id | string&lt;uri&gt;! | Linked-Data uri  |
-| name | string | the name of the item.  |
-| url | string&lt;uri&gt; | a public href that is clearly and uniquely associated with the item.  |
+| id | string&lt;uri&gt;! |   |
 | primaryTopic | string |   |
 | #me | object |   |
 | #me.type | string! |   |

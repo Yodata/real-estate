@@ -8,9 +8,10 @@ properties:
     description: '{domain}/{topic}#{event}'
     type: string
   data:
-    allOf:
-    - $ref: action/Action.yaml
-    - description: the event payload
+    type: object
+    properties:
+      type:
+        type: string
   source:
     description: the event origin, typically a user
     type: string
@@ -25,13 +26,4 @@ properties:
     description: when the event was published
     type: string
     format: date-time
-  contenttype:
-    description: mimetype of the data property.  default=application/json
-    type: string
-    example: application/json
-  '@context':
-    description: message context used for transforming message content
-    type: string
-    format: uri
-    example: http://realestate.yodata.me/context/v1.json
-  
+    

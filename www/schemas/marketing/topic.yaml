@@ -1,0 +1,7 @@
+x-title: Marketing
+x-summary: Marketing events
+subscribe:
+  oneOf:
+    - $ref: programcreate.yaml
+    - $ref: programmemberadd.yaml
+    - $ref: programmemberremove.yaml

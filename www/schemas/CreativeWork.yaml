@@ -6,11 +6,8 @@ allOf:
   - type: object
     properties:
       type:
-        type: string
-        description: CreativeWork
         enum:
           - CreativeWork
-
       name:
         type: string
         description: name of the work.

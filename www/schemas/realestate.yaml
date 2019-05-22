@@ -26,12 +26,12 @@ RealEstateWebsite: { $ref: RealEstateWebsite.yaml }
 Service: { $ref: Service.yaml }
 Thing: { $ref: Thing.yaml }
 
-AcceptAction: { $ref: AcceptAction.yaml }
-Action: { $ref: Action.yaml }
-AddAction: { $ref: AddAction.yaml }
-OfferAction: { $ref: OfferAction.yaml }
-RejectAction: { $ref: RejectAction.yaml }
-RemoveAction: { $ref: RemoveAction.yaml }
-UpdateAction: { $ref: UpdateAction.yaml }
+# AcceptAction: { $ref: AcceptAction.yaml }
+# Action: { $ref: Action.yaml }
+# AddAction: { $ref: AddAction.yaml }
+# OfferAction: { $ref: OfferAction.yaml }
+# RejectAction: { $ref: RejectAction.yaml }
+# RemoveAction: { $ref: RemoveAction.yaml }
+# UpdateAction: { $ref: UpdateAction.yaml }
 
 ApplicationProfile: { $ref: ApplicationProfile.yaml }

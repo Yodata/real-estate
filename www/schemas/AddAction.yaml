@@ -2,11 +2,13 @@ allOf:
   - $ref: Action.yaml
   - properties:
       type:
+        description: AddAction
         enum:
           - AddAction
       object:
         description: the item added to the collection
       targetCollection:
+        type: object
         description: the collection receiving the added object
         example:
           type: Collection

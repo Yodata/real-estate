@@ -11,19 +11,9 @@ properties:
     description: the role name
     example: Owner
   memberOf:
-    type:
-    - string
-    - object
-    description: the organization to which the role applies
-    example: https://{organization}.example.com
+    description: the org or group where the role is performed
   member:
-    type:
-    - string
-    - object
     description: member object or id
-    example:
-      type: Person
-      id: http://{user}.example.com/profile/card#me
   startDate:
     type: string
     format: date-time

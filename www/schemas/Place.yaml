@@ -1,16 +1,11 @@
 allOf:
   - $ref: Thing.yaml
-  - properties:
+  - type: object
+    properties:
       address:
         type: object
         x-range: PostalAddress
         description: PostalAddress
-
-      aggregateRating:
-        type: object
-        description:
-          'AggregateRating -- The overall rating, based on a collection of
-          reviews or ratings, of the item.'
 
       branchCode:
         type: string

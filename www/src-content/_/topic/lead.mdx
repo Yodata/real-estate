@@ -37,7 +37,7 @@ a lead (object) was accepted by the agent
       },
       "recipient": "http://{user}.example.com/profile/card#me",
       "sender": "http://{provider}.example.com/profile/card#me",
-      "dateSent": "2019-05-22T13:59:57Z",
+      "dateSent": "2019-05-22T14:53:14Z",
       "activity": [
         {
           "type": "Action",
@@ -52,7 +52,7 @@ a lead (object) was accepted by the agent
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-22T13:59:57Z"
+  "time": "2019-05-22T14:53:14Z"
 }
 ```
 
@@ -89,7 +89,7 @@ a crm lead was created
       },
       "recipient": "http://{user}.example.com/profile/card#me",
       "sender": "http://{provider}.example.com/profile/card#me",
-      "dateSent": "2019-05-22T13:59:57Z",
+      "dateSent": "2019-05-22T14:53:14Z",
       "activity": [
         {
           "type": "Action",
@@ -108,7 +108,7 @@ a crm lead was created
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-22T13:59:57Z"
+  "time": "2019-05-22T14:53:14Z"
 }
 ```
 
@@ -117,11 +117,11 @@ a crm lead was created
 |:-----| :--- | :---------- |
 | topic | string! | the message id, equivalent to cloudevents type.  |
 | data | object! | the message payload  |
-| data.type | string! | the action type  |
+| data.type | string! | AddAction  |
 | data.object | [Lead](/schemas#lead) | a lead offered or assigned by the agent to one or more recipients  |
 | data.agent | * | the direct performer of the action  |
 | data.instrument | string&lt;uri&gt; | something used by the agent to perform the action, i.e. an application or website that generated the message.  |
-| data.targetCollection | * | the collection receiving the added object  |
+| data.targetCollection | object | the collection receiving the added object  |
 | source | string&lt;uri&gt;! | the subscription source  |
 | instrument | string&lt;uri&gt; | the message producer  |
 | time | string&lt;date-time&gt; | the time the message was produced  |
@@ -146,7 +146,7 @@ a lead was assigned
       },
       "recipient": "http://{user}.example.com/profile/card#me",
       "sender": "http://{provider}.example.com/profile/card#me",
-      "dateSent": "2019-05-22T13:59:57Z",
+      "dateSent": "2019-05-22T14:53:14Z",
       "activity": [
         {
           "type": "Action",
@@ -161,7 +161,7 @@ a lead was assigned
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-22T13:59:57Z"
+  "time": "2019-05-22T14:53:14Z"
 }
 ```
 
@@ -198,7 +198,7 @@ a crm lead was updated
       },
       "recipient": "http://{user}.example.com/profile/card#me",
       "sender": "http://{provider}.example.com/profile/card#me",
-      "dateSent": "2019-05-22T13:59:57Z",
+      "dateSent": "2019-05-22T14:53:14Z",
       "activity": [
         {
           "type": "Action",
@@ -213,7 +213,7 @@ a crm lead was updated
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-22T13:59:57Z"
+  "time": "2019-05-22T14:53:14Z"
 }
 ```
 
@@ -250,7 +250,7 @@ a crm lead was rejected
       },
       "recipient": "http://{user}.example.com/profile/card#me",
       "sender": "http://{provider}.example.com/profile/card#me",
-      "dateSent": "2019-05-22T13:59:57Z",
+      "dateSent": "2019-05-22T14:53:14Z",
       "activity": [
         {
           "type": "Action",
@@ -265,7 +265,7 @@ a crm lead was rejected
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-22T13:59:57Z"
+  "time": "2019-05-22T14:53:14Z"
 }
 ```
 

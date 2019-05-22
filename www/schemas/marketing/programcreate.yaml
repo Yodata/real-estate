@@ -15,6 +15,21 @@ payload:
               object:
                 $ref: ../MarketingProgram.yaml
           - properties:
+              object:
+                x-range: MarketingProgram
+                properties:
+                  about:
+                    x-range: Place
+                example:
+                  type: MarketingProgram
+                  name: Market Activity Report 508 Homewood Ave
+                  about:
+                    type: Place
+                    address:
+                      streetAddress: 508 Homewood Ave
+                      addressLocality: Chula Vista
+                      addressRegion: California
+                      postalCode: '55555'
               agent:
                 type: string
                 example: http://{agent}.example.com/profile/card#me

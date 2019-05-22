@@ -64,11 +64,11 @@
                     "properties": {
                       "type": {
                         "type": "string",
-                        "description": "the action type",
+                        "description": "AddAction",
                         "enum": [
                           "AddAction"
                         ],
-                        "descriptionAsHTML": "<p>the action type</p>\n"
+                        "descriptionAsHTML": "<p>AddAction</p>\n"
                       },
                       "object": {
                         "type": "object",
@@ -263,6 +263,7 @@
                         "descriptionAsHTML": "<p>something used by the agent to perform the action, i.e. an application or website that generated the message.</p>\n"
                       },
                       "targetCollection": {
+                        "type": "object",
                         "description": "the collection receiving the added object",
                         "example": {
                           "type": "Collection",
@@ -306,7 +307,7 @@
               },
               "summaryAsHTML": "<p>a contact was added/created.</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/contact#add\",\n  \"data\": {\n    \"type\": \"AddAction\",\n    \"object\": {\n      \"type\": \"Contact\",\n      \"name\": \"Bruce Wayne\",\n      \"email\": \"batman@example.com\",\n      \"identifier\": {\n        \"sourcevendorid\": \"xxxx\"\n      }\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"targetCollection\": {\n      \"type\": \"Collection\",\n      \"id\": \"https://{user}.example.com/data/contact/\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/contact#add\",\n  \"data\": {\n    \"type\": \"AddAction\",\n    \"object\": {\n      \"type\": \"Contact\",\n      \"name\": \"Bruce Wayne\",\n      \"email\": \"batman@example.com\",\n      \"identifier\": {\n        \"sourcevendorid\": \"xxxx\"\n      }\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"targetCollection\": {\n      \"type\": \"Collection\",\n      \"id\": \"https://{user}.example.com/data/contact/\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "update",
@@ -419,7 +420,7 @@
               },
               "summaryAsHTML": "<p>a crm contact was updated</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/contact#update\",\n  \"data\": {\n    \"type\": \"UpdateAction\",\n    \"object\": {\n      \"type\": \"Contact\",\n      \"name\": \"the updated contact\",\n      \"identifier\": {\n        \"vendornameid\": 1234\n      }\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"targetCollection\": {\n      \"type\": \"Collection\",\n      \"name\": \"targetcollection\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/contact#update\",\n  \"data\": {\n    \"type\": \"UpdateAction\",\n    \"object\": {\n      \"type\": \"Contact\",\n      \"name\": \"the updated contact\",\n      \"identifier\": {\n        \"vendornameid\": 1234\n      }\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"targetCollection\": {\n      \"type\": \"Collection\",\n      \"name\": \"targetcollection\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             }
           ],
           "summaryAsHTML": "",
@@ -591,7 +592,7 @@
               },
               "summaryAsHTML": "<p>a lead (object) was accepted by the agent</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#accept\",\n  \"data\": {\n    \"type\": \"AcceptAction\",\n    \"object\": {\n      \"type\": \"Lead\",\n      \"object\": {\n        \"type\": \"Person\",\n        \"name\": \"Larry Lead\",\n        \"email\": \"larry@example.com\"\n      },\n      \"recipient\": \"http://{user}.example.com/profile/card#me\",\n      \"sender\": \"http://{provider}.example.com/profile/card#me\",\n      \"dateSent\": \"2019-05-22T13:59:57Z\",\n      \"activity\": [\n        {\n          \"type\": \"Action\",\n          \"object\": {},\n          \"agent\": null,\n          \"instrument\": \"https://{app}.example.com/profile/card#me\"\n        }\n      ]\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#accept\",\n  \"data\": {\n    \"type\": \"AcceptAction\",\n    \"object\": {\n      \"type\": \"Lead\",\n      \"object\": {\n        \"type\": \"Person\",\n        \"name\": \"Larry Lead\",\n        \"email\": \"larry@example.com\"\n      },\n      \"recipient\": \"http://{user}.example.com/profile/card#me\",\n      \"sender\": \"http://{provider}.example.com/profile/card#me\",\n      \"dateSent\": \"2019-05-22T14:53:14Z\",\n      \"activity\": [\n        {\n          \"type\": \"Action\",\n          \"object\": {},\n          \"agent\": null,\n          \"instrument\": \"https://{app}.example.com/profile/card#me\"\n        }\n      ]\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "add",
@@ -619,11 +620,11 @@
                     "properties": {
                       "type": {
                         "type": "string",
-                        "description": "the action type",
+                        "description": "AddAction",
                         "enum": [
                           "AddAction"
                         ],
-                        "descriptionAsHTML": "<p>the action type</p>\n"
+                        "descriptionAsHTML": "<p>AddAction</p>\n"
                       },
                       "object": {
                         "type": "object",
@@ -719,6 +720,7 @@
                         "descriptionAsHTML": "<p>something used by the agent to perform the action, i.e. an application or website that generated the message.</p>\n"
                       },
                       "targetCollection": {
+                        "type": "object",
                         "description": "the collection receiving the added object",
                         "example": {
                           "type": "Collection",
@@ -761,7 +763,7 @@
               },
               "summaryAsHTML": "<p>a crm lead was created</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#add\",\n  \"data\": {\n    \"type\": \"AddAction\",\n    \"object\": {\n      \"type\": \"Lead\",\n      \"object\": {\n        \"type\": \"Person\",\n        \"name\": \"Larry Lead\",\n        \"email\": \"larry@example.com\"\n      },\n      \"recipient\": \"http://{user}.example.com/profile/card#me\",\n      \"sender\": \"http://{provider}.example.com/profile/card#me\",\n      \"dateSent\": \"2019-05-22T13:59:57Z\",\n      \"activity\": [\n        {\n          \"type\": \"Action\",\n          \"object\": {},\n          \"agent\": null,\n          \"instrument\": \"https://{app}.example.com/profile/card#me\"\n        }\n      ]\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"targetCollection\": {\n      \"type\": \"Collection\",\n      \"id\": \"https://{user}.example.com/data/contact/\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#add\",\n  \"data\": {\n    \"type\": \"AddAction\",\n    \"object\": {\n      \"type\": \"Lead\",\n      \"object\": {\n        \"type\": \"Person\",\n        \"name\": \"Larry Lead\",\n        \"email\": \"larry@example.com\"\n      },\n      \"recipient\": \"http://{user}.example.com/profile/card#me\",\n      \"sender\": \"http://{provider}.example.com/profile/card#me\",\n      \"dateSent\": \"2019-05-22T14:53:14Z\",\n      \"activity\": [\n        {\n          \"type\": \"Action\",\n          \"object\": {},\n          \"agent\": null,\n          \"instrument\": \"https://{app}.example.com/profile/card#me\"\n        }\n      ]\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"targetCollection\": {\n      \"type\": \"Collection\",\n      \"id\": \"https://{user}.example.com/data/contact/\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "asssign",
@@ -924,7 +926,7 @@
               },
               "summaryAsHTML": "<p>a lead was assigned</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#assign\",\n  \"data\": {\n    \"type\": \"AssignAction\",\n    \"object\": {\n      \"type\": \"Lead\",\n      \"object\": {\n        \"type\": \"Person\",\n        \"name\": \"Larry Lead\",\n        \"email\": \"larry@example.com\"\n      },\n      \"recipient\": \"http://{user}.example.com/profile/card#me\",\n      \"sender\": \"http://{provider}.example.com/profile/card#me\",\n      \"dateSent\": \"2019-05-22T13:59:57Z\",\n      \"activity\": [\n        {\n          \"type\": \"Action\",\n          \"object\": {},\n          \"agent\": null,\n          \"instrument\": \"https://{app}.example.com/profile/card#me\"\n        }\n      ]\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#assign\",\n  \"data\": {\n    \"type\": \"AssignAction\",\n    \"object\": {\n      \"type\": \"Lead\",\n      \"object\": {\n        \"type\": \"Person\",\n        \"name\": \"Larry Lead\",\n        \"email\": \"larry@example.com\"\n      },\n      \"recipient\": \"http://{user}.example.com/profile/card#me\",\n      \"sender\": \"http://{provider}.example.com/profile/card#me\",\n      \"dateSent\": \"2019-05-22T14:53:14Z\",\n      \"activity\": [\n        {\n          \"type\": \"Action\",\n          \"object\": {},\n          \"agent\": null,\n          \"instrument\": \"https://{app}.example.com/profile/card#me\"\n        }\n      ]\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "update",
@@ -1087,7 +1089,7 @@
               },
               "summaryAsHTML": "<p>a crm lead was updated</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#update\",\n  \"data\": {\n    \"type\": \"UpdateAction\",\n    \"object\": {\n      \"type\": \"Lead\",\n      \"object\": {\n        \"type\": \"Person\",\n        \"name\": \"Larry Lead\",\n        \"email\": \"larry@example.com\"\n      },\n      \"recipient\": \"http://{user}.example.com/profile/card#me\",\n      \"sender\": \"http://{provider}.example.com/profile/card#me\",\n      \"dateSent\": \"2019-05-22T13:59:57Z\",\n      \"activity\": [\n        {\n          \"type\": \"Action\",\n          \"object\": {},\n          \"agent\": null,\n          \"instrument\": \"https://{app}.example.com/profile/card#me\"\n        }\n      ]\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#update\",\n  \"data\": {\n    \"type\": \"UpdateAction\",\n    \"object\": {\n      \"type\": \"Lead\",\n      \"object\": {\n        \"type\": \"Person\",\n        \"name\": \"Larry Lead\",\n        \"email\": \"larry@example.com\"\n      },\n      \"recipient\": \"http://{user}.example.com/profile/card#me\",\n      \"sender\": \"http://{provider}.example.com/profile/card#me\",\n      \"dateSent\": \"2019-05-22T14:53:14Z\",\n      \"activity\": [\n        {\n          \"type\": \"Action\",\n          \"object\": {},\n          \"agent\": null,\n          \"instrument\": \"https://{app}.example.com/profile/card#me\"\n        }\n      ]\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "reject",
@@ -1249,7 +1251,7 @@
               },
               "summaryAsHTML": "<p>a crm lead was rejected</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#reject\",\n  \"data\": {\n    \"type\": \"RejectAction\",\n    \"object\": {\n      \"type\": \"Lead\",\n      \"object\": {\n        \"type\": \"Person\",\n        \"name\": \"Larry Lead\",\n        \"email\": \"larry@example.com\"\n      },\n      \"recipient\": \"http://{user}.example.com/profile/card#me\",\n      \"sender\": \"http://{provider}.example.com/profile/card#me\",\n      \"dateSent\": \"2019-05-22T13:59:57Z\",\n      \"activity\": [\n        {\n          \"type\": \"Action\",\n          \"object\": {},\n          \"agent\": null,\n          \"instrument\": \"https://{app}.example.com/profile/card#me\"\n        }\n      ]\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#reject\",\n  \"data\": {\n    \"type\": \"RejectAction\",\n    \"object\": {\n      \"type\": \"Lead\",\n      \"object\": {\n        \"type\": \"Person\",\n        \"name\": \"Larry Lead\",\n        \"email\": \"larry@example.com\"\n      },\n      \"recipient\": \"http://{user}.example.com/profile/card#me\",\n      \"sender\": \"http://{provider}.example.com/profile/card#me\",\n      \"dateSent\": \"2019-05-22T14:53:14Z\",\n      \"activity\": [\n        {\n          \"type\": \"Action\",\n          \"object\": {},\n          \"agent\": null,\n          \"instrument\": \"https://{app}.example.com/profile/card#me\"\n        }\n      ]\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             }
           ],
           "summaryAsHTML": "",
@@ -1338,23 +1340,10 @@
                                       "example": "Owner"
                                     },
                                     "memberOf": {
-                                      "type": [
-                                        "string",
-                                        "object"
-                                      ],
-                                      "description": "the organization to which the role applies",
-                                      "example": "https://{organization}.example.com"
+                                      "description": "the org or group where the role is performed"
                                     },
                                     "member": {
-                                      "type": [
-                                        "string",
-                                        "object"
-                                      ],
-                                      "description": "member object or id",
-                                      "example": {
-                                        "type": "Person",
-                                        "id": "http://{user}.example.com/profile/card#me"
-                                      }
+                                      "description": "member object or id"
                                     },
                                     "startDate": {
                                       "type": "string",
@@ -1403,9 +1392,26 @@
                             "type": "string",
                             "format": "date-time",
                             "descriptionAsHTML": "<p>The date on which the item was most recently modified or when the item's entry was modified within a DataFeed.</p>\n"
+                          },
+                          "about": {
+                            "x-range": "Place"
                           }
                         },
                         "x-subClassOf": "Organization",
+                        "x-range": "MarketingProgram",
+                        "example": {
+                          "type": "MarketingProgram",
+                          "name": "Market Activity Report 508 Homewood Ave",
+                          "about": {
+                            "type": "Place",
+                            "address": {
+                              "streetAddress": "508 Homewood Ave",
+                              "addressLocality": "Chula Vista",
+                              "addressRegion": "California",
+                              "postalCode": "55555"
+                            }
+                          }
+                        },
                         "descriptionAsHTML": "<p>the object upon which the action is carried out</p>\n"
                       },
                       "agent": {
@@ -1456,7 +1462,7 @@
               },
               "summaryAsHTML": "<p>a marketing program has been created</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/marketingprogram#create\",\n  \"data\": {\n    \"type\": \"CreateAction\",\n    \"object\": {\n      \"type\": \"MarketingProgram\",\n      \"name\": \"Market Activity Report 508 Homewood Ave\",\n      \"member\": [\n        {\n          \"type\": \"ProgramMembership\",\n          \"roleName\": \"Owner\",\n          \"memberOf\": null,\n          \"member\": {\n            \"type\": \"Person\",\n            \"id\": \"http://{user}.example.com/profile/card#me\"\n          },\n          \"startDate\": \"2019-05-22T13:59:57Z\",\n          \"endDate\": \"2019-05-22T13:59:57Z\"\n        }\n      ],\n      \"creator\": \"http://{user}.example.com/profile/card#me\",\n      \"dateCreated\": \"2019-05-22T13:59:57Z\",\n      \"dateModified\": \"2019-05-22T13:59:57Z\"\n    },\n    \"agent\": \"http://{agent}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/marketingprogram#create\",\n  \"data\": {\n    \"type\": \"CreateAction\",\n    \"object\": {\n      \"type\": \"MarketingProgram\",\n      \"name\": \"Market Activity Report 508 Homewood Ave\",\n      \"about\": {\n        \"type\": \"Place\",\n        \"address\": {\n          \"streetAddress\": \"508 Homewood Ave\",\n          \"addressLocality\": \"Chula Vista\",\n          \"addressRegion\": \"California\",\n          \"postalCode\": \"55555\"\n        }\n      }\n    },\n    \"agent\": \"http://{agent}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "memberadd",
@@ -1484,11 +1490,11 @@
                     "properties": {
                       "type": {
                         "type": "string",
-                        "description": "the action type",
+                        "description": "AddAction",
                         "enum": [
                           "AddAction"
                         ],
-                        "descriptionAsHTML": "<p>the action type</p>\n"
+                        "descriptionAsHTML": "<p>AddAction</p>\n"
                       },
                       "object": {
                         "type": "object",
@@ -1509,25 +1515,12 @@
                             "descriptionAsHTML": "<p>the role name</p>\n"
                           },
                           "memberOf": {
-                            "type": [
-                              "string",
-                              "object"
-                            ],
-                            "description": "the organization to which the role applies",
-                            "example": "https://{organization}.example.com",
+                            "description": "the org or group where the role is performed",
                             "x-range": "MarketingProgram",
-                            "descriptionAsHTML": "<p>the organization to which the role applies</p>\n"
+                            "descriptionAsHTML": "<p>the org or group where the role is performed</p>\n"
                           },
                           "member": {
-                            "type": [
-                              "string",
-                              "object"
-                            ],
                             "description": "member object or id",
-                            "example": {
-                              "type": "Person",
-                              "id": "http://{user}.example.com/profile/card#me"
-                            },
                             "descriptionAsHTML": "<p>member object or id</p>\n"
                           },
                           "startDate": {
@@ -1544,6 +1537,26 @@
                           }
                         },
                         "x-title": "ProgramMembership",
+                        "x-range": "ProgramMembership",
+                        "example": {
+                          "type": "ProgramMembership",
+                          "role": "Owner",
+                          "member": {
+                            "type": "Person",
+                            "name": "Edgardo Fisher",
+                            "identifier": {
+                              "aceid": "816fd12f-6479-4f45-b26f-0a2ba54972b6"
+                            }
+                          },
+                          "memberOf": {
+                            "type": "MarketingProgram",
+                            "name": "Market Activity Report 508 Homewood Ave",
+                            "identifier": {
+                              "aceid": "4ef1469a-1fc4-43af-96b1-0e4402ccc46e",
+                              "buysideid": "83271c2a-c35e-44e9-b790-5389f2c11b17"
+                            }
+                          }
+                        },
                         "descriptionAsHTML": "<p>describes membership relation between a member (Person) and a MarketingProgram</p>\n"
                       },
                       "agent": {
@@ -1559,14 +1572,18 @@
                         "descriptionAsHTML": "<p>something used by the agent to perform the action, i.e. an application or website that generated the message.</p>\n"
                       },
                       "targetCollection": {
+                        "type": "object",
                         "description": "the collection receiving the added object",
                         "example": {
                           "type": "MarketingProgram",
-                          "id": null,
+                          "id": "https://{user}.example.com/data/contact/",
+                          "name": "Market Activity Report 508 Homewood Ave",
                           "identifier": {
-                            "vendornameid": 1234
+                            "aceid": "4ef1469a-1fc4-43af-96b1-0e4402ccc46e",
+                            "buysideid": "83271c2a-c35e-44e9-b790-5389f2c11b17"
                           }
                         },
+                        "x-range": "MarketingProgram",
                         "descriptionAsHTML": "<p>the collection receiving the added object</p>\n"
                       }
                     },
@@ -1604,7 +1621,7 @@
               },
               "summaryAsHTML": "<p>a program member was added by the agent</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/marketingprogram#memberadd\",\n  \"data\": {\n    \"type\": \"AddAction\",\n    \"object\": {\n      \"type\": \"ProgramMembership\",\n      \"roleName\": \"Owner\",\n      \"memberOf\": \"https://{organization}.example.com\",\n      \"member\": {\n        \"type\": \"Person\",\n        \"id\": \"http://{user}.example.com/profile/card#me\"\n      },\n      \"startDate\": \"2019-05-22T13:59:57Z\",\n      \"endDate\": \"2019-05-22T13:59:57Z\"\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"targetCollection\": {\n      \"type\": \"MarketingProgram\",\n      \"id\": null,\n      \"identifier\": {\n        \"vendornameid\": 1234\n      }\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/marketingprogram#memberadd\",\n  \"data\": {\n    \"type\": \"AddAction\",\n    \"object\": {\n      \"type\": \"ProgramMembership\",\n      \"role\": \"Owner\",\n      \"member\": {\n        \"type\": \"Person\",\n        \"name\": \"Edgardo Fisher\",\n        \"identifier\": {\n          \"aceid\": \"816fd12f-6479-4f45-b26f-0a2ba54972b6\"\n        }\n      },\n      \"memberOf\": {\n        \"type\": \"MarketingProgram\",\n        \"name\": \"Market Activity Report 508 Homewood Ave\",\n        \"identifier\": {\n          \"aceid\": \"4ef1469a-1fc4-43af-96b1-0e4402ccc46e\",\n          \"buysideid\": \"83271c2a-c35e-44e9-b790-5389f2c11b17\"\n        }\n      }\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"targetCollection\": {\n      \"type\": \"MarketingProgram\",\n      \"id\": \"https://{user}.example.com/data/contact/\",\n      \"name\": \"Market Activity Report 508 Homewood Ave\",\n      \"identifier\": {\n        \"aceid\": \"4ef1469a-1fc4-43af-96b1-0e4402ccc46e\",\n        \"buysideid\": \"83271c2a-c35e-44e9-b790-5389f2c11b17\"\n      }\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "memberremove",
@@ -1657,25 +1674,12 @@
                             "descriptionAsHTML": "<p>the role name</p>\n"
                           },
                           "memberOf": {
-                            "type": [
-                              "string",
-                              "object"
-                            ],
-                            "description": "the organization to which the role applies",
-                            "example": "https://{organization}.example.com",
+                            "description": "the org or group where the role is performed",
                             "x-range": "MarketingProgram",
-                            "descriptionAsHTML": "<p>the organization to which the role applies</p>\n"
+                            "descriptionAsHTML": "<p>the org or group where the role is performed</p>\n"
                           },
                           "member": {
-                            "type": [
-                              "string",
-                              "object"
-                            ],
                             "description": "member object or id",
-                            "example": {
-                              "type": "Person",
-                              "id": "http://{user}.example.com/profile/card#me"
-                            },
                             "descriptionAsHTML": "<p>member object or id</p>\n"
                           },
                           "startDate": {
@@ -1692,13 +1696,22 @@
                           }
                         },
                         "x-title": "ProgramMembership",
+                        "x-range": "ProgramMembership",
+                        "example": {
+                          "type": "ProgramMembership",
+                          "role": "Owner",
+                          "member": {
+                            "type": "Person",
+                            "name": "Edgardo Fisher",
+                            "identifier": {
+                              "aceid": "816fd12f-6479-4f45-b26f-0a2ba54972b6"
+                            }
+                          }
+                        },
                         "descriptionAsHTML": "<p>describes membership relation between a member (Person) and a MarketingProgram</p>\n"
                       },
                       "agent": {
-                        "example": {
-                          "type": "RealEstateAgent",
-                          "id": "http://{user}.example.com/profile/card#me"
-                        },
+                        "example": "https://{user}.example.com/profile/card#me",
                         "description": "the direct performer of the action",
                         "descriptionAsHTML": "<p>the direct performer of the action</p>\n"
                       },
@@ -1711,10 +1724,13 @@
                       },
                       "targetCollection": {
                         "description": "the collection from which the item is being removed",
+                        "x-range": "MarketingProgram",
                         "example": {
                           "type": "MarketingProgram",
+                          "name": "Market Activity Report 508 Homewood Ave",
                           "identifier": {
-                            "vendornameid": "abc123"
+                            "aceid": "4ef1469a-1fc4-43af-96b1-0e4402ccc46e",
+                            "buysideid": "83271c2a-c35e-44e9-b790-5389f2c11b17"
                           }
                         },
                         "descriptionAsHTML": "<p>the collection from which the item is being removed</p>\n"
@@ -1754,7 +1770,7 @@
               },
               "summaryAsHTML": "<p>a program member was removed by the agent</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/marketingprogram#memberremove\",\n  \"data\": {\n    \"type\": \"RemoveAction\",\n    \"object\": {\n      \"type\": \"ProgramMembership\",\n      \"roleName\": \"Owner\",\n      \"memberOf\": \"https://{organization}.example.com\",\n      \"member\": {\n        \"type\": \"Person\",\n        \"id\": \"http://{user}.example.com/profile/card#me\"\n      },\n      \"startDate\": \"2019-05-22T13:59:57Z\",\n      \"endDate\": \"2019-05-22T13:59:57Z\"\n    },\n    \"agent\": {\n      \"type\": \"RealEstateAgent\",\n      \"id\": \"http://{user}.example.com/profile/card#me\"\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"targetCollection\": {\n      \"type\": \"MarketingProgram\",\n      \"identifier\": {\n        \"vendornameid\": \"abc123\"\n      }\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/marketingprogram#memberremove\",\n  \"data\": {\n    \"type\": \"RemoveAction\",\n    \"object\": {\n      \"type\": \"ProgramMembership\",\n      \"role\": \"Owner\",\n      \"member\": {\n        \"type\": \"Person\",\n        \"name\": \"Edgardo Fisher\",\n        \"identifier\": {\n          \"aceid\": \"816fd12f-6479-4f45-b26f-0a2ba54972b6\"\n        }\n      }\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"targetCollection\": {\n      \"type\": \"MarketingProgram\",\n      \"name\": \"Market Activity Report 508 Homewood Ave\",\n      \"identifier\": {\n        \"aceid\": \"4ef1469a-1fc4-43af-96b1-0e4402ccc46e\",\n        \"buysideid\": \"83271c2a-c35e-44e9-b790-5389f2c11b17\"\n      }\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             }
           ],
           "summaryAsHTML": "",
@@ -1847,7 +1863,7 @@
               },
               "summaryAsHTML": "<p>an agent, office or organization profile was added</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/profile#add\",\n  \"data\": {\n    \"type\": \"AddAction\",\n    \"object\": {\n      \"type\": \"RealEstateAgent\",\n      \"name\": \"Arya Stark\",\n      \"email\": \"arya@example.com\"\n    },\n    \"agent\": \"http://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/profile#add\",\n  \"data\": {\n    \"type\": \"AddAction\",\n    \"object\": {\n      \"type\": \"RealEstateAgent\",\n      \"name\": \"Arya Stark\",\n      \"email\": \"arya@example.com\"\n    },\n    \"agent\": \"http://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "update",
@@ -1928,7 +1944,7 @@
               },
               "summaryAsHTML": "<p>an agent, office or organization profile was updated</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"string\",\n  \"data\": {\n    \"type\": \"UpdateAction\",\n    \"object\": {\n      \"type\": \"RealEstateAgent\",\n      \"name\": \"Arya Stark\",\n      \"email\": \"arya@example.com\"\n    },\n    \"agent\": \"http://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"string\",\n  \"data\": {\n    \"type\": \"UpdateAction\",\n    \"object\": {\n      \"type\": \"RealEstateAgent\",\n      \"name\": \"Arya Stark\",\n      \"email\": \"arya@example.com\"\n    },\n    \"agent\": \"http://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             }
           ],
           "summaryAsHTML": "",
@@ -2092,7 +2108,7 @@
               },
               "summaryAsHTML": "<p>a website vistor has requested an appointment</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#appointmentrequest\",\n  \"data\": {\n    \"type\": \"AppointmentRequest\",\n    \"object\": {\n      \"type\": \"Comment\",\n      \"text\": \"Winter is coming\",\n      \"author\": {\n        \"type\": \"Person\",\n        \"email\": \"user@example.com\"\n      },\n      \"about\": {\n        \"type\": \"RealEstateListing\",\n        \"id\": \"http://example.com/listing/1\"\n      }\n    },\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"recipient\": \"http://{agent}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#appointmentrequest\",\n  \"data\": {\n    \"type\": \"AppointmentRequest\",\n    \"object\": {\n      \"type\": \"Comment\",\n      \"text\": \"Winter is coming\",\n      \"author\": {\n        \"type\": \"Person\",\n        \"email\": \"user@example.com\"\n      },\n      \"about\": {\n        \"type\": \"RealEstateListing\",\n        \"id\": \"http://example.com/listing/1\"\n      }\n    },\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"recipient\": \"http://{agent}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "propertyoffer",
@@ -2235,7 +2251,7 @@
               },
               "summaryAsHTML": "<p>website user makes an offer on a property listing</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertyoffer\",\n  \"data\": {\n    \"type\": \"OfferAction\",\n    \"object\": {\n      \"type\": \"RealEstateListing\",\n      \"id\": \"http://example.com/12345\"\n    },\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"recipient\": {\n      \"id\": \"http://user.example.com/profile/card#me\"\n    },\n    \"offerPrice\": {\n      \"type\": \"PriceSpecification\",\n      \"minPrice\": 0,\n      \"maxPrice\": 0,\n      \"price\": 0,\n      \"priceCurrency\": \"USD\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertyoffer\",\n  \"data\": {\n    \"type\": \"OfferAction\",\n    \"object\": {\n      \"type\": \"RealEstateListing\",\n      \"id\": \"http://example.com/12345\"\n    },\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"recipient\": {\n      \"id\": \"http://user.example.com/profile/card#me\"\n    },\n    \"offerPrice\": {\n      \"type\": \"PriceSpecification\",\n      \"minPrice\": 0,\n      \"maxPrice\": 0,\n      \"price\": 0,\n      \"priceCurrency\": \"USD\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "propertysearch",
@@ -2415,15 +2431,12 @@
                                     }
                                   },
                                   {
+                                    "type": "object",
                                     "properties": {
                                       "address": {
                                         "type": "object",
                                         "x-range": "PostalAddress",
                                         "description": "PostalAddress"
-                                      },
-                                      "aggregateRating": {
-                                        "type": "object",
-                                        "description": "AggregateRating -- The overall rating, based on a collection of reviews or ratings, of the item."
                                       },
                                       "branchCode": {
                                         "type": "string",
@@ -2571,7 +2584,7 @@
               },
               "summaryAsHTML": "<p>a website user has performed a property search</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertysearch\",\n  \"data\": {\n    \"type\": \"SearchAction\",\n    \"object\": {\n      \"type\": \"PropertySearchArguments\",\n      \"price\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"bedrooms\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"bathrooms\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"location\": {\n        \"type\": \"PostalAddress\",\n        \"streetAddress\": \"1007 Mountain Gate Rd\",\n        \"postOfficeBoxNumber\": \"Box 1234\",\n        \"addressRegion\": \"New Jersey\",\n        \"addressLocality\": \"Gotham City\",\n        \"postalCode\": \"10010\",\n        \"addressCountry\": \"usa\"\n      }\n    },\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertysearch\",\n  \"data\": {\n    \"type\": \"SearchAction\",\n    \"object\": {\n      \"type\": \"PropertySearchArguments\",\n      \"price\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"bedrooms\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"bathrooms\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"location\": {\n        \"type\": \"PostalAddress\",\n        \"streetAddress\": \"1007 Mountain Gate Rd\",\n        \"postOfficeBoxNumber\": \"Box 1234\",\n        \"addressRegion\": \"New Jersey\",\n        \"addressLocality\": \"Gotham City\",\n        \"postalCode\": \"10010\",\n        \"addressCountry\": \"usa\"\n      }\n    },\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "propertyshare",
@@ -2656,7 +2669,7 @@
               },
               "summaryAsHTML": "<p>agent shared object with recipient</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertyshare\",\n  \"data\": {\n    \"type\": \"ShareAction\",\n    \"object\": {\n      \"type\": \"RealEstateListing\",\n      \"url\": \"http://example.com/listing/122\"\n    },\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertyshare\",\n  \"data\": {\n    \"type\": \"ShareAction\",\n    \"object\": {\n      \"type\": \"RealEstateListing\",\n      \"url\": \"http://example.com/listing/122\"\n    },\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "propertyview",
@@ -2736,7 +2749,7 @@
               },
               "summaryAsHTML": "<p>website user (agent) viewed an (object) on website (instrument)</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertyview\",\n  \"data\": {\n    \"type\": \"ViewAction\",\n    \"object\": {},\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertyview\",\n  \"data\": {\n    \"type\": \"ViewAction\",\n    \"object\": {},\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "question",
@@ -2843,7 +2856,7 @@
               },
               "summaryAsHTML": "<p>a website visitor has asked a question</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#question\",\n  \"data\": {\n    \"type\": \"AskAction\",\n    \"object\": {},\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"question\": {\n      \"type\": \"Question\",\n      \"text\": \"What is the meaning of life?\"\n    },\n    \"recipient\": \"https://{user}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#question\",\n  \"data\": {\n    \"type\": \"AskAction\",\n    \"object\": {},\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"question\": {\n      \"type\": \"Question\",\n      \"text\": \"What is the meaning of life?\"\n    },\n    \"recipient\": \"https://{user}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "register",
@@ -2920,7 +2933,7 @@
               },
               "summaryAsHTML": "<p>a website visitor has registered</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#register\",\n  \"data\": {\n    \"type\": \"string\",\n    \"object\": {},\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#register\",\n  \"data\": {\n    \"type\": \"string\",\n    \"object\": {},\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "showingrequest",
@@ -2997,7 +3010,7 @@
               },
               "summaryAsHTML": "<p>a website visitor has requested a property showing</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#showingrequest\",\n  \"data\": {\n    \"type\": \"string\",\n    \"object\": {},\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#showingrequest\",\n  \"data\": {\n    \"type\": \"string\",\n    \"object\": {},\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "propertysave",
@@ -3602,23 +3615,10 @@
                                                       "example": "Owner"
                                                     },
                                                     "memberOf": {
-                                                      "type": [
-                                                        "string",
-                                                        "object"
-                                                      ],
-                                                      "description": "the organization to which the role applies",
-                                                      "example": "https://{organization}.example.com"
+                                                      "description": "the org or group where the role is performed"
                                                     },
                                                     "member": {
-                                                      "type": [
-                                                        "string",
-                                                        "object"
-                                                      ],
-                                                      "description": "member object or id",
-                                                      "example": {
-                                                        "type": "Person",
-                                                        "id": "http://{user}.example.com/profile/card#me"
-                                                      }
+                                                      "description": "member object or id"
                                                     },
                                                     "startDate": {
                                                       "type": "string",
@@ -3668,23 +3668,10 @@
                                                       "example": "Owner"
                                                     },
                                                     "memberOf": {
-                                                      "type": [
-                                                        "string",
-                                                        "object"
-                                                      ],
-                                                      "description": "the organization to which the role applies",
-                                                      "example": "https://{organization}.example.com"
+                                                      "description": "the org or group where the role is performed"
                                                     },
                                                     "member": {
-                                                      "type": [
-                                                        "string",
-                                                        "object"
-                                                      ],
-                                                      "description": "member object or id",
-                                                      "example": {
-                                                        "type": "Person",
-                                                        "id": "http://{user}.example.com/profile/card#me"
-                                                      }
+                                                      "description": "member object or id"
                                                     },
                                                     "startDate": {
                                                       "type": "string",
@@ -4309,23 +4296,10 @@
                                                       "example": "Owner"
                                                     },
                                                     "memberOf": {
-                                                      "type": [
-                                                        "string",
-                                                        "object"
-                                                      ],
-                                                      "description": "the organization to which the role applies",
-                                                      "example": "https://{organization}.example.com"
+                                                      "description": "the org or group where the role is performed"
                                                     },
                                                     "member": {
-                                                      "type": [
-                                                        "string",
-                                                        "object"
-                                                      ],
-                                                      "description": "member object or id",
-                                                      "example": {
-                                                        "type": "Person",
-                                                        "id": "http://{user}.example.com/profile/card#me"
-                                                      }
+                                                      "description": "member object or id"
                                                     },
                                                     "startDate": {
                                                       "type": "string",
@@ -4375,23 +4349,10 @@
                                                       "example": "Owner"
                                                     },
                                                     "memberOf": {
-                                                      "type": [
-                                                        "string",
-                                                        "object"
-                                                      ],
-                                                      "description": "the organization to which the role applies",
-                                                      "example": "https://{organization}.example.com"
+                                                      "description": "the org or group where the role is performed"
                                                     },
                                                     "member": {
-                                                      "type": [
-                                                        "string",
-                                                        "object"
-                                                      ],
-                                                      "description": "member object or id",
-                                                      "example": {
-                                                        "type": "Person",
-                                                        "id": "http://{user}.example.com/profile/card#me"
-                                                      }
+                                                      "description": "member object or id"
                                                     },
                                                     "startDate": {
                                                       "type": "string",
@@ -4727,7 +4688,7 @@
               },
               "summaryAsHTML": "<p>website user (agent) saved a property</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertysave\",\n  \"data\": {\n    \"type\": \"SaveAction\",\n    \"object\": {\n      \"type\": \"PropertyListing\",\n      \"url\": \"http://example.com/property/123\"\n    },\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertysave\",\n  \"data\": {\n    \"type\": \"SaveAction\",\n    \"object\": {\n      \"type\": \"PropertyListing\",\n      \"url\": \"http://example.com/property/123\"\n    },\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "propertysearchsave",
@@ -4905,15 +4866,12 @@
                                     }
                                   },
                                   {
+                                    "type": "object",
                                     "properties": {
                                       "address": {
                                         "type": "object",
                                         "x-range": "PostalAddress",
                                         "description": "PostalAddress"
-                                      },
-                                      "aggregateRating": {
-                                        "type": "object",
-                                        "description": "AggregateRating -- The overall rating, based on a collection of reviews or ratings, of the item."
                                       },
                                       "branchCode": {
                                         "type": "string",
@@ -5056,7 +5014,7 @@
               },
               "summaryAsHTML": "<p>website user (agent) saved a propertysearch (object)</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertysearchsave\",\n  \"data\": {\n    \"type\": \"SaveAction\",\n    \"object\": {\n      \"type\": \"PropertySearchArguments\",\n      \"price\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"bedrooms\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"bathrooms\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"location\": {\n        \"type\": \"PostalAddress\",\n        \"streetAddress\": \"1007 Mountain Gate Rd\",\n        \"postOfficeBoxNumber\": \"Box 1234\",\n        \"addressRegion\": \"New Jersey\",\n        \"addressLocality\": \"Gotham City\",\n        \"postalCode\": \"10010\",\n        \"addressCountry\": \"usa\"\n      }\n    },\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertysearchsave\",\n  \"data\": {\n    \"type\": \"SaveAction\",\n    \"object\": {\n      \"type\": \"PropertySearchArguments\",\n      \"price\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"bedrooms\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"bathrooms\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"location\": {\n        \"type\": \"PostalAddress\",\n        \"streetAddress\": \"1007 Mountain Gate Rd\",\n        \"postOfficeBoxNumber\": \"Box 1234\",\n        \"addressRegion\": \"New Jersey\",\n        \"addressLocality\": \"Gotham City\",\n        \"postalCode\": \"10010\",\n        \"addressCountry\": \"usa\"\n      }\n    },\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             }
           ],
           "summaryAsHTML": "",
@@ -5427,7 +5385,7 @@
               }
             }
           },
-          "generatedExample": "{\n  \"type\": \"Lead\",\n  \"object\": {\n    \"type\": \"Person\",\n    \"name\": \"Larry Lead\",\n    \"email\": \"larry@example.com\"\n  },\n  \"recipient\": \"http://{user}.example.com/profile/card#me\",\n  \"sender\": \"http://{provider}.example.com/profile/card#me\",\n  \"dateSent\": \"2019-05-22T13:59:57Z\",\n  \"activity\": [\n    {\n      \"type\": \"Action\",\n      \"object\": {},\n      \"agent\": null,\n      \"instrument\": \"https://{app}.example.com/profile/card#me\"\n    }\n  ]\n}"
+          "generatedExample": "{\n  \"type\": \"Lead\",\n  \"object\": {\n    \"type\": \"Person\",\n    \"name\": \"Larry Lead\",\n    \"email\": \"larry@example.com\"\n  },\n  \"recipient\": \"http://{user}.example.com/profile/card#me\",\n  \"sender\": \"http://{provider}.example.com/profile/card#me\",\n  \"dateSent\": \"2019-05-22T14:53:14Z\",\n  \"activity\": [\n    {\n      \"type\": \"Action\",\n      \"object\": {},\n      \"agent\": null,\n      \"instrument\": \"https://{app}.example.com/profile/card#me\"\n    }\n  ]\n}"
         },
         "MarketingProgram": {
           "title": "Thing",
@@ -5473,23 +5431,10 @@
                         "example": "Owner"
                       },
                       "memberOf": {
-                        "type": [
-                          "string",
-                          "object"
-                        ],
-                        "description": "the organization to which the role applies",
-                        "example": "https://{organization}.example.com"
+                        "description": "the org or group where the role is performed"
                       },
                       "member": {
-                        "type": [
-                          "string",
-                          "object"
-                        ],
-                        "description": "member object or id",
-                        "example": {
-                          "type": "Person",
-                          "id": "http://{user}.example.com/profile/card#me"
-                        }
+                        "description": "member object or id"
                       },
                       "startDate": {
                         "type": "string",
@@ -5541,7 +5486,7 @@
             }
           },
           "x-subClassOf": "Organization",
-          "generatedExample": "{\n  \"type\": \"MarketingProgram\",\n  \"name\": \"Market Activity Report 508 Homewood Ave\",\n  \"member\": [\n    {\n      \"type\": \"ProgramMembership\",\n      \"roleName\": \"Owner\",\n      \"memberOf\": null,\n      \"member\": {\n        \"type\": \"Person\",\n        \"id\": \"http://{user}.example.com/profile/card#me\"\n      },\n      \"startDate\": \"2019-05-22T13:59:57Z\",\n      \"endDate\": \"2019-05-22T13:59:57Z\"\n    }\n  ],\n  \"creator\": \"http://{user}.example.com/profile/card#me\",\n  \"dateCreated\": \"2019-05-22T13:59:57Z\",\n  \"dateModified\": \"2019-05-22T13:59:57Z\"\n}"
+          "generatedExample": "{\n  \"type\": \"MarketingProgram\",\n  \"name\": \"Market Activity Report 508 Homewood Ave\",\n  \"member\": [\n    {\n      \"type\": \"ProgramMembership\",\n      \"roleName\": \"Owner\",\n      \"memberOf\": null,\n      \"member\": null,\n      \"startDate\": \"2019-05-22T14:53:14Z\",\n      \"endDate\": \"2019-05-22T14:53:14Z\"\n    }\n  ],\n  \"creator\": \"http://{user}.example.com/profile/card#me\",\n  \"dateCreated\": \"2019-05-22T14:53:14Z\",\n  \"dateModified\": \"2019-05-22T14:53:14Z\"\n}"
         },
         "MediaObject": {
           "title": "Thing",
@@ -5620,25 +5565,17 @@
               "descriptionAsHTML": "<p>the role name</p>\n"
             },
             "memberOf": {
+              "description": "the org or group where the role is performed",
               "type": "object",
-              "description": "the organization to which the role applies",
+              "x-range": "MultipleListingService",
               "example": {
                 "type": "MultipleListingService",
                 "name": "GreatScottMLS"
               },
-              "x-range": "MultipleListingService",
-              "descriptionAsHTML": "<p>the organization to which the role applies</p>\n"
+              "descriptionAsHTML": "<p>the org or group where the role is performed</p>\n"
             },
             "member": {
-              "type": [
-                "string",
-                "object"
-              ],
               "description": "member object or id",
-              "example": {
-                "type": "Person",
-                "id": "http://{user}.example.com/profile/card#me"
-              },
               "descriptionAsHTML": "<p>member object or id</p>\n"
             },
             "startDate": {
@@ -5660,7 +5597,7 @@
               "descriptionAsHTML": "<p>the user's MLSID</p>\n"
             }
           },
-          "generatedExample": "{\n  \"type\": \"MLSMembership\",\n  \"roleName\": \"MLSMember\",\n  \"memberOf\": {\n    \"type\": \"MultipleListingService\",\n    \"name\": \"GreatScottMLS\"\n  },\n  \"member\": {\n    \"type\": \"Person\",\n    \"id\": \"http://{user}.example.com/profile/card#me\"\n  },\n  \"startDate\": \"2019-05-22T13:59:57Z\",\n  \"endDate\": \"2019-05-22T13:59:57Z\",\n  \"memberId\": \"memberid123\"\n}"
+          "generatedExample": "{\n  \"type\": \"MLSMembership\",\n  \"roleName\": \"MLSMember\",\n  \"memberOf\": {\n    \"type\": \"MultipleListingService\",\n    \"name\": \"GreatScottMLS\"\n  },\n  \"member\": null,\n  \"startDate\": \"2019-05-22T14:53:14Z\",\n  \"endDate\": \"2019-05-22T14:53:14Z\",\n  \"memberId\": \"memberid123\"\n}"
         },
         "MultipleListingService": {
           "title": "Thing",
@@ -6432,24 +6369,11 @@
               "descriptionAsHTML": "<p>the role name</p>\n"
             },
             "memberOf": {
-              "type": [
-                "string",
-                "object"
-              ],
-              "description": "the organization to which the role applies",
-              "example": "https://{organization}.example.com",
-              "descriptionAsHTML": "<p>the organization to which the role applies</p>\n"
+              "description": "the org or group where the role is performed",
+              "descriptionAsHTML": "<p>the org or group where the role is performed</p>\n"
             },
             "member": {
-              "type": [
-                "string",
-                "object"
-              ],
               "description": "member object or id",
-              "example": {
-                "type": "Person",
-                "id": "http://{user}.example.com/profile/card#me"
-              },
               "descriptionAsHTML": "<p>member object or id</p>\n"
             },
             "startDate": {
@@ -6465,7 +6389,7 @@
               "descriptionAsHTML": "<p>date the member stopped performing the role</p>\n"
             }
           },
-          "generatedExample": "{\n  \"type\": \"OrganizationRole\",\n  \"roleName\": \"Owner\",\n  \"memberOf\": \"https://{organization}.example.com\",\n  \"member\": {\n    \"type\": \"Person\",\n    \"id\": \"http://{user}.example.com/profile/card#me\"\n  },\n  \"startDate\": \"2019-05-22T13:59:57Z\",\n  \"endDate\": \"2019-05-22T13:59:57Z\"\n}"
+          "generatedExample": "{\n  \"type\": \"OrganizationRole\",\n  \"roleName\": \"Owner\",\n  \"memberOf\": null,\n  \"member\": null,\n  \"startDate\": \"2019-05-22T14:53:14Z\",\n  \"endDate\": \"2019-05-22T14:53:14Z\"\n}"
         },
         "Permit": {
           "title": "Permit",
@@ -6525,11 +6449,6 @@
                   "x-range": "PostalAddress",
                   "description": "PostalAddress",
                   "descriptionAsHTML": "<p>PostalAddress</p>\n"
-                },
-                "aggregateRating": {
-                  "type": "object",
-                  "description": "AggregateRating -- The overall rating, based on a collection of reviews or ratings, of the item.",
-                  "descriptionAsHTML": "<p>AggregateRating -- The overall rating, based on a collection of reviews or ratings, of the item.</p>\n"
                 },
                 "branchCode": {
                   "type": "string",
@@ -6642,7 +6561,7 @@
               "descriptionAsHTML": "<p>end date</p>\n"
             }
           },
-          "generatedExample": "{\n  \"type\": \"Permit\",\n  \"name\": \"License to Kill\",\n  \"issuedBy\": {\n    \"type\": \"GovernmentOrganization\",\n    \"name\": \"United Kingdom\"\n  },\n  \"issuedThrough\": {\n    \"type\": \"Service\",\n    \"name\": \"MI6\"\n  },\n  \"validIn\": {\n    \"type\": \"Thing\",\n    \"address\": {},\n    \"aggregateRating\": {},\n    \"branchCode\": \"string\",\n    \"containedInPlace\": [\n      \"http://example.com\"\n    ],\n    \"containsPlace\": [\n      \"http://example.com\"\n    ],\n    \"geo\": {},\n    \"hasMap\": \"http://example.com\",\n    \"openingHoursSpecification\": {},\n    \"photo\": [\n      \"http://example.com\"\n    ],\n    \"review\": [\n      {}\n    ],\n    \"specialOpeningHoursSpecification\": [\n      {}\n    ]\n  },\n  \"validFrom\": \"2019-05-22T13:59:57Z\",\n  \"validUntil\": \"2019-05-22T13:59:57Z\"\n}"
+          "generatedExample": "{\n  \"type\": \"Permit\",\n  \"name\": \"License to Kill\",\n  \"issuedBy\": {\n    \"type\": \"GovernmentOrganization\",\n    \"name\": \"United Kingdom\"\n  },\n  \"issuedThrough\": {\n    \"type\": \"Service\",\n    \"name\": \"MI6\"\n  },\n  \"validIn\": {\n    \"type\": \"Thing\",\n    \"address\": {},\n    \"branchCode\": \"string\",\n    \"containedInPlace\": [\n      \"http://example.com\"\n    ],\n    \"containsPlace\": [\n      \"http://example.com\"\n    ],\n    \"geo\": {},\n    \"hasMap\": \"http://example.com\",\n    \"openingHoursSpecification\": {},\n    \"photo\": [\n      \"http://example.com\"\n    ],\n    \"review\": [\n      {}\n    ],\n    \"specialOpeningHoursSpecification\": [\n      {}\n    ]\n  },\n  \"validFrom\": \"2019-05-22T14:53:14Z\",\n  \"validUntil\": \"2019-05-22T14:53:14Z\"\n}"
         },
         "Person": {
           "title": "Thing",
@@ -6825,11 +6744,6 @@
               "description": "PostalAddress",
               "descriptionAsHTML": "<p>PostalAddress</p>\n"
             },
-            "aggregateRating": {
-              "type": "object",
-              "description": "AggregateRating -- The overall rating, based on a collection of reviews or ratings, of the item.",
-              "descriptionAsHTML": "<p>AggregateRating -- The overall rating, based on a collection of reviews or ratings, of the item.</p>\n"
-            },
             "branchCode": {
               "type": "string",
               "description": "A short textual code (also called \"store code\") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.",
@@ -6927,7 +6841,7 @@
               "descriptionAsHTML": "<p>The special opening hours of a certain place. Use this to explicitly override general opening hours brought in scope by openingHoursSpecification or openingHours.</p>\n"
             }
           },
-          "generatedExample": "{\n  \"type\": \"Thing\",\n  \"address\": {},\n  \"aggregateRating\": {},\n  \"branchCode\": \"string\",\n  \"containedInPlace\": [\n    \"http://example.com\"\n  ],\n  \"containsPlace\": [\n    \"http://example.com\"\n  ],\n  \"geo\": {},\n  \"hasMap\": \"http://example.com\",\n  \"openingHoursSpecification\": {},\n  \"photo\": [\n    \"http://example.com\"\n  ],\n  \"review\": [\n    {}\n  ],\n  \"specialOpeningHoursSpecification\": [\n    {}\n  ]\n}"
+          "generatedExample": "{\n  \"type\": \"Thing\",\n  \"address\": {},\n  \"branchCode\": \"string\",\n  \"containedInPlace\": [\n    \"http://example.com\"\n  ],\n  \"containsPlace\": [\n    \"http://example.com\"\n  ],\n  \"geo\": {},\n  \"hasMap\": \"http://example.com\",\n  \"openingHoursSpecification\": {},\n  \"photo\": [\n    \"http://example.com\"\n  ],\n  \"review\": [\n    {}\n  ],\n  \"specialOpeningHoursSpecification\": [\n    {}\n  ]\n}"
         },
         "PostalAddress": {
           "type": "object",
@@ -7068,25 +6982,12 @@
               "descriptionAsHTML": "<p>the role name</p>\n"
             },
             "memberOf": {
-              "type": [
-                "string",
-                "object"
-              ],
-              "description": "the organization to which the role applies",
-              "example": "https://{organization}.example.com",
+              "description": "the org or group where the role is performed",
               "x-range": "MarketingProgram",
-              "descriptionAsHTML": "<p>the organization to which the role applies</p>\n"
+              "descriptionAsHTML": "<p>the org or group where the role is performed</p>\n"
             },
             "member": {
-              "type": [
-                "string",
-                "object"
-              ],
               "description": "member object or id",
-              "example": {
-                "type": "Person",
-                "id": "http://{user}.example.com/profile/card#me"
-              },
               "descriptionAsHTML": "<p>member object or id</p>\n"
             },
             "startDate": {
@@ -7103,7 +7004,7 @@
             }
           },
           "x-title": "ProgramMembership",
-          "generatedExample": "{\n  \"type\": \"ProgramMembership\",\n  \"roleName\": \"Owner\",\n  \"memberOf\": \"https://{organization}.example.com\",\n  \"member\": {\n    \"type\": \"Person\",\n    \"id\": \"http://{user}.example.com/profile/card#me\"\n  },\n  \"startDate\": \"2019-05-22T13:59:57Z\",\n  \"endDate\": \"2019-05-22T13:59:57Z\"\n}"
+          "generatedExample": "{\n  \"type\": \"ProgramMembership\",\n  \"roleName\": \"Owner\",\n  \"memberOf\": null,\n  \"member\": null,\n  \"startDate\": \"2019-05-22T14:53:14Z\",\n  \"endDate\": \"2019-05-22T14:53:14Z\"\n}"
         },
         "PropertyListing": {
           "title": "PropertyListing",
@@ -7644,23 +7545,10 @@
                             "example": "Owner"
                           },
                           "memberOf": {
-                            "type": [
-                              "string",
-                              "object"
-                            ],
-                            "description": "the organization to which the role applies",
-                            "example": "https://{organization}.example.com"
+                            "description": "the org or group where the role is performed"
                           },
                           "member": {
-                            "type": [
-                              "string",
-                              "object"
-                            ],
-                            "description": "member object or id",
-                            "example": {
-                              "type": "Person",
-                              "id": "http://{user}.example.com/profile/card#me"
-                            }
+                            "description": "member object or id"
                           },
                           "startDate": {
                             "type": "string",
@@ -7711,23 +7599,10 @@
                             "example": "Owner"
                           },
                           "memberOf": {
-                            "type": [
-                              "string",
-                              "object"
-                            ],
-                            "description": "the organization to which the role applies",
-                            "example": "https://{organization}.example.com"
+                            "description": "the org or group where the role is performed"
                           },
                           "member": {
-                            "type": [
-                              "string",
-                              "object"
-                            ],
-                            "description": "member object or id",
-                            "example": {
-                              "type": "Person",
-                              "id": "http://{user}.example.com/profile/card#me"
-                            }
+                            "description": "member object or id"
                           },
                           "startDate": {
                             "type": "string",
@@ -8285,23 +8160,10 @@
                             "example": "Owner"
                           },
                           "memberOf": {
-                            "type": [
-                              "string",
-                              "object"
-                            ],
-                            "description": "the organization to which the role applies",
-                            "example": "https://{organization}.example.com"
+                            "description": "the org or group where the role is performed"
                           },
                           "member": {
-                            "type": [
-                              "string",
-                              "object"
-                            ],
-                            "description": "member object or id",
-                            "example": {
-                              "type": "Person",
-                              "id": "http://{user}.example.com/profile/card#me"
-                            }
+                            "description": "member object or id"
                           },
                           "startDate": {
                             "type": "string",
@@ -8352,23 +8214,10 @@
                             "example": "Owner"
                           },
                           "memberOf": {
-                            "type": [
-                              "string",
-                              "object"
-                            ],
-                            "description": "the organization to which the role applies",
-                            "example": "https://{organization}.example.com"
+                            "description": "the org or group where the role is performed"
                           },
                           "member": {
-                            "type": [
-                              "string",
-                              "object"
-                            ],
-                            "description": "member object or id",
-                            "example": {
-                              "type": "Person",
-                              "id": "http://{user}.example.com/profile/card#me"
-                            }
+                            "description": "member object or id"
                           },
                           "startDate": {
                             "type": "string",
@@ -8626,7 +8475,7 @@
               "descriptionAsHTML": "<p>URL of the item.</p>\n"
             }
           },
-          "generatedExample": "{\n  \"type\": \"PropertyListing\",\n  \"address\": {\n    \"type\": \"PostalAddress\",\n    \"streetAddress\": \"1007 Mountain Gate Rd\",\n    \"postOfficeBoxNumber\": \"Box 1234\",\n    \"addressRegion\": \"New Jersey\",\n    \"addressLocality\": \"Gotham City\",\n    \"postalCode\": \"10010\",\n    \"addressCountry\": \"usa\"\n  },\n  \"dateListed\": \"2019-05-22T13:59:57Z\",\n  \"dateSold\": \"2019-05-22T13:59:57Z\",\n  \"dateClosed\": \"2019-05-22T13:59:57Z\",\n  \"listingPrice\": {\n    \"type\": \"PriceSpecification\",\n    \"minPrice\": 0,\n    \"maxPrice\": 0,\n    \"price\": 0,\n    \"priceCurrency\": \"USD\"\n  },\n  \"listingStatus\": \"Active\",\n  \"listingAgent\": {\n    \"type\": \"RealEstateAgent\",\n    \"id\": \"https://user.example.com/profile/card#me\"\n  },\n  \"listingOffice\": {\n    \"type\": \"RealEstateOffice\",\n    \"id\": \"https://{office}.example.com/profile/card#me\"\n  },\n  \"image\": [\n    {\n      \"type\": \"ImageObject\",\n      \"id\": \"http://user.example.com/public/logo/image.jpg\",\n      \"name\": \"image.jpg\",\n      \"encodingFormat\": \"image/jpeg\",\n      \"content\": \"string\",\n      \"about\": \"http://user.example.com/profile/card#me\",\n      \"url\": \"http://user.example.com/public/profile/image.jpg\"\n    }\n  ],\n  \"url\": \"http://example.com\"\n}"
+          "generatedExample": "{\n  \"type\": \"PropertyListing\",\n  \"address\": {\n    \"type\": \"PostalAddress\",\n    \"streetAddress\": \"1007 Mountain Gate Rd\",\n    \"postOfficeBoxNumber\": \"Box 1234\",\n    \"addressRegion\": \"New Jersey\",\n    \"addressLocality\": \"Gotham City\",\n    \"postalCode\": \"10010\",\n    \"addressCountry\": \"usa\"\n  },\n  \"dateListed\": \"2019-05-22T14:53:14Z\",\n  \"dateSold\": \"2019-05-22T14:53:14Z\",\n  \"dateClosed\": \"2019-05-22T14:53:14Z\",\n  \"listingPrice\": {\n    \"type\": \"PriceSpecification\",\n    \"minPrice\": 0,\n    \"maxPrice\": 0,\n    \"price\": 0,\n    \"priceCurrency\": \"USD\"\n  },\n  \"listingStatus\": \"Active\",\n  \"listingAgent\": {\n    \"type\": \"RealEstateAgent\",\n    \"id\": \"https://user.example.com/profile/card#me\"\n  },\n  \"listingOffice\": {\n    \"type\": \"RealEstateOffice\",\n    \"id\": \"https://{office}.example.com/profile/card#me\"\n  },\n  \"image\": [\n    {\n      \"type\": \"ImageObject\",\n      \"id\": \"http://user.example.com/public/logo/image.jpg\",\n      \"name\": \"image.jpg\",\n      \"encodingFormat\": \"image/jpeg\",\n      \"content\": \"string\",\n      \"about\": \"http://user.example.com/profile/card#me\",\n      \"url\": \"http://user.example.com/public/profile/image.jpg\"\n    }\n  ],\n  \"url\": \"http://example.com\"\n}"
         },
         "PropertySearch": {
           "title": "Thing",
@@ -8790,15 +8639,12 @@
                           }
                         },
                         {
+                          "type": "object",
                           "properties": {
                             "address": {
                               "type": "object",
                               "x-range": "PostalAddress",
                               "description": "PostalAddress"
-                            },
-                            "aggregateRating": {
-                              "type": "object",
-                              "description": "AggregateRating -- The overall rating, based on a collection of reviews or ratings, of the item."
                             },
                             "branchCode": {
                               "type": "string",
@@ -9053,15 +8899,12 @@
                       }
                     },
                     {
+                      "type": "object",
                       "properties": {
                         "address": {
                           "type": "object",
                           "x-range": "PostalAddress",
                           "description": "PostalAddress"
-                        },
-                        "aggregateRating": {
-                          "type": "object",
-                          "description": "AggregateRating -- The overall rating, based on a collection of reviews or ratings, of the item."
                         },
                         "branchCode": {
                           "type": "string",
@@ -9606,23 +9449,10 @@
                         "example": "Owner"
                       },
                       "memberOf": {
-                        "type": [
-                          "string",
-                          "object"
-                        ],
-                        "description": "the organization to which the role applies",
-                        "example": "https://{organization}.example.com"
+                        "description": "the org or group where the role is performed"
                       },
                       "member": {
-                        "type": [
-                          "string",
-                          "object"
-                        ],
-                        "description": "member object or id",
-                        "example": {
-                          "type": "Person",
-                          "id": "http://{user}.example.com/profile/card#me"
-                        }
+                        "description": "member object or id"
                       },
                       "startDate": {
                         "type": "string",
@@ -9673,23 +9503,10 @@
                         "example": "Owner"
                       },
                       "memberOf": {
-                        "type": [
-                          "string",
-                          "object"
-                        ],
-                        "description": "the organization to which the role applies",
-                        "example": "https://{organization}.example.com"
+                        "description": "the org or group where the role is performed"
                       },
                       "member": {
-                        "type": [
-                          "string",
-                          "object"
-                        ],
-                        "description": "member object or id",
-                        "example": {
-                          "type": "Person",
-                          "id": "http://{user}.example.com/profile/card#me"
-                        }
+                        "description": "member object or id"
                       },
                       "startDate": {
                         "type": "string",
@@ -9820,7 +9637,7 @@
             "https://schema.org/Organization"
           ],
           "description": "A real estate agent or team.",
-          "generatedExample": "{\n  \"type\": \"RealEstateAgent\",\n  \"name\": \"Batman & Robin\",\n  \"telephone\": \"079.706.7065 x6341\",\n  \"faxNumber\": \"(873) 271-4802\",\n  \"email\": \"user@example.com\",\n  \"url\": \"http://example.com\",\n  \"availableLanguage\": [\n    {\n      \"type\": \"Language\",\n      \"name\": \"English\",\n      \"additionalName\": \"en\"\n    }\n  ],\n  \"branchCode\": \"CA301-001\",\n  \"contactPoint\": [\n    {\n      \"type\": \"ContactPoint\",\n      \"name\": \"Work\",\n      \"telephone\": \"1-364-127-9618 x20418\",\n      \"faxNumber\": \"834.320.1602\",\n      \"email\": \"user@example.com\",\n      \"url\": \"https://www.facebook.com/hallandoates\"\n    }\n  ],\n  \"logo\": [\n    {\n      \"type\": \"DigitalDocument\",\n      \"id\": \"http://user.example.com/public/logo/fileName.zip\",\n      \"name\": \"fileName.zip\",\n      \"encodingFormat\": \"application/zip\",\n      \"identifier\": {},\n      \"about\": \"http://user.example.com/profile/card#me\"\n    }\n  ],\n  \"image\": [\n    {\n      \"type\": \"ImageObject\",\n      \"id\": \"http://user.example.com/public/logo/image.jpg\",\n      \"name\": \"image.jpg\",\n      \"encodingFormat\": \"image/jpeg\",\n      \"content\": \"string\",\n      \"about\": \"http://user.example.com/profile/card#me\",\n      \"url\": \"http://user.example.com/public/profile/image.jpg\"\n    }\n  ],\n  \"parentOrganization\": [\n    \"http://office-real-estate.example.com/\",\n    \"http://batmanandrobinteam.example.com/\"\n  ],\n  \"address\": {\n    \"type\": \"PostalAddress\",\n    \"streetAddress\": \"1007 Mountain Gate Rd\",\n    \"postOfficeBoxNumber\": \"Box 1234\",\n    \"addressRegion\": \"New Jersey\",\n    \"addressLocality\": \"Gotham City\",\n    \"postalCode\": \"10010\",\n    \"addressCountry\": \"usa\"\n  },\n  \"subOrganization\": [\n    \"http://org.example.com/profile/card#me\"\n  ],\n  \"member\": [\n    {\n      \"type\": \"OrganizationRole\",\n      \"roleName\": \"Owner\",\n      \"memberOf\": \"https://{organization}.example.com\",\n      \"member\": {\n        \"type\": \"Person\",\n        \"id\": \"http://{user}.example.com/profile/card#me\"\n      },\n      \"startDate\": \"2019-05-22T13:59:57Z\",\n      \"endDate\": \"2019-05-22T13:59:57Z\"\n    }\n  ],\n  \"memberOf\": [\n    {\n      \"type\": \"MLSMembership\",\n      \"roleName\": \"MLSMember\",\n      \"memberOf\": {\n        \"type\": \"MultipleListingService\",\n        \"name\": \"GreatScottMLS\"\n      },\n      \"member\": {\n        \"type\": \"Person\",\n        \"id\": \"http://{user}.example.com/profile/card#me\"\n      },\n      \"startDate\": \"2019-05-22T13:59:57Z\",\n      \"endDate\": \"2019-05-22T13:59:57Z\",\n      \"memberId\": \"memberid123\"\n    }\n  ],\n  \"permit\": [\n    {\n      \"type\": \"RealEstateLicense\",\n      \"name\": \"CA-DRE# 02068375\",\n      \"issuedBy\": {\n        \"type\": \"Organization\",\n        \"name\": \"California\"\n      },\n      \"issuedThrough\": {\n        \"type\": \"Service\",\n        \"name\": \"California Department of Real Estate\"\n      },\n      \"validIn\": {\n        \"type\": \"AdministrativeArea\",\n        \"name\": \"New York\"\n      },\n      \"validFrom\": \"2019-05-22T13:59:57Z\",\n      \"validUntil\": \"2019-05-22T13:59:57Z\"\n    }\n  ]\n}"
+          "generatedExample": "{\n  \"type\": \"RealEstateAgent\",\n  \"name\": \"Batman & Robin\",\n  \"telephone\": \"079.706.7065 x6341\",\n  \"faxNumber\": \"(873) 271-4802\",\n  \"email\": \"user@example.com\",\n  \"url\": \"http://example.com\",\n  \"availableLanguage\": [\n    {\n      \"type\": \"Language\",\n      \"name\": \"English\",\n      \"additionalName\": \"en\"\n    }\n  ],\n  \"branchCode\": \"CA301-001\",\n  \"contactPoint\": [\n    {\n      \"type\": \"ContactPoint\",\n      \"name\": \"Work\",\n      \"telephone\": \"1-364-127-9618 x20418\",\n      \"faxNumber\": \"834.320.1602\",\n      \"email\": \"user@example.com\",\n      \"url\": \"https://www.facebook.com/hallandoates\"\n    }\n  ],\n  \"logo\": [\n    {\n      \"type\": \"DigitalDocument\",\n      \"id\": \"http://user.example.com/public/logo/fileName.zip\",\n      \"name\": \"fileName.zip\",\n      \"encodingFormat\": \"application/zip\",\n      \"identifier\": {},\n      \"about\": \"http://user.example.com/profile/card#me\"\n    }\n  ],\n  \"image\": [\n    {\n      \"type\": \"ImageObject\",\n      \"id\": \"http://user.example.com/public/logo/image.jpg\",\n      \"name\": \"image.jpg\",\n      \"encodingFormat\": \"image/jpeg\",\n      \"content\": \"string\",\n      \"about\": \"http://user.example.com/profile/card#me\",\n      \"url\": \"http://user.example.com/public/profile/image.jpg\"\n    }\n  ],\n  \"parentOrganization\": [\n    \"http://office-real-estate.example.com/\",\n    \"http://batmanandrobinteam.example.com/\"\n  ],\n  \"address\": {\n    \"type\": \"PostalAddress\",\n    \"streetAddress\": \"1007 Mountain Gate Rd\",\n    \"postOfficeBoxNumber\": \"Box 1234\",\n    \"addressRegion\": \"New Jersey\",\n    \"addressLocality\": \"Gotham City\",\n    \"postalCode\": \"10010\",\n    \"addressCountry\": \"usa\"\n  },\n  \"subOrganization\": [\n    \"http://org.example.com/profile/card#me\"\n  ],\n  \"member\": [\n    {\n      \"type\": \"OrganizationRole\",\n      \"roleName\": \"Owner\",\n      \"memberOf\": null,\n      \"member\": null,\n      \"startDate\": \"2019-05-22T14:53:14Z\",\n      \"endDate\": \"2019-05-22T14:53:14Z\"\n    }\n  ],\n  \"memberOf\": [\n    {\n      \"type\": \"MLSMembership\",\n      \"roleName\": \"MLSMember\",\n      \"memberOf\": {\n        \"type\": \"MultipleListingService\",\n        \"name\": \"GreatScottMLS\"\n      },\n      \"member\": null,\n      \"startDate\": \"2019-05-22T14:53:14Z\",\n      \"endDate\": \"2019-05-22T14:53:14Z\",\n      \"memberId\": \"memberid123\"\n    }\n  ],\n  \"permit\": [\n    {\n      \"type\": \"RealEstateLicense\",\n      \"name\": \"CA-DRE# 02068375\",\n      \"issuedBy\": {\n        \"type\": \"Organization\",\n        \"name\": \"California\"\n      },\n      \"issuedThrough\": {\n        \"type\": \"Service\",\n        \"name\": \"California Department of Real Estate\"\n      },\n      \"validIn\": {\n        \"type\": \"AdministrativeArea\",\n        \"name\": \"New York\"\n      },\n      \"validFrom\": \"2019-05-22T14:53:14Z\",\n      \"validUntil\": \"2019-05-22T14:53:14Z\"\n    }\n  ]\n}"
         },
         "RealEstateOffice": {
           "title": "Thing",
@@ -10243,23 +10060,10 @@
                         "example": "Owner"
                       },
                       "memberOf": {
-                        "type": [
-                          "string",
-                          "object"
-                        ],
-                        "description": "the organization to which the role applies",
-                        "example": "https://{organization}.example.com"
+                        "description": "the org or group where the role is performed"
                       },
                       "member": {
-                        "type": [
-                          "string",
-                          "object"
-                        ],
-                        "description": "member object or id",
-                        "example": {
-                          "type": "Person",
-                          "id": "http://{user}.example.com/profile/card#me"
-                        }
+                        "description": "member object or id"
                       },
                       "startDate": {
                         "type": "string",
@@ -10310,23 +10114,10 @@
                         "example": "Owner"
                       },
                       "memberOf": {
-                        "type": [
-                          "string",
-                          "object"
-                        ],
-                        "description": "the organization to which the role applies",
-                        "example": "https://{organization}.example.com"
+                        "description": "the org or group where the role is performed"
                       },
                       "member": {
-                        "type": [
-                          "string",
-                          "object"
-                        ],
-                        "description": "member object or id",
-                        "example": {
-                          "type": "Person",
-                          "id": "http://{user}.example.com/profile/card#me"
-                        }
+                        "description": "member object or id"
                       },
                       "startDate": {
                         "type": "string",
@@ -10457,7 +10248,7 @@
             "https://schema.org/Organization"
           ],
           "description": "A real estate franchisor, broker or business.",
-          "generatedExample": "{\n  \"type\": \"RealEstateOrganization\",\n  \"name\": \"string\",\n  \"telephone\": \"079.706.7065 x6341\",\n  \"faxNumber\": \"(873) 271-4802\",\n  \"email\": \"user@example.com\",\n  \"url\": \"http://example.com\",\n  \"availableLanguage\": [\n    {\n      \"type\": \"Language\",\n      \"name\": \"English\",\n      \"additionalName\": \"en\"\n    }\n  ],\n  \"branchCode\": \"CA301-001\",\n  \"contactPoint\": [\n    {\n      \"type\": \"ContactPoint\",\n      \"name\": \"Relocation\",\n      \"telephone\": \"1-245-880-8222\",\n      \"faxNumber\": \"958-530-3473\",\n      \"email\": \"relocation@example.com\"\n    }\n  ],\n  \"logo\": [\n    {\n      \"type\": \"DigitalDocument\",\n      \"id\": \"http://user.example.com/public/logo/fileName.zip\",\n      \"name\": \"fileName.zip\",\n      \"encodingFormat\": \"application/zip\",\n      \"identifier\": {},\n      \"about\": \"http://user.example.com/profile/card#me\"\n    }\n  ],\n  \"image\": [\n    {\n      \"type\": \"ImageObject\",\n      \"id\": \"http://user.example.com/public/logo/image.jpg\",\n      \"name\": \"image.jpg\",\n      \"encodingFormat\": \"image/jpeg\",\n      \"content\": \"string\",\n      \"about\": \"http://user.example.com/profile/card#me\",\n      \"url\": \"http://user.example.com/public/profile/image.jpg\"\n    }\n  ],\n  \"parentOrganization\": [\n    \"http://example.com\"\n  ],\n  \"address\": {\n    \"type\": \"PostalAddress\",\n    \"streetAddress\": \"1007 Mountain Gate Rd\",\n    \"postOfficeBoxNumber\": \"Box 1234\",\n    \"addressRegion\": \"New Jersey\",\n    \"addressLocality\": \"Gotham City\",\n    \"postalCode\": \"10010\",\n    \"addressCountry\": \"usa\"\n  },\n  \"subOrganization\": [\n    \"http://org.example.com/profile/card#me\"\n  ],\n  \"member\": [\n    {\n      \"type\": \"OrganizationRole\",\n      \"roleName\": \"Owner\",\n      \"memberOf\": \"https://{organization}.example.com\",\n      \"member\": {\n        \"type\": \"Person\",\n        \"id\": \"http://{user}.example.com/profile/card#me\"\n      },\n      \"startDate\": \"2019-05-22T13:59:57Z\",\n      \"endDate\": \"2019-05-22T13:59:57Z\"\n    }\n  ],\n  \"memberOf\": [\n    {\n      \"type\": \"MLSMembership\",\n      \"roleName\": \"MLSMember\",\n      \"memberOf\": {\n        \"type\": \"MultipleListingService\",\n        \"name\": \"GreatScottMLS\"\n      },\n      \"member\": {\n        \"type\": \"Person\",\n        \"id\": \"http://{user}.example.com/profile/card#me\"\n      },\n      \"startDate\": \"2019-05-22T13:59:57Z\",\n      \"endDate\": \"2019-05-22T13:59:57Z\",\n      \"memberId\": \"memberid123\"\n    }\n  ],\n  \"permit\": [\n    {\n      \"type\": \"RealEstateLicense\",\n      \"name\": \"CA-DRE# 02068375\",\n      \"issuedBy\": {\n        \"type\": \"Organization\",\n        \"name\": \"California\"\n      },\n      \"issuedThrough\": {\n        \"type\": \"Service\",\n        \"name\": \"California Department of Real Estate\"\n      },\n      \"validIn\": {\n        \"type\": \"AdministrativeArea\",\n        \"name\": \"New York\"\n      },\n      \"validFrom\": \"2019-05-22T13:59:57Z\",\n      \"validUntil\": \"2019-05-22T13:59:57Z\"\n    }\n  ]\n}"
+          "generatedExample": "{\n  \"type\": \"RealEstateOrganization\",\n  \"name\": \"string\",\n  \"telephone\": \"079.706.7065 x6341\",\n  \"faxNumber\": \"(873) 271-4802\",\n  \"email\": \"user@example.com\",\n  \"url\": \"http://example.com\",\n  \"availableLanguage\": [\n    {\n      \"type\": \"Language\",\n      \"name\": \"English\",\n      \"additionalName\": \"en\"\n    }\n  ],\n  \"branchCode\": \"CA301-001\",\n  \"contactPoint\": [\n    {\n      \"type\": \"ContactPoint\",\n      \"name\": \"Relocation\",\n      \"telephone\": \"1-245-880-8222\",\n      \"faxNumber\": \"958-530-3473\",\n      \"email\": \"relocation@example.com\"\n    }\n  ],\n  \"logo\": [\n    {\n      \"type\": \"DigitalDocument\",\n      \"id\": \"http://user.example.com/public/logo/fileName.zip\",\n      \"name\": \"fileName.zip\",\n      \"encodingFormat\": \"application/zip\",\n      \"identifier\": {},\n      \"about\": \"http://user.example.com/profile/card#me\"\n    }\n  ],\n  \"image\": [\n    {\n      \"type\": \"ImageObject\",\n      \"id\": \"http://user.example.com/public/logo/image.jpg\",\n      \"name\": \"image.jpg\",\n      \"encodingFormat\": \"image/jpeg\",\n      \"content\": \"string\",\n      \"about\": \"http://user.example.com/profile/card#me\",\n      \"url\": \"http://user.example.com/public/profile/image.jpg\"\n    }\n  ],\n  \"parentOrganization\": [\n    \"http://example.com\"\n  ],\n  \"address\": {\n    \"type\": \"PostalAddress\",\n    \"streetAddress\": \"1007 Mountain Gate Rd\",\n    \"postOfficeBoxNumber\": \"Box 1234\",\n    \"addressRegion\": \"New Jersey\",\n    \"addressLocality\": \"Gotham City\",\n    \"postalCode\": \"10010\",\n    \"addressCountry\": \"usa\"\n  },\n  \"subOrganization\": [\n    \"http://org.example.com/profile/card#me\"\n  ],\n  \"member\": [\n    {\n      \"type\": \"OrganizationRole\",\n      \"roleName\": \"Owner\",\n      \"memberOf\": null,\n      \"member\": null,\n      \"startDate\": \"2019-05-22T14:53:14Z\",\n      \"endDate\": \"2019-05-22T14:53:14Z\"\n    }\n  ],\n  \"memberOf\": [\n    {\n      \"type\": \"MLSMembership\",\n      \"roleName\": \"MLSMember\",\n      \"memberOf\": {\n        \"type\": \"MultipleListingService\",\n        \"name\": \"GreatScottMLS\"\n      },\n      \"member\": null,\n      \"startDate\": \"2019-05-22T14:53:14Z\",\n      \"endDate\": \"2019-05-22T14:53:14Z\",\n      \"memberId\": \"memberid123\"\n    }\n  ],\n  \"permit\": [\n    {\n      \"type\": \"RealEstateLicense\",\n      \"name\": \"CA-DRE# 02068375\",\n      \"issuedBy\": {\n        \"type\": \"Organization\",\n        \"name\": \"California\"\n      },\n      \"issuedThrough\": {\n        \"type\": \"Service\",\n        \"name\": \"California Department of Real Estate\"\n      },\n      \"validIn\": {\n        \"type\": \"AdministrativeArea\",\n        \"name\": \"New York\"\n      },\n      \"validFrom\": \"2019-05-22T14:53:14Z\",\n      \"validUntil\": \"2019-05-22T14:53:14Z\"\n    }\n  ]\n}"
         },
         "RealEstateOrganization": {
           "title": "Thing",
@@ -10873,23 +10664,10 @@
                         "example": "Owner"
                       },
                       "memberOf": {
-                        "type": [
-                          "string",
-                          "object"
-                        ],
-                        "description": "the organization to which the role applies",
-                        "example": "https://{organization}.example.com"
+                        "description": "the org or group where the role is performed"
                       },
                       "member": {
-                        "type": [
-                          "string",
-                          "object"
-                        ],
-                        "description": "member object or id",
-                        "example": {
-                          "type": "Person",
-                          "id": "http://{user}.example.com/profile/card#me"
-                        }
+                        "description": "member object or id"
                       },
                       "startDate": {
                         "type": "string",
@@ -10940,23 +10718,10 @@
                         "example": "Owner"
                       },
                       "memberOf": {
-                        "type": [
-                          "string",
-                          "object"
-                        ],
-                        "description": "the organization to which the role applies",
-                        "example": "https://{organization}.example.com"
+                        "description": "the org or group where the role is performed"
                       },
                       "member": {
-                        "type": [
-                          "string",
-                          "object"
-                        ],
-                        "description": "member object or id",
-                        "example": {
-                          "type": "Person",
-                          "id": "http://{user}.example.com/profile/card#me"
-                        }
+                        "description": "member object or id"
                       },
                       "startDate": {
                         "type": "string",
@@ -11087,7 +10852,7 @@
             "https://schema.org/Organization"
           ],
           "description": "A real estate franchisor, broker or business.",
-          "generatedExample": "{\n  \"type\": \"RealEstateOrganization\",\n  \"name\": \"string\",\n  \"telephone\": \"079.706.7065 x6341\",\n  \"faxNumber\": \"(873) 271-4802\",\n  \"email\": \"user@example.com\",\n  \"url\": \"http://example.com\",\n  \"availableLanguage\": [\n    {\n      \"type\": \"Language\",\n      \"name\": \"English\",\n      \"additionalName\": \"en\"\n    }\n  ],\n  \"branchCode\": \"CA301-001\",\n  \"contactPoint\": [\n    {\n      \"type\": \"ContactPoint\",\n      \"name\": \"Work\",\n      \"telephone\": \"1-364-127-9618 x20418\",\n      \"faxNumber\": \"834.320.1602\",\n      \"email\": \"user@example.com\",\n      \"url\": \"https://www.facebook.com/hallandoates\"\n    }\n  ],\n  \"logo\": [\n    {\n      \"type\": \"DigitalDocument\",\n      \"id\": \"http://user.example.com/public/logo/fileName.zip\",\n      \"name\": \"fileName.zip\",\n      \"encodingFormat\": \"application/zip\",\n      \"identifier\": {},\n      \"about\": \"http://user.example.com/profile/card#me\"\n    }\n  ],\n  \"image\": [\n    {\n      \"type\": \"ImageObject\",\n      \"id\": \"http://user.example.com/public/logo/image.jpg\",\n      \"name\": \"image.jpg\",\n      \"encodingFormat\": \"image/jpeg\",\n      \"content\": \"string\",\n      \"about\": \"http://user.example.com/profile/card#me\",\n      \"url\": \"http://user.example.com/public/profile/image.jpg\"\n    }\n  ],\n  \"parentOrganization\": [\n    \"http://example.com\"\n  ],\n  \"address\": {\n    \"type\": \"PostalAddress\",\n    \"streetAddress\": \"1007 Mountain Gate Rd\",\n    \"postOfficeBoxNumber\": \"Box 1234\",\n    \"addressRegion\": \"New Jersey\",\n    \"addressLocality\": \"Gotham City\",\n    \"postalCode\": \"10010\",\n    \"addressCountry\": \"usa\"\n  },\n  \"subOrganization\": [\n    \"http://org.example.com/profile/card#me\"\n  ],\n  \"member\": [\n    {\n      \"type\": \"OrganizationRole\",\n      \"roleName\": \"Owner\",\n      \"memberOf\": \"https://{organization}.example.com\",\n      \"member\": {\n        \"type\": \"Person\",\n        \"id\": \"http://{user}.example.com/profile/card#me\"\n      },\n      \"startDate\": \"2019-05-22T13:59:57Z\",\n      \"endDate\": \"2019-05-22T13:59:57Z\"\n    }\n  ],\n  \"memberOf\": [\n    {\n      \"type\": \"MLSMembership\",\n      \"roleName\": \"MLSMember\",\n      \"memberOf\": {\n        \"type\": \"MultipleListingService\",\n        \"name\": \"GreatScottMLS\"\n      },\n      \"member\": {\n        \"type\": \"Person\",\n        \"id\": \"http://{user}.example.com/profile/card#me\"\n      },\n      \"startDate\": \"2019-05-22T13:59:57Z\",\n      \"endDate\": \"2019-05-22T13:59:57Z\",\n      \"memberId\": \"memberid123\"\n    }\n  ],\n  \"permit\": [\n    {\n      \"type\": \"RealEstateLicense\",\n      \"name\": \"CA-DRE# 02068375\",\n      \"issuedBy\": {\n        \"type\": \"Organization\",\n        \"name\": \"California\"\n      },\n      \"issuedThrough\": {\n        \"type\": \"Service\",\n        \"name\": \"California Department of Real Estate\"\n      },\n      \"validIn\": {\n        \"type\": \"AdministrativeArea\",\n        \"name\": \"New York\"\n      },\n      \"validFrom\": \"2019-05-22T13:59:57Z\",\n      \"validUntil\": \"2019-05-22T13:59:57Z\"\n    }\n  ]\n}"
+          "generatedExample": "{\n  \"type\": \"RealEstateOrganization\",\n  \"name\": \"string\",\n  \"telephone\": \"079.706.7065 x6341\",\n  \"faxNumber\": \"(873) 271-4802\",\n  \"email\": \"user@example.com\",\n  \"url\": \"http://example.com\",\n  \"availableLanguage\": [\n    {\n      \"type\": \"Language\",\n      \"name\": \"English\",\n      \"additionalName\": \"en\"\n    }\n  ],\n  \"branchCode\": \"CA301-001\",\n  \"contactPoint\": [\n    {\n      \"type\": \"ContactPoint\",\n      \"name\": \"Work\",\n      \"telephone\": \"1-364-127-9618 x20418\",\n      \"faxNumber\": \"834.320.1602\",\n      \"email\": \"user@example.com\",\n      \"url\": \"https://www.facebook.com/hallandoates\"\n    }\n  ],\n  \"logo\": [\n    {\n      \"type\": \"DigitalDocument\",\n      \"id\": \"http://user.example.com/public/logo/fileName.zip\",\n      \"name\": \"fileName.zip\",\n      \"encodingFormat\": \"application/zip\",\n      \"identifier\": {},\n      \"about\": \"http://user.example.com/profile/card#me\"\n    }\n  ],\n  \"image\": [\n    {\n      \"type\": \"ImageObject\",\n      \"id\": \"http://user.example.com/public/logo/image.jpg\",\n      \"name\": \"image.jpg\",\n      \"encodingFormat\": \"image/jpeg\",\n      \"content\": \"string\",\n      \"about\": \"http://user.example.com/profile/card#me\",\n      \"url\": \"http://user.example.com/public/profile/image.jpg\"\n    }\n  ],\n  \"parentOrganization\": [\n    \"http://example.com\"\n  ],\n  \"address\": {\n    \"type\": \"PostalAddress\",\n    \"streetAddress\": \"1007 Mountain Gate Rd\",\n    \"postOfficeBoxNumber\": \"Box 1234\",\n    \"addressRegion\": \"New Jersey\",\n    \"addressLocality\": \"Gotham City\",\n    \"postalCode\": \"10010\",\n    \"addressCountry\": \"usa\"\n  },\n  \"subOrganization\": [\n    \"http://org.example.com/profile/card#me\"\n  ],\n  \"member\": [\n    {\n      \"type\": \"OrganizationRole\",\n      \"roleName\": \"Owner\",\n      \"memberOf\": null,\n      \"member\": null,\n      \"startDate\": \"2019-05-22T14:53:14Z\",\n      \"endDate\": \"2019-05-22T14:53:14Z\"\n    }\n  ],\n  \"memberOf\": [\n    {\n      \"type\": \"MLSMembership\",\n      \"roleName\": \"MLSMember\",\n      \"memberOf\": {\n        \"type\": \"MultipleListingService\",\n        \"name\": \"GreatScottMLS\"\n      },\n      \"member\": null,\n      \"startDate\": \"2019-05-22T14:53:14Z\",\n      \"endDate\": \"2019-05-22T14:53:14Z\",\n      \"memberId\": \"memberid123\"\n    }\n  ],\n  \"permit\": [\n    {\n      \"type\": \"RealEstateLicense\",\n      \"name\": \"CA-DRE# 02068375\",\n      \"issuedBy\": {\n        \"type\": \"Organization\",\n        \"name\": \"California\"\n      },\n      \"issuedThrough\": {\n        \"type\": \"Service\",\n        \"name\": \"California Department of Real Estate\"\n      },\n      \"validIn\": {\n        \"type\": \"AdministrativeArea\",\n        \"name\": \"New York\"\n      },\n      \"validFrom\": \"2019-05-22T14:53:14Z\",\n      \"validUntil\": \"2019-05-22T14:53:14Z\"\n    }\n  ]\n}"
         },
         "RealEstateWebsite": {
           "title": "Thing",
@@ -11149,11 +10914,6 @@
                   "x-range": "PostalAddress",
                   "description": "PostalAddress",
                   "descriptionAsHTML": "<p>PostalAddress</p>\n"
-                },
-                "aggregateRating": {
-                  "type": "object",
-                  "description": "AggregateRating -- The overall rating, based on a collection of reviews or ratings, of the item.",
-                  "descriptionAsHTML": "<p>AggregateRating -- The overall rating, based on a collection of reviews or ratings, of the item.</p>\n"
                 },
                 "branchCode": {
                   "type": "string",
@@ -11254,7 +11014,7 @@
               }
             }
           },
-          "generatedExample": "{\n  \"type\": \"Service\",\n  \"name\": \"string\",\n  \"areaServed\": {\n    \"type\": \"Thing\",\n    \"address\": {},\n    \"aggregateRating\": {},\n    \"branchCode\": \"string\",\n    \"containedInPlace\": [\n      \"http://example.com\"\n    ],\n    \"containsPlace\": [\n      \"http://example.com\"\n    ],\n    \"geo\": {},\n    \"hasMap\": \"http://example.com\",\n    \"openingHoursSpecification\": {},\n    \"photo\": [\n      \"http://example.com\"\n    ],\n    \"review\": [\n      {}\n    ],\n    \"specialOpeningHoursSpecification\": [\n      {}\n    ]\n  }\n}"
+          "generatedExample": "{\n  \"type\": \"Service\",\n  \"name\": \"string\",\n  \"areaServed\": {\n    \"type\": \"Thing\",\n    \"address\": {},\n    \"branchCode\": \"string\",\n    \"containedInPlace\": [\n      \"http://example.com\"\n    ],\n    \"containsPlace\": [\n      \"http://example.com\"\n    ],\n    \"geo\": {},\n    \"hasMap\": \"http://example.com\",\n    \"openingHoursSpecification\": {},\n    \"photo\": [\n      \"http://example.com\"\n    ],\n    \"review\": [\n      {}\n    ],\n    \"specialOpeningHoursSpecification\": [\n      {}\n    ]\n  }\n}"
         },
         "Thing": {
           "title": "Thing",
@@ -11361,12 +11121,12 @@
           ],
           "properties": {
             "type": {
-              "description": "the action type",
+              "description": "AddAction",
               "type": "string",
               "enum": [
                 "AddAction"
               ],
-              "descriptionAsHTML": "<p>the action type</p>\n"
+              "descriptionAsHTML": "<p>AddAction</p>\n"
             },
             "object": {
               "description": "the item added to the collection",
@@ -11385,6 +11145,7 @@
               "descriptionAsHTML": "<p>something used by the agent to perform the action, i.e. an application or website that generated the message.</p>\n"
             },
             "targetCollection": {
+              "type": "object",
               "description": "the collection receiving the added object",
               "example": {
                 "type": "Collection",
@@ -11625,7 +11386,7 @@
             "description": "schema.org/Action",
             "url": "https://schema.org/Action"
           },
-          "generatedExample": "{\n  \"type\": \"RejectAction\",\n  \"object\": {\n    \"type\": \"Lead\",\n    \"object\": {\n      \"type\": \"Person\",\n      \"name\": \"Larry Lead\",\n      \"email\": \"larry@example.com\"\n    },\n    \"recipient\": \"http://{user}.example.com/profile/card#me\",\n    \"sender\": \"http://{provider}.example.com/profile/card#me\",\n    \"dateSent\": \"2019-05-22T13:59:57Z\",\n    \"activity\": [\n      {\n        \"type\": \"Action\",\n        \"object\": {},\n        \"agent\": null,\n        \"instrument\": \"https://{app}.example.com/profile/card#me\"\n      }\n    ]\n  },\n  \"agent\": null,\n  \"instrument\": \"https://{app}.example.com/profile/card#me\"\n}"
+          "generatedExample": "{\n  \"type\": \"RejectAction\",\n  \"object\": {\n    \"type\": \"Lead\",\n    \"object\": {\n      \"type\": \"Person\",\n      \"name\": \"Larry Lead\",\n      \"email\": \"larry@example.com\"\n    },\n    \"recipient\": \"http://{user}.example.com/profile/card#me\",\n    \"sender\": \"http://{provider}.example.com/profile/card#me\",\n    \"dateSent\": \"2019-05-22T14:53:14Z\",\n    \"activity\": [\n      {\n        \"type\": \"Action\",\n        \"object\": {},\n        \"agent\": null,\n        \"instrument\": \"https://{app}.example.com/profile/card#me\"\n      }\n    ]\n  },\n  \"agent\": null,\n  \"instrument\": \"https://{app}.example.com/profile/card#me\"\n}"
         },
         "RemoveAction": {
           "title": "Action",
@@ -11933,11 +11694,11 @@
                     "properties": {
                       "type": {
                         "type": "string",
-                        "description": "the action type",
+                        "description": "AddAction",
                         "enum": [
                           "AddAction"
                         ],
-                        "descriptionAsHTML": "<p>the action type</p>\n"
+                        "descriptionAsHTML": "<p>AddAction</p>\n"
                       },
                       "object": {
                         "type": "object",
@@ -12132,6 +11893,7 @@
                         "descriptionAsHTML": "<p>something used by the agent to perform the action, i.e. an application or website that generated the message.</p>\n"
                       },
                       "targetCollection": {
+                        "type": "object",
                         "description": "the collection receiving the added object",
                         "example": {
                           "type": "Collection",
@@ -12175,7 +11937,7 @@
               },
               "summaryAsHTML": "<p>a contact was added/created.</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/contact#add\",\n  \"data\": {\n    \"type\": \"AddAction\",\n    \"object\": {\n      \"type\": \"Contact\",\n      \"name\": \"Bruce Wayne\",\n      \"email\": \"batman@example.com\",\n      \"identifier\": {\n        \"sourcevendorid\": \"xxxx\"\n      }\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"targetCollection\": {\n      \"type\": \"Collection\",\n      \"id\": \"https://{user}.example.com/data/contact/\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/contact#add\",\n  \"data\": {\n    \"type\": \"AddAction\",\n    \"object\": {\n      \"type\": \"Contact\",\n      \"name\": \"Bruce Wayne\",\n      \"email\": \"batman@example.com\",\n      \"identifier\": {\n        \"sourcevendorid\": \"xxxx\"\n      }\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"targetCollection\": {\n      \"type\": \"Collection\",\n      \"id\": \"https://{user}.example.com/data/contact/\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "update",
@@ -12288,7 +12050,7 @@
               },
               "summaryAsHTML": "<p>a crm contact was updated</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/contact#update\",\n  \"data\": {\n    \"type\": \"UpdateAction\",\n    \"object\": {\n      \"type\": \"Contact\",\n      \"name\": \"the updated contact\",\n      \"identifier\": {\n        \"vendornameid\": 1234\n      }\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"targetCollection\": {\n      \"type\": \"Collection\",\n      \"name\": \"targetcollection\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/contact#update\",\n  \"data\": {\n    \"type\": \"UpdateAction\",\n    \"object\": {\n      \"type\": \"Contact\",\n      \"name\": \"the updated contact\",\n      \"identifier\": {\n        \"vendornameid\": 1234\n      }\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"targetCollection\": {\n      \"type\": \"Collection\",\n      \"name\": \"targetcollection\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             }
           ],
           "summaryAsHTML": "",
@@ -12460,7 +12222,7 @@
               },
               "summaryAsHTML": "<p>a lead (object) was accepted by the agent</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#accept\",\n  \"data\": {\n    \"type\": \"AcceptAction\",\n    \"object\": {\n      \"type\": \"Lead\",\n      \"object\": {\n        \"type\": \"Person\",\n        \"name\": \"Larry Lead\",\n        \"email\": \"larry@example.com\"\n      },\n      \"recipient\": \"http://{user}.example.com/profile/card#me\",\n      \"sender\": \"http://{provider}.example.com/profile/card#me\",\n      \"dateSent\": \"2019-05-22T13:59:57Z\",\n      \"activity\": [\n        {\n          \"type\": \"Action\",\n          \"object\": {},\n          \"agent\": null,\n          \"instrument\": \"https://{app}.example.com/profile/card#me\"\n        }\n      ]\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#accept\",\n  \"data\": {\n    \"type\": \"AcceptAction\",\n    \"object\": {\n      \"type\": \"Lead\",\n      \"object\": {\n        \"type\": \"Person\",\n        \"name\": \"Larry Lead\",\n        \"email\": \"larry@example.com\"\n      },\n      \"recipient\": \"http://{user}.example.com/profile/card#me\",\n      \"sender\": \"http://{provider}.example.com/profile/card#me\",\n      \"dateSent\": \"2019-05-22T14:53:14Z\",\n      \"activity\": [\n        {\n          \"type\": \"Action\",\n          \"object\": {},\n          \"agent\": null,\n          \"instrument\": \"https://{app}.example.com/profile/card#me\"\n        }\n      ]\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "add",
@@ -12488,11 +12250,11 @@
                     "properties": {
                       "type": {
                         "type": "string",
-                        "description": "the action type",
+                        "description": "AddAction",
                         "enum": [
                           "AddAction"
                         ],
-                        "descriptionAsHTML": "<p>the action type</p>\n"
+                        "descriptionAsHTML": "<p>AddAction</p>\n"
                       },
                       "object": {
                         "type": "object",
@@ -12588,6 +12350,7 @@
                         "descriptionAsHTML": "<p>something used by the agent to perform the action, i.e. an application or website that generated the message.</p>\n"
                       },
                       "targetCollection": {
+                        "type": "object",
                         "description": "the collection receiving the added object",
                         "example": {
                           "type": "Collection",
@@ -12630,7 +12393,7 @@
               },
               "summaryAsHTML": "<p>a crm lead was created</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#add\",\n  \"data\": {\n    \"type\": \"AddAction\",\n    \"object\": {\n      \"type\": \"Lead\",\n      \"object\": {\n        \"type\": \"Person\",\n        \"name\": \"Larry Lead\",\n        \"email\": \"larry@example.com\"\n      },\n      \"recipient\": \"http://{user}.example.com/profile/card#me\",\n      \"sender\": \"http://{provider}.example.com/profile/card#me\",\n      \"dateSent\": \"2019-05-22T13:59:57Z\",\n      \"activity\": [\n        {\n          \"type\": \"Action\",\n          \"object\": {},\n          \"agent\": null,\n          \"instrument\": \"https://{app}.example.com/profile/card#me\"\n        }\n      ]\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"targetCollection\": {\n      \"type\": \"Collection\",\n      \"id\": \"https://{user}.example.com/data/contact/\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#add\",\n  \"data\": {\n    \"type\": \"AddAction\",\n    \"object\": {\n      \"type\": \"Lead\",\n      \"object\": {\n        \"type\": \"Person\",\n        \"name\": \"Larry Lead\",\n        \"email\": \"larry@example.com\"\n      },\n      \"recipient\": \"http://{user}.example.com/profile/card#me\",\n      \"sender\": \"http://{provider}.example.com/profile/card#me\",\n      \"dateSent\": \"2019-05-22T14:53:14Z\",\n      \"activity\": [\n        {\n          \"type\": \"Action\",\n          \"object\": {},\n          \"agent\": null,\n          \"instrument\": \"https://{app}.example.com/profile/card#me\"\n        }\n      ]\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"targetCollection\": {\n      \"type\": \"Collection\",\n      \"id\": \"https://{user}.example.com/data/contact/\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "asssign",
@@ -12793,7 +12556,7 @@
               },
               "summaryAsHTML": "<p>a lead was assigned</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#assign\",\n  \"data\": {\n    \"type\": \"AssignAction\",\n    \"object\": {\n      \"type\": \"Lead\",\n      \"object\": {\n        \"type\": \"Person\",\n        \"name\": \"Larry Lead\",\n        \"email\": \"larry@example.com\"\n      },\n      \"recipient\": \"http://{user}.example.com/profile/card#me\",\n      \"sender\": \"http://{provider}.example.com/profile/card#me\",\n      \"dateSent\": \"2019-05-22T13:59:57Z\",\n      \"activity\": [\n        {\n          \"type\": \"Action\",\n          \"object\": {},\n          \"agent\": null,\n          \"instrument\": \"https://{app}.example.com/profile/card#me\"\n        }\n      ]\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#assign\",\n  \"data\": {\n    \"type\": \"AssignAction\",\n    \"object\": {\n      \"type\": \"Lead\",\n      \"object\": {\n        \"type\": \"Person\",\n        \"name\": \"Larry Lead\",\n        \"email\": \"larry@example.com\"\n      },\n      \"recipient\": \"http://{user}.example.com/profile/card#me\",\n      \"sender\": \"http://{provider}.example.com/profile/card#me\",\n      \"dateSent\": \"2019-05-22T14:53:14Z\",\n      \"activity\": [\n        {\n          \"type\": \"Action\",\n          \"object\": {},\n          \"agent\": null,\n          \"instrument\": \"https://{app}.example.com/profile/card#me\"\n        }\n      ]\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "update",
@@ -12956,7 +12719,7 @@
               },
               "summaryAsHTML": "<p>a crm lead was updated</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#update\",\n  \"data\": {\n    \"type\": \"UpdateAction\",\n    \"object\": {\n      \"type\": \"Lead\",\n      \"object\": {\n        \"type\": \"Person\",\n        \"name\": \"Larry Lead\",\n        \"email\": \"larry@example.com\"\n      },\n      \"recipient\": \"http://{user}.example.com/profile/card#me\",\n      \"sender\": \"http://{provider}.example.com/profile/card#me\",\n      \"dateSent\": \"2019-05-22T13:59:57Z\",\n      \"activity\": [\n        {\n          \"type\": \"Action\",\n          \"object\": {},\n          \"agent\": null,\n          \"instrument\": \"https://{app}.example.com/profile/card#me\"\n        }\n      ]\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#update\",\n  \"data\": {\n    \"type\": \"UpdateAction\",\n    \"object\": {\n      \"type\": \"Lead\",\n      \"object\": {\n        \"type\": \"Person\",\n        \"name\": \"Larry Lead\",\n        \"email\": \"larry@example.com\"\n      },\n      \"recipient\": \"http://{user}.example.com/profile/card#me\",\n      \"sender\": \"http://{provider}.example.com/profile/card#me\",\n      \"dateSent\": \"2019-05-22T14:53:14Z\",\n      \"activity\": [\n        {\n          \"type\": \"Action\",\n          \"object\": {},\n          \"agent\": null,\n          \"instrument\": \"https://{app}.example.com/profile/card#me\"\n        }\n      ]\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "reject",
@@ -13118,7 +12881,7 @@
               },
               "summaryAsHTML": "<p>a crm lead was rejected</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#reject\",\n  \"data\": {\n    \"type\": \"RejectAction\",\n    \"object\": {\n      \"type\": \"Lead\",\n      \"object\": {\n        \"type\": \"Person\",\n        \"name\": \"Larry Lead\",\n        \"email\": \"larry@example.com\"\n      },\n      \"recipient\": \"http://{user}.example.com/profile/card#me\",\n      \"sender\": \"http://{provider}.example.com/profile/card#me\",\n      \"dateSent\": \"2019-05-22T13:59:57Z\",\n      \"activity\": [\n        {\n          \"type\": \"Action\",\n          \"object\": {},\n          \"agent\": null,\n          \"instrument\": \"https://{app}.example.com/profile/card#me\"\n        }\n      ]\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/lead#reject\",\n  \"data\": {\n    \"type\": \"RejectAction\",\n    \"object\": {\n      \"type\": \"Lead\",\n      \"object\": {\n        \"type\": \"Person\",\n        \"name\": \"Larry Lead\",\n        \"email\": \"larry@example.com\"\n      },\n      \"recipient\": \"http://{user}.example.com/profile/card#me\",\n      \"sender\": \"http://{provider}.example.com/profile/card#me\",\n      \"dateSent\": \"2019-05-22T14:53:14Z\",\n      \"activity\": [\n        {\n          \"type\": \"Action\",\n          \"object\": {},\n          \"agent\": null,\n          \"instrument\": \"https://{app}.example.com/profile/card#me\"\n        }\n      ]\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             }
           ],
           "summaryAsHTML": "",
@@ -13207,23 +12970,10 @@
                                       "example": "Owner"
                                     },
                                     "memberOf": {
-                                      "type": [
-                                        "string",
-                                        "object"
-                                      ],
-                                      "description": "the organization to which the role applies",
-                                      "example": "https://{organization}.example.com"
+                                      "description": "the org or group where the role is performed"
                                     },
                                     "member": {
-                                      "type": [
-                                        "string",
-                                        "object"
-                                      ],
-                                      "description": "member object or id",
-                                      "example": {
-                                        "type": "Person",
-                                        "id": "http://{user}.example.com/profile/card#me"
-                                      }
+                                      "description": "member object or id"
                                     },
                                     "startDate": {
                                       "type": "string",
@@ -13272,9 +13022,26 @@
                             "type": "string",
                             "format": "date-time",
                             "descriptionAsHTML": "<p>The date on which the item was most recently modified or when the item's entry was modified within a DataFeed.</p>\n"
+                          },
+                          "about": {
+                            "x-range": "Place"
                           }
                         },
                         "x-subClassOf": "Organization",
+                        "x-range": "MarketingProgram",
+                        "example": {
+                          "type": "MarketingProgram",
+                          "name": "Market Activity Report 508 Homewood Ave",
+                          "about": {
+                            "type": "Place",
+                            "address": {
+                              "streetAddress": "508 Homewood Ave",
+                              "addressLocality": "Chula Vista",
+                              "addressRegion": "California",
+                              "postalCode": "55555"
+                            }
+                          }
+                        },
                         "descriptionAsHTML": "<p>the object upon which the action is carried out</p>\n"
                       },
                       "agent": {
@@ -13325,7 +13092,7 @@
               },
               "summaryAsHTML": "<p>a marketing program has been created</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/marketingprogram#create\",\n  \"data\": {\n    \"type\": \"CreateAction\",\n    \"object\": {\n      \"type\": \"MarketingProgram\",\n      \"name\": \"Market Activity Report 508 Homewood Ave\",\n      \"member\": [\n        {\n          \"type\": \"ProgramMembership\",\n          \"roleName\": \"Owner\",\n          \"memberOf\": null,\n          \"member\": {\n            \"type\": \"Person\",\n            \"id\": \"http://{user}.example.com/profile/card#me\"\n          },\n          \"startDate\": \"2019-05-22T13:59:57Z\",\n          \"endDate\": \"2019-05-22T13:59:57Z\"\n        }\n      ],\n      \"creator\": \"http://{user}.example.com/profile/card#me\",\n      \"dateCreated\": \"2019-05-22T13:59:57Z\",\n      \"dateModified\": \"2019-05-22T13:59:57Z\"\n    },\n    \"agent\": \"http://{agent}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/marketingprogram#create\",\n  \"data\": {\n    \"type\": \"CreateAction\",\n    \"object\": {\n      \"type\": \"MarketingProgram\",\n      \"name\": \"Market Activity Report 508 Homewood Ave\",\n      \"about\": {\n        \"type\": \"Place\",\n        \"address\": {\n          \"streetAddress\": \"508 Homewood Ave\",\n          \"addressLocality\": \"Chula Vista\",\n          \"addressRegion\": \"California\",\n          \"postalCode\": \"55555\"\n        }\n      }\n    },\n    \"agent\": \"http://{agent}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "memberadd",
@@ -13353,11 +13120,11 @@
                     "properties": {
                       "type": {
                         "type": "string",
-                        "description": "the action type",
+                        "description": "AddAction",
                         "enum": [
                           "AddAction"
                         ],
-                        "descriptionAsHTML": "<p>the action type</p>\n"
+                        "descriptionAsHTML": "<p>AddAction</p>\n"
                       },
                       "object": {
                         "type": "object",
@@ -13378,25 +13145,12 @@
                             "descriptionAsHTML": "<p>the role name</p>\n"
                           },
                           "memberOf": {
-                            "type": [
-                              "string",
-                              "object"
-                            ],
-                            "description": "the organization to which the role applies",
-                            "example": "https://{organization}.example.com",
+                            "description": "the org or group where the role is performed",
                             "x-range": "MarketingProgram",
-                            "descriptionAsHTML": "<p>the organization to which the role applies</p>\n"
+                            "descriptionAsHTML": "<p>the org or group where the role is performed</p>\n"
                           },
                           "member": {
-                            "type": [
-                              "string",
-                              "object"
-                            ],
                             "description": "member object or id",
-                            "example": {
-                              "type": "Person",
-                              "id": "http://{user}.example.com/profile/card#me"
-                            },
                             "descriptionAsHTML": "<p>member object or id</p>\n"
                           },
                           "startDate": {
@@ -13413,6 +13167,26 @@
                           }
                         },
                         "x-title": "ProgramMembership",
+                        "x-range": "ProgramMembership",
+                        "example": {
+                          "type": "ProgramMembership",
+                          "role": "Owner",
+                          "member": {
+                            "type": "Person",
+                            "name": "Edgardo Fisher",
+                            "identifier": {
+                              "aceid": "816fd12f-6479-4f45-b26f-0a2ba54972b6"
+                            }
+                          },
+                          "memberOf": {
+                            "type": "MarketingProgram",
+                            "name": "Market Activity Report 508 Homewood Ave",
+                            "identifier": {
+                              "aceid": "4ef1469a-1fc4-43af-96b1-0e4402ccc46e",
+                              "buysideid": "83271c2a-c35e-44e9-b790-5389f2c11b17"
+                            }
+                          }
+                        },
                         "descriptionAsHTML": "<p>describes membership relation between a member (Person) and a MarketingProgram</p>\n"
                       },
                       "agent": {
@@ -13428,14 +13202,18 @@
                         "descriptionAsHTML": "<p>something used by the agent to perform the action, i.e. an application or website that generated the message.</p>\n"
                       },
                       "targetCollection": {
+                        "type": "object",
                         "description": "the collection receiving the added object",
                         "example": {
                           "type": "MarketingProgram",
-                          "id": null,
+                          "id": "https://{user}.example.com/data/contact/",
+                          "name": "Market Activity Report 508 Homewood Ave",
                           "identifier": {
-                            "vendornameid": 1234
+                            "aceid": "4ef1469a-1fc4-43af-96b1-0e4402ccc46e",
+                            "buysideid": "83271c2a-c35e-44e9-b790-5389f2c11b17"
                           }
                         },
+                        "x-range": "MarketingProgram",
                         "descriptionAsHTML": "<p>the collection receiving the added object</p>\n"
                       }
                     },
@@ -13473,7 +13251,7 @@
               },
               "summaryAsHTML": "<p>a program member was added by the agent</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/marketingprogram#memberadd\",\n  \"data\": {\n    \"type\": \"AddAction\",\n    \"object\": {\n      \"type\": \"ProgramMembership\",\n      \"roleName\": \"Owner\",\n      \"memberOf\": \"https://{organization}.example.com\",\n      \"member\": {\n        \"type\": \"Person\",\n        \"id\": \"http://{user}.example.com/profile/card#me\"\n      },\n      \"startDate\": \"2019-05-22T13:59:57Z\",\n      \"endDate\": \"2019-05-22T13:59:57Z\"\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"targetCollection\": {\n      \"type\": \"MarketingProgram\",\n      \"id\": null,\n      \"identifier\": {\n        \"vendornameid\": 1234\n      }\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/marketingprogram#memberadd\",\n  \"data\": {\n    \"type\": \"AddAction\",\n    \"object\": {\n      \"type\": \"ProgramMembership\",\n      \"role\": \"Owner\",\n      \"member\": {\n        \"type\": \"Person\",\n        \"name\": \"Edgardo Fisher\",\n        \"identifier\": {\n          \"aceid\": \"816fd12f-6479-4f45-b26f-0a2ba54972b6\"\n        }\n      },\n      \"memberOf\": {\n        \"type\": \"MarketingProgram\",\n        \"name\": \"Market Activity Report 508 Homewood Ave\",\n        \"identifier\": {\n          \"aceid\": \"4ef1469a-1fc4-43af-96b1-0e4402ccc46e\",\n          \"buysideid\": \"83271c2a-c35e-44e9-b790-5389f2c11b17\"\n        }\n      }\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"targetCollection\": {\n      \"type\": \"MarketingProgram\",\n      \"id\": \"https://{user}.example.com/data/contact/\",\n      \"name\": \"Market Activity Report 508 Homewood Ave\",\n      \"identifier\": {\n        \"aceid\": \"4ef1469a-1fc4-43af-96b1-0e4402ccc46e\",\n        \"buysideid\": \"83271c2a-c35e-44e9-b790-5389f2c11b17\"\n      }\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "memberremove",
@@ -13526,25 +13304,12 @@
                             "descriptionAsHTML": "<p>the role name</p>\n"
                           },
                           "memberOf": {
-                            "type": [
-                              "string",
-                              "object"
-                            ],
-                            "description": "the organization to which the role applies",
-                            "example": "https://{organization}.example.com",
+                            "description": "the org or group where the role is performed",
                             "x-range": "MarketingProgram",
-                            "descriptionAsHTML": "<p>the organization to which the role applies</p>\n"
+                            "descriptionAsHTML": "<p>the org or group where the role is performed</p>\n"
                           },
                           "member": {
-                            "type": [
-                              "string",
-                              "object"
-                            ],
                             "description": "member object or id",
-                            "example": {
-                              "type": "Person",
-                              "id": "http://{user}.example.com/profile/card#me"
-                            },
                             "descriptionAsHTML": "<p>member object or id</p>\n"
                           },
                           "startDate": {
@@ -13561,13 +13326,22 @@
                           }
                         },
                         "x-title": "ProgramMembership",
+                        "x-range": "ProgramMembership",
+                        "example": {
+                          "type": "ProgramMembership",
+                          "role": "Owner",
+                          "member": {
+                            "type": "Person",
+                            "name": "Edgardo Fisher",
+                            "identifier": {
+                              "aceid": "816fd12f-6479-4f45-b26f-0a2ba54972b6"
+                            }
+                          }
+                        },
                         "descriptionAsHTML": "<p>describes membership relation between a member (Person) and a MarketingProgram</p>\n"
                       },
                       "agent": {
-                        "example": {
-                          "type": "RealEstateAgent",
-                          "id": "http://{user}.example.com/profile/card#me"
-                        },
+                        "example": "https://{user}.example.com/profile/card#me",
                         "description": "the direct performer of the action",
                         "descriptionAsHTML": "<p>the direct performer of the action</p>\n"
                       },
@@ -13580,10 +13354,13 @@
                       },
                       "targetCollection": {
                         "description": "the collection from which the item is being removed",
+                        "x-range": "MarketingProgram",
                         "example": {
                           "type": "MarketingProgram",
+                          "name": "Market Activity Report 508 Homewood Ave",
                           "identifier": {
-                            "vendornameid": "abc123"
+                            "aceid": "4ef1469a-1fc4-43af-96b1-0e4402ccc46e",
+                            "buysideid": "83271c2a-c35e-44e9-b790-5389f2c11b17"
                           }
                         },
                         "descriptionAsHTML": "<p>the collection from which the item is being removed</p>\n"
@@ -13623,7 +13400,7 @@
               },
               "summaryAsHTML": "<p>a program member was removed by the agent</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/marketingprogram#memberremove\",\n  \"data\": {\n    \"type\": \"RemoveAction\",\n    \"object\": {\n      \"type\": \"ProgramMembership\",\n      \"roleName\": \"Owner\",\n      \"memberOf\": \"https://{organization}.example.com\",\n      \"member\": {\n        \"type\": \"Person\",\n        \"id\": \"http://{user}.example.com/profile/card#me\"\n      },\n      \"startDate\": \"2019-05-22T13:59:57Z\",\n      \"endDate\": \"2019-05-22T13:59:57Z\"\n    },\n    \"agent\": {\n      \"type\": \"RealEstateAgent\",\n      \"id\": \"http://{user}.example.com/profile/card#me\"\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"targetCollection\": {\n      \"type\": \"MarketingProgram\",\n      \"identifier\": {\n        \"vendornameid\": \"abc123\"\n      }\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/marketingprogram#memberremove\",\n  \"data\": {\n    \"type\": \"RemoveAction\",\n    \"object\": {\n      \"type\": \"ProgramMembership\",\n      \"role\": \"Owner\",\n      \"member\": {\n        \"type\": \"Person\",\n        \"name\": \"Edgardo Fisher\",\n        \"identifier\": {\n          \"aceid\": \"816fd12f-6479-4f45-b26f-0a2ba54972b6\"\n        }\n      }\n    },\n    \"agent\": \"https://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"targetCollection\": {\n      \"type\": \"MarketingProgram\",\n      \"name\": \"Market Activity Report 508 Homewood Ave\",\n      \"identifier\": {\n        \"aceid\": \"4ef1469a-1fc4-43af-96b1-0e4402ccc46e\",\n        \"buysideid\": \"83271c2a-c35e-44e9-b790-5389f2c11b17\"\n      }\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             }
           ],
           "summaryAsHTML": "",
@@ -13716,7 +13493,7 @@
               },
               "summaryAsHTML": "<p>an agent, office or organization profile was added</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/profile#add\",\n  \"data\": {\n    \"type\": \"AddAction\",\n    \"object\": {\n      \"type\": \"RealEstateAgent\",\n      \"name\": \"Arya Stark\",\n      \"email\": \"arya@example.com\"\n    },\n    \"agent\": \"http://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/profile#add\",\n  \"data\": {\n    \"type\": \"AddAction\",\n    \"object\": {\n      \"type\": \"RealEstateAgent\",\n      \"name\": \"Arya Stark\",\n      \"email\": \"arya@example.com\"\n    },\n    \"agent\": \"http://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "update",
@@ -13797,7 +13574,7 @@
               },
               "summaryAsHTML": "<p>an agent, office or organization profile was updated</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"string\",\n  \"data\": {\n    \"type\": \"UpdateAction\",\n    \"object\": {\n      \"type\": \"RealEstateAgent\",\n      \"name\": \"Arya Stark\",\n      \"email\": \"arya@example.com\"\n    },\n    \"agent\": \"http://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"string\",\n  \"data\": {\n    \"type\": \"UpdateAction\",\n    \"object\": {\n      \"type\": \"RealEstateAgent\",\n      \"name\": \"Arya Stark\",\n      \"email\": \"arya@example.com\"\n    },\n    \"agent\": \"http://{user}.example.com/profile/card#me\",\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             }
           ],
           "summaryAsHTML": "",
@@ -13961,7 +13738,7 @@
               },
               "summaryAsHTML": "<p>a website vistor has requested an appointment</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#appointmentrequest\",\n  \"data\": {\n    \"type\": \"AppointmentRequest\",\n    \"object\": {\n      \"type\": \"Comment\",\n      \"text\": \"Winter is coming\",\n      \"author\": {\n        \"type\": \"Person\",\n        \"email\": \"user@example.com\"\n      },\n      \"about\": {\n        \"type\": \"RealEstateListing\",\n        \"id\": \"http://example.com/listing/1\"\n      }\n    },\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"recipient\": \"http://{agent}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#appointmentrequest\",\n  \"data\": {\n    \"type\": \"AppointmentRequest\",\n    \"object\": {\n      \"type\": \"Comment\",\n      \"text\": \"Winter is coming\",\n      \"author\": {\n        \"type\": \"Person\",\n        \"email\": \"user@example.com\"\n      },\n      \"about\": {\n        \"type\": \"RealEstateListing\",\n        \"id\": \"http://example.com/listing/1\"\n      }\n    },\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"recipient\": \"http://{agent}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "propertyoffer",
@@ -14104,7 +13881,7 @@
               },
               "summaryAsHTML": "<p>website user makes an offer on a property listing</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertyoffer\",\n  \"data\": {\n    \"type\": \"OfferAction\",\n    \"object\": {\n      \"type\": \"RealEstateListing\",\n      \"id\": \"http://example.com/12345\"\n    },\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"recipient\": {\n      \"id\": \"http://user.example.com/profile/card#me\"\n    },\n    \"offerPrice\": {\n      \"type\": \"PriceSpecification\",\n      \"minPrice\": 0,\n      \"maxPrice\": 0,\n      \"price\": 0,\n      \"priceCurrency\": \"USD\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertyoffer\",\n  \"data\": {\n    \"type\": \"OfferAction\",\n    \"object\": {\n      \"type\": \"RealEstateListing\",\n      \"id\": \"http://example.com/12345\"\n    },\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"recipient\": {\n      \"id\": \"http://user.example.com/profile/card#me\"\n    },\n    \"offerPrice\": {\n      \"type\": \"PriceSpecification\",\n      \"minPrice\": 0,\n      \"maxPrice\": 0,\n      \"price\": 0,\n      \"priceCurrency\": \"USD\"\n    }\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "propertysearch",
@@ -14284,15 +14061,12 @@
                                     }
                                   },
                                   {
+                                    "type": "object",
                                     "properties": {
                                       "address": {
                                         "type": "object",
                                         "x-range": "PostalAddress",
                                         "description": "PostalAddress"
-                                      },
-                                      "aggregateRating": {
-                                        "type": "object",
-                                        "description": "AggregateRating -- The overall rating, based on a collection of reviews or ratings, of the item."
                                       },
                                       "branchCode": {
                                         "type": "string",
@@ -14440,7 +14214,7 @@
               },
               "summaryAsHTML": "<p>a website user has performed a property search</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertysearch\",\n  \"data\": {\n    \"type\": \"SearchAction\",\n    \"object\": {\n      \"type\": \"PropertySearchArguments\",\n      \"price\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"bedrooms\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"bathrooms\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"location\": {\n        \"type\": \"PostalAddress\",\n        \"streetAddress\": \"1007 Mountain Gate Rd\",\n        \"postOfficeBoxNumber\": \"Box 1234\",\n        \"addressRegion\": \"New Jersey\",\n        \"addressLocality\": \"Gotham City\",\n        \"postalCode\": \"10010\",\n        \"addressCountry\": \"usa\"\n      }\n    },\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertysearch\",\n  \"data\": {\n    \"type\": \"SearchAction\",\n    \"object\": {\n      \"type\": \"PropertySearchArguments\",\n      \"price\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"bedrooms\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"bathrooms\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"location\": {\n        \"type\": \"PostalAddress\",\n        \"streetAddress\": \"1007 Mountain Gate Rd\",\n        \"postOfficeBoxNumber\": \"Box 1234\",\n        \"addressRegion\": \"New Jersey\",\n        \"addressLocality\": \"Gotham City\",\n        \"postalCode\": \"10010\",\n        \"addressCountry\": \"usa\"\n      }\n    },\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "propertyshare",
@@ -14525,7 +14299,7 @@
               },
               "summaryAsHTML": "<p>agent shared object with recipient</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertyshare\",\n  \"data\": {\n    \"type\": \"ShareAction\",\n    \"object\": {\n      \"type\": \"RealEstateListing\",\n      \"url\": \"http://example.com/listing/122\"\n    },\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertyshare\",\n  \"data\": {\n    \"type\": \"ShareAction\",\n    \"object\": {\n      \"type\": \"RealEstateListing\",\n      \"url\": \"http://example.com/listing/122\"\n    },\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "propertyview",
@@ -14605,7 +14379,7 @@
               },
               "summaryAsHTML": "<p>website user (agent) viewed an (object) on website (instrument)</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertyview\",\n  \"data\": {\n    \"type\": \"ViewAction\",\n    \"object\": {},\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertyview\",\n  \"data\": {\n    \"type\": \"ViewAction\",\n    \"object\": {},\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "question",
@@ -14712,7 +14486,7 @@
               },
               "summaryAsHTML": "<p>a website visitor has asked a question</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#question\",\n  \"data\": {\n    \"type\": \"AskAction\",\n    \"object\": {},\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"question\": {\n      \"type\": \"Question\",\n      \"text\": \"What is the meaning of life?\"\n    },\n    \"recipient\": \"https://{user}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#question\",\n  \"data\": {\n    \"type\": \"AskAction\",\n    \"object\": {},\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\",\n    \"question\": {\n      \"type\": \"Question\",\n      \"text\": \"What is the meaning of life?\"\n    },\n    \"recipient\": \"https://{user}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "register",
@@ -14789,7 +14563,7 @@
               },
               "summaryAsHTML": "<p>a website visitor has registered</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#register\",\n  \"data\": {\n    \"type\": \"string\",\n    \"object\": {},\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#register\",\n  \"data\": {\n    \"type\": \"string\",\n    \"object\": {},\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "showingrequest",
@@ -14866,7 +14640,7 @@
               },
               "summaryAsHTML": "<p>a website visitor has requested a property showing</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#showingrequest\",\n  \"data\": {\n    \"type\": \"string\",\n    \"object\": {},\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#showingrequest\",\n  \"data\": {\n    \"type\": \"string\",\n    \"object\": {},\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "propertysave",
@@ -15471,23 +15245,10 @@
                                                       "example": "Owner"
                                                     },
                                                     "memberOf": {
-                                                      "type": [
-                                                        "string",
-                                                        "object"
-                                                      ],
-                                                      "description": "the organization to which the role applies",
-                                                      "example": "https://{organization}.example.com"
+                                                      "description": "the org or group where the role is performed"
                                                     },
                                                     "member": {
-                                                      "type": [
-                                                        "string",
-                                                        "object"
-                                                      ],
-                                                      "description": "member object or id",
-                                                      "example": {
-                                                        "type": "Person",
-                                                        "id": "http://{user}.example.com/profile/card#me"
-                                                      }
+                                                      "description": "member object or id"
                                                     },
                                                     "startDate": {
                                                       "type": "string",
@@ -15537,23 +15298,10 @@
                                                       "example": "Owner"
                                                     },
                                                     "memberOf": {
-                                                      "type": [
-                                                        "string",
-                                                        "object"
-                                                      ],
-                                                      "description": "the organization to which the role applies",
-                                                      "example": "https://{organization}.example.com"
+                                                      "description": "the org or group where the role is performed"
                                                     },
                                                     "member": {
-                                                      "type": [
-                                                        "string",
-                                                        "object"
-                                                      ],
-                                                      "description": "member object or id",
-                                                      "example": {
-                                                        "type": "Person",
-                                                        "id": "http://{user}.example.com/profile/card#me"
-                                                      }
+                                                      "description": "member object or id"
                                                     },
                                                     "startDate": {
                                                       "type": "string",
@@ -16178,23 +15926,10 @@
                                                       "example": "Owner"
                                                     },
                                                     "memberOf": {
-                                                      "type": [
-                                                        "string",
-                                                        "object"
-                                                      ],
-                                                      "description": "the organization to which the role applies",
-                                                      "example": "https://{organization}.example.com"
+                                                      "description": "the org or group where the role is performed"
                                                     },
                                                     "member": {
-                                                      "type": [
-                                                        "string",
-                                                        "object"
-                                                      ],
-                                                      "description": "member object or id",
-                                                      "example": {
-                                                        "type": "Person",
-                                                        "id": "http://{user}.example.com/profile/card#me"
-                                                      }
+                                                      "description": "member object or id"
                                                     },
                                                     "startDate": {
                                                       "type": "string",
@@ -16244,23 +15979,10 @@
                                                       "example": "Owner"
                                                     },
                                                     "memberOf": {
-                                                      "type": [
-                                                        "string",
-                                                        "object"
-                                                      ],
-                                                      "description": "the organization to which the role applies",
-                                                      "example": "https://{organization}.example.com"
+                                                      "description": "the org or group where the role is performed"
                                                     },
                                                     "member": {
-                                                      "type": [
-                                                        "string",
-                                                        "object"
-                                                      ],
-                                                      "description": "member object or id",
-                                                      "example": {
-                                                        "type": "Person",
-                                                        "id": "http://{user}.example.com/profile/card#me"
-                                                      }
+                                                      "description": "member object or id"
                                                     },
                                                     "startDate": {
                                                       "type": "string",
@@ -16596,7 +16318,7 @@
               },
               "summaryAsHTML": "<p>website user (agent) saved a property</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertysave\",\n  \"data\": {\n    \"type\": \"SaveAction\",\n    \"object\": {\n      \"type\": \"PropertyListing\",\n      \"url\": \"http://example.com/property/123\"\n    },\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertysave\",\n  \"data\": {\n    \"type\": \"SaveAction\",\n    \"object\": {\n      \"type\": \"PropertyListing\",\n      \"url\": \"http://example.com/property/123\"\n    },\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             },
             {
               "x-title": "propertysearchsave",
@@ -16774,15 +16496,12 @@
                                     }
                                   },
                                   {
+                                    "type": "object",
                                     "properties": {
                                       "address": {
                                         "type": "object",
                                         "x-range": "PostalAddress",
                                         "description": "PostalAddress"
-                                      },
-                                      "aggregateRating": {
-                                        "type": "object",
-                                        "description": "AggregateRating -- The overall rating, based on a collection of reviews or ratings, of the item."
                                       },
                                       "branchCode": {
                                         "type": "string",
@@ -16925,7 +16644,7 @@
               },
               "summaryAsHTML": "<p>website user (agent) saved a propertysearch (object)</p>\n",
               "descriptionAsHTML": "",
-              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertysearchsave\",\n  \"data\": {\n    \"type\": \"SaveAction\",\n    \"object\": {\n      \"type\": \"PropertySearchArguments\",\n      \"price\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"bedrooms\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"bathrooms\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"location\": {\n        \"type\": \"PostalAddress\",\n        \"streetAddress\": \"1007 Mountain Gate Rd\",\n        \"postOfficeBoxNumber\": \"Box 1234\",\n        \"addressRegion\": \"New Jersey\",\n        \"addressLocality\": \"Gotham City\",\n        \"postalCode\": \"10010\",\n        \"addressCountry\": \"usa\"\n      }\n    },\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T13:59:57Z\"\n}"
+              "generatedPayloadExample": "{\n  \"topic\": \"realestate/website#propertysearchsave\",\n  \"data\": {\n    \"type\": \"SaveAction\",\n    \"object\": {\n      \"type\": \"PropertySearchArguments\",\n      \"price\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"bedrooms\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"bathrooms\": {\n        \"value\": 0,\n        \"minValue\": 0,\n        \"maxValue\": 0,\n        \"unitCode\": \"string\",\n        \"unitText\": \"string\"\n      },\n      \"location\": {\n        \"type\": \"PostalAddress\",\n        \"streetAddress\": \"1007 Mountain Gate Rd\",\n        \"postOfficeBoxNumber\": \"Box 1234\",\n        \"addressRegion\": \"New Jersey\",\n        \"addressLocality\": \"Gotham City\",\n        \"postalCode\": \"10010\",\n        \"addressCountry\": \"usa\"\n      }\n    },\n    \"agent\": {\n      \"type\": \"Person\",\n      \"name\": \"Bob\",\n      \"email\": \"bob@example.com\",\n      \"telephone\": \"1+000-867-5309\",\n      \"identifier\": {\n        \"vendornameuserid\": \"abc123\"\n      }\n    },\n    \"instrument\": \"https://{app}.example.com/profile/card#me\"\n  },\n  \"source\": \"http://{user}.example.com/profile/card#me\",\n  \"instrument\": \"http://{supercrm}.example.com/profile/card#me\",\n  \"time\": \"2019-05-22T14:53:14Z\"\n}"
             }
           ],
           "summaryAsHTML": "",

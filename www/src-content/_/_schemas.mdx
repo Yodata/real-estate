@@ -142,7 +142,7 @@ a lead offered or assigned by the agent to one or more recipients
   },
   "recipient": "http://{user}.example.com/profile/card#me",
   "sender": "http://{provider}.example.com/profile/card#me",
-  "dateSent": "2019-05-22T13:59:57Z",
+  "dateSent": "2019-05-22T14:53:14Z",
   "activity": [
     {
       "type": "Action",
@@ -178,17 +178,14 @@ a lead offered or assigned by the agent to one or more recipients
       "type": "ProgramMembership",
       "roleName": "Owner",
       "memberOf": null,
-      "member": {
-        "type": "Person",
-        "id": "http://{user}.example.com/profile/card#me"
-      },
-      "startDate": "2019-05-22T13:59:57Z",
-      "endDate": "2019-05-22T13:59:57Z"
+      "member": null,
+      "startDate": "2019-05-22T14:53:14Z",
+      "endDate": "2019-05-22T14:53:14Z"
     }
   ],
   "creator": "http://{user}.example.com/profile/card#me",
-  "dateCreated": "2019-05-22T13:59:57Z",
-  "dateModified": "2019-05-22T13:59:57Z"
+  "dateCreated": "2019-05-22T14:53:14Z",
+  "dateModified": "2019-05-22T14:53:14Z"
 }
 ```
 
@@ -237,12 +234,9 @@ describes a role played by a member and a group or organization.
     "type": "MultipleListingService",
     "name": "GreatScottMLS"
   },
-  "member": {
-    "type": "Person",
-    "id": "http://{user}.example.com/profile/card#me"
-  },
-  "startDate": "2019-05-22T13:59:57Z",
-  "endDate": "2019-05-22T13:59:57Z",
+  "member": null,
+  "startDate": "2019-05-22T14:53:14Z",
+  "endDate": "2019-05-22T14:53:14Z",
   "memberId": "memberid123"
 }
 ```
@@ -252,8 +246,8 @@ describes a role played by a member and a group or organization.
 |:-----| :--- | :---------- |
 | type | string | an MLS member relationship  |
 | roleName | string | the role name  |
-| memberOf | object | the organization to which the role applies <br/>RANGE: [MultipleListingService](/schemas#multiplelistingservice) |
-| member | string,object | member object or id  |
+| memberOf | object | the org or group where the role is performed <br/>RANGE: [MultipleListingService](/schemas#multiplelistingservice) |
+| member | * | member object or id  |
 | startDate | string&lt;date-time&gt; | date the member began performing this role  |
 | endDate | string&lt;date-time&gt; | date the member stopped performing the role  |
 | memberId | string | the user's MLSID  |
@@ -415,13 +409,10 @@ describes a role played by a member and a group or organization.
 {
   "type": "OrganizationRole",
   "roleName": "Owner",
-  "memberOf": "https://{organization}.example.com",
-  "member": {
-    "type": "Person",
-    "id": "http://{user}.example.com/profile/card#me"
-  },
-  "startDate": "2019-05-22T13:59:57Z",
-  "endDate": "2019-05-22T13:59:57Z"
+  "memberOf": null,
+  "member": null,
+  "startDate": "2019-05-22T14:53:14Z",
+  "endDate": "2019-05-22T14:53:14Z"
 }
 ```
 
@@ -430,8 +421,8 @@ describes a role played by a member and a group or organization.
 |:-----| :--- | :---------- |
 | type | string | a role played by the member in the memberOf group  |
 | roleName | string | the role name  |
-| memberOf | string,object | the organization to which the role applies  |
-| member | string,object | member object or id  |
+| memberOf | * | the org or group where the role is performed  |
+| member | * | member object or id  |
 | startDate | string&lt;date-time&gt; | date the member began performing this role  |
 | endDate | string&lt;date-time&gt; | date the member stopped performing the role  |
 
@@ -453,7 +444,6 @@ A permit issued by an organization to an individual or business.
   "validIn": {
     "type": "Thing",
     "address": {},
-    "aggregateRating": {},
     "branchCode": "string",
     "containedInPlace": [
       "http://example.com"
@@ -474,8 +464,8 @@ A permit issued by an organization to an individual or business.
       {}
     ]
   },
-  "validFrom": "2019-05-22T13:59:57Z",
-  "validUntil": "2019-05-22T13:59:57Z"
+  "validFrom": "2019-05-22T14:53:14Z",
+  "validUntil": "2019-05-22T14:53:14Z"
 }
 ```
 
@@ -489,7 +479,6 @@ A permit issued by an organization to an individual or business.
 | validIn | object |   |
 | validIn.type | string! | Linked-Data (@type)  |
 | validIn.address | object | PostalAddress <br/>RANGE: [PostalAddress](/schemas#postaladdress) |
-| validIn.aggregateRating | object | AggregateRating -- The overall rating, based on a collection of reviews or ratings, of the item.  |
 | validIn.branchCode | string | A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.  |
 | validIn.containedInPlace | [string&lt;uri&gt;] | Place  |
 | validIn.containsPlace | [string&lt;uri&gt;] | Place  |
@@ -571,7 +560,6 @@ A permit issued by an organization to an individual or business.
 {
   "type": "Thing",
   "address": {},
-  "aggregateRating": {},
   "branchCode": "string",
   "containedInPlace": [
     "http://example.com"
@@ -599,7 +587,6 @@ A permit issued by an organization to an individual or business.
 |:-----| :--- | :---------- |
 | type | string! | Linked-Data (@type)  |
 | address | object | PostalAddress <br/>RANGE: [PostalAddress](/schemas#postaladdress) |
-| aggregateRating | object | AggregateRating -- The overall rating, based on a collection of reviews or ratings, of the item.  |
 | branchCode | string | A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.  |
 | containedInPlace | [string&lt;uri&gt;] | Place  |
 | containsPlace | [string&lt;uri&gt;] | Place  |
@@ -680,13 +667,10 @@ describes membership relation between a member (Person) and a MarketingProgram
 {
   "type": "ProgramMembership",
   "roleName": "Owner",
-  "memberOf": "https://{organization}.example.com",
-  "member": {
-    "type": "Person",
-    "id": "http://{user}.example.com/profile/card#me"
-  },
-  "startDate": "2019-05-22T13:59:57Z",
-  "endDate": "2019-05-22T13:59:57Z"
+  "memberOf": null,
+  "member": null,
+  "startDate": "2019-05-22T14:53:14Z",
+  "endDate": "2019-05-22T14:53:14Z"
 }
 ```
 
@@ -695,8 +679,8 @@ describes membership relation between a member (Person) and a MarketingProgram
 |:-----| :--- | :---------- |
 | type | string | a role played by the member in the memberOf group  |
 | roleName | string | the role name  |
-| memberOf | string,object | the organization to which the role applies <br/>RANGE: [MarketingProgram](/schemas#marketingprogram) |
-| member | string,object | member object or id  |
+| memberOf | * | the org or group where the role is performed <br/>RANGE: [MarketingProgram](/schemas#marketingprogram) |
+| member | * | member object or id  |
 | startDate | string&lt;date-time&gt; | date the member began performing this role  |
 | endDate | string&lt;date-time&gt; | date the member stopped performing the role  |
 
@@ -715,9 +699,9 @@ a real estate property listed for sale
     "postalCode": "10010",
     "addressCountry": "usa"
   },
-  "dateListed": "2019-05-22T13:59:57Z",
-  "dateSold": "2019-05-22T13:59:57Z",
-  "dateClosed": "2019-05-22T13:59:57Z",
+  "dateListed": "2019-05-22T14:53:14Z",
+  "dateSold": "2019-05-22T14:53:14Z",
+  "dateClosed": "2019-05-22T14:53:14Z",
   "listingPrice": {
     "type": "PriceSpecification",
     "minPrice": 0,
@@ -1016,13 +1000,10 @@ A real estate agent or team.
     {
       "type": "OrganizationRole",
       "roleName": "Owner",
-      "memberOf": "https://{organization}.example.com",
-      "member": {
-        "type": "Person",
-        "id": "http://{user}.example.com/profile/card#me"
-      },
-      "startDate": "2019-05-22T13:59:57Z",
-      "endDate": "2019-05-22T13:59:57Z"
+      "memberOf": null,
+      "member": null,
+      "startDate": "2019-05-22T14:53:14Z",
+      "endDate": "2019-05-22T14:53:14Z"
     }
   ],
   "memberOf": [
@@ -1033,12 +1014,9 @@ A real estate agent or team.
         "type": "MultipleListingService",
         "name": "GreatScottMLS"
       },
-      "member": {
-        "type": "Person",
-        "id": "http://{user}.example.com/profile/card#me"
-      },
-      "startDate": "2019-05-22T13:59:57Z",
-      "endDate": "2019-05-22T13:59:57Z",
+      "member": null,
+      "startDate": "2019-05-22T14:53:14Z",
+      "endDate": "2019-05-22T14:53:14Z",
       "memberId": "memberid123"
     }
   ],
@@ -1058,8 +1036,8 @@ A real estate agent or team.
         "type": "AdministrativeArea",
         "name": "New York"
       },
-      "validFrom": "2019-05-22T13:59:57Z",
-      "validUntil": "2019-05-22T13:59:57Z"
+      "validFrom": "2019-05-22T14:53:14Z",
+      "validUntil": "2019-05-22T14:53:14Z"
     }
   ]
 }
@@ -1177,13 +1155,10 @@ A real estate franchisor, broker or business.
     {
       "type": "OrganizationRole",
       "roleName": "Owner",
-      "memberOf": "https://{organization}.example.com",
-      "member": {
-        "type": "Person",
-        "id": "http://{user}.example.com/profile/card#me"
-      },
-      "startDate": "2019-05-22T13:59:57Z",
-      "endDate": "2019-05-22T13:59:57Z"
+      "memberOf": null,
+      "member": null,
+      "startDate": "2019-05-22T14:53:14Z",
+      "endDate": "2019-05-22T14:53:14Z"
     }
   ],
   "memberOf": [
@@ -1194,12 +1169,9 @@ A real estate franchisor, broker or business.
         "type": "MultipleListingService",
         "name": "GreatScottMLS"
       },
-      "member": {
-        "type": "Person",
-        "id": "http://{user}.example.com/profile/card#me"
-      },
-      "startDate": "2019-05-22T13:59:57Z",
-      "endDate": "2019-05-22T13:59:57Z",
+      "member": null,
+      "startDate": "2019-05-22T14:53:14Z",
+      "endDate": "2019-05-22T14:53:14Z",
       "memberId": "memberid123"
     }
   ],
@@ -1219,8 +1191,8 @@ A real estate franchisor, broker or business.
         "type": "AdministrativeArea",
         "name": "New York"
       },
-      "validFrom": "2019-05-22T13:59:57Z",
-      "validUntil": "2019-05-22T13:59:57Z"
+      "validFrom": "2019-05-22T14:53:14Z",
+      "validUntil": "2019-05-22T14:53:14Z"
     }
   ]
 }
@@ -1339,13 +1311,10 @@ A real estate franchisor, broker or business.
     {
       "type": "OrganizationRole",
       "roleName": "Owner",
-      "memberOf": "https://{organization}.example.com",
-      "member": {
-        "type": "Person",
-        "id": "http://{user}.example.com/profile/card#me"
-      },
-      "startDate": "2019-05-22T13:59:57Z",
-      "endDate": "2019-05-22T13:59:57Z"
+      "memberOf": null,
+      "member": null,
+      "startDate": "2019-05-22T14:53:14Z",
+      "endDate": "2019-05-22T14:53:14Z"
     }
   ],
   "memberOf": [
@@ -1356,12 +1325,9 @@ A real estate franchisor, broker or business.
         "type": "MultipleListingService",
         "name": "GreatScottMLS"
       },
-      "member": {
-        "type": "Person",
-        "id": "http://{user}.example.com/profile/card#me"
-      },
-      "startDate": "2019-05-22T13:59:57Z",
-      "endDate": "2019-05-22T13:59:57Z",
+      "member": null,
+      "startDate": "2019-05-22T14:53:14Z",
+      "endDate": "2019-05-22T14:53:14Z",
       "memberId": "memberid123"
     }
   ],
@@ -1381,8 +1347,8 @@ A real estate franchisor, broker or business.
         "type": "AdministrativeArea",
         "name": "New York"
       },
-      "validFrom": "2019-05-22T13:59:57Z",
-      "validUntil": "2019-05-22T13:59:57Z"
+      "validFrom": "2019-05-22T14:53:14Z",
+      "validUntil": "2019-05-22T14:53:14Z"
     }
   ]
 }
@@ -1456,7 +1422,6 @@ A service provided by an organization.
   "areaServed": {
     "type": "Thing",
     "address": {},
-    "aggregateRating": {},
     "branchCode": "string",
     "containedInPlace": [
       "http://example.com"
@@ -1488,7 +1453,6 @@ A service provided by an organization.
 | areaServed | object |   |
 | areaServed.type | string! | Linked-Data (@type)  |
 | areaServed.address | object | PostalAddress <br/>RANGE: [PostalAddress](/schemas#postaladdress) |
-| areaServed.aggregateRating | object | AggregateRating -- The overall rating, based on a collection of reviews or ratings, of the item.  |
 | areaServed.branchCode | string | A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.  |
 | areaServed.containedInPlace | [string&lt;uri&gt;] | Place  |
 | areaServed.containsPlace | [string&lt;uri&gt;] | Place  |
@@ -1566,11 +1530,11 @@ The act of committing to/adopting an object.
 
 | Name | Type | Description |
 |:-----| :--- | :---------- |
-| type | string! | the action type  |
+| type | string! | AddAction  |
 | object | object | the item added to the collection  |
 | agent | * | the direct performer of the action  |
 | instrument | string&lt;uri&gt; | something used by the agent to perform the action, i.e. an application or website that generated the message.  |
-| targetCollection | * | the collection receiving the added object  |
+| targetCollection | object | the collection receiving the added object  |
 
 ## OfferAction
 agent makes an offer to buy or sell the object
@@ -1625,7 +1589,7 @@ agent makes an offer to buy or sell the object
     },
     "recipient": "http://{user}.example.com/profile/card#me",
     "sender": "http://{provider}.example.com/profile/card#me",
-    "dateSent": "2019-05-22T13:59:57Z",
+    "dateSent": "2019-05-22T14:53:14Z",
     "activity": [
       {
         "type": "Action",

@@ -14,7 +14,6 @@
     "lerna": "^3.13.2"
   },
   "dependencies": {
-    "asyncapi-generator": "^0.6.5",
-    "meow": "^5.0.0"
+    "asyncapi-generator": "^0.6.5"
   }
 }

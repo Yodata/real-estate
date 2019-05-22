@@ -1,0 +1,35 @@
+# x-title and x-scope are REQUIRED custom properties used by the documentation generator
+x-title: mynewthing
+x-scope: realestate/canary#
+summary: an example canary event
+payload:
+  allOf:
+    # adds the message wrapper (topic, data, etc..)
+    - $ref: ../base.event.yaml
+
+    # adds a topic to the base event
+    - properties:
+        topic:
+          type: string
+          description: an example event
+          enum:
+            - realestate/canary#mynewthing
+    
+    # add event payload (Action)
+    - properties:
+        data:
+          allOf:
+            # import a generic action models
+            - $ref: ../Action.yaml
+         
+            # customize your action
+            - title: My New Thing
+              description: a new thing
+              properties:
+                type:
+                  enum:
+                    - MyNewThing
+                foo:
+                  type: string
+                  description: the foo contained within the item
+                  example: lots of foo

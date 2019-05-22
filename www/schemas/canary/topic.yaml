@@ -1,0 +1,5 @@
+x-summary: Events under development can be shared here for feedback and testing
+subscribe:
+  oneOf:
+    - $ref: example.event.yaml
+    - $ref: rickroll.yaml

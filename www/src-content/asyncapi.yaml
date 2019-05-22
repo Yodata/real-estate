@@ -64,6 +64,9 @@ topics:
   website:
     $ref: schemas/website/topic.yaml
 
+  canary:
+    $ref: schemas/canary/topic.yaml
+
 components:
   schemas: { $ref: 'schemas/realestate.yaml' }
       

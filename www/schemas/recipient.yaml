@@ -1,0 +1,5 @@
+title: recipient
+description: the recipient of the item
+example:
+  type: Person
+  name: John

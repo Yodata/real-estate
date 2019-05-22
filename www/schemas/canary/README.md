@@ -2,6 +2,8 @@
 
 A place to share and develop new events together.
 
+Models in the documentation site follow the [asyncapi 1.2 specification](https://www.asyncapi.com/docs/specifications/1.2.0/)
+
 ## Create a new event
 
 Create a new file in the canary directory
@@ -39,6 +41,16 @@ payload:
                   - ExampleAction
 ```
 
-## References
+Next, add your event to the topic.yaml file.
 
-Models in the documentation site follow the [asyncapi 1.2 specification](https://www.asyncapi.com/docs/specifications/1.2.0/)
+```yaml
+# schemas/canary/topic.yaml
+x-summary: Events under development can be shared here for feedback and testing
+subscribe:
+  oneOf:
+    - $ref: example.event.yaml
+    - $ref: rickroll.yaml
+    ## add your event here
+```
+
+Submit a PR to have your event published to the website.

@@ -3,3 +3,4 @@ subscribe:
   oneOf:
     - $ref: example.event.yaml
     - $ref: rickroll.yaml
+    ## add your event here

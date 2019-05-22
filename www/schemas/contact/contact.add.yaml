@@ -1,10 +1,6 @@
 x-title: add
 x-scope: realestate/contact#
 summary: a contact was added/created.
-tags:
-- name: foo
-- name: bar
-  description: the bar type
 payload:
   allOf:
     - $ref: ../base.event.yaml

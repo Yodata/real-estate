@@ -14,9 +14,7 @@ payload:
           - properties:
               object:
                 $ref: ../MarketingProgram.yaml
-                example:
-                  type: MarketingProgram
-                  name: my awesome marketing program
+          - properties:
               agent:
                 type: string
                 example: http://{agent}.example.com/profile/card#me

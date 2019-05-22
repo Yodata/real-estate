@@ -58,7 +58,7 @@ a website vistor has requested an appointment
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-22T12:52:29Z"
+  "time": "2019-05-22T13:20:09Z"
 }
 ```
 
@@ -71,9 +71,9 @@ a website vistor has requested an appointment
 | data.agent | object | a website user/visitor <br/>RANGE: [Person](/schemas#person) |
 | data.object | * |   |
 | data.recipient | * | the request recipient <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
-| source | string&lt;uri&gt;! | the event origin, typically a user  |
-| instrument | string&lt;uri&gt; | event producer, typically an app or service  |
-| time | string&lt;date-time&gt; | when the event was published  |
+| source | string&lt;uri&gt;! | the subscription source  |
+| instrument | string&lt;uri&gt; | the message producer  |
+| time | string&lt;date-time&gt; | the time the message was produced  |
 
 
 ## propertyoffer
@@ -112,7 +112,7 @@ website user makes an offer on a property listing
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-22T12:52:29Z"
+  "time": "2019-05-22T13:20:09Z"
 }
 ```
 
@@ -126,9 +126,9 @@ website user makes an offer on a property listing
 | data.object | * | reference to the item on which the offer is being made  |
 | data.recipient | object | the offer recipient <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
 | data.offerPrice | object | a price offered for transfer of ownership of an item <br/>RANGE: [PriceSpecification](/schemas#pricespecification) |
-| source | string&lt;uri&gt;! | the event origin, typically a user  |
-| instrument | string&lt;uri&gt; | event producer, typically an app or service  |
-| time | string&lt;date-time&gt; | when the event was published  |
+| source | string&lt;uri&gt;! | the subscription source  |
+| instrument | string&lt;uri&gt; | the message producer  |
+| time | string&lt;date-time&gt; | the time the message was produced  |
 
 
 ## propertysearch
@@ -186,7 +186,7 @@ a website user has performed a property search
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-22T12:52:29Z"
+  "time": "2019-05-22T13:20:09Z"
 }
 ```
 
@@ -198,9 +198,9 @@ a website user has performed a property search
 | data.type | string! | Linked-Data (@type)  |
 | data.agent | object | a website user/visitor <br/>RANGE: [Person](/schemas#person) |
 | data.object | object |  <br/>RANGE: [PropertySearchArguments](/schemas#propertysearcharguments) |
-| source | string&lt;uri&gt;! | the event origin, typically a user  |
-| instrument | string&lt;uri&gt; | event producer, typically an app or service  |
-| time | string&lt;date-time&gt; | when the event was published  |
+| source | string&lt;uri&gt;! | the subscription source  |
+| instrument | string&lt;uri&gt; | the message producer  |
+| time | string&lt;date-time&gt; | the time the message was produced  |
 
 
 ## propertyshare
@@ -229,7 +229,7 @@ agent shared object with recipient
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-22T12:52:29Z"
+  "time": "2019-05-22T13:20:09Z"
 }
 ```
 
@@ -241,9 +241,9 @@ agent shared object with recipient
 | data.type | string |   |
 | data.agent | object | a website user/visitor <br/>RANGE: [Person](/schemas#person) |
 | data.object | * |  <br/>RANGE: [RealEstateListing](/schemas#realestatelisting) |
-| source | string&lt;uri&gt;! | the event origin, typically a user  |
-| instrument | string&lt;uri&gt; | event producer, typically an app or service  |
-| time | string&lt;date-time&gt; | when the event was published  |
+| source | string&lt;uri&gt;! | the subscription source  |
+| instrument | string&lt;uri&gt; | the message producer  |
+| time | string&lt;date-time&gt; | the time the message was produced  |
 
 
 ## propertyview
@@ -268,7 +268,7 @@ website user (agent) viewed an (object) on website (instrument)
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-22T12:52:29Z"
+  "time": "2019-05-22T13:20:09Z"
 }
 ```
 
@@ -279,9 +279,9 @@ website user (agent) viewed an (object) on website (instrument)
 | data | object! |   |
 | data.type | string |   |
 | data.agent | object | a website user/visitor <br/>RANGE: [Person](/schemas#person) |
-| source | string&lt;uri&gt;! | the event origin, typically a user  |
-| instrument | string&lt;uri&gt; | event producer, typically an app or service  |
-| time | string&lt;date-time&gt; | when the event was published  |
+| source | string&lt;uri&gt;! | the subscription source  |
+| instrument | string&lt;uri&gt; | the message producer  |
+| time | string&lt;date-time&gt; | the time the message was produced  |
 
 
 ## question
@@ -309,18 +309,18 @@ a website visitor has asked a question
     },
     "recipient": "https://{user}.example.com/profile/card#me",
     "object": {},
-    "instrument": "http://example.com"
+    "instrument": "https://{app}.example.com/profile/card#me"
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-22T12:52:29Z"
+  "time": "2019-05-22T13:20:09Z"
 }
 ```
 
 
 | Name | Type | Description |
 |:-----| :--- | :---------- |
-| topic | string! | {domain}/{topic}#{event}  |
+| topic | string! | the message id, equivalent to cloudevents type.  |
 | data | object! |   |
 | data.type | string! | the action type  |
 | data.agent | object | the direct performer of the action <br/>RANGE: [Person](/schemas#person) |
@@ -328,9 +328,9 @@ a website visitor has asked a question
 | data.recipient | string |   |
 | data.object | object | the object upon which the action is carried out  |
 | data.instrument | string&lt;uri&gt; | something used by the agent to perform the action, i.e. an application or website that generated the message.  |
-| source | string&lt;uri&gt;! | the event origin, typically a user  |
-| instrument | string&lt;uri&gt; | event producer, typically an app or service  |
-| time | string&lt;date-time&gt; | when the event was published  |
+| source | string&lt;uri&gt;! | the subscription source  |
+| instrument | string&lt;uri&gt; | the message producer  |
+| time | string&lt;date-time&gt; | the time the message was produced  |
 
 
 ## register
@@ -355,20 +355,20 @@ a website visitor has registered
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-22T12:52:29Z"
+  "time": "2019-05-22T13:20:09Z"
 }
 ```
 
 
 | Name | Type | Description |
 |:-----| :--- | :---------- |
-| topic | string! | {domain}/{topic}#{event}  |
+| topic | string! | the message id, equivalent to cloudevents type.  |
 | data | object! |   |
 | data.type | string |   |
 | data.agent | object | a website user/visitor <br/>RANGE: [Person](/schemas#person) |
-| source | string&lt;uri&gt;! | the event origin, typically a user  |
-| instrument | string&lt;uri&gt; | event producer, typically an app or service  |
-| time | string&lt;date-time&gt; | when the event was published  |
+| source | string&lt;uri&gt;! | the subscription source  |
+| instrument | string&lt;uri&gt; | the message producer  |
+| time | string&lt;date-time&gt; | the time the message was produced  |
 
 
 ## showingrequest
@@ -393,20 +393,20 @@ a website visitor has requested a property showing
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-22T12:52:29Z"
+  "time": "2019-05-22T13:20:09Z"
 }
 ```
 
 
 | Name | Type | Description |
 |:-----| :--- | :---------- |
-| topic | string! | {domain}/{topic}#{event}  |
+| topic | string! | the message id, equivalent to cloudevents type.  |
 | data | object! |   |
 | data.type | string |   |
 | data.agent | object | a website user/visitor <br/>RANGE: [Person](/schemas#person) |
-| source | string&lt;uri&gt;! | the event origin, typically a user  |
-| instrument | string&lt;uri&gt; | event producer, typically an app or service  |
-| time | string&lt;date-time&gt; | when the event was published  |
+| source | string&lt;uri&gt;! | the subscription source  |
+| instrument | string&lt;uri&gt; | the message producer  |
+| time | string&lt;date-time&gt; | the time the message was produced  |
 
 
 ## propertysave
@@ -435,7 +435,7 @@ website user (agent) saved a property
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-22T12:52:29Z"
+  "time": "2019-05-22T13:20:09Z"
 }
 ```
 
@@ -447,9 +447,9 @@ website user (agent) saved a property
 | data.type | string |   |
 | data.agent | object | a website user/visitor <br/>RANGE: [Person](/schemas#person) |
 | data.object | object | a real estate property listed for sale <br/>RANGE: [PropertyListing](/schemas#propertylisting) |
-| source | string&lt;uri&gt;! | the event origin, typically a user  |
-| instrument | string&lt;uri&gt; | event producer, typically an app or service  |
-| time | string&lt;date-time&gt; | when the event was published  |
+| source | string&lt;uri&gt;! | the subscription source  |
+| instrument | string&lt;uri&gt; | the message producer  |
+| time | string&lt;date-time&gt; | the time the message was produced  |
 
 
 ## propertysearchsave
@@ -507,7 +507,7 @@ website user (agent) saved a propertysearch (object)
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-22T12:52:29Z"
+  "time": "2019-05-22T13:20:09Z"
 }
 ```
 
@@ -519,8 +519,8 @@ website user (agent) saved a propertysearch (object)
 | data.type | string |   |
 | data.agent | object | a website user/visitor <br/>RANGE: [Person](/schemas#person) |
 | data.object | object |  <br/>RANGE: [PropertySearchArguments](/schemas#propertysearcharguments) |
-| source | string&lt;uri&gt;! | the event origin, typically a user  |
-| instrument | string&lt;uri&gt; | event producer, typically an app or service  |
-| time | string&lt;date-time&gt; | when the event was published  |
+| source | string&lt;uri&gt;! | the subscription source  |
+| instrument | string&lt;uri&gt; | the message producer  |
+| time | string&lt;date-time&gt; | the time the message was produced  |
 
 

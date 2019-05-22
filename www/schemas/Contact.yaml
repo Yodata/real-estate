@@ -1,13 +1,11 @@
-type: object
+title: Contact
 allOf:
   - $ref: Person.yaml
-  - description: a contact
+  - description: a user contact record.
     properties:
       type:
         enum:
           - Contact
-        example: Contact
-        description: Contact
       leadSource:
         description: the Lead Provider
         type: object

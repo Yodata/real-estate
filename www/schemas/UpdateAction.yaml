@@ -1,9 +1,7 @@
+title: UpdateAction
 allOf:
   - $ref: Action.yaml
-  - type: object
-    properties:
+  - properties:
       type:
-        description: UpdateAction
-        type: string
         enum:
           - UpdateAction

@@ -34,7 +34,7 @@ an agent, office or organization profile was added
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-22T12:52:29Z"
+  "time": "2019-05-22T13:20:09Z"
 }
 ```
 
@@ -46,9 +46,9 @@ an agent, office or organization profile was added
 | data.type | string | AddAction  |
 | data.agent | * |   |
 | data.object | object | the updated profile <br/>RANGE: [RealEstateOrganization](/schemas#realestateorganization),[RealEstateOffice](/schemas#realestateoffice),[RealEstateAgent](/schemas#realestateagent),[Person](/schemas#person) |
-| source | string&lt;uri&gt;! | the event origin, typically a user  |
-| instrument | string&lt;uri&gt; | event producer, typically an app or service  |
-| time | string&lt;date-time&gt; | when the event was published  |
+| source | string&lt;uri&gt;! | the subscription source  |
+| instrument | string&lt;uri&gt; | the message producer  |
+| time | string&lt;date-time&gt; | the time the message was produced  |
 
 
 ## update
@@ -70,20 +70,20 @@ an agent, office or organization profile was updated
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-22T12:52:29Z"
+  "time": "2019-05-22T13:20:09Z"
 }
 ```
 
 
 | Name | Type | Description |
 |:-----| :--- | :---------- |
-| topic | string! | {domain}/{topic}#{event}  |
+| topic | string! | the message id, equivalent to cloudevents type.  |
 | data | object! |  <br/>RANGE: [UpdateAction](/schemas#updateaction) |
 | data.type | string | UpdateAction  |
 | data.agent | * |   |
 | data.object | object | the updated profile <br/>RANGE: [RealEstateOrganization](/schemas#realestateorganization),[RealEstateOffice](/schemas#realestateoffice),[RealEstateAgent](/schemas#realestateagent),[Person](/schemas#person) |
-| source | string&lt;uri&gt;! | the event origin, typically a user  |
-| instrument | string&lt;uri&gt; | event producer, typically an app or service  |
-| time | string&lt;date-time&gt; | when the event was published  |
+| source | string&lt;uri&gt;! | the subscription source  |
+| instrument | string&lt;uri&gt; | the message producer  |
+| time | string&lt;date-time&gt; | the time the message was produced  |
 
 

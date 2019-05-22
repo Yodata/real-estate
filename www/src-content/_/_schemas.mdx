@@ -23,10 +23,8 @@ name: Objects
       "id": "http://example.com/listing/1"
     }
   },
-  "agent": {
-    "type": "Person",
-    "id": "http://{user}.example.com/profile/card#me"
-  }
+  "agent": null,
+  "instrument": "http://example.com"
 }
 ```
 
@@ -40,6 +38,7 @@ name: Objects
 | object.text | string | the comment content  |
 | object.about | object | the subject of the item  |
 | agent | * | the direct performer of the action  |
+| instrument | string&lt;uri&gt; | something used by the agent to perform the action, i.e. an application or website that generated the message.  |
 
 ## Contact
 a contact
@@ -143,15 +142,13 @@ a lead offered or assigned by the agent to one or more recipients
   },
   "recipient": "http://{user}.example.com/profile/card#me",
   "sender": "http://{provider}.example.com/profile/card#me",
-  "dateSent": "2019-05-22T02:19:48Z",
+  "dateSent": "2019-05-22T12:52:29Z",
   "activity": [
     {
       "type": "Action",
       "object": {},
-      "agent": {
-        "type": "Person",
-        "id": "http://{user}.example.com/profile/card#me"
-      }
+      "agent": null,
+      "instrument": "http://example.com"
     }
   ]
 }
@@ -167,8 +164,9 @@ a lead offered or assigned by the agent to one or more recipients
 | dateSent | string&lt;date-time&gt; | the date the lead was sent  |
 | activity | [object] |   |
 | activity.type | string! | the action type  |
-| activity.object | object | The object upon which the action is carried out  |
+| activity.object | object | the object upon which the action is carried out  |
 | activity.agent | * | the direct performer of the action  |
+| activity.instrument | string&lt;uri&gt; | something used by the agent to perform the action, i.e. an application or website that generated the message.  |
 
 ## MarketingProgram
 ```json
@@ -184,13 +182,13 @@ a lead offered or assigned by the agent to one or more recipients
         "type": "Person",
         "id": "http://{user}.example.com/profile/card#me"
       },
-      "startDate": "2019-05-22T02:19:48Z",
-      "endDate": "2019-05-22T02:19:48Z"
+      "startDate": "2019-05-22T12:52:29Z",
+      "endDate": "2019-05-22T12:52:29Z"
     }
   ],
   "creator": "http://{user}.example.com/profile/card#me",
-  "dateCreated": "2019-05-22T02:19:48Z",
-  "dateModified": "2019-05-22T02:19:48Z"
+  "dateCreated": "2019-05-22T12:52:29Z",
+  "dateModified": "2019-05-22T12:52:29Z"
 }
 ```
 
@@ -243,8 +241,8 @@ describes a role played by a member and a group or organization.
     "type": "Person",
     "id": "http://{user}.example.com/profile/card#me"
   },
-  "startDate": "2019-05-22T02:19:48Z",
-  "endDate": "2019-05-22T02:19:48Z",
+  "startDate": "2019-05-22T12:52:29Z",
+  "endDate": "2019-05-22T12:52:29Z",
   "memberId": "memberid123"
 }
 ```
@@ -422,8 +420,8 @@ describes a role played by a member and a group or organization.
     "type": "Person",
     "id": "http://{user}.example.com/profile/card#me"
   },
-  "startDate": "2019-05-22T02:19:48Z",
-  "endDate": "2019-05-22T02:19:48Z"
+  "startDate": "2019-05-22T12:52:29Z",
+  "endDate": "2019-05-22T12:52:29Z"
 }
 ```
 
@@ -453,7 +451,7 @@ A permit issued by an organization to an individual or business.
     "name": "MI6"
   },
   "validIn": {
-    "type": "string",
+    "type": "Thing",
     "address": {},
     "aggregateRating": {},
     "branchCode": "string",
@@ -476,8 +474,8 @@ A permit issued by an organization to an individual or business.
       {}
     ]
   },
-  "validFrom": "2019-05-22T02:19:48Z",
-  "validUntil": "2019-05-22T02:19:48Z"
+  "validFrom": "2019-05-22T12:52:29Z",
+  "validUntil": "2019-05-22T12:52:29Z"
 }
 ```
 
@@ -571,7 +569,7 @@ A permit issued by an organization to an individual or business.
 ## Place
 ```json
 {
-  "type": "string",
+  "type": "Thing",
   "address": {},
   "aggregateRating": {},
   "branchCode": "string",
@@ -687,8 +685,8 @@ describes membership relation between a member (Person) and a MarketingProgram
     "type": "Person",
     "id": "http://{user}.example.com/profile/card#me"
   },
-  "startDate": "2019-05-22T02:19:48Z",
-  "endDate": "2019-05-22T02:19:48Z"
+  "startDate": "2019-05-22T12:52:29Z",
+  "endDate": "2019-05-22T12:52:29Z"
 }
 ```
 
@@ -701,24 +699,6 @@ describes membership relation between a member (Person) and a MarketingProgram
 | member | string,object | member object or id  |
 | startDate | string&lt;date-time&gt; | date the member began performing this role  |
 | endDate | string&lt;date-time&gt; | date the member stopped performing the role  |
-
-## PropertyValue
-a key/value pair, used for maintaining state outside of the current context
-
-```json
-{
-  "type": "PropertyValue",
-  "propertyID": "UserID",
-  "value": "<userid-string>"
-}
-```
-
-
-| Name | Type | Description |
-|:-----| :--- | :---------- |
-| type | string! |   |
-| propertyID | string! |   |
-| value | string! |   |
 
 ## PropertyListing
 a real estate property listed for sale
@@ -735,9 +715,9 @@ a real estate property listed for sale
     "postalCode": "10010",
     "addressCountry": "usa"
   },
-  "dateListed": "2019-05-22T02:19:48Z",
-  "dateSold": "2019-05-22T02:19:48Z",
-  "dateClosed": "2019-05-22T02:19:48Z",
+  "dateListed": "2019-05-22T12:52:29Z",
+  "dateSold": "2019-05-22T12:52:29Z",
+  "dateClosed": "2019-05-22T12:52:29Z",
   "listingPrice": {
     "type": "PriceSpecification",
     "minPrice": 0,
@@ -948,6 +928,24 @@ a real estate property listed for sale
 | location | object | The location of for example where the event is happening, an organization is located, or where an action takes place. <br/>RANGE: [Place](/schemas#place),[PostalAddress](/schemas#postaladdress),[Text](/schemas#text) |
 | location.1 | * |   |
 
+## PropertyValue
+a key/value pair, used for maintaining state outside of the current context
+
+```json
+{
+  "type": "PropertyValue",
+  "propertyID": "UserID",
+  "value": "<userid-string>"
+}
+```
+
+
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| type | string! |   |
+| propertyID | string! |   |
+| value | string! |   |
+
 ## RealEstateAgent
 A real estate agent or team.
 
@@ -1023,8 +1021,8 @@ A real estate agent or team.
         "type": "Person",
         "id": "http://{user}.example.com/profile/card#me"
       },
-      "startDate": "2019-05-22T02:19:48Z",
-      "endDate": "2019-05-22T02:19:48Z"
+      "startDate": "2019-05-22T12:52:29Z",
+      "endDate": "2019-05-22T12:52:29Z"
     }
   ],
   "memberOf": [
@@ -1039,8 +1037,8 @@ A real estate agent or team.
         "type": "Person",
         "id": "http://{user}.example.com/profile/card#me"
       },
-      "startDate": "2019-05-22T02:19:48Z",
-      "endDate": "2019-05-22T02:19:48Z",
+      "startDate": "2019-05-22T12:52:29Z",
+      "endDate": "2019-05-22T12:52:29Z",
       "memberId": "memberid123"
     }
   ],
@@ -1060,8 +1058,8 @@ A real estate agent or team.
         "type": "AdministrativeArea",
         "name": "New York"
       },
-      "validFrom": "2019-05-22T02:19:48Z",
-      "validUntil": "2019-05-22T02:19:48Z"
+      "validFrom": "2019-05-22T12:52:29Z",
+      "validUntil": "2019-05-22T12:52:29Z"
     }
   ]
 }
@@ -1184,8 +1182,8 @@ A real estate franchisor, broker or business.
         "type": "Person",
         "id": "http://{user}.example.com/profile/card#me"
       },
-      "startDate": "2019-05-22T02:19:48Z",
-      "endDate": "2019-05-22T02:19:48Z"
+      "startDate": "2019-05-22T12:52:29Z",
+      "endDate": "2019-05-22T12:52:29Z"
     }
   ],
   "memberOf": [
@@ -1200,8 +1198,8 @@ A real estate franchisor, broker or business.
         "type": "Person",
         "id": "http://{user}.example.com/profile/card#me"
       },
-      "startDate": "2019-05-22T02:19:48Z",
-      "endDate": "2019-05-22T02:19:48Z",
+      "startDate": "2019-05-22T12:52:29Z",
+      "endDate": "2019-05-22T12:52:29Z",
       "memberId": "memberid123"
     }
   ],
@@ -1221,8 +1219,8 @@ A real estate franchisor, broker or business.
         "type": "AdministrativeArea",
         "name": "New York"
       },
-      "validFrom": "2019-05-22T02:19:48Z",
-      "validUntil": "2019-05-22T02:19:48Z"
+      "validFrom": "2019-05-22T12:52:29Z",
+      "validUntil": "2019-05-22T12:52:29Z"
     }
   ]
 }
@@ -1346,8 +1344,8 @@ A real estate franchisor, broker or business.
         "type": "Person",
         "id": "http://{user}.example.com/profile/card#me"
       },
-      "startDate": "2019-05-22T02:19:48Z",
-      "endDate": "2019-05-22T02:19:48Z"
+      "startDate": "2019-05-22T12:52:29Z",
+      "endDate": "2019-05-22T12:52:29Z"
     }
   ],
   "memberOf": [
@@ -1362,8 +1360,8 @@ A real estate franchisor, broker or business.
         "type": "Person",
         "id": "http://{user}.example.com/profile/card#me"
       },
-      "startDate": "2019-05-22T02:19:48Z",
-      "endDate": "2019-05-22T02:19:48Z",
+      "startDate": "2019-05-22T12:52:29Z",
+      "endDate": "2019-05-22T12:52:29Z",
       "memberId": "memberid123"
     }
   ],
@@ -1383,8 +1381,8 @@ A real estate franchisor, broker or business.
         "type": "AdministrativeArea",
         "name": "New York"
       },
-      "validFrom": "2019-05-22T02:19:48Z",
-      "validUntil": "2019-05-22T02:19:48Z"
+      "validFrom": "2019-05-22T12:52:29Z",
+      "validUntil": "2019-05-22T12:52:29Z"
     }
   ]
 }
@@ -1456,7 +1454,7 @@ A service provided by an organization.
   "type": "Service",
   "name": "string",
   "areaServed": {
-    "type": "string",
+    "type": "Thing",
     "address": {},
     "aggregateRating": {},
     "branchCode": "string",
@@ -1504,7 +1502,7 @@ A service provided by an organization.
 ## Thing
 ```json
 {
-  "type": "string"
+  "type": "Thing"
 }
 ```
 
@@ -1512,6 +1510,187 @@ A service provided by an organization.
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 | type | string! | Linked-Data (@type)  |
+
+## AcceptAction
+The act of committing to/adopting an object.
+
+```json
+{
+  "type": "AcceptAction",
+  "object": {},
+  "agent": null,
+  "instrument": "http://example.com"
+}
+```
+
+
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| type | string! | the action type  |
+| object | object | the accepted offer/item  |
+| agent | * | the person or organization accepting the item  |
+| instrument | string&lt;uri&gt; | something used by the agent to perform the action, i.e. an application or website that generated the message.  |
+
+## Action
+```json
+{
+  "type": "Action",
+  "object": {},
+  "agent": null,
+  "instrument": "http://example.com"
+}
+```
+
+
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| type | string! | the action type  |
+| object | object | the object upon which the action is carried out  |
+| agent | * | the direct performer of the action  |
+| instrument | string&lt;uri&gt; | something used by the agent to perform the action, i.e. an application or website that generated the message.  |
+
+## AddAction
+```json
+{
+  "type": "AddAction",
+  "object": {},
+  "agent": null,
+  "instrument": "http://example.com",
+  "targetCollection": {
+    "type": "Collection",
+    "id": "https://{user}.example.com/data/contact/"
+  }
+}
+```
+
+
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| type | string! | the action type  |
+| object | object | the item added to the collection  |
+| agent | * | the direct performer of the action  |
+| instrument | string&lt;uri&gt; | something used by the agent to perform the action, i.e. an application or website that generated the message.  |
+| targetCollection | * | the collection receiving the added object  |
+
+## OfferAction
+agent makes an offer to buy or sell the object
+
+```json
+{
+  "type": "OfferAction",
+  "object": {
+    "type": "OfferAction",
+    "object": {
+      "type": "RealEstateListing",
+      "id": "http://example.com/12345"
+    },
+    "recipient": {
+      "id": "http://user.example.com/profile/card#me"
+    },
+    "offerPrice": {
+      "type": "PriceSpecification",
+      "minPrice": 0,
+      "maxPrice": 0,
+      "price": 0,
+      "priceCurrency": "USD"
+    }
+  },
+  "agent": {},
+  "instrument": "https://{app}.example.com/profile/card#me"
+}
+```
+
+
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| type | string! | OfferAction  |
+| object | object | an agent makes an offer to buy the object  |
+| object.type | string! | OfferAction  |
+| object.object | * | reference to the item on which the offer is being made  |
+| object.recipient | object | the offer recipient <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
+| object.offerPrice | object | a price offered for transfer of ownership of an item <br/>RANGE: [PriceSpecification](/schemas#pricespecification) |
+| agent | object | the entity making the offer <br/>RANGE: [Person](/schemas#person),[Organization](/schemas#organization) |
+| instrument | * | thing used by the agent to perform the action, i.e. an application or website that generated the message.  |
+
+## RejectAction
+```json
+{
+  "type": "RejectAction",
+  "object": {
+    "type": "Lead",
+    "object": {
+      "type": "Person",
+      "name": "Larry Lead",
+      "email": "larry@example.com"
+    },
+    "recipient": "http://{user}.example.com/profile/card#me",
+    "sender": "http://{provider}.example.com/profile/card#me",
+    "dateSent": "2019-05-22T12:52:29Z",
+    "activity": [
+      {
+        "type": "Action",
+        "object": {},
+        "agent": null,
+        "instrument": "http://example.com"
+      }
+    ]
+  },
+  "agent": null,
+  "instrument": "http://example.com"
+}
+```
+
+
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| type | string! | the action type  |
+| object | [Lead](/schemas#lead) | a lead offered or assigned by the agent to one or more recipients  |
+| object.type | string | Lead  |
+| object.object | object | a Contact (Person/Organization)  |
+| object.recipient | * | the lead recipient  |
+| object.sender | string&lt;uri&gt; | the lead provider  |
+| object.dateSent | string&lt;date-time&gt; | the date the lead was sent  |
+| object.activity | [object] |   |
+| agent | * | the direct performer of the action  |
+| instrument | string&lt;uri&gt; | something used by the agent to perform the action, i.e. an application or website that generated the message.  |
+
+## RemoveAction
+```json
+{
+  "type": "RemoveAction",
+  "object": {},
+  "agent": null,
+  "instrument": "http://example.com",
+  "targetCollection": null
+}
+```
+
+
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| type | string! | the action type  |
+| object | object | the item removed  |
+| agent | * | the direct performer of the action  |
+| instrument | string&lt;uri&gt; | something used by the agent to perform the action, i.e. an application or website that generated the message.  |
+| targetCollection | * | the collection from which the item is being removed  |
+
+## UpdateAction
+```json
+{
+  "type": "UpdateAction",
+  "object": {},
+  "agent": null,
+  "instrument": "http://example.com"
+}
+```
+
+
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| type | string! | UpdateAction  |
+| object | object | the object upon which the action is carried out  |
+| agent | * | the direct performer of the action  |
+| instrument | string&lt;uri&gt; | something used by the agent to perform the action, i.e. an application or website that generated the message.  |
 
 ## ApplicationProfile
 a solid profile document

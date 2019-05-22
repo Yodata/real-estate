@@ -1,6 +1,3 @@
-description: thing used by the agent to perform the action, i.e. an application or website that generated the message.
-oneOf:
-  - type: string
-    format: uri
-    example: http://{app}.example.com/profile/card#me
-  - type: object
+description: something used by the agent to perform the action, i.e. an application or website that generated the message.
+type: string
+format: uri

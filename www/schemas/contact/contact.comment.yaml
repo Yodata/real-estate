@@ -3,7 +3,7 @@ x-scope: realestate/contact#
 summary: a comment was made by or associated with the item (about)
 payload:
   allOf:
-    - $ref: base.event.yaml
+    - $ref: ../base.event.yaml
     - properties:
         topic:
           enum:

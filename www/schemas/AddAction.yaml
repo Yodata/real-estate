@@ -1,22 +1,14 @@
 allOf:
   - $ref: Action.yaml
   - properties:
-      agent:
-        example: http://{user}.example.com/profile/card#me
-      instrument:
-        example: http://{app}.example.com/profile/card#me
       type:
         enum:
           - AddAction
-        example: AddAction
-        description: AddAction
       object:
-        description: the added item
-        example:
-          type: Contact
-          name: Adam Addme
+        description: the item added to the collection
       targetCollection:
         description: the collection receiving the added object
         example:
           type: Collection
           id: https://{user}.example.com/data/contact/
+      

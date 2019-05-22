@@ -3,7 +3,7 @@ x-scope: realestate/contact#
 summary: a contact was removed from a collection
 payload:
   allOf:
-    - $ref: base.event.yaml
+    - $ref: ../base.event.yaml
     - properties:
         topic:
           enum:

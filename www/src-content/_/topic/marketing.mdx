@@ -38,19 +38,20 @@ a marketing program has been created
             "type": "Person",
             "id": "http://{user}.example.com/profile/card#me"
           },
-          "startDate": "2019-05-22T02:19:48Z",
-          "endDate": "2019-05-22T02:19:48Z"
+          "startDate": "2019-05-22T12:52:29Z",
+          "endDate": "2019-05-22T12:52:29Z"
         }
       ],
       "creator": "http://{user}.example.com/profile/card#me",
-      "dateCreated": "2019-05-22T02:19:48Z",
-      "dateModified": "2019-05-22T02:19:48Z"
+      "dateCreated": "2019-05-22T12:52:29Z",
+      "dateModified": "2019-05-22T12:52:29Z"
     },
-    "agent": "http://{agent}.example.com/profile/card#me"
+    "agent": "http://{agent}.example.com/profile/card#me",
+    "instrument": "http://example.com"
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-22T02:19:48Z"
+  "time": "2019-05-22T12:52:29Z"
 }
 ```
 
@@ -60,8 +61,9 @@ a marketing program has been created
 | topic | string! | {domain}/{topic}#{event}  |
 | data | object! | the object was created by the agent  |
 | data.type | string! | CreateAction  |
-| data.object | object | The object upon which the action is carried out  |
+| data.object | object | the object upon which the action is carried out  |
 | data.agent | string | the direct performer of the action  |
+| data.instrument | string&lt;uri&gt; | something used by the agent to perform the action, i.e. an application or website that generated the message.  |
 | source | string&lt;uri&gt;! | the event origin, typically a user  |
 | instrument | string&lt;uri&gt; | event producer, typically an app or service  |
 | time | string&lt;date-time&gt; | when the event was published  |
@@ -78,11 +80,18 @@ a program member was added by the agent
   "data": {
     "type": "AddAction",
     "object": {
-      "type": "Contact",
-      "name": "Adam Addme"
+      "type": "ProgramMembership",
+      "roleName": "Owner",
+      "memberOf": "https://{organization}.example.com",
+      "member": {
+        "type": "Person",
+        "id": "http://{user}.example.com/profile/card#me"
+      },
+      "startDate": "2019-05-22T12:52:29Z",
+      "endDate": "2019-05-22T12:52:29Z"
     },
-    "agent": "http://{user}.example.com/profile/card#me",
-    "instrument": "http://{app}.example.com/profile/card#me",
+    "agent": null,
+    "instrument": "http://example.com",
     "targetCollection": {
       "type": "MarketingProgram",
       "id": null,
@@ -93,7 +102,7 @@ a program member was added by the agent
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-22T02:19:48Z"
+  "time": "2019-05-22T12:52:29Z"
 }
 ```
 
@@ -102,10 +111,10 @@ a program member was added by the agent
 |:-----| :--- | :---------- |
 | topic | string! | {domain}/{topic}#{event}  |
 | data | object! |   |
-| data.type | string! | AddAction  |
+| data.type | string! | the action type  |
 | data.object | object | describes membership relation between a member (Person) and a MarketingProgram  |
 | data.agent | * | the direct performer of the action  |
-| data.instrument | * |   |
+| data.instrument | string&lt;uri&gt; | something used by the agent to perform the action, i.e. an application or website that generated the message.  |
 | data.targetCollection | * | the collection receiving the added object  |
 | source | string&lt;uri&gt;! | the event origin, typically a user  |
 | instrument | string&lt;uri&gt; | event producer, typically an app or service  |
@@ -130,13 +139,14 @@ a program member was removed by the agent
         "type": "Person",
         "id": "http://{user}.example.com/profile/card#me"
       },
-      "startDate": "2019-05-22T02:19:48Z",
-      "endDate": "2019-05-22T02:19:48Z"
+      "startDate": "2019-05-22T12:52:29Z",
+      "endDate": "2019-05-22T12:52:29Z"
     },
     "agent": {
       "type": "RealEstateAgent",
       "id": "http://{user}.example.com/profile/card#me"
     },
+    "instrument": "http://example.com",
     "targetCollection": {
       "type": "MarketingProgram",
       "identifier": {
@@ -146,7 +156,7 @@ a program member was removed by the agent
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-22T02:19:48Z"
+  "time": "2019-05-22T12:52:29Z"
 }
 ```
 
@@ -158,6 +168,7 @@ a program member was removed by the agent
 | data.type | string! | the action type  |
 | data.object | object | describes membership relation between a member (Person) and a MarketingProgram  |
 | data.agent | * | the direct performer of the action  |
+| data.instrument | string&lt;uri&gt; | something used by the agent to perform the action, i.e. an application or website that generated the message.  |
 | data.targetCollection | * | the collection from which the item is being removed  |
 | source | string&lt;uri&gt;! | the event origin, typically a user  |
 | instrument | string&lt;uri&gt; | event producer, typically an app or service  |

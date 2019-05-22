@@ -6,8 +6,6 @@ allOf:
         enum:
           - AcceptAction
       agent:
-        example: https://{user}.example.com/profile/card#me
+        description: the person or organization accepting the item
       object:
-        example:
-          type: Lead
-          name: Lianna Stark
+        description: the accepted offer/item

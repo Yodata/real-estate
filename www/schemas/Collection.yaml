@@ -3,7 +3,8 @@ description: target collection
 properties:
   type:
     type: string
-    example: Collection
+    enum:
+    - Collection
   name:
     type: string
     example: targetcollection

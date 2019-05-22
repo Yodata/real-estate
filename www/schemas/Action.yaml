@@ -1,3 +1,4 @@
+title: Action
 type: object
 required:
   - 'type'
@@ -8,13 +9,12 @@ properties:
     enum:
     - Action
   object:
-    description: The object upon which the action is carried out
+    description: the object upon which the action is carried out
     type: object
   agent:
     description: the direct performer of the action
-    example:
-      type: Person
-      id: http://{user}.example.com/profile/card#me
+  instrument:
+    $ref: instrument.yaml
 externalDocs:
   description: schema.org/Action
   url: https://schema.org/Action

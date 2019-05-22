@@ -1,18 +1,26 @@
 x-title: add
 x-scope: realestate/contact#
 summary: a contact was added/created.
+tags:
+- name: foo
+- name: bar
+  description: the bar type
 payload:
   allOf:
-    - $ref: base.event.yaml
+    - $ref: ../base.event.yaml
     - properties:
         topic:
           enum:
             - realestate/contact#add
         data:
-          properties:
-            type:
-              enum:
-              - AddAction
-            object:
-              x-kind: Contact
-              x-range: Contact
+          allOf:
+          - $ref: ../AddAction.yaml
+          - properties:
+              object:
+                $ref: ../Contact.yaml
+          - properties:
+              object:
+                example:
+                  type: Contact
+                  name: Bruce Wayne
+                  email: batman@example.com

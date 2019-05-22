@@ -20,16 +20,30 @@ Contact events
 a contact was added/created.
 
 
+* foo
+* bar
+
+
 ```json
 {
   "topic": "realestate/contact#add",
   "data": {
     "type": "AddAction",
-    "object": null
+    "object": {
+      "type": "Contact",
+      "name": "Bruce Wayne",
+      "email": "batman@example.com"
+    },
+    "agent": null,
+    "instrument": "http://example.com",
+    "targetCollection": {
+      "type": "Collection",
+      "id": "https://{user}.example.com/data/contact/"
+    }
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-22T02:19:48Z"
+  "time": "2019-05-22T12:52:29Z"
 }
 ```
 
@@ -38,8 +52,11 @@ a contact was added/created.
 |:-----| :--- | :---------- |
 | topic | string! | {domain}/{topic}#{event}  |
 | data | object! |   |
-| data.type | string |   |
-| data.object | [Contact](/schemas#contact) |  <br/>RANGE: [Contact](/schemas#contact) |
+| data.type | string! | the action type  |
+| data.object | object | a contact  |
+| data.agent | * | the direct performer of the action  |
+| data.instrument | string&lt;uri&gt; | something used by the agent to perform the action, i.e. an application or website that generated the message.  |
+| data.targetCollection | * | the collection receiving the added object  |
 | source | string&lt;uri&gt;! | the event origin, typically a user  |
 | instrument | string&lt;uri&gt; | event producer, typically an app or service  |
 | time | string&lt;date-time&gt; | when the event was published  |
@@ -59,10 +76,8 @@ a crm contact was updated
       "type": "Contact",
       "name": "the updated contact"
     },
-    "agent": {
-      "type": "Person",
-      "id": "http://{user}.example.com/profile/card#me"
-    },
+    "agent": null,
+    "instrument": "http://example.com",
     "targetCollection": {
       "type": "Collection",
       "name": "targetcollection"
@@ -70,7 +85,7 @@ a crm contact was updated
   },
   "source": "http://{user}.example.com/profile/card#me",
   "instrument": "http://{supercrm}.example.com/profile/card#me",
-  "time": "2019-05-22T02:19:48Z"
+  "time": "2019-05-22T12:52:29Z"
 }
 ```
 
@@ -80,8 +95,9 @@ a crm contact was updated
 | topic | string! | {domain}/{topic}#{event}  |
 | data | object! |   |
 | data.type | string! | UpdateAction  |
-| data.object | object | The object upon which the action is carried out  |
+| data.object | object | the object upon which the action is carried out  |
 | data.agent | * | the direct performer of the action  |
+| data.instrument | string&lt;uri&gt; | something used by the agent to perform the action, i.e. an application or website that generated the message.  |
 | data.targetCollection | object | target collection  |
 | source | string&lt;uri&gt;! | the event origin, typically a user  |
 | instrument | string&lt;uri&gt; | event producer, typically an app or service  |

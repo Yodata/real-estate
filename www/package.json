@@ -6,7 +6,7 @@
   "scripts": {
     "generate": "npx ag -t template -o src-content/_/ src-content/asyncapi.yaml docz",
     "dev": "yarn generate && docz dev",
-    "build": "docz build",
+    "build": "yarn generate && docz build",
     "now-build": "yarn build",
     "clean": "rm -rf src-content/_/"
   },

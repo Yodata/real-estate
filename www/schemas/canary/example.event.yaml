@@ -24,4 +24,9 @@ payload:
          
             # customize your action
             - title: ExampleAction
-              description: an example action 
+              description: an example action
+              properties:
+                type:
+                  enum:
+                    - ExampleAction
+                

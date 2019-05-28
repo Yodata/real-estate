@@ -17,6 +17,13 @@ payload:
                 - $ref: ../MarketingProgram.yaml
                 - x-range: MarketingProgram
                 - properties:
+
+                    identifier:
+                      type: object
+                      description: namespaced identifiers
+                      example:
+                        namespaceid: xxxx
+                        
                     about:
                       x-range: Place
                       example: 

@@ -9,9 +9,15 @@ payload:
           enum:
             - realestate/marketingprogram#delete
         data:
-          $ref: ../DeleteAction.yaml
-    - properties:
-        data:
-          properties:
-            object:
-              $ref: ../MarketingProgram.yaml
+          allOf:
+          - $ref: ../DeleteAction.yaml
+          - properties:
+              object:
+                $ref: ../MarketingProgram.yaml
+            example:
+              type: DeleteAction
+              object:
+                type: MarketingProgram
+                identifier:
+                  namespaceid: xxxx
+              agent: https://{user}.example.com/profile/card#me

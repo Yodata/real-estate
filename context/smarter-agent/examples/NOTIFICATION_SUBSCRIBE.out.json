@@ -1,0 +1,19 @@
+{
+  "activity_time": 1908,
+  "activity_time_tdate": "2019-05-03T19:08:54Z",
+  "agent": "https://smarteragent-dev.dev.yodata.io/profile/card#me",
+  "daily_epoch_timestamp": 1556910534,
+  "id": "https://smarteragent-dev.dev.yodata.io/inbox/0b57e179baaf4fcfb805c72495877e97",
+  "identifier": {
+    "actionID": "5118793479096813672"
+  },
+  "log_id": "5118793479096813672",
+  "log_payload_activity": "NOTIFICATION_SUBSCRIBE",
+  "log_payload_activity_date": "1556910534",
+  "log_payload_app_id": "4002598569791236878",
+  "log_payload_device_id": "5118793486024200243",
+  "log_payload_signature_id": 198,
+  "log_payload_status": "SUCCESS",
+  "log_payload_user_guid": "4bb2debb-58f7-4dbc-bbae-4f5b1a187f52",
+  "origin_id": 4118523896865165300
+}

@@ -1,0 +1,18 @@
+{
+  "activity_time": 1532,
+  "activity_time_tdate": "2019-05-03T15:32:36Z",
+  "agent": "https://smarteragent-dev.dev.yodata.io/profile/card#me",
+  "daily_epoch_timestamp": 1556897556,
+  "id": "https://smarteragent-dev.dev.yodata.io/inbox/a8a110b597c34f6abaae8dd5fff925f8",
+  "identifier": {
+    "actionID": "5118684611741224157"
+  },
+  "log_id": "5118684611741224157",
+  "log_payload_activity": "SSO_FORGOT_PWD",
+  "log_payload_activity_date": "1556897556",
+  "log_payload_sig_id": 198,
+  "log_payload_signature_id": 198,
+  "log_payload_status": "SUCCESS",
+  "log_payload_user": "gailjohnson@hsfranchise.com",
+  "origin_id": 4117158137601235500
+}

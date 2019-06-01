@@ -1,5 +1,6 @@
 x-title:
-x-summary: Contact events
+x-summary: |
+  topic: realestate/contact
 subscribe:
   oneOf:
     - $ref: contact.add.yaml

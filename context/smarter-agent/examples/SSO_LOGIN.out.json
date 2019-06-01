@@ -1,0 +1,25 @@
+{
+  "log_payload_brand_code": "11413100001000010000",
+  "log_payload_brand_level": "1",
+  "identifier": {
+    "actionID": "5126148501543996660"
+  },
+  "origin_id": 4117158137601235500,
+  "log_id": "5126148501543996660",
+  "log_payload_service": "https://ignite",
+  "log_payload_sig_id": 198,
+  "log_payload_status": "SUCCESS",
+  "log_payload_franchise_brand_code": "11413100001000010000",
+  "daily_epoch_timestamp": 1557787321,
+  "log_payload_user_id": 5101402094132893000,
+  "log_payload_activity": "SSO_LOGIN",
+  "log_payload_signature_id": 198,
+  "log_payload_activity_date": "1557787321",
+  "activity_time": 2242,
+  "log_payload_user": "automated-testing@smarteragent.com",
+  "log_payload_user_snowflake": "5101402094132893042",
+  "activity_time_tdate": "2019-05-13T22:42:01Z",
+  "agent": "https://smarteragent-dev.dev.yodata.io/profile/card#me",
+  "id": "https://smarteragent-dev.dev.yodata.io/inbox/00459c0cf7574db4bbffd427f0d3ddef",
+  "log_payload_details": "SSO_INCORRECT_EMAIL_OR_PASSWORD"
+}

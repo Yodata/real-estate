@@ -1,0 +1,28 @@
+{
+  "log_payload_email": "ncysneiros+notifications@smarteragent.com",
+  "identifier": {
+    "actionID": "5116694750040065853"
+  },
+  "log_payload_notification_brandcode_s": "11413101471000010000",
+  "origin_id": 4118523896865165300,
+  "log_id": "5116694750040065853",
+  "log_payload_user_brandcode_s": "11413100001000010000",
+  "log_payload_subscriptions": "5107805782360629084",
+  "log_payload_status": "SUCCESS",
+  "log_payload_company_brand_code_s": "11413101471000010000",
+  "log_payload_content_snowflake": "5116694750816722628",
+  "daily_epoch_timestamp": 1556660346,
+  "log_payload_activity": "NOTIFICATION_EMAIL_SENT",
+  "log_payload_delivery": "email",
+  "log_payload_signature_id": 198,
+  "log_payload_frequency": "instant",
+  "activity_time": 2139,
+  "log_payload_brand_level_i": 2,
+  "log_payload_activity_date": "1556660346",
+  "activity_time_tdate": "2019-04-30T21:39:06Z",
+  "log_payload_user_snowflake": "5107789292024447119",
+  "log_payload_franchise_brand_code_s": "11413100001000010000",
+  "agent": "https://smarteragent-dev.dev.yodata.io/profile/card#me",
+  "id": "https://smarteragent-dev.dev.yodata.io/inbox/047e60af07b047c598ad678c221fe80c",
+  "log_payload_office_brand_code_s": "11413101331001210000"
+}

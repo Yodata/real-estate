@@ -1,11 +1,19 @@
+x-range: Contact
+x-sameas: https://schema.org/Person
 title: Contact
 allOf:
+  
   - $ref: Person.yaml
-  - description: a user contact record.
+  - description: |
+      A contact record.
+
+      sameAs: [schema:Person](https://schema.org/Person)
+
     properties:
       type:
         enum:
           - Contact
+          
       leadSource:
         description: the Lead Provider
         type: object

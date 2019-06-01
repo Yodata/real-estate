@@ -1,0 +1,21 @@
+{
+  "log_payload_value_new": "No Results Realty",
+  "log_payload_roster_type": "agent",
+  "log_payload_key_update": "OfficeDBA",
+  "identifier": {
+    "actionID": "5131755638701610491"
+  },
+  "origin_id": 5131719363465790000,
+  "log_id": "5131755638701610491",
+  "log_payload_key_path": "additionalProperty.OfficeDBA",
+  "log_payload_value_old": "Results Realty",
+  "daily_epoch_timestamp": 1558455743,
+  "log_payload_activity": "ROSTER_UPDATE",
+  "log_payload_signature_id": 198,
+  "log_payload_activity_date": "1558455743",
+  "activity_time": 1622,
+  "activity_time_tdate": "2019-05-21T16:22:23Z",
+  "log_payload_roster_id": "198_468738",
+  "agent": "https://smarteragent-dev.dev.yodata.io/profile/card#me",
+  "id": "https://smarteragent-dev.dev.yodata.io/inbox/6c7ccb010bd3412fbb108149f654d4dc"
+}

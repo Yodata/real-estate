@@ -1,0 +1,29 @@
+{
+  "activity_time": 1526,
+  "activity_time_tdate": "2019-05-01T15:26:25Z",
+  "agent": "https://smarteragent-dev.dev.yodata.io/profile/card#me",
+  "daily_epoch_timestamp": 1556724385,
+  "id": "https://smarteragent-dev.dev.yodata.io/inbox/d0af9b01bba34d45b1e43f8eb71a67ba",
+  "identifier": {
+    "actionID": "5117231955915705299"
+  },
+  "log_id": "5117231955915705299",
+  "log_payload_activity": "AUTHENTICATE",
+  "log_payload_activity_date": "1556724385",
+  "log_payload_application_id": "2",
+  "log_payload_brand_code": "11413100001000010000",
+  "log_payload_brand_level": "1",
+  "log_payload_carrier": "",
+  "log_payload_carrier_id": -1,
+  "log_payload_device": "Android SDK built for x86",
+  "log_payload_franchise_brand_code": "11413100001000010000",
+  "log_payload_log_id": 5117231955915705000,
+  "log_payload_platform": "Android",
+  "log_payload_search_param_applicationId": "0",
+  "log_payload_signature_id": 198,
+  "log_payload_user_guid": "0a9c6a50-271a-40c1-964f-8905369f2ba5",
+  "log_payload_user_id": 24322138,
+  "log_payload_user_latlon": "-122.084 37.4219983333",
+  "log_payload_version": "75.500.09",
+  "origin_id": 3959622135601007000
+}

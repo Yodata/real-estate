@@ -1,0 +1,25 @@
+{
+  "log_payload_brand_code": "11413101781000410043",
+  "log_payload_brand_level": "4",
+  "identifier": {
+    "actionID": "5117385593847889206"
+  },
+  "log_payload_company_brand_code": "11413101781000010000",
+  "log_id": "5117385593847889206",
+  "log_payload_service": "https://qa-engage.smarteragent.com",
+  "log_payload_sig_id": 198,
+  "log_payload_status": "SUCCESS",
+  "log_payload_franchise_brand_code": "11413100001000010000",
+  "daily_epoch_timestamp": 1556742701,
+  "log_payload_activity": "SSO_PRO_LOGIN",
+  "log_payload_signature_id": 198,
+  "log_payload_activity_date": "1556742701",
+  "log_payload_user_id": 5117385520295175000,
+  "log_payload_user": "rlewis+bhhsarowan1@smarteragent.com",
+  "activity_time": 2031,
+  "activity_time_tdate": "2019-05-01T20:31:41Z",
+  "origin_id": 4117158137601235500,
+  "log_payload_office_brand_code": "11413101781000410000",
+  "agent": "https://smarteragent-dev.dev.yodata.io/profile/card#me",
+  "id": "https://smarteragent-dev.dev.yodata.io/inbox/0c18f907aab2420eaea80fda00473f58"
+}

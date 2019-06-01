@@ -1,0 +1,61 @@
+{
+  "additionalProperty": {
+    "listingAgent": {
+      "@type": "RealEstateAgent"
+    },
+    "listingOffice": {
+      "@type": "Organization"
+    },
+    "referredBy": {
+      "@type": "RealEstateAgent"
+    }
+  },
+  "agent": "https://smarteragent-dev.dev.yodata.io/profile/card#me",
+  "id": "https://smarteragent-dev.dev.yodata.io/inbox/080d4b3cf78447468e16a403519a51af",
+  "identifier": {
+    "actionID": "5133257397352909876",
+    "recipientBrandingID": "11413100431000010000",
+    "refCompanyID": "510001967"
+  },
+  "object": {
+    "@context": "https://api.smarteranget.com/1.0/properties/2135862125",
+    "@type": "Place",
+    "addressLocality": "Tampa",
+    "addressRegion": "FL",
+    "baths": "6.0",
+    "beds": "4.0",
+    "identifier": {
+      "listingID": "T3159910",
+      "listingKey": "20181003131219502246000000",
+      "propertyID": "2135862125"
+    },
+    "postalCode": "33629",
+    "price": "4900000.0",
+    "sameAs": "https://api.smarteranget.com/1.0/properties/2135862125",
+    "streetAddress": "5128 W Longfellow Avenue",
+    "type": "RealEstateListing"
+  },
+  "offerPrice": {
+    "price": "100000000.00",
+    "priceCurrency": "USD",
+    "type": "PriceSpecification"
+  },
+  "recipient": {
+    "@id": "https://PA301.ds.bhhsresource.com/profile/card#me",
+    "@type": "RealEstateAgent",
+    "addressLocality": "Devon",
+    "addressRegion": "PA",
+    "email": "clientservices@foxroach.com",
+    "identifier": {
+      "SAAppCode": "BHHSPA301",
+      "SABrandCode": "11413100431000010000",
+      "thridPartyID": "PA301"
+    },
+    "name": "Berkshire Hathaway HomeServices Fox & Roach, REALTORS",
+    "postalCode": "19333",
+    "sameAs": "https://api.smarteragent.com/1.0/agent/11413100431000010000",
+    "streetAddress": "431 W. Lancaster Ave.",
+    "telephone": "8004517356"
+  },
+  "type": "OfferAction"
+}

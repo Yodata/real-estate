@@ -1,0 +1,263 @@
+{
+  "smarteragentlog_payload_company_brand_code": "11413101331000010000",
+  "smarteragentlog_payload_franchise_brand_code": "11413100001000010000",
+  "smarteragentorigin_id": 3959622135601007000,
+  "smarteragentlog_id": "5137198964842931314",
+  "agent": "https://smarteragent-dev.dev.yodata.io/profile/card#me",
+  "identifier": {
+    "actionID": "5137198964842931314"
+  },
+  "data": {
+    "listingOffice": {
+      "name": "F.C. Tucker Company",
+      "telephone": "317-888-3311"
+    },
+    "agent": {
+      "additionalProperty": {
+        "smarteragentlog_payload_user_brandcode_s": "11413100001000010000",
+        "smarteragentuser_usid": "5137198964190051789",
+        "smarteragentlog_payload_user_snowflake": "5101402094132893042",
+        "smarteragentlog_payload_brand_code": "11413100001000010000"
+      },
+      "identifier": {
+        "smarteragentlog_payload_user_id": 24343934,
+        "smarteragentlog_payload_user_guid": "0a9c6a50-271a-40c1-964f-8905369f2ba5"
+      },
+      "location": {
+        "geo": "-122.084 37.4219983333"
+      },
+      "email": "automated-testing@smarteragent.com"
+    },
+    "instrument": [
+      {
+        "name": [
+          "email",
+          "Android SDK built for x86",
+          "",
+          "WEB"
+        ],
+        "identifier": {
+          "smarteragentlog_payload_carrier_id": -1
+        }
+      },
+      "",
+      "https://ignite"
+    ],
+    "query": {
+      "propertyListingStatus": [
+        "[u'1']",
+        "[u'1', u'2']",
+        "[u'2']"
+      ],
+      "body": [
+        "{\"sortType\": \"PRICE_DESCENDING\", \"pageSize\": 20, \"searchType\": \"ADDRESS_SEARCH\", \"searchInfo\": \"Any Bed, Any Bath,  Any Square Feet.\", \"propertyType\": \"1,2,9\", \"sig_id\": 198, \"applicationType\": \"FOR_SALE\", \"address\": \"indianapolis,in\", \"statuses\": \"1\"}",
+        "{\"sortType\": \"PRICE_DESCENDING\", \"pageSize\": 20, \"searchType\": \"ADDRESS_SEARCH\", \"searchInfo\": \"Any Bed, Any Bath,  Any Square Feet.\", \"propertyType\": \"1,2,9\", \"sig_id\": 198, \"applicationType\": \"FOR_SALE\", \"address\": \"aspen\", \"statuses\": \"1\"}",
+        "None",
+        "{\"southWestLatitude\": 39.80060143154095, \"sortType\": \"PRICE_ASCENDING\", \"pageSize\": 20, \"searchType\": \"ADDRESS_SEARCH\", \"searchInfo\": \"Any Bed, Any Bath,  Any Square Feet.\", \"northEastLatitude\": 39.813327007157895, \"sig_id\": 198, \"southWestLongitude\": -86.17412989688114, \"applicationType\": \"FOR_SALE\", \"propertyType\": \"1,2,9\", \"address\": \"Indianapolis, in\", \"northEastLongitude\": -86.15932410311893, \"statuses\": \"2\"}",
+        "{\"sortType\": \"PRICE_DESCENDING\", \"pageSize\": 20, \"searchType\": \"ADDRESS_SEARCH\", \"searchInfo\": \"Any Bed, Any Bath,  Any Square Feet.\", \"propertyType\": \"1,2,9\", \"sig_id\": 198, \"ordinates\": \"39.87859251823408,-86.19061999169844,39.88051052657184,-86.18375353662032,39.88051052657184,-86.1625293005045,39.87811300374726,-86.1500460482921,39.86901217409135,-86.13257095364588,39.86805299171763,-86.13257095364588,39.8670990873965,-86.13007155393916,39.86038976257516,-86.1225802279796,39.85607815852141,-86.11883804348963,39.851286565487264,-86.11758830172676,39.84217691589636,-86.11134671753007,39.830197535544855,-86.11134671753007,39.82396451586665,-86.11446411495763,39.813416615447856,-86.12570449856776,39.80814205815013,-86.13381373842913,39.80190700566637,-86.15067091917354,39.79855184797427,-86.16565348727363,39.79855184797427,-86.17876161036747,39.799986784493775,-86.18375353662032,39.80238703648271,-86.19124477876085,39.80910202937349,-86.20372803097325,39.81485120956801,-86.21121927311378,39.823484603528065,-86.21933546995479,39.83259148686856,-86.22245286738234,39.84792857362804,-86.22245286738234,39.85176100702702,-86.21933546995479,39.853200076971866,-86.21933546995479,39.87045088229901,-86.20310316009181,39.87620018695148,-86.18250379485744\", \"applicationType\": \"FOR_SALE\", \"address\": \"indianapolis, in\", \"statuses\": \"1\"}",
+        "{\"city\": \"Brooksville\", \"sortType\": \"DISTANCE_ASCENDING\", \"searchType\": \"ADDRESS_SEARCH\", \"distance\": 15.4, \"searchInfo\": \"$280,000-$35,000,000, 1+beds, 1+baths, 327+ sqm., $0.125+ hectares, 15.4, Single Family, Condo / Townhouse, Multi Family, Active, Pending\", \"sig_id\": 198, \"maxPrice\": 35000000.0, \"beds\": 1, \"state\": \"FL\", \"minHomeSize\": 1000.0, \"propertyType\": \"1,2,3\", \"minLotSize\": 0.4, \"minPrice\": 260000.0, \"statuses\": \"1,2\", \"applicationType\": \"FOR_SALE\"}",
+        "{\"sortType\": \"PRICE_DESCENDING\", \"pageSize\": 20, \"searchType\": \"ADDRESS_SEARCH\", \"searchInfo\": \"Any Bed, Any Bath,  Any Square Feet.\", \"propertyType\": \"1,2,9\", \"sig_id\": 198, \"maxPrice\": 2500000.0, \"applicationType\": \"FOR_SALE\", \"address\": \"indianapolis, in\", \"statuses\": \"1\"}",
+        "{\"sortType\": \"PRICE_DESCENDING\", \"pageSize\": 20, \"searchType\": \"ADDRESS_SEARCH\", \"searchInfo\": \"Any Bed, Any Bath,  Any Square Feet.\", \"propertyType\": \"1,2,9\", \"sig_id\": 198, \"applicationType\": \"FOR_SALE\", \"address\": \"san francisco, ca\", \"statuses\": \"1\"}",
+        "{\"sortType\": \"PRICE_DESCENDING\", \"searchType\": \"ADDRESS_SEARCH\", \"pageSize\": 20, \"searchInfo\": \"Any Bed, Any Bath,  Any Square Feet.\", \"applicationType\": \"FOR_SALE\", \"sig_id\": 198, \"statuses\": \"1\"}",
+        "{\"sortType\": \"PRICE_DESCENDING\", \"pageSize\": 20, \"searchType\": \"ADDRESS_SEARCH\", \"searchInfo\": \"Any Bed, Any Bath,  Any Square Feet.\", \"sig_id\": 198, \"applicationType\": \"FOR_SALE\", \"propertyType\": \"1,2,9\", \"minPrice\": 1000000.0, \"statuses\": \"1\"}",
+        "{\"sortType\": \"PRICE_DESCENDING\", \"pageSize\": 20, \"searchType\": \"ADDRESS_SEARCH\", \"searchInfo\": \"Any Bed, Any Bath,  Any Square Feet.\", \"propertyType\": \"1,2,9\", \"sig_id\": 198, \"applicationType\": \"FOR_SALE\", \"address\": \"san diego,ca\", \"statuses\": \"1\"}",
+        "{\"sortType\": \"PRICE_DESCENDING\", \"pageSize\": 20, \"searchType\": \"ADDRESS_SEARCH\", \"searchInfo\": \"Any Bed, Any Bath,  Any Square Feet. office: drysdale\", \"propertyType\": \"1,2,9\", \"sig_id\": 198, \"applicationType\": \"FOR_SALE\", \"address\": \"San francisco, CA\", \"statuses\": \"1\"}"
+      ],
+      "numberOfBathrooms": {
+        "value": [
+          "3.0",
+          4
+        ]
+      },
+      "addressRegion": [
+        "FL",
+        "Indianapolis"
+      ],
+      "price": {
+        "maxValue": [
+          "0.0",
+          "D"
+        ],
+        "minValue": "2450000.0"
+      },
+      "propertyType": [
+        "[u'1', u'2', u'9']",
+        "[u'5']",
+        "[u'1', u'2', u'3']",
+        "[u'2', u'9']",
+        "[u'3']",
+        "[u'9', u'5']",
+        "[u'0']",
+        "[u'1', u'2', u'9', u'14', u'11', u'8', u'5', u'7', u'10', u'13']",
+        "[u'1', u'2', u'9', u'3', u'7', u'10', u'13']",
+        "[u'1', u'2', u'9', u'10', u'8', u'6']",
+        "[u'1', u'2', u'9', u'3', u'7', u'10', u'13', u'8', u'11']",
+        "[u'1']",
+        "[u'9', u'2', u'1']",
+        "[u'8']"
+      ],
+      "streetAddress": [
+        "435 Virginia Avenue",
+        "indianapolis,in"
+      ],
+      "geo": {
+        "latitude": "39.921032",
+        "box": [
+          null,
+          "39.8116092667",
+          "-86.3743228601",
+          "39.8785626927",
+          "-86.2814111399"
+        ],
+        "longitude": "-85.957883"
+      },
+      "lotSize": {
+        "minValue": "0.4"
+      },
+      "location": {
+        "geoRadius": "2.0"
+      },
+      "livingArea": {
+        "maxValue": "7500.0",
+        "minValue": "7500.0"
+      },
+      "addressLocality": "Saint Petersburg",
+      "numberOfBedrooms": {
+        "value": [
+          "1",
+          3
+        ]
+      },
+      "postalCode": "33703",
+      "additionalProperty": {
+        "smarteragentlog_payload_search_brand_level": "2",
+        "smarteragentlog_payload_search_brand_code": "11413101331000010000",
+        "smarteragentlog_payload_search_param_newListings": "True",
+        "smarteragentlog_payload_search_param_openHouses": "20190423-20190723"
+      },
+      "description": "For Sale,  Zip search:  33703"
+    },
+    "error": "SSO_INCORRECT_EMAIL_OR_PASSWORD",
+    "endTime": "2019-05-29T04:37:18Z",
+    "identifier": {
+      "smarteragentlog_payload_notification_brandcode_s": "11413101471000010000"
+    },
+    "text": "I would like to talk to you about the following property that I viewed on Berkshire Hathaway HomeServices'  mobile app:\n\nMLS/List Number: 1588167\nList Price: $1,299,999\nProperty address: Address Withheld\nCity: St. Simons Island\nState: GA\nZip: 31522\n\nMLS: GIMLS\nProperty URL: http://qa-m.smarteragent.com/fs60d8j\n\n",
+    "about": "Listing# 1588167 Request for information from Berkshire Hathaway HomeServices' mobile app 1588167",
+    "sender": {
+      "email": "ncysneiros+notifications@smarteragent.com"
+    },
+    "frequency": [
+      "Saturday",
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Monday"
+    ],
+    "additionalProperty": {
+      "smarteragentlog_payload_active": "True",
+      "smarteragentlog_payload_office_brand_code_s": "11413101331001210000",
+      "smarteragentlog_payload_signature_id`": 198,
+      "smarteragentlog_payload_sig_id": 198,
+      "smarteragentlog_payload_source_id": "94",
+      "smarteragentdaily_epoch_timestamp": 1559104638,
+      "smarteragentlog_payload_office_brand_code": "11413101331000210000",
+      "smarteragentactivity_time": 437,
+      "smarteragentlog_payload_applicationtype": "FOR_SALE",
+      "smarteragentlog_payload_leadbrand": "11413101331000010000",
+      "smarteragentlog_payload_brand_level": "1",
+      "smarteragentlog_payload_log_id": 5137198964842931000,
+      "smarteragentlog_payload_content_snowflake": "5116694750816722628",
+      "smarteragentlog_payload_roster_type": "agent",
+      "smarteragentlog_payload_notification_type": "saved_search",
+      "smarteragentlog_payload_state": "IN",
+      "smarteragentlog_payload_franchise_brand_code_s": "11413100001000010000",
+      "smarteragentlog_payload_brand_level_i": 2,
+      "smarteragentlog_payload_subscriptions": "5107805782360629084",
+      "smarteragentlog_payload_subscription_method_s": "POST",
+      "smarteragentpayload_activity_date": "1559104638"
+    },
+    "toRecipient": {
+      "email": "info@hcrega.com"
+    },
+    "object": {
+      "name": "Sunset,in - 1556658301",
+      "additionalProperty": {
+        "smarteragentlog_payload_subscription_id": "5116689366331322652",
+        "smarteragentlog_payload_subscribe_for_id": "None"
+      },
+      "mlsListingId": [
+        "2135322218",
+        "21615573"
+      ],
+      "price": 1750000
+    }
+  },
+  "offerPrice": {
+    "price": "100000000.00",
+    "priceCurrency": "USD",
+    "type": "PriceSpecification"
+  },
+  "topic": {
+    "topic": "FIRST_BRAND_LOGIN",
+    "type": "id"
+  },
+  "smarteragentlog_payload_roster_id": "198_468738",
+  "smarteragentlog_payload_company_brand_code_s": "11413101471000010000",
+  "postalCode": "46203-0010",
+  "recipient": [
+    "NC703-001",
+    {
+      "telephone": "8004517356",
+      "addressRegion": "PA",
+      "identifier": {
+        "SAAppCode": "BHHSPA301",
+        "SABrandCode": "11413100431000010000",
+        "thridPartyID": "PA301"
+      },
+      "name": "Berkshire Hathaway HomeServices Fox & Roach, REALTORS",
+      "streetAddress": "431 W. Lancaster Ave.",
+      "addressLocality": "Devon",
+      "postalCode": "19333",
+      "sameAs": "https://api.smarteragent.com/1.0/agent/11413100431000010000",
+      "@type": "RealEstateAgent",
+      "@id": "https://PA301.ds.bhhsresource.com/profile/card#me",
+      "email": "clientservices@foxroach.com"
+    }
+  ],
+  "type": "OfferAction",
+  "id": "https://smarteragent-dev.dev.yodata.io/inbox/0000d5ffb18c447c9732593ae75dbc39",
+  "additionalProperty": {
+    "listingAgent": {
+      "@type": "RealEstateAgent"
+    },
+    "listingOffice": {
+      "@type": "Organization"
+    },
+    "referredBy": {
+      "@type": "RealEstateAgent"
+    }
+  },
+  "smarteragentlog_payload_version": "5.800.20",
+  "object": {
+    "baths": "6.0",
+    "addressRegion": "FL",
+    "identifier": {
+      "listingID": "T3159910",
+      "listingKey": "20181003131219502246000000",
+      "propertyID": "2135862125"
+    },
+    "price": "4900000.0",
+    "@context": "https://api.smarteranget.com/1.0/properties/2135862125",
+    "streetAddress": "5128 W Longfellow Avenue",
+    "beds": "4.0",
+    "addressLocality": "Tampa",
+    "postalCode": "33629",
+    "sameAs": "https://api.smarteranget.com/1.0/properties/2135862125",
+    "type": "RealEstateListing",
+    "@type": "Place"
+  }
+}

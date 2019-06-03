@@ -1,0 +1,22 @@
+{
+	"name": "smarter-agent-ignite",
+	"description": "ignite/smarter-agent event data context",
+	"keywords": [
+		"yodata",
+		"real estate",
+		"smarter agent",
+		"ignite",
+		"reflex"
+	],
+	"version": "0.0.1",
+	"scripts": {
+		"test": "npx jest"
+	},
+	"devDependencies": {
+		"@yodata/context-sdk": "latest",
+		"jest": "^24.7.1",
+		"dotenv": "^7.0.0",
+		"@types/node": "^11.13.7",
+		"@types/jest": "^24.0.11"
+	}
+}

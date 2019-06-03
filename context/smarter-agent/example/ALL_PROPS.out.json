@@ -1,0 +1,175 @@
+{
+  "listingOffice": {
+    "name": "F.C. Tucker Company",
+    "telephone": "317-888-3311"
+  },
+  "smarteragentlog_payload_company_brand_code": "11413101331000010000",
+  "smarteragentlog_payload_franchise_brand_code": "11413100001000010000",
+  "smarteragentorigin_id": 3959622135601007000,
+  "smarteragentlog_id": "5137198964842931314",
+  "agent": "https://smarteragent-dev.dev.yodata.io/profile/card#me",
+  "identifier": {
+    "actionID": "5137198964842931314"
+  },
+  "data": {
+    "agent": {
+      "additionalProperty": {
+        "smarteragentlog_payload_user_brandcode_s": "11413100001000010000",
+        "smarteragentuser_usid": "5137198964190051789",
+        "smarteragentlog_payload_user_snowflake": "5101402094132893042",
+        "smarteragentlog_payload_brand_code": "11413100001000010000"
+      },
+      "identifier": {
+        "smarteragentlog_payload_user_id": 24343934,
+        "smarteragentlog_payload_user_guid": "0a9c6a50-271a-40c1-964f-8905369f2ba5"
+      },
+      "location": {
+        "geo": "-122.084 37.4219983333"
+      },
+      "email": "automated-testing@smarteragent.com"
+    },
+    "instrument": [
+      {
+        "name": [
+          "email",
+          "Android SDK built for x86",
+          "",
+          "WEB"
+        ],
+        "identifier": {
+          "smarteragentlog_payload_carrier_id": -1
+        }
+      },
+      "",
+      "https://ignite"
+    ],
+    "query": {
+      "propertyListingStatus": "[u'1']",
+      "body": "{\"sortType\": \"PRICE_DESCENDING\", \"pageSize\": 20, \"searchType\": \"ADDRESS_SEARCH\", \"searchInfo\": \"Any Bed, Any Bath,  Any Square Feet.\", \"propertyType\": \"1,2,9\", \"sig_id\": 198, \"applicationType\": \"FOR_SALE\", \"address\": \"indianapolis,in\", \"statuses\": \"1\"}",
+      "numberOfBathrooms": {
+        "value": [
+          "3.0",
+          4
+        ]
+      },
+      "addressRegion": [
+        "FL",
+        "Indianapolis"
+      ],
+      "price": {
+        "maxValue": [
+          "0.0",
+          "D"
+        ],
+        "minValue": "2450000.0"
+      },
+      "propertyType": "[u'1', u'2', u'9']",
+      "streetAddress": "indianapolis,in",
+      "geo": {
+        "latitude": "39.921032",
+        "box": [
+          null,
+          "39.8116092667",
+          "-86.3743228601",
+          "39.8785626927",
+          "-86.2814111399"
+        ],
+        "longitude": "-85.957883"
+      },
+      "lotSize": {
+        "minValue": "0.4"
+      },
+      "location": {
+        "geoRadius": "2.0"
+      },
+      "livingArea": {
+        "maxValue": "7500.0",
+        "minValue": "7500.0"
+      },
+      "addressLocality": "Saint Petersburg",
+      "numberOfBedrooms": {
+        "value": [
+          "1",
+          3
+        ]
+      },
+      "postalCode": "33703",
+      "additionalProperty": {
+        "smarteragentlog_payload_search_brand_level": "2",
+        "smarteragentlog_payload_search_brand_code": "11413101331000010000",
+        "smarteragentlog_payload_search_param_newListings": "True",
+        "smarteragentlog_payload_search_param_openHouses": "20190423-20190723"
+      },
+      "description": "For Sale,  Zip search:  33703"
+    },
+    "error": "SSO_INCORRECT_EMAIL_OR_PASSWORD",
+    "endTime": "2019-05-29T04:37:18Z",
+    "identifier": {
+      "smarteragentlog_payload_notification_brandcode_s": "11413101471000010000"
+    },
+    "text": "I would like to talk to you about the following property that I viewed on Berkshire Hathaway HomeServices'  mobile app:\n\nMLS/List Number: 1588167\nList Price: $1,299,999\nProperty address: Address Withheld\nCity: St. Simons Island\nState: GA\nZip: 31522\n\nMLS: GIMLS\nProperty URL: http://qa-m.smarteragent.com/fs60d8j\n\n",
+    "about": "Listing# 1588167 Request for information from Berkshire Hathaway HomeServices' mobile app 1588167",
+    "sender": {
+      "email": "ncysneiros+notifications@smarteragent.com"
+    },
+    "frequency": [
+      "Saturday",
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Monday"
+    ],
+    "additionalProperty": {
+      "smarteragentlog_payload_active": "True",
+      "smarteragentlog_payload_office_brand_code_s": "11413101331001210000",
+      "smarteragentlog_payload_signature_id`": 198,
+      "smarteragentlog_payload_sig_id": 198,
+      "smarteragentlog_payload_source_id": "94",
+      "smarteragentdaily_epoch_timestamp": 1559104638,
+      "smarteragentlog_payload_office_brand_code": "11413101331000210000",
+      "smarteragentactivity_time": 437,
+      "smarteragentlog_payload_applicationtype": "FOR_SALE",
+      "smarteragentlog_payload_leadbrand": "11413101331000010000",
+      "smarteragentlog_payload_brand_level": "1",
+      "smarteragentlog_payload_log_id": 5137198964842931000,
+      "smarteragentlog_payload_content_snowflake": "5116694750816722628",
+      "smarteragentlog_payload_roster_type": "agent",
+      "smarteragentlog_payload_notification_type": "saved_search",
+      "smarteragentlog_payload_state": "IN",
+      "smarteragentlog_payload_franchise_brand_code_s": "11413100001000010000",
+      "smarteragentlog_payload_brand_level_i": 2,
+      "smarteragentlog_payload_subscriptions": "5107805782360629084",
+      "smarteragentlog_payload_subscription_method_s": "POST",
+      "smarteragentpayload_activity_date": "1559104638"
+    },
+    "toRecipient": {
+      "email": "info@hcrega.com"
+    },
+    "object": {
+      "name": "Sunset,in - 1556658301",
+      "additionalProperty": {
+        "smarteragentlog_payload_subscription_id": "5116689366331322652",
+        "smarteragentlog_payload_subscribe_for_id": "None"
+      },
+      "mlsListingId": [
+        "2135322218",
+        "21615573"
+      ],
+      "price": 1750000
+    }
+  },
+  "topic": {
+    "topic": "FIRST_BRAND_LOGIN",
+    "type": "id"
+  },
+  "streetAddress": "435 Virginia Avenue",
+  "smarteragentlog_payload_roster_id": "198_468738",
+  "smarteragentlog_payload_company_brand_code_s": "11413101471000010000",
+  "OfficeID": "NC703-001",
+  "postalCode": "46203-0010",
+  "id": "https://smarteragent-dev.dev.yodata.io/inbox/0000d5ffb18c447c9732593ae75dbc39",
+  "smarteragentlog_payload_version": "5.800.20"
+}

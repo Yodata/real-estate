@@ -1,3 +1,9 @@
+# @example
+# type: PriceSpecification
+# minPrice: 0
+# maxPrice: 10000000
+# price: 33333
+# priceCurrency: USD
 title: PriceSpecification
 type: object
 x-range: PriceSpecification

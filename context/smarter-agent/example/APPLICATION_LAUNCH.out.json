@@ -1,0 +1,53 @@
+{
+  "smarteragentlog_payload_company_brand_code": "11413101331000010000",
+  "smarteragentlog_payload_franchise_brand_code": "11413100001000010000",
+  "smarteragentorigin_id": 3959622135601007000,
+  "smarteragentlog_id": "5131040289069717164",
+  "agent": "https://smarteragent-dev.dev.yodata.io/profile/card#me",
+  "identifier": {
+    "actionID": "5131040289069717164"
+  },
+  "data": {
+    "endTime": "2019-05-20T16:41:07Z",
+    "additionalProperty": {
+      "smarteragentlog_payload_brand_level": "1",
+      "smarteragentlog_payload_log_id": 5131040289069718000,
+      "smarteragentlog_payload_signature_id`": 198,
+      "smarteragentpayload_activity_date": "1558370467",
+      "smarteragentdaily_epoch_timestamp": 1558370467,
+      "smarteragentlog_payload_office_brand_code": "11413101331000210000",
+      "smarteragentactivity_time": 1641
+    },
+    "agent": {
+      "additionalProperty": {
+        "smarteragentuser_usid": "5131040288343856165",
+        "smarteragentlog_payload_brand_code": "11413100001000010000"
+      },
+      "identifier": {
+        "smarteragentlog_payload_user_id": 24340376,
+        "smarteragentlog_payload_user_guid": "0a9c6a50-271a-40c1-964f-8905369f2ba5"
+      },
+      "location": {
+        "geo": "-122.084 37.4219983333"
+      }
+    },
+    "instrument": [
+      {
+        "name": [
+          "Android SDK built for x86",
+          "",
+          "WEB"
+        ],
+        "identifier": {
+          "smarteragentlog_payload_carrier_id": -1
+        }
+      }
+    ]
+  },
+  "topic": {
+    "topic": "APPLICATION_LAUNCH",
+    "type": "id"
+  },
+  "id": "https://smarteragent-dev.dev.yodata.io/inbox/000129bc8eb24567955bdf0a6ea09780",
+  "smarteragentlog_payload_version": "5.800.20"
+}

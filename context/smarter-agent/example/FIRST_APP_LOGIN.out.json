@@ -1,0 +1,51 @@
+{
+  "smarteragentlog_payload_franchise_brand_code": "11413100001000010000",
+  "smarteragentorigin_id": 3959622135601007000,
+  "smarteragentlog_id": "5128526126699500076",
+  "agent": "https://smarteragent-dev.dev.yodata.io/profile/card#me",
+  "identifier": {
+    "actionID": "5128526126699500076"
+  },
+  "data": {
+    "endTime": "2019-05-17T05:25:56Z",
+    "additionalProperty": {
+      "smarteragentlog_payload_brand_level": "1",
+      "smarteragentlog_payload_log_id": 5128526126699501000,
+      "smarteragentlog_payload_signature_id`": 198,
+      "smarteragentpayload_activity_date": "1558070756",
+      "smarteragentdaily_epoch_timestamp": 1558070756,
+      "smarteragentactivity_time": 525
+    },
+    "agent": {
+      "additionalProperty": {
+        "smarteragentuser_usid": "5128526124007905694",
+        "smarteragentlog_payload_brand_code": "11413100001000010000"
+      },
+      "identifier": {
+        "smarteragentlog_payload_user_id": 24339580,
+        "smarteragentlog_payload_user_guid": "e87ca97b-bd30-42d2-85a1-7a984e9e1b18"
+      },
+      "location": {
+        "geo": "-75.066857 39.916028"
+      }
+    },
+    "instrument": [
+      {
+        "name": [
+          "iPhone",
+          "SPRINT",
+          "WEB"
+        ],
+        "identifier": {
+          "smarteragentlog_payload_carrier_id": 1
+        }
+      }
+    ]
+  },
+  "topic": {
+    "topic": "FIRST_APP_LOGIN",
+    "type": "id"
+  },
+  "id": "https://smarteragent-dev.dev.yodata.io/inbox/00096e78670d4a0bba3e72f1210f7170",
+  "smarteragentlog_payload_version": "5.800.20"
+}

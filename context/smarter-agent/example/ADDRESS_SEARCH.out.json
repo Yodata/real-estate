@@ -1,0 +1,81 @@
+{
+  "smarteragentlog_payload_company_brand_code": "11413101331000010000",
+  "smarteragentlog_payload_franchise_brand_code": "11413100001000010000",
+  "smarteragentorigin_id": 3959622135601007000,
+  "smarteragentlog_id": "5126187965428480923",
+  "agent": "https://smarteragent-dev.dev.yodata.io/profile/card#me",
+  "identifier": {
+    "actionID": "5126187965428480923"
+  },
+  "data": {
+    "endTime": "2019-05-14T00:00:25Z",
+    "additionalProperty": {
+      "smarteragentlog_payload_brand_level": "1",
+      "smarteragentlog_payload_log_id": 5126187965428481000,
+      "smarteragentlog_payload_signature_id`": 198,
+      "smarteragentpayload_activity_date": "1557792025",
+      "smarteragentdaily_epoch_timestamp": 1557792025,
+      "smarteragentlog_payload_office_brand_code": "11413101331000210000",
+      "smarteragentactivity_time": 0
+    },
+    "agent": {
+      "additionalProperty": {
+        "smarteragentuser_usid": "5124016864787328252",
+        "smarteragentlog_payload_brand_code": "11413100001000010000"
+      },
+      "identifier": {
+        "smarteragentlog_payload_user_id": 24335347,
+        "smarteragentlog_payload_user_guid": "f84e571e-bcb7-480f-96a2-e17dd0e1bfff"
+      },
+      "location": {
+        "geo": "-117.852898 33.677074"
+      }
+    },
+    "instrument": [
+      {
+        "name": [
+          "iPhone",
+          "AT&T",
+          "WEB"
+        ],
+        "identifier": {
+          "smarteragentlog_payload_carrier_id": 2
+        }
+      }
+    ],
+    "query": {
+      "propertyListingStatus": "[u'1']",
+      "numberOfBathrooms": {
+        "value": "3.0"
+      },
+      "addressRegion": "FL",
+      "price": {
+        "maxValue": "0.0",
+        "minValue": "2450000.0"
+      },
+      "propertyType": "[u'1', u'2', u'9']",
+      "geo": {
+        "latitude": "39.921032",
+        "longitude": "-85.957883"
+      },
+      "location": {
+        "geoRadius": "2.0"
+      },
+      "addressLocality": "Saint Petersburg",
+      "numberOfBedrooms": {
+        "value": "2"
+      },
+      "postalCode": "33703",
+      "additionalProperty": {
+        "smarteragentlog_payload_search_param_openHouses": "20190423-20190723"
+      },
+      "description": "For Sale,  Zip search:  33703"
+    }
+  },
+  "topic": {
+    "topic": "ADDRESS_SEARCH",
+    "type": "id"
+  },
+  "id": "https://smarteragent-dev.dev.yodata.io/inbox/00057d2946d04cb1b205c9b8d2910954",
+  "smarteragentlog_payload_version": "5.9"
+}

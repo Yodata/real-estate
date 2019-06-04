@@ -1,0 +1,13 @@
+x-range: GeoCordinates
+x-title: GeoCordinates
+type: object
+description: a lat/long point.
+properties:
+  type:
+    type: string
+    enum:
+    - GeoCordinates
+  longitude:
+    $ref: longitude.yaml
+  latitude:
+    $ref: latitude.yaml

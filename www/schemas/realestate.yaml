@@ -1,4 +1,4 @@
-AppointmentRequest: { $ref: AppointmentRequest.yaml }
+RequestAppointmentAction: { $ref: RequestAppointmentAction.yaml }
 Contact: { $ref: Contact.yaml }
 Language: { $ref: Language.yaml }
 Lead: { $ref: Lead.yaml }
@@ -6,7 +6,7 @@ MarketingProgram: { $ref: MarketingProgram.yaml }
 MediaObject: { $ref: MediaObject.yaml }
 MLSMembership: { $ref: MLSMembership.yaml }
 MultipleListingService: { $ref: MultipleListingService.yaml }
-Offer: { $ref: Offer.yaml }
+ListingOffer: { $ref: ListingOffer.yaml }
 Organization: { $ref: Organization.yaml }
 OrganizationRole: { $ref: OrganizationRole.yaml }
 Permit: { $ref: Permit.yaml }
@@ -17,7 +17,6 @@ Profile: { $ref: Profile.yaml }
 ProgramMembership: { $ref: ProgramMembership.yaml }
 PropertyListing: { $ref: PropertyListing.yaml }
 PropertySearch: { $ref: PropertySearch.yaml }
-PropertySearchArguments: { $ref: PropertySearchArguments.yaml }
 PropertyValue: { $ref: PropertyValue.yaml }
 RealEstateAgent: { $ref: RealEstateAgent.yaml }
 RealEstateOffice: { $ref: RealEstateOffice.yaml }

@@ -1,6 +1,7 @@
 title: about
 type: object
-description: the subject of the item
+x-range: Thing
+description: a subject of the item.
 example:
   type: RealEstateListing
   id: https://example.com/listingid

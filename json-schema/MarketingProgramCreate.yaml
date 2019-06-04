@@ -1,9 +1,0 @@
-allOf:
-  - $ref: CreateAction.yaml
-  - type: object
-    description: a MarketingProgram (object) was created by the user (agent).
-    properties:
-      object:
-        description: the program
-        x-range: MarketingProgram
-        $ref: MarketingProgram.yaml

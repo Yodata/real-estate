@@ -1,10 +1,22 @@
-  x-title: register
-  x-scope: realestate/website#
-  summary: a website visitor has registered
-  payload:
-    allOf:
+x-title: register
+x-scope: realestate/website#
+summary: The user (agent) has registered for a website, product or service.
+payload:
+  allOf:
     - $ref: website.event.yaml
     - properties:
         topic:
           enum:
-          - realestate/website#register
+            - realestate/website#register
+        data:
+          allOf:
+            - $ref: ../RegisterAction.yaml
+            - properties:
+                object:
+                  type: string
+                  format: uri
+                  description: the site, app or service being registered on
+                instrument:
+                  example:
+                    type: MobileApplication
+                    name: BuzzStation

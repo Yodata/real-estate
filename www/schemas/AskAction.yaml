@@ -1,17 +1,15 @@
 allOf:
-- properties:
-    question:
-      type: object
-      example:
-        type: Question
-        text: What is the meaning of life?
-    recipient:
-      type: string
-      example: https://{user}.example.com/profile/card#me
-- $ref: Action.yaml
-- properties:
-    type:
-      enum:
-        - AskAction
-    
-    
+  - properties:
+      agent:
+        description: the one who asks
+      recipient:
+        description: the one who should answer
+      question:
+        example:
+          type: Question
+          text: What is the meaning of life?
+  - $ref: Action.yaml
+  - properties:
+      type:
+        enum:
+          - AskAction

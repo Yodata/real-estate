@@ -1,0 +1,24 @@
+x-title: requestappointment
+x-scope: realestate/website#
+summary: a website vistor has requested an appointment
+payload:
+  allOf:
+    - $ref: website.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/website#requestappointment
+        data:
+          properties:
+            type:
+              enum:
+              - AskAction
+            recipient:
+              x-range:
+                - RealEstateOrganization
+              type: string
+              format: uri
+              description: the agent, office or organization being asked.
+              example: https://{agent|office|affiliate}.example.com/profile/card#me
+            about:
+              $ref: ../about.yaml

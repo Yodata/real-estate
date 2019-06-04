@@ -1,0 +1,6 @@
+x-range: Question
+type: object
+description: A question.
+example:
+  type: Question
+  text: What is the meaning of life?

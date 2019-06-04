@@ -1,0 +1,22 @@
+x-title: viewproperty
+x-scope: realestate/website#
+summary: website user (agent) viewed an (object) on website (instrument)
+payload:
+  allOf:
+  - $ref: website.event.yaml
+  - properties:
+      topic:
+        description: realestate/website#viewproperty
+        enum:
+        - realestate/website#viewproperty
+      data:
+        properties:
+          type:
+            enum:
+            - ViewAction
+          object:
+            x-range: PropertyListing
+            example:
+              type: PropertyListing
+              url: https://example.com/listing/123
+          

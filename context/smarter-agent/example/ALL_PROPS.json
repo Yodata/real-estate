@@ -61,7 +61,7 @@
   "log_payload_roster_type": "agent",
   "log_payload_search_brand_code": "11413101331000010000",
   "log_payload_search_brand_level": "2",
-  "log_payload_search_param_address": "indianapolis,in",
+  "log_payload_search_param_address": "indianapolis,in", 
   "log_payload_search_param_applicationId": "0",
   "log_payload_search_param_baths": "3.0",
   "log_payload_search_param_beds": "1",

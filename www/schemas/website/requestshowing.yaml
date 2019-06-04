@@ -1,0 +1,16 @@
+x-title: requestshowing
+x-scope: realestate/website#
+summary: a website visitor has requested a property showing
+payload:
+  allOf:
+  - $ref: website.event.yaml
+  - properties:
+      topic:
+        enum:
+        - realestate/website#requestshowing
+      data:
+        allOf:
+        - $ref: ../RequestAppointmentAction.yaml
+        - properties:
+            about:
+              $ref: ../about.yaml

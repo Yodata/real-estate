@@ -1,0 +1,13 @@
+allOf:
+- type: object
+  x-range: SearchAction
+  properties:
+    type:
+      enum:
+      - SearchAction
+    query:
+      description: search criteria
+    result:
+      description: search result
+      x-range: FindAction
+- $ref: Action.yaml    

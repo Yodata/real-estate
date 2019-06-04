@@ -18,7 +18,7 @@ allOf:
         $ref: about.yaml
     example:
       type: Comment
-      text: 'Winter is coming'
+      text: Placeat veritatis mollitia nihil reiciendis excepturi totam quis odio.
       author:
         type: Person
         email: user@example.com

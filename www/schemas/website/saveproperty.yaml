@@ -1,0 +1,24 @@
+x-title: saveproperty
+x-scope: realestate/website#
+summary: website user (agent) saved a property
+payload:
+  allOf:
+    - $ref: website.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/website#saveproperty
+        data:
+          allOf:
+            - $ref: ../SaveAction.yaml
+            - properties:
+                type:
+                  enum:
+                    - SaveAction
+                object:
+                  allOf:
+                  - $ref: ../PropertyListing.yaml
+                  - properties:
+                      listingAgent:
+                        example: https://user.example.com/profile/card#me
+                

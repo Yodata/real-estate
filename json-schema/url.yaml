@@ -1,4 +1,0 @@
-url:
-  type: string
-  format: uri
-  description: URL of the item.

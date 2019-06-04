@@ -7,8 +7,7 @@ log_payload_activity:
   # actiontype -> .data.type
   # actionobjecttype -> .data.object.type
 
-ADDRESS_SEARCH:
-  id: realestate/website#propertysearch
+ADDRESS_SEARCH: realestate/website#propertysearch
 
 # @description the agent(user) registers for object(website)
 FIRST_BRAND_LOGIN: realestate/lead#register
@@ -27,9 +26,9 @@ MAP_SEARCH: realestate/website#propertysearch
 
 # @smarteragent: how is NOTIFICATION_SUBSCRIBE different from SUBSCRIPTION_SAVE?
 NOTIFICATION_SUBSCRIBE: realestate/website#propertysearchsubscribe
-PROPERTY_BASIC_VIEW: realestate/website#propertyview
+PROPERTY_BASIC_VIEW: realestate/website#viewproperty
 SAVE_PROPERTY: realestate/website#propertysave
-SAVE_SEARCH: realestate/website#propertysearchsave
+SAVE_SEARCH: realestate/website#savepropertysearch
 SHARE_PROPERTY: realestate/website#propertyshare
 SUBSCRIPTION_SAVE: realestate/website#propertysearchsubscribe
 # todo: add realestate/website#officeview to vocab - @daveduran
@@ -67,7 +66,6 @@ USER_LOGIN: null
 
 # todo: not sure what this is used for.
 log_payload_office_id_s: recipient
-
 
 # @property {string}
 # @smarteragent need definition
@@ -135,8 +133,8 @@ log_payload_city: data.query.addressRegion
 
 # @property {string} - listing address (searched)
 # @example 2
-log_payload_baths: data.query.numberOfBathrooms.value
-log_payload_beds: data.query.numberOfBedrooms.value
+log_payload_baths: data.query.bathrooms.value
+log_payload_beds: data.query.bedrooms.value
 
 # @property {string} 
 # @example '21615573'
@@ -388,8 +386,8 @@ log_payload_search_brand_level: data.query.additionalProperty.smarteragentlog_pa
 log_payload_search_param_applicationId: 
 
 log_payload_search_param_address: data.query.streetAddress
-log_payload_search_param_state: data.query.addressRegion
 log_payload_search_param_city: data.query.addressLocality
+log_payload_search_param_state: data.query.addressRegion
 log_payload_search_param_zip: data.query.postalCode
 
 # @property {number} - are this presumed to be min-values?

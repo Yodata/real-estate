@@ -1,0 +1,30 @@
+x-title: askquestion
+x-scope: realestate/website#
+summary: a website visitor has asked a question
+payload:
+  allOf:
+  - properties:
+      topic:
+        enum:
+        - realestate/website#askquestion
+      data:
+        x-range: AskAction
+        properties:
+          type:
+            enum:
+            - AskAction
+          agent:
+            type: object
+          recipient:
+            x-range:
+            - RealEstateOrganization
+            type: string
+            format: uri
+            description: the agent, office or organization being asked.
+            example: https://{agent|office|affiliate}.example.com/profile/card#me
+          question:
+            $ref: ../question.yaml
+          about:
+            $ref: ../about.yaml
+            
+  - $ref: website.event.yaml

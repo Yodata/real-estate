@@ -1,0 +1,16 @@
+x-range: FindAction
+description: the act of finding something, typically precededby or the result of a SearchAction
+type: object
+properties:
+  type:
+    type: string
+    enum:
+    - FindAction
+  object:
+    description: the items found
+    type: array
+    example:
+    - type: RealEstateListing
+      url: http://example.com/listing/123
+    - type: RealEstateListing
+      url: http://example.com/listing/234

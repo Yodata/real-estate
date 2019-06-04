@@ -1,0 +1,15 @@
+x-range: GeoCircle
+type: object
+properties:
+  geoMidpoint:
+    $ref: GeoCoordinates.yaml
+  geoRadius:
+    allOf:
+    - $ref: QuantitativeValue.yaml
+example:
+  type: GeoCircle
+  geoRadius:
+    type: QuantitativeValue
+    value: 10
+    unitCode: mi
+    unitText: miles

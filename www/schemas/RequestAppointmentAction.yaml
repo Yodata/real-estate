@@ -1,0 +1,18 @@
+allOf:
+  - $ref: Action.yaml
+  - x-range: RequestAppointmentAction
+    type: object
+    properties:
+      type:
+        type: string
+        enum:
+          - RequestAppointmentAction
+      text:
+        type: string
+        description: request text
+        example: Accusantium eos neque doloribus illo nobis.
+      agent:
+        $ref: agent.yaml
+      about:
+        $ref: about.yaml
+      

@@ -1,16 +1,29 @@
-title: PropertySearch
+x-title: PropertySearch
+x-range: PropertySearch
 type: object
-allOf:
-  - $ref: Thing.yaml
-  - properties:
-      type:
-        enum:
-        - SearchAction
-      object:
-        $ref: PropertySearchArguments.yaml
-      agent:
-        type: object
-        x-range: Person
-        example:
-          type: Person
-          email: bob@example.com
+description: a real estate property query - the query property of a SearchAction
+properties:
+  type:
+    type: string
+    enum:
+    - PropertySearch
+  price:
+    description: price value or range (minValue, maxValue)
+    $ref: PriceSpecification.yaml
+  bedrooms:
+    description: value or range (minValue, maxValue)
+    $ref: QuantitativeValue.yaml
+  bathrooms:
+    description: value or range (minValue, maxValue)
+    $ref: QuantitativeValue.yaml
+  location:
+    $ref: location.yaml
+  livingArea:
+    description: property indoor space
+    $ref: QuantitativeValue.yaml
+  lotSize:
+    description: outdoor space minValue, maxValue
+    $ref: QuantitativeValue.yaml
+
+
+    

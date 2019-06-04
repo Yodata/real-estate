@@ -1,0 +1,13 @@
+x-title: listingoffer
+x-scope: realestate/website#
+summary: website user makes an offer to buy a RealEstateListing
+payload:
+  allOf:
+  - $ref: website.event.yaml
+  - properties:
+      topic:
+        description: realestate/website#listingoffer
+        enum:
+        - realestate/website#listingoffer
+      data:
+        $ref: ../ListingOffer.yaml

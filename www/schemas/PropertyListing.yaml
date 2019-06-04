@@ -6,9 +6,13 @@ properties:
   type:
     type: string
     enum:
-    - PropertyListing
-  address:
-    $ref: PostalAddress.yaml
+      - PropertyListing
+  streetAddress:
+    $ref: streetAddress.yaml
+  addressLocality:
+    $ref: addressLocality.yaml
+  addressRegion:
+    $ref: addressRegion.yaml
   dateListed:
     type: string
     format: date-time
@@ -23,27 +27,26 @@ properties:
   listingStatus:
     type: string
     enum:
-    - Active
-    - Pending
-    - Sold
-    - Cancelled
-    - Prelisted
-    - OffMarket
-    - Private
+      - Active
+      - Pending
+      - Sold
+      - Cancelled
+      - Prelisted
+      - OffMarket
+      - Private
   listingAgent:
     allOf:
-    - $ref: RealEstateAgent.yaml
-    - example:
-        type: RealEstateAgent
-        id: https://user.example.com/profile/card#me
+      - $ref: RealEstateAgent.yaml
+      - example:
+          type: RealEstateAgent
+          id: https://user.example.com/profile/card#me
   listingOffice:
     allOf:
-    - $ref: RealEstateOffice.yaml
-    - example:
-        type: RealEstateOffice
-        id: https://{office}.example.com/profile/card#me
+      - $ref: RealEstateOffice.yaml
+      - example:
+          type: RealEstateOffice
+          id: https://{office}.example.com/profile/card#me
   image:
     $ref: image.yaml
   url:
     $ref: url.yaml
-  

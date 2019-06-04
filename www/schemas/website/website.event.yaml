@@ -1,7 +1,47 @@
-allOf:
-- $ref: ../base.event.yaml
-- properties:
-    data:
-      properties:
-        agent:
-          $ref: website.visitor.yaml
+type: object
+required:
+  - topic
+  - source
+  - data
+properties:
+  topic:
+    description: message event type
+    type: string
+  data:
+    type: object
+    properties:
+      type:
+        type: string
+        description: the Action identifier
+      agent:
+        type: object
+        description: the website user
+        x-range:
+          - Person
+          - Contact
+        example:
+          type: Person
+          name: Bob Buyer
+          email: bob@example.com
+          identifier:
+            vendoraid: 123
+            vendorbid: 456
+      instrument:
+        description: the website url where the action occurred.
+        type: string
+        format: uri
+        example: http://agentwebsite.example.com
+  source:
+    description: the subscription source
+    type: string
+    format: uri
+    example: http://{user}.example.com/profile/card#me
+  instrument:
+    description: the message producer
+    type: string
+    format: uri
+    example: http://{supercrm}.example.com/profile/card#me
+  time:
+    description: the time the message was produced
+    type: string
+    format: date-time

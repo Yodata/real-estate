@@ -1,13 +1,13 @@
 x-summary: Website events
 subscribe:
   oneOf:
-  - $ref: appointmentrequest.yaml
-  - $ref: propertyoffer.yaml
-  - $ref: propertysearch.yaml
-  - $ref: propertyshare.yaml
-  - $ref: propertyview.yaml
-  - $ref: question.yaml
-  - $ref: register.yaml
-  - $ref: showingrequest.yaml
-  - $ref: propertysave.yaml
-  - $ref: propertysearchsave.yaml
+    - $ref: askquestion.yaml
+    - $ref: listingoffer.yaml
+    - $ref: register.yaml
+    - $ref: requestappointment.yaml
+    - $ref: requestshowing.yaml
+    - $ref: saveproperty.yaml
+    - $ref: savepropertysearch.yaml
+    - $ref: searchproperties.yaml
+    - $ref: shareproperty.yaml
+    - $ref: viewproperty.yaml

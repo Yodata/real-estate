@@ -1,0 +1,10 @@
+allOf:
+  - $ref: Action.yaml
+  - x-range: RegisterAction
+    type: object
+    description: The user (agent) has registered for a website, product or service. Unlike SubscribeAction, RegisterAction doesn't imply that the agent is expecting updates from the object.
+    properties:
+      type:
+        type: string
+        enum:
+          - RegisterAction

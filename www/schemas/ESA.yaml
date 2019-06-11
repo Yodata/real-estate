@@ -1,0 +1,38 @@
+title: ESA
+description: Area served by an RealEstateOrganization.
+x-kind: ESA
+type: object
+properties:
+  type:
+    type: string
+    enum:
+      - ESA
+  
+  realEstateOrganization:
+    description: franchisor.
+    x-range: RealEstateOrganization
+  
+  areaServed:
+    type: array
+    items:
+      type: object
+      $ref: Place.yaml
+      relocationOffice:
+        description: relocation office
+        x-range: RealEstateOffice
+      weight:
+        type: integer
+        description: weight
+      sortOrder:
+        type: integer
+        description: sort order
+      sentToConsumerSite:
+        type: boolean
+        description: sent to consumer site
+      sentToCompanyLocator:
+        type: boolean
+        description: sent to company locator
+      sentToReloSepc:
+        type: boolean
+        description: sent to Relo Spec
+      

@@ -34,3 +34,5 @@ RemoveAction: { $ref: RemoveAction.yaml }
 UpdateAction: { $ref: UpdateAction.yaml }
 
 ApplicationProfile: { $ref: ApplicationProfile.yaml }
+
+ESA: { $ref: ESA.yaml }

@@ -57,3 +57,20 @@ allOf:
 
       permit:
         $ref: permit-prop.yaml
+          
+      additionalProperty:
+        type: object
+        properties:
+          status:
+            type: string
+            example: Active
+          isDisplayed:
+            type: string
+            example: Yes
+          franchiseCommitmentNotes:
+            type: string
+          franchiseCommitment:
+            type: string
+          listingLeadsToListingAgent:
+            type: boolean
+            example: false

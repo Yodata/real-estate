@@ -15,7 +15,7 @@ properties:
     items:
       allOf:
         - $ref: Place.yaml
-        properties: 
+        - properties: 
           relocationOffice:
             description: relocation office
             x-range: RealEstateOffice

@@ -21,12 +21,13 @@ allOf:
         example: Batman & Robin
         
       jobTitle:
+        description: agent's job titles
         type: array
         items:
           type: string
-        example:
-          - Accounting Department
-          - Awards Coordinator
+          example:
+            - Accounting Department
+            - Awards Coordinator
 
       subOrganization:
         description: 'for teams: URI reference to a team member'

@@ -24,6 +24,9 @@ allOf:
         type: array
         items:
           type: string
+        example:
+          - Accounting Department
+          - Awards Coordinator
 
       subOrganization:
         description: 'for teams: URI reference to a team member'

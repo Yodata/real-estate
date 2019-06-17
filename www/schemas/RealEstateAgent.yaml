@@ -15,6 +15,11 @@ allOf:
       name:
         type: string
         example: Batman & Robin
+        
+      jobTitle:
+        type: array
+        items:
+          type: string
 
       subOrganization:
         description: 'for teams: URI reference to a team member'

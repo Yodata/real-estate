@@ -1,0 +1,41 @@
+type: object
+description: BHHS agent additional properties
+properties:
+  type:
+    type: string
+    description: BHHS agent additional properties
+    enum:
+      - BHHSAgentAdditionalProperties
+      
+  affiliateId:
+    type: string
+    example: CA301
+    
+  officeId:
+    type: string
+    example: CA301-001
+    
+  employeeType:
+    type: string
+    example: Full Time Sales Professional
+      
+  status:
+    description: the status of object
+    type: string
+    example: Active
+
+  isDisplayed:
+    description: is displayed on consumer website
+    type: string
+    example: Yes
+    
+  agentWebsiteType:
+    type: string
+    example: Agent_Page_with_IDX_Search
+    
+  agentBio:
+    type: string
+
+  highResPhotoURL:
+    type: string
+    format: uri

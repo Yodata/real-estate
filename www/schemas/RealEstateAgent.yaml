@@ -25,9 +25,9 @@ allOf:
             - Accounting Department
             - Awards Coordinator
             
-      additionalProperty:
-        type: object
-        properties:
+      additionalProperties:
+        - ref: BHHSAdditionalProperties
+        - properties:
           affiliateId:
             type: string
             example: MA312
@@ -37,12 +37,6 @@ allOf:
           employeeType:
             type: string
             example: Full Time Sales Professional
-          isDisplayed:
-            type: string
-            example: Yes
-          status:
-            type: string
-            example: Active
           agentWebsiteType:
             type: string
             example: Agent_Page_with_IDX_Search

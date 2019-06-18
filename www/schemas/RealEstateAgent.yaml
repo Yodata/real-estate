@@ -26,7 +26,8 @@ allOf:
             - Awards Coordinator
             
       additionalProperties:
-        - ref: BHHSAdditionalProperties.yaml
+        properties:
+          - ref: BHHSAdditionalProperties.yaml
         
 
       subOrganization:

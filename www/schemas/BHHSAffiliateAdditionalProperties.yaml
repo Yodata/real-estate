@@ -1,0 +1,28 @@
+type: object
+description: BHHS affiliate additional properties
+properties:
+  type:
+    type: string
+    description: BHHS affiliate additional properties
+    enum:
+      - BHHSAffiliateAdditionalProperties      
+      
+  status:
+    description: the status of object
+    type: string
+    example: Active
+
+  isDisplayedOnCompanyWebsite :
+    description: is displayed on consumer website
+    type: boolean
+    example: True
+    
+  franchiseCommitmentNotes:
+    type: string
+    example: Agent_Page_with_IDX_Search
+    
+  franchiseCommitment:
+    type: string
+
+  listingLeadsToListingAgent:
+    type: boolean

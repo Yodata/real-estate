@@ -24,10 +24,10 @@ properties:
     type: string
     example: Active
 
-  isDisplayed:
+  isDisplayedOnCompanyWebsite :
     description: is displayed on consumer website
-    type: string
-    example: Yes
+    type: boolean
+    example: True
     
   agentWebsiteType:
     type: string
@@ -35,7 +35,3 @@ properties:
     
   agentBio:
     type: string
-
-  highResPhotoURL:
-    type: string
-    format: uri

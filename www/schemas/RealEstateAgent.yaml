@@ -29,8 +29,8 @@ allOf:
             - Accounting Department
             - Awards Coordinator
             
-      additionalProperties:
-        $ref: BHHSAdditionalProperties.yaml
+      bhhsAdditionalProperties:
+        $ref: BHHSAgentAdditionalProperties.yaml
           
         
 

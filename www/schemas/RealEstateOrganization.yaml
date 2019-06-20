@@ -62,19 +62,5 @@ allOf:
         items:
           $ref: Place.yaml
           
-      additionalProperty:
-        type: object
-        properties:
-          status:
-            type: string
-            example: Active
-          isDisplayed:
-            type: string
-            example: Yes
-          franchiseCommitmentNotes:
-            type: string
-          franchiseCommitment:
-            type: string
-          listingLeadsToListingAgent:
-            type: boolean
-            example: false
+      bhhsAdditionalProperties:
+        $ref: BHHSAffiliateAdditionalProperties.yaml

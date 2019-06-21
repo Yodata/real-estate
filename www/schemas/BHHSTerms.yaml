@@ -1,7 +1,7 @@
 title: BHHSTerms
 type: object
 properties:
-  status:
+  Status:
     type: string
     x-subPropertyOf: additionalProperty
     x-domain:
@@ -10,15 +10,16 @@ properties:
       - RealEstateAgent
     example: Active
       
-  isDisplayedOnWebsite:
+  IsListedInFinder:
     type: boolean
+    description: If company/office/agent is listed in company/office/agent finder.
     x-subPropertyOf: additionalProperty
     x-domain:
       - RealEstateOrganization
       - RealEstateOffice
       - RealEstateAgent
       
-  affiliateID:
+  AffiliateID:
     type: string
     description: BHHS affiliate identifier
     x-subPropertyOf: identifier
@@ -26,14 +27,14 @@ properties:
       - RealEstateAgent
       - RealEstateOffice
       
-  officeID:
+  OfficeID:
     type: string
     description: BHHS office identifier
     x-subPropertyOf: identifier
     x-domain:
       - RealEstateAgent
       
-  employeeType:
+  EmployeeType:
     type: string
     description: the type of employee
     x-subPropertyOf: additionalProperty
@@ -55,13 +56,13 @@ properties:
     x-domain:
       - RealEstateAgent
       
-  officeType:
+  OfficeType:
     type: string
     description: the type of office
     x-subPropertyOf: additionalProperty
     x-domain:
       - RealEstateOffice
-    example: Evergreen Office
+    example: Primary Office
     
   isPrimaryOffice:
     type: boolean

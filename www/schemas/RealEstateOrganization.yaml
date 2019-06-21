@@ -1,6 +1,5 @@
 allOf:
   - $ref: Organization.yaml
-  - $ref: BHHSTerms.yaml
   - description: A real estate franchisor, broker or business.
     properties:
       type:

@@ -61,3 +61,7 @@ allOf:
         type: array
         items:
           $ref: Place.yaml
+
+      additionalProperties:
+        type: object
+        $ref: BHHSTerms.yaml

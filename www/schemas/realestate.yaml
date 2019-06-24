@@ -1,4 +1,5 @@
 RequestAppointmentAction: { $ref: RequestAppointmentAction.yaml }
+BHHSTerms: { $ref: BHHSTerms.yaml }
 Contact: { $ref: Contact.yaml }
 Language: { $ref: Language.yaml }
 Lead: { $ref: Lead.yaml }

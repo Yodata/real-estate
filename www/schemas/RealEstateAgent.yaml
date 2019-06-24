@@ -25,11 +25,6 @@ allOf:
             - Accounting Department
             - Awards Coordinator
             
-      bhhsAdditionalProperties:
-        $ref: BHHSAgentAdditionalProperties.yaml
-          
-        
-
       subOrganization:
         description: 'for teams: URI reference to a team member'
         type: array

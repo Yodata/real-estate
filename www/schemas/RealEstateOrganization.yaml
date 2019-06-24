@@ -62,6 +62,6 @@ allOf:
         items:
           $ref: Place.yaml
 
-      additionalProperties:
+      hsfTerms:
         x-range: BHHSTerms
         $ref: BHHSTerms.yaml

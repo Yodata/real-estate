@@ -61,7 +61,3 @@ allOf:
         type: array
         items:
           $ref: Place.yaml
-
-      hsfTerms:
-        x-range: BHHSTerms
-        $ref: BHHSTerms.yaml

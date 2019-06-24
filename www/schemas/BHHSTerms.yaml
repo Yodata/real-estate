@@ -1,6 +1,11 @@
 title: BHHSTerms
 type: object
 properties:
+  type:
+    type: string
+    enum:
+      - BHHSTerms
+      
   Status:
     type: string
     x-subPropertyOf: additionalProperty

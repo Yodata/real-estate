@@ -1,7 +1,4 @@
 RequestAppointmentAction: { $ref: RequestAppointmentAction.yaml }
-BHHSAffiliateAdditionalProperties: { $ref: BHHSAffiliateAdditionalProperties.yaml }
-BHHSAgentAdditionalProperties: { $ref: BHHSAgentAdditionalProperties.yaml }
-BHHSOfficeAdditionalProperties: { $ref: BHHSOfficeAdditionalProperties.yaml }
 Contact: { $ref: Contact.yaml }
 Language: { $ref: Language.yaml }
 Lead: { $ref: Lead.yaml }

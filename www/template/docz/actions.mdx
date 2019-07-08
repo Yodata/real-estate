@@ -1,0 +1,5 @@
+# Actions
+
+{{#each (getActions) }}
+{{~>schema schema=. schemaName=@key~}}
+{{/each}}

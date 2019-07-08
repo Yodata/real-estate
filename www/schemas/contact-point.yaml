@@ -1,0 +1,15 @@
+title: ContactPoint
+description: A contact point—for example, a Customer Complaints department.
+x-range: ContactPoint
+type: array
+items:
+  x-range: ContactPoint
+  type: object
+  example:
+    type: ContactPoint
+    name: Work
+    telephone: '(593) 626-2646 x8227'
+    faxNumber: '871-590-1520 x737'
+    email: Bailee_VonRueden@hotmail.com
+    url: http://example.com
+    

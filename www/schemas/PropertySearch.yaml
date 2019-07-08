@@ -10,20 +10,49 @@ properties:
   price:
     description: price value or range (minValue, maxValue)
     $ref: PriceSpecification.yaml
+  
   bedrooms:
     description: value or range (minValue, maxValue)
-    $ref: QuantitativeValue.yaml
+    type: object
+    x-range: QuantitativeValue
+    example:
+      type: QuantitativeValue
+      minValue: 1
+      maxValue: 3
+      unitCode: BR
+      unitText: Bedrooms
+    
   bathrooms:
     description: value or range (minValue, maxValue)
-    $ref: QuantitativeValue.yaml
+    type: object
+    x-range: QuantitativeValue
+    example:
+      type: QuantitativeValue
+      minValue: 1
+      maxValue: 3
+      unitCode: BA
+      unitText: Bathrooms
+
   location:
     $ref: location.yaml
+
   livingArea:
     description: property indoor space
-    $ref: QuantitativeValue.yaml
+    type: object
+    x-range: QuantitativeValue
+    example:
+      type: QuantitativeValue
+      minValue: 1500
+      unitCode: SqFt
+      unitText: Square Feet
+
   lotSize:
     description: outdoor space minValue, maxValue
-    $ref: QuantitativeValue.yaml
-
-
-    
+    type: object
+    x-range: QuantitativeValue
+    example:
+      type: QuantitativeValue
+      minValue: .5
+      unitCode: AC
+      unitText: Acres
+         

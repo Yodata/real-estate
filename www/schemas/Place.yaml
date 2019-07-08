@@ -1,5 +1,12 @@
+type: object
+x-range:
+- Place
+- City
+- State
+- Country
+- PostalCode
 allOf:
-
+  - $ref: Thing.yaml
   - type: object
     description: a physical location
     properties:
@@ -8,13 +15,14 @@ allOf:
         - Place
 
       address:
-        $ref: PostalAddress.yaml
+        $ref: address.yaml
 
       geo:
         description: a GEO location
         x-range:
         - GeoCoordinates
         - GeoCircle
+        - GeoShape
         example:
           type: GeoCircle
           geoMidpoint:
@@ -26,5 +34,3 @@ allOf:
             value: 10
             unitCode: mi
             unitText: miles
-  
-  - $ref: Thing.yaml

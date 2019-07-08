@@ -13,7 +13,7 @@
 {{/asyncapi.info.x-schemas}}
 
 {{#unless asyncapi.__noSchemas}}
-{{#each asyncapi.components.schemas}}
+{{#each (get-types)}}
 {{~>schema schema=. schemaName=@key~}}
 {{/each}}
 {{/unless}}

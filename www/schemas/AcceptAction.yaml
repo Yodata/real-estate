@@ -11,3 +11,9 @@ allOf:
         description: the person or organization accepting the item
       object:
         description: the accepted offer/item
+    example:
+      type: AcceptAction
+      agent: https://{agent}.example.com/profile/card#me
+      object:
+        type: Lead
+        

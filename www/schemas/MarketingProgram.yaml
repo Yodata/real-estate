@@ -12,8 +12,12 @@ allOf:
         type: string
         description: name of the item
         example: Market Activity Report 508 Homewood Ave
+
+      identifier:
+        $ref: identifier.yaml
       
       member:
+        description: array of program memberships
         x-range: ProgramMembership
         type: array
         items:

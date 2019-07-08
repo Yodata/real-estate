@@ -22,10 +22,12 @@ allOf:
         type: string
         description: Last Name
         example: Wayne
+
       jobTitle:
         type: string
         description: The Job Title of the person.
         example: Jefe
+
       email:
         type: string
         description: Primary email address.
@@ -42,18 +44,10 @@ allOf:
         example: 1-339-041-0306 x2866
 
       contactPoint:
-        x-range: ContactPoint
-        description: Named and grouped contacts points.
-        type: array
-        items:
-          $ref: ContactPoint.yaml
+        $ref: contact-point.yaml
 
       address:
-        x-range: PostalAddress
-        description: mailing addresses.
-        type: array
-        items:
-          $ref: PostalAddress.yaml
+        $ref: address.yaml
 
       birthDate:
         type: string

@@ -1,6 +1,7 @@
+type: object
 title: Thing
 x-summary: the most basic type
-type: object
+discriminator: type
 required:
   - type
 properties:

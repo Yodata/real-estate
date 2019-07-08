@@ -9,6 +9,7 @@ export default {
     'API',
     'Topics',
     'Objects',
+    'Actions',
     'Reference'
   ],
   src: 'src-content',

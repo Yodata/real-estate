@@ -10,11 +10,10 @@ allOf:
           - RealEstateOffice
           - RealEstateAgent
         example: RealEstateOrganization
-
-      address:
-        description: primary address
-        x-range: PostalAddress
-        $ref: PostalAddress.yaml
+        
+      areaServed:
+        $ref: areaServed.yaml
+        
 
       parentOrganization:
         type: array
@@ -49,15 +48,4 @@ allOf:
           $ref: MLSMembership.yaml
 
       permit:
-        description: permits issued to the person or organization
-        type: array
-        x-range:
-          - RealEstateLicense
-        items:
-          $ref: RealEstateLicense.yaml
-
-      areaServed:
-        description: The geographic area where a service or offered item is provided.
-        type: array
-        items:
-          $ref: Place.yaml
+        $ref: permit-prop.yaml

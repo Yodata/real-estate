@@ -13,15 +13,23 @@ properties:
       - RealEstateOrganization
       - RealEstateOffice
       - RealEstateAgent
-    example: Active
+    enum:
+      - Active
+      - Inactive
+      - Pre-Active
       
-  isListedInFinder:
-    type: boolean
-    description: If company/office/agent is listed in company/office/agent finder.
+  UserType:
+    type: string
+    description: It comes from legacy system. The value is always "Contact".
     x-subPropertyOf: additionalProperty
     x-domain:
-      - RealEstateOrganization
-      - RealEstateOffice
+      - RealEstateAgent
+  
+  IsListedInAgentFinder:
+    type: boolean
+    description: If an agent is listed in agent finder.
+    x-subPropertyOf: additionalProperty
+    x-domain:
       - RealEstateAgent
       
   AffiliateID:
@@ -45,21 +53,30 @@ properties:
     x-subPropertyOf: additionalProperty
     x-domain:
       - RealEstateAgent
-    example: Full Time Sales Professional
-    
+    enum:
+      - Full Time Sales Professional
+      - Part Time Sales Professional
+      - Non-Agent
+      - Marketing Team
+      - In-House Admin. Profile
+      
   agentWebsiteType:
     type: string
     description: agent's website type
     x-subPropertyOf: additionalProperty
     x-domain:
       - RealEstateAgent
+    enum:
+      - Agent Profile
+      - Agent Page with IDX Search
       
-  agentBio:
-    type: string
-    description: 
+  IsDisplayed:
+    type: boolean
+    description: If an affiliate/office is listed in company/office finder.
     x-subPropertyOf: additionalProperty
     x-domain:
-      - RealEstateAgent
+      - RealEstateOrganization
+      - RealEstateOffice
       
   OfficeType:
     type: string
@@ -67,7 +84,13 @@ properties:
     x-subPropertyOf: additionalProperty
     x-domain:
       - RealEstateOffice
-    example: Primary Office
+    enum:
+      - Administrative Office
+      - Branch Office
+      - Kiosk
+      - Primary Office
+      - Srvice Center
+      - Subdivision Sales Office
     
   isPrimaryOffice:
     type: boolean

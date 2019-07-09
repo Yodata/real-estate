@@ -1,6 +1,7 @@
 AcceptAction: { $ref: AcceptAction.yaml }
 Action: { $ref: Action.yaml }
 AddAction: { $ref: AddAction.yaml }
+AskAction: { $ref: AskAction.yaml }
 ApplicationProfile: { $ref: ApplicationProfile.yaml }
 Contact: { $ref: Contact.yaml }
 Language: { $ref: Language.yaml }

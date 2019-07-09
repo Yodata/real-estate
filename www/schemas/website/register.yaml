@@ -19,4 +19,4 @@ payload:
                 instrument:
                   example:
                     type: MobileApplication
-                    name: BuzzStation
+                    name: MyRealEstateBuddy

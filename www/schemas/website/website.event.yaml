@@ -17,20 +17,25 @@ properties:
         type: object
         description: the website user
         x-range:
-          - Person
           - Contact
+          - Person
         example:
-          type: Person
+          type: Contact
           name: Bob Buyer
           email: bob@example.com
           identifier:
-            vendoraid: 123
-            vendorbid: 456
+            websitevendorid: 123
+            leadmanagervendorid: 456
       instrument:
-        description: the website url where the action occurred.
-        type: string
-        format: uri
-        example: http://agentwebsite.example.com
+        type: object
+        description: the locaction on the website where the event occurred
+        x-range:
+        - RealEstateWebsite
+        - MobileApplication
+        example:
+          type: RealEstateWebsite
+          url:  https://example.com/property/detail/page?xxx=123
+        
   source:
     description: the subscription source
     type: string

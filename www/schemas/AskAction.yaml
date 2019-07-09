@@ -1,5 +1,9 @@
 allOf:
+  - $ref: Action.yaml
   - properties:
+      type:
+        enum:
+          - AskAction
       agent:
         description: the one who asks
       recipient:
@@ -8,8 +12,13 @@ allOf:
         example:
           type: Question
           text: What is the meaning of life?
-  - $ref: Action.yaml
-  - properties:
-      type:
-        enum:
-          - AskAction
+      instrument:
+        type: object
+        x-range:
+        - RealEstateWebsite
+        - MobileApplication
+        example:
+          type: RealEstateWebsite
+          name: Use id for a base domain or url for a deep link
+          id: http://example.com
+          url: http://example.com/property/detail/page/?xxx=333

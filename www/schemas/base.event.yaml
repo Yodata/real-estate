@@ -5,7 +5,7 @@ required:
 - data
 properties:
   topic:
-    description: the message id, equivalent to cloudevents type.
+    description: the event subject/type, equivalent to cloudevents type.
     type: string
   data:
     type: object
@@ -13,24 +13,21 @@ properties:
     properties:
       type:
         type: string
-      object:
-        type: object
-      agent:
-        example: https://{user}.example.com/profile/card#me
-      instrument:
-        example: https://{app}.example.com/profile/card#me
   source:
     description: the subscription source
     type: string
     format: uri
-    example: http://{user}.example.com/profile/card#me
+    example: http://{event-publisher}.example.com/profile/card#me
   instrument:
     description: the message producer
     type: string
     format: uri
-    example: http://{supercrm}.example.com/profile/card#me
+    example: http://{event-producer}.example.com/profile/card#me
   time:
     description: the time the message was produced
     type: string
     format: date-time
+  
+      
+  
     

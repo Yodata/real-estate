@@ -23,7 +23,7 @@ properties:
     type: string
     format: date-time
   listingPrice:
-    $ref: PriceSpecification.yaml
+    $ref: price-specification-object.yaml
   listingStatus:
     type: string
     enum:
@@ -35,17 +35,21 @@ properties:
       - OffMarket
       - Private
   listingAgent:
-    allOf:
-      - $ref: RealEstateAgent.yaml
-      - example:
-          type: RealEstateAgent
-          id: https://user.example.com/profile/card#me
+    type: object
+    description: the listing RealEstateAgent
+    x-range: RealEstateAgent
+    example:
+      type: RealEstateAgent
+      id: https://user.example.com/profile/card#me
+
   listingOffice:
-    allOf:
-      - $ref: RealEstateOffice.yaml
-      - example:
-          type: RealEstateOffice
-          id: https://{office}.example.com/profile/card#me
+    type: object
+    description: the listing office
+    x-range: RealEstateOrganization
+    example:
+      type: RealEstateOffice
+      id: https://{officeid}.example.com/profile/card#me
+
   image:
     $ref: image.yaml
   url:

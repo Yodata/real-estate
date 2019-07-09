@@ -27,6 +27,19 @@ allOf:
         type: string
         description: The Job Title of the person.
         example: Jefe
+    
+      contactPoint:
+        $ref: contact-point.yaml
+
+      address:
+        type: array
+        items:
+          $ref: address.yaml
+
+      birthDate:
+        type: string
+        format: date
+        description: date of birth.
 
       email:
         type: string
@@ -43,13 +56,3 @@ allOf:
         type: string
         example: 1-339-041-0306 x2866
 
-      contactPoint:
-        $ref: contact-point.yaml
-
-      address:
-        $ref: address.yaml
-
-      birthDate:
-        type: string
-        format: date
-        description: date of birth.

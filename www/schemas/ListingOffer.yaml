@@ -7,11 +7,13 @@ allOf:
         description: ListingOffer
         enum:
           - ListingOffer
+      offerPrice:
+        $ref: PriceSpecification.yaml
       object:
         description: reference to the item on which the offer is being made
         example:
           type: RealEstateListing
-          id: http://example.com/12345
+          id: http://example.com/gotham/10010/1007-Mountain-Gate-Rd
       recipient:
         type: object
         x-range:
@@ -20,5 +22,4 @@ allOf:
         description: the offer recipient
         example:
           id: http://user.example.com/profile/card#me
-      offerPrice:
-        $ref: PriceSpecification.yaml
+      

@@ -4,16 +4,13 @@ allOf:
   - x-range: AcceptAction
     properties:
       type:
-        description: AcceptAction
         enum:
           - AcceptAction
       agent:
         description: the person or organization accepting the item
+        type: string
+        format: uri
+        example: https://{lead-acceptor}.example.com/profile/card#me
       object:
-        description: the accepted offer/item
-    example:
-      type: AcceptAction
-      agent: https://{agent}.example.com/profile/card#me
-      object:
-        type: Lead
-        
+        description: the accepted item
+        type: object

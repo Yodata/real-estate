@@ -7,29 +7,30 @@ properties:
     type: string
     enum:
     - PropertySearch
+  
   price:
     description: price value or range (minValue, maxValue)
     $ref: PriceSpecification.yaml
   
   bedrooms:
-    description: value or range (minValue, maxValue)
+    description: number of bedrooms (range)
     type: object
     x-range: QuantitativeValue
     example:
       type: QuantitativeValue
-      minValue: 1
-      maxValue: 3
-      unitCode: BR
+      minValue: 4
+      maxValue: null
+      unitCode: BD
       unitText: Bedrooms
     
   bathrooms:
-    description: value or range (minValue, maxValue)
+    description: number of bathrooms (range)
     type: object
     x-range: QuantitativeValue
     example:
       type: QuantitativeValue
-      minValue: 1
-      maxValue: 3
+      minValue: 2
+      maxValue: null
       unitCode: BA
       unitText: Bathrooms
 

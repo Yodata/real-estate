@@ -20,6 +20,10 @@ allOf:
         example:
           type: MultipleListingService
           name: GreatScottMLS
+      member:
+        type: string
+        format: uri
+        example:  https://{agent}.example.com/profile/card#me
       memberId:
         type: string
         description: the user's MLSID

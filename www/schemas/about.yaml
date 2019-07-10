@@ -1,6 +1,5 @@
 title: about
 type: object
-x-range: Thing
 description: a subject of the item.
 example:
   type: RealEstateListing

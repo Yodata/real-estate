@@ -50,6 +50,17 @@ properties:
       type: RealEstateOffice
       id: https://{officeid}.example.com/profile/card#me
 
+  listingDataSource:
+    type: object
+    x-range: MultipleListingService
+    example:
+      type: MultipleListingService
+      name: MLSListings
+      identifier:
+        bhhsmlsid: xxxx
+        resoouid: not-yet-available
+
+
   image:
     $ref: image.yaml
   url:

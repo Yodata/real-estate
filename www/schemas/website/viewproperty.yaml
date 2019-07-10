@@ -10,6 +10,7 @@ payload:
         enum:
         - realestate/website#viewproperty
       data:
+        x-range: AddAction
         properties:
           type:
             enum:

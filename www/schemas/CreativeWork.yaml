@@ -1,9 +1,7 @@
-title: CreativeWork
-type: object
-description: A creative work, including books, movies, photographs, software programs, etc.
 allOf:
   - $ref: Thing.yaml
-  - type: object
+  - title: CreativeWork
+    description: A creative work, including books, movies, photographs, software programs, etc.
     properties:
       type:
         enum:

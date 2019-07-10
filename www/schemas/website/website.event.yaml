@@ -9,6 +9,7 @@ properties:
     type: string
   data:
     type: object
+    description: the message payload, typically an Action.
     properties:
       type:
         type: string
@@ -18,17 +19,17 @@ properties:
         description: the website user
         x-range:
           - Contact
-          - Person
         example:
           type: Contact
           name: Bob Buyer
           email: bob@example.com
+          telephone: 1-403-703-1298
           identifier:
             websitevendorid: 123
             leadmanagervendorid: 456
       instrument:
         type: object
-        description: the locaction on the website where the event occurred
+        description: the website, url or mobile application where the action occured
         x-range:
         - RealEstateWebsite
         - MobileApplication
@@ -37,16 +38,16 @@ properties:
           url:  https://example.com/property/detail/page?xxx=123
         
   source:
-    description: the subscription source
+    description: the message publisher
     type: string
     format: uri
     example: http://{user}.example.com/profile/card#me
   instrument:
-    description: the message producer
+    description: the profile URI of the messag producer.
     type: string
     format: uri
     example: http://{supercrm}.example.com/profile/card#me
   time:
-    description: the time the message was produced
+    description: the message publish date-time
     type: string
     format: date-time

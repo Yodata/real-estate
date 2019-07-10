@@ -6,11 +6,15 @@ properties:
     type: string
     enum:
       - Comment
+  about:
+    $ref: about.yaml
   author:
     $ref: author.yaml
+  dateCreated:
+    $ref: dateCreated.yaml
+  dateModified:
+    $ref: dateModified.yaml
   text:
     description: the content
     type: string
     example: the comment goes here.
-  about:
-    $ref: about.yaml

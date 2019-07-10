@@ -3,6 +3,9 @@ x-range: Contact
 description: a contact
 example:
   type: Contact
+  identifier:
+    vendoracontactid: 123
+    vendorbcontactid: 456
   name: Bruce Wayne
   givenName: Bruce
   familyName: Wayne

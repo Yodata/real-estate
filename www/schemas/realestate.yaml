@@ -1,9 +1,10 @@
 AcceptAction: { $ref: AcceptAction.yaml }
 Action: { $ref: Action.yaml }
 AddAction: { $ref: AddAction.yaml }
-AskAction: { $ref: AskAction.yaml }
 ApplicationProfile: { $ref: ApplicationProfile.yaml }
+AskAction: { $ref: AskAction.yaml }
 Contact: { $ref: Contact.yaml }
+Comment: { $ref: Comment.yaml }
 Language: { $ref: Language.yaml }
 Lead: { $ref: Lead.yaml }
 ListingOffer: { $ref: ListingOffer.yaml }
@@ -26,6 +27,7 @@ PropertySearch: { $ref: PropertySearch.yaml }
 PropertyValue: { $ref: PropertyValue.yaml }
 QuantitativeValue: { $ref: QuantitativeValue.yaml }
 RealEstateAgent: { $ref: RealEstateAgent.yaml }
+RealEstateLicense: { $ref: RealEstateLicense.yaml }
 RealEstateOffice: { $ref: RealEstateOffice.yaml }
 RealEstateOrganization: { $ref: RealEstateOrganization.yaml }
 RealEstateWebsite: { $ref: RealEstateWebsite.yaml }

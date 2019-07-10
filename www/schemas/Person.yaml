@@ -1,7 +1,6 @@
 title: Person
 type: object
 allOf:
-  - $ref: Thing.yaml
   - type: object
     properties:
       type:
@@ -55,4 +54,5 @@ allOf:
         description: Primary phone number.
         type: string
         example: 1-339-041-0306 x2866
+
 

@@ -1,5 +1,7 @@
 title: Permit
 description: A permit issued by an organization to an individual or business.
+x-hasSubclass:
+-  RealEstateLicense
 properties:
   type:
     type: string

@@ -1,27 +1,16 @@
-allOf:
-  - $ref: Thing.yaml
-  - type: object
-    description: A comment on an item.
-    properties:
-      type:
-        description: Comment
-        type: string
-        enum:
-          - Comment
-      author:
-        $ref: author.yaml
-      text:
-        description: the comment content
-        type: string
-        example: Commodi ratione vel qui ullam ea ut.
-      about:
-        $ref: about.yaml
-    example:
-      type: Comment
-      text: Placeat veritatis mollitia nihil reiciendis excepturi totam quis odio.
-      author:
-        type: Person
-        email: user@example.com
-      about:
-        type: RealEstateListing
-        id: http://example.com/listing/1
+type: object
+description: A comment on an item.
+properties:
+  type:
+    description: Comment
+    type: string
+    enum:
+      - Comment
+  author:
+    $ref: author.yaml
+  text:
+    description: the content
+    type: string
+    example: the comment goes here.
+  about:
+    $ref: about.yaml

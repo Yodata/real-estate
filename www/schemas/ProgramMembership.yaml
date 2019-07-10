@@ -6,5 +6,8 @@ allOf:
     type:
       enum:
       - ProgramMembership
+    member:
+      $ref: contact-object.yaml
+      
     memberOf:
       x-range: MarketingProgram

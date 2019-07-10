@@ -2,5 +2,5 @@ title: about
 type: object
 description: a subject of the item.
 example:
-  type: RealEstateListing
+  type: PropertyListing
   id: https://example.com/listingid

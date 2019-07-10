@@ -10,7 +10,7 @@ properties:
     description: the items found
     type: array
     example:
-    - type: RealEstateListing
+    - type: PropertyListing
       url: http://example.com/listing/123
-    - type: RealEstateListing
+    - type: PropertyListing
       url: http://example.com/listing/234

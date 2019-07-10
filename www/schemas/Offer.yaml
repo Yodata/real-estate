@@ -1,6 +1,6 @@
 allOf:
   - $ref: Thing.yaml
-  - description: an offer is made to buy a RealEstatelisting
+  - description: an offer is made to buy a PropertyListing
     properties:
       type:
         type: string
@@ -10,7 +10,7 @@ allOf:
       object:
         description: reference to the item on which the offer is being made
         example:
-          type: RealEstateListing
+          type: PropertyListing
           id: http://example.com/12345
       recipient:
         type: object

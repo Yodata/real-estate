@@ -1,6 +1,7 @@
 type: string
-description: disposition of the Action when the event was created
+description: disposition of the Action at the time of this action message
 enum:
   - CompletedActionStatus
   - FailedActionStatus
   - ActiveActionStatus
+  - potentialActionStatus

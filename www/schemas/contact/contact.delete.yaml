@@ -13,8 +13,8 @@ payload:
             - $ref: ../DeleteAction.yaml
             - properties:
                 object:
-                  example:
-                    type: Contact
-                    name: Delete Me
+                  type: object
+                  description: the deleted item
                 targetCollection:
-                  $ref: ../schemas/Collection.yaml
+                  $ref: ../Collection.yaml
+

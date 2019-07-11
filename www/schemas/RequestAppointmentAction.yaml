@@ -2,6 +2,7 @@ allOf:
   - $ref: Action.yaml
   - x-range: RequestAppointmentAction
     type: object
+    description: a user (agent) is  requesting an appointment with the recipient
     properties:
       type:
         type: string
@@ -13,6 +14,8 @@ allOf:
         example: Accusantium eos neque doloribus illo nobis.
       agent:
         $ref: agent.yaml
+      recipient:
+        $ref: recipient.yaml
       about:
         $ref: about.yaml
       

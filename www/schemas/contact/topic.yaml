@@ -5,3 +5,4 @@ subscribe:
   oneOf:
     - $ref: contact.add.yaml
     - $ref: contact.update.yaml
+    - $ref: contact.delete.yaml

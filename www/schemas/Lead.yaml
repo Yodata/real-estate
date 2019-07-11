@@ -28,6 +28,7 @@ properties:
     format: date-time
 
   object:
+    x-range: Contact
     $ref: contact-object.yaml
 
   activity:

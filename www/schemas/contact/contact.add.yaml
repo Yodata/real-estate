@@ -1,6 +1,6 @@
 x-title: add
 x-scope: realestate/contact#
-summary: a contact was added/created.
+summary: a contact (data.object) is added by a user (data.agent), optionally to a specific targetCollection
 payload:
   allOf:
     - $ref: ../base.event.yaml
@@ -11,17 +11,11 @@ payload:
         data:
           allOf:
           - $ref: ../AddAction.yaml
-          - x-range: AddAction
           - properties:
+              agent:
+                type: string
+                format: uri
+                description: the agent who added the object
+                example: http://{user-who-added-the-contact}.com/profile/card#me
               object:
-                $ref: ../Contact.yaml
-          - properties:
-              object:
-                x-range:
-                - Person
-                example:
-                  type: Contact
-                  name: Bruce Wayne
-                  email: batman@example.com
-                  identifier:
-                    sourcevendorid: xxxx
+                $ref: ../contact-object.yaml

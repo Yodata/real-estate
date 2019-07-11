@@ -12,9 +12,6 @@ properties:
     type: object
   agent:
     description: the direct performer of the action
-    type:
-    - string
-    - object
   instrument:
     description: thing used by the agent to perform the action, i.e. an application or website that generated the message.
     example: https://{app}.example.com/profile/card#me

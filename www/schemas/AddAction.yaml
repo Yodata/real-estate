@@ -1,16 +1,26 @@
 allOf:
   - $ref: Action.yaml
-  - properties:
+  - x-range: AddAction
+    title: AddAction
+    description: data (object) is added by user (agent), optionally to the targetCollection
+    properties:
       type:
         description: AddAction
         enum:
           - AddAction
+      agent:
+        type: object
+        description:  user who added the item
       object:
-        description: the item added to the collection
+        type: object
+        description: data which was added
       targetCollection:
         type: object
-        description: the collection receiving the added object
+        description: collection receiving the data (object)
         example:
           type: Collection
-          id: https://{user}.example.com/data/contact/
+          name: My Contacts
+          identifier:
+            vendoraid: xxx
+            vendorbid: xxx
       

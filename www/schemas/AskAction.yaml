@@ -6,13 +6,23 @@ allOf:
           - AskAction
       agent:
         description: the one who asks
-      recipient:
-        description: the one who should answer
-      question:
         example:
-          type: Question
-          text: What is the meaning of life?
+          type: Contact
+          name: Bob Jones
+      object:
+        description: (not used)
+      recipient:
+        description: the one being asked, and who should answer
+        example:
+          type: RealEstateAgent
+          name: Arya Agent
+          id: https://{the-user-being-asked}.com/profile/card#me
+      about:
+        $ref: about.yaml
+      question:
+        $ref: question.yaml
       instrument:
+        description: something used by the user to ask the question
         type: object
         x-range:
         - RealEstateWebsite
@@ -20,5 +30,4 @@ allOf:
         example:
           type: RealEstateWebsite
           name: Use id for a base domain or url for a deep link
-          id: http://example.com
           url: http://example.com/property/detail/page/?xxx=333

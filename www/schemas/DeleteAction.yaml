@@ -1,16 +1,18 @@
 allOf:
   - $ref: Action.yaml
   - type: object
+    x-range: DeleteAction
+    title: DeleteAction
+    description: object is removed by the agent from the targetCollection
     properties:
       type:
         type: string
         enum:
           - DeleteAction
       agent:
-        example: https://{ideleteyou}.example.com/profile/card#me
-      instrument:
-        example: https://{delete-o-matic2K}.example.com/profile/card#me
+        example: https://{user-who-deleted-the-item}.com/profile/card#me
       object:
+        type: object
         description: the deleted item
       targetCollection:
         type: object

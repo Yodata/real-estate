@@ -23,9 +23,7 @@ allOf:
         example: Wayne
 
       jobTitle:
-        type: string
-        description: The Job Title of the person.
-        example: Jefe
+        $ref: job-title.yaml
     
       contactPoint:
         $ref: contact-point.yaml

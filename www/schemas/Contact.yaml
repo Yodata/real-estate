@@ -22,4 +22,13 @@ allOf:
       leadSource:
         description: the Lead Provider
         example: https://{lead-provider}.example.com/profile/card#me
+
+      keywords:
+        type: array
+        description: Keywords or tags assigned to the contact
+        example:
+        - Sphere of Influence
+        - Past Customer
+        items:
+          type: string       
           

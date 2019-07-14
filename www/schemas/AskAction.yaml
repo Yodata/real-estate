@@ -1,11 +1,13 @@
 allOf:
   - $ref: Action.yaml
-  - properties:
+  - description: a user (agent) asks recipient a question
+    properties:
       type:
         enum:
           - AskAction
       agent:
         description: the one who asks
+        x-range: Contact
         example:
           type: Contact
           name: Bob Jones

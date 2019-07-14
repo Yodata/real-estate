@@ -13,6 +13,10 @@ properties:
     $ref: addressLocality.yaml
   addressRegion:
     $ref: addressRegion.yaml
+  postalCode:
+    $ref: postalCode.yaml
+  addressCountry:
+    $ref: addressCountry.yaml
   dateListed:
     type: string
     format: date-time
@@ -48,7 +52,7 @@ properties:
     x-range: RealEstateOrganization
     example:
       type: RealEstateOffice
-      id: https://{officeid}.example.com/profile/card#me
+      name: Gotham City Real Estate
 
   listingDataSource:
     type: object

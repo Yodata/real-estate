@@ -3,7 +3,7 @@ x-sameas: https://schema.org/Person
 title: Contact
 allOf:
   
-  - $ref: Person.yaml
+  
   - description: |
       A Contact
 
@@ -32,3 +32,4 @@ allOf:
         items:
           type: string       
           
+  - $ref: Person.yaml        

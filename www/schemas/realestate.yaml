@@ -4,6 +4,7 @@ AddAction: { $ref: AddAction.yaml }
 ApplicationProfile: { $ref: ApplicationProfile.yaml }
 AskAction: { $ref: AskAction.yaml }
 Contact: { $ref: Contact.yaml }
+ContactPoint: { $ref: ContactPoint.yaml }
 Comment: { $ref: Comment.yaml }
 Language: { $ref: Language.yaml }
 Lead: { $ref: Lead.yaml }
@@ -24,6 +25,7 @@ Profile: { $ref: Profile.yaml }
 ProgramMembership: { $ref: ProgramMembership.yaml }
 PropertyListing: { $ref: PropertyListing.yaml }
 PropertySearch: { $ref: PropertySearch.yaml }
+PropertyType: { $ref: PropertyType.yaml }
 PropertyValue: { $ref: PropertyValue.yaml }
 QuantitativeValue: { $ref: QuantitativeValue.yaml }
 RealEstateAgent: { $ref: RealEstateAgent.yaml }

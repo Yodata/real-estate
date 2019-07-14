@@ -17,10 +17,4 @@ allOf:
       targetCollection:
         type: object
         description: collection receiving the data (object)
-        example:
-          type: Collection
-          name: My Contacts
-          identifier:
-            vendoraid: xxx
-            vendorbid: xxx
       

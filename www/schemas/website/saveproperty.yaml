@@ -20,5 +20,7 @@ payload:
                   - $ref: ../PropertyListing.yaml
                   - properties:
                       listingAgent:
-                        example: https://user.example.com/profile/card#me
+                        example:
+                          type: RealEstateAgent
+                          name: Lori Listingagent
                 

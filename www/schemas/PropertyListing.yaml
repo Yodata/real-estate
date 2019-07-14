@@ -17,17 +17,25 @@ properties:
     $ref: postalCode.yaml
   addressCountry:
     $ref: addressCountry.yaml
-  dateListed:
+  
+  listingContractDate:
     type: string
     format: date-time
-  dateSold:
+    description: The effective date of the agreement between the seller and the seller's broker.
+  
+  purchaseContractDate:
     type: string
     format: date-time
-  dateClosed:
+    description: With for-sale listings, the date an offer was accepted and the listing was no longer on market. With lease listings this may represent a meeting of the minds to lease, but some contractual requirements are yet to be fulfilled, such as contract signing or receipt of the deposit.
+  
+  closeDate:
     type: string
     format: date-time
+    description: With for-sale listings, the date the purchase agreement was fulfilled. With lease listings, the date the requirements were fulfilled, such as contract and/or deposit.
+  
   listingPrice:
     $ref: price-specification-object.yaml
+  
   listingStatus:
     type: string
     enum:
@@ -38,13 +46,16 @@ properties:
       - Prelisted
       - OffMarket
       - Private
+  
   listingAgent:
     type: object
     description: the listing RealEstateAgent
     x-range: RealEstateAgent
     example:
       type: RealEstateAgent
-      id: https://user.example.com/profile/card#me
+      name: Arvel Kassulke
+      telephone: 1-252-574-0160
+      email: user@example.com
 
   listingOffice:
     type: object
@@ -54,16 +65,17 @@ properties:
       type: RealEstateOffice
       name: Gotham City Real Estate
 
-  listingDataSource:
+  listingOriginatingSystem:
     type: object
     x-range: MultipleListingService
+    x-subPropertyOf: instrument
+    description: The place where the item is originally input by the user.
     example:
       type: MultipleListingService
       name: MLSListings
       identifier:
         bhhsmlsid: xxxx
         resoouid: not-yet-available
-
 
   image:
     $ref: image.yaml

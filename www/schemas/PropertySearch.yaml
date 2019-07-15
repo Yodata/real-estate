@@ -7,6 +7,16 @@ properties:
     type: string
     enum:
     - PropertySearch
+
+  name:
+    type: string
+    description: name of the search, input by the user or generated automatically
+    example: my property search
+
+  description:
+    type: string
+    description: optional search description input by the user
+    example: 3+ beds in Gotham City
   
   price:
     description: price value or range (minValue, maxValue)

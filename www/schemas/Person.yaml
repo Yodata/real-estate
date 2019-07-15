@@ -24,16 +24,6 @@ allOf:
       contactPoint:
         $ref: contact-point.yaml
 
-      name:
-        type: string
-        description: Full name of the person.
-        example: Bruce Wayne
-
-      givenName:
-        type: string
-        description: First Name of a person
-        example: Bruce
-
       email:
         type: string
         description: Primary email address.
@@ -45,9 +35,10 @@ allOf:
         example: Wayne
 
       faxNumber:
-        description: Primary fax number.
-        type: string
-        example: '(498) 625-6456'
+        $ref: faxNumber.yaml
+
+      givenName:
+        $ref: givenName.yaml
 
       honorificPrefix:
         $ref: honorificPrefix.yaml
@@ -68,6 +59,11 @@ allOf:
           - type: Language
             name: English
             additionalName: en-us
+      
+      name:
+        type: string
+        description: Full name of the person.
+        example: Bruce Wayne
           
       telephone:
         description: Primary phone number.

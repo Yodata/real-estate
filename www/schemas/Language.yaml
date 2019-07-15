@@ -1,5 +1,6 @@
 type: object
 description: a written or spoken Language
+x-range: Language
 properties:
   type:
     type: string

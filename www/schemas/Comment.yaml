@@ -1,4 +1,5 @@
 type: object
+x-range: Comment
 description: A comment on an item.
 properties:
   type:
@@ -6,15 +7,17 @@ properties:
     type: string
     enum:
       - Comment
-  about:
-    $ref: about.yaml
+  text:
+    description: the content
+    type: string
+    example: this is my comment.
   author:
     $ref: author.yaml
+  about:
+    $ref: about.yaml
+  
   dateCreated:
     $ref: dateCreated.yaml
   dateModified:
     $ref: dateModified.yaml
-  text:
-    description: the content
-    type: string
-    example: the comment goes here.
+  

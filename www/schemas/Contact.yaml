@@ -1,35 +1,37 @@
-x-range: Contact
-x-sameas: https://schema.org/Person
-title: Contact
 allOf:
-  
-  
-  - description: |
-      A Contact
-
+  - $ref: Person.yaml
+  - title: Contact
+    description: a personal contact.
+    x-range: Contact
     properties:
       type:
         enum:
           - Contact
+      
+      comment:
+        $ref: comment-property.yaml
 
-      address:
-        type: array
-        x-range: PostalAddress
-        description: a mailing address for the item
-        items:
-          $ref: address.yaml
+      identifier:
+        $ref: identifier.yaml
 
-      leadSource:
-        description: the Lead Provider
-        example: https://{lead-provider}.example.com/profile/card#me
+      jobTitle:
+        type: string
+        example: Superhero
 
       keywords:
-        type: array
-        description: Keywords or tags assigned to the contact
+        $ref: keywords.yaml
+
+      leadOwner:
+        type: object
+        description: lead lead owner
         example:
-        - Sphere of Influence
-        - Past Customer
-        items:
-          type: string       
-          
-  - $ref: Person.yaml        
+          type: RealEstateOrganization
+          name: Gotham City Real Estate
+
+      leadSource:
+        type: object
+        description: origin of the lead
+        example:
+          type: RealEstateWebsite
+          url: https://example.com        
+  

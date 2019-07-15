@@ -1,5 +1,5 @@
 title: ContactPoint
-description: A contact point—for example, a Customer Complaints department.
+description: a point of contact, use ContactPoint objects for named telephone, email, faxNumber values.
 x-range: ContactPoint
 type: object
 example:

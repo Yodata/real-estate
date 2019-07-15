@@ -1,6 +1,5 @@
 # additionalProperty
 type: object
-x-summary: namespaced custom properties
-description: Property names and values are only valid in the provided `@context`.  For example if `@context http://example.com/context#`. the property with key `ID` should be represented locally as `http;//example.com/context#ID`
+description: vendor namespaced custom properties
 example:
   supercrmuserid: 1234

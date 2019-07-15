@@ -8,49 +8,75 @@ allOf:
         description: Person
         enum:
           - Person
-      name:
-        type: string
-        description: Full name of the person.
-
-      givenName:
-        type: string
-        description: First Name
-        example: Bruce
-
-      familyName:
-        type: string
-        description: Last Name
-        example: Wayne
-
-      jobTitle:
-        $ref: job-title.yaml
-    
-      contactPoint:
-        $ref: contact-point.yaml
 
       address:
         type: array
+        x-range: PostalAddress
         items:
           $ref: address.yaml
-
+      
       birthDate:
         type: string
         format: date
         description: date of birth.
+
+
+      contactPoint:
+        $ref: contact-point.yaml
+
+      name:
+        type: string
+        description: Full name of the person.
+        example: Bruce Wayne
+
+      givenName:
+        type: string
+        description: First Name of a person
+        example: Bruce
 
       email:
         type: string
         description: Primary email address.
         example: user@example.com
 
+      familyName:
+        type: string
+        description: Last Name of a person
+        example: Wayne
+
       faxNumber:
         description: Primary fax number.
         type: string
         example: '(498) 625-6456'
 
+      honorificPrefix:
+        $ref: honorificPrefix.yaml
+
+      honorifixSuffix:
+        $ref: honorificSuffix.yaml
+
+      jobTitle:
+        $ref: job-title.yaml
+
+      knowsLanguage:
+        type: array
+        description: languages spoken by the person
+        x-range: Language
+        items:
+          type: object
+        example:
+          - type: Language
+            name: English
+            additionalName: en-us
+          
       telephone:
         description: Primary phone number.
         type: string
         example: 1-339-041-0306 x2866
+
+      worksFor:
+        type: string
+        description: Organizations the person works for.
+        example: Gotham City Police Department
 
 

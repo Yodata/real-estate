@@ -1,5 +1,5 @@
-type: object
 title: Thing
+type: object
 description: |
   All types in the vocabulary are derived from Thing, and, therefore
   properties of Thing are valid properties of any object.
@@ -10,7 +10,3 @@ properties:
   type:
     type: string
     description: The item type (Linked-Data @type)
-  id:
-    description: the Linked-Data URI of the item
-    type: string
-    format: URI

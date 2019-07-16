@@ -1,13 +1,11 @@
-title: ImageObject
-type: object
-x-subclassOf:
-  - MediaObject
-  - CreativeWork
-  - Thing
 allOf:
   - $ref: MediaObject.yaml
-  - properties:
+  - title: ImageObject
+    x-range: ImageObject
+    properties:
       type:
+        enum:
+        - ImageObject
         example: ImageObject
       id:
         example: http://user.example.com/public/logo/image.jpg

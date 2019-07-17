@@ -40,6 +40,9 @@ allOf:
         type: string
         example: Superhero
 
+      contactGroup:
+        $ref: contactGroup.yaml
+
       keywords:
         $ref: keywords.yaml
 

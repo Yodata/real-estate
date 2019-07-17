@@ -1,6 +1,9 @@
 type: object
 x-range: Comment
 description: A comment on an item.
+required:
+- type
+- text
 properties:
   type:
     description: Comment

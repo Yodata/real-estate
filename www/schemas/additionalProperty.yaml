@@ -1,5 +1,5 @@
-# additionalProperty
+title: additionalProperty
 type: object
-description: vendor namespaced custom properties
+description: vendor namespaced properties
 example:
   supercrmuserid: 1234

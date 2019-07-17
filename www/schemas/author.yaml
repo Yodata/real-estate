@@ -1,5 +1,11 @@
 type: object
 description: the content author
+x-range:
+- Person
+- Organization
 example:
-  type: Contact
+  type: Person
   name: Bruce Wayne
+  id: http://user.example.com/profile/card#me
+  identifier:
+    vendoraid: batman

@@ -31,11 +31,10 @@ properties:
     x-range: Contact
     $ref: contact-object.yaml
 
-  activity:
-    description: lead history
+  leadSource:
+    description: original source of the lead
     type: array
     items:
-      x-range: Action
       type: object
       example:
         type: AskAction

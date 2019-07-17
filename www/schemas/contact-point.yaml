@@ -1,14 +1,12 @@
 title: ContactPoint
 description: a point of contact, use ContactPoint objects for named telephone, email, faxNumber values.
-x-range: ContactPoint
 type: object
+x-range: ContactPoint
 example:
   - type: ContactPoint
-    name: Work Email
+    name: Office
+    telephone: '800-555-5555'
     email: Bailee_VonRueden@hotmail.com
   - type: ContactPoint
-    name: Work Phone
-    telephone: '800-555-5555'
-  - type: ContactPoint
-    name: personal website
+    name: Website
     url: https://example.com

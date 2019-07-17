@@ -21,5 +21,7 @@ payload:
                   name: Past Clients
                   identifier:
                     vendoraid: pastclientscollectionid
+                  dateCreated: 2019-07-17T11:05:17Z
+                  dateModified: 2019-07-17T11:05:17Z
                   
                   

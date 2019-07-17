@@ -12,10 +12,5 @@ payload:
           allOf:
           - $ref: ../AddAction.yaml
           - properties:
-              agent:
-                type: string
-                format: uri
-                description: the agent who added the object
-                example: http://{user-who-added-the-contact}.com/profile/card#me
               object:
-                $ref: ../contact-object.yaml
+                $ref: ../Contact.yaml

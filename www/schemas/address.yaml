@@ -3,6 +3,7 @@ x-range: PostalAddress
 description: A physical address.
 example:
   type: PostalAddress
+  name: Home
   streetAddress: '1007 Mountain Gate Rd'
   postOfficeBoxNumber: Box 1234
   addressRegion: New Jersey

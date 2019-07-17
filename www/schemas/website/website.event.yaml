@@ -43,7 +43,7 @@ properties:
     format: uri
     example: http://{user}.example.com/profile/card#me
   instrument:
-    description: the profile URI of the messag producer.
+    description: the profile URI of the message producer.
     type: string
     format: uri
     example: http://{supercrm}.example.com/profile/card#me

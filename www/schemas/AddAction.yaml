@@ -8,13 +8,6 @@ allOf:
         description: AddAction
         enum:
           - AddAction
-      agent:
-        type: object
-        description:  user who added the item
       object:
         type: object
-        description: data which was added
-      targetCollection:
-        type: object
-        description: collection receiving the data (object)
-      
+        description: data which was added      

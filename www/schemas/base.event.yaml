@@ -5,11 +5,11 @@ required:
 - data
 properties:
   topic:
-    description: the event subject/type, equivalent to cloudevents type.
+    description: event identifier, same as cloudevents type.
     type: string
   data:
     type: object
-    description: the message payload
+    description: message payload
     properties:
       type:
         type: string

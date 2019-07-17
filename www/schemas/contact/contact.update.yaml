@@ -11,16 +11,13 @@ payload:
         data:
           allOf:
             - $ref: ../UpdateAction.yaml
-            - x-range: UpdateAction
-              x-const: value
-              properties:
+            - properties:
                 object:
                   x-range: Contact
-                  description: the updated contact
                   example:
                     type: Contact
-                    name: the updated contact
+                    description: see Objects > Contact for full schema details
                     identifier:
-                      vendornameid: 1234
-                targetCollection:
-                  $ref: ../Collection.yaml
+                      vendoraid: xxx
+                    
+                  

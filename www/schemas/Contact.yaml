@@ -1,4 +1,29 @@
 allOf:
+  - properties:
+      type:
+        example: Contact
+      identifier:
+        type: object
+        description: vendor namespaced unique identifiers for the items
+        example:
+          redContact_Guid: 55BC6EB4-5C3D-4603-B5AB-154117E1269F
+      additionalProperty:
+        type: object
+        description: vendor namespaced property values
+        example:
+          "redPreferred_Contact_Method": "No Preference"
+          "redIsContact": "0"
+          "redIsunsubscribed": "0"
+          "redAccepted": "1"
+          "redIsLead": "1"
+          "redOrig_Auto_Accepted": "1"
+          "redPreferred_Contact_Method_Display": "No Preference"
+          "redExternal_Last_Mod_DTM": "2019-02-05T10: 26: 49.527"
+          "redAssociated_Agent_Per_ID": "320989E53619474BA22FE10601A4D63B"
+          "redPreferredPhoneType": "No preference"
+          "redIsBuyer": "1"
+          "redIsSeller": "1"
+          "redIsCustomerCare": "0"      
   - $ref: Person.yaml
   - title: Contact
     description: a personal contact.
@@ -7,12 +32,9 @@ allOf:
       type:
         enum:
           - Contact
-      
+
       comment:
         $ref: comment-property.yaml
-
-      identifier:
-        $ref: identifier.yaml
 
       jobTitle:
         type: string
@@ -27,11 +49,12 @@ allOf:
         example:
           type: RealEstateOrganization
           name: Gotham City Real Estate
+          id: https://example.com/profile.card#me
 
       leadSource:
         type: object
         description: origin of the lead
         example:
           type: RealEstateWebsite
-          url: https://example.com        
+          url: https://example.com/path/where/the/event/occurred   
   

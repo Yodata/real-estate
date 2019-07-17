@@ -12,6 +12,7 @@ allOf:
       address:
         type: array
         x-range: PostalAddress
+        description: addresses for the item 
         items:
           $ref: address.yaml
       

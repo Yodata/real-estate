@@ -9,11 +9,6 @@ allOf:
         type: string
         enum:
           - DeleteAction
-      agent:
-        example: https://{user-who-deleted-the-item}.com/profile/card#me
       object:
         type: object
         description: the deleted item
-      targetCollection:
-        type: object
-        description: the collection from which the object was removed

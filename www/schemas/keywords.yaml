@@ -1,5 +1,5 @@
 title: keywords
-description: keywords or tags for organizing the items in a collection
+description: keywords/tags for grouping and organizing the item in collections
 type: array
 example:
 - Sphere of Influence

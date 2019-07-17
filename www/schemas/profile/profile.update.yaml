@@ -5,11 +5,18 @@ payload:
   allOf:
     - $ref: base.profile.event.yaml
     - properties:
+        topic:
+          enum:
+            - realestate/profile#update
         data:
           x-range: UpdateAction
           properties:
             type:
               type: string
+              description: UpdateAction
               enum:
                 - UpdateAction
-              description: UpdateAction
+              example: UpdateAction
+            object:
+              type: object
+              description: the updated or added profile value

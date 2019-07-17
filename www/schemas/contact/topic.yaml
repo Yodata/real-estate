@@ -4,5 +4,9 @@ x-summary: |
 subscribe:
   oneOf:
     - $ref: contact.add.yaml
-    - $ref: contact.update.yaml
+    - $ref: contact.collectioncreate.yaml
+    - $ref: contact.collectiondelete.yaml
+    - $ref: contact.collectionmemberadd.yaml
+    - $ref: contact.collectionmemberremove.yaml
     - $ref: contact.delete.yaml
+    - $ref: contact.update.yaml

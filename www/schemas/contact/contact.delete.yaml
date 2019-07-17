@@ -1,6 +1,6 @@
 x-title: delete
 x-scope: realestate/contact#
-summary: a contact was removed from a collection
+summary: contact (object) was removed by user (agent)
 payload:
   allOf:
     - $ref: ../base.event.yaml
@@ -9,12 +9,19 @@ payload:
           enum:
             - realestate/contact#delete
         data:
-          allOf:
-            - $ref: ../DeleteAction.yaml
-            - properties:
-                object:
-                  type: object
-                  description: the deleted item
-                targetCollection:
-                  $ref: ../Collection.yaml
-
+          type: object
+          x-range: DeleteAction
+          properties:
+            type:
+              type: string
+              description: "DeleteAction"
+              enum:
+              - DeleteAction
+            object:
+              type: object
+              x-range: Contact
+              description: the deleted contact
+              example:
+                type: Contact
+                identifier:
+                  vendoraid: xxx

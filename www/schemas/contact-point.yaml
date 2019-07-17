@@ -7,5 +7,8 @@ example:
     name: Work Email
     email: Bailee_VonRueden@hotmail.com
   - type: ContactPoint
-    name: Facebook
-    url: http://facebook.com/    
+    name: Work Phone
+    telephone: '800-555-5555'
+  - type: ContactPoint
+    name: personal website
+    url: https://example.com

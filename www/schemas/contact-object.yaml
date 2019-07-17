@@ -3,9 +3,6 @@ x-range: Contact
 description: a contact
 example:
   type: Contact
-  identifier:
-    vendoracontactid: 123
-    vendorbcontactid: 456
   name: Bruce Wayne
   givenName: Bruce
   familyName: Wayne
@@ -27,6 +24,9 @@ example:
       postalCode: '10010'
       addressCountry: USA
   birthDate: '2019-07-09'
-  leadSource:
+  leadOwner:
     type: RealEstateOrganization
     id: 'https://{lead-owner}.example.com/profile/card#me'
+  leadSource:
+    type: Lead
+    

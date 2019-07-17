@@ -8,8 +8,6 @@ properties:
   type:
     description: the action type
     type: string
-  agent:
-    description: direct performer of the action
   object:
     description: item on which the action is carried out
   

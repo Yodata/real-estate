@@ -1,5 +1,6 @@
 type: object
-description: target collection
+x-range: Collection
+description: a set of items.
 properties:
   type:
     type: string
@@ -7,4 +8,23 @@ properties:
     - Collection
   name:
     type: string
-    example: targetcollection
+    description: name of the collection
+    example: Clients
+  identifier:
+    $ref: identifier.yaml
+  creator:
+    description: creator of the collection 
+    type: object
+    example:
+      type: RealEstateAgent
+      id: https://{agentid}.example.com/profile/card#me
+  dateCreated:
+    $ref: dateCreated.yaml
+  dateModified:
+    $ref: dateModified.yaml
+  member:
+    description: members of the collection
+    type: array
+    items:
+      type: object
+    

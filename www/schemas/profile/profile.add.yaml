@@ -8,7 +8,6 @@ payload:
         topic:
           enum:
             - realestate/profile#add
-          description: realestate/profile#add
         data:
           x-range: AddAction
           properties:

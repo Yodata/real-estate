@@ -1,22 +1,15 @@
-title: UpdateAction
 allOf:
   - $ref: Action.yaml
-  - x-range: UpdateAction
-    description: an object is updated by the agent
+  - title: UpdateAction
+    x-range: UpdateAction
+    description: the item (object) has been updated by user (agent)
     properties:
       type:
         enum:
           - UpdateAction
-      agent:
-        example: https://{user-who-updated-the-object}.com/profile/card#me
       object:
         type: object
         description: the updated item
-        example:
-          type: Contact
-          name: Bruce Wayne
-          identifier:
-            vendoraid: xxx
 
 
         

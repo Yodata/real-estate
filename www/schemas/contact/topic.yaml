@@ -11,7 +11,8 @@ subscribe:
     - $ref: contact.eventcreate.yaml
     - $ref: contact.plancreate.yaml
     - $ref: contact.plandelete.yaml
-    - $ref: contact.planmemberadd.yaml
-    - $ref: contact.planmemberremove.yaml
+    - $ref: contact.taskcreate.yaml
+    - $ref: contact.taskdelete.yaml
+    - $ref: contact.taskupdate.yaml
     - $ref: contact.delete.yaml
     - $ref: contact.update.yaml

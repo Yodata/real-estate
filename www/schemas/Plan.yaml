@@ -22,12 +22,7 @@ properties:
     type: array
     description: tasks which make up the plan
     items:
-      type: object
-      x-range: Task
-      example:
-        type: Task
-        name: Call Ricky
-        
+      $ref: Task.yaml
   creator:
     $ref: creator.yaml
   dateCreated:

@@ -1,0 +1,20 @@
+x-title: taskcreate
+x-scope: realestate/contact#
+summary: a new task is created and optionally added to plan
+payload:
+  allOf:
+    - $ref: ../base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/contact#taskcreate
+        data:
+          allOf:
+          - $ref: ../CreateAction.yaml
+          - properties:
+              object:
+                $ref: ../Task.yaml
+                description: the task to be added
+
+
+    

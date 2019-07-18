@@ -16,8 +16,12 @@ properties:
     example: PotentialActionStatus
   memberOf:
     type: object
-    x-range: ActionPlan
-    description: an action plan that the task is a member of
+    x-range: Plan
+    description: a plan the task is associated with
+    example:
+      type: Plan
+      identifier:
+        redPlan_ID: xxxx
   agent:
     type: object
     description: the party who completed, or will complete the task

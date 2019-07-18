@@ -1,0 +1,27 @@
+x-title: planmemberadd
+x-scope: realestate/contact#
+summary: a task was added to a task
+payload:
+  allOf:
+    - $ref: ../base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/contact#planmemberadd
+        data:
+          allOf:
+          - $ref: ../AddAction.yaml
+          - properties:
+              object:
+                $ref: ../Task.yaml
+                description: the task to be added
+              targetCollection:
+                type: object
+                description: the plan to which the task is being added
+                example:
+                  type: Plan
+                  identifier:
+                    vendoraid: xxx
+
+
+    

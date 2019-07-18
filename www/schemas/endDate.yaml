@@ -1,0 +1,3 @@
+type: string
+description: the end date-time (ISO 8601 formated)
+format: date-time

@@ -1,0 +1,26 @@
+x-title: eventdelete
+x-scope: realestate/contact#
+summary: an event was deleted
+payload:
+  allOf:
+    - $ref: ../base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/contact#eventdelete
+        data:
+          allOf:
+          - $ref: ../DeleteAction.yaml
+          - properties:
+              object:
+                description: the event deleted
+                type: object
+                x-range: Event
+                example:
+                  type: Event
+                  identifier:
+                    redEvent_ID: '9551570'
+                    
+
+                  
+                  

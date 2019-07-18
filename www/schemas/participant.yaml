@@ -2,7 +2,13 @@ x-title: participant
 x-range:
   - Person
   - Organization
-description: Other co-agents that participated in the action indirectly.
+description: Other co-agents with a direct or indirect interest in the action.
 type: array
 items:
   type: object
+example:
+- type: Contact
+  name: Bruce Wayne
+  email: bruce@example.com
+  identifier:
+    redContact_GUID: 92d0a096-457e-4643-ace8-fa95b6bdb1c5

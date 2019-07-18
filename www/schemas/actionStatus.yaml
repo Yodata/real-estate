@@ -1,7 +1,12 @@
 type: string
-description: disposition of the Action at the time of this action message
+description: disposition of the Action at the time of this action message.
+x-range: 
+- CompletedActionStatus
+- FailedActionStatus
+- ActiveActionStatus
+- PotentialActionStatus
 enum:
   - CompletedActionStatus
   - FailedActionStatus
   - ActiveActionStatus
-  - potentialActionStatus
+  - PotentialActionStatus

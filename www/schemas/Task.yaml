@@ -1,0 +1,58 @@
+title: Task
+type: object
+description: a future action
+x-range: Task
+properties:
+  type:
+    $ref: type.yaml
+    enum:
+    - Task
+  identifier:
+    $ref: identifier.yaml
+    example:
+      redEvent_ID: '23445'
+  actionStatus:
+    $ref: actionStatus.yaml
+    example: PotentialActionStatus
+  memberOf:
+    type: object
+    x-range: ActionPlan
+    description: an action plan that the task is a member of
+  agent:
+    type: object
+    description: the party who completed, or will complete the task
+    x-range:
+    - Person
+    - Organization
+    - RealEstateAgent
+    - Contact
+    example:
+      type: RealEstateAgent
+      id: http://user.example.com/profile/card#me
+
+  participant:
+    $ref: participant.yaml
+
+  name:
+    type: string
+    description: name or title
+    example: Call Ricky
+
+  description:
+    type: string
+    description: task detailed description
+    example: Agenda 1. Something 2. Something Else ...
+
+  keywords:
+    $ref: keywords.yaml
+
+  dateDue:
+    $ref: dueDate.yaml
+
+  dateCompleted:
+    type: string
+    format: date-time
+    description: date the task was completed
+
+  location:
+    $ref: location.yaml

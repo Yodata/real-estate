@@ -20,10 +20,10 @@ properties:
     type: string
     format: date-time
     description: the time the event was first published
-  contenttype:
-    type: string
-    description: mime-type of the message data, default is application/json
-    example: null
+  # contenttype:
+  #   type: string
+  #   description: mime-type of the message data, default is application/json
+  #   example: null
   '@context':
     type: string
     format: uri

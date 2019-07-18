@@ -1,0 +1,25 @@
+type: object
+title: Event
+description: An event happening at a certain time and location
+x-range: Event
+properties:
+  type:
+    $ref: type.yaml
+    example: Event
+  name:
+    type: string
+    description: name of the event
+    example: Property Showing 1007 Mountain Gate Rd
+  description:
+    type: string
+    description: event message content
+    example: meet at bottom of drive and we'll buzz through the gate together
+  
+  about:
+    $ref: about.yaml
+  startDate:
+    $ref: startDate.yaml
+  endDate:
+    $ref: endDate.yaml
+  organizer:
+    $ref: organizer.yaml

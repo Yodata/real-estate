@@ -8,5 +8,10 @@ subscribe:
     - $ref: contact.collectiondelete.yaml
     - $ref: contact.collectionmemberadd.yaml
     - $ref: contact.collectionmemberremove.yaml
+    - $ref: contact.eventcreate.yaml
+    - $ref: contact.plancreate.yaml
+    - $ref: contact.plandelete.yaml
+    - $ref: contact.planmemberadd.yaml
+    - $ref: contact.planmemberremove.yaml
     - $ref: contact.delete.yaml
     - $ref: contact.update.yaml

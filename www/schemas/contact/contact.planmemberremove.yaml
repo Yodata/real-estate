@@ -1,0 +1,30 @@
+x-title: planmemberremove
+x-scope: realestate/contact#
+summary: a task was removed from an action plan
+payload:
+  allOf:
+    - $ref: ../base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/contact#planmemberremove
+        data:
+          allOf:
+          - $ref: ../RemoveAction.yaml
+          - properties:
+              object:
+                type: object
+                x-range: Task
+                example:
+                  type: Task
+                  identifier:
+                    vendoraid: xxx
+              targetCollection:
+                type: object
+                x-range: Plan
+                example:
+                  type: Plan
+                  name: the best plan in the history of plans
+                  identifier:
+                    vendoraid: xxx
+    

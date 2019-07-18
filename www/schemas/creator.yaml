@@ -1,0 +1,6 @@
+title: creator
+description: the item creator
+x-range:
+  - Person
+  - Organization
+example: http://agent.example.com/profile/card#me

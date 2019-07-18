@@ -1,20 +1,21 @@
-title: Event
+title: CloudEvent
 description: message metadata based on cloudevents.io
 type: object
 properties:
   topic:
     type: string
-    description: the message subscription id
+    description: subscription topic. Same As CloudEvents.type
     example: 'realestate/{topic}#{event}'
   source:
     type: string
     format: uri
-    description: message publisher, typically the pod owner
-    example: http://{user}.example.com/profile/card#me
+    description: message publisher, typically the user / data owner
+    example: http://{message-publisher}.example.com/profile/card#me
   instrument:
     type: string
     format: uri
     description: application or service which produced the message
+    example: http://{message-producer}.example.com/profile/card#me
   time:
     type: string
     format: date-time
@@ -27,8 +28,8 @@ properties:
     type: string
     format: uri
     example: http://realestate.yodate.me/context/v1.json
-    description: uri to context resource to be applied to normalizing / denormalizing the message
+    description: if provided, the context will be used to transform/ingest the message
   data:
-    x-range: Action
-    description: an Action
     type: object
+    description: the message payload, typically a schema.org/Action
+    x-range: Action

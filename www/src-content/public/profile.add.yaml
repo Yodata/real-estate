@@ -3,7 +3,7 @@ x-scope: realestate
 summary: a user profile was updated
 payload:
   allOf:
-    - $ref: Event.yaml
+    - $ref: CloudEvent.yaml
     - properties:
         topic:
           enum:

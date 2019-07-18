@@ -14,10 +14,18 @@ properties:
     description: the content
     type: string
     example: this is my comment.
+  identifier:
+    type: object
+    example:
+      redContact_Note_ID: 8e4ffb29-a887-42e9-a4b0-cc3755ea782e
   author:
     $ref: author.yaml
   about:
     $ref: about.yaml
+    example:
+      type: Contact
+      identifier:
+        redContact_GUID: 6bf62a1b-225e-4fca-87b3-54cc09446a66
   
   dateCreated:
     $ref: dateCreated.yaml

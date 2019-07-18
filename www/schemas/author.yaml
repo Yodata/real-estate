@@ -8,4 +8,4 @@ example:
   name: Bruce Wayne
   id: http://user.example.com/profile/card#me
   identifier:
-    vendoraid: batman
+    redAuthor_Per_ID: 7185facc-a2d8-4e25-b0cf-dbef14c11b4b

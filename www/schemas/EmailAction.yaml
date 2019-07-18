@@ -3,6 +3,6 @@ x-scope: marketing
 summary: an EmailMessage was sent
 payload:
   allOf:
-    - $ref: Event.yaml
+    - $ref: CloudEvent.yaml
     - properties:
         data: { $ref: EmailMessage.yaml }

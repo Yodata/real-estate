@@ -12,12 +12,21 @@ payload:
           allOf:
             - $ref: ../UpdateAction.yaml
             - properties:
+                agent:
+                  example:
+                    type: RealEstateAgent
+                    description: the user who updated the item
+                    id: https://agent.example.com/profile/card#me
                 object:
                   x-range: Contact
+                  description: a complete or partial contact containing only the changed values
                   example:
                     type: Contact
-                    description: see Objects > Contact for full schema details
+                    description: a partial update example
                     identifier:
-                      vendoraid: xxx
+                      redContact_GUID: 2d9d15be-de2d-497f-bd4d-edfa0f094356
+                    contactPoint:
+                    - type: ContactPoint
+                      name: Mobile
+                      telephone: 800-4-BATMAN
                     
-                  

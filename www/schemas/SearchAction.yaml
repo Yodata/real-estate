@@ -1,13 +1,25 @@
-allOf:
-- type: object
-  x-range: SearchAction
-  properties:
-    type:
-      enum:
-      - SearchAction
-    query:
-      description: search criteria
-    result:
-      description: search result
-      x-range: FindAction
-- $ref: Action.yaml    
+type: object
+x-range: SearchAction
+properties:
+  type:
+    type: string
+    description: SearchAction
+    enum:
+    - SearchAction
+  agent:
+    description: the user who performed the search
+    type: object
+    x-range:
+    - Contact
+    - RealEstateAgent
+    - Person
+    example:
+      type: Contact
+      identifier:
+        redContact_GUID: 06df8682-b663-4569-9f81-6bb36af7be44
+  object:
+    description: search criteria
+    x-range: PropertySearch
+  result:
+    description: search result
+    x-range: FindAction

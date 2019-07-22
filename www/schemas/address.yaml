@@ -10,3 +10,5 @@ example:
   addressLocality: Gotham City
   postalCode: '10010'
   addressCountry: USA
+  addressCounty: Gotham County
+  addressSubdivision: Gotham Heights

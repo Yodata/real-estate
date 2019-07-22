@@ -29,3 +29,11 @@ properties:
     type: string
     description: country
     example: usa
+  addressCounty:
+    type: string
+    description: the county (us real estate extension)
+    example: Gotham County
+  addressSubdivision:
+    type: string
+    description: the subdivision or neighborhood (us real estate extension)
+    example: Gotham Heights

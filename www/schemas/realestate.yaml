@@ -16,6 +16,10 @@ Contact: { $ref: Contact.yaml }
 ContactPoint: { $ref: ContactPoint.yaml }
 EmailMessage: { $ref: EmailMessage.yaml }
 Event: { $ref: Event.yaml }
+GeoCircle: { $ref: GeoCircle.yaml }
+GeoShape: { $ref: GeoShape.yaml }
+GeoCoordinates: { $ref: GeoCoordinates.yaml }
+PotentialActionStatus: { $ref: PotentialActionStatus.yaml }
 ImageObject: { $ref: ImageObject.yaml }
 Language: { $ref: Language.yaml }
 Lead: { $ref: Lead.yaml }
@@ -35,7 +39,7 @@ Profile: { $ref: Profile.yaml }
 ProgramMembership: { $ref: ProgramMembership.yaml }
 PropertyListing: { $ref: PropertyListing.yaml }
 PropertySearch: { $ref: PropertySearch.yaml }
-PropertyType: { $ref: PropertyType.yaml }
+ListingType: { $ref: ListingType.yaml }
 PropertyValue: { $ref: PropertyValue.yaml }
 QuantitativeValue: { $ref: QuantitativeValue.yaml }
 RealEstateAgent: { $ref: RealEstateAgent.yaml }

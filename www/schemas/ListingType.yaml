@@ -1,0 +1,26 @@
+title: ListingType
+x-range: ListingType
+type: string
+enum:
+  - RESI
+  - RLSE
+  - RINC
+  - LAND
+  - MOBI
+  - FARM
+  - COMS
+  - COML
+  - BUSO
+
+description: >
+  a RESO standard property type lookup value.
+  allowed values
+  RESI - Residential
+  RLSE - Residential Lease
+  RINC - Residential Income
+  LAND - Lots & Land
+  MOBI - Mobile Homes
+  FARM - Farm
+  COMS - Commercial For-Sale
+  COML - Commercial For-Lease
+  BUSO - Business Opportunity 

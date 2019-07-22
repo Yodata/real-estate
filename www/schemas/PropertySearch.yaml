@@ -11,12 +11,35 @@ properties:
   name:
     type: string
     description: name of the search, input by the user or generated automatically
-    example: my property search
+    example: 3+ beds in Gotham City
 
   description:
     type: string
-    description: optional search description input by the user
-    example: 3+ beds in Gotham City
+    description: optional search description input by the user or generated automatically
+    example: ((city=Gotham),(Bedrooms=3+))
+    
+  listingType:
+    type: string
+    description: RESO Listing Type
+    x-range:
+    - RESI
+    - RLSE
+    - RINC
+    - LAND
+    example: RESI
+
+  listingStatus:
+    type: string
+    description: RESO Listing Status Code
+    x-range:
+    - ActiveListingStatus
+    - PendingListingStatus
+    - SoldListingStatus
+    - ContingentListingStatus
+    example: ActiveListingStatus,ContingentListingStatus
+
+  location:
+    $ref: Place.yaml
   
   price:
     description: price value or range (minValue, maxValue)
@@ -44,8 +67,7 @@ properties:
       unitCode: BA
       unitText: Bathrooms
 
-  location:
-    $ref: location.yaml
+  
 
   livingArea:
     description: property indoor space

@@ -1,11 +1,16 @@
-x-range:
-  - Place
-  - PostalAddress
-  - Text
-description:
-  The location of for example where the event is happening, an organization
-  is located, or where an action takes place.
 type: object
-oneOf:
-- $ref: PostalAddress.yaml
-- $ref: Place.yaml
+description:
+  the physical location where an event takes place
+x-range:
+- Place
+example:
+  type: Place
+  address:
+    streetAddress: 1007 Mountain Gate Rd
+    addressLocality: Gotham City
+    addressRegion: NJ
+    postalCode: 10007
+    addressCounty: Gotham addressCounty
+    addressSubdivision: Gotham Heights
+  
+    

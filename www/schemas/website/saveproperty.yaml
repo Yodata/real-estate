@@ -16,11 +16,20 @@ payload:
                   enum:
                     - SaveAction
                 object:
-                  allOf:
-                  - $ref: ../PropertyListing.yaml
-                  - properties:
-                      listingAgent:
-                        example:
-                          type: RealEstateAgent
-                          name: Lori Listingagent
+                  type: object
+                  x-range: PropertyListing
+                  example:
+                    type: PropertyListing
+                    identifier:
+                      redMLSListingNumber: '1123423'
+                    streetAddress: 1007 Mountain Gate Rd
+                    addressLocality: Gotham City
+                    addressRegion: NJ
+                    postalCode: '10007'
+                    listingOriginatingSystem:
+                      type: MultipleListingService
+                      identifier:
+                        redMLSID: casmls-1
+                    
+
                 

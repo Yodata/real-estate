@@ -1,6 +1,6 @@
 title: Task
 type: object
-description: a future action
+description: an action assigned to an agent, typically as part of a set of interdependent tasks in a Plan
 x-range: Task
 properties:
   type:

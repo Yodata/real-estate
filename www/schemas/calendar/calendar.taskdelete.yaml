@@ -1,5 +1,5 @@
 x-title: taskdelete
-x-scope: realestate/contact#
+x-scope: realestate/calendar#
 summary: a task was removed from an action plan
 payload:
   allOf:
@@ -7,7 +7,7 @@ payload:
     - properties:
         topic:
           enum:
-            - realestate/contact#taskdelete
+            - realestate/calendar#taskdelete
         data:
           allOf:
           - $ref: ../DeleteAction.yaml

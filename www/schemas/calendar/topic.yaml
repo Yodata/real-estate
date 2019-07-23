@@ -1,0 +1,9 @@
+x-title:
+x-summary: |
+  topic: realestate/calendar
+subscribe:
+  oneOf:
+    - $ref: calendar.eventcreate.yaml
+    - $ref: calendar.taskcreate.yaml
+    - $ref: calendar.taskdelete.yaml
+    - $ref: calendar.taskupdate.yaml

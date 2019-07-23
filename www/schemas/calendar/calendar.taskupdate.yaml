@@ -1,5 +1,5 @@
 x-title: taskupdate
-x-scope: realestate/contact#
+x-scope: realestate/calendar#
 summary: a task has been updated
 payload:
   allOf:
@@ -7,7 +7,7 @@ payload:
     - properties:
         topic:
           enum:
-            - realestate/contact#taskupdate
+            - realestate/calendar#taskupdate
         data:
           allOf:
           - $ref: ../UpdateAction.yaml

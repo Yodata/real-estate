@@ -1,5 +1,5 @@
 x-title: eventcreate
-x-scope: realestate/contact#
+x-scope: realestate/calendar#
 summary: a calendar event was created
 payload:
   allOf:
@@ -7,7 +7,7 @@ payload:
     - properties:
         topic:
           enum:
-            - realestate/contact#eventcreate
+            - realestate/calendar#eventcreate
         data:
           allOf:
           - $ref: ../CreateAction.yaml

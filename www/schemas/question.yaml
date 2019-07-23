@@ -3,4 +3,4 @@ type: object
 description: A question.
 example:
   type: Question
-  text: What is the meaning of life?
+  text: I would like to view 123 Main Street.

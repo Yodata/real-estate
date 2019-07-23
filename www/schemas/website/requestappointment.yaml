@@ -11,8 +11,11 @@ payload:
         data:
           properties:
             type:
+              type: string
+              description: RequestAppointmentAction
               enum:
-              - AskAction
+              - RequestAppointmentAction
+              
             recipient:
               x-range:
                 - RealEstateOrganization
@@ -20,5 +23,7 @@ payload:
               format: uri
               description: the agent, office or organization being asked.
               example: https://{agent|office|affiliate}.example.com/profile/card#me
+            object:
+              $ref: ../question.yaml
             about:
               $ref: ../about.yaml

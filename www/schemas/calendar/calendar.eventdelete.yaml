@@ -1,5 +1,5 @@
 x-title: eventdelete
-x-scope: realestate/contact#
+x-scope: realestate/calendar#
 summary: an event was deleted
 payload:
   allOf:
@@ -7,7 +7,7 @@ payload:
     - properties:
         topic:
           enum:
-            - realestate/contact#eventdelete
+            - realestate/calendar#eventdelete
         data:
           allOf:
           - $ref: ../DeleteAction.yaml

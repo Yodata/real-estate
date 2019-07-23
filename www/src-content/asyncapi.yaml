@@ -49,6 +49,9 @@ info:
 # baseTopic: realestate
 
 topics:
+  calendar:
+    $ref: schemas/calendar/topic.yaml
+
   contact:
     $ref: schemas/contact/topic.yaml
 

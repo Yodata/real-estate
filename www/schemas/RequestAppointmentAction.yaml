@@ -8,14 +8,12 @@ allOf:
         type: string
         enum:
           - RequestAppointmentAction
-      text:
-        type: string
-        description: request text
-        example: Accusantium eos neque doloribus illo nobis.
       agent:
         $ref: agent.yaml
       recipient:
         $ref: recipient.yaml
+      object:
+        $ref: question.yaml
       about:
         $ref: about.yaml
       

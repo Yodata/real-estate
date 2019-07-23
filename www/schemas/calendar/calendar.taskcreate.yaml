@@ -1,5 +1,5 @@
 x-title: taskcreate
-x-scope: realestate/contact#
+x-scope: realestate/calendar#
 summary: a new task is created and optionally added to plan
 payload:
   allOf:
@@ -7,7 +7,7 @@ payload:
     - properties:
         topic:
           enum:
-            - realestate/contact#taskcreate
+            - realestate/calendar#taskcreate
         data:
           allOf:
           - $ref: ../CreateAction.yaml

@@ -71,7 +71,8 @@ topics:
     $ref: schemas/website/topic.yaml
 
 components:
-  schemas: { $ref: 'schemas/realestate.yaml' }
+  schemas:
+    $ref: schemas/realestate.yaml
   
   securitySchemes:
     https:

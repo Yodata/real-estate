@@ -1,0 +1,71 @@
+x-title: serviceareaadd
+x-scope: realestate/profile#
+summary: an agent, office or organization profile was updated
+payload:
+  allOf:
+    - $ref: ../base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/profile#serviceareaadd
+        data:
+          allOf:
+          - $ref: ../AddAction.yaml
+          - properties:
+              type:
+                enum:
+                - AddAction
+              object:
+                type: object
+                x-range: Place
+                description: describes the service area geo boundaries
+                example:
+                  type: Place
+                  identifier:
+                    bhhsESAId: ESA-68717
+                  additionalProperty:
+                    bhhsOfficeInZipcode: false
+                    bhhsWeight: 1
+                    bhhsSortOrder: 9
+                    bhhsESAType: Zip code
+                  address:
+                    addressLocality: Gotham City
+                    postalCode: '10007'
+              targetCollection:
+                example:
+                  id: https://user.example.com/profile/card#areaServed
+                
+
+
+# {
+#   "recipient": "https://dev.bhhs.hsfaffiliates.com/profile/card#me",
+#   "topic": "realestate/profile#esaupdate",
+#   "data": {
+#     "type": "UpdateAction",
+#     "object": {
+#       "type": "ESA",
+#       "ESAType": "Zip code",
+#       "memberOf": "https://FL308.dev.bhhs.hsfaffiliates.com/profile/card#me",
+#       "relocationOfficeID": "https://FL308-002.dev.bhhs.hsfaffiliates.com/profile/card#me",
+#       "officeInZipcode": false,
+#       "weight": 1,
+#       "sortOrder": 9,
+#       "reloSpec": true,
+#       "consumerSite": true,
+#       "companyLocator": true,
+#       "areaServed": {
+#         "type": "ESA",
+#         "address": {
+#           "type": "PostalAddress",
+#           "addressLocality": "Astor",
+#           "addressRegion": "FL",
+#           "postalCode": 32102,
+#           "addressCountry": "US"
+#         }
+#       },
+#       "identifier": {
+#         "bhhsESAId": "ESA-68717"
+#       }
+#     }
+#   }
+# }

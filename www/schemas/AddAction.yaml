@@ -10,4 +10,7 @@ allOf:
           - AddAction
       object:
         type: object
-        description: data which was added      
+        description: data added
+      targetCollection:
+        type: object
+        description: the collection or reference to the collection receiving the data 

@@ -19,7 +19,7 @@ properties:
     $ref: addressCountry.yaml
 
   propertyType:
-    $ref: PropertyType.yaml
+    $ref: property-type.yaml
 
   propertySubType:
     $ref: PropertySubType.yaml

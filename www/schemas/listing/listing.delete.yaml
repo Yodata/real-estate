@@ -14,4 +14,7 @@ payload:
           - properties:
               object:
                 $ref: ../PropertyListing.yaml
+                example:
+                  type: PropertyListing
+                  url: https://www.example.com/Gotham-Properties-NJ001/homes-for-sale/1007-Mountain-Gate-Road-Gotham-City-NJ-10007-187440425
     

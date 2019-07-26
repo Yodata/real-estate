@@ -1,4 +1,6 @@
 title: PropertyType
+type: string
+description: a RESO standard property type
 x-range:
 - RESI
 - RLSE
@@ -8,8 +10,6 @@ x-range:
 - FARM
 - COMS
 - BUSO
-type: string
-description: a RESO standard property type
 enum:
   - RESI
   - RLSE

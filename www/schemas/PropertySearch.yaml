@@ -19,7 +19,7 @@ properties:
     example: ((city=Gotham),(Bedrooms=3+))
     
   propertyType:
-    $ref: propertyType.yaml
+    $ref: PropertyType.yaml
 
   propertySubType:
     $ref: PropertySubType.yaml

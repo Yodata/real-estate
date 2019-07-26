@@ -18,15 +18,11 @@ properties:
     description: optional search description input by the user or generated automatically
     example: ((city=Gotham),(Bedrooms=3+))
     
-  listingType:
-    type: string
-    description: RESO Listing Type
-    x-range:
-    - RESI
-    - RLSE
-    - RINC
-    - LAND
-    example: RESI
+  propertyType:
+    $ref: propertyType.yaml
+
+  propertySubType:
+    $ref: PropertySubType.yaml
 
   listingStatus:
     type: string

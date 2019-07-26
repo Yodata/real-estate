@@ -57,6 +57,9 @@ topics:
 
   lead:
     $ref: schemas/lead/topic.yaml
+  
+  listing:
+    $ref: schemas/listing/listing.topic.yaml
 
   marketing:
     $ref: schemas/marketing/topic.yaml

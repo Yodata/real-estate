@@ -1,0 +1,6 @@
+x-title: Listing
+x-summary: Real estate listings
+subscribe:
+  oneOf:
+    - $ref: listing.create.yaml
+    - $ref: listing.delete.yaml

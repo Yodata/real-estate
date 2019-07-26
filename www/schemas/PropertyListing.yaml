@@ -17,6 +17,15 @@ properties:
     $ref: postalCode.yaml
   addressCountry:
     $ref: addressCountry.yaml
+
+  propertyType:
+    $ref: propertyType.yaml
+
+  propertySubType:
+    $ref: PropertySubType.yaml
+
+  universalPropertyId:
+    $ref: UniversalPropertyId.yaml
   
   listingContractDate:
     type: string
@@ -47,13 +56,36 @@ properties:
       - OffMarket
       - Private
   
+  buyerAgent:
+    type: object
+    x-range: RealEstateAgent
+    description: the buyer's RealEstateAgent
+    example:
+      type: RealEstateAgent
+      name: Butch Byers
+      email: butch.byers@example.com
+      identifier:
+        agentKey: xxxx
+
+
+  buyerOffice:
+    type: object
+    x-range: RealEstateOffice
+    description: the buyer's RealEstateOffice
+    example:
+      type: RealEstateOffice
+      name: Gotham City Real Estate
+      email: gcr@example.com
+      identifier:
+        officeKey: grc1
+
   listingAgent:
     type: object
     description: the listing RealEstateAgent
     x-range: RealEstateAgent
     example:
       type: RealEstateAgent
-      name: Arvel Kassulke
+      name: Lori Listagent
       telephone: 1-252-574-0160
       email: user@example.com
 
@@ -76,6 +108,33 @@ properties:
       identifier:
         bhhsmlsid: xxxx
         resoouid: not-yet-available
+
+  livingArea:
+    description: property indoor space
+    type: object
+    x-range: QuantitativeValue
+    example:
+      type: QuantitativeValue
+      value: 1500
+      unitCode: SqFt
+      unitText: Square Feet
+
+  lotSize:
+    description: outdoor space minValue, maxValue
+    type: object
+    x-range: QuantitativeValue
+    example:
+      type: QuantitativeValue
+      value: .5
+      unitCode: AC
+      unitText: Acres
+
+
+  internetAddressDisplayYN:
+    type: string
+    enum:
+    - Y
+    - N
 
   image:
     $ref: image.yaml

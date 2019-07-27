@@ -6,7 +6,5 @@ example:
     name: Work
     telephone: '800-555-5555'
     faxNumber: '888-4BA-TMAN'
-    email: Bailee_VonRueden@hotmail.com
-  - type: ContactPoint
-    name: Website
+    email: bruce@example.com
     url: https://example.com

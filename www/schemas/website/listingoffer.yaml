@@ -1,6 +1,6 @@
 x-title: listingoffer
 x-scope: realestate/website#
-summary: website user makes an offer to buy a ProertyListing
+summary: website user makes a listing offer
 payload:
   allOf:
   - $ref: website.event.yaml

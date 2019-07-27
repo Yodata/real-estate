@@ -1,33 +1,53 @@
 x-title: askquestion
 x-scope: realestate/website#
-summary: a website visitor has asked a question
+summary: website user asks a question
 payload:
   allOf:
+  - $ref: website.event.yaml
   - properties:
       topic:
+        description: realestate/website#askquestion
         enum:
         - realestate/website#askquestion
       data:
-        x-range: AskAction
+        description: a schema.org/AskAction
+        required:
+        - type
+        - agent
+        - object
+        - recipient
         properties:
           type:
+            description: '"AskAction"'
             enum:
             - AskAction
-          recipient:
-            x-range:
-            - RealEstateOrganization
-            type: string
-            format: uri
-            description: the agent, office or organization being asked.
-            example: https://{agent|office|affiliate}.example.com/profile/card#me
-          
+
           agent:
-            type: object
+            description: the website user who is asking the question
+            example:
+              additionalProperty:
+                userPath: xxxx
 
           object:
             $ref: ../question.yaml
-            
+            description: the question.
+
+          recipient:
+            $ref: ../recipient.yaml
+            description: the user who is being asked and is expected to answer
+            x-range:
+            - RealEstateAgent
+            - RealEstateOffice
+            - RealEstateOrganization
+          
           about:
-            $ref: ../about.yaml
+            type: object
+            description: optional subject of the question, typically a PropertyListing
+            x-range: PropertyListing
+            example:
+              type: PropertyListing
+              url: http://example.com/listing/1234
+    
+          
             
-  - $ref: website.event.yaml
+  

@@ -7,16 +7,8 @@ properties:
     enum:
     - SearchAction
   agent:
-    description: the user who performed the search
     type: object
-    x-range:
-    - Contact
-    - RealEstateAgent
-    - Person
-    example:
-      type: Contact
-      identifier:
-        redContact_GUID: 06df8682-b663-4569-9f81-6bb36af7be44
+    description: the user who performed the search
   object:
     description: search criteria
     x-range: PropertySearch

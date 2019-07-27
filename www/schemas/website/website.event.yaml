@@ -1,60 +1,33 @@
-type: object
-required:
-  - topic
-  - source
-  - data
-properties:
-  topic:
-    description: message event type
-    type: string
-  agent:
-    description: the event publisher, may be an event aggregator in the case of a company pod distributing events on behalf of many users.
-    type: string
-    format: uri
-    example: http://{broker-or-office}.example.com/profile/card#me
-  source:
-    description: the user pod associated with the event, when events are published through an aggregator, publishers should add the source to identify the specific user associated with the event.
-    type: string
-    format: uri
-    example: http://{real-estate-agent}.example.com/profile/card#me
-  instrument:
-    description: the message producer, the application or service that created the event
-    type: string
-    format: uri
-    example: http://{message-producer}.example.com/profile/card#me
-  time:
-    description: the message publish date-time
-    type: string
-    format: date-time
-  data:
-    type: object
-    description: the event (Action)
-    required:
-    - type
-    - agent
-    - object
-    properties:
-      type:
-        type: string
-        description: the Action identifier
-      agent:
-        type: object
-        description: the user who performed the action.
-        x-range:
-          - Contact
-        example:
-          type: Contact
-          identifier:
-            redContact_GUID: 6f2b30c6-fb39-4cf9-a8e3-fc4c8f3f5b8b
-      object:
-        type: object
-      instrument:
-        type: object
-        description: the website, url or mobile application where the action occured
-        x-range:
-        - RealEstateWebsite
-        - MobileApplication
-        example:
-          type: RealEstateWebsite
-          url:  https://example.com/property/detail/page?xxx=123
-        
+allOf:
+- $ref: ../CloudEvent.yaml
+- properties:
+    agent:
+      example: https://bhhs.example.com/profile/card#me
+    instrument:
+      example: https://smarter-agent.example.com/profile/card#me
+    source:
+      example: https://{agentid}.example.com/profile/card#me
+    data:
+      type: object
+      description: the event (Action)
+      required:
+      - type
+      - agent
+      - object
+      properties:
+        agent:
+          type: object
+          description: the website user
+          x-range: Contact
+          example:
+            type: Contact
+            name: Bill Bailey
+            telephone: 067-419-1230
+            email: user@example.com
+            additionalProperty:
+              userPath: xxx
+            identifier:
+              websiteuser_guid: 216bf670-0777-43db-9d73-c3377d280fe4
+
+        object:
+          type: object

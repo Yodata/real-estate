@@ -3,16 +3,14 @@ allOf:
   - description: a user (agent) asks recipient a question
     properties:
       type:
+        type: string
+        description: '"AskAction"'
         enum:
           - AskAction
       agent:
-        description: the one who asks
-        x-range: Contact
-        example:
-          type: Contact
-          name: Bob Jones
+        $ref: Contact.yaml
       object:
-        description: (not used)
+        $ref: question.yaml
       recipient:
         description: the one being asked, and who should answer
         example:
@@ -21,8 +19,6 @@ allOf:
           id: https://{the-user-being-asked}.com/profile/card#me
       about:
         $ref: about.yaml
-      question:
-        $ref: question.yaml
       instrument:
         description: something used by the user to ask the question
         type: object

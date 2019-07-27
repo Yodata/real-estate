@@ -1,6 +1,11 @@
-x-range: Question
 type: object
-description: A question.
-example:
-  type: Question
-  text: I would like to view 123 Main Street.
+x-range: Question
+properties:
+  type:
+    type: string
+    description: '"Question"'
+    enum:
+    - Question
+  text:
+    type: string
+    example: I would like to view 123 Main Street.

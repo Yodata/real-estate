@@ -21,3 +21,9 @@ payload:
             example:
               type: PropertyListing
               url: http://example.com/listing/122
+          recipient:
+            type: object
+            description: the recipient of the share
+            example:
+              type: Person
+              email: user@example.com

@@ -6,6 +6,7 @@ payload:
     - $ref: website.event.yaml
     - properties:
         topic:
+          description: '"realestate/website#saveproperty"'
           enum:
             - realestate/website#saveproperty
         data:
@@ -22,6 +23,7 @@ payload:
                     type: PropertyListing
                     identifier:
                       redMLSListingNumber: '1123423'
+                    listingId: '1123423'
                     streetAddress: 1007 Mountain Gate Rd
                     addressLocality: Gotham City
                     addressRegion: NJ
@@ -30,6 +32,7 @@ payload:
                       type: MultipleListingService
                       identifier:
                         redMLSID: casmls-1
+                    url: https://example.com/listing/12345
                     
 
                 

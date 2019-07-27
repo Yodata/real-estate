@@ -1,5 +1,4 @@
 title: CloudEvent
-description: message metadata based on cloudevents.io
 type: object
 required:
 - topic
@@ -9,8 +8,7 @@ required:
 properties:
   topic:
     type: string
-    description: message topic / CloudEvents type. Format={domain}/{topic}#{event}
-    example: realestate/contact#add
+    description: message type
   
   time:
     type: string
@@ -19,28 +17,33 @@ properties:
   
   agent:
     type: string
-    description: the message publisher which delivers the message.
-    example: https://{message-publisher}.example.com/profile/card#me
+    description: the message publisher which delivers the message
+    example: https://bhhs.hsfaffiliates.com/profile/card#me
   
   instrument:
     type: string
     format: uri
-    description: the message producer, typically an applciaton or service
-    example: http://{message-producer}.example.com/profile/card#me
+    description: the application or service which created the message.
+    example: https://ignite.bhhs.hsfaffiliates.com/profile/card#me
   
   source:
     type: string
     format: uri
-    description: when the message.agent publishes messages for multiple child pods, the source identifies the user / child pod which is the subject of the message.  If source is not present, the message agent is assumed.
-    example: http://{message-subject-or-user}.example.com/profile/card#me
+    description: the message subject, when `.agent` is publishing events on behalf of a user, `.source` identifies the child pod
+    example: https://1047522.bhhs.hsfaffiliates.com/profile/card#me
     
-  '@context':
-    type: string
-    format: uri
-    example: http://realestate.yodate.me/context/v1.json
-    description: if provided, the context will be used to transform/ingest the message
+  # '@context':
+  #   type: string
+  #   format: uri
+  #   example: http://realestate.yodate.me/context/v1.json
+  #   description: if provided, the context will be used to transform/ingest the message
   
   data:
     type: object
     description: the message payload, typically a schema.org/Action
-    x-range: Action
+    required:
+    - type
+    properties:
+      type:
+        type: string
+        description: the action type

@@ -5,20 +5,6 @@
 {{{schema.description}}}
 
 {{/if}}
-{{#unless options.hideExample}}
-```json
-{{#if schema.formattedExample}}
-{{{json schema.formattedExample}}}
-{{else if generatedExample}}
-{{{generatedExample}}}
-{{else if schema.generatedExample}}
-{{{schema.generatedExample}}}
-{{else if schema.example}}
-{{{json schema.example}}}
-{{/if}}
-```
-
-{{/unless}}
 {{#unless x-hideProps}}
 
 
@@ -30,4 +16,18 @@
 {{> schemaPropDeep prop=schema propName=schemaName required=(isRequired ../schema @key) path=''}}
 {{/each}}
 {{/unless}}
+{{#unless options.hideExample}}
 
+### Example
+```json
+{{#if schema.formattedExample}}
+{{{json schema.formattedExample}}}
+{{else if generatedExample}}
+{{{generatedExample}}}
+{{else if schema.generatedExample}}
+{{{schema.generatedExample}}}
+{{else if schema.example}}
+{{{json schema.example}}}
+{{/if}}
+```
+{{/unless}}

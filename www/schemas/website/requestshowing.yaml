@@ -6,6 +6,7 @@ payload:
   - $ref: website.event.yaml
   - properties:
       topic:
+        description: '"realestate/website#requestshowing"'
         enum:
         - realestate/website#requestshowing
       data:
@@ -13,27 +14,20 @@ payload:
         properties:
           type:
             type: string
-            description: RequestShowingAction
+            description: '"RequestShowingAction"'
             enum:
             - RequestShowingAction
+
           about:
-            type: object
-            x-range: PropertyListing
-            example:
-              type: PropertyListing
-              url: http://example.com/listing/1234
+            $ref: ../about.yaml  
+
           agent:
-            type: object
-            x-range: Contact
-            description: the website user
-          recipient:
-            type: object
-            x-range:
-            - RealEstateAgent
-            - RealEstateOrganization
-            example:
-              type: RealEstateAgent
-              id: http://{agentid}.example.com/profile/card#me
+            description: website user requesting the showing
+
           object:
             $ref: ../question.yaml
-            
+
+          recipient:
+            $ref: ../recipient.yaml
+
+          

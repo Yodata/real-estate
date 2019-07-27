@@ -6,16 +6,21 @@ properties:
     type: string
     description: subscription topic. Same As CloudEvents.type
     example: 'realestate/{topic}#{event}'
-  source:
+  agent:
     type: string
-    format: uri
-    description: message publisher, typically the user / data owner
-    example: http://{message-publisher}.example.com/profile/card#me
+    description: message publisher
+    example: https://{application}.example.com/profile/card#me
   instrument:
     type: string
     format: uri
     description: application or service which produced the message
     example: http://{message-producer}.example.com/profile/card#me
+  source:
+    type: string
+    format: uri
+    description: message publisher, typically the user / data owner
+    example: http://{event-publisher}.example.com/profile/card#me
+  
   time:
     type: string
     format: date-time

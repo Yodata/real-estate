@@ -70,6 +70,15 @@ properties:
       - Agent Profile
       - Agent Page with IDX Search
       
+  RoqLogicTCVersion:
+    type: string
+    description: The version of RoqLogic terms and conditions agent accepted.
+    x-subPropertyOf: additionalProperty
+    x-domain:
+      - RealEstateAgent
+    example:
+      TC-00035
+      
   IsDisplayed:
     type: boolean
     description: If an affiliate/office is listed in company/office finder.
@@ -91,18 +100,22 @@ properties:
       - Primary Office
       - Srvice Center
       - Subdivision Sales Office
-    
-  isPrimaryOffice:
-    type: boolean
+      
+  FullTimeCount:
+    type: integer
+    description: the number of full time sales professional
     x-subPropertyOf: additionalProperty
     x-domain:
       - RealEstateOffice
-    
-  officeContact:
-    type: string
-    x-subPropertyOf: identifier
+      - RealEstateCompany
+      
+  PartTimeCount:
+    type: integer
+    description: the number of part time sales professional
+    x-subPropertyOf: additionalProperty
     x-domain:
       - RealEstateOffice
+      - RealEstateCompany
       
   franchiseCommitmentNotes:
     type: string
@@ -121,4 +134,3 @@ properties:
     x-subPropertyOf: additionalProperty
     x-domain:
       - RealEstateOrganization
-      

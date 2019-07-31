@@ -1,0 +1,29 @@
+type: object
+x-range:
+- Schedule
+allOf:
+  - type: object
+    description: schedule
+    properties:
+      type:
+        enum:
+        - Schedule
+
+      name:
+        type: string
+        enum:
+          - Weekday
+          - Saturday
+          - Sunday
+
+      byDay:
+        type: array
+        description: Defines the day(s) of the week on which a recurring event takes place
+        
+      startTime:
+        type: time
+        description: Event start time
+        
+      endTime:
+        type: time
+        description: Event end time

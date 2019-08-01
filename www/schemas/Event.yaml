@@ -13,13 +13,17 @@ properties:
   description:
     type: string
     description: event message content
-    example: meet at bottom of drive and we'll buzz through the gate together
-  
+    example: an example meeting request for 4:00PM to 4:30PM.
   about:
-    $ref: about.yaml
+    type: object
+    description: a subject of the meeting or event
+    example:
+      $ref: example-propertylisting.yaml
   startDate:
     $ref: startDate.yaml
+    example: '2019-08-01T16:00Z'
   endDate:
     $ref: endDate.yaml
+    example: '2019-08-01T16:30Z'
   organizer:
     $ref: organizer.yaml

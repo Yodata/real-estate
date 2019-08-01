@@ -17,19 +17,19 @@ properties:
   
   agent:
     type: string
-    description: the message publisher which delivers the message
+    description: the message publisher
     example: https://bhhs.hsfaffiliates.com/profile/card#me
   
   instrument:
     type: string
     format: uri
-    description: the application or service which created the message.
+    description: the message producer, typically an application or service provider
     example: https://ignite.bhhs.hsfaffiliates.com/profile/card#me
   
   source:
     type: string
     format: uri
-    description: the message subject, when `.agent` is publishing events on behalf of a user, `.source` identifies the child pod
+    description: the user/agent associated with the event.
     example: https://1047522.bhhs.hsfaffiliates.com/profile/card#me
     
   # '@context':

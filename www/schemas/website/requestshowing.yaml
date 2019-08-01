@@ -18,11 +18,11 @@ payload:
             enum:
             - RequestShowingAction
 
-          about:
-            $ref: ../about.yaml  
-
           agent:
             description: website user requesting the showing
+
+          event:
+            $ref: ../Event.yaml
 
           object:
             $ref: ../question.yaml

@@ -23,7 +23,6 @@ RealEstateOffice: { $ref: RealEstateOffice.yaml }
 RealEstateOrganization: { $ref: RealEstateOrganization.yaml }
 RealEstateWebsite: { $ref: RealEstateWebsite.yaml }
 Service: { $ref: Service.yaml }
-Schedule: { $ref: Schedule.yaml }
 Thing: { $ref: Thing.yaml }
 
 AcceptAction: { $ref: AcceptAction.yaml }

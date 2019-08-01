@@ -1,29 +1,25 @@
+title: Schedule
 type: object
-x-range:
-- Schedule
-allOf:
-  - type: object
-    description: schedule
-    properties:
-      type:
-        enum:
-        - Schedule
+properties:
+  type:
+    type: string
+    enum:
+      - Schedule
 
-      name:
-        type: string
-        enum:
-          - Weekday
-          - Saturday
-          - Sunday
+  name:
+    type: string
+    description: a label for the schedule
+    example:
+      - Weekday
+      - Saturday
+      - Sunday
 
-      byDay:
-        type: array
-        description: Defines the day(s) of the week on which a recurring event takes place
+    byDay:
+      type: array
+      description: Defines the day(s) of the week on which a recurring event takes place
         
-      startTime:
-        type: time
-        description: Event start time
+    startTime:
+      $ref: startTime.yaml
         
-      endTime:
-        type: time
-        description: Event end time
+    endTime:
+      $ref: endTime.yaml

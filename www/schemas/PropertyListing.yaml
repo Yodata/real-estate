@@ -89,6 +89,11 @@ properties:
       telephone: 1-252-574-0160
       email: user@example.com
 
+  listingId:
+    type: string
+    description: the local identifier for the listing
+    example: GOTHAM-MLS+12345
+
   listingOffice:
     type: object
     description: the listing office
@@ -96,6 +101,16 @@ properties:
     example:
       type: RealEstateOffice
       name: Gotham City Real Estate
+
+  originatingSystemName:
+    type: string
+    description: the name of the MLS where the listing was originally input
+    example: GOTHAM-MLS
+
+  originatingSystemKey:
+    type: string
+    description: the listing identifier from the original MLS, aka MLSID.
+    example: 12345
 
   listingOriginatingSystem:
     type: object

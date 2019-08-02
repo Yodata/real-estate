@@ -7,6 +7,17 @@ properties:
     type: string
     enum:
       - PropertyListing
+      
+  originatingSystemName:
+    type: string
+    description: the name of the MLS where the listing was originally input
+    example: GOTHAM-MLS
+
+  originatingSystemKey:
+    type: string
+    description: the listing identifier from the original MLS, aka MLSID.
+    example: 12345
+
   streetAddress:
     $ref: streetAddress.yaml
   addressLocality:
@@ -102,16 +113,6 @@ properties:
       type: RealEstateOffice
       name: Gotham City Real Estate
 
-  originatingSystemName:
-    type: string
-    description: the name of the MLS where the listing was originally input
-    example: GOTHAM-MLS
-
-  originatingSystemKey:
-    type: string
-    description: the listing identifier from the original MLS, aka MLSID.
-    example: 12345
-
   listingOriginatingSystem:
     type: object
     x-range: MultipleListingService
@@ -153,5 +154,7 @@ properties:
 
   image:
     $ref: image.yaml
+
   url:
     $ref: url.yaml
+    example: https://www.example.com/homedetails/1007-Mountain-Gate-Rd-Gotham-City-Gotham/10007

@@ -16,6 +16,13 @@ payload:
                 agent:
                   description: the registering user
                 object:
-                  type: string
-                  format: uri
+                  type: object
                   description: the site, app or service being on which the user is registered
+                  x-range:
+                  - RealEstateWebsite
+                  - MobileApplication
+                  example:
+                    type: RealEstateWebsite
+                    url: https://gothamcityrealestate.example.com
+
+                  

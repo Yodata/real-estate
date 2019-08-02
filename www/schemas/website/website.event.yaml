@@ -27,7 +27,8 @@ allOf:
             additionalProperty:
               userPath: xxx
             identifier:
-              websiteuser_guid: 216bf670-0777-43db-9d73-c3377d280fe4
+              sausID: 216bf670-0777-43db-9d73-c3377d280fe4
+              redContact_Guid: 201ff92c-e3ad-43b1-8a01-5555168cb0ae
 
         object:
           type: object

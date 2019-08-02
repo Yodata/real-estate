@@ -20,6 +20,16 @@ allOf:
       offerPrice:
         $ref: PriceSpecification.yaml
         description: the offer price or range
+
+      object:
+        type: object
+        x-range:
+        - Comment
+        - Question
+        example:
+          type: Comment
+          text: take it or leave it.
+
       
       propertyListing:
         type: object

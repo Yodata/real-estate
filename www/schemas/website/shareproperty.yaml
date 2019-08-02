@@ -10,6 +10,9 @@ payload:
         
         enum:
         - realestate/website#shareproperty
+      
+      source:
+        example: https://{listing-agent}.example.com/profile/card#me
         
       data:
         properties:

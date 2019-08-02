@@ -28,9 +28,9 @@ payload:
               additionalProperty:
                 userPath: xxxx
 
-          # object:
-          #   $ref: ../question.yaml
-          #   description: the question.
+          object:
+            $ref: ../question.yaml
+            description: the question.
 
           recipient:
             $ref: ../recipient.yaml

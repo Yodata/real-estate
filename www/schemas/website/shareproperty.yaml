@@ -19,8 +19,7 @@ payload:
           object:
             x-range: PropertyListing
             example:
-              type: PropertyListing
-              url: http://example.com/listing/122
+              $ref: ../example-propertylisting.yaml
           recipient:
             type: object
             description: the recipient of the share

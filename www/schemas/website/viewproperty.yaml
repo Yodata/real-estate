@@ -16,8 +16,8 @@ payload:
             enum:
             - ViewAction
           object:
+            type: object
+            description: the viewed property
             x-range: PropertyListing
             example:
-              type: PropertyListing
-              url: https://example.com/listing/123
-          
+              $ref: ../example-propertylisting.yaml

@@ -21,11 +21,12 @@ allOf:
         $ref: PriceSpecification.yaml
         description: the offer price or range
       
-      object:
-        description: the offer listing
+      propertyListing:
+        type: object
+        description: the listing on which the offer is made.
         example:
-          type: PropertyListing
-          id: http://example.com/gotham/10010/1007-Mountain-Gate-Rd
+          $ref: example-propertylisting.yaml
+      
       recipient:
         description: the offer recipient, who is expected to respond to the offer
         type: object

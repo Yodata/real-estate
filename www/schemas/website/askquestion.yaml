@@ -28,9 +28,9 @@ payload:
               additionalProperty:
                 userPath: xxxx
 
-          object:
-            $ref: ../question.yaml
-            description: the question.
+          # object:
+          #   $ref: ../question.yaml
+          #   description: the question.
 
           recipient:
             $ref: ../recipient.yaml
@@ -45,8 +45,7 @@ payload:
             description: optional subject of the question, typically a PropertyListing
             x-range: PropertyListing
             example:
-              type: PropertyListing
-              url: http://example.com/listing/1234
+              $ref: ../example-propertylisting.yaml
     
           
             

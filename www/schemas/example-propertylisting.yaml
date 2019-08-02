@@ -1,7 +1,7 @@
 type: PropertyListing
 originatingSystemName: GOTHAM-MLS
 originatingSystemKey: '12345'
-listingId: GOTHAM-MLS+12345
+# listingId: GOTHAM-MLS+12345
 url: https://{company-website-url}/{path-to-listing}
 streetAddress: '1007 Mountain Gate Rd'
 postOfficeBoxNumber: Box 1234

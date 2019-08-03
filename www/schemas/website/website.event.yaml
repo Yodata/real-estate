@@ -40,7 +40,7 @@ allOf:
           example:
             type: RealEstateWebsite
             url: http://gotham-city-realestate.example.com
-                
+                  
         object:
           type: object
 

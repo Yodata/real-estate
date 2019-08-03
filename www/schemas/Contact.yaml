@@ -67,7 +67,15 @@ allOf:
       leadSource:
         type: object
         description: origin of the lead
+        x-range:
+        - MobileApplication
+        - RealEstateOffice
+        - RealEstateWebsite
+        - Thing
         example:
+          id: https://www.zillow.com/homedetails/1044-Siler-Pl-Berkeley-CA-94705/24820985_zpid/
           type: RealEstateWebsite
-          url: https://example.com/path/where/the/event/occurred   
+          name: Zillow
+          url: https://zillow.com
+
   

@@ -78,4 +78,15 @@ allOf:
           name: Zillow
           url: https://zillow.com
 
+
+      originatingSystem:
+        type: object
+        x-range:
+        - Thing
+        description: the original system where this item was created.  Can be of type Thing or any sub-type.
+        example:
+          type: SoftwareApplication
+          name: RDesk
+          description: User Created.
+          url: http://www.rdeskwebsite.com/
   

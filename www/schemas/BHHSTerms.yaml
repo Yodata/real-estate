@@ -79,6 +79,40 @@ properties:
     example:
       TC-00035
       
+  bhhsLeadNotificationPreference:
+    type: object
+    description: Lead notification preference
+    x-subPropertyOf: additionalProperty
+    x-domain:
+      - RealEstateAgent 
+    properties:
+      timeZone:
+        type: string
+        example:
+          - GMT+12:00 Fiji Time (Pacific/Fiji)
+          
+      emailNotification:
+        type: boolean
+        description: If notification will be sent to sepcified email address
+        
+      textNotification:
+        type: boolean
+        description: If notification will be sent to sepcified phone number
+        
+      email:
+        type: string
+        description: Email address that notification will be sent to
+        
+      telephone:
+        type: string
+        description: Phone number that notification will be sent to
+        
+      leadNotificationSchedule:
+        type: array
+        items:
+          type: object
+          $ref: Schedule.yaml
+      
   IsDisplayed:
     type: boolean
     description: If an affiliate/office is listed in company/office finder.

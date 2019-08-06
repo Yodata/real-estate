@@ -1,6 +1,5 @@
 RequestAppointmentAction: { $ref: RequestAppointmentAction.yaml }
 Contact: { $ref: Contact.yaml }
-EffectiveServiceArea: { $ref: EffectiveServiceArea.yaml }
 Language: { $ref: Language.yaml }
 Lead: { $ref: Lead.yaml }
 MarketingProgram: { $ref: MarketingProgram.yaml }

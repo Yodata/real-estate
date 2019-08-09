@@ -11,6 +11,10 @@ allOf:
           - RealEstateAgent
         example: RealEstateAgent
         description: RealEstateAgent
+        
+      description:
+        type: string
+        description: The description about real estate agent
 
       name:
         type: string

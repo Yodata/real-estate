@@ -13,6 +13,7 @@ Collection: { $ref: Collection.yaml }
 Comment: { $ref: Comment.yaml }
 Contact: { $ref: Contact.yaml }
 ContactPoint: { $ref: ContactPoint.yaml }
+Certification: { $ref: Certification.yaml }
 EmailMessage: { $ref: EmailMessage.yaml }
 Event: { $ref: Event.yaml }
 GeoCircle: { $ref: GeoCircle.yaml }
@@ -48,6 +49,7 @@ RealEstateLicense: { $ref: RealEstateLicense.yaml }
 RealEstateOffice: { $ref: RealEstateOffice.yaml }
 RealEstateOrganization: { $ref: RealEstateOrganization.yaml }
 RealEstateWebsite: { $ref: RealEstateWebsite.yaml }
+Schedule: { $ref: Schedule.yaml }
 Service: { $ref: Service.yaml }
 Task: { $ref: Task.yaml }
 Thing: { $ref: Thing.yaml }

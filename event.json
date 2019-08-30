@@ -1,0 +1,93 @@
+{
+  "topic": "realestate/profile#update",
+  "type": "Notification",
+  "timestamp": 1567111552437,
+  "instrument": "https://co308.bhhs.dev.yodata.io/profile/card#me",
+  "data": {
+    "type": "UpdateAction",
+    "timestamp": 1567111506739,
+    "instrument": "https://service-patcher-test.localhost/profile/card#me",
+    "agent": "https://service-patcher-test.localhost/profile/card#me",
+    "object": {
+      "type": "RealEstateOrganization",
+      "id": "https://co308.bhhs.dev.yodata.io/profile/card#me",
+      "name": "Innovative Real Estate",
+      "telephone": "(303) 289-7009",
+      "faxNumber": "(303) 853-8333",
+      "email": "scott@innovativere.com",
+      "url": "http://www.innovativere.com",
+      "address": {
+        "type": "PostalAddress",
+        "streetAddress": "2460 W. 26th Ave. #120C",
+        "addressLocality": "Denver",
+        "addressRegion": "CO",
+        "postalCode": "80211",
+        "addressCountry": "US"
+      },
+      "parentOrganization": [
+        "https://bhhs.hsfaffiliates.com/profile/card#me"
+      ],
+      "additionalProperty": {
+        "Status": "Active",
+        "IsDisplayed": true,
+        "franchiseCommitmentNotes": "Test",
+        "franchiseCommitment": "Office Count",
+        "listingLeadsToListingAgent": true,
+        "FullTimeCount": 188,
+        "PartTimeCount": 4
+      },
+      "contactPoint": [
+        {
+          "type": "ContactPoint",
+          "name": "Consumer",
+          "email": "leads@iregroup.com",
+          "telephone": "(303) 289-7009"
+        },
+        {
+          "type": "ContactPoint",
+          "name": "LeadRouting",
+          "email": "leadsall@innovativere.com"
+        },
+        {
+          "type": "ContactPoint",
+          "name": "MobileLeadNotification",
+          "email": "pattyolson@innovativere.com",
+          "telephone": "(720) 572-4436"
+        },
+        {
+          "type": "ContactPoint",
+          "name": "TollFreePhone",
+          "telephone": "(999) 999-9999"
+        },
+        {
+          "type": "ContactPoint",
+          "name": "BHHSWebsiteURL",
+          "url": "https://www.bhhs.com/Innovative Real Estate-CO308"
+        }
+      ],
+      "permit": [
+        {
+          "type": "RealEstateLicense",
+          "name": "Colorado CO9898",
+          "identifier": [
+            {
+              "type": "PropertyValue",
+              "name": "Colorado",
+              "value": "CO9898"
+            }
+          ],
+          "additionalProperty": {
+            "bhhsDRELicenseId": "MLS-305678"
+          },
+          "issuedBy": {
+            "type": "State",
+            "name": "Colorado"
+          },
+          "issuedTo": "https://co308.bhhs.dev.yodata.io/profile/card#me"
+        }
+      ]
+    }
+  },
+  "id": "https://smarter-agent-dev.bhhs.hsfaffiliates.com/inbox/76b51f9dfbaf4686bac46a9741a08a5a",
+  "agent": "https://staging.bhhs.hsfaffiliates.com/profile/card#me"
+}

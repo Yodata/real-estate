@@ -17,7 +17,7 @@ allOf:
         
       areaServed:
         $ref: areaServed.yaml
-        
+                
       parentOrganization:
         type: array
         x-range: RealEstateOrganization

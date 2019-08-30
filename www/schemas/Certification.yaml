@@ -1,6 +1,7 @@
 allOf:
   - $ref: Permit.yaml
-  - properties:
+  - description: A certification issued by an organization to an individual or business.
+    properties:
       type:
         description: Certification
         type: string

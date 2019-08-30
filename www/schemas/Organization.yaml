@@ -41,6 +41,9 @@ allOf:
         type: string
         example: CA301-001
 
+      certification:
+        $ref: certification-prop.yaml
+
       contactPoint:
         $ref: contact-point.yaml
         

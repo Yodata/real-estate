@@ -1,9 +1,4 @@
-title: Thing
 type: object
-description: |
-  All types in the vocabulary are derived from Thing, and, therefore
-  properties of Thing are valid properties of any object.
-discriminator: type
 required:
   - type
 properties:

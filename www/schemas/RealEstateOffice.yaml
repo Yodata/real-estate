@@ -1,8 +1,9 @@
-description: A real estate office / place of business.
 type: object
+description: A real estate office / place of business.
 allOf:
   - $ref: RealEstateOrganization.yaml
-  - properties:
+  - title: RealEstateOffice
+    properties:
       type:
         type: string
         description: RealEstateOffice

@@ -1,0 +1,12 @@
+type: object
+description: the subject
+properties:
+  type:
+    $ref: type.yaml
+    enum:
+    - RealEstateAgent
+  id:
+    $ref: id.yaml
+  name:
+    $ref: name.yaml
+  

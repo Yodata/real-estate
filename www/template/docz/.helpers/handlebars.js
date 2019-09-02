@@ -29,6 +29,7 @@ module.exports = (Handlebars, _) => {
   });
 
   Handlebars.registerHelper('equal', (lvalue, rvalue, options) => {
+    // @ts-ignore
     if (arguments.length < 3)
       throw new Error('Handlebars Helper equal needs 2 parameters');
     if (lvalue !== rvalue) {
@@ -102,7 +103,7 @@ module.exports = (Handlebars, _) => {
       let range = oneOf || anyOf
 
       if (kind) {
-        return `[${kind}](/schemas#${kind.toLowerCase()})`
+        return `[${kind}](/types/${kind})`
       }
 
       if (type) {
@@ -124,10 +125,10 @@ module.exports = (Handlebars, _) => {
       let spec
       switch (typeof range) {
         case 'string':
-          spec = `[${range}](/schemas#${range.toLowerCase()})`
+          spec = `[${range}](/types/${range})`
           break
         case 'object':
-          spec = range.map(range => `[${range}](/schemas#${range.toLowerCase()})`).join(',')
+          spec = range.map(range => `[${range}](/types/${range})`).join(',')
       }
       return `<br/>RANGE: ${spec}`
     }

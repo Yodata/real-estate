@@ -2,7 +2,8 @@ type: object
 description: a real estate agent or team.
 allOf:
   - $ref: RealEstateOrganization.yaml
-  - type: object
+  - title: RealEstateAgent
+    type: object
     description: A real estate agent or team.
     properties:
       type:

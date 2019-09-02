@@ -1,5 +1,5 @@
 {{#unless hideTitle}}
-## {{schemaName}}
+# {{title}}
 {{/unless}}
 {{#if schema.description}}
 {{{schema.description}}}
@@ -7,7 +7,7 @@
 {{/if}}
 {{#unless x-hideProps}}
 
-
+### Schema
 | Name | Type | Description |
 |:-----| :--- | :---------- |
 {{#each schema.properties}}
@@ -16,7 +16,7 @@
 {{> schemaPropDeep prop=schema propName=schemaName required=(isRequired ../schema @key) path=''}}
 {{/each}}
 {{/unless}}
-{{#unless options.hideExample}}
+{{#unless hideExample}}
 
 ### Example
 ```json

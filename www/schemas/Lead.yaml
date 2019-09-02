@@ -1,7 +1,7 @@
 title: Lead
 type: object
 x-range: Lead
-description: a contact
+description: a sales opportunity, represented as  (.object) is 
 properties:
   type:
     type: string
@@ -28,7 +28,9 @@ properties:
     format: date-time
 
   object:
-    x-range: Contact
+    x-range:
+    - Contact
+    - Person
     $ref: contact-object.yaml
 
   leadSource:

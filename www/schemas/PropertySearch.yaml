@@ -1,7 +1,7 @@
-x-title: PropertySearch
+title: PropertySearch
 x-range: PropertySearch
 type: object
-description: a real estate property query - the query property of a SearchAction
+description: property search parameters
 properties:
   type:
     type: string
@@ -47,8 +47,8 @@ properties:
     x-range: QuantitativeValue
     example:
       type: QuantitativeValue
-      minValue: 4
-      maxValue: null
+      minValue: 0
+      maxValue: 4
       unitCode: BD
       unitText: Bedrooms
     
@@ -59,7 +59,6 @@ properties:
     example:
       type: QuantitativeValue
       minValue: 2
-      maxValue: null
       unitCode: BA
       unitText: Bathrooms
 

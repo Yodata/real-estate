@@ -1,3 +1,4 @@
+title: RealEstateLicence
 type: object
 description:
   Real estate licenses, authorizations issued by state governments, give agents
@@ -34,7 +35,7 @@ properties:
       name: California
   issuedThrough:
     x-range:
-    - GovernmentOrganization
+    - Organization
     description: The service through with the permit was granted.
     type: object
     properties:
@@ -47,15 +48,19 @@ properties:
   validIn:
     type: object
     description: the state where the RealEstateLicense is valid
-    x-range: State
+    x-range:
+    - State
+    - City
+    - GeographicArea
+    - PostalCode
     example:
       type: State
       name: California
   validFrom:
     type: string
     format: date-time
-    description: start date
+    description: the first date and time on which the license is valid.
   validUntil:
     type: string
     format: date-time
-    description: end date
+    description: the last date and time on which the license is valid.

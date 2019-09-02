@@ -1,3 +1,4 @@
+title: QuantitativeValue
 type: object
 description: A point value or interval.
 x-range: QuantitativeValue

@@ -18,12 +18,11 @@ payload:
         - recipient
         properties:
           type:
-            description: '"AskAction"'
             enum:
             - AskAction
 
           agent:
-            description: the website user who is asking the question
+            description: the website user
             example:
               additionalProperty:
                 userPath: xxxx
@@ -34,7 +33,7 @@ payload:
 
           recipient:
             $ref: ../recipient.yaml
-            description: the user who is being asked and is expected to answer
+            description: the agent being asked
             x-range:
             - RealEstateAgent
             - RealEstateOffice
@@ -42,8 +41,10 @@ payload:
           
           about:
             type: object
-            description: optional subject of the question, typically a PropertyListing
-            x-range: PropertyListing
+            description: subject of the question
+            x-range:
+            - PropertyListing
+            - Thing
             example:
               $ref: ../example-propertylisting.yaml
     

@@ -1,6 +1,6 @@
 x-title: viewproperty
 x-scope: realestate/website#
-summary: website user (agent) viewed an (object) on website (instrument)
+summary: website user (data.agent) has viewed a listing (data.object) on a webiste or mobile app (data.instrument)
 payload:
   allOf:
   - $ref: website.event.yaml

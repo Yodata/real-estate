@@ -4,7 +4,8 @@ allOf:
         type: string
         example: https://org.example.com/profile/card#me
   - $ref: Organization.yaml
-  - description: A real estate franchisor, broker or business.
+  - title: RealEstateOrganization
+    description: A real estate franchisor, broker or business.
     properties:
       type:
         type: string

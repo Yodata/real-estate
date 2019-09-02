@@ -1,9 +1,6 @@
+title: availableLanguage
 type: array
 description: Please use one of the language codes from the IETF BCP 47 standard.
 x-range: Language
 items:
-  type: object
-  example:
-    type: Languague
-    name: English
-    additionalName: en-US
+  $ref: Language.yaml

@@ -1,6 +1,6 @@
 export default {
   title: 'Integrate Real Estate',
-  description: 'Open source integration solution for ambitious real estate software',
+  description: 'Open source, vendor agnostic standards for integrating real estate software.',
   themeConfig: {
     linesToScrollEditor: 100
   },
@@ -8,7 +8,7 @@ export default {
     'Introduction',
     'API',
     'Topics',
-    'Objects',
+    'Types',
     'Actions',
     'Reference'
   ],

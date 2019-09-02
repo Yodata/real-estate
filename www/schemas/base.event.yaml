@@ -27,7 +27,7 @@ properties:
     description: the time the message was produced
     type: string
     format: date-time
-  data:
+  data: 
     type: object
     description: message payload, typically an Action
     properties:

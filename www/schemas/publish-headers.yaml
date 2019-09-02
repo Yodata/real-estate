@@ -1,0 +1,25 @@
+type: object
+required:
+- topic
+- recipient
+properties:
+  topic:
+    type: string
+    description: event group
+    example: realestate/website#register
+  
+  recipient:
+    type: string
+    format: uri
+    description: event publisher
+    example: https://bhhs.hsfaffiliates.com/profile/card#me
+  
+  source:
+    type: string
+    format: uri
+    description: agent, office or company assoicated with the event.
+    example: https://1047522.bhhs.hsfaffiliates.com/profile/card#me
+    
+  data:
+    type: object
+    description: event payload

@@ -1,6 +1,9 @@
-x-title:
-x-summary: |
-  topic: realestate/calendar
+publish:
+  headers:
+    $ref: ../publish-headers.yaml
+  payload:
+    type: object
+    description: the event payload
 subscribe:
   oneOf:
     - $ref: calendar.eventcreate.yaml

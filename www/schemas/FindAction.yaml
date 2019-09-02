@@ -1,5 +1,5 @@
 x-range: FindAction
-description: the act of finding something, typically precededby or the result of a SearchAction
+description: the result of a search action
 type: object
 properties:
   type:

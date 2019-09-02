@@ -1,3 +1,4 @@
+title: Comment
 type: object
 x-range: Comment
 description: A comment on an item.

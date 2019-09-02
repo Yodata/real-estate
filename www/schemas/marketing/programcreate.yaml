@@ -33,6 +33,7 @@ payload:
                           addressLocality: Chula Vista
                           addressRegion: California
                           postalCode: '55555'
+                    
                     member:
                       type: array
                       items:

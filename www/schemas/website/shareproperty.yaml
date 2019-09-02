@@ -7,7 +7,6 @@ payload:
   - properties:
       topic:
         description: realestate/website#shareproperty
-        
         enum:
         - realestate/website#shareproperty
       

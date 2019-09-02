@@ -1,4 +1,9 @@
-x-summary: Affiliate, Office, and Agent profile events
+publish:
+  headers:
+    $ref: ../publish-headers.yaml
+  payload:
+    type: object
+    description: the event payload
 subscribe:
   oneOf:
     - $ref: profile.add.yaml

@@ -44,7 +44,8 @@ info:
     hideExample: false
 
   x-schemas:
-    name: Objects
+    menu: Types
+
 
 # baseTopic: realestate
 
@@ -71,9 +72,8 @@ topics:
     $ref: schemas/website/topic.yaml
 
 components:
-  schemas:
-    $ref: schemas/realestate.yaml
-  
+  $ref: schemas/realestate.yaml
+    
   securitySchemes:
     https:
       name: api-key

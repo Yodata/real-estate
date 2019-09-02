@@ -9,16 +9,20 @@ allOf:
       example: https://{agentid}.example.com/profile/card#me
     data:
       type: object
-      description: the event (Action)
+      description: the message payload.
       required:
       - type
       - agent
       - object
       properties:
+        type:
+          $ref: ../type.yaml
         agent:
           type: object
           description: the website user
-          x-range: Contact
+          x-range:
+          - Contact
+          - Person
           example:
             type: Contact
             name: Bill Bailey
@@ -32,7 +36,7 @@ allOf:
         
         instrument:
           type: object
-          description: used by the the action agent to perform the action.
+          description: website or mobile application
           x-range:
           - RealEstateWebsite
           - MobileApplication

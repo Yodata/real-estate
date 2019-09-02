@@ -1,6 +1,7 @@
 allOf:
   - $ref: Organization.yaml
-  - x-hideProps: true
+  - title: MultipleListingService
+    x-hideProps: true
     x-subClassOf: Organization
     type: object
     description: |

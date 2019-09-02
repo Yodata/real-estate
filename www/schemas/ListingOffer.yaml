@@ -10,8 +10,6 @@ allOf:
     - offerPrice
     properties:
       type:
-        type: string
-        description: ListingOffer
         enum:
           - ListingOffer
       agent:
@@ -38,12 +36,12 @@ allOf:
           $ref: example-propertylisting.yaml
       
       recipient:
-        description: the offer recipient, who is expected to respond to the offer
+        description: listing agent or offer recipient
         type: object
         x-range:
         - RealEstateAgent
-        - RealEstateOffice
         - RealEstateOrganization
+
         example:
           type: RealEstateAgent
           name: Randy RealEstateAgent

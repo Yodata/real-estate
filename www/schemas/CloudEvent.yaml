@@ -8,42 +8,33 @@ required:
 properties:
   topic:
     type: string
-    description: message type
+    description: event group identifier
+    example: realestate/website#register
   
   time:
     type: string
     format: date-time
-    description: time the message was published
+    description: date & time the event was produced
   
   agent:
     type: string
-    description: the message publisher
+    format: uri
+    description: event publisher
     example: https://bhhs.hsfaffiliates.com/profile/card#me
   
   instrument:
     type: string
     format: uri
-    description: the message producer, typically an application or service provider
+    description: the application that produced the event
     example: https://ignite.bhhs.hsfaffiliates.com/profile/card#me
   
   source:
     type: string
     format: uri
-    description: the user/agent associated with the event.
+    description: associated RealEstate{Agent,Office,Organization}
     example: https://1047522.bhhs.hsfaffiliates.com/profile/card#me
-    
-  # '@context':
-  #   type: string
-  #   format: uri
-  #   example: http://realestate.yodate.me/context/v1.json
-  #   description: if provided, the context will be used to transform/ingest the message
+  
   
   data:
     type: object
-    description: the message payload, typically a schema.org/Action
-    required:
-    - type
-    properties:
-      type:
-        type: string
-        description: the action type
+    description: event payload

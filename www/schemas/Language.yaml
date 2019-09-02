@@ -1,16 +1,17 @@
+title: Language
 type: object
 description: a written or spoken Language
 x-range: Language
 properties:
   type:
     type: string
-    description: Lanuguage
+    description: Language
     enum:
       - Language
 
   name:
-    description: the display name of the language
     type: string
+    description: the display name of the language
     example: English
 
   additionalName:

@@ -28,5 +28,6 @@ example:
     type: RealEstateOrganization
     id: 'https://{lead-owner}.example.com/profile/card#me'
   leadSource:
-    type: Lead
+    type: RealEstateWebsite
+    url: https://agentwebsite.example.com
     

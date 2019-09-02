@@ -1,21 +1,19 @@
 ---
+name: {{topicName}}
 menu: Topics
-route: /topic/{{topicName}}
+route: /topic/{{x-scope}}{{topicName}}
 ---
-# {{topicName}}
+# {{topicName}} 
 {{~#if topic.deprecated}} (**deprecated**){{~/if}}
-
-{{#if topic.x-summary}}
-{{topic.x-summary}}
-{{/if}}
 
 {{#if topic.parameters}}
 {{~> parameters params=topic.parameters topicName=topicName ~}}
 {{/if}}
 
 {{#if topic.publish}}
+
+### publishing {{topicName}} events
 {{~#if topic.publish.oneOf}}
-### {{topicName}} Operations
 
 | Topic | Description |
 | :---- | :---------- |
@@ -28,17 +26,22 @@ route: /topic/{{topicName}}
 
 {{/if}}
 {{#if topic.subscribe}}
+
+### receiving {{topicName}} events
 {{#if topic.subscribe.oneOf}}
-### {{topicName}} Events
 
 | Event | Description |
 | :---- | :---------- |
 {{#each topic.subscribe.oneOf as |op index|}}
 {{~> operationSummary operation=op ~}}
 {{/each}}
-{{else}}{{> operation operation=topic.subscribe}}{{/if}}
 
 {{#each topic.subscribe.oneOf}}
+
+---
 {{>message message=. messageName=@key options=../asyncapi.info.x-messages}}
+
+[back to top](#)
 {{/each}}
+{{else}}{{> operation operation=topic.subscribe}}{{/if}}
 {{/if}}

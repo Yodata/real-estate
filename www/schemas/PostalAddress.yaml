@@ -1,4 +1,5 @@
 # PostalAddress
+title: PostalAddress
 type: object
 x-range: PostalAddress
 description: A physical address.

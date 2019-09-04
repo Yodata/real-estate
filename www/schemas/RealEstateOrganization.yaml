@@ -18,7 +18,11 @@ allOf:
         
       areaServed:
         $ref: areaServed.yaml
-                
+      
+      description:
+        $ref: description.yaml
+        example: The number on Gotham City Real Estate Company since 1940
+      
       parentOrganization:
         type: array
         x-range: RealEstateOrganization

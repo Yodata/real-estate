@@ -1,46 +1,261 @@
 {
-  "activity_time": 0,
-  "activity_time_tdate": "2019-05-14T00:00:25Z",
-  "agent": "https://smarteragent-dev.dev.yodata.io/profile/card#me",
-  "daily_epoch_timestamp": 1557792025,
-  "id": "https://smarteragent-dev.dev.yodata.io/inbox/00057d2946d04cb1b205c9b8d2910954",
-  "identifier": {
-    "actionID": "5126187965428480923"
+  "participant": {
+    "worksFor": {
+      "name": "",
+      "parentOrganization": {
+        "identifier": [
+          {
+            "@type": "PropertyValue",
+            "value": "11413100001000010000",
+            "name": "franchiseBrandCode"
+          },
+          {
+            "@type": "PropertyValue",
+            "value": "198",
+            "name": "signatureId"
+          },
+          {
+            "@type": "PropertyValue",
+            "value": "",
+            "name": "companyThirdPartyId"
+          }
+        ],
+        "name": ""
+      },
+      "image": "",
+      "telephone": "",
+      "address": {
+        "addressLocality": "",
+        "addressRegion": "",
+        "streetAddress": "",
+        "postalCode": ""
+      },
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "value": "",
+          "name": "officeBrandCode"
+        },
+        {
+          "@type": "PropertyValue",
+          "value": "",
+          "name": "officeThirdPartyId"
+        }
+      ],
+      "@type": "Organization"
+    },
+    "identifier": [
+      {
+        "@type": "PropertyValue",
+        "value": "11413100001000010000",
+        "name": "brandCode"
+      },
+      {
+        "@type": "PropertyValue",
+        "value": "",
+        "name": "agentThirdPartyId"
+      },
+      {
+        "@type": "PropertyValue",
+        "value": "1",
+        "name": "brandLevel"
+      }
+    ],
+    "familyName": "",
+    "telephone": "",
+    "email": "",
+    "address": {
+      "addressLocality": "",
+      "addressRegion": "",
+      "streetAddress": "",
+      "postalCode": ""
+    },
+    "givenName": "",
+    "@type": "Person"
   },
-  "log_id": "5126187965428480923",
-  "log_payload_activity": "ADDRESS_SEARCH",
-  "log_payload_activity_date": "1557792025",
-  "log_payload_application_id": "0",
-  "log_payload_brand_code": "11413100001000010000",
-  "log_payload_brand_level": "1",
-  "log_payload_carrier": "AT&T",
-  "log_payload_carrier_id": 2,
-  "log_payload_company_brand_code": "11413101331000010000",
-  "log_payload_device": "iPhone",
-  "log_payload_franchise_brand_code": "11413100001000010000",
-  "log_payload_log_id": 5126187965428481000,
-  "log_payload_office_brand_code": "11413101331000210000",
-  "log_payload_platform": "WEB",
-  "log_payload_search_param_applicationId": "2",
-  "log_payload_search_param_baths": "3.0",
-  "log_payload_search_param_beds": "2",
-  "log_payload_search_param_city": "Saint Petersburg",
-  "log_payload_search_param_distance": "2.0",
-  "log_payload_search_param_latitude": "39.921032",
-  "log_payload_search_param_longitude": "-85.957883",
-  "log_payload_search_param_maxPrice": "0.0",
-  "log_payload_search_param_minPrice": "2450000.0",
-  "log_payload_search_param_openHouses": "20190423-20190723",
-  "log_payload_search_param_propertyTypes": "[u'1', u'2', u'9']",
-  "log_payload_search_param_state": "FL",
-  "log_payload_search_param_statuses": "[u'1']",
-  "log_payload_search_param_summary": "For Sale,  Zip search:  33703",
-  "log_payload_search_param_zip": "33703",
-  "log_payload_signature_id": 198,
-  "log_payload_user_guid": "f84e571e-bcb7-480f-96a2-e17dd0e1bfff",
-  "log_payload_user_id": 24335347,
-  "log_payload_user_latlon": "-117.852898 33.677074",
-  "log_payload_user_usid": "5124016864787328252",
-  "log_payload_version": "5.9",
-  "origin_id": 3959622135601007000
+  "description": "ADDRESS_SEARCH",
+  "url": "",
+  "agent": {
+    "givenName": "",
+    "familyName": "",
+    "telephone": "",
+    "email": "",
+    "additionalProperty": [
+      {
+        "@type": "PropertyValue",
+        "value": "",
+        "name": "mobileCarrier"
+      },
+      {
+        "@type": "PropertyValue",
+        "value": "",
+        "name": "mobileDevice"
+      }
+    ],
+    "identifier": [
+      {
+        "@type": "PropertyValue",
+        "value": "24796614",
+        "name": "userId"
+      },
+      {
+        "@type": "PropertyValue",
+        "value": "2da5b1c9-09a6-4a0e-a4f9-140236acb525",
+        "name": "mobileGuid"
+      },
+      {
+        "@type": "PropertyValue",
+        "value": "5205009488704431931",
+        "name": "universalSessionId"
+      }
+    ],
+    "homeLocation": {
+      "geo": {
+        "latitude": "",
+        "@type": "GeoCoordinates",
+        "longitude": ""
+      },
+      "@type": "Place"
+    },
+    "@type": "Person"
+  },
+  "actionStatus": "CompletedActionStatus",
+  "location": {
+    "identifier": [
+      {
+        "@type": "PropertyValue",
+        "value": "24796614",
+        "name": "saListingId"
+      },
+      {
+        "@type": "PropertyValue",
+        "value": "",
+        "name": "mlsId"
+      },
+      {
+        "@type": "PropertyValue",
+        "value": "",
+        "name": "listingId"
+      }
+    ],
+    "@type": "Place",
+    "address": {
+      "addressLocality": "",
+      "addressRegion": "",
+      "streetAddress": "",
+      "postalCode": ""
+    }
+  },
+  "startTime": "1567201797",
+  "@context": "http://schema.org",
+  "alternateName": "ADDRESS_SEARCH",
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "value": "",
+      "name": "activityId"
+    },
+    {
+      "@type": "PropertyValue",
+      "value": "3959622135601007091",
+      "name": "originId"
+    },
+    {
+      "@type": "PropertyValue",
+      "value": "0",
+      "name": "applicationId"
+    },
+    {
+      "@type": "PropertyValue",
+      "value": "198",
+      "name": "signatureId"
+    }
+  ],
+  "@type": "CreateAction",
+  "result": {
+    "alternateName": "ADDRESS_SEARCH",
+    "@type": "Thing",
+    "additionalProperty": [
+      {
+        "@type": "PropertyValue",
+        "value": "qa",
+        "name": "environment"
+      },
+      {
+        "@type": "PropertyValue",
+        "value": "WEB",
+        "name": "actionPlatform"
+      },
+      {
+        "@type": "PropertyValue",
+        "value": "40.3967",
+        "name": "log_payload_search_param_latitude"
+      },
+      {
+        "@type": "PropertyValue",
+        "value": "5205122855777689074",
+        "name": "log_id"
+      },
+      {
+        "@type": "PropertyValue",
+        "value": "PA",
+        "name": "log_payload_search_param_state"
+      },
+      {
+        "@type": "PropertyValue",
+        "value": 1567201797,
+        "name": "daily_epoch_timestamp"
+      },
+      {
+        "@type": "PropertyValue",
+        "value": 1567201740,
+        "name": "epoch_minute_s"
+      },
+      {
+        "@type": "PropertyValue",
+        "value": 5205122855777689000,
+        "name": "log_payload_log_id"
+      },
+      {
+        "@type": "PropertyValue",
+        "value": "0.0",
+        "name": "log_payload_version"
+      },
+      {
+        "@type": "PropertyValue",
+        "value": 2149,
+        "name": "activity_time"
+      },
+      {
+        "@type": "PropertyValue",
+        "value": "Pennsburg",
+        "name": "log_payload_search_param_city"
+      },
+      {
+        "@type": "PropertyValue",
+        "value": "18073",
+        "name": "log_payload_search_param_zip"
+      },
+      {
+        "@type": "PropertyValue",
+        "value": "2019-08-30T21:49:57Z",
+        "name": "activity_time_tdate"
+      },
+      {
+        "@type": "PropertyValue",
+        "value": "2",
+        "name": "log_payload_search_param_applicationId"
+      },
+      {
+        "@type": "PropertyValue",
+        "value": "-75.49809",
+        "name": "log_payload_search_param_longitude"
+      },
+      {
+        "@type": "PropertyValue",
+        "value": "For Sale,  GPS search: Pennsburg PA area",
+        "name": "log_payload_search_param_summary"
+      }
+    ]
+  }
 }

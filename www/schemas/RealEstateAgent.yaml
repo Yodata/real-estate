@@ -13,6 +13,9 @@ allOf:
         example: RealEstateAgent
         description: RealEstateAgent
 
+      description:
+        example: The leading Gotham City Real Estate Agent.
+
       name:
         type: string
         example: Batman & Robin

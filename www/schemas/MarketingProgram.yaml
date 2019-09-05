@@ -1,8 +1,8 @@
-title: MarketingProgram
-description: A collection of pre-defined activities which take place over a period of time or in a regular, ongoing schedule.
 allOf:
   - $ref: Thing.yaml
-  - x-subClassOf: Organization
+  - title: MarketingProgram
+    description: A collection of pre-defined activities which take place over a period of time or in a regular, ongoing schedule.
+    x-subClassOf: Organization
     properties:
       type:
         enum:

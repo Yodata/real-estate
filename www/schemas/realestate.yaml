@@ -9,12 +9,12 @@
 schemas:
   Action: { $ref: Action.yaml }
   ApplicationProfile: { $ref: ApplicationProfile.yaml }
+  Certification: { $ref: Certification.yaml }
   CloudEvent: { $ref: CloudEvent.yaml }
   Collection: { $ref: Collection.yaml }
   Comment: { $ref: Comment.yaml }
   Contact: { $ref: Contact.yaml }
   ContactPoint: { $ref: ContactPoint.yaml }
-  Certification: { $ref: Certification.yaml }
   DigitalDocument: { $ref: DigitalDocument.yaml }
   EmailMessage: { $ref: EmailMessage.yaml }
   Event: { $ref: Event.yaml }

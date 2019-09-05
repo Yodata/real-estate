@@ -15,6 +15,7 @@ schemas:
   Contact: { $ref: Contact.yaml }
   ContactPoint: { $ref: ContactPoint.yaml }
   Certification: { $ref: Certification.yaml }
+  DigitalDocument: { $ref: DigitalDocument.yaml }
   EmailMessage: { $ref: EmailMessage.yaml }
   Event: { $ref: Event.yaml }
   GeoCircle: { $ref: GeoCircle.yaml }

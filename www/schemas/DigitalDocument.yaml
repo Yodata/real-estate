@@ -1,9 +1,9 @@
-title: DigitalDocument
-type: object
-x-kind: DigitalDocument
 allOf:
   - $ref: Thing.yaml
-  - description: an electronic file.
+  - title: DigitalDocument
+    type: object
+    x-range: DigitalDocument
+    description: an electronic file.
     properties:
       type:
         type: string

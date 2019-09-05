@@ -1,10 +1,10 @@
-type: object
-x-range:
-- Place
 allOf:
   - $ref: Thing.yaml
   - type: object
     description: a physical location
+    title: Place
+    x-range:
+      - Place
     properties:
       type:
         enum:

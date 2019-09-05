@@ -1,10 +1,10 @@
-x-title: MLSMembership
-description: a membership relationship
-type: object
 allOf:
   - $ref: OrganizationRole.yaml
   - type: object
+    title: MLSMembership
+    description: a membership relationship
     properties:
+      
       type:
         type: string
         description: an MLS member relationship

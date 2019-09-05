@@ -1,4 +1,6 @@
+title: RealEstateWebsite
 type: object
+x-range: RealEstateWebsite
 properties:
   type:
     type: string

@@ -1,0 +1,5 @@
+'@view': |
+  {
+    "type": type,
+    "source": "$fetchjsonvalue(" & parentOrganization[0] & ",name,myDefaultValue)"
+  }

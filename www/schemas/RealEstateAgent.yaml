@@ -15,9 +15,6 @@ allOf:
         
       description:
         type: string
-        description: The description about real estate agent
-
-      description:
         example: The leading Gotham City Real Estate Agent.
 
       name:

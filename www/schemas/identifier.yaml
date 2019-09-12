@@ -1,6 +1,5 @@
-# identifier custom id maps
 type: object
-description: a key value map of **namespaced** unique identifiers.
+description: vendor namespaced item identifiers, value should be stored and included in any future events that reference the same item.
 example:
-  vendoraid: 123
-  vendorbid: 456
+  vendoraid: 'abc'
+  vendorbid: 'def'

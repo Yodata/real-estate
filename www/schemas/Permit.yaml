@@ -1,5 +1,8 @@
 title: Permit
 description: A permit issued by an organization to an individual or business.
+type: object
+x-hasSubclass:
+-  RealEstateLicense
 properties:
   type:
     type: string
@@ -9,23 +12,23 @@ properties:
   name:
     type: string
     description: Common or display value of the Permit.
-    example: License to Kill
+    example: DRE Number
   issuedBy:
     type: object
     x-range: Organization
     description: The issuing authority
     example:
-      type: GovernmentOrganization
-      name: United Kingdom
+      type: State
+      name: California
   issuedThrough:
     type: object
     description: the service through which the permit was granted
     example:
       type: Service
-      name: MI6
+      name: Department of Real Estate
   validIn:
+    type: object
     x-range: Place
-    $ref: Place.yaml
   validFrom:
     type: string
     format: date-time

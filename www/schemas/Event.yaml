@@ -1,34 +1,29 @@
-title: Event
-description: message metadata based on cloudevents.io
 type: object
+title: Event
+description: An event happening at a certain time and location
+x-range: Event
 properties:
-  topic:
+  type:
+    $ref: type.yaml
+    example: Event
+  name:
     type: string
-    description: the message subscription id
-    example: 'realestate/{topic}#{event}'
-  source:
+    description: name of the event
+    example: Property Showing 1007 Mountain Gate Rd
+  description:
     type: string
-    format: uri
-    description: message publisher, typically the pod owner
-    example: http://{user}.example.com/profile/card#me
-  instrument:
-    type: string
-    format: uri
-    description: application or service which produced the message
-  time:
-    type: string
-    format: date-time
-    description: the time the event was first published
-  contenttype:
-    type: string
-    description: mime-type of the message data, default is application/json
-    example: null
-  '@context':
-    type: string
-    format: uri
-    example: http://realestate.yodate.me/context/v1.json
-    description: uri to context resource to be applied to normalizing / denormalizing the message
-  data:
-    x-range: Action
-    description: an Action
+    description: event message content
+    example: an example meeting request for 4:00PM to 4:30PM.
+  about:
     type: object
+    description: a subject of the meeting or event
+    example:
+      $ref: example-propertylisting.yaml
+  startDate:
+    $ref: startDate.yaml
+    example: '2019-08-01T16:00Z'
+  endDate:
+    $ref: endDate.yaml
+    example: '2019-08-01T16:30Z'
+  organizer:
+    $ref: organizer.yaml

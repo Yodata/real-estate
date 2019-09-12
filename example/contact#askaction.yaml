@@ -17,7 +17,7 @@ actor:
     SAAppCode: BHHSMSTANTON
 
 about:
-  type: RealEstateListing
+  type: PropertyListing
 
   # These properties should be namespaced
   identifier:

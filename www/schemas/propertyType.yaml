@@ -1,0 +1,22 @@
+title: PropertyType
+type: string
+description: a RESO standard property type
+x-range:
+- RESI
+- RLSE
+- RINC
+- LAND
+- MOBI
+- FARM
+- COMS
+- BUSO
+enum:
+  - RESI
+  - RLSE
+  - RINC
+  - LAND
+  - MOBI
+  - FARM
+  - COMS
+  - COML
+  - BUSO

@@ -3,7 +3,7 @@ x-topic:
   - website
   - listing
 allOf:
-  - $ref: action/Action.yaml
+  - $ref: Action.yaml
   - type: object
     description: agent makes an offer to buy or sell the object
     properties:

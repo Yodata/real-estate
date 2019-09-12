@@ -1,5 +1,7 @@
 # PostalAddress
+title: PostalAddress
 type: object
+x-range: PostalAddress
 description: A physical address.
 properties:
   type:
@@ -8,9 +10,11 @@ properties:
       - PostalAddress
   streetAddress:
     type: string
+    description: the street number and name.
     example: '1007 Mountain Gate Rd'
   postOfficeBoxNumber:
     type: string
+    description: The post office box number for PO box addresses.
     example: Box 1234
   addressRegion:
     type: string
@@ -26,5 +30,13 @@ properties:
     example: '10010'
   addressCountry:
     type: string
-    description: country
-    example: usa
+    description: The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
+    example: USA
+  addressCounty:
+    type: string
+    description: the county (us real estate extension)
+    example: Gotham County
+  addressSubdivision:
+    type: string
+    description: the subdivision or neighborhood (us real estate extension)
+    example: Gotham Heights

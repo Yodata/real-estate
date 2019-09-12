@@ -1,0 +1,6 @@
+x-range:
+- Place
+type: array
+description: A Place where a service or offered item is provided.
+items:
+  $ref: Place.yaml

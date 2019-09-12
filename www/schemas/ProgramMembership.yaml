@@ -1,10 +1,13 @@
 allOf:
 - $ref: OrganizationRole.yaml
-- x-title: ProgramMembership
+- title: ProgramMembership
   description: describes membership relation between a member (Person) and a MarketingProgram
   properties:
     type:
       enum:
       - ProgramMembership
+    member:
+      $ref: contact-object.yaml
+      
     memberOf:
       x-range: MarketingProgram

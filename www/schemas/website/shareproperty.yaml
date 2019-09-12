@@ -7,9 +7,11 @@ payload:
   - properties:
       topic:
         description: realestate/website#shareproperty
-        
         enum:
         - realestate/website#shareproperty
+      
+      source:
+        example: https://{listing-agent}.example.com/profile/card#me
         
       data:
         properties:
@@ -17,7 +19,12 @@ payload:
             enum:
             - ShareAction
           object:
-            x-range: RealEstateListing
+            x-range: PropertyListing
             example:
-              type: RealEstateListing
-              url: http://example.com/listing/122
+              $ref: ../example-propertylisting.yaml
+          recipient:
+            type: object
+            description: the recipient of the share
+            example:
+              type: Person
+              email: user@example.com

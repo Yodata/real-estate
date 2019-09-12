@@ -1,3 +1,4 @@
+title: OrganizationRole
 type: object
 description: describes a role played by a member and a group or organization.
 properties:

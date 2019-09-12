@@ -1,15 +1,31 @@
 allOf:
-  - properties:
-      agent:
-        description: the one who asks
-      recipient:
-        description: the one who should answer
-      question:
-        example:
-          type: Question
-          text: What is the meaning of life?
   - $ref: Action.yaml
-  - properties:
+  - description: a user (agent) asks recipient a question
+    properties:
       type:
+        type: string
+        description: '"AskAction"'
         enum:
           - AskAction
+      agent:
+        $ref: Contact.yaml
+      object:
+        $ref: question.yaml
+      recipient:
+        description: the one being asked, and who should answer
+        example:
+          type: RealEstateAgent
+          name: Arya Agent
+          id: https://{the-user-being-asked}.com/profile/card#me
+      about:
+        $ref: about.yaml
+      instrument:
+        description: something used by the user to ask the question
+        type: object
+        x-range:
+        - RealEstateWebsite
+        - MobileApplication
+        example:
+          type: RealEstateWebsite
+          name: Use id for a base domain or url for a deep link
+          url: http://example.com/property/detail/page/?xxx=333

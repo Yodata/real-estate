@@ -1,61 +1,78 @@
-title: Person
-type: object
 allOf:
-  - $ref: Thing.yaml
-  - type: object
+  - title: Person
+    type: object
     properties:
       type:
         type: string
         description: Person
         enum:
           - Person
-      name:
-        type: string
-        description: Full name of the person.
 
-      givenName:
+      address:
+        type: array
+        x-range: PostalAddress
+        description: addresses for the item 
+        items:
+          $ref: address.yaml
+      
+      birthDate:
         type: string
-        description: First Name
-        example: Bruce
+        format: date
+        description: date of birth.
 
-      familyName:
-        type: string
-        description: Last Name
-        example: Wayne
-      jobTitle:
-        type: string
-        description: The Job Title of the person.
-        example: Jefe
+
+      contactPoint:
+        $ref: contact-point.yaml
+
       email:
         type: string
         description: Primary email address.
         example: user@example.com
 
-      faxNumber:
-        description: Primary fax number.
+      familyName:
         type: string
-        example: '(498) 625-6456'
+        description: Last Name of a person
+        example: Wayne
 
+      faxNumber:
+        $ref: faxNumber.yaml
+
+      givenName:
+        $ref: givenName.yaml
+
+      honorificPrefix:
+        $ref: honorificPrefix.yaml
+
+      honorifixSuffix:
+        $ref: honorificSuffix.yaml
+
+      jobTitle:
+        $ref: job-title.yaml
+
+      knowsLanguage:
+        type: array
+        description: languages spoken by the person
+        x-range: Language
+        items:
+          type: object
+        example:
+          - type: Language
+            name: English
+            additionalName: en-us
+      
+      name:
+        type: string
+        description: Full name of the person.
+        example: Bruce Wayne
+          
       telephone:
         description: Primary phone number.
         type: string
         example: 1-339-041-0306 x2866
 
-      contactPoint:
-        x-range: ContactPoint
-        description: Named and grouped contacts points.
-        type: array
-        items:
-          $ref: ContactPoint.yaml
-
-      address:
-        x-range: PostalAddress
-        description: mailing addresses.
-        type: array
-        items:
-          $ref: PostalAddress.yaml
-
-      birthDate:
+      worksFor:
         type: string
-        format: date
-        description: date of birth.
+        description: Organizations the person works for.
+        example: Gotham City Police Department
+
+

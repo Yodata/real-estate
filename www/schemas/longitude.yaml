@@ -1,4 +1,4 @@
 type: number
 description: The longitude of a location.
 x-title: longitude
-example: -122.08585
+example: 73.98

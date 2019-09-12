@@ -15,7 +15,7 @@ object:
       name: alice
       email: alice@example.com
   about:
-    type: RealEstateListing
+    type: PropertyListing
     id: https://realestate.example.com/1007-Mountain-Drive
 
 ---

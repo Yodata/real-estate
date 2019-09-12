@@ -1,11 +1,14 @@
 allOf:
   - $ref: Action.yaml
   - type: object
+    description: an object (object) is removed by a user (agent), optionally from a collection (targetCollection)
     properties:
       type:
         type: string
         enum:
           - RemoveAction
+      agent:
+        example: https://{user-who-removed-the-item}.com/profile/card#me
       object:
         description: the item removed
       targetCollection:

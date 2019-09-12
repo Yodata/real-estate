@@ -1,0 +1,8 @@
+type: object
+x-range: PriceSpecification
+example:
+  type: PriceSpecification
+  minPrice: 75000
+  maxPrice: 100000
+  price: 75000
+  priceCurrency: USD

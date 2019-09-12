@@ -1,7 +1,17 @@
-x-title:
-x-summary: |
-  topic: realestate/contact
+publish:
+  headers:
+    $ref: ../publish-headers.yaml
+  payload:
+    type: object
+    description: the event payload
 subscribe:
   oneOf:
     - $ref: contact.add.yaml
+    - $ref: contact.collectioncreate.yaml
+    - $ref: contact.collectiondelete.yaml
+    - $ref: contact.collectionmemberadd.yaml
+    - $ref: contact.collectionmemberremove.yaml
+    - $ref: contact.plancreate.yaml
+    - $ref: contact.plandelete.yaml
+    - $ref: contact.delete.yaml
     - $ref: contact.update.yaml

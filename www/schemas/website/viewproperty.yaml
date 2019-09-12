@@ -1,6 +1,6 @@
 x-title: viewproperty
 x-scope: realestate/website#
-summary: website user (agent) viewed an (object) on website (instrument)
+summary: website user (data.agent) has viewed a listing (data.object) on a webiste or mobile app (data.instrument)
 payload:
   allOf:
   - $ref: website.event.yaml
@@ -10,13 +10,14 @@ payload:
         enum:
         - realestate/website#viewproperty
       data:
+        x-range: AddAction
         properties:
           type:
             enum:
             - ViewAction
           object:
+            type: object
+            description: the viewed property
             x-range: PropertyListing
             example:
-              type: PropertyListing
-              url: https://example.com/listing/123
-          
+              $ref: ../example-propertylisting.yaml

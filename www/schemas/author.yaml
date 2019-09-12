@@ -1,5 +1,6 @@
 type: object
-x-kind: Person
+description: the content author
 example:
-  type: Person
-  name: Paul Person
+  type: Contact
+  name: Robin
+

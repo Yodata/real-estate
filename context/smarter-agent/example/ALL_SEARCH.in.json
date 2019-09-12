@@ -169,7 +169,7 @@
     "price": "4900000.0",
     "sameAs": "https://api.smarteranget.com/1.0/properties/2135862125",
     "streetAddress": "5128 W Longfellow Avenue",
-    "type": "RealEstateListing"
+    "type": "PropertyListing"
   },
   "offerPrice": {
     "price": "100000000.00",

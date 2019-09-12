@@ -2,19 +2,9 @@
 
 smarter agent raw data events for project ignite
 
-## Project Status
+## Website Events
 
-### Events
-
-
-
-[x] Source examples for all `log_payload_activity` values contained in the sample dataset (~70k events) are in the [examples](https://github.com/Yodata/real-estate/tree/master/context/smarter-agent/examples) directory
-[ x ] Example values for all properties represented in the sample dataset ~100 properties in examples/[ALL_PROPS.json](https://github.com/Yodata/real-estate/blob/master/context/smarter-agent/examples/APPLICATION_LAUNCH.in.json)
-[ ] All properties with a clear map to a schema.org property mapped.
-
-## Issues
-
-1. 
+- [ ]
 
 ---
 

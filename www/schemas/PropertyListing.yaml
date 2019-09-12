@@ -7,23 +7,55 @@ properties:
     type: string
     enum:
       - PropertyListing
+      
+  originatingSystemName:
+    type: string
+    description: the name of the MLS where the listing was originally input
+    example: GOTHAM-MLS
+
+  originatingSystemKey:
+    type: string
+    description: the listing identifier from the original MLS, aka MLSID.
+    example: 12345
+
   streetAddress:
     $ref: streetAddress.yaml
   addressLocality:
     $ref: addressLocality.yaml
   addressRegion:
     $ref: addressRegion.yaml
-  dateListed:
+  postalCode:
+    $ref: postalCode.yaml
+  addressCountry:
+    $ref: addressCountry.yaml
+
+  propertyType:
+    $ref: property-type.yaml
+
+  propertySubType:
+    $ref: PropertySubType.yaml
+
+  universalPropertyId:
+    $ref: UniversalPropertyId.yaml
+  
+  listingContractDate:
     type: string
     format: date-time
-  dateSold:
+    description: The effective date of the agreement between the seller and the seller's broker.
+  
+  purchaseContractDate:
     type: string
     format: date-time
-  dateClosed:
+    description: With for-sale listings, the date an offer was accepted and the listing was no longer on market. With lease listings this may represent a meeting of the minds to lease, but some contractual requirements are yet to be fulfilled, such as contract signing or receipt of the deposit.
+  
+  closeDate:
     type: string
     format: date-time
+    description: With for-sale listings, the date the purchase agreement was fulfilled. With lease listings, the date the requirements were fulfilled, such as contract and/or deposit.
+  
   listingPrice:
-    $ref: PriceSpecification.yaml
+    $ref: price-specification-object.yaml
+  
   listingStatus:
     type: string
     enum:
@@ -34,19 +66,95 @@ properties:
       - Prelisted
       - OffMarket
       - Private
+  
+  buyerAgent:
+    type: object
+    x-range: RealEstateAgent
+    description: the buyer's RealEstateAgent
+    example:
+      type: RealEstateAgent
+      name: Butch Byers
+      email: butch.byers@example.com
+      identifier:
+        agentKey: xxxx
+
+
+  buyerOffice:
+    type: object
+    x-range: RealEstateOffice
+    description: the buyer's RealEstateOffice
+    example:
+      type: RealEstateOffice
+      name: Gotham City Real Estate
+      email: gcr@example.com
+      identifier:
+        officeKey: grc1
+
   listingAgent:
-    allOf:
-      - $ref: RealEstateAgent.yaml
-      - example:
-          type: RealEstateAgent
-          id: https://user.example.com/profile/card#me
+    type: object
+    description: the listing RealEstateAgent
+    x-range: RealEstateAgent
+    example:
+      type: RealEstateAgent
+      name: Lori Listagent
+      telephone: 1-252-574-0160
+      email: user@example.com
+
+  listingId:
+    type: string
+    description: the local identifier for the listing
+    example: GOTHAM-MLS+12345
+
   listingOffice:
-    allOf:
-      - $ref: RealEstateOffice.yaml
-      - example:
-          type: RealEstateOffice
-          id: https://{office}.example.com/profile/card#me
+    type: object
+    description: the listing office
+    x-range: RealEstateOrganization
+    example:
+      type: RealEstateOffice
+      name: Gotham City Real Estate
+
+  listingOriginatingSystem:
+    type: object
+    x-range: MultipleListingService
+    x-subPropertyOf: instrument
+    description: The place where the item is originally input by the user.
+    example:
+      type: MultipleListingService
+      name: MLSListings
+      identifier:
+        bhhsmlsid: xxxx
+        resoouid: not-yet-available
+
+  livingArea:
+    description: property indoor space
+    type: object
+    x-range: QuantitativeValue
+    example:
+      type: QuantitativeValue
+      value: 1500
+      unitCode: SqFt
+      unitText: Square Feet
+
+  lotSize:
+    description: outdoor space minValue, maxValue
+    type: object
+    x-range: QuantitativeValue
+    example:
+      type: QuantitativeValue
+      value: .5
+      unitCode: AC
+      unitText: Acres
+
+
+  internetAddressDisplayYN:
+    type: string
+    enum:
+    - Y
+    - N
+
   image:
     $ref: image.yaml
+
   url:
     $ref: url.yaml
+    example: https://www.example.com/homedetails/1007-Mountain-Gate-Rd-Gotham-City-Gotham/10007

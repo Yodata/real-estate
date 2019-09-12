@@ -1,22 +1,92 @@
-x-range: Contact
-x-sameas: https://schema.org/Person
-title: Contact
 allOf:
-  
+  - properties:
+      type:
+        example: Contact
+      identifier:
+        type: object
+        description: vendor namespaced unique identifiers for the items
+        example:
+          redContact_Guid: 55BC6EB4-5C3D-4603-B5AB-154117E1269F
+      additionalProperty:
+        type: object
+        description: vendor namespaced property values
+        example:
+          redLastLoginDtm: '2014-01-13 20:09:00.000'
+          redCRM_CustomerType: CRM Contact Only
+          redCustomer_Status: A
+          redAgentName: Alice Agent
+          redOffice_OrgID: 2DEB3BFAB0EB45428EFAE1DEBD0388C0
+          redPreferred_Contact_Method: No Preference
+          redIsContact: false
+          redIsunsubscribed: false
+          redAccepted: false
+          redIsLead: true
+          redOfficeName: Berkshire Hathaway HomeServices Executive Group Real Estate
+          redIsBuyer: true
+          redIsSeller: false
+          redIsCustomerCare: true
+          redOriginal_Owner_Ctel_Org_ID: 2DEB3BFAB0EB45428EFAE1DEBD0388C0
+          redReferralSource: Initial BHHS Migration - Market120
+          redTRIO_RegisteredYN: N
+          redOrig_Auto_Accepted: 1
+          redPreferred_Contact_Method_Display: No Preference
+          redExternal_Last_Mod_DTM: '2019-02-05T10:26:49.527'
+          redAssociated_Agent_Per_ID: 320989E53619474BA22FE10601A4D63B
+          redPreferredPhoneType: No preference
+          
   - $ref: Person.yaml
-  - description: |
-      A contact record.
-
-      sameAs: [schema:Person](https://schema.org/Person)
-
+  - title: Contact
+    description: a personal contact.
+    x-range: Contact
     properties:
       type:
         enum:
           - Contact
 
-      leadSource:
-        description: the Lead Provider
+      comment:
+        $ref: comment-property.yaml
+
+      jobTitle:
+        type: string
+        example: Superhero
+
+      contactGroup:
+        $ref: contactGroup.yaml
+
+      keywords:
+        $ref: keywords.yaml
+
+      leadOwner:
         type: object
+        description: lead lead owner
         example:
           type: RealEstateOrganization
-          id: https://{affiliate}.example.com/profile/card#me
+          name: Gotham City Real Estate
+          id: https://example.com/profile.card#me
+
+      leadSource:
+        type: object
+        description: origin of the lead
+        x-range:
+        - MobileApplication
+        - RealEstateOffice
+        - RealEstateWebsite
+        - Thing
+        example:
+          id: https://www.zillow.com/homedetails/1044-Siler-Pl-Berkeley-CA-94705/24820985_zpid/
+          type: RealEstateWebsite
+          name: Zillow
+          url: https://zillow.com
+
+
+      originatingSystem:
+        type: object
+        x-range:
+        - Thing
+        description: the original system where this item was created.  Can be of type Thing or any sub-type.
+        example:
+          type: SoftwareApplication
+          name: RDesk
+          description: User Created.
+          url: http://www.rdeskwebsite.com/
+  

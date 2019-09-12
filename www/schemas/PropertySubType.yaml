@@ -1,0 +1,33 @@
+title: PropertySubType.yaml
+type: string
+x-range: PropertySubType
+description: RESO PropertySubtype
+enum:
+- Apartment
+- Boat Slip
+- Cabin
+- Condominium
+- Deeded Parking
+- Duplex
+- Farm (PropertySubType)
+- Manufactured Home
+- Manufactured On Land
+- Mobile Home
+- Own Your Own
+- Quadruplex
+- Ranch
+- Single Family Residence
+- Stock Cooperative
+- Timeshare
+- Townhouse
+- Triplex
+- Agriculture (PropertySubType)
+- Business (PropertySubType)
+- Hotel-Motel
+- Industrial (PropertySubType)
+- Mixed Use
+- Multi Family
+- Office (PropertySubType)
+- Retail (PropertySubType)
+- Unimproved Land
+- Warehouse (PropertySubType)

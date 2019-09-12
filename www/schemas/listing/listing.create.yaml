@@ -1,0 +1,17 @@
+x-title: create
+x-scope: realestate/listing#
+summary: a PropertyListing is created
+payload:
+  allOf:
+    - $ref: ../base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/listing#create
+        data:
+          allOf:
+          - $ref: ../CreateAction.yaml
+          - properties:
+              object:
+                $ref: ../PropertyListing.yaml
+    

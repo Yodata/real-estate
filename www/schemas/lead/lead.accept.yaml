@@ -1,6 +1,6 @@
 x-title: accept
 x-scope: realestate/lead#
-summary: a lead (object) was accepted by the agent
+summary: a lead (data.object) was accepted by the recipient (data.recipient).
 payload:
   allOf:
     - $ref: ../base.event.yaml

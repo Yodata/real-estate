@@ -1,7 +1,3 @@
 title: about
 type: object
-x-range: Thing
-description: a subject of the item.
-example:
-  type: RealEstateListing
-  id: https://example.com/listingid
+description: the action subject

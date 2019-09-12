@@ -1,5 +1,5 @@
 x-range: FindAction
-description: the act of finding something, typically precededby or the result of a SearchAction
+description: the result of a search action
 type: object
 properties:
   type:
@@ -10,7 +10,7 @@ properties:
     description: the items found
     type: array
     example:
-    - type: RealEstateListing
+    - type: PropertyListing
       url: http://example.com/listing/123
-    - type: RealEstateListing
+    - type: PropertyListing
       url: http://example.com/listing/234

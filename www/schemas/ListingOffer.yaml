@@ -1,24 +1,50 @@
 allOf:
   - $ref: Thing.yaml
-  - description: an offer is made to buy a RealEstatelisting
+  - description: an offer is made to buy a PropertyListing
+    x-range: ListingOffer
+    required:
+    - type
+    - agent
+    - object
+    - recipient
+    - offerPrice
     properties:
       type:
-        type: string
-        description: ListingOffer
         enum:
           - ListingOffer
-      object:
-        description: reference to the item on which the offer is being made
-        example:
-          type: RealEstateListing
-          id: http://example.com/12345
-      recipient:
-        type: object
-        x-range:
-          - Person
-          - Organization
-        description: the offer recipient
-        example:
-          id: http://user.example.com/profile/card#me
+      agent:
+        description: the Person or Contact who makes the offer
+      
       offerPrice:
         $ref: PriceSpecification.yaml
+        description: the offer price or range
+
+      object:
+        type: object
+        x-range:
+        - Comment
+        - Question
+        example:
+          type: Comment
+          text: take it or leave it.
+
+      
+      propertyListing:
+        type: object
+        description: the listing on which the offer is made.
+        example:
+          $ref: example-propertylisting.yaml
+      
+      recipient:
+        description: listing agent or offer recipient
+        type: object
+        x-range:
+        - RealEstateAgent
+        - RealEstateOrganization
+
+        example:
+          type: RealEstateAgent
+          name: Randy RealEstateAgent
+          id: https://{agentid}.example.com/profile/card#me
+          
+      

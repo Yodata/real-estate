@@ -15,6 +15,8 @@ allOf:
       id:
         description: the URL to access the item.
         example: http://user.example.com/public/logo/fileName.zip
+        type: string
+        format: uri
       name:
         type: string
         description: the file name of the object.
@@ -26,6 +28,7 @@ allOf:
       content:
         type: string
         description: base64 encoded content
+        example: R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs
       about:
         type: string
         format: uri

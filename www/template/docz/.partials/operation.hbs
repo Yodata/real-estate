@@ -1,13 +1,9 @@
-{{#if operation.x-title}}
-#### {{operation.x-title}}
-{{/if}}
-
 {{#if operation.summary}}
 {{{operation.summary}}}
 
 {{/if}}
-
 {{#if operation.tags}}
+
 ### Tags
 {{> tags tags=operation.tags}}
 {{/if}}
@@ -15,36 +11,29 @@
 {{#if operation.description}}
 
 {{{operation.description}}}
-
+{{else}}
+Publish events by HTTP POST to your own pods `/publish/` endpoint including the topic, recipient and message body.]
 {{/if}}
 
 {{#if operation.headers}}
-##### Headers
-/
-{{> schema schema=operation.headers schemaName='Message Headers' hideTitle=true}}
 
+{{!-- {{> schema schema=operation.headers hideExample=true}} --}}
 
+### Example
+```http
+POST /publish/ HTTP/1.1
+Host: # { your pod host url }
+x-api-key: # { your api key }
+Content-Type: application/json
 
-{{#if operation.generatedHeadersExample}}
-###### Example of headers _(generated)_
+{
+  "topic": "https://realestate/website#search",
+  "recipient": # the publishing pod,
+  "@context": # optional transformation context,
+  "data": {
+    "type": "SearchAction
+  }
 
-```json
-{{{operation.generatedHeadersExample}}}
+}
 ```
-{{/if}}
-
-{{/if}}
-
-{{#if operation.payload.example}}
-### Payload
-
-```json
-{{{operation.formattedExample}}}
-```
-{{else}}
-{{#if operation.generatedPayloadExample}}
-```json
-{{{operation.generatedPayloadExample}}}
-```
-{{/if}}
 {{/if}}

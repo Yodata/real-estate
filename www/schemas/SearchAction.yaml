@@ -1,13 +1,17 @@
-allOf:
-- type: object
-  x-range: SearchAction
-  properties:
-    type:
-      enum:
-      - SearchAction
-    query:
-      description: search criteria
-    result:
-      description: search result
-      x-range: FindAction
-- $ref: Action.yaml    
+type: object
+x-range: SearchAction
+properties:
+  type:
+    type: string
+    description: SearchAction
+    enum:
+    - SearchAction
+  agent:
+    type: object
+    description: the user who performed the search
+  object:
+    description: search criteria
+    x-range: PropertySearch
+  result:
+    description: search result
+    x-range: FindAction

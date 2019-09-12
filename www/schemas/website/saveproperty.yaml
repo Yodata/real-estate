@@ -6,6 +6,7 @@ payload:
     - $ref: website.event.yaml
     - properties:
         topic:
+          description: '"realestate/website#saveproperty"'
           enum:
             - realestate/website#saveproperty
         data:
@@ -16,9 +17,17 @@ payload:
                   enum:
                     - SaveAction
                 object:
-                  allOf:
-                  - $ref: ../PropertyListing.yaml
-                  - properties:
-                      listingAgent:
-                        example: https://user.example.com/profile/card#me
+                  type: object
+                  description: the properting that was saved
+                  x-range: PropertyListing
+                  required:
+                  - type
+                  - originatingSystemName
+                  - originatingSystemKey
+                  - listingId
+                  example:
+                    $ref: ../example-propertylisting.yaml
+                    
+                    
+
                 

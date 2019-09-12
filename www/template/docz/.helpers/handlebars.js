@@ -1,3 +1,4 @@
+
 module.exports = (Handlebars, _) => {
 
   Handlebars.registerHelper('concat', (str1, str2, separator) => {
@@ -28,6 +29,7 @@ module.exports = (Handlebars, _) => {
   });
 
   Handlebars.registerHelper('equal', (lvalue, rvalue, options) => {
+    // @ts-ignore
     if (arguments.length < 3)
       throw new Error('Handlebars Helper equal needs 2 parameters');
     if (lvalue !== rvalue) {
@@ -97,11 +99,11 @@ module.exports = (Handlebars, _) => {
       if (typeof prop === 'undefined') return
       let result
       let { type, format, oneOf, anyOf } = prop
-      let kind = prop['x-kind']
+      let kind = prop[ 'x-kind' ]
       let range = oneOf || anyOf
 
       if (kind) {
-        return `[${kind}](/schemas#${kind.toLowerCase()})`
+        return `[${kind}](/types/${kind})`
       }
 
       if (type) {
@@ -118,15 +120,15 @@ module.exports = (Handlebars, _) => {
   });
 
   Handlebars.registerHelper('rangespec', function (property) {
-    if (typeof property === 'object' && property['x-range']) {
-      let range = property['x-range']
+    if (typeof property === 'object' && property[ 'x-range' ]) {
+      let range = property[ 'x-range' ]
       let spec
       switch (typeof range) {
         case 'string':
-          spec = `[${range}](/schemas#${range.toLowerCase()})`
+          spec = `[${range}](/types/${range})`
           break
         case 'object':
-          spec = range.map(range => `[${range}](/schemas#${range.toLowerCase()})`).join(',')
+          spec = range.map(range => `[${range}](/types/${range})`).join(',')
       }
       return `<br/>RANGE: ${spec}`
     }
@@ -144,14 +146,13 @@ module.exports = (Handlebars, _) => {
   });
 
 
-
   Handlebars.registerHelper('listItem', function (value) {
     return (typeof value !== 'undefined') ? `- ${value + ' '}` : ''
   });
 
   Handlebars.registerHelper('enum', function (property) {
-    if (property && Array.isArray(property['enum'])) {
-      const items = property['enum']
+    if (property && Array.isArray(property[ 'enum' ])) {
+      const items = property[ 'enum' ]
       const label = (items.length === 1) ? 'CONST' : 'ENUM'
       const value = items.join(', ')
       return `${label}: ${value}`
@@ -166,5 +167,34 @@ module.exports = (Handlebars, _) => {
     return String(name).replace('#', '')
   })
 
+  Handlebars.registerHelper('getActions', function () {
+    const { schemas } = this.asyncapi.components
+    const result = {}
+    Object.keys(schemas)
+      .filter(key => { return String(key).includes('Action') })
+      .sort()
+      .forEach(key => {
+        result[ key ] = schemas[ key ]
+      })
+    return result
+  })
+
+  Handlebars.registerHelper('get-types', function () {
+    const { schemas } = this.asyncapi.components
+    const result = {}
+    Object.keys(schemas)
+      .filter(key => {
+        return ! String(key).includes('Action')
+      })
+      .sort()
+      .forEach(key => {
+        result[ key ] = schemas[ key ]
+      })
+    return result
+  })
+
+  Handlebars.registerHelper('isAction', function (name) {
+    return String(name).includes('Action')
+  })
 
 };

@@ -1,0 +1,10 @@
+publish:
+  headers:
+    $ref: ../publish-headers.yaml
+  payload:
+    type: object
+    description: the event payload
+subscribe:
+  oneOf:
+    - $ref: listing.create.yaml
+    - $ref: listing.delete.yaml

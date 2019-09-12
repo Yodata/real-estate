@@ -100,7 +100,7 @@ notes:
 leadSources: instrument
 properties:
   id: includes
-  type: RealEstateListing
+  type: PropertyListing
 timestampEntered: dateCreated
 timestampModified: dateModified
 

@@ -1,4 +1,9 @@
-x-summary: Lead events
+publish:
+  headers:
+    $ref: ../publish-headers.yaml
+  payload:
+    type: object
+    description: the event payload
 subscribe:
   oneOf:
     - $ref: lead.accept.yaml

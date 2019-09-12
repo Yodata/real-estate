@@ -1,4 +1,7 @@
 ## {{x-title}}
+```
+{{x-scope}}{{x-title}}
+```
 
 {{message.summary}}
 
@@ -7,13 +10,11 @@
 
 {{/if}}
 {{#if message.headers}}
-HEADERS:
 
 {{>schema schema=message.headers schemaName=@key generatedExample=message.generatedHeadersExample options=this.options }}
-
 {{/if}}
 {{#if message.payload}}
 
-{{>schema schema=message.payload schemaName=@key generatedExample=message.generatedPayloadExample hideTitle=true options=this.options }}
+{{>schema schema=message.payload schemaName=x-title generatedExample=message.generatedPayloadExample hideTitle=true options=this.options }}
 
 {{/if}}

@@ -1,3 +1,4 @@
+title: RealEstateLicense
 type: object
 description:
   Real estate licenses, authorizations issued by state governments, give agents
@@ -13,15 +14,28 @@ properties:
     type: string
     description: display value, i.e. 'CA-DRE# 02068375'
     example: 'CA-DRE# 02068375'
+  issuedTo:
+    type: object
+    description: the license recipient
+    x-range:
+    - RealEstateAgent
+    - RealEstateOrganization
+    example:
+      type: RealEstateAgent
+      id: http://{agentid}.example.com/profile/card#me
   issuedBy:
     type: object
     description: the issuing organization or service
-    x-range: Organization
+    x-range:
+    - State
+    - Organization
+    - AdministrativeArea
     example:
-      type: Organization
+      type: State
       name: California
   issuedThrough:
-    x-range: Service
+    x-range:
+    - Organization
     description: The service through with the permit was granted.
     type: object
     properties:
@@ -32,19 +46,21 @@ properties:
         type: string
         example: California Department of Real Estate
   validIn:
-    x-range:
-      - Place
-      - AdministrativeArea
-    description: The geographic area where the permit is valid.
     type: object
+    description: the state where the RealEstateLicense is valid
+    x-range:
+    - State
+    - City
+    - GeographicArea
+    - PostalCode
     example:
-      type: AdministrativeArea
-      name: New York
+      type: State
+      name: California
   validFrom:
     type: string
     format: date-time
-    description: start date
+    description: the first date and time on which the license is valid.
   validUntil:
     type: string
     format: date-time
-    description: end date
+    description: the last date and time on which the license is valid.

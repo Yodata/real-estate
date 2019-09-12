@@ -1,47 +1,51 @@
-type: object
-required:
-  - topic
-  - source
-  - data
-properties:
-  topic:
-    description: message event type
-    type: string
-  data:
-    type: object
-    properties:
-      type:
-        type: string
-        description: the Action identifier
-      agent:
-        type: object
-        description: the website user
-        x-range:
-          - Person
+allOf:
+- $ref: ../CloudEvent.yaml
+- properties:
+    agent:
+      example: https://bhhs.example.com/profile/card#me
+    instrument:
+      example: https://smarter-agent.example.com/profile/card#me
+    source:
+      example: https://{agentid}.example.com/profile/card#me
+    data:
+      type: object
+      description: the message payload.
+      required:
+      - type
+      - agent
+      - object
+      properties:
+        type:
+          $ref: ../type.yaml
+        agent:
+          type: object
+          description: the website user
+          x-range:
           - Contact
-        example:
-          type: Person
-          name: Bob Buyer
-          email: bob@example.com
-          identifier:
-            vendoraid: 123
-            vendorbid: 456
-      instrument:
-        description: the website url where the action occurred.
-        type: string
-        format: uri
-        example: http://agentwebsite.example.com
-  source:
-    description: the subscription source
-    type: string
-    format: uri
-    example: http://{user}.example.com/profile/card#me
-  instrument:
-    description: the message producer
-    type: string
-    format: uri
-    example: http://{supercrm}.example.com/profile/card#me
-  time:
-    description: the time the message was produced
-    type: string
-    format: date-time
+          - Person
+          example:
+            type: Contact
+            name: Bill Bailey
+            telephone: 067-419-1230
+            email: user@example.com
+            additionalProperty:
+              userPath: xxx
+            identifier:
+              sausID: 216bf670-0777-43db-9d73-c3377d280fe4
+              redContact_Guid: 201ff92c-e3ad-43b1-8a01-5555168cb0ae
+        
+        instrument:
+          type: object
+          description: website or mobile application
+          x-range:
+          - RealEstateWebsite
+          - MobileApplication
+          - Thing
+          example:
+            type: RealEstateWebsite
+            url: http://gotham-city-realestate.example.com
+                  
+        object:
+          type: object
+
+        

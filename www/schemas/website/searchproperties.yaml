@@ -13,7 +13,7 @@ payload:
         allOf:
         - $ref: ../SearchAction.yaml
         - properties:
-            query:
+            object:
               $ref: ../PropertySearch.yaml
             result:
               $ref: ../FindAction.yaml

@@ -1,6 +1,6 @@
-description:
-  a key/value pair, used for maintaining state outside of the current context
 type: object
+title: PropertyValue
+description: a key/value pair, used for maintaining state outside of the current context
 required:
   - type
   - propertyID
@@ -15,4 +15,4 @@ properties:
     example: UserID
   value:
     type: string
-    example: <userid-string>
+    example: '@bobjones'

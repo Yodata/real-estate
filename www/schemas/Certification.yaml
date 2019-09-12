@@ -1,12 +1,20 @@
-allOf:
-  - $ref: Permit.yaml
-  - properties:
-      type:
-        description: Certification
-        type: string
-        enum:
-          - Certification
-      name:
-        type: string
-        description: the name of the Certification
-        example: e-Agent Certified
+type: object
+title: Certification
+description: A certification issued by an organization to an individual or business.
+x-range: Certification
+properties:
+  type:
+    description: Certification
+    type: string
+    enum:
+      - Certification
+  name:
+    type: string
+    description: the name of the Certification
+    example: e-Agent Certified
+  issuedBy:
+    $ref: issued-by.yaml
+  issuedTo:
+    $ref: issued-to.yaml
+    x-range: RealEstateAgent
+      

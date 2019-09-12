@@ -1,0 +1,19 @@
+{
+	"name": "fetch-ctx-test",
+	"description": "an example of fetching remote data in a context transform",
+	"version": "0.0.1",
+	"scripts": {
+		"test": "npx jest --env node"
+	},
+	"main": "index.js",
+	"devDependencies": {
+		"@types/jest": "^24.0.11",
+		"@types/node": "^11.13.7",
+		"@yodata/context-sdk": "^1.2.8",
+		"dotenv": "^7.0.0",
+		"jest": "^24.7.1"
+	},
+	"dependencies": {
+		"@yodata/transform": "^1.5.6"
+	}
+}

@@ -1,16 +1,20 @@
+title: Language
 type: object
-description: Natural languages such as Spanish, Tamil, Hindi, English, etc. Formal language code tags expressed in BCP 47 can be used via the alternateName property
+description: a written or spoken Language
+x-range: Language
 properties:
   type:
     type: string
-    description: Lanuguage
+    description: Language
     enum:
       - Language
+
   name:
-    description: the name of the language
     type: string
+    description: the display name of the language
     example: English
 
   additionalName:
     type: string
-    example: en
+    description: BCP 47 language code
+    example: en-US

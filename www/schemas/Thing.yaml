@@ -1,11 +1,7 @@
-title: Thing
-x-summary: the most basic type
 type: object
 required:
   - type
 properties:
   type:
     type: string
-    description: Linked-Data (@type)
-    enum:
-    - Thing
+    description: The item type (Linked-Data @type)

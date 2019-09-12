@@ -5,77 +5,74 @@ menu: API
 
 ## Overview
 
-As a publisher, to facilitate the publication of events on behalf of another entity, a dedicated publish endpoint can be used that will ensure:
+Use the publish API to send events to your user's PODs for distribution to that user's subscribers.
 
-- Relevant keys are added.
-- Event is stored in the right location on the other entity's pod using the `topic`
+### Published Event Data Flow 
 
-This mechanism should not be used to publish events about your own entity. This is a helper endpoint for publishers to ensure the low-level mechanisms are handled in a coherent manner.
+```sequence
+[ your app (producer) ] => [ user pod (publisher) ] => [ other user apps (subscribers) ]
+```
 
 ## Usage
 
-The following steps will use the default example values, adapt as needed:
-
-- Publisher's pod is `https://publisher.example.com`
-- The other entity's pod is `https://entity.example.com`
-- An example event data `{"type": "test", "hello": "world"}`
-
-Send the event to your own pod's publish endpoint, which will return the event ID, just like `/inbox/` and `/outbox/`.
+To publish an event, HTTP POST to your pod's /publish/ endpoint with a content-type of application/json and the event in the body.
 
 ```http
-POST /publish/ HTTP/1.1
-Host: publisher.example.com
+POST /publish/
+Host: {your-pod-host}
 Content-Type: application/json
 
 {
-    "recipient": "https://entity.example.com/profile/card#me",
-    "topic": "realestate/example#action",
-    "datacontenttype": "application/json",
+    "recipient": "https://{user-pod-host}/profile/card#me",
+    "topic": "{domain}/{topic}#{actiontype}",
     "data": {
-        "type": "test",
-        "hello": "world"
+        "type": "{actiontype}"
+        ... payload
     }
 }
 ```
 
-The format mandates that:
+### Example
 
-- The `recipient` key is to be set to the Linked-Data URI of the entity that the publisher is acting on behalf of. This key and value will be removed from the final event.
+Let's imagine your user has added a new CRM contact and you want to publish that event.
 
-- The `topic` key is mandatory and will be used in the entity pod to compute the right container.
+Assumptions:
+- Your pod is producer.example.com
+- Your user's pod is user.example.com
+- The new contact is named "Bruce Wayne"
 
-If the publish is successful, the event will be deleted from the `/publish/` container. Processing can range from instant to several minutes.
-
-The following keys will be added to the event to make it compliant with the pubsub system:
-
-- `agent` with the entity's identity
-- `instrument` with the publisher's identity
-- `timestamp` as a millisecond Epoch timestamp
-- `time` as an ISO formatted date
+```sh
+curl -X POST \
+https://producer.example.com/publish/ \
+-H 'Content-Type: application/json' \
+-H 'x-api-key: {your-secret}' \
+-d '[
+  {
+    "recipient": "https://user.example.com/profile/card#me",
+    "topic": "realestate/contact#add",
+    "data": {
+        "type": "AddAction",
+        "object": {
+            "type": "Contact",
+            "name": "Bruce Wayne"
+        }
+  }
+]'
+```
 
 ## Outcome
 
-Once published, the event will appear in the appropriate event container on the entity pod. Following the **Usage** example, the event would be stored under `https://entity.example.com/event/topic/realestate/example/`.
+Once published, the event will be distributued to authorized subscribers of the user pod.
 
-If the generated ID was `abcde12345`, the event would be available at:
+Subscribers recieve the event created by the producer, with some additional meta data.
 
-```http
-GET /event/topic/realestate/example/abcde12345 HTTP/1.1
-Host: entity.example.com
-
-Content-Type: application/json
-
+```json
 {
-    "agent": "https://entity.example.com/profile/card#me",
-    "instrument": "https://publisher.example.com/profile/card#me",
-    "timestamp": 1555097126000,
-    "time": "2019-04-12T19:25:26Z",
-    "topic": "realestate/example#action",
-    "datacontenttype": "application/json",
+    "topic": "{published topic}",
+    "instrument": "{producer pod URI}",
+    "agent": "{user (publisher) pod URI}",
     "data": {
-        "type": "test",
-        "hello": "world"
-    }
-}
+        ... payload       
+  }
 ```
 

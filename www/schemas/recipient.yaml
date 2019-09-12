@@ -1,5 +1,7 @@
 title: recipient
-description: the recipient of the item
+description: the recipient
+type: object
 example:
-  type: Person
-  name: John
+  type: RealEstateAgent
+  name: Randy RealEstateAgent
+  id: https://{userid}.example.com/profile/card#me

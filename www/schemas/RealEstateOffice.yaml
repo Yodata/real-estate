@@ -1,8 +1,9 @@
-description: A real estate office / place of business.
 type: object
+description: A real estate office / place of business.
 allOf:
   - $ref: RealEstateOrganization.yaml
-  - properties:
+  - title: RealEstateOffice
+    properties:
       type:
         type: string
         description: RealEstateOffice
@@ -17,6 +18,9 @@ allOf:
             telephone: 1-245-880-8222
             faxNumber: 958-530-3473
             email: relocation@example.com
+
+      description:
+        example: The number on Gotham City Real Estate Company since 1940
 
       parentOrganization:
         description: Office broker or franchisor.

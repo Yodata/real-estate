@@ -1,31 +1,45 @@
 title: Lead
-x-kind: Lead
-description: a lead offered or assigned by the agent to one or more recipients
+type: object
+x-range: Lead
+description: a sales opportunity (object) offered by a sender to a recipient.
 properties:
   type:
     type: string
     enum: ['Lead']
     description: Lead
-  object:
-    type: object
-    description: a Contact (Person/Organization)
-    example:
-      type: Person
-      name: Larry Lead
-      email: larry@example.com
   recipient:
     description: the lead recipient
-    example: http://{user}.example.com/profile/card#me
+    type: string
+    format: uri
+    example: http://{lead-recipient}.example.com/profile/card#me
   sender:
     description: the lead provider
     type: string
     format: uri
-    example: http://{provider}.example.com/profile/card#me
+    example: http://{lead-sender}.example.com/profile/card#me
+  owner:
+    description: the lead owner
+    type: string
+    format: uri
+    example: http://{lead-owner}.example.com/profile/card#me
   dateSent:
     description: the date the lead was sent
     type: string
     format: date-time
-  activity:
+
+  object:
+    x-range:
+    - Contact
+    - Person
+    $ref: contact-object.yaml
+
+  leadSource:
+    description: original source of the lead
     type: array
     items:
-      $ref: Action.yaml
+      type: object
+      example:
+        type: AskAction
+        object:
+          type: Question
+          text: Help me I'm trapped inside documentation.

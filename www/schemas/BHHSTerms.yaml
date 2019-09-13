@@ -1,170 +1,169 @@
 title: BHHSTerms
 type: object
+description: additional properties for BHHS.
 properties:
-  type:
-    type: string
-    enum:
-      - BHHSTerms
-      
-  Status:
-    type: string
-    x-subPropertyOf: additionalProperty
-    x-domain:
-      - RealEstateOrganization
-      - RealEstateOffice
-      - RealEstateAgent
-    enum:
-      - Active
-      - Inactive
-      - Pre-Active
-      
-  UserType:
-    type: string
-    description: It comes from legacy system. The value is always "Contact".
-    x-subPropertyOf: additionalProperty
-    x-domain:
-      - RealEstateAgent
-  
-  IsListedInAgentFinder:
-    type: boolean
-    description: If an agent is listed in agent finder.
-    x-subPropertyOf: additionalProperty
-    x-domain:
-      - RealEstateAgent
-      
-  AffiliateID:
-    type: string
-    description: BHHS affiliate identifier
-    x-subPropertyOf: identifier
-    x-domain:
-      - RealEstateAgent
-      - RealEstateOffice
-      
-  OfficeID:
-    type: string
-    description: BHHS office identifier
-    x-subPropertyOf: identifier
-    x-domain:
-      - RealEstateAgent
-      
-  EmployeeType:
-    type: string
-    description: the type of employee
-    x-subPropertyOf: additionalProperty
-    x-domain:
-      - RealEstateAgent
-    enum:
-      - Full Time Sales Professional
-      - Part Time Sales Professional
-      - Non-Agent
-      - Marketing Team
-      - In-House Admin. Profile
-      
-  agentWebsiteType:
-    type: string
-    description: agent's website type
-    x-subPropertyOf: additionalProperty
-    x-domain:
-      - RealEstateAgent
-    enum:
-      - Agent Profile
-      - Agent Page with IDX Search
-      
-  RoqLogicTCVersion:
-    type: string
-    description: The version of RoqLogic terms and conditions agent accepted.
-    x-subPropertyOf: additionalProperty
-    x-domain:
-      - RealEstateAgent
-    example:
-      TC-00035
-      
-  bhhsLeadNotificationPreference:
+  additionalProperty:
     type: object
-    description: Lead notification preference
-    x-subPropertyOf: additionalProperty
-    x-domain:
-      - RealEstateAgent 
     properties:
-      timeZone:
+      Status:
         type: string
-        example:
-          - GMT+12:00 Fiji Time (Pacific/Fiji)
+        x-subPropertyOf: additionalProperty
+        x-domain:
+          - RealEstateOrganization
+          - RealEstateOffice
+          - RealEstateAgent
+        enum:
+          - Active
+          - Inactive
+          - Pre-Active
           
-      emailNotification:
-        type: boolean
-        description: If notification will be sent to sepcified email address
-        
-      textNotification:
-        type: boolean
-        description: If notification will be sent to sepcified phone number
-        
-      email:
+      UserType:
         type: string
-        description: Email address that notification will be sent to
-        
-      telephone:
+        description: It comes from legacy system. The value is always "Contact".
+        x-subPropertyOf: additionalProperty
+        x-domain:
+          - RealEstateAgent
+      
+      IsListedInAgentFinder:
+        type: boolean
+        description: If an agent is listed in agent finder.
+        x-subPropertyOf: additionalProperty
+        x-domain:
+          - RealEstateAgent
+          
+      AffiliateID:
         type: string
-        description: Phone number that notification will be sent to
-        
-      leadNotificationSchedule:
-        type: array
-        items:
-          type: object
-          $ref: Schedule.yaml
-      
-  IsDisplayed:
-    type: boolean
-    description: If an affiliate/office is listed in company/office finder.
-    x-subPropertyOf: additionalProperty
-    x-domain:
-      - RealEstateOrganization
-      - RealEstateOffice
-      
-  OfficeType:
-    type: string
-    description: the type of office
-    x-subPropertyOf: additionalProperty
-    x-domain:
-      - RealEstateOffice
-    enum:
-      - Administrative Office
-      - Branch Office
-      - Kiosk
-      - Primary Office
-      - Srvice Center
-      - Subdivision Sales Office
-      
-  FullTimeCount:
-    type: integer
-    description: the number of full time sales professional
-    x-subPropertyOf: additionalProperty
-    x-domain:
-      - RealEstateOffice
-      - RealEstateCompany
-      
-  PartTimeCount:
-    type: integer
-    description: the number of part time sales professional
-    x-subPropertyOf: additionalProperty
-    x-domain:
-      - RealEstateOffice
-      - RealEstateCompany
-      
-  franchiseCommitmentNotes:
-    type: string
-    x-subPropertyOf: additionalProperty
-    x-domain:
-      - RealEstateOrganization
-      
-  franchiseCommitment:
-    type: string
-    x-subPropertyOf: additionalProperty
-    x-domain:
-      - RealEstateOrganization
-      
-  listingLeadsToListingAgent:
-    type: boolean
-    x-subPropertyOf: additionalProperty
-    x-domain:
-      - RealEstateOrganization
+        description: BHHS affiliate identifier
+        x-subPropertyOf: identifier
+        x-domain:
+          - RealEstateAgent
+          - RealEstateOffice
+          
+      OfficeID:
+        type: string
+        description: BHHS office identifier
+        x-subPropertyOf: identifier
+        x-domain:
+          - RealEstateAgent
+          
+      EmployeeType:
+        type: string
+        description: the type of employee
+        x-subPropertyOf: additionalProperty
+        x-domain:
+          - RealEstateAgent
+        enum:
+          - Full Time Sales Professional
+          - Part Time Sales Professional
+          - Non-Agent
+          - Marketing Team
+          - In-House Admin. Profile
+          
+      agentWebsiteType:
+        type: string
+        description: agent's website type
+        x-subPropertyOf: additionalProperty
+        x-domain:
+          - RealEstateAgent
+        enum:
+          - Agent Profile
+          - Agent Page with IDX Search
+          
+      RoqLogicTCVersion:
+        type: string
+        description: The version of RoqLogic terms and conditions agent accepted.
+        x-subPropertyOf: additionalProperty
+        x-domain:
+          - RealEstateAgent
+        example:
+          TC-00035
+          
+      bhhsLeadNotificationPreference:
+        type: object
+        description: Lead notification preference
+        x-subPropertyOf: additionalProperty
+        x-domain:
+          - RealEstateAgent 
+        properties:
+          timeZone:
+            type: string
+            example:
+              - GMT+12:00 Fiji Time (Pacific/Fiji)
+              
+          emailNotification:
+            type: boolean
+            description: If notification will be sent to sepcified email address
+            
+          textNotification:
+            type: boolean
+            description: If notification will be sent to sepcified phone number
+            
+          email:
+            type: string
+            description: Email address that notification will be sent to
+            
+          telephone:
+            type: string
+            description: Phone number that notification will be sent to
+            
+          leadNotificationSchedule:
+            type: array
+            items:
+              type: object
+              $ref: Schedule.yaml
+          
+      IsDisplayed:
+        type: boolean
+        description: If an affiliate/office is listed in company/office finder.
+        x-subPropertyOf: additionalProperty
+        x-domain:
+          - RealEstateOrganization
+          - RealEstateOffice
+          
+      OfficeType:
+        type: string
+        description: the type of office
+        x-subPropertyOf: additionalProperty
+        x-domain:
+          - RealEstateOffice
+        enum:
+          - Administrative Office
+          - Branch Office
+          - Kiosk
+          - Primary Office
+          - Srvice Center
+          - Subdivision Sales Office
+          
+      FullTimeCount:
+        type: integer
+        description: the number of full time sales professional
+        x-subPropertyOf: additionalProperty
+        x-domain:
+          - RealEstateOffice
+          - RealEstateCompany
+          
+      PartTimeCount:
+        type: integer
+        description: the number of part time sales professional
+        x-subPropertyOf: additionalProperty
+        x-domain:
+          - RealEstateOffice
+          - RealEstateCompany
+          
+      franchiseCommitmentNotes:
+        type: string
+        x-subPropertyOf: additionalProperty
+        x-domain:
+          - RealEstateOrganization
+          
+      franchiseCommitment:
+        type: string
+        x-subPropertyOf: additionalProperty
+        x-domain:
+          - RealEstateOrganization
+          
+      listingLeadsToListingAgent:
+        type: boolean
+        x-subPropertyOf: additionalProperty
+        x-domain:
+          - RealEstateOrganization

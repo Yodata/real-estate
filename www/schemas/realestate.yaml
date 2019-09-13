@@ -55,3 +55,4 @@ schemas:
   Service: { $ref: Service.yaml }
   Task: { $ref: Task.yaml }
   Thing: { $ref: Thing.yaml }
+  BHHSTerms: { $ref: BHHSTerms.yaml }

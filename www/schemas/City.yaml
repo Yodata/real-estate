@@ -4,11 +4,12 @@ description: a city or town
 type: object
 properties:
   type:
-    type: string
-    description: City
+    $ref: type.yaml
     enum:
     - City
   name:
-    type: string
-    example: Gotham City
+    $ref: name.yaml
+example:
+  type: City
+  name: Gotham City
   

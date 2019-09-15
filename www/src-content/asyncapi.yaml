@@ -67,6 +67,9 @@ topics:
     
   profile:
     $ref: schemas/profile/topic.yaml
+
+  servicearea:
+    $ref: schemas/servicearea/topic.yaml
   
   website:
     $ref: schemas/website/topic.yaml

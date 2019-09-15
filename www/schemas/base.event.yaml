@@ -7,17 +7,19 @@ properties:
   topic:
     description: event identifier, same as cloudevents type.
     type: string
+
+  source:
+    description: the user pod associated with the event, when events are published through an aggregator, publishers should add the source to identify the specific user associated with the event.
+    type: string
+    format: uri
+    example: http://{real-estate-agent}.gotham-city-real-estate.example.com/profile/card#me
   
   agent:
     description: the event publisher, may be an event aggregator in the case of a company pod distributing events on behalf of many users.
     type: string
     format: uri
     example: http://{real-estate-broker}.example.com/profile/card#me
-  source:
-    description: the user pod associated with the event, when events are published through an aggregator, publishers should add the source to identify the specific user associated with the event.
-    type: string
-    format: uri
-    example: http://{real-estate-agent}.gotham-city-real-estate.example.com/profile/card#me
+  
   instrument:
     description: the message producer, the application or service that created the event
     type: string

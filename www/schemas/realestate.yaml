@@ -10,6 +10,7 @@ schemas:
   Action: { $ref: Action.yaml }
   ApplicationProfile: { $ref: ApplicationProfile.yaml }
   Certification: { $ref: Certification.yaml }
+  City: { $ref: City.yaml }
   CloudEvent: { $ref: CloudEvent.yaml }
   Collection: { $ref: Collection.yaml }
   Comment: { $ref: Comment.yaml }
@@ -53,6 +54,8 @@ schemas:
   RealEstateWebsite: { $ref: RealEstateWebsite.yaml }
   Schedule: { $ref: Schedule.yaml }
   Service: { $ref: Service.yaml }
+  ServiceArea: { $ref: ServiceArea.yaml }
+  State: { $ref: State.yaml }
   Task: { $ref: Task.yaml }
   Thing: { $ref: Thing.yaml }
   BHHSTerms: { $ref: BHHSTerms.yaml }

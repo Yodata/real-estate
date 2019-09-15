@@ -36,7 +36,7 @@ allOf:
           
   - $ref: Person.yaml
   - title: Contact
-    description: a personal contact.
+    description: a CRM contact.
     x-range: Contact
     properties:
       type:
@@ -58,7 +58,7 @@ allOf:
 
       leadOwner:
         type: object
-        description: lead lead owner
+        description: lead owner
         example:
           type: RealEstateOrganization
           name: Gotham City Real Estate

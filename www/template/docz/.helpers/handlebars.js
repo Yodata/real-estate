@@ -107,7 +107,7 @@ module.exports = (Handlebars, _) => {
       }
 
       if (type) {
-        return format ? `${type}&lt;${format}&gt;` : type
+        return format ? `${type}&lt;${format}&gt; ` : type
       }
 
       if (Array.isArray(range)) {
@@ -128,7 +128,7 @@ module.exports = (Handlebars, _) => {
           spec = `[${range}](/types/${range})`
           break
         case 'object':
-          spec = range.map(range => `[${range}](/types/${range})`).join(',')
+          spec = range.map(range => `[${range}](/types/${range})`).join(', ')
       }
       return `<br/>RANGE: ${spec}`
     }
@@ -184,7 +184,7 @@ module.exports = (Handlebars, _) => {
     const result = {}
     Object.keys(schemas)
       .filter(key => {
-        return ! String(key).includes('Action')
+        return !String(key).includes('Action')
       })
       .sort()
       .forEach(key => {

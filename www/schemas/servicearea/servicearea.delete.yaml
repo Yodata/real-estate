@@ -1,0 +1,20 @@
+x-title: delete
+x-scope: realestate/servicearea#
+summary: service area deleted
+payload:
+  allOf:
+    - $ref: ../base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/servicearea#delete
+        data:
+          properties:
+            type:
+              enum:
+              - DeleteAction
+            target:
+              type: string
+              format: uri
+              description: target for deletion 
+              example: https://example.com/data/servicarea/10007

@@ -1,0 +1,24 @@
+x-title: update
+x-scope: realestate/servicearea#
+summary: service area update
+payload:
+  allOf:
+    - $ref: ../base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/servicearea#update
+        data:
+          properties:
+            type:
+              enum:
+              - UpdateAction
+            object:
+              type: object
+              description: changed content
+              example:
+                name: new name
+            target:
+              type: string
+              format: uri
+              example: https://example.com/data/servicearea/1007

@@ -1,6 +1,20 @@
-x-range:
-- Place
 type: array
-description: A Place where a service or offered item is provided.
+description: the physical areas that make up the ServiceArea
+x-range:
+  - Place
+  - City
+  - State
+  - PostalCode
+  - GeoCircle
+  - GeoShape
 items:
-  $ref: Place.yaml
+  type: object
+  example:
+  - type: PostalCode
+    postalCode: 94705
+  - type: State
+    name: New Jersey
+  - type: City
+    name: Gotham City
+
+

@@ -24,25 +24,25 @@ properties:
         x-domain:
           - RealEstateAgent
       
-      IsListedInAgentFinder:
-        type: boolean
-        description: If an agent is listed in agent finder.
-        x-subPropertyOf: additionalProperty
-        x-domain:
-          - RealEstateAgent
-          
       AffiliateID:
         type: string
         description: BHHS affiliate identifier
-        x-subPropertyOf: identifier
+        x-subPropertyOf: additionalProperty
         x-domain:
           - RealEstateAgent
+          - RealEstateOffice
+          
+      BrokerID:
+        type: string
+        description: BHHS affiliate identifier. For backward compatible
+        x-subPropertyOf: additionalProperty
+        x-domain:
           - RealEstateOffice
           
       OfficeID:
         type: string
         description: BHHS office identifier
-        x-subPropertyOf: identifier
+        x-subPropertyOf: additionalProperty
         x-domain:
           - RealEstateAgent
           
@@ -114,11 +114,12 @@ properties:
           
       IsDisplayed:
         type: boolean
-        description: If an affiliate/office is listed in company/office finder.
+        description: If an affiliate/office/agent is listed in company/office/agent finder.
         x-subPropertyOf: additionalProperty
         x-domain:
           - RealEstateOrganization
           - RealEstateOffice
+          - RealEstateAgent
           
       OfficeType:
         type: string
@@ -165,5 +166,18 @@ properties:
       listingLeadsToListingAgent:
         type: boolean
         x-subPropertyOf: additionalProperty
+        x-domain:
+          - RealEstateOrganization
+          
+      HSoACompany:
+        type: boolean
+        description: indicate if company is owned by HSoA
+        x-subPropertyOf: additionalProperty
+        x-domain:
+          - RealEstateOrganization
+          
+      unassignedLeadOwner:
+        description: agent whom affiliate leads are assigned to
+        x-subPropertyOf: identifier
         x-domain:
           - RealEstateOrganization

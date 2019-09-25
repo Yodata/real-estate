@@ -2,6 +2,12 @@ title: BHHSTerms
 type: object
 description: additional properties for BHHS.
 properties:
+  contactPoint.name:
+    type: string
+    enum:
+      - BHHSWebsiteURL
+      - BHHSWebsiteVanityURL
+      
   additionalProperty:
     type: object
     properties:

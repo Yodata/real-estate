@@ -6,7 +6,7 @@ info:
   description: |
     ## WHAT
     Yodata/Real-Estate is an open source collaborative effort between real estate technology brokers, 
-    agents and technolgy providers working to normalize data and application integrations.
+    agents and technology providers working to normalize data and application integrations.
 
     ## HOW
     Applications connect to a shared event bus controlled by the user (customer of the vendor).

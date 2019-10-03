@@ -19,7 +19,7 @@ properties:
           
       UserType:
         type: string
-        description: It comes from legacy system. The value is always "Contact".
+        description: Employee type. For backward compatibility
         x-subPropertyOf: additionalProperty
         x-domain:
           - RealEstateAgent
@@ -34,14 +34,29 @@ properties:
           
       BrokerID:
         type: string
-        description: BHHS affiliate identifier. For backward compatible
+        description: BHHS affiliate identifier. For backward compatibility
         x-subPropertyOf: additionalProperty
         x-domain:
+          - RealEstateAgent
           - RealEstateOffice
           
       OfficeID:
         type: string
         description: BHHS office identifier
+        x-subPropertyOf: additionalProperty
+        x-domain:
+          - RealEstateAgent
+          
+      OfficeDBA:
+        type: string
+        description: Name of office
+        x-subPropertyOf: additionalProperty
+        x-domain:
+          - RealEstateAgent
+          
+      OfficeStatus:
+        type: string
+        description: Status of office
         x-subPropertyOf: additionalProperty
         x-domain:
           - RealEstateAgent

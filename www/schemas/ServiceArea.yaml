@@ -9,60 +9,47 @@ properties:
     enum:
       - ServiceArea
 
-  name:
-    $ref: name.yaml
-
-  id:
-    $ref: id.yaml
-    example: https://example.com/data/{type}/{identifier}
-
   areaServed:
     $ref: areaServed.yaml
 
   member:
-    type: array
-    description: service area members
-    x-range:
-      - OrganizationRole
-    items:
-      type: object
-      properties:
-        type:
-          type: string
-          enum:
-            - OrganizationRole
-        identifier:
-            $ref: identifier.yaml
-        member:
-          description: the role member
-          type: object
-          x-range:
+    type: object
+    description: service area member
+    properties:
+      type: 
+        $ref: type.yaml
+        enum: 
           - RealEstateOrganization
-          - RealEstateOffice
-          - RealEstateAgent
-          example:
-            type: RealEstateAgent
-            id: https://example.com/profile/card#me
+      id:
+        type: string
+        x-subPropertyOf: identifier
           
-        additionalProperty:
-          type: object
-          description: a place for vendor namespaced properties
-          properties:
-            relocationOffice:
-              description: relocation office
-              x-range: RealEstateOffice
-            weight:
-              type: integer
-              description: weight
-            sortOrder:
-              type: integer
-              description: sort order
-            sentToConsumerSite:
-              type: boolean
-              description: sent to consumer site
-            sentToCompanyLocator:
-              type: boolean
-              description: sent to company locator
-            sentToReloSepc:
-              type: boolean
-              description: sent to Relo Spec
+  additionalProperty:
+    type: object
+    description: a place for vendor namespaced properties
+    properties:
+      relocationOffice:
+        description: relocation office
+        x-range: RealEstateOffice
+      weight:
+        type: integer
+        description: weight
+      sortOrder:
+        type: integer
+        description: sort order
+      sentToConsumerSite:
+        type: boolean
+        description: sent to consumer site
+      sentToCompanyLocator:
+        type: boolean
+        description: sent to company locator
+      sentToReloSepc:
+        type: boolean
+        description: sent to Relo Spec
+        
+      identifier:
+        type: object
+        properties:
+          bhhsESAId:
+            type: string
+            description: BHHS internal ESA ID

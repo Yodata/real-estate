@@ -22,7 +22,11 @@ allOf:
 
 
       contactPoint:
-        $ref: contact-point.yaml
+        type: array
+        x-range: ContactPoint
+        description: a named point of contact - telephone, email, faxNumber, and/or url for the entity
+        items:
+          $ref: contact-point.yaml          
 
       email:
         type: string

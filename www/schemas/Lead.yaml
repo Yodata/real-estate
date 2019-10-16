@@ -7,6 +7,13 @@ properties:
     type: string
     enum: ['Lead']
     description: Lead
+
+  object:
+    description: the lead (Contact)
+    x-range:
+    - Contact
+    $ref: contact-object.yaml
+
   recipient:
     description: the lead recipient
     type: string
@@ -18,23 +25,36 @@ properties:
     format: uri
     example: http://{lead-sender}.example.com/profile/card#me
   owner:
-    description: the lead owner
+    description: the original owner of the lead
+    x-range:
+    - RealEstateOrganization
+    - RealEstateAgent
+    - Person
     type: string
     format: uri
     example: http://{lead-owner}.example.com/profile/card#me
+
+  dateAccepted:
+    $ref: date-accepted.yaml
+
+  dateRejected:
+    $ref: date-rejected.yaml
+
   dateSent:
     description: the date the lead was sent
     type: string
     format: date-time
 
-  object:
-    x-range:
-    - Contact
-    - Person
-    $ref: contact-object.yaml
-
+  dateReceived:
+    $ref: date-received.yaml
+  
+  
   leadSource:
-    description: original source of the lead
+    description: lead origin, may be a website event or a thing such as a website, zillow, mobile applicaton.
+    x-range:
+    - Action
+    - RealEstateWebSite
+    - MobileApplication
     type: array
     items:
       type: object

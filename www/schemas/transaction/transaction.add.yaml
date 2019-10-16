@@ -1,0 +1,17 @@
+x-title: add
+x-scope: realestate/transaction#
+summary: a tms transaction was created
+payload:
+  allOf:
+    - $ref: ../base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/transaction#add
+        data:
+          $ref: ../AddAction.yaml
+    - properties:
+        data:
+          properties:
+            object:
+              $ref: ../Transaction.yaml

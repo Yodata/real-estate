@@ -1,0 +1,79 @@
+title: Transaction
+x-range: Transaction
+description: a real estate opportunity advanced to be a transaction
+type: object
+properties:
+  type:
+    type: string
+    enum:
+      - Transaction
+
+  listingId:
+    type: string
+    description: the local identifier for the listing (MLS #)
+    
+   apn:
+    type: string
+    description: apraiser's parcel number
+  
+  vendorType:
+    $ref: VendorType.yaml
+        
+  inspectionSubType:
+    $ref: InspectionSubType.yaml
+  
+  documents:
+    $ref: DigitalDocument.yaml
+        
+  propertyType:
+    $ref: propertyType.yaml
+
+  propertySubType:
+    $ref: PropertySubType.yaml
+
+  universalPropertyId:
+    $ref: UniversalPropertyId.yaml
+  
+  createdDate:
+    type: string
+    format: date-time
+    description: Transaction created date
+    
+  offerDate:
+    type: string
+    format: date-time
+    description: The date an offer was given to the property
+    
+  contractDate:
+    type: string
+    format: date-time
+    description: The date a contract was signed
+    
+  closeDate:
+    type: string
+    format: date-time
+    description: With for-sale listings, the date the purchase agreement was fulfilled. With lease listings, the date the requirements were fulfilled, such as contract and/or deposit.
+    
+  candelledDate:
+    type: string
+    format: date-time
+    description: The transaction cancelled date
+    
+  purchaseContractDate:
+    type: string
+    format: date-time
+    description: With for-sale listings, the date an offer was accepted and the listing was no longer on market. With lease listings this may represent a meeting of the minds to lease, but some contractual requirements are yet to be fulfilled, such as contract signing or receipt of the deposit.
+  
+  buyerAgent:
+    $ref: agent.yaml
+
+  buyerOffice:
+    $ref: Office.yaml
+
+  side:
+    type: string
+    description: buyer/seller side represented
+    enum:
+        - Buyer
+        - Seller
+        - Both

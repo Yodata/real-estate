@@ -78,7 +78,6 @@ allOf:
           name: Zillow
           url: https://zillow.com
 
-
       originatingSystem:
         type: object
         x-range:
@@ -90,3 +89,8 @@ allOf:
           description: User Created.
           url: http://www.rdeskwebsite.com/
   
+      dateCreated:
+        $ref: dateCreated.yaml
+
+      dateModified:
+        $ref: dateModified.yaml

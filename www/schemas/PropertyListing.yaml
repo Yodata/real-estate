@@ -145,6 +145,16 @@ properties:
       unitCode: AC
       unitText: Acres
 
+  numberOfBedrooms:
+    description: the number of bedrooms
+    type: string
+    example: '3'
+
+  numberOfBathrooms:
+    description: the number of bathrooms
+    type: string
+    example: '2'
+
 
   internetAddressDisplayYN:
     type: string

@@ -13,5 +13,12 @@ payload:
     - properties:
         data:
           properties:
+            type:
+              type: string
+              description: static AssignAction
             object:
               $ref: ../Lead.yaml
+            agent:
+              description: the assignor, typically the lead owner
+              type: string
+              format: uri

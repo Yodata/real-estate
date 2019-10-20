@@ -155,7 +155,6 @@ properties:
     type: string
     example: '2'
 
-
   internetAddressDisplayYN:
     type: string
     enum:

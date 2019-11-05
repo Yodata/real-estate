@@ -23,14 +23,24 @@ properties:
       id:
         type: string
         x-subPropertyOf: identifier
+        example: https://org.example.com/profile/card#me
           
   additionalProperty:
     type: object
     description: a place for vendor namespaced properties
     properties:
       relocationOffice:
+        type: object
         description: relocation office
-        x-range: RealEstateOffice
+        properties:
+          type:
+            $ref: type.yaml
+            enum: 
+              - RealEstateOffice
+          id:
+            type: string
+            x-subPropertyOf: identifier
+            example: https://org.example.com/profile/card#me
       weight:
         type: integer
         description: weight
@@ -43,9 +53,9 @@ properties:
       sentToCompanyLocator:
         type: boolean
         description: sent to company locator
-      sentToReloSepc:
+      sentToReferralSolutions:
         type: boolean
-        description: sent to Relo Spec
+        description: sent to referral solutions
         
       identifier:
         type: object

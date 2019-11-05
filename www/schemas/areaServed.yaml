@@ -3,9 +3,7 @@ description: the physical areas that make up the ServiceArea
 x-range:
   - City
   - PostalCode
-items:
-  type: object
-  example:
+example:
   - type: PostalCode
     postalCode: 91371
     primaryCity: Woodland Hills
@@ -17,4 +15,5 @@ items:
     county: Orange
     state: FL
     country: US
+  
 

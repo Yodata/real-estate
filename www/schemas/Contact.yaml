@@ -3,37 +3,13 @@ allOf:
       type:
         example: Contact
       identifier:
-        type: object
-        description: vendor namespaced unique identifiers for the items
+        $ref: identifier.yaml
         example:
           redContact_Guid: 55BC6EB4-5C3D-4603-B5AB-154117E1269F
       additionalProperty:
-        type: object
-        description: vendor namespaced property values
-        example:
-          redLastLoginDtm: '2014-01-13 20:09:00.000'
-          redCRM_CustomerType: CRM Contact Only
-          redCustomer_Status: A
-          redAgentName: Alice Agent
-          redOffice_OrgID: 2DEB3BFAB0EB45428EFAE1DEBD0388C0
-          redPreferred_Contact_Method: No Preference
-          redIsContact: false
-          redIsunsubscribed: false
-          redAccepted: false
-          redIsLead: true
-          redOfficeName: Berkshire Hathaway HomeServices Executive Group Real Estate
-          redIsBuyer: true
-          redIsSeller: false
-          redIsCustomerCare: true
-          redOriginal_Owner_Ctel_Org_ID: 2DEB3BFAB0EB45428EFAE1DEBD0388C0
-          redReferralSource: Initial BHHS Migration - Market120
-          redTRIO_RegisteredYN: N
-          redOrig_Auto_Accepted: 1
-          redPreferred_Contact_Method_Display: No Preference
-          redExternal_Last_Mod_DTM: '2019-02-05T10:26:49.527'
-          redAssociated_Agent_Per_ID: 320989E53619474BA22FE10601A4D63B
-          redPreferredPhoneType: No preference
-          
+        $ref: additionalProperty.yaml
+
+
   - $ref: Person.yaml
   - title: Contact
     description: a CRM contact.
@@ -88,7 +64,7 @@ allOf:
           name: RDesk
           description: User Created.
           url: http://www.rdeskwebsite.com/
-  
+
       dateCreated:
         $ref: dateCreated.yaml
 

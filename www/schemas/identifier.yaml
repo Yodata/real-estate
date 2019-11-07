@@ -1,5 +1,4 @@
 type: object
-description: vendor namespaced item identifiers, value should be stored and included in any future events that reference the same item.
+description: namespaced identifier from the provider who created / sourced the original entity.
 example:
-  vendoraid: 'abc'
-  vendorbid: 'def'
+  vendoraid: c28834ca-db69-4da8-90ad-75cdc9907298

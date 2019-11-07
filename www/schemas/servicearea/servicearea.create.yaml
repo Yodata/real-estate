@@ -17,8 +17,3 @@ payload:
               - CreateAction
             object:
               $ref: ../ServiceArea.yaml
-            target:
-              type: string
-              format: uri
-              description: location of item (same as data.object.id)
-              example: https://example.com/data/servicearea/10007

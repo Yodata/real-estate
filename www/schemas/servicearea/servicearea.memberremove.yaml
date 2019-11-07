@@ -1,4 +1,4 @@
-x-title: memberremove
+x-title: providerremove
 x-scope: realestate/servicearea#
 summary: a member was removed from the target
 payload:
@@ -7,7 +7,7 @@ payload:
     - properties:
         topic:
           enum:
-            - realestate/servicearea#memberremove
+            - realestate/servicearea#providerremove
         data:
           x-range: RemoveAction
           properties:
@@ -20,7 +20,9 @@ payload:
               description: the data to be merge added with target
               example: https://example.com/profile/card#me
             target:
-              description: the ldp:Collection uri
-              type: string
-              format: uri
-              example: https://example.com/data/servicearea/10007
+              type: object
+              x-range: ServiceArea
+              example:
+                type: ServiceArea
+                identifier:
+                    bhhsESAId: Foo

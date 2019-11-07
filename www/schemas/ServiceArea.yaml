@@ -1,33 +1,66 @@
 title: ServiceArea
 type: object
-description: an area when a provider provides a service
-x-range:
-  - ServiceArea
+description: an area when a provider provides a service. additional information available; see [Using Service Areas](/reference-using-service-area)
+
+x-kind: ServiceArea
 properties:
   type:
-    $ref: type.yaml
+    type: string
+    description: '"ServiceArea"'
     enum:
       - ServiceArea
-
-  areaServed:
-    $ref: areaServed.yaml
-
-  member:
+  kind:
+    type: string
+    description: ServiceArea sub-type.  City or PostalCode
+    enum:
+    - City
+    - PostalCode
+    example: PostalCode
+  identifier:
     type: object
-    description: service area member
+    description: vendor namespaced item identifiers, value should be stored and included in any future events that reference the same item.
     properties:
-      type: 
-        $ref: type.yaml
-        enum: 
+      bhhsESAId:
+        type: string
+        description: BHHS internal ESA ID
+  addressLocality:
+    type: string
+    description: City, Township.
+    example: Woodland Hills
+  postalCode:
+    type: string
+    description: Zip/Post Code
+    example: '91371'
+  addressRegion:
+    type: string
+    description: State or Province.
+    example: CA
+  addressCountry:
+    type: string
+    description: The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
+    example: US
+  addressCounty:
+    type: string
+    description: the county (us real estate extension)
+    example: Los Angeles
+  provider:
+    type: object
+    description: a broker or company who provides service in the ServiceArea
+    x-range:
+    - RealEstateOrganization
+    properties:
+      type:
+        type: string
+        description: '"RealEstateOrganization"'
+        enum:
           - RealEstateOrganization
       id:
         type: string
-        x-subPropertyOf: identifier
+        description: profile URI
         example: https://org.example.com/profile/card#me
-          
   additionalProperty:
     type: object
-    description: a place for vendor namespaced properties
+    description: BHHS specific ServiceArea properties
     properties:
       relocationOffice:
         type: object
@@ -35,7 +68,7 @@ properties:
         properties:
           type:
             $ref: type.yaml
-            enum: 
+            enum:
               - RealEstateOffice
           id:
             type: string
@@ -56,10 +89,3 @@ properties:
       sentToReferralSolutions:
         type: boolean
         description: sent to referral solutions
-        
-      identifier:
-        type: object
-        properties:
-          bhhsESAId:
-            type: string
-            description: BHHS internal ESA ID

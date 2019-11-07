@@ -1,13 +1,13 @@
-x-title: memberadd
+x-title: provideradd
 x-scope: realestate/servicearea#
-summary: a member was added to a service area (target).
+summary: a provider was added to a service area (target)
 payload:
   allOf:
     - $ref: ../base.event.yaml
     - properties:
         topic:
           enum:
-            - realestate/servicearea#memberadd
+            - realestate/servicearea#provideradd
         data:
           x-range: AddAction
           properties:
@@ -21,7 +21,9 @@ payload:
               description: uri ref to the new member
               example: https://example.com/profile/card#me
             target:
-              description: uri ref to the target
-              type: string
-              format: uri
-              example: https://example.com/data/servicearea/10007
+              type: object
+              x-range: ServiceArea
+              example:
+                type: ServiceArea
+                identifier:
+                    bhhsESAId: Foo

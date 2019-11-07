@@ -77,6 +77,9 @@ properties:
       weight:
         type: integer
         description: weight
+      officeInPostalCode:
+        type: boolean
+        description: true if the service area provider is physically located in the ServiceArea.
       sortOrder:
         type: integer
         description: sort order

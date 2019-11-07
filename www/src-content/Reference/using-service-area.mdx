@@ -1,7 +1,8 @@
 ---
 menu: Reference
 ---
-# Using Service Area Data
+
+# Using Service Area Data (WORK-IN-PROGRESS)
 
 **General Info**
 
@@ -23,13 +24,13 @@ Each ServiceArea record includes EITHER a combination of data that defines the c
 
 ```json
 {
-  "areaServed": {
-    "type": "City",
-    "addressLocality": "Pine Hills",
-    "addressCounty": "Orange",
-    "addressRegion": "FL",
-    "addressCountry": "US"
-  }
+  "type": "ServiceArea",
+  "kind": "City",
+  "postalCode": "91371",
+  "addressLocality": "Woodland Hills",
+  "addressRegion": "CA",
+  "addressCountry": "US",
+  "addressCounty": "Los Angeles",
 }
 ```
 
@@ -37,14 +38,13 @@ Each ServiceArea record includes EITHER a combination of data that defines the c
 
 ```json
 {
-  "areaServed": {
-    "type": "PostalCodeArea",
-    "postalCode": "91371",
-    "addressLocality": "Woodland Hills",
-    "addressCounty": "Los Angeles",
-    "addressRegion": "CA",
-    "addressCountry": "US"
-  }
+  "type": "ServiceArea",
+  "kind": "PostalCode",
+  "postalCode": "91371",
+  "addressLocality": "Woodland Hills",
+  "addressRegion": "CA",
+  "addressCountry": "US",
+  "addressCounty": "Los Angeles",
 }
 ```
 

@@ -7,7 +7,7 @@ payload:
     - properties:
         topic:
           enum:
-            - realestate/contact#collectioncreated
+            - realestate/contact#collectioncreate
         data:
           allOf:
           - $ref: ../CreateAction.yaml
@@ -23,5 +23,3 @@ payload:
                     vendoraid: pastclientscollectionid
                   dateCreated: 2019-07-17T11:05:17Z
                   dateModified: 2019-07-17T11:05:17Z
-                  
-                  

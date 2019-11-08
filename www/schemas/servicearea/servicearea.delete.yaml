@@ -1,6 +1,6 @@
 x-title: delete
 x-scope: realestate/servicearea#
-summary: service area deleted
+summary: ServiceArea (data.object) has been deleted.  Identifier is required.
 payload:
   allOf:
     - $ref: ../base.event.yaml
@@ -13,8 +13,10 @@ payload:
             type:
               enum:
               - DeleteAction
-            target:
-              type: string
-              format: uri
-              description: target for deletion 
-              example: https://example.com/data/servicarea/10007
+            object:
+              x-range: ServiceArea
+              type: object
+              example:
+                type: ServiceArea
+                identifier:
+                    bhhsESAId: abcde

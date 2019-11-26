@@ -17,4 +17,3 @@ properties:
   issuedTo:
     $ref: issued-to.yaml
     x-range: RealEstateAgent
-      

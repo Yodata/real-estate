@@ -1,4 +1,4 @@
 type: object
-description: namespaced identifier from the provider who created / sourced the original entity.
+description: key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.
 example:
-  vendoraid: c28834ca-db69-4da8-90ad-75cdc9907298
+  salesforceContactID: c28834ca-db69-4da8-90ad-75cdc9907298

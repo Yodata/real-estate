@@ -5,7 +5,7 @@ info:
   version: '0.0.2'
   description: |
     ## WHAT
-    Yodata/Real-Estate is an open source collaborative effort between real estate technology brokers, 
+    Yodata/Real-Estate is an open source collaborative effort between real estate technology brokers,
     agents and technology providers working to normalize data and application integrations.
 
     ## HOW
@@ -50,6 +50,9 @@ info:
 # baseTopic: realestate
 
 topics:
+  award:
+    $ref: schemas/award/topic.yaml
+
   calendar:
     $ref: schemas/calendar/topic.yaml
 
@@ -58,25 +61,25 @@ topics:
 
   lead:
     $ref: schemas/lead/topic.yaml
-  
+
   listing:
     $ref: schemas/listing/listing.topic.yaml
 
   marketing:
     $ref: schemas/marketing/topic.yaml
-    
+
   profile:
     $ref: schemas/profile/topic.yaml
 
   servicearea:
     $ref: schemas/servicearea/topic.yaml
-  
+
   website:
     $ref: schemas/website/topic.yaml
 
 components:
   $ref: schemas/realestate.yaml
-    
+
   securitySchemes:
     https:
       name: api-key

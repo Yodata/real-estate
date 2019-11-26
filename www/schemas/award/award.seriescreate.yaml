@@ -1,0 +1,19 @@
+x-title: seriescreate
+x-scope: realestate/award#
+summary: a new award series was created
+payload:
+  allOf:
+    - $ref: ../base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/award#seriescreate
+        data:
+          x-range:
+          - CreateAction
+          properties:
+            type:
+              enum:
+              - CreateAction
+            object:
+              $ref: ../AwardSeries.yaml

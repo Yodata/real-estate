@@ -8,6 +8,9 @@
 # UpdateAction: { $ref: UpdateAction.yaml }
 schemas:
   Action: { $ref: Action.yaml }
+  Award: { $ref: Award.yaml }
+  AwardSeries: { $ref: AwardSeries.yaml }
+  AwardTeam: { $ref: AwardTeam.yaml }
   ApplicationProfile: { $ref: ApplicationProfile.yaml }
   Certification: { $ref: Certification.yaml }
   City: { $ref: City.yaml }

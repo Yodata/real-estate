@@ -1,0 +1,16 @@
+publish:
+  headers:
+    $ref: ../publish-headers.yaml
+  payload:
+    type: object
+    description: the event payload
+subscribe:
+  oneOf:
+    - $ref: award.award.yaml
+    - $ref: award.seriescreate.yaml
+    - $ref: award.seriesupdate.yaml
+    - $ref: award.seriesdelete.yaml
+    - $ref: award.teamcreate.yaml
+    - $ref: award.teamupdate.yaml
+    - $ref: award.teammemberadd.yaml
+    - $ref: award.teammemberremove.yaml

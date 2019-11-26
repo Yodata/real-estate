@@ -1,0 +1,33 @@
+title: AwardTeam
+type: object
+x-range: AwardTeam
+description: a Collection
+required:
+- type
+properties:
+  type:
+    description: AwardTeam
+    type: string
+    enum:
+    - AwardTeam
+  name:
+    type: string
+    description: name of the AwardTeam
+    example: Clients
+  identifier:
+    $ref: identifier.yaml
+    example:
+     hsfTeamId: xxxxx
+  member:
+    description: members of the AwardTeam
+    type: array
+    x-range:
+    - RealEstateAgent
+    - RealEstateOffice
+    - RealEstateOrganization
+    items:
+     type: string
+    example:
+    - https://user.example.com/profile/card#me
+    - https://office.example.com/profile/card#me
+    - https://company.example.com/profile/card#me

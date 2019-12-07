@@ -12,7 +12,12 @@ properties:
     description: the lead (Contact)
     x-range:
     - Contact
-    $ref: contact-object.yaml
+    type: object
+    example:
+      type: Contact
+      name: Joe Smith
+      telephone: 731-620-9877 x6155
+      email: Giuseppe.Lang62@hotmail.com
 
   recipient:
     description: the lead recipient

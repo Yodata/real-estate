@@ -1,0 +1,20 @@
+{
+  "recipient": "https://profile-events-staging-handler.bhhs.hsfaffiliates.com/profile/card#me",
+  "topic": "realestate/awardteammember#add",
+  "data": {
+    "type": "AddAction",
+    "object": {
+      "type": "AwardTeamMember",
+      "awardTeamType": "Company_Team_Member",
+      "awardTeamID": 1,
+      "identity": {
+        "AwardTeamMemberName": "TM-575885"
+      },
+      "member": {
+        "type": "RealEstateOrganization",
+        "id": "https://tx301.bhhs.dev.yodata.io/profile/card#me"
+      },
+      "isPrimary": true
+    }
+  }
+}

@@ -1,20 +1,12 @@
-type: array
+type: object
 description: the physical areas that make up the ServiceArea
 x-range:
-  - Place
   - City
-  - State
-  - PostalCode
-  - GeoCircle
-  - GeoShape
-items:
-  type: object
-  example:
-  - type: PostalCode
-    postalCode: 94705
-  - type: State
-    name: New Jersey
-  - type: City
-    name: Gotham City
-
-
+  - PostalCodeArea
+example:
+  type: PostalCode
+  postalCode: '91371'
+  addressLocality: Woodland Hills
+  addressCounty: Los Angeles
+  addressRegion: CA
+  addressCountry: US

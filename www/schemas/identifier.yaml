@@ -1,5 +1,4 @@
 type: object
-description: vendor namespaced item identifiers, value should be stored and included in any future events that reference the same item.
+description: key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.
 example:
-  vendoraid: 'abc'
-  vendorbid: 'def'
+  salesforceContactID: c28834ca-db69-4da8-90ad-75cdc9907298

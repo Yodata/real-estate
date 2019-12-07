@@ -1,17 +1,19 @@
-x-title: update
-x-scope: realestate/servicearea#
-summary: service area update
+x-title: seriesupdate
+x-scope: realestate/award#
+summary: an award series was updated
 payload:
   allOf:
     - $ref: ../base.event.yaml
     - properties:
         topic:
           enum:
-            - realestate/servicearea#update
+            - realestate/award#seriesupdate
         data:
+          x-range:
+          - UpdateAction
           properties:
             type:
               enum:
               - UpdateAction
             object:
-              $ref: ../ServiceArea.yaml
+              $ref: ../AwardSeries.yaml

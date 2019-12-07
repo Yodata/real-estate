@@ -7,7 +7,5 @@ publish:
 subscribe:
   oneOf:
     - $ref: servicearea.create.yaml
-    - $ref: servicearea.memberadd.yaml
-    - $ref: servicearea.memberremove.yaml
     - $ref: servicearea.update.yaml
     - $ref: servicearea.delete.yaml

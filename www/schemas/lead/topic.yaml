@@ -11,3 +11,4 @@ subscribe:
     - $ref: lead.assign.yaml
     - $ref: lead.update.yaml
     - $ref: lead.reject.yaml
+    - $ref: lead.retract.yaml

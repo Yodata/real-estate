@@ -42,5 +42,6 @@ payload:
 
           recipient:
             $ref: ../recipient.yaml
+            description: the assigned agent
 
           

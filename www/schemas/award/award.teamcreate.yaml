@@ -1,13 +1,13 @@
-x-title: create
-x-scope: realestate/servicearea#
-summary: service area created
+x-title: teamcreate
+x-scope: realestate/award#
+summary: an award team was created
 payload:
   allOf:
     - $ref: ../base.event.yaml
     - properties:
         topic:
           enum:
-            - realestate/servicearea#create
+            - realestate/award#teamcreate
         data:
           x-range:
           - CreateAction
@@ -16,4 +16,4 @@ payload:
               enum:
               - CreateAction
             object:
-              $ref: ../ServiceArea.yaml
+              $ref: ../AwardTeam.yaml

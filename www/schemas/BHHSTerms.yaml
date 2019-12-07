@@ -25,7 +25,7 @@ properties:
           
       UserType:
         type: string
-        description: Employee type. For backward compatibility
+        description: employee type. For backward compatibility
         x-subPropertyOf: additionalProperty
         x-domain:
           - RealEstateAgent
@@ -48,28 +48,36 @@ properties:
           
       OfficeID:
         type: string
-        description: BHHS office identifier
+        description: BHHS office identifier. For backward compatibility
         x-subPropertyOf: additionalProperty
         x-domain:
           - RealEstateAgent
           
       OfficeDBA:
         type: string
-        description: Name of office
+        description: name of office. For backward compatibility
         x-subPropertyOf: additionalProperty
         x-domain:
           - RealEstateAgent
+          
+      AffiliateStatus:
+        type: string
+        description: status of affiliate. For backward compatibility
+        x-subPropertyOf: additionalProperty
+        x-domain:
+          - RealEstateOrganization
           
       OfficeStatus:
         type: string
-        description: Status of office
+        description: status of office. For backward compatibility
         x-subPropertyOf: additionalProperty
         x-domain:
           - RealEstateAgent
+          - RealEstateOffice
           
       EmployeeType:
         type: string
-        description: the type of employee
+        description: type of employee
         x-subPropertyOf: additionalProperty
         x-domain:
           - RealEstateAgent
@@ -79,6 +87,13 @@ properties:
           - Non-Agent
           - Marketing Team
           - In-House Admin. Profile
+          
+      IsCompanyQueue:
+        type: boolean
+        description: if the real estate agent accepts company's lead
+        x-subPropertyOf: additionalProperty
+        x-domain:
+          - RealEstateAgent
           
       agentWebsiteType:
         type: string
@@ -92,7 +107,7 @@ properties:
           
       RoqLogicTCVersion:
         type: string
-        description: The version of RoqLogic terms and conditions agent accepted.
+        description: version of RoqLogic terms and conditions agent accepted.
         x-subPropertyOf: additionalProperty
         x-domain:
           - RealEstateAgent
@@ -101,7 +116,7 @@ properties:
           
       bhhsLeadNotificationPreference:
         type: object
-        description: Lead notification preference
+        description: lead notification preference
         x-subPropertyOf: additionalProperty
         x-domain:
           - RealEstateAgent 
@@ -113,19 +128,19 @@ properties:
               
           emailNotification:
             type: boolean
-            description: If notification will be sent to sepcified email address
+            description: if notification will be sent to sepcified email address
             
           textNotification:
             type: boolean
-            description: If notification will be sent to sepcified phone number
+            description: if notification will be sent to sepcified phone number
             
           email:
             type: string
-            description: Email address that notification will be sent to
+            description: email address that notification will be sent to
             
           telephone:
             type: string
-            description: Phone number that notification will be sent to
+            description: phone number that notification will be sent to
             
           leadNotificationSchedule:
             type: array
@@ -135,7 +150,7 @@ properties:
           
       IsDisplayed:
         type: boolean
-        description: If an affiliate/office/agent is listed in company/office/agent finder.
+        description: if an affiliate/office/agent is listed in company/office/agent finder.
         x-subPropertyOf: additionalProperty
         x-domain:
           - RealEstateOrganization
@@ -144,7 +159,7 @@ properties:
           
       OfficeType:
         type: string
-        description: the type of office
+        description: type of office
         x-subPropertyOf: additionalProperty
         x-domain:
           - RealEstateOffice
@@ -192,7 +207,7 @@ properties:
           
       HSoACompany:
         type: boolean
-        description: indicate if company is owned by HSoA
+        description: if company is owned by HSoA
         x-subPropertyOf: additionalProperty
         x-domain:
           - RealEstateOrganization

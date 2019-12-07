@@ -1,0 +1,25 @@
+{
+  "recipient": "https://profile-events-staging-handler.bhhs.hsfaffiliates.com/profile/card#me",
+  "topic": "realestate/awardteam#update",
+  "data": {
+    "type": "UpdateAction",
+    "object": {
+      "type": "AwardTeam",
+      "awardTeamName": "Lucy's agent team",
+      "awardTeamType": "Agent_Team",
+      "awardTeamID": 2,
+      "brand": "Berkshire Hathaway HomeServices",
+      "status": "Active",
+      "period": "2019 Annual",
+      "periodType": "Annual",
+      "office": {
+        "type": "RealEstateOffice",
+        "id": "https://tx301-001.bhhs.dev.yodata.io/profile/card#me"
+      },
+      "primaryContact": {
+        "type": "RealEstateAgent",
+        "id": "https://10001.bhhs.dev.yodata.io/profile/card#me"
+      }
+    }
+  }
+}

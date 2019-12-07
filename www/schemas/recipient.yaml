@@ -1,6 +1,9 @@
 title: recipient
 description: the recipient
 type: object
+x-range:
+- Person
+- Organization
 example:
   type: RealEstateAgent
   name: Randy RealEstateAgent

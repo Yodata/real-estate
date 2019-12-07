@@ -87,6 +87,9 @@ topics:
   website:
     $ref: schemas/website/topic.yaml
 
+  transaction:
+    $ref: schemas/transaction/topic.yaml
+
 components:
   $ref: schemas/realestate.yaml
 

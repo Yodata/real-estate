@@ -61,4 +61,5 @@ schemas:
   State: { $ref: State.yaml }
   Task: { $ref: Task.yaml }
   Thing: { $ref: Thing.yaml }
+  Transaction: { $ref: Transaction.yaml }
   BHHSTerms: { $ref: BHHSTerms.yaml }

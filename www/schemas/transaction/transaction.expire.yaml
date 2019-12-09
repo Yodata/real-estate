@@ -1,6 +1,6 @@
 x-title: expire
 x-scope: realestate/transaction#
-summary: a tms transaction was expired
+summary: a real estate transaction was expired
 payload:
   allOf:
     - $ref: ../base.event.yaml

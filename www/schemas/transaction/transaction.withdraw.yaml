@@ -1,6 +1,6 @@
 x-title: withdraw
 x-scope: realestate/withdraw#
-summary: a tms transaction was withdrawn
+summary: a real estate transaction was withdrawn
 payload:
   allOf:
     - $ref: ../base.event.yaml

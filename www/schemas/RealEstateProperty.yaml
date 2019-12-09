@@ -1,0 +1,31 @@
+title: RealEstateProperty
+x-range: RealEstateProperty
+description: a property in the real estate transaction context
+type: object
+properties:
+  type:
+    type: string
+    description: '"RealEstateProperty"'
+    enum:
+    - RealEstateProperty
+  apn:
+    $ref: apn.yaml
+  listingId:
+    type: string
+    description: 'the local identifier for the listing (MLS #)'
+  streetAddress:
+    $ref: streetAddress.yaml
+  addressRegion:
+    $ref: addressRegion.yaml
+  addressLocality:
+    $ref: addressLocality.yaml
+  postalCode:
+    $ref: postalCode.yaml
+  addressCountry:
+    $ref: addressCountry.yaml
+  propertyType:
+    $ref: property-type.yaml
+  propertySubType:
+    $ref: property-sub-type.yaml
+  universalPropertyId:
+    $ref: UniversalPropertyId.yaml

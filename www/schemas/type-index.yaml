@@ -1,12 +1,6 @@
-# AcceptAction: { $ref: AcceptAction.yaml }
-# AddAction: { $ref: AddAction.yaml }
-# AskAction: { $ref: AskAction.yaml }
-# OfferAction: { $ref: OfferAction.yaml }
-# RejectAction: { $ref: RejectAction.yaml }
-# RemoveAction: { $ref: RemoveAction.yaml }
-# RequestAppointmentAction: { $ref: RequestAppointmentAction.yaml }
-# UpdateAction: { $ref: UpdateAction.yaml }
-# schemas:
+# to add a new type:
+# 1. insert a line in alphabetical order referencing the type yaml file
+# 2. create a .mdx file with the same name as your type in ../template/docz/types/
 Action: { $ref: Action.yaml }
 Award: { $ref: Award.yaml }
 AwardSeries: { $ref: AwardSeries.yaml }
@@ -19,6 +13,7 @@ Collection: { $ref: Collection.yaml }
 Comment: { $ref: Comment.yaml }
 Contact: { $ref: Contact.yaml }
 ContactPoint: { $ref: ContactPoint.yaml }
+CustomerSummary: { $ref: CustomerSummary.yaml }
 DigitalDocument: { $ref: DigitalDocument.yaml }
 EmailMessage: { $ref: EmailMessage.yaml }
 Event: { $ref: Event.yaml }
@@ -29,6 +24,7 @@ ImageObject: { $ref: ImageObject.yaml }
 Language: { $ref: Language.yaml }
 Lead: { $ref: Lead.yaml }
 ListingOffer: { $ref: ListingOffer.yaml }
+ListingCountSummary: { $ref: ListingCountSummary.yaml }
 MarketingProgram: { $ref: MarketingProgram.yaml }
 MediaObject: { $ref: MediaObject.yaml }
 MLSMembership: { $ref: MLSMembership.yaml }
@@ -47,6 +43,7 @@ ProgramMembership: { $ref: ProgramMembership.yaml }
 PropertyListing: { $ref: PropertyListing.yaml }
 PropertySearch: { $ref: PropertySearch.yaml }
 PropertyType: { $ref: PropertyType.yaml }
+PropertySubType: { $ref: PropertySubType.yaml }
 PropertyValue: { $ref: PropertyValue.yaml }
 QuantitativeValue: { $ref: QuantitativeValue.yaml }
 Question: { $ref: question.yaml }
@@ -54,6 +51,7 @@ RealEstateAgent: { $ref: RealEstateAgent.yaml }
 RealEstateLicense: { $ref: RealEstateLicense.yaml }
 RealEstateOffice: { $ref: RealEstateOffice.yaml }
 RealEstateOrganization: { $ref: RealEstateOrganization.yaml }
+RealEstateProperty: { $ref: RealEstateProperty.yaml }
 RealEstateWebsite: { $ref: RealEstateWebsite.yaml }
 Schedule: { $ref: Schedule.yaml }
 Service: { $ref: Service.yaml }
@@ -62,4 +60,6 @@ State: { $ref: State.yaml }
 Task: { $ref: Task.yaml }
 Thing: { $ref: Thing.yaml }
 Transaction: { $ref: Transaction.yaml }
+TransactionSummary: { $ref: TransactionSummary.yaml }
+TransactionStatus: { $ref: TransactionStatus.yaml }
 BHHSTerms: { $ref: BHHSTerms.yaml }

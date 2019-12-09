@@ -1,6 +1,6 @@
 x-title: cancel
 x-scope: realestate/transaction#
-summary: a tms transaction was canceled
+summary: a real estate transaction was canceled
 payload:
   allOf:
     - $ref: ../base.event.yaml

@@ -1,85 +1,78 @@
 title: Transaction
-x-range: Transaction
-description: a real estate opportunity advanced to be a transaction
 type: object
+x-range: RealEstateTransaction
+description: a real estate opportunity advanced to be a transaction
 properties:
   type:
-    type: string
     enum:
-      - Transaction
-
-  listingId:
+      - RealEstateTransaction
+    description: '"RealEstateTransaction"'
     type: string
-    description: "the local identifier for the listing (MLS #)"
-
-  apn:
+  identifier:
+    $ref: identifier.yaml
+    example:
+      bhhsTransactionId: 0000097123
+  transactionStatus:
     type: string
-    description: apraiser's parcel number
+    description: transaction status
+  object:
+    $ref: RealEstateProperty.yaml
+    description: RealEstateProperty which is being transferred
+  # participants
+  buyer:
+    type: object
+    x-range:
+    - Person
+    - Organization
+    description: the buying participant
+    example:
+      type: Person
 
-  vendorType:
-    $ref: VendorType.yaml
-
-  inspectionSubType:
-    $ref: InspectionSubType.yaml
-
-  documents:
-    $ref: DigitalDocument.yaml
-
-  propertyType:
-    $ref: propertyType.yaml
-
-  propertySubType:
-    $ref: PropertySubType.yaml
-
-  universalPropertyId:
-    $ref: UniversalPropertyId.yaml
-
+  seller:
+    type: object
+    x-range:
+    - Person
+    - Organization
+    description: the seller
+  participant:
+    type: array
+    description: other parties with a direct or indirect interest or role in the transaction
+    x-range:
+    - CoBuyer
+    - CoSeller
+    - ListingAgent
+    - SellingAgent
+    - Buyer
+    - Seller
+    - TransactionCoordinator
+    - LoanOfficer
+    - EscrowCoordinator
+    - Vendor
+    items:
+      type: object
+  dateCancelled:
+    description: date the transaction was cancelled
+    format: date-time
+    type: string
+  # dates
   dateCreated:
     $ref: dateCreated.yaml
-
+  closeDate:
+    description: 'With for-sale listings, the date the purchase agreement was fulfilled. With lease listings, the date the requirements were fulfilled, such as contract and/or deposit.'
+    format: date-time
+    type: string
   offerDate:
     type: string
+    description: date the purchase offer was presented
     format: date-time
-    description: The date an offer was given to the property
-
-  contractDate:
-    type: string
-    format: date-time
-    description: The date a contract was signed
-
-  closeDate:
-    type: string
-    format: date-time
-    description: With for-sale listings, the date the purchase agreement was fulfilled. With lease listings, the date the requirements were fulfilled, such as contract and/or deposit.
-
-  cancelledDate:
-    type: string
-    format: date-time
-    description: The transaction cancelled date
-
   purchaseContractDate:
-    type: string
+    description: date the purchase contract was signed
     format: date-time
-    description: With for-sale listings, the date an offer was accepted and the listing was no longer on market. With lease listings this may represent a meeting of the minds to lease, but some contractual requirements are yet to be fulfilled, such as contract signing or receipt of the deposit.
-
-  buyerAgent:
-    type: object
-    x-range: RealEstateAgent
-    example:
-      type: RealEstateAgent
-      name: Bruce Wayne
-
-  buyerOffice:
-    type: object
-    x-range: RealEstateOffice
-    example:
-      type: RealEstateOffice
-      name: Gotham City Real Estate
-
-  side:
     type: string
-    description: buyer/seller side represented
-    enum:
-        - Buyer
-        - Seller
-        - Both
+  # documents
+  document:
+    type: array
+    description: associated documents (question - create standard document types?)
+    x-range: DigitalDocument
+    items:
+      $ref: DigitalDocument.yaml

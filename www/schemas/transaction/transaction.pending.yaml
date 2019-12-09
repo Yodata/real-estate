@@ -1,6 +1,6 @@
 x-title: pending
 x-scope: realestate/transaction#
-summary: a tms transaction is pending
+summary: a real estate transaction is pending
 payload:
   allOf:
     - $ref: ../base.event.yaml

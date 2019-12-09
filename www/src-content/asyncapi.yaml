@@ -91,7 +91,8 @@ topics:
     $ref: schemas/transaction/topic.yaml
 
 components:
-  $ref: schemas/realestate.yaml
+  schemas:
+    $ref: schemas/type-index.yaml
 
   securitySchemes:
     https:

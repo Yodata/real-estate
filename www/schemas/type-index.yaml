@@ -13,7 +13,7 @@ Collection: { $ref: Collection.yaml }
 Comment: { $ref: Comment.yaml }
 Contact: { $ref: Contact.yaml }
 ContactPoint: { $ref: ContactPoint.yaml }
-CustomerSummary: { $ref: CustomerSummary.yaml }
+# CustomerSummary: { $ref: CustomerSummary.yaml }
 DigitalDocument: { $ref: DigitalDocument.yaml }
 EmailMessage: { $ref: EmailMessage.yaml }
 Event: { $ref: Event.yaml }
@@ -24,7 +24,7 @@ ImageObject: { $ref: ImageObject.yaml }
 Language: { $ref: Language.yaml }
 Lead: { $ref: Lead.yaml }
 ListingOffer: { $ref: ListingOffer.yaml }
-ListingCountSummary: { $ref: ListingCountSummary.yaml }
+# ListingCountSummary: { $ref: ListingCountSummary.yaml }
 MarketingProgram: { $ref: MarketingProgram.yaml }
 MediaObject: { $ref: MediaObject.yaml }
 MLSMembership: { $ref: MLSMembership.yaml }
@@ -60,6 +60,6 @@ State: { $ref: State.yaml }
 Task: { $ref: Task.yaml }
 Thing: { $ref: Thing.yaml }
 Transaction: { $ref: Transaction.yaml }
-TransactionSummary: { $ref: TransactionSummary.yaml }
+# TransactionSummary: { $ref: TransactionSummary.yaml }
 TransactionStatus: { $ref: TransactionStatus.yaml }
 BHHSTerms: { $ref: BHHSTerms.yaml }

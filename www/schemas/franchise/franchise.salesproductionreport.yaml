@@ -1,0 +1,17 @@
+x-title: salesproductionreport
+x-scope: realestate/franchise#
+summary: franchise salesproductionreport
+payload:
+  allOf:
+    - $ref: ../base.event.yaml
+    - properties:
+        topic:
+          description: realestate/franchise#salesproductionreport
+          enum:
+            - realestate/franchise#salesproductionreport
+        data:
+          allOf:
+            - $ref: ../CreateAction.yaml
+            - properties:
+                object:
+                  $ref: ../SalesProductionReport.yaml

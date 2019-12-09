@@ -1,0 +1,49 @@
+title: SalesProductionReport
+description: a summary report of real estate transaction
+type: object
+properties:
+  type:
+    type: string
+    description: "'SalesProductionReport'"
+    enum:
+      - SalesProductionSummary
+  officeIdentifier:
+    type: string
+    example: https://office.example.com/profile/card#me
+  transactionType:
+    description: TRANS-TYPE
+    type: string
+  batchId:
+    type: string
+    description: BATCH-ID
+  reportingOfficeId:
+    type: string
+    description: OFFICE-ID
+    example: https://office.example.com/profile/card#me
+  transactionId:
+    type: string
+    description: TRANS-NO
+    example: '0000097123'
+  transactionStatus:
+    type: string
+    description: STATUS
+    example: ClosedTransactionStatus
+  position:
+    description: ADJUSTMENT-SEQUENCE
+    type: string
+    example: 1
+  participantId:
+    type: string
+    description: associated agent (PREA-ID)
+    x-range: RealEstateAgent
+    example: https://{agentid}.example.com/profile/card#me
+  participantRoleName:
+    type: string
+    description: LIST-SELL-CODE
+    example: ListingAgentRole
+  salesProductionUnit:
+    $ref: MonetaryAmount.yaml
+    description: ASSOC-PRODUCTION-UNIT
+  salesProductionGCI:
+    $ref: MonetaryAmount.yaml
+    description: ASSOC-PRODUCTION-GCI

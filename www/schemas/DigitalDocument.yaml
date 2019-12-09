@@ -1,29 +1,32 @@
-allOf:
-  - $ref: Thing.yaml
-  - title: DigitalDocument
+title: DigitalDocument
+type: object
+x-range: DigitalDocument
+description: an electronic file.
+properties:
+  type:
+    type: string
+    enum:
+      - DigitalDocument
+  id:
+    type: string
+    example: http://user.example.com/public/logo/archive.zip
+  name:
+    type: string
+    description: document name or title
+    example: archive.zip
+  encodingFormat:
+    type: string
+    description: "[ISO Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml)"
+    example: application/zip
+  about:
     type: object
-    x-range: DigitalDocument
-    description: an electronic file.
-    properties:
-      type:
-        type: string
-        enum:
-          - DigitalDocument
-      id:
-        example: http://user.example.com/public/logo/fileName.zip
-      name:
-        type: string
-        description: the FileName
-        example: fileName.zip
-      encodingFormat:
-        type: string
-        description: the MIME type
-        example: application/zip
+    description: subject of the Document
+    x-range: Thing
+    example:
+      type: Transaction
       identifier:
-        type: object
-        description: namespaced identifier
-      about:
-        type: string
-        format: uri
-        description: URI to the subject of the image or logo
-        example: http://user.example.com/profile/card#me
+        bhhsTransactionId: xxxx
+  url:
+    type: string
+    description: public URL of the object
+    example: https://example.com

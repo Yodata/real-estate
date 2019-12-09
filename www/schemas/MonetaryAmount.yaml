@@ -1,0 +1,26 @@
+type: object
+title: MonetaryAmount
+x-range: MonetaryAmount
+description: a value offered for transfer of ownership of an item
+properties:
+  type:
+    type: string
+    description: MonetaryAmount
+    enum:
+      - MonetaryAmount
+  minValue:
+    type: number
+    description: the low value offered if value is a range.
+    example: null
+  maxValue:
+    type: number
+    description: the high value offered if value is a range.
+    example: null
+  value:
+    type: number
+    description: the amount.
+    example: 75000
+  currency:
+    type: string
+    description: use ISO4217
+    example: USD

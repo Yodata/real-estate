@@ -43,6 +43,7 @@ properties:
   RanchPropertyType:
     type: string
     description: A Ranch
+  # Residential Single Family
   SingleFamilyPropertyType:
     type: string
     description: Single Family Residence

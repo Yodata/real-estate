@@ -1,20 +1,20 @@
-x-title: awardupdate
+x-title: delete
 x-scope: realestate/award#
-summary: award action is updated
+summary: award record deleted.
 payload:
   allOf:
     - $ref: ../base.event.yaml
     - properties:
         topic:
           enum:
-            - realestate/award#awardupdate
+            - realestate/award#delete
         data:
           x-range:
-          - UpdateAction
+          - DeleteAction
           properties:
             type:
               enum:
-              - UpdateAction
+              - DeleteAction
             identifier:
               $ref: ../identifier.yaml
               example:

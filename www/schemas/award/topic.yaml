@@ -7,6 +7,7 @@ publish:
 subscribe:
   oneOf:
     - $ref: award.award.yaml
+    - $ref: award.awardupdate.yaml
     - $ref: award.seriescreate.yaml
     - $ref: award.seriesupdate.yaml
     - $ref: award.seriesdelete.yaml

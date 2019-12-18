@@ -1,17 +1,17 @@
-x-title: customerreport
+x-title: contactreport
 x-scope: realestate/franchise#
-summary: franchise customerreport
+summary: franchise contactreport
 payload:
   allOf:
     - $ref: ../base.event.yaml
     - properties:
         topic:
-          description: realestate/franchise#customerreport
+          description: realestate/franchise#contactreport
           enum:
-            - realestate/franchise#customerreport
+            - realestate/franchise#contactreport
         data:
           allOf:
             - $ref: ../CreateAction.yaml
             - properties:
                 object:
-                  $ref: ../CustomerSummary.yaml
+                  $ref: ../ContactSummary.yaml

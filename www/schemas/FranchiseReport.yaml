@@ -12,17 +12,27 @@ properties:
     type: string
     description: BATCH-ID
     example: '1234'
-  totalCgiInBatch:
+  totalGci:
     $ref: MonetaryAmount.yaml
     description: TOTAL-GCI-IN-BATCH
-  transactions:
+  transaction:
     type: array
     description: transaction data
     x-range: TransactionSummary
     items:
-      $ref: TransactionSummary.yaml
+      type: object
+      example:
+        type: TransactionSummary
+      # $ref: TransactionSummary.yaml
+  transactionParticipant:
+    type: array
+    description: transaction customers
+
   listingCount:
-    $ref: ListingCountSummary.yaml
+    type: object
+    description: new listings and inventory count
+    x-range: ListingCountSummary
+    # $ref: ListingCountSummary.yaml
   associateProduction:
     type: array
     description: associate production summary

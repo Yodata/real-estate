@@ -8,6 +8,6 @@ subscribe:
   oneOf:
     - $ref: franchise.report.yaml
     - $ref: franchise.transactionreport.yaml
-    - $ref: franchise.customerreport.yaml
+    - $ref: franchise.contactreport.yaml
     - $ref: franchise.listingcountreport.yaml
     - $ref: franchise.salesproductionreport.yaml

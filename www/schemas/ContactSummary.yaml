@@ -1,13 +1,13 @@
-title: CustomerSummary
-x-range: CustomerSummary
+title: ContactSummary
+x-range: ContactSummary
 description: minimal schema of a customer for report messages
 type: object
 properties:
   type:
     type: string
-    description: '"CustomerSummary"'
+    description: '"ContactSummary"'
     enum:
-    - CustomerSummaryReport
+    - ContactSummaryReport
   batchId:
     type: string
     description: BATCH-ID

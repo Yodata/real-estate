@@ -75,7 +75,7 @@ properties:
       bhhsUninprovedLandFlag:
         type: boolean
         description: UNIMPROVED-LAND-FLAG
-  salesPrice:
+  closePrice:
     $ref: MonetaryAmount.yaml
     description: SALES-PRICE
   gci:

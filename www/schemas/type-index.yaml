@@ -13,9 +13,10 @@ Collection: { $ref: Collection.yaml }
 Comment: { $ref: Comment.yaml }
 Contact: { $ref: Contact.yaml }
 ContactPoint: { $ref: ContactPoint.yaml }
-CustomerSummary: { $ref: CustomerSummary.yaml }
+ContactSummary: { $ref: ContactSummary.yaml }
 DigitalDocument: { $ref: DigitalDocument.yaml }
 EmailMessage: { $ref: EmailMessage.yaml }
+FranchiseReport: { $ref: FranchiseReport.yaml }
 Event: { $ref: Event.yaml }
 GeoCircle: { $ref: GeoCircle.yaml }
 GeoCoordinates: { $ref: GeoCoordinates.yaml }

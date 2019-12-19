@@ -6,8 +6,6 @@ publish:
     description: the event payload
 subscribe:
   oneOf:
-    - $ref: franchise.report.yaml
     - $ref: franchise.transactionreport.yaml
-    - $ref: franchise.contactreport.yaml
-    - $ref: franchise.listingcountreport.yaml
-    - $ref: franchise.salesproductionreport.yaml
+    - $ref: franchise.listingreport.yaml
+    # - $ref: franchise.salesproductionreport.yaml

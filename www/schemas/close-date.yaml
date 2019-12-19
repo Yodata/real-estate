@@ -1,0 +1,4 @@
+title: closeDate
+type: string
+format: date-time
+description: With for-sale listings, the date the purchase agreement was fulfilled. With lease listings, the date the requirements were fulfilled, such as contract and/or deposit.

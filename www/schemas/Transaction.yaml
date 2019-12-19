@@ -1,13 +1,13 @@
-title: Transaction
+title: RealEstateTransaction
 type: object
 x-range: RealEstateTransaction
 description: a real estate opportunity advanced to be a transaction
 properties:
   type:
+    type: string
+    description: '"RealEstateTransaction"'
     enum:
       - RealEstateTransaction
-    description: '"RealEstateTransaction"'
-    type: string
   identifier:
     $ref: identifier.yaml
     example:
@@ -15,64 +15,83 @@ properties:
   transactionStatus:
     type: string
     description: transaction status
+    example: ClosedTransactionStatus
   object:
     $ref: RealEstateProperty.yaml
     description: RealEstateProperty which is being transferred
-  # participants
-  buyer:
-    type: object
-    x-range:
-    - Person
-    - Organization
-    description: the buying participant
-    example:
-      type: Person
-
-  seller:
-    type: object
-    x-range:
-    - Person
-    - Organization
-    description: the seller
-  participant:
-    type: array
-    description: other parties with a direct or indirect interest or role in the transaction
-    x-range:
-    - CoBuyer
-    - CoSeller
-    - ListingAgent
-    - SellingAgent
-    - Buyer
-    - Seller
-    - TransactionCoordinator
-    - LoanOfficer
-    - EscrowCoordinator
-    - Vendor
-    items:
-      type: object
-  dateCancelled:
-    description: date the transaction was cancelled
-    format: date-time
-    type: string
   # dates
-  dateCreated:
-    $ref: dateCreated.yaml
-  closeDate:
-    description: 'With for-sale listings, the date the purchase agreement was fulfilled. With lease listings, the date the requirements were fulfilled, such as contract and/or deposit.'
-    format: date-time
-    type: string
+  listingContractDate:
+    $ref: listing-contract-date.yaml
   offerDate:
     type: string
     description: date the purchase offer was presented
     format: date-time
   purchaseContractDate:
-    description: date the purchase contract was signed
-    format: date-time
-    type: string
+    $ref: purchase-contract-date.yaml
+  closeDate:
+    $ref: close-date.yaml
   # documents
   document:
     type: array
-    description: associated documents (question - create standard document types?)
+    description: associated documents such as disclosures, etc..
     x-range: DigitalDocument
     items:
       $ref: DigitalDocument.yaml
+  # participants
+  participant:
+    type: array
+    description: parties with a direct or indirect interest or role in the transaction
+    x-range:
+    - Buyer
+    - BuyerAgent
+    - BuyerOffice
+    - Cobuyer
+    - Coseller
+    - EscrowCoordinator
+    - ListingAgent
+    - ListingOffice
+    - LoanOfficer
+    - Seller
+    - TransactionCoordinator
+    - Vendor
+    - Other
+    items:
+      type: object
+    example:
+    - type: Person
+      roleName: Buyer
+      name: Bob Buyer
+      email: bob@example.com
+    - type: RealEstateAgent
+      roleName: BuyerAgent
+      name: Robin Escobar
+
+  referral:
+    type: object
+    description: referral information
+    properties:
+      type:
+        type: string
+        description: '"Referral"'
+        enum:
+        - Referral
+      referredBy:
+        type: string
+        description: name of the referral source
+        example: example needed
+      additionalProperty:
+        type: object
+        example:
+          hsfInNetworkReferral: true
+
+  grossCommissionIncome:
+    type: array
+    description: commissions and adjustments
+    items:
+      $ref: Commission.yaml
+
+  salesProduction:
+    type: array
+    description: sales production assigned to agent/office for transaction
+    items:
+      $ref: Commission.yaml

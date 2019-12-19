@@ -28,11 +28,11 @@ properties:
     type: array
     description: transaction customers
 
-  listingCount:
+  propertyListing:
     type: object
     description: new listings and inventory count
-    x-range: ListingCountSummary
-    # $ref: ListingCountSummary.yaml
+    x-range: ListingReport
+    # $ref: ListingReport.yaml
   associateProduction:
     type: array
     description: associate production summary

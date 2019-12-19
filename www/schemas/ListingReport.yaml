@@ -1,12 +1,12 @@
-title: ListingCountSummary
+title: ListingReport
 description: summary report of listing inventory count
-x-range: ListingCountSummary
+x-range: ListingReport
 type: object
 properties:
   type:
     type: string
     description: RECORD-TYPE
-    example: ListingCountSummary
+    example: ListingReport
   batchId:
     type: string
     description: BATCH-ID

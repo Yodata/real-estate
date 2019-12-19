@@ -1,17 +1,17 @@
-x-title: transactionsummary
+x-title: transactionreport
 x-scope: realestate/franchise#
-summary: franchise transactionsummary
+summary: franchise transactionreport
 payload:
   allOf:
     - $ref: ../base.event.yaml
     - properties:
         topic:
-          description: realestate/franchise#transactionsummary
+          description: realestate/franchise#transactionreport
           enum:
-            - realestate/franchise#transactionsummary
+            - realestate/franchise#transactionreport
         data:
           allOf:
             - $ref: ../CreateAction.yaml
             - properties:
                 object:
-                  $ref: ../TransactionSummary.yaml
+                  $ref: ../Transaction.yaml

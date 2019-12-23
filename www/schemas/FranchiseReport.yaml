@@ -1,0 +1,24 @@
+title: FranchiseReport
+x-range: FranchiseReport
+description: a franchisee business report
+type: object
+properties:
+  type:
+    type: string
+    description: '"FranchiseReport"'
+    enum:
+    - FranchiseReport
+  transactions:
+    type: array
+    description: transaction data
+    x-range: TransactionSummary
+    items:
+      $ref: TransactionSummary.yaml
+  listingCount:
+    $ref: ListingCountSummary.yaml
+  associateProduction:
+    type: array
+    description: associate production summary
+    x-range: AssociateProductionSummary
+    items:
+      type: object

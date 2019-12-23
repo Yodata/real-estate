@@ -1,0 +1,15 @@
+title: TransactionStatus
+description: Transaction Status Enumeration Values
+type: object
+properties:
+  PendingTransactionStatus:
+    type: string
+    description: Pending Status
+  ClosedTransactionStatus:
+    type: string
+    description: Closed Status
+  CancelledTransactionStatus:
+    type: string
+    description: Cancelled Status
+example:
+  transactionStatus: PendingTransactionStatus

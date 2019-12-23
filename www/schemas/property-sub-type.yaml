@@ -1,0 +1,33 @@
+title: propertySubType
+type: string
+x-range: PropertySubType
+description: RESO property sub-type (see range for allowed values)
+enum:
+- ApartmentPropertyType
+- BoatSlipPropertyType
+- CabinPropertyType
+- CondominiumPropertyType
+- DeededParkingPropertyType
+- DuplexPropertyType
+- FarmPropertyType
+- ManufacturedHomePropertyType
+- ManufacturedOnLandPropertyType
+- MobileHomePropertyType
+- OwnYourOwnPropertyType
+- QuadruplexPropertyType
+- RanchPropertyType
+- SingleFamilyPropertyType
+- StockCooperativePropertyType
+- TimesharePropertyType
+- TownhousePropertyType
+- TriplexPropertyType
+- AgriculturePropertyType
+- BusinessPropertyType
+- HotelMotelPropertyType
+- IndustrialPropertyType
+- MixedUsePropertyType
+- MultiFamilyPropertyType
+- OfficePropertyType
+- RetailPropertyType
+- UnimprovedLandPropertyType
+- WarehousePropertyType

@@ -1,0 +1,21 @@
+allOf:
+  - $ref: Thing.yaml
+  - description: an office of a broker
+    properties:
+      type:
+        type: string
+        description: type of the office
+    
+      name:
+        type: string
+        description: the designated name for the office
+        
+      address:
+        $ref: address.yaml
+
+      email:
+        $ref: email.yaml
+        
+      identifier:
+        officeKey: grc1
+

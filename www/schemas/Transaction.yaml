@@ -1,0 +1,78 @@
+title: Transaction
+type: object
+x-range: RealEstateTransaction
+description: a real estate opportunity advanced to be a transaction
+properties:
+  type:
+    enum:
+      - RealEstateTransaction
+    description: '"RealEstateTransaction"'
+    type: string
+  identifier:
+    $ref: identifier.yaml
+    example:
+      bhhsTransactionId: 0000097123
+  transactionStatus:
+    type: string
+    description: transaction status
+  object:
+    $ref: RealEstateProperty.yaml
+    description: RealEstateProperty which is being transferred
+  # participants
+  buyer:
+    type: object
+    x-range:
+    - Person
+    - Organization
+    description: the buying participant
+    example:
+      type: Person
+
+  seller:
+    type: object
+    x-range:
+    - Person
+    - Organization
+    description: the seller
+  participant:
+    type: array
+    description: other parties with a direct or indirect interest or role in the transaction
+    x-range:
+    - CoBuyer
+    - CoSeller
+    - ListingAgent
+    - SellingAgent
+    - Buyer
+    - Seller
+    - TransactionCoordinator
+    - LoanOfficer
+    - EscrowCoordinator
+    - Vendor
+    items:
+      type: object
+  dateCancelled:
+    description: date the transaction was cancelled
+    format: date-time
+    type: string
+  # dates
+  dateCreated:
+    $ref: dateCreated.yaml
+  closeDate:
+    description: 'With for-sale listings, the date the purchase agreement was fulfilled. With lease listings, the date the requirements were fulfilled, such as contract and/or deposit.'
+    format: date-time
+    type: string
+  offerDate:
+    type: string
+    description: date the purchase offer was presented
+    format: date-time
+  purchaseContractDate:
+    description: date the purchase contract was signed
+    format: date-time
+    type: string
+  # documents
+  document:
+    type: array
+    description: associated documents (question - create standard document types?)
+    x-range: DigitalDocument
+    items:
+      $ref: DigitalDocument.yaml

@@ -11,6 +11,7 @@ City: { $ref: City.yaml }
 CloudEvent: { $ref: CloudEvent.yaml }
 Collection: { $ref: Collection.yaml }
 Comment: { $ref: Comment.yaml }
+Commission: { $ref: Commission.yaml }
 Contact: { $ref: Contact.yaml }
 ContactPoint: { $ref: ContactPoint.yaml }
 ContactSummary: { $ref: ContactSummary.yaml }

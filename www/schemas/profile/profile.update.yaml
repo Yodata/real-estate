@@ -18,5 +18,9 @@ payload:
                 - UpdateAction
               example: UpdateAction
             object:
+              x-range:
+              - RealEstateAgent
+              - RealEstateOffice
+              - RealEstateOrganization
               type: object
               description: the updated or added profile value

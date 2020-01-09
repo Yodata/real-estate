@@ -1,7 +1,7 @@
 title: HSFTerms
 type: object
 description: additional properties for HSF.
-properties:      
+properties:
   additionalProperty:
     type: object
     properties:
@@ -10,13 +10,13 @@ properties:
         x-subPropertyOf: additionalProperty
         x-domain:
           - Award
-          
+
       awardBasis:
         type: string
         x-subPropertyOf: additionalProperty
         x-domain:
           - Award
-      
+
       teamType:
         type: string
         description: award team type
@@ -26,33 +26,33 @@ properties:
         enum:
           - Company Team
           - Agent Team
-          
+
       brand:
         type: string
         description: brand
         x-subPropertyOf: additionalProperty
         x-domain:
           - AwardTeam
-        enum: 
+        enum:
           - Berkshire Hathaway HomeServices
-          
+
       status:
         type: string
         description: status of award team
         x-subPropertyOf: additionalProperty
         x-domain:
           - AwardTeam
-        enum: 
+        enum:
           - Active
           - Inactive
-          
+
       period:
         type: string
         description: name of award period
         x-subPropertyOf: additionalProperty
         x-domain:
           - AwardTeam
-          
+
       periodType:
         type: string
         description: type of award period
@@ -62,9 +62,9 @@ properties:
         enum:
           - Annual
           - Quarterly
-          
+
       primaryCompany:
-        type: Object
+        type: object
         description: primary company if team type is Company Team
         properties:
           type:
@@ -76,7 +76,7 @@ properties:
             x-subPropertyOf: identifier
         x-domain:
           - AwardTeam
-          
+
       company:
         type: object
         description: agent's company if team type is Agent Team
@@ -90,7 +90,7 @@ properties:
             x-subPropertyOf: identifier
         x-domain:
           - AwardTeam
-          
+
       office:
         type: boolean
         description: agent's office if team type is Agent Team
@@ -104,7 +104,7 @@ properties:
             x-subPropertyOf: identifier
         x-domain:
           - AwardTeam
-          
+
       primaryContact:
         type: boolean
         description: primary contact/agent if team type is Agent Team

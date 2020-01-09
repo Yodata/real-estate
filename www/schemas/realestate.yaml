@@ -62,3 +62,4 @@ schemas:
   Task: { $ref: Task.yaml }
   Thing: { $ref: Thing.yaml }
   BHHSTerms: { $ref: BHHSTerms.yaml }
+  HSFTerms: { $ref: HSFTerms.yaml }

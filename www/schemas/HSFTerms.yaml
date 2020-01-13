@@ -92,7 +92,7 @@ properties:
           - AwardTeam
 
       office:
-        type: boolean
+        type: object
         description: agent's office if team type is Agent Team
         properties:
           type:
@@ -106,7 +106,7 @@ properties:
           - AwardTeam
 
       primaryContact:
-        type: boolean
+        type: object
         description: primary contact/agent if team type is Agent Team
         properties:
           type:

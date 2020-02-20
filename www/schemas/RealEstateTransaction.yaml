@@ -1,7 +1,7 @@
 title: RealEstateTransaction
 type: object
 x-range: RealEstateTransaction
-description: a real estate opportunity advanced to be a transaction
+description: describes a sale, purchase and transfer of a real estate property.
 properties:
   type:
     type: string
@@ -17,8 +17,21 @@ properties:
     description: transaction status
     example: ClosedTransactionStatus
   object:
-    $ref: RealEstateProperty.yaml
-    description: RealEstateProperty which is being transferred
+    #$ref: RealEstateProperty.yaml
+    type: object
+    x-range: RealEstateProperty
+    description: the RealEstateProperty being purchased, sold, rented, leased or transferred, a.k.a. the transaction subject.
+    example:
+      type: DigitalDocument
+      id: 'http://user.example.com/public/logo/archive.zip'
+      name: archive.zip
+      encodingFormat: application/zip
+      about:
+       type: Transaction
+       identifier:
+          bhhsTransactionId: xxxx
+          url: 'https://example.com'
+
   # dates
   listingContractDate:
     $ref: listing-contract-date.yaml
@@ -33,10 +46,10 @@ properties:
   # documents
   document:
     type: array
-    description: associated documents such as disclosures, etc..
+    description: any documents, images, etc... related to the transaction.
     x-range: DigitalDocument
     items:
-      $ref: DigitalDocument.yaml
+        type: object
   # participants
   participant:
     type: array
@@ -84,14 +97,8 @@ properties:
         example:
           hsfInNetworkReferral: true
 
-  grossCommissionIncome:
+  transactionEntry:
     type: array
     description: commissions and adjustments
-    items:
-      $ref: Commission.yaml
-
-  salesProduction:
-    type: array
-    description: sales production assigned to agent/office for transaction
     items:
       $ref: Commission.yaml

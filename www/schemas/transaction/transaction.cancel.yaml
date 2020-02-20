@@ -14,4 +14,4 @@ payload:
         data:
           properties:
             object:
-              $ref: ../Transaction.yaml
+              $ref: ../RealEstateTransaction.yaml

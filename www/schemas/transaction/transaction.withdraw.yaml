@@ -13,4 +13,4 @@ payload:
           - $ref: ../WithdrawAction.yaml
           - properties:
               object:
-                $ref: ../Transaction.yaml
+                $ref: ../RealEstateTransaction.yaml

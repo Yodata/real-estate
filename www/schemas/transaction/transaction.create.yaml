@@ -1,4 +1,4 @@
-x-title: add
+x-title: create
 x-scope: realestate/transaction#
 summary: a real estate transaction was created
 payload:
@@ -7,11 +7,11 @@ payload:
     - properties:
         topic:
           enum:
-            - realestate/transaction#add
+            - realestate/transaction#create
         data:
-          $ref: ../AddAction.yaml
+          $ref: ../CreateAction.yaml
     - properties:
         data:
           properties:
             object:
-              $ref: ../Transaction.yaml
+              $ref: ../RealEstateTransaction.yaml

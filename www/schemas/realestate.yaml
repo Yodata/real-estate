@@ -8,10 +8,10 @@
 # UpdateAction: { $ref: UpdateAction.yaml }
 # schemas:
 Action: { $ref: Action.yaml }
+ApplicationProfile: { $ref: ApplicationProfile.yaml }
 Award: { $ref: Award.yaml }
 AwardSeries: { $ref: AwardSeries.yaml }
 AwardTeam: { $ref: AwardTeam.yaml }
-ApplicationProfile: { $ref: ApplicationProfile.yaml }
 Certification: { $ref: Certification.yaml }
 City: { $ref: City.yaml }
 CloudEvent: { $ref: CloudEvent.yaml }
@@ -54,6 +54,7 @@ RealEstateAgent: { $ref: RealEstateAgent.yaml }
 RealEstateLicense: { $ref: RealEstateLicense.yaml }
 RealEstateOffice: { $ref: RealEstateOffice.yaml }
 RealEstateOrganization: { $ref: RealEstateOrganization.yaml }
+RealEstateTransaction: { $ref: RealEstateTransaction.yaml }
 RealEstateWebsite: { $ref: RealEstateWebsite.yaml }
 Schedule: { $ref: Schedule.yaml }
 Service: { $ref: Service.yaml }
@@ -61,5 +62,4 @@ ServiceArea: { $ref: ServiceArea.yaml }
 State: { $ref: State.yaml }
 Task: { $ref: Task.yaml }
 Thing: { $ref: Thing.yaml }
-Transaction: { $ref: Transaction.yaml }
 BHHSTerms: { $ref: BHHSTerms.yaml }

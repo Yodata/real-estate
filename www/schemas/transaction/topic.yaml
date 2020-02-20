@@ -6,10 +6,6 @@ publish:
     description: the event payload
 subscribe:
   oneOf:
-    - $ref: transaction.add.yaml
-    - $ref: transaction.cancel.yaml
-    - $ref: transaction.close.yaml
-    - $ref: transaction.expire.yaml
-    - $ref: transaction.pending.yaml
-    - $ref: transaction.withdraw.yaml
+    - $ref: transaction.create.yaml
     - $ref: transaction.update.yaml
+    - $ref: transaction.close.yaml

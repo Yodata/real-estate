@@ -14,4 +14,4 @@ payload:
           - x-range: UpdateAction
             properties:
               object:
-                $ref: ../Transaction.yaml
+                $ref: ../RealEstateTransaction.yaml

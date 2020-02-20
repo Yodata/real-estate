@@ -61,7 +61,7 @@ ServiceArea: { $ref: ServiceArea.yaml }
 State: { $ref: State.yaml }
 Task: { $ref: Task.yaml }
 Thing: { $ref: Thing.yaml }
-Transaction: { $ref: Transaction.yaml }
+RealEstateTransaction: { $ref: RealEstateTransaction.yaml }
 TransactionSummary: { $ref: TransactionSummary.yaml }
 TransactionStatus: { $ref: TransactionStatus.yaml }
 BHHSTerms: { $ref: BHHSTerms.yaml }

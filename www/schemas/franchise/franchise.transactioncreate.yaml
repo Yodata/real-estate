@@ -1,6 +1,6 @@
-x-title: transactionreport
+x-title: transaction.create
 x-scope: realestate/franchise#
-summary: franchise transactionreport
+summary: fires when a new transaction is created
 payload:
   allOf:
     - $ref: ../base.event.yaml

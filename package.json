@@ -3,6 +3,9 @@
   "bin": {
     "merge-schema": "./src/merge-schema/cli.js"
   },
+  "scripts": {
+    "dev": "cd www && npm run dev"
+  },
   "private": true,
   "devDependencies": {
     "@types/eslint": "^6.1.8",

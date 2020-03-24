@@ -92,3 +92,11 @@ properties:
       sentToReferralSolutions:
         type: boolean
         description: sent to referral solutions
+      luxuryPropertyMinPrice:
+        description: minimum price for a property listing in the area to be considered a luxury property
+        type: object
+        x-range: PriceSpecification
+        example:
+            type: PriceSpecification
+            price: 100000
+            priceCurrency: USD

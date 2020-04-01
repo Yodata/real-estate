@@ -11,13 +11,15 @@ properties:
   identifier:
     $ref: identifier.yaml
     example:
-      bhhsTransactionId: 0000097123
+      vendorTransactionId: 0000097123
   transactionStatus:
     type: string
     description: transaction status
     example: ClosedTransactionStatus
+  additionalProperty:
+    type: object
+    description: vendor/context specific custom properties
   object:
-    #$ref: RealEstateProperty.yaml
     type: object
     x-range: RealEstateProperty
     description: the RealEstateProperty being purchased, sold, rented, leased or transferred, a.k.a. the transaction subject.
@@ -29,8 +31,9 @@ properties:
       about:
        type: Transaction
        identifier:
-          bhhsTransactionId: xxxx
-          url: 'https://example.com'
+          vendorTransactionId: xxxx
+       additionalProperty:
+         bhhsTransactionId: yyyy
 
   # dates
   listingContractDate:

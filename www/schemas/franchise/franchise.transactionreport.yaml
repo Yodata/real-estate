@@ -13,5 +13,11 @@ payload:
           allOf:
             - $ref: ../CreateAction.yaml
             - properties:
+                type:
+                  type: string
+                  x-range:
+                  - CreateAction
+                  - UpdateAction
+                  - DeleteAction
                 object:
                   $ref: ../RealEstateTransaction.yaml

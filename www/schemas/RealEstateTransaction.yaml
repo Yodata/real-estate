@@ -24,16 +24,13 @@ properties:
     x-range: RealEstateProperty
     description: the RealEstateProperty being purchased, sold, rented, leased or transferred, a.k.a. the transaction subject.
     example:
-      type: DigitalDocument
-      id: 'http://user.example.com/public/logo/archive.zip'
-      name: archive.zip
-      encodingFormat: application/zip
-      about:
-       type: Transaction
-       identifier:
-          vendorTransactionId: xxxx
-       additionalProperty:
-         bhhsTransactionId: yyyy
+      type: RealEstateProperty
+      apn: ABC-12345-XX-XXXX
+      streetAddress: 1007 Mountain Gate Rd
+      addressLocality: Gotham City
+      addressRegion: New Jersey
+      postalCode: 10007
+      addressCountry: USA
 
   # dates
   listingContractDate:
@@ -46,13 +43,24 @@ properties:
     $ref: purchase-contract-date.yaml
   closeDate:
     $ref: close-date.yaml
+  statusChangeDate:
+    type: string
+    description: the date of the most recent status change for the transaction.
+    x-range: DateTime
+    example: 2019-11-25T04:23:32Z
+  # prices
+  listingPrice:
+    $ref: price-specification-object.yaml
+  closePrice:
+    $ref: price-specification-object.yaml
   # documents
   document:
     type: array
     description: any documents, images, etc... related to the transaction.
-    x-range: DigitalDocument
     items:
-        type: object
+      $ref: DigitalDocument.yaml
+
+
   # participants
   participant:
     type: array
@@ -81,6 +89,16 @@ properties:
     - type: RealEstateAgent
       roleName: BuyerAgent
       name: Robin Escobar
+    - type: RealEstateOffice
+      roleName: ListingOffice
+      id: https://xxx.example.com/profile/card#me
+      additionalProperty:
+        OfficeID: xxx
+    - type: RealEstateOffice
+      roleName: SellingOffice
+      id: https://yyy.example.com/profile/card#me
+      additionalProperty:
+        OfficeID: yyy
 
   referral:
     type: object

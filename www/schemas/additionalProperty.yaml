@@ -3,3 +3,4 @@ type: object
 description: vendor namespaced properties
 example:
   supercrmuserid: 1234
+  doNotSell: true

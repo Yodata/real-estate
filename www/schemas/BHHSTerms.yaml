@@ -217,3 +217,10 @@ properties:
         x-subPropertyOf: identifier
         x-domain:
           - RealEstateOrganization
+          
+      doNotSell:
+        type: boolean
+        description: if contact doesn't want to sell his/her personal information
+        x-subPropertyOf: additionalProperty
+        x-domain:
+          - Contact

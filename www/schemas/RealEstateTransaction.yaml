@@ -19,6 +19,7 @@ properties:
   additionalProperty:
     type: object
     description: vendor/context specific custom properties
+
   object:
     type: object
     x-range: RealEstateProperty
@@ -39,6 +40,7 @@ properties:
     type: string
     description: date the purchase offer was presented
     format: date-time
+    x-range: DateTime
   purchaseContractDate:
     $ref: purchase-contract-date.yaml
   closeDate:
@@ -48,6 +50,7 @@ properties:
     description: the date of the most recent status change for the transaction.
     x-range: DateTime
     example: 2019-11-25T04:23:32Z
+
   # prices
   listingPrice:
     $ref: price-specification-object.yaml
@@ -57,9 +60,9 @@ properties:
   document:
     type: array
     description: any documents, images, etc... related to the transaction.
+    x-range: DigitalDocument
     items:
-      $ref: DigitalDocument.yaml
-
+      type: object
 
   # participants
   participant:
@@ -121,5 +124,6 @@ properties:
   transactionEntry:
     type: array
     description: commissions and adjustments
+    x-range: Commission
     items:
       $ref: Commission.yaml

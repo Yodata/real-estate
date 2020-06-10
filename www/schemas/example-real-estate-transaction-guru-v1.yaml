@@ -1,12 +1,14 @@
 
 type: RealEstateTransaction
-adjustmentSequence: '001'
+
 identifier:
   vendorTransactionId: '0000007631'
+
 transactionStatus: ClosedTransactionStatus
-additionalProperty: {}
+
 object:
   type: RealEstateProperty
+  propertyType: Resi
   apn: ABC-12345-XX-XXXX
   streetAddress: 7125 E. Morning Sun Lane
   addressLocality: Anchorage
@@ -15,69 +17,49 @@ object:
   addressCountry: USA
   additionalProperty:
     bhhsUninprovedLandFlag: 'true'
+
 listingContractDate: ''
-offerDate: ''
-purchaseContractDate: '2020-05-05'
+offerDate: '2019-11-25'
+purchaseContractDate: '2019-11-25'
 closeDate: '2020-05-05'
 statusChangeDate: '2020-03-06'
-propertyType: Resi
-isLand: 'N'
-price: '00553000000'
-priceCurrency: USD
+
 referral:
   type: 'Y'
   referredBy: GT703
   additionalProperty:
     hsfInNetworkReferral: 'Y'
+
 closePrice:
   type: PriceSpecification
-  minValue: ''
-  maxValue: ''
-  value: '553000000'
+  value: 553000000
   currency: USD
-gci:
-  type: MonetaryAmount
-  minValue: ''
-  maxValue: ''
-  value: 00016590000
+
+transactionEntry:
+
+- type: Commission
+  position: 0
+  value: 165900
   currency: USD
-gciDeduction:
-  type: MonetaryAmount
-  minValue: ''
-  maxValue: ''
-  value: 00005308800
-  currency: USD
-customers:
+  recipient:
+    type: RealEstateAgent
+    id: https://{contactid}.bhhs.hsfaffiliates.com/profile/card#me
+
+- type: Commission
+  position: 1
+  value: 1500
+  recipient:
+    type: RealEstateAgent
+    id: https://{contactid}.bhhs.hsfaffiliates.com/profile/card#me
+
+participant:
   - type: Person
     roleName: Buyer 1
     name: Elizabeth M Brown
     email: helpdesk@guru-solutions.com
-agentProduction:
-  - type: RealEstateAgent
-    roleName: BuyerAgent 1
-    name: A BMS Test
-    officeId: '002'
-    associatedId: '41775'
-    recipient: '111100'
-    unit: '1000'
-    gci:
-      type: ''
-      minValue: ''
-      maxValue: ''
-      value: '165,
-900.00'
-      currency: USD
-document:
-  - type: DigitalDocument
-    id: ''
-    name: archive.zip
-    encodingFormat: application/zip
-    about:
-      type: Transaction
-      identifier:
-        bhhsTransactionId: ''
-    url: ''
-footer:
+
+additionalProperty:
   type: '99'
   batchId: '1211'
   affiliateId: AK521
+  isLand: 'N'

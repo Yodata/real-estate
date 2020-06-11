@@ -3,8 +3,8 @@ identifier:
   guruTransactionId: '0000074792'
 object:
   type: RealEstateProperty
-  apn: ''
-  listingId: string
+  parcelNumber: '123456'  # new term
+  listingId: '1234567' # this is a property of a listing not a location
   streetAddress: 1433 W 150 N
   addressLocality: Springville
   addressRegion: UT
@@ -49,19 +49,24 @@ transactionSummary:
   referredBy: 'https://FL302.bhhs.hsfaffiliates.com/profile/card#me'
 referral:
   type: Referral
+  referredBy:
+    type: RealEstateAgent
+    name: Joe Agent
+    id: https://12345.bhhs.hsfaffiliates.com/profile/card#me
   additionalProperty:
     hsfInNetworkReferral: 'Y'
 participant:
   - type: Person
-    givenName: Josh
-    additionalName: ''
-    familyName: Cold
-    email: ''
     roleName: Buyer
-    additionalProperty:
-      position: '1'
-      owner: 'https://474912.bhhs.hsfaffiliates.com/profile/card#me'
-      fax: ''
+    position: 1
+    givenName: Josh
+    familyName: Cold
+    additionalName: Stone
+    email: joe@example.com
+    telephone: '8885550001'
+    faxNumber: '8885550002'
+    # use existing property leadOwner or if a new property is more appropriate use schema.org/affiliation
+    leadOwner: 'https://474912.bhhs.hsfaffiliates.com/profile/card#me'
 salesProductionSummary:
   type: SalesProductionSummary
   officeIdentifier: 'https://UT302-008.bhhs.hsfaffiliattes.com/profile/card#me'
@@ -69,17 +74,13 @@ salesProductionSummary:
   participantRoleName: BuyerAgentRole
   Position: '1'
   identifier:
-    vendoraid: '218034'
+    vendoraid: '218034' #what is this is this referring to?
   salesProductionUnit:
     type: MonetaryAmount
-    minValue: null
-    maxValue: null
     value: 1000
     currency: USD
   salesProductionGCI:
     type: MonetaryAmount
-    minValue: null
-    maxValue: null
     value: 75000
     currency: USD
 document:

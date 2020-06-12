@@ -37,7 +37,7 @@ closePrice:
 
 transactionEntry:
 
-- type: Commission
+- type: TransactionEntry
   position: 0
   value: 165900
   currency: USD
@@ -45,7 +45,7 @@ transactionEntry:
     type: RealEstateAgent
     id: https://{contactid}.bhhs.hsfaffiliates.com/profile/card#me
 
-- type: Commission
+- type: TransactionEntry
   position: 1
   value: 1500
   recipient:

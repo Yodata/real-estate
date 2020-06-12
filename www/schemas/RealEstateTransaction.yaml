@@ -126,4 +126,4 @@ properties:
     description: commissions and unit entries
     x-range: TransactionEntry
     items:
-      $ref: Commission.yaml
+      type: object

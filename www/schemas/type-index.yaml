@@ -11,7 +11,6 @@ City: { $ref: City.yaml }
 CloudEvent: { $ref: CloudEvent.yaml }
 Collection: { $ref: Collection.yaml }
 Comment: { $ref: Comment.yaml }
-Commission: { $ref: Commission.yaml }
 Contact: { $ref: Contact.yaml }
 ContactPoint: { $ref: ContactPoint.yaml }
 ContactSummary: { $ref: ContactSummary.yaml }
@@ -53,15 +52,13 @@ RealEstateLicense: { $ref: RealEstateLicense.yaml }
 RealEstateOffice: { $ref: RealEstateOffice.yaml }
 RealEstateOrganization: { $ref: RealEstateOrganization.yaml }
 RealEstateProperty: { $ref: RealEstateProperty.yaml }
+RealEstateTransaction: { $ref: RealEstateTransaction.yaml }
 RealEstateWebsite: { $ref: RealEstateWebsite.yaml }
-SalesProductionReport: { $ref: SalesProductionReport.yaml }
 Schedule: { $ref: Schedule.yaml }
 Service: { $ref: Service.yaml }
 ServiceArea: { $ref: ServiceArea.yaml }
 State: { $ref: State.yaml }
 Task: { $ref: Task.yaml }
 Thing: { $ref: Thing.yaml }
-RealEstateTransaction: { $ref: RealEstateTransaction.yaml }
-TransactionSummary: { $ref: TransactionSummary.yaml }
-TransactionStatus: { $ref: TransactionStatus.yaml }
+TransactionEntry: { $ref: TransactionEntry.yaml }
 BHHSTerms: { $ref: BHHSTerms.yaml }

@@ -8,13 +8,21 @@ allOf:
         enum:
           - Person
 
+      affiliation:
+        type: array
+        description: An organization that this person is affiliated with
+        items:
+          type: string
+          format: uri
+          example: https://example.com/profile/card#me
+
       address:
         type: array
         x-range: PostalAddress
-        description: addresses for the item 
+        description: addresses for the item
         items:
           $ref: address.yaml
-      
+
       birthDate:
         type: string
         format: date
@@ -26,7 +34,7 @@ allOf:
         x-range: ContactPoint
         description: a named point of contact - telephone, email, faxNumber, and/or url for the entity
         items:
-          $ref: contact-point.yaml          
+          $ref: contact-point.yaml
 
       email:
         type: string
@@ -63,12 +71,12 @@ allOf:
           - type: Language
             name: English
             additionalName: en-us
-      
+
       name:
         type: string
         description: Full name of the person.
         example: Bruce Wayne
-          
+
       telephone:
         description: Primary phone number.
         type: string
@@ -78,5 +86,3 @@ allOf:
         type: string
         description: Organizations the person works for.
         example: Gotham City Police Department
-
-

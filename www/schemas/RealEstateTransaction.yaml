@@ -109,8 +109,8 @@ properties:
         type: array
         description: parties with a direct or indirect interest or role in the transaction
         x-range:
-            - Buyer
-            - Seller
+            - Person
+            - Organization
         items:
             type: object
             x-range: Person

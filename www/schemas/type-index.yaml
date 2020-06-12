@@ -61,4 +61,5 @@ State: { $ref: State.yaml }
 Task: { $ref: Task.yaml }
 Thing: { $ref: Thing.yaml }
 TransactionEntry: { $ref: TransactionEntry.yaml }
+TransactionStatus: { $ref: TransactionStatus.yaml }
 BHHSTerms: { $ref: BHHSTerms.yaml }

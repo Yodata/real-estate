@@ -8,19 +8,11 @@ properties:
     description: MonetaryAmount
     enum:
       - MonetaryAmount
-  minValue:
-    type: number
-    description: the low value offered if value is a range.
-    example: null
-  maxValue:
-    type: number
-    description: the high value offered if value is a range.
-    example: null
   value:
     type: number
     description: the amount.
-    example: 75000
+    example: 75000.00
   currency:
     type: string
-    description: use ISO4217
+    description: use ISO4217 country codes
     example: USD

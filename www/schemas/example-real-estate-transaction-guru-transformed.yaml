@@ -13,11 +13,12 @@ object:
   propertySubType: SingleFamilyPropertyType
   universalPropertyId: US-04015-N-R-11022331-N
 transactionType: ST
-reportingOfficeId: 'https://UT302-008.bhhs.hsfaffiliates.com/profile/card#me'
+reportingOffice:
+    id: 'https://UT302-008.bhhs.hsfaffiliates.com/profile/card#me'
 transactionStatus: ClosedTransactionStatus
 closeDate: '2020-26-05T09:18:08Z'
 commissionDate: '2020-26-05T09:18:08Z'
-purhaseContractDate: '2020-25-04T09:18:08Z'
+purchaseContractDate: '2020-25-04T09:18:08Z'
 additionalProperty:
     batchId: '4136'
     bhhsUninprovedLandFlag: true
@@ -28,7 +29,8 @@ closePrice:
 totalSalesProductionGCI:
     type: MonetaryAmount
     value: 10023.00
-gciDeduction: # please explain
+    currency: USD
+totalSalesProductionGCIDeduction:
     type: MonetaryAmount
     value: 500.00
     currency: USD
@@ -64,20 +66,18 @@ transactionEntry:
     identifier:
         guruAgentId: '218034'  # todo: verify this is the vendor identifier for the agent receiving the credit
   salesProductionUnit:
-    type: MonetaryAmount
-    value: 1000.00
-    currency: USD
+    type: QuantitativeValue
+    value: 0.5
   salesProductionGCI:
     type: MonetaryAmount
-    value: 75000
+    value: 150000.00
     currency: USD
 document:
   - type: DigitalDocument
-    id: ''
-    name: ''
+    name: Sales Contract
     encodingFormat: application/zip
     about:
       type: Transaction
       identifier:
-        bhhsTransactionId: ''
-    url: ''
+        guruTransactionId: '0000074792'
+    url: https://example.com/path/to/document.pdf

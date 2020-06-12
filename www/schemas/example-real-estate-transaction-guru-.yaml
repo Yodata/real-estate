@@ -23,7 +23,7 @@ transactionSummary:
   position: '001'
   closeDate: '2020-26-05T09:18:08Z'
   commissionDate: '2020-26-05T09:18:08Z'
-  purhaseContractDate: '2020-25-04T09:18:08Z'
+  purchaseContractDate: '2020-25-04T09:18:08Z'
   additionalProperty:
     bhhsUninprovedLandFlag: true
   closePrice:

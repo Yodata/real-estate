@@ -3,127 +3,154 @@ type: object
 x-range: RealEstateTransaction
 description: describes a sale, purchase and transfer of a real estate property.
 properties:
-  type:
-    type: string
-    description: '"RealEstateTransaction"'
-    enum:
-      - RealEstateTransaction
-  identifier:
-    $ref: identifier.yaml
-    example:
-      vendorTransactionId: 0000097123
-  transactionStatus:
-    type: string
-    description: transaction status
-    example: ClosedTransactionStatus
-  additionalProperty:
-    type: object
-    description: vendor/context specific custom properties
-
-  object:
-    type: object
-    x-range: RealEstateProperty
-    description: the RealEstateProperty being purchased, sold, rented, leased or transferred, a.k.a. the transaction subject.
-    example:
-      type: RealEstateProperty
-      apn: ABC-12345-XX-XXXX
-      streetAddress: 1007 Mountain Gate Rd
-      addressLocality: Gotham City
-      addressRegion: New Jersey
-      postalCode: 10007
-      addressCountry: USA
-
-  # dates
-  listingContractDate:
-    $ref: listing-contract-date.yaml
-  offerDate:
-    type: string
-    description: date the purchase offer was presented
-    format: date-time
-    x-range: DateTime
-  purchaseContractDate:
-    $ref: purchase-contract-date.yaml
-  closeDate:
-    $ref: close-date.yaml
-  statusChangeDate:
-    type: string
-    description: the date of the most recent status change for the transaction.
-    x-range: DateTime
-    example: 2019-11-25T04:23:32Z
-
-  # prices
-  listingPrice:
-    $ref: price-specification-object.yaml
-  closePrice:
-    $ref: price-specification-object.yaml
-  # documents
-  document:
-    type: array
-    description: any documents, images, etc... related to the transaction.
-    x-range: DigitalDocument
-    items:
-      type: object
-
-  # participants
-  participant:
-    type: array
-    description: parties with a direct or indirect interest or role in the transaction
-    x-range:
-    - Buyer
-    - BuyerAgent
-    - BuyerOffice
-    - Cobuyer
-    - Coseller
-    - EscrowCoordinator
-    - ListingAgent
-    - ListingOffice
-    - LoanOfficer
-    - Seller
-    - TransactionCoordinator
-    - Vendor
-    - Other
-    items:
-      type: object
-    example:
-    - type: Person
-      roleName: Buyer
-      name: Bob Buyer
-      email: bob@example.com
-    - type: RealEstateAgent
-      roleName: BuyerAgent
-      name: Robin Escobar
-    - type: RealEstateOffice
-      roleName: ListingOffice
-      id: https://xxx.example.com/profile/card#me
-      additionalProperty:
-        OfficeID: xxx
-    - type: RealEstateOffice
-      roleName: SellingOffice
-      id: https://yyy.example.com/profile/card#me
-      additionalProperty:
-        OfficeID: yyy
-
-  referral:
-    type: object
-    description: referral information
-    properties:
-      type:
+    type:
         type: string
-        description: '"Referral"'
+        description: '"RealEstateTransaction"'
         enum:
-        - Referral
-      referredBy:
-        type: string
-        description: name of the referral source
-        example: example needed
-      additionalProperty:
-        type: object
+            - RealEstateTransaction
+    identifier:
+        $ref: identifier.yaml
         example:
-          hsfInNetworkReferral: true
+            vendorTransactionId: 0000097123
+    transactionStatus:
+        type: string
+        description: transaction status
+        example: ClosedTransactionStatus
+    transactionType:
+        type: string
+        description: transaction type
+        example: ST
 
-  transactionEntry:
-    type: array
-    description: commissions and unit entries
-    x-range: TransactionEntry
-    items:
-      type: object
+    additionalProperty:
+        type: object
+        description: vendor/context specific custom properties
+        properties:
+            batchid:
+                type: string
+                description: identifies the batch for the current transaction
+                example: '4136-001'
+            bhhsUninprovedLandFlag:
+                type: boolean
+                description: true if the transaction subject property is an unimproved lot.
+
+    object:
+        type: object
+        x-range: RealEstateProperty
+        description: the RealEstateProperty being purchased, sold, rented, leased or transferred, a.k.a. the transaction subject.
+        example:
+            type: RealEstateProperty
+            apn: ABC-12345-XX-XXXX
+            streetAddress: 1007 Mountain Gate Rd
+            addressLocality: Gotham City
+            addressRegion: New Jersey
+            postalCode: 10007
+            addressCountry: USA
+
+    # dates
+    offerDate:
+        type: string
+        description: date the purchase offer was presented
+        format: date-time
+        x-range: DateTime
+    purchaseContractDate:
+        type: string
+        description: date of purchase agreement execution
+        x-range: DateTime
+        example: 2019-11-25T04:23:32Z
+    closeDate:
+        title: closeDate
+        type: string
+        format: date-time
+        x-range: DateTime
+        description: With for-sale listings, the date the purchase agreement was fulfilled. With lease listings, the date the requirements were fulfilled, such as contract and/or deposit.
+
+    # prices
+    listingPrice:
+        type: object
+        x-range: MonetaryAmount
+        description: the listing price of the subject
+        example:
+            type: MonetaryAmount
+            value: 4500.00
+            currency: USD
+    closePrice:
+        type: object
+        x-range: MonetaryAmount
+        description: the final sale price of the subject
+        example:
+            type: MonetaryAmount
+            value: 1000.00
+            currency: USD
+
+    # documents
+    document:
+        type: array
+        description: any documents, images, etc... related to the transaction.
+        x-range: DigitalDocument
+
+    # participants
+
+    reportingOffice:
+        type: string
+        description: the office reportint the transaction
+        example: 'https://{officeid}.example.com/profile/card#me'
+
+    listingOffice:
+        type: string
+        description: the listing office
+        example: 'https://{officeid}.example.com/profile/card#me'
+
+    buyerOffice:
+        type: string
+        description: the office representing the buyer
+        example: 'https://{officeid}.example.com/profile/card#me'
+
+    participant:
+        type: array
+        description: parties with a direct or indirect interest or role in the transaction
+        x-range:
+            - Buyer
+            - Seller
+        items:
+            type: object
+            x-range: Person
+        example:
+            - type: Person
+              roleName: Buyer
+              givenName: Bob
+              familyName: Buyer
+              additionalName: Big
+              email: bob@example.com
+              affiliation:
+                  - https://{agent1}.bhhs.hsfaffiliates.com
+
+    referral:
+        type: object
+        description: referral information
+        example:
+            type: Referral
+            referredBy:
+                id: 'https://FL305-001.bhhs.hsfaffiliates.com/profile/card#me'
+            additionalProperty:
+                isReferralYN: 'Y'
+                hsfInNetworkReferralYN: 'Y'
+
+    transactionEntry:
+        type: array
+        description: commissions and unit entries
+        x-range: TransactionEntry
+        example:
+            - type: TransactionEntry
+              roleName: BuyerAgent
+              position: 1
+              recipient:
+                  id: 'https://474912.bhhs.hsfaffiliates.com/profile/card#me'
+                  identifier:
+                      guruAgentId: '218034'
+              salesProductionUnit:
+                  type: QuantitativeValue
+                  value: 0.5
+              salesProductionGCI:
+                  type: MonetaryAmount
+                  value: 150000.00
+                  currency: USD

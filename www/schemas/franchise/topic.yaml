@@ -7,4 +7,4 @@ publish:
 subscribe:
   oneOf:
     - $ref: franchise.transactionreport.yaml
-    - $ref: franchise.listingreport.yaml
+    - $ref: franchise.transactionreport.yaml

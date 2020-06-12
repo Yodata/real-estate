@@ -8,14 +8,19 @@ properties:
     description: TransactionEntry
     enum:
       - TransactionEntry
-  recipient:
-    description: the entity which is credited the unit and production value of this TransactionEntry
-    $ref: recipient.yaml
-  value:
-    type: number
-    description: the amount paid
-    example: 75000.00
-  currency:
+  roleName:
     type: string
-    description: use ISO4217
-    example: USD
+    description: the role of the entry subject
+    example: BuyerAgent
+  recipient:
+    description: the agent credited with the sales production and who receives the value
+    type: object
+    example:
+      id: https://{agentid}.example.com/profile/card#me
+      identifier:
+        guruAgentId: '218034'
+  salesProductionUnit:
+    $ref: sales-production-unit.yaml
+  salesProductionGCI:
+    $ref: MonetaryAmount.yaml
+    description: gross commission income credited to the recipient

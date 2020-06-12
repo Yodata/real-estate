@@ -21,6 +21,14 @@ properties:
         description: transaction type
         example: ST
 
+    totalSalesProductionGCI:
+        $ref: MonetaryAmount.yaml
+        description: the total gci for the transaction
+
+    totalSalesProductionGCIDeduction:
+        $ref: MonetaryAmount.yaml
+        description: Total gci deductions for the transaction
+
     additionalProperty:
         type: object
         description: vendor/context specific custom properties

@@ -13,15 +13,15 @@ object:
   propertySubType: SingleFamilyPropertyType
   universalPropertyId: US-04015-N-R-11022331-N
 transactionType: ST
-reportingOffice:
-    id: 'https://UT302-008.bhhs.hsfaffiliates.com/profile/card#me'
 transactionStatus: ClosedTransactionStatus
-closeDate: '2020-26-05T09:18:08Z'
-commissionDate: '2020-26-05T09:18:08Z'
-purchaseContractDate: '2020-25-04T09:18:08Z'
 additionalProperty:
     batchId: '4136'
     bhhsUninprovedLandFlag: true
+
+closeDate: '2020-26-05T09:18:08Z'
+commissionDate: '2020-26-05T09:18:08Z'
+purchaseContractDate: '2020-25-04T09:18:08Z'
+
 closePrice:
     type: MonetaryAmount
     value: 339000.00
@@ -34,10 +34,10 @@ totalSalesProductionGCIDeduction:
     type: MonetaryAmount
     value: 500.00
     currency: USD
-listingOffice:
-    id: 'https://FL305-001.bhhs.hsfaffiliates.com/profile/card#me'
-buyerOffice:
-    id: 'https://FL305-001.bhhs.hsfaffiliates.com/profile/card#me'
+
+reportingOffice: 'https://UT302-008.bhhs.hsfaffiliates.com/profile/card#me'
+listingOffice: 'https://FL305-001.bhhs.hsfaffiliates.com/profile/card#me'
+buyerOffice: 'https://FL305-001.bhhs.hsfaffiliates.com/profile/card#me'
 referral:
   type: Referral
   referredBy:
@@ -55,8 +55,8 @@ participant:
     email: joe@example.com
     telephone: '8885550001'
     faxNumber: '8885550002'
-    # use existing property leadOwner or if a new property is more appropriate use schema.org/affiliation
-    leadOwner: 'https://474912.bhhs.hsfaffiliates.com/profile/card#me'
+    affiliation:
+    - 'https://474912.bhhs.hsfaffiliates.com/profile/card#me'
 transactionEntry:
 - type: TransactionEntry
   roleName: BuyerAgent

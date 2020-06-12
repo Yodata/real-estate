@@ -1,0 +1,21 @@
+type: object
+title: TransactionEntry
+x-range: TransactionEntry
+description: describes a unit of sales credit in unit or commission value relative to a parent transaction
+properties:
+  type:
+    type: string
+    description: TransactionEntry
+    enum:
+      - TransactionEntry
+  recipient:
+    description: the entity which is credited the unit and production value of this TransactionEntry
+    $ref: recipient.yaml
+  value:
+    type: number
+    description: the amount paid
+    example: 75000.00
+  currency:
+    type: string
+    description: use ISO4217
+    example: USD

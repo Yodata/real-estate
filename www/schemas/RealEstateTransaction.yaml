@@ -123,7 +123,7 @@ properties:
 
   transactionEntry:
     type: array
-    description: commissions and adjustments
-    x-range: Commission
+    description: commissions and unit entries
+    x-range: TransactionEntry
     items:
       $ref: Commission.yaml

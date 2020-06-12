@@ -3,8 +3,7 @@ identifier:
   guruTransactionId: '0000074792'
 object:
   type: RealEstateProperty
-  parcelNumber: '123456'  # new term
-  listingId: '1234567' # this is a property of a listing not a location
+  parcelNumber: '123456'
   streetAddress: 1433 W 150 N
   addressLocality: Springville
   addressRegion: UT
@@ -13,48 +12,37 @@ object:
   propertyType: RESI
   propertySubType: SingleFamilyPropertyType
   universalPropertyId: US-04015-N-R-11022331-N
-transactionSummary:
-  type: TransactionSummary
-  transactionType: ST
-  batchId: '4136'
-  reportingOfficeId: 'https://UT302-008.bhhs.hsfaffiliates.com/profile/card#me'
-  transactionId: 0000074792
-  transactionStatus: ClosedTransactionStatus
-  position: '001'
-  closeDate: '2020-26-05T09:18:08Z'
-  commissionDate: '2020-26-05T09:18:08Z'
-  purhaseContractDate: '2020-25-04T09:18:08Z'
-  additionalProperty:
+transactionType: ST
+reportingOfficeId: 'https://UT302-008.bhhs.hsfaffiliates.com/profile/card#me'
+transactionStatus: ClosedTransactionStatus
+closeDate: '2020-26-05T09:18:08Z'
+commissionDate: '2020-26-05T09:18:08Z'
+purhaseContractDate: '2020-25-04T09:18:08Z'
+additionalProperty:
+    batchId: '4136'
     bhhsUninprovedLandFlag: true
-  closePrice:
+closePrice:
     type: MonetaryAmount
-    minValue: null
-    maxValue: null
-    value: 33900000
+    value: 339000.00
     currency: USD
-  gci:
+totalSalesProductionGCI:
     type: MonetaryAmount
-    minValue: null
-    maxValue: null
-    value: 1002300
-    currency: USD
-  gciDeduction:
+    value: 10023.00
+gciDeduction: # please explain
     type: MonetaryAmount
-    minValue: null
-    maxValue: null
-    value: 50000
+    value: 500.00
     currency: USD
-  listingOfficeID: ''
-  buyerOfficeId: 'https://FL305-001.bhhs.hsfaffiliates.com/profile/card#me'
-  referredBy: 'https://FL302.bhhs.hsfaffiliates.com/profile/card#me'
+listingOffice:
+    id: 'https://FL305-001.bhhs.hsfaffiliates.com/profile/card#me'
+buyerOffice:
+    id: 'https://FL305-001.bhhs.hsfaffiliates.com/profile/card#me'
 referral:
   type: Referral
   referredBy:
-    type: RealEstateAgent
-    name: Joe Agent
-    id: https://12345.bhhs.hsfaffiliates.com/profile/card#me
+    id: 'https://FL305-001.bhhs.hsfaffiliates.com/profile/card#me'
   additionalProperty:
-    hsfInNetworkReferral: 'Y'
+    isReferralYN: 'Y'
+    hsfInNetworkReferralYN: 'Y'
 participant:
   - type: Person
     roleName: Buyer
@@ -67,17 +55,17 @@ participant:
     faxNumber: '8885550002'
     # use existing property leadOwner or if a new property is more appropriate use schema.org/affiliation
     leadOwner: 'https://474912.bhhs.hsfaffiliates.com/profile/card#me'
-salesProductionSummary:
-  type: SalesProductionSummary
-  officeIdentifier: 'https://UT302-008.bhhs.hsfaffiliattes.com/profile/card#me'
-  participantId: 'https://474912.bhhs.hsfaffiliates.com/profile/card#me'
-  participantRoleName: BuyerAgentRole
-  Position: '1'
-  identifier:
-    vendoraid: '218034' #what is this is this referring to?
+transactionEntry:
+- type: TransactionEntry
+  roleName: BuyerAgent
+  position: 1
+  recipient:
+    id: 'https://474912.bhhs.hsfaffiliates.com/profile/card#me'
+    identifier:
+        guruAgentId: '218034'  # todo: verify this is the vendor identifier for the agent receiving the credit
   salesProductionUnit:
     type: MonetaryAmount
-    value: 1000
+    value: 1000.00
     currency: USD
   salesProductionGCI:
     type: MonetaryAmount

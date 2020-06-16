@@ -8,26 +8,11 @@ properties:
         description: '"RealEstateTransaction"'
         enum:
             - RealEstateTransaction
+
     identifier:
         $ref: identifier.yaml
         example:
             vendorTransactionId: 0000097123
-    transactionStatus:
-        type: string
-        description: transaction status
-        example: ClosedTransactionStatus
-    transactionType:
-        type: string
-        description: transaction type
-        example: ST
-
-    totalSalesProductionGCI:
-        $ref: MonetaryAmount.yaml
-        description: the total gci for the transaction
-
-    totalSalesProductionGCIDeduction:
-        $ref: MonetaryAmount.yaml
-        description: Total gci deductions for the transaction
 
     additionalProperty:
         type: object
@@ -36,67 +21,24 @@ properties:
             batchid:
                 type: string
                 description: identifies the batch for the current transaction
-                example: '4136-001'
+                example: '4136'
+            bhhsTransactionSequence:
+                type: number
+                description: the sequentail order of this transaction report relative to previous reports of the the same RealEstateTransaction
+                example: 1
             bhhsUninprovedLandFlag:
                 type: boolean
                 description: true if the transaction subject property is an unimproved lot.
 
-    object:
-        type: object
-        x-range: RealEstateProperty
-        description: the RealEstateProperty being purchased, sold, rented, leased or transferred, a.k.a. the transaction subject.
-        example:
-            type: RealEstateProperty
-            apn: ABC-12345-XX-XXXX
-            streetAddress: 1007 Mountain Gate Rd
-            addressLocality: Gotham City
-            addressRegion: New Jersey
-            postalCode: 10007
-            addressCountry: USA
-
-    # dates
-    offerDate:
+    transactionStatus:
         type: string
-        description: date the purchase offer was presented
-        format: date-time
-        x-range: DateTime
-    purchaseContractDate:
+        description: transaction status
+        example: ClosedTransactionStatus # todo: need range enumeration
+
+    transactionType:
         type: string
-        description: date of purchase agreement execution
-        x-range: DateTime
-        example: 2019-11-25T04:23:32Z
-    closeDate:
-        title: closeDate
-        type: string
-        format: date-time
-        x-range: DateTime
-        description: With for-sale listings, the date the purchase agreement was fulfilled. With lease listings, the date the requirements were fulfilled, such as contract and/or deposit.
-
-    # prices
-    listingPrice:
-        type: object
-        x-range: MonetaryAmount
-        description: the listing price of the subject
-        example:
-            type: MonetaryAmount
-            value: 4500.00
-            currency: USD
-    closePrice:
-        type: object
-        x-range: MonetaryAmount
-        description: the final sale price of the subject
-        example:
-            type: MonetaryAmount
-            value: 1000.00
-            currency: USD
-
-    # documents
-    document:
-        type: array
-        description: any documents, images, etc... related to the transaction.
-        x-range: DigitalDocument
-
-    # participants
+        description: transaction type
+        example: ST  # todo: need range enumeration
 
     reportingOffice:
         type: string
@@ -113,6 +55,87 @@ properties:
         description: the office representing the buyer
         example: 'https://{officeid}.example.com/profile/card#me'
 
+
+
+    totalSalesProductionGCI:
+        $ref: MonetaryAmount.yaml
+        description: the total gci for the transaction
+
+    totalSalesProductionGCIDeduction:
+        $ref: MonetaryAmount.yaml
+        description: Total gci deductions for the transaction
+
+
+
+    object:
+        type: object
+        x-range: RealEstateProperty
+        description: the RealEstateProperty being purchased, sold, rented, leased or transferred, a.k.a. the transaction subject.
+        properties:
+            type:
+                type: string
+                description: '"RealEstateProperty"'
+                enum:
+                - RealEstateProperty
+            apn:
+                $ref: apn.yaml
+            streetAddress:
+                $ref: streetAddress.yaml
+            addressLocality:
+                $ref: addressLocality.yaml
+            addressRegion:
+                $ref: addressRegion.yaml
+            postalCode:
+                $ref: postalCode.yaml
+            addressCountry:
+                $ref: addressCountry.yaml
+        example:
+            type: RealEstateProperty
+            apn: ABC-12345-XX-XXXX
+            streetAddress: 1007 Mountain Gate Rd
+            addressLocality: Gotham City
+            addressRegion: New Jersey
+            postalCode: 10007
+            addressCountry: USA
+
+    # dates
+    commissionDate:
+        type: string
+        description: date the purchase offer was presented
+        format: date-time
+        x-range: DateTime
+
+    closeDate:
+        title: closeDate
+        type: string
+        format: date-time
+        x-range: DateTime
+        description: With for-sale listings, the date the purchase agreement was fulfilled. With lease listings, the date the requirements were fulfilled, such as contract and/or deposit.
+
+    purchaseContractDate:
+        type: string
+        description: date of purchase agreement execution (aka sale date)
+        x-range: DateTime
+        example: 2019-11-25T04:23:32Z
+
+
+    # prices
+    closePrice:
+        type: object
+        x-range: MonetaryAmount
+        description: the final sale price of the subject
+        example:
+            type: MonetaryAmount
+            value: 1000.00
+            currency: USD
+
+    # documents
+    document:
+        type: array
+        description: any documents, images, etc... related to the transaction.
+        x-range: DigitalDocument
+
+    # participants
     participant:
         type: array
         description: parties with a direct or indirect interest or role in the transaction
@@ -121,7 +144,28 @@ properties:
             - Organization
         items:
             type: object
-            x-range: Person
+            properties:
+                type:
+                    $ref: type.yaml
+                roleName:
+                    type: string
+                    description: role of the participant
+                    example: Buyer
+                givenName:
+                    $ref: givenName.yaml
+                familyName:
+                    $ref: familyName.yaml
+                additionalName:
+                    type: string
+                    description: middleName or alternate name of the Person
+                    example: Big
+                email:
+                    $ref: email.yaml
+                affiliation:
+                    type: array
+                    description: agent associated with the participant relevant to this transaction
+                    items:
+                        type: string
         example:
             - type: Person
               roleName: Buyer
@@ -130,11 +174,33 @@ properties:
               additionalName: Big
               email: bob@example.com
               affiliation:
-                  - https://{agent1}.bhhs.hsfaffiliates.com
+                  - https://{agent1}.bhhs.hsfaffiliates.com/profile/card#me
 
     referral:
         type: object
         description: referral information
+        properties:
+            type:
+                $ref: type.yaml
+            referredBy:
+                type: object
+                properties:
+                    id:
+                        type: string
+                        example: https://example.com/profile/card#me
+            additionalProperty:
+                type: object
+                properties:
+                    isReferralYN:
+                        type: string
+                        enum:
+                        - Y
+                        - N
+                    bhhsInNetworkReferralYN:
+                        type: string
+                        enum:
+                        - Y
+                        - N
         example:
             type: Referral
             referredBy:
@@ -157,7 +223,7 @@ properties:
                       guruAgentId: '218034'
               salesProductionUnit:
                   type: QuantitativeValue
-                  value: 0.5
+                  value: 0.500
               salesProductionGCI:
                   type: MonetaryAmount
                   value: 150000.00

@@ -1,5 +1,5 @@
-title: RealEstateTransaction
 type: object
+title: RealEstateTransaction
 x-range: RealEstateTransaction
 description: describes a sale, purchase and transfer of a real estate property.
 properties:
@@ -12,7 +12,7 @@ properties:
     identifier:
         $ref: identifier.yaml
         example:
-            vendorTransactionId: 0000097123
+            guruTransactionId: '0000074792'
 
     additionalProperty:
         type: object
@@ -42,82 +42,41 @@ properties:
 
     reportingOffice:
         type: string
-        description: the office reportint the transaction
+        format: uri
+        description: the office reporting the transaction
         example: 'https://{officeid}.example.com/profile/card#me'
+
 
     listingOffice:
         type: string
+        format: uri
         description: the listing office
         example: 'https://{officeid}.example.com/profile/card#me'
 
     buyerOffice:
         type: string
+        format: uri
         description: the office representing the buyer
         example: 'https://{officeid}.example.com/profile/card#me'
-
-
-
-    totalSalesProductionGCI:
-        $ref: MonetaryAmount.yaml
-        description: the total gci for the transaction
-
-    totalSalesProductionGCIDeduction:
-        $ref: MonetaryAmount.yaml
-        description: Total gci deductions for the transaction
-
-
-
-    object:
-        type: object
-        x-range: RealEstateProperty
-        description: the RealEstateProperty being purchased, sold, rented, leased or transferred, a.k.a. the transaction subject.
-        properties:
-            type:
-                type: string
-                description: '"RealEstateProperty"'
-                enum:
-                - RealEstateProperty
-            apn:
-                $ref: apn.yaml
-            streetAddress:
-                $ref: streetAddress.yaml
-            addressLocality:
-                $ref: addressLocality.yaml
-            addressRegion:
-                $ref: addressRegion.yaml
-            postalCode:
-                $ref: postalCode.yaml
-            addressCountry:
-                $ref: addressCountry.yaml
-        example:
-            type: RealEstateProperty
-            apn: ABC-12345-XX-XXXX
-            streetAddress: 1007 Mountain Gate Rd
-            addressLocality: Gotham City
-            addressRegion: New Jersey
-            postalCode: 10007
-            addressCountry: USA
 
     # dates
     commissionDate:
         type: string
-        description: date the purchase offer was presented
         format: date-time
         x-range: DateTime
+        description: date the purchase offer was presented
 
     closeDate:
-        title: closeDate
         type: string
         format: date-time
         x-range: DateTime
-        description: With for-sale listings, the date the purchase agreement was fulfilled. With lease listings, the date the requirements were fulfilled, such as contract and/or deposit.
+        description: With purchase the date the purchase agreement was fulfilled. With lease, the date the requirements were fulfilled, such as contract and/or deposit.
 
     purchaseContractDate:
         type: string
+        format: date-time
         description: date of purchase agreement execution (aka sale date)
         x-range: DateTime
-        example: 2019-11-25T04:23:32Z
-
 
     # prices
     closePrice:
@@ -126,81 +85,47 @@ properties:
         description: the final sale price of the subject
         example:
             type: MonetaryAmount
-            value: 1000.00
+            value: 123456.78
             currency: USD
 
-    # documents
-    document:
-        type: array
-        description: any documents, images, etc... related to the transaction.
-        x-range: DigitalDocument
-
-    # participants
-    participant:
-        type: array
-        description: parties with a direct or indirect interest or role in the transaction
-        x-range:
-            - Person
-            - Organization
-        items:
-            type: object
-            properties:
-                type:
-                    $ref: type.yaml
-                roleName:
-                    type: string
-                    description: role of the participant
-                    example: Buyer
-                givenName:
-                    $ref: givenName.yaml
-                familyName:
-                    $ref: familyName.yaml
-                additionalName:
-                    type: string
-                    description: middleName or alternate name of the Person
-                    example: Big
-                email:
-                    $ref: email.yaml
-                affiliation:
-                    type: array
-                    description: agent associated with the participant relevant to this transaction
-                    items:
-                        type: string
+    totalSalesProductionGCI:
+        type: object
+        x-range: MonetaryAmount
+        description: the total gci for the transaction
         example:
-            - type: Person
-              roleName: Buyer
-              givenName: Bob
-              familyName: Buyer
-              additionalName: Big
-              email: bob@example.com
-              affiliation:
-                  - https://{agent1}.bhhs.hsfaffiliates.com/profile/card#me
+            type: MonetaryAmount
+            value: 123456.78
+            currency: USD
+
+    totalSalesProductionGCIDeduction:
+        type: object
+        x-range: MonetaryAmount
+        description: total gci deductions for the transaction
+        example:
+            type: MonetaryAmount
+            value: 1234.56
+            currency: USD
+
+    object:
+        type: object
+        x-range: RealEstateProperty
+        description: the RealEstateProperty being purchased, sold, rented, leased or transferred, a.k.a. the transaction subject.
+        example:
+            type: RealEstateProperty
+            parcelNumber: '123456'
+            streetAddress: 1433 W 150 N
+            addressLocality: Springville
+            addressRegion: UT
+            postalCode: '84663'
+            addressCountry: USA
+            propertyType: RESI
+            propertySubType: SingleFamilyPropertyType
+            universalPropertyId: US-04015-N-R-11022331-N
 
     referral:
         type: object
+        x-range: Referral
         description: referral information
-        properties:
-            type:
-                $ref: type.yaml
-            referredBy:
-                type: object
-                properties:
-                    id:
-                        type: string
-                        example: https://example.com/profile/card#me
-            additionalProperty:
-                type: object
-                properties:
-                    isReferralYN:
-                        type: string
-                        enum:
-                        - Y
-                        - N
-                    bhhsInNetworkReferralYN:
-                        type: string
-                        enum:
-                        - Y
-                        - N
         example:
             type: Referral
             referredBy:
@@ -208,13 +133,34 @@ properties:
             additionalProperty:
                 isReferralYN: 'Y'
                 hsfInNetworkReferralYN: 'Y'
+    # participants
+    participant:
+        type: array
+        description: parties with a direct or indirect interest or role in the transaction
+        x-range: TransactionParticipant
+        items:
+            type: object
+        example:
+        -   type: TransactionParticipant
+            roleName: Buyer
+            position: 1
+            givenName: Josh
+            familyName: Cold
+            additionalName: Stone
+            email: joe@example.com
+            telephone: '8885550001'
+            faxNumber: '8885550002'
+            affiliation:
+            - 'https://474912.bhhs.hsfaffiliates.com/profile/card#me'
 
     transactionEntry:
         type: array
         description: commissions and unit entries
         x-range: TransactionEntry
-        example:
-            - type: TransactionEntry
+        items:
+            type: object
+            example:
+              type: TransactionEntry
               roleName: BuyerAgent
               position: 1
               recipient:
@@ -228,3 +174,20 @@ properties:
                   type: MonetaryAmount
                   value: 150000.00
                   currency: USD
+
+    # documents
+    document:
+        type: array
+        description: any documents, images, etc... related to the transaction.
+        x-range: DigitalDocument
+        items:
+            type: object
+            example:
+                type: DigitalDocument
+                name: Sales Contract
+                encodingFormat: application/zip
+                about:
+                    type: Transaction
+                    identifier:
+                        guruTransactionId: '0000074792'
+                url: https://example.com/path/to/document.pdf

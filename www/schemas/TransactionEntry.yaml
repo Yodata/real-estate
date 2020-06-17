@@ -1,7 +1,7 @@
 type: object
 title: TransactionEntry
-x-range: TransactionEntry
 description: describes a unit of sales credit in unit or commission value relative to a parent transaction
+x-range: TransactionEntry
 properties:
   type:
     type: string
@@ -10,17 +10,41 @@ properties:
       - TransactionEntry
   roleName:
     type: string
-    description: the role of the entry subject
-    example: BuyerAgent
+    description: 'enum: ListingAgent,SellingAgent'
+    enum:
+    - ListingAgent
+    - SellingAgent
   recipient:
     description: the agent credited with the sales production and who receives the value
     type: object
-    example:
-      id: https://{agentid}.example.com/profile/card#me
-      identifier:
-        guruAgentId: '218034'
+    properties:
+        type:
+            type: string
+            description: typically a RealEstateAgent
+            enum:
+            - RealEstateAgent
+            - RealEstateOrganization
+        id:
+            $ref: id.yaml
+        identifier:
+            type: object
+            description: unique identifier of the recipient from the data producer
+            example:
+                guruAgentId: '218034'
+
   salesProductionUnit:
-    $ref: sales-production-unit.yaml
+    type: object
+    description: the sales production units credited to the recipient
+    x-range: QuantitativeValue
+    example:
+        type: QuantitativeValue
+        value: 0.5
+
   salesProductionGCI:
-    $ref: MonetaryAmount.yaml
+    type: object
     description: gross commission income credited to the recipient
+    x-range: MonetaryAmount
+    example:
+        type: MonetaryAmount
+        value: 1234.56
+        currency: USD

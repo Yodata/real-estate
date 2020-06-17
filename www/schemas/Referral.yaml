@@ -1,0 +1,33 @@
+title: Referral
+type: object
+description: describes a real estate referral from the referredBy (subProperty of agent) to the recipient
+x-range: Referral
+properties:
+    type:
+        $ref: type.yaml
+    referredBy:
+        type: object
+        properties:
+            id:
+                type: string
+                example: https://example.com/profile/card#me
+    additionalProperty:
+        type: object
+        properties:
+            isReferralYN:
+                type: string
+                enum:
+                - Y
+                - N
+            bhhsInNetworkReferralYN:
+                type: string
+                enum:
+                - Y
+                - N
+example:
+    type: Referral
+    referredBy:
+        id: 'https://FL305-001.bhhs.hsfaffiliates.com/profile/card#me'
+    additionalProperty:
+        isReferralYN: 'Y'
+        hsfInNetworkReferralYN: 'Y'

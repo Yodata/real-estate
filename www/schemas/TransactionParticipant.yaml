@@ -1,0 +1,29 @@
+type: object
+title: TransactionParticipant
+x-range: TransactionParticipant
+properties:
+    type:
+        $ref: type.yaml
+    roleName:
+        type: string
+        description: one of Buyer,Seller
+        enum:
+        - Buyer
+        - Seller
+    givenName:
+        $ref: givenName.yaml
+    familyName:
+        $ref: familyName.yaml
+    additionalName:
+        type: string
+        description: middleName or alternate name of the Person
+        example: Big
+    email:
+        $ref: email.yaml
+    affiliation:
+        type: array
+        description: person or organization associated with the participant
+        items:
+            type: string
+            format: uri
+            example: https://{agentid}.example.com/profile/card#me

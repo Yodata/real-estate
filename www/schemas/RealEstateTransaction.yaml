@@ -112,14 +112,13 @@ properties:
         description: the RealEstateProperty being purchased, sold, rented, leased or transferred, a.k.a. the transaction subject.
         example:
             type: RealEstateProperty
-            parcelNumber: '123456'
+            propertyType: RESI
+            propertySubType: SingleFamilyPropertyType
             streetAddress: 1433 W 150 N
             addressLocality: Springville
             addressRegion: UT
             postalCode: '84663'
             addressCountry: USA
-            propertyType: RESI
-            propertySubType: SingleFamilyPropertyType
             universalPropertyId: US-04015-N-R-11022331-N
 
     referral:
@@ -132,7 +131,8 @@ properties:
                 id: 'https://FL305-001.bhhs.hsfaffiliates.com/profile/card#me'
             additionalProperty:
                 isReferralYN: 'Y'
-                hsfInNetworkReferralYN: 'Y'
+                bhssInNetworkReferralYN: 'Y'
+
     # participants
     participant:
         type: array

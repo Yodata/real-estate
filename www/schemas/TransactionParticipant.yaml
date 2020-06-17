@@ -4,12 +4,17 @@ x-range: TransactionParticipant
 properties:
     type:
         $ref: type.yaml
+        description: '"TransactionParticipant"'
     roleName:
         type: string
-        description: one of Buyer,Seller
+        description: 'enum: Buyer,Seller'
         enum:
         - Buyer
         - Seller
+    rolePosition:
+        type: number
+        description: numeric position for the participant/roleName.
+        example: 1
     givenName:
         $ref: givenName.yaml
     familyName:

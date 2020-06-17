@@ -5,29 +5,32 @@ x-range: Referral
 properties:
     type:
         $ref: type.yaml
-    referredBy:
-        type: object
-        properties:
-            id:
-                type: string
-                example: https://example.com/profile/card#me
+        enum:
+        - Referral
+        description: Referral
     additionalProperty:
         type: object
         properties:
             isReferralYN:
                 type: string
+                description: Y if transaction was a referral
                 enum:
                 - Y
                 - N
             bhhsInNetworkReferralYN:
                 type: string
+                description: Y if transaction was referred by an in network agent
                 enum:
                 - Y
                 - N
-example:
-    type: Referral
     referredBy:
-        id: 'https://FL305-001.bhhs.hsfaffiliates.com/profile/card#me'
-    additionalProperty:
-        isReferralYN: 'Y'
-        hsfInNetworkReferralYN: 'Y'
+        type: object
+        description: the referring entity (required properties shown)
+        x-range:
+        - RealEstateAgent
+        - RealEstateOrganization
+        properties:
+            type:
+                $ref: type.yaml
+            id:
+                $ref: id.yaml

@@ -46,7 +46,7 @@ referral:
     isReferralYN: 'Y'
     hsfInNetworkReferralYN: 'Y'
 participant:
-  - type: Person
+  - type: TransactionParticipant
     roleName: Buyer
     position: 1
     givenName: Josh

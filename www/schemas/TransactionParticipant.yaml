@@ -5,6 +5,8 @@ properties:
     type:
         $ref: type.yaml
         description: '"TransactionParticipant"'
+        enum:
+        - TransactionParticipant
     roleName:
         type: string
         description: 'enum: Buyer,Seller'

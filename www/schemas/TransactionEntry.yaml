@@ -8,43 +8,47 @@ properties:
     description: TransactionEntry
     enum:
       - TransactionEntry
-  roleName:
-    type: string
-    description: 'enum: ListingAgent,SellingAgent'
-    enum:
-    - ListingAgent
-    - SellingAgent
-  recipient:
-    description: the agent credited with the sales production and who receives the value
-    type: object
-    properties:
-        type:
-            type: string
-            description: typically a RealEstateAgent
-            enum:
-            - RealEstateAgent
-            - RealEstateOrganization
-        id:
-            $ref: id.yaml
-        identifier:
-            type: object
-            description: unique identifier of the recipient from the data producer
-            example:
-                guruAgentId: '218034'
 
   salesProductionUnit:
     type: object
     description: the sales production units credited to the recipient
     x-range: QuantitativeValue
     example:
-        type: QuantitativeValue
-        value: 0.5
+      type: QuantitativeValue
+      value: 0.5
 
   salesProductionGCI:
     type: object
     description: gross commission income credited to the recipient
     x-range: MonetaryAmount
     example:
-        type: MonetaryAmount
-        value: 1234.56
-        currency: USD
+      type: MonetaryAmount
+      value: 1234.56
+      currency: USD
+
+  roleName:
+    type: string
+    description: 'enum: ListingAgent,SellingAgent'
+    enum:
+      - ListingAgent
+      - SellingAgent
+
+  recipient:
+    description: the agent credited with the sales production and who receives the value
+    type: object
+    properties:
+      type:
+        type: string
+        description: typically a RealEstateAgent
+        example: RealEstateAgent
+
+      id:
+        $ref: id.yaml
+        description: bhhs profile id for the referring entity
+        example: https://{entityid}.example.com/profile/card#me
+
+      identifier:
+        type: object
+        description: unique identifier of the recipient from the data producer
+        example:
+          guruAgentId: '218034'

@@ -11,7 +11,7 @@ properties:
         enum:
         - Buyer
         - Seller
-    rolePosition:
+    position:
         type: number
         description: numeric position for the participant/roleName.
         example: 1
@@ -25,6 +25,8 @@ properties:
         example: Big
     email:
         $ref: email.yaml
+    telephone:
+        $ref: telephone.yaml
     affiliation:
         type: array
         description: person or organization associated with the participant

@@ -3,191 +3,191 @@ title: RealEstateTransaction
 x-range: RealEstateTransaction
 description: describes a sale, purchase and transfer of a real estate property.
 properties:
-    type:
-        type: string
-        description: '"RealEstateTransaction"'
-        enum:
-            - RealEstateTransaction
+  type:
+    type: string
+    description: '"RealEstateTransaction"'
+    enum:
+      - RealEstateTransaction
 
-    identifier:
-        $ref: identifier.yaml
-        example:
+  identifier:
+    $ref: identifier.yaml
+    example:
+      guruTransactionId: '0000074792'
+
+  additionalProperty:
+    type: object
+    description: vendor/context specific custom properties
+    properties:
+      batchid:
+        type: string
+        description: identifies the batch for the current transaction
+        example: '4136'
+      bhhsTransactionSequence:
+        type: number
+        description: the sequentail order of this transaction report relative to previous reports of the the same RealEstateTransaction
+        example: 1
+      bhhsUninprovedLandFlag:
+        type: boolean
+        description: true if the transaction subject property is an unimproved lot.
+
+  transactionStatus:
+    type: string
+    description: transaction status
+    x-range: TransactionStatus
+    example: ClosedTransactionStatus
+
+  transactionType:
+    type: string
+    description: transaction type
+    example: ST # todo: need range enumeration
+
+  reportingOffice:
+    type: string
+    format: uri
+    description: the reporting office
+    example: 'https://{officeid}.example.com/profile/card#me'
+
+  listingOffice:
+    type: string
+    format: uri
+    description: the office representing the seller
+    example: 'https://{officeid}.example.com/profile/card#me'
+
+  buyerOffice:
+    type: string
+    format: uri
+    description: the office representing the buyer
+    example: 'https://{officeid}.example.com/profile/card#me'
+
+  # dates
+  commissionDate:
+    type: string
+    format: date-time
+    x-range: DateTime
+    description: date the purchase offer was presented
+
+  closeDate:
+    type: string
+    format: date-time
+    x-range: DateTime
+    description: With purchase the date the purchase agreement was fulfilled. With lease, the date the requirements were fulfilled, such as contract and/or deposit.
+
+  purchaseContractDate:
+    type: string
+    format: date-time
+    description: date of purchase agreement execution (aka sale date)
+    x-range: DateTime
+
+  # prices
+  closePrice:
+    type: object
+    x-range: MonetaryAmount
+    description: the final sale price of the subject
+    example:
+      type: MonetaryAmount
+      value: 123456.78
+      currency: USD
+
+  totalSalesProductionGCI:
+    type: object
+    x-range: MonetaryAmount
+    description: the total gci for the transaction
+    example:
+      type: MonetaryAmount
+      value: 123456.78
+      currency: USD
+
+  totalSalesProductionGCIDeduction:
+    type: object
+    x-range: MonetaryAmount
+    description: total gci deductions for the transaction
+    example:
+      type: MonetaryAmount
+      value: 1234.56
+      currency: USD
+
+  object:
+    type: object
+    x-range: RealEstateProperty
+    description: the RealEstateProperty being purchased, sold, rented, leased or transferred, a.k.a. the transaction subject.
+    example:
+      type: RealEstateProperty
+      propertyType: RESI
+      propertySubType: SingleFamilyPropertyType
+      streetAddress: 1433 W 150 N
+      addressLocality: Springville
+      addressRegion: UT
+      postalCode: '84663'
+      addressCountry: USA
+      universalPropertyId: US-04015-N-R-11022331-N
+
+  referral:
+    type: object
+    x-range: Referral
+    description: referring agent information
+    example:
+      type: Referral
+      referredBy:
+        id: 'https://FL305.bhhs.hsfaffiliates.com/profile/card#me'
+      additionalProperty:
+        isReferralYN: Y
+        bhssInNetworkReferralYN: Y
+
+  # participants
+  participant:
+    type: array
+    description: parties with a direct or indirect interest or role in the transaction
+    x-range: TransactionParticipant
+    items:
+      type: object
+      example:
+        type: TransactionParticipant
+        roleName: Buyer
+        position: 1
+        givenName: Josh
+        familyName: Cold
+        additionalName: Stone
+        email: joe@example.com
+        telephone: '8885550001'
+        faxNumber: '8885550002'
+        affiliation:
+          - 'https://474912.bhhs.hsfaffiliates.com/profile/card#me'
+
+  transactionEntry:
+    type: array
+    description: commissions and unit entries
+    x-range: TransactionEntry
+    items:
+      type: object
+      example:
+        type: TransactionEntry
+        salesProductionUnit:
+          type: QuantitativeValue
+          value: 0.500
+        salesProductionGCI:
+          type: MonetaryAmount
+          value: 150000.00
+          currency: USD
+        roleName: BuyerAgent
+        recipient:
+          type: RealEstateAgent
+          id: 'https://{agentid}.bhhs.hsfaffiliates.com/profile/card#me'
+          identifier:
+            guruAgentId: '218034'
+
+  # documents
+  document:
+    type: array
+    description: any documents, images, etc... related to the transaction.
+    x-range: DigitalDocument
+    items:
+      type: object
+      example:
+        type: DigitalDocument
+        name: Sales Contract
+        encodingFormat: application/zip
+        about:
+          type: Transaction
+          identifier:
             guruTransactionId: '0000074792'
-
-    additionalProperty:
-        type: object
-        description: vendor/context specific custom properties
-        properties:
-            batchid:
-                type: string
-                description: identifies the batch for the current transaction
-                example: '4136'
-            bhhsTransactionSequence:
-                type: number
-                description: the sequentail order of this transaction report relative to previous reports of the the same RealEstateTransaction
-                example: 1
-            bhhsUninprovedLandFlag:
-                type: boolean
-                description: true if the transaction subject property is an unimproved lot.
-
-    transactionStatus:
-        type: string
-        description: transaction status
-        example: ClosedTransactionStatus # todo: need range enumeration
-
-    transactionType:
-        type: string
-        description: transaction type
-        example: ST  # todo: need range enumeration
-
-    reportingOffice:
-        type: string
-        format: uri
-        description: the office reporting the transaction
-        example: 'https://{officeid}.example.com/profile/card#me'
-
-
-    listingOffice:
-        type: string
-        format: uri
-        description: the listing office
-        example: 'https://{officeid}.example.com/profile/card#me'
-
-    buyerOffice:
-        type: string
-        format: uri
-        description: the office representing the buyer
-        example: 'https://{officeid}.example.com/profile/card#me'
-
-    # dates
-    commissionDate:
-        type: string
-        format: date-time
-        x-range: DateTime
-        description: date the purchase offer was presented
-
-    closeDate:
-        type: string
-        format: date-time
-        x-range: DateTime
-        description: With purchase the date the purchase agreement was fulfilled. With lease, the date the requirements were fulfilled, such as contract and/or deposit.
-
-    purchaseContractDate:
-        type: string
-        format: date-time
-        description: date of purchase agreement execution (aka sale date)
-        x-range: DateTime
-
-    # prices
-    closePrice:
-        type: object
-        x-range: MonetaryAmount
-        description: the final sale price of the subject
-        example:
-            type: MonetaryAmount
-            value: 123456.78
-            currency: USD
-
-    totalSalesProductionGCI:
-        type: object
-        x-range: MonetaryAmount
-        description: the total gci for the transaction
-        example:
-            type: MonetaryAmount
-            value: 123456.78
-            currency: USD
-
-    totalSalesProductionGCIDeduction:
-        type: object
-        x-range: MonetaryAmount
-        description: total gci deductions for the transaction
-        example:
-            type: MonetaryAmount
-            value: 1234.56
-            currency: USD
-
-    object:
-        type: object
-        x-range: RealEstateProperty
-        description: the RealEstateProperty being purchased, sold, rented, leased or transferred, a.k.a. the transaction subject.
-        example:
-            type: RealEstateProperty
-            propertyType: RESI
-            propertySubType: SingleFamilyPropertyType
-            streetAddress: 1433 W 150 N
-            addressLocality: Springville
-            addressRegion: UT
-            postalCode: '84663'
-            addressCountry: USA
-            universalPropertyId: US-04015-N-R-11022331-N
-
-    referral:
-        type: object
-        x-range: Referral
-        description: referral information
-        example:
-            type: Referral
-            referredBy:
-                id: 'https://FL305-001.bhhs.hsfaffiliates.com/profile/card#me'
-            additionalProperty:
-                isReferralYN: 'Y'
-                bhssInNetworkReferralYN: 'Y'
-
-    # participants
-    participant:
-        type: array
-        description: parties with a direct or indirect interest or role in the transaction
-        x-range: TransactionParticipant
-        items:
-            type: object
-        example:
-        -   type: TransactionParticipant
-            roleName: Buyer
-            position: 1
-            givenName: Josh
-            familyName: Cold
-            additionalName: Stone
-            email: joe@example.com
-            telephone: '8885550001'
-            faxNumber: '8885550002'
-            affiliation:
-            - 'https://474912.bhhs.hsfaffiliates.com/profile/card#me'
-
-    transactionEntry:
-        type: array
-        description: commissions and unit entries
-        x-range: TransactionEntry
-        items:
-            type: object
-            example:
-              type: TransactionEntry
-              roleName: BuyerAgent
-              position: 1
-              recipient:
-                  id: 'https://474912.bhhs.hsfaffiliates.com/profile/card#me'
-                  identifier:
-                      guruAgentId: '218034'
-              salesProductionUnit:
-                  type: QuantitativeValue
-                  value: 0.500
-              salesProductionGCI:
-                  type: MonetaryAmount
-                  value: 150000.00
-                  currency: USD
-
-    # documents
-    document:
-        type: array
-        description: any documents, images, etc... related to the transaction.
-        x-range: DigitalDocument
-        items:
-            type: object
-            example:
-                type: DigitalDocument
-                name: Sales Contract
-                encodingFormat: application/zip
-                about:
-                    type: Transaction
-                    identifier:
-                        guruTransactionId: '0000074792'
-                url: https://example.com/path/to/document.pdf
+        url: https://example.com/path/to/document.pdf

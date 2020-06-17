@@ -41,6 +41,11 @@ allOf:
         description: Primary email address.
         example: user@example.com
 
+      additionalName:
+        type: string
+        description: additional name (i.e. middle name or nickname)
+        example: Batman
+
       familyName:
         type: string
         description: Last Name of a person

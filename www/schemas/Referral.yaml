@@ -10,6 +10,7 @@ properties:
         description: Referral
     additionalProperty:
         type: object
+        description: context specific custom properties
         properties:
             isReferralYN:
                 type: string
@@ -25,12 +26,10 @@ properties:
                 - N
     referredBy:
         type: object
-        description: the referring entity (required properties shown)
-        x-range:
-        - RealEstateAgent
-        - RealEstateOrganization
+        description: the referring entity
         properties:
             type:
                 $ref: type.yaml
+                example: RealEstateAgent
             id:
                 $ref: id.yaml

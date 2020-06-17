@@ -11,7 +11,7 @@ properties:
   value:
     type: number
     description: the amount.
-    example: 75000.00
+    example: 1234.56
   currency:
     type: string
     description: use ISO4217 country codes

@@ -149,7 +149,6 @@ properties:
         additionalName: Stone
         email: joe@example.com
         telephone: '8885550001'
-        faxNumber: '8885550002'
         affiliation:
           - 'https://474912.bhhs.hsfaffiliates.com/profile/card#me'
 

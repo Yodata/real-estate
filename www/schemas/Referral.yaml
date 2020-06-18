@@ -29,7 +29,13 @@ properties:
         description: the referring entity
         properties:
             type:
-                $ref: type.yaml
-                example: RealEstateAgent
+                type: string
+                description: the referring entity type i.e RealEstateOrganization, RealEstateAgent
+                enum:
+                - RealEstateOrganization
+                - RealEstateAgent
+                - RealEstateOffice
+                - Organization
+                - Person
             id:
                 $ref: id.yaml

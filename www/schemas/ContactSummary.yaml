@@ -32,7 +32,7 @@ properties:
     - Buyer
     - Seller
     - BuyerAgent
-    - SellerAgent
+    - ListingAgent
     enum:
     - Buyer
     - Seller

@@ -128,6 +128,7 @@ properties:
     example:
       type: Referral
       referredBy:
+        type: RealEstateOrganization
         id: 'https://FL305.bhhs.hsfaffiliates.com/profile/card#me'
       additionalProperty:
         isReferralYN: Y
@@ -167,7 +168,7 @@ properties:
           currency: USD
         recipient:
           type: RealEstateAgent
-          roleName: SellingAgent
+          roleName: ListingAgent
           id: 'https://{agentid}.bhhs.hsfaffiliates.com/profile/card#me'
           identifier:
             guruAgentId: '218034'

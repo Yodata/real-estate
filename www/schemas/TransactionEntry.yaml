@@ -34,10 +34,10 @@ properties:
 
       roleName:
         type: string
-        description: 'enum: ListingAgent,SellingAgent'
+        description: 'enum: ListingAgent,BuyerAgent'
         enum:
         - ListingAgent
-        - SellingAgent
+        - BuyerAgent
 
       id:
         $ref: id.yaml

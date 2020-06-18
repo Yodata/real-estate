@@ -167,7 +167,7 @@ properties:
           currency: USD
         recipient:
           type: RealEstateAgent
-          roleName: BuyerAgent
+          roleName: SellingAgent
           id: 'https://{agentid}.bhhs.hsfaffiliates.com/profile/card#me'
           identifier:
             guruAgentId: '218034'

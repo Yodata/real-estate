@@ -160,16 +160,14 @@ properties:
       type: object
       example:
         type: TransactionEntry
-        salesProductionUnit:
-          type: QuantitativeValue
-          value: 0.500
+        salesProductionUnit: 0.500
         salesProductionGCI:
           type: MonetaryAmount
-          value: 150000.00
+          value: 1234.56
           currency: USD
-        roleName: BuyerAgent
         recipient:
           type: RealEstateAgent
+          roleName: BuyerAgent
           id: 'https://{agentid}.bhhs.hsfaffiliates.com/profile/card#me'
           identifier:
             guruAgentId: '218034'

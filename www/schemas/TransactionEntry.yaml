@@ -10,12 +10,9 @@ properties:
       - TransactionEntry
 
   salesProductionUnit:
-    type: object
+    type: number
     description: the sales production units credited to the recipient
-    x-range: QuantitativeValue
-    example:
-      type: QuantitativeValue
-      value: 0.5
+    example: 0.5
 
   salesProductionGCI:
     type: object
@@ -26,13 +23,6 @@ properties:
       value: 1234.56
       currency: USD
 
-  roleName:
-    type: string
-    description: 'enum: ListingAgent,SellingAgent'
-    enum:
-      - ListingAgent
-      - SellingAgent
-
   recipient:
     description: the agent credited with the sales production and who receives the value
     type: object
@@ -41,6 +31,13 @@ properties:
         type: string
         description: typically a RealEstateAgent
         example: RealEstateAgent
+
+      roleName:
+        type: string
+        description: 'enum: ListingAgent,SellingAgent'
+        enum:
+        - ListingAgent
+        - SellingAgent
 
       id:
         $ref: id.yaml

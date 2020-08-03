@@ -1,0 +1,18 @@
+type: object
+title: MonetaryAmount
+x-range: MonetaryAmount
+description: a value offered for transfer of ownership of an item
+properties:
+  type:
+    type: string
+    description: MonetaryAmount
+    enum:
+      - MonetaryAmount
+  value:
+    type: number
+    description: the amount.
+    example: 1234.56
+  currency:
+    type: string
+    description: use ISO4217 country codes
+    example: USD

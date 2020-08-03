@@ -1,0 +1,41 @@
+title: Referral
+type: object
+description: describes a real estate referral from the referredBy (subProperty of agent) to the recipient
+x-range: Referral
+properties:
+    type:
+        $ref: type.yaml
+        enum:
+        - Referral
+        description: Referral
+    additionalProperty:
+        type: object
+        description: context specific custom properties
+        properties:
+            isReferralYN:
+                type: string
+                description: Y if transaction was a referral
+                enum:
+                - Y
+                - N
+            bhhsInNetworkReferralYN:
+                type: string
+                description: Y if transaction was referred by an in network agent
+                enum:
+                - Y
+                - N
+    referredBy:
+        type: object
+        description: the referring entity
+        properties:
+            type:
+                type: string
+                description: the referring entity type i.e RealEstateOrganization, RealEstateAgent
+                enum:
+                - RealEstateOrganization
+                - RealEstateAgent
+                - RealEstateOffice
+                - Organization
+                - Person
+            id:
+                $ref: id.yaml

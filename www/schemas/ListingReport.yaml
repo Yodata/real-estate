@@ -1,0 +1,30 @@
+title: ListingReport
+description: summary report of listing inventory count
+x-range: ListingReport
+type: object
+properties:
+  type:
+    type: string
+    description: RECORD-TYPE
+    example: ListingReport
+  batchId:
+    type: string
+    description: BATCH-ID
+  reportingOfficeId:
+    type: string
+    format: uri
+    description: OFFICE-ID
+    example: https://{officeid}.example.com/profile/card#me
+
+  dateCreated:
+    type: string
+    format: date-time
+    description: YEAR-MONTH
+
+  listingsAddedCount:
+    type: number
+    description: LISTINGS-TAKEN
+
+  totalListingsCount:
+    type: number
+    description: LISTINGS-INVENTORY

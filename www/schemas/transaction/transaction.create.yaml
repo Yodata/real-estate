@@ -1,0 +1,17 @@
+x-title: create
+x-scope: realestate/transaction#
+summary: a real estate transaction was created
+payload:
+  allOf:
+    - $ref: ../base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/transaction#create
+        data:
+          $ref: ../CreateAction.yaml
+    - properties:
+        data:
+          properties:
+            object:
+              $ref: ../RealEstateTransaction.yaml

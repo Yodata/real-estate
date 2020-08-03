@@ -17,7 +17,7 @@ Publish events by HTTP POST to your own pods `/publish/` endpoint including the 
 
 {{#if operation.headers}}
 
-{{!-- {{> schema schema=operation.headers hideExample=true}} --}}
+{{!-- {{> schema schema=operation.headers}} --}}
 
 ### Example
 ```http
@@ -27,11 +27,11 @@ x-api-key: # { your api key }
 Content-Type: application/json
 
 {
-  "topic": "https://realestate/website#search",
+  "topic": "https://realestate/{topic}#{event}",
   "recipient": # the publishing pod,
   "@context": # optional transformation context,
   "data": {
-    "type": "SearchAction
+    "type": "{Action}
   }
 
 }

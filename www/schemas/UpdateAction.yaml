@@ -1,15 +1,12 @@
 allOf:
   - $ref: Action.yaml
   - title: UpdateAction
-    x-range: UpdateAction
     description: the item (object) has been updated by user (agent)
     properties:
       type:
+        description: const UpdateAction
         enum:
           - UpdateAction
       object:
         type: object
         description: the updated item
-
-
-        

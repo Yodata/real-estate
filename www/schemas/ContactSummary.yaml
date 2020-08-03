@@ -1,0 +1,68 @@
+title: ContactSummary
+x-range: ContactSummary
+description: minimal schema of a customer for report messages
+type: object
+properties:
+  type:
+    type: string
+    description: '"ContactSummary"'
+    enum:
+    - ContactSummaryReport
+  batchId:
+    type: string
+    description: BATCH-ID
+    example: '0001'
+  author:
+    type: string
+    format: uri
+    description: OFFICE-ID
+    example: https://{officeid}.example.com/profile/card#me
+  transactionType:
+    type: string
+    description: TRANS-TYPE
+    x-range: TransactionType
+    example: SoldTransactionType
+  transactionId:
+    type: string
+    description: TRANS-NO
+    example: '0000097123'
+  transactionRole:
+    type: string
+    x-range:
+    - Buyer
+    - Seller
+    - BuyerAgent
+    - ListingAgent
+    enum:
+    - Buyer
+    - Seller
+  position:
+    type: number
+    description: ADJUSTMENT-SEQUENCE
+    example: 1
+  assoicatedAgent:
+    type: string
+    format: uri
+    description: ASSOC-ID
+    example: https://{userid}.example.com/profile/card#me
+  object:
+    type: object
+    description: the Customer
+    x-range:
+      - Person
+      - Organization
+    properties:
+      type:
+        $ref: type.yaml
+      givenName:
+        $ref: givenName.yaml
+      additionalName:
+        type: string
+        description: CUSTOMER-MIDDLE-INITIAL
+        example: M
+      familyName:
+        $ref: familyName.yaml
+      gender:
+        type: string
+        description: gender of the Customer (why?)
+        example: M

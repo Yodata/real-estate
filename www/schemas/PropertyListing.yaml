@@ -7,7 +7,7 @@ properties:
     type: string
     enum:
       - PropertyListing
-      
+
   originatingSystemName:
     type: string
     description: the name of the MLS where the listing was originally input
@@ -33,29 +33,27 @@ properties:
     $ref: property-type.yaml
 
   propertySubType:
-    $ref: PropertySubType.yaml
+    $ref: property-sub-type.yaml
 
   universalPropertyId:
     $ref: UniversalPropertyId.yaml
-  
+
   listingContractDate:
     type: string
     format: date-time
     description: The effective date of the agreement between the seller and the seller's broker.
-  
+
   purchaseContractDate:
     type: string
     format: date-time
     description: With for-sale listings, the date an offer was accepted and the listing was no longer on market. With lease listings this may represent a meeting of the minds to lease, but some contractual requirements are yet to be fulfilled, such as contract signing or receipt of the deposit.
-  
+
   closeDate:
-    type: string
-    format: date-time
-    description: With for-sale listings, the date the purchase agreement was fulfilled. With lease listings, the date the requirements were fulfilled, such as contract and/or deposit.
-  
+    $ref: close-date.yaml
+
   listingPrice:
     $ref: price-specification-object.yaml
-  
+
   listingStatus:
     type: string
     enum:
@@ -66,7 +64,7 @@ properties:
       - Prelisted
       - OffMarket
       - Private
-  
+
   buyerAgent:
     type: object
     x-range: RealEstateAgent
@@ -77,7 +75,6 @@ properties:
       email: butch.byers@example.com
       identifier:
         agentKey: xxxx
-
 
   buyerOffice:
     type: object
@@ -91,14 +88,7 @@ properties:
         officeKey: grc1
 
   listingAgent:
-    type: object
-    description: the listing RealEstateAgent
-    x-range: RealEstateAgent
-    example:
-      type: RealEstateAgent
-      name: Lori Listagent
-      telephone: 1-252-574-0160
-      email: user@example.com
+    $ref: listing-agent.yaml
 
   listingId:
     type: string

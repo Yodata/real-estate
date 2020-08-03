@@ -54,6 +54,7 @@ schemas:
   RealEstateLicense: { $ref: RealEstateLicense.yaml }
   RealEstateOffice: { $ref: RealEstateOffice.yaml }
   RealEstateOrganization: { $ref: RealEstateOrganization.yaml }
+  RealEstateTransaction: { $ref: RealEstateTransaction.yaml }
   RealEstateWebsite: { $ref: RealEstateWebsite.yaml }
   Schedule: { $ref: Schedule.yaml }
   Service: { $ref: Service.yaml }

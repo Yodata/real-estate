@@ -1,0 +1,11 @@
+publish:
+  headers:
+    $ref: ../publish-headers.yaml
+  payload:
+    type: object
+    description: the event payload
+subscribe:
+  oneOf:
+    - $ref: transaction.create.yaml
+    - $ref: transaction.update.yaml
+    - $ref: transaction.close.yaml

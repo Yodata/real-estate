@@ -1,0 +1,19 @@
+x-title: transactionreport
+x-scope: realestate/franchise#
+summary: Franchise transaction report of transaction for sales production reporting.
+payload:
+  allOf:
+    - $ref: ../base.event.yaml
+    - properties:
+        topic:
+          description: realestate/franchise#transactionreport
+          enum:
+            - realestate/franchise#transactionreport
+        data:
+          allOf:
+            - $ref: ../UpdateAction.yaml
+            - properties:
+                type:
+                  type: string
+                object:
+                  $ref: ../RealEstateTransaction.yaml

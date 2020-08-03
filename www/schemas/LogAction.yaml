@@ -1,0 +1,28 @@
+title: LogAction
+type: object
+description: a LogAction should be produced at the end of service execution
+required:
+  - type
+  - actionStatus
+properties:
+  type:
+    description: the action type (LogAction)
+    type: string
+  actionStatus:
+    description: CompletedActionStatus | FailedActionStatus
+  object:
+    description: the data received by the service
+    type: object
+  result:
+    description: the output of a sucessful execution
+  error:
+    description: details the error of an unsucessful execution
+    type: object
+    properties:
+      message:
+        description: the error message
+        type: string
+        example: sorry dave
+      stack:
+        description: the error stack
+        type: string

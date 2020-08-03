@@ -8,4 +8,3 @@ subscribe:
   oneOf:
     - $ref: profile.add.yaml
     - $ref: profile.update.yaml
-    - $ref: profile.serviceareaadd.yaml

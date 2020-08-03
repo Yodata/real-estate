@@ -15,4 +15,10 @@ payload:
               description: AddAction
               enum:
                 - AddAction
-            
+            object:
+              x-range:
+              - RealEstateAgent
+              - RealEstateOffice
+              - RealEstateOrganization
+              type: object
+              description: the updated or added profile value

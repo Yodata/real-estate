@@ -2,6 +2,9 @@
   "name": "realestate-yodata-me",
   "description": "A specification for describing real estate data and events in common way",
   "version": "0.0.2",
+  "engines": {
+    "node": "12.x"
+  },
   "main": "dist",
   "scripts": {
     "generate": "npx ag -t template -o src-content/_/ src-content/asyncapi.yaml docz",

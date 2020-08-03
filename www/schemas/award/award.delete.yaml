@@ -1,20 +1,24 @@
-x-title: award
+x-title: delete
 x-scope: realestate/award#
-summary: an award _object_ is bestowed upon the _recipient_ by the message _agent_.
+summary: award record deleted.
 payload:
   allOf:
     - $ref: ../base.event.yaml
     - properties:
         topic:
           enum:
-            - realestate/award#award
+            - realestate/award#delete
         data:
           x-range:
-          - AwardAction
+          - DeleteAction
           properties:
             type:
               enum:
-              - AwardAction
+              - DeleteAction
+            identifier:
+              $ref: ../identifier.yaml
+              example:
+                bhhsAwardId: xxxx
             agent:
               $ref: ../agent.yaml
               description: the award presentor

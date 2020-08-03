@@ -6,7 +6,9 @@ publish:
     description: the event payload
 subscribe:
   oneOf:
-    - $ref: award.award.yaml
+    - $ref: award.create.yaml
+    - $ref: award.update.yaml
+    - $ref: award.delete.yaml
     - $ref: award.seriescreate.yaml
     - $ref: award.seriesupdate.yaml
     - $ref: award.seriesdelete.yaml

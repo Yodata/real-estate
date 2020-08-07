@@ -26,7 +26,7 @@ properties:
         type: number
         description: the sequentail order of this transaction report relative to previous reports of the the same RealEstateTransaction
         example: 1
-      bhhsUninprovedLandFlag:
+      bhhsUnimprovedLandFlag:
         type: boolean
         description: true if the transaction subject property is an unimproved lot.
 

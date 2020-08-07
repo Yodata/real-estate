@@ -16,7 +16,7 @@ transactionType: ST
 transactionStatus: ClosedTransactionStatus
 additionalProperty:
     batchId: '4136'
-    bhhsUninprovedLandFlag: true
+    bhhsUnimprovedLandFlag: true
 
 closeDate: '2020-26-05T09:18:08Z'
 commissionDate: '2020-26-05T09:18:08Z'

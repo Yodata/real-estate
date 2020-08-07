@@ -15,5 +15,17 @@ payload:
             - properties:
                 type:
                   type: string
+                instrument:
+                  type: object
+                  description: the data provider
+                  properties:
+                    type:
+                      type: string
+                      enum:
+                      - SoftwareApplication
+                    name:
+                      type: string
+                      description: the name of the data provider software
+                      example: Breaking BMS
                 object:
                   $ref: ../RealEstateTransaction.yaml

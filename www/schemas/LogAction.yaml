@@ -15,6 +15,7 @@ properties:
     type: object
   result:
     description: the output of a sucessful execution
+    type: object
   error:
     description: details the error of an unsucessful execution
     type: object

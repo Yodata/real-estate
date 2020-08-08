@@ -6,19 +6,30 @@ required:
   - actionStatus
 properties:
   type:
-    description: the action type (LogAction)
     type: string
+    description: the action type (LogAction)
   actionStatus:
+    type: string
     description: CompletedActionStatus | FailedActionStatus
+    enum:
+    - CompletedActionStatus
+    - FailedActionStatus
   object:
-    description: the data received by the service
     type: object
+    description: the data input
+    example:
+      topic: realestate/contact#add
+      data:
+        type: AddAction
+        object:
+            name: Bob Smith
+            email: bob@example.com
   result:
+    type: object
     description: the output of a sucessful execution
-    type: object
   error:
-    description: details the error of an unsucessful execution
     type: object
+    description: details the error of an unsucessful execution
     properties:
       message:
         description: the error message

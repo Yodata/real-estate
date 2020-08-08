@@ -23,7 +23,7 @@ GeoShape: { $ref: GeoShape.yaml }
 ImageObject: { $ref: ImageObject.yaml }
 Language: { $ref: Language.yaml }
 Lead: { $ref: Lead.yaml }
-LogAction: { $Ref: LogAction.yaml }
+LogAction: { $ref: LogAction.yaml }
 ListingOffer: { $ref: ListingOffer.yaml }
 ListingReport: { $ref: ListingReport.yaml }
 MarketingProgram: { $ref: MarketingProgram.yaml }

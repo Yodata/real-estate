@@ -218,7 +218,7 @@ properties:
         x-domain:
           - RealEstateOrganization
           
-      doNotSell:
+      doNotSellPersonalInformation:
         type: boolean
         description: if contact doesn't want to sell his/her personal information
         x-subPropertyOf: additionalProperty

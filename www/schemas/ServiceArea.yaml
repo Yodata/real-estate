@@ -98,5 +98,5 @@ properties:
         x-range: PriceSpecification
         example:
             type: PriceSpecification
-            price: 100000
+            price: 1000000
             priceCurrency: USD

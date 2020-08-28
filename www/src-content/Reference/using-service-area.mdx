@@ -82,3 +82,9 @@ Vendors may only use ServiceArea data for their system when the attribute corres
 -   Vendors that primarily use ServiceArea data to support referral products must look at the value in the additionalProperty.sentToReferralSolutions field.  
 
 Each vendor should look at only one of these attributes to determine whether or not they can use ServiceArea data, as instructed by HSF.  For example, a company supporting the consumer site will be instructed to look at the value in the additionalProperty.sentToConsumerSite field and ignore values in the additionalProperty.sentToCompanyLocator and additionalProperty.sentToReloSpec fields.
+
+## Luxury Price Minimum
+
+Vendors may use the “LuxuryPriceMinimum” data to determine the price floor or minimum price for property listings in the area to be considered a luxury property per the postal code referenced in the ServiceArea data. The “priceCurrency” will determine the currency code applicable to the “price” provided.
+
+For example, if “postalCode”: “91371” has the “price”: 1000000, and “priceCurrency”: “USD”, then this means that residential properties in postal code 91371 are considered a luxury property listing starting at $1,000,000 United States Dollar (USD). Note: Currency codes displayed will match the currency used in the country where the property listing is located.

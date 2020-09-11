@@ -12,7 +12,14 @@ allOf:
           - RealEstateAgent
         example: RealEstateAgent
         description: RealEstateAgent
-        
+
+      identifier:
+        type: object
+        description: key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.
+        example:
+            guruAgentID: 'c28834ca-db69-4da8-90ad-75cdc9907298'
+
+
       description:
         type: string
         example: The leading Gotham City Real Estate Agent.
@@ -20,7 +27,7 @@ allOf:
       name:
         type: string
         example: Batman & Robin
-        
+
       jobTitle:
         description: agent's job titles
         type: array
@@ -29,7 +36,7 @@ allOf:
           example:
             - Accounting Department
             - Awards Coordinator
-            
+
       subOrganization:
         description: 'for teams: URI reference to a team member'
         type: array

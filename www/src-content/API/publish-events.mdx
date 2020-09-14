@@ -7,7 +7,7 @@ menu: API
 
 Use the publish API to send events to your user's PODs for distribution to that user's subscribers.
 
-### Published Event Data Flow 
+### Published Event Data Flow
 
 ```sequence
 [ your app (producer) ] => [ user pod (publisher) ] => [ other user apps (subscribers) ]
@@ -23,7 +23,8 @@ Host: {your-pod-host}
 Content-Type: application/json
 
 {
-    "recipient": "https://{user-pod-host}/profile/card#me",
+    "recipient": "https://{user-pod}/profile/card#me",
+    "source": "https://{participant-pod/profile/card#me"
     "topic": "{domain}/{topic}#{actiontype}",
     "data": {
         "type": "{actiontype}"
@@ -39,6 +40,7 @@ Let's imagine your user has added a new CRM contact and you want to publish that
 Assumptions:
 - Your pod is producer.example.com
 - Your user's pod is user.example.com
+- A participant pod will receive a copy of this event
 - The new contact is named "Bruce Wayne"
 
 ```sh
@@ -49,6 +51,7 @@ https://producer.example.com/publish/ \
 -d '[
   {
     "recipient": "https://user.example.com/profile/card#me",
+    "source": "https://participant.example.com/profile/card#me"
     "topic": "realestate/contact#add",
     "data": {
         "type": "AddAction",
@@ -72,7 +75,6 @@ Subscribers recieve the event created by the producer, with some additional meta
     "instrument": "{producer pod URI}",
     "agent": "{user (publisher) pod URI}",
     "data": {
-        ... payload       
+        ... payload
   }
 ```
-

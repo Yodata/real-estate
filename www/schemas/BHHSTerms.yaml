@@ -218,9 +218,111 @@ properties:
         x-domain:
           - RealEstateOrganization
           
-      doNotSellPersonalInformation:
-        type: boolean
-        description: if contact doesn't want to sell his/her personal information
-        x-subPropertyOf: additionalProperty
+      companyContact:
+        description: company contact
+        x-subPropertyOf: identifier
         x-domain:
-          - Contact
+          - RealEstateOrganization
+        
+      primaryOffice:
+        description: primay office of company
+        x-subPropertyOf: identifier
+        x-domain:
+          - RealEstateOrganization
+          
+      transactionReportingMethod:
+        description: method of reporting transaction
+        type: string
+        x-domain:
+          - RealEstateOrganization
+        enum:
+          - Batch File Upload
+          - Direct Data Entry
+          - Summary Reporting
+          
+      databridgeVersion:
+        description: version of data bridge
+        type: string
+        x-domain:
+          - RealEstateOrganization
+        enum:
+          - DB4.0
+          - DB3.0
+          
+      systemDeactivationDate:
+        type: date
+        x-domain:
+          - RealEstateOrganization
+          - RealEstateOffice
+          
+      inactiveDate:
+        type: date
+        x-domain:
+          - RealEstateOrganization
+          - RealEstateOffice
+          
+      PublicOffice:
+        type: string
+        description: office's public name
+        x-domain:
+          - RealEstateOffice
+          
+      OfficeContact:
+        description: office contact
+        x-subPropertyOf: identifier
+        x-domain:
+          - RealEstateOffice
+
+      IsRelocationOffice:
+        description: if office is relocation office
+        type: boolean
+        x-domain:
+          - RealEstateOffice
+          
+      PrimaryHomeStoryContact:
+        description: office primary Home Story contact
+        x-subPropertyOf: identifier
+        x-domain:
+          - RealEstateOffice
+          
+      PrimaryHomeStoryContactEmail:
+        description: primary Home Story contact email
+        type: string
+        x-domain:
+          - RealEstateOffice
+      
+      PrimaryRelocationContact:
+        description: office primary relocation contact
+        x-subPropertyOf: identifier
+        x-domain:
+          - RealEstateOffice
+          
+      PrimaryRelocationContactEmail:
+        description: primary relocation contact email
+        type: string
+        x-domain:
+          - RealEstateOffice
+          
+      PrimaryReferralContact:
+        description: office primary referral contact
+        x-subPropertyOf: identifier
+        x-domain:
+          - RealEstateOffice
+          
+      PrimaryReferralContactEmail:
+        description: primary referral contact email
+        type: string
+        x-domain:
+          - RealEstateOffice
+          
+      PrimaryREOContact:
+        description: office primary REO contact
+        x-subPropertyOf: identifier
+        x-domain:
+          - RealEstateOffice
+          
+      PrimaryREOContactEmail:
+        description: primary REO contact email
+        type: string
+        x-domain:
+          - RealEstateOffice

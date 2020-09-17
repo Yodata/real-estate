@@ -250,13 +250,15 @@ properties:
           - DB3.0
           
       systemDeactivationDate:
-        type: date
+        type: string
+        format: date-time
         x-domain:
           - RealEstateOrganization
           - RealEstateOffice
           
       inactiveDate:
-        type: date
+        type: string
+        format: date-time
         x-domain:
           - RealEstateOrganization
           - RealEstateOffice

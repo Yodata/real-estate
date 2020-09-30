@@ -1,3 +1,4 @@
 type: string
 description: Last Name of a person
 example: Wayne
+maxLength: 50

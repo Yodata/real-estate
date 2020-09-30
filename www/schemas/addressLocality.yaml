@@ -1,4 +1,4 @@
 type: string
 description: City, Township.
 example: Gotham City
-maxLength: 10
+maxLength: 50

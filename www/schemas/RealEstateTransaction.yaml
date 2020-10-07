@@ -36,9 +36,9 @@ properties:
     x-range: TransactionStatus
     example: ClosedTransactionStatus
     enum:
-    - ActiveTransactionStatus
+    - OpenTransactionStatus
     - ClosedTransactionStatus
-    - PendingTransactionStatus
+    - CancelledTransactionStatus
 
 
   transactionType:

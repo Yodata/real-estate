@@ -38,7 +38,7 @@ properties:
     enum:
     - OpenTransactionStatus
     - ClosedTransactionStatus
-    - CancelledTransactionStatus
+    - CanceledTransactionStatus
 
 
   transactionType:

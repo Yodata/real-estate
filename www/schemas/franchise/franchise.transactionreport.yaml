@@ -27,5 +27,6 @@ payload:
                       type: string
                       description: the name of the data provider software
                       example: Breaking BMS
+                      maxLength: 10
                 object:
                   $ref: ../RealEstateTransaction.yaml

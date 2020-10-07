@@ -19,9 +19,9 @@ properties:
     description: vendor/context specific custom properties
     properties:
       batchid:
-        type: string
+        type: integer
         description: identifies the batch for the current transaction
-        example: '4136'
+        example: 4136
       bhhsTransactionSequence:
         type: number
         description: the sequentail order of this transaction report relative to previous reports of the the same RealEstateTransaction

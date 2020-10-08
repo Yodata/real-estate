@@ -1,6 +1,8 @@
 type: string
 description: RESO property type (see range for allowed values)
 x-range: PropertyType
+minLength: 4
+maxLength: 4
 enum:
   - RESI
   - RLSE

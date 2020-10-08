@@ -10,6 +10,7 @@ properties:
       - MonetaryAmount
   value:
     type: number
+    multipleOf: 0.01
     description: the amount.
     example: 1234.56
   currency:

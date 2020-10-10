@@ -11,6 +11,9 @@ properties:
 
   salesProductionUnit:
     type: number
+    minimum: 0.0001
+    maximum: 1
+    multipleOf: 0.001
     description: the sales production units credited to the recipient
     example: 0.5
 

@@ -17,8 +17,13 @@ allOf:
         type: object
         description: key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.
         example:
-            guruAgentID: 'c28834ca-db69-4da8-90ad-75cdc9907298'
-
+            ContactID: '1234567'
+            
+      sameAs:
+        type: object
+        description: key/value id assigned to the record
+        example:
+            bmsID: '1234'
 
       description:
         type: string

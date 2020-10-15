@@ -330,7 +330,7 @@ properties:
           - RealEstateOffice
           
       transactionSequence:
-        description: The adjustment sequence number.  Must be zeros if STR is closed but not an adjustment of if STR is open or canceled.  If adjusting a closed transaction, the first adjustment must have 001 in the adjustment sequence: the second must have 002,; the third, 003, etc.  Sequence number cannot be equal or less than the last adjustment sequence number reported for the transaction if the Status has not changed.
+        description: The adjustment sequence number. Must be zeros if STR is closed but not an adjustment or if STR is open or canceled. If adjusting a closed transaction, the first adjustment must have 001 in the adjustment sequence, the second must have 002, the third, 003, etc. Sequence number cannot be equal or less than the last adjustment sequence number reported for the transaction if the Status has not changed.
         type: string
         
       unimprovedLandFlag:

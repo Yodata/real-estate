@@ -1,4 +1,4 @@
 type: string
 description: State or Province.
-example: New Jersey 
-maxLength: 2
+example: New Jersey
+maxLength: 3

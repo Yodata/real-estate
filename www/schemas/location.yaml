@@ -9,7 +9,7 @@ example:
     streetAddress: 1007 Mountain Gate Rd
     addressLocality: Gotham City
     addressRegion: NJ
-    postalCode: 10007
+    postalCode: '10007'
     addressCounty: Gotham addressCounty
     addressSubdivision: Gotham Heights
   

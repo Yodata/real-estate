@@ -32,6 +32,7 @@ schemas:
     LogAction: { $ref: LogAction.yaml }
     MarketingProgram: { $ref: MarketingProgram.yaml }
     MediaObject: { $ref: MediaObject.yaml }
+    MonetaryAmount: { $ref: MonetaryAmount.yaml }
     MLSMembership: { $ref: MLSMembership.yaml }
     MultipleListingService: { $ref: MultipleListingService.yaml }
     Organization: { $ref: Organization.yaml }

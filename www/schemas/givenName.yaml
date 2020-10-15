@@ -1,4 +1,3 @@
 type: string
 description: First Name of a person
 example: Bruce
-maxLength: 50

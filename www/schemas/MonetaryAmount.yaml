@@ -1,7 +1,6 @@
 type: object
 title: MonetaryAmount
 x-range: MonetaryAmount
-description: a value offered for transfer of ownership of an item
 properties:
   type:
     type: string
@@ -16,4 +15,5 @@ properties:
   currency:
     type: string
     description: use ISO4217 country codes
+    maxLength: 3
     example: USD

@@ -29,6 +29,7 @@ ListingReport: { $ref: ListingReport.yaml }
 MarketingProgram: { $ref: MarketingProgram.yaml }
 MediaObject: { $ref: MediaObject.yaml }
 MLSMembership: { $ref: MLSMembership.yaml }
+MonetaryAmount: { $ref: MonetaryAmount.yaml }
 MultipleListingService: { $ref: MultipleListingService.yaml }
 Organization: { $ref: Organization.yaml }
 OrganizationRole: { $ref: OrganizationRole.yaml }

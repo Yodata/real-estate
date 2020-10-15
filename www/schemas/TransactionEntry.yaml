@@ -51,4 +51,4 @@ properties:
         type: object
         description: unique identifier of the recipient from the data producer
         example:
-          guruAgentId: '218034'
+          bmsAgentId: '218034'

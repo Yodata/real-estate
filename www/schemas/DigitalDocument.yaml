@@ -23,9 +23,9 @@ properties:
     description: subject of the Document
     x-range: Thing
     example:
-      type: Transaction
+      type: RealEstateTransaction
       identifier:
-        bhhsTransactionId: xxxx
+        bmsTransactionId: xxxx
   url:
     type: string
     description: public URL of the object

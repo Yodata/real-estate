@@ -22,11 +22,11 @@ properties:
         type: integer
         description: identifies the batch for the current transaction
         example: 4136
-      bhhsTransactionSequence:
+      transactionSequence:
         type: number
         description: the sequentail order of this transaction report relative to previous reports of the the same RealEstateTransaction
         example: 1
-      bhhsUnimprovedLandFlag:
+      unimprovedLandFlag:
         type: boolean
         description: true if the transaction subject property is an unimproved lot.
 
@@ -176,7 +176,7 @@ properties:
           roleName: ListingAgent
           id: 'https://{agentid}.bhhs.hsfaffiliates.com/profile/card#me'
           identifier:
-            guruAgentId: '218034'
+            bmsAgentId: '218034'
 
   # documents
   document:

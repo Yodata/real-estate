@@ -16,7 +16,7 @@ transactionType: ST
 transactionStatus: ClosedTransactionStatus
 additionalProperty:
     batchId: '4136'
-    bhhsUnimprovedLandFlag: true
+    unimprovedLandFlag: true
 
 closeDate: '2020-26-05T09:18:08Z'
 commissionDate: '2020-26-05T09:18:08Z'
@@ -64,7 +64,7 @@ transactionEntry:
   recipient:
     id: 'https://474912.bhhs.hsfaffiliates.com/profile/card#me'
     identifier:
-        guruAgentId: '218034'  # todo: verify this is the vendor identifier for the agent receiving the credit
+        bmsAgentId: '218034'  # todo: verify this is the vendor identifier for the agent receiving the credit
   salesProductionUnit:
     type: QuantitativeValue
     value: 0.5

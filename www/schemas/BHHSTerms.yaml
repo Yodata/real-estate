@@ -328,3 +328,11 @@ properties:
         type: string
         x-domain:
           - RealEstateOffice
+          
+      transactionSequence:
+        description: The adjustment sequence number. Must be zeros if STR is closed but not an adjustment or if STR is open or canceled. If adjusting a closed transaction, the first adjustment must have 001 in the adjustment sequence, the second must have 002, the third, 003, etc. Sequence number cannot be equal or less than the last adjustment sequence number reported for the transaction if the Status has not changed.
+        type: string
+        
+      unimprovedLandFlag:
+        description: A Yes/No flag identifying where or not the property involved in the transaction is considered unimproved land. Valid codes are Y = unimproved land  N= not an unimproved land
+        type: string   

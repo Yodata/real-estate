@@ -263,6 +263,19 @@ properties:
           - RealEstateOrganization
           - RealEstateOffice
           
+      goLiveDate:
+        type: string
+        format: date-time
+        x-domain:
+          - RealEstateOrganization
+          - RealEstateOffice
+          
+      originalAffiliationDate:
+        type: string
+        format: date-time
+        x-domain:
+          - RealEstateOrganization
+          
       PublicOffice:
         type: string
         description: office's public name

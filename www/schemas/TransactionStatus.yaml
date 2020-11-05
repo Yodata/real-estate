@@ -8,8 +8,8 @@ properties:
   ClosedTransactionStatus:
     type: string
     description: Closed Status
-  CancelledTransactionStatus:
+  CanceledTransactionStatus:
     type: string
-    description: Cancelled Status
+    description: Canceled Status
 example:
   transactionStatus: ClosedTransactionStatus

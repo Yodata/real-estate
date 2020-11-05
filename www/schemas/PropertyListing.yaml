@@ -60,7 +60,7 @@ properties:
       - Active
       - Pending
       - Sold
-      - Cancelled
+      - Canceled
       - Prelisted
       - OffMarket
       - Private

@@ -2,7 +2,6 @@ type: object
 title: RealEstateTransaction
 x-range: RealEstateTransaction
 description: describes a sale, purchase and transfer of a real estate property.
-required
 properties:
   type:
     type: string
@@ -18,8 +17,6 @@ properties:
             type: string
             maxLength: 12
             example: '0000074792'
-    required:
-    - bmsTransactionId
 
   additionalProperty:
     type: object

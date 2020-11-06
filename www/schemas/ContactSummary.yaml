@@ -21,7 +21,13 @@ properties:
     type: string
     description: TRANS-TYPE
     x-range: TransactionType
-    example: SoldTransactionType
+    example: SalesTransactionType
+    enum:
+    - SalesTransactionType
+    - LeaseTransactionType
+    - OtherIncomeTransactionType
+    - PropertyManagementTransactionType
+    - ReferralTransactionType
   transactionId:
     type: string
     description: TRANS-NO

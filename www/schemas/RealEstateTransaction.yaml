@@ -33,11 +33,11 @@ properties:
     type: object
     description: vendor/context specific custom properties
     required:
-      - batchid
+      - batchId
       - transactionSequence
       - unimprovedLandFlag
     properties:
-      batchid:
+      batchId:
         type: integer
         description: identifies the batch for the current transaction
         example: 4136

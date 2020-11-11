@@ -2,6 +2,9 @@ title: RealEstateProperty
 x-range: RealEstateProperty
 description: a property in the real estate transaction context
 type: object
+required: 
+  - type
+  - propertyType
 properties:
   type:
     type: string

@@ -2,6 +2,15 @@ type: object
 title: RealEstateTransaction
 x-range: RealEstateTransaction
 description: describes a sale, purchase and transfer of a real estate property.
+required:
+  - type
+  - identifier
+  - additionalProperty
+  - transactionType
+  - reportingOffice
+  - totalSalesProductionGCI
+  - totalSalesProductionGCIDeduction
+  - object
 properties:
   type:
     type: string
@@ -12,6 +21,8 @@ properties:
   identifier:
     type: object
     description: the data producer's id for the transaction.
+    required:
+      - bmsTransactionId
     properties:
         bmsTransactionId:
             type: string
@@ -21,6 +32,10 @@ properties:
   additionalProperty:
     type: object
     description: vendor/context specific custom properties
+    required:
+      - batchid
+      - transactionSequence
+      - unimprovedLandFlag
     properties:
       batchid:
         type: integer
@@ -45,11 +60,17 @@ properties:
     - ClosedTransactionStatus
     - CanceledTransactionStatus
 
-
   transactionType:
     type: string
     description: transaction type
+    x-range: TransactionType
     example: ST # todo: need range enumeration
+    enum:
+      - ST
+      - LS
+      - OI
+      - PM
+      - RF
 
   reportingOffice:
     type: string

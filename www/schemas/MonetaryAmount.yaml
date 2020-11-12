@@ -1,6 +1,10 @@
 type: object
 title: MonetaryAmount
 x-range: MonetaryAmount
+required: 
+  - type
+  - value
+  - currency
 properties:
   type:
     type: string

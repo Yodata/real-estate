@@ -32,6 +32,11 @@ allOf:
         items:
           type: string
           format: uri
+          
+      numberOfSubOrganizations:
+        type: number
+        description: the number of offices for an affiliate. 
+        
 
       subOrganization:
         description: an organization member

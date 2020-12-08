@@ -38,8 +38,3 @@ properties:
   data:
     type: object
     description: event payload
-    x-range: Action
-    example:
-      type: Action
-      actionStatus: CompletedActionStatus
-      object: "{input payload}"

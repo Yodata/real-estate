@@ -36,7 +36,4 @@ allOf:
 
       geoCoordinates:
         description: It is only applied to BHHS office.
-        example:
-          - type: GeoCoordinates
-            longitude: 73.98
-            latitude: 40.75
+        $ref: GeoCoordinates.yaml

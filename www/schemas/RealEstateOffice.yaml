@@ -32,4 +32,11 @@ allOf:
         description: Agents and teams associated with the office.
         items:
           type: string
-          format: uri
+          format: uri    
+
+      geoCoordinates:
+        description: It is only applied to BHHS office.
+        example:
+          - type: GeoCoordinates
+            longitude: 73.98
+            latitude: 40.75

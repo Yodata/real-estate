@@ -1,0 +1,13 @@
+publish:
+  headers:
+    $ref: ../publish-headers.yaml
+  payload:
+    type: object
+    description: the event payload
+subscribe:
+  oneOf:
+    - $ref: team.create.yaml
+    - $ref: team.update.yaml
+    - $ref: team.delete.yaml
+    - $ref: team.memberadd.yaml
+    - $ref: team.memberremove.yaml

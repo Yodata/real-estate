@@ -1,17 +1,16 @@
-x-title: create
+x-title: update
 x-scope: realestate/listing#
-summary: a PropertyListing is created
+summary: a PropertyListing is created or updated
 payload:
   allOf:
     - $ref: ../base.event.yaml
     - properties:
         topic:
           enum:
-            - realestate/listing#create
+            - realestate/listing#update
         data:
           allOf:
-          - $ref: ../CreateAction.yaml
+          - $ref: ../UpdateAction.yaml
           - properties:
               object:
                 $ref: ../PropertyListing.yaml
-    

@@ -87,6 +87,12 @@ properties:
       identifier:
         officeKey: grc1
 
+  latitude:
+      $ref: latitude.yaml
+
+  longitude:
+      $ref: longitude.yaml
+
   listingAgent:
     $ref: listing-agent.yaml
 

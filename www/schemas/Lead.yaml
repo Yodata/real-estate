@@ -8,6 +8,9 @@ properties:
     enum: ['Lead']
     description: Lead
 
+  identifier:
+      $ref: identifier.yaml
+
   object:
     description: the lead (Contact)
     x-range:
@@ -52,8 +55,8 @@ properties:
 
   dateReceived:
     $ref: date-received.yaml
-  
-  
+
+
   leadSource:
     description: lead origin, may be a website event or a thing such as a website, zillow, mobile applicaton.
     x-range:

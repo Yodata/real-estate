@@ -33,7 +33,17 @@ allOf:
             identifier:
               sausID: 216bf670-0777-43db-9d73-c3377d280fe4
               redContact_Guid: 201ff92c-e3ad-43b1-8a01-5555168cb0ae
-        
+
+        participant:
+            $ref: ../participant.yaml
+            example:
+                - type: RealEstateAgent
+                  id: https://robin.example.com/profile/card#me
+                  name: Robin
+                  roleName: CoListingAgent
+
+
+
         instrument:
           type: object
           description: website or mobile application
@@ -44,8 +54,6 @@ allOf:
           example:
             type: RealEstateWebsite
             url: http://gotham-city-realestate.example.com
-                  
+
         object:
           type: object
-
-        

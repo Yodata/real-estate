@@ -2,6 +2,7 @@ x-title: participant
 x-range:
   - Person
   - Organization
+  - RealEstateAgent
 description: Other co-agents with a direct or indirect interest in the action.
 type: array
 items:

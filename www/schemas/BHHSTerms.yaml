@@ -218,9 +218,21 @@ properties:
         x-domain:
           - RealEstateOrganization
           
-      companyContact:
-        description: company contact
-        x-subPropertyOf: identifier
+      companyContactLastName:
+        type: string
+        description: last name of company contact
+        x-domain:
+          - RealEstateOrganization
+          
+      companyContactFirstName:
+        type: string
+        description: first name of company contact
+        x-domain:
+          - RealEstateOrganization
+          
+      companyCFO:
+        type: string
+        description: full name of company CFO
         x-domain:
           - RealEstateOrganization
         
@@ -273,6 +285,11 @@ properties:
       originalAffiliationDate:
         type: string
         format: date-time
+        x-domain:
+          - RealEstateOrganization
+          
+      numberOfSubOrganizations:
+        type: integer
         x-domain:
           - RealEstateOrganization
           

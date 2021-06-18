@@ -1,0 +1,30 @@
+x-title: unsubscribe
+x-scope: realestate/marketingpreferences#
+summary: a consumer (agent) unsubscribes to email or sms for a specific agent (object)
+payload:
+  allOf:
+    - $ref: ../base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/marketingpreferences#unsubscribe
+        data:
+          allOf:
+          - $ref: ../UnsubscribeAction.yaml
+          - properties:
+              agent:
+                $ref: ../Contact.yaml
+              object:
+                type: string
+                format: uri
+                description: agent being unsubscribed from
+              context:
+                object:
+                 properties: 
+                    scope:
+                      type: array
+                      items:
+                        type: string
+                        enum:
+                          - email
+                          - sms

@@ -1,0 +1,10 @@
+allOf:
+  - $ref: Action.yaml
+  - x-range: UnsubscribeAction
+    type: object
+    description: the consumer (agent) has unsubscribed from agent (object).
+    properties:
+      type:
+        type: string
+        enum:
+          - UnsubscribeAction

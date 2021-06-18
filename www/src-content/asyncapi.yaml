@@ -81,6 +81,9 @@ topics:
   marketing:
     $ref: schemas/marketing/topic.yaml
 
+  marketingpreferences:
+    $ref: schemas/marketingpreferences/topic.yaml
+
   profile:
     $ref: schemas/profile/topic.yaml
 

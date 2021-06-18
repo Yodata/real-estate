@@ -6,5 +6,5 @@ publish:
     description: the event payload
 subscribe:
   oneOf:
-    - $ref: consumer.subscribe.yaml
-    - $ref: consumer.unsubscribe.yaml
+    - $ref: marketingpreferences.subscribe.yaml
+    - $ref: marketingpreferences.unsubscribe.yaml

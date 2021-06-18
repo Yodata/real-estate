@@ -1,0 +1,10 @@
+allOf:
+  - $ref: Action.yaml
+  - x-range: SubscribeAction
+    type: object
+    description: the user (agent) has created a website account.
+    properties:
+      type:
+        type: string
+        enum:
+          - SubscribeAction

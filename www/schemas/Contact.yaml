@@ -1,72 +1,71 @@
 allOf:
-  - properties:
-      type:
-        example: Contact
-      identifier:
-        $ref: identifier.yaml
-        example:
-          redContact_Guid: 55BC6EB4-5C3D-4603-B5AB-154117E1269F
-      additionalProperty:
-        $ref: additionalProperty.yaml
+    - $ref: Person.yaml
+    - properties:
+          type:
+              example: Contact
+          identifier:
+              $ref: identifier.yaml
+              example:
+                  redContact_Guid: 55BC6EB4-5C3D-4603-B5AB-154117E1269F
+          additionalProperty:
+              $ref: additionalProperty.yaml
 
+    - title: Contact
+      description: a CRM contact.
+      x-range: Contact
+      properties:
+          type:
+              enum:
+                  - Contact
 
-  - $ref: Person.yaml
-  - title: Contact
-    description: a CRM contact.
-    x-range: Contact
-    properties:
-      type:
-        enum:
-          - Contact
+          comment:
+              $ref: comment-property.yaml
 
-      comment:
-        $ref: comment-property.yaml
+          jobTitle:
+              type: string
+              example: Superhero
 
-      jobTitle:
-        type: string
-        example: Superhero
+          contactGroup:
+              $ref: contactGroup.yaml
 
-      contactGroup:
-        $ref: contactGroup.yaml
+          keywords:
+              $ref: keywords.yaml
 
-      keywords:
-        $ref: keywords.yaml
+          leadOwner:
+              type: object
+              description: lead owner
+              example:
+                  type: RealEstateOrganization
+                  name: Gotham City Real Estate
+                  id: https://example.com/profile.card#me
 
-      leadOwner:
-        type: object
-        description: lead owner
-        example:
-          type: RealEstateOrganization
-          name: Gotham City Real Estate
-          id: https://example.com/profile.card#me
+          leadSource:
+              type: object
+              description: origin of the lead
+              x-range:
+                  - MobileApplication
+                  - RealEstateOffice
+                  - RealEstateWebsite
+                  - Thing
+              example:
+                  id: https://www.zillow.com/homedetails/1044-Siler-Pl-Berkeley-CA-94705/24820985_zpid/
+                  type: RealEstateWebsite
+                  name: Zillow
+                  url: https://zillow.com
 
-      leadSource:
-        type: object
-        description: origin of the lead
-        x-range:
-        - MobileApplication
-        - RealEstateOffice
-        - RealEstateWebsite
-        - Thing
-        example:
-          id: https://www.zillow.com/homedetails/1044-Siler-Pl-Berkeley-CA-94705/24820985_zpid/
-          type: RealEstateWebsite
-          name: Zillow
-          url: https://zillow.com
+          originatingSystem:
+              type: object
+              x-range:
+                  - Thing
+              description: the original system where this item was created.  Can be of type Thing or any sub-type.
+              example:
+                  type: SoftwareApplication
+                  name: RDesk
+                  description: User Created.
+                  url: http://www.rdeskwebsite.com/
 
-      originatingSystem:
-        type: object
-        x-range:
-        - Thing
-        description: the original system where this item was created.  Can be of type Thing or any sub-type.
-        example:
-          type: SoftwareApplication
-          name: RDesk
-          description: User Created.
-          url: http://www.rdeskwebsite.com/
+          dateCreated:
+              $ref: dateCreated.yaml
 
-      dateCreated:
-        $ref: dateCreated.yaml
-
-      dateModified:
-        $ref: dateModified.yaml
+          dateModified:
+              $ref: dateModified.yaml

@@ -1,10 +1,35 @@
 allOf:
   - $ref: Action.yaml
   - x-range: UnsubscribeAction
-    type: object
     description: the consumer (agent) has unsubscribed from agent (object).
     properties:
       type:
-        type: string
         enum:
           - UnsubscribeAction
+      object:
+        type: object
+        properties:
+          id:
+            example: https://agentid.example.com/profile/card#me
+          scope:
+            description: identifers of specific content being subscribed/unsubscribed to
+            type: array
+            items:
+              type: string
+            example:
+              - email:*
+              - sms:message_1
+      agent:
+        allOf:
+          - $ref: Contact.yaml
+          - example:
+              type: Contact
+              email: bob@email.com
+              telephone: "+10008675309"
+              identifier:
+                provider_0: provider_0_id
+              sameAs:
+               - { provider_1: value1 }
+               - { provider_2: value1 }
+               - { provider_3: value1 }
+               - { provider_1: value2 }

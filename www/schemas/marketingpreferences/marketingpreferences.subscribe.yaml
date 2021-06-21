@@ -1,6 +1,5 @@
 x-title: subscribe
 x-scope: realestate/marketingpreferences#
-summary: a consumer (agent) subscribes to email or sms for a specific agent (object)
 payload:
   allOf:
     - $ref: ../base.event.yaml
@@ -9,22 +8,4 @@ payload:
           enum:
             - realestate/marketingpreferences#subscribe
         data:
-          allOf:
-          - $ref: ../SubscribeAction.yaml
-          - properties:
-              agent:
-                $ref: ../Contact.yaml
-              object:
-                type: string
-                format: uri
-                description: agent being subscribed to
-              context:
-                object:
-                 properties: 
-                    scope:
-                      type: array
-                      items:
-                        type: string
-                        enum:
-                          - email
-                          - sms
+          $ref: ../SubscribeAction.yaml

@@ -1,7 +1,6 @@
 type: object
 required:
 - topic
-- source
 - data
 properties:
   topic:
@@ -13,13 +12,13 @@ properties:
     type: string
     format: uri
     example: http://{event-subject}.gotham-city-real-estate.example.com/profile/card#me
-  
+
   agent:
     description: the event publisher, may be an event aggregator in the case of a company pod distributing events on behalf of many users.
     type: string
     format: uri
     example: http://{event-publisher}.example.com/profile/card#me
-  
+
   instrument:
     description: the message producer, the application or service that created the event
     type: string
@@ -29,13 +28,9 @@ properties:
     description: the time the message was produced
     type: string
     format: date-time
-  data: 
+  data:
     type: object
     description: message payload, typically an Action
     properties:
       type:
         type: string
-  
-      
-  
-    

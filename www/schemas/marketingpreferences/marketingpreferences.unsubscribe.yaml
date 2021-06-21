@@ -9,22 +9,4 @@ payload:
           enum:
             - realestate/marketingpreferences#unsubscribe
         data:
-          allOf:
-          - $ref: ../UnsubscribeAction.yaml
-          - properties:
-              agent:
-                $ref: ../Contact.yaml
-              object:
-                type: string
-                format: uri
-                description: agent being unsubscribed from
-              context:
-                object:
-                 properties: 
-                    scope:
-                      type: array
-                      items:
-                        type: string
-                        enum:
-                          - email
-                          - sms
+          $ref: ../UnsubscribeAction.yaml

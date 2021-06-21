@@ -61,8 +61,10 @@ schemas:
     Schedule: { $ref: Schedule.yaml }
     Service: { $ref: Service.yaml }
     ServiceArea: { $ref: ServiceArea.yaml }
+    SubscribeAction: { $ref: SubscribeAction.yaml }
     State: { $ref: State.yaml }
     Task: { $ref: Task.yaml }
     Thing: { $ref: Thing.yaml }
+    UnsubscribeAction: { $ref: UnsubscribeAction.yaml }
     BHHSTerms: { $ref: BHHSTerms.yaml }
     HSFTerms: { $ref: HSFTerms.yaml }

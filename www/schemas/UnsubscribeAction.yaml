@@ -1,18 +1,18 @@
 allOf:
   - $ref: Action.yaml
-  - x-range: SubscribeAction
-    description: the consumer (agent) has Subscribed from agent (object).
+  - x-range: UnsubscribeAction
+    description: the consumer (agent) has unsubscribed from agent (object).
     properties:
       type:
         enum:
-          - SubscribeAction
+          - UnsubscribeAction
       object:
         type: object
         properties:
           id:
             example: https://agentid.example.com/profile/card#me
           scope:
-            description: identifers of specific content being subscribed/Subscribed to
+            description: identifers of specific content being subscribed/unsubscribed to
             type: array
             items:
               type: string

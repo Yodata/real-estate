@@ -61,9 +61,11 @@ Schedule: { $ref: Schedule.yaml }
 Service: { $ref: Service.yaml }
 ServiceArea: { $ref: ServiceArea.yaml }
 State: { $ref: State.yaml }
+SubscribeAction: { $ref: SubscribeAction.yaml }
 Task: { $ref: Task.yaml }
 Thing: { $ref: Thing.yaml }
 TransactionEntry: { $ref: TransactionEntry.yaml }
 TransactionParticipant: { $ref: TransactionParticipant.yaml }
 TransactionStatus: { $ref: TransactionStatus.yaml }
+UnsubscribeAction: { $ref: UnsubscribeAction.yaml }
 BHHSTerms: { $ref: BHHSTerms.yaml }

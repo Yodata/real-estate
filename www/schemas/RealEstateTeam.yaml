@@ -1,0 +1,36 @@
+allOf:
+  - properties:
+      id:
+        type: string
+        example: https://org.example.com/profile/card#me
+  - $ref: Organization.yaml
+  - title: RealEstateTeam
+    description: A real estate team.
+    properties:
+      type:
+        type: string
+        description: RealEstateTeam
+        enum:
+          - RealEstateTeam
+
+      areaServed:
+        $ref: areaServed.yaml
+
+      description:
+        $ref: description.yaml
+        example: The number on Gotham City Real Estate Company since 1940
+
+      parentOrganization:
+        x-range: RealEstateOrganization
+        description:
+          A franchisor or affiliate network of which this organization plays a
+          membership role.
+        type: array
+        items:
+          type: string
+          format: uri
+
+      member:
+        type: array
+        items:
+          $ref: RealEstateTeammembership.yaml

@@ -1,13 +1,13 @@
 x-title: delete
-x-scope: realestate/award#
-summary: award record deleted.
+x-scope: realestate/team#
+summary: team record deleted.
 payload:
   allOf:
     - $ref: ../base.event.yaml
     - properties:
         topic:
           enum:
-            - realestate/award#delete
+            - realestate/team#delete
         data:
           x-range:
           - DeleteAction
@@ -21,10 +21,10 @@ payload:
                 bhhsAwardId: xxxx
             agent:
               $ref: ../agent.yaml
-              description: the award presentor
+              description: the team presentor
             object:
               $ref: ../AwardSeries.yaml
-              description: the award being bestowed
+              description: the team being bestowed
               example:
                 type: AwardSeries
                 name: Agent of The Year
@@ -36,7 +36,7 @@ payload:
               - RealEstateAgent
               - RealEstateOffice
               - RealEstateOrganiation
-              description: profile URI of the award recipient
+              description: profile URI of the team recipient
               example:
                 type: RealEstateAgent
                 id: https://user.example.com/profile/card#me

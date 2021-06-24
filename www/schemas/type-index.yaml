@@ -54,6 +54,8 @@ RealEstateLicense: { $ref: RealEstateLicense.yaml }
 RealEstateOffice: { $ref: RealEstateOffice.yaml }
 RealEstateOrganization: { $ref: RealEstateOrganization.yaml }
 RealEstateProperty: { $ref: RealEstateProperty.yaml }
+RealEstateTeam: { $ref: RealEstateTeam.yaml }
+RealEstateTeamMembership: { $ref: RealEstateTeamMembership.yaml }
 RealEstateTransaction: { $ref: RealEstateTransaction.yaml }
 RealEstateWebsite: { $ref: RealEstateWebsite.yaml }
 Referral: { $ref: Referral.yaml }

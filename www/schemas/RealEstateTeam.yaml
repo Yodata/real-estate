@@ -33,4 +33,4 @@ allOf:
       member:
         type: array
         items:
-          $ref: RealEstateTeammembership.yaml
+          $ref: RealEstateTeamMembership.yaml

@@ -1,7 +1,7 @@
 asyncapi: 1.2.0
 
 info:
-  title: Standard Events for Integrating Real Estate Software
+  title: Standard Events for Real Estate Software Integration and Automation.
   version: '0.0.2'
   description: |
 

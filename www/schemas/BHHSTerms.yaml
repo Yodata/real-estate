@@ -366,3 +366,7 @@ properties:
       unimprovedLandFlag:
         description: A Yes/No flag identifying where or not the property involved in the transaction is considered unimproved land. Valid codes are Y = unimproved land  N= not an unimproved land
         type: string   
+
+      workingWithAgent:
+        description: is consumer already working with an Agent?
+        type: boolean

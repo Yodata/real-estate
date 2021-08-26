@@ -26,6 +26,7 @@ payload:
             example:
               additionalProperty:
                 userPath: xxxx
+                workingWithAgent: true
 
           object:
             $ref: ../question.yaml

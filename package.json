@@ -15,7 +15,7 @@
     "eslint": "^6.8.0",
     "json-schema-ref-parser": "^6.1.0",
     "lerna": "^3.18.3",
-    "tar": "^4.4.8"
+    "tar": "^4.4.15"
   },
   "dependencies": {
     "asyncapi-generator": "^0.6.5"

@@ -12,7 +12,6 @@ allOf:
         example: RealEstateTeamMembership
       roleName:
         type: string
-        example: TeamMember
         enum:
           - TeamMember
           - TeamAdmin

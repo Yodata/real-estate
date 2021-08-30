@@ -8,3 +8,7 @@ subscribe:
   oneOf:
     - $ref: profile.add.yaml
     - $ref: profile.update.yaml
+    - $ref: profile.teamadd.yaml
+    - $ref: profile.teamdelete.yaml
+    - $ref: profile.teammemberadd.yaml
+    - $ref: profile.teammemberremove.yaml

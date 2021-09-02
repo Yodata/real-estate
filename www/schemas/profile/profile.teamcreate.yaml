@@ -1,4 +1,4 @@
-x-title: teamadd
+x-title: teamcreate
 x-scope: realestate/profile#
 summary: a team profile was creatd
 payload:
@@ -7,7 +7,7 @@ payload:
     - properties:
         topic:
           enum:
-            - realestate/profile#teamadd
+            - realestate/profile#teamcreate
         data:
           x-range: AddAction
           properties:

@@ -1,35 +1,41 @@
 allOf:
   - $ref: Action.yaml
   - x-range: UnsubscribeAction
-    description: the consumer (agent) has unsubscribed from agent (object).
+    description: the consumer (agent) has unsubscribed to content from the participant with roleName SubscriptionProvider.
     properties:
       type:
         enum:
           - UnsubscribeAction
-      object:
-        type: object
-        properties:
-          id:
-            example: https://agentid.example.com/profile/card#me
-          scope:
-            description: identifers of specific content being subscribed/unsubscribed to
-            type: array
-            items:
-              type: string
-            example:
-              - email:*
-              - sms:message_1
       agent:
-        allOf:
-          - $ref: Contact.yaml
-          - example:
-              type: Contact
-              email: bob@email.com
-              telephone: "+10008675309"
-              identifier:
-                provider_0: provider_0_id
-              sameAs:
-               - { provider_1: value1 }
-               - { provider_2: value1 }
-               - { provider_3: value1 }
-               - { provider_1: value2 }
+        type: object
+        description: the subscriber
+        x-range: Contact
+        example:
+          type: Contact
+          email: bob@example.com
+          identifier:
+            sausID: xxxxxxxxxxxxx
+      participant:
+        description: the subscription provider, an Agent, Team, Office or Organization
+        x-range:
+          - RealEstateAgent
+          - RealEstateTeam
+          - RealEstateOffice
+          - RealEstateOrganization
+        type: array
+        items:
+          type: object
+          properties:
+            roleName:
+              type: string
+              enum:
+              - SubscriptionProvider
+            id:
+              type: string
+              format: uri
+              example:  https://12345.example.com/profile/card#me
+            additionalProperty:
+              type: object
+              properties:
+                isCompanyQueue:
+                  type: boolean

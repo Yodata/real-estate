@@ -3,10 +3,6 @@ description: an ImageObject or URI reference to an image on the web.
 type: array
 x-range:
   - ImageObject
-  - URI
 items:
-  oneOf:
-    - type: object
-      $ref: ImageObject.yaml
-    - type: string
-      format: uri
+  - type: object
+    $ref: ImageObject.yaml

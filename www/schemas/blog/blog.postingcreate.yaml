@@ -1,0 +1,19 @@
+x-title: postingcreate
+x-scope: realestate/blog#
+summary: a blog post was created
+payload:
+  allOf:
+    - $ref: ../base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/blog#postingcreate
+        data:
+          x-range:
+          - CreateAction
+          properties:
+            type:
+              enum:
+              - CreateAction
+            object:
+              $ref: ../BlogPosting.yaml

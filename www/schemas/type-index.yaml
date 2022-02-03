@@ -6,6 +6,7 @@ Award: { $ref: Award.yaml }
 AwardSeries: { $ref: AwardSeries.yaml }
 AwardTeam: { $ref: AwardTeam.yaml }
 ApplicationProfile: { $ref: ApplicationProfile.yaml }
+BlogPosting: { $ref: BlogPosting.yaml }
 Certification: { $ref: Certification.yaml }
 City: { $ref: City.yaml }
 CloudEvent: { $ref: CloudEvent.yaml }

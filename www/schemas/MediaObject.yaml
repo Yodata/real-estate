@@ -25,10 +25,10 @@ allOf:
         type: string
         description: MIME type
         example: application/zip
-      content:
-        type: string
-        description: base64 encoded content
-        example: R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs
+      # content:
+      #   type: string
+      #   description: base64 encoded content
+      #   example: R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs
       about:
         type: string
         format: uri

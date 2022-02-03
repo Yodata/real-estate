@@ -63,6 +63,9 @@ topics:
   award:
     $ref: schemas/award/topic.yaml
 
+  blog:
+    $ref: schemas/blog/topic.yaml
+
   calendar:
     $ref: schemas/calendar/topic.yaml
 

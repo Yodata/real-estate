@@ -34,6 +34,10 @@ allOf:
           leadOwner:
               type: object
               description: lead owner
+              x-range:
+                - RealEstateAgent
+                - RealEstateOrganization
+                - RealEstateTeam
               example:
                   type: RealEstateOrganization
                   name: Gotham City Real Estate

@@ -1,61 +1,80 @@
 title: PropertyListing
+type: object
 x-range: PropertyListing
 description: a real estate property listed for sale
-type: object
 properties:
   type:
-    type: string
     enum:
       - PropertyListing
-
-  originatingSystemName:
     type: string
-    description: the name of the MLS where the listing was originally input
-    example: GOTHAM-MLS
-
-  originatingSystemKey:
-    type: string
-    description: the listing identifier from the original MLS, aka MLSID.
-    example: 12345
-
-  streetAddress:
-    $ref: streetAddress.yaml
+  addressCountry:
+    $ref: addressCountry.yaml
   addressLocality:
     $ref: addressLocality.yaml
   addressRegion:
     $ref: addressRegion.yaml
-  postalCode:
-    $ref: postalCode.yaml
-  addressCountry:
-    $ref: addressCountry.yaml
-
-  propertyType:
-    $ref: property-type.yaml
-
-  propertySubType:
-    $ref: property-sub-type.yaml
-
-  universalPropertyId:
-    $ref: UniversalPropertyId.yaml
-
-  listingContractDate:
-    type: string
-    format: date-time
-    description: The effective date of the agreement between the seller and the seller's broker.
-
-  purchaseContractDate:
-    type: string
-    format: date-time
-    description: With for-sale listings, the date an offer was accepted and the listing was no longer on market. With lease listings this may represent a meeting of the minds to lease, but some contractual requirements are yet to be fulfilled, such as contract signing or receipt of the deposit.
-
+  buyerAgent:
+    description: "the buyer's RealEstateAgent"
+    example:
+      email: butch.byers@example.com
+      identifier:
+        agentKey: xxxx
+      name: Butch Byers
+      type: RealEstateAgent
+    type: object
+    x-range: RealEstateAgent
+  buyerOffice:
+    description: "the buyer's RealEstateOffice"
+    example:
+      email: gcr@example.com
+      identifier:
+        officeKey: grc1
+      name: Gotham City Real Estate
+      type: RealEstateOffice
+    type: object
+    x-range: RealEstateOffice
   closeDate:
     $ref: close-date.yaml
-
+  image:
+    $ref: image.yaml
+  internetAddressDisplayYN:
+    enum:
+      - 'Y'
+      - 'N'
+    type: string
+  latitude:
+    $ref: latitude.yaml
+  listingAgent:
+    $ref: listing-agent.yaml
+  listingContractDate:
+    description: "The effective date of the agreement between the seller and the seller's broker."
+    format: date-time
+    type: string
+  listingId:
+    description: the local identifier for the listing
+    example: GOTHAM-MLS+12345
+    type: string
+  listingOffice:
+    description: the listing office
+    example:
+      name: Gotham City Real Estate
+      type: RealEstateOffice
+    type: object
+    x-range: RealEstateOrganization
+  listingOriginatingSystem:
+    description: The place where the item is originally input by the user.
+    example:
+      identifier:
+        bhhsmlsid: xxxx
+        resoouid: not-yet-available
+      name: MLSListings
+      type: MultipleListingService
+    type: object
+    x-range: MultipleListingService
+    x-subPropertyOf: instrument
   listingPrice:
     $ref: price-specification-object.yaml
-
   listingStatus:
-    type: string
     enum:
       - Active
       - Pending
@@ -64,102 +83,65 @@ properties:
       - Prelisted
       - OffMarket
       - Private
-
-  buyerAgent:
-    type: object
-    x-range: RealEstateAgent
-    description: the buyer's RealEstateAgent
-    example:
-      type: RealEstateAgent
-      name: Butch Byers
-      email: butch.byers@example.com
-      identifier:
-        agentKey: xxxx
-
-  buyerOffice:
-    type: object
-    x-range: RealEstateOffice
-    description: the buyer's RealEstateOffice
-    example:
-      type: RealEstateOffice
-      name: Gotham City Real Estate
-      email: gcr@example.com
-      identifier:
-        officeKey: grc1
-
-  latitude:
-      $ref: latitude.yaml
-
-  longitude:
-      $ref: longitude.yaml
-
-  listingAgent:
-    $ref: listing-agent.yaml
-
-  listingId:
     type: string
-    description: the local identifier for the listing
-    example: GOTHAM-MLS+12345
-
-  listingOffice:
-    type: object
-    description: the listing office
-    x-range: RealEstateOrganization
-    example:
-      type: RealEstateOffice
-      name: Gotham City Real Estate
-
-  listingOriginatingSystem:
-    type: object
-    x-range: MultipleListingService
-    x-subPropertyOf: instrument
-    description: The place where the item is originally input by the user.
-    example:
-      type: MultipleListingService
-      name: MLSListings
-      identifier:
-        bhhsmlsid: xxxx
-        resoouid: not-yet-available
-
   livingArea:
     description: property indoor space
-    type: object
-    x-range: QuantitativeValue
     example:
       type: QuantitativeValue
-      value: 1500
       unitCode: SqFt
       unitText: Square Feet
-
-  lotSize:
-    description: outdoor space minValue, maxValue
+      value: 1500
     type: object
     x-range: QuantitativeValue
+  longitude:
+    $ref: longitude.yaml
+  lotSize:
+    description: 'outdoor space minValue, maxValue'
     example:
       type: QuantitativeValue
-      value: .5
       unitCode: AC
       unitText: Acres
-
-  numberOfBedrooms:
-    description: the number of bedrooms
-    type: string
-    example: '3'
-
+      value: 0.5
+    type: object
+    x-range: QuantitativeValue
   numberOfBathrooms:
     description: the number of bathrooms
-    type: string
     example: '2'
-
-  internetAddressDisplayYN:
     type: string
-    enum:
-    - Y
-    - N
-
-  image:
-    $ref: image.yaml
-
+  numberOfBedrooms:
+    description: the number of bedrooms
+    example: '3'
+    type: string
+  numberOfRooms:
+    description: the total number of rooms in the building
+    example: '7'
+    type: string
+  originatingSystemKey:
+    description: 'the listing identifier from the original MLS, aka MLSID.'
+    example: 12345
+    type: string
+  originatingSystemName:
+    description: the name of the MLS where the listing was originally input
+    example: GOTHAM-MLS
+    type: string
+  postalCode:
+    $ref: postalCode.yaml
+  propertySubType:
+    $ref: property-sub-type.yaml
+  propertyType:
+    $ref: property-type.yaml
+  purchaseContractDate:
+    description: 'With for-sale listings, the date an offer was accepted and the listing was no longer on market. With lease listings this may represent a meeting of the minds to lease, but some contractual requirements are yet to be fulfilled, such as contract signing or receipt of the deposit.'
+    format: date-time
+    type: string
+  stories:
+      $ref: stories.yaml
+  streetAddress:
+    $ref: streetAddress.yaml
+  universalPropertyId:
+    $ref: UniversalPropertyId.yaml
   url:
     $ref: url.yaml
-    example: https://www.example.com/homedetails/1007-Mountain-Gate-Rd-Gotham-City-Gotham/10007
+    example: 'https://www.example.com/homedetails/1007-Mountain-Gate-Rd-Gotham-City-Gotham/10007'
+  yearBuilt:
+      $ref: yearBuilt.yaml

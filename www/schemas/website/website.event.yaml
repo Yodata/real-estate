@@ -1,15 +1,9 @@
 allOf:
 - $ref: ../CloudEvent.yaml
 - properties:
-    agent:
-      example: https://bhhs.example.com/profile/card#me
-    instrument:
-      example: https://smarter-agent.example.com/profile/card#me
-    source:
-      example: https://{agentid}.example.com/profile/card#me
     data:
       type: object
-      description: the message payload.
+      description: the event payload, typeically a schema.org/Action
       required:
       - type
       - agent
@@ -19,28 +13,31 @@ allOf:
           $ref: ../type.yaml
         agent:
           type: object
-          description: the website user
+          description: the website user who performed the action
           x-range:
           - Contact
           - Person
           example:
             type: Contact
-            name: Bill Bailey
+            name: Miles Davis
+            givenName: Miles
+            familyName: Davis
             telephone: 067-419-1230
             email: user@example.com
+            identifier:
+              hsfconsumerid: 216bf670-0777-43db-9d73-c3377d280fe4
             additionalProperty:
               userPath: xxx
-            identifier:
-              sausID: 216bf670-0777-43db-9d73-c3377d280fe4
-              redContact_Guid: 201ff92c-e3ad-43b1-8a01-5555168cb0ae
+              workingWithAgent: true
+
 
         participant:
             $ref: ../participant.yaml
+            description: a RealEstateAgent,RealEstateTeam,RealEstateOrganization to be notified about the event
             example:
-                - type: RealEstateAgent
-                  id: https://robin.example.com/profile/card#me
-                  name: Robin
-                  roleName: CoListingAgent
+              - type: RealEstateAgent
+                id: https://robin.example.com/profile/card#me
+                name: Robin
 
 
 

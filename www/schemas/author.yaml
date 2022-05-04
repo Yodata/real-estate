@@ -2,5 +2,4 @@ type: object
 description: the content author
 example:
   type: Contact
-  name: Robin
-
+  name: Sarah Vaughn

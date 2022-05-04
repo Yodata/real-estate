@@ -14,7 +14,7 @@ allOf:
           type: Contact
           email: bob@example.com
           identifier:
-            sausID: xxxxxxxxxxxxx
+            hsfconsumerid: xxxxxxxxxxxxx
       participant:
         description: the subscription provider, an Agent, Team, Office or Organization
         x-range:

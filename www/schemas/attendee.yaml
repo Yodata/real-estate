@@ -8,5 +8,5 @@ items:
     - Organization
   example:
     type: Person
-    name: Bob Smith
-    email: bob@example.com
+    name: Red Garland
+    email: redg@example.com

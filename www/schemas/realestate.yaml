@@ -52,7 +52,7 @@ schemas:
     PropertyValue: { $ref: PropertyValue.yaml }
     QuantitativeValue: { $ref: QuantitativeValue.yaml }
     Question: { $ref: question.yaml }
-    RealEstateAgent: { $ref: RealEstateAgent.yaml }
+    RealEstateAgent: { $ref: RealEstateAgent.yaml }z
     RealEstateLicense: { $ref: RealEstateLicense.yaml }
     RealEstateOffice: { $ref: RealEstateOffice.yaml }
     RealEstateOrganization: { $ref: RealEstateOrganization.yaml }

@@ -1,0 +1,75 @@
+type: object
+title: PropertyValueReport
+x-range: PropertyValueReport
+description: an automated property value esmation
+properties:
+  type:
+    type: string
+    description: PropertyValueReport
+    enum:
+      - PropertyValueReport
+  name:
+    type: string
+    description: document name or title
+    example: 'LOT:45 DIST:33 CITY/MUNI/TWP:LADUE LINDWORTH...'
+  dateCreated:
+    $ref: dateCreated.yaml
+  result:
+    $ref: MonetaryAmount.yaml
+    description: the estimated value of the property
+  about:
+    allOf:
+    - $ref: RealEstateProperty.yaml
+    - description: the subject property
+    - properties:
+        additionalProperty:
+          example:
+            heating: null
+            cooling: null
+            isForeclosure: null
+            isShortsale: null
+            score: 7
+            parcelId: null
+            averageSalePrice:
+              type: PriceSpecification
+              price: 7500000
+              priceCurrency: USD
+            nonDisclosureProperty: false
+            taxAssessedValue:
+              '@type': MonetaryAmount
+              amount: '100000'
+              currency: USD
+            taxAssessedYear: 2021
+            inHouseCompanyListingUrl: null
+            inHouseCompanyListingEvent: null
+            neighborhoodMetrics: null
+            neighborhoodName: DEER CREEK WOODS
+            neighborhoodKey: null
+            useNeighborhoodDataForCharts: false
+            ownerName: Bob Jones
+            ownerOccupied: 'Y'
+            ownersEstimatedEquity:
+              '@type': MonetaryAmount
+              amount: '100000'
+              currency: USD
+            firstLoanPrice:
+              '@type': MonetaryAmount
+              amount: '100000'
+              currency: USD
+            firstLoanLenderName: ''
+            secondLoanPrice:
+              '@type': MonetaryAmount
+              amount: null
+              currency: null
+            secondLoanLenderName: N/A
+            lastRefinanceLoanVal1:
+              '@type': MonetaryAmount
+              amount: '100000'
+              currency: USD
+            lastRefinanceLenderName1: N/A
+            lastRefinanceLoanVal2:
+              '@type': MonetaryAmount
+              amount: null
+              currency: null
+            lastRefinanceLenderName2: N/A
+            Title_Company: ''

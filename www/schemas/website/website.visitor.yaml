@@ -1,10 +1,17 @@
 type: object
 description: a website user/visitor
-x-range: Person
+x-range:
+  - Contact
+  - Person
 example:
-  type: Person
-  name: Bob
-  email: bob@example.com
-  telephone: '1+000-867-5309'
+  type: Contact
+  name: Bruce Wayne
+  givenName: Bruce
+  familyName: Wayne
+  email: batman@example.com
+  telephone: '1+888-867-5309'
   identifier:
-    vendornameuserid: 'abc123'
+   hsfconsumerid: xxxxxxxxxxxxx
+  sameAs:
+   amcecrmid: '1234567'
+   salesForceId: xxxxxxxxxxxxx

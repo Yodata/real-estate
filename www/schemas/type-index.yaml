@@ -48,6 +48,7 @@ PropertySearch: { $ref: PropertySearch.yaml }
 PropertyType: { $ref: PropertyType.yaml }
 PropertySubType: { $ref: PropertySubType.yaml }
 PropertyValue: { $ref: PropertyValue.yaml }
+PropertyValueReport: { $ref: PropertyValueReport.yaml }
 QuantitativeValue: { $ref: QuantitativeValue.yaml }
 Question: { $ref: question.yaml }
 RealEstateAgent: { $ref: RealEstateAgent.yaml }

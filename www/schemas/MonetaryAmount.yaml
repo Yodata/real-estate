@@ -1,7 +1,7 @@
 type: object
 title: MonetaryAmount
 x-range: MonetaryAmount
-required: 
+required:
   - type
   - value
   - currency
@@ -11,11 +11,21 @@ properties:
     description: MonetaryAmount
     enum:
       - MonetaryAmount
+  minValue:
+    type: number
+    # multipleOf: 0.01
+    description: the lower limit of the range
+    example: 2400000.00
+  maxValue:
+    type: number
+    # multipleOf: 0.01
+    description: the upper limit of the range
+    example: 3200000.00
   value:
     type: number
     # multipleOf: 0.01
-    description: the amount.
-    example: 1234.56
+    description: the actual or expected value
+    example: 2700000.00
   currency:
     type: string
     description: use ISO4217 country codes

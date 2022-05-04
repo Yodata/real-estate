@@ -1,28 +1,24 @@
 allOf:
-  - properties:
-      id:
-        type: string
-        example: https://org.example.com/profile/card#me
   - $ref: Organization.yaml
   - title: RealEstateOrganization
-    description: A real estate franchisor, broker or business.
+    description: A real estate franchisor, broker or business
+    x-range: RealEstateOrganization
     properties:
       type:
-        type: string
         description: RealEstateOrganzation
         enum:
           - RealEstateOrganization
           - RealEstateOffice
           - RealEstateAgent
         example: RealEstateOrganization
-        
+
       areaServed:
         $ref: areaServed.yaml
-      
+
       description:
         $ref: description.yaml
         example: The number on Gotham City Real Estate Company since 1940
-      
+
       parentOrganization:
         type: array
         x-range: RealEstateOrganization
@@ -32,21 +28,13 @@ allOf:
         items:
           type: string
           format: uri
-          
+
       numberOfSubOrganizations:
         type: number
-        description: the number of offices for an affiliate. 
-        
+        description: the number of offices for an affiliate.
 
-      subOrganization:
-        description: an organization member
-        x-range:
-          - RealEstateOrganization
-        type: array
-        items:
-          type: string
-          format: uri
-          example: http://org.example.com/profile/card#me
+
+
 
       member:
         $ref: member.yaml
@@ -62,4 +50,3 @@ allOf:
 
       permit:
         $ref: permit-prop.yaml
-

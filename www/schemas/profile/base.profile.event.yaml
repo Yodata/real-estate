@@ -7,8 +7,4 @@ allOf:
           oneOf:
           - $ref: ../RealEstateAgent.yaml
           - $ref: ../RealEstateOffice.yaml
-          
-            
-            
-            
-            
+          - $ref: ../RealEstateTeam.yaml

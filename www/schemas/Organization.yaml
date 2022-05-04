@@ -6,65 +6,63 @@ allOf:
       - RealEstateOffice
       - RealEstateAgent
   - x-subClassOf:
-      - https://schema.org/Organization
+      - 'https://schema.org/Organization'
     properties:
-      type:
-        type: string
-        enum: ['Organization']
-
-      name:
-        type: string
-        description: Name or DBA.
-
-      telephone:
-        $ref: telephone.yaml
-
-      faxNumber:
-        $ref: faxNumber.yaml
-
-      email:
-        $ref: email.yaml
-
-      url:
-        type: string
-        format: uri
-        description: primary website/url for the entity.
-
       address:
         $ref: address.yaml
-
       availableLanguage:
         $ref: availableLanguage.yaml
-
       branchCode:
-        description: A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.
-        type: string
+        description: 'A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.'
         example: CA301-001
-
+        type: string
       certification:
         $ref: certification-prop.yaml
-
       contactPoint:
         $ref: contact-point.yaml
-        
+      email:
+        $ref: email.yaml
+      faxNumber:
+        $ref: faxNumber.yaml
+      image:
+        $ref: image.yaml
+        description: an ImageObject or URI reference to an image of the entity on the web.
       logo:
         description: a logo associated with the organization.
+        items:
+          allOf:
+            - $ref: DigitalDocument.yaml
+            - description: an associated logo
+              type: object
+          type: object
         type: array
         x-range:
           - ImageObject
           - DigitalDocument
-        items:
-          type: object
-          allOf:
-            - $ref: DigitalDocument.yaml
-            - type: object
-              description: an associated logo
-      image:
-        description: an ImageObject or URI reference to an image of the entity on the web.
-        $ref: image.yaml
-
+      name:
+        description: Name or DBA.
+        type: string
       parentOrganization:
+        items:
+          format: uri
+          type: string
+        type: array
+      subOrganization:
+        description: a child organization
+        x-range:
+          - RealEstateOrganization
         type: array
         items:
           type: string
           format: uri
+          example: http://org.example.com/profile/card#me
+      telephone:
+        $ref: telephone.yaml
+      type:
+        enum:
+          - Organization
+        type: string
+      url:
+        description: primary website/url for the entity.
+        format: uri
+        type: string

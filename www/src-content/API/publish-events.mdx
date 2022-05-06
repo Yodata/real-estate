@@ -21,6 +21,7 @@ To publish an event, HTTP POST to your pod's /publish/ endpoint with a content-t
 POST /publish/
 Host: {your-pod-host}
 Content-Type: application/json
+x-api-key: {your-api-key}
 
 {
     "recipient": "https://{user-pod}/profile/card#me",
@@ -63,18 +64,57 @@ https://producer.example.com/publish/ \
 ]'
 ```
 
-## Outcome
+## SUCCESS RESPONSE
 
-Once published, the event will be distributued to authorized subscribers of the user pod.
+### 201 SUCCESS
+A successful response wil have an HTTP status code 201 and the JSON response.body will contain the event.id.
 
-Subscribers recieve the event created by the producer, with some additional meta data.
+### RESULT
 
-```json
+- The `recipient` and optional  `source` in the request.body will receive a copy of the event and forward it to their subscribers.
+- If you are subscriber of the event recipient and/or source you will receive the event in your `/inbox/`
+
+```http
+HTTP/1.1 201 OK
+Content-Type: application/json
+Location: https://your.domain.com/publish/{eventid}
+
 {
-    "topic": "{published topic}",
-    "instrument": "{producer pod URI}",
-    "agent": "{user (publisher) pod URI}",
-    "data": {
-        ... payload
-  }
+    "id": "https://dave.bhhs.dev.yodata.io/publish/dc6cb9e6338c4af797a077577b9fd0ad"
+}}
 ```
+
+## ERROR RESPONSES
+
+### 400 BAD REQUEST
+There is a problem with the request.body, see the resopnse error message for more information.
+
+```http
+HTTP/1.1 400 BAD REQUEST
+Content-Type: application/json
+
+{
+    "error": "No recipient found"
+}
+```
+
+###
+HOW TO FIX
+Make sure your request.body inclues all required fields (recipient, topic and data)
+
+
+### 403 FORBIDDEN
+Your request was rejected, the error message for details.
+
+```http
+HTTP/1.1 403 FORBIDDEN
+Content-Type: application/json
+
+{
+    "error": "Not authorized to publish to {recipient} on topic {topic}"
+}
+```
+
+HOW TO FIX
+1. contact the rejecting host and get authorized, then resend the event, or
+2. remove or replace the rejecting host from the request recipient and/or source.

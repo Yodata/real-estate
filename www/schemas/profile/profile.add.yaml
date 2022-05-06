@@ -22,3 +22,7 @@ payload:
               - RealEstateOrganization
               type: object
               description: the updated or added profile value
+              properties:
+                branchCode:
+                  type: string
+                  example: for BHHS profile events see additionalProperty.OfficeId

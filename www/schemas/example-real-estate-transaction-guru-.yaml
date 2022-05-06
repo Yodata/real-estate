@@ -54,7 +54,7 @@ referral:
 participant:
   - type: Person
     givenName: Josh
-    additionalName: ''
+    additionalName: 'A'
     familyName: Cold
     email: ''
     roleName: Buyer

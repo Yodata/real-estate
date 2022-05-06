@@ -13,8 +13,8 @@ allOf:
       availableLanguage:
         $ref: availableLanguage.yaml
       branchCode:
-        description: 'A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.'
-        example: CA301-001
+        description: 'A short textual code that uniquely identifies a place of business.'
+        example: for BHHS profile events, see additionalProperty.OfficeId
         type: string
       certification:
         $ref: certification-prop.yaml

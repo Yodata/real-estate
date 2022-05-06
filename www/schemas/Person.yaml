@@ -42,9 +42,7 @@ allOf:
         example: user@example.com
 
       additionalName:
-        type: string
-        description: additional name (i.e. middle name or nickname)
-        example: Batman
+        $ref: additionalName.yaml
 
       familyName:
         type: string

@@ -33,14 +33,16 @@ allOf:
           type: string
         type: array
       name:
-        example: Glenn Miller
+        example: Louis Armstrong
         type: string
       givenName:
         $ref: givenName.yaml
-        example: Glenn
+        example: Louis
       familyName:
         $ref: familyName.yaml
-        example: Miller
+        example: Armstrong
+      additionalName:
+        $ref: additionalName.yaml
       parentOrganization:
         description: "URI reference to the agent's office. For teams, this can be a reference to the team leader/primary profile."
         example:

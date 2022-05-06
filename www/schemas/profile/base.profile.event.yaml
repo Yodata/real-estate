@@ -8,3 +8,5 @@ allOf:
           - $ref: ../RealEstateAgent.yaml
           - $ref: ../RealEstateOffice.yaml
           - $ref: ../RealEstateTeam.yaml
+        branchCode:
+         example: fuck me

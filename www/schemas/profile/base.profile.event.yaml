@@ -9,4 +9,4 @@ allOf:
           - $ref: ../RealEstateOffice.yaml
           - $ref: ../RealEstateTeam.yaml
         branchCode:
-         example: fuck me
+         example: ABC123

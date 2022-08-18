@@ -7,6 +7,7 @@ publish:
 subscribe:
   oneOf:
     - $ref: programcreate.yaml
+    - $ref: programupdate.yaml    
     - $ref: programdelete.yaml
     - $ref: programmemberadd.yaml
     - $ref: programmemberremove.yaml

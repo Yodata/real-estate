@@ -1,0 +1,29 @@
+type: object
+title: OpenHouseEvent
+description: An OpenHouseEvent happening at a certain time and location
+x-range: Event
+properties:
+  type:
+    $ref: type.yaml
+    example: OpenHouseEvent
+  name:
+    type: string
+    description: name of the OpenHouseEvent
+    example: Property Showing 1007 Mountain Gate Rd
+  description:
+    type: string
+    description: OpenHouseEvent message content
+    example: an example meeting request for 4:00PM to 4:30PM.
+  about:
+    type: object
+    description: a subject of the meeting or OpenHouseEvent
+    example:
+      $ref: example-propertylisting.yaml
+  startDate:
+    $ref: startDate.yaml
+    example: '2019-08-01T16:00Z'
+  endDate:
+    $ref: endDate.yaml
+    example: '2019-08-01T16:30Z'
+  organizer:
+    $ref: organizer.yaml

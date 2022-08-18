@@ -145,3 +145,5 @@ properties:
     example: 'https://www.example.com/homedetails/1007-Mountain-Gate-Rd-Gotham-City-Gotham/10007'
   yearBuilt:
       $ref: yearBuilt.yaml
+  events:
+      $ref: OpenHouseEvent.yaml      

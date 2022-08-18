@@ -32,6 +32,7 @@ MediaObject: { $ref: MediaObject.yaml }
 MLSMembership: { $ref: MLSMembership.yaml }
 MonetaryAmount: { $ref: MonetaryAmount.yaml }
 MultipleListingService: { $ref: MultipleListingService.yaml }
+OpenHouseEvent: { $ref: OpenHouseEvent.yaml }
 Organization: { $ref: Organization.yaml }
 OrganizationRole: { $ref: OrganizationRole.yaml }
 Permit: { $ref: Permit.yaml }

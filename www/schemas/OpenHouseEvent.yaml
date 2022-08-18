@@ -18,7 +18,9 @@ properties:
     type: object
     description: a subject of the meeting or OpenHouseEvent
     example:
-      $ref: example-propertylisting.yaml
+      about: 
+        type: 'PropertyListing'
+        url: 'https://{company-website-url}/{path-to-listing}'
   startDate:
     $ref: startDate.yaml
     example: '2019-08-01T16:00Z'

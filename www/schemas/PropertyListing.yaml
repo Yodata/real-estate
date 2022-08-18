@@ -146,4 +146,8 @@ properties:
   yearBuilt:
       $ref: yearBuilt.yaml
   events:
+    type: array
+    description: An OpenHouseEvent happening at a certain time and location
+    x-range: OpenHouseEvent
+    items:
       $ref: OpenHouseEvent.yaml      

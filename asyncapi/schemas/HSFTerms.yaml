@@ -1,0 +1,120 @@
+title: HSFTerms
+type: object
+description: additional properties for HSF.
+properties:
+  additionalProperty:
+    type: object
+    properties:
+      region:
+        type: string
+        x-subPropertyOf: additionalProperty
+        x-domain:
+          - Award
+
+      awardBasis:
+        type: string
+        x-subPropertyOf: additionalProperty
+        x-domain:
+          - Award
+
+      teamType:
+        type: string
+        description: award team type
+        x-subPropertyOf: additionalProperty
+        x-domain:
+          - AwardTeam
+        enum:
+          - Company Team
+          - Agent Team
+
+      brand:
+        type: string
+        description: brand
+        x-subPropertyOf: additionalProperty
+        x-domain:
+          - AwardTeam
+        enum:
+          - Berkshire Hathaway HomeServices
+
+      status:
+        type: string
+        description: status of award team
+        x-subPropertyOf: additionalProperty
+        x-domain:
+          - AwardTeam
+        enum:
+          - Active
+          - Inactive
+
+      period:
+        type: string
+        description: name of award period
+        x-subPropertyOf: additionalProperty
+        x-domain:
+          - AwardTeam
+
+      periodType:
+        type: string
+        description: type of award period
+        x-subPropertyOf: additionalProperty
+        x-domain:
+          - AwardTeam
+        enum:
+          - Annual
+          - Quarterly
+
+      primaryCompany:
+        type: object
+        description: primary company if team type is Company Team
+        properties:
+          type:
+            type: string
+            enum:
+              - RealEstateOrganization
+          id:
+            type: string
+            x-subPropertyOf: identifier
+        x-domain:
+          - AwardTeam
+
+      company:
+        type: object
+        description: agent's company if team type is Agent Team
+        properties:
+          type:
+            type: string
+            enum:
+              - RealEstateOrganization
+          id:
+            type: string
+            x-subPropertyOf: identifier
+        x-domain:
+          - AwardTeam
+
+      office:
+        type: object
+        description: agent's office if team type is Agent Team
+        properties:
+          type:
+            type: string
+            enum:
+              - RealEstateOffice
+          id:
+            type: string
+            x-subPropertyOf: identifier
+        x-domain:
+          - AwardTeam
+
+      primaryContact:
+        type: object
+        description: primary contact/agent if team type is Agent Team
+        properties:
+          type:
+            type: string
+            enum:
+              - RealEstateAgent
+          id:
+            type: string
+            x-subPropertyOf: identifier
+        x-domain:
+          - AwardTeam

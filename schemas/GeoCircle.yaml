@@ -1,0 +1,13 @@
+x-range: GeoCircle
+type: object
+title: GeoCircle
+description: a circle with a mid point and radius
+properties:
+  type:
+    type: string
+    enum:
+    - GeoCircle
+  geoMidpoint:
+    $ref: GeoCoordinates.yaml
+  geoRadius:
+    $ref: geo-radius.yaml

@@ -1,0 +1,24 @@
+{
+  "name": "@yodata/asyncapi-doc-website-generator",
+  "version": "0.0.1",
+  "description": "generates https://realestate.yodata.me",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ag ./asyncapi.yaml ./ -o test/output --force-write --watch-template"
+  },
+  "keywords": [],
+  "author": "Dave Duran <dave@yodata.io> (https://yodata.io/)",
+  "license": "MIT",
+  "devDependencies": {
+    "@asyncapi/generator-hooks": "^0.1.0"
+  },
+  "generator": {
+    "generator": ">=1.3.0 <2.0.0",
+    "renderer": "nunjucks"
+  },
+  "dependencies": {
+    "@asyncapi/generator": "^1.9.12",
+    "@asyncapi/generator-filters": "^2.1.0",
+    "@asyncapi/parser": "^1.17.0"
+  }
+}

@@ -1,0 +1,13 @@
+title: EntryPoint
+description: An entry point, within some Web-based protocol.
+type: object
+properties:
+  type:
+    $ref: type.yaml
+  urlTemplate:
+    type: string
+    format: uri
+    example: https://example.com/data/{type}/{identifier}
+  contentType:
+    type: string
+    example: application/json

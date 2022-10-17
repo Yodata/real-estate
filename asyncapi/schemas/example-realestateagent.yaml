@@ -1,0 +1,7 @@
+title: Example Real Estate Agent
+type: object
+x-range: RealEstateAgent
+description: a real estate agent
+example:
+  type: RealEstateAgent
+  name: Joe Agent

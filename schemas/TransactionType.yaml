@@ -1,0 +1,21 @@
+title: TransactionType
+description: Transaction Type Enumeration Values
+type: object
+properties:
+  ST:
+    type: string
+    description: Sales Transaction
+  LS:
+    type: string
+    description: Lease
+  OI:
+    type: string
+    description: Other Income
+  PM:
+    type: string
+    description: Property Management
+  RF:
+      type: string
+      description: Referral
+example:
+  transactionType: ST

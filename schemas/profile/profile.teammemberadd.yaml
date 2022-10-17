@@ -1,0 +1,19 @@
+x-title: teammemberadd
+x-scope: realestate/profile#
+summary: a team member was added
+payload:
+  allOf:
+    - $ref: ../base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/profile#teammemberadd
+        data:
+          x-range: AddAction
+          properties:
+            type:
+              description: AddAction
+              enum:
+                - AddAction
+            object:
+              $ref: ../RealEstateTeamMembership.yaml

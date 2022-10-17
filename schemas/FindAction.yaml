@@ -1,0 +1,16 @@
+x-range: FindAction
+description: the result of a search action
+type: object
+properties:
+  type:
+    type: string
+    enum:
+    - FindAction
+  object:
+    description: the items found
+    type: array
+    example:
+    - type: PropertyListing
+      url: http://example.com/listing/123
+    - type: PropertyListing
+      url: http://example.com/listing/234

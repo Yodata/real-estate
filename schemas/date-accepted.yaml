@@ -1,0 +1,4 @@
+type: string
+description: The date/time the item was accepted by the recipient
+x-range: DateTime
+example: 2019-11-25T04:23:32Z

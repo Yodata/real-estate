@@ -1,0 +1,14 @@
+title: AssignAction
+type: object
+description: AssignAction
+allOf:
+  - $ref: Action.yaml
+  - type: object
+    properties:
+      type:
+        type: string
+        enum:
+          - AssignAction
+        example: AssignAction
+      object:
+        type: object

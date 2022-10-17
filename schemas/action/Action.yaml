@@ -1,0 +1,20 @@
+type: object
+required:
+  - 'type'
+properties:
+  type:
+    description: a schema.org Action
+    type: string
+    enum:
+    - Action
+  object:
+    description: The object upon which the action is carried out
+    type: object
+  agent:
+    description: the actor who performed the Action
+  instrument:
+    description: thing used by the agent to perform the action, i.e. an application or website that generated the message.
+    example: https://sernvicename.example.com/profile/card#me
+externalDocs:
+  description: schema.org/Action
+  url: https://schema.org/Action

@@ -1,0 +1,79 @@
+allOf:
+  - properties:
+      type:
+        type: string
+        enum:
+          - RealEstateAgent
+        description: RealEstateAgent
+      id:
+        $ref: id.yaml
+      name:
+        type: string
+      givenName:
+        $ref: givenName.yaml
+      familyName:
+        $ref: familyName.yaml
+  - $ref: RealEstateOrganization.yaml
+  - description: A real estate agent
+  - properties:
+      description:
+        example: The leading Gotham City Real Estate Agent.
+        type: string
+      identifier:
+        description: 'key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.'
+        example:
+          ContactID: '1234567'
+        type: object
+      jobTitle:
+        description: "agent's job titles"
+        items:
+          example:
+            - Accounting Department
+            - Awards Coordinator
+          type: string
+        type: array
+      name:
+        example: Louis Armstrong
+        type: string
+      givenName:
+        $ref: givenName.yaml
+        example: Louis
+      familyName:
+        $ref: familyName.yaml
+        example: Armstrong
+      additionalName:
+        $ref: additionalName.yaml
+      parentOrganization:
+        description: "URI reference to the agent's office. For teams, this can be a reference to the team leader/primary profile."
+        example:
+          - 'http://office-real-estate.example.com/'
+          - 'http://batmanandrobinteam.example.com/'
+        items:
+          format: uri
+          type: string
+        type: array
+        x-range:
+          - RealEstateOffice
+          - RealEstateAgent
+      sameAs:
+        description: key/value id assigned to the record
+        example:
+          bmsID: '1234'
+        type: object
+      subOrganization:
+        description: 'for teams: URI reference to a team member'
+        items:
+          format: uri
+          type: string
+        type: array
+        x-range: RealEstateAgent
+      type:
+        description: RealEstateAgent
+        enum:
+          - RealEstateAgent
+        example: RealEstateAgent
+        type: string
+    title: RealEstateAgent
+    type: object
+description: a real estate agent or team.
+type: object

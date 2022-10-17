@@ -1,0 +1,4 @@
+title: contenttype
+description: mimetype of the data property.  default=application/json
+type: string
+example: application/json

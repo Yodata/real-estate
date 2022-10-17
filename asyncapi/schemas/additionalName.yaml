@@ -1,0 +1,3 @@
+type: string
+description: any other name(s) associated with the entity, i.e. nickname, middle name, maiden name, etc. For multiple names, use a comma without space as a separator.
+example: ambassador satch,pops,satchmo

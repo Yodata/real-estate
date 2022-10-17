@@ -1,0 +1,21 @@
+title: RealEstateWebsite
+type: object
+x-range: RealEstateWebsite
+properties:
+  type:
+    type: string
+    enum:
+    - RealEstateWebsite
+    description: RealEstateWebsite
+  about:
+    type: object
+    description: subject of the website
+    x-range:
+    - RealEstateAgent
+    - RealEstateOffice
+    - RealEstateOrganization
+    example:
+      type: RealEstateAgent
+      id: http://agent.example.com/profile/card#me
+  url:
+    $ref: url.yaml

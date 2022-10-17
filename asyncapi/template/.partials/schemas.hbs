@@ -1,0 +1,3 @@
+{{#each asyncapi.components.schemas}}
+  {{~>schema schema=. schemaName=@key~}}
+{{/each}}

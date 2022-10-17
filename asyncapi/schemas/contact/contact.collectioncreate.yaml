@@ -1,0 +1,25 @@
+x-title: collectioncreate
+x-scope: realestate/contact#
+summary: a contact group was created
+payload:
+  allOf:
+    - $ref: ../base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/contact#collectioncreate
+        data:
+          allOf:
+          - $ref: ../CreateAction.yaml
+          - properties:
+              object:
+                $ref: ../Collection.yaml
+          - properties:
+              object:
+                example:
+                  type: Collection
+                  name: Past Clients
+                  identifier:
+                    vendoraid: pastclientscollectionid
+                  dateCreated: 2019-07-17T11:05:17Z
+                  dateModified: 2019-07-17T11:05:17Z

@@ -1,0 +1,86 @@
+title: PropertySearch
+x-range: PropertySearch
+type: object
+description: property search parameters
+properties:
+  type:
+    type: string
+    enum:
+    - PropertySearch
+
+  name:
+    type: string
+    description: name of the search, input by the user or generated automatically
+    example: 3+ beds in Gotham City
+
+  description:
+    type: string
+    description: optional search description input by the user or generated automatically
+    example: ((city=Gotham),(Bedrooms=3+))
+    
+  propertyType:
+    $ref: property-type.yaml
+
+  propertySubType:
+    $ref: PropertySubType.yaml
+
+  listingStatus:
+    type: string
+    description: RESO Listing Status Code
+    x-range:
+    - ActiveListingStatus
+    - PendingListingStatus
+    - SoldListingStatus
+    - ContingentListingStatus
+    example: ActiveListingStatus,ContingentListingStatus
+
+  location:
+    $ref: Place.yaml
+  
+  price:
+    description: price value or range (minValue, maxValue)
+    $ref: PriceSpecification.yaml
+  
+  bedrooms:
+    description: number of bedrooms (range)
+    type: object
+    x-range: QuantitativeValue
+    example:
+      type: QuantitativeValue
+      minValue: 0
+      maxValue: 4
+      unitCode: BD
+      unitText: Bedrooms
+    
+  bathrooms:
+    description: number of bathrooms (range)
+    type: object
+    x-range: QuantitativeValue
+    example:
+      type: QuantitativeValue
+      minValue: 2
+      unitCode: BA
+      unitText: Bathrooms
+
+  
+
+  livingArea:
+    description: property indoor space
+    type: object
+    x-range: QuantitativeValue
+    example:
+      type: QuantitativeValue
+      minValue: 1500
+      unitCode: SqFt
+      unitText: Square Feet
+
+  lotSize:
+    description: outdoor space minValue, maxValue
+    type: object
+    x-range: QuantitativeValue
+    example:
+      type: QuantitativeValue
+      minValue: .5
+      unitCode: AC
+      unitText: Acres
+         

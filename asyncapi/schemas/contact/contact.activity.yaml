@@ -1,0 +1,12 @@
+x-title: activity
+x-scope: realestate/contact#
+summary: 
+payload:
+  allOf:
+    - $ref: ../base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/contact#comment
+        data:
+          $ref: ../Comment.yaml

@@ -1,0 +1,16 @@
+x-title: participant
+x-range:
+  - Person
+  - RealEstateAgent
+  - RealEstateTeam
+  - RealEstateOrganization
+description: Other co-agents with a direct or indirect interest in the action.
+type: array
+items:
+  type: object
+example:
+- type: Contact
+  name: Bruce Wayne
+  email: bruce@example.com
+  identifier:
+    redContact_GUID: 92d0a096-457e-4643-ace8-fa95b6bdb1c5

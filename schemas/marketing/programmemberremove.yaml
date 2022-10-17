@@ -1,0 +1,36 @@
+x-title: memberremove
+x-scope: realestate/marketingprogram#
+summary: a program member was removed by the agent
+payload:
+  allOf:
+    - $ref: ../base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/marketingprogram#memberremove
+        data:
+          allOf:
+          - $ref: ../RemoveAction.yaml
+          - properties:
+              object:
+                $ref: ../ProgramMembership.yaml
+          - properties:
+              object:
+                x-range: ProgramMembership
+                example:
+                  type: ProgramMembership
+                  role: Owner
+                  member:
+                    type: Person  
+                    name: Edgardo Fisher
+                    identifier:
+                      aceid: 816fd12f-6479-4f45-b26f-0a2ba54972b6
+          - properties:
+              targetCollection:
+                  x-range: MarketingProgram
+                  example:
+                    type: MarketingProgram
+                    name: Market Activity Report 508 Homewood Ave
+                    identifier:
+                      aceid: 4ef1469a-1fc4-43af-96b1-0e4402ccc46e
+                      buysideid: 83271c2a-c35e-44e9-b790-5389f2c11b17

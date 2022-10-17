@@ -1,0 +1,11 @@
+title: agent
+description: the direct performer or driver of the action.
+x-range:
+  - Person
+  - Organization
+  - URI
+oneOf:
+  - type: string
+    format: uri
+    example: http://{user}.example.com/profile/card#me
+  - type: object

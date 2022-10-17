@@ -1,0 +1,20 @@
+publish:
+  headers:
+    $ref: ../publish-headers.yaml
+  payload:
+    type: object
+    description: the event payload
+subscribe:
+  oneOf:
+    - $ref: askquestion.yaml
+    - $ref: listingoffer.yaml
+    - $ref: register.yaml
+    - $ref: requestappointment.yaml
+    - $ref: requestshowing.yaml
+    - $ref: saveproperty.yaml
+    - $ref: savepropertysearch.yaml
+    - $ref: searchproperties.yaml
+    - $ref: shareproperty.yaml
+    - $ref: sharepropertyvaluereport.yaml
+    - $ref: viewproperty.yaml
+    - $ref: viewpropertyvaluereport.yaml

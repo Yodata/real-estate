@@ -1,0 +1,7 @@
+allOf:
+- $ref: Action.yaml
+- properties:
+    type:
+      enum:
+      - SearchAction
+    

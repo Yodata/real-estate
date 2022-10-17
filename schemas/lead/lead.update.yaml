@@ -1,0 +1,17 @@
+x-title: update
+x-scope: realestate/lead#
+summary: a crm lead was updated
+payload:
+  allOf:
+    - $ref: ../base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/lead#update
+        data:
+          allOf:
+          - $ref: ../UpdateAction.yaml
+          - x-range: UpdateAction
+            properties:
+              object:
+                $ref: ../Lead.yaml

@@ -1,0 +1,3 @@
+description: the start date-time (ISO 8601 formated)
+type: string
+format: date-time

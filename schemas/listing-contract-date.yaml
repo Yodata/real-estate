@@ -1,0 +1,4 @@
+type: string
+description: date of the listing agreement execution.
+x-range: DateTime
+example: 2019-11-25T04:23:32Z

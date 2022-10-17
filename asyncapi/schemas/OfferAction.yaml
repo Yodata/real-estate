@@ -1,0 +1,22 @@
+title: OfferAction
+x-topic:
+  - website
+  - listing
+allOf:
+  - $ref: Action.yaml
+  - type: object
+    description: agent makes an offer to buy or sell the object
+    properties:
+      type:
+        type: string
+        description: OfferAction
+        enum:
+          - OfferAction
+      agent:
+        type: object
+        description: the entity making the offer
+        x-range:
+          - Person
+          - Organization
+      object:
+        $ref: Offer.yaml

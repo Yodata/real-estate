@@ -1,0 +1,175 @@
+type: object
+title: RealEstateTransaction
+x-range: RealEstateTransaction
+description: describes a sale, purchase and transfer of a real estate property.
+required:
+  - type
+  - identifier
+  - additionalProperty
+  - transactionType
+  - reportingOffice
+  - totalSalesProductionGCI
+  - totalSalesProductionGCIDeduction
+  - object
+properties:
+  type:
+    type: string
+    description: '"RealEstateTransaction"'
+    enum:
+      - RealEstateTransaction
+
+  identifier:
+    type: object
+    description: the data producer's id for the transaction.
+    required:
+      - bmsTransactionId
+    properties:
+        bmsTransactionId:
+            type: string
+            maxLength: 12
+            example: '0000074792'
+
+  additionalProperty:
+    type: object
+    description: vendor/context specific custom properties
+    required:
+      - batchId
+      - transactionSequence
+      - unimprovedLandFlag
+    properties:
+      batchId:
+        type: integer
+        description: identifies the batch for the current transaction
+        example: 4136
+      transactionSequence:
+        type: integer
+        description: the sequentail order of this transaction report relative to previous reports of the the same RealEstateTransaction
+        minimum: 0
+        example: 1
+      unimprovedLandFlag:
+        type: boolean
+        description: true if the transaction subject property is an unimproved lot.
+
+  transactionStatus:
+    type: string
+    description: transaction status
+    x-range: TransactionStatus
+    example: ClosedTransactionStatus
+    enum:
+    - PendingTransactionStatus
+    - ClosedTransactionStatus
+    - CanceledTransactionStatus
+
+  transactionType:
+    type: string
+    description: transaction type
+    x-range: TransactionType
+    example: ST # todo: need range enumeration
+    enum:
+      - ST
+      - LS
+      - OI
+      - PM
+      - RF
+
+  reportingOffice:
+    type: string
+    format: uri
+    description: the reporting office
+    example: 'https://{officeid}.example.com/profile/card#me'
+
+  listingOffice:
+    type: string
+    format: uri
+    description: the office representing the seller
+    example: 'https://{officeid}.example.com/profile/card#me'
+
+  buyerOffice:
+    type: string
+    format: uri
+    description: the office representing the buyer
+    example: 'https://{officeid}.example.com/profile/card#me'
+
+  # dates
+  commissionDate:
+    type: string
+    format: date-time
+    x-range: DateTime
+    description: date the purchase offer was presented
+
+  closeDate:
+    type: string
+    format: date-time
+    x-range: DateTime
+    description: With purchase the date the purchase agreement was fulfilled. With lease, the date the requirements were fulfilled, such as contract and/or deposit.
+
+  purchaseContractDate:
+    type: string
+    format: date-time
+    description: date of purchase agreement execution (aka sale date)
+    x-range: DateTime
+
+  # prices
+  closePrice:
+    $ref: MonetaryAmount.yaml
+    description: the final sale price of the subject
+    example:
+      type: MonetaryAmount
+      value: 123456.78
+      currency: USD
+
+  totalSalesProductionGCI:
+    $ref: MonetaryAmount.yaml
+    description: the total gci of the transaction
+    example:
+      type: MonetaryAmount
+      value: 123456.78
+      currency: USD
+
+  totalSalesProductionGCIDeduction:
+    $ref: MonetaryAmount.yaml
+    description: total gci deductions for the transaction
+    example:
+      type: MonetaryAmount
+      value: 1234.56
+      currency: USD
+
+  object:
+    $ref: RealEstateProperty.yaml
+
+  referral:
+    $ref: Referral.yaml
+    description: referring agent details
+
+  # participants
+  participant:
+    type: array
+    description: parties with a direct or indirect interest or role in the transaction
+    x-range: TransactionParticipant
+    items:
+      $ref: TransactionParticipant.yaml
+
+
+  transactionEntry:
+    type: array
+    description: commissions and unit entries
+    x-range: TransactionEntry
+    items:
+      $ref: TransactionEntry.yaml
+
+  # documents
+  document:
+    type: array
+    description: any documents, images, etc... related to the transaction.
+    x-range: DigitalDocument
+    items:
+      type: object
+      example:
+        type: DigitalDocument
+        name: Sales Contract
+        encodingFormat: application/zip
+        about:
+          type: Transaction
+          identifier:
+            guruTransactionId: '0000074792'
+        url: https://example.com/path/to/document.pdf

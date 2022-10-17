@@ -1,0 +1,16 @@
+title: Action
+type: object
+description: An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role.
+
+required:
+  - 'type'
+properties:
+  type:
+    description: the action type
+    type: string
+  object:
+    description: item on which the action is carried out
+  
+externalDocs:
+  description: schema.org/Action
+  url: https://schema.org/Action

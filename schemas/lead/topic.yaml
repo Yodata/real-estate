@@ -1,0 +1,14 @@
+publish:
+  headers:
+    $ref: ../publish-headers.yaml
+  payload:
+    type: object
+    description: the event payload
+subscribe:
+  oneOf:
+    - $ref: lead.accept.yaml
+    - $ref: lead.add.yaml
+    - $ref: lead.assign.yaml
+    - $ref: lead.update.yaml
+    - $ref: lead.reject.yaml
+    - $ref: lead.retract.yaml

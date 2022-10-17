@@ -1,0 +1,15 @@
+{
+  "recipient": "https://profile-events-staging-handler.bhhs.hsfaffiliates.com/profile/card#me",
+  "topic": "realestate/awardwinner#add",
+  "data": {
+    "type": "AddAction",
+    "object": {
+      "type": "AwardWinner",
+      "teamAward": true,
+      "awardCategoryName": "Lucy Award Category",
+      "awardTeamID": 2,
+      "awardBasis": "Total GCI",
+      "region": "United States"
+    }
+  }
+}

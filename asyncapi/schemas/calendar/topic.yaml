@@ -1,0 +1,12 @@
+publish:
+  headers:
+    $ref: ../publish-headers.yaml
+  payload:
+    type: object
+    description: the event payload
+subscribe:
+  oneOf:
+    - $ref: calendar.eventcreate.yaml
+    - $ref: calendar.taskcreate.yaml
+    - $ref: calendar.taskdelete.yaml
+    - $ref: calendar.taskupdate.yaml

@@ -1,0 +1,11 @@
+x-range: Certification
+description: certifications granted to a person or organization
+type: array
+items:
+  type: object
+  example:
+    type: Certification
+    name: E-Agent Certified
+    validFrom: '2019-06-13T07:00:00.000Z'
+    additionalProperty:
+      ceritificationTypeId: 86afafd3-ac25-4a89-9a6e-bebb3753c4b2

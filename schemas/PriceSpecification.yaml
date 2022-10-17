@@ -1,0 +1,26 @@
+type: object
+title: PriceSpecification
+x-range: PriceSpecification
+description: a price offered for transfer of ownership of an item
+properties:
+  type:
+    type: string
+    description: PriceSpecification
+    enum:
+      - PriceSpecification
+  minPrice:
+    type: number
+    description: the low price offered if price is a range.
+    example: 75000
+  maxPrice:
+    type: number
+    description: the high price offered if price is a range.
+    example: 100000
+  price:
+    type: number
+    description: the offer price.
+    example: 75000
+  priceCurrency:
+    type: string
+    description: use ISO4217
+    example: USD

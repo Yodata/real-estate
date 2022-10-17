@@ -1,0 +1,13 @@
+type: object
+description: the sales production units credited to the recipient
+x-range: QuantitativeValue
+properties:
+  type:
+    type: string
+    description: QuantitativeValue
+    enum:
+    - QuantitativeValue
+  value:
+    type: number
+    description: the value (if a static value)
+    example: 0.5

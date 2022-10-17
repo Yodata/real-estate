@@ -1,0 +1,18 @@
+title: GeoShape
+type: object
+x-range:
+- GeoShape
+- GeoCircle
+description: a geo shape
+properties:
+  type:
+    type: string
+    enum:
+    - GeoShape
+    - GeoCircle
+  geoMidpoint:
+    $ref: GeoCoordinates.yaml
+  geoRadius:
+    $ref: geo-radius.yaml
+  box:
+    $ref: box.yaml

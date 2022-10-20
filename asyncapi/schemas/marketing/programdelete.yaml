@@ -1,4 +1,4 @@
-x-title: delete
+messageId: marketing#delete
 x-scope: realestate/marketingprogram#
 summary: a marketing program was deleted
 payload:

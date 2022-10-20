@@ -1,4 +1,4 @@
-x-title: transactionreport
+messageId: franchise#transactionreport
 x-scope: realestate/franchise#
 summary: Franchise transaction report of transaction for sales production reporting.
 payload:

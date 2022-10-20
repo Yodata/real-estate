@@ -1,6 +1,13 @@
-x-title: delete
-x-scope: realestate/award#
-summary: award record deleted.
+# https://www.asyncapi.com/docs/reference/specification/v2.4.0#messageObject
+messageId: award#delete
+name: award#delete
+title: award#delete
+summary: award deleted
+contentType: application/json
+tags:
+  - name: action|delete
+  - name: topic|award
+  - name: domain|realestate
 payload:
   allOf:
     - $ref: ../base.event.yaml
@@ -10,11 +17,11 @@ payload:
             - realestate/award#delete
         data:
           x-range:
-          - DeleteAction
+            - DeleteAction
           properties:
             type:
               enum:
-              - DeleteAction
+                - DeleteAction
             identifier:
               $ref: ../identifier.yaml
               example:
@@ -33,9 +40,9 @@ payload:
             recipient:
               type: object
               x-range:
-              - RealEstateAgent
-              - RealEstateOffice
-              - RealEstateOrganiation
+                - RealEstateAgent
+                - RealEstateOffice
+                - RealEstateOrganiation
               description: profile URI of the award recipient
               example:
                 type: RealEstateAgent

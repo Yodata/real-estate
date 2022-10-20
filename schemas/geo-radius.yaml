@@ -1,9 +1,0 @@
-title: geoRadius
-type: object
-x-range: QuantitativeValue
-description: the radius of a geo-shape in meters if unitCode is not indicated
-example:
-  type: QuantitativeValue
-  value: '10'
-  unitCode: 'mi'
-  unitText: 'miles'

@@ -1,4 +1,4 @@
-x-title: collectionmemberremove
+messageId: contact#collectionmemberremove
 x-scope: realestate/contact#
 summary: a contact was removed from collection
 payload:
@@ -28,5 +28,4 @@ payload:
                   type: Collection
                   name: Past Clients
                   identifier:
-                    vendoraid: pastclientscollectionid  
-                  
+                    vendoraid: pastclientscollectionid

@@ -1,4 +1,4 @@
-x-title: sharepropertyvaluereport
+messageId: website#sharepropertyvaluereport
 x-scope: realestate/website#
 summary: agent shared object with recipient
 payload:

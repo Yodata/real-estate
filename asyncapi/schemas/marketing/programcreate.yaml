@@ -1,4 +1,4 @@
-x-title: create
+messageId: marketing#create
 x-scope: realestate/marketingprogram#
 summary: a marketing program has been created
 payload:
@@ -23,17 +23,17 @@ payload:
                       description: namespaced identifiers
                       example:
                         namespaceid: xxxx
-                        
+
                     about:
                       x-range: Place
-                      example: 
+                      example:
                         type: Place
                         address:
                           streetAddress: 508 Homewood Ave
                           addressLocality: Chula Vista
                           addressRegion: California
                           postalCode: '55555'
-                    
+
                     member:
                       type: array
                       items:
@@ -44,4 +44,3 @@ payload:
                           name: John Smith
                           identifier:
                             buysideid: ab123
-          

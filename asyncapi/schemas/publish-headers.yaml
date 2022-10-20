@@ -1,25 +1,8 @@
+# required publish headers
+title: HTTP publish headers
 type: object
 required:
-- topic
-- recipient
+  - x-api-key
 properties:
-  topic:
+  x-api-key:
     type: string
-    description: event group
-    example: realestate/{topic}#{event}
-
-  recipient:
-    type: string
-    format: uri
-    description: event publisher
-    example: https://staging.example.com/profile/card#me
-
-  source:
-    type: string
-    format: uri
-    description: agent, office or company assoicated with the event.
-    example: https://{user}.example.com/profile/card#me
-
-  data:
-    type: object
-    description: event payload

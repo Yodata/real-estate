@@ -1,4 +1,4 @@
-x-title: comment
+messageId: contact#comment
 x-scope: realestate/contact#
 summary: a comment was made by or associated with the item (about)
 payload:

@@ -1,4 +1,4 @@
-x-title: register
+messageId: website#register
 x-scope: realestate/website#
 summary: website user has registered on the website.
 payload:
@@ -24,5 +24,3 @@ payload:
                   example:
                     type: RealEstateWebsite
                     url: https://gothamcityrealestate.example.com
-
-                  

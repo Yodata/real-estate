@@ -1,4 +1,4 @@
-x-title: asssign
+messageId: lead#asssign
 x-scope: realestate/lead#
 summary: a lead was assigned
 payload:

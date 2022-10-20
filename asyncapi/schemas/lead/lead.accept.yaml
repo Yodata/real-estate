@@ -1,4 +1,4 @@
-x-title: accept
+messageId: lead#accept
 x-scope: realestate/lead#
 summary: a lead (data.object) was accepted by the recipient (data.recipient).
 payload:

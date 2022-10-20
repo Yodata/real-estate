@@ -1,4 +1,0 @@
-title: duration
-type: string
-description: The duration of the item in ISO 8601 date format.
-example: R/P1Y

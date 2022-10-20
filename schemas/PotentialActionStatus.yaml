@@ -1,3 +1,0 @@
-type: string
-description: A description of an action that is allowed and might happen in the future.
-example: PotentialActionStatus

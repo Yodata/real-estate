@@ -1,4 +1,4 @@
-x-title: listingoffer
+messageId: website#listingoffer
 x-scope: realestate/website#
 summary: website user makes a listing offer
 payload:

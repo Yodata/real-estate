@@ -1,4 +1,0 @@
-description: message context used for transforming message content
-type: string
-format: uri
-example: http://realestate.yodata.me/context/v1.json

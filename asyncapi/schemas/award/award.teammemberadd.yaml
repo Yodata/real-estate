@@ -1,4 +1,4 @@
-x-title: teammemberadd
+messageId: award#teammemberadd
 x-scope: realestate/award#
 summary: a member has been added to an award team
 payload:

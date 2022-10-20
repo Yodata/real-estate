@@ -1,5 +1,0 @@
-type: object
-title: data
-properties:
-  type:
-    type: string 

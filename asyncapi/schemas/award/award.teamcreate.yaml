@@ -1,4 +1,4 @@
-x-title: teamcreate
+messageId: award#teamcreate
 x-scope: realestate/award#
 summary: an award team was created
 payload:

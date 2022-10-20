@@ -1,9 +1,0 @@
-type: object
-description: an ldp:Collection (schema:EntryPoint)
-x-range:
-- EntryPoint
-example:
-  type: EntryPoint
-  urlTemplate: http://example.com/{collectionpath}
-  contentType: application/json+ld
-  httpMethod: POST

@@ -1,4 +1,4 @@
-x-title: teamdelete
+messageId: profile#teamdelete
 x-scope: realestate/profile#
 summary: a team profile was deleted
 payload:

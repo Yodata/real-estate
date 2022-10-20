@@ -1,4 +1,4 @@
-x-title: teammemberremove
+messageId: profile#teammemberremove
 x-scope: realestate/profile#
 summary: a member (user) is removed from the team
 payload:

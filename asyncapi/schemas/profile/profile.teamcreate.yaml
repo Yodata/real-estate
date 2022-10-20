@@ -1,4 +1,4 @@
-x-title: teamcreate
+messageId: profile#teamcreate
 x-scope: realestate/profile#
 summary: a team profile was creatd
 payload:

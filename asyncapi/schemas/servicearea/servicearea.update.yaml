@@ -1,4 +1,4 @@
-x-title: update
+messageId: servicearea#update
 x-scope: realestate/servicearea#
 summary: service area update
 payload:

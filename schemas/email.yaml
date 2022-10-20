@@ -1,4 +1,0 @@
-type: string
-format: email
-description: Primary email address.
-example: user@example.com

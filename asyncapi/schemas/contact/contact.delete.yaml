@@ -1,4 +1,4 @@
-x-title: delete
+messageId: contact#delete
 x-scope: realestate/contact#
 summary: contact (object) was removed by user (agent)
 payload:

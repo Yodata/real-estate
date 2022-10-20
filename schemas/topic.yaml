@@ -1,4 +1,0 @@
-title: topic
-type: string
-description: the subscription type assigned to the action
-example: realestate/contact#addaction

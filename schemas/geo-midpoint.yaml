@@ -1,8 +1,0 @@
-type: object
-description: Indicates the GeoCoordinates at the centre of a GeoShape e.g. GeoCircle.
-x-range:
-- GeoCoordinates
-example:
-  type: GeoCoordinates
-  latitude: 40.75
-  longitude: 73.98

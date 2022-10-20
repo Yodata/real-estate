@@ -1,0 +1,41 @@
+{{#unless hideTitle}}
+## {{topicName}}
+{{/unless}}
+{% if topic.deprecated}} (**deprecated**){{~/if}}
+
+{% if topic.x-summary}}
+{{topic.x-summary}}
+{% endif %}
+
+{% if topic.parameters}}
+{{~> parameters params=topic.parameters topicName=topicName ~}}
+{% endif %}
+
+{% if topic.publish}}
+{% if topic.publish.oneOf}}
+### {{topicName}} Publisher can send
+
+| Topic | Description |
+| :---- | :---------- |
+{{#each topic.publish.oneOf as |op index| }}
+{{~> operationSummary operation=op ~}}
+{{/each}}
+{{else}}
+{{ include  operation operation=topic.publish}}
+{% endif %}
+
+{% endif %}
+{% if topic.subscribe}}
+{% if topic.subscribe.oneOf}}
+### {{topicName}} subscriptions receive
+
+| Event | Description |
+| :---- | :---------- |
+{{#each topic.subscribe.oneOf as |op index|}}
+{{~> operationSummary operation=op ~}}
+{{/each}}
+{{else}}
+{{ include  operation operation=topic.subscribe}}
+{% endif %}
+{{ include message message=. messageName=@key options=../asyncapi.info.x-messages}}
+{% endif %}

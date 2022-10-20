@@ -1,4 +1,4 @@
-x-title: askquestion
+messageId: website#askquestion
 x-scope: realestate/website#
 summary: website user asks a question
 payload:
@@ -39,7 +39,7 @@ payload:
             - RealEstateAgent
             - RealEstateOffice
             - RealEstateOrganization
-          
+
           about:
             type: object
             description: subject of the question
@@ -48,7 +48,3 @@ payload:
             - Thing
             example:
               $ref: ../example-propertylisting.yaml
-    
-          
-            
-  

@@ -1,7 +1,0 @@
-title: InspectionSubType.yaml
-type: string
-x-range: InspectionSubType
-description: RESO InspectionSubType
-enum:
-- Pest
-- Property

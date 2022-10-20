@@ -1,4 +1,4 @@
-x-title: retract
+messageId: lead#retract
 x-scope: realestate/lead#
 summary: a lead (data.object) is taken back from the previous assignee (data.participant) by the previous sender/owner (data.recipient)
 payload:
@@ -56,5 +56,3 @@ payload:
               example:
                 type: RealEstateOrganization
                 id: https://{lead-owner}.example.com/profile/card#me
-              
-            

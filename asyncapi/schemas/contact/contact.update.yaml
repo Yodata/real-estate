@@ -1,4 +1,4 @@
-x-title: update
+messageId: contact#update
 x-scope: realestate/contact#
 summary: a crm contact was updated
 payload:
@@ -29,4 +29,3 @@ payload:
                     - type: ContactPoint
                       name: Mobile
                       telephone: 800-4-BATMAN
-                    

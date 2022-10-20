@@ -1,4 +1,4 @@
-x-title: delete
+messageId: servicearea#delete
 x-scope: realestate/servicearea#
 summary: ServiceArea (data.object) has been deleted.  Identifier is required.
 payload:

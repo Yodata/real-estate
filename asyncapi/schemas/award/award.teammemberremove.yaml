@@ -1,4 +1,4 @@
-x-title: teammemberremove
+messageId: award#teammemberremove
 x-scope: realestate/award#
 summary: a member has been removed from an award team
 payload:

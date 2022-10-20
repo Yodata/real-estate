@@ -1,3 +1,0 @@
-description: The date on which the item was created.
-type: string
-format: date-time

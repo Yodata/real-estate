@@ -1,6 +1,6 @@
-x-title: activity
+messageId: contact#activity
 x-scope: realestate/contact#
-summary: 
+summary:
 payload:
   allOf:
     - $ref: ../base.event.yaml

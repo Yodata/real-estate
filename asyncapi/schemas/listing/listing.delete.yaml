@@ -1,4 +1,4 @@
-x-title: delete
+messageId: listing#delete
 x-scope: realestate/listing#
 summary: a PropertyListing is deleted
 payload:
@@ -17,4 +17,3 @@ payload:
                 example:
                   type: PropertyListing
                   url: https://www.example.com/Gotham-Properties-NJ001/homes-for-sale/1007-Mountain-Gate-Road-Gotham-City-NJ-10007-187440425
-    

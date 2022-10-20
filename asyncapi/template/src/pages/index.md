@@ -1,6 +1,22 @@
+{% set info = asyncapi.info().json() %}
 ---
-title: {{asyncapi.info.title}}
-pageTitle: {{asyncapi.info.title}}
+{% if info.title %}
+title: {{ info.title }}
+{% endif %}
 ---
 
-{{asyncapi.info.description}}
+# {{asyncapi.info().title()}}
+{% if info.version %}
+**Version: {{ info.version }} **
+{% endif %}
+
+{% if info.description %}
+{{info.description}}
+{% endif %}
+{% include "partials/contact.njk" ignore missing %}
+{% include 'partials/license.njk' ignore missing %}
+{%- if info.termsOfService %}
+## Terms of service
+
+{{info.termsOfService}}
+{% endif %}

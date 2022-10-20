@@ -14,11 +14,18 @@
   },
   "generator": {
     "generator": ">=1.3.0 <2.0.0",
-    "renderer": "nunjucks"
+    "renderer": "nunjucks",
+    "filters": [
+      "@asyncapi/generator-filters"
+    ]
   },
   "dependencies": {
     "@asyncapi/generator": "^1.9.12",
     "@asyncapi/generator-filters": "^2.1.0",
-    "@asyncapi/parser": "^1.17.0"
+    "@asyncapi/parser": "^1.17.0",
+    "@yodata/get-value": "^1.0.0",
+    "@yodata/has-value": "^0.0.3",
+    "nunjucks": "^3.2.3",
+    "openapi-sampler": "^1.3.0"
   }
 }

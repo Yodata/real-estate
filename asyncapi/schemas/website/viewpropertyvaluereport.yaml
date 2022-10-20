@@ -1,4 +1,4 @@
-x-title: viewpropertyvaluereort
+messageId: website#viewpropertyvaluereort
 x-scope: realestate/website#
 summary: website user (data.agent) has viewed a propvery value report (data.object) on a webiste or mobile app (data.instrument)
 payload:

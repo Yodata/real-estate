@@ -1,4 +1,0 @@
-title: honorificPrefix
-description: An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.
-type: string
-example: Dr

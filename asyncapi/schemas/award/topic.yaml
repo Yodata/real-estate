@@ -1,14 +1,12 @@
-
-subscribe:
+publish:
   message:
     oneOf:
-      - $ref: award.create.yaml
-      - $ref: award.update.yaml
       - $ref: award.delete.yaml
       - $ref: award.seriescreate.yaml
-      - $ref: award.seriesupdate.yaml
       - $ref: award.seriesdelete.yaml
+      - $ref: award.seriesupdate.yaml
       - $ref: award.teamcreate.yaml
-      - $ref: award.teamupdate.yaml
       - $ref: award.teammemberadd.yaml
       - $ref: award.teammemberremove.yaml
+      - $ref: award.teamupdate.yaml
+      - $ref: award.update.yaml

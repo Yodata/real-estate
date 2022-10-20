@@ -1,4 +1,4 @@
-x-title: collectionmemberadd
+messageId: contact#collectionmemberadd
 x-scope: realestate/contact#
 summary: a contact was added to a collection
 payload:
@@ -29,4 +29,3 @@ payload:
                   name: Superhero Sidekicks
                   identifier:
                     vendoraid: xxx
-                  

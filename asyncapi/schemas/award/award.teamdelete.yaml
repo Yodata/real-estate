@@ -1,4 +1,4 @@
-x-title: teamdelete
+messageId: award#teamdelete
 x-scope: realestate/award#
 summary: an award team was deleted
 payload:

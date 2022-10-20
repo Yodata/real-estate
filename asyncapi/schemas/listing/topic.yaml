@@ -1,0 +1,5 @@
+subscribe:
+  message:
+    oneOf:
+      - $ref: listing.update.yaml
+      - $ref: listing.delete.yaml

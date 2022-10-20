@@ -128,3 +128,5 @@ Temporary Items
 # End of https://www.gitignore.io/api/node,visualstudiocode,osx
 
 .idea/*
+
+www/node_modules

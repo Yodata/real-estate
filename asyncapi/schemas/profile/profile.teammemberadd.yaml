@@ -1,4 +1,4 @@
-x-title: teammemberadd
+messageId: profile#teammemberadd
 x-scope: realestate/profile#
 summary: a team member was added
 payload:

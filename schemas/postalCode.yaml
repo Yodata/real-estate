@@ -1,4 +1,0 @@
-type: string
-description: Zip/Post Code
-example: '10010'
-maxLength: 12

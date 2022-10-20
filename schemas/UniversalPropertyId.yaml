@@ -1,4 +1,0 @@
-type: string
-title: universalPropertyId
-description: The Universal Property Identifier is a unique identifier for all real property in the US and Canada.  It is based on country and local identification methods and is limited to real property.  For cases such as shares of real property, units, and other more granular cases, please utilize the UniversalPropertySubId.
-example: US-04015-N-R-11022331-N

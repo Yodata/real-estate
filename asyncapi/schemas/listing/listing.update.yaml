@@ -1,4 +1,4 @@
-x-title: update
+messageId: listing#update
 x-scope: realestate/listing#
 summary: a PropertyListing is created or updated
 payload:

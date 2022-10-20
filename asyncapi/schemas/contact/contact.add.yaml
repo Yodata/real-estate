@@ -1,4 +1,4 @@
-x-title: add
+messageId: contact#add
 x-scope: realestate/contact#
 summary: a contact (data.object) is added by a user (data.agent), optionally to a specific targetCollection
 payload:
@@ -14,4 +14,3 @@ payload:
           - properties:
               object:
                 $ref: ../Contact.yaml
- 

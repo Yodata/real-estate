@@ -1,4 +1,0 @@
-type: string
-description: Last Name of a person
-example: Miller
-maxLength: 50

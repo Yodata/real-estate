@@ -1,4 +1,4 @@
-x-title: update
+messageId: profile#update
 x-scope: realestate/profile#
 summary: an agent, office or organization profile was updated
 payload:

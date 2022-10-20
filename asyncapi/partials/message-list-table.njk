@@ -1,0 +1,10 @@
+{% macro MessageListTable(messages, title='Messages', name='messageId', anchor='messageId', body='summary' ) %}
+## {{title}}
+
+| Message | Description |
+| :---- | :---------- |
+{% for message in messages -%}
+| [{{message[name]}}](#{{message[anchor]}}) | {{message[body]}} |
+{% endfor %}
+
+{% endmacro %}

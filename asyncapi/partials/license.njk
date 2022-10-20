@@ -1,0 +1,8 @@
+{% from "partials/link.njk" import link %}
+{% set license = asyncapi.info().license().json() %}
+{% if license %}
+### License
+
+{{link(license.name, license.url)}}
+
+{% endif %}

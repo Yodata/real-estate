@@ -1,4 +1,0 @@
-type: string
-description: two-letter ISO 3166-1 alpha-2 country code
-example: US
-enum: [CA,DE,GR,IN,IT,MX,PE,PT,ES,AE,GB,US]

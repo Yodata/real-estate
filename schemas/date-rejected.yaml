@@ -1,3 +1,0 @@
-type: string
-format: date-time
-description: The date/time the item was rejected by the recipient

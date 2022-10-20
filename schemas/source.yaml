@@ -1,5 +1,0 @@
-title: source
-description: the message publisher
-type: string
-format: uri
-example: http://user.example.com/profile/card#me

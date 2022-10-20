@@ -1,4 +1,4 @@
-x-title: searchproperties
+messageId: website#searchproperties
 x-scope: realestate/website#
 summary: a website user has performed a property search
 payload:
@@ -17,4 +17,3 @@ payload:
               $ref: ../PropertySearch.yaml
             result:
               $ref: ../FindAction.yaml
-                

@@ -1,4 +1,4 @@
-x-title: listingreport
+messageId: franchise#listingreport
 x-scope: realestate/franchise#
 summary: franchise listingreport
 payload:

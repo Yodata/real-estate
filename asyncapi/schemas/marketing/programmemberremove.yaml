@@ -1,4 +1,4 @@
-x-title: memberremove
+messageId: marketing#memberremove
 x-scope: realestate/marketingprogram#
 summary: a program member was removed by the agent
 payload:
@@ -21,7 +21,7 @@ payload:
                   type: ProgramMembership
                   role: Owner
                   member:
-                    type: Person  
+                    type: Person
                     name: Edgardo Fisher
                     identifier:
                       aceid: 816fd12f-6479-4f45-b26f-0a2ba54972b6

@@ -1,4 +1,4 @@
-x-title: seriesdelete
+messageId: award#seriesdelete
 x-scope: realestate/award#
 summary: an award series was deleted
 payload:

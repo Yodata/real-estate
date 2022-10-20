@@ -1,4 +1,4 @@
-x-title: subscribe
+messageId: marketingpreferences#subscribe
 x-scope: realestate/marketingpreferences#
 payload:
   allOf:

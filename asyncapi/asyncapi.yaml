@@ -1,4 +1,4 @@
-asyncapi: 2.0.0
+asyncapi: '2.4.0'
 
 info:
   title: Standard Events for Real Estate Software Integration and Automation.
@@ -30,7 +30,7 @@ info:
     url: https://opensource.org/licenses/MIT
 
   x-info:
-    route: /
+    title: Standard Events for Real Estate Software Integration
 
   x-topics:
     name: Topics
@@ -54,50 +54,56 @@ info:
   x-schemas:
     menu: Types
 
-channels:
-  award:
-    $ref: ../schemas/award/topic.yaml
-
-  # blog:
-  #   $ref: schemas/blog/topic.yaml
-
-  # calendar:
-  #   $ref: schemas/calendar/topic.yaml
-
-  # contact:
-  #   $ref: schemas/contact/topic.yaml
-
-  # franchise:
-  #   $ref: schemas/franchise/topic.yaml
-
-  # lead:
-  #   $ref: schemas/lead/topic.yaml
-
-  # listing:
-  #   $ref: schemas/listing/listing.topic.yaml
-
-  # marketing:
-  #   $ref: schemas/marketing/topic.yaml
-
-  # marketingpreferences:
-  #   $ref: schemas/marketingpreferences/topic.yaml
-
-  # profile:
-  #   $ref: schemas/profile/topic.yaml
-
-  # servicearea:
-  #   $ref: schemas/servicearea/topic.yaml
-
-  # website:
-  #   $ref: schemas/website/topic.yaml
-
-  # transaction:
-  #   $ref: schemas/transaction/topic.yaml
-
 components:
   schemas:
-    Thing:
-      $ref: schemas/Thing.yaml
+    $ref: 'schemas/type-index.yaml'
+
+  messages:
+    award#create:
+      $ref: schemas/award/award.create.yaml
+    award#delete:
+      $ref: schemas/award/award.delete.yaml
+
+channels:
+  award:
+    $ref: schemas/award/topic.yaml
+  franchise:
+    $ref: schemas/franchise/topic.yaml
+  lead:
+    $ref: schemas/lead/topic.yaml
+
+  listing:
+    $ref: schemas/listing/topic.yaml
+
+  marketing:
+    $ref: schemas/marketing/topic.yaml
+
+  marketingpreferences:
+    $ref: schemas/marketingpreferences/topic.yaml
+
+  profile:
+    $ref: schemas/profile/topic.yaml
+
+  servicearea:
+    $ref: schemas/servicearea/topic.yaml
+
+  website:
+    $ref: schemas/website/topic.yaml
+
+
+
+
+
+
+
+
+
+
+#   channels:
+#     award:
+#       subscribe:
+#         message:
+#           $ref: schemas/award/award.create.yaml
 
   # securitySchemes:
   #   https:

@@ -1,4 +1,4 @@
-x-title: seriescreate
+messageId: award#seriescreate
 x-scope: realestate/award#
 summary: a new award series was created
 payload:

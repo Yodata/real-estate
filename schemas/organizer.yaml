@@ -1,7 +1,0 @@
-title: organizer
-description: the event organizer
-type: object
-example:
-  type: RealEstateAgent
-  name: Bruce Wayne
-  id: https://batman.example.com/profile/card#me

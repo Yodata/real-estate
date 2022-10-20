@@ -1,4 +1,4 @@
-x-title: plandelete
+messageId: contact#plandelete
 x-scope: realestate/contact#
 summary: an action plan was created
 payload:
@@ -20,6 +20,3 @@ payload:
                   type: Plan
                   identifier:
                     vendoraid: acb
-                    
-
-    

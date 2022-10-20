@@ -1,0 +1,9 @@
+{% macro TagList(tags) %}
+{% if tags and  tags.length %}
+### Tags
+
+{% for name, value in tags -%}
+-  {{name}}: {{value}}
+{% endfor -%}
+{% endif %}
+{% endmacro %}

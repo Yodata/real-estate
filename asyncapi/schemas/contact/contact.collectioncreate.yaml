@@ -1,4 +1,4 @@
-x-title: collectioncreate
+messageId: contact#collectioncreate
 x-scope: realestate/contact#
 summary: a contact group was created
 payload:

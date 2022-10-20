@@ -1,4 +1,0 @@
-type: string
-description: the street address
-example: '1007 Mountain Gate Rd'
-maxLength: 75

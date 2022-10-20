@@ -1,4 +1,4 @@
-x-title: requestshowing
+messageId: website#requestshowing
 x-scope: realestate/website#
 summary: a website visitor has requested a property showing
 payload:
@@ -43,5 +43,3 @@ payload:
           recipient:
             $ref: ../recipient.yaml
             description: the assigned agent
-
-          

@@ -1,4 +1,4 @@
-x-title: propertysearchsave
+messageId: website#propertysearchsave
 x-scope: realestate/website#
 summary: website user (agent) saves a property search (object), on a website or mobile app (instrument)
 payload:
@@ -17,4 +17,3 @@ payload:
             - SaveAction
           object:
             $ref: ../PropertySearch.yaml
-                

@@ -1,4 +1,4 @@
-x-title: collectiondelete
+messageId: contact#collectiondelete
 x-scope: realestate/contact#
 summary: a contact group was deleted
 payload:
@@ -19,5 +19,3 @@ payload:
                   name: Past Clients
                   identifier:
                     vendoraid: pastclientscollectionid
-                  
-                  

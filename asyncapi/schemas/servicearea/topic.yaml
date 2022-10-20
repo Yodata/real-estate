@@ -1,11 +1,6 @@
-publish:
-  headers:
-    $ref: ../publish-headers.yaml
-  payload:
-    type: object
-    description: the event payload
 subscribe:
-  oneOf:
-    - $ref: servicearea.create.yaml
-    - $ref: servicearea.update.yaml
-    - $ref: servicearea.delete.yaml
+  message:
+    oneOf:
+      - $ref: servicearea.create.yaml
+      - $ref: servicearea.update.yaml
+      - $ref: servicearea.delete.yaml

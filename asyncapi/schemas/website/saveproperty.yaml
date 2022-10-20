@@ -1,4 +1,4 @@
-x-title: saveproperty
+messageId: website#saveproperty
 x-scope: realestate/website#
 summary: website user (agent) saved a property
 payload:
@@ -27,7 +27,3 @@ payload:
                   - listingId
                   example:
                     $ref: ../example-propertylisting.yaml
-                    
-                    
-
-                

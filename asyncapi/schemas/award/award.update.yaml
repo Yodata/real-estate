@@ -1,4 +1,4 @@
-x-title: update
+messageId: award#update
 x-scope: realestate/award#
 summary: award action is updated
 payload:

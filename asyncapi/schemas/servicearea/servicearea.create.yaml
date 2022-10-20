@@ -1,4 +1,4 @@
-x-title: create
+messageId: servicearea#create
 x-scope: realestate/servicearea#
 summary: service area created
 payload:

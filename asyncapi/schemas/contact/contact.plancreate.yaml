@@ -1,4 +1,4 @@
-x-title: plancreate
+messageId: contact#plancreate
 x-scope: realestate/contact#
 summary: an action plan was created
 payload:
@@ -14,4 +14,3 @@ payload:
           - properties:
               object:
                 $ref: ../Plan.yaml
-    

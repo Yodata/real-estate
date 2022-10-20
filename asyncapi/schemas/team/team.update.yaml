@@ -1,4 +1,4 @@
-x-title: delete
+messageId: team#delete
 x-scope: realestate/team#
 summary: team record deleted.
 payload:

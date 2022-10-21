@@ -1,1 +1,0 @@
-{{ asyncapi._json | dump(2) | safe }}

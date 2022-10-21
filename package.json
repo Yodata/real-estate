@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "generate": "ag ./asyncapi/asyncapi.yaml asyncapi/template/ -o ~/temp/generated/",
+    "generate": "cd asyncapi && npx -p @asyncapi/generator@1.9.12 ag ./asyncapi.yaml ./template/ -o asyncapi/generated --force-write",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

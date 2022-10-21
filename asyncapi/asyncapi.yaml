@@ -56,7 +56,7 @@ info:
 
 components:
   schemas:
-    $ref: 'schemas/type-index.yaml'
+    $ref: schemas/type-index.yaml
 
   messages:
     award#create:

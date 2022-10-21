@@ -130,3 +130,4 @@ Temporary Items
 .idea/*
 
 www/node_modules
+asyncapi/__transpiled

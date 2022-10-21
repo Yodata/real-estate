@@ -1,8 +1,15 @@
 {
-  "name": "@yodata/asyncapi-doc-website-generator",
+  "name": "@yodata/real-estate-webdocs-generator",
   "version": "0.0.1",
+  "main": "",
   "description": "generates https://realestate.yodata.me",
+  "exports": {
+    ".": {
+      "require": "./*"
+    }
+  },
   "scripts": {
+    "generate": " npx -p @asyncapi/generator@1.9.12 ag ./asyncapi.yaml ./ -o ./test --force-write",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ag ./asyncapi.yaml ./ -o test/output --force-write --watch-template"
   },
@@ -13,19 +20,28 @@
     "@asyncapi/generator-hooks": "^0.1.0"
   },
   "generator": {
-    "generator": ">=1.3.0 <2.0.0",
-    "renderer": "nunjucks",
-    "filters": [
-      "@asyncapi/generator-filters"
-    ]
+    "renderer": "react",
+    "generator": ">=1.9.12 <2.0.0",
+    "parameters": {
+      "toc": {
+        "description": "Include a Table-of-Contents in the output markdown.",
+        "default": "true",
+        "required": false
+      },
+      "version": {
+        "description": "Override the version of your application provided under `info.version` location in the specification file.",
+        "required": false
+      }
+    }
   },
   "dependencies": {
     "@asyncapi/generator": "^1.9.12",
     "@asyncapi/generator-filters": "^2.1.0",
+    "@asyncapi/generator-react-sdk": "^0.2.25",
     "@asyncapi/parser": "^1.17.0",
     "@yodata/get-value": "^1.0.0",
     "@yodata/has-value": "^0.0.3",
-    "nunjucks": "^3.2.3",
-    "openapi-sampler": "^1.3.0"
+    "openapi-sampler": "^1.3.0",
+    "yaml": "^2.1.3"
   }
 }

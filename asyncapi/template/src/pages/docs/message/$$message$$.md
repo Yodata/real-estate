@@ -1,3 +1,0 @@
-# {{messageName}}
-
-{{ message | jsonBlock | safe }}

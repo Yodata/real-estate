@@ -1,0 +1,29 @@
+{
+  "topic": "realestate/lead#score",
+  "data": {
+    "type": "AssessAction"
+  },
+  "agent": {
+    "type": "Organization",
+    "name": "Chalk Digital",
+    "url": "https://www.chalkdigital.com/"
+  },
+  "result": {
+    "type": "LeadScore (subclass of https://schema.org/Rating)",
+    "ratingValue": 5,
+    "bestRating": 10,
+    "worstRating": 1,
+    "ratingExplanation": "text might be displayed by event consumers to provide a richer UX"
+  },
+  "object": {
+    "type": "Contact",
+    "identifier": {
+      "contact_producer_id": "aaaa"
+    },
+    "sameAs": {
+      "leadscoreprovider_id": "bbbb"
+    },
+    "name": "Batman",
+    "email": "batman@example.com"
+  }
+}

@@ -1,15 +1,15 @@
-import { Schema } from './Schema';
+import { Schema } from './Schema'
 
-import { SchemaHelpers } from '../helpers/schema';
+import { SchemaHelpers } from '../helpers/schema'
 
 export const Extensions = ({ name = 'Extensions', item }) => {
-  const extensions = SchemaHelpers.getCustomExtensions(item);
+  const extensions = SchemaHelpers.getCustomExtensions(item)
   if (!extensions || !Object.keys(extensions).length) {
-    return null;
+    return null
   }
 
-  const schema = SchemaHelpers.jsonToSchema(extensions);
+  const schema = SchemaHelpers.jsonToSchema(extensions)
   return (
     <Schema schemaName={name} schema={schema} />
-  );
-};
+  )
+}

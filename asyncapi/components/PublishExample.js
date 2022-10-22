@@ -1,5 +1,5 @@
 import { Text } from '@asyncapi/generator-react-sdk'
-import { generateExample, getPayloadExamples } from '@asyncapi/generator-filters';
+import { generateExample, getPayloadExamples } from '@asyncapi/generator-filters'
 import { CodeBlock } from './common'
 
 const defaultOptions = {
@@ -17,14 +17,11 @@ const defaultOptions = {
  * @param {boolean} [options.quiet] = Don't log console warning messages
  * @returns {string}
  */
-export function generate(schema, options) {
+export function generate (schema, options) {
   const getOptions = (overrides) => Object.assign({}, defaultOptions, overrides)
   const _options = getOptions(options)
   return generateExample(schema, _options)
 }
-
-
-
 
 export default function PublishExample (props) {
   const { schema, options } = props
@@ -39,7 +36,7 @@ export default function PublishExample (props) {
         Content-Type: application/json
 
         {content}
-    </CodeBlock>
+      </CodeBlock>
     </Text>
   )
 }

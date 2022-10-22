@@ -1,10 +1,10 @@
-import { Text, Indent, IndentationTypes } from '@asyncapi/generator-react-sdk';
+import { Text, Indent, IndentationTypes } from '@asyncapi/generator-react-sdk'
 
-import { Header, Link, ListItem } from './common';
+import { Header, Link, ListItem } from './common'
 
-import { FormatHelpers } from '../helpers/format';
+import { FormatHelpers } from '../helpers/format'
 
-export function TableOfContents({ asyncapi }) {
+export function TableOfContents ({ asyncapi }) {
   const serversList = Object.keys(asyncapi.servers()).map(serverName => {
     return (
       <Indent size={2} type={IndentationTypes.SPACES} key={serverName}>
@@ -12,9 +12,9 @@ export function TableOfContents({ asyncapi }) {
           <Link href={`#${FormatHelpers.slugify(serverName)}-server`}>{serverName}</Link>
         </ListItem>
       </Indent>
-    );
-  });
-  const operationsList = [];
+    )
+  })
+  const operationsList = []
   Object.entries(asyncapi.channels()).map(([channelName, channel]) => {
     if (channel.hasPublish()) {
       operationsList.push(
@@ -23,7 +23,7 @@ export function TableOfContents({ asyncapi }) {
             <Link href={`#pub-${FormatHelpers.slugify(channelName)}-operation`}>PUB {channelName}</Link>
           </ListItem>
         </Indent>
-      );
+      )
     }
     if (channel.hasSubscribe()) {
       operationsList.push(
@@ -32,9 +32,9 @@ export function TableOfContents({ asyncapi }) {
             <Link href={`#sub-${FormatHelpers.slugify(channelName)}-operation`}>SUB {channelName}</Link>
           </ListItem>
         </Indent>
-      );
+      )
     }
-  });
+  })
 
   return (
     <>
@@ -42,17 +42,15 @@ export function TableOfContents({ asyncapi }) {
       <Text>
         {asyncapi.hasServers() &&
           <ListItem>
-            <Link href="#servers">Servers</Link>
-          </ListItem>
-        }
+            <Link href='#servers'>Servers</Link>
+          </ListItem>}
         {serversList.length > 0 && serversList}
         {asyncapi.hasChannels() &&
           <ListItem>
-            <Link href="#operations">Operations</Link>
-          </ListItem>
-        }
+            <Link href='#operations'>Operations</Link>
+          </ListItem>}
         {operationsList.length > 0 && operationsList}
       </Text>
     </>
-  );
+  )
 }

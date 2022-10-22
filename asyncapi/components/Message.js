@@ -1,32 +1,32 @@
-import { IndentationTypes, Text } from '@asyncapi/generator-react-sdk';
-import { generateExample, getPayloadExamples, getHeadersExamples } from '@asyncapi/generator-filters';
+import { IndentationTypes, Text } from '@asyncapi/generator-react-sdk'
+import { generateExample, getPayloadExamples, getHeadersExamples } from '@asyncapi/generator-filters'
 
-import { Bindings } from './Bindings';
-import { Extensions } from './Extensions';
-import { Schema } from './Schema';
-import { Tags } from './Tags';
-import { Header, ListItem, Link, BlockQuote, CodeBlock, NewLine } from './common';
+import { Bindings } from './Bindings'
+import { Extensions } from './Extensions'
+import { Schema } from './Schema'
+import { Tags } from './Tags'
+import { Header, ListItem, Link, BlockQuote, CodeBlock, NewLine } from './common'
 
-export function Message({ message }) { // NOSONAR
+export function Message ({ message }) { // NOSONAR
   if (!message) {
-    return null;
+    return null
   }
 
   // check typeof as fallback for older version than `2.4.0`
-  const messageId = typeof message.id === 'function' && message.id();
-  const headers = message.headers();
-  const payload = message.payload();
-  const correlationId = message.correlationId();
-  const contentType = message.contentType();
-  const externalDocs = message.externalDocs();
-  const showInfoList = contentType || externalDocs;
+  const messageId = typeof message.id === 'function' && message.id()
+  const headers = message.headers()
+  const payload = message.payload()
+  const correlationId = message.correlationId()
+  const contentType = message.contentType()
+  const externalDocs = message.externalDocs()
+  const showInfoList = contentType || externalDocs
 
-  let header = 'Message';
+  let header = 'Message'
   if (message.title()) {
-    header += ` ${message.title()}`;
+    header += ` ${message.title()}`
   }
   if (message.uid()) {
-    header += ` \`${message.uid()}\``;
+    header += ` \`${message.uid()}\``
   }
 
   return (
@@ -39,36 +39,38 @@ export function Message({ message }) { // NOSONAR
         </Text>
       )}
 
-      {showInfoList ? (
-        <Text>
-          {messageId && <ListItem>Message ID: `{messageId}`</ListItem>}
-          {contentType && (
-            <ListItem>
-              Content type:{' '}
-              <Link
-                href={`https://www.iana.org/assignments/media-types/${contentType}`}
-              >
-                {contentType}
-              </Link>
-            </ListItem>
-          )}
-          {correlationId && (
-            <>
+      {showInfoList
+        ? (
+          <Text>
+            {messageId && <ListItem>Message ID: `{messageId}`</ListItem>}
+            {contentType && (
               <ListItem>
-                Correlation ID: `{correlationId.location()}`
+                Content type:{' '}
+                <Link
+                  href={`https://www.iana.org/assignments/media-types/${contentType}`}
+                >
+                  {contentType}
+                </Link>
               </ListItem>
-              {correlationId.hasDescription() && (
-                <>
-                  <NewLine />
-                  <Text indent={2} type={IndentationTypes.SPACES}>
-                    {correlationId.description()}
-                  </Text>
-                </>
-              )}
-            </>
-          )}
-        </Text>
-      ) : null}
+            )}
+            {correlationId && (
+              <>
+                <ListItem>
+                  Correlation ID: `{correlationId.location()}`
+                </ListItem>
+                {correlationId.hasDescription() && (
+                  <>
+                    <NewLine />
+                    <Text indent={2} type={IndentationTypes.SPACES}>
+                      {correlationId.description()}
+                    </Text>
+                  </>
+                )}
+              </>
+            )}
+          </Text>
+          )
+        : null}
 
       {message.hasDescription() && (
         <Text newLines={2}>
@@ -89,7 +91,7 @@ export function Message({ message }) { // NOSONAR
       {headers && (
         <>
           <Header type={5}>Headers</Header>
-          <Schema schema={headers} hideTitle={true} />
+          <Schema schema={headers} hideTitle />
           <Examples type='headers' message={message} />
         </>
       )}
@@ -97,34 +99,34 @@ export function Message({ message }) { // NOSONAR
       {payload && (
         <>
           <Header type={5}>Payload</Header>
-          <Schema schema={payload} hideTitle={true} />
+          <Schema schema={payload} hideTitle />
           <Examples type='payload' message={message} />
         </>
       )}
 
       <Bindings
-        name="Message specific information"
+        name='Message specific information'
         item={message}
       />
-      <Extensions name="Message extensions" item={message} />
+      <Extensions name='Message extensions' item={message} />
 
       {message.hasTags() && (
-        <Tags name="Message tags" tags={message.tags()} />
+        <Tags name='Message tags' tags={message.tags()} />
       )}
     </>
-  );
+  )
 }
 
-function Examples({ type = 'headers', message }) {
+function Examples ({ type = 'headers', message }) {
   if (type === 'headers') {
-    const ex = getHeadersExamples(message);
+    const ex = getHeadersExamples(message)
     if (ex) {
       return (
         <>
           <BlockQuote>Examples of headers</BlockQuote>
           <Example examples={ex} />
         </>
-      );
+      )
     }
 
     return (
@@ -134,17 +136,17 @@ function Examples({ type = 'headers', message }) {
           <CodeBlock language='json'>{generateExample(message.headers().json())}</CodeBlock>
         </Text>
       </>
-    );
+    )
   }
 
-  const examples = getPayloadExamples(message);
+  const examples = getPayloadExamples(message)
   if (examples) {
     return (
       <>
         <BlockQuote>Examples of payload</BlockQuote>
         <Example examples={examples} />
       </>
-    );
+    )
   }
 
   return (
@@ -154,12 +156,12 @@ function Examples({ type = 'headers', message }) {
         <CodeBlock language='json'>{generateExample(message.payload().json())}</CodeBlock>
       </Text>
     </>
-  );
+  )
 }
 
-function Example({ examples = [] }) {
+function Example ({ examples = [] }) {
   if (examples.length === 0) {
-    return null;
+    return null
   }
 
   return examples.map((ex, idx) => (
@@ -168,5 +170,5 @@ function Example({ examples = [] }) {
       {ex.summary && <Text newLines={2}>{ex.summary}</Text>}
       <CodeBlock language='json'>{JSON.stringify(ex.example, null, 2)}</CodeBlock>
     </Text>
-  ));
+  ))
 }

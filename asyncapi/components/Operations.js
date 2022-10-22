@@ -1,23 +1,23 @@
-import { Text } from '@asyncapi/generator-react-sdk';
+import { Text } from '@asyncapi/generator-react-sdk'
 
-import { Bindings } from './Bindings';
-import { Extensions } from './Extensions';
-import { Message } from './Message';
-import { Schema } from './Schema';
-import { Security } from './Servers';
-import { Tags } from './Tags';
-import { Header, ListItem, Link } from './common';
+import { Bindings } from './Bindings'
+import { Extensions } from './Extensions'
+import { Message } from './Message'
+import { Schema } from './Schema'
+import { Security } from './Servers'
+import { Tags } from './Tags'
+import { Header, ListItem, Link } from './common'
 
-import { SchemaHelpers } from '../helpers/schema';
-import { FormatHelpers } from '../helpers/format';
+import { SchemaHelpers } from '../helpers/schema'
+import { FormatHelpers } from '../helpers/format'
 
-export function Operations({ asyncapi }) {
-  const channels = asyncapi.channels();
+export function Operations ({ asyncapi }) {
+  const channels = asyncapi.channels()
   if (!Object.keys(channels).length) {
-    return null;
+    return null
   }
 
-  const operationsList = [];
+  const operationsList = []
   Object.entries(channels).forEach(([channelName, channel]) => {
     if (channel.hasPublish()) {
       operationsList.push(
@@ -29,7 +29,7 @@ export function Operations({ asyncapi }) {
           channelName={channelName}
           channel={channel}
         />
-      );
+      )
     }
     if (channel.hasSubscribe()) {
       operationsList.push(
@@ -41,9 +41,9 @@ export function Operations({ asyncapi }) {
           channelName={channelName}
           channel={channel}
         />
-      );
+      )
     }
-  });
+  })
 
   return (
     <>
@@ -52,22 +52,22 @@ export function Operations({ asyncapi }) {
       </Header>
       {operationsList}
     </>
-  );
+  )
 }
 
-export function Operation({ type, asyncapi, operation, channelName, channel }) { // NOSONAR
+export function Operation ({ type, asyncapi, operation, channelName, channel }) { // NOSONAR
   if (!operation || !channel) {
-    return null;
+    return null
   }
 
-  const operationId = operation.id();
-  const externalDocs = operation.externalDocs();
+  const operationId = operation.id()
+  const externalDocs = operation.externalDocs()
   // check typeof as fallback for older version than `2.2.0`
-  const servers = typeof channel.servers === 'function' && channel.servers();
+  const servers = typeof channel.servers === 'function' && channel.servers()
   // check typeof as fallback for older version than `2.4.0`
-  const security = typeof operation.security === 'function' && operation.security();
-  const renderedType = type === 'publish' ? 'PUB' : 'SUB';
-  const showInfoList = operationId || (servers && servers.length);
+  const security = typeof operation.security === 'function' && operation.security()
+  const renderedType = type === 'publish' ? 'PUB' : 'SUB'
+  const showInfoList = operationId || (servers && servers.length)
 
   return (
     <Text>
@@ -81,20 +81,22 @@ export function Operation({ type, asyncapi, operation, channelName, channel }) {
         </Text>
       )}
 
-      {showInfoList ? (
-        <Text>
-          {operationId && <ListItem>Operation ID: `{operationId}`</ListItem>}
-          {servers && servers.length && (
-            <ListItem>
-              Available only on servers:{' '}
-              {servers.map(s => {
-                const slug = FormatHelpers.slugify(s);
-                return `[${s}](#${slug}-server)`;
-              }).join(', ')}
-            </ListItem>
-          )}
-        </Text>
-      ) : null}
+      {showInfoList
+        ? (
+          <Text>
+            {operationId && <ListItem>Operation ID: `{operationId}`</ListItem>}
+            {servers && servers.length && (
+              <ListItem>
+                Available only on servers:{' '}
+                {servers.map(s => {
+                  const slug = FormatHelpers.slugify(s)
+                  return `[${s}](#${slug}-server)`
+                }).join(', ')}
+              </ListItem>
+            )}
+          </Text>
+          )
+        : null}
 
       {channel.hasDescription() && (
         <Text newLines={2}>
@@ -118,7 +120,7 @@ export function Operation({ type, asyncapi, operation, channelName, channel }) {
       )}
 
       {operation.hasTags() && (
-        <Tags name="Operation tags" tags={operation.tags()} />
+        <Tags name='Operation tags' tags={operation.tags()} />
       )}
 
       <OperationParameters channel={channel} />
@@ -126,42 +128,42 @@ export function Operation({ type, asyncapi, operation, channelName, channel }) {
       <Security security={security} asyncapi={asyncapi} header='Additional security requirements' />
 
       <Bindings
-        name="Channel specific information"
+        name='Channel specific information'
         item={channel}
       />
       <Bindings
-        name="Operation specific information"
+        name='Operation specific information'
         item={operation}
       />
 
-      <Extensions name="Channel extensions" item={channel} />
-      <Extensions name="Operation extensions" item={operation} />
+      <Extensions name='Channel extensions' item={channel} />
+      <Extensions name='Operation extensions' item={operation} />
 
       <OperationMessages operation={operation} />
     </Text>
-  );
+  )
 }
 
-function OperationParameters({ channel }) {
-  const parameters = SchemaHelpers.parametersToSchema(channel.parameters());
+function OperationParameters ({ channel }) {
+  const parameters = SchemaHelpers.parametersToSchema(channel.parameters())
   if (!parameters) {
-    return null;
+    return null
   }
 
   return (
     <Text>
       <Header type={4}>Parameters</Header>
-      <Schema schema={parameters} hideTitle={true} />
+      <Schema schema={parameters} hideTitle />
     </Text>
-  );
+  )
 }
 
-function OperationMessages({ operation }) {
-  const hasMessages = operation.hasMultipleMessages() || !!operation.message(0);
+function OperationMessages ({ operation }) {
+  const hasMessages = operation.hasMultipleMessages() || !!operation.message(0)
   if (!hasMessages) {
-    return null;
+    return null
   }
-  const messages = operation.messages();
+  const messages = operation.messages()
 
   return (
     <>
@@ -174,5 +176,5 @@ function OperationMessages({ operation }) {
         <Message title={`Message \`${msg.uid()}\``} message={msg} key={msg.uid()} />
       ))}
     </>
-  );
+  )
 }

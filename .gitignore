@@ -131,3 +131,6 @@ Temporary Items
 
 www/node_modules
 asyncapi/__transpiled
+.docz
+.dist
+www/src-content/_

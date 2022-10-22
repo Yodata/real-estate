@@ -1,12 +1,12 @@
 ---
-menu: Reference
+title: About
 ---
 # Let's Integrate!
 
 ### About the project
 
-An community of software developers working to make real estate 
-application and data integration easier and create an ecosystem of 
+An community of software developers working to make real estate
+application and data integration easier and create an ecosystem of
 rapid innovation through the magic of shared data models, open source
 and common sense.
 
@@ -35,4 +35,3 @@ We are a community of software developers working to make better real estate sof
 ### Are you in?
 
 Contact us dave@yodata.io
-

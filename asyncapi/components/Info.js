@@ -1,33 +1,35 @@
-import { Text } from '@asyncapi/generator-react-sdk';
+import { Text } from '@asyncapi/generator-react-sdk'
 
-import { Tags } from './Tags';
-import { Header, Link, Image, List, NewLine } from './common';
+import { Tags } from './Tags'
+import { Header, Link, Image, List, NewLine } from './common'
 
-export function Info({ asyncapi, params = {} }) {
-  const info = asyncapi.info();
+export function Info ({ asyncapi, params = {} }) {
+  const info = asyncapi.info()
 
-  const specId = asyncapi.id();
-  const externalDocs = asyncapi.externalDocs();
-  const license = info.license();
-  const termsOfService = info.termsOfService();
-  const defaultContentType = asyncapi.defaultContentType();
-  const contact = info.contact();
+  const specId = asyncapi.id()
+  const externalDocs = asyncapi.externalDocs()
+  const license = info.license()
+  const termsOfService = info.termsOfService()
+  const defaultContentType = asyncapi.defaultContentType()
+  const contact = info.contact()
 
-  const infoList = [];
+  const infoList = []
   if (specId) {
-    infoList.push(`Specification ID: \`${specId}\``);
+    infoList.push(`Specification ID: \`${specId}\``)
   }
   if (license) {
-    infoList.push(license.url() ? (
-      <>
-        License:{' '}
-        <Link
-          href={license.url()}
-        >
-          {license.name()}
-        </Link>
-      </>
-    ) : `License: ${license.name()}`);
+    infoList.push(license.url()
+      ? (
+        <>
+          License:{' '}
+          <Link
+            href={license.url()}
+          >
+            {license.name()}
+          </Link>
+        </>
+        )
+      : `License: ${license.name()}`)
   }
   if (termsOfService) {
     infoList.push(
@@ -39,7 +41,7 @@ export function Info({ asyncapi, params = {} }) {
           {termsOfService}
         </Link>
       </>
-    );
+    )
   }
   if (defaultContentType) {
     infoList.push(
@@ -51,7 +53,7 @@ export function Info({ asyncapi, params = {} }) {
           {defaultContentType}
         </Link>
       </>
-    );
+    )
   }
   if (contact) {
     if (contact.url()) {
@@ -64,7 +66,7 @@ export function Info({ asyncapi, params = {} }) {
             {contact.name() || 'Link'}
           </Link>
         </>
-      );
+      )
     }
     if (contact.email()) {
       infoList.push(
@@ -76,7 +78,7 @@ export function Info({ asyncapi, params = {} }) {
             {contact.email()}
           </Link>
         </>
-      );
+      )
     }
   }
 
@@ -116,8 +118,8 @@ export function Info({ asyncapi, params = {} }) {
       )}
 
       {asyncapi.hasTags() && (
-        <Tags name="Specification tags" tags={asyncapi.tags()} />
+        <Tags name='Specification tags' tags={asyncapi.tags()} />
       )}
     </Text>
-  );
+  )
 }

@@ -1,0 +1,165 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/LeadScore",
+  "definitions": {
+      "LeadScore": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+              "topic": {
+                  "type": "string"
+              },
+              "recipient": {
+                  "type": "string",
+                  "format": "uri",
+                  "qt-uri-protocols": [
+                      "https"
+                  ]
+              },
+              "data": {
+                  "$ref": "#/definitions/Data"
+              }
+          },
+          "required": [
+              "data",
+              "recipient",
+              "topic"
+          ],
+          "title": "LeadScore"
+      },
+      "Data": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+              "type": {
+                  "type": "string"
+              },
+              "agent": {
+                  "$ref": "#/definitions/Agent"
+              },
+              "result": {
+                  "$ref": "#/definitions/Result"
+              },
+              "object": {
+                  "$ref": "#/definitions/Object"
+              }
+          },
+          "required": [
+              "agent",
+              "object",
+              "result",
+              "type"
+          ],
+          "title": "Data"
+      },
+      "Agent": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+              "type": {
+                  "type": "string"
+              },
+              "name": {
+                  "type": "string"
+              },
+              "url": {
+                  "type": "string",
+                  "format": "uri",
+                  "qt-uri-protocols": [
+                      "https"
+                  ]
+              }
+          },
+          "required": [
+              "name",
+              "type",
+              "url"
+          ],
+          "title": "Agent"
+      },
+      "Object": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+              "type": {
+                  "type": "string"
+              },
+              "identifier": {
+                  "$ref": "#/definitions/Identifier"
+              },
+              "sameAs": {
+                  "$ref": "#/definitions/SameAs"
+              },
+              "name": {
+                  "type": "string"
+              },
+              "email": {
+                  "type": "string"
+              }
+          },
+          "required": [
+              "email",
+              "identifier",
+              "name",
+              "sameAs",
+              "type"
+          ],
+          "title": "Object"
+      },
+      "Identifier": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+              "contact_producer_id": {
+                  "type": "string"
+              }
+          },
+          "required": [
+              "contact_producer_id"
+          ],
+          "title": "Identifier"
+      },
+      "SameAs": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+              "leadscoreprovider_id": {
+                  "type": "string"
+              }
+          },
+          "required": [
+              "leadscoreprovider_id"
+          ],
+          "title": "SameAs"
+      },
+      "Result": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+              "type": {
+                  "type": "string"
+              },
+              "ratingValue": {
+                  "type": "integer"
+              },
+              "bestRating": {
+                  "type": "integer"
+              },
+              "worstRating": {
+                  "type": "integer"
+              },
+              "ratingExplanation": {
+                  "type": "string"
+              }
+          },
+          "required": [
+              "bestRating",
+              "ratingExplanation",
+              "ratingValue",
+              "type",
+              "worstRating"
+          ],
+          "title": "Result"
+      }
+  }
+}

@@ -59,7 +59,7 @@ export class SchemaHelpers {
   static extRawValue = 'x-schema-private-raw-value'
   static extParameterLocation = 'x-schema-private-parameter-location'
 
-  static toSchemaType(schema) {
+  static toSchemaType (schema) {
     if (!schema || typeof schema.json !== 'function') {
       return SchemaCustomTypes.UNKNOWN
     }
@@ -95,7 +95,7 @@ export class SchemaHelpers {
     return type
   }
 
-  static toType(type, schema) {
+  static toType (type, schema) {
     if (type === 'array') {
       const items = schema.items()
       if (Array.isArray(items)) {
@@ -119,7 +119,7 @@ export class SchemaHelpers {
     return type
   }
 
-  static toCombinedType(schema) {
+  static toCombinedType (schema) {
     const t = []
     if (schema.oneOf()) {
       t.push('oneOf')
@@ -133,10 +133,10 @@ export class SchemaHelpers {
     if (t.length === 0 || t.length > 1) {
       return undefined
     }
-    return t[ 0 ]
+    return t[0]
   }
 
-  static inferType(schema) {
+  static inferType (schema) {
     let types = schema.type()
 
     if (types !== undefined) {
@@ -145,7 +145,7 @@ export class SchemaHelpers {
         if (types.includes('integer') && types.includes('number')) {
           types = types.filter(t => t !== 'integer')
         }
-        return types.length === 1 ? types[ 0 ] : types
+        return types.length === 1 ? types[0] : types
       }
       return types
     }
@@ -167,7 +167,7 @@ export class SchemaHelpers {
         }
         return typeOf
       })))
-      return inferredType.length === 1 ? inferredType[ 0 ] : inferredType
+      return inferredType.length === 1 ? inferredType[0] : inferredType
     }
 
     const schemaKeys = Object.keys(schema.json() || {}) || []
@@ -183,7 +183,7 @@ export class SchemaHelpers {
     return SchemaCustomTypes.ANY
   }
 
-  static prettifyValue(value) {
+  static prettifyValue (value) {
     const typeOf = typeof value
     if (typeOf === 'string') {
       return `"${value}"`
@@ -197,7 +197,7 @@ export class SchemaHelpers {
     return JSON.stringify(value)
   }
 
-  static parametersToSchema(parameters) {
+  static parametersToSchema (parameters) {
     if (!parameters || !Object.keys(parameters).length) {
       return undefined
     }
@@ -205,23 +205,23 @@ export class SchemaHelpers {
     const json = {
       type: 'object',
       properties: Object.entries(parameters).reduce(
-        (obj, [ paramaterName, parameter ]) => {
-          obj[ String(paramaterName) ] = Object.assign({}, parameter.schema().json())
-          obj[ String(paramaterName) ].description =
-            parameter.description() || obj[ String(paramaterName) ].description
-          obj[ String(paramaterName) ][ this.extParameterLocation ] = parameter.location()
+        (obj, [paramaterName, parameter]) => {
+          obj[String(paramaterName)] = Object.assign({}, parameter.schema().json())
+          obj[String(paramaterName)].description =
+            parameter.description() || obj[String(paramaterName)].description
+          obj[String(paramaterName)][this.extParameterLocation] = parameter.location()
           return obj
         },
         {}
       ),
       required: Object.keys(parameters),
-      [ this.extRenderType ]: false,
-      [ this.extRenderAdditionalInfo ]: false
+      [this.extRenderType]: false,
+      [this.extRenderAdditionalInfo]: false
     }
     return new SchemaModel(json)
   }
 
-  static humanizeConstraints(schema) {
+  static humanizeConstraints (schema) {
     const constraints = []
 
     // related to number/integer
@@ -275,7 +275,7 @@ export class SchemaHelpers {
     return constraints
   }
 
-  static humanizeNumberRangeConstraint(
+  static humanizeNumberRangeConstraint (
     min,
     exclusiveMin,
     max,
@@ -303,7 +303,7 @@ export class SchemaHelpers {
     return numberRange
   }
 
-  static humanizeMultipleOfConstraint(
+  static humanizeMultipleOfConstraint (
     multipleOf
   ) {
     if (multipleOf === undefined) {
@@ -313,10 +313,10 @@ export class SchemaHelpers {
     if (!(/^0\.0*1$/).test(strigifiedMultipleOf)) {
       return `multiple of ${strigifiedMultipleOf}`
     }
-    return `decimal places <= ${strigifiedMultipleOf.split('.')[ 1 ].length}`
+    return `decimal places <= ${strigifiedMultipleOf.split('.')[1].length}`
   }
 
-  static humanizeRangeConstraint(
+  static humanizeRangeConstraint (
     description,
     min,
     max
@@ -346,14 +346,14 @@ export class SchemaHelpers {
    * @param propertyName
    * @param schema
    */
-  static getDependentRequired(propertyName, schema) {
+  static getDependentRequired (propertyName, schema) {
     const dependentRequired = []
     const dependencies = schema.dependencies()
     if (!dependencies) {
       return
     }
 
-    for (const [ prop, array ] of Object.entries(dependencies)) {
+    for (const [prop, array] of Object.entries(dependencies)) {
       if (Array.isArray(array) && array.includes(propertyName)) {
         dependentRequired.push(prop)
       }
@@ -366,7 +366,7 @@ export class SchemaHelpers {
    *
    * @param schema
    */
-  static getDependentSchemas(schema) {
+  static getDependentSchemas (schema) {
     return
     const dependencies = schema.dependencies()
     if (!dependencies) {
@@ -374,9 +374,9 @@ export class SchemaHelpers {
     }
 
     const records = {}
-    for (const [ prop, propSchema ] of Object.entries(dependencies)) {
+    for (const [prop, propSchema] of Object.entries(dependencies)) {
       if (typeof propSchema === 'object' && !Array.isArray(propSchema)) {
-        records[ String(prop) ] = propSchema
+        records[String(prop)] = propSchema
       }
     }
     if (!Object.keys(records).length) {
@@ -386,30 +386,30 @@ export class SchemaHelpers {
     const json = {
       type: 'object',
       properties: Object.entries(records).reduce(
-        (obj, [ propertyName, propertySchema ]) => {
-          obj[ String(propertyName) ] = Object.assign({}, propertySchema.json())
+        (obj, [propertyName, propertySchema]) => {
+          obj[String(propertyName)] = Object.assign({}, propertySchema.json())
           return obj
         },
         {}
       ),
-      [ this.extRenderType ]: false,
-      [ this.extRenderAdditionalInfo ]: false
+      [this.extRenderType]: false,
+      [this.extRenderAdditionalInfo]: false
     }
     return new SchemaModel(json)
   }
 
-  static jsonToSchema(value) {
+  static jsonToSchema (value) {
     const json = this.jsonFieldToSchema(value)
     return new SchemaModel(json)
   }
 
-  static jsonFieldToSchema(value) {
+  static jsonFieldToSchema (value) {
     if (value === undefined || value === null) {
       return {
         type: 'string',
         const: value === undefined ? '' : 'NULL',
-        [ this.extRawValue ]: true,
-        [ this.extRenderType ]: false
+        [this.extRawValue]: true,
+        [this.extRenderType]: false
       }
     }
     if (typeof value !== 'object') {
@@ -418,8 +418,8 @@ export class SchemaHelpers {
       return {
         type: 'string',
         const: str,
-        [ this.extRawValue ]: true,
-        [ this.extRenderType ]: false
+        [this.extRawValue]: true,
+        [this.extRenderType]: false
       }
     }
     if (this.isJSONSchema(value)) {
@@ -429,22 +429,22 @@ export class SchemaHelpers {
       return {
         type: 'array',
         items: value.map(v => this.jsonFieldToSchema(v)),
-        [ this.extRenderType ]: false,
-        [ this.extRenderAdditionalInfo ]: false
+        [this.extRenderType]: false,
+        [this.extRenderAdditionalInfo]: false
       }
     }
     return {
       type: 'object',
-      properties: Object.entries(value).reduce((obj, [ k, v ]) => {
-        obj[ String(k) ] = this.jsonFieldToSchema(v)
+      properties: Object.entries(value).reduce((obj, [k, v]) => {
+        obj[String(k)] = this.jsonFieldToSchema(v)
         return obj
       }, {}),
-      [ this.extRenderType ]: false,
-      [ this.extRenderAdditionalInfo ]: false
+      [this.extRenderType]: false,
+      [this.extRenderAdditionalInfo]: false
     }
   }
 
-  static isJSONSchema(value) {
+  static isJSONSchema (value) {
     if (
       value &&
       typeof value === 'object' &&
@@ -457,17 +457,17 @@ export class SchemaHelpers {
     return false
   }
 
-  static getCustomExtensions(value) {
+  static getCustomExtensions (value) {
     if (!value || typeof value.extensions !== 'function') {
       return
     }
     return Object.entries(value.extensions() || {}).reduce(
-      (obj, [ extName, ext ]) => {
+      (obj, [extName, ext]) => {
         if (
           !extName.startsWith('x-parser-') &&
           !extName.startsWith('x-schema-private-')
         ) {
-          obj[ String(extName) ] = ext
+          obj[String(extName)] = ext
         }
         return obj
       },

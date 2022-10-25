@@ -1,24 +1,24 @@
-import invert from 'lodash/invert';
-import {Namespace} from 'rdflib';
+import invert from 'lodash/invert'
+import { Namespace } from 'rdflib'
 
 // Namespaces
-const acl = Namespace('http://www.w3.org/ns/auth/acl#');
-const dc = Namespace('http://purl.org/dc/terms/');
-const dce = Namespace('http://purl.org/dc/elements/1.1/');
-const foaf = Namespace('http://xmlns.com/foaf/0.1/');
-const ldp = Namespace('http://www.w3.org/ns/ldp#');
-const rdf = Namespace('http://www.w3.org/1999/02/22-rdf-syntax-ns#');
-const rdfs = Namespace('http://www.w3.org/2000/01/rdf-schema#');
-const schema = Namespace('http://schema.org/');
-const owl = Namespace('http://www.w3.org/2002/07/owl#');
-const posix = Namespace('http://www.w3.org/ns/posix/stat#');
-const skos = Namespace('http://www.w3.org/2004/02/skos/core#');
-const solid = Namespace('http://www.w3.org/ns/solid/terms#');
-const vann = Namespace('http://purl.org/vocab/vann/');
-const vs = Namespace('http://www.w3.org/2003/06/sw-vocab-status/ns#');
-const xsd = Namespace('http://www.w3.org/2001/XMLSchema#');
-const link = Namespace('http://www.w3.org/2007/ont/link#');
-const pim = Namespace('http://www.w3.org/ns/pim/space#');
+const acl = Namespace('http://www.w3.org/ns/auth/acl#')
+const dc = Namespace('http://purl.org/dc/terms/')
+const dce = Namespace('http://purl.org/dc/elements/1.1/')
+const foaf = Namespace('http://xmlns.com/foaf/0.1/')
+const ldp = Namespace('http://www.w3.org/ns/ldp#')
+const rdf = Namespace('http://www.w3.org/1999/02/22-rdf-syntax-ns#')
+const rdfs = Namespace('http://www.w3.org/2000/01/rdf-schema#')
+const schema = Namespace('http://schema.org/')
+const owl = Namespace('http://www.w3.org/2002/07/owl#')
+const posix = Namespace('http://www.w3.org/ns/posix/stat#')
+const skos = Namespace('http://www.w3.org/2004/02/skos/core#')
+const solid = Namespace('http://www.w3.org/ns/solid/terms#')
+const vann = Namespace('http://purl.org/vocab/vann/')
+const vs = Namespace('http://www.w3.org/2003/06/sw-vocab-status/ns#')
+const xsd = Namespace('http://www.w3.org/2001/XMLSchema#')
+const link = Namespace('http://www.w3.org/2007/ont/link#')
+const pim = Namespace('http://www.w3.org/ns/pim/space#')
 
 export const NS_PREFIX = {
   'http://www.w3.org/ns/auth/acl#': 'acl',
@@ -49,8 +49,8 @@ export const NS_PREFIX = {
   'http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#': 'schema',
   'https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#': 'schema',
   'http://www.wikidata.org/entity/': 'entity',
-  'http://purl.org/dc/dcmitype/': 'dctype',
-};
+  'http://purl.org/dc/dcmitype/': 'dctype'
+}
 
 export const NAMESPACE = {
   acl,
@@ -69,8 +69,8 @@ export const NAMESPACE = {
   xsd,
   link,
   posix,
-  pim,
-};
+  pim
+}
 
 const baseTypes = {
   Person: schema('Person'),
@@ -93,15 +93,15 @@ const baseTypes = {
   Document: link('Document'),
   RDFDocument: link('RDFDocument'),
   Container: ldp('Container'),
-  BasicContainer: ldp('BasicContainer'),
-};
+  BasicContainer: ldp('BasicContainer')
+}
 
 const actionTypes = {
   Action: schema('Action'),
   RegisterAction: schema('RegisterAction'),
   UnRegisterAction: schema('UnRegisterAction'),
-  AchieveAction: schema('AchieveAction'),
-};
+  AchieveAction: schema('AchieveAction')
+}
 
 export const context = {
   allValuesFrom: owl('allValuesFrom'),
@@ -156,14 +156,14 @@ export const context = {
   preferencesUrl: pim('preferencesFile'),
   linkURI: link('uri'),
   ...baseTypes,
-  ...actionTypes,
-};
+  ...actionTypes
+}
 
 export const sameAs = [
   [rdfs('domain'), schema('domainIncludes')],
   [rdfs('range'), schema('rangeIncludes')],
-  [dc('modified'), schema('dateModified')],
-];
+  [dc('modified'), schema('dateModified')]
+]
 
 export const PROPERTY_TYPES = [
   'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property',
@@ -172,17 +172,17 @@ export const PROPERTY_TYPES = [
   'http://www.w3.org/2002/07/owl#DeprecatedProperty',
   'http://www.w3.org/2002/07/owl#FunctionalProperty',
   'http://www.w3.org/2002/07/owl#ObjectProperty',
-  'http://www.w3.org/2002/07/owl#OntologyProperty',
-];
+  'http://www.w3.org/2002/07/owl#OntologyProperty'
+]
 
 export const CLASS_TYPES = [
   'http://www.w3.org/2000/01/rdf-schema#Class',
   'http://www.w3.org/2002/07/owl#Class',
   'http://www.w3.org/2000/01/rdf-schema#Datatype',
   'http://www.w3.org/2002/07/owl#DeprecatedClass',
-  'http://purl.org/dc/terms/AgentClass',
-];
+  'http://purl.org/dc/terms/AgentClass'
+]
 
-export const CONTEXT_IN = invert(context);
+export const CONTEXT_IN = invert(context)
 
-export default context;
+export default context

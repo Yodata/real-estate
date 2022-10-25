@@ -74,5 +74,8 @@
 		"oneDarkPro.bold": true,
 		"search.showLineNumbers": true,
 		"docthis.enableHungarianNotationEvaluation": false,
+		"yaml.schemas": {
+			"https://json.schemastore.org/eslintrc": "file:///Users/dave/git/yodata/real-estate/.eslintrc.yaml"
+		},
 	}
 }

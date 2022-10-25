@@ -17,12 +17,11 @@ module.exports = {
   // clearMocks: false,
 
   // Indicates whether the coverage information should be collected while executing the test
-  collectCoverage: true,
+  collectCoverage: false,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   collectCoverageFrom: [
-    '**/*.{js,jsx}',
-    '!**/*.{test,spec,schema}.{js,jsx}'
+    '**/src/*.{js,jsx}'
   ],
 
   // The directory where Jest should output its coverage files
@@ -131,7 +130,7 @@ module.exports = {
   // The root directory that Jest should scan for tests and modules within
   // rootDir: undefined,
 
-  // A list of paths to directories that Jest should use to search for files in
+  // A list of patx hs to directories that Jest should use to search for files in
   // roots: [
   //   "<rootDir>/src/",
   //   "<rootDir>/asyncapi/",

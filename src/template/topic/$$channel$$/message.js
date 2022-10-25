@@ -1,8 +1,7 @@
-import { File, Text } from '@asyncapi/generator-react-sdk'
+import { React } from 'react'
+import { File } from '@asyncapi/generator-react-sdk'
 import { FrontMatter } from '../../../asyncapi/components/FrontMatter'
 import { Message } from '../../../asyncapi/components/Message'
-
-const formatFileName = (messageId, extension) => String(messageId).replace('#', '.') + extension
 
 export default function ({ asyncapi }) {
   const messages = asyncapi.allMessages()
@@ -25,7 +24,7 @@ export function MessageFile (messageName, message) {
   return (
     <File name={fileName}>
       <FrontMatter params={{ title }} />
-      <Message asyncapi={asyncapi} message={message} messageName={messageName} />
+      <Message message={message} messageName={messageName} />
     </File>
   )
 }

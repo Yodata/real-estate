@@ -8,19 +8,18 @@ const store = {
   }
 }
 
-
-export default function getSuperTypes(subject) {
+export default function getSuperTypes (subject) {
   if (subject && subject.id) {
-    let state = store.getState();
-    let typeIndex = {};
+    const state = store.getState()
+    let typeIndex = {}
     if (state && state.schema && state.schema.index) {
-      typeIndex = state.schema.index;
+      typeIndex = state.schema.index
     }
-    let superTypes = [subject.id];
-    let nextParent = subject.subClassOf;
+    const superTypes = [subject.id]
+    let nextParent = subject.subClassOf
     while (nextParent && nextParent !== subject.id) {
-      superTypes.push(nextParent);
-      nextParent = typeIndex[nextParent] && typeIndex[nextParent].subClassOf;
+      superTypes.push(nextParent)
+      nextParent = typeIndex[nextParent] && typeIndex[nextParent].subClassOf
     }
     return flatten(superTypes)
   }

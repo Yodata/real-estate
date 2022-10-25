@@ -1,9 +1,9 @@
 // @ts-check
-function debrac(url) {
+function debrac (url) {
   if (url[0] === '<') {
     return url.slice(1, -1)
   }
-  return url;
+  return url
 }
 
 export default debrac

@@ -9,17 +9,17 @@ const tags = {
         type: String,
         default: 'note',
         matches: ['note', 'warning'],
-        errorLevel: 'critical',
-      },
+        errorLevel: 'critical'
+      }
     },
-    render: Callout,
+    render: Callout
   },
   figure: {
     selfClosing: true,
     attributes: {
       src: { type: String },
       alt: { type: String },
-      caption: { type: String },
+      caption: { type: String }
     },
     render: ({ src, alt = '', caption }) => (
       <figure>
@@ -27,10 +27,10 @@ const tags = {
         <img src={src} alt={alt} />
         <figcaption>{caption}</figcaption>
       </figure>
-    ),
+    )
   },
   'quick-links': {
-    render: QuickLinks,
+    render: QuickLinks
   },
   'quick-link': {
     selfClosing: true,
@@ -39,9 +39,9 @@ const tags = {
       title: { type: String },
       description: { type: String },
       icon: { type: String },
-      href: { type: String },
-    },
-  },
+      href: { type: String }
+    }
+  }
 }
 
 export default tags

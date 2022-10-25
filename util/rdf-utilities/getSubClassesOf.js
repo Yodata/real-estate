@@ -7,9 +7,9 @@ const store = {
   }
 }
 
-function getSubClassesOf(subject, collection) {
-  let _collection = collection || store.getState().schema.types
-  return filter(_collection, { 'subClassOf': subject });
+function getSubClassesOf (subject, collection) {
+  const _collection = collection || store.getState().schema.types
+  return filter(_collection, { subClassOf: subject })
 }
 
 export default getSubClassesOf

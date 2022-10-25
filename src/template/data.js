@@ -1,3 +1,4 @@
+import { React } from 'react'
 import { DataFile } from '../asyncapi/components/DataFile'
 
 export default function exportData (props) {

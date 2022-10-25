@@ -3,49 +3,49 @@
 import values from 'lodash/values'
 import json from 'json5'
 import getSchemaObject from './getSchemaObject'
-import isArray from 'lodash/isArray';
+import isArray from 'lodash/isArray'
 
-function first(val) {
+function first (val) {
   if (typeof val === 'string') {
-    return val;
+    return val
   }
-  return values(val)[ 0 ];
+  return values(val)[0]
 }
 
-function hasExample(subject) {
-  return subject.exampleValue && values(subject.exampleValue).length > 0;
+function hasExample (subject) {
+  return subject.exampleValue && values(subject.exampleValue).length > 0
 }
 
-export function createMockValue(subject) {
+export function createMockValue (subject) {
   if (subject) {
     if (hasExample(subject)) {
-      let example = first(subject.exampleValue);
-      let text = example.text || '';
+      const example = first(subject.exampleValue)
+      const text = example.text || ''
       try {
-        let response = text.startsWith('{') ? json.parse(example.text) : example.text;
-        return response;
+        const response = text.startsWith('{') ? json.parse(example.text) : example.text
+        return response
       } catch (e) {
         console.error(`failed to json parse ${subject.id}`)
-        return text;
+        return text
       }
     }
     switch (subject.type) {
       case 'Type': {
-        return createMockType(subject.id);
+        return createMockType(subject.id)
       }
       case 'Property': {
-        let propertyType = first(subject.rangeIncludes);
-        let propertySubject = getSchemaObject(propertyType);
+        const propertyType = first(subject.rangeIncludes)
+        const propertySubject = getSchemaObject(propertyType)
         return createMockValue(propertySubject)
       }
       case 'Boolean':
-        return true;
+        return true
       case 'Date':
-        return new Date().toDateString();
+        return new Date().toDateString()
       case 'DateTime':
-        return new Date().toISOString();
+        return new Date().toISOString()
       case 'Number':
-        return 1.0;
+        return 1.0
       case 'Text':
         return subject.id
       case 'URL':
@@ -58,28 +58,27 @@ export function createMockValue(subject) {
   throw new Error('subject required')
 }
 
-export function createMockType(type, properties = []) {
-  let value = {type};
+export function createMockType (type, properties = []) {
+  const value = { type }
   if (isArray(properties) && properties.length > 0) {
     properties.forEach(prop => {
-      value[prop.id] = createMockValue(prop);
+      value[prop.id] = createMockValue(prop)
     })
   }
-  return value;
+  return value
 }
 
-
-export function getExampleValue(subject) {
+export function getExampleValue (subject) {
   if (subject) {
     if (hasExample(subject)) {
-      return first(subject.exampleValue);
+      return first(subject.exampleValue)
     }
-    let mockJson = createMockValue(subject);
-    let mockText = json.stringify(mockJson);
+    const mockJson = createMockValue(subject)
+    const mockText = json.stringify(mockJson)
     return {
       exampleOfWork: subject.id,
       json: mockJson,
-      text: mockText,
+      text: mockText
     }
   }
   console.error('getExampleValue called with null/undefined subject')

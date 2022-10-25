@@ -6,8 +6,8 @@ const store = {
   }
 }
 
-export default function getSchemaObject(id) {
-  let state = store.getState();
+export default function getSchemaObject (id) {
+  const state = store.getState()
   if (state && state.schema && state.schema.index[id]) {
     return state.schema.index[id]
   }

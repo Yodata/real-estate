@@ -1,6 +1,4 @@
 
-
-kind: RealEstateAgent
 allOf:
   - properties:
       id:

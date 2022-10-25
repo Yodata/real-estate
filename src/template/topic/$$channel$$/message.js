@@ -10,7 +10,7 @@ export default function ({ asyncapi }) {
   const messageFiles = []
   Object.entries(messages).forEach(([messageName, message]) => {
     messageFiles.push(
-      <File name={messageName+'.md'}>
+      <File name={messageName + '.md'}>
         <FrontMatter params={{ title: messageName }} />
         <Message message={message} />
       </File>

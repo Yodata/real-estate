@@ -19,10 +19,10 @@ const code = `export default {
 
 const tabs = [
   { name: 'cache-advance.config.js', isActive: true },
-  { name: 'package.json', isActive: false },
+  { name: 'package.json', isActive: false }
 ]
 
-function TrafficLightsIcon(props) {
+function TrafficLightsIcon (props) {
   return (
     <svg aria-hidden="true" viewBox="0 0 42 10" fill="none" {...props}>
       <circle cx="5" cy="5" r="4.5" />
@@ -32,7 +32,7 @@ function TrafficLightsIcon(props) {
   )
 }
 
-export function Hero() {
+export function Hero () {
   return (
     <div className="overflow-hidden bg-slate-900 dark:-mb-32 dark:mt-[-4.5rem] dark:pb-32 dark:pt-[4.5rem] dark:lg:mt-[-4.75rem] dark:lg:pt-[4.75rem]">
       <div className="py-16 sm:px-2 lg:relative lg:py-20 lg:px-0">
@@ -120,7 +120,7 @@ export function Hero() {
                       className="select-none border-r border-slate-300/5 pr-4 font-mono text-slate-600"
                     >
                       {Array.from({
-                        length: code.split('\n').length,
+                        length: code.split('\n').length
                       }).map((_, index) => (
                         <Fragment key={index}>
                           {(index + 1).toString().padStart(2, '0')}
@@ -139,7 +139,7 @@ export function Hero() {
                         style,
                         tokens,
                         getLineProps,
-                        getTokenProps,
+                        getTokenProps
                       }) => (
                         <pre
                           className={clsx(

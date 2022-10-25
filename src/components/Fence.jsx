@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 
-export function Fence({ children, language }) {
+export function Fence ({ children, language }) {
   return (
     <Highlight
       {...defaultProps}

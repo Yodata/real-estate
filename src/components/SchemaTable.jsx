@@ -1,10 +1,10 @@
 import React from 'react'
-import {Link} from 'docz'
+import { Link } from 'docz'
 import entries from 'lodash/entries'
 
 const COLUMNS = [
-    { title: 'Property', key: 'name' },
-    { title: 'Range / Description', key: 'range'}
+  { title: 'Property', key: 'name' },
+  { title: 'Range / Description', key: 'range' }
 ]
 
 const ListItem = ({ property = {} }) => (
@@ -14,7 +14,7 @@ const ListItem = ({ property = {} }) => (
     </td>
     <td>
       <div>{property.range || property.rangeIncludes}</div>
-      {property.description && 
+      {property.description &&
         <div dangerouslySetInnerHTML={{ __html: property.description.toString() }}></div>
       }
     </td>
@@ -31,7 +31,7 @@ export const PropertyTable = ({ items = [], columns = COLUMNS }) => {
         </tr>
       </thead>
       <tbody>
-          {entries(items).map(([key,value]) => <ListItem key={key} property={value} />)}
+          {entries(items).map(([key, value]) => <ListItem key={key} property={value} />)}
       </tbody>
     </table>
   )

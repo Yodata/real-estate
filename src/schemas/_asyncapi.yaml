@@ -1,0 +1,214 @@
+asyncapi: '2.5.0'
+
+info:
+  title: Standard Events for Real Estate Software Integration and Automation.
+  version: '1.0.0'
+  description: |
+    This document describes an event vocabulary for automating business processes across organizational boundaries in the residential real estate domain.
+
+    The vocabulary and related libraries are 100% open-source software actively maintained by a small but passionate community of developers and supported by forward-thinking real estate businesses.
+
+    ## Technical Acknowledgments
+    The Real Estate vocabulary is largely based on the tremendous work being done at schema.org.
+
+    Linked Data Platform and Notifications are W3C specs credited to Sarven Capadisli, University of Bonn, info@csarven.ca
+    Amy Guy, University of Edinburgh, amy@rhiaro.co.uk
+    Steve Speicher, IBM Corporation
+    John Arwe, IBM Corporation
+    Ashok Malhotra, Oracle Corporation
+
+    The Profile schema comes from the SOLID project developed at MIT.
+
+    And all of the above can be traced directly to the work of the incomparable Tim Berners-Lee.
+
+  contact:
+    name: Dave Duran
+    email: dave@yodata.io
+    url: https://github.com/yodata/real-estate
+
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+  x-messages:
+    name: Events
+    hideProps: false
+    hideExample: false
+
+  x-schemas:
+    menu: Types
+
+components:
+  schemas:
+    CloudEvent: { $ref: CloudEvent.yaml }
+    Action: { $ref: Action.yaml }
+    Award: { $ref: Award.yaml }
+    AwardSeries: { $ref: AwardSeries.yaml }
+    AwardTeam: { $ref: AwardTeam.yaml }
+    ApplicationProfile: { $ref: ApplicationProfile.yaml }
+    BlogPosting: { $ref: BlogPosting.yaml }
+    Certification: { $ref: Certification.yaml }
+    City: { $ref: City.yaml }
+    Collection: { $ref: Collection.yaml }
+    Comment: { $ref: Comment.yaml }
+    Contact: { $ref: Contact.yaml }
+    ContactPoint: { $ref: ContactPoint.yaml }
+    ContactSummary: { $ref: ContactSummary.yaml }
+    DigitalDocument: { $ref: DigitalDocument.yaml }
+    EmailMessage: { $ref: EmailMessage.yaml }
+    Event: { $ref: Event.yaml }
+    GeoCircle: { $ref: GeoCircle.yaml }
+    GeoCoordinates: { $ref: GeoCoordinates.yaml }
+    GeoShape: { $ref: GeoShape.yaml }
+    ImageObject: { $ref: ImageObject.yaml }
+    Language: { $ref: Language.yaml }
+    Lead: { $ref: Lead.yaml }
+    LogAction: { $ref: LogAction.yaml }
+    ListingOffer: { $ref: ListingOffer.yaml }
+    ListingReport: { $ref: ListingReport.yaml }
+    MarketingProgram: { $ref: MarketingProgram.yaml }
+    MediaObject: { $ref: MediaObject.yaml }
+    MLSMembership: { $ref: MLSMembership.yaml }
+    MonetaryAmount: { $ref: MonetaryAmount.yaml }
+    MultipleListingService: { $ref: MultipleListingService.yaml }
+    Organization: { $ref: Organization.yaml }
+    OrganizationRole: { $ref: OrganizationRole.yaml }
+    Permit: { $ref: Permit.yaml }
+    Person: { $ref: Person.yaml }
+    Place: { $ref: Place.yaml }
+    Plan: { $ref: Plan.yaml }
+    PostalAddress: { $ref: PostalAddress.yaml }
+    PotentialActionStatus: { $ref: PotentialActionStatus.yaml }
+    PriceSpecification: { $ref: PriceSpecification.yaml }
+    Profile: { $ref: Profile.yaml }
+    ProgramMembership: { $ref: ProgramMembership.yaml }
+    PropertyListing: { $ref: PropertyListing.yaml }
+    PropertySearch: { $ref: PropertySearch.yaml }
+    PropertyType: { $ref: PropertyType.yaml }
+    PropertySubType: { $ref: PropertySubType.yaml }
+    PropertyValue: { $ref: PropertyValue.yaml }
+    PropertyValueReport: { $ref: PropertyValueReport.yaml }
+    QuantitativeValue: { $ref: QuantitativeValue.yaml }
+    Question: { $ref: question.yaml }
+    RealEstateAgent: { $ref: RealEstateAgent.yaml }
+    RealEstateLicense: { $ref: RealEstateLicense.yaml }
+    RealEstateOffice: { $ref: RealEstateOffice.yaml }
+    RealEstateOrganization: { $ref: RealEstateOrganization.yaml }
+    RealEstateProperty: { $ref: RealEstateProperty.yaml }
+    RealEstateTeam: { $ref: RealEstateTeam.yaml }
+    RealEstateTeamMembership: { $ref: RealEstateTeamMembership.yaml }
+    RealEstateTransaction: { $ref: RealEstateTransaction.yaml }
+    RealEstateWebsite: { $ref: RealEstateWebsite.yaml }
+    Referral: { $ref: Referral.yaml }
+    Schedule: { $ref: Schedule.yaml }
+    Service: { $ref: Service.yaml }
+    ServiceArea: { $ref: ServiceArea.yaml }
+    State: { $ref: State.yaml }
+    SubscribeAction: { $ref: SubscribeAction.yaml }
+    Task: { $ref: Task.yaml }
+    Thing: { $ref: Thing.yaml }
+    TransactionEntry: { $ref: TransactionEntry.yaml }
+    TransactionParticipant: { $ref: TransactionParticipant.yaml }
+    TransactionStatus: { $ref: TransactionStatus.yaml }
+    UnsubscribeAction: { $ref: UnsubscribeAction.yaml }
+    BHHSTerms: { $ref: BHHSTerms.yaml }
+
+# securitySchemes:
+#   https:
+#     name: x-api-key
+#     type: httpApiKey
+#     in: header
+# TOPICS
+channels:
+
+  /award#:
+    description: Awards
+    subscribe:
+      message:
+        oneOf:
+          - $ref: award.delete.yaml
+          - $ref: award.seriescreate.yaml
+          - $ref: award.seriesdelete.yaml
+          - $ref: award.seriesupdate.yaml
+          - $ref: award.teamcreate.yaml
+          - $ref: award.teammemberadd.yaml
+          - $ref: award.teammemberremove.yaml
+          - $ref: award.teamupdate.yaml
+          - $ref: award.update.yaml
+
+  /franchise:
+    subscribe:
+      message:
+        $ref: franchise.transactionreport.yaml
+
+  /lead:
+    description: lead management events
+    subscribe:
+      message:
+        oneOf:
+          - $ref: lead.accept.yaml
+          - $ref: lead.add.yaml
+          - $ref: lead.assign.yaml
+          - $ref: lead.update.yaml
+          - $ref: lead.reject.yaml
+          - $ref: lead.retract.yaml
+
+  /listing:
+    subscribe:
+      message:
+        oneOf:
+          - $ref: listing.update.yaml
+          - $ref: listing.delete.yaml
+
+  /marketing:
+    subscribe:
+      message:
+        oneOf:
+          - $ref: programcreate.yaml
+          - $ref: programdelete.yaml
+          - $ref: programmemberadd.yaml
+          - $ref: programmemberremove.yaml
+
+  /marketingpreferences:
+    subscribe:
+      message:
+        oneOf:
+          - $ref: marketingpreferences.subscribe.yaml
+          - $ref: marketingpreferences.unsubscribe.yaml
+
+  /profile:
+    description: 'real estate agent/office profile updates.'
+    subscribe:
+      message:
+        oneOf:
+          - $ref: profile.add.yaml
+          - $ref: profile.update.yaml
+          - $ref: profile.teamcreate.yaml
+          - $ref: profile.teamdelete.yaml
+          - $ref: profile.teammemberadd.yaml
+          - $ref: profile.teammemberremove.yaml
+
+  /servicearea:
+    subscribe:
+      message:
+        oneOf:
+          - $ref: servicearea.create.yaml
+          - $ref: servicearea.update.yaml
+          - $ref: servicearea.delete.yaml
+
+  /website:
+    subscribe:
+      message:
+        oneOf:
+        - $ref: askquestion.yaml
+        # - $ref: listingoffer.yaml
+        - $ref: register.yaml
+        - $ref: requestappointment.yaml
+        - $ref: requestshowing.yaml
+        - $ref: saveproperty.yaml
+        - $ref: savepropertysearch.yaml
+        - $ref: searchproperties.yaml
+        - $ref: shareproperty.yaml
+        - $ref: sharepropertyvaluereport.yaml
+        - $ref: viewproperty.yaml
+        - $ref: viewpropertyvaluereport.yaml

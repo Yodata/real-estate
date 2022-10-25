@@ -5,7 +5,7 @@ summary: an agent rick-rolled the recipient
 payload:
   allOf:
     # adds the message wrapper (topic, data, etc..)
-    - $ref: ../base.event.yaml
+    - $ref: base.event.yaml
 
     # adds a topic to the base event
     - properties:
@@ -13,14 +13,14 @@ payload:
           type: string
           enum:
             - realestate/canary#rickroll
-    
+
     # add event payload (Action)
     - properties:
         data:
           allOf:
             # import a generic action models
-            - $ref: ../Action.yaml
-         
+            - $ref: Action.yaml
+
             # customize your action
             - description: an agent rickrolled the recipient
               properties:
@@ -37,8 +37,3 @@ payload:
                   example:
                     type: Person
                     name: Bob
-
-                  
-
-                  
-

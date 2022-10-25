@@ -3,14 +3,14 @@ x-scope: realestate/calendar#
 summary: an event was deleted
 payload:
   allOf:
-    - $ref: ../base.event.yaml
+    - $ref: base.event.yaml
     - properties:
         topic:
           enum:
             - realestate/calendar#eventdelete
         data:
           allOf:
-          - $ref: ../DeleteAction.yaml
+          - $ref: DeleteAction.yaml
           - properties:
               object:
                 description: the event deleted
@@ -20,7 +20,3 @@ payload:
                   type: Event
                   identifier:
                     redEvent_ID: '9551570'
-                    
-
-                  
-                  

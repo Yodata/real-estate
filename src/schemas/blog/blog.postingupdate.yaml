@@ -3,7 +3,7 @@ x-scope: realestate/blog#
 summary: a blog post was updated
 payload:
   allOf:
-    - $ref: ../base.event.yaml
+    - $ref: base.event.yaml
     - properties:
         topic:
           enum:
@@ -16,4 +16,4 @@ payload:
               enum:
               - UpdateAction
             object:
-              $ref: ../BlogPosting.yaml
+              $ref: BlogPosting.yaml

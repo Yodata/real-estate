@@ -1,0 +1,17 @@
+x-title: pending
+x-scope: realestate/transaction#
+summary: a real estate transaction is pending
+payload:
+  allOf:
+    - $ref: base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/transaction#pending
+        data:
+          $ref: PendingAction.yaml
+    - properties:
+        data:
+          properties:
+            object:
+              $ref: RealEstateTransaction.yaml

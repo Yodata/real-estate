@@ -1,5 +1,3 @@
-$id: htttps://realestate.yodata.me/schema/contactPoint
-$schema: https://asyncapi.com/definitions/2.5.0/schema.json
 type: object
 description: a named point of contact - telephone, email, faxNumber, and/or url for the entity
 x-range: ContactPoint

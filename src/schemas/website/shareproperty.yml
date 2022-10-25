@@ -21,7 +21,7 @@ payload:
           object:
             x-range: PropertyListing
             example:
-              $ref: ../example-propertylisting.yaml
+              $ref: example-propertylisting.yaml
           recipient:
             type: object
             description: the recipient of the share

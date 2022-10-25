@@ -6,9 +6,9 @@ import { Layout } from '@/components/Layout'
 import 'focus-visible'
 import '@/styles/tailwind.css'
 
-function getNodeText(node) {
+function getNodeText (node) {
   let text = ''
-  for (let child of node.children ?? []) {
+  for (const child of node.children ?? []) {
     if (typeof child === 'string') {
       text += child
     }
@@ -17,14 +17,14 @@ function getNodeText(node) {
   return text
 }
 
-function collectHeadings(nodes, slugify = slugifyWithCounter()) {
-  let sections = []
+function collectHeadings (nodes, slugify = slugifyWithCounter()) {
+  const sections = []
 
-  for (let node of nodes) {
+  for (const node of nodes) {
     if (node.name === 'h2' || node.name === 'h3') {
-      let title = getNodeText(node)
+      const title = getNodeText(node)
       if (title) {
-        let id = slugify(title)
+        const id = slugify(title)
         node.attributes.id = id
         if (node.name === 'h3') {
           if (!sections[sections.length - 1]) {
@@ -34,7 +34,7 @@ function collectHeadings(nodes, slugify = slugifyWithCounter()) {
           }
           sections[sections.length - 1].children.push({
             ...node.attributes,
-            title,
+            title
           })
         } else {
           sections.push({ ...node.attributes, title, children: [] })
@@ -48,16 +48,16 @@ function collectHeadings(nodes, slugify = slugifyWithCounter()) {
   return sections
 }
 
-export default function App({ Component, pageProps }) {
-  let title = pageProps.markdoc?.frontmatter.title
+export default function App ({ Component, pageProps }) {
+  const title = pageProps.markdoc?.frontmatter.title
 
-  let pageTitle =
+  const pageTitle =
     pageProps.markdoc?.frontmatter.pageTitle ||
     `${pageProps.markdoc?.frontmatter.title} - Docs`
 
-  let description = pageProps.markdoc?.frontmatter.description
+  const description = pageProps.markdoc?.frontmatter.description
 
-  let tableOfContents = pageProps.markdoc?.content
+  const tableOfContents = pageProps.markdoc?.content
     ? collectHeadings(pageProps.markdoc.content)
     : []
 

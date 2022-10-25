@@ -5,10 +5,10 @@ import clsx from 'clsx'
 const themes = [
   { name: 'Light', value: 'light', icon: LightIcon },
   { name: 'Dark', value: 'dark', icon: DarkIcon },
-  { name: 'System', value: 'system', icon: SystemIcon },
+  { name: 'System', value: 'system', icon: SystemIcon }
 ]
 
-function LightIcon(props) {
+function LightIcon (props) {
   return (
     <svg aria-hidden="true" viewBox="0 0 16 16" {...props}>
       <path
@@ -20,7 +20,7 @@ function LightIcon(props) {
   )
 }
 
-function DarkIcon(props) {
+function DarkIcon (props) {
   return (
     <svg aria-hidden="true" viewBox="0 0 16 16" {...props}>
       <path
@@ -32,7 +32,7 @@ function DarkIcon(props) {
   )
 }
 
-function SystemIcon(props) {
+function SystemIcon (props) {
   return (
     <svg aria-hidden="true" viewBox="0 0 16 16" {...props}>
       <path
@@ -44,8 +44,8 @@ function SystemIcon(props) {
   )
 }
 
-export function ThemeSelector(props) {
-  let [selectedTheme, setSelectedTheme] = useState()
+export function ThemeSelector (props) {
+  const [selectedTheme, setSelectedTheme] = useState()
 
   useEffect(() => {
     if (selectedTheme) {
@@ -61,7 +61,7 @@ export function ThemeSelector(props) {
   }, [selectedTheme])
 
   useEffect(() => {
-    let handler = () =>
+    const handler = () =>
       setSelectedTheme(
         themes.find(
           (theme) => theme.value === (window.localStorage.theme ?? 'system')
@@ -102,7 +102,7 @@ export function ThemeSelector(props) {
                   'text-sky-500': selected,
                   'text-slate-900 dark:text-white': active && !selected,
                   'text-slate-700 dark:text-slate-400': !active && !selected,
-                  'bg-slate-100 dark:bg-slate-900/40': active,
+                  'bg-slate-100 dark:bg-slate-900/40': active
                 }
               )
             }

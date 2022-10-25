@@ -1,7 +1,7 @@
 import { useId } from 'react'
 
-export function HeroBackground(props) {
-  let id = useId()
+export function HeroBackground (props) {
+  const id = useId()
 
   return (
     <svg

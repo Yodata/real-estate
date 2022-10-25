@@ -2,7 +2,7 @@ transaction#create:
   description: Create a new transaction
   publish:
     headers:
-      $ref: ../publish-headers.yaml
+      $ref: publish-headers.yaml
     payload:
       $ref: transaction.create.yaml
 transaction#update:

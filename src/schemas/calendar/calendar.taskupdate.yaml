@@ -3,18 +3,15 @@ x-scope: realestate/calendar#
 summary: a task has been updated
 payload:
   allOf:
-    - $ref: ../base.event.yaml
+    - $ref: base.event.yaml
     - properties:
         topic:
           enum:
             - realestate/calendar#taskupdate
         data:
           allOf:
-          - $ref: ../UpdateAction.yaml
+          - $ref: UpdateAction.yaml
           - properties:
               object:
-                $ref: ../Task.yaml
+                $ref: Task.yaml
                 description: the task to be updated
-
-
-    

@@ -1,6 +1,6 @@
 import { DarkMode, Gradient, LightMode } from '@/components/Icon'
 
-export function ThemingIcon({ id, color }) {
+export function ThemingIcon ({ id, color }) {
   return (
     <>
       <defs>

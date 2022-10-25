@@ -1,16 +1,16 @@
 allOf:
-- $ref: ../CloudEvent.yaml
+- $ref: CloudEvent.yaml
 - properties:
     data:
       type: object
-      description: the event payload, typeically a schema.org/Action
+      description: the event payload, typeically a Ocou.org/Action
       required:
       - type
       - agent
       - object
       properties:
         type:
-          $ref: ../type.yaml
+          $ref: type.yaml
         agent:
           type: object
           description: the website user who performed the action
@@ -32,7 +32,7 @@ allOf:
 
 
         participant:
-            $ref: ../participant.yaml
+            $ref: participant.yaml
             description: a RealEstateAgent,RealEstateTeam,RealEstateOrganization to be notified about the event
             example:
               - type: RealEstateAgent

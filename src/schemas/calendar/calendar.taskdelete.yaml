@@ -3,14 +3,14 @@ x-scope: realestate/calendar#
 summary: a task was removed from an action plan
 payload:
   allOf:
-    - $ref: ../base.event.yaml
+    - $ref: base.event.yaml
     - properties:
         topic:
           enum:
             - realestate/calendar#taskdelete
         data:
           allOf:
-          - $ref: ../DeleteAction.yaml
+          - $ref: DeleteAction.yaml
           - properties:
               object:
                 type: object
@@ -19,4 +19,3 @@ payload:
                   type: Task
                   identifier:
                     vendoraid: xxx
-    

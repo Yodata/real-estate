@@ -1,4 +1,3 @@
-$api:
 allOf:
   - $ref: Action.yaml
   - description: The act of committing to/adopting an object.

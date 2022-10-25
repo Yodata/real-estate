@@ -1,6 +1,6 @@
 import { DarkMode, Gradient, LightMode } from '@/components/Icon'
 
-export function PluginsIcon({ id, color }) {
+export function PluginsIcon ({ id, color }) {
   return (
     <>
       <defs>

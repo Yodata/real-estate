@@ -5,7 +5,7 @@ summary: an example canary event
 payload:
   allOf:
     # adds the message wrapper (topic, data, etc..)
-    - $ref: ../base.event.yaml
+    - $ref: base.event.yaml
 
     # adds a topic to the base event
     - properties:
@@ -14,14 +14,14 @@ payload:
           description: an example event
           enum:
             - realestate/canary#example
-    
+
     # add event payload (Action)
     - properties:
         data:
           allOf:
             # import a generic action models
-            - $ref: ../Action.yaml
-         
+            - $ref: Action.yaml
+
             # customize your action
             - title: ExampleAction
               description: an example action
@@ -29,4 +29,3 @@ payload:
                 type:
                   enum:
                     - ExampleAction
-                

@@ -1,6 +1,6 @@
 import { DarkMode, Gradient, LightMode } from '@/components/Icon'
 
-export function InstallationIcon({ id, color }) {
+export function InstallationIcon ({ id, color }) {
   return (
     <>
       <defs>

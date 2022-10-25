@@ -16,7 +16,7 @@ summary: an example canary event
 payload:
   allOf:
     # adds the message wrapper (topic, data, etc..)
-    - $ref: ../base.event.yaml
+    - $ref: base.event.yaml
 
     # adds a topic to the base event
     - properties:
@@ -31,7 +31,7 @@ payload:
         data:
           allOf:
             # import a base action model
-            - $ref: ../Action.yaml
+            - $ref: Action.yaml
 
             # customize your action
             - description: an example action

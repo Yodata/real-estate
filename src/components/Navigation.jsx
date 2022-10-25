@@ -2,8 +2,8 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import clsx from 'clsx'
 
-export function Navigation({ navigation, className }) {
-  let router = useRouter()
+export function Navigation ({ navigation, className }) {
+  const router = useRouter()
 
   return (
     <nav className={clsx('text-base lg:text-sm', className)}>

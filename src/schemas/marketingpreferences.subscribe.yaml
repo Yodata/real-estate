@@ -1,0 +1,11 @@
+messageId: marketingpreferences#subscribe
+x-scope: realestate/marketingpreferences#
+payload:
+  allOf:
+    - $ref: base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/marketingpreferences#subscribe
+        data:
+          $ref: SubscribeAction.yaml

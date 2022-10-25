@@ -3,7 +3,7 @@ x-scope: realestate/franchise#
 summary: franchise listingreport
 payload:
   allOf:
-    - $ref: ../base.event.yaml
+    - $ref: base.event.yaml
     - properties:
         topic:
           description: realestate/franchise#listingreport
@@ -11,7 +11,7 @@ payload:
             - realestate/franchise#listingreport
         data:
           allOf:
-            - $ref: ../CreateAction.yaml
+            - $ref: CreateAction.yaml
             - properties:
                 object:
-                  $ref: ../ListingReport.yaml
+                  $ref: ListingReport.yaml

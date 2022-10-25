@@ -6,7 +6,7 @@ import { Dialog } from '@headlessui/react'
 import { Logomark } from '@/components/Logo'
 import { Navigation } from '@/components/Navigation'
 
-function MenuIcon(props) {
+function MenuIcon (props) {
   return (
     <svg
       aria-hidden="true"
@@ -21,7 +21,7 @@ function MenuIcon(props) {
   )
 }
 
-function CloseIcon(props) {
+function CloseIcon (props) {
   return (
     <svg
       aria-hidden="true"
@@ -36,14 +36,14 @@ function CloseIcon(props) {
   )
 }
 
-export function MobileNavigation({ navigation }) {
-  let router = useRouter()
-  let [isOpen, setIsOpen] = useState(false)
+export function MobileNavigation ({ navigation }) {
+  const router = useRouter()
+  const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
     if (!isOpen) return
 
-    function onRouteChange() {
+    function onRouteChange () {
       setIsOpen(false)
     }
 

@@ -1,0 +1,22 @@
+messageId: contact#plandelete
+x-scope: realestate/contact#
+summary: an action plan was created
+payload:
+  allOf:
+    - $ref: base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/contact#plandelete
+        data:
+          allOf:
+          - $ref: DeleteAction.yaml
+          - properties:
+              object:
+                type: object
+                description: the plan being deleted
+                x-range: Plan
+                example:
+                  type: Plan
+                  identifier:
+                    vendoraid: acb

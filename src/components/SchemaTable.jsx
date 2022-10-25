@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'docz'
 import entries from 'lodash/entries'
 
 const COLUMNS = [

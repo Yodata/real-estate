@@ -1,9 +1,8 @@
-import { useCallback, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import clsx from 'clsx'
 import navigation from '@/util/get-navbar-items'
-
+import { useState, useEffect, useCallback } from 'react'
 import { Hero } from '@/components/Hero'
 import { Logo, Logomark } from '@/components/Logo'
 import { MobileNavigation } from '@/components/MobileNavigation'
@@ -73,7 +72,7 @@ function useTableOfContents (tableOfContents) {
       .flatMap((node) => [node.id, ...node.children.map((child) => child.id)])
       .map((id) => {
         const el = document.getElementById(id)
-        if (!el) return
+        if (!el) return null
 
         const style = window.getComputedStyle(el)
         const scrollMt = parseFloat(style.scrollMarginTop)

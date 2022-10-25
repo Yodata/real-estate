@@ -1,0 +1,54 @@
+
+
+allOf:
+  - $ref: Organization.yaml
+  - title: RealEstateOrganization
+    description: A real estate franchisor, broker or business
+    x-range: RealEstateOrganization
+    properties:
+      type:
+        description: RealEstateOrganzation
+        enum:
+          - RealEstateOrganization
+          - RealEstateOffice
+          - RealEstateAgent
+        example: RealEstateOrganization
+
+      areaServed:
+        $ref: areaServed.yaml
+
+      description:
+        $ref: description.yaml
+        example: The number on Gotham City Real Estate Company since 1940
+
+      parentOrganization:
+        type: array
+        x-range: RealEstateOrganization
+        description:
+          A franchisor or affiliate network of which this organization plays a
+          membership role.
+        items:
+          type: string
+          format: uri
+
+      numberOfSubOrganizations:
+        type: number
+        description: the number of offices for an affiliate.
+
+
+
+
+      member:
+        $ref: member.yaml
+
+      memberOf:
+        x-range:
+          - OrganizationRole
+          - MLSMembership
+        description: An Organization (or ProgramMembership) to which this Person or Organization belongs.
+        type: array
+        items:
+          $ref: MLSMembership.yaml
+
+      permit:
+        $ref: permit-prop.yaml

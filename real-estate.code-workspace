@@ -1,0 +1,63 @@
+{
+	"folders": [
+		{
+			"name": "WORKSPACE_ROOT",
+			"path": "."
+		},
+		{
+			"name": "SCHEMAS",
+			"path": "src/schemas"
+		},
+		{
+			"name": "GENERATOR_DATA",
+			"path": "generator/data"
+		}
+	],
+	"settings": {
+		"eslint.alwaysShowStatus": true,
+		"importCost.bundleSizeDecoration": "minified",
+		"importCost.javascriptExtensions": [
+			".js",
+			".jsx",
+			".ts",
+			".tsx"
+		],
+		"gitProjectManager.displayProjectPath": true,
+		"gitProjectManager.ignoredFolders": [
+			"node_modules",
+			"__transpiled"
+		],
+		"markdown.allAvailableLanguages": false,
+		"markdown.docsetLanguages": [
+			"HTML",
+			"HTTP",
+			"JavaScript",
+			"Bash"
+		],
+		"markdown.enableMetadataDateReminder": false,
+		"markdown-preview-enhanced.enableTypographer": true,
+		"files.associations": {
+			"/template/*.js": "javascriptreact"
+		},
+		"workbench.editor.autoLockGroups": {
+			"vscode.markdown.preview.editor": true
+		},
+		"terminal.integrated.defaultProfile.osx": "zsh",
+		"terminal.integrated.minimumContrastRatio": 7,
+		"terminal.integrated.confirmOnExit": "hasChildProcesses",
+		"terminal.integrated.defaultLocation": "editor",
+		"yaml.schemaStore.enable": false,
+		"json-yaml-schema-selector.additionalSchemas": [
+			{
+				"url": "http://asyncapi.com/definitions/2.5.0/schema.json"
+			},
+			{
+				"url": "http://asyncapi.com/definitions/2.5.0/message.json"
+			},
+			{
+				"url": "http://asyncapi.com/definitions/2.5.0/channelItem.json"
+			}
+
+		],
+	}
+}

@@ -1,0 +1,16 @@
+$api:
+allOf:
+  - $ref: Action.yaml
+  - description: The act of committing to/adopting an object.
+  - x-range: AcceptAction
+    properties:
+      type:
+        enum:
+          - AcceptAction
+      agent:
+        description: the accepting user
+        type: string
+        format: uri
+        example: https://{the-user-who-accepted-the-item}.com/profile/card#me
+      object:
+        description: the accepted item

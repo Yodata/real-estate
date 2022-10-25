@@ -1,0 +1,51 @@
+
+$id: http://realestate.yodata.me/schema/award#delete
+messageId: award#delete
+name: award#delete
+title: award#delete
+summary: award deleted
+contentType: application/json
+tags:
+  - name: action|delete
+  - name: topic|award
+  - name: domain|realestate
+payload:
+  allOf:
+    - $ref: ../base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/award#delete
+        data:
+          x-range:
+            - DeleteAction
+          properties:
+            type:
+              enum:
+                - DeleteAction
+            identifier:
+              $ref: ../identifier.yaml
+              example:
+                bhhsAwardId: xxxx
+            agent:
+              $ref: ../agent.yaml
+              description: the award presentor
+            object:
+              $ref: ../AwardSeries.yaml
+              description: the award being bestowed
+              example:
+                type: AwardSeries
+                name: Agent of The Year
+                identifier:
+                  hsfAwardSeriesId: xxxx
+            recipient:
+              type: object
+              x-range:
+                - RealEstateAgent
+                - RealEstateOffice
+                - RealEstateOrganiation
+              description: profile URI of the award recipient
+              example:
+                type: RealEstateAgent
+                id: https://user.example.com/profile/card#me
+                name: Joann Agent

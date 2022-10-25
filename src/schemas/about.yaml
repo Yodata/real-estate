@@ -1,0 +1,5 @@
+
+sameAs: https://schema.org/about
+title: about
+type: object
+description: The subject matter of the content

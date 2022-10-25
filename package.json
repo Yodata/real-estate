@@ -3,18 +3,19 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "generate:production": "npx -p @asyncapi/generator ag ./asyncapi/asyncapi.yaml ./asyncapi -o ./src/pages/docs --force-write",
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "npx next dev",
+    "build": "npx next build",
+    "start": "npx next start",
+    "lint": "npx next lint",
+    "test": "npx jest",
+    "generate": "npx -p @asyncapi/generator@latest ag ./src/asyncapi.yaml ./template/data -o ./__generated__/test --force-write"
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
     "@docsearch/react": "^3.2.1",
     "@headlessui/react": "^1.7.2",
-    "@markdoc/markdoc": "0.1.7",
-    "@markdoc/next.js": "0.1.6",
+    "@markdoc/markdoc": "0.1.13",
+    "@markdoc/next.js": "0.1.10",
     "@sindresorhus/slugify": "^2.1.0",
     "@tailwindcss/typography": "^0.5.7",
     "autoprefixer": "^10.4.12",
@@ -30,15 +31,39 @@
     "tailwindcss": "^3.1.8"
   },
   "devDependencies": {
+    "@asyncapi/generator": "^1.9.13",
+    "@asyncapi/generator-react-sdk": "^0.2.25",
+    "@asyncapi/parser": "^1.17.1",
+    "@asyncapi/specs": "^4.0.0",
+    "@babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining": "^7.18.9",
     "@types/postcss-import": "^14.0.0",
     "@types/prettier": "^2.7.1",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
-    "eslint": "8.19.0",
-    "eslint-config-next": "12.2.5",
+    "eslint": "8.26.0",
+    "eslint-config-next": "12.3.1",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.31.10",
+    "jest": "^29.2.1",
+    "jest-environment-jsdom": "^29.2.1",
     "prettier": "^2.7.1",
-    "prettier-plugin-tailwindcss": "^0.1.13",
-    "standard": "^17.0.0"
+    "prettier-plugin-tailwindcss": "^0.1.13"
   },
-  "packageManager": "pnpm"
+  "generator": {
+    "renderer": "react",
+    "generator": ">=1.9.12 <2.0.0",
+    "parameters": {}
+  },
+  "pnpm": {
+    "overrides": {
+      "markdown-it@<12.3.2": ">=12.3.2",
+      "semantic-release@>=17.0.4 <19.0.3": ">=19.0.3",
+      "npm@>=7.9.0 <8.11.0": ">=8.11.0",
+      "ajv@<6.12.3": ">=6.12.3",
+      "marked@<4.0.10": ">=4.0.10"
+    }
+  }
 }

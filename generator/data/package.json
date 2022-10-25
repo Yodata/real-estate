@@ -1,0 +1,16 @@
+{
+  "name": "@yodata/real-estate-generator-data",
+  "description": "generators json data from the realestate.yodata.me/asyncapi.json file",
+  "generator": {
+    "generator": "1.9.13",
+    "renderer": "react"
+  },
+  "dependencies": {
+    "@asyncapi/generator": "^1.9.13",
+    "@asyncapi/generator-react-sdk": "^0.2.25",
+    "@asyncapi/parser": "^1.17.1"
+  },
+  "scripts": {
+    "test": "rimraf ./__generated__ && npx ag ../../src/asyncapi.yaml ./ -o ./__generated__ --force-write"
+  }
+}

@@ -134,3 +134,6 @@ asyncapi/__transpiled
 .docz
 .dist
 www/src-content/_
+
+.env.local
+__transpiled

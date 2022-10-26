@@ -26,19 +26,19 @@ const navigation = [
     ]
   },
   {
-    title: 'Topics',
+    title: 'Topics (/realestate/)',
     links: [
-      { title: 'realestate/award', href: '/docs/topic/award' },
-      { title: 'realestate/contact', href: '/docs/topic/contact' },
-      { title: 'realestaste/franchise', href: '/docs/topic/franchise' },
-      { title: 'realestaste/lead', href: '/docs/topic/lead' },
-      { title: 'realestaste/listing', href: '/docs/topic/listing' },
-      { title: 'realestaste/marketing', href: '/docs/topic/marketing' },
-      { title: 'realestaste/marketingpreferences', href: '/docs/topic/marketingpreferences' },
-      { title: 'realestaste/profile', href: '/docs/topic/profile' },
-      { title: 'realestaste/servicearea', href: '/docs/topic/servicearea' },
-      { title: 'realestaste/using-service-area', href: '/docs/topic/using-service-area' },
-      { title: 'realestaste/website', href: '/docs/topic/website' }
+      { title: 'award', href: '/docs/topic/award' },
+      { title: 'contact', href: '/docs/topic/contact' },
+      { title: 'franchise', href: '/docs/topic/franchise' },
+      { title: 'lead', href: '/docs/topic/lead' },
+      { title: 'listing', href: '/docs/topic/listing' },
+      { title: 'marketing', href: '/docs/topic/marketing' },
+      { title: 'marketingpreferences', href: '/docs/topic/marketingpreferences' },
+      { title: 'profile', href: '/docs/topic/profile' },
+      { title: 'servicearea', href: '/docs/topic/servicearea' },
+      { title: 'using-service-area', href: '/docs/topic/using-service-area' },
+      { title: 'website', href: '/docs/topic/website' }
     ]
   },
   {

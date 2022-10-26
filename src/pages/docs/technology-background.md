@@ -2,7 +2,7 @@
 title: Technology Background
 ---
 
-# Background
+## hello world.
 
 REflex is a user-centric pub/sub system that uses [Linked Data Notifications (LDN)](https://www.w3.org/TR/ldn/)
 to enable sharing and reuse of notifications across applications, regardless of how they were generated.

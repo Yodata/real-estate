@@ -47,9 +47,4 @@ test('request', () => {
     expect(res.statusCode).toBe(200)
     expect(res.body)
   })
-}
-
-  test('response', () => {
-    expect.assertions(1)
-    const payload = {
-  })
+})

@@ -1,0 +1,11 @@
+{
+  "name": "@yodata/real-estate/api/replay",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "got": "^12.5.2"
+  },
+  "devDependencies": {
+    "nock": "^13.2.9"
+  }
+}

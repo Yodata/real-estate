@@ -1,5 +1,5 @@
 {
   "scripts": {
-    "vercel-build": "next build"
+    "vercel-build": "npx next build"
   }
 }

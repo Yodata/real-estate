@@ -4,7 +4,6 @@ env:
   node: true
 extends:
   - 'plugin:react/recommended'
-  - standard
   - next
 overrides: []
 parserOptions:
@@ -13,7 +12,8 @@ parserOptions:
 plugins:
   - react
   - jest
-rules: {}
+rules:
+  no-extra-semi: 1
 
 ignorePatterns:
   - '!**/src/**/*'

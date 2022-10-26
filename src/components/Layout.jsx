@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import clsx from 'clsx'
-import navigation from '@/util/get-navbar-items'
 import { useState, useEffect, useCallback } from 'react'
 import { Hero } from '@/components/Hero'
 import { Logo, Logomark } from '@/components/Logo'
@@ -10,6 +9,61 @@ import { Navigation } from '@/components/Navigation'
 import { Prose } from '@/components/Prose'
 import { Search } from '@/components/Search'
 import { ThemeSelector } from '@/components/ThemeSelector'
+
+const navigation = [
+  {
+    title: 'Introduction',
+    links: [
+      { title: 'Getting started', href: '/' }
+    ]
+  },
+  {
+    title: 'API reference',
+    links: [
+      { title: 'publish', href: '/docs/api/publish' },
+      { title: 'subscribe', href: '/docs/subscribe' },
+      { title: 'events', href: '/docs/topic/' }
+    ]
+  },
+  {
+    title: 'Topics',
+    links: [
+      { title: 'realestate/award', href: '/docs/topic/award' },
+      { title: 'realestate/contact', href: '/docs/topic/contact' },
+      { title: 'realestaste/franchise', href: '/docs/topic/franchise' },
+      { title: 'realestaste/lead', href: '/docs/topic/lead' },
+      { title: 'realestaste/listing', href: '/docs/topic/listing' },
+      { title: 'realestaste/marketing', href: '/docs/topic/marketing' },
+      { title: 'realestaste/marketingpreferences', href: '/docs/topic/marketingpreferences' },
+      { title: 'realestaste/profile', href: '/docs/topic/profile' },
+      { title: 'realestaste/servicearea', href: '/docs/topic/servicearea' },
+      { title: 'realestaste/using-service-area', href: '/docs/topic/using-service-area' },
+      { title: 'realestaste/website', href: '/docs/topic/website' }
+    ]
+  },
+  {
+    title: 'Advanced guides',
+    links: [
+      { title: 'Writing plugins', href: '/docs/writing-plugins' },
+      { title: 'Neuralink integration', href: '/docs/neuralink-integration' },
+      { title: 'Temporal paradoxes', href: '/docs/temporal-paradoxes' },
+      { title: 'Testing', href: '/docs/testing' },
+      { title: 'Compile-time caching', href: '/docs/compile-time-caching' },
+      {
+        title: 'Predictive data generation',
+        href: '/docs/predictive-data-generation'
+      }
+    ]
+  },
+  {
+    title: 'Contributing',
+    links: [
+      { title: 'How to contribute', href: '/docs/how-to-contribute' },
+      { title: 'Architecture guide', href: '/docs/architecture-guide' },
+      { title: 'Design principles', href: '/docs/design-principles' }
+    ]
+  }
+]
 
 function GitHubIcon (props) {
   return (

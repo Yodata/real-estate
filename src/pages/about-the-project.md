@@ -1,7 +1,7 @@
 ---
-title: About
+title: About the Project
 ---
-# Let's Integrate!
+## Let's Integrate!
 
 ### About the project
 

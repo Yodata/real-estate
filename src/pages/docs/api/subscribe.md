@@ -1,6 +1,5 @@
 ---
-name: Subscribe to Data
-menu: API
+title: Subscribe to Data
 ---
 
 ## Authorization Process

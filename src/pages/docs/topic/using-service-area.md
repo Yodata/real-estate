@@ -1,24 +1,24 @@
 ---
-menu: Reference
+title: Reference
 ---
 
 # Using Service Area Data
 
 ## General Info
 
-Real estate brokerages contract with HSF Affiliates to become franchisees within one of its franchises, such as Berkshire Hathaway HomeServices.  Each franchisee has permission to complete real estate transactions within certain cities and/or postal codes.  The geographic locations within which a franchisee has permission to do business are called Effective Service Areas, or ServiceAreas.  
+Real estate brokerages contract with HSF Affiliates to become franchisees within one of its franchises, such as Berkshire Hathaway HomeServices.  Each franchisee has permission to complete real estate transactions within certain cities and/or postal codes.  The geographic locations within which a franchisee has permission to do business are called Effective Service Areas, or ServiceAreas.
 
-ServiceAreas are established for a variety of reasons.  They may be used to locate companies, route leads, and/or manage referrals.  There may be instances where a ServiceArea should be recognized for one reason but not for another.  For example, one of franchisee XX999’s ServiceAreas might be available for use in referrals but not for lead routing.  Each ServiceArea record includes attributes that specify how the information can be used.  Each vendor must look at the attribute that represents their type of business and use or ignore ServiceArea information accordingly.  
+ServiceAreas are established for a variety of reasons.  They may be used to locate companies, route leads, and/or manage referrals.  There may be instances where a ServiceArea should be recognized for one reason but not for another.  For example, one of franchisee XX999’s ServiceAreas might be available for use in referrals but not for lead routing.  Each ServiceArea record includes attributes that specify how the information can be used.  Each vendor must look at the attribute that represents their type of business and use or ignore ServiceArea information accordingly.
 
-Each franchisee has one or more offices designated as a “relocation office”.  Each of a franchisee’s ServiceAreas is assigned to a specific relocation office.  That way, if a franchisee has more than one relocation office then referrals for specific areas are always channeled to the correct location.  
+Each franchisee has one or more offices designated as a “relocation office”.  Each of a franchisee’s ServiceAreas is assigned to a specific relocation office.  That way, if a franchisee has more than one relocation office then referrals for specific areas are always channeled to the correct location.
 
-It is possible that more than one franchisee has permission to service a city or postal code.  For that reason, each ServiceArea includes a Sort Order that tells vendors the order in which to display relocation offices associated with the ServiceAreas for the selected city or postal code.  Each ServiceArea also includes a Weight so that vendors know how to route leads to franchisees’ relocation offices.  
+It is possible that more than one franchisee has permission to service a city or postal code.  For that reason, each ServiceArea includes a Sort Order that tells vendors the order in which to display relocation offices associated with the ServiceAreas for the selected city or postal code.  Each ServiceArea also includes a Weight so that vendors know how to route leads to franchisees’ relocation offices.
 
 ## Geographic Details
 
-If a franchisee services multiple cities and/or postal codes (and they usually do), then there will be multiple ServiceArea records for the franchisee – one per city or postal code that is serviced. 
+If a franchisee services multiple cities and/or postal codes (and they usually do), then there will be multiple ServiceArea records for the franchisee – one per city or postal code that is serviced.
 
-Each ServiceArea record includes a combination of data that either defines a specific city or a specific postal code serviced by the franchisee.  The kind field indicates whether it is a city or postal code being defined.  When kind = “City”, the postalCode field will not be present.  When kind = “PostalCode”, the addressLocality field will show the primary city associated with the postal code.  
+Each ServiceArea record includes a combination of data that either defines a specific city or a specific postal code serviced by the franchisee.  The kind field indicates whether it is a city or postal code being defined.  When kind = “City”, the postalCode field will not be present.  When kind = “PostalCode”, the addressLocality field will show the primary city associated with the postal code.
 
 **Example 1:** If the ServiceArea is for the city of Woodland Hills, CA then the following info would be provided.
 
@@ -78,8 +78,8 @@ Vendors using data for lead routing purposes must use the value in the additiona
 
 Vendors may only use ServiceArea data for their system when the attribute corresponding to their primary type of business is set to True.
 -   Vendors that primarily use ServiceArea data to display information in HSF’s Company Locator app must look at the value in the additionalProperty.sentToCompanyLocator field.
--   Vendors that primarily use ServiceArea data to route leads to franchisees based on searches performed in a consumer site must look at the value in the additionalProperty.sentToConsumerSite field.  
--   Vendors that primarily use ServiceArea data to support referral products must look at the value in the additionalProperty.sentToReferralSolutions field.  
+-   Vendors that primarily use ServiceArea data to route leads to franchisees based on searches performed in a consumer site must look at the value in the additionalProperty.sentToConsumerSite field.
+-   Vendors that primarily use ServiceArea data to support referral products must look at the value in the additionalProperty.sentToReferralSolutions field.
 
 Each vendor should look at only one of these attributes to determine whether or not they can use ServiceArea data, as instructed by HSF.  For example, a company supporting the consumer site will be instructed to look at the value in the additionalProperty.sentToConsumerSite field and ignore values in the additionalProperty.sentToCompanyLocator and additionalProperty.sentToReloSpec fields.
 

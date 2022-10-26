@@ -1,6 +1,5 @@
 ---
-name: Send/Receive Messages
-menu: API
+title: Send/Receive Messages
 ---
 # Send/Receive Messages
 

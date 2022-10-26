@@ -1,6 +1,5 @@
 ---
-name: Publishing Events
-menu: API
+title: Publishing Events
 ---
 
 ## Overview

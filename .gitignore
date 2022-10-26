@@ -138,8 +138,5 @@ www/src-content/_
 .env.local
 __transpiled
 context
-generator/data/__generated__/allSchemas.json
-generator/data/__generated__/asyncapi.json
-generator/data/__generated__/messages.json
-generator/data/__generated__/topics.json
-generator/data/__generated__/topics.md
+generator/**/__generated__/*
+.vercel

@@ -6,6 +6,10 @@ description: Standard events for real estate software integration and automation
 
 Learn how to use the free realestate events. {% .lead %}
 
+This document describes an event vocabulary for automating business processes across organizational boundaries in the residential real estate domain.
+
+The vocabulary and related libraries are 100% open-source software actively maintained by a small but passionate community of developers and supported by forward-thinking real estate businesses.
+
 {% quick-links %}
 
 {% quick-link title="Introduction" icon="installation" href="/about-the-project" description="Step-by-step guides to setting up your system and installing the library." /%}
@@ -68,8 +72,15 @@ Consequatur enim quia maiores aperiam et ipsum dicta. Quam ut sit facere sit qua
 
 ### Join the community
 
-Praesentium facilis iste aliquid quo quia a excepturi. Fuga reprehenderit illo sequi voluptatem voluptatem omnis. Id quia consequatur rerum consectetur eligendi et omnis. Voluptates iusto labore possimus provident praesentium id vel harum quisquam. Voluptatem provident corrupti.
+Together we can expand innovation.  Embracing open standards makes data transmision between applications a simple process.  With greater data access, and access to new types of data, we can create new products and services that enhance our industry.
 
-Eum et ut. Qui facilis est ipsa. Non facere quia sequi commodi autem. Dicta autem sit sequi omnis impedit. Eligendi amet dolorum magnam repudiandae in a.
+Join a growing community of innovative companies who embrace data standards and simplified integrations.  The easy to use developer tools will make your next integration your easiest integration.
 
-Molestiae iusto ut exercitationem dolorem unde iusto tempora atque nihil. Voluptatem velit facere laboriosam nobis ea. Consequatur rerum velit ipsum ipsam. Et qui saepe consequatur minima laborum tempore voluptatum et. Quia eveniet eaque sequi consequatur nihil eos.
+### Technical Acknowledgements
+The Real Estate vocabulary is largely based on the tremendous work being done at schema.org.
+
+Linked Data Platform and Notifications are W3C specs credited to Sarven Capadisli, University of Bonn, info@csarven.ca Amy Guy, University of Edinburgh, amy@rhiaro.co.uk Steve Speicher, IBM Corporation John Arwe, IBM Corporation Ashok Malhotra, Oracle Corporation
+
+The Profile schema comes from the SOLID project developed at MIT.
+
+And all of the above can be traced directly to the work of the incomparable Tim Berners-Lee.

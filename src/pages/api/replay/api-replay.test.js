@@ -1,50 +1,45 @@
-import api from './index'
+import { handler } from '.'
 import nock from 'nock'
+import { NextApiRequest, NextApiRespons } from 'next'
 
-
-test('can fetch test response', async t => {
-  // Set up the mock request.
-  const scope = nock('http://localhost')
-    .get('/test')
-    .reply(200, 'test response')
-
-  // Make the request. Note that the hostname must match exactly what is passed
-  // to `nock()`. Alternatively you can set `axios.defaults.host = 'http://localhost'`
-  // and run `axios.get('/test')`.
-  await axios.get('http://localhost/test')
-
-  // Assert that the expected request was made.
-  scope.done()
-})
+const request =
+{
+  "target": "https://dave.bhhs.dev.yodata.io/inbox/",
+  "items": [
+    "23d801ffd6134e628afec22cc60f192c"
+  ]
+}
 
 const response =
 {
   "agent": "post-replay",
   "object": {
-      "target": "https://dave.bhhs.dev.yodata.io/inbox/",
-      "items": [
-          "notgonnafindshit",
-          "23d801ffd6134e628afec22cc60f192c"
-      ]
+    "target": "https://dave.bhhs.dev.yodata.io/inbox/",
+    "items": [
+      "notgonnafindshit",
+      "23d801ffd6134e628afec22cc60f192c"
+    ]
   },
   "result": "replay request sent successfully",
   "actionStatus": "CompletedActionStatus"
 }
 
-const payload =
-{
-  "target": "https://dave.bhhs.dev.yodata.io/inbox/",
-  "items": [
-      "notgonnafindshit",
-      "23d801ffd6134e628afec22cc60f192c"
-  ]
-}
 
-test('request', () => {
-  expect.assertions(1)
-  return api.get('/test')
-    .then(res => {
-    expect(res.statusCode).toBe(200)
-    expect(res.body)
+test('can fetch test response', async t => {
+  const host = 'http://example.com'
+  const scope = nock(host)
+    .post('/replay', request)
+    .reply(200, response)
+    .done()
+
+  await got.post()
+
+  const res = await handler({
+    method: 'POST',
+    body: request
   })
+
+  expect(res.statusCode).toBe(200)
+  expect(res.body).toEqual(response)
+  return scope.done()
 })

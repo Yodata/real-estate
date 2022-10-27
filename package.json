@@ -1,42 +1,29 @@
 {
   "name": "@yodata/real-estate",
   "version": "1.0.0",
-  "private": true,
+  "description": "standard real estate events for software integration",
+  "main": "index.js",
   "scripts": {
-    "dev": "npx next dev",
-    "build": "npx next build",
-    "start": "npx next start",
-    "lint": "npx next lint",
-    "test": "npx jest",
-    "generate": "npx -p @asyncapi/generator@latest ag ./src/asyncapi.yaml ./template/data -o ./__generated__/test --force-write"
+    "test": "npx jest"
   },
-  "browserslist": "defaults, not ie <= 11",
-  "dependencies": {
-    "@docsearch/react": "^3.2.1",
-    "@headlessui/react": "^1.7.2",
-    "@markdoc/markdoc": "0.1.7",
-    "@markdoc/next.js": "0.1.6",
-    "@sindresorhus/slugify": "^2.1.0",
-    "@tailwindcss/typography": "^0.5.7",
-    "clsx": "^1.2.1",
-    "focus-visible": "^5.2.0",
-    "got": "^12.5.2",
-    "next": "^12.3.1",
-    "postcss-focus-visible": "^6.0.4",
-    "postcss-import": "^14.1.0",
-    "prism-react-renderer": "^1.3.5",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yodata/real-estate.git"
   },
+  "keywords": [
+    "real",
+    "estate",
+    "events",
+    "schema",
+    "yodata"
+  ],
+  "author": "yodaveduran <dave@yodata.io> (https://yodata.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Yodata/real-estate/issues"
+  },
+  "homepage": "https://github.com/Yodata/real-estate#readme",
   "devDependencies": {
-    "autoprefixer": "^10.4.12",
-    "eslint": "8.19.0",
-    "eslint-config-next": "12.2.5",
-    "eslint-plugin-jest": "^27.1.3",
-    "nock": "^13.2.9",
-    "postcss": "^8.4.18",
-    "prettier": "^2.7.1",
-    "prettier-plugin-tailwindcss": "^0.1.13",
-    "tailwindcss": "^3.2.1"
+    "husky": "^8.0.1"
   }
 }

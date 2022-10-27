@@ -1,8 +1,12 @@
 {
 	"folders": [
 		{
-			"name": "ROOT",
-			"path": "."
+			"name": "WEBSITE",
+			"path": "src"
+		},
+		{
+			"name": "API/REPLAY",
+			"path": "src/pages/api/replay"
 		},
 		{
 			"name": "SCHEMAS",
@@ -13,13 +17,10 @@
 			"path": "generator"
 		},
 		{
-			"name": "WEBSITE",
-			"path": "src"
+			"name": "ROOT",
+			"path": "."
 		},
-		{
-			"name": "API/REPLAY",
-			"path": "src/pages/api/replay"
-		}
+
 	],
 	"settings": {
 		"eslint.alwaysShowStatus": true,

@@ -52,7 +52,7 @@ export function Hero () {
                 Standard Events for Real Estate Software Integration
               </p>
               <p className="mt-3 text-2xl tracking-tight text-slate-400">
-                Used in producction for 3+ years by more than 40 companies.
+                Used in production for 3+ years by more than 40 companies.
               </p>
               <div className="mt-8 flex gap-4 md:justify-center lg:justify-start">
                 <Button href="/">Get started</Button>

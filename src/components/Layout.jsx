@@ -42,9 +42,9 @@ const navigation = [
     ]
   },
   {
-    title: 'Advanced guides',
+    title: 'References',
     links: [
-      { title: 'Writing plugins', href: '/docs/writing-plugins' },
+      { title: 'About the project', href: '/about-the-project' },
       { title: 'Neuralink integration', href: '/docs/neuralink-integration' },
       { title: 'Temporal paradoxes', href: '/docs/temporal-paradoxes' },
       { title: 'Testing', href: '/docs/testing' },

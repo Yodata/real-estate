@@ -1,10 +1,10 @@
 ---
- franchise
+title: franchise
 menu: Topics
 route: /topic/franchise
 ---
 
-# franchise
+## franchise
 
 
 

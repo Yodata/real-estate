@@ -2,7 +2,7 @@
 title: Data Model
 ---
 
-# Data Model
+## Data Model
 
 The data model is derived from https://schema.org/, whch is  derived from [RDF Schema](https://en.wikipedia.org/wiki/RDF_Schema) (which in turn was derived from [CycL](https://en.wikipedia.org/wiki/CycL), which in turn ...).
 

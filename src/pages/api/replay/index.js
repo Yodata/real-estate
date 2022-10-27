@@ -14,8 +14,7 @@ export default async function handler(request, response) {
   return got.post(target, {
     json: request.body
   }).then(res => {
-    const {data, statusCode, statusMessage, body, json} = res
-    // logger.json({data, statusCode, statusMessage, body, json})
+
     response.status(res.statusCode).json(JSON.parse(res.body))
   })
     .catch(error => {

@@ -1,38 +1,62 @@
-# Syntax
+---
+title: About the Project
+---
+## Let's Integrate!
 
-Syntax is a [Tailwind UI](https://tailwindui.com) site template built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
+### About the project
 
-## Getting started
+A community of software developers working to make real estate
+application and data integration easier and to create an ecosystem of
+rapid innovation through the magic of shared data models, open source
+and common sense.
 
-To get started with this template, first install the npm dependencies:
+### Project Mission & Goals
 
-```bash
-npm install
-cp .env.example .env.local
-```
+- Decentralized data (Customer Control.)
+- Software is integrated by default.
+- No vendor lock-in.
+- No customer lock-out!
+- Open source, plug-and-play APIs to build-on.  Fast.
 
-Next, run the development server:
+### Who's in?
 
-```bash
-npm run dev
-```
+We are a community of software developers working to make better real estate software.
 
-Finally, open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
+- Yodata
+- Home Services of America
+- ActivePipe
+- Adwerks
+- Buyside
+- Chalk Digital
+- Constellation Real Estate Group
+- eRelocation
+- Guru
+- Homespotter
+- Homestory
+- Juwai
+- LiveBy
+- Lone Wolf
+- MoveEasy
+- Moxiworks
+- Orion
+- PhotFy
+- Prospect Converter
+- Rate My Agent
+- Raven 360
+- Real Estate Digital
+- Reliance Network
+- RELOSpec
+- RIS Media
+- RoqLogic
+- Soci
+- SocialBoost
+- Sold.com
+- Testimonial Tree
+- Truelogic
+- Xpressdocs
 
-## Customizing
 
-You can start editing this template by modifying the files in the `/src` folder. The site will auto-update as you edit these files.
+### Are you in?
 
-## License
+Contact us dave@yodata.io
 
-This site template is a commercial product and is licensed under the [Tailwind UI license](https://tailwindui.com/license).
-
-## Learn more
-
-To learn more about the technologies used in this site template, see the following resources:
-
-- [Tailwind CSS](https://tailwindcss.com/docs) - the official Tailwind CSS documentation
-- [Next.js](https://nextjs.org/docs) - the official Next.js documentation
-- [Headless UI](https://headlessui.dev) - the official Headless UI documentation
-- [Markdoc](https://markdoc.io) - the official Markdoc documentation
-- [DocSearch](https://docsearch.algolia.com) - the official DocSearch documentation

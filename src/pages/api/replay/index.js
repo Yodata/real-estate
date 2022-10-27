@@ -12,7 +12,7 @@ import got from 'got'
 export default function handler(request, response) {
   const staging = 'https://gxlejs63x9.execute-api.us-west-2.amazonaws.com/replay'
   const test = 'http://example.com/replay'
-  const target = process.env.REPLAY_TARGET || test || staging
+  const target = process.env.REPLAY_TARGET || staging || test
   return got.json(target, request.body)
     .then(res => {
     })

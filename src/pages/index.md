@@ -12,11 +12,11 @@ The vocabulary and related libraries are 100% open-source software actively main
 
 {% quick-links %}
 
-{% quick-link title="Introduction" icon="installation" href="/about-the-project" description="Step-by-step guides to setting up your system and installing the library." /%}
+{% quick-link title="About the project" icon="installation" href="/about-the-project" description="A community of vendors and practitioners making data integration easier." /%}
 
-{% quick-link title="Architecture guide" icon="presets" href="/" description="Learn how the internals work and contribute." /%}
+{% quick-link title="Data Model" icon="presets" href="/data-model" description="Creating open models to standardize data." /%}
 
-{% quick-link title="Plugins" icon="plugins" href="/" description="Extend the library with third-party plugins or write your own." /%}
+{% quick-link title="Technology Background" icon="plugins" href="/" description="How it works." /%}
 
 {% quick-link title="API reference" icon="theming" href="/" description="Learn to easily customize and modify your app's visual design to fit your brand." /%}
 

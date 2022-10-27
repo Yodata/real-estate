@@ -16,7 +16,7 @@ The vocabulary and related libraries are 100% open-source software actively main
 
 {% quick-link title="Data Model" icon="presets" href="/docs/data-model" description="Creating open models to standardize data." /%}
 
-{% quick-link title="Technology Background" icon="plugins" href="/" description="How it works." /%}
+{% quick-link title="Technology Background" icon="plugins" href="/docs/technology-background" description="How it works." /%}
 
 {% quick-link title="API reference" icon="theming" href="/" description="Learn to easily customize and modify your app's visual design to fit your brand." /%}
 

@@ -28,13 +28,13 @@ Utilize the developer tools to build and manager your APIs.
 
 ---
 
-### Join the community
+## Join the community
 
 Together we can expand innovation.  Embracing open standards makes data transmision between applications a simple process.  With greater data access, and access to new types of data, we can create new products and services that enhance our industry.
 
 Join a growing community of innovative companies who embrace data standards and simplified integrations.  The easy to use developer tools will make your next integration your easiest integration.
 
-### Technical Acknowledgements
+## Technical Acknowledgements
 The Real Estate vocabulary is largely based on the tremendous work being done at schema.org.
 
 Linked Data Platform and Notifications are W3C specs credited to Sarven Capadisli, University of Bonn, info@csarven.ca Amy Guy, University of Edinburgh, amy@rhiaro.co.uk Steve Speicher, IBM Corporation John Arwe, IBM Corporation Ashok Malhotra, Oracle Corporation

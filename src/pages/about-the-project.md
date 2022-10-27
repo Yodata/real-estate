@@ -5,8 +5,8 @@ title: About the Project
 
 ### About the project
 
-An community of software developers working to make real estate
-application and data integration easier and create an ecosystem of
+A community of software developers working to make real estate
+application and data integration easier and to create an ecosystem of
 rapid innovation through the magic of shared data models, open source
 and common sense.
 
@@ -23,14 +23,38 @@ and common sense.
 We are a community of software developers working to make better real estate software.
 
 - Yodata
-- Real Estate Digital
-- RoqLogic
+- Home Services of America
+- ActivePipe
+- Adwerks
+- Buyside
+- Chalk Digital
+- Constellation Real Estate Group
+- eRelocation
+- Guru
+- Homespotter
+- Homestory
+- Juwai
+- LiveBy
+- Lone Wolf
+- MoveEasy
 - Moxiworks
-- HSF
-- Real-Living
-- SmarterAgent
-- Imprev
-- Contactually
+- Orion
+- PhotFy
+- Prospect Converter
+- Rate My Agent
+- Raven 360
+- Real Estate Digital
+- Reliance Network
+- RELOSpec
+- RIS Media
+- RoqLogic
+- Soci
+- SocialBoost
+- Sold.com
+- Testimonial Tree
+- Truelogic
+- Xpressdocs
+
 
 ### Are you in?
 

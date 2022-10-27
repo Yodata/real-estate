@@ -8,6 +8,7 @@ specifiers:
   '@markdoc/next.js': 0.1.6
   '@sindresorhus/slugify': ^2.1.0
   '@tailwindcss/typography': ^0.5.7
+  '@types/react': ^18.0.23
   autoprefixer: ^10.4.12
   clsx: ^1.2.1
   eslint: 8.19.0
@@ -31,7 +32,7 @@ specifiers:
   typescript: ^4.8.4
 
 dependencies:
-  '@docsearch/react': 3.3.0_ftygaz6e6e5e4cecsqmsnm4myu
+  '@docsearch/react': 3.3.0_4mdvn5gl4vbbvabne2xxb7fpaa
   '@headlessui/react': 1.7.3_biqbaboplfbrettd7655fr4n2y
   '@markdoc/markdoc': 0.1.7
   '@markdoc/next.js': 0.1.6_kzxf2m5znf57ls2c4eyt7resga
@@ -49,6 +50,7 @@ dependencies:
 
 devDependencies:
   '@algolia/client-search': 4.14.2
+  '@types/react': 18.0.23
   autoprefixer: 10.4.12_postcss@8.4.18
   eslint: 8.19.0
   eslint-config-next: 12.2.5_baqe24dl4g2yeaom2kijju3o74
@@ -209,7 +211,7 @@ packages:
     resolution: {integrity: sha512-rODCdDtGyudLj+Va8b6w6Y85KE85bXRsps/R4Yjwt5vueXKXZQKYw0aA9knxLBT6a/bI/GMrAcmCR75KYOM6hg==}
     dev: false
 
-  /@docsearch/react/3.3.0_ftygaz6e6e5e4cecsqmsnm4myu:
+  /@docsearch/react/3.3.0_4mdvn5gl4vbbvabne2xxb7fpaa:
     resolution: {integrity: sha512-fhS5adZkae2SSdMYEMVg6pxI5a/cE+tW16ki1V0/ur4Fdok3hBRkmN/H8VvlXnxzggkQIIRIVvYPn00JPjen3A==}
     peerDependencies:
       '@types/react': '>= 16.8.0 < 19.0.0'
@@ -226,6 +228,7 @@ packages:
       '@algolia/autocomplete-core': 1.7.2
       '@algolia/autocomplete-preset-algolia': 1.7.2_qs6lk5nhygj2o3hj4sf6xnr724
       '@docsearch/css': 3.3.0
+      '@types/react': 18.0.23
       algoliasearch: 4.14.2
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -590,6 +593,19 @@ packages:
   /@types/node/18.11.7:
     resolution: {integrity: sha512-LhFTglglr63mNXUSRYD8A+ZAIu5sFqNJ4Y2fPuY7UlrySJH87rRRlhtVmMHplmfk5WkoJGmDjE9oiTfyX94CpQ==}
     dev: true
+
+  /@types/prop-types/15.7.5:
+    resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
+
+  /@types/react/18.0.23:
+    resolution: {integrity: sha512-R1wTULtCiJkudAN2DJGoYYySbGtOdzZyUWAACYinKdiQC8auxso4kLDUhQ7AJ2kh3F6A6z4v69U6tNY39hihVQ==}
+    dependencies:
+      '@types/prop-types': 15.7.5
+      '@types/scheduler': 0.16.2
+      csstype: 3.1.1
+
+  /@types/scheduler/0.16.2:
+    resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
 
   /@types/semver/7.3.13:
     resolution: {integrity: sha512-21cFJr9z3g5dW8B0CVI9g2O9beqaThGQ6ZFBqHfwhzLDKUxaqTIy3vnfah/UPkfOiF2pLq+tGz+W8RyCskuslw==}
@@ -1065,6 +1081,9 @@ packages:
     dependencies:
       cssom: 0.3.8
     dev: true
+
+  /csstype/3.1.1:
+    resolution: {integrity: sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==}
 
   /damerau-levenshtein/1.0.8:
     resolution: {integrity: sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==}

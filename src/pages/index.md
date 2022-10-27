@@ -14,7 +14,7 @@ The vocabulary and related libraries are 100% open-source software actively main
 
 {% quick-link title="About the project" icon="installation" href="/about-the-project" description="A community of vendors and practitioners making data integration easier." /%}
 
-{% quick-link title="Data Model" icon="presets" href="/data-model" description="Creating open models to standardize data." /%}
+{% quick-link title="Data Model" icon="presets" href="/docs/data-model" description="Creating open models to standardize data." /%}
 
 {% quick-link title="Technology Background" icon="plugins" href="/" description="How it works." /%}
 

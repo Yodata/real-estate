@@ -1,7 +1,6 @@
 ---
 title: Send/Receive Messages
 ---
-# Send/Receive Messages
 
 ## Process
 

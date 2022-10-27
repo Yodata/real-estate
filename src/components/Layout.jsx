@@ -21,8 +21,8 @@ const navigation = [
     title: 'API reference',
     links: [
       { title: 'publish', href: '/docs/api/publish' },
-      { title: 'subscribe', href: '/docs/subscribe' },
-      { title: 'events', href: '/docs/topic/' }
+      { title: 'subscribe', href: '/docs/api/subscribe' },
+      { title: 'events', href: '/docs/api/events/' }
     ]
   },
   {

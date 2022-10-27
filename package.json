@@ -4,7 +4,6 @@
   "description": "standard real estate events for software integration",
   "main": "index.js",
   "scripts": {
-    "test": "npx jest"
   },
   "repository": {
     "type": "git",

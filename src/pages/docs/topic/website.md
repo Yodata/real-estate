@@ -1,27 +1,90 @@
 ---
-title: website
+ website
+menu: Topics
+route: /topic/website
 ---
 
-## Operations### SUB `website` Operation
+# website
 
-Accepts **one of** the following messages:
 
-#### Message `website#askquestion`
 
-*website user asks a question*
+### publishing website events
+Publish events by HTTP POST to your own pods `/publish/` endpoint including the topic, recipient and message body.]
 
-##### Payload
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
-| (root) | allOf | - | - | - | **additional properties are allowed** |
 
-> Examples of payload _(generated)_
+### Example
+```http
+POST /publish/ HTTP/1.1
+Host: # { your pod host url }
+x-api-key: # { your api key }
+Content-Type: application/json
 
+{
+  "topic": "https://realestate/{topic}#{event}",
+  "recipient": # the publishing pod,
+  "@context": # optional transformation context,
+  "data": {
+    "type": "{Action}
+  }
+
+}
+```
+
+
+### receiving website events
+
+| Event | Description |
+| :---- | :---------- |
+| [realestate/website#askquestion](#askquestion) | website user asks a question |
+| [realestate/website#listingoffer](#listingoffer) | website user makes a listing offer |
+| [realestate/website#register](#register) | website user has registered on the website. |
+| [realestate/website#requestappointment](#requestappointment) | website user has requested an appointment |
+| [realestate/website#requestshowing](#requestshowing) | a website visitor has requested a property showing |
+| [realestate/website#saveproperty](#saveproperty) | website user (agent) saved a property |
+| [realestate/website#propertysearchsave](#propertysearchsave) | website user (agent) saves a property search (object), on a website or mobile app (instrument) |
+| [realestate/website#searchproperties](#searchproperties) | a website user has performed a property search |
+| [realestate/website#shareproperty](#shareproperty) | agent shared object with recipient |
+| [realestate/website#sharepropertyvaluereport](#sharepropertyvaluereport) | agent shared object with recipient |
+| [realestate/website#viewproperty](#viewproperty) | website user (data.agent) has viewed a listing (data.object) on a webiste or mobile app (data.instrument) |
+| [realestate/website#viewpropertyvaluereort](#viewpropertyvaluereort) | website user (data.agent) has viewed a propvery value report (data.object) on a webiste or mobile app (data.instrument) |
+
+
+---
+## askquestion
+```
+realestate/website#askquestion
+```
+
+website user asks a question
+
+
+
+### Schema
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | realestate/website#askquestion  |
+| time | string&lt;date-time&gt; ! | date & time the event was produced  |
+| agent | string&lt;uri&gt; ! | the user,tema or organization who sent the event  |
+| instrument | string&lt;uri&gt; ! | the service which created the event  |
+| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
+| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
+| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
+| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
+| data | object | a schema.org/AskAction  |
+| data.type | string! | The item type (Linked-Data @type)  |
+| data.agent | object! | the website user <br/>RANGE: [Contact](/types/Contact), [Person](/types/Person) |
+| data.participant | [object] | a RealEstateAgent,RealEstateTeam,RealEstateOrganization to be notified about the event <br/>RANGE: [Person](/types/Person), [RealEstateAgent](/types/RealEstateAgent), [RealEstateTeam](/types/RealEstateTeam), [RealEstateOrganization](/types/RealEstateOrganization) |
+| data.instrument | object | website or mobile application <br/>RANGE: [RealEstateWebsite](/types/RealEstateWebsite), [MobileApplication](/types/MobileApplication), [Thing](/types/Thing) |
+| data.object | object! | the question. <br/>RANGE: [Question](/types/Question) |
+| data.recipient | object! | the agent being asked <br/>RANGE: [RealEstateAgent](/types/RealEstateAgent), [RealEstateOffice](/types/RealEstateOffice), [RealEstateOrganization](/types/RealEstateOrganization) |
+| data.about | object | subject of the question <br/>RANGE: [PropertyListing](/types/PropertyListing), [Thing](/types/Thing) |
+
+### Example
 ```json
 {
   "topic": "realestate/website#askquestion",
-  "time": "2019-08-24T14:15:22Z",
+  "time": "2022-10-12T01:13:43Z",
   "agent": "https://agentid.example.com/profile/card#me",
   "instrument": "https://vendorid.example.com/profile/card#me",
   "source": "https://companyid.example.com/profile/card#me",
@@ -47,12 +110,9 @@ Accepts **one of** the following messages:
     },
     "participant": [
       {
-        "type": "Contact",
-        "name": "Bruce Wayne",
-        "email": "bruce@example.com",
-        "identifier": {
-          "redContact_GUID": "92d0a096-457e-4643-ace8-fa95b6bdb1c5"
-        }
+        "type": "RealEstateAgent",
+        "id": "https://robin.example.com/profile/card#me",
+        "name": "Robin"
       }
     ],
     "instrument": {
@@ -89,27 +149,44 @@ Accepts **one of** the following messages:
 ```
 
 
-#### Message extensions
+[back to top](#)
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
+---
+## listingoffer
+```
+realestate/website#listingoffer
+```
 
-#### Message `website#listingoffer`
+website user makes a listing offer
 
-*website user makes a listing offer*
 
-##### Payload
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
-| (root) | allOf | - | - | - | **additional properties are allowed** |
+### Schema
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | realestate/website#listingoffer  |
+| time | string&lt;date-time&gt; ! | date & time the event was produced  |
+| agent | string&lt;uri&gt; ! | the user,tema or organization who sent the event  |
+| instrument | string&lt;uri&gt; ! | the service which created the event  |
+| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
+| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
+| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
+| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
+| data | object | an offer is made to buy a PropertyListing <br/>RANGE: [ListingOffer](/types/ListingOffer) |
+| data.type | string! | The item type (Linked-Data @type)  |
+| data.agent | object! | the Person or Contact who makes the offer <br/>RANGE: [Contact](/types/Contact), [Person](/types/Person) |
+| data.participant | [object] | a RealEstateAgent,RealEstateTeam,RealEstateOrganization to be notified about the event <br/>RANGE: [Person](/types/Person), [RealEstateAgent](/types/RealEstateAgent), [RealEstateTeam](/types/RealEstateTeam), [RealEstateOrganization](/types/RealEstateOrganization) |
+| data.instrument | object | website or mobile application <br/>RANGE: [RealEstateWebsite](/types/RealEstateWebsite), [MobileApplication](/types/MobileApplication), [Thing](/types/Thing) |
+| data.object | object! |  <br/>RANGE: [Comment](/types/Comment), [Question](/types/Question) |
+| data.offerPrice | object! | the offer price or range <br/>RANGE: [PriceSpecification](/types/PriceSpecification) |
+| data.propertyListing | object | the listing on which the offer is made.  |
+| data.recipient | object! | listing agent or offer recipient <br/>RANGE: [RealEstateAgent](/types/RealEstateAgent), [RealEstateOrganization](/types/RealEstateOrganization) |
 
-> Examples of payload _(generated)_
-
+### Example
 ```json
 {
   "topic": "realestate/website#listingoffer",
-  "time": "2019-08-24T14:15:22Z",
+  "time": "2022-10-12T01:13:43Z",
   "agent": "https://agentid.example.com/profile/card#me",
   "instrument": "https://vendorid.example.com/profile/card#me",
   "source": "https://companyid.example.com/profile/card#me",
@@ -118,15 +195,26 @@ Accepts **one of** the following messages:
   "@id": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
   "data": {
     "type": "ListingOffer",
-    "agent": null,
+    "agent": {
+      "type": "Contact",
+      "name": "Miles Davis",
+      "givenName": "Miles",
+      "familyName": "Davis",
+      "telephone": "067-419-1230",
+      "email": "user@example.com",
+      "identifier": {
+        "hsfconsumerid": "216bf670-0777-43db-9d73-c3377d280fe4"
+      },
+      "additionalProperty": {
+        "userPath": "xxx",
+        "workingWithAgent": true
+      }
+    },
     "participant": [
       {
-        "type": "Contact",
-        "name": "Bruce Wayne",
-        "email": "bruce@example.com",
-        "identifier": {
-          "redContact_GUID": "92d0a096-457e-4643-ace8-fa95b6bdb1c5"
-        }
+        "type": "RealEstateAgent",
+        "id": "https://robin.example.com/profile/card#me",
+        "name": "Robin"
       }
     ],
     "instrument": {
@@ -170,27 +258,41 @@ Accepts **one of** the following messages:
 ```
 
 
-#### Message extensions
+[back to top](#)
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
+---
+## register
+```
+realestate/website#register
+```
 
-#### Message `website#register`
+website user has registered on the website.
 
-*website user has registered on the website.*
 
-##### Payload
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
-| (root) | allOf | - | - | - | **additional properties are allowed** |
+### Schema
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | "realestate/website#register"  |
+| time | string&lt;date-time&gt; ! | date & time the event was produced  |
+| agent | string&lt;uri&gt; ! | the user,tema or organization who sent the event  |
+| instrument | string&lt;uri&gt; ! | the service which created the event  |
+| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
+| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
+| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
+| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
+| data | object | the user (agent) has created a website account. <br/>RANGE: [RegisterAction](/types/RegisterAction) |
+| data.type | string! | the action type  |
+| data.agent | object! | the registering user <br/>RANGE: [Contact](/types/Contact), [Person](/types/Person) |
+| data.participant | [object] | a RealEstateAgent,RealEstateTeam,RealEstateOrganization to be notified about the event <br/>RANGE: [Person](/types/Person), [RealEstateAgent](/types/RealEstateAgent), [RealEstateTeam](/types/RealEstateTeam), [RealEstateOrganization](/types/RealEstateOrganization) |
+| data.instrument | object | website or mobile application <br/>RANGE: [RealEstateWebsite](/types/RealEstateWebsite), [MobileApplication](/types/MobileApplication), [Thing](/types/Thing) |
+| data.object | object! | the site, app or service being on which the user is registered <br/>RANGE: [RealEstateWebsite](/types/RealEstateWebsite), [MobileApplication](/types/MobileApplication) |
 
-> Examples of payload _(generated)_
-
+### Example
 ```json
 {
   "topic": "realestate/website#register",
-  "time": "2019-08-24T14:15:22Z",
+  "time": "2022-10-12T01:13:43Z",
   "agent": "https://agentid.example.com/profile/card#me",
   "instrument": "https://vendorid.example.com/profile/card#me",
   "source": "https://companyid.example.com/profile/card#me",
@@ -199,15 +301,26 @@ Accepts **one of** the following messages:
   "@id": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
   "data": {
     "type": "RegisterAction",
-    "agent": null,
+    "agent": {
+      "type": "Contact",
+      "name": "Miles Davis",
+      "givenName": "Miles",
+      "familyName": "Davis",
+      "telephone": "067-419-1230",
+      "email": "user@example.com",
+      "identifier": {
+        "hsfconsumerid": "216bf670-0777-43db-9d73-c3377d280fe4"
+      },
+      "additionalProperty": {
+        "userPath": "xxx",
+        "workingWithAgent": true
+      }
+    },
     "participant": [
       {
-        "type": "Contact",
-        "name": "Bruce Wayne",
-        "email": "bruce@example.com",
-        "identifier": {
-          "redContact_GUID": "92d0a096-457e-4643-ace8-fa95b6bdb1c5"
-        }
+        "type": "RealEstateAgent",
+        "id": "https://robin.example.com/profile/card#me",
+        "name": "Robin"
       }
     ],
     "instrument": {
@@ -223,27 +336,42 @@ Accepts **one of** the following messages:
 ```
 
 
-#### Message extensions
+[back to top](#)
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
+---
+## requestappointment
+```
+realestate/website#requestappointment
+```
 
-#### Message `website#requestappointment`
+website user has requested an appointment
 
-*website user has requested an appointment*
 
-##### Payload
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
-| (root) | allOf | - | - | - | **additional properties are allowed** |
+### Schema
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | "realestate/website#requestappointment"  |
+| time | string&lt;date-time&gt; ! | date & time the event was produced  |
+| agent | string&lt;uri&gt; ! | the user,tema or organization who sent the event  |
+| instrument | string&lt;uri&gt; ! | the service which created the event  |
+| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
+| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
+| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
+| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
+| data | object | the event payload, typeically a schema.org/Action  |
+| data.type | string! | "RequestAppointmentAction"  |
+| data.agent | object! | the website user requesting the appointment <br/>RANGE: [Contact](/types/Contact), [Person](/types/Person) |
+| data.participant | [object] | a RealEstateAgent,RealEstateTeam,RealEstateOrganization to be notified about the event <br/>RANGE: [Person](/types/Person), [RealEstateAgent](/types/RealEstateAgent), [RealEstateTeam](/types/RealEstateTeam), [RealEstateOrganization](/types/RealEstateOrganization) |
+| data.instrument | object | website or mobile application <br/>RANGE: [RealEstateWebsite](/types/RealEstateWebsite), [MobileApplication](/types/MobileApplication), [Thing](/types/Thing) |
+| data.object | object! | webform content submitted by the agent <br/>RANGE: [Question](/types/Question) |
+| data.recipient | object | the recipient <br/>RANGE: [Person](/types/Person), [Organization](/types/Organization) |
 
-> Examples of payload _(generated)_
-
+### Example
 ```json
 {
   "topic": "realestate/website#requestappointment",
-  "time": "2019-08-24T14:15:22Z",
+  "time": "2022-10-12T01:13:43Z",
   "agent": "https://agentid.example.com/profile/card#me",
   "instrument": "https://vendorid.example.com/profile/card#me",
   "source": "https://companyid.example.com/profile/card#me",
@@ -252,15 +380,26 @@ Accepts **one of** the following messages:
   "@id": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
   "data": {
     "type": "RequestAppointmentAction",
-    "agent": null,
+    "agent": {
+      "type": "Contact",
+      "name": "Miles Davis",
+      "givenName": "Miles",
+      "familyName": "Davis",
+      "telephone": "067-419-1230",
+      "email": "user@example.com",
+      "identifier": {
+        "hsfconsumerid": "216bf670-0777-43db-9d73-c3377d280fe4"
+      },
+      "additionalProperty": {
+        "userPath": "xxx",
+        "workingWithAgent": true
+      }
+    },
     "participant": [
       {
-        "type": "Contact",
-        "name": "Bruce Wayne",
-        "email": "bruce@example.com",
-        "identifier": {
-          "redContact_GUID": "92d0a096-457e-4643-ace8-fa95b6bdb1c5"
-        }
+        "type": "RealEstateAgent",
+        "id": "https://robin.example.com/profile/card#me",
+        "name": "Robin"
       }
     ],
     "instrument": {
@@ -281,27 +420,44 @@ Accepts **one of** the following messages:
 ```
 
 
-#### Message extensions
+[back to top](#)
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
+---
+## requestshowing
+```
+realestate/website#requestshowing
+```
 
-#### Message `website#requestshowing`
+a website visitor has requested a property showing
 
-*a website visitor has requested a property showing*
 
-##### Payload
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
-| (root) | allOf | - | - | - | **additional properties are allowed** |
+### Schema
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | "realestate/website#requestshowing"  |
+| time | string&lt;date-time&gt; ! | date & time the event was produced  |
+| agent | string&lt;uri&gt; ! | the user,tema or organization who sent the event  |
+| instrument | string&lt;uri&gt; ! | the service which created the event  |
+| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
+| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
+| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
+| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
+| data | object | the event payload, typeically a schema.org/Action  |
+| data.type | string! | "RequestShowingAction"  |
+| data.agent | object! | website user requesting the showing <br/>RANGE: [Contact](/types/Contact), [Person](/types/Person) |
+| data.participant | [object] | a RealEstateAgent,RealEstateTeam,RealEstateOrganization to be notified about the event <br/>RANGE: [Person](/types/Person), [RealEstateAgent](/types/RealEstateAgent), [RealEstateTeam](/types/RealEstateTeam), [RealEstateOrganization](/types/RealEstateOrganization) |
+| data.instrument | object | website or mobile application <br/>RANGE: [RealEstateWebsite](/types/RealEstateWebsite), [MobileApplication](/types/MobileApplication), [Thing](/types/Thing) |
+| data.object | object! | A specific question - e.g. from a user seeking answers online, or collected in a Frequently Asked Questions (FAQ) document. <br/>RANGE: [Question](/types/Question) |
+| data.about | object | the PropertyListing <br/>RANGE: [PropertyListing](/types/PropertyListing) |
+| data.event | object | An event happening at a certain time and location <br/>RANGE: [Event](/types/Event) |
+| data.recipient | object | the assigned agent <br/>RANGE: [Person](/types/Person), [Organization](/types/Organization) |
 
-> Examples of payload _(generated)_
-
+### Example
 ```json
 {
   "topic": "realestate/website#requestshowing",
-  "time": "2019-08-24T14:15:22Z",
+  "time": "2022-10-12T01:13:43Z",
   "agent": "https://agentid.example.com/profile/card#me",
   "instrument": "https://vendorid.example.com/profile/card#me",
   "source": "https://companyid.example.com/profile/card#me",
@@ -310,15 +466,26 @@ Accepts **one of** the following messages:
   "@id": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
   "data": {
     "type": "RequestShowingAction",
-    "agent": null,
+    "agent": {
+      "type": "Contact",
+      "name": "Miles Davis",
+      "givenName": "Miles",
+      "familyName": "Davis",
+      "telephone": "067-419-1230",
+      "email": "user@example.com",
+      "identifier": {
+        "hsfconsumerid": "216bf670-0777-43db-9d73-c3377d280fe4"
+      },
+      "additionalProperty": {
+        "userPath": "xxx",
+        "workingWithAgent": true
+      }
+    },
     "participant": [
       {
-        "type": "Contact",
-        "name": "Bruce Wayne",
-        "email": "bruce@example.com",
-        "identifier": {
-          "redContact_GUID": "92d0a096-457e-4643-ace8-fa95b6bdb1c5"
-        }
+        "type": "RealEstateAgent",
+        "id": "https://robin.example.com/profile/card#me",
+        "name": "Robin"
       }
     ],
     "instrument": {
@@ -362,27 +529,41 @@ Accepts **one of** the following messages:
 ```
 
 
-#### Message extensions
+[back to top](#)
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
+---
+## saveproperty
+```
+realestate/website#saveproperty
+```
 
-#### Message `website#saveproperty`
+website user (agent) saved a property
 
-*website user (agent) saved a property*
 
-##### Payload
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
-| (root) | allOf | - | - | - | **additional properties are allowed** |
+### Schema
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | "realestate/website#saveproperty"  |
+| time | string&lt;date-time&gt; ! | date & time the event was produced  |
+| agent | string&lt;uri&gt; ! | the user,tema or organization who sent the event  |
+| instrument | string&lt;uri&gt; ! | the service which created the event  |
+| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
+| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
+| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
+| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
+| data | object | An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role. <br/>RANGE: [SaveAction](/types/SaveAction) |
+| data.type | string! | the action type  |
+| data.agent | object! | the website user who performed the action <br/>RANGE: [Contact](/types/Contact), [Person](/types/Person) |
+| data.participant | [object] | a RealEstateAgent,RealEstateTeam,RealEstateOrganization to be notified about the event <br/>RANGE: [Person](/types/Person), [RealEstateAgent](/types/RealEstateAgent), [RealEstateTeam](/types/RealEstateTeam), [RealEstateOrganization](/types/RealEstateOrganization) |
+| data.instrument | object | website or mobile application <br/>RANGE: [RealEstateWebsite](/types/RealEstateWebsite), [MobileApplication](/types/MobileApplication), [Thing](/types/Thing) |
+| data.object | object! | the properting that was saved <br/>RANGE: [PropertyListing](/types/PropertyListing) |
 
-> Examples of payload _(generated)_
-
+### Example
 ```json
 {
   "topic": "realestate/website#saveproperty",
-  "time": "2019-08-24T14:15:22Z",
+  "time": "2022-10-12T01:13:43Z",
   "agent": "https://agentid.example.com/profile/card#me",
   "instrument": "https://vendorid.example.com/profile/card#me",
   "source": "https://companyid.example.com/profile/card#me",
@@ -408,12 +589,9 @@ Accepts **one of** the following messages:
     },
     "participant": [
       {
-        "type": "Contact",
-        "name": "Bruce Wayne",
-        "email": "bruce@example.com",
-        "identifier": {
-          "redContact_GUID": "92d0a096-457e-4643-ace8-fa95b6bdb1c5"
-        }
+        "type": "RealEstateAgent",
+        "id": "https://robin.example.com/profile/card#me",
+        "name": "Robin"
       }
     ],
     "instrument": {
@@ -441,27 +619,41 @@ Accepts **one of** the following messages:
 ```
 
 
-#### Message extensions
+[back to top](#)
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
+---
+## propertysearchsave
+```
+realestate/website#propertysearchsave
+```
 
-#### Message `website#propertysearchsave`
+website user (agent) saves a property search (object), on a website or mobile app (instrument)
 
-*website user (agent) saves a property search (object), on a website or mobile app (instrument)*
 
-##### Payload
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
-| (root) | allOf | - | - | - | **additional properties are allowed** |
+### Schema
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | realestate/website#propertysearchsave  |
+| time | string&lt;date-time&gt; ! | date & time the event was produced  |
+| agent | string&lt;uri&gt; ! | the user,tema or organization who sent the event  |
+| instrument | string&lt;uri&gt; ! | the service which created the event  |
+| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
+| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
+| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
+| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
+| data | object | the event payload, typeically a schema.org/Action  |
+| data.type | string! | The item type (Linked-Data @type)  |
+| data.agent | object! | the website user who performed the action <br/>RANGE: [Contact](/types/Contact), [Person](/types/Person) |
+| data.participant | [object] | a RealEstateAgent,RealEstateTeam,RealEstateOrganization to be notified about the event <br/>RANGE: [Person](/types/Person), [RealEstateAgent](/types/RealEstateAgent), [RealEstateTeam](/types/RealEstateTeam), [RealEstateOrganization](/types/RealEstateOrganization) |
+| data.instrument | object | website or mobile application <br/>RANGE: [RealEstateWebsite](/types/RealEstateWebsite), [MobileApplication](/types/MobileApplication), [Thing](/types/Thing) |
+| data.object | object! | property search parameters <br/>RANGE: [PropertySearch](/types/PropertySearch) |
 
-> Examples of payload _(generated)_
-
+### Example
 ```json
 {
   "topic": "realestate/website#propertysearchsave",
-  "time": "2019-08-24T14:15:22Z",
+  "time": "2022-10-12T01:13:43Z",
   "agent": "https://agentid.example.com/profile/card#me",
   "instrument": "https://vendorid.example.com/profile/card#me",
   "source": "https://companyid.example.com/profile/card#me",
@@ -487,12 +679,9 @@ Accepts **one of** the following messages:
     },
     "participant": [
       {
-        "type": "Contact",
-        "name": "Bruce Wayne",
-        "email": "bruce@example.com",
-        "identifier": {
-          "redContact_GUID": "92d0a096-457e-4643-ace8-fa95b6bdb1c5"
-        }
+        "type": "RealEstateAgent",
+        "id": "https://robin.example.com/profile/card#me",
+        "name": "Robin"
       }
     ],
     "instrument": {
@@ -512,9 +701,7 @@ Accepts **one of** the following messages:
         "type": "Place",
         "address": {
           "type": "PostalAddress",
-          "name": "Home",
           "streetAddress": "1007 Mountain Gate Rd",
-          "postOfficeBoxNumber": "Box 1234",
           "addressRegion": "New Jersey",
           "addressLocality": "Gotham City",
           "postalCode": "10010",
@@ -576,27 +763,42 @@ Accepts **one of** the following messages:
 ```
 
 
-#### Message extensions
+[back to top](#)
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
+---
+## searchproperties
+```
+realestate/website#searchproperties
+```
 
-#### Message `website#searchproperties`
+a website user has performed a property search
 
-*a website user has performed a property search*
 
-##### Payload
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
-| (root) | allOf | - | - | - | **additional properties are allowed** |
+### Schema
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | realestate/website#searchproperties  |
+| time | string&lt;date-time&gt; ! | date & time the event was produced  |
+| agent | string&lt;uri&gt; ! | the user,tema or organization who sent the event  |
+| instrument | string&lt;uri&gt; ! | the service which created the event  |
+| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
+| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
+| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
+| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
+| data | object | the event payload, typeically a schema.org/Action <br/>RANGE: [SearchAction](/types/SearchAction) |
+| data.type | string! | SearchAction  |
+| data.agent | object! | the user who performed the search <br/>RANGE: [Contact](/types/Contact), [Person](/types/Person) |
+| data.participant | [object] | a RealEstateAgent,RealEstateTeam,RealEstateOrganization to be notified about the event <br/>RANGE: [Person](/types/Person), [RealEstateAgent](/types/RealEstateAgent), [RealEstateTeam](/types/RealEstateTeam), [RealEstateOrganization](/types/RealEstateOrganization) |
+| data.instrument | object | website or mobile application <br/>RANGE: [RealEstateWebsite](/types/RealEstateWebsite), [MobileApplication](/types/MobileApplication), [Thing](/types/Thing) |
+| data.object | object! | property search parameters <br/>RANGE: [PropertySearch](/types/PropertySearch) |
+| data.result | object | the result of a search action <br/>RANGE: [FindAction](/types/FindAction) |
 
-> Examples of payload _(generated)_
-
+### Example
 ```json
 {
   "topic": "realestate/website#searchproperties",
-  "time": "2019-08-24T14:15:22Z",
+  "time": "2022-10-12T01:13:43Z",
   "agent": "https://agentid.example.com/profile/card#me",
   "instrument": "https://vendorid.example.com/profile/card#me",
   "source": "https://companyid.example.com/profile/card#me",
@@ -622,12 +824,9 @@ Accepts **one of** the following messages:
     },
     "participant": [
       {
-        "type": "Contact",
-        "name": "Bruce Wayne",
-        "email": "bruce@example.com",
-        "identifier": {
-          "redContact_GUID": "92d0a096-457e-4643-ace8-fa95b6bdb1c5"
-        }
+        "type": "RealEstateAgent",
+        "id": "https://robin.example.com/profile/card#me",
+        "name": "Robin"
       }
     ],
     "instrument": {
@@ -647,9 +846,7 @@ Accepts **one of** the following messages:
         "type": "Place",
         "address": {
           "type": "PostalAddress",
-          "name": "Home",
           "streetAddress": "1007 Mountain Gate Rd",
-          "postOfficeBoxNumber": "Box 1234",
           "addressRegion": "New Jersey",
           "addressLocality": "Gotham City",
           "postalCode": "10010",
@@ -724,27 +921,42 @@ Accepts **one of** the following messages:
 ```
 
 
-#### Message extensions
+[back to top](#)
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
+---
+## shareproperty
+```
+realestate/website#shareproperty
+```
 
-#### Message `website#shareproperty`
+agent shared object with recipient
 
-*agent shared object with recipient*
 
-##### Payload
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
-| (root) | allOf | - | - | - | **additional properties are allowed** |
+### Schema
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | realestate/website#shareproperty  |
+| time | string&lt;date-time&gt; ! | date & time the event was produced  |
+| agent | string&lt;uri&gt; ! | the user,tema or organization who sent the event  |
+| instrument | string&lt;uri&gt; ! | the service which created the event  |
+| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
+| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
+| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
+| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
+| data | object | the event payload, typeically a schema.org/Action  |
+| data.type | string! | The item type (Linked-Data @type)  |
+| data.agent | object! | the website user who performed the action <br/>RANGE: [Contact](/types/Contact), [Person](/types/Person) |
+| data.participant | [object] | a RealEstateAgent,RealEstateTeam,RealEstateOrganization to be notified about the event <br/>RANGE: [Person](/types/Person), [RealEstateAgent](/types/RealEstateAgent), [RealEstateTeam](/types/RealEstateTeam), [RealEstateOrganization](/types/RealEstateOrganization) |
+| data.instrument | object | website or mobile application <br/>RANGE: [RealEstateWebsite](/types/RealEstateWebsite), [MobileApplication](/types/MobileApplication), [Thing](/types/Thing) |
+| data.object | object! |  <br/>RANGE: [PropertyListing](/types/PropertyListing) |
+| data.recipient | object | the recipient of the share  |
 
-> Examples of payload _(generated)_
-
+### Example
 ```json
 {
   "topic": "realestate/website#shareproperty",
-  "time": "2019-08-24T14:15:22Z",
+  "time": "2022-10-12T01:13:43Z",
   "agent": "https://agentid.example.com/profile/card#me",
   "instrument": "https://vendorid.example.com/profile/card#me",
   "source": "https://{listing-agent}.example.com/profile/card#me",
@@ -770,12 +982,9 @@ Accepts **one of** the following messages:
     },
     "participant": [
       {
-        "type": "Contact",
-        "name": "Bruce Wayne",
-        "email": "bruce@example.com",
-        "identifier": {
-          "redContact_GUID": "92d0a096-457e-4643-ace8-fa95b6bdb1c5"
-        }
+        "type": "RealEstateAgent",
+        "id": "https://robin.example.com/profile/card#me",
+        "name": "Robin"
       }
     ],
     "instrument": {
@@ -807,27 +1016,42 @@ Accepts **one of** the following messages:
 ```
 
 
-#### Message extensions
+[back to top](#)
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
+---
+## sharepropertyvaluereport
+```
+realestate/website#sharepropertyvaluereport
+```
 
-#### Message `website#sharepropertyvaluereport`
+agent shared object with recipient
 
-*agent shared object with recipient*
 
-##### Payload
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
-| (root) | allOf | - | - | - | **additional properties are allowed** |
+### Schema
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | realestate/website#sharepropertyvaluereport  |
+| time | string&lt;date-time&gt; ! | date & time the event was produced  |
+| agent | string&lt;uri&gt; ! | the user,tema or organization who sent the event  |
+| instrument | string&lt;uri&gt; ! | the service which created the event  |
+| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
+| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
+| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
+| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
+| data | object | the event payload, typeically a schema.org/Action  |
+| data.type | string! | The item type (Linked-Data @type)  |
+| data.agent | object! | the website user who performed the action <br/>RANGE: [Contact](/types/Contact), [Person](/types/Person) |
+| data.participant | [object] | a RealEstateAgent,RealEstateTeam,RealEstateOrganization to be notified about the event <br/>RANGE: [Person](/types/Person), [RealEstateAgent](/types/RealEstateAgent), [RealEstateTeam](/types/RealEstateTeam), [RealEstateOrganization](/types/RealEstateOrganization) |
+| data.instrument | object | website or mobile application <br/>RANGE: [RealEstateWebsite](/types/RealEstateWebsite), [MobileApplication](/types/MobileApplication), [Thing](/types/Thing) |
+| data.object | object! | an automated property value esmation <br/>RANGE: [PropertyValueReport](/types/PropertyValueReport) |
+| data.recipient | object | the recipient of the share  |
 
-> Examples of payload _(generated)_
-
+### Example
 ```json
 {
   "topic": "realestate/website#sharepropertyvaluereport",
-  "time": "2019-08-24T14:15:22Z",
+  "time": "2022-10-12T01:13:43Z",
   "agent": "https://agentid.example.com/profile/card#me",
   "instrument": "https://vendorid.example.com/profile/card#me",
   "source": "https://companyid.example.com/profile/card#me",
@@ -853,12 +1077,9 @@ Accepts **one of** the following messages:
     },
     "participant": [
       {
-        "type": "Contact",
-        "name": "Bruce Wayne",
-        "email": "bruce@example.com",
-        "identifier": {
-          "redContact_GUID": "92d0a096-457e-4643-ace8-fa95b6bdb1c5"
-        }
+        "type": "RealEstateAgent",
+        "id": "https://robin.example.com/profile/card#me",
+        "name": "Robin"
       }
     ],
     "instrument": {
@@ -868,7 +1089,7 @@ Accepts **one of** the following messages:
     "object": {
       "type": "PropertyValueReport",
       "name": "LOT:45 DIST:33 CITY/MUNI/TWP:LADUE LINDWORTH...",
-      "dateCreated": "2019-08-24T14:15:22Z",
+      "dateCreated": "2022-10-12T01:13:43Z",
       "result": {
         "type": "MonetaryAmount",
         "minValue": 2400000,
@@ -985,27 +1206,41 @@ Accepts **one of** the following messages:
 ```
 
 
-#### Message extensions
+[back to top](#)
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
+---
+## viewproperty
+```
+realestate/website#viewproperty
+```
 
-#### Message `website#viewproperty`
+website user (data.agent) has viewed a listing (data.object) on a webiste or mobile app (data.instrument)
 
-*website user (data.agent) has viewed a listing (data.object) on a webiste or mobile app (data.instrument)*
 
-##### Payload
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
-| (root) | allOf | - | - | - | **additional properties are allowed** |
+### Schema
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | realestate/website#viewproperty  |
+| time | string&lt;date-time&gt; ! | date & time the event was produced  |
+| agent | string&lt;uri&gt; ! | the user,tema or organization who sent the event  |
+| instrument | string&lt;uri&gt; ! | the service which created the event  |
+| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
+| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
+| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
+| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
+| data | object | the event payload, typeically a schema.org/Action <br/>RANGE: [AddAction](/types/AddAction) |
+| data.type | string! | The item type (Linked-Data @type)  |
+| data.agent | object! | the website user who performed the action <br/>RANGE: [Contact](/types/Contact), [Person](/types/Person) |
+| data.participant | [object] | a RealEstateAgent,RealEstateTeam,RealEstateOrganization to be notified about the event <br/>RANGE: [Person](/types/Person), [RealEstateAgent](/types/RealEstateAgent), [RealEstateTeam](/types/RealEstateTeam), [RealEstateOrganization](/types/RealEstateOrganization) |
+| data.instrument | object | website or mobile application <br/>RANGE: [RealEstateWebsite](/types/RealEstateWebsite), [MobileApplication](/types/MobileApplication), [Thing](/types/Thing) |
+| data.object | object! | the viewed property <br/>RANGE: [PropertyListing](/types/PropertyListing) |
 
-> Examples of payload _(generated)_
-
+### Example
 ```json
 {
   "topic": "realestate/website#viewproperty",
-  "time": "2019-08-24T14:15:22Z",
+  "time": "2022-10-12T01:13:43Z",
   "agent": "https://agentid.example.com/profile/card#me",
   "instrument": "https://vendorid.example.com/profile/card#me",
   "source": "https://companyid.example.com/profile/card#me",
@@ -1031,12 +1266,9 @@ Accepts **one of** the following messages:
     },
     "participant": [
       {
-        "type": "Contact",
-        "name": "Bruce Wayne",
-        "email": "bruce@example.com",
-        "identifier": {
-          "redContact_GUID": "92d0a096-457e-4643-ace8-fa95b6bdb1c5"
-        }
+        "type": "RealEstateAgent",
+        "id": "https://robin.example.com/profile/card#me",
+        "name": "Robin"
       }
     ],
     "instrument": {
@@ -1064,27 +1296,41 @@ Accepts **one of** the following messages:
 ```
 
 
-#### Message extensions
+[back to top](#)
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
+---
+## viewpropertyvaluereort
+```
+realestate/website#viewpropertyvaluereort
+```
 
-#### Message `website#viewpropertyvaluereort`
+website user (data.agent) has viewed a propvery value report (data.object) on a webiste or mobile app (data.instrument)
 
-*website user (data.agent) has viewed a propvery value report (data.object) on a webiste or mobile app (data.instrument)*
 
-##### Payload
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
-| (root) | allOf | - | - | - | **additional properties are allowed** |
+### Schema
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | realestate/website#viewpropertyvaluereport  |
+| time | string&lt;date-time&gt; ! | date & time the event was produced  |
+| agent | string&lt;uri&gt; ! | the user,tema or organization who sent the event  |
+| instrument | string&lt;uri&gt; ! | the service which created the event  |
+| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
+| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
+| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
+| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
+| data | object | the event payload, typeically a schema.org/Action <br/>RANGE: [ViewAction](/types/ViewAction) |
+| data.type | string! | (required, constant) ViewAction  |
+| data.agent | object! | the website user who viewed the property value reportt <br/>RANGE: [Contact](/types/Contact), [Person](/types/Person) |
+| data.participant | [object] | a RealEstateAgent,RealEstateTeam,RealEstateOrganization to be notified about the event <br/>RANGE: [Person](/types/Person), [RealEstateAgent](/types/RealEstateAgent), [RealEstateTeam](/types/RealEstateTeam), [RealEstateOrganization](/types/RealEstateOrganization) |
+| data.instrument | object | website or mobile application <br/>RANGE: [RealEstateWebsite](/types/RealEstateWebsite), [MobileApplication](/types/MobileApplication), [Thing](/types/Thing) |
+| data.object | object! | an automated property value esmation <br/>RANGE: [PropertyValueReport](/types/PropertyValueReport) |
 
-> Examples of payload _(generated)_
-
+### Example
 ```json
 {
   "topic": "realestate/website#viewpropertyvaluereport",
-  "time": "2019-08-24T14:15:22Z",
+  "time": "2022-10-12T01:13:43Z",
   "agent": "https://agentid.example.com/profile/card#me",
   "instrument": "https://vendorid.example.com/profile/card#me",
   "source": "https://companyid.example.com/profile/card#me",
@@ -1110,12 +1356,9 @@ Accepts **one of** the following messages:
     },
     "participant": [
       {
-        "type": "Contact",
-        "name": "Bruce Wayne",
-        "email": "bruce@example.com",
-        "identifier": {
-          "redContact_GUID": "92d0a096-457e-4643-ace8-fa95b6bdb1c5"
-        }
+        "type": "RealEstateAgent",
+        "id": "https://robin.example.com/profile/card#me",
+        "name": "Robin"
       }
     ],
     "instrument": {
@@ -1125,7 +1368,7 @@ Accepts **one of** the following messages:
     "object": {
       "type": "PropertyValueReport",
       "name": "LOT:45 DIST:33 CITY/MUNI/TWP:LADUE LINDWORTH...",
-      "dateCreated": "2019-08-24T14:15:22Z",
+      "dateCreated": "2022-10-12T01:13:43Z",
       "result": {
         "type": "MonetaryAmount",
         "minValue": 2400000,
@@ -1238,11 +1481,4 @@ Accepts **one of** the following messages:
 ```
 
 
-#### Message extensions
-
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
-
-
-
-
+[back to top](#)

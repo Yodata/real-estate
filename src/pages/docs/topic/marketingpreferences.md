@@ -1,25 +1,77 @@
 ---
-title: marketingpreferences
+ marketingpreferences
+menu: Topics
+route: /topic/marketingpreferences
 ---
 
-## Operations### SUB `marketingpreferences` Operation
+# marketingpreferences
 
-Accepts **one of** the following messages:
 
-#### Message `marketingpreferences#subscribe`
 
-##### Payload
+### publishing marketingpreferences events
+Publish events by HTTP POST to your own pods `/publish/` endpoint including the topic, recipient and message body.]
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
-| (root) | allOf | - | - | - | **additional properties are allowed** |
 
-> Examples of payload _(generated)_
 
+### Example
+```http
+POST /publish/ HTTP/1.1
+Host: # { your pod host url }
+x-api-key: # { your api key }
+Content-Type: application/json
+
+{
+  "topic": "https://realestate/{topic}#{event}",
+  "recipient": # the publishing pod,
+  "@context": # optional transformation context,
+  "data": {
+    "type": "{Action}
+  }
+
+}
+```
+
+
+### receiving marketingpreferences events
+
+| Event | Description |
+| :---- | :---------- |
+| [realestate/marketingpreferences#subscribe](#subscribe) |  |
+| [realestate/marketingpreferences#unsubscribe](#unsubscribe) | a consumer (agent) unsubscribes to email or sms for a specific agent (object) |
+
+
+---
+## subscribe
+```
+realestate/marketingpreferences#subscribe
+```
+
+
+
+
+
+### Schema
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | the event topic which determines the schema of event.data  |
+| time | string&lt;date-time&gt;  | date & time the event was produced  |
+| agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
+| instrument | string&lt;uri&gt;  | the service which created the event  |
+| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
+| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
+| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
+| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
+| data | object! | the consumer (agent) has subscribed to content from the participant with roleName SubscriptionProvider. <br/>RANGE: [SubscribeAction](/types/SubscribeAction) |
+| data.type | string! | the action type  |
+| data.object | * | item on which the action is carried out  |
+| data.agent | object | the subscriber <br/>RANGE: [Contact](/types/Contact) |
+| data.participant | [object] | the subscription provider, an Agent, Team, Office or Organization <br/>RANGE: [RealEstateAgent](/types/RealEstateAgent), [RealEstateTeam](/types/RealEstateTeam), [RealEstateOffice](/types/RealEstateOffice), [RealEstateOrganization](/types/RealEstateOrganization) |
+
+### Example
 ```json
 {
   "topic": "realestate/marketingpreferences#subscribe",
-  "time": "2019-08-24T14:15:22Z",
+  "time": "2022-10-12T01:13:43Z",
   "agent": "https://agentid.example.com/profile/card#me",
   "instrument": "https://vendorid.example.com/profile/card#me",
   "source": "https://companyid.example.com/profile/card#me",
@@ -50,27 +102,40 @@ Accepts **one of** the following messages:
 ```
 
 
-#### Message extensions
+[back to top](#)
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
+---
+## unsubscribe
+```
+realestate/marketingpreferences#unsubscribe
+```
 
-#### Message `marketingpreferences#unsubscribe`
+a consumer (agent) unsubscribes to email or sms for a specific agent (object)
 
-*a consumer (agent) unsubscribes to email or sms for a specific agent (object)*
 
-##### Payload
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
-| (root) | allOf | - | - | - | **additional properties are allowed** |
+### Schema
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | the event topic which determines the schema of event.data  |
+| time | string&lt;date-time&gt;  | date & time the event was produced  |
+| agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
+| instrument | string&lt;uri&gt;  | the service which created the event  |
+| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
+| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
+| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
+| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
+| data | object! | the consumer (agent) has unsubscribed to content from the participant with roleName SubscriptionProvider. <br/>RANGE: [UnsubscribeAction](/types/UnsubscribeAction) |
+| data.type | string! | the action type  |
+| data.object | * | item on which the action is carried out  |
+| data.agent | object | the subscriber <br/>RANGE: [Contact](/types/Contact) |
+| data.participant | [object] | the subscription provider, an Agent, Team, Office or Organization <br/>RANGE: [RealEstateAgent](/types/RealEstateAgent), [RealEstateTeam](/types/RealEstateTeam), [RealEstateOffice](/types/RealEstateOffice), [RealEstateOrganization](/types/RealEstateOrganization) |
 
-> Examples of payload _(generated)_
-
+### Example
 ```json
 {
   "topic": "realestate/marketingpreferences#unsubscribe",
-  "time": "2019-08-24T14:15:22Z",
+  "time": "2022-10-12T01:13:43Z",
   "agent": "https://agentid.example.com/profile/card#me",
   "instrument": "https://vendorid.example.com/profile/card#me",
   "source": "https://companyid.example.com/profile/card#me",
@@ -101,11 +166,4 @@ Accepts **one of** the following messages:
 ```
 
 
-#### Message extensions
-
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
-
-
-
-
+[back to top](#)

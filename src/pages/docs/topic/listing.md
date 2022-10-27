@@ -1,27 +1,75 @@
 ---
-title: listing
+ listing
+menu: Topics
+route: /topic/listing
 ---
 
-## Operations### SUB `listing` Operation
+# listing
 
-Accepts **one of** the following messages:
 
-#### Message `listing#update`
 
-*a PropertyListing is created or updated*
+### publishing listing events
+Publish events by HTTP POST to your own pods `/publish/` endpoint including the topic, recipient and message body.]
 
-##### Payload
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
-| (root) | allOf | - | - | - | **additional properties are allowed** |
 
-> Examples of payload _(generated)_
+### Example
+```http
+POST /publish/ HTTP/1.1
+Host: # { your pod host url }
+x-api-key: # { your api key }
+Content-Type: application/json
 
+{
+  "topic": "https://realestate/{topic}#{event}",
+  "recipient": # the publishing pod,
+  "@context": # optional transformation context,
+  "data": {
+    "type": "{Action}
+  }
+
+}
+```
+
+
+### receiving listing events
+
+| Event | Description |
+| :---- | :---------- |
+| [realestate/listing#update](#update) | a PropertyListing is created or updated |
+| [realestate/listing#delete](#delete) | a PropertyListing is deleted |
+
+
+---
+## update
+```
+realestate/listing#update
+```
+
+a PropertyListing is created or updated
+
+
+
+### Schema
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | the event topic which determines the schema of event.data  |
+| time | string&lt;date-time&gt;  | date & time the event was produced  |
+| agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
+| instrument | string&lt;uri&gt;  | the service which created the event  |
+| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
+| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
+| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
+| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
+| data | object! | the item (object) has been updated by user (agent)  |
+| data.type | string! | const UpdateAction  |
+| data.object | object | a real estate property listed for sale <br/>RANGE: [PropertyListing](/types/PropertyListing) |
+
+### Example
 ```json
 {
   "topic": "realestate/listing#update",
-  "time": "2019-08-24T14:15:22Z",
+  "time": "2022-10-12T01:13:43Z",
   "agent": "https://agentid.example.com/profile/card#me",
   "instrument": "https://vendorid.example.com/profile/card#me",
   "source": "https://companyid.example.com/profile/card#me",
@@ -51,7 +99,7 @@ Accepts **one of** the following messages:
         "name": "Gotham City Real Estate",
         "type": "RealEstateOffice"
       },
-      "closeDate": "2019-08-24T14:15:22Z",
+      "closeDate": "2022-10-12T01:13:43Z",
       "image": [
         {
           "type": "ImageObject",
@@ -70,7 +118,7 @@ Accepts **one of** the following messages:
         "telephone": "1-252-574-0160",
         "email": "lorilistagent@example.com"
       },
-      "listingContractDate": "2019-08-24T14:15:22Z",
+      "listingContractDate": "2022-10-12T01:13:43Z",
       "listingId": "GOTHAM-MLS+12345",
       "listingOffice": {
         "name": "Gotham City Real Estate",
@@ -111,7 +159,7 @@ Accepts **one of** the following messages:
       "postalCode": "10010",
       "propertySubType": "ApartmentPropertyType",
       "propertyType": "RESI",
-      "purchaseContractDate": "2019-08-24T14:15:22Z",
+      "purchaseContractDate": "2022-10-12T01:13:43Z",
       "stories": 2,
       "streetAddress": "1007 Mountain Gate Rd",
       "universalPropertyId": "US-04015-N-R-11022331-N",
@@ -123,27 +171,38 @@ Accepts **one of** the following messages:
 ```
 
 
-#### Message extensions
+[back to top](#)
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
+---
+## delete
+```
+realestate/listing#delete
+```
 
-#### Message `listing#delete`
+a PropertyListing is deleted
 
-*a PropertyListing is deleted*
 
-##### Payload
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
-| (root) | allOf | - | - | - | **additional properties are allowed** |
+### Schema
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | the event topic which determines the schema of event.data  |
+| time | string&lt;date-time&gt;  | date & time the event was produced  |
+| agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
+| instrument | string&lt;uri&gt;  | the service which created the event  |
+| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
+| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
+| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
+| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
+| data | object! | object is removed by the agent from the targetCollection <br/>RANGE: [DeleteAction](/types/DeleteAction) |
+| data.type | string! | the action type  |
+| data.object | object | a real estate property listed for sale <br/>RANGE: [PropertyListing](/types/PropertyListing) |
 
-> Examples of payload _(generated)_
-
+### Example
 ```json
 {
   "topic": "realestate/listing#delete",
-  "time": "2019-08-24T14:15:22Z",
+  "time": "2022-10-12T01:13:43Z",
   "agent": "https://agentid.example.com/profile/card#me",
   "instrument": "https://vendorid.example.com/profile/card#me",
   "source": "https://companyid.example.com/profile/card#me",
@@ -161,11 +220,4 @@ Accepts **one of** the following messages:
 ```
 
 
-#### Message extensions
-
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
-
-
-
-
+[back to top](#)

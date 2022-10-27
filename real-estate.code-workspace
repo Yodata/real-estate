@@ -10,7 +10,7 @@
 		},
 		{
 			"name": "SCHEMAS",
-			"path": "src/schemas"
+			"path": "schemas"
 		},
 		{
 			"name": "GENERATOR",
@@ -33,9 +33,9 @@
 		],
 		"gitProjectManager.displayProjectPath": true,
 		"gitProjectManager.ignoredFolders": [
-			"generated",
-			"node_modules",
-			"__transpiled"
+			"**/__generated__",
+			"**/node_modules/",
+			"**/__transpiled"
 		],
 		"markdown.allAvailableLanguages": false,
 		"markdown.docsetLanguages": [
@@ -46,9 +46,6 @@
 		],
 		"markdown.enableMetadataDateReminder": false,
 		"markdown-preview-enhanced.enableTypographer": true,
-		"files.associations": {
-			"/template/*.js": "javascriptreact"
-		},
 		"workbench.editor.autoLockGroups": {
 			"vscode.markdown.preview.editor": true
 		},
@@ -56,20 +53,15 @@
 		"terminal.integrated.minimumContrastRatio": 7,
 		"terminal.integrated.confirmOnExit": "hasChildProcesses",
 		"terminal.integrated.defaultLocation": "editor",
-		"yaml.schemaStore.enable": false,
+		"yaml.schemaStore.enable": true,
 		"json-yaml-schema-selector.additionalSchemas": [
 			{
 				"name": "asyncapi:schema",
 				"url": "http://asyncapi.com/definitions/2.5.0/schema.json",
-			},
-			{
-				"name": "asyncapi:message",
-				"url": "http://asyncapi.com/definitions/2.5.0/message.json"
-			},
-			{
-				"url": "http://asyncapi.com/definitions/2.5.0/channelItem.json"
+				"fileMatch": [
+					"asyncapi.{json,yaml,yml}"
+				]
 			}
-
 		],
 		"files.insertFinalNewline": true,
 		"files.simpleDialog.enable": true,
@@ -78,7 +70,6 @@
 		"npm-intellisense.packageSubfoldersIntellisense": true,
 		"oneDarkPro.bold": true,
 		"search.showLineNumbers": true,
-		"docthis.enableHungarianNotationEvaluation": false,
 		"yaml.schemas": {
 			"https://json.schemastore.org/eslintrc": "file:///Users/dave/git/yodata/real-estate/.eslintrc.yaml"
 		},

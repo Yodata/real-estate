@@ -1,14 +1,14 @@
 ---
- servicearea
+ blog
 menu: Topics
-route: /topic/servicearea
+route: /topic/blog
 ---
 
-# servicearea
+# blog
 
 
 
-### publishing servicearea events
+### publishing blog events
 Publish events by HTTP POST to your own pods `/publish/` endpoint including the topic, recipient and message body.]
 
 
@@ -32,22 +32,22 @@ Content-Type: application/json
 ```
 
 
-### receiving servicearea events
+### receiving blog events
 
 | Event | Description |
 | :---- | :---------- |
-| [realestate/servicearea#create](#create) | service area created |
-| [realestate/servicearea#update](#update) | service area update |
-| [realestate/servicearea#delete](#delete) | ServiceArea (data.object) has been deleted.  Identifier is required. |
+| [realestate/blog#postingcreate](#postingcreate) | a blog post was created |
+| [realestate/blog#postingupdate](#postingupdate) | a blog post was updated |
+| [realestate/blog#postingdelete](#postingdelete) | a blog post was deleted |
 
 
 ---
-## create
+## postingcreate
 ```
-realestate/servicearea#create
+realestate/blog#postingcreate
 ```
 
-service area created
+a blog post was created
 
 
 
@@ -64,13 +64,13 @@ service area created
 | @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
 | data | object! | event payload, typically an Action <br/>RANGE: [CreateAction](/types/CreateAction) |
 | data.type | * |   |
-| data.object | [ServiceArea](/types/ServiceArea) | an area when a provider provides a service. additional information available; see [Using Service Areas](/reference-using-service-area)  |
+| data.object | object | A blog post. <br/>RANGE: [BlogPosting](/types/BlogPosting) |
 
 ### Example
 ```json
 {
-  "topic": "realestate/servicearea#create",
-  "time": "2022-10-12T01:13:43Z",
+  "topic": "realestate/blog#postingcreate",
+  "time": "2022-10-12T01:13:42Z",
   "agent": "https://agentid.example.com/profile/card#me",
   "instrument": "https://vendorid.example.com/profile/card#me",
   "source": "https://companyid.example.com/profile/card#me",
@@ -80,37 +80,34 @@ service area created
   "data": {
     "type": "CreateAction",
     "object": {
-      "type": "ServiceArea",
-      "kind": "PostalCode",
+      "type": "BlogPosting",
       "identifier": {
-        "bhhsESAId": "string"
+        "aempostid": "xxxx"
       },
-      "addressLocality": "Woodland Hills",
-      "postalCode": "91371",
-      "addressRegion": "CA",
-      "addressCountry": "US",
-      "addressCounty": "Los Angeles",
+      "headline": "Top 10 Spring Cleeaning Tips",
+      "articleBody": "<HTML><body>lorem ipsum dolor sit amet, consectetur adipiscing</body></HTML>",
+      "image": [
+        {
+          "type": "ImageObject",
+          "id": "http://user.example.com/public/logo/image.jpg",
+          "name": "image.jpg",
+          "encodingFormat": "image/jpeg",
+          "about": "http://user.example.com/profile/card#me",
+          "url": "http://user.example.com/public/profile/image.jpg"
+        }
+      ],
+      "author": {
+        "type": "RealEstateAgent",
+        "id": "https://agent123.example.com/profile/card#me"
+      },
       "provider": {
         "type": "RealEstateOrganization",
-        "id": "https://org.example.com/profile/card#me"
+        "id": "https://example.com/profile/card#me"
       },
-      "additionalProperty": {
-        "relocationOffice": {
-          "type": "RealEstateOffice",
-          "id": "https://org.example.com/profile/card#me"
-        },
-        "weight": 0,
-        "officeInPostalCode": true,
-        "sortOrder": 0,
-        "sentToConsumerSite": true,
-        "sentToCompanyLocator": true,
-        "sentToReferralSolutions": true,
-        "luxuryPriceMinimum": {
-          "type": "PriceSpecification",
-          "price": 1000000,
-          "priceCurrency": "USD"
-        }
-      }
+      "dateCreated": "2022-10-12T01:13:42Z",
+      "dateModified": "2022-10-12T01:13:42Z",
+      "url": "http://example.com",
+      "urlTemplate": "https://example.com/{author/name}/blog/post?{slug}"
     }
   }
 }
@@ -120,12 +117,12 @@ service area created
 [back to top](#)
 
 ---
-## update
+## postingupdate
 ```
-realestate/servicearea#update
+realestate/blog#postingupdate
 ```
 
-service area update
+a blog post was updated
 
 
 
@@ -140,15 +137,15 @@ service area update
 | originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
 | id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
 | @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
-| data | object! | event payload, typically an Action  |
+| data | object! | event payload, typically an Action <br/>RANGE: [UpdateAction](/types/UpdateAction) |
 | data.type | * |   |
-| data.object | [ServiceArea](/types/ServiceArea) | an area when a provider provides a service. additional information available; see [Using Service Areas](/reference-using-service-area)  |
+| data.object | object | A blog post. <br/>RANGE: [BlogPosting](/types/BlogPosting) |
 
 ### Example
 ```json
 {
-  "topic": "realestate/servicearea#update",
-  "time": "2022-10-12T01:13:43Z",
+  "topic": "realestate/blog#postingupdate",
+  "time": "2022-10-12T01:13:42Z",
   "agent": "https://agentid.example.com/profile/card#me",
   "instrument": "https://vendorid.example.com/profile/card#me",
   "source": "https://companyid.example.com/profile/card#me",
@@ -158,37 +155,34 @@ service area update
   "data": {
     "type": "UpdateAction",
     "object": {
-      "type": "ServiceArea",
-      "kind": "PostalCode",
+      "type": "BlogPosting",
       "identifier": {
-        "bhhsESAId": "string"
+        "aempostid": "xxxx"
       },
-      "addressLocality": "Woodland Hills",
-      "postalCode": "91371",
-      "addressRegion": "CA",
-      "addressCountry": "US",
-      "addressCounty": "Los Angeles",
+      "headline": "Top 10 Spring Cleeaning Tips",
+      "articleBody": "<HTML><body>lorem ipsum dolor sit amet, consectetur adipiscing</body></HTML>",
+      "image": [
+        {
+          "type": "ImageObject",
+          "id": "http://user.example.com/public/logo/image.jpg",
+          "name": "image.jpg",
+          "encodingFormat": "image/jpeg",
+          "about": "http://user.example.com/profile/card#me",
+          "url": "http://user.example.com/public/profile/image.jpg"
+        }
+      ],
+      "author": {
+        "type": "RealEstateAgent",
+        "id": "https://agent123.example.com/profile/card#me"
+      },
       "provider": {
         "type": "RealEstateOrganization",
-        "id": "https://org.example.com/profile/card#me"
+        "id": "https://example.com/profile/card#me"
       },
-      "additionalProperty": {
-        "relocationOffice": {
-          "type": "RealEstateOffice",
-          "id": "https://org.example.com/profile/card#me"
-        },
-        "weight": 0,
-        "officeInPostalCode": true,
-        "sortOrder": 0,
-        "sentToConsumerSite": true,
-        "sentToCompanyLocator": true,
-        "sentToReferralSolutions": true,
-        "luxuryPriceMinimum": {
-          "type": "PriceSpecification",
-          "price": 1000000,
-          "priceCurrency": "USD"
-        }
-      }
+      "dateCreated": "2022-10-12T01:13:42Z",
+      "dateModified": "2022-10-12T01:13:42Z",
+      "url": "http://example.com",
+      "urlTemplate": "https://example.com/{author/name}/blog/post?{slug}"
     }
   }
 }
@@ -198,12 +192,12 @@ service area update
 [back to top](#)
 
 ---
-## delete
+## postingdelete
 ```
-realestate/servicearea#delete
+realestate/blog#postingdelete
 ```
 
-ServiceArea (data.object) has been deleted.  Identifier is required.
+a blog post was deleted
 
 
 
@@ -218,15 +212,15 @@ ServiceArea (data.object) has been deleted.  Identifier is required.
 | originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
 | id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
 | @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
-| data | object! | event payload, typically an Action  |
+| data | object! | event payload, typically an Action <br/>RANGE: [DeleteAction](/types/DeleteAction) |
 | data.type | * |   |
-| data.object | object |  <br/>RANGE: [ServiceArea](/types/ServiceArea) |
+| data.object | object | A blog post. <br/>RANGE: [BlogPosting](/types/BlogPosting) |
 
 ### Example
 ```json
 {
-  "topic": "realestate/servicearea#delete",
-  "time": "2022-10-12T01:13:43Z",
+  "topic": "realestate/blog#postingdelete",
+  "time": "2022-10-12T01:13:42Z",
   "agent": "https://agentid.example.com/profile/card#me",
   "instrument": "https://vendorid.example.com/profile/card#me",
   "source": "https://companyid.example.com/profile/card#me",
@@ -236,10 +230,34 @@ ServiceArea (data.object) has been deleted.  Identifier is required.
   "data": {
     "type": "DeleteAction",
     "object": {
-      "type": "ServiceArea",
+      "type": "BlogPosting",
       "identifier": {
-        "bhhsESAId": "abcde"
-      }
+        "aempostid": "xxxx"
+      },
+      "headline": "Top 10 Spring Cleeaning Tips",
+      "articleBody": "<HTML><body>lorem ipsum dolor sit amet, consectetur adipiscing</body></HTML>",
+      "image": [
+        {
+          "type": "ImageObject",
+          "id": "http://user.example.com/public/logo/image.jpg",
+          "name": "image.jpg",
+          "encodingFormat": "image/jpeg",
+          "about": "http://user.example.com/profile/card#me",
+          "url": "http://user.example.com/public/profile/image.jpg"
+        }
+      ],
+      "author": {
+        "type": "RealEstateAgent",
+        "id": "https://agent123.example.com/profile/card#me"
+      },
+      "provider": {
+        "type": "RealEstateOrganization",
+        "id": "https://example.com/profile/card#me"
+      },
+      "dateCreated": "2022-10-12T01:13:42Z",
+      "dateModified": "2022-10-12T01:13:42Z",
+      "url": "http://example.com",
+      "urlTemplate": "https://example.com/{author/name}/blog/post?{slug}"
     }
   }
 }

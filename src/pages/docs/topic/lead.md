@@ -1,27 +1,80 @@
 ---
-title: lead
+ lead
+menu: Topics
+route: /topic/lead
 ---
 
-## Operations### SUB `lead` Operation
+# lead
 
-Accepts **one of** the following messages:
 
-#### Message `lead#accept`
 
-*a lead (data.object) was accepted by the recipient (data.recipient).*
+### publishing lead events
+Publish events by HTTP POST to your own pods `/publish/` endpoint including the topic, recipient and message body.]
 
-##### Payload
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
-| (root) | allOf | - | - | - | **additional properties are allowed** |
 
-> Examples of payload _(generated)_
+### Example
+```http
+POST /publish/ HTTP/1.1
+Host: # { your pod host url }
+x-api-key: # { your api key }
+Content-Type: application/json
 
+{
+  "topic": "https://realestate/{topic}#{event}",
+  "recipient": # the publishing pod,
+  "@context": # optional transformation context,
+  "data": {
+    "type": "{Action}
+  }
+
+}
+```
+
+
+### receiving lead events
+
+| Event | Description |
+| :---- | :---------- |
+| [realestate/lead#accept](#accept) | a lead (data.object) was accepted by the recipient (data.recipient). |
+| [realestate/lead#add](#add) | a crm lead was created |
+| [realestate/lead#asssign](#asssign) | a lead was assigned |
+| [realestate/lead#update](#update) | a crm lead was updated |
+| [realestate/lead#reject](#reject) | a crm lead was rejected |
+| [realestate/lead#retract](#retract) | a lead (data.object) is taken back from the previous assignee (data.participant) by the previous sender/owner (data.recipient) |
+
+
+---
+## accept
+```
+realestate/lead#accept
+```
+
+a lead (data.object) was accepted by the recipient (data.recipient).
+
+
+
+### Schema
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | realestate/lead#accept  |
+| time | string&lt;date-time&gt;  | date & time the event was produced  |
+| agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
+| instrument | string&lt;uri&gt;  | the service which created the event  |
+| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
+| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
+| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
+| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
+| data | object! | The act of committing to/adopting an object. <br/>RANGE: [AcceptAction](/types/AcceptAction) |
+| data.type | string! | the action type  |
+| data.object | object | a sales opportunity (object) offered by a sender to a recipient. <br/>RANGE: [Lead](/types/Lead) |
+| data.agent | string&lt;uri&gt;  | the accepting user  |
+
+### Example
 ```json
 {
   "topic": "realestate/lead#accept",
-  "time": "2019-08-24T14:15:22Z",
+  "time": "2022-10-12T01:13:43Z",
   "agent": "https://agentid.example.com/profile/card#me",
   "instrument": "https://vendorid.example.com/profile/card#me",
   "source": "https://companyid.example.com/profile/card#me",
@@ -45,8 +98,8 @@ Accepts **one of** the following messages:
       "sender": "http://{lead-sender}.example.com/profile/card#me",
       "owner": "http://{lead-owner}.example.com/profile/card#me",
       "dateAccepted": "2019-11-25T04:23:32.000Z",
-      "dateRejected": "2019-08-24T14:15:22Z",
-      "dateSent": "2019-08-24T14:15:22Z",
+      "dateRejected": "2022-10-12T01:13:43Z",
+      "dateSent": "2022-10-12T01:13:43Z",
       "dateReceived": "2019-11-25T04:23:32.000Z",
       "leadSource": [
         {
@@ -64,27 +117,39 @@ Accepts **one of** the following messages:
 ```
 
 
-#### Message extensions
+[back to top](#)
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
+---
+## add
+```
+realestate/lead#add
+```
 
-#### Message `lead#add`
+a crm lead was created
 
-*a crm lead was created*
 
-##### Payload
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
-| (root) | allOf | - | - | - | **additional properties are allowed** |
+### Schema
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | the event topic which determines the schema of event.data  |
+| time | string&lt;date-time&gt;  | date & time the event was produced  |
+| agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
+| instrument | string&lt;uri&gt;  | the service which created the event  |
+| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
+| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
+| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
+| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
+| data | object! | data (object) is added by user (agent), optionally to the targetCollection <br/>RANGE: [AddAction](/types/AddAction) |
+| data.type | string! | AddAction  |
+| data.object | object | a sales opportunity (object) offered by a sender to a recipient. <br/>RANGE: [Lead](/types/Lead) |
+| data.targetCollection | object | the collection or reference to the collection receiving the data  |
 
-> Examples of payload _(generated)_
-
+### Example
 ```json
 {
   "topic": "realestate/lead#add",
-  "time": "2019-08-24T14:15:22Z",
+  "time": "2022-10-12T01:13:43Z",
   "agent": "https://agentid.example.com/profile/card#me",
   "instrument": "https://vendorid.example.com/profile/card#me",
   "source": "https://companyid.example.com/profile/card#me",
@@ -108,8 +173,8 @@ Accepts **one of** the following messages:
       "sender": "http://{lead-sender}.example.com/profile/card#me",
       "owner": "http://{lead-owner}.example.com/profile/card#me",
       "dateAccepted": "2019-11-25T04:23:32.000Z",
-      "dateRejected": "2019-08-24T14:15:22Z",
-      "dateSent": "2019-08-24T14:15:22Z",
+      "dateRejected": "2022-10-12T01:13:43Z",
+      "dateSent": "2022-10-12T01:13:43Z",
       "dateReceived": "2019-11-25T04:23:32.000Z",
       "leadSource": [
         {
@@ -127,27 +192,39 @@ Accepts **one of** the following messages:
 ```
 
 
-#### Message extensions
+[back to top](#)
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
+---
+## asssign
+```
+realestate/lead#asssign
+```
 
-#### Message `lead#asssign`
+a lead was assigned
 
-*a lead was assigned*
 
-##### Payload
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
-| (root) | allOf | - | - | - | **additional properties are allowed** |
+### Schema
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | the event topic which determines the schema of event.data  |
+| time | string&lt;date-time&gt;  | date & time the event was produced  |
+| agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
+| instrument | string&lt;uri&gt;  | the service which created the event  |
+| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
+| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
+| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
+| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
+| data | object! | An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role.  |
+| data.type | string! | static AssignAction  |
+| data.object | object | a sales opportunity (object) offered by a sender to a recipient. <br/>RANGE: [Lead](/types/Lead) |
+| data.agent | string&lt;uri&gt;  | the assignor, typically the lead owner  |
 
-> Examples of payload _(generated)_
-
+### Example
 ```json
 {
   "topic": "realestate/lead#assign",
-  "time": "2019-08-24T14:15:22Z",
+  "time": "2022-10-12T01:13:43Z",
   "agent": "https://agentid.example.com/profile/card#me",
   "instrument": "https://vendorid.example.com/profile/card#me",
   "source": "https://companyid.example.com/profile/card#me",
@@ -155,7 +232,7 @@ Accepts **one of** the following messages:
   "id": "https://instrumentid.example.com/publish/xxxxxxxxxxxxx",
   "@id": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
   "data": {
-    "type": "string",
+    "type": "AssignAction",
     "object": {
       "type": "Lead",
       "identifier": {
@@ -171,8 +248,8 @@ Accepts **one of** the following messages:
       "sender": "http://{lead-sender}.example.com/profile/card#me",
       "owner": "http://{lead-owner}.example.com/profile/card#me",
       "dateAccepted": "2019-11-25T04:23:32.000Z",
-      "dateRejected": "2019-08-24T14:15:22Z",
-      "dateSent": "2019-08-24T14:15:22Z",
+      "dateRejected": "2022-10-12T01:13:43Z",
+      "dateSent": "2022-10-12T01:13:43Z",
       "dateReceived": "2019-11-25T04:23:32.000Z",
       "leadSource": [
         {
@@ -190,27 +267,38 @@ Accepts **one of** the following messages:
 ```
 
 
-#### Message extensions
+[back to top](#)
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
+---
+## update
+```
+realestate/lead#update
+```
 
-#### Message `lead#update`
+a crm lead was updated
 
-*a crm lead was updated*
 
-##### Payload
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
-| (root) | allOf | - | - | - | **additional properties are allowed** |
+### Schema
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | the event topic which determines the schema of event.data  |
+| time | string&lt;date-time&gt;  | date & time the event was produced  |
+| agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
+| instrument | string&lt;uri&gt;  | the service which created the event  |
+| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
+| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
+| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
+| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
+| data | object! | the item (object) has been updated by user (agent) <br/>RANGE: [UpdateAction](/types/UpdateAction) |
+| data.type | string! | const UpdateAction  |
+| data.object | object | a sales opportunity (object) offered by a sender to a recipient. <br/>RANGE: [Lead](/types/Lead) |
 
-> Examples of payload _(generated)_
-
+### Example
 ```json
 {
   "topic": "realestate/lead#update",
-  "time": "2019-08-24T14:15:22Z",
+  "time": "2022-10-12T01:13:43Z",
   "agent": "https://agentid.example.com/profile/card#me",
   "instrument": "https://vendorid.example.com/profile/card#me",
   "source": "https://companyid.example.com/profile/card#me",
@@ -234,8 +322,8 @@ Accepts **one of** the following messages:
       "sender": "http://{lead-sender}.example.com/profile/card#me",
       "owner": "http://{lead-owner}.example.com/profile/card#me",
       "dateAccepted": "2019-11-25T04:23:32.000Z",
-      "dateRejected": "2019-08-24T14:15:22Z",
-      "dateSent": "2019-08-24T14:15:22Z",
+      "dateRejected": "2022-10-12T01:13:43Z",
+      "dateSent": "2022-10-12T01:13:43Z",
       "dateReceived": "2019-11-25T04:23:32.000Z",
       "leadSource": [
         {
@@ -252,27 +340,39 @@ Accepts **one of** the following messages:
 ```
 
 
-#### Message extensions
+[back to top](#)
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
+---
+## reject
+```
+realestate/lead#reject
+```
 
-#### Message `lead#reject`
+a crm lead was rejected
 
-*a crm lead was rejected*
 
-##### Payload
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
-| (root) | allOf | - | - | - | **additional properties are allowed** |
+### Schema
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | the event topic which determines the schema of event.data  |
+| time | string&lt;date-time&gt;  | date & time the event was produced  |
+| agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
+| instrument | string&lt;uri&gt;  | the service which created the event  |
+| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
+| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
+| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
+| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
+| data | object! | a user (agent) has rejected an item (object) <br/>RANGE: [RejectAction](/types/RejectAction) |
+| data.type | string! | the action type  |
+| data.object | object | a sales opportunity (object) offered by a sender to a recipient. <br/>RANGE: [Lead](/types/Lead) |
+| data.participant | object | the entity who made the offer  |
 
-> Examples of payload _(generated)_
-
+### Example
 ```json
 {
   "topic": "realestate/lead#reject",
-  "time": "2019-08-24T14:15:22Z",
+  "time": "2022-10-12T01:13:43Z",
   "agent": "https://agentid.example.com/profile/card#me",
   "instrument": "https://vendorid.example.com/profile/card#me",
   "source": "https://companyid.example.com/profile/card#me",
@@ -296,8 +396,8 @@ Accepts **one of** the following messages:
       "sender": "http://{lead-sender}.example.com/profile/card#me",
       "owner": "http://{lead-owner}.example.com/profile/card#me",
       "dateAccepted": "2019-11-25T04:23:32.000Z",
-      "dateRejected": "2019-08-24T14:15:22Z",
-      "dateSent": "2019-08-24T14:15:22Z",
+      "dateRejected": "2022-10-12T01:13:43Z",
+      "dateSent": "2022-10-12T01:13:43Z",
       "dateReceived": "2019-11-25T04:23:32.000Z",
       "leadSource": [
         {
@@ -318,27 +418,41 @@ Accepts **one of** the following messages:
 ```
 
 
-#### Message extensions
+[back to top](#)
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
+---
+## retract
+```
+realestate/lead#retract
+```
 
-#### Message `lead#retract`
+a lead (data.object) is taken back from the previous assignee (data.participant) by the previous sender/owner (data.recipient)
 
-*a lead (data.object) is taken back from the previous assignee (data.participant) by the previous sender/owner (data.recipient)*
 
-##### Payload
 
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
-| (root) | allOf | - | - | - | **additional properties are allowed** |
+### Schema
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | the event topic which determines the schema of event.data  |
+| time | string&lt;date-time&gt;  | date & time the event was produced  |
+| agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
+| instrument | string&lt;uri&gt;  | the service which created the event  |
+| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
+| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
+| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
+| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
+| data | object! | the message payload <br/>RANGE: [RetractAction](/types/RetractAction) |
+| data.type | string | static RetractAction  |
+| data.object | object | the lead being retracted <br/>RANGE: [Lead](/types/Lead) |
+| data.agent | string&lt;uri&gt;  | user who effected the change  |
+| data.participant | object | the original recipient from which the lead is being taken <br/>RANGE: [RealEstateAgent](/types/RealEstateAgent), [RealEstateOffice](/types/RealEstateOffice), [RealEstateOrganization](/types/RealEstateOrganization) |
+| data.recipient | object | the lead-owner, to whom the lead is being returned <br/>RANGE: [RealEstateOffice](/types/RealEstateOffice), [RealEstateOrganization](/types/RealEstateOrganization), [RealEstateAgent](/types/RealEstateAgent) |
 
-> Examples of payload _(generated)_
-
+### Example
 ```json
 {
   "topic": "realestate/lead#retract",
-  "time": "2019-08-24T14:15:22Z",
+  "time": "2022-10-12T01:13:43Z",
   "agent": "https://agentid.example.com/profile/card#me",
   "instrument": "https://vendorid.example.com/profile/card#me",
   "source": "https://companyid.example.com/profile/card#me",
@@ -372,11 +486,4 @@ Accepts **one of** the following messages:
 ```
 
 
-#### Message extensions
-
-| Name | Type | Description | Value | Constraints | Notes |
-|---|---|---|---|---|---|
-
-
-
-
+[back to top](#)

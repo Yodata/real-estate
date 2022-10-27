@@ -1,14 +1,14 @@
 ---
- award
+ contact
 menu: Topics
-route: /topic/award
+route: /topic/contact
 ---
 
-# award
+# contact
 
 
 
-### publishing award events
+### publishing contact events
 Publish events by HTTP POST to your own pods `/publish/` endpoint including the topic, recipient and message body.]
 
 
@@ -32,29 +32,28 @@ Content-Type: application/json
 ```
 
 
-### receiving award events
+### receiving contact events
 
 | Event | Description |
 | :---- | :---------- |
-| [realestate/award#create](#create) | an award _object_ is bestowed upon the _recipient_ by the message _agent_. |
-| [realestate/award#update](#update) | award action is updated |
-| [realestate/award#delete](#delete) | award record deleted. |
-| [realestate/award#seriescreate](#seriescreate) | a new award series was created |
-| [realestate/award#seriesupdate](#seriesupdate) | an award series was updated |
-| [realestate/award#seriesdelete](#seriesdelete) | an award series was deleted |
-| [realestate/award#teamcreate](#teamcreate) | an award team was created |
-| [realestate/award#teamupdate](#teamupdate) | an award team has been updated |
-| [realestate/award#teammemberadd](#teammemberadd) | a member has been added to an award team |
-| [realestate/award#teammemberremove](#teammemberremove) | a member has been removed from an award team |
+| [realestate/contact#add](#add) | a contact (data.object) is added by a user (data.agent), optionally to a specific targetCollection |
+| [realestate/contact#collectioncreate](#collectioncreate) | a contact group was created |
+| [realestate/contact#collectiondelete](#collectiondelete) | a contact group was deleted |
+| [realestate/contact#collectionmemberadd](#collectionmemberadd) | a contact was added to a collection |
+| [realestate/contact#collectionmemberremove](#collectionmemberremove) | a contact was removed from collection |
+| [realestate/contact#plancreate](#plancreate) | an action plan was created |
+| [realestate/contact#plandelete](#plandelete) | an action plan was created |
+| [realestate/contact#delete](#delete) | contact (object) was removed by user (agent) |
+| [realestate/contact#update](#update) | a crm contact was updated |
 
 
 ---
-## create
+## add
 ```
-realestate/award#create
+realestate/contact#add
 ```
 
-an award _object_ is bestowed upon the _recipient_ by the message _agent_.
+a contact (data.object) is added by a user (data.agent), optionally to a specific targetCollection
 
 
 
@@ -69,17 +68,165 @@ an award _object_ is bestowed upon the _recipient_ by the message _agent_.
 | originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
 | id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
 | @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
-| data | object! | event payload, typically an Action <br/>RANGE: [CreateAction](/types/CreateAction) |
-| data.type | * |   |
-| data.identifier | object | key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.  |
-| data.agent | string&lt;uri&gt; &#124;object | the award presentor <br/>RANGE: [Person](/types/Person), [Organization](/types/Organization), [URI](/types/URI) |
-| data.object | object | the award being bestowed <br/>RANGE: [AwardSeries](/types/AwardSeries) |
-| data.recipient | object | profile URI of the award recipient <br/>RANGE: [RealEstateAgent](/types/RealEstateAgent), [RealEstateOffice](/types/RealEstateOffice), [RealEstateOrganiation](/types/RealEstateOrganiation) |
+| data | object! | data (object) is added by user (agent), optionally to the targetCollection <br/>RANGE: [AddAction](/types/AddAction) |
+| data.type | string! | AddAction  |
+| data.object | object | a CRM contact. <br/>RANGE: [Contact](/types/Contact) |
+| data.targetCollection | object | the collection or reference to the collection receiving the data  |
 
 ### Example
 ```json
 {
-  "topic": "realestate/award#create",
+  "topic": "realestate/contact#add",
+  "time": "2022-10-12T01:13:42Z",
+  "agent": "https://agentid.example.com/profile/card#me",
+  "instrument": "https://vendorid.example.com/profile/card#me",
+  "source": "https://companyid.example.com/profile/card#me",
+  "originalRecipient": "https://agentid.example.com/profile/card#me",
+  "id": "https://instrumentid.example.com/publish/xxxxxxxxxxxxx",
+  "@id": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
+  "data": {
+    "type": "AddAction",
+    "object": {
+      "type": "Contact",
+      "affiliation": [
+        "https://example.com/profile/card#me"
+      ],
+      "address": [
+        {
+          "type": "PostalAddress",
+          "name": "Home",
+          "streetAddress": "1007 Mountain Gate Rd",
+          "postOfficeBoxNumber": "Box 1234",
+          "addressRegion": "New Jersey",
+          "addressLocality": "Gotham City",
+          "postalCode": "10010",
+          "addressCountry": "USA",
+          "addressCounty": "Gotham County",
+          "addressSubdivision": "Gotham Heights"
+        }
+      ],
+      "birthDate": "2022-10-12",
+      "contactPoint": [
+        {
+          "type": "ContactPoint",
+          "name": "Work",
+          "telephone": "800-555-5555",
+          "faxNumber": "888-4BA-TMAN",
+          "email": "bruce@example.com",
+          "url": "https://example.com"
+        }
+      ],
+      "email": "user@example.com",
+      "additionalName": "ambassador satch,pops,satchmo",
+      "familyName": "Wayne",
+      "faxNumber": "(873) 271-4802",
+      "givenName": "Glenn",
+      "honorificPrefix": "Dr",
+      "honorifixSuffix": "Esq",
+      "jobTitle": "Superhero",
+      "knowsLanguage": [
+        {
+          "type": "Language",
+          "name": "English",
+          "additionalName": "en-us"
+        }
+      ],
+      "name": "Bruce Wayne",
+      "telephone": "1-339-041-0306 x2866",
+      "worksFor": "Gotham City Police Department",
+      "identifier": {
+        "redContact_Guid": "55BC6EB4-5C3D-4603-B5AB-154117E1269F"
+      },
+      "additionalProperty": {
+        "supercrmuserid": 1234,
+        "doNotSell": true
+      },
+      "comment": [
+        {
+          "type": "Comment",
+          "text": "this is my comment.",
+          "author": {
+            "type": "Contact",
+            "name": "Bruce Wayne"
+          },
+          "about": {
+            "type": "PropertyListing",
+            "id": "https://example.com/listingid"
+          },
+          "dateCreated": "2019-07-15T05:24:05Z",
+          "dateModified": "2019-07-15T05:24:05Z"
+        }
+      ],
+      "contactGroup": [
+        {
+          "type": "Collection",
+          "name": "Superheros",
+          "identifier": {
+            "vendoraid": "xxx"
+          }
+        }
+      ],
+      "keywords": [
+        "Sphere of Influence",
+        "Past Customer"
+      ],
+      "leadOwner": {
+        "type": "RealEstateOrganization",
+        "name": "Gotham City Real Estate",
+        "id": "https://example.com/profile.card#me"
+      },
+      "leadSource": {
+        "id": "https://www.zillow.com/homedetails/1044-Siler-Pl-Berkeley-CA-94705/24820985_zpid/",
+        "type": "RealEstateWebsite",
+        "name": "Zillow",
+        "url": "https://zillow.com"
+      },
+      "originatingSystem": {
+        "type": "SoftwareApplication",
+        "name": "RDesk",
+        "description": "User Created.",
+        "url": "http://www.rdeskwebsite.com/"
+      },
+      "dateCreated": "2022-10-12T01:13:42Z",
+      "dateModified": "2022-10-12T01:13:42Z"
+    },
+    "targetCollection": {}
+  }
+}
+```
+
+
+[back to top](#)
+
+---
+## collectioncreate
+```
+realestate/contact#collectioncreate
+```
+
+a contact group was created
+
+
+
+### Schema
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | the event topic which determines the schema of event.data  |
+| time | string&lt;date-time&gt;  | date & time the event was produced  |
+| agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
+| instrument | string&lt;uri&gt;  | the service which created the event  |
+| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
+| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
+| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
+| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
+| data | object! | the object was created by the agent  |
+| data.type | string! | CreateAction  |
+| data.object | object | a set of items. <br/>RANGE: [Collection](/types/Collection) |
+
+### Example
+```json
+{
+  "topic": "realestate/contact#collectioncreate",
   "time": "2022-10-12T01:13:42Z",
   "agent": "https://agentid.example.com/profile/card#me",
   "instrument": "https://vendorid.example.com/profile/card#me",
@@ -89,21 +236,14 @@ an award _object_ is bestowed upon the _recipient_ by the message _agent_.
   "@id": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
   "data": {
     "type": "CreateAction",
-    "identifier": {
-      "bhhsAwardId": "xxxx"
-    },
-    "agent": "http://{user}.example.com/profile/card#me",
     "object": {
-      "type": "AwardSeries",
-      "name": "Agent of The Year",
+      "type": "Collection",
+      "name": "Past Clients",
       "identifier": {
-        "hsfAwardSeriesId": "xxxx"
-      }
-    },
-    "recipient": {
-      "type": "RealEstateAgent",
-      "id": "https://user.example.com/profile/card#me",
-      "name": "Joann Agent"
+        "vendoraid": "pastclientscollectionid"
+      },
+      "dateCreated": "2019-07-17T11:05:17.000Z",
+      "dateModified": "2019-07-17T11:05:17.000Z"
     }
   }
 }
@@ -113,12 +253,12 @@ an award _object_ is bestowed upon the _recipient_ by the message _agent_.
 [back to top](#)
 
 ---
-## update
+## collectiondelete
 ```
-realestate/award#update
+realestate/contact#collectiondelete
 ```
 
-award action is updated
+a contact group was deleted
 
 
 
@@ -133,17 +273,14 @@ award action is updated
 | originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
 | id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
 | @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
-| data | object! | event payload, typically an Action <br/>RANGE: [UpdateAction](/types/UpdateAction) |
-| data.type | * |   |
-| data.identifier | object | key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.  |
-| data.agent | string&lt;uri&gt; &#124;object | the award presentor <br/>RANGE: [Person](/types/Person), [Organization](/types/Organization), [URI](/types/URI) |
-| data.object | object | the award being bestowed <br/>RANGE: [AwardSeries](/types/AwardSeries) |
-| data.recipient | object | profile URI of the award recipient <br/>RANGE: [RealEstateAgent](/types/RealEstateAgent), [RealEstateOffice](/types/RealEstateOffice), [RealEstateOrganiation](/types/RealEstateOrganiation) |
+| data | object! | object is removed by the agent from the targetCollection <br/>RANGE: [DeleteAction](/types/DeleteAction) |
+| data.type | string! | the action type  |
+| data.object | object | the deleted collection  |
 
 ### Example
 ```json
 {
-  "topic": "realestate/award#update",
+  "topic": "realestate/contact#collectiondelete",
   "time": "2022-10-12T01:13:42Z",
   "agent": "https://agentid.example.com/profile/card#me",
   "instrument": "https://vendorid.example.com/profile/card#me",
@@ -152,22 +289,288 @@ award action is updated
   "id": "https://instrumentid.example.com/publish/xxxxxxxxxxxxx",
   "@id": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
   "data": {
-    "type": "UpdateAction",
-    "identifier": {
-      "bhhsAwardId": "xxxx"
-    },
-    "agent": "http://{user}.example.com/profile/card#me",
+    "type": "DeleteAction",
     "object": {
-      "type": "AwardSeries",
-      "name": "Agent of The Year",
+      "type": "Collection",
+      "name": "Past Clients",
       "identifier": {
-        "hsfAwardSeriesId": "xxxx"
+        "vendoraid": "pastclientscollectionid"
+      }
+    }
+  }
+}
+```
+
+
+[back to top](#)
+
+---
+## collectionmemberadd
+```
+realestate/contact#collectionmemberadd
+```
+
+a contact was added to a collection
+
+
+
+### Schema
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | the event topic which determines the schema of event.data  |
+| time | string&lt;date-time&gt;  | date & time the event was produced  |
+| agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
+| instrument | string&lt;uri&gt;  | the service which created the event  |
+| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
+| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
+| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
+| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
+| data | object! | data (object) is added by user (agent), optionally to the targetCollection <br/>RANGE: [AddAction](/types/AddAction) |
+| data.type | string! | AddAction  |
+| data.object | object | data added <br/>RANGE: [Contact](/types/Contact) |
+| data.targetCollection | object | the collection or reference to the collection receiving the data <br/>RANGE: [Collection](/types/Collection) |
+
+### Example
+```json
+{
+  "topic": "realestate/contact#collectionmemberadd",
+  "time": "2022-10-12T01:13:42Z",
+  "agent": "https://agentid.example.com/profile/card#me",
+  "instrument": "https://vendorid.example.com/profile/card#me",
+  "source": "https://companyid.example.com/profile/card#me",
+  "originalRecipient": "https://agentid.example.com/profile/card#me",
+  "id": "https://instrumentid.example.com/publish/xxxxxxxxxxxxx",
+  "@id": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
+  "data": {
+    "type": "AddAction",
+    "object": {
+      "type": "Contact",
+      "name": "Dick Grayson",
+      "identifier": {
+        "vendoraid": "robin"
       }
     },
-    "recipient": {
-      "type": "RealEstateAgent",
-      "id": "https://user.example.com/profile/card#me",
-      "name": "Joann Agent"
+    "targetCollection": {
+      "type": "Collection",
+      "name": "Superhero Sidekicks",
+      "identifier": {
+        "vendoraid": "xxx"
+      }
+    }
+  }
+}
+```
+
+
+[back to top](#)
+
+---
+## collectionmemberremove
+```
+realestate/contact#collectionmemberremove
+```
+
+a contact was removed from collection
+
+
+
+### Schema
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | the event topic which determines the schema of event.data  |
+| time | string&lt;date-time&gt;  | date & time the event was produced  |
+| agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
+| instrument | string&lt;uri&gt;  | the service which created the event  |
+| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
+| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
+| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
+| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
+| data | object! | an object (object) is removed by a user (agent), optionally from a collection (targetCollection)  |
+| data.type | string! | the action type  |
+| data.object | object | the item removed <br/>RANGE: [Contact](/types/Contact) |
+| data.agent | * |   |
+| data.targetCollection | object | the collection from which the item is being removed <br/>RANGE: [Collection](/types/Collection) |
+
+### Example
+```json
+{
+  "topic": "realestate/contact#collectionmemberremove",
+  "time": "2022-10-12T01:13:42Z",
+  "agent": "https://agentid.example.com/profile/card#me",
+  "instrument": "https://vendorid.example.com/profile/card#me",
+  "source": "https://companyid.example.com/profile/card#me",
+  "originalRecipient": "https://agentid.example.com/profile/card#me",
+  "id": "https://instrumentid.example.com/publish/xxxxxxxxxxxxx",
+  "@id": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
+  "data": {
+    "type": "RemoveAction",
+    "object": {
+      "type": "Contact",
+      "name": "Dick Grayson",
+      "identifier": {
+        "vendoraid": "xxx"
+      }
+    },
+    "agent": "https://{user-who-removed-the-item}.com/profile/card#me",
+    "targetCollection": {
+      "type": "Collection",
+      "name": "Past Clients",
+      "identifier": {
+        "vendoraid": "pastclientscollectionid"
+      }
+    }
+  }
+}
+```
+
+
+[back to top](#)
+
+---
+## plancreate
+```
+realestate/contact#plancreate
+```
+
+an action plan was created
+
+
+
+### Schema
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | the event topic which determines the schema of event.data  |
+| time | string&lt;date-time&gt;  | date & time the event was produced  |
+| agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
+| instrument | string&lt;uri&gt;  | the service which created the event  |
+| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
+| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
+| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
+| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
+| data | object! | the object was created by the agent  |
+| data.type | string! | CreateAction  |
+| data.object | object | a collection of related tasks <br/>RANGE: [Plan](/types/Plan) |
+
+### Example
+```json
+{
+  "topic": "realestate/contact#plancreate",
+  "time": "2022-10-12T01:13:42Z",
+  "agent": "https://agentid.example.com/profile/card#me",
+  "instrument": "https://vendorid.example.com/profile/card#me",
+  "source": "https://companyid.example.com/profile/card#me",
+  "originalRecipient": "https://agentid.example.com/profile/card#me",
+  "id": "https://instrumentid.example.com/publish/xxxxxxxxxxxxx",
+  "@id": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
+  "data": {
+    "type": "CreateAction",
+    "object": {
+      "type": "Plan",
+      "name": "Ricky Follow Up Plan",
+      "description": "this is the description of my awesome plan",
+      "member": [
+        {
+          "type": "Task",
+          "identifier": {
+            "redEvent_ID": "23445"
+          },
+          "actionStatus": "PotentialActionStatus",
+          "memberOf": {
+            "type": "Plan",
+            "identifier": {
+              "redPlan_ID": "xxxx"
+            }
+          },
+          "agent": {
+            "type": "RealEstateAgent",
+            "id": "http://user.example.com/profile/card#me"
+          },
+          "participant": [
+            {
+              "type": "Contact",
+              "name": "Bruce Wayne",
+              "email": "bruce@example.com",
+              "identifier": {
+                "redContact_GUID": "92d0a096-457e-4643-ace8-fa95b6bdb1c5"
+              }
+            }
+          ],
+          "name": "Call Ricky",
+          "description": "Agenda 1. Something 2. Something Else ...",
+          "keywords": [
+            "Sphere of Influence",
+            "Past Customer"
+          ],
+          "dateDue": "2022-10-12T01:13:42Z",
+          "dateCompleted": "2022-10-12T01:13:42Z",
+          "location": {
+            "type": "Place",
+            "address": {
+              "streetAddress": "1007 Mountain Gate Rd",
+              "addressLocality": "Gotham City",
+              "addressRegion": "NJ",
+              "postalCode": "10007",
+              "addressCounty": "Gotham addressCounty",
+              "addressSubdivision": "Gotham Heights"
+            }
+          }
+        }
+      ],
+      "creator": "http://agent.example.com/profile/card#me",
+      "dateCreated": "2022-10-12T01:13:42Z",
+      "dateModified": "2022-10-12T01:13:42Z",
+      "dateCompleted": "2022-10-12T01:13:42Z"
+    }
+  }
+}
+```
+
+
+[back to top](#)
+
+---
+## plandelete
+```
+realestate/contact#plandelete
+```
+
+an action plan was created
+
+
+
+### Schema
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | the event topic which determines the schema of event.data  |
+| time | string&lt;date-time&gt;  | date & time the event was produced  |
+| agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
+| instrument | string&lt;uri&gt;  | the service which created the event  |
+| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
+| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
+| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
+| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
+| data | object! | object is removed by the agent from the targetCollection <br/>RANGE: [DeleteAction](/types/DeleteAction) |
+| data.type | string! | the action type  |
+| data.object | object | the plan being deleted <br/>RANGE: [Plan](/types/Plan) |
+
+### Example
+```json
+{
+  "topic": "realestate/contact#plandelete",
+  "time": "2022-10-12T01:13:42Z",
+  "agent": "https://agentid.example.com/profile/card#me",
+  "instrument": "https://vendorid.example.com/profile/card#me",
+  "source": "https://companyid.example.com/profile/card#me",
+  "originalRecipient": "https://agentid.example.com/profile/card#me",
+  "id": "https://instrumentid.example.com/publish/xxxxxxxxxxxxx",
+  "@id": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
+  "data": {
+    "type": "DeleteAction",
+    "object": {
+      "type": "Plan",
+      "identifier": {
+        "vendoraid": "acb"
+      }
     }
   }
 }
@@ -179,10 +582,10 @@ award action is updated
 ---
 ## delete
 ```
-realestate/award#delete
+realestate/contact#delete
 ```
 
-award record deleted.
+contact (object) was removed by user (agent)
 
 
 
@@ -198,16 +601,13 @@ award record deleted.
 | id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
 | @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
 | data | object! | event payload, typically an Action <br/>RANGE: [DeleteAction](/types/DeleteAction) |
-| data.type | * |   |
-| data.identifier | object | key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.  |
-| data.agent | string&lt;uri&gt; &#124;object | the award presentor <br/>RANGE: [Person](/types/Person), [Organization](/types/Organization), [URI](/types/URI) |
-| data.object | object | the award being bestowed <br/>RANGE: [AwardSeries](/types/AwardSeries) |
-| data.recipient | object | profile URI of the award recipient <br/>RANGE: [RealEstateAgent](/types/RealEstateAgent), [RealEstateOffice](/types/RealEstateOffice), [RealEstateOrganiation](/types/RealEstateOrganiation) |
+| data.type | string | DeleteAction  |
+| data.object | object | the deleted contact <br/>RANGE: [Contact](/types/Contact) |
 
 ### Example
 ```json
 {
-  "topic": "realestate/award#delete",
+  "topic": "realestate/contact#delete",
   "time": "2022-10-12T01:13:42Z",
   "agent": "https://agentid.example.com/profile/card#me",
   "instrument": "https://vendorid.example.com/profile/card#me",
@@ -217,412 +617,76 @@ award record deleted.
   "@id": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
   "data": {
     "type": "DeleteAction",
-    "identifier": {
-      "bhhsAwardId": "xxxx"
-    },
-    "agent": "http://{user}.example.com/profile/card#me",
     "object": {
-      "type": "AwardSeries",
-      "name": "Agent of The Year",
+      "type": "Contact",
       "identifier": {
-        "hsfAwardSeriesId": "xxxx"
+        "vendoraid": "xxx"
       }
+    }
+  }
+}
+```
+
+
+[back to top](#)
+
+---
+## update
+```
+realestate/contact#update
+```
+
+a crm contact was updated
+
+
+
+### Schema
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | the event topic which determines the schema of event.data  |
+| time | string&lt;date-time&gt;  | date & time the event was produced  |
+| agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
+| instrument | string&lt;uri&gt;  | the service which created the event  |
+| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
+| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
+| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
+| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
+| data | object! | the item (object) has been updated by user (agent)  |
+| data.type | string! | const UpdateAction  |
+| data.object | object | a complete or partial contact containing only the changed values <br/>RANGE: [Contact](/types/Contact) |
+| data.agent | * |   |
+
+### Example
+```json
+{
+  "topic": "realestate/contact#update",
+  "time": "2022-10-12T01:13:42Z",
+  "agent": "https://agentid.example.com/profile/card#me",
+  "instrument": "https://vendorid.example.com/profile/card#me",
+  "source": "https://companyid.example.com/profile/card#me",
+  "originalRecipient": "https://agentid.example.com/profile/card#me",
+  "id": "https://instrumentid.example.com/publish/xxxxxxxxxxxxx",
+  "@id": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
+  "data": {
+    "type": "UpdateAction",
+    "object": {
+      "type": "Contact",
+      "description": "a partial update example",
+      "identifier": {
+        "redContact_GUID": "2d9d15be-de2d-497f-bd4d-edfa0f094356"
+      },
+      "contactPoint": [
+        {
+          "type": "ContactPoint",
+          "name": "Mobile",
+          "telephone": "800-4-BATMAN"
+        }
+      ]
     },
-    "recipient": {
+    "agent": {
       "type": "RealEstateAgent",
-      "id": "https://user.example.com/profile/card#me",
-      "name": "Joann Agent"
-    }
-  }
-}
-```
-
-
-[back to top](#)
-
----
-## seriescreate
-```
-realestate/award#seriescreate
-```
-
-a new award series was created
-
-
-
-### Schema
-| Name | Type | Description |
-|:-----| :--- | :---------- |
-| topic | string! | the event topic which determines the schema of event.data  |
-| time | string&lt;date-time&gt;  | date & time the event was produced  |
-| agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
-| instrument | string&lt;uri&gt;  | the service which created the event  |
-| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
-| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
-| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
-| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
-| data | object! | event payload, typically an Action <br/>RANGE: [CreateAction](/types/CreateAction) |
-| data.type | * |   |
-| data.object | object | an award bestowed at regular intervals <br/>RANGE: [AwardSeries](/types/AwardSeries) |
-
-### Example
-```json
-{
-  "topic": "realestate/award#seriescreate",
-  "time": "2022-10-12T01:13:42Z",
-  "agent": "https://agentid.example.com/profile/card#me",
-  "instrument": "https://vendorid.example.com/profile/card#me",
-  "source": "https://companyid.example.com/profile/card#me",
-  "originalRecipient": "https://agentid.example.com/profile/card#me",
-  "id": "https://instrumentid.example.com/publish/xxxxxxxxxxxxx",
-  "@id": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
-  "data": {
-    "type": "CreateAction",
-    "object": {
-      "type": "AwardSeries",
-      "name": "Top 1% Club",
-      "description": "Annual",
-      "duration": "R/P1Y",
-      "startDate": "2022-10-12T01:13:42Z",
-      "endDate": "2022-10-12T01:13:42Z",
-      "id": "https://example/com",
-      "identifier": {
-        "hsfAwardSeriesID": "xxxx"
-      }
-    }
-  }
-}
-```
-
-
-[back to top](#)
-
----
-## seriesupdate
-```
-realestate/award#seriesupdate
-```
-
-an award series was updated
-
-
-
-### Schema
-| Name | Type | Description |
-|:-----| :--- | :---------- |
-| topic | string! | the event topic which determines the schema of event.data  |
-| time | string&lt;date-time&gt;  | date & time the event was produced  |
-| agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
-| instrument | string&lt;uri&gt;  | the service which created the event  |
-| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
-| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
-| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
-| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
-| data | object! | event payload, typically an Action <br/>RANGE: [UpdateAction](/types/UpdateAction) |
-| data.type | * |   |
-| data.object | object | an award bestowed at regular intervals <br/>RANGE: [AwardSeries](/types/AwardSeries) |
-
-### Example
-```json
-{
-  "topic": "realestate/award#seriesupdate",
-  "time": "2022-10-12T01:13:42Z",
-  "agent": "https://agentid.example.com/profile/card#me",
-  "instrument": "https://vendorid.example.com/profile/card#me",
-  "source": "https://companyid.example.com/profile/card#me",
-  "originalRecipient": "https://agentid.example.com/profile/card#me",
-  "id": "https://instrumentid.example.com/publish/xxxxxxxxxxxxx",
-  "@id": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
-  "data": {
-    "type": "UpdateAction",
-    "object": {
-      "type": "AwardSeries",
-      "name": "Top 1% Club",
-      "description": "Annual",
-      "duration": "R/P1Y",
-      "startDate": "2022-10-12T01:13:42Z",
-      "endDate": "2022-10-12T01:13:42Z",
-      "id": "https://example/com",
-      "identifier": {
-        "hsfAwardSeriesID": "xxxx"
-      }
-    }
-  }
-}
-```
-
-
-[back to top](#)
-
----
-## seriesdelete
-```
-realestate/award#seriesdelete
-```
-
-an award series was deleted
-
-
-
-### Schema
-| Name | Type | Description |
-|:-----| :--- | :---------- |
-| topic | string! | the event topic which determines the schema of event.data  |
-| time | string&lt;date-time&gt;  | date & time the event was produced  |
-| agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
-| instrument | string&lt;uri&gt;  | the service which created the event  |
-| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
-| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
-| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
-| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
-| data | object! | event payload, typically an Action <br/>RANGE: [DeleteAction](/types/DeleteAction) |
-| data.type | * |   |
-| data.object | object | an award bestowed at regular intervals <br/>RANGE: [AwardSeries](/types/AwardSeries) |
-
-### Example
-```json
-{
-  "topic": "realestate/award#seriesdelete",
-  "time": "2022-10-12T01:13:42Z",
-  "agent": "https://agentid.example.com/profile/card#me",
-  "instrument": "https://vendorid.example.com/profile/card#me",
-  "source": "https://companyid.example.com/profile/card#me",
-  "originalRecipient": "https://agentid.example.com/profile/card#me",
-  "id": "https://instrumentid.example.com/publish/xxxxxxxxxxxxx",
-  "@id": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
-  "data": {
-    "type": "DeleteAction",
-    "object": {
-      "type": "AwardSeries",
-      "name": "Top 1% Club",
-      "description": "Annual",
-      "duration": "R/P1Y",
-      "startDate": "2022-10-12T01:13:42Z",
-      "endDate": "2022-10-12T01:13:42Z",
-      "id": "https://example/com",
-      "identifier": {
-        "hsfAwardSeriesID": "xxxx"
-      }
-    }
-  }
-}
-```
-
-
-[back to top](#)
-
----
-## teamcreate
-```
-realestate/award#teamcreate
-```
-
-an award team was created
-
-
-
-### Schema
-| Name | Type | Description |
-|:-----| :--- | :---------- |
-| topic | string! | the event topic which determines the schema of event.data  |
-| time | string&lt;date-time&gt;  | date & time the event was produced  |
-| agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
-| instrument | string&lt;uri&gt;  | the service which created the event  |
-| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
-| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
-| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
-| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
-| data | object! | event payload, typically an Action <br/>RANGE: [CreateAction](/types/CreateAction) |
-| data.type | * |   |
-| data.object | object | a Collection <br/>RANGE: [AwardTeam](/types/AwardTeam) |
-
-### Example
-```json
-{
-  "topic": "realestate/award#teamcreate",
-  "time": "2022-10-12T01:13:42Z",
-  "agent": "https://agentid.example.com/profile/card#me",
-  "instrument": "https://vendorid.example.com/profile/card#me",
-  "source": "https://companyid.example.com/profile/card#me",
-  "originalRecipient": "https://agentid.example.com/profile/card#me",
-  "id": "https://instrumentid.example.com/publish/xxxxxxxxxxxxx",
-  "@id": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
-  "data": {
-    "type": "CreateAction",
-    "object": {
-      "type": "AwardTeam",
-      "name": "Clients",
-      "identifier": {
-        "hsfTeamId": "xxxxx"
-      },
-      "member": [
-        "https://user.example.com/profile/card#me",
-        "https://office.example.com/profile/card#me",
-        "https://company.example.com/profile/card#me"
-      ]
-    }
-  }
-}
-```
-
-
-[back to top](#)
-
----
-## teamupdate
-```
-realestate/award#teamupdate
-```
-
-an award team has been updated
-
-
-
-### Schema
-| Name | Type | Description |
-|:-----| :--- | :---------- |
-| topic | string! | the event topic which determines the schema of event.data  |
-| time | string&lt;date-time&gt;  | date & time the event was produced  |
-| agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
-| instrument | string&lt;uri&gt;  | the service which created the event  |
-| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
-| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
-| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
-| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
-| data | object! | event payload, typically an Action <br/>RANGE: [UpdateAction](/types/UpdateAction) |
-| data.type | * |   |
-| data.object | object | a Collection <br/>RANGE: [AwardTeam](/types/AwardTeam) |
-
-### Example
-```json
-{
-  "topic": "realestate/award#teamupdate",
-  "time": "2022-10-12T01:13:42Z",
-  "agent": "https://agentid.example.com/profile/card#me",
-  "instrument": "https://vendorid.example.com/profile/card#me",
-  "source": "https://companyid.example.com/profile/card#me",
-  "originalRecipient": "https://agentid.example.com/profile/card#me",
-  "id": "https://instrumentid.example.com/publish/xxxxxxxxxxxxx",
-  "@id": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
-  "data": {
-    "type": "UpdateAction",
-    "object": {
-      "type": "AwardTeam",
-      "name": "Clients",
-      "identifier": {
-        "hsfTeamId": "xxxxx"
-      },
-      "member": [
-        "https://user.example.com/profile/card#me",
-        "https://office.example.com/profile/card#me",
-        "https://company.example.com/profile/card#me"
-      ]
-    }
-  }
-}
-```
-
-
-[back to top](#)
-
----
-## teammemberadd
-```
-realestate/award#teammemberadd
-```
-
-a member has been added to an award team
-
-
-
-### Schema
-| Name | Type | Description |
-|:-----| :--- | :---------- |
-| topic | string! | the event topic which determines the schema of event.data  |
-| time | string&lt;date-time&gt;  | date & time the event was produced  |
-| agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
-| instrument | string&lt;uri&gt;  | the service which created the event  |
-| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
-| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
-| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
-| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
-| data | object! | event payload, typically an Action <br/>RANGE: [AddAction](/types/AddAction) |
-| data.type | * |   |
-| data.object | string | the member being added <br/>RANGE: [RealEstateAgent](/types/RealEstateAgent), [RealEstateOffice](/types/RealEstateOffice), [RealEstateOrganization](/types/RealEstateOrganization) |
-| data.targetCollection | object | the team receiving the new member <br/>RANGE: [AwardTeam](/types/AwardTeam) |
-
-### Example
-```json
-{
-  "topic": "realestate/award#teammemberadd",
-  "time": "2022-10-12T01:13:42Z",
-  "agent": "https://agentid.example.com/profile/card#me",
-  "instrument": "https://vendorid.example.com/profile/card#me",
-  "source": "https://companyid.example.com/profile/card#me",
-  "originalRecipient": "https://agentid.example.com/profile/card#me",
-  "id": "https://instrumentid.example.com/publish/xxxxxxxxxxxxx",
-  "@id": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
-  "data": {
-    "type": "AddAction",
-    "object": "https://user.example.com/profile/card#me",
-    "targetCollection": {
-      "type": "AwardTeam",
-      "identifier": {
-        "hsfTeamId": "xxxx"
-      }
-    }
-  }
-}
-```
-
-
-[back to top](#)
-
----
-## teammemberremove
-```
-realestate/award#teammemberremove
-```
-
-a member has been removed from an award team
-
-
-
-### Schema
-| Name | Type | Description |
-|:-----| :--- | :---------- |
-| topic | string! | the event topic which determines the schema of event.data  |
-| time | string&lt;date-time&gt;  | date & time the event was produced  |
-| agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
-| instrument | string&lt;uri&gt;  | the service which created the event  |
-| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
-| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
-| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
-| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
-| data | object! | event payload, typically an Action <br/>RANGE: [RemoveAction](/types/RemoveAction) |
-| data.type | * |   |
-| data.object | string | the member being removed <br/>RANGE: [RealEstateAgent](/types/RealEstateAgent), [RealEstateOffice](/types/RealEstateOffice), [RealEstateOrganization](/types/RealEstateOrganization) |
-| data.targetCollection | object | the team from which the member is removed <br/>RANGE: [AwardTeam](/types/AwardTeam) |
-
-### Example
-```json
-{
-  "topic": "realestate/award#teammemberremove",
-  "time": "2022-10-12T01:13:42Z",
-  "agent": "https://agentid.example.com/profile/card#me",
-  "instrument": "https://vendorid.example.com/profile/card#me",
-  "source": "https://companyid.example.com/profile/card#me",
-  "originalRecipient": "https://agentid.example.com/profile/card#me",
-  "id": "https://instrumentid.example.com/publish/xxxxxxxxxxxxx",
-  "@id": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
-  "data": {
-    "type": "RemoveAction",
-    "object": "https://user.example.com/profile/card#me",
-    "targetCollection": {
-      "type": "AwardTeam",
-      "identifier": {
-        "hsfTeamId": "xxxx"
-      }
+      "description": "the user who updated the item",
+      "id": "https://agent.example.com/profile/card#me"
     }
   }
 }

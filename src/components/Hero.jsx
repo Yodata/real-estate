@@ -55,8 +55,8 @@ export function Hero () {
                 Used in production for 3+ years by more than 40 companies.
               </p>
               <div className="mt-8 flex gap-4 md:justify-center lg:justify-start">
-                <Button href="/">Get started</Button>
-                <Button href="/" variant="secondary">
+                <Button href="/docs/api">Get started</Button>
+                <Button href="https://github.com/yodata/real-estate" variant="secondary">
                   View on GitHub
                 </Button>
               </div>

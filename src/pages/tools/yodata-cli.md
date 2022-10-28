@@ -9,12 +9,12 @@ yodata cli
 [![Downloads/week](https://img.shields.io/npm/dw/mycli.svg)](https://npmjs.org/package/mycli)
 [![License](https://img.shields.io/npm/l/mycli.svg)](https://github.com/yodata/yodata/yodata/blob/master/package.json)
 
-<!-- toc -->
+
 * [Usage](#usage)
 * [Commands](#commands)
-<!-- tocstop -->
+
 # Usage
-<!-- usage -->
+
 ```sh-session
 $ npm install -g @yodata/cli
 $ yodata COMMAND
@@ -26,9 +26,9 @@ USAGE
   $ yodata COMMAND
 ...
 ```
-<!-- usagestop -->
+
 # Commands
-<!-- commands -->
+
 * [`yodata autocomplete [SHELL]`](#yodata-autocomplete-shell)
 * [`yodata check TARGET`](#yodata-check-target)
 * [`yodata check-parent TARGET`](#yodata-check-parent-target)
@@ -403,4 +403,4 @@ OPTIONS
 ALIASES
   $ yodata who
 ```
-<!-- commandsstop -->
+

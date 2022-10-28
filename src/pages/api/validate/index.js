@@ -1,7 +1,7 @@
 const logger = require('@yodata/logger')
 import Ajv from 'ajv'
 import $RefParser from 'json-schema-ref-parser'
-import GetSchema from './getSchema'
+import { getSchema } from './getSchema'
 
 /**
  * validates the payload.object with payload.schema and returns isValid or errors array.
@@ -18,11 +18,23 @@ import GetSchema from './getSchema'
  * @property {string} [error] - error message
  */
 export default async function handler(request, res) {
-  const { object, schema } = request.body
-  const response = {}
+  const object = request.body
+  const response = { object }
+  const schemaName = object?.topic || object?.type || undefined
+  if (!schemaName) {
+    response.actionStatus = 'FailedActionStatus'
+    response.error = 'unable to determine the object type'
+    return res.status(400).json(response)
+  }
+  response.schemaName = schemaName
+  const schema = await getSchema(schemaName).catch(err => undefined)
+  if (!schema) {
+    response.actionStatus = 'FailedActionStatus'
+    response.error = `schema ${schemaName} not found`
+    return res.status(400).json(response)
+  }
   try {
-    logger.debug({ object, schema })
-    const ajv = new Ajv({ allErrors: true })
+    const ajv = new Ajv({ allErrors: true, strict: false })
     const validate = ajv.compile(schema)
     response.isValid = await validate(object)
     if (!response.isValid) {

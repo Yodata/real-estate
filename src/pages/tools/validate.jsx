@@ -109,6 +109,7 @@ const defaultObject = {
 }
 
 export default function ValidateSchemaObject(props) {
+
   const [ schemaObject, setSchemaObject ] = useState(defaultObject);
   const schemaType = schemaObject?.topic || schemaObject?.type || undefined
   const schemaId = (typeof schemaType === 'string')

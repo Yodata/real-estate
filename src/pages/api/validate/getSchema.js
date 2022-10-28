@@ -10979,24 +10979,11 @@ const schemas = {
   },
 }
 
-export async function getSchema(payload) {
-  let { object, schema } = payload
-  const { topic, type } = object
+export async function getSchema(schema) {
   if (typeof schema === 'string' && schema.startsWith('http')) {
     schema = await $RefParser.dereference(schema)
-  } else if (typeof topic === 'string') {
-    schema = schemas[topic]
-    if (!schema) {
-      throw new Error(`No schema found for topic: ${topic}`)
-    }
-  } else if (typeof type === 'string') {
-    schema = schemas[type]
-    if (!schema) {
-      throw new Error(`No schema found for type: ${type}`)
-    }
-  }
-  if (typeof schema === 'undefined') {
-    throw new Error(`SCHEMA_NOT_FOUND:${topic}${type}`)
+  } else {
+    schema = schemas[schema]
   }
   return schema
 }

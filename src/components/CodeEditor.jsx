@@ -24,6 +24,7 @@ export function CodeEditor({ content ='', language = 'json', ...props }) {
               {line
                 .filter((token) => !token.empty)
                 .map((token, key) => (
+                  // eslint-disable-next-line react/jsx-key
                   <span {...getTokenProps({ token, key })} />
                 ))}
               {'\n'}

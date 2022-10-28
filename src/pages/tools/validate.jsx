@@ -116,8 +116,8 @@ export default function ValidateSchemaObject(props) {
     : 'Unrecognized'
 
 
-  const onSubmit = (json) => {
-    axios.post('/api/replay', json).then((res) => {
+  const onSubmit = () => {
+    axios.post('/api/validate', json).then((res) => {
       setApiResponse(`${res?.data?.actionStatus}: ${res?.data?.result}`)
     })
   }
@@ -125,7 +125,7 @@ export default function ValidateSchemaObject(props) {
   return (
     <div>
       <h2>Schema Validation</h2>
-      <div className='mb-5'>paste any message or schema object and we'll try to validate it for you</div>
+      <div className='mb-5'>validate any event message (with a topic) or schema object (with a type)</div>
       <div id='schema-type'>{`schema: ${schemaId}`}</div>
       <CodeEditor content={JSON.stringify(defaultObject,null,2)} />
     </div>

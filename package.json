@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "standard real estate events for software integration",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Yodata/real-estate.git"
@@ -23,6 +22,7 @@
   },
   "homepage": "https://github.com/Yodata/real-estate#readme",
   "devDependencies": {
-    "husky": "^8.0.1"
+    "husky": "^8.0.1",
+    "typescript": "^4.8.4"
   }
 }

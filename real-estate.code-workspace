@@ -73,5 +73,7 @@
 		"yaml.schemas": {
 			"https://json.schemastore.org/eslintrc": "file:///Users/dave/git/yodata/real-estate/.eslintrc.yaml"
 		},
+		"zenMode.hideLineNumbers": false,
+		"search.useParentIgnoreFiles": true,
 	}
 }

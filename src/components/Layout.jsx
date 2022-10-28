@@ -42,25 +42,22 @@ const navigation = [
     ]
   },
   {
-    title: 'References',
+    title: 'Developers',
     links: [
-      { title: 'About the project', href: '/about-the-project' },
-      { title: 'Neuralink integration', href: '/docs/neuralink-integration' },
-      { title: 'Temporal paradoxes', href: '/docs/temporal-paradoxes' },
-      { title: 'Testing', href: '/docs/testing' },
-      { title: 'Compile-time caching', href: '/docs/compile-time-caching' },
-      {
-        title: 'Predictive data generation',
-        href: '/docs/predictive-data-generation'
-      }
+      { title: 'Design principles', href: '/about-the-project' },
+      { title: 'Schema Validator GUI', href: '/tools/validate' },
+      { title: 'Schema Validation API', href: '/docs/api/validate' },
+      { title: 'Replay Events GUI', href: '/tools/replay' },
+      { title: 'Replay Events API', href: '/docs/api/replay' },
+      { title: 'Yodata CLI', href: '/tools/yodata-cli' },
+      { title: 'Architecture guide', href: '/docs/architecture-guide' }
     ]
   },
   {
     title: 'Contributing',
     links: [
-      { title: 'How to contribute', href: '/docs/how-to-contribute' },
-      { title: 'Architecture guide', href: '/docs/architecture-guide' },
-      { title: 'Design principles', href: '/docs/design-principles' }
+      { title: 'How to contribute', href: 'https://github.com/yodata/real-estate' },
+      { title: 'Developer Forum', href: 'https://github.com/Yodata/real-estate/discussions' },
     ]
   }
 ]

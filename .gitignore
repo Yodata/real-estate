@@ -140,3 +140,4 @@ __transpiled
 context
 generator/**/__generated__/*
 .vercel
+**/.next/

@@ -1,12 +1,15 @@
+$id: ./definitions/AcceptAction
+type: object
 allOf:
   - $ref: Action.yaml
+  - title: AcceptAction
   - description: The act of committing to/adopting an object.
   - x-range: AcceptAction
     properties:
       type:
-        enum:
-          - AcceptAction
+        const: AcceptAction
       agent:
+        $ref: ./agent
         description: the accepting user
         type: string
         format: uri

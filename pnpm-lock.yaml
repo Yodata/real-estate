@@ -2,14 +2,22 @@ lockfileVersion: 5.4
 
 specifiers:
   husky: ^8.0.1
+  typescript: ^4.8.4
 
 devDependencies:
   husky: 8.0.1
+  typescript: 4.8.4
 
 packages:
 
   /husky/8.0.1:
     resolution: {integrity: sha512-xs7/chUH/CKdOCs7Zy0Aev9e/dKOMZf3K1Az1nar3tzlv0jfqnYtu235bstsWTmXOR0EfINrPa97yy4Lz6RiKw==}
     engines: {node: '>=14'}
+    hasBin: true
+    dev: true
+
+  /typescript/4.8.4:
+    resolution: {integrity: sha512-QCh+85mCy+h0IGff8r5XWzOVSbBO+KfeYrMQh7NJ58QujwcE22u+NUSmUxqF+un70P9GXKxa2HCNiTTMJknyjQ==}
+    engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true

@@ -1,6 +1,7 @@
+import React from 'react'
+import clsx from 'clsx'
 
-export function Table (props) {
-  return (<table>{props.children}</table>)
+export default function Table(props) {
+  const { childen, className } = props
+  return <table className={className}>{childen}</table>
 }
-
-module.exports = exports = Table

@@ -23,15 +23,19 @@ export default async function handler(request, res) {
   const schemaName = object?.topic || object?.type || undefined
   if (!schemaName) {
     response.actionStatus = 'FailedActionStatus'
-    response.error = 'unable to determine the object type'
-    return res.status(400).json(response)
+    response.error = {
+      message: 'unable to determine the object type'
+    }
+    return res.status(200).json(response)
   }
   response.schemaName = schemaName
   const schema = await getSchema(schemaName).catch(err => undefined)
   if (!schema) {
     response.actionStatus = 'FailedActionStatus'
-    response.error = `schema ${schemaName} not found`
-    return res.status(400).json(response)
+    response.error = {
+      message: `Sorry, we can't validate ${schemaName} at this time`
+    }
+    return res.status(200).json(response)
   }
   try {
     const ajv = new Ajv({ allErrors: true, strict: false })

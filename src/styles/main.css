@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .error {
+    @apply text-red-600! !important
+  }
+
+  .success * {
+    @apply text-green-600 !important
+  }
+}

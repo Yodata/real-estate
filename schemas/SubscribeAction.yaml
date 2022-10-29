@@ -1,3 +1,4 @@
+$id: SubscribeAction
 allOf:
   - $ref: Action.yaml
   - x-range: SubscribeAction

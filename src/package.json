@@ -11,6 +11,7 @@
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
     "@docsearch/react": "^3.2.1",
+    "@faker-js/faker": "^7.6.0",
     "@headlessui/react": "^1.7.2",
     "@markdoc/markdoc": "0.1.7",
     "@markdoc/next.js": "0.1.6",
@@ -24,6 +25,7 @@
     "focus-visible": "^5.2.0",
     "got": "^12.5.2",
     "http2-wrapper": "^2.1.11",
+    "json-schema-faker": "0.5.0-rcv.46",
     "json-schema-ref-parser": "^9.0.9",
     "next": "^12.3.1",
     "postcss-focus-visible": "^6.0.4",

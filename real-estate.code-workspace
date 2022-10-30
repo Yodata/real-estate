@@ -12,6 +12,14 @@
       "path": "src/pages/api/replay"
     },
     {
+      "name": "API/MOCK",
+      "path": "src/pages/api/mock"
+    },
+    {
+      "name": "API/VALIDATE",
+      "path": "src/pages/api/validate"
+    },
+    {
       "name": "SCHEMAS",
       "path": "schemas"
     },

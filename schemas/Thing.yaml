@@ -1,7 +1,14 @@
+$id: htttp://realestate.yodata.me/schema/Thing
 type: object
+title: Thing
+summary: The root type of all Things.
 required:
   - type
 properties:
   type:
     type: string
     description: The item type (Linked-Data @type)
+  '@id':
+    type: string
+    format: uri
+    description: the liked data uri for the Thing

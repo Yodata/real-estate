@@ -1,0 +1,18 @@
+$id: https://realestate.yodata.me/schema/Thing.yaml
+type: object
+title: Thing
+summary: The root type of all Things.
+required:
+  - type
+properties:
+  type:
+    type: string
+    description: The item type (Linked-Data @type)
+    x-parser-schema-id: <anonymous-schema-136>
+  '@id':
+    type: string
+    format: uri
+    description: the liked data uri for the Thing
+    x-parser-schema-id: <anonymous-schema-137>
+x-parser-schema-id: Thing
+

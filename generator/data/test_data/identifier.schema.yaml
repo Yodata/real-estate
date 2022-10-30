@@ -1,0 +1,3 @@
+$id: identifier
+type: object
+additionalProperties: true

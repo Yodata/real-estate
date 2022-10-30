@@ -1,0 +1,56 @@
+title: RealEstateOffice
+properties:
+  type:
+    type: string
+    description: RealEstateOffice
+    enum:
+      - RealEstateOffice
+  contactPoint:
+    description: department or role specific contact points, i.e. relocation.
+    example:
+      - type: ContactPoint
+        name: Relocation
+        telephone: 1-245-880-8222
+        faxNumber: 958-530-3473
+        email: relocation@example.com
+  description:
+    example: The number on Gotham City Real Estate Company since 1940
+  parentOrganization:
+    description: Office broker or franchisor.
+    x-range: RealEstateOrganization
+  subOrganization:
+    type: array
+    x-range: RealEstateAgent
+    description: Agents and teams associated with the office.
+    items:
+      type: string
+      format: uri
+  geoCoordinates:
+    title: GeoCoordinates
+    type: object
+    description: a lat/long point.
+    x-range: GeoCoordinates
+    properties:
+      type:
+        type: string
+        description: GeoCordinates
+        enum:
+          - GeoCoordinates
+        x-parser-schema-id: <anonymous-schema-272>
+      longitude:
+        type: number
+        description: The longitude of a location.
+        x-title: longitude
+        example: 73.98
+        x-parser-schema-id: <anonymous-schema-273>
+      latitude:
+        type: number
+        description: The latitude of a location.
+        x-title: latitude
+        example: 40.75
+        x-parser-schema-id: <anonymous-schema-274>
+type: object
+description: A real estate office / place of business.
+x-parser-schema-id: RealEstateOffice
+$id: https://realestate.yodata.me/schema/RealEstateOffice.yaml
+

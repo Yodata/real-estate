@@ -1,0 +1,49 @@
+title: Permit
+description: A permit issued by an organization to an individual or business.
+type: object
+x-hasSubclass:
+  - RealEstateLicense
+properties:
+  type:
+    type: string
+    description: Permit type.
+    enum:
+      - Permit
+    x-parser-schema-id: <anonymous-schema-329>
+  name:
+    type: string
+    description: Common or display value of the Permit.
+    example: DRE Number
+    x-parser-schema-id: <anonymous-schema-330>
+  issuedBy:
+    type: object
+    x-range: Organization
+    description: The issuing authority
+    example:
+      type: State
+      name: California
+    x-parser-schema-id: <anonymous-schema-331>
+  issuedThrough:
+    type: object
+    description: the service through which the permit was granted
+    example:
+      type: Service
+      name: Department of Real Estate
+    x-parser-schema-id: <anonymous-schema-332>
+  validIn:
+    type: object
+    x-range: Place
+    x-parser-schema-id: <anonymous-schema-333>
+  validFrom:
+    type: string
+    format: date-time
+    description: start date
+    x-parser-schema-id: <anonymous-schema-334>
+  validUntil:
+    type: string
+    format: date-time
+    description: end date
+    x-parser-schema-id: <anonymous-schema-335>
+x-parser-schema-id: Permit
+$id: https://realestate.yodata.me/schema/Permit.yaml
+

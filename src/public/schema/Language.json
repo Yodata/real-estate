@@ -1,0 +1,30 @@
+{
+  "title": "Language",
+  "type": "object",
+  "description": "a written or spoken Language",
+  "x-range": "Language",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Language",
+      "enum": [
+        "Language"
+      ],
+      "x-parser-schema-id": "<anonymous-schema-278>"
+    },
+    "name": {
+      "type": "string",
+      "description": "the display name of the language",
+      "example": "English",
+      "x-parser-schema-id": "<anonymous-schema-279>"
+    },
+    "additionalName": {
+      "type": "string",
+      "description": "BCP 47 language code",
+      "example": "en-US",
+      "x-parser-schema-id": "<anonymous-schema-280>"
+    }
+  },
+  "x-parser-schema-id": "Language",
+  "$id": "https://realestate.yodata.me/schema/Language.json"
+}

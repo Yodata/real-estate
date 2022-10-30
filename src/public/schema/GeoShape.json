@@ -1,0 +1,72 @@
+{
+  "title": "GeoShape",
+  "type": "object",
+  "x-range": [
+    "GeoShape",
+    "GeoCircle"
+  ],
+  "description": "a geo shape",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "GeoShape",
+        "GeoCircle"
+      ],
+      "x-parser-schema-id": "<anonymous-schema-276>"
+    },
+    "geoMidpoint": {
+      "title": "GeoCoordinates",
+      "type": "object",
+      "description": "a lat/long point.",
+      "x-range": "GeoCoordinates",
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "GeoCordinates",
+          "enum": [
+            "GeoCoordinates"
+          ],
+          "x-parser-schema-id": "<anonymous-schema-272>"
+        },
+        "longitude": {
+          "type": "number",
+          "description": "The longitude of a location.",
+          "x-title": "longitude",
+          "example": 73.98,
+          "x-parser-schema-id": "<anonymous-schema-273>"
+        },
+        "latitude": {
+          "type": "number",
+          "description": "The latitude of a location.",
+          "x-title": "latitude",
+          "example": 40.75,
+          "x-parser-schema-id": "<anonymous-schema-274>"
+        }
+      },
+      "x-parser-schema-id": "GeoCoordinates"
+    },
+    "geoRadius": {
+      "title": "geoRadius",
+      "type": "object",
+      "x-range": "QuantitativeValue",
+      "description": "the radius of a geo-shape in meters if unitCode is not indicated",
+      "example": {
+        "type": "QuantitativeValue",
+        "value": "10",
+        "unitCode": "mi",
+        "unitText": "miles"
+      },
+      "x-parser-schema-id": "<anonymous-schema-275>"
+    },
+    "box": {
+      "type": "string",
+      "title": "box",
+      "description": "A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character.",
+      "example": "(33.5697,-117.775),(33.6018,-117.707)",
+      "x-parser-schema-id": "<anonymous-schema-277>"
+    }
+  },
+  "x-parser-schema-id": "GeoShape",
+  "$id": "https://realestate.yodata.me/schema/GeoShape.json"
+}

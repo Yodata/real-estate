@@ -1,0 +1,34 @@
+type: object
+title: PriceSpecification
+x-range: PriceSpecification
+description: a price offered for transfer of ownership of an item
+properties:
+  type:
+    type: string
+    description: PriceSpecification
+    enum:
+      - PriceSpecification
+    x-parser-schema-id: <anonymous-schema-367>
+  minPrice:
+    type: number
+    description: the low price offered if price is a range.
+    example: 75000
+    x-parser-schema-id: <anonymous-schema-368>
+  maxPrice:
+    type: number
+    description: the high price offered if price is a range.
+    example: 100000
+    x-parser-schema-id: <anonymous-schema-369>
+  price:
+    type: number
+    description: the offer price.
+    example: 75000
+    x-parser-schema-id: <anonymous-schema-370>
+  priceCurrency:
+    type: string
+    description: use ISO4217
+    example: USD
+    x-parser-schema-id: <anonymous-schema-371>
+x-parser-schema-id: PriceSpecification
+$id: https://realestate.yodata.me/schema/PriceSpecification.yaml
+

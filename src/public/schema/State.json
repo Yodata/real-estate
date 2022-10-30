@@ -1,0 +1,27 @@
+{
+  "title": "State",
+  "x-range": "State",
+  "description": "a State or Region",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "The item type (Linked-Data @type)",
+      "enum": [
+        "State"
+      ],
+      "x-parser-schema-id": "<anonymous-schema-611>"
+    },
+    "name": {
+      "type": "string",
+      "description": "the name of the item",
+      "x-parser-schema-id": "<anonymous-schema-192>"
+    }
+  },
+  "example": {
+    "type": "State",
+    "name": "New Jersey"
+  },
+  "x-parser-schema-id": "State",
+  "$id": "https://realestate.yodata.me/schema/State.json"
+}

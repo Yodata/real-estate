@@ -1,0 +1,65 @@
+{
+  "title": "LogAction",
+  "type": "object",
+  "description": "a LogAction should be produced at the end of service execution",
+  "required": [
+    "type",
+    "actionStatus"
+  ],
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "the action type (LogAction)",
+      "x-parser-schema-id": "<anonymous-schema-292>"
+    },
+    "actionStatus": {
+      "type": "string",
+      "description": "CompletedActionStatus | FailedActionStatus",
+      "enum": [
+        "CompletedActionStatus",
+        "FailedActionStatus"
+      ],
+      "x-parser-schema-id": "<anonymous-schema-293>"
+    },
+    "object": {
+      "type": "object",
+      "description": "the data input",
+      "example": {
+        "topic": "realestate/contact#add",
+        "data": {
+          "type": "AddAction",
+          "object": {
+            "name": "Bob Smith",
+            "email": "bob@example.com"
+          }
+        }
+      },
+      "x-parser-schema-id": "<anonymous-schema-294>"
+    },
+    "result": {
+      "type": "object",
+      "description": "the output of a sucessful execution",
+      "x-parser-schema-id": "<anonymous-schema-295>"
+    },
+    "error": {
+      "type": "object",
+      "description": "details the error of an unsucessful execution",
+      "properties": {
+        "message": {
+          "description": "the error message",
+          "type": "string",
+          "example": "sorry dave",
+          "x-parser-schema-id": "<anonymous-schema-297>"
+        },
+        "stack": {
+          "description": "the error stack",
+          "type": "string",
+          "x-parser-schema-id": "<anonymous-schema-298>"
+        }
+      },
+      "x-parser-schema-id": "<anonymous-schema-296>"
+    }
+  },
+  "x-parser-schema-id": "LogAction",
+  "$id": "https://realestate.yodata.me/schema/LogAction.json"
+}

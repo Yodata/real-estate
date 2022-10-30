@@ -1,0 +1,9 @@
+$id: Thing.shcema.yaml
+type: object
+description: The root of all things.
+discriminator: type
+required:
+  - type
+properties:
+  type:
+    type: string

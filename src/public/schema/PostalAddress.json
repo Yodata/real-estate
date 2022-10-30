@@ -1,0 +1,65 @@
+{
+  "title": "PostalAddress",
+  "type": "object",
+  "x-range": "PostalAddress",
+  "description": "A physical address.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "PostalAddress"
+      ],
+      "x-parser-schema-id": "<anonymous-schema-358>"
+    },
+    "streetAddress": {
+      "type": "string",
+      "description": "the street number and name.",
+      "example": "1007 Mountain Gate Rd",
+      "x-parser-schema-id": "<anonymous-schema-359>"
+    },
+    "postOfficeBoxNumber": {
+      "type": "string",
+      "description": "The post office box number for PO box addresses.",
+      "example": "Box 1234",
+      "x-parser-schema-id": "<anonymous-schema-360>"
+    },
+    "addressRegion": {
+      "type": "string",
+      "description": "State or Province.",
+      "example": "New Jersey",
+      "x-parser-schema-id": "<anonymous-schema-361>"
+    },
+    "addressLocality": {
+      "type": "string",
+      "description": "City, Township.",
+      "example": "Gotham City",
+      "x-parser-schema-id": "<anonymous-schema-362>"
+    },
+    "postalCode": {
+      "type": "string",
+      "description": "Zip/Post Code",
+      "example": "10010",
+      "x-parser-schema-id": "<anonymous-schema-363>"
+    },
+    "addressCountry": {
+      "type": "string",
+      "description": "The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.",
+      "example": "USA",
+      "x-parser-schema-id": "<anonymous-schema-364>"
+    },
+    "addressCounty": {
+      "type": "string",
+      "description": "the county (us real estate extension)",
+      "example": "Gotham County",
+      "x-parser-schema-id": "<anonymous-schema-365>"
+    },
+    "addressSubdivision": {
+      "type": "string",
+      "description": "the subdivision or neighborhood (us real estate extension)",
+      "example": "Gotham Heights",
+      "x-parser-schema-id": "<anonymous-schema-366>"
+    }
+  },
+  "x-parser-schema-id": "PostalAddress",
+  "$id": "https://realestate.yodata.me/schema/PostalAddress.json"
+}

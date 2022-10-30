@@ -1,0 +1,148 @@
+{
+  "title": "Contact",
+  "description": "a CRM contact.",
+  "x-range": "Contact",
+  "properties": {
+    "identifier": {
+      "type": "object",
+      "description": "key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.",
+      "example": {
+        "salesforceContactID": "c28834ca-db69-4da8-90ad-75cdc9907298"
+      }
+    },
+    "additionalProperty": {
+      "title": "additionalProperty",
+      "type": "object",
+      "description": "additionalProperty are",
+      "example": {
+        "supercrmuserid": 1234,
+        "doNotSell": true
+      }
+    },
+    "type": {
+      "example": "Contact",
+      "enum": [
+        "Contact"
+      ]
+    },
+    "comment": {
+      "title": "comment",
+      "type": "array",
+      "description": "comments by, for or about the item",
+      "x-range": "Comment",
+      "items": {
+        "type": "object"
+      },
+      "example": [
+        {
+          "type": "Comment",
+          "text": "this is my comment.",
+          "author": {
+            "type": "Contact",
+            "name": "Bruce Wayne"
+          },
+          "about": {
+            "type": "PropertyListing",
+            "id": "https://example.com/listingid"
+          },
+          "dateCreated": "2019-07-15T05:24:05Z",
+          "dateModified": "2019-07-15T05:24:05Z"
+        }
+      ]
+    },
+    "jobTitle": {
+      "type": "string",
+      "example": "Superhero"
+    },
+    "contactGroup": {
+      "$id": "#contactGroup",
+      "title": "contactGroup",
+      "description": "groups the contact is a member of.",
+      "x-range": "Collection",
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "example": [
+        {
+          "type": "Collection",
+          "name": "Superheros",
+          "identifier": {
+            "vendoraid": "xxx"
+          }
+        }
+      ]
+    },
+    "keywords": {
+      "title": "keywords",
+      "description": "keywords/tags for grouping and organizing the item in collections",
+      "type": "array",
+      "example": [
+        "Sphere of Influence",
+        "Past Customer"
+      ],
+      "items": {
+        "type": "string",
+        "x-parser-schema-id": "<anonymous-schema-353>"
+      },
+      "x-parser-schema-id": "<anonymous-schema-352>"
+    },
+    "leadOwner": {
+      "type": "object",
+      "description": "lead owner",
+      "x-range": [
+        "RealEstateAgent",
+        "RealEstateOrganization",
+        "RealEstateTeam"
+      ],
+      "example": {
+        "type": "RealEstateOrganization",
+        "name": "Gotham City Real Estate",
+        "id": "https://example.com/profile.card#me"
+      }
+    },
+    "leadSource": {
+      "type": "object",
+      "description": "origin of the lead",
+      "x-range": [
+        "MobileApplication",
+        "RealEstateOffice",
+        "RealEstateWebsite",
+        "Thing"
+      ],
+      "example": {
+        "id": "https://www.zillow.com/homedetails/1044-Siler-Pl-Berkeley-CA-94705/24820985_zpid/",
+        "type": "RealEstateWebsite",
+        "name": "Zillow",
+        "url": "https://zillow.com"
+      }
+    },
+    "originatingSystem": {
+      "type": "object",
+      "x-range": [
+        "Thing"
+      ],
+      "description": "the original system where this item was created.  Can be of type Thing or any sub-type.",
+      "example": {
+        "type": "SoftwareApplication",
+        "name": "RDesk",
+        "description": "User Created.",
+        "url": "http://www.rdeskwebsite.com/"
+      }
+    },
+    "dateCreated": {
+      "description": "The date on which the item was created.",
+      "type": "string",
+      "format": "date-time",
+      "x-parser-schema-id": "<anonymous-schema-204>"
+    },
+    "dateModified": {
+      "description": "The date on which the item was most recently modified or when the item's entry was modified within a DataFeed.",
+      "type": "string",
+      "format": "date-time",
+      "x-parser-schema-id": "<anonymous-schema-205>"
+    }
+  },
+  "x-parser-schema-id": "Contact",
+  "$id": "https://realestate.yodata.me/schema/Contact.json"
+}

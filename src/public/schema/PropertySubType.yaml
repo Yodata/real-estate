@@ -1,0 +1,121 @@
+title: PropertySubType
+type: object
+description: Property sub-type enumeration values derived from RESO data dictionary.
+example:
+  propertySubType: ApartmentPropertyType
+properties:
+  ApartmentPropertyType:
+    type: string
+    description: Apartment
+    x-parser-schema-id: <anonymous-schema-420>
+  BoatSlipPropertyType:
+    type: string
+    description: Boat Slip
+    x-parser-schema-id: <anonymous-schema-421>
+  CabinPropertyType:
+    type: string
+    description: Cabin
+    x-parser-schema-id: <anonymous-schema-422>
+  CondominiumPropertyType:
+    type: string
+    description: Condominium
+    x-parser-schema-id: <anonymous-schema-423>
+  DeededParkingPropertyType:
+    type: string
+    description: Deeded Parking
+    x-parser-schema-id: <anonymous-schema-424>
+  DuplexPropertyType:
+    type: string
+    description: Residential Duplex
+    x-parser-schema-id: <anonymous-schema-425>
+  FarmPropertyType:
+    type: string
+    description: Farm Property Type
+    x-parser-schema-id: <anonymous-schema-426>
+  ManufacturedHomePropertyType:
+    type: string
+    description: Manufactured Home
+    x-parser-schema-id: <anonymous-schema-427>
+  ManufacturedOnLandPropertyType:
+    type: string
+    description: Manufactured Home + Land
+    x-parser-schema-id: <anonymous-schema-428>
+  MobileHomePropertyType:
+    type: string
+    description: Mobile Home
+    x-parser-schema-id: <anonymous-schema-429>
+  OwnYourOwnPropertyType:
+    type: string
+    description: RESO Own Your Own Property
+    x-parser-schema-id: <anonymous-schema-430>
+  QuadruplexPropertyType:
+    type: string
+    description: A residential property with four units
+    x-parser-schema-id: <anonymous-schema-431>
+  RanchPropertyType:
+    type: string
+    description: A Ranch
+    x-parser-schema-id: <anonymous-schema-432>
+  SingleFamilyPropertyType:
+    type: string
+    description: Single Family Residence
+    x-parser-schema-id: <anonymous-schema-433>
+  StockCooperativePropertyType:
+    type: string
+    description: Stock Co-op.
+    x-parser-schema-id: <anonymous-schema-434>
+  TimesharePropertyType:
+    type: string
+    description: Timeshare
+    x-parser-schema-id: <anonymous-schema-435>
+  TownhousePropertyType:
+    type: string
+    description: Townhouse
+    x-parser-schema-id: <anonymous-schema-436>
+  TriplexPropertyType:
+    type: string
+    description: A residential property with 3 separate units
+    x-parser-schema-id: <anonymous-schema-437>
+  AgriculturePropertyType:
+    type: string
+    description: An agriculture property.
+    x-parser-schema-id: <anonymous-schema-438>
+  BusinessPropertyType:
+    type: string
+    description: a residential property zoned for business operation
+    x-parser-schema-id: <anonymous-schema-439>
+  HotelMotelPropertyType:
+    type: string
+    description: Hotel property for sale.
+    x-parser-schema-id: <anonymous-schema-440>
+  IndustrialPropertyType:
+    type: string
+    description: Industrial property
+    x-parser-schema-id: <anonymous-schema-441>
+  MixedUsePropertyType:
+    type: string
+    description: Residential/Commercial property
+    x-parser-schema-id: <anonymous-schema-442>
+  MultiFamilyPropertyType:
+    type: string
+    description: A single building with multiple units
+    x-parser-schema-id: <anonymous-schema-443>
+  OfficePropertyType:
+    type: string
+    description: An office.
+    x-parser-schema-id: <anonymous-schema-444>
+  RetailPropertyType:
+    type: string
+    description: Retail property
+    x-parser-schema-id: <anonymous-schema-445>
+  UnimprovedLandPropertyType:
+    type: string
+    description: Land for sale
+    x-parser-schema-id: <anonymous-schema-446>
+  WarehousePropertyType:
+    type: string
+    description: A Warehouse property type.
+    x-parser-schema-id: <anonymous-schema-447>
+x-parser-schema-id: PropertySubType
+$id: https://realestate.yodata.me/schema/PropertySubType.yaml
+

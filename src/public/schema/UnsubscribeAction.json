@@ -1,0 +1,75 @@
+{
+  "$id": "https://realestate.yodata.me/schema/UnsubscribeAction.json",
+  "title": "Action",
+  "type": "object",
+  "required": [
+    "type"
+  ],
+  "externalDocs": {
+    "description": "schema.org/Action",
+    "url": "https://schema.org/Action"
+  },
+  "x-range": "UnsubscribeAction",
+  "description": "the consumer (agent) has unsubscribed to content from the participant with roleName SubscriptionProvider.",
+  "properties": {
+    "object": {
+      "description": "item on which the action is carried out",
+      "x-parser-schema-id": "<anonymous-schema-114>"
+    },
+    "type": {
+      "description": "the action type",
+      "type": "string",
+      "x-parser-schema-id": "<anonymous-schema-113>",
+      "enum": [
+        "UnsubscribeAction"
+      ]
+    },
+    "agent": {
+      "type": "object",
+      "description": "the subscriber",
+      "x-range": "Contact",
+      "example": {
+        "type": "Contact",
+        "email": "bob@example.com",
+        "identifier": {
+          "hsfconsumerid": "xxxxxxxxxxxxx"
+        }
+      }
+    },
+    "participant": {
+      "description": "the subscription provider, an Agent, Team, Office or Organization",
+      "x-range": [
+        "RealEstateAgent",
+        "RealEstateTeam",
+        "RealEstateOffice",
+        "RealEstateOrganization"
+      ],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "roleName": {
+            "type": "string",
+            "enum": [
+              "SubscriptionProvider"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "format": "uri",
+            "example": "https://12345.example.com/profile/card#me"
+          },
+          "additionalProperty": {
+            "type": "object",
+            "properties": {
+              "isCompanyQueue": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "x-parser-schema-id": "UnsubscribeAction"
+}

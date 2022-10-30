@@ -1,0 +1,67 @@
+{
+  "title": "Award",
+  "type": "object",
+  "description": "An honor bestowed on one or mote _recipients_ by the message _agent_",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "Award"
+      ],
+      "description": "\"AwardAction\"",
+      "x-parser-schema-id": "<anonymous-schema-115>"
+    },
+    "name": {
+      "example": "Top 1%",
+      "description": "name of the award",
+      "type": "string",
+      "x-parser-schema-id": "<anonymous-schema-116>"
+    },
+    "dateAwarded": {
+      "type": "string",
+      "description": "date the award was presented or announced.",
+      "x-range": "DateTime",
+      "example": "2019-11-25T04:23:32.000Z",
+      "x-parser-schema-id": "<anonymous-schema-117>"
+    },
+    "agent": {
+      "title": "creator",
+      "description": "the item creator",
+      "x-range": [
+        "Person",
+        "Organization"
+      ],
+      "example": "http://agent.example.com/profile/card#me",
+      "x-parser-schema-id": "<anonymous-schema-118>"
+    },
+    "recipient": {
+      "type": "array",
+      "items": {
+        "title": "recipient",
+        "description": "the recipient",
+        "type": "object",
+        "x-range": [
+          "Person",
+          "Organization"
+        ],
+        "example": {
+          "type": "RealEstateAgent",
+          "name": "Randy RealEstateAgent",
+          "id": "https://{userid}.example.com/profile/card#me"
+        },
+        "x-parser-schema-id": "<anonymous-schema-120>"
+      },
+      "x-parser-schema-id": "<anonymous-schema-119>"
+    },
+    "identifier": {
+      "example": {
+        "hsfAwardId": "xxxx"
+      },
+      "type": "object",
+      "description": "key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.",
+      "x-parser-schema-id": "<anonymous-schema-121>"
+    }
+  },
+  "x-parser-schema-id": "Award",
+  "$id": "https://realestate.yodata.me/schema/Award.json"
+}

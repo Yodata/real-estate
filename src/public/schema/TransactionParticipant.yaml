@@ -1,0 +1,61 @@
+type: object
+title: TransactionParticipant
+x-range: TransactionParticipant
+properties:
+  type:
+    type: string
+    description: The item type (Linked-Data @type)
+    enum:
+      - TransactionParticipant
+    x-parser-schema-id: <anonymous-schema-559>
+  roleName:
+    type: string
+    description: 'enum: Buyer,Seller'
+    enum:
+      - Buyer
+      - Seller
+    x-parser-schema-id: <anonymous-schema-560>
+  position:
+    type: number
+    description: numeric position for the participant/roleName.
+    example: 1
+    x-parser-schema-id: <anonymous-schema-561>
+  givenName:
+    type: string
+    description: First Name of a person
+    example: Glenn
+    x-parser-schema-id: <anonymous-schema-230>
+  familyName:
+    type: string
+    description: Last Name of a person
+    example: Miller
+    maxLength: 50
+    x-parser-schema-id: <anonymous-schema-253>
+  additionalName:
+    type: string
+    description: middleName or alternate name of the Person
+    example: Big
+    x-parser-schema-id: <anonymous-schema-562>
+  email:
+    type: string
+    format: email
+    description: Primary email address.
+    example: user@example.com
+    x-parser-schema-id: <anonymous-schema-499>
+  telephone:
+    type: string
+    description: Primary phone number.
+    example: '+15558675309'
+    x-parser-schema-id: <anonymous-schema-563>
+  affiliation:
+    type: array
+    description: person or organization associated with the participant
+    items:
+      type: string
+      format: uri
+      example: https://{agentid}.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-565>
+    x-parser-schema-id: <anonymous-schema-564>
+x-parser-schema-id: TransactionParticipant
+$id: https://realestate.yodata.me/schema/TransactionParticipant.yaml
+

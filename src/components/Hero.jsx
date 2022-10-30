@@ -9,17 +9,25 @@ import blurCyanImage from '@/images/blur-cyan.png'
 import blurIndigoImage from '@/images/blur-indigo.png'
 
 const codeLanguage = 'javascript'
-const code = `export default {
-  strategy: 'predictive',
-  engine: {
-    cpus: 12,
-    backups: ['./storage/cache.wtf'],
-  },
+const code = `
+{
+  "topic": "realestate/listing#update",
+  "agent": "https://examplerealestate.com/profile/card#me.",
+  "data": {
+    "type": "UpdateAction",
+    "object": {
+      "type": "PropertyListing",
+
+    }
+  }
+
 }`
 
 const tabs = [
-  { name: 'cache-advance.config.js', isActive: true },
-  { name: 'package.json', isActive: false }
+  { name: 'website#register', isActive: true },
+  { name:' -> lead#assign', isActive: false },
+  { name:'-> lead#accept', isActive: false },
+  { name:'-> contact#add', isActive: false }
 ]
 
 function TrafficLightsIcon (props) {

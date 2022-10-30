@@ -22,6 +22,8 @@
   },
   "homepage": "https://github.com/Yodata/real-estate#readme",
   "devDependencies": {
+    "eslint": "^8.26.0",
+    "eslint-config-next": "^13.0.0",
     "husky": "^8.0.1",
     "typescript": "^4.8.4"
   }

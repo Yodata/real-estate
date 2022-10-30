@@ -11,6 +11,13 @@ export default async function handler(request, response) {
   const staging = 'https://gxlejs63x9.execute-api.us-west-2.amazonaws.com/replay'
   const test = 'http://example.com/replay'
   const target = process.env.API_REPLAY_TARGET || staging || test
+  const json = request.body
+  if (json.startDate) {
+    json.startDate = new Date(json.startDate).toISOString()
+  }
+  if (json.endDate) {
+    json.endDate = new Date(json.endDate).toISOString()
+  }
   return got.post(target, {
     json: request.body
   }).then(res => {

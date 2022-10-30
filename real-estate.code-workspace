@@ -1,6 +1,9 @@
 {
   "folders": [
     {
+      "path": "."
+    },
+    {
       "name": "WEBSITE",
       "path": "src"
     },
@@ -15,10 +18,6 @@
     {
       "name": "GENERATOR",
       "path": "generator"
-    },
-    {
-      "name": "ROOT",
-      "path": "."
     }
   ],
   "settings": {

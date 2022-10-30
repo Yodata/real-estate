@@ -1,58 +1,95 @@
 import React, { useState } from 'react'
-import { Layout } from  '@/components/Layout'
 import { useForm, Controller } from 'react-hook-form'
-import { Input, DatePicker, InputController } from '@/components/Forms'
+import { Input, DatePicker } from '@/components/Forms'
 import { Button } from '@/components/Button'
 import clsx from 'clsx'
 import axios from 'axios'
 
-export default function ReplayUI({ className, ...props }) {
+const content = {
+  target: {
+    name: 'target',
+    type: 'text',
+    placeholder: 'https://dave.bhhs.dev.yodata.io/inbox/',
+    caption: 'the url of the container where you want to replay messages',
+    required: true,
+  },
+  apikey: {
+    name: 'apikey',
+    type: 'password',
+    required: true,
+  },
+  filter: {
+    name: 'filter',
+    label: 'topic-filter',
+    type: 'text',
+    required: false,
+    placeholder: 'realestate/contact#add',
+    caption: '(optional) only replay topic events',
+  },
+  startDate: {
+    name: 'startDate',
+    type: 'datetime-local',
+    required: false,
+  },
+  endDate: {
+    name: 'endDate',
+    type: 'datetime-local',
+    required: false,
+  },
+}
+
+export default function ReplayUI(props) {
+  const { className } = props
 
   const [apiResponse, setApiResponse] = useState('waiting')
   const formStyle = clsx('form-input', className)
-  const { control, handleSubmit } = useForm({
+  const {
+    control,
+    handleSubmit,
+    formState: { errors, touchedFields, submitCount, isValid },
+  } = useForm({
+    useNativeValidation: true,
     defaultValues: {
-      target: 'https://{yourpodname}.dev.yodata.io/inbox/',
-      apikey: '{your secret key}',
-      startDate: new Date().toISOString(),
-      endDate: new Date().toISOString(),
+      target: '',
+      apikey: '',
+      filter: '',
+      startDate: '2022-10-28T23:45',
+      endDate: '2022-10-29T23:45',
     },
   })
 
   const onSubmit = (json) => {
-    axios.post('/api/replay', json).then((res) => {
-      setApiResponse(`${res?.data?.actionStatus}: ${res?.data?.result}`)
-    })
+    axios
+      .post('/api/replay', json)
+      .then((res) => {
+        setApiResponse(`${res?.data?.actionStatus}: ${res?.data?.result}`)
+      })
+      .then((res) => {
+        console.log(res)
+      })
+      .catch((error) => {
+        console.error(error)
+        setApiResponse('SOMETHING BAD HAPPENED')
+      })
+  }
+
+  const onError = (input) => {
+    console.log('ERROR', errors)
+    setApiResponse(JSON.stringify(errors))
   }
 
   return (
-    <Layout title={'Replay GUI'}>
+    <>
       <h1>Replay Events</h1>
-      <form
-        name="replayForm"
-        onSubmit={handleSubmit(onSubmit)}
-        className={formStyle}
-      >
-        <InputController control={control} name="target" />
-        <InputController control={control} name="api-key" />
-        <InputController control={control} name="topicFilter" />
-        <Controller
-          control={control}
-          name="startDate"
-          required={true}
-          render={DatePicker}
-          aria-invalid={true}
-        />
-        <br />
-        <Controller control={control} name="endDate" render={DatePicker} />
-        <br />
-        <div className="block w-full">
-          <div className="w-70 block">{apiResponse}</div>
-          <div className="w-30 block">
-            <Button type={'submit'}>Submit</Button>
-          </div>
-        </div>
+      <div>{apiResponse}</div>
+      <form name="replayForm" onSubmit={handleSubmit(onSubmit, onError)}>
+        <Input {...content.target} control={control} />
+        <Input {...content.apikey} control={control} />
+        <Input {...content.startDate} control={control} />
+        <Input {...content.endDate} control={control} />
+        <Input {...content.filter} control={control} />
+        <Button type="submit">Submit</Button>
       </form>
-    </Layout>
+    </>
   )
 }

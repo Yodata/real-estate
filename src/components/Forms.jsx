@@ -1,31 +1,60 @@
+import React from 'react'
+import { useController } from 'react-hook-form'
 import clsx from 'clsx'
 
-// rounded-full bg-slate-800 py-2 px-4 text-sm font-medium text-white hover:bg-slate-700 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/50 active:text-slate-400'
-
 const styles = {
-  textInput: 'w-full',
-  datePicker: 'w-full',
-  label: 'font-semibold text-slate-900',
+  label: 'text-sm block',
+  input: {
+    container: 'block w-full mb-4',
+    text: 'block w-full',
+    password: 'block w-full',
+    'datetime-local': 'block w-full',
+    datetime: 'block w-full',
+  },
 }
 
-export function Input({ className, field, ...props })  {
-  const inputStyle = clsx(styles.textInput, className)
-  const labelStyle = clsx(styles.label, className)
-  return (
-    <div>
-      <label className={labelStyle} htmlFor={field.name}>{field.name}</label>
-      <input type='text' className={inputStyle} {...field} />
-    </div>
+export function Input(props) {
+  const { control, name, required = true } = props
+  const { field, fieldState } = useController({
+    control,
+    name,
+    rules: { required },
+  })
+  const { type = 'text' } = props
+  const descriptionId = `${field.name}_description`
+  const labelText = props.label || field.name
+  const helpText = props.caption || ''
+
+  let inputStyle = clsx(
+    styles.input[ type ],
+    fieldState.error && 'border border-red-600'
   )
-}
 
-export function DatePicker({ className, field, ...props }) {
-  const inputStyle = clsx(styles.datePicker, className)
-  const labelStyle = clsx(styles.label, className)
+
   return (
-    <div>
-      <label className={labelStyle} htmlFor={field.name}>{field.name}</label>
-      <input type='datetime-local' className={inputStyle} {...field} />
-    </div>
+    <label htmlFor={field.name} className={styles.input.container}>
+      <span className="text-s">{labelText}</span>
+      <input
+        type={type}
+        control={props.control}
+        name={field.name}
+        onChange={field.onChange}
+        onBlur={field.onBlur}
+        value={field.value}
+        placeholder={props.placeholder}
+        className={inputStyle}
+        ref={field.ref}
+        aria-describedby={descriptionId}
+        aria-invalid={fieldState.error?.message}
+      />
+      {helpText && (
+        <div id={descriptionId} className="text-xs">
+          {helpText}
+        </div>
+      )}
+      {fieldState.error && (
+        <div className="block text-red-600">{fieldState.error.message}</div>
+      )}
+    </label>
   )
 }

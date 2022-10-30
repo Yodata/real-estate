@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 @layer components {
-  .error {
-    @apply text-red-600! !important
-  }
-
-  .success * {
-    @apply text-green-600 !important
-  }
+  form[name] {
+    label {
+      display: block
+    }
+    input {
+      @apply form-input block
+    }
 }

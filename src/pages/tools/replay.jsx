@@ -1,16 +1,15 @@
 import React, { useState } from 'react'
+import { Layout } from  '@/components/Layout'
 import { useForm, Controller } from 'react-hook-form'
-import { Input, DatePicker } from '@/components/Forms'
-import { Button} from '@/components/Button'
+import { Input, DatePicker, InputController } from '@/components/Forms'
+import { Button } from '@/components/Button'
 import clsx from 'clsx'
 import axios from 'axios'
 
 export default function ReplayUI({ className, ...props }) {
+
   const [apiResponse, setApiResponse] = useState('waiting')
   const formStyle = clsx('form-input', className)
-  const errors = {
-    target: 'This field is required',
-  }
   const { control, handleSubmit } = useForm({
     defaultValues: {
       target: 'https://{yourpodname}.dev.yodata.io/inbox/',
@@ -27,31 +26,33 @@ export default function ReplayUI({ className, ...props }) {
   }
 
   return (
-    <form name='replayForm' onSubmit={handleSubmit(onSubmit)} className={formStyle}>
-      <Controller
-        control={control}
-        name="target"
-        required={true}
-        aria-invalid={errors.target}
-        render={Input}
-      />
-      <br />
-      <Controller control={control} name="apikey" render={Input} />
-      <br />
-      <Controller
-        control={control}
-        name="startDate"
-        required={true}
-        render={DatePicker}
-        aria-invalid={true}
-      />
-      <br />
-      <Controller control={control} name="endDate" render={DatePicker} />
-      <br />
-      <div className="block w-full">
-        <div className='block w-70'>{apiResponse}</div>
-        <div className='block w-30'><Button type={'submit'}>Submit</Button></div>
-      </div>
-    </form>
+    <Layout title={'Replay GUI'}>
+      <h1>Replay Events</h1>
+      <form
+        name="replayForm"
+        onSubmit={handleSubmit(onSubmit)}
+        className={formStyle}
+      >
+        <InputController control={control} name="target" />
+        <InputController control={control} name="api-key" />
+        <InputController control={control} name="topicFilter" />
+        <Controller
+          control={control}
+          name="startDate"
+          required={true}
+          render={DatePicker}
+          aria-invalid={true}
+        />
+        <br />
+        <Controller control={control} name="endDate" render={DatePicker} />
+        <br />
+        <div className="block w-full">
+          <div className="w-70 block">{apiResponse}</div>
+          <div className="w-30 block">
+            <Button type={'submit'}>Submit</Button>
+          </div>
+        </div>
+      </form>
+    </Layout>
   )
 }

@@ -3,7 +3,6 @@ lockfileVersion: 5.4
 specifiers:
   '@algolia/client-search': ^4.14.2
   '@docsearch/react': ^3.2.1
-  '@faker-js/faker': ^7.6.0
   '@headlessui/react': ^1.7.2
   '@markdoc/markdoc': 0.1.7
   '@markdoc/next.js': 0.1.6
@@ -46,7 +45,6 @@ specifiers:
 
 dependencies:
   '@docsearch/react': 3.3.0_4mdvn5gl4vbbvabne2xxb7fpaa
-  '@faker-js/faker': 7.6.0
   '@headlessui/react': 1.7.3_biqbaboplfbrettd7655fr4n2y
   '@markdoc/markdoc': 0.1.7
   '@markdoc/next.js': 0.1.6_kzxf2m5znf57ls2c4eyt7resga
@@ -344,11 +342,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
-
-  /@faker-js/faker/7.6.0:
-    resolution: {integrity: sha512-XK6BTq1NDMo9Xqw/YkYyGjSsg44fbNwYRx7QK2CuoQgyy+f1rrTDHoExVM5PsyXCtfl2vs2vVJ0MN0yN6LppRw==}
-    engines: {node: '>=14.0.0', npm: '>=6.0.0'}
-    dev: false
 
   /@headlessui/react/1.7.3_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-LGp06SrGv7BMaIQlTs8s2G06moqkI0cb0b8stgq7KZ3xcHdH3qMP+cRyV7qe5x4XEW/IGY48BW4fLesD6NQLng==}

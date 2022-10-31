@@ -1,6 +1,5 @@
 const logger = require('@yodata/logger')
 import Ajv from 'ajv'
-import $RefParser from 'json-schema-ref-parser'
 import { getSchema } from './getSchema'
 
 /**
@@ -17,45 +16,46 @@ import { getSchema } from './getSchema'
  * @property {object[]} [errors] - error message
  * @property {string} [error] - error message
  */
-export default async function handler(request, res) {
-  const object = request.body
-  const response = { object }
-  const schemaName = object?.topic || object?.type || undefined
-  if (!schemaName) {
-    response.actionStatus = 'FailedActionStatus'
-    response.error = {
-      message: 'unable to determine the object type'
-    }
-    return res.status(200).json(response)
+export default async function handler(request, response) {
+  await getSchema(request)
+    .then(validateJsonSchema)
+    .then((validationResponse) => {
+      response.status(200).json(validationResponse)
+    })
+    .catch((err) => {
+      logger.error(err)
+      response.status(500).json({
+        actionStatus: 'FailedActionStatus',
+        isValid: false,
+        object: request.body,
+        error: {
+          message: err.message,
+          stack: err.stack
+        }
+      })
+    })
+  return
+}
+
+/**
+ *
+ * @param {JSONSchema} schema the schema to validate against
+ * @param {JsonObject} object the object to validate
+ */
+async function validateJsonSchema({schema, object}) {
+  console.log('validateJsonSchema', {schema, object})
+  const ajv = new Ajv({ allErrors: true, strict: false })
+  const validate = ajv.compile(schema)
+  const isValid = validate(object)
+  const validationResponse = {
+    isValid: isValid,
+    object: object
   }
-  response.schemaName = schemaName
-  const schema = await getSchema(schemaName).catch(err => undefined)
-  if (!schema) {
-    response.actionStatus = 'FailedActionStatus'
-    response.error = {
-      message: `Sorry, we can't validate ${schemaName} at this time`
+  if (!isValid) {
+    validationResponse.error = {
+      message: ajv.errorsText(validate.errors),
+      items: validate.errors
     }
-    return res.status(200).json(response)
   }
-  try {
-    const ajv = new Ajv({ allErrors: true, strict: false })
-    const validate = ajv.compile(schema)
-    response.isValid = await validate(object)
-    if (!response.isValid) {
-      response.error = {
-        message: ajv.errorsText(validate.errors),
-        items: validate.errors,
-      }
-    }
-    logger.info(response)
-  } catch (error) {
-    response.isValid = false
-    response.object = request.body
-    response.error = {
-      message: error.message,
-      stack: error.stack,
-    }
-    logger.error(response)
-  }
-  res.status(200).json(response)
+  return validationResponse
 }

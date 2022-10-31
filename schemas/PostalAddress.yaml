@@ -1,4 +1,5 @@
 # PostalAddress
+$id: PostalAddress
 title: PostalAddress
 type: object
 x-range: PostalAddress
@@ -12,31 +13,67 @@ properties:
     type: string
     description: the street number and name.
     example: '1007 Mountain Gate Rd'
+    examples:
+      - 5046 Ottis Point
+      - 166 Marion Burg
+      - 93044 Haley Stream
   postOfficeBoxNumber:
     type: string
     description: The post office box number for PO box addresses.
-    example: Box 1234
+    examples:
+      - Box 1234
+      - Apt. 161
+      - Apt. 623
   addressRegion:
     type: string
     description: State or Province.
     example: New Jersey
+    examples:
+      - New Jersey
+      - California
+      - MI
+      - NULL
   addressLocality:
     type: string
     description: City, Township.
-    example: Gotham City
+    examples:
+      - Gotham City
+      - Kulasmouth
+      - Heidistad
+      - Altamonte Springs
+      - West Ahmed
+      - Blaiseview
   postalCode:
     type: string
     description: Zip/Post Code
-    example: '10010'
+    examples:
+      - '10010'
+      - '38859'
+      - '40387'
+      - '50239-7698'
+      - NULL
   addressCountry:
     type: string
     description: The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
-    example: USA
+    examples:
+      - USA
+      - TH
+      - NZ
+      - EG
+      - SJ
+      - VN
   addressCounty:
     type: string
     description: the county (us real estate extension)
-    example: Gotham County
+    examples:
+      - Gotham County
+      - Buckinghamshire
+      - Borders
+      - NULL
   addressSubdivision:
     type: string
     description: the subdivision or neighborhood (us real estate extension)
-    example: Gotham Heights
+    examples:
+      - Gotham Heights
+      - NULL
+      - NULL

@@ -6,12 +6,11 @@
     "start": "npx next start",
     "lint": "npx next lint",
     "test": "npx jest",
-    "generate": "npx -p @asyncapi/generator@latest ag ./src/asyncapi.yaml ./template/data -o ./__generated__/test --force-write"
+    "generate:production-public-schemas": "npx @asyncapi/cli generate fromTemplate ../generator/data ../schema/_asyncapi -o ./public/schema"
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
     "@docsearch/react": "^3.2.1",
-    "@faker-js/faker": "^7.6.0",
     "@headlessui/react": "^1.7.2",
     "@markdoc/markdoc": "0.1.7",
     "@markdoc/next.js": "0.1.6",

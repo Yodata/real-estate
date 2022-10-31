@@ -62,12 +62,18 @@
     "npm.enableRunFromFolder": true,
     "npm-intellisense.importLinebreak": "",
     "npm-intellisense.packageSubfoldersIntellisense": true,
-    "oneDarkPro.bold": true,
+    "oneDarkPro.bold": false,
     "search.showLineNumbers": true,
     "yaml.schemas": {
       "https://json.schemastore.org/eslintrc": "file:///Users/dave/git/yodata/real-estate/.eslintrc.yaml"
     },
     "zenMode.hideLineNumbers": false,
-    "search.useParentIgnoreFiles": true
+    "search.useParentIgnoreFiles": true,
+    "eslint.workingDirectories": [
+      "src/components/**",
+      "src/pages/**/*"
+      "generator/**",
+      "schemas/**"
+    ]
   }
 }

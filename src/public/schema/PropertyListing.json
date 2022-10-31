@@ -9,7 +9,7 @@
         "PropertyListing"
       ],
       "type": "string",
-      "x-parser-schema-id": "<anonymous-schema-385>"
+      "x-parser-schema-id": "<anonymous-schema-384>"
     },
     "addressCountry": {
       "type": "string",
@@ -29,21 +29,21 @@
         "GB",
         "US"
       ],
-      "x-parser-schema-id": "<anonymous-schema-386>"
+      "x-parser-schema-id": "<anonymous-schema-385>"
     },
     "addressLocality": {
       "type": "string",
       "description": "City, Township.",
       "example": "Gotham City",
       "maxLength": 50,
-      "x-parser-schema-id": "<anonymous-schema-387>"
+      "x-parser-schema-id": "<anonymous-schema-386>"
     },
     "addressRegion": {
       "type": "string",
       "description": "State or Province.",
       "example": "New Jersey",
       "maxLength": 3,
-      "x-parser-schema-id": "<anonymous-schema-388>"
+      "x-parser-schema-id": "<anonymous-schema-387>"
     },
     "buyerAgent": {
       "description": "the buyer's RealEstateAgent",
@@ -57,7 +57,7 @@
       },
       "type": "object",
       "x-range": "RealEstateAgent",
-      "x-parser-schema-id": "<anonymous-schema-389>"
+      "x-parser-schema-id": "<anonymous-schema-388>"
     },
     "buyerOffice": {
       "description": "the buyer's RealEstateOffice",
@@ -71,7 +71,7 @@
       },
       "type": "object",
       "x-range": "RealEstateOffice",
-      "x-parser-schema-id": "<anonymous-schema-390>"
+      "x-parser-schema-id": "<anonymous-schema-389>"
     },
     "closeDate": {
       "title": "closeDate",
@@ -79,7 +79,7 @@
       "format": "date-time",
       "description": "With for-sale listings, the date the purchase agreement was fulfilled. With lease listings, the date the requirements were fulfilled, such as contract and/or deposit.",
       "x-range": "DateTime",
-      "x-parser-schema-id": "<anonymous-schema-391>"
+      "x-parser-schema-id": "<anonymous-schema-390>"
     },
     "image": {
       "title": "image",
@@ -193,7 +193,7 @@
           "x-parser-schema-id": "<anonymous-schema-170>"
         }
       ],
-      "x-parser-schema-id": "<anonymous-schema-392>"
+      "x-parser-schema-id": "<anonymous-schema-391>"
     },
     "internetAddressDisplayYN": {
       "enum": [
@@ -201,14 +201,14 @@
         "N"
       ],
       "type": "string",
-      "x-parser-schema-id": "<anonymous-schema-393>"
+      "x-parser-schema-id": "<anonymous-schema-392>"
     },
     "latitude": {
       "type": "number",
       "description": "The latitude of a location.",
       "x-title": "latitude",
       "example": 40.75,
-      "x-parser-schema-id": "<anonymous-schema-274>"
+      "x-parser-schema-id": "<anonymous-schema-273>"
     },
     "listingAgent": {
       "type": "object",
@@ -223,19 +223,19 @@
         "telephone": "1-252-574-0160",
         "email": "lorilistagent@example.com"
       },
-      "x-parser-schema-id": "<anonymous-schema-394>"
+      "x-parser-schema-id": "<anonymous-schema-393>"
     },
     "listingContractDate": {
       "description": "The effective date of the agreement between the seller and the seller's broker.",
       "format": "date-time",
       "type": "string",
-      "x-parser-schema-id": "<anonymous-schema-395>"
+      "x-parser-schema-id": "<anonymous-schema-394>"
     },
     "listingId": {
       "description": "the local identifier for the listing",
       "example": "GOTHAM-MLS+12345",
       "type": "string",
-      "x-parser-schema-id": "<anonymous-schema-396>"
+      "x-parser-schema-id": "<anonymous-schema-395>"
     },
     "listingOffice": {
       "description": "the listing office",
@@ -245,7 +245,7 @@
       },
       "type": "object",
       "x-range": "RealEstateOrganization",
-      "x-parser-schema-id": "<anonymous-schema-397>"
+      "x-parser-schema-id": "<anonymous-schema-396>"
     },
     "listingOriginatingSystem": {
       "description": "The place where the item is originally input by the user.",
@@ -260,7 +260,7 @@
       "type": "object",
       "x-range": "MultipleListingService",
       "x-subPropertyOf": "instrument",
-      "x-parser-schema-id": "<anonymous-schema-398>"
+      "x-parser-schema-id": "<anonymous-schema-397>"
     },
     "listingPrice": {
       "type": "object",
@@ -270,7 +270,7 @@
         "price": 75000,
         "priceCurrency": "USD"
       },
-      "x-parser-schema-id": "<anonymous-schema-399>"
+      "x-parser-schema-id": "<anonymous-schema-398>"
     },
     "listingStatus": {
       "enum": [
@@ -283,7 +283,7 @@
         "Private"
       ],
       "type": "string",
-      "x-parser-schema-id": "<anonymous-schema-400>"
+      "x-parser-schema-id": "<anonymous-schema-399>"
     },
     "livingArea": {
       "description": "property indoor space",
@@ -295,14 +295,14 @@
       },
       "type": "object",
       "x-range": "QuantitativeValue",
-      "x-parser-schema-id": "<anonymous-schema-401>"
+      "x-parser-schema-id": "<anonymous-schema-400>"
     },
     "longitude": {
       "type": "number",
       "description": "The longitude of a location.",
       "x-title": "longitude",
       "example": 73.98,
-      "x-parser-schema-id": "<anonymous-schema-273>"
+      "x-parser-schema-id": "<anonymous-schema-272>"
     },
     "lotSize": {
       "description": "outdoor space minValue, maxValue",
@@ -314,44 +314,44 @@
       },
       "type": "object",
       "x-range": "QuantitativeValue",
-      "x-parser-schema-id": "<anonymous-schema-402>"
+      "x-parser-schema-id": "<anonymous-schema-401>"
     },
     "numberOfBathrooms": {
       "description": "the number of bathrooms",
       "example": "2",
       "type": "string",
-      "x-parser-schema-id": "<anonymous-schema-403>"
+      "x-parser-schema-id": "<anonymous-schema-402>"
     },
     "numberOfBedrooms": {
       "description": "the number of bedrooms",
       "example": "3",
       "type": "string",
-      "x-parser-schema-id": "<anonymous-schema-404>"
+      "x-parser-schema-id": "<anonymous-schema-403>"
     },
     "numberOfRooms": {
       "description": "the total number of rooms in the building",
       "example": "7",
       "type": "string",
-      "x-parser-schema-id": "<anonymous-schema-405>"
+      "x-parser-schema-id": "<anonymous-schema-404>"
     },
     "originatingSystemKey": {
       "description": "the listing identifier from the original MLS, aka MLSID.",
       "example": 12345,
       "type": "string",
-      "x-parser-schema-id": "<anonymous-schema-406>"
+      "x-parser-schema-id": "<anonymous-schema-405>"
     },
     "originatingSystemName": {
       "description": "the name of the MLS where the listing was originally input",
       "example": "GOTHAM-MLS",
       "type": "string",
-      "x-parser-schema-id": "<anonymous-schema-407>"
+      "x-parser-schema-id": "<anonymous-schema-406>"
     },
     "postalCode": {
       "type": "string",
       "description": "Zip/Post Code",
       "example": "10010",
       "maxLength": 12,
-      "x-parser-schema-id": "<anonymous-schema-408>"
+      "x-parser-schema-id": "<anonymous-schema-407>"
     },
     "propertySubType": {
       "title": "propertySubType",
@@ -388,7 +388,7 @@
         "UnimprovedLandPropertyType",
         "WarehousePropertyType"
       ],
-      "x-parser-schema-id": "<anonymous-schema-409>"
+      "x-parser-schema-id": "<anonymous-schema-408>"
     },
     "propertyType": {
       "type": "string",
@@ -407,33 +407,33 @@
         "COML",
         "BUSO"
       ],
-      "x-parser-schema-id": "<anonymous-schema-410>"
+      "x-parser-schema-id": "<anonymous-schema-409>"
     },
     "purchaseContractDate": {
       "description": "With for-sale listings, the date an offer was accepted and the listing was no longer on market. With lease listings this may represent a meeting of the minds to lease, but some contractual requirements are yet to be fulfilled, such as contract signing or receipt of the deposit.",
       "format": "date-time",
       "type": "string",
-      "x-parser-schema-id": "<anonymous-schema-411>"
+      "x-parser-schema-id": "<anonymous-schema-410>"
     },
     "stories": {
       "type": "number",
       "description": "he number of floors in the property",
       "example": 2,
-      "x-parser-schema-id": "<anonymous-schema-412>"
+      "x-parser-schema-id": "<anonymous-schema-411>"
     },
     "streetAddress": {
       "type": "string",
       "description": "the street address",
       "example": "1007 Mountain Gate Rd",
       "maxLength": 75,
-      "x-parser-schema-id": "<anonymous-schema-413>"
+      "x-parser-schema-id": "<anonymous-schema-412>"
     },
     "universalPropertyId": {
       "type": "string",
       "title": "universalPropertyId",
       "description": "The Universal Property Identifier is a unique identifier for all real property in the US and Canada.  It is based on country and local identification methods and is limited to real property.  For cases such as shares of real property, units, and other more granular cases, please utilize the UniversalPropertySubId.",
       "example": "US-04015-N-R-11022331-N",
-      "x-parser-schema-id": "<anonymous-schema-414>"
+      "x-parser-schema-id": "<anonymous-schema-413>"
     },
     "url": {
       "title": "url",
@@ -441,13 +441,13 @@
       "format": "uri",
       "description": "URL of the item.",
       "example": "https://www.example.com/homedetails/1007-Mountain-Gate-Rd-Gotham-City-Gotham/10007",
-      "x-parser-schema-id": "<anonymous-schema-415>"
+      "x-parser-schema-id": "<anonymous-schema-414>"
     },
     "yearBuilt": {
       "type": "number",
       "description": "the year the structure was created",
       "example": 1988,
-      "x-parser-schema-id": "<anonymous-schema-416>"
+      "x-parser-schema-id": "<anonymous-schema-415>"
     }
   },
   "x-parser-schema-id": "PropertyListing",

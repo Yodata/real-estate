@@ -1,7 +1,169 @@
+type: object
 title: Contact
 description: a CRM contact.
 x-range: Contact
 properties:
+  affiliation:
+    type: array
+    description: An organization that this person is affiliated with
+    items:
+      type: string
+      format: uri
+      example: https://example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-214>
+    x-parser-schema-id: <anonymous-schema-213>
+  address:
+    type: array
+    x-range: PostalAddress
+    description: addresses for the item
+    items:
+      type: object
+      x-range: PostalAddress
+      description: A physical address.
+      example:
+        type: PostalAddress
+        name: Home
+        addressCountry: USA
+        addressCounty: Gotham County
+        addressLocality: Gotham City
+        addressRegion: New Jersey
+        addressSubdivision: Gotham Heights
+        postalCode: '10010'
+        postOfficeBoxNumber: Box 1234
+        streetAddress: 1007 Mountain Gate Rd
+      x-parser-schema-id: <anonymous-schema-216>
+    x-parser-schema-id: <anonymous-schema-215>
+  birthDate:
+    type: string
+    format: date
+    description: date of birth.
+    x-parser-schema-id: <anonymous-schema-217>
+  contactPoint:
+    type: array
+    x-range: ContactPoint
+    description: >-
+      a named point of contact - telephone, email, faxNumber, and/or url for the
+      entity
+    items:
+      $id: htttp://realestate.yodata.me/schema/contactPoint
+      type: array
+      description: >-
+        a named point of contact - telephone, email, faxNumber, and/or url for
+        the entity
+      items:
+        title: ContactPoint
+        description: >
+          A point of contact for the entity. By convention in the real estate
+          domain, ContactPoints 
+
+          are preferred over telephone, email, and faxNumber so the
+          ContactPoint.name property can be used to label values 
+
+          for example, Work Telephone, Home, as named contactPoint values.
+        type: object
+        properties:
+          type:
+            description: ContactPoint
+            type: string
+            enum:
+              - ContactPoint
+            x-parser-schema-id: <anonymous-schema-219>
+          name:
+            type: string
+            description: a label for the contactPoint, i.e. 'Work', or 'Home'
+            example: Work
+            x-parser-schema-id: <anonymous-schema-220>
+          telephone:
+            description: a telephone number
+            type: string
+            example: 1-364-127-9618 x20418
+            x-parser-schema-id: <anonymous-schema-221>
+          faxNumber:
+            description: a fax number
+            type: string
+            example: 834.320.1602
+            x-parser-schema-id: <anonymous-schema-222>
+          email:
+            description: an email address for the item.
+            type: string
+            format: email
+            example: user@example.com
+            x-parser-schema-id: <anonymous-schema-223>
+          url:
+            description: primary URL for the item.
+            type: string
+            format: uri
+            example: https://www.facebook.com/hallandoates
+            x-parser-schema-id: <anonymous-schema-224>
+        x-parser-schema-id: ContactPoint
+    x-parser-schema-id: <anonymous-schema-218>
+  email:
+    type: string
+    description: Primary email address.
+    example: user@example.com
+    x-parser-schema-id: <anonymous-schema-225>
+  additionalName:
+    type: string
+    description: >-
+      any other name(s) associated with the entity, i.e. nickname, middle name,
+      maiden name, etc. For multiple names, use a comma without space as a
+      separator.
+    example: ambassador satch,pops,satchmo
+    x-parser-schema-id: <anonymous-schema-226>
+  familyName:
+    type: string
+    description: Last Name of a person
+    example: Wayne
+    x-parser-schema-id: <anonymous-schema-227>
+  faxNumber:
+    type: string
+    description: Primary fax number.
+    example: (873) 271-4802
+    x-parser-schema-id: <anonymous-schema-228>
+  givenName:
+    type: string
+    description: First Name of a person
+    example: Glenn
+    x-parser-schema-id: <anonymous-schema-229>
+  honorificPrefix:
+    title: honorificPrefix
+    description: An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.
+    type: string
+    example: Dr
+    x-parser-schema-id: <anonymous-schema-230>
+  honorifixSuffix:
+    title: honorificSuffix
+    description: An honorific title following a person's name like M.D.
+    type: string
+    example: Esq
+    x-parser-schema-id: <anonymous-schema-231>
+  knowsLanguage:
+    type: array
+    description: languages spoken by the person
+    x-range: Language
+    items:
+      type: object
+      x-parser-schema-id: <anonymous-schema-235>
+    example:
+      - type: Language
+        name: English
+        additionalName: en-us
+    x-parser-schema-id: <anonymous-schema-234>
+  name:
+    type: string
+    description: Full name of the person.
+    example: Bruce Wayne
+    x-parser-schema-id: <anonymous-schema-236>
+  telephone:
+    description: Primary phone number.
+    type: string
+    example: 1-339-041-0306 x2866
+    x-parser-schema-id: <anonymous-schema-237>
+  worksFor:
+    type: string
+    description: Organizations the person works for.
+    example: Gotham City Police Department
+    x-parser-schema-id: <anonymous-schema-238>
   identifier:
     type: object
     description: >-
@@ -18,6 +180,9 @@ properties:
       supercrmuserid: 1234
       doNotSell: true
   type:
+    type: string
+    description: Person
+    x-parser-schema-id: <anonymous-schema-212>
     example: Contact
     enum:
       - Contact
@@ -40,6 +205,12 @@ properties:
         dateCreated: '2019-07-15T05:24:05Z'
         dateModified: '2019-07-15T05:24:05Z'
   jobTitle:
+    title: jobTitle
+    description: job tiles associated with the item
+    items:
+      type: string
+      x-parser-schema-id: <anonymous-schema-233>
+    x-parser-schema-id: <anonymous-schema-232>
     type: string
     example: Superhero
   contactGroup:
@@ -64,8 +235,8 @@ properties:
       - Past Customer
     items:
       type: string
-      x-parser-schema-id: <anonymous-schema-353>
-    x-parser-schema-id: <anonymous-schema-352>
+      x-parser-schema-id: <anonymous-schema-352>
+    x-parser-schema-id: <anonymous-schema-351>
   leadOwner:
     type: object
     description: lead owner

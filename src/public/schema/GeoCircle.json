@@ -9,7 +9,7 @@
       "enum": [
         "GeoCircle"
       ],
-      "x-parser-schema-id": "<anonymous-schema-271>"
+      "x-parser-schema-id": "<anonymous-schema-270>"
     },
     "geoMidpoint": {
       "title": "GeoCoordinates",
@@ -23,21 +23,21 @@
           "enum": [
             "GeoCoordinates"
           ],
-          "x-parser-schema-id": "<anonymous-schema-272>"
+          "x-parser-schema-id": "<anonymous-schema-271>"
         },
         "longitude": {
           "type": "number",
           "description": "The longitude of a location.",
           "x-title": "longitude",
           "example": 73.98,
-          "x-parser-schema-id": "<anonymous-schema-273>"
+          "x-parser-schema-id": "<anonymous-schema-272>"
         },
         "latitude": {
           "type": "number",
           "description": "The latitude of a location.",
           "x-title": "latitude",
           "example": 40.75,
-          "x-parser-schema-id": "<anonymous-schema-274>"
+          "x-parser-schema-id": "<anonymous-schema-273>"
         }
       },
       "x-parser-schema-id": "GeoCoordinates"
@@ -53,7 +53,7 @@
         "unitCode": "mi",
         "unitText": "miles"
       },
-      "x-parser-schema-id": "<anonymous-schema-275>"
+      "x-parser-schema-id": "<anonymous-schema-274>"
     }
   },
   "x-parser-schema-id": "GeoCircle",

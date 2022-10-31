@@ -6,7 +6,7 @@ additionalProperties: true
 properties:
   type:
     const: RealEStateAgent
-    x-parser-schema-id: <anonymous-schema-487>
+    x-parser-schema-id: <anonymous-schema-486>
   additionalName:
     type: string
     description: >-
@@ -14,7 +14,7 @@ properties:
       maiden name, etc. For multiple names, use a comma without space as a
       separator.
     example: ambassador satch,pops,satchmo
-    x-parser-schema-id: <anonymous-schema-227>
+    x-parser-schema-id: <anonymous-schema-226>
   address:
     type: object
     x-range: PostalAddress
@@ -22,15 +22,15 @@ properties:
     example:
       type: PostalAddress
       name: Home
-      streetAddress: 1007 Mountain Gate Rd
-      postOfficeBoxNumber: Box 1234
-      addressRegion: New Jersey
-      addressLocality: Gotham City
-      postalCode: '10010'
       addressCountry: USA
       addressCounty: Gotham County
+      addressLocality: Gotham City
+      addressRegion: New Jersey
       addressSubdivision: Gotham Heights
-    x-parser-schema-id: <anonymous-schema-217>
+      postalCode: '10010'
+      postOfficeBoxNumber: Box 1234
+      streetAddress: 1007 Mountain Gate Rd
+    x-parser-schema-id: <anonymous-schema-216>
   certification:
     type: object
     title: Certification
@@ -42,12 +42,12 @@ properties:
         type: string
         enum:
           - Certification
-        x-parser-schema-id: <anonymous-schema-489>
+        x-parser-schema-id: <anonymous-schema-488>
       name:
         type: string
         description: the name of the Certification
         example: e-Agent Certified
-        x-parser-schema-id: <anonymous-schema-490>
+        x-parser-schema-id: <anonymous-schema-489>
       issuedBy:
         type: object
         x-range: RealEstateOrganization
@@ -91,8 +91,8 @@ properties:
             type: string
             description: the name of the item
             x-parser-schema-id: <anonymous-schema-192>
-        x-parser-schema-id: <anonymous-schema-491>
-    x-parser-schema-id: <anonymous-schema-488>
+        x-parser-schema-id: <anonymous-schema-490>
+    x-parser-schema-id: <anonymous-schema-487>
   contactPoint:
     title: ContactPoint
     description: >
@@ -110,52 +110,52 @@ properties:
         type: string
         enum:
           - ContactPoint
-        x-parser-schema-id: <anonymous-schema-493>
+        x-parser-schema-id: <anonymous-schema-492>
       name:
         type: string
         description: a label for the contactPoint, i.e. 'Work', or 'Home'
         example: Work
-        x-parser-schema-id: <anonymous-schema-494>
+        x-parser-schema-id: <anonymous-schema-493>
       telephone:
         description: a telephone number
         type: string
         example: 1-364-127-9618 x20418
-        x-parser-schema-id: <anonymous-schema-495>
+        x-parser-schema-id: <anonymous-schema-494>
       faxNumber:
         description: a fax number
         type: string
         example: 834.320.1602
-        x-parser-schema-id: <anonymous-schema-496>
+        x-parser-schema-id: <anonymous-schema-495>
       email:
         description: an email address for the item.
         type: string
         format: email
         example: user@example.com
-        x-parser-schema-id: <anonymous-schema-497>
+        x-parser-schema-id: <anonymous-schema-496>
       url:
         description: primary URL for the item.
         type: string
         format: uri
         example: https://www.facebook.com/hallandoates
-        x-parser-schema-id: <anonymous-schema-498>
-    x-parser-schema-id: <anonymous-schema-492>
+        x-parser-schema-id: <anonymous-schema-497>
+    x-parser-schema-id: <anonymous-schema-491>
   email:
     type: string
     format: email
     description: Primary email address.
     example: user@example.com
-    x-parser-schema-id: <anonymous-schema-499>
+    x-parser-schema-id: <anonymous-schema-498>
   familyName:
     type: string
     description: Last Name of a person
     example: Miller
     maxLength: 50
-    x-parser-schema-id: <anonymous-schema-253>
+    x-parser-schema-id: <anonymous-schema-252>
   givenName:
     type: string
     description: First Name of a person
     example: Glenn
-    x-parser-schema-id: <anonymous-schema-230>
+    x-parser-schema-id: <anonymous-schema-229>
   id:
     type: string
     format: uri
@@ -249,7 +249,7 @@ properties:
                 example: image/jpeg
             x-parser-schema-id: <anonymous-schema-172>
         x-parser-schema-id: <anonymous-schema-170>
-    x-parser-schema-id: <anonymous-schema-392>
+    x-parser-schema-id: <anonymous-schema-391>
   jobTitle:
     $id: htttp://realestate.yodata.me/schema/jobTitle
     title: jobTitle
@@ -257,7 +257,7 @@ properties:
     type: array
     items:
       type: string
-      x-parser-schema-id: <anonymous-schema-500>
+      x-parser-schema-id: <anonymous-schema-499>
     example:
       - Chief Data Officer
       - Sanitation Engineer
@@ -281,41 +281,41 @@ properties:
               description: a role played by the member in the memberOf group
               enum:
                 - OrganizationRole
-              x-parser-schema-id: <anonymous-schema-307>
+              x-parser-schema-id: <anonymous-schema-306>
             roleName:
               type: string
               description: the role name
               example: Owner
-              x-parser-schema-id: <anonymous-schema-308>
+              x-parser-schema-id: <anonymous-schema-307>
             memberOf:
               description: the org or group where the role is performed
               type: object
               example:
                 type: RealEstateOrganization
                 id: http://orgid.example.com/profile/card#me
-              x-parser-schema-id: <anonymous-schema-309>
+              x-parser-schema-id: <anonymous-schema-308>
             member:
               description: member object or id
               type: string
               format: uri
               example: https://memberid.example.com/profile/card#me
-              x-parser-schema-id: <anonymous-schema-310>
+              x-parser-schema-id: <anonymous-schema-309>
             startDate:
               type: string
               format: date-time
               description: date the member began performing this role
-              x-parser-schema-id: <anonymous-schema-311>
+              x-parser-schema-id: <anonymous-schema-310>
             endDate:
               type: string
               format: date-time
               description: date the member stopped performing the role
-              x-parser-schema-id: <anonymous-schema-312>
+              x-parser-schema-id: <anonymous-schema-311>
           x-parser-schema-id: OrganizationRole
         - type: string
           format: uri
-          x-parser-schema-id: <anonymous-schema-503>
-      x-parser-schema-id: <anonymous-schema-502>
-    x-parser-schema-id: <anonymous-schema-501>
+          x-parser-schema-id: <anonymous-schema-502>
+      x-parser-schema-id: <anonymous-schema-501>
+    x-parser-schema-id: <anonymous-schema-500>
   name:
     type: string
     description: the name of the item
@@ -328,7 +328,7 @@ properties:
     items:
       type: string
       format: uri
-      x-parser-schema-id: <anonymous-schema-504>
+      x-parser-schema-id: <anonymous-schema-503>
   permit:
     title: Permit
     description: A permit issued by an organization to an individual or business.
@@ -341,12 +341,12 @@ properties:
         description: Permit type.
         enum:
           - Permit
-        x-parser-schema-id: <anonymous-schema-506>
+        x-parser-schema-id: <anonymous-schema-505>
       name:
         type: string
         description: Common or display value of the Permit.
         example: DRE Number
-        x-parser-schema-id: <anonymous-schema-507>
+        x-parser-schema-id: <anonymous-schema-506>
       issuedBy:
         type: object
         x-range: Organization
@@ -354,29 +354,29 @@ properties:
         example:
           type: State
           name: California
-        x-parser-schema-id: <anonymous-schema-508>
+        x-parser-schema-id: <anonymous-schema-507>
       issuedThrough:
         type: object
         description: the service through which the permit was granted
         example:
           type: Service
           name: Department of Real Estate
-        x-parser-schema-id: <anonymous-schema-509>
+        x-parser-schema-id: <anonymous-schema-508>
       validIn:
         type: object
         x-range: Place
-        x-parser-schema-id: <anonymous-schema-510>
+        x-parser-schema-id: <anonymous-schema-509>
       validFrom:
         type: string
         format: date-time
         description: start date
-        x-parser-schema-id: <anonymous-schema-511>
+        x-parser-schema-id: <anonymous-schema-510>
       validUntil:
         type: string
         format: date-time
         description: end date
-        x-parser-schema-id: <anonymous-schema-512>
-    x-parser-schema-id: <anonymous-schema-505>
+        x-parser-schema-id: <anonymous-schema-511>
+    x-parser-schema-id: <anonymous-schema-504>
   subOrganization:
     $id: htttp://realestate.yodata.me/schema/subOrganization
     title: subOrganization
@@ -385,7 +385,7 @@ properties:
     items:
       type: string
       format: uri
-      x-parser-schema-id: <anonymous-schema-513>
+      x-parser-schema-id: <anonymous-schema-512>
   url:
     title: url
     type: string

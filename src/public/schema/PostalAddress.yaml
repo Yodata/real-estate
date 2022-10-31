@@ -1,55 +1,89 @@
+$id: https://realestate.yodata.me/schema/PostalAddress.yaml
 title: PostalAddress
 type: object
 x-range: PostalAddress
 description: A physical address.
+required:
+  - type
 properties:
   type:
     type: string
-    enum:
-      - PostalAddress
-    x-parser-schema-id: <anonymous-schema-358>
+    const: PostalAddress
+    x-parser-schema-id: <anonymous-schema-357>
   streetAddress:
     type: string
     description: the street number and name.
-    example: 1007 Mountain Gate Rd
-    x-parser-schema-id: <anonymous-schema-359>
+    examples:
+      - 5046 Ottis Point
+      - 166 Marion Burg
+      - 93044 Haley Stream
+    x-parser-schema-id: <anonymous-schema-358>
   postOfficeBoxNumber:
     type: string
     description: The post office box number for PO box addresses.
-    example: Box 1234
-    x-parser-schema-id: <anonymous-schema-360>
+    examples:
+      - Box 1234
+      - Apt. 161
+      - Apt. 623
+    x-parser-schema-id: <anonymous-schema-359>
   addressRegion:
     type: string
     description: State or Province.
-    example: New Jersey
-    x-parser-schema-id: <anonymous-schema-361>
+    examples:
+      - New Jersey
+      - California
+      - MI
+      - null
+    x-parser-schema-id: <anonymous-schema-360>
   addressLocality:
     type: string
     description: City, Township.
-    example: Gotham City
-    x-parser-schema-id: <anonymous-schema-362>
+    examples:
+      - Gotham City
+      - Kulasmouth
+      - Heidistad
+      - Altamonte Springs
+      - West Ahmed
+      - Blaiseview
+    x-parser-schema-id: <anonymous-schema-361>
   postalCode:
     type: string
     description: Zip/Post Code
-    example: '10010'
-    x-parser-schema-id: <anonymous-schema-363>
+    examples:
+      - '10010'
+      - '38859'
+      - '40387'
+      - 50239-7698
+      - null
+    x-parser-schema-id: <anonymous-schema-362>
   addressCountry:
     type: string
     description: >-
       The country. For example, USA. You can also provide the two-letter ISO
       3166-1 alpha-2 country code.
-    example: USA
-    x-parser-schema-id: <anonymous-schema-364>
+    examples:
+      - USA
+      - TH
+      - NZ
+      - EG
+      - SJ
+      - VN
+    x-parser-schema-id: <anonymous-schema-363>
   addressCounty:
     type: string
     description: the county (us real estate extension)
-    example: Gotham County
-    x-parser-schema-id: <anonymous-schema-365>
+    examples:
+      - Gotham County
+      - Buckinghamshire
+      - Borders
+      - null
+    x-parser-schema-id: <anonymous-schema-364>
   addressSubdivision:
     type: string
     description: the subdivision or neighborhood (us real estate extension)
-    example: Gotham Heights
-    x-parser-schema-id: <anonymous-schema-366>
+    examples:
+      - Gotham Heights
+      - null
+      - null
+    x-parser-schema-id: <anonymous-schema-365>
 x-parser-schema-id: PostalAddress
-$id: https://realestate.yodata.me/schema/PostalAddress.yaml
-

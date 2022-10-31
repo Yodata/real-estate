@@ -29,16 +29,16 @@
       "example": {
         "type": "PostalAddress",
         "name": "Home",
-        "streetAddress": "1007 Mountain Gate Rd",
-        "postOfficeBoxNumber": "Box 1234",
-        "addressRegion": "New Jersey",
-        "addressLocality": "Gotham City",
-        "postalCode": "10010",
         "addressCountry": "USA",
         "addressCounty": "Gotham County",
-        "addressSubdivision": "Gotham Heights"
+        "addressLocality": "Gotham City",
+        "addressRegion": "New Jersey",
+        "addressSubdivision": "Gotham Heights",
+        "postalCode": "10010",
+        "postOfficeBoxNumber": "Box 1234",
+        "streetAddress": "1007 Mountain Gate Rd"
       },
-      "x-parser-schema-id": "<anonymous-schema-217>"
+      "x-parser-schema-id": "<anonymous-schema-216>"
     },
     "availableLanguage": {
       "title": "availableLanguage",
@@ -57,19 +57,19 @@
             "enum": [
               "Language"
             ],
-            "x-parser-schema-id": "<anonymous-schema-278>"
+            "x-parser-schema-id": "<anonymous-schema-277>"
           },
           "name": {
             "type": "string",
             "description": "the display name of the language",
             "example": "English",
-            "x-parser-schema-id": "<anonymous-schema-279>"
+            "x-parser-schema-id": "<anonymous-schema-278>"
           },
           "additionalName": {
             "type": "string",
             "description": "BCP 47 language code",
             "example": "en-US",
-            "x-parser-schema-id": "<anonymous-schema-280>"
+            "x-parser-schema-id": "<anonymous-schema-279>"
           }
         },
         "x-parser-schema-id": "Language"
@@ -182,39 +182,39 @@
             "enum": [
               "ContactPoint"
             ],
-            "x-parser-schema-id": "<anonymous-schema-220>"
+            "x-parser-schema-id": "<anonymous-schema-219>"
           },
           "name": {
             "type": "string",
             "description": "a label for the contactPoint, i.e. 'Work', or 'Home'",
             "example": "Work",
-            "x-parser-schema-id": "<anonymous-schema-221>"
+            "x-parser-schema-id": "<anonymous-schema-220>"
           },
           "telephone": {
             "description": "a telephone number",
             "type": "string",
             "example": "1-364-127-9618 x20418",
-            "x-parser-schema-id": "<anonymous-schema-222>"
+            "x-parser-schema-id": "<anonymous-schema-221>"
           },
           "faxNumber": {
             "description": "a fax number",
             "type": "string",
             "example": "834.320.1602",
-            "x-parser-schema-id": "<anonymous-schema-223>"
+            "x-parser-schema-id": "<anonymous-schema-222>"
           },
           "email": {
             "description": "an email address for the item.",
             "type": "string",
             "format": "email",
             "example": "user@example.com",
-            "x-parser-schema-id": "<anonymous-schema-224>"
+            "x-parser-schema-id": "<anonymous-schema-223>"
           },
           "url": {
             "description": "primary URL for the item.",
             "type": "string",
             "format": "uri",
             "example": "https://www.facebook.com/hallandoates",
-            "x-parser-schema-id": "<anonymous-schema-225>"
+            "x-parser-schema-id": "<anonymous-schema-224>"
           }
         },
         "x-parser-schema-id": "ContactPoint"
@@ -225,13 +225,13 @@
       "format": "email",
       "description": "Primary email address.",
       "example": "user@example.com",
-      "x-parser-schema-id": "<anonymous-schema-499>"
+      "x-parser-schema-id": "<anonymous-schema-498>"
     },
     "faxNumber": {
       "type": "string",
       "description": "Primary fax number.",
       "example": "(873) 271-4802",
-      "x-parser-schema-id": "<anonymous-schema-229>"
+      "x-parser-schema-id": "<anonymous-schema-228>"
     },
     "image": {
       "description": "an ImageObject or URI reference to an image of the entity on the web.",
@@ -361,24 +361,24 @@
                 "enum": [
                   "DigitalDocument"
                 ],
-                "x-parser-schema-id": "<anonymous-schema-255>"
+                "x-parser-schema-id": "<anonymous-schema-254>"
               },
               "id": {
                 "type": "string",
                 "example": "http://user.example.com/public/logo/archive.zip",
-                "x-parser-schema-id": "<anonymous-schema-256>"
+                "x-parser-schema-id": "<anonymous-schema-255>"
               },
               "name": {
                 "type": "string",
                 "description": "document name or title",
                 "example": "archive.zip",
-                "x-parser-schema-id": "<anonymous-schema-257>"
+                "x-parser-schema-id": "<anonymous-schema-256>"
               },
               "encodingFormat": {
                 "type": "string",
                 "description": "[ISO Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml)",
                 "example": "application/zip",
-                "x-parser-schema-id": "<anonymous-schema-258>"
+                "x-parser-schema-id": "<anonymous-schema-257>"
               },
               "about": {
                 "type": "object",
@@ -390,13 +390,13 @@
                     "bmsTransactionId": "xxxx"
                   }
                 },
-                "x-parser-schema-id": "<anonymous-schema-259>"
+                "x-parser-schema-id": "<anonymous-schema-258>"
               },
               "url": {
                 "type": "string",
                 "description": "public URL of the object",
                 "example": "https://example.com",
-                "x-parser-schema-id": "<anonymous-schema-260>"
+                "x-parser-schema-id": "<anonymous-schema-259>"
               }
             },
             "x-parser-schema-id": "DigitalDocument"
@@ -441,7 +441,7 @@
       "type": "string",
       "description": "Primary phone number.",
       "example": "+15558675309",
-      "x-parser-schema-id": "<anonymous-schema-563>"
+      "x-parser-schema-id": "<anonymous-schema-562>"
     },
     "type": {
       "description": "The item type (Linked-Data @type)",

@@ -14,7 +14,7 @@ properties:
     description: The item type (Linked-Data @type)
     enum:
       - Place
-    x-parser-schema-id: <anonymous-schema-336>
+    x-parser-schema-id: <anonymous-schema-335>
   address:
     type: object
     x-range: PostalAddress
@@ -22,15 +22,15 @@ properties:
     example:
       type: PostalAddress
       name: Home
-      streetAddress: 1007 Mountain Gate Rd
-      postOfficeBoxNumber: Box 1234
-      addressRegion: New Jersey
-      addressLocality: Gotham City
-      postalCode: '10010'
       addressCountry: USA
       addressCounty: Gotham County
+      addressLocality: Gotham City
+      addressRegion: New Jersey
       addressSubdivision: Gotham Heights
-    x-parser-schema-id: <anonymous-schema-337>
+      postalCode: '10010'
+      postOfficeBoxNumber: Box 1234
+      streetAddress: 1007 Mountain Gate Rd
+    x-parser-schema-id: <anonymous-schema-336>
   geo:
     type: object
     description: a geo shape (circle or box)
@@ -49,7 +49,7 @@ properties:
         unitCode: mi,
         unitText: miles
       box: (33.5697,-117.775),(33.6018,-117.707)
-    x-parser-schema-id: <anonymous-schema-338>
+    x-parser-schema-id: <anonymous-schema-337>
 x-parser-schema-id: Place
 $id: https://realestate.yodata.me/schema/Place.yaml
 

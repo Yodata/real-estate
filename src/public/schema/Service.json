@@ -9,12 +9,12 @@
       "enum": [
         "Service"
       ],
-      "x-parser-schema-id": "<anonymous-schema-586>"
+      "x-parser-schema-id": "<anonymous-schema-585>"
     },
     "name": {
       "type": "string",
       "description": "name of the service.",
-      "x-parser-schema-id": "<anonymous-schema-587>"
+      "x-parser-schema-id": "<anonymous-schema-586>"
     },
     "areaServed": {
       "type": "object",
@@ -35,7 +35,7 @@
           "enum": [
             "Place"
           ],
-          "x-parser-schema-id": "<anonymous-schema-336>"
+          "x-parser-schema-id": "<anonymous-schema-335>"
         },
         "address": {
           "type": "object",
@@ -44,16 +44,16 @@
           "example": {
             "type": "PostalAddress",
             "name": "Home",
-            "streetAddress": "1007 Mountain Gate Rd",
-            "postOfficeBoxNumber": "Box 1234",
-            "addressRegion": "New Jersey",
-            "addressLocality": "Gotham City",
-            "postalCode": "10010",
             "addressCountry": "USA",
             "addressCounty": "Gotham County",
-            "addressSubdivision": "Gotham Heights"
+            "addressLocality": "Gotham City",
+            "addressRegion": "New Jersey",
+            "addressSubdivision": "Gotham Heights",
+            "postalCode": "10010",
+            "postOfficeBoxNumber": "Box 1234",
+            "streetAddress": "1007 Mountain Gate Rd"
           },
-          "x-parser-schema-id": "<anonymous-schema-337>"
+          "x-parser-schema-id": "<anonymous-schema-336>"
         },
         "geo": {
           "type": "object",
@@ -77,7 +77,7 @@
             },
             "box": "(33.5697,-117.775),(33.6018,-117.707)"
           },
-          "x-parser-schema-id": "<anonymous-schema-338>"
+          "x-parser-schema-id": "<anonymous-schema-337>"
         }
       },
       "x-parser-schema-id": "Place"

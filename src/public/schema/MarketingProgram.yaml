@@ -48,35 +48,35 @@ properties:
               description: a role played by the member in the memberOf group
               enum:
                 - OrganizationRole
-              x-parser-schema-id: <anonymous-schema-307>
+              x-parser-schema-id: <anonymous-schema-306>
             roleName:
               type: string
               description: the role name
               example: Owner
-              x-parser-schema-id: <anonymous-schema-308>
+              x-parser-schema-id: <anonymous-schema-307>
             memberOf:
               description: the org or group where the role is performed
               type: object
               example:
                 type: RealEstateOrganization
                 id: http://orgid.example.com/profile/card#me
-              x-parser-schema-id: <anonymous-schema-309>
+              x-parser-schema-id: <anonymous-schema-308>
             member:
               description: member object or id
               type: string
               format: uri
               example: https://memberid.example.com/profile/card#me
-              x-parser-schema-id: <anonymous-schema-310>
+              x-parser-schema-id: <anonymous-schema-309>
             startDate:
               type: string
               format: date-time
               description: date the member began performing this role
-              x-parser-schema-id: <anonymous-schema-311>
+              x-parser-schema-id: <anonymous-schema-310>
             endDate:
               type: string
               format: date-time
               description: date the member stopped performing the role
-              x-parser-schema-id: <anonymous-schema-312>
+              x-parser-schema-id: <anonymous-schema-311>
           x-parser-schema-id: OrganizationRole
         - title: ProgramMembership
           description: >-
@@ -121,7 +121,7 @@ properties:
                   url: https://agentwebsite.example.com
             memberOf:
               x-range: MarketingProgram
-          x-parser-schema-id: <anonymous-schema-384>
+          x-parser-schema-id: <anonymous-schema-383>
       x-parser-schema-id: ProgramMembership
   creator:
     description: creator / author of the item

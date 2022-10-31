@@ -32,24 +32,24 @@
             "enum": [
               "DigitalDocument"
             ],
-            "x-parser-schema-id": "<anonymous-schema-255>"
+            "x-parser-schema-id": "<anonymous-schema-254>"
           },
           "id": {
             "type": "string",
             "example": "http://user.example.com/public/logo/archive.zip",
-            "x-parser-schema-id": "<anonymous-schema-256>"
+            "x-parser-schema-id": "<anonymous-schema-255>"
           },
           "name": {
             "type": "string",
             "description": "document name or title",
             "example": "archive.zip",
-            "x-parser-schema-id": "<anonymous-schema-257>"
+            "x-parser-schema-id": "<anonymous-schema-256>"
           },
           "encodingFormat": {
             "type": "string",
             "description": "[ISO Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml)",
             "example": "application/zip",
-            "x-parser-schema-id": "<anonymous-schema-258>"
+            "x-parser-schema-id": "<anonymous-schema-257>"
           },
           "about": {
             "type": "object",
@@ -61,13 +61,13 @@
                 "bmsTransactionId": "xxxx"
               }
             },
-            "x-parser-schema-id": "<anonymous-schema-259>"
+            "x-parser-schema-id": "<anonymous-schema-258>"
           },
           "url": {
             "type": "string",
             "description": "public URL of the object",
             "example": "https://example.com",
-            "x-parser-schema-id": "<anonymous-schema-260>"
+            "x-parser-schema-id": "<anonymous-schema-259>"
           }
         },
         "x-parser-schema-id": "DigitalDocument"

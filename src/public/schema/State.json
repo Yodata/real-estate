@@ -10,7 +10,7 @@
       "enum": [
         "State"
       ],
-      "x-parser-schema-id": "<anonymous-schema-611>"
+      "x-parser-schema-id": "<anonymous-schema-610>"
     },
     "name": {
       "type": "string",

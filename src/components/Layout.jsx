@@ -44,12 +44,14 @@ const navigation = [
   {
     title: 'Developers',
     links: [
-      { title: 'Design principles', href: '/about-the-project' },
-      { title: 'Schema Validator GUI', href: '/tools/validate' },
-      { title: 'Schema Validation API', href: '/docs/api/validate' },
+      { title: 'Mock Data Generator API', href: '/docs/api/mock-data-generator' },
+      { title: 'Mock Data Generator GUI', href: '/tools/mock-data-generator' },
       { title: 'Replay Events GUI', href: '/tools/replay' },
       { title: 'Replay Events API', href: '/docs/api/replay' },
+      { title: 'Schema Validator GUI', href: '/tools/validate' },
+      { title: 'Schema Validation API', href: '/docs/api/validate' },
       { title: 'Yodata CLI', href: '/tools/yodata-cli' },
+      { title: 'Design principles', href: '/about-the-project' },
       { title: 'Architecture guide', href: '/docs/architecture-guide' }
     ]
   },

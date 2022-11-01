@@ -33,7 +33,7 @@ const navigation = [
       { title: 'franchise', href: '/docs/topic/franchise' },
       { title: 'lead', href: '/docs/topic/lead' },
       { title: 'listing', href: '/docs/topic/listing' },
-      { title: 'marketing', href: '/docs/topic/marketing' },
+      { title: 'marketingprogram', href: '/docs/topic/marketingprogram' },
       { title: 'marketingpreferences', href: '/docs/topic/marketingpreferences' },
       { title: 'profile', href: '/docs/topic/profile' },
       { title: 'servicearea', href: '/docs/topic/servicearea' },

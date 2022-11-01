@@ -1,20 +1,20 @@
-messageId: team#delete
+messageId: team#update
 x-scope: realestate/team#
-summary: team record deleted.
+summary: team record Updated.
 payload:
   allOf:
     - $ref: base.event.yaml
     - properties:
         topic:
           enum:
-            - realestate/team#delete
+            - realestate/team#update
         data:
           x-range:
-          - DeleteAction
+          - UpdateAction
           properties:
             type:
               enum:
-              - DeleteAction
+              - UpdateAction
             identifier:
               $ref: identifier.yaml
               example:
@@ -31,13 +31,7 @@ payload:
                 identifier:
                   hsfAwardSeriesId: xxxx
             recipient:
-              type: object
-              x-range:
-              - RealEstateAgent
-              - RealEstateOffice
-              - RealEstateOrganiation
-              description: profile URI of the team recipient
-              example:
-                type: RealEstateAgent
-                id: https://user.example.com/profile/card#me
-                name: Joann Agent
+              oneOf:
+                - $ref: RealEstateAgent
+                - $ref: RealEstateOffice
+                - $ref: RealEstateOrganization

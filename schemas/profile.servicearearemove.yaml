@@ -1,4 +1,4 @@
-messageId: profile#serviceareaadd
+messageId: profile#servicearearemove
 x-scope: realestate/profile#
 summary: an agent, office or organization profile was updated
 payload:
@@ -7,7 +7,7 @@ payload:
     - properties:
         topic:
           enum:
-            - realestate/profile#serviceareaadd
+            - realestate/profile#servicearearemove
         data:
           allOf:
           - $ref: AddAction.yaml

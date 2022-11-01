@@ -1,0 +1,7 @@
+$id: htttp://realestate.yodata.me/schema/parentOrganization
+title: parentOrganization
+description: organizations of which this org is a part.
+type: array
+items:
+  type: string
+  format: uri

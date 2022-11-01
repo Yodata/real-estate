@@ -1,0 +1,1 @@
+: http://asyncapi.com/definitions/2.5.0/message.json

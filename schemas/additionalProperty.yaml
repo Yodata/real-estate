@@ -1,0 +1,6 @@
+title: additionalProperty
+type: object
+description: additionalProperty are
+example:
+  supercrmuserid: 1234
+  doNotSell: true

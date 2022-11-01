@@ -1,0 +1,20 @@
+description: an image, video or document availble for download
+x-subclass:
+  - ImageObject
+  - DigitalDocument
+title: ImageObject
+x-range: ImageObject
+properties:
+  type:
+    enum:
+      - ImageObject
+    example: ImageObject
+  id:
+    example: http://user.example.com/public/logo/image.jpg
+  name:
+    example: image.jpg
+  encodingFormat:
+    example: image/jpeg
+x-parser-schema-id: ImageObject
+$id: https://realestate.yodata.me/schema/ImageObject.yaml
+

@@ -1,0 +1,88 @@
+{
+  "name": "@yodata/real-estate-webdocs-generator",
+  "version": "0.0.1",
+  "author": "Dave Duran <dave@yodata.io> (https://yodata.io/)",
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {
+    "@asyncapi/generator-filters": "^2.1.0",
+    "@asyncapi/generator-hooks": "^0.1.0",
+    "@asyncapi/generator-react-sdk": "^0.2.23",
+    "@yodata/get-value": "^1.0.0",
+    "@yodata/has-value": "^0.0.3",
+    "openapi-sampler": "^1.3.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "yaml": "^2.1.3"
+  },
+  "devDependencies": {
+    "@asyncapi/generator": "^1.9.13",
+    "@asyncapi/parser": "^1.17.1",
+    "@asyncapi/specs": "^4.0.0",
+    "@babel/core": "^7.13.0",
+    "@babel/preset-env": "^7.19.4",
+    "@babel/preset-react": "^7.18.6",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/github": "^7.2.3",
+    "@semantic-release/npm": "^7.1.3",
+    "@semantic-release/release-notes-generator": "^9.0.3",
+    "add": "^2.0.6",
+    "all-contributors-cli": "^6.24.0",
+    "babel-jest": "^29.2.1",
+    "conventional-changelog-conventionalcommits": "^4.6.3",
+    "eslint": "^8.26.0",
+    "eslint-plugin-jest": "^27.1.3",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-security": "^1.5.0",
+    "jest": "^29.2.1",
+    "markdown-toc": "^1.2.0",
+    "marked": "4.1.1",
+    "marked-terminal": "^5.1.1",
+    "rimraf": "^3.0.2",
+    "semantic-release": "17.4.7",
+    "typescript": "^4.8.4",
+    "react-test-renderer": "18.2.0"
+  },
+  "description": "generates https://realestate.yodata.me",
+  "generator": {
+    "renderer": "react",
+    "generator": ">=1.9.12 <2.0.0",
+    "parameters": {
+      "toc": {
+        "default": "false",
+        "description": "Include a Table-of-Contents in the output markdown.",
+        "required": false
+      },
+      "version": {
+        "description": "Override the version of your application provided under `info.version` location in the specification file.",
+        "required": false
+      }
+    }
+  },
+  "scripts": {
+    "bump:version": "echo 'We do not trigger releases for this template. Normally this script should invoke \"npm --no-git-tag-version --allow-same-version version $VERSION\"'",
+    "generate:assets": "npm run generate:readme:toc",
+    "generate:readme:toc": "markdown-toc -i README.md",
+    "generate:production": "npx -p @asyncapi/generator@1.9.12 ag ./asyncapi.yaml ./ -o ../_generated_ --force-write",
+    "generate": "rimraf ./test/_generated_ && npx -p @asyncapi/generator@1.9.12 ag ./asyncapi.yaml ./ -o ../test/_generated_ --force-write",
+    "lint": "eslint --max-warnings 0 --fix --config .eslintrc .",
+    "release": "echo 'We do not trigger releases for this template. Normally this script should invoke \"semantic-release\"'",
+    "test": "jest --bail",
+    "testComponents": "rimraf test/temp && jest --coverage ./__tests__/components",
+    "testFilters": "rimraf test/temp && jest --coverage ./__tests__/filters",
+    "testTemplate": "rimraf test/temp && jest --coverage ./__tests__/template"
+  },
+  "pnpm": {
+    "overrides": {
+      "markdown-it@<12.3.2": ">=12.3.2",
+      "semantic-release@>=17.0.4 <19.0.3": ">=19.0.3",
+      "npm@>=7.9.0 <8.11.0": ">=8.11.0",
+      "ajv@<6.12.3": ">=6.12.3",
+      "marked@<4.0.10": ">=4.0.10"
+    }
+  },
+  "peerDependencies": {
+    "marked-terminal": "^5.1.1",
+    "semantic-release": "17.4.7"
+  }
+}

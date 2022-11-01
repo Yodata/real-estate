@@ -1,0 +1,74 @@
+{
+  "type": "object",
+  "title": "Event",
+  "description": "An event happening at a certain time and location",
+  "x-range": "Event",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "The item type (Linked-Data @type)",
+      "example": "Event",
+      "x-parser-schema-id": "<anonymous-schema-263>"
+    },
+    "name": {
+      "type": "string",
+      "description": "name of the event",
+      "example": "Property Showing 1007 Mountain Gate Rd",
+      "x-parser-schema-id": "<anonymous-schema-264>"
+    },
+    "description": {
+      "type": "string",
+      "description": "event message content",
+      "example": "an example meeting request for 4:00PM to 4:30PM.",
+      "x-parser-schema-id": "<anonymous-schema-265>"
+    },
+    "about": {
+      "type": "object",
+      "description": "a subject of the meeting or event",
+      "example": {
+        "type": "PropertyListing",
+        "originatingSystemName": "GOTHAM-MLS",
+        "originatingSystemKey": "12345",
+        "url": "https://{company-website-url}/{path-to-listing}",
+        "streetAddress": "1007 Mountain Gate Rd",
+        "addressRegion": "New Jersey",
+        "addressLocality": "Gotham City",
+        "postalCode": "10010",
+        "addressCountry": "USA",
+        "listingPrice": {
+          "type": "PriceSpecification",
+          "price": 7500000,
+          "priceCurrency": "USD"
+        }
+      },
+      "x-parser-schema-id": "<anonymous-schema-266>"
+    },
+    "startDate": {
+      "description": "the start date-time (ISO 8601 formated)",
+      "type": "string",
+      "format": "date-time",
+      "example": "2019-08-01T16:00Z",
+      "x-parser-schema-id": "<anonymous-schema-267>"
+    },
+    "endDate": {
+      "type": "string",
+      "description": "the end date-time (ISO 8601 formated)",
+      "format": "date-time",
+      "example": "2019-08-01T16:30Z",
+      "x-parser-schema-id": "<anonymous-schema-268>"
+    },
+    "organizer": {
+      "title": "organizer",
+      "description": "the event organizer",
+      "type": "object",
+      "example": {
+        "type": "RealEstateAgent",
+        "name": "Bruce Wayne",
+        "id": "https://batman.example.com/profile/card#me"
+      },
+      "x-parser-schema-id": "<anonymous-schema-269>"
+    }
+  },
+  "x-parser-schema-id": "Event",
+  "$id": "https://realestate.yodata.me/schema/Event.json"
+}

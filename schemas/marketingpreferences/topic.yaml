@@ -1,0 +1,5 @@
+subscribe:
+  message:
+      oneOf:
+      - $ref: marketingpreferences.subscribe.yaml
+      - $ref: marketingpreferences.unsubscribe.yaml

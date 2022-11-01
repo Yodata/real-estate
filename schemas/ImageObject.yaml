@@ -1,0 +1,15 @@
+allOf:
+  - $ref: MediaObject.yaml
+  - title: ImageObject
+    x-range: ImageObject
+    properties:
+      type:
+        enum:
+        - ImageObject
+        example: ImageObject
+      id:
+        example: http://user.example.com/public/logo/image.jpg
+      name:
+        example: image.jpg
+      encodingFormat:
+        example: image/jpeg

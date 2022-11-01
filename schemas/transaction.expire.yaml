@@ -1,0 +1,17 @@
+x-title: expire
+x-scope: realestate/transaction#
+summary: a real estate transaction was expired
+payload:
+  allOf:
+    - $ref: base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/transaction#expire
+        data:
+          $ref: ExpireAction.yaml
+    - properties:
+        data:
+          properties:
+            object:
+              $ref: RealEstateTransaction.yaml

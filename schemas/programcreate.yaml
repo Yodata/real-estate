@@ -1,0 +1,46 @@
+messageId: marketing#create
+x-scope: realestate/marketingprogram#
+summary: a marketing program has been created
+payload:
+  allOf:
+    - $ref: base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/marketingprogram#create
+        data:
+          allOf:
+          - $ref: CreateAction.yaml
+          - properties:
+              object:
+                allOf:
+                - $ref: MarketingProgram.yaml
+                - x-range: MarketingProgram
+                - properties:
+
+                    identifier:
+                      type: object
+                      description: namespaced identifiers
+                      example:
+                        namespaceid: xxxx
+
+                    about:
+                      x-range: Place
+                      example:
+                        type: Place
+                        address:
+                          streetAddress: 508 Homewood Ave
+                          addressLocality: Chula Vista
+                          addressRegion: California
+                          postalCode: '55555'
+
+                    member:
+                      type: array
+                      items:
+                        type: object
+                        x-range: Person
+                        example:
+                          type: Person
+                          name: John Smith
+                          identifier:
+                            buysideid: ab123

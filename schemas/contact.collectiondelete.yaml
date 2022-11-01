@@ -1,0 +1,21 @@
+messageId: contact#collectiondelete
+x-scope: realestate/contact#
+summary: a contact group was deleted
+payload:
+  allOf:
+    - $ref: base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/contact#collectiondelete
+        data:
+          allOf:
+          - $ref: DeleteAction.yaml
+          - properties:
+              object:
+                description: the deleted collection
+                example:
+                  type: Collection
+                  name: Past Clients
+                  identifier:
+                    vendoraid: pastclientscollectionid

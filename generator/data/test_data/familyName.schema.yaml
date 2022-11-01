@@ -1,0 +1,3 @@
+$id: familyName.schema.yaml
+description: the family name of a [Person](Person.schema.yaml)
+type: string

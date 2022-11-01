@@ -1,0 +1,16 @@
+messageId: listing#update
+x-scope: realestate/listing#
+summary: a PropertyListing is created or updated
+payload:
+  allOf:
+    - $ref: base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/listing#update
+        data:
+          allOf:
+          - $ref: UpdateAction.yaml
+          - properties:
+              object:
+                $ref: PropertyListing.yaml

@@ -1,0 +1,3 @@
+description: The date on which the item was most recently modified or when the item's entry was modified within a DataFeed.
+type: string
+format: date-time

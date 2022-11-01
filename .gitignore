@@ -128,8 +128,10 @@ Temporary Items
 # End of https://www.gitignore.io/api/node,visualstudiocode,osx
 
 .idea/*
-src/.vercel/project.json
-src/.vercel/README.txt
-src/.env.local
-.vercel/project.json
-.vercel/README.txt
+.env.local
+__transpiled
+context
+**/.vercel/*
+**/.next/
+**/__generated
+__generated__

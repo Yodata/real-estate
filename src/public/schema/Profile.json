@@ -1,0 +1,80 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uri",
+      "description": "document uri",
+      "example": "https://user.example.com/profile/card",
+      "x-parser-schema-id": "<anonymous-schema-371>"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "ProfileDocument"
+      ],
+      "x-parser-schema-id": "<anonymous-schema-372>"
+    },
+    "#me": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uri",
+          "example": "https://user.example.com/profile/card#me",
+          "x-parser-schema-id": "<anonymous-schema-374>"
+        },
+        "type": {
+          "type": "string",
+          "example": "SoftwareApplication",
+          "x-parser-schema-id": "<anonymous-schema-375>"
+        },
+        "inbox": {
+          "description": "discoverable uri to your LDN inbox",
+          "type": "string",
+          "example": "/inbox/",
+          "x-parser-schema-id": "<anonymous-schema-376>"
+        },
+        "outbox": {
+          "description": "discoverable uri to your LDN outbox",
+          "type": "string",
+          "example": "/outbox/",
+          "x-parser-schema-id": "<anonymous-schema-377>"
+        },
+        "storage": {
+          "description": "uri to your linked-data storage root",
+          "type": "string",
+          "example": "/",
+          "x-parser-schema-id": "<anonymous-schema-378>"
+        },
+        "preferencesFile": {
+          "description": "discoverable uri for shared application preferences",
+          "type": "string",
+          "example": "/settings/prefs",
+          "x-parser-schema-id": "<anonymous-schema-379>"
+        },
+        "account": {
+          "description": "discoverable solid:account root",
+          "type": "string",
+          "example": "/",
+          "x-parser-schema-id": "<anonymous-schema-380>"
+        },
+        "privateTypeIndex": {
+          "description": "type index for your private use",
+          "type": "string",
+          "example": "/settings/privateTypeIndex",
+          "x-parser-schema-id": "<anonymous-schema-381>"
+        },
+        "publicTypeIndex": {
+          "description": "shared, discoverable type index",
+          "type": "string",
+          "example": "/settings/publicTypeIndex",
+          "x-parser-schema-id": "<anonymous-schema-382>"
+        }
+      },
+      "x-parser-schema-id": "<anonymous-schema-373>"
+    }
+  },
+  "x-parser-schema-id": "Profile",
+  "$id": "https://realestate.yodata.me/schema/Profile.json"
+}

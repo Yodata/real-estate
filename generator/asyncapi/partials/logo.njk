@@ -1,0 +1,3 @@
+{% if asyncapi.info('x-logo') %}
+[{{asyncapi.info('logo')}} logo]({{asyncapi.info()['x-logo']}})
+{% endif %}

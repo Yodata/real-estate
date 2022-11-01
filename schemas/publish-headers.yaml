@@ -1,0 +1,8 @@
+# required publish headers
+title: HTTP publish headers
+type: object
+required:
+  - x-api-key
+properties:
+  x-api-key:
+    type: string

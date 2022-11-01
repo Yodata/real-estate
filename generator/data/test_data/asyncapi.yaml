@@ -1,0 +1,29 @@
+asyncapi: '2.5.0'
+info:
+  title: allof test
+  version: '1.0.0'
+
+channels:
+  test:
+    publish:
+      message:
+        $ref: '#/components/messages/testMessages'
+
+components:
+  messages:
+    testMessages:
+      payload:
+        anyOf: # anyOf in payload schema
+          - $ref: "#/components/schemas/objectWithKey"
+          - $ref: "#/components/schemas/objectWithKey2"
+
+  schemas:
+    objectWithKey: { $ref: ./objectWithKey.schema.yaml }
+    objectWithKey2: { $ref: ./objectWithKey2.schema.yaml }
+    Thing: { $ref: Thing.schema.yaml }
+    Person: { $ref: Person.schema.yaml }
+    type: { $ref: type.schema.yaml }
+    name: { $ref: name.schema.yaml }
+    givenName: { $ref: givenName.schema.yaml }
+    familyName: { $ref: familyName.schema.yaml }
+    Contact: { $ref: Contact.schema.yaml }

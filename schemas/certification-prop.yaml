@@ -1,0 +1,6 @@
+$id: htttp://realestate.yodata.me/schema/certification
+title: certifications
+description: certifications granted to a person or organization
+type: array
+items:
+  - $ref: Certification.yaml

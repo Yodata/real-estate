@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "title": "PropertyValue",
+  "description": "a key/value pair, used for maintaining state outside of the current context",
+  "required": [
+    "type",
+    "propertyID",
+    "value"
+  ],
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "PropertyValue"
+      ],
+      "x-parser-schema-id": "<anonymous-schema-461>"
+    },
+    "propertyID": {
+      "type": "string",
+      "example": "UserID",
+      "x-parser-schema-id": "<anonymous-schema-462>"
+    },
+    "value": {
+      "type": "string",
+      "example": "@bobjones",
+      "x-parser-schema-id": "<anonymous-schema-463>"
+    }
+  },
+  "x-parser-schema-id": "PropertyValue",
+  "$id": "https://realestate.yodata.me/schema/PropertyValue.json"
+}

@@ -1,0 +1,17 @@
+messageId: lead#accept
+x-scope: realestate/lead#
+summary: a lead (data.object) was accepted by the recipient (data.recipient).
+payload:
+  allOf:
+    - $ref: base.event.yaml
+    - properties:
+        topic:
+          description: realestate/lead#accept
+          enum:
+            - realestate/lead#accept
+        data:
+          allOf:
+            - $ref: AcceptAction.yaml
+            - properties:
+                object:
+                  $ref: Lead.yaml

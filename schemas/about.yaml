@@ -1,0 +1,4 @@
+$id: htttp://realestate.yodata.me/schema/about
+title: about
+description: The subject matter of the content
+type: object

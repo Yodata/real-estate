@@ -1,0 +1,22 @@
+{% from 'partials/schema.njk' import schemaView %}
+{% from 'partials/tag-list.njk' import TagList  %}
+
+{% macro messageView(message, messageName) %}
+
+## {{message.messageId()}}
+
+{{message.summary()}}
+
+{% if message.tags %}
+{{ tagList(message.tags()) }}
+
+{% endif %}
+{% if message.headers %}
+
+{{ schemaView(schema=message.headers(), schema) }}
+{% endif %}
+{% if message.payload %}
+{{ schemaView(message.payload, schemaName=message['messageId'], true) }}
+
+{% endif %}
+{% endmacro %}

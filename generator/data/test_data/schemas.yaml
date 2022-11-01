@@ -1,0 +1,8 @@
+$id: http://realestate.yodata.me/schema/definitions
+definitions:
+  type: { $ref: type.schema.yaml }
+  name: { $ref: name.schema.yaml }
+  givenName: { $ref: givenName.schema.yaml }
+  familyName: { $ref: familyName.schema.yaml }
+  Thing: { $ref: Thing.schema.yaml }
+  Person: { $ref: Person.schema.yaml }

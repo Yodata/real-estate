@@ -1,0 +1,19 @@
+x-title: postingupdate
+x-scope: realestate/blog#
+summary: a blog post was updated
+payload:
+  allOf:
+    - $ref: base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/blog#postingupdate
+        data:
+          x-range:
+          - UpdateAction
+          properties:
+            type:
+              enum:
+              - UpdateAction
+            object:
+              $ref: BlogPosting.yaml

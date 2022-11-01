@@ -1,0 +1,31 @@
+messageId: contact#collectionmemberremove
+x-scope: realestate/contact#
+summary: a contact was removed from collection
+payload:
+  allOf:
+    - $ref: base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/contact#collectionmemberremove
+        data:
+          allOf:
+          - $ref: RemoveAction.yaml
+          - properties:
+              object:
+                type: object
+                x-range: Contact
+                example:
+                  type: Contact
+                  name: Dick Grayson
+                  identifier:
+                    vendoraid: xxx
+
+              targetCollection:
+                type: object
+                x-range: Collection
+                example:
+                  type: Collection
+                  name: Past Clients
+                  identifier:
+                    vendoraid: pastclientscollectionid

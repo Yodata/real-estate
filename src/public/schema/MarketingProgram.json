@@ -1,0 +1,179 @@
+{
+  "$id": "https://realestate.yodata.me/schema/MarketingProgram.json",
+  "type": "object",
+  "summary": "The root type of all Things.",
+  "required": [
+    "type"
+  ],
+  "title": "MarketingProgram",
+  "description": "A collection of pre-defined activities which take place over a period of time or in a regular, ongoing schedule.",
+  "x-subClassOf": "Organization",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "format": "uri",
+      "description": "the liked data uri for the Thing",
+      "x-parser-schema-id": "<anonymous-schema-137>"
+    },
+    "type": {
+      "type": "string",
+      "description": "The item type (Linked-Data @type)",
+      "x-parser-schema-id": "<anonymous-schema-136>",
+      "enum": [
+        "MarketingProgram"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "description": "name of the item",
+      "example": "Market Activity Report 508 Homewood Ave"
+    },
+    "identifier": {
+      "type": "object",
+      "description": "key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.",
+      "example": {
+        "salesforceContactID": "c28834ca-db69-4da8-90ad-75cdc9907298"
+      },
+      "x-parser-schema-id": "<anonymous-schema-202>"
+    },
+    "member": {
+      "description": "array of program memberships",
+      "x-range": "ProgramMembership",
+      "type": "array",
+      "items": {
+        "allOf": [
+          {
+            "title": "OrganizationRole",
+            "type": "object",
+            "description": "describes a role played by a member and a group or organization.",
+            "properties": {
+              "type": {
+                "type": "string",
+                "description": "a role played by the member in the memberOf group",
+                "enum": [
+                  "OrganizationRole"
+                ],
+                "x-parser-schema-id": "<anonymous-schema-306>"
+              },
+              "roleName": {
+                "type": "string",
+                "description": "the role name",
+                "example": "Owner",
+                "x-parser-schema-id": "<anonymous-schema-307>"
+              },
+              "memberOf": {
+                "description": "the org or group where the role is performed",
+                "type": "object",
+                "example": {
+                  "type": "RealEstateOrganization",
+                  "id": "http://orgid.example.com/profile/card#me"
+                },
+                "x-parser-schema-id": "<anonymous-schema-308>"
+              },
+              "member": {
+                "description": "member object or id",
+                "type": "string",
+                "format": "uri",
+                "example": "https://memberid.example.com/profile/card#me",
+                "x-parser-schema-id": "<anonymous-schema-309>"
+              },
+              "startDate": {
+                "type": "string",
+                "format": "date-time",
+                "description": "date the member began performing this role",
+                "x-parser-schema-id": "<anonymous-schema-310>"
+              },
+              "endDate": {
+                "type": "string",
+                "format": "date-time",
+                "description": "date the member stopped performing the role",
+                "x-parser-schema-id": "<anonymous-schema-311>"
+              }
+            },
+            "x-parser-schema-id": "OrganizationRole"
+          },
+          {
+            "title": "ProgramMembership",
+            "description": "describes membership relation between a member (Person) and a MarketingProgram",
+            "properties": {
+              "type": {
+                "enum": [
+                  "ProgramMembership"
+                ]
+              },
+              "member": {
+                "type": "object",
+                "x-range": "Contact",
+                "description": "a contact",
+                "example": {
+                  "type": "Contact",
+                  "name": "Bruce Wayne",
+                  "givenName": "Bruce",
+                  "familyName": "Wayne",
+                  "jobTitle": "Batman",
+                  "contactPoint": [
+                    {
+                      "type": "ContactPoint",
+                      "name": "Mobile Phone",
+                      "telephone": "888.GET-BATMAN"
+                    },
+                    {
+                      "type": "ContactPoint",
+                      "name": "Email",
+                      "email": "batman@example.com"
+                    }
+                  ],
+                  "address": [
+                    {
+                      "type": "PostalAddress",
+                      "name": "Home",
+                      "streetAddress": "1007 Mountain Gate Rd",
+                      "postOfficeBoxNumber": "Box 1234",
+                      "addressRegion": "New Jersey",
+                      "addressLocality": "Gotham City",
+                      "postalCode": "10010",
+                      "addressCountry": "USA"
+                    }
+                  ],
+                  "birthDate": "2019-07-09",
+                  "leadOwner": {
+                    "type": "RealEstateOrganization",
+                    "id": "https://{lead-owner}.example.com/profile/card#me"
+                  },
+                  "leadSource": {
+                    "type": "RealEstateWebsite",
+                    "url": "https://agentwebsite.example.com"
+                  }
+                }
+              },
+              "memberOf": {
+                "x-range": "MarketingProgram"
+              }
+            },
+            "x-parser-schema-id": "<anonymous-schema-383>"
+          }
+        ],
+        "x-parser-schema-id": "ProgramMembership"
+      }
+    },
+    "creator": {
+      "description": "creator / author of the item",
+      "type": "string",
+      "format": "uri",
+      "example": "http://{user}.example.com/profile/card#me"
+    },
+    "dateCreated": {
+      "description": "The date on which the item was created.",
+      "type": "string",
+      "format": "date-time",
+      "x-parser-schema-id": "<anonymous-schema-204>"
+    },
+    "dateModified": {
+      "description": "The date on which the item was most recently modified or when the item's entry was modified within a DataFeed.",
+      "type": "string",
+      "format": "date-time",
+      "x-parser-schema-id": "<anonymous-schema-205>"
+    }
+  },
+  "x-parser-schema-id": "MarketingProgram"
+}

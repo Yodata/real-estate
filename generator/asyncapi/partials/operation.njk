@@ -1,0 +1,46 @@
+{% from 'partials/tag-list' import tagList()}
+{% macro operation(object, key, showTags=true, showExample=true ) %}
+## {{key}}
+{% if object.summary or object.description %}
+
+{{ object.summary || object.description  }}
+{% endif %}
+{% if showTags %}
+{{ TagList(object.tags) }}
+{% endif %}
+{% if showExample %}
+{{ TagList(object.example) }}
+{% endif %}
+
+
+
+{% if object.description %}
+
+{{object.description}}
+{% else %}
+Publish events by HTTP POST to your own pods `/publish/` endpoint including the topic, recipient and message body.]
+{% endif %}
+
+{% if object.headers %}
+
+{# {{!-- {{ include  schema schema=object.headers}} --}} #}
+
+### Example
+```http
+POST /publish/ HTTP/1.1
+Host: https://my-pod.example.com
+x-api-key: my-api-key
+Content-Type: application/json
+
+{
+  "topic": "{{operationName}}",
+  "recipient": # the publishing pod,
+  "@context": # optional transformation context,
+  "data": {
+    "type": "{Action}
+  }
+
+}
+```
+{% endif %}
+{% endmacro %}

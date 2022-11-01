@@ -1,0 +1,16 @@
+### {{asyncapi.info.title}} Info
+
+{{ include logo}}
+
+**Version: {{asyncapi.info.version}}**
+
+{{{asyncapi.info.description}}}
+
+{{ include contact}}
+
+{{ include license}}
+
+{% if asyncapi.info.termsOfService}}
+## Terms of service
+[{{asyncapi.info.termsOfService}}]({{asyncapi.info.termsOfService}})
+{% endif %}

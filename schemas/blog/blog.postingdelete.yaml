@@ -1,0 +1,19 @@
+x-title: postingdelete
+x-scope: realestate/blog#
+summary: a blog post was deleted
+payload:
+  allOf:
+    - $ref: base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/blog#postingdelete
+        data:
+          x-range:
+          - DeleteAction
+          properties:
+            type:
+              enum:
+              - DeleteAction
+            object:
+              $ref: BlogPosting.yaml

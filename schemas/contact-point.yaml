@@ -1,0 +1,5 @@
+$id: htttp://realestate.yodata.me/schema/contactPoint
+type: array
+description: a named point of contact - telephone, email, faxNumber, and/or url for the entity
+items:
+  $ref: ContactPoint.yaml

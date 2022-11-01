@@ -1,0 +1,13 @@
+
+$id: '#contactGroup'
+title: contactGroup
+description: groups the contact is a member of.
+x-range: Collection
+type: array
+items:
+  type: object
+example:
+- type: Collection
+  name: Superheros
+  identifier:
+    vendoraid: xxx

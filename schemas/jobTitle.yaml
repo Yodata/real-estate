@@ -1,0 +1,9 @@
+$id: htttp://realestate.yodata.me/schema/jobTitle
+title: jobTitle
+description: job tiles associated with the item
+type: array
+items:
+  type: string
+example:
+- Chief Data Officer
+- Sanitation Engineer

@@ -1,0 +1,30 @@
+{% from 'partials/schema-prop-deep.njk' import schemaPropDeep %}
+{% from 'partials/schema-prop.njk' import schemaProp %}
+
+{% macro schemaView(schema, schemaName, required=false, path='', hideTitle=false, hideExample=false ) %}
+{% if schemaName %}
+# {{schemaName}}
+{% endif %}
+{% if schema and schema.description() %}
+{{ schema.description() }}
+{% endif %}
+
+
+### Schema
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+{% for propName, prop in schema.properties() -%}
+| {{propName | dump(2) | safe }} | {{prop | dump(2) | safe }} |
+
+{% endfor %}
+
+
+{% if hideExample === false %}
+
+### Example
+
+```json
+{{  schema.json() | generateExample | safe }}
+```
+{% endif %}
+{% endmacro %}

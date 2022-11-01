@@ -1,0 +1,53 @@
+{
+  "title": "PropertyType",
+  "x-range": "PropertyType",
+  "description": "RESO property type enumeration values",
+  "type": "object",
+  "properties": {
+    "RESI": {
+      "type": "string",
+      "description": "Residential",
+      "x-parser-schema-id": "<anonymous-schema-453>"
+    },
+    "RLSE": {
+      "type": "string",
+      "description": "Residential Property Lease",
+      "x-parser-schema-id": "<anonymous-schema-454>"
+    },
+    "RINC": {
+      "type": "string",
+      "description": "Residential Income",
+      "x-parser-schema-id": "<anonymous-schema-455>"
+    },
+    "LAND": {
+      "type": "string",
+      "description": "Land",
+      "x-parser-schema-id": "<anonymous-schema-456>"
+    },
+    "MOBI": {
+      "type": "string",
+      "description": "Mobile home",
+      "x-parser-schema-id": "<anonymous-schema-457>"
+    },
+    "FARM": {
+      "type": "string",
+      "description": "Farm Residential",
+      "x-parser-schema-id": "<anonymous-schema-458>"
+    },
+    "COMS": {
+      "type": "string",
+      "description": "commercial standard applies",
+      "x-parser-schema-id": "<anonymous-schema-459>"
+    },
+    "BUSO": {
+      "type": "string",
+      "description": "Business Opportunity",
+      "x-parser-schema-id": "<anonymous-schema-460>"
+    }
+  },
+  "example": {
+    "propertyType": "RESI"
+  },
+  "x-parser-schema-id": "PropertyType",
+  "$id": "https://realestate.yodata.me/schema/PropertyType.json"
+}

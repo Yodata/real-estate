@@ -1,0 +1,31 @@
+messageId: contact#collectionmemberadd
+x-scope: realestate/contact#
+summary: a contact was added to a collection
+payload:
+  allOf:
+    - $ref: base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/contact#collectionmemberadd
+        data:
+          allOf:
+          - $ref: AddAction.yaml
+          - properties:
+              object:
+                type: object
+                x-range: Contact
+                example:
+                  type: Contact
+                  name: Dick Grayson
+                  identifier:
+                    vendoraid: robin
+
+              targetCollection:
+                type: object
+                x-range: Collection
+                example:
+                  type: Collection
+                  name: Superhero Sidekicks
+                  identifier:
+                    vendoraid: xxx

@@ -1,0 +1,10 @@
+$id: Person.schema.yaml
+title: Person
+description: a Person is a person.
+allOf:
+  - $ref: Thing.schema.yaml
+  - properties:
+      givenName:
+        $ref: givenName.schema.yaml
+      familyName:
+        $ref: familyName.schema.yaml

@@ -1,0 +1,19 @@
+messageId: award#teamupdate
+x-scope: realestate/award#
+summary: an award team has been updated
+payload:
+  allOf:
+    - $ref: base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/award#teamupdate
+        data:
+          x-range:
+          - UpdateAction
+          properties:
+            type:
+              enum:
+              - UpdateAction
+            object:
+              $ref: AwardTeam.yaml

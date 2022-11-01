@@ -1,0 +1,7 @@
+allOf:
+  - $ref: Action.yaml
+  - x-range: SaveAction
+    properties:
+      type:
+        enum:
+          - SaveAction

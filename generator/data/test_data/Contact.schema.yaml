@@ -1,0 +1,7 @@
+$id: 'http://realestate.yodata.me/schema/Contact'
+title: Contact
+allOf:
+  - $ref: Person.schema.yaml
+  - properties:
+      identifier:
+        $ref: identifier.schema.yaml

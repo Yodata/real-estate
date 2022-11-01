@@ -1,0 +1,8 @@
+x-title: EmailAction
+x-scope: marketing
+summary: an EmailMessage was sent
+payload:
+  allOf:
+    - $ref: CloudEvent.yaml
+    - properties:
+        data: { $ref: EmailMessage.yaml }

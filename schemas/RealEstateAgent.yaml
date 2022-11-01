@@ -1,0 +1,24 @@
+$id: http://realestate.yodata.me/schema/RealEstateAgent
+title: RealEstateAgent
+description: A real estate agent who represents buyers and sellers
+type: object
+additionalProperties: true
+properties:
+  type: { const: RealEStateAgent }
+  additionalName: { $ref: additionalName.yaml }
+  address:  { $ref: address.yaml }
+  certification: { $ref: certification.yaml }
+  contactPoint: { $ref: contactPoint.yaml }
+  email: { $ref: email.yaml }
+  familyName: { $ref: familyName.yaml }
+  givenName: { $ref: givenName.yaml }
+  id: { $ref: id.yaml }
+  identifier: { $ref: identifier.yaml }
+  image: { $ref: image.yaml }
+  jobTitle: { $ref: jobTitle.yaml }
+  memberOf: { $ref: memberOf.yaml }
+  name: { $ref: name.yaml }
+  parentOrganization: { $ref: parentOrganization.yaml }
+  permit: { $ref: permit.yaml }
+  subOrganization: { $ref: subOrganization.yaml }
+  url: { $ref: url.yaml }

@@ -1,0 +1,66 @@
+type: object
+required:
+  - id
+  - type
+  - inbox
+  - outbox
+properties:
+  id:
+    type: string
+    format: uri
+    example: https://user.example.com/profile/card#me
+    x-parser-schema-id: <anonymous-schema-154>
+  type:
+    type: string
+    example: SoftwareApplication
+    x-parser-schema-id: <anonymous-schema-155>
+  inbox:
+    description: discoverable uri to your LDN inbox
+    type: string
+    example: /inbox/
+    x-parser-schema-id: <anonymous-schema-156>
+  outbox:
+    description: discoverable uri to your LDN outbox
+    type: string
+    example: /outbox/
+    x-parser-schema-id: <anonymous-schema-157>
+  storage:
+    description: uri to your linked-data storage root
+    type: string
+    example: /
+    x-parser-schema-id: <anonymous-schema-158>
+  preferencesFile:
+    description: discoverable uri for shared application preferences
+    type: string
+    example: /settings/prefs
+    x-parser-schema-id: <anonymous-schema-159>
+  account:
+    description: discoverable solid:account root
+    type: string
+    example: /
+    x-parser-schema-id: <anonymous-schema-160>
+  privateTypeIndex:
+    description: type index for your private use
+    type: string
+    example: /settings/privateTypeIndex
+    x-parser-schema-id: <anonymous-schema-161>
+  publicTypeIndex:
+    description: shared, discoverable type index
+    type: string
+    example: /settings/publicTypeIndex
+    x-parser-schema-id: <anonymous-schema-162>
+  permissions:
+    description: the subscription types required by your service.
+    type: array
+    items:
+      type: string
+      enum:
+        - profile:read
+        - contact
+        - lead
+        - listing
+      x-parser-schema-id: <anonymous-schema-164>
+    x-parser-schema-id: <anonymous-schema-163>
+x-parser-schema-id: ApplicationProfile
+$id: https://realestate.yodata.me/schema/ApplicationProfile.yaml
+

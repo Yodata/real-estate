@@ -1,0 +1,5 @@
+{% macro schemaProp(prop, propName, path='') %}
+{% if propName %}
+| {{path | tree}}{{propName}} | {{prop.json() | typespec }} | {{prop.description()}} {{prop.json() | rangespec }} |
+{% endif %}
+{% endmacro %}

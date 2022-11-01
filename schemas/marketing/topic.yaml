@@ -1,0 +1,7 @@
+subscribe:
+  message:
+    oneOf:
+      - $ref: programcreate.yaml
+      - $ref: programdelete.yaml
+      - $ref: programmemberadd.yaml
+      - $ref: programmemberremove.yaml

@@ -1,0 +1,13 @@
+messageId: website#listingoffer
+x-scope: realestate/website#
+summary: website user makes a listing offer
+payload:
+  allOf:
+  - $ref: website.event.yaml
+  - properties:
+      topic:
+        description: realestate/website#listingoffer
+        enum:
+        - realestate/website#listingoffer
+      data:
+        $ref: ListingOffer.yaml

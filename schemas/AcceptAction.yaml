@@ -1,0 +1,11 @@
+$id: htttp://realestate.yodata.me/schema/AcceptAction
+title: AcceptAction
+description: The act of committing to/adopting an object.
+type: object
+properties:
+  type:
+    const: AcceptAction
+  agent:
+    $ref: Agent.yaml
+    summary: The recipient of the object being accepted.
+  object: { $ref: object.yaml }

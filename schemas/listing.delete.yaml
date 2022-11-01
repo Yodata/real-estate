@@ -1,0 +1,19 @@
+messageId: listing#delete
+x-scope: realestate/listing#
+summary: a PropertyListing is deleted
+payload:
+  allOf:
+    - $ref: base.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/listing#delete
+        data:
+          allOf:
+          - $ref: DeleteAction.yaml
+          - properties:
+              object:
+                $ref: PropertyListing.yaml
+                example:
+                  type: PropertyListing
+                  url: https://www.example.com/Gotham-Properties-NJ001/homes-for-sale/1007-Mountain-Gate-Road-Gotham-City-NJ-10007-187440425

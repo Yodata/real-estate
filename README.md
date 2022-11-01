@@ -1,29 +1,62 @@
-# @yodata/real-estate
+---
+title: About the Project
+---
+## Let's Integrate!
 
-> standard schema &amp; events for integrating real estate software
+### About the project
 
-- [Background](#background)
-- [Install](#install)
-- [Usage](#usage)
-- [Maintainers](#maintainers)
-- [Contributing](#contributing)
+A community of software developers working to make real estate
+application and data integration easier and to create an ecosystem of
+rapid innovation through the magic of shared data models, open source
+and common sense.
 
-## Background
+### Project Mission & Goals
 
-todo
+- Decentralized data (Customer Control.)
+- Software is integrated by default.
+- No vendor lock-in.
+- No customer lock-out!
+- Open source, plug-and-play APIs to build-on.  Fast.
 
-## Install
+### Who's in?
 
-todo
+We are a community of software developers working to make better real estate software.
 
-## Maintainers
+- Yodata
+- Home Services of America
+- ActivePipe
+- Adwerks
+- Buyside
+- Chalk Digital
+- Constellation Real Estate Group
+- eRelocation
+- Guru
+- Homespotter
+- Homestory
+- Juwai
+- LiveBy
+- Lone Wolf
+- MoveEasy
+- Moxiworks
+- Orion
+- PhotFy
+- Prospect Converter
+- Rate My Agent
+- Raven 360
+- Real Estate Digital
+- Reliance Network
+- RELOSpec
+- RIS Media
+- RoqLogic
+- Soci
+- SocialBoost
+- Sold.com
+- Testimonial Tree
+- Truelogic
+- Xpressdocs
 
-[@yodata](https://github.com/yodata)
 
-## Contributing
+### Are you in?
 
-[ ] create contributing.md file
+Contact us dave@yodata.io
 
-## License
-
-MIT © 2015-2019 Yodata, Inc.

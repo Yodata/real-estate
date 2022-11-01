@@ -1,0 +1,28 @@
+messageId: profile#add
+x-scope: realestate/profile#
+summary: an agent, office or organization profile was added
+payload:
+  allOf:
+    - $ref: base.profile.event.yaml
+    - properties:
+        topic:
+          enum:
+            - realestate/profile#add
+        data:
+          x-range: AddAction
+          properties:
+            type:
+              description: AddAction
+              enum:
+                - AddAction
+            object:
+              x-range:
+              - RealEstateAgent
+              - RealEstateOffice
+              - RealEstateOrganization
+              type: object
+              description: the updated or added profile value
+              properties:
+                branchCode:
+                  type: string
+                  example: for BHHS profile events see additionalProperty.OfficeId

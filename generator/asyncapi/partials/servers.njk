@@ -1,0 +1,19 @@
+## Servers
+
+| Stage | Entrypoint |
+|:--  |:--          |
+{{#each asyncapi.servers }}
+| {{description}} | {{url}} |
+{{/each}}
+
+## Security
+
+SoftPro events will be authenticated by API Key in the http request header.
+
+API Key is not yet requred in development.
+
+```shell
+GET / HTTP/1.1
+Accept: */*
+x-api-key: xxxxx
+```

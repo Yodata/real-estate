@@ -1,0 +1,79 @@
+{
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "name": "WEBSITE",
+      "path": "src"
+    },
+    {
+      "name": "API/REPLAY",
+      "path": "src/pages/api/replay"
+    },
+    {
+      "name": "API/MOCK",
+      "path": "src/pages/api/mock"
+    },
+    {
+      "name": "API/VALIDATE",
+      "path": "src/pages/api/validate"
+    },
+    {
+      "name": "SCHEMAS",
+      "path": "schemas"
+    },
+    {
+      "name": "GENERATOR",
+      "path": "generator"
+    }
+  ],
+  "settings": {
+    "eslint.alwaysShowStatus": true,
+    "importCost.bundleSizeDecoration": "minified",
+    "importCost.javascriptExtensions": [".js", ".jsx", ".ts", ".tsx"],
+    "gitProjectManager.displayProjectPath": true,
+    "gitProjectManager.ignoredFolders": [
+      "**/__generated__",
+      "**/node_modules/",
+      "**/__transpiled"
+    ],
+    "markdown.allAvailableLanguages": false,
+    "markdown.docsetLanguages": ["HTML", "HTTP", "JavaScript", "Bash"],
+    "markdown.enableMetadataDateReminder": false,
+    "markdown-preview-enhanced.enableTypographer": true,
+    "workbench.editor.autoLockGroups": {
+      "vscode.markdown.preview.editor": true
+    },
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.integrated.minimumContrastRatio": 7,
+    "terminal.integrated.confirmOnExit": "hasChildProcesses",
+    "terminal.integrated.defaultLocation": "editor",
+    "yaml.schemaStore.enable": true,
+    "json-yaml-schema-selector.additionalSchemas": [
+      {
+        "name": "asyncapi:schema",
+        "url": "http://asyncapi.com/definitions/2.5.0/schema.json",
+        "fileMatch": ["asyncapi.{json,yaml,yml}"]
+      }
+    ],
+    "files.insertFinalNewline": true,
+    "files.simpleDialog.enable": true,
+    "npm.enableRunFromFolder": true,
+    "npm-intellisense.importLinebreak": "",
+    "npm-intellisense.packageSubfoldersIntellisense": true,
+    "oneDarkPro.bold": false,
+    "search.showLineNumbers": true,
+    "yaml.schemas": {
+      "https://json.schemastore.org/eslintrc": "file:///Users/dave/git/yodata/real-estate/.eslintrc.yaml"
+    },
+    "zenMode.hideLineNumbers": false,
+    "search.useParentIgnoreFiles": true,
+    "eslint.workingDirectories": [
+      "src/components/**",
+      "src/pages/**/*"
+      "generator/**",
+      "schemas/**"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+title: State
+x-range: State
+description: a State or Region
+type: object
+properties:
+  type:
+    $ref: type.yaml
+    enum:
+    - State
+  name:
+    $ref: name.yaml
+example:
+  type: State
+  name: New Jersey
+  

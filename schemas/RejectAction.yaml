@@ -1,0 +1,17 @@
+allOf:
+  - $ref: Action.yaml
+  - x-range: RejectAction
+    description: a user (agent) has rejected an item (object)
+    properties:
+      type:
+        type: string
+        enum:
+          - RejectAction
+      object:
+        description: the rejected item(s)
+      participant:
+        description: the entity who made the offer
+        type: object
+        example:
+          type: RealEstateOrganization
+          name: Gotham City Real Estate

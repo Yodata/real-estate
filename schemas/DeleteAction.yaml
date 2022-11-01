@@ -1,0 +1,14 @@
+allOf:
+  - $ref: Action.yaml
+  - type: object
+    x-range: DeleteAction
+    title: DeleteAction
+    description: object is removed by the agent from the targetCollection
+    properties:
+      type:
+        type: string
+        enum:
+          - DeleteAction
+      object:
+        type: object
+        description: the deleted item

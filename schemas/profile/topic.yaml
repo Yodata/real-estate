@@ -1,0 +1,9 @@
+subscribe:
+  message:
+    oneOf:
+      - $ref: profile.add.yaml
+      - $ref: profile.update.yaml
+      - $ref: profile.teamcreate.yaml
+      - $ref: profile.teamdelete.yaml
+      - $ref: profile.teammemberadd.yaml
+      - $ref: profile.teammemberremove.yaml

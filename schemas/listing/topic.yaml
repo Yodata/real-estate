@@ -1,0 +1,8 @@
+
+$schema: http://asyncapi.com/definitions/2.5.0/channelItem.json
+
+subscribe:
+  message:
+    oneOf:
+      - $ref: listing.update.yaml
+      - $ref: listing.delete.yaml

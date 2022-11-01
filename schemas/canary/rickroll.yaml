@@ -1,0 +1,39 @@
+# x-title and x-scope are REQUIRED custom properties used by the documentation generator
+x-title: rickroll
+x-scope: realestate/canary#
+summary: an agent rick-rolled the recipient
+payload:
+  allOf:
+    # adds the message wrapper (topic, data, etc..)
+    - $ref: base.event.yaml
+
+    # adds a topic to the base event
+    - properties:
+        topic:
+          type: string
+          enum:
+            - realestate/canary#rickroll
+
+    # add event payload (Action)
+    - properties:
+        data:
+          allOf:
+            # import a generic action models
+            - $ref: Action.yaml
+
+            # customize your action
+            - description: an agent rickrolled the recipient
+              properties:
+                type:
+                  enum:
+                  - RickRollAction
+                agent:
+                  description: the one who did the rolling
+                object:
+                  example: https://en.wikipedia.org/wiki/Rickrolling
+                recipient:
+                  type: object
+                  description: the one who was rolled
+                  example:
+                    type: Person
+                    name: Bob

@@ -1,0 +1,118 @@
+{
+  "title": "EmailMessage",
+  "x-range": "EamilMessage",
+  "description": "an email message",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "EmailMessage",
+      "enum": [
+        "EmailMessage"
+      ],
+      "example": "EmailMessage"
+    },
+    "sender": {
+      "type": "string",
+      "format": "uri",
+      "description": "ref to the sender",
+      "example": "http://user.example.com/profile/card"
+    },
+    "messageAttachment": {
+      "description": "message attachments",
+      "x-range": "DigitalDocument",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "title": "DigitalDocument",
+        "x-range": "DigitalDocument",
+        "description": "an electronic file.",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "DigitalDocument"
+            ],
+            "x-parser-schema-id": "<anonymous-schema-254>"
+          },
+          "id": {
+            "type": "string",
+            "example": "http://user.example.com/public/logo/archive.zip",
+            "x-parser-schema-id": "<anonymous-schema-255>"
+          },
+          "name": {
+            "type": "string",
+            "description": "document name or title",
+            "example": "archive.zip",
+            "x-parser-schema-id": "<anonymous-schema-256>"
+          },
+          "encodingFormat": {
+            "type": "string",
+            "description": "[ISO Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml)",
+            "example": "application/zip",
+            "x-parser-schema-id": "<anonymous-schema-257>"
+          },
+          "about": {
+            "type": "object",
+            "description": "subject of the Document",
+            "x-range": "Thing",
+            "example": {
+              "type": "RealEstateTransaction",
+              "identifier": {
+                "bmsTransactionId": "xxxx"
+              }
+            },
+            "x-parser-schema-id": "<anonymous-schema-258>"
+          },
+          "url": {
+            "type": "string",
+            "description": "public URL of the object",
+            "example": "https://example.com",
+            "x-parser-schema-id": "<anonymous-schema-259>"
+          }
+        },
+        "x-parser-schema-id": "DigitalDocument"
+      }
+    },
+    "dateSent": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The date/time at which the message was sent"
+    },
+    "dateReceived": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The date/time at which the message was received"
+    },
+    "dateRead": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The date/time at which the message was first viewed"
+    },
+    "toRecipient": {
+      "type": "array",
+      "description": "direct recipient of the message",
+      "items": {
+        "type": "string",
+        "example": "user@example.com"
+      }
+    },
+    "ccRecipient": {
+      "type": "array",
+      "description": "direct recipient of the message",
+      "items": {
+        "type": "string",
+        "example": "user@example.com"
+      }
+    },
+    "bccRecipient": {
+      "type": "array",
+      "description": "direct recipient of the message",
+      "items": {
+        "type": "string",
+        "example": "user@example.com"
+      }
+    }
+  },
+  "x-parser-schema-id": "EmailMessage",
+  "$id": "https://realestate.yodata.me/schema/EmailMessage.json"
+}

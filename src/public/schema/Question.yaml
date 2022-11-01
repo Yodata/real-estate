@@ -1,0 +1,21 @@
+type: object
+description: >-
+  A specific question - e.g. from a user seeking answers online, or collected in
+  a Frequently Asked Questions (FAQ) document.
+title: Question
+x-range: Question
+properties:
+  type:
+    type: string
+    description: The item type (Linked-Data @type)
+    enum:
+      - Question
+    x-parser-schema-id: <anonymous-schema-484>
+  text:
+    type: string
+    description: the question content
+    example: I would like to view 123 Main Street.
+    x-parser-schema-id: <anonymous-schema-485>
+x-parser-schema-id: Question
+$id: https://realestate.yodata.me/schema/Question.yaml
+

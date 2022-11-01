@@ -128,34 +128,10 @@ Temporary Items
 # End of https://www.gitignore.io/api/node,visualstudiocode,osx
 
 .idea/*
-
-www/node_modules
-asyncapi/__transpiled
-.docz
-.dist
-www/src-content/_
-
 .env.local
 __transpiled
 context
-generator/**/__generated__/*
-.vercel
+**/.vercel/*
 **/.next/
-generator/data/test_data/generated/Contact.json
-generator/data/test_data/generated/Contact.yaml
-generator/data/test_data/generated/familyName.json
-generator/data/test_data/generated/familyName.yaml
-generator/data/test_data/generated/givenName.json
-generator/data/test_data/generated/givenName.yaml
-generator/data/test_data/generated/name.json
-generator/data/test_data/generated/name.yaml
-generator/data/test_data/generated/objectWithKey.json
-generator/data/test_data/generated/objectWithKey.yaml
-generator/data/test_data/generated/objectWithKey2.json
-generator/data/test_data/generated/objectWithKey2.yaml
-generator/data/test_data/generated/Person.json
-generator/data/test_data/generated/Person.yaml
-generator/data/test_data/generated/Thing.json
-generator/data/test_data/generated/Thing.yaml
-generator/data/test_data/generated/type.json
-generator/data/test_data/generated/type.yaml
+**/__generated
+__generated__

@@ -1,28 +1,56 @@
 {
-  "description": "an image, video or document availble for download",
-  "x-subclass": [
-    "ImageObject",
-    "DigitalDocument"
+  "$id": "http://realestate.yodata.me/schema/ImageObject.json",
+  "type": "object",
+  "summary": "The root type of all Things.",
+  "required": [
+    "type"
   ],
   "title": "ImageObject",
   "x-range": "ImageObject",
   "properties": {
+    "@id": {
+      "type": "string",
+      "format": "uri",
+      "description": "the liked data uri for the Thing",
+      "x-parser-schema-id": "<anonymous-schema-138>"
+    },
+    "about": {
+      "type": "string",
+      "format": "uri",
+      "description": "URI to the subject of the image or logo",
+      "example": "http://user.example.com/profile/card#me"
+    },
+    "encodingFormat": {
+      "type": "string",
+      "description": "MIME type",
+      "example": "image/jpeg"
+    },
+    "id": {
+      "description": "the URL to access the item.",
+      "type": "string",
+      "format": "uri",
+      "example": "http://user.example.com/public/logo/image.jpg"
+    },
+    "name": {
+      "type": "string",
+      "description": "the file name of the object.",
+      "example": "image.jpg"
+    },
     "type": {
+      "description": "The item type (Linked-Data @type)",
+      "x-parser-schema-id": "<anonymous-schema-137>",
+      "type": "string",
       "enum": [
         "ImageObject"
       ],
       "example": "ImageObject"
     },
-    "id": {
-      "example": "http://user.example.com/public/logo/image.jpg"
-    },
-    "name": {
-      "example": "image.jpg"
-    },
-    "encodingFormat": {
-      "example": "image/jpeg"
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL of the image content",
+      "example": "http://user.example.com/public/profile/image.jpg"
     }
   },
-  "x-parser-schema-id": "ImageObject",
-  "$id": "https://realestate.yodata.me/schema/ImageObject.json"
+  "x-parser-schema-id": "<anonymous-schema-173>"
 }

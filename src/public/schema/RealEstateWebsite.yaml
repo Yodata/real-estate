@@ -2,12 +2,6 @@ title: RealEstateWebsite
 type: object
 x-range: RealEstateWebsite
 properties:
-  type:
-    type: string
-    enum:
-      - RealEstateWebsite
-    description: RealEstateWebsite
-    x-parser-schema-id: <anonymous-schema-577>
   about:
     type: object
     description: subject of the website
@@ -18,13 +12,19 @@ properties:
     example:
       type: RealEstateAgent
       id: http://agent.example.com/profile/card#me
+    x-parser-schema-id: <anonymous-schema-579>
+  type:
+    type: string
+    enum:
+      - RealEstateWebsite
+    description: RealEstateWebsite
     x-parser-schema-id: <anonymous-schema-578>
   url:
     title: url
     type: string
     format: uri
     description: URL of the item.
-    x-parser-schema-id: <anonymous-schema-181>
+    x-parser-schema-id: <anonymous-schema-182>
 x-parser-schema-id: RealEstateWebsite
-$id: https://realestate.yodata.me/schema/RealEstateWebsite.yaml
+$id: http://realestate.yodata.me/schema/RealEstateWebsite.yaml
 

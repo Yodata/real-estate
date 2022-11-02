@@ -4,30 +4,6 @@
   "x-range": "DigitalDocument",
   "description": "an electronic file.",
   "properties": {
-    "type": {
-      "type": "string",
-      "enum": [
-        "DigitalDocument"
-      ],
-      "x-parser-schema-id": "<anonymous-schema-254>"
-    },
-    "id": {
-      "type": "string",
-      "example": "http://user.example.com/public/logo/archive.zip",
-      "x-parser-schema-id": "<anonymous-schema-255>"
-    },
-    "name": {
-      "type": "string",
-      "description": "document name or title",
-      "example": "archive.zip",
-      "x-parser-schema-id": "<anonymous-schema-256>"
-    },
-    "encodingFormat": {
-      "type": "string",
-      "description": "[ISO Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml)",
-      "example": "application/zip",
-      "x-parser-schema-id": "<anonymous-schema-257>"
-    },
     "about": {
       "type": "object",
       "description": "subject of the Document",
@@ -38,15 +14,39 @@
           "bmsTransactionId": "xxxx"
         }
       },
+      "x-parser-schema-id": "<anonymous-schema-259>"
+    },
+    "encodingFormat": {
+      "type": "string",
+      "description": "[ISO Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml)",
+      "example": "application/zip",
       "x-parser-schema-id": "<anonymous-schema-258>"
+    },
+    "id": {
+      "type": "string",
+      "example": "http://user.example.com/public/logo/archive.zip",
+      "x-parser-schema-id": "<anonymous-schema-256>"
+    },
+    "name": {
+      "type": "string",
+      "description": "document name or title",
+      "example": "archive.zip",
+      "x-parser-schema-id": "<anonymous-schema-257>"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "DigitalDocument"
+      ],
+      "x-parser-schema-id": "<anonymous-schema-255>"
     },
     "url": {
       "type": "string",
       "description": "public URL of the object",
       "example": "https://example.com",
-      "x-parser-schema-id": "<anonymous-schema-259>"
+      "x-parser-schema-id": "<anonymous-schema-260>"
     }
   },
   "x-parser-schema-id": "DigitalDocument",
-  "$id": "https://realestate.yodata.me/schema/DigitalDocument.json"
+  "$id": "http://realestate.yodata.me/schema/DigitalDocument.json"
 }

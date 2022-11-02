@@ -1,0 +1,125 @@
+$id: http://realestate.yodata.me/schema/marketingpreferences#subscribe.yaml
+messageId: marketingpreferences#subscribe
+externalDocs: null
+headers:
+  type: object
+  properties:
+    time:
+      type: string
+      format: date-time
+      description: date & time the event was produced
+      x-parser-schema-id: <anonymous-schema-4>
+    agent:
+      type: string
+      format: uri
+      description: the user,tema or organization who sent the event
+      example: https://agentid.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-5>
+    instrument:
+      type: string
+      format: uri
+      description: the service which created the event
+      example: https://vendorid.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-6>
+    source:
+      type: string
+      format: uri
+      description: an agent, team or organization who received a copy of the event
+      example: https://companyid.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-7>
+    originalRecipient:
+      type: string
+      format: uri
+      description: the original recipient of the event with this id
+      example: https://agentid.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-8>
+    id:
+      type: string
+      format: uri
+      description: the shared identifier of the event, akd the event id
+      example: https://instrumentid.example.com/publish/xxxxxxxxxxxxx
+      x-parser-schema-id: <anonymous-schema-9>
+    '@id':
+      type: string
+      format: uri
+      description: the url of your instance of the event in your inbox
+      example: https://yourpod.example.com/inbox/xxxxxxxxxxxxx
+      x-parser-schema-id: <anonymous-schema-10>
+    topic:
+      type: string
+      description: the event topic which determines the schema of event.data
+      x-parser-schema-id: <anonymous-schema-3>
+      enum:
+        - realestate/marketingpreferences#subscribe
+payload:
+  type: object
+  description: event payload, typically an Action
+  $id: SubscribeAction
+  allOf:
+    - $id: htttp://realestate.yodata.me/schema/Action
+      title: Action
+      type: object
+      description: >-
+        An action performed by a direct agent and indirect participants upon a
+        direct object. Optionally happens at a location with the help of an
+        inanimate instrument. The execution of the action may produce a result.
+        Specific action sub-type documentation specifies the exact expectation
+        of each argument/role.
+      required:
+        - type
+      properties:
+        type:
+          description: the action type
+          type: string
+          x-parser-schema-id: <anonymous-schema-114>
+        object:
+          description: item on which the action is carried out
+          x-parser-schema-id: <anonymous-schema-115>
+      externalDocs:
+        description: schema.org/Action
+        url: https://schema.org/Action
+      x-parser-schema-id: Action
+    - x-range: SubscribeAction
+      description: >-
+        the consumer (agent) has subscribed to content from the participant with
+        roleName SubscriptionProvider.
+      properties:
+        type:
+          enum:
+            - SubscribeAction
+        agent:
+          type: object
+          description: the subscriber
+          x-range: Contact
+          example:
+            type: Contact
+            email: bob@example.com
+            identifier:
+              hsfconsumerid: D9AB8127-7D19-4C67-A514-9209F22F4511
+        participant:
+          description: the subscription provider, an Agent, Team, Office or Organization
+          x-range:
+            - RealEstateAgent
+            - RealEstateTeam
+            - RealEstateOffice
+            - RealEstateOrganization
+          type: array
+          items:
+            type: object
+            properties:
+              roleName:
+                type: string
+                enum:
+                  - SubscriptionProvider
+              id:
+                type: string
+                format: uri
+                example: https://12345.example.com/profile/card#me
+              additionalProperty:
+                type: object
+                properties:
+                  isCompanyQueue:
+                    type: boolean
+      x-parser-schema-id: <anonymous-schema-612>
+  x-parser-schema-id: SubscribeAction
+

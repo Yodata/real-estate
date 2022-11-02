@@ -3,34 +3,34 @@ type: object
 description: A point value or interval.
 x-range: QuantitativeValue
 properties:
+  maxValue:
+    type: number
+    description: the upper value of a range
+    x-parser-schema-id: <anonymous-schema-482>
+  minValue:
+    type: number
+    description: the lower value of a range
+    x-parser-schema-id: <anonymous-schema-481>
   type:
     type: string
     description: QuantitativeValue
     enum:
       - QuantitativeValue
-    x-parser-schema-id: <anonymous-schema-478>
-  value:
-    type: number
-    description: the value (if a static value)
     x-parser-schema-id: <anonymous-schema-479>
-  minValue:
-    type: number
-    description: the lower value of a range
-    x-parser-schema-id: <anonymous-schema-480>
-  maxValue:
-    type: number
-    description: the upper value of a range
-    x-parser-schema-id: <anonymous-schema-481>
   unitCode:
     type: string
     description: unit code (RESO or UN/CEFACT)
     example: AC
-    x-parser-schema-id: <anonymous-schema-482>
+    x-parser-schema-id: <anonymous-schema-483>
   unitText:
     type: string
     description: unit code in common text
     example: acres
-    x-parser-schema-id: <anonymous-schema-483>
+    x-parser-schema-id: <anonymous-schema-484>
+  value:
+    type: number
+    description: the value (if a static value)
+    x-parser-schema-id: <anonymous-schema-480>
 x-parser-schema-id: QuantitativeValue
-$id: https://realestate.yodata.me/schema/QuantitativeValue.yaml
+$id: http://realestate.yodata.me/schema/QuantitativeValue.yaml
 

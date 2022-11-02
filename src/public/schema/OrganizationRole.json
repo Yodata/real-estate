@@ -3,19 +3,18 @@
   "type": "object",
   "description": "describes a role played by a member and a group or organization.",
   "properties": {
-    "type": {
+    "endDate": {
       "type": "string",
-      "description": "a role played by the member in the memberOf group",
-      "enum": [
-        "OrganizationRole"
-      ],
-      "x-parser-schema-id": "<anonymous-schema-306>"
+      "format": "date-time",
+      "description": "date the member stopped performing the role",
+      "x-parser-schema-id": "<anonymous-schema-312>"
     },
-    "roleName": {
+    "member": {
+      "description": "member object or id",
       "type": "string",
-      "description": "the role name",
-      "example": "Owner",
-      "x-parser-schema-id": "<anonymous-schema-307>"
+      "format": "uri",
+      "example": "https://memberid.example.com/profile/card#me",
+      "x-parser-schema-id": "<anonymous-schema-310>"
     },
     "memberOf": {
       "description": "the org or group where the role is performed",
@@ -24,28 +23,29 @@
         "type": "RealEstateOrganization",
         "id": "http://orgid.example.com/profile/card#me"
       },
-      "x-parser-schema-id": "<anonymous-schema-308>"
-    },
-    "member": {
-      "description": "member object or id",
-      "type": "string",
-      "format": "uri",
-      "example": "https://memberid.example.com/profile/card#me",
       "x-parser-schema-id": "<anonymous-schema-309>"
+    },
+    "roleName": {
+      "type": "string",
+      "description": "the role name",
+      "example": "Owner",
+      "x-parser-schema-id": "<anonymous-schema-308>"
     },
     "startDate": {
       "type": "string",
       "format": "date-time",
       "description": "date the member began performing this role",
-      "x-parser-schema-id": "<anonymous-schema-310>"
-    },
-    "endDate": {
-      "type": "string",
-      "format": "date-time",
-      "description": "date the member stopped performing the role",
       "x-parser-schema-id": "<anonymous-schema-311>"
+    },
+    "type": {
+      "type": "string",
+      "description": "a role played by the member in the memberOf group",
+      "enum": [
+        "OrganizationRole"
+      ],
+      "x-parser-schema-id": "<anonymous-schema-307>"
     }
   },
   "x-parser-schema-id": "OrganizationRole",
-  "$id": "https://realestate.yodata.me/schema/OrganizationRole.json"
+  "$id": "http://realestate.yodata.me/schema/OrganizationRole.json"
 }

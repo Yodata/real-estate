@@ -3,11 +3,6 @@
   "type": "object",
   "description": "A schedule defines a repeating time period used to describe a regularly occurring Event. At a minimum a schedule will specify repeatFrequency which describes the interval between occurences of the event. Additional information can be provided to specify the schedule more precisely. This includes identifying the day(s) of the week or month when the recurring event will take place, in addition to its start and end time. Schedules may also have start and end dates to indicate when they are active, e.g. to define a limited calendar of events.\n",
   "properties": {
-    "type": {
-      "type": "string",
-      "description": "The item type (Linked-Data @type)",
-      "x-parser-schema-id": "<anonymous-schema-250>"
-    },
     "byDay": {
       "description": "Defines the day(s) of the week on which a recurring Event takes place",
       "type": "array",
@@ -21,14 +16,14 @@
           "Thursday",
           "Friday"
         ],
-        "x-parser-schema-id": "<anonymous-schema-580>"
+        "x-parser-schema-id": "<anonymous-schema-581>"
       },
       "example": [
         "Monday",
         "Wednesday",
         "Friday"
       ],
-      "x-parser-schema-id": "<anonymous-schema-579>"
+      "x-parser-schema-id": "<anonymous-schema-580>"
     },
     "byMonth": {
       "description": "Defines the month(s) of the year on which a recurring Event takes place. Specified as an Integer between 1-12. January is 1.",
@@ -49,23 +44,28 @@
           11,
           12
         ],
-        "x-parser-schema-id": "<anonymous-schema-582>"
+        "x-parser-schema-id": "<anonymous-schema-583>"
       },
       "example": [
         1
       ],
-      "x-parser-schema-id": "<anonymous-schema-581>"
+      "x-parser-schema-id": "<anonymous-schema-582>"
     },
     "byMonthDay": {
       "type": "array",
       "description": "Defines the day(s) of the month on which a recurring Event takes place. Specified as an Integer between 1-31.",
       "items": {
         "type": "number",
-        "x-parser-schema-id": "<anonymous-schema-584>"
+        "x-parser-schema-id": "<anonymous-schema-585>"
       },
-      "x-parser-schema-id": "<anonymous-schema-583>"
+      "x-parser-schema-id": "<anonymous-schema-584>"
+    },
+    "type": {
+      "type": "string",
+      "description": "The item type (Linked-Data @type)",
+      "x-parser-schema-id": "<anonymous-schema-251>"
     }
   },
   "x-parser-schema-id": "Schedule",
-  "$id": "https://realestate.yodata.me/schema/Schedule.json"
+  "$id": "http://realestate.yodata.me/schema/Schedule.json"
 }

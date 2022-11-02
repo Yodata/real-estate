@@ -4,21 +4,47 @@
   "description": "describes a unit of sales credit in unit or commission value relative to a parent transaction",
   "x-range": "TransactionEntry",
   "properties": {
-    "type": {
-      "type": "string",
-      "description": "TransactionEntry",
-      "enum": [
-        "TransactionEntry"
-      ],
-      "x-parser-schema-id": "<anonymous-schema-566>"
-    },
-    "salesProductionUnit": {
-      "type": "number",
-      "minimum": 0.0001,
-      "maximum": 1,
-      "description": "the sales production units credited to the recipient",
-      "example": 0.5,
-      "x-parser-schema-id": "<anonymous-schema-567>"
+    "recipient": {
+      "description": "the agent credited with the sales production and who receives the value",
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "typically a RealEstateAgent",
+          "example": "RealEstateAgent",
+          "x-parser-schema-id": "<anonymous-schema-571>"
+        },
+        "roleName": {
+          "type": "string",
+          "description": "enum: ListingAgent,BuyerAgent",
+          "enum": [
+            "ListingAgent",
+            "BuyerAgent"
+          ],
+          "x-parser-schema-id": "<anonymous-schema-572>"
+        },
+        "id": {
+          "type": "string",
+          "format": "uri",
+          "description": "Linked-Data URI (@id)",
+          "example": "https://{entityid}.example.com/profile/card#me",
+          "x-parser-schema-id": "<anonymous-schema-573>"
+        },
+        "identifier": {
+          "type": "object",
+          "description": "unique identifier of the recipient from the data producer",
+          "properties": {
+            "bmsAgentId": {
+              "type": "string",
+              "maxLength": 12,
+              "example": "1657897",
+              "x-parser-schema-id": "<anonymous-schema-575>"
+            }
+          },
+          "x-parser-schema-id": "<anonymous-schema-574>"
+        }
+      },
+      "x-parser-schema-id": "<anonymous-schema-570>"
     },
     "salesProductionGCI": {
       "type": "object",
@@ -36,32 +62,32 @@
           "enum": [
             "MonetaryAmount"
           ],
-          "x-parser-schema-id": "<anonymous-schema-318>"
+          "x-parser-schema-id": "<anonymous-schema-319>"
         },
         "minValue": {
           "type": "number",
           "description": "the lower limit of the range",
           "example": 2400000,
-          "x-parser-schema-id": "<anonymous-schema-319>"
+          "x-parser-schema-id": "<anonymous-schema-320>"
         },
         "maxValue": {
           "type": "number",
           "description": "the upper limit of the range",
           "example": 3200000,
-          "x-parser-schema-id": "<anonymous-schema-320>"
+          "x-parser-schema-id": "<anonymous-schema-321>"
         },
         "value": {
           "type": "number",
           "description": "the actual or expected value",
           "example": 2700000,
-          "x-parser-schema-id": "<anonymous-schema-321>"
+          "x-parser-schema-id": "<anonymous-schema-322>"
         },
         "currency": {
           "type": "string",
           "description": "use ISO4217 country codes",
           "maxLength": 3,
           "example": "USD",
-          "x-parser-schema-id": "<anonymous-schema-322>"
+          "x-parser-schema-id": "<anonymous-schema-323>"
         }
       },
       "description": "gross commission income credited to the recipient",
@@ -70,51 +96,25 @@
         "value": 1234.56,
         "currency": "USD"
       },
+      "x-parser-schema-id": "<anonymous-schema-569>"
+    },
+    "salesProductionUnit": {
+      "type": "number",
+      "minimum": 0.0001,
+      "maximum": 1,
+      "description": "the sales production units credited to the recipient",
+      "example": 0.5,
       "x-parser-schema-id": "<anonymous-schema-568>"
     },
-    "recipient": {
-      "description": "the agent credited with the sales production and who receives the value",
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "description": "typically a RealEstateAgent",
-          "example": "RealEstateAgent",
-          "x-parser-schema-id": "<anonymous-schema-570>"
-        },
-        "roleName": {
-          "type": "string",
-          "description": "enum: ListingAgent,BuyerAgent",
-          "enum": [
-            "ListingAgent",
-            "BuyerAgent"
-          ],
-          "x-parser-schema-id": "<anonymous-schema-571>"
-        },
-        "id": {
-          "type": "string",
-          "format": "uri",
-          "description": "Linked-Data URI (@id)",
-          "example": "https://{entityid}.example.com/profile/card#me",
-          "x-parser-schema-id": "<anonymous-schema-572>"
-        },
-        "identifier": {
-          "type": "object",
-          "description": "unique identifier of the recipient from the data producer",
-          "properties": {
-            "bmsAgentId": {
-              "type": "string",
-              "maxLength": 12,
-              "example": "1657897",
-              "x-parser-schema-id": "<anonymous-schema-574>"
-            }
-          },
-          "x-parser-schema-id": "<anonymous-schema-573>"
-        }
-      },
-      "x-parser-schema-id": "<anonymous-schema-569>"
+    "type": {
+      "type": "string",
+      "description": "TransactionEntry",
+      "enum": [
+        "TransactionEntry"
+      ],
+      "x-parser-schema-id": "<anonymous-schema-567>"
     }
   },
   "x-parser-schema-id": "TransactionEntry",
-  "$id": "https://realestate.yodata.me/schema/TransactionEntry.json"
+  "$id": "http://realestate.yodata.me/schema/TransactionEntry.json"
 }

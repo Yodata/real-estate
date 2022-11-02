@@ -1,0 +1,185 @@
+{
+  "$id": "http://realestate.yodata.me/schema/website#requestappointment.json",
+  "messageId": "website#requestappointment",
+  "summary": "website user has requested an appointment",
+  "externalDocs": null,
+  "headers": {
+    "type": "object",
+    "properties": {
+      "time": {
+        "type": "string",
+        "format": "date-time",
+        "description": "date & time the event was produced",
+        "x-parser-schema-id": "<anonymous-schema-84>"
+      },
+      "agent": {
+        "type": "string",
+        "format": "uri",
+        "description": "the user,tema or organization who sent the event",
+        "example": "https://agentid.example.com/profile/card#me",
+        "x-parser-schema-id": "<anonymous-schema-85>"
+      },
+      "instrument": {
+        "type": "string",
+        "format": "uri",
+        "description": "the service which created the event",
+        "example": "https://vendorid.example.com/profile/card#me",
+        "x-parser-schema-id": "<anonymous-schema-86>"
+      },
+      "source": {
+        "type": "string",
+        "format": "uri",
+        "description": "an agent, team or organization who received a copy of the event",
+        "example": "https://companyid.example.com/profile/card#me",
+        "x-parser-schema-id": "<anonymous-schema-87>"
+      },
+      "originalRecipient": {
+        "type": "string",
+        "format": "uri",
+        "description": "the original recipient of the event with this id",
+        "example": "https://agentid.example.com/profile/card#me",
+        "x-parser-schema-id": "<anonymous-schema-88>"
+      },
+      "id": {
+        "type": "string",
+        "format": "uri",
+        "description": "the shared identifier of the event, akd the event id",
+        "example": "https://instrumentid.example.com/publish/xxxxxxxxxxxxx",
+        "x-parser-schema-id": "<anonymous-schema-89>"
+      },
+      "@id": {
+        "type": "string",
+        "format": "uri",
+        "description": "the url of your instance of the event in your inbox",
+        "example": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
+        "x-parser-schema-id": "<anonymous-schema-90>"
+      },
+      "topic": {
+        "type": "string",
+        "x-parser-schema-id": "<anonymous-schema-83>",
+        "description": "\"realestate/website#requestappointment\"",
+        "enum": [
+          "realestate/website#requestappointment"
+        ]
+      }
+    }
+  },
+  "payload": {
+    "x-parser-schema-id": "<anonymous-schema-91>",
+    "type": "object",
+    "description": "the event payload, typeically a schema.org/Action",
+    "required": [
+      "type",
+      "agent",
+      "object"
+    ],
+    "properties": {
+      "agent": {
+        "type": "object",
+        "x-range": [
+          "Contact",
+          "Person"
+        ],
+        "example": {
+          "type": "Contact",
+          "name": "Miles Davis",
+          "givenName": "Miles",
+          "familyName": "Davis",
+          "telephone": "067-419-1230",
+          "email": "user@example.com",
+          "identifier": {
+            "hsfconsumerid": "216bf670-0777-43db-9d73-c3377d280fe4"
+          },
+          "additionalProperty": {
+            "userPath": "xxx",
+            "workingWithAgent": true
+          }
+        },
+        "description": "the website user requesting the appointment"
+      },
+      "instrument": {
+        "type": "object",
+        "description": "website or mobile application",
+        "x-range": [
+          "RealEstateWebsite",
+          "MobileApplication",
+          "Thing"
+        ],
+        "example": {
+          "type": "RealEstateWebsite",
+          "url": "http://gotham-city-realestate.example.com"
+        }
+      },
+      "object": {
+        "type": "object",
+        "description": "A specific question - e.g. from a user seeking answers online, or collected in a Frequently Asked Questions (FAQ) document.",
+        "title": "Question",
+        "x-range": "Question",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "The item type (Linked-Data @type)",
+            "enum": [
+              "Question"
+            ],
+            "x-parser-schema-id": "<anonymous-schema-485>"
+          },
+          "text": {
+            "type": "string",
+            "description": "the question content",
+            "example": "I would like to view 123 Main Street.",
+            "x-parser-schema-id": "<anonymous-schema-486>"
+          }
+        }
+      },
+      "participant": {
+        "x-title": "participant",
+        "x-range": [
+          "Person",
+          "RealEstateAgent",
+          "RealEstateTeam",
+          "RealEstateOrganization"
+        ],
+        "description": "Other co-agents with a direct or indirect interest in the action.",
+        "type": "array",
+        "items": {
+          "type": "object",
+          "x-parser-schema-id": "<anonymous-schema-349>"
+        },
+        "example": [
+          {
+            "type": "Contact",
+            "name": "Bruce Wayne",
+            "email": "bruce@example.com",
+            "identifier": {
+              "redContact_GUID": "92d0a096-457e-4643-ace8-fa95b6bdb1c5"
+            }
+          }
+        ]
+      },
+      "recipient": {
+        "title": "recipient",
+        "description": "the recipient",
+        "type": "object",
+        "x-range": [
+          "Person",
+          "Organization"
+        ],
+        "example": {
+          "type": "RealEstateAgent",
+          "name": "Randy RealEstateAgent",
+          "id": "https://{userid}.example.com/profile/card#me"
+        },
+        "x-parser-schema-id": "<anonymous-schema-121>"
+      },
+      "type": {
+        "x-parser-schema-id": "<anonymous-schema-251>",
+        "type": "string",
+        "description": "\"RequestAppointmentAction\"",
+        "enum": [
+          "RequestAppointmentAction"
+        ]
+      }
+    }
+  }
+}

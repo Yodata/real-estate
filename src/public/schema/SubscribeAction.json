@@ -1,4 +1,5 @@
 {
+  "$id": "http://realestate.yodata.me/schema/SubscribeAction.json",
   "title": "Action",
   "type": "object",
   "required": [
@@ -11,18 +12,6 @@
   "x-range": "SubscribeAction",
   "description": "the consumer (agent) has subscribed to content from the participant with roleName SubscriptionProvider.",
   "properties": {
-    "object": {
-      "description": "item on which the action is carried out",
-      "x-parser-schema-id": "<anonymous-schema-114>"
-    },
-    "type": {
-      "description": "the action type",
-      "type": "string",
-      "x-parser-schema-id": "<anonymous-schema-113>",
-      "enum": [
-        "SubscribeAction"
-      ]
-    },
     "agent": {
       "type": "object",
       "description": "the subscriber",
@@ -34,6 +23,10 @@
           "hsfconsumerid": "D9AB8127-7D19-4C67-A514-9209F22F4511"
         }
       }
+    },
+    "object": {
+      "description": "item on which the action is carried out",
+      "x-parser-schema-id": "<anonymous-schema-115>"
     },
     "participant": {
       "description": "the subscription provider, an Agent, Team, Office or Organization",
@@ -68,8 +61,15 @@
           }
         }
       }
+    },
+    "type": {
+      "description": "the action type",
+      "type": "string",
+      "x-parser-schema-id": "<anonymous-schema-114>",
+      "enum": [
+        "SubscribeAction"
+      ]
     }
   },
-  "$id": "https://realestate.yodata.me/schema/SubscribeAction.json",
-  "x-parser-schema-id": "SubscribeAction"
+  "x-parser-schema-id": "<anonymous-schema-612>"
 }

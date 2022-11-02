@@ -7,25 +7,39 @@
   ],
   "x-range": "Plan",
   "properties": {
-    "type": {
-      "description": "Plan",
-      "type": "string",
-      "enum": [
-        "Plan"
+    "creator": {
+      "title": "creator",
+      "description": "the item creator",
+      "x-range": [
+        "Person",
+        "Organization"
       ],
-      "x-parser-schema-id": "<anonymous-schema-338>"
+      "example": "http://agent.example.com/profile/card#me",
+      "x-parser-schema-id": "<anonymous-schema-119>"
     },
-    "name": {
+    "dateCompleted": {
+      "description": "The date on which the item was created.",
       "type": "string",
-      "description": "name of the plan",
-      "example": "Ricky Follow Up Plan",
-      "x-parser-schema-id": "<anonymous-schema-339>"
+      "format": "date-time",
+      "x-parser-schema-id": "<anonymous-schema-357>"
+    },
+    "dateCreated": {
+      "description": "The date on which the item was created.",
+      "type": "string",
+      "format": "date-time",
+      "x-parser-schema-id": "<anonymous-schema-205>"
+    },
+    "dateModified": {
+      "description": "The date on which the item was most recently modified or when the item's entry was modified within a DataFeed.",
+      "type": "string",
+      "format": "date-time",
+      "x-parser-schema-id": "<anonymous-schema-206>"
     },
     "description": {
       "type": "string",
       "description": "description of the item",
       "example": "this is the description of my awesome plan",
-      "x-parser-schema-id": "<anonymous-schema-340>"
+      "x-parser-schema-id": "<anonymous-schema-341>"
     },
     "member": {
       "type": "array",
@@ -42,7 +56,7 @@
             "enum": [
               "Task"
             ],
-            "x-parser-schema-id": "<anonymous-schema-342>"
+            "x-parser-schema-id": "<anonymous-schema-343>"
           },
           "identifier": {
             "type": "object",
@@ -50,7 +64,7 @@
             "example": {
               "salesforceContactID": "c28834ca-db69-4da8-90ad-75cdc9907298"
             },
-            "x-parser-schema-id": "<anonymous-schema-343>"
+            "x-parser-schema-id": "<anonymous-schema-344>"
           },
           "actionStatus": {
             "example": "PotentialActionStatus",
@@ -68,7 +82,7 @@
               "ActiveActionStatus",
               "PotentialActionStatus"
             ],
-            "x-parser-schema-id": "<anonymous-schema-344>"
+            "x-parser-schema-id": "<anonymous-schema-345>"
           },
           "memberOf": {
             "type": "object",
@@ -80,7 +94,7 @@
                 "redPlan_ID": "xxxx"
               }
             },
-            "x-parser-schema-id": "<anonymous-schema-345>"
+            "x-parser-schema-id": "<anonymous-schema-346>"
           },
           "agent": {
             "type": "object",
@@ -95,7 +109,7 @@
               "type": "RealEstateAgent",
               "id": "http://user.example.com/profile/card#me"
             },
-            "x-parser-schema-id": "<anonymous-schema-346>"
+            "x-parser-schema-id": "<anonymous-schema-347>"
           },
           "participant": {
             "x-title": "participant",
@@ -109,7 +123,7 @@
             "type": "array",
             "items": {
               "type": "object",
-              "x-parser-schema-id": "<anonymous-schema-348>"
+              "x-parser-schema-id": "<anonymous-schema-349>"
             },
             "example": [
               {
@@ -121,19 +135,19 @@
                 }
               }
             ],
-            "x-parser-schema-id": "<anonymous-schema-347>"
+            "x-parser-schema-id": "<anonymous-schema-348>"
           },
           "name": {
             "type": "string",
             "description": "name or title",
             "example": "Call Ricky",
-            "x-parser-schema-id": "<anonymous-schema-349>"
+            "x-parser-schema-id": "<anonymous-schema-350>"
           },
           "description": {
             "type": "string",
             "description": "task detailed description",
             "example": "Agenda 1. Something 2. Something Else ...",
-            "x-parser-schema-id": "<anonymous-schema-350>"
+            "x-parser-schema-id": "<anonymous-schema-351>"
           },
           "keywords": {
             "title": "keywords",
@@ -145,21 +159,21 @@
             ],
             "items": {
               "type": "string",
-              "x-parser-schema-id": "<anonymous-schema-352>"
+              "x-parser-schema-id": "<anonymous-schema-353>"
             },
-            "x-parser-schema-id": "<anonymous-schema-351>"
+            "x-parser-schema-id": "<anonymous-schema-352>"
           },
           "dateDue": {
             "description": "the due date-time (ISO 8601 formated)",
             "type": "string",
             "format": "date-time",
-            "x-parser-schema-id": "<anonymous-schema-353>"
+            "x-parser-schema-id": "<anonymous-schema-354>"
           },
           "dateCompleted": {
             "type": "string",
             "format": "date-time",
             "description": "date the task was completed",
-            "x-parser-schema-id": "<anonymous-schema-354>"
+            "x-parser-schema-id": "<anonymous-schema-355>"
           },
           "location": {
             "type": "object",
@@ -178,42 +192,28 @@
                 "addressSubdivision": "Gotham Heights"
               }
             },
-            "x-parser-schema-id": "<anonymous-schema-355>"
+            "x-parser-schema-id": "<anonymous-schema-356>"
           }
         },
         "x-parser-schema-id": "Task"
       },
-      "x-parser-schema-id": "<anonymous-schema-341>"
+      "x-parser-schema-id": "<anonymous-schema-342>"
     },
-    "creator": {
-      "title": "creator",
-      "description": "the item creator",
-      "x-range": [
-        "Person",
-        "Organization"
+    "name": {
+      "type": "string",
+      "description": "name of the plan",
+      "example": "Ricky Follow Up Plan",
+      "x-parser-schema-id": "<anonymous-schema-340>"
+    },
+    "type": {
+      "description": "Plan",
+      "type": "string",
+      "enum": [
+        "Plan"
       ],
-      "example": "http://agent.example.com/profile/card#me",
-      "x-parser-schema-id": "<anonymous-schema-118>"
-    },
-    "dateCreated": {
-      "description": "The date on which the item was created.",
-      "type": "string",
-      "format": "date-time",
-      "x-parser-schema-id": "<anonymous-schema-204>"
-    },
-    "dateModified": {
-      "description": "The date on which the item was most recently modified or when the item's entry was modified within a DataFeed.",
-      "type": "string",
-      "format": "date-time",
-      "x-parser-schema-id": "<anonymous-schema-205>"
-    },
-    "dateCompleted": {
-      "description": "The date on which the item was created.",
-      "type": "string",
-      "format": "date-time",
-      "x-parser-schema-id": "<anonymous-schema-356>"
+      "x-parser-schema-id": "<anonymous-schema-339>"
     }
   },
   "x-parser-schema-id": "Plan",
-  "$id": "https://realestate.yodata.me/schema/Plan.json"
+  "$id": "http://realestate.yodata.me/schema/Plan.json"
 }

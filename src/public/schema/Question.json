@@ -4,21 +4,21 @@
   "title": "Question",
   "x-range": "Question",
   "properties": {
+    "text": {
+      "type": "string",
+      "description": "the question content",
+      "example": "I would like to view 123 Main Street.",
+      "x-parser-schema-id": "<anonymous-schema-486>"
+    },
     "type": {
       "type": "string",
       "description": "The item type (Linked-Data @type)",
       "enum": [
         "Question"
       ],
-      "x-parser-schema-id": "<anonymous-schema-484>"
-    },
-    "text": {
-      "type": "string",
-      "description": "the question content",
-      "example": "I would like to view 123 Main Street.",
       "x-parser-schema-id": "<anonymous-schema-485>"
     }
   },
   "x-parser-schema-id": "Question",
-  "$id": "https://realestate.yodata.me/schema/Question.json"
+  "$id": "http://realestate.yodata.me/schema/Question.json"
 }

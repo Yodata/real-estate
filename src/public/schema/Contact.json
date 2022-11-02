@@ -4,16 +4,20 @@
   "description": "a CRM contact.",
   "x-range": "Contact",
   "properties": {
-    "affiliation": {
-      "type": "array",
-      "description": "An organization that this person is affiliated with",
-      "items": {
-        "type": "string",
-        "format": "uri",
-        "example": "https://example.com/profile/card#me",
-        "x-parser-schema-id": "<anonymous-schema-214>"
-      },
-      "x-parser-schema-id": "<anonymous-schema-213>"
+    "additionalName": {
+      "type": "string",
+      "description": "any other name(s) associated with the entity, i.e. nickname, middle name, maiden name, etc. For multiple names, use a comma without space as a separator.",
+      "example": "ambassador satch,pops,satchmo",
+      "x-parser-schema-id": "<anonymous-schema-227>"
+    },
+    "additionalProperty": {
+      "title": "additionalProperty",
+      "type": "object",
+      "description": "additionalProperty are",
+      "example": {
+        "supercrmuserid": 1234,
+        "doNotSell": true
+      }
     },
     "address": {
       "type": "array",
@@ -35,178 +39,26 @@
           "postOfficeBoxNumber": "Box 1234",
           "streetAddress": "1007 Mountain Gate Rd"
         },
-        "x-parser-schema-id": "<anonymous-schema-216>"
+        "x-parser-schema-id": "<anonymous-schema-217>"
       },
-      "x-parser-schema-id": "<anonymous-schema-215>"
+      "x-parser-schema-id": "<anonymous-schema-216>"
+    },
+    "affiliation": {
+      "type": "array",
+      "description": "An organization that this person is affiliated with",
+      "items": {
+        "type": "string",
+        "format": "uri",
+        "example": "https://example.com/profile/card#me",
+        "x-parser-schema-id": "<anonymous-schema-215>"
+      },
+      "x-parser-schema-id": "<anonymous-schema-214>"
     },
     "birthDate": {
       "type": "string",
       "format": "date",
       "description": "date of birth.",
-      "x-parser-schema-id": "<anonymous-schema-217>"
-    },
-    "contactPoint": {
-      "type": "array",
-      "x-range": "ContactPoint",
-      "description": "a named point of contact - telephone, email, faxNumber, and/or url for the entity",
-      "items": {
-        "$id": "htttp://realestate.yodata.me/schema/contactPoint",
-        "type": "array",
-        "description": "a named point of contact - telephone, email, faxNumber, and/or url for the entity",
-        "items": {
-          "title": "ContactPoint",
-          "description": "A point of contact for the entity. By convention in the real estate domain, ContactPoints \nare preferred over telephone, email, and faxNumber so the ContactPoint.name property can be used to label values \nfor example, Work Telephone, Home, as named contactPoint values.\n",
-          "type": "object",
-          "properties": {
-            "type": {
-              "description": "ContactPoint",
-              "type": "string",
-              "enum": [
-                "ContactPoint"
-              ],
-              "x-parser-schema-id": "<anonymous-schema-219>"
-            },
-            "name": {
-              "type": "string",
-              "description": "a label for the contactPoint, i.e. 'Work', or 'Home'",
-              "example": "Work",
-              "x-parser-schema-id": "<anonymous-schema-220>"
-            },
-            "telephone": {
-              "description": "a telephone number",
-              "type": "string",
-              "example": "1-364-127-9618 x20418",
-              "x-parser-schema-id": "<anonymous-schema-221>"
-            },
-            "faxNumber": {
-              "description": "a fax number",
-              "type": "string",
-              "example": "834.320.1602",
-              "x-parser-schema-id": "<anonymous-schema-222>"
-            },
-            "email": {
-              "description": "an email address for the item.",
-              "type": "string",
-              "format": "email",
-              "example": "user@example.com",
-              "x-parser-schema-id": "<anonymous-schema-223>"
-            },
-            "url": {
-              "description": "primary URL for the item.",
-              "type": "string",
-              "format": "uri",
-              "example": "https://www.facebook.com/hallandoates",
-              "x-parser-schema-id": "<anonymous-schema-224>"
-            }
-          },
-          "x-parser-schema-id": "ContactPoint"
-        }
-      },
       "x-parser-schema-id": "<anonymous-schema-218>"
-    },
-    "email": {
-      "type": "string",
-      "description": "Primary email address.",
-      "example": "user@example.com",
-      "x-parser-schema-id": "<anonymous-schema-225>"
-    },
-    "additionalName": {
-      "type": "string",
-      "description": "any other name(s) associated with the entity, i.e. nickname, middle name, maiden name, etc. For multiple names, use a comma without space as a separator.",
-      "example": "ambassador satch,pops,satchmo",
-      "x-parser-schema-id": "<anonymous-schema-226>"
-    },
-    "familyName": {
-      "type": "string",
-      "description": "Last Name of a person",
-      "example": "Wayne",
-      "x-parser-schema-id": "<anonymous-schema-227>"
-    },
-    "faxNumber": {
-      "type": "string",
-      "description": "Primary fax number.",
-      "example": "(873) 271-4802",
-      "x-parser-schema-id": "<anonymous-schema-228>"
-    },
-    "givenName": {
-      "type": "string",
-      "description": "First Name of a person",
-      "example": "Glenn",
-      "x-parser-schema-id": "<anonymous-schema-229>"
-    },
-    "honorificPrefix": {
-      "title": "honorificPrefix",
-      "description": "An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.",
-      "type": "string",
-      "example": "Dr",
-      "x-parser-schema-id": "<anonymous-schema-230>"
-    },
-    "honorifixSuffix": {
-      "title": "honorificSuffix",
-      "description": "An honorific title following a person's name like M.D.",
-      "type": "string",
-      "example": "Esq",
-      "x-parser-schema-id": "<anonymous-schema-231>"
-    },
-    "knowsLanguage": {
-      "type": "array",
-      "description": "languages spoken by the person",
-      "x-range": "Language",
-      "items": {
-        "type": "object",
-        "x-parser-schema-id": "<anonymous-schema-235>"
-      },
-      "example": [
-        {
-          "type": "Language",
-          "name": "English",
-          "additionalName": "en-us"
-        }
-      ],
-      "x-parser-schema-id": "<anonymous-schema-234>"
-    },
-    "name": {
-      "type": "string",
-      "description": "Full name of the person.",
-      "example": "Bruce Wayne",
-      "x-parser-schema-id": "<anonymous-schema-236>"
-    },
-    "telephone": {
-      "description": "Primary phone number.",
-      "type": "string",
-      "example": "1-339-041-0306 x2866",
-      "x-parser-schema-id": "<anonymous-schema-237>"
-    },
-    "worksFor": {
-      "type": "string",
-      "description": "Organizations the person works for.",
-      "example": "Gotham City Police Department",
-      "x-parser-schema-id": "<anonymous-schema-238>"
-    },
-    "identifier": {
-      "type": "object",
-      "description": "key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.",
-      "example": {
-        "salesforceContactID": "c28834ca-db69-4da8-90ad-75cdc9907298"
-      }
-    },
-    "additionalProperty": {
-      "title": "additionalProperty",
-      "type": "object",
-      "description": "additionalProperty are",
-      "example": {
-        "supercrmuserid": 1234,
-        "doNotSell": true
-      }
-    },
-    "type": {
-      "type": "string",
-      "description": "Person",
-      "x-parser-schema-id": "<anonymous-schema-212>",
-      "example": "Contact",
-      "enum": [
-        "Contact"
-      ]
     },
     "comment": {
       "title": "comment",
@@ -233,17 +85,6 @@
         }
       ]
     },
-    "jobTitle": {
-      "title": "jobTitle",
-      "description": "job tiles associated with the item",
-      "items": {
-        "type": "string",
-        "x-parser-schema-id": "<anonymous-schema-233>"
-      },
-      "x-parser-schema-id": "<anonymous-schema-232>",
-      "type": "string",
-      "example": "Superhero"
-    },
     "contactGroup": {
       "$id": "#contactGroup",
       "title": "contactGroup",
@@ -263,6 +104,133 @@
         }
       ]
     },
+    "contactPoint": {
+      "type": "array",
+      "x-range": "ContactPoint",
+      "description": "a named point of contact - telephone, email, faxNumber, and/or url for the entity",
+      "items": {
+        "$id": "htttp://realestate.yodata.me/schema/contactPoint",
+        "type": "array",
+        "description": "a named point of contact - telephone, email, faxNumber, and/or url for the entity",
+        "items": {
+          "title": "ContactPoint",
+          "description": "A point of contact for the entity. By convention in the real estate domain, ContactPoints \nare preferred over telephone, email, and faxNumber so the ContactPoint.name property can be used to label values \nfor example, Work Telephone, Home, as named contactPoint values.\n",
+          "type": "object",
+          "properties": {
+            "type": {
+              "description": "ContactPoint",
+              "type": "string",
+              "enum": [
+                "ContactPoint"
+              ],
+              "x-parser-schema-id": "<anonymous-schema-220>"
+            },
+            "name": {
+              "type": "string",
+              "description": "a label for the contactPoint, i.e. 'Work', or 'Home'",
+              "example": "Work",
+              "x-parser-schema-id": "<anonymous-schema-221>"
+            },
+            "telephone": {
+              "description": "a telephone number",
+              "type": "string",
+              "example": "1-364-127-9618 x20418",
+              "x-parser-schema-id": "<anonymous-schema-222>"
+            },
+            "faxNumber": {
+              "description": "a fax number",
+              "type": "string",
+              "example": "834.320.1602",
+              "x-parser-schema-id": "<anonymous-schema-223>"
+            },
+            "email": {
+              "description": "an email address for the item.",
+              "type": "string",
+              "format": "email",
+              "example": "user@example.com",
+              "x-parser-schema-id": "<anonymous-schema-224>"
+            },
+            "url": {
+              "description": "primary URL for the item.",
+              "type": "string",
+              "format": "uri",
+              "example": "https://www.facebook.com/hallandoates",
+              "x-parser-schema-id": "<anonymous-schema-225>"
+            }
+          },
+          "x-parser-schema-id": "ContactPoint"
+        }
+      },
+      "x-parser-schema-id": "<anonymous-schema-219>"
+    },
+    "dateCreated": {
+      "description": "The date on which the item was created.",
+      "type": "string",
+      "format": "date-time",
+      "x-parser-schema-id": "<anonymous-schema-205>"
+    },
+    "dateModified": {
+      "description": "The date on which the item was most recently modified or when the item's entry was modified within a DataFeed.",
+      "type": "string",
+      "format": "date-time",
+      "x-parser-schema-id": "<anonymous-schema-206>"
+    },
+    "email": {
+      "type": "string",
+      "description": "Primary email address.",
+      "example": "user@example.com",
+      "x-parser-schema-id": "<anonymous-schema-226>"
+    },
+    "familyName": {
+      "type": "string",
+      "description": "Last Name of a person",
+      "example": "Wayne",
+      "x-parser-schema-id": "<anonymous-schema-228>"
+    },
+    "faxNumber": {
+      "type": "string",
+      "description": "Primary fax number.",
+      "example": "(873) 271-4802",
+      "x-parser-schema-id": "<anonymous-schema-229>"
+    },
+    "givenName": {
+      "type": "string",
+      "description": "First Name of a person",
+      "example": "Glenn",
+      "x-parser-schema-id": "<anonymous-schema-230>"
+    },
+    "honorificPrefix": {
+      "title": "honorificPrefix",
+      "description": "An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.",
+      "type": "string",
+      "example": "Dr",
+      "x-parser-schema-id": "<anonymous-schema-231>"
+    },
+    "honorifixSuffix": {
+      "title": "honorificSuffix",
+      "description": "An honorific title following a person's name like M.D.",
+      "type": "string",
+      "example": "Esq",
+      "x-parser-schema-id": "<anonymous-schema-232>"
+    },
+    "identifier": {
+      "type": "object",
+      "description": "key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.",
+      "example": {
+        "salesforceContactID": "c28834ca-db69-4da8-90ad-75cdc9907298"
+      }
+    },
+    "jobTitle": {
+      "title": "jobTitle",
+      "description": "job tiles associated with the item",
+      "items": {
+        "type": "string",
+        "x-parser-schema-id": "<anonymous-schema-234>"
+      },
+      "x-parser-schema-id": "<anonymous-schema-233>",
+      "type": "string",
+      "example": "Superhero"
+    },
     "keywords": {
       "title": "keywords",
       "description": "keywords/tags for grouping and organizing the item in collections",
@@ -273,9 +241,26 @@
       ],
       "items": {
         "type": "string",
-        "x-parser-schema-id": "<anonymous-schema-352>"
+        "x-parser-schema-id": "<anonymous-schema-353>"
       },
-      "x-parser-schema-id": "<anonymous-schema-351>"
+      "x-parser-schema-id": "<anonymous-schema-352>"
+    },
+    "knowsLanguage": {
+      "type": "array",
+      "description": "languages spoken by the person",
+      "x-range": "Language",
+      "items": {
+        "type": "object",
+        "x-parser-schema-id": "<anonymous-schema-236>"
+      },
+      "example": [
+        {
+          "type": "Language",
+          "name": "English",
+          "additionalName": "en-us"
+        }
+      ],
+      "x-parser-schema-id": "<anonymous-schema-235>"
     },
     "leadOwner": {
       "type": "object",
@@ -307,6 +292,12 @@
         "url": "https://zillow.com"
       }
     },
+    "name": {
+      "type": "string",
+      "description": "Full name of the person.",
+      "example": "Bruce Wayne",
+      "x-parser-schema-id": "<anonymous-schema-237>"
+    },
     "originatingSystem": {
       "type": "object",
       "x-range": [
@@ -320,19 +311,28 @@
         "url": "http://www.rdeskwebsite.com/"
       }
     },
-    "dateCreated": {
-      "description": "The date on which the item was created.",
+    "telephone": {
+      "description": "Primary phone number.",
       "type": "string",
-      "format": "date-time",
-      "x-parser-schema-id": "<anonymous-schema-204>"
+      "example": "1-339-041-0306 x2866",
+      "x-parser-schema-id": "<anonymous-schema-238>"
     },
-    "dateModified": {
-      "description": "The date on which the item was most recently modified or when the item's entry was modified within a DataFeed.",
+    "type": {
       "type": "string",
-      "format": "date-time",
-      "x-parser-schema-id": "<anonymous-schema-205>"
+      "description": "Person",
+      "x-parser-schema-id": "<anonymous-schema-213>",
+      "example": "Contact",
+      "enum": [
+        "Contact"
+      ]
+    },
+    "worksFor": {
+      "type": "string",
+      "description": "Organizations the person works for.",
+      "example": "Gotham City Police Department",
+      "x-parser-schema-id": "<anonymous-schema-239>"
     }
   },
-  "x-parser-schema-id": "Contact",
-  "$id": "https://realestate.yodata.me/schema/Contact.json"
+  "x-parser-schema-id": "<anonymous-schema-241>",
+  "$id": "http://realestate.yodata.me/schema/Contact.json"
 }

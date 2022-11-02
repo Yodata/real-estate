@@ -1,0 +1,228 @@
+{
+  "$id": "http://realestate.yodata.me/schema/lead#accept.json",
+  "messageId": "lead#accept",
+  "summary": "a lead (data.object) was accepted by the recipient (data.recipient).",
+  "externalDocs": null,
+  "headers": {
+    "type": "object",
+    "properties": {
+      "time": {
+        "type": "string",
+        "format": "date-time",
+        "description": "date & time the event was produced",
+        "x-parser-schema-id": "<anonymous-schema-4>"
+      },
+      "agent": {
+        "type": "string",
+        "format": "uri",
+        "description": "the user,tema or organization who sent the event",
+        "example": "https://agentid.example.com/profile/card#me",
+        "x-parser-schema-id": "<anonymous-schema-5>"
+      },
+      "instrument": {
+        "type": "string",
+        "format": "uri",
+        "description": "the service which created the event",
+        "example": "https://vendorid.example.com/profile/card#me",
+        "x-parser-schema-id": "<anonymous-schema-6>"
+      },
+      "source": {
+        "type": "string",
+        "format": "uri",
+        "description": "an agent, team or organization who received a copy of the event",
+        "example": "https://companyid.example.com/profile/card#me",
+        "x-parser-schema-id": "<anonymous-schema-7>"
+      },
+      "originalRecipient": {
+        "type": "string",
+        "format": "uri",
+        "description": "the original recipient of the event with this id",
+        "example": "https://agentid.example.com/profile/card#me",
+        "x-parser-schema-id": "<anonymous-schema-8>"
+      },
+      "id": {
+        "type": "string",
+        "format": "uri",
+        "description": "the shared identifier of the event, akd the event id",
+        "example": "https://instrumentid.example.com/publish/xxxxxxxxxxxxx",
+        "x-parser-schema-id": "<anonymous-schema-9>"
+      },
+      "@id": {
+        "type": "string",
+        "format": "uri",
+        "description": "the url of your instance of the event in your inbox",
+        "example": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
+        "x-parser-schema-id": "<anonymous-schema-10>"
+      },
+      "topic": {
+        "type": "string",
+        "x-parser-schema-id": "<anonymous-schema-3>",
+        "description": "realestate/lead#accept",
+        "enum": [
+          "realestate/lead#accept"
+        ]
+      }
+    }
+  },
+  "payload": {
+    "type": "object",
+    "description": "event payload, typically an Action",
+    "x-parser-schema-id": "<anonymous-schema-11>",
+    "allOf": [
+      {
+        "$id": "htttp://realestate.yodata.me/schema/AcceptAction",
+        "title": "AcceptAction",
+        "description": "The act of committing to/adopting an object.",
+        "type": "object",
+        "properties": {
+          "type": {
+            "const": "AcceptAction"
+          },
+          "agent": {
+            "summary": "The recipient of the object being accepted.",
+            "$id": "http://schema.org/agent",
+            "title": "agent",
+            "description": "the direct performer or driver of the action.",
+            "x-range": [
+              "Person",
+              "Organization",
+              "URI"
+            ],
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "uri",
+                "example": "http://{user}.example.com/profile/card#me"
+              },
+              {
+                "type": "object"
+              }
+            ]
+          },
+          "object": {
+            "$id": "htttp://realestate.yodata.me/schema/object",
+            "title": "object",
+            "type": "object",
+            "description": "The object upon which the action is carried out, whose state is kept intact or changed.\nAlso known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). E.g. John read a book.\n"
+          }
+        }
+      },
+      {
+        "properties": {
+          "object": {
+            "title": "Lead",
+            "type": "object",
+            "x-range": "Lead",
+            "description": "a sales opportunity (object) offered by a sender to a recipient.",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "Lead"
+                ],
+                "description": "Lead",
+                "x-parser-schema-id": "<anonymous-schema-281>"
+              },
+              "identifier": {
+                "type": "object",
+                "description": "key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.",
+                "example": {
+                  "salesforceContactID": "c28834ca-db69-4da8-90ad-75cdc9907298"
+                },
+                "x-parser-schema-id": "<anonymous-schema-203>"
+              },
+              "object": {
+                "description": "the lead (Contact)",
+                "x-range": [
+                  "Contact"
+                ],
+                "type": "object",
+                "example": {
+                  "type": "Contact",
+                  "name": "Joe Smith",
+                  "telephone": "731-620-9877 x6155",
+                  "email": "Giuseppe.Lang62@hotmail.com"
+                },
+                "x-parser-schema-id": "<anonymous-schema-282>"
+              },
+              "recipient": {
+                "description": "the lead recipient",
+                "type": "string",
+                "format": "uri",
+                "example": "http://{lead-recipient}.example.com/profile/card#me",
+                "x-parser-schema-id": "<anonymous-schema-283>"
+              },
+              "sender": {
+                "description": "the lead provider",
+                "type": "string",
+                "format": "uri",
+                "example": "http://{lead-sender}.example.com/profile/card#me",
+                "x-parser-schema-id": "<anonymous-schema-284>"
+              },
+              "owner": {
+                "description": "the original owner of the lead",
+                "x-range": [
+                  "RealEstateOrganization",
+                  "RealEstateAgent",
+                  "Person"
+                ],
+                "type": "string",
+                "format": "uri",
+                "example": "http://{lead-owner}.example.com/profile/card#me",
+                "x-parser-schema-id": "<anonymous-schema-285>"
+              },
+              "dateAccepted": {
+                "type": "string",
+                "description": "The date/time the item was accepted by the recipient",
+                "x-range": "DateTime",
+                "example": "2019-11-25T04:23:32.000Z",
+                "x-parser-schema-id": "<anonymous-schema-286>"
+              },
+              "dateRejected": {
+                "type": "string",
+                "format": "date-time",
+                "description": "The date/time the item was rejected by the recipient",
+                "x-parser-schema-id": "<anonymous-schema-287>"
+              },
+              "dateSent": {
+                "description": "the date the lead was sent",
+                "type": "string",
+                "format": "date-time",
+                "x-parser-schema-id": "<anonymous-schema-288>"
+              },
+              "dateReceived": {
+                "type": "string",
+                "description": "The date/time the item was received by it's recipient",
+                "x-range": "DateTime",
+                "example": "2019-11-25T04:23:32.000Z",
+                "x-parser-schema-id": "<anonymous-schema-289>"
+              },
+              "leadSource": {
+                "description": "lead origin, may be a website event or a thing such as a website, zillow, mobile applicaton.",
+                "x-range": [
+                  "Action",
+                  "RealEstateWebSite",
+                  "MobileApplication"
+                ],
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "example": {
+                    "type": "AskAction",
+                    "object": {
+                      "type": "Question",
+                      "text": "Help me I'm trapped inside documentation."
+                    }
+                  },
+                  "x-parser-schema-id": "<anonymous-schema-291>"
+                },
+                "x-parser-schema-id": "<anonymous-schema-290>"
+              }
+            },
+            "x-parser-schema-id": "Lead"
+          }
+        }
+      }
+    ]
+  }
+}

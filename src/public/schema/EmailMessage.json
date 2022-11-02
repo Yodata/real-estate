@@ -1,21 +1,71 @@
 {
+  "$id": "http://realestate.yodata.me/schema/EmailMessage.json",
+  "type": "object",
+  "summary": "The root type of all Things.",
+  "required": [
+    "type"
+  ],
   "title": "EmailMessage",
   "x-range": "EamilMessage",
   "description": "an email message",
   "properties": {
-    "type": {
-      "type": "string",
-      "description": "EmailMessage",
-      "enum": [
-        "EmailMessage"
-      ],
-      "example": "EmailMessage"
-    },
-    "sender": {
+    "@id": {
       "type": "string",
       "format": "uri",
-      "description": "ref to the sender",
+      "description": "the liked data uri for the Thing",
+      "x-parser-schema-id": "<anonymous-schema-138>"
+    },
+    "bccRecipient": {
+      "type": "array",
+      "description": "direct recipient of the message",
+      "items": {
+        "type": "string",
+        "example": "user@example.com"
+      }
+    },
+    "ccRecipient": {
+      "type": "array",
+      "description": "direct recipient of the message",
+      "items": {
+        "type": "string",
+        "example": "user@example.com"
+      }
+    },
+    "creator": {
+      "description": "creator / author of the work",
+      "type": "string",
+      "format": "uri",
       "example": "http://user.example.com/profile/card"
+    },
+    "dateCreated": {
+      "description": "The date on which the CreativeWork was created or the item was added to a DataFeed.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "dateModified": {
+      "description": "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "dateRead": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The date/time at which the message was first viewed"
+    },
+    "dateReceived": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The date/time at which the message was received"
+    },
+    "dateSent": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The date/time at which the message was sent"
+    },
+    "description": {
+      "type": "string",
+      "description": "description of the item",
+      "example": "Dolor accusamus rerum nemo non omnis. Nam labore pariatur eius omnis sit."
     },
     "messageAttachment": {
       "description": "message attachments",
@@ -32,24 +82,24 @@
             "enum": [
               "DigitalDocument"
             ],
-            "x-parser-schema-id": "<anonymous-schema-254>"
+            "x-parser-schema-id": "<anonymous-schema-255>"
           },
           "id": {
             "type": "string",
             "example": "http://user.example.com/public/logo/archive.zip",
-            "x-parser-schema-id": "<anonymous-schema-255>"
+            "x-parser-schema-id": "<anonymous-schema-256>"
           },
           "name": {
             "type": "string",
             "description": "document name or title",
             "example": "archive.zip",
-            "x-parser-schema-id": "<anonymous-schema-256>"
+            "x-parser-schema-id": "<anonymous-schema-257>"
           },
           "encodingFormat": {
             "type": "string",
             "description": "[ISO Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml)",
             "example": "application/zip",
-            "x-parser-schema-id": "<anonymous-schema-257>"
+            "x-parser-schema-id": "<anonymous-schema-258>"
           },
           "about": {
             "type": "object",
@@ -61,32 +111,28 @@
                 "bmsTransactionId": "xxxx"
               }
             },
-            "x-parser-schema-id": "<anonymous-schema-258>"
+            "x-parser-schema-id": "<anonymous-schema-259>"
           },
           "url": {
             "type": "string",
             "description": "public URL of the object",
             "example": "https://example.com",
-            "x-parser-schema-id": "<anonymous-schema-259>"
+            "x-parser-schema-id": "<anonymous-schema-260>"
           }
         },
         "x-parser-schema-id": "DigitalDocument"
       }
     },
-    "dateSent": {
+    "name": {
       "type": "string",
-      "format": "date-time",
-      "description": "The date/time at which the message was sent"
+      "description": "name of the work.",
+      "example": "Market Report 1008 Mountain Gate Road"
     },
-    "dateReceived": {
+    "sender": {
       "type": "string",
-      "format": "date-time",
-      "description": "The date/time at which the message was received"
-    },
-    "dateRead": {
-      "type": "string",
-      "format": "date-time",
-      "description": "The date/time at which the message was first viewed"
+      "format": "uri",
+      "description": "ref to the sender",
+      "example": "http://user.example.com/profile/card"
     },
     "toRecipient": {
       "type": "array",
@@ -96,23 +142,15 @@
         "example": "user@example.com"
       }
     },
-    "ccRecipient": {
-      "type": "array",
-      "description": "direct recipient of the message",
-      "items": {
-        "type": "string",
-        "example": "user@example.com"
-      }
-    },
-    "bccRecipient": {
-      "type": "array",
-      "description": "direct recipient of the message",
-      "items": {
-        "type": "string",
-        "example": "user@example.com"
-      }
+    "type": {
+      "x-parser-schema-id": "<anonymous-schema-137>",
+      "type": "string",
+      "description": "EmailMessage",
+      "enum": [
+        "EmailMessage"
+      ],
+      "example": "EmailMessage"
     }
   },
-  "x-parser-schema-id": "EmailMessage",
-  "$id": "https://realestate.yodata.me/schema/EmailMessage.json"
+  "x-parser-schema-id": "<anonymous-schema-263>"
 }

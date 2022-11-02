@@ -1,0 +1,572 @@
+{
+  "$id": "http://realestate.yodata.me/schema/website#searchproperties.json",
+  "messageId": "website#searchproperties",
+  "summary": "a website user has performed a property search",
+  "externalDocs": null,
+  "headers": {
+    "type": "object",
+    "properties": {
+      "time": {
+        "type": "string",
+        "format": "date-time",
+        "description": "date & time the event was produced",
+        "x-parser-schema-id": "<anonymous-schema-84>"
+      },
+      "agent": {
+        "type": "string",
+        "format": "uri",
+        "description": "the user,tema or organization who sent the event",
+        "example": "https://agentid.example.com/profile/card#me",
+        "x-parser-schema-id": "<anonymous-schema-85>"
+      },
+      "instrument": {
+        "type": "string",
+        "format": "uri",
+        "description": "the service which created the event",
+        "example": "https://vendorid.example.com/profile/card#me",
+        "x-parser-schema-id": "<anonymous-schema-86>"
+      },
+      "source": {
+        "type": "string",
+        "format": "uri",
+        "description": "an agent, team or organization who received a copy of the event",
+        "example": "https://companyid.example.com/profile/card#me",
+        "x-parser-schema-id": "<anonymous-schema-87>"
+      },
+      "originalRecipient": {
+        "type": "string",
+        "format": "uri",
+        "description": "the original recipient of the event with this id",
+        "example": "https://agentid.example.com/profile/card#me",
+        "x-parser-schema-id": "<anonymous-schema-88>"
+      },
+      "id": {
+        "type": "string",
+        "format": "uri",
+        "description": "the shared identifier of the event, akd the event id",
+        "example": "https://instrumentid.example.com/publish/xxxxxxxxxxxxx",
+        "x-parser-schema-id": "<anonymous-schema-89>"
+      },
+      "@id": {
+        "type": "string",
+        "format": "uri",
+        "description": "the url of your instance of the event in your inbox",
+        "example": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
+        "x-parser-schema-id": "<anonymous-schema-90>"
+      },
+      "topic": {
+        "type": "string",
+        "x-parser-schema-id": "<anonymous-schema-83>",
+        "description": "realestate/website#searchproperties",
+        "enum": [
+          "realestate/website#searchproperties"
+        ]
+      }
+    }
+  },
+  "payload": {
+    "x-parser-schema-id": "<anonymous-schema-91>",
+    "type": "object",
+    "description": "the event payload, typeically a schema.org/Action",
+    "required": [
+      "type",
+      "agent",
+      "object"
+    ],
+    "properties": {
+      "agent": {
+        "type": "object",
+        "description": "the website user who performed the action",
+        "x-range": [
+          "Contact",
+          "Person"
+        ],
+        "example": {
+          "type": "Contact",
+          "name": "Miles Davis",
+          "givenName": "Miles",
+          "familyName": "Davis",
+          "telephone": "067-419-1230",
+          "email": "user@example.com",
+          "identifier": {
+            "hsfconsumerid": "216bf670-0777-43db-9d73-c3377d280fe4"
+          },
+          "additionalProperty": {
+            "userPath": "xxx",
+            "workingWithAgent": true
+          }
+        }
+      },
+      "instrument": {
+        "type": "object",
+        "description": "website or mobile application",
+        "x-range": [
+          "RealEstateWebsite",
+          "MobileApplication",
+          "Thing"
+        ],
+        "example": {
+          "type": "RealEstateWebsite",
+          "url": "http://gotham-city-realestate.example.com"
+        }
+      },
+      "object": {
+        "type": "object"
+      },
+      "participant": {
+        "x-title": "participant",
+        "x-range": [
+          "Person",
+          "RealEstateAgent",
+          "RealEstateTeam",
+          "RealEstateOrganization"
+        ],
+        "description": "Other co-agents with a direct or indirect interest in the action.",
+        "type": "array",
+        "items": {
+          "type": "object",
+          "x-parser-schema-id": "<anonymous-schema-349>"
+        },
+        "example": [
+          {
+            "type": "Contact",
+            "name": "Bruce Wayne",
+            "email": "bruce@example.com",
+            "identifier": {
+              "redContact_GUID": "92d0a096-457e-4643-ace8-fa95b6bdb1c5"
+            }
+          }
+        ]
+      },
+      "type": {
+        "type": "string",
+        "description": "The item type (Linked-Data @type)",
+        "x-parser-schema-id": "<anonymous-schema-251>"
+      }
+    },
+    "allOf": [
+      {
+        "type": "object",
+        "x-range": "SearchAction",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "SearchAction",
+            "enum": [
+              "SearchAction"
+            ]
+          },
+          "agent": {
+            "type": "object",
+            "description": "the user who performed the search"
+          },
+          "object": {
+            "description": "search criteria",
+            "x-range": "PropertySearch"
+          },
+          "result": {
+            "description": "search result",
+            "x-range": "FindAction"
+          }
+        }
+      },
+      {
+        "properties": {
+          "object": {
+            "title": "PropertySearch",
+            "x-range": "PropertySearch",
+            "type": "object",
+            "description": "property search parameters",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "PropertySearch"
+                ],
+                "x-parser-schema-id": "<anonymous-schema-417>"
+              },
+              "name": {
+                "type": "string",
+                "description": "name of the search, input by the user or generated automatically",
+                "example": "3+ beds in Gotham City",
+                "x-parser-schema-id": "<anonymous-schema-418>"
+              },
+              "description": {
+                "type": "string",
+                "description": "optional search description input by the user or generated automatically",
+                "example": "((city=Gotham),(Bedrooms=3+))",
+                "x-parser-schema-id": "<anonymous-schema-419>"
+              },
+              "propertyType": {
+                "type": "string",
+                "description": "RESO property type (see range for allowed values)",
+                "x-range": "PropertyType",
+                "minLength": 4,
+                "maxLength": 4,
+                "enum": [
+                  "RESI",
+                  "RLSE",
+                  "RINC",
+                  "LAND",
+                  "MOBI",
+                  "FARM",
+                  "COMS",
+                  "COML",
+                  "BUSO"
+                ],
+                "x-parser-schema-id": "<anonymous-schema-410>"
+              },
+              "propertySubType": {
+                "title": "PropertySubType",
+                "type": "object",
+                "description": "Property sub-type enumeration values derived from RESO data dictionary.",
+                "example": {
+                  "propertySubType": "ApartmentPropertyType"
+                },
+                "properties": {
+                  "ApartmentPropertyType": {
+                    "type": "string",
+                    "description": "Apartment",
+                    "x-parser-schema-id": "<anonymous-schema-420>"
+                  },
+                  "BoatSlipPropertyType": {
+                    "type": "string",
+                    "description": "Boat Slip",
+                    "x-parser-schema-id": "<anonymous-schema-421>"
+                  },
+                  "CabinPropertyType": {
+                    "type": "string",
+                    "description": "Cabin",
+                    "x-parser-schema-id": "<anonymous-schema-422>"
+                  },
+                  "CondominiumPropertyType": {
+                    "type": "string",
+                    "description": "Condominium",
+                    "x-parser-schema-id": "<anonymous-schema-423>"
+                  },
+                  "DeededParkingPropertyType": {
+                    "type": "string",
+                    "description": "Deeded Parking",
+                    "x-parser-schema-id": "<anonymous-schema-424>"
+                  },
+                  "DuplexPropertyType": {
+                    "type": "string",
+                    "description": "Residential Duplex",
+                    "x-parser-schema-id": "<anonymous-schema-425>"
+                  },
+                  "FarmPropertyType": {
+                    "type": "string",
+                    "description": "Farm Property Type",
+                    "x-parser-schema-id": "<anonymous-schema-426>"
+                  },
+                  "ManufacturedHomePropertyType": {
+                    "type": "string",
+                    "description": "Manufactured Home",
+                    "x-parser-schema-id": "<anonymous-schema-427>"
+                  },
+                  "ManufacturedOnLandPropertyType": {
+                    "type": "string",
+                    "description": "Manufactured Home + Land",
+                    "x-parser-schema-id": "<anonymous-schema-428>"
+                  },
+                  "MobileHomePropertyType": {
+                    "type": "string",
+                    "description": "Mobile Home",
+                    "x-parser-schema-id": "<anonymous-schema-429>"
+                  },
+                  "OwnYourOwnPropertyType": {
+                    "type": "string",
+                    "description": "RESO Own Your Own Property",
+                    "x-parser-schema-id": "<anonymous-schema-430>"
+                  },
+                  "QuadruplexPropertyType": {
+                    "type": "string",
+                    "description": "A residential property with four units",
+                    "x-parser-schema-id": "<anonymous-schema-431>"
+                  },
+                  "RanchPropertyType": {
+                    "type": "string",
+                    "description": "A Ranch",
+                    "x-parser-schema-id": "<anonymous-schema-432>"
+                  },
+                  "SingleFamilyPropertyType": {
+                    "type": "string",
+                    "description": "Single Family Residence",
+                    "x-parser-schema-id": "<anonymous-schema-433>"
+                  },
+                  "StockCooperativePropertyType": {
+                    "type": "string",
+                    "description": "Stock Co-op.",
+                    "x-parser-schema-id": "<anonymous-schema-434>"
+                  },
+                  "TimesharePropertyType": {
+                    "type": "string",
+                    "description": "Timeshare",
+                    "x-parser-schema-id": "<anonymous-schema-435>"
+                  },
+                  "TownhousePropertyType": {
+                    "type": "string",
+                    "description": "Townhouse",
+                    "x-parser-schema-id": "<anonymous-schema-436>"
+                  },
+                  "TriplexPropertyType": {
+                    "type": "string",
+                    "description": "A residential property with 3 separate units",
+                    "x-parser-schema-id": "<anonymous-schema-437>"
+                  },
+                  "AgriculturePropertyType": {
+                    "type": "string",
+                    "description": "An agriculture property.",
+                    "x-parser-schema-id": "<anonymous-schema-438>"
+                  },
+                  "BusinessPropertyType": {
+                    "type": "string",
+                    "description": "a residential property zoned for business operation",
+                    "x-parser-schema-id": "<anonymous-schema-439>"
+                  },
+                  "HotelMotelPropertyType": {
+                    "type": "string",
+                    "description": "Hotel property for sale.",
+                    "x-parser-schema-id": "<anonymous-schema-440>"
+                  },
+                  "IndustrialPropertyType": {
+                    "type": "string",
+                    "description": "Industrial property",
+                    "x-parser-schema-id": "<anonymous-schema-441>"
+                  },
+                  "MixedUsePropertyType": {
+                    "type": "string",
+                    "description": "Residential/Commercial property",
+                    "x-parser-schema-id": "<anonymous-schema-442>"
+                  },
+                  "MultiFamilyPropertyType": {
+                    "type": "string",
+                    "description": "A single building with multiple units",
+                    "x-parser-schema-id": "<anonymous-schema-443>"
+                  },
+                  "OfficePropertyType": {
+                    "type": "string",
+                    "description": "An office.",
+                    "x-parser-schema-id": "<anonymous-schema-444>"
+                  },
+                  "RetailPropertyType": {
+                    "type": "string",
+                    "description": "Retail property",
+                    "x-parser-schema-id": "<anonymous-schema-445>"
+                  },
+                  "UnimprovedLandPropertyType": {
+                    "type": "string",
+                    "description": "Land for sale",
+                    "x-parser-schema-id": "<anonymous-schema-446>"
+                  },
+                  "WarehousePropertyType": {
+                    "type": "string",
+                    "description": "A Warehouse property type.",
+                    "x-parser-schema-id": "<anonymous-schema-447>"
+                  }
+                },
+                "x-parser-schema-id": "PropertySubType"
+              },
+              "listingStatus": {
+                "type": "string",
+                "description": "RESO Listing Status Code",
+                "x-range": [
+                  "ActiveListingStatus",
+                  "PendingListingStatus",
+                  "SoldListingStatus",
+                  "ContingentListingStatus"
+                ],
+                "example": "ActiveListingStatus,ContingentListingStatus",
+                "x-parser-schema-id": "<anonymous-schema-448>"
+              },
+              "location": {
+                "type": "object",
+                "description": "a physical location",
+                "title": "Place",
+                "x-range": [
+                  "Place",
+                  "City",
+                  "State",
+                  "PostalCode",
+                  "GeoCircle",
+                  "GeoShape"
+                ],
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "The item type (Linked-Data @type)",
+                    "enum": [
+                      "Place"
+                    ],
+                    "x-parser-schema-id": "<anonymous-schema-336>"
+                  },
+                  "address": {
+                    "type": "object",
+                    "x-range": "PostalAddress",
+                    "description": "A physical address.",
+                    "example": {
+                      "type": "PostalAddress",
+                      "name": "Home",
+                      "addressCountry": "USA",
+                      "addressCounty": "Gotham County",
+                      "addressLocality": "Gotham City",
+                      "addressRegion": "New Jersey",
+                      "addressSubdivision": "Gotham Heights",
+                      "postalCode": "10010",
+                      "postOfficeBoxNumber": "Box 1234",
+                      "streetAddress": "1007 Mountain Gate Rd"
+                    },
+                    "x-parser-schema-id": "<anonymous-schema-337>"
+                  },
+                  "geo": {
+                    "type": "object",
+                    "description": "a geo shape (circle or box)",
+                    "x-range": [
+                      "GeoCircle",
+                      "GeoShape"
+                    ],
+                    "example": {
+                      "type": "GeoShape",
+                      "geoMidpoint": {
+                        "type": "GeoCoordinates,",
+                        "longitude": "73.98",
+                        "latitude": "40.75"
+                      },
+                      "geoRadius": {
+                        "type": "QuantitativeValue,",
+                        "value": "10,",
+                        "unitCode": "mi,",
+                        "unitText": "miles"
+                      },
+                      "box": "(33.5697,-117.775),(33.6018,-117.707)"
+                    },
+                    "x-parser-schema-id": "<anonymous-schema-338>"
+                  }
+                },
+                "x-parser-schema-id": "Place"
+              },
+              "price": {
+                "type": "object",
+                "title": "PriceSpecification",
+                "x-range": "PriceSpecification",
+                "description": "a price offered for transfer of ownership of an item",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "PriceSpecification",
+                    "enum": [
+                      "PriceSpecification"
+                    ],
+                    "x-parser-schema-id": "<anonymous-schema-367>"
+                  },
+                  "minPrice": {
+                    "type": "number",
+                    "description": "the low price offered if price is a range.",
+                    "example": 75000,
+                    "x-parser-schema-id": "<anonymous-schema-368>"
+                  },
+                  "maxPrice": {
+                    "type": "number",
+                    "description": "the high price offered if price is a range.",
+                    "example": 100000,
+                    "x-parser-schema-id": "<anonymous-schema-369>"
+                  },
+                  "price": {
+                    "type": "number",
+                    "description": "the offer price.",
+                    "example": 75000,
+                    "x-parser-schema-id": "<anonymous-schema-370>"
+                  },
+                  "priceCurrency": {
+                    "type": "string",
+                    "description": "use ISO4217",
+                    "example": "USD",
+                    "x-parser-schema-id": "<anonymous-schema-371>"
+                  }
+                },
+                "x-parser-schema-id": "<anonymous-schema-449>"
+              },
+              "bedrooms": {
+                "description": "number of bedrooms (range)",
+                "type": "object",
+                "x-range": "QuantitativeValue",
+                "example": {
+                  "type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 4,
+                  "unitCode": "BD",
+                  "unitText": "Bedrooms"
+                },
+                "x-parser-schema-id": "<anonymous-schema-450>"
+              },
+              "bathrooms": {
+                "description": "number of bathrooms (range)",
+                "type": "object",
+                "x-range": "QuantitativeValue",
+                "example": {
+                  "type": "QuantitativeValue",
+                  "minValue": 2,
+                  "unitCode": "BA",
+                  "unitText": "Bathrooms"
+                },
+                "x-parser-schema-id": "<anonymous-schema-451>"
+              },
+              "livingArea": {
+                "description": "property indoor space",
+                "type": "object",
+                "x-range": "QuantitativeValue",
+                "example": {
+                  "type": "QuantitativeValue",
+                  "minValue": 1500,
+                  "unitCode": "SqFt",
+                  "unitText": "Square Feet"
+                },
+                "x-parser-schema-id": "<anonymous-schema-452>"
+              },
+              "lotSize": {
+                "description": "outdoor space minValue, maxValue",
+                "type": "object",
+                "x-range": "QuantitativeValue",
+                "example": {
+                  "type": "QuantitativeValue",
+                  "minValue": 0.5,
+                  "unitCode": "AC",
+                  "unitText": "Acres"
+                },
+                "x-parser-schema-id": "<anonymous-schema-453>"
+              }
+            },
+            "x-parser-schema-id": "PropertySearch"
+          },
+          "result": {
+            "x-range": "FindAction",
+            "description": "the result of a search action",
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "FindAction"
+                ]
+              },
+              "object": {
+                "description": "the items found",
+                "type": "array",
+                "example": [
+                  {
+                    "type": "PropertyListing",
+                    "url": "http://example.com/listing/123"
+                  },
+                  {
+                    "type": "PropertyListing",
+                    "url": "http://example.com/listing/234"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

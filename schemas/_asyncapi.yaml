@@ -40,7 +40,7 @@ info:
 
 components:
   schemas:
-    CloudEvent: { $ref: CloudEvent.yaml }
+    CloudEvent: { $ref: ./CloudEvent.yaml }
     Action: { $ref: Action.yaml }
     Award: { $ref: Award.yaml }
     AwardSeries: { $ref: AwardSeries.yaml }

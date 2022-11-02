@@ -5,17 +5,23 @@ description: a set of items.
 required:
   - type
 properties:
-  type:
-    description: Collection
+  creator:
+    description: creator of the collection
     type: string
-    enum:
-      - Collection
-    x-parser-schema-id: <anonymous-schema-200>
-  name:
+    example: https://{agentid}.example.com/profile/card#me
+    x-parser-schema-id: <anonymous-schema-204>
+  dateCreated:
+    description: The date on which the item was created.
     type: string
-    description: name of the collection
-    example: Clients
-    x-parser-schema-id: <anonymous-schema-201>
+    format: date-time
+    x-parser-schema-id: <anonymous-schema-205>
+  dateModified:
+    description: >-
+      The date on which the item was most recently modified or when the item's
+      entry was modified within a DataFeed.
+    type: string
+    format: date-time
+    x-parser-schema-id: <anonymous-schema-206>
   identifier:
     type: object
     description: >-
@@ -24,31 +30,25 @@ properties:
       statements on the record, or the entity associated to the record.
     example:
       salesforceContactID: c28834ca-db69-4da8-90ad-75cdc9907298
-    x-parser-schema-id: <anonymous-schema-202>
-  creator:
-    description: creator of the collection
-    type: string
-    example: https://{agentid}.example.com/profile/card#me
     x-parser-schema-id: <anonymous-schema-203>
-  dateCreated:
-    description: The date on which the item was created.
-    type: string
-    format: date-time
-    x-parser-schema-id: <anonymous-schema-204>
-  dateModified:
-    description: >-
-      The date on which the item was most recently modified or when the item's
-      entry was modified within a DataFeed.
-    type: string
-    format: date-time
-    x-parser-schema-id: <anonymous-schema-205>
   member:
     description: members of the collection
     type: array
     items:
       type: object
-      x-parser-schema-id: <anonymous-schema-207>
-    x-parser-schema-id: <anonymous-schema-206>
+      x-parser-schema-id: <anonymous-schema-208>
+    x-parser-schema-id: <anonymous-schema-207>
+  name:
+    type: string
+    description: name of the collection
+    example: Clients
+    x-parser-schema-id: <anonymous-schema-202>
+  type:
+    description: Collection
+    type: string
+    enum:
+      - Collection
+    x-parser-schema-id: <anonymous-schema-201>
 x-parser-schema-id: Collection
-$id: https://realestate.yodata.me/schema/Collection.yaml
+$id: http://realestate.yodata.me/schema/Collection.yaml
 

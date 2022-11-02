@@ -9,39 +9,39 @@ description: >
   for example, Work Telephone, Home, as named contactPoint values.
 type: object
 properties:
-  type:
-    description: ContactPoint
-    type: string
-    enum:
-      - ContactPoint
-    x-parser-schema-id: <anonymous-schema-219>
-  name:
-    type: string
-    description: a label for the contactPoint, i.e. 'Work', or 'Home'
-    example: Work
-    x-parser-schema-id: <anonymous-schema-220>
-  telephone:
-    description: a telephone number
-    type: string
-    example: 1-364-127-9618 x20418
-    x-parser-schema-id: <anonymous-schema-221>
-  faxNumber:
-    description: a fax number
-    type: string
-    example: 834.320.1602
-    x-parser-schema-id: <anonymous-schema-222>
   email:
     description: an email address for the item.
     type: string
     format: email
     example: user@example.com
+    x-parser-schema-id: <anonymous-schema-224>
+  faxNumber:
+    description: a fax number
+    type: string
+    example: 834.320.1602
     x-parser-schema-id: <anonymous-schema-223>
+  name:
+    type: string
+    description: a label for the contactPoint, i.e. 'Work', or 'Home'
+    example: Work
+    x-parser-schema-id: <anonymous-schema-221>
+  telephone:
+    description: a telephone number
+    type: string
+    example: 1-364-127-9618 x20418
+    x-parser-schema-id: <anonymous-schema-222>
+  type:
+    description: ContactPoint
+    type: string
+    enum:
+      - ContactPoint
+    x-parser-schema-id: <anonymous-schema-220>
   url:
     description: primary URL for the item.
     type: string
     format: uri
     example: https://www.facebook.com/hallandoates
-    x-parser-schema-id: <anonymous-schema-224>
+    x-parser-schema-id: <anonymous-schema-225>
 x-parser-schema-id: ContactPoint
-$id: https://realestate.yodata.me/schema/ContactPoint.yaml
+$id: http://realestate.yodata.me/schema/ContactPoint.yaml
 

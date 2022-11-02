@@ -8,33 +8,6 @@
     "propertyType"
   ],
   "properties": {
-    "type": {
-      "description": "\"RealEstateProperty\"",
-      "enum": [
-        "RealEstateProperty"
-      ],
-      "type": "string",
-      "x-parser-schema-id": "<anonymous-schema-468>"
-    },
-    "propertyType": {
-      "type": "string",
-      "description": "RESO property type (see range for allowed values)",
-      "x-range": "PropertyType",
-      "minLength": 4,
-      "maxLength": 4,
-      "enum": [
-        "RESI",
-        "RLSE",
-        "RINC",
-        "LAND",
-        "MOBI",
-        "FARM",
-        "COMS",
-        "COML",
-        "BUSO"
-      ],
-      "x-parser-schema-id": "<anonymous-schema-409>"
-    },
     "addressCountry": {
       "type": "string",
       "description": "two-letter ISO 3166-1 alpha-2 country code",
@@ -53,27 +26,27 @@
         "GB",
         "US"
       ],
-      "x-parser-schema-id": "<anonymous-schema-385>"
+      "x-parser-schema-id": "<anonymous-schema-386>"
     },
     "addressLocality": {
       "type": "string",
       "description": "City, Township.",
       "example": "Gotham City",
       "maxLength": 50,
-      "x-parser-schema-id": "<anonymous-schema-386>"
+      "x-parser-schema-id": "<anonymous-schema-387>"
     },
     "addressRegion": {
       "type": "string",
       "description": "State or Province.",
       "example": "New Jersey",
       "maxLength": 3,
-      "x-parser-schema-id": "<anonymous-schema-387>"
+      "x-parser-schema-id": "<anonymous-schema-388>"
     },
     "apn": {
       "type": "string",
       "description": "Assessors Parcel Number",
       "example": "ABC-12345-XX-XXXX",
-      "x-parser-schema-id": "<anonymous-schema-469>"
+      "x-parser-schema-id": "<anonymous-schema-470>"
     },
     "image": {
       "title": "image",
@@ -106,13 +79,13 @@
                     "type": {
                       "type": "string",
                       "description": "The item type (Linked-Data @type)",
-                      "x-parser-schema-id": "<anonymous-schema-136>"
+                      "x-parser-schema-id": "<anonymous-schema-137>"
                     },
                     "@id": {
                       "type": "string",
                       "format": "uri",
                       "description": "the liked data uri for the Thing",
-                      "x-parser-schema-id": "<anonymous-schema-137>"
+                      "x-parser-schema-id": "<anonymous-schema-138>"
                     }
                   },
                   "x-parser-schema-id": "Thing"
@@ -156,7 +129,7 @@
                       "example": "http://user.example.com/public/profile/image.jpg"
                     }
                   },
-                  "x-parser-schema-id": "<anonymous-schema-171>"
+                  "x-parser-schema-id": "<anonymous-schema-172>"
                 }
               ],
               "x-parser-schema-id": "MediaObject"
@@ -181,25 +154,25 @@
                   "example": "image/jpeg"
                 }
               },
-              "x-parser-schema-id": "<anonymous-schema-172>"
+              "x-parser-schema-id": "<anonymous-schema-173>"
             }
           ],
-          "x-parser-schema-id": "<anonymous-schema-170>"
+          "x-parser-schema-id": "<anonymous-schema-171>"
         }
       ],
-      "x-parser-schema-id": "<anonymous-schema-391>"
+      "x-parser-schema-id": "<anonymous-schema-392>"
     },
     "latitude": {
       "type": "number",
       "description": "The latitude of a location.",
       "x-title": "latitude",
       "example": 40.75,
-      "x-parser-schema-id": "<anonymous-schema-273>"
+      "x-parser-schema-id": "<anonymous-schema-274>"
     },
     "listingId": {
       "description": "the local identifier for the listing (MLS #)",
       "type": "string",
-      "x-parser-schema-id": "<anonymous-schema-470>"
+      "x-parser-schema-id": "<anonymous-schema-471>"
     },
     "livingArea": {
       "description": "property indoor space",
@@ -211,14 +184,14 @@
       },
       "type": "object",
       "x-range": "QuantitativeValue",
-      "x-parser-schema-id": "<anonymous-schema-471>"
+      "x-parser-schema-id": "<anonymous-schema-472>"
     },
     "longitude": {
       "type": "number",
       "description": "The longitude of a location.",
       "x-title": "longitude",
       "example": 73.98,
-      "x-parser-schema-id": "<anonymous-schema-272>"
+      "x-parser-schema-id": "<anonymous-schema-273>"
     },
     "lotSize": {
       "description": "outdoor space minValue, maxValue",
@@ -230,32 +203,32 @@
       },
       "type": "object",
       "x-range": "QuantitativeValue",
-      "x-parser-schema-id": "<anonymous-schema-472>"
+      "x-parser-schema-id": "<anonymous-schema-473>"
     },
     "numberOfBathrooms": {
       "description": "the number of bathrooms",
       "example": "2",
       "type": "string",
-      "x-parser-schema-id": "<anonymous-schema-473>"
+      "x-parser-schema-id": "<anonymous-schema-474>"
     },
     "numberOfBedrooms": {
       "description": "the number of bedrooms",
       "example": "3",
       "type": "string",
-      "x-parser-schema-id": "<anonymous-schema-474>"
+      "x-parser-schema-id": "<anonymous-schema-475>"
     },
     "numberOfRooms": {
       "description": "the total number of rooms in the building",
       "type": "string",
       "example": 7,
-      "x-parser-schema-id": "<anonymous-schema-475>"
+      "x-parser-schema-id": "<anonymous-schema-476>"
     },
     "postalCode": {
       "type": "string",
       "description": "Zip/Post Code",
       "example": "10010",
       "maxLength": 12,
-      "x-parser-schema-id": "<anonymous-schema-407>"
+      "x-parser-schema-id": "<anonymous-schema-408>"
     },
     "propertySubType": {
       "title": "propertySubType",
@@ -292,28 +265,55 @@
         "UnimprovedLandPropertyType",
         "WarehousePropertyType"
       ],
-      "x-parser-schema-id": "<anonymous-schema-408>"
+      "x-parser-schema-id": "<anonymous-schema-409>"
+    },
+    "propertyType": {
+      "type": "string",
+      "description": "RESO property type (see range for allowed values)",
+      "x-range": "PropertyType",
+      "minLength": 4,
+      "maxLength": 4,
+      "enum": [
+        "RESI",
+        "RLSE",
+        "RINC",
+        "LAND",
+        "MOBI",
+        "FARM",
+        "COMS",
+        "COML",
+        "BUSO"
+      ],
+      "x-parser-schema-id": "<anonymous-schema-410>"
     },
     "stories": {
       "type": "number",
       "description": "he number of floors in the property",
       "example": 2,
-      "x-parser-schema-id": "<anonymous-schema-411>"
+      "x-parser-schema-id": "<anonymous-schema-412>"
     },
     "streetAddress": {
       "type": "string",
       "description": "the street address",
       "example": "1007 Mountain Gate Rd",
       "maxLength": 75,
-      "x-parser-schema-id": "<anonymous-schema-412>"
+      "x-parser-schema-id": "<anonymous-schema-413>"
+    },
+    "type": {
+      "description": "\"RealEstateProperty\"",
+      "enum": [
+        "RealEstateProperty"
+      ],
+      "type": "string",
+      "x-parser-schema-id": "<anonymous-schema-469>"
     },
     "yearBuilt": {
       "type": "number",
       "description": "the year the structure was created",
       "example": 1988,
-      "x-parser-schema-id": "<anonymous-schema-415>"
+      "x-parser-schema-id": "<anonymous-schema-416>"
     }
   },
   "x-parser-schema-id": "RealEstateProperty",
-  "$id": "https://realestate.yodata.me/schema/RealEstateProperty.json"
+  "$id": "http://realestate.yodata.me/schema/RealEstateProperty.json"
 }

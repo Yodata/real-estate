@@ -8,24 +8,24 @@
     "value"
   ],
   "properties": {
+    "propertyID": {
+      "type": "string",
+      "example": "UserID",
+      "x-parser-schema-id": "<anonymous-schema-463>"
+    },
     "type": {
       "type": "string",
       "enum": [
         "PropertyValue"
       ],
-      "x-parser-schema-id": "<anonymous-schema-461>"
-    },
-    "propertyID": {
-      "type": "string",
-      "example": "UserID",
       "x-parser-schema-id": "<anonymous-schema-462>"
     },
     "value": {
       "type": "string",
       "example": "@bobjones",
-      "x-parser-schema-id": "<anonymous-schema-463>"
+      "x-parser-schema-id": "<anonymous-schema-464>"
     }
   },
   "x-parser-schema-id": "PropertyValue",
-  "$id": "https://realestate.yodata.me/schema/PropertyValue.json"
+  "$id": "http://realestate.yodata.me/schema/PropertyValue.json"
 }

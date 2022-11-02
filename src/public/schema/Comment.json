@@ -8,41 +8,6 @@
     "text"
   ],
   "properties": {
-    "type": {
-      "description": "Comment",
-      "type": "string",
-      "enum": [
-        "Comment"
-      ],
-      "x-parser-schema-id": "<anonymous-schema-208>"
-    },
-    "dateCreated": {
-      "description": "The date on which the item was created.",
-      "type": "string",
-      "format": "date-time",
-      "x-parser-schema-id": "<anonymous-schema-204>"
-    },
-    "dateModified": {
-      "description": "The date on which the item was most recently modified or when the item's entry was modified within a DataFeed.",
-      "type": "string",
-      "format": "date-time",
-      "x-parser-schema-id": "<anonymous-schema-205>"
-    },
-    "text": {
-      "description": "the comment body",
-      "type": "string",
-      "example": "That's a negative attitude, Robin.",
-      "x-parser-schema-id": "<anonymous-schema-209>"
-    },
-    "author": {
-      "type": "object",
-      "description": "the content author",
-      "example": {
-        "type": "RealEstateAgent",
-        "name": "Batman"
-      },
-      "x-parser-schema-id": "<anonymous-schema-210>"
-    },
     "about": {
       "example": {
         "type": "Contact",
@@ -56,15 +21,50 @@
       "description": "The subject matter of the content",
       "type": "object"
     },
+    "author": {
+      "type": "object",
+      "description": "the content author",
+      "example": {
+        "type": "RealEstateAgent",
+        "name": "Batman"
+      },
+      "x-parser-schema-id": "<anonymous-schema-211>"
+    },
+    "dateCreated": {
+      "description": "The date on which the item was created.",
+      "type": "string",
+      "format": "date-time",
+      "x-parser-schema-id": "<anonymous-schema-205>"
+    },
+    "dateModified": {
+      "description": "The date on which the item was most recently modified or when the item's entry was modified within a DataFeed.",
+      "type": "string",
+      "format": "date-time",
+      "x-parser-schema-id": "<anonymous-schema-206>"
+    },
     "identifier": {
       "type": "object",
       "description": "key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.",
       "example": {
         "salesforceContactID": "c28834ca-db69-4da8-90ad-75cdc9907298"
       },
-      "x-parser-schema-id": "<anonymous-schema-211>"
+      "x-parser-schema-id": "<anonymous-schema-212>"
+    },
+    "text": {
+      "description": "the comment body",
+      "type": "string",
+      "example": "That's a negative attitude, Robin.",
+      "x-parser-schema-id": "<anonymous-schema-210>"
+    },
+    "type": {
+      "description": "Comment",
+      "type": "string",
+      "enum": [
+        "Comment"
+      ],
+      "x-parser-schema-id": "<anonymous-schema-209>"
     }
   },
   "x-parser-schema-id": "Comment",
-  "$id": "https://realestate.yodata.me/schema/Comment.json"
+  "$id": "http://realestate.yodata.me/schema/Comment.json"
 }

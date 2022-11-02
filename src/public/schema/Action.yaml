@@ -1,4 +1,4 @@
-$id: https://realestate.yodata.me/schema/Action.yaml
+$id: http://realestate.yodata.me/schema/Action.yaml
 title: Action
 type: object
 description: >-
@@ -9,12 +9,12 @@ description: >-
 required:
   - type
 properties:
+  object:
+    description: item on which the action is carried out
+    x-parser-schema-id: <anonymous-schema-115>
   type:
     description: the action type
     type: string
-    x-parser-schema-id: <anonymous-schema-113>
-  object:
-    description: item on which the action is carried out
     x-parser-schema-id: <anonymous-schema-114>
 externalDocs:
   description: schema.org/Action

@@ -4,22 +4,6 @@
   "description": "an action assigned to an agent, typically as part of a set of interdependent tasks in a Plan",
   "x-range": "Task",
   "properties": {
-    "type": {
-      "type": "string",
-      "description": "The item type (Linked-Data @type)",
-      "enum": [
-        "Task"
-      ],
-      "x-parser-schema-id": "<anonymous-schema-342>"
-    },
-    "identifier": {
-      "type": "object",
-      "description": "key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.",
-      "example": {
-        "salesforceContactID": "c28834ca-db69-4da8-90ad-75cdc9907298"
-      },
-      "x-parser-schema-id": "<anonymous-schema-343>"
-    },
     "actionStatus": {
       "example": "PotentialActionStatus",
       "type": "string",
@@ -36,18 +20,6 @@
         "ActiveActionStatus",
         "PotentialActionStatus"
       ],
-      "x-parser-schema-id": "<anonymous-schema-344>"
-    },
-    "memberOf": {
-      "type": "object",
-      "x-range": "Plan",
-      "description": "a plan the task is associated with",
-      "example": {
-        "type": "Plan",
-        "identifier": {
-          "redPlan_ID": "xxxx"
-        }
-      },
       "x-parser-schema-id": "<anonymous-schema-345>"
     },
     "agent": {
@@ -63,45 +35,33 @@
         "type": "RealEstateAgent",
         "id": "http://user.example.com/profile/card#me"
       },
-      "x-parser-schema-id": "<anonymous-schema-346>"
-    },
-    "participant": {
-      "x-title": "participant",
-      "x-range": [
-        "Person",
-        "RealEstateAgent",
-        "RealEstateTeam",
-        "RealEstateOrganization"
-      ],
-      "description": "Other co-agents with a direct or indirect interest in the action.",
-      "type": "array",
-      "items": {
-        "type": "object",
-        "x-parser-schema-id": "<anonymous-schema-348>"
-      },
-      "example": [
-        {
-          "type": "Contact",
-          "name": "Bruce Wayne",
-          "email": "bruce@example.com",
-          "identifier": {
-            "redContact_GUID": "92d0a096-457e-4643-ace8-fa95b6bdb1c5"
-          }
-        }
-      ],
       "x-parser-schema-id": "<anonymous-schema-347>"
     },
-    "name": {
+    "dateCompleted": {
       "type": "string",
-      "description": "name or title",
-      "example": "Call Ricky",
-      "x-parser-schema-id": "<anonymous-schema-349>"
+      "format": "date-time",
+      "description": "date the task was completed",
+      "x-parser-schema-id": "<anonymous-schema-355>"
+    },
+    "dateDue": {
+      "description": "the due date-time (ISO 8601 formated)",
+      "type": "string",
+      "format": "date-time",
+      "x-parser-schema-id": "<anonymous-schema-354>"
     },
     "description": {
       "type": "string",
       "description": "task detailed description",
       "example": "Agenda 1. Something 2. Something Else ...",
-      "x-parser-schema-id": "<anonymous-schema-350>"
+      "x-parser-schema-id": "<anonymous-schema-351>"
+    },
+    "identifier": {
+      "type": "object",
+      "description": "key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.",
+      "example": {
+        "salesforceContactID": "c28834ca-db69-4da8-90ad-75cdc9907298"
+      },
+      "x-parser-schema-id": "<anonymous-schema-344>"
     },
     "keywords": {
       "title": "keywords",
@@ -113,21 +73,9 @@
       ],
       "items": {
         "type": "string",
-        "x-parser-schema-id": "<anonymous-schema-352>"
+        "x-parser-schema-id": "<anonymous-schema-353>"
       },
-      "x-parser-schema-id": "<anonymous-schema-351>"
-    },
-    "dateDue": {
-      "description": "the due date-time (ISO 8601 formated)",
-      "type": "string",
-      "format": "date-time",
-      "x-parser-schema-id": "<anonymous-schema-353>"
-    },
-    "dateCompleted": {
-      "type": "string",
-      "format": "date-time",
-      "description": "date the task was completed",
-      "x-parser-schema-id": "<anonymous-schema-354>"
+      "x-parser-schema-id": "<anonymous-schema-352>"
     },
     "location": {
       "type": "object",
@@ -146,9 +94,61 @@
           "addressSubdivision": "Gotham Heights"
         }
       },
-      "x-parser-schema-id": "<anonymous-schema-355>"
+      "x-parser-schema-id": "<anonymous-schema-356>"
+    },
+    "memberOf": {
+      "type": "object",
+      "x-range": "Plan",
+      "description": "a plan the task is associated with",
+      "example": {
+        "type": "Plan",
+        "identifier": {
+          "redPlan_ID": "xxxx"
+        }
+      },
+      "x-parser-schema-id": "<anonymous-schema-346>"
+    },
+    "name": {
+      "type": "string",
+      "description": "name or title",
+      "example": "Call Ricky",
+      "x-parser-schema-id": "<anonymous-schema-350>"
+    },
+    "participant": {
+      "x-title": "participant",
+      "x-range": [
+        "Person",
+        "RealEstateAgent",
+        "RealEstateTeam",
+        "RealEstateOrganization"
+      ],
+      "description": "Other co-agents with a direct or indirect interest in the action.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "x-parser-schema-id": "<anonymous-schema-349>"
+      },
+      "example": [
+        {
+          "type": "Contact",
+          "name": "Bruce Wayne",
+          "email": "bruce@example.com",
+          "identifier": {
+            "redContact_GUID": "92d0a096-457e-4643-ace8-fa95b6bdb1c5"
+          }
+        }
+      ],
+      "x-parser-schema-id": "<anonymous-schema-348>"
+    },
+    "type": {
+      "type": "string",
+      "description": "The item type (Linked-Data @type)",
+      "enum": [
+        "Task"
+      ],
+      "x-parser-schema-id": "<anonymous-schema-343>"
     }
   },
   "x-parser-schema-id": "Task",
-  "$id": "https://realestate.yodata.me/schema/Task.json"
+  "$id": "http://realestate.yodata.me/schema/Task.json"
 }

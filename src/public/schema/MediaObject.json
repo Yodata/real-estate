@@ -1,6 +1,7 @@
 {
-  "$id": "https://realestate.yodata.me/schema/MediaObject.json",
+  "$id": "http://realestate.yodata.me/schema/MediaObject.json",
   "type": "object",
+  "title": "Thing",
   "summary": "The root type of all Things.",
   "required": [
     "type"
@@ -10,17 +11,18 @@
       "type": "string",
       "format": "uri",
       "description": "the liked data uri for the Thing",
-      "x-parser-schema-id": "<anonymous-schema-137>"
+      "x-parser-schema-id": "<anonymous-schema-138>"
     },
-    "type": {
-      "description": "The item type (Linked-Data @type)",
-      "x-parser-schema-id": "<anonymous-schema-136>",
+    "about": {
       "type": "string",
-      "enum": [
-        "MediaObject",
-        "ImageObject",
-        "DigitalDocument"
-      ]
+      "format": "uri",
+      "description": "URI to the subject of the image or logo",
+      "example": "http://user.example.com/profile/card#me"
+    },
+    "encodingFormat": {
+      "type": "string",
+      "description": "MIME type",
+      "example": "application/zip"
     },
     "id": {
       "description": "the URL to access the item.",
@@ -33,16 +35,15 @@
       "description": "the file name of the object.",
       "example": "fileName.zip"
     },
-    "encodingFormat": {
+    "type": {
+      "description": "The item type (Linked-Data @type)",
+      "x-parser-schema-id": "<anonymous-schema-137>",
       "type": "string",
-      "description": "MIME type",
-      "example": "application/zip"
-    },
-    "about": {
-      "type": "string",
-      "format": "uri",
-      "description": "URI to the subject of the image or logo",
-      "example": "http://user.example.com/profile/card#me"
+      "enum": [
+        "MediaObject",
+        "ImageObject",
+        "DigitalDocument"
+      ]
     },
     "url": {
       "type": "string",
@@ -51,11 +52,5 @@
       "example": "http://user.example.com/public/profile/image.jpg"
     }
   },
-  "title": "MediaObject",
-  "description": "an image, video or document availble for download",
-  "x-subclass": [
-    "ImageObject",
-    "DigitalDocument"
-  ],
-  "x-parser-schema-id": "MediaObject"
+  "x-parser-schema-id": "<anonymous-schema-172>"
 }

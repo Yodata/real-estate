@@ -3,5 +3,5 @@
   "description": "A description of an action that is allowed and might happen in the future.",
   "example": "PotentialActionStatus",
   "x-parser-schema-id": "PotentialActionStatus",
-  "$id": "https://realestate.yodata.me/schema/PotentialActionStatus.json"
+  "$id": "http://realestate.yodata.me/schema/PotentialActionStatus.json"
 }

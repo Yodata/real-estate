@@ -5,16 +5,22 @@
     "generator": "1.9.13",
     "renderer": "react",
     "params": {
-      "baseUrl": "https://exampe.com/schemas/",
+      "baseUrl": "http://realestate.yodata.me/schema/",
+      "sortProperties": true,
+      "generate": {
+        "schemas": true,
+        "messages": true,
+        "topics": false
+      },
       "outputFormats": {
         "json": {
           "enabled": true,
-          "extension": "json",
+          "extension": ".json",
           "basePath": ""
         },
         "yaml": {
           "enabled": true,
-          "extension": "yaml",
+          "extension": ".yaml",
           "basePath": ""
         }
       }
@@ -31,7 +37,7 @@
   },
   "scripts": {
     "cleanup": "rimraf ./__generated__",
-    "generate": "cleanup && npx ag /Users/dave/git/yodata/real-estate/schemas/_asyncapi.yaml ./ -o ./__generated__ --force-write",
+    "generate": "npm run cleanup && npx ag test_data/asyncapi.yaml ./ -o __generated__ --force-write",
     "generate:production-public-schemas": "npx ag /Users/dave/git/yodata/real-estate/schemas/_asyncapi.yaml ./ -o ../../src/public/schema --force-write"
   },
   "devDependencies": {

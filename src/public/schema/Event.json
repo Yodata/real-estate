@@ -4,24 +4,6 @@
   "description": "An event happening at a certain time and location",
   "x-range": "Event",
   "properties": {
-    "type": {
-      "type": "string",
-      "description": "The item type (Linked-Data @type)",
-      "example": "Event",
-      "x-parser-schema-id": "<anonymous-schema-263>"
-    },
-    "name": {
-      "type": "string",
-      "description": "name of the event",
-      "example": "Property Showing 1007 Mountain Gate Rd",
-      "x-parser-schema-id": "<anonymous-schema-264>"
-    },
-    "description": {
-      "type": "string",
-      "description": "event message content",
-      "example": "an example meeting request for 4:00PM to 4:30PM.",
-      "x-parser-schema-id": "<anonymous-schema-265>"
-    },
     "about": {
       "type": "object",
       "description": "a subject of the meeting or event",
@@ -41,21 +23,26 @@
           "priceCurrency": "USD"
         }
       },
-      "x-parser-schema-id": "<anonymous-schema-266>"
-    },
-    "startDate": {
-      "description": "the start date-time (ISO 8601 formated)",
-      "type": "string",
-      "format": "date-time",
-      "example": "2019-08-01T16:00Z",
       "x-parser-schema-id": "<anonymous-schema-267>"
+    },
+    "description": {
+      "type": "string",
+      "description": "event message content",
+      "example": "an example meeting request for 4:00PM to 4:30PM.",
+      "x-parser-schema-id": "<anonymous-schema-266>"
     },
     "endDate": {
       "type": "string",
       "description": "the end date-time (ISO 8601 formated)",
       "format": "date-time",
       "example": "2019-08-01T16:30Z",
-      "x-parser-schema-id": "<anonymous-schema-268>"
+      "x-parser-schema-id": "<anonymous-schema-269>"
+    },
+    "name": {
+      "type": "string",
+      "description": "name of the event",
+      "example": "Property Showing 1007 Mountain Gate Rd",
+      "x-parser-schema-id": "<anonymous-schema-265>"
     },
     "organizer": {
       "title": "organizer",
@@ -66,9 +53,22 @@
         "name": "Bruce Wayne",
         "id": "https://batman.example.com/profile/card#me"
       },
-      "x-parser-schema-id": "<anonymous-schema-269>"
+      "x-parser-schema-id": "<anonymous-schema-270>"
+    },
+    "startDate": {
+      "description": "the start date-time (ISO 8601 formated)",
+      "type": "string",
+      "format": "date-time",
+      "example": "2019-08-01T16:00Z",
+      "x-parser-schema-id": "<anonymous-schema-268>"
+    },
+    "type": {
+      "type": "string",
+      "description": "The item type (Linked-Data @type)",
+      "example": "Event",
+      "x-parser-schema-id": "<anonymous-schema-264>"
     }
   },
   "x-parser-schema-id": "Event",
-  "$id": "https://realestate.yodata.me/schema/Event.json"
+  "$id": "http://realestate.yodata.me/schema/Event.json"
 }

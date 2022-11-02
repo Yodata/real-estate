@@ -4,18 +4,6 @@
   "x-kind": "Service",
   "type": "object",
   "properties": {
-    "type": {
-      "type": "string",
-      "enum": [
-        "Service"
-      ],
-      "x-parser-schema-id": "<anonymous-schema-585>"
-    },
-    "name": {
-      "type": "string",
-      "description": "name of the service.",
-      "x-parser-schema-id": "<anonymous-schema-586>"
-    },
     "areaServed": {
       "type": "object",
       "description": "a physical location",
@@ -35,7 +23,7 @@
           "enum": [
             "Place"
           ],
-          "x-parser-schema-id": "<anonymous-schema-335>"
+          "x-parser-schema-id": "<anonymous-schema-336>"
         },
         "address": {
           "type": "object",
@@ -53,7 +41,7 @@
             "postOfficeBoxNumber": "Box 1234",
             "streetAddress": "1007 Mountain Gate Rd"
           },
-          "x-parser-schema-id": "<anonymous-schema-336>"
+          "x-parser-schema-id": "<anonymous-schema-337>"
         },
         "geo": {
           "type": "object",
@@ -77,12 +65,24 @@
             },
             "box": "(33.5697,-117.775),(33.6018,-117.707)"
           },
-          "x-parser-schema-id": "<anonymous-schema-337>"
+          "x-parser-schema-id": "<anonymous-schema-338>"
         }
       },
       "x-parser-schema-id": "Place"
+    },
+    "name": {
+      "type": "string",
+      "description": "name of the service.",
+      "x-parser-schema-id": "<anonymous-schema-587>"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "Service"
+      ],
+      "x-parser-schema-id": "<anonymous-schema-586>"
     }
   },
   "x-parser-schema-id": "Service",
-  "$id": "https://realestate.yodata.me/schema/Service.json"
+  "$id": "http://realestate.yodata.me/schema/Service.json"
 }

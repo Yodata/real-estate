@@ -10,10 +10,6 @@ description: >
   and end dates to indicate when they are active, e.g. to define a limited
   calendar of events.
 properties:
-  type:
-    type: string
-    description: The item type (Linked-Data @type)
-    x-parser-schema-id: <anonymous-schema-250>
   byDay:
     description: Defines the day(s) of the week on which a recurring Event takes place
     type: array
@@ -26,12 +22,12 @@ properties:
         - Wednesday
         - Thursday
         - Friday
-      x-parser-schema-id: <anonymous-schema-580>
+      x-parser-schema-id: <anonymous-schema-581>
     example:
       - Monday
       - Wednesday
       - Friday
-    x-parser-schema-id: <anonymous-schema-579>
+    x-parser-schema-id: <anonymous-schema-580>
   byMonth:
     description: >-
       Defines the month(s) of the year on which a recurring Event takes place.
@@ -52,10 +48,10 @@ properties:
         - 10
         - 11
         - 12
-      x-parser-schema-id: <anonymous-schema-582>
+      x-parser-schema-id: <anonymous-schema-583>
     example:
       - 1
-    x-parser-schema-id: <anonymous-schema-581>
+    x-parser-schema-id: <anonymous-schema-582>
   byMonthDay:
     type: array
     description: >-
@@ -63,8 +59,12 @@ properties:
       Specified as an Integer between 1-31.
     items:
       type: number
-      x-parser-schema-id: <anonymous-schema-584>
-    x-parser-schema-id: <anonymous-schema-583>
+      x-parser-schema-id: <anonymous-schema-585>
+    x-parser-schema-id: <anonymous-schema-584>
+  type:
+    type: string
+    description: The item type (Linked-Data @type)
+    x-parser-schema-id: <anonymous-schema-251>
 x-parser-schema-id: Schedule
-$id: https://realestate.yodata.me/schema/Schedule.yaml
+$id: http://realestate.yodata.me/schema/Schedule.yaml
 

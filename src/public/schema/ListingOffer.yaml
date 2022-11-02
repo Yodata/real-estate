@@ -1,4 +1,4 @@
-$id: https://realestate.yodata.me/schema/ListingOffer.yaml
+$id: http://realestate.yodata.me/schema/ListingOffer.yaml
 type: object
 title: Thing
 summary: The root type of all Things.
@@ -15,15 +15,17 @@ properties:
     type: string
     format: uri
     description: the liked data uri for the Thing
-    x-parser-schema-id: <anonymous-schema-137>
-  type:
-    type: string
-    description: The item type (Linked-Data @type)
-    x-parser-schema-id: <anonymous-schema-136>
-    enum:
-      - ListingOffer
+    x-parser-schema-id: <anonymous-schema-138>
   agent:
     description: the Person or Contact who makes the offer
+  object:
+    type: object
+    x-range:
+      - Comment
+      - Question
+    example:
+      type: Comment
+      text: take it or leave it.
   offerPrice:
     description: the offer price or range
     type: object
@@ -35,35 +37,27 @@ properties:
         description: PriceSpecification
         enum:
           - PriceSpecification
-        x-parser-schema-id: <anonymous-schema-366>
+        x-parser-schema-id: <anonymous-schema-367>
       minPrice:
         type: number
         description: the low price offered if price is a range.
         example: 75000
-        x-parser-schema-id: <anonymous-schema-367>
+        x-parser-schema-id: <anonymous-schema-368>
       maxPrice:
         type: number
         description: the high price offered if price is a range.
         example: 100000
-        x-parser-schema-id: <anonymous-schema-368>
+        x-parser-schema-id: <anonymous-schema-369>
       price:
         type: number
         description: the offer price.
         example: 75000
-        x-parser-schema-id: <anonymous-schema-369>
+        x-parser-schema-id: <anonymous-schema-370>
       priceCurrency:
         type: string
         description: use ISO4217
         example: USD
-        x-parser-schema-id: <anonymous-schema-370>
-  object:
-    type: object
-    x-range:
-      - Comment
-      - Question
-    example:
-      type: Comment
-      text: take it or leave it.
+        x-parser-schema-id: <anonymous-schema-371>
   propertyListing:
     type: object
     description: the listing on which the offer is made.
@@ -91,5 +85,11 @@ properties:
       type: RealEstateAgent
       name: Randy RealEstateAgent
       id: https://{agentid}.example.com/profile/card#me
-x-parser-schema-id: ListingOffer
+  type:
+    type: string
+    description: The item type (Linked-Data @type)
+    x-parser-schema-id: <anonymous-schema-137>
+    enum:
+      - ListingOffer
+x-parser-schema-id: <anonymous-schema-299>
 

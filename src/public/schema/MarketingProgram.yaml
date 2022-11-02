@@ -1,4 +1,4 @@
-$id: https://realestate.yodata.me/schema/MarketingProgram.yaml
+$id: http://realestate.yodata.me/schema/MarketingProgram.yaml
 type: object
 summary: The root type of all Things.
 required:
@@ -13,17 +13,24 @@ properties:
     type: string
     format: uri
     description: the liked data uri for the Thing
-    x-parser-schema-id: <anonymous-schema-137>
-  type:
+    x-parser-schema-id: <anonymous-schema-138>
+  creator:
+    description: creator / author of the item
     type: string
-    description: The item type (Linked-Data @type)
-    x-parser-schema-id: <anonymous-schema-136>
-    enum:
-      - MarketingProgram
-  name:
+    format: uri
+    example: http://{user}.example.com/profile/card#me
+  dateCreated:
+    description: The date on which the item was created.
     type: string
-    description: name of the item
-    example: Market Activity Report 508 Homewood Ave
+    format: date-time
+    x-parser-schema-id: <anonymous-schema-205>
+  dateModified:
+    description: >-
+      The date on which the item was most recently modified or when the item's
+      entry was modified within a DataFeed.
+    type: string
+    format: date-time
+    x-parser-schema-id: <anonymous-schema-206>
   identifier:
     type: object
     description: >-
@@ -32,7 +39,7 @@ properties:
       statements on the record, or the entity associated to the record.
     example:
       salesforceContactID: c28834ca-db69-4da8-90ad-75cdc9907298
-    x-parser-schema-id: <anonymous-schema-202>
+    x-parser-schema-id: <anonymous-schema-203>
   member:
     description: array of program memberships
     x-range: ProgramMembership
@@ -48,35 +55,35 @@ properties:
               description: a role played by the member in the memberOf group
               enum:
                 - OrganizationRole
-              x-parser-schema-id: <anonymous-schema-306>
+              x-parser-schema-id: <anonymous-schema-307>
             roleName:
               type: string
               description: the role name
               example: Owner
-              x-parser-schema-id: <anonymous-schema-307>
+              x-parser-schema-id: <anonymous-schema-308>
             memberOf:
               description: the org or group where the role is performed
               type: object
               example:
                 type: RealEstateOrganization
                 id: http://orgid.example.com/profile/card#me
-              x-parser-schema-id: <anonymous-schema-308>
+              x-parser-schema-id: <anonymous-schema-309>
             member:
               description: member object or id
               type: string
               format: uri
               example: https://memberid.example.com/profile/card#me
-              x-parser-schema-id: <anonymous-schema-309>
+              x-parser-schema-id: <anonymous-schema-310>
             startDate:
               type: string
               format: date-time
               description: date the member began performing this role
-              x-parser-schema-id: <anonymous-schema-310>
+              x-parser-schema-id: <anonymous-schema-311>
             endDate:
               type: string
               format: date-time
               description: date the member stopped performing the role
-              x-parser-schema-id: <anonymous-schema-311>
+              x-parser-schema-id: <anonymous-schema-312>
           x-parser-schema-id: OrganizationRole
         - title: ProgramMembership
           description: >-
@@ -121,24 +128,17 @@ properties:
                   url: https://agentwebsite.example.com
             memberOf:
               x-range: MarketingProgram
-          x-parser-schema-id: <anonymous-schema-383>
+          x-parser-schema-id: <anonymous-schema-384>
       x-parser-schema-id: ProgramMembership
-  creator:
-    description: creator / author of the item
+  name:
     type: string
-    format: uri
-    example: http://{user}.example.com/profile/card#me
-  dateCreated:
-    description: The date on which the item was created.
+    description: name of the item
+    example: Market Activity Report 508 Homewood Ave
+  type:
     type: string
-    format: date-time
-    x-parser-schema-id: <anonymous-schema-204>
-  dateModified:
-    description: >-
-      The date on which the item was most recently modified or when the item's
-      entry was modified within a DataFeed.
-    type: string
-    format: date-time
-    x-parser-schema-id: <anonymous-schema-205>
-x-parser-schema-id: MarketingProgram
+    description: The item type (Linked-Data @type)
+    x-parser-schema-id: <anonymous-schema-137>
+    enum:
+      - MarketingProgram
+x-parser-schema-id: <anonymous-schema-306>
 

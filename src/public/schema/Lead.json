@@ -4,13 +4,31 @@
   "x-range": "Lead",
   "description": "a sales opportunity (object) offered by a sender to a recipient.",
   "properties": {
-    "type": {
+    "dateAccepted": {
       "type": "string",
-      "enum": [
-        "Lead"
-      ],
-      "description": "Lead",
-      "x-parser-schema-id": "<anonymous-schema-280>"
+      "description": "The date/time the item was accepted by the recipient",
+      "x-range": "DateTime",
+      "example": "2019-11-25T04:23:32.000Z",
+      "x-parser-schema-id": "<anonymous-schema-286>"
+    },
+    "dateReceived": {
+      "type": "string",
+      "description": "The date/time the item was received by it's recipient",
+      "x-range": "DateTime",
+      "example": "2019-11-25T04:23:32.000Z",
+      "x-parser-schema-id": "<anonymous-schema-289>"
+    },
+    "dateRejected": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The date/time the item was rejected by the recipient",
+      "x-parser-schema-id": "<anonymous-schema-287>"
+    },
+    "dateSent": {
+      "description": "the date the lead was sent",
+      "type": "string",
+      "format": "date-time",
+      "x-parser-schema-id": "<anonymous-schema-288>"
     },
     "identifier": {
       "type": "object",
@@ -18,73 +36,7 @@
       "example": {
         "salesforceContactID": "c28834ca-db69-4da8-90ad-75cdc9907298"
       },
-      "x-parser-schema-id": "<anonymous-schema-202>"
-    },
-    "object": {
-      "description": "the lead (Contact)",
-      "x-range": [
-        "Contact"
-      ],
-      "type": "object",
-      "example": {
-        "type": "Contact",
-        "name": "Joe Smith",
-        "telephone": "731-620-9877 x6155",
-        "email": "Giuseppe.Lang62@hotmail.com"
-      },
-      "x-parser-schema-id": "<anonymous-schema-281>"
-    },
-    "recipient": {
-      "description": "the lead recipient",
-      "type": "string",
-      "format": "uri",
-      "example": "http://{lead-recipient}.example.com/profile/card#me",
-      "x-parser-schema-id": "<anonymous-schema-282>"
-    },
-    "sender": {
-      "description": "the lead provider",
-      "type": "string",
-      "format": "uri",
-      "example": "http://{lead-sender}.example.com/profile/card#me",
-      "x-parser-schema-id": "<anonymous-schema-283>"
-    },
-    "owner": {
-      "description": "the original owner of the lead",
-      "x-range": [
-        "RealEstateOrganization",
-        "RealEstateAgent",
-        "Person"
-      ],
-      "type": "string",
-      "format": "uri",
-      "example": "http://{lead-owner}.example.com/profile/card#me",
-      "x-parser-schema-id": "<anonymous-schema-284>"
-    },
-    "dateAccepted": {
-      "type": "string",
-      "description": "The date/time the item was accepted by the recipient",
-      "x-range": "DateTime",
-      "example": "2019-11-25T04:23:32.000Z",
-      "x-parser-schema-id": "<anonymous-schema-285>"
-    },
-    "dateRejected": {
-      "type": "string",
-      "format": "date-time",
-      "description": "The date/time the item was rejected by the recipient",
-      "x-parser-schema-id": "<anonymous-schema-286>"
-    },
-    "dateSent": {
-      "description": "the date the lead was sent",
-      "type": "string",
-      "format": "date-time",
-      "x-parser-schema-id": "<anonymous-schema-287>"
-    },
-    "dateReceived": {
-      "type": "string",
-      "description": "The date/time the item was received by it's recipient",
-      "x-range": "DateTime",
-      "example": "2019-11-25T04:23:32.000Z",
-      "x-parser-schema-id": "<anonymous-schema-288>"
+      "x-parser-schema-id": "<anonymous-schema-203>"
     },
     "leadSource": {
       "description": "lead origin, may be a website event or a thing such as a website, zillow, mobile applicaton.",
@@ -103,11 +55,59 @@
             "text": "Help me I'm trapped inside documentation."
           }
         },
-        "x-parser-schema-id": "<anonymous-schema-290>"
+        "x-parser-schema-id": "<anonymous-schema-291>"
       },
-      "x-parser-schema-id": "<anonymous-schema-289>"
+      "x-parser-schema-id": "<anonymous-schema-290>"
+    },
+    "object": {
+      "description": "the lead (Contact)",
+      "x-range": [
+        "Contact"
+      ],
+      "type": "object",
+      "example": {
+        "type": "Contact",
+        "name": "Joe Smith",
+        "telephone": "731-620-9877 x6155",
+        "email": "Giuseppe.Lang62@hotmail.com"
+      },
+      "x-parser-schema-id": "<anonymous-schema-282>"
+    },
+    "owner": {
+      "description": "the original owner of the lead",
+      "x-range": [
+        "RealEstateOrganization",
+        "RealEstateAgent",
+        "Person"
+      ],
+      "type": "string",
+      "format": "uri",
+      "example": "http://{lead-owner}.example.com/profile/card#me",
+      "x-parser-schema-id": "<anonymous-schema-285>"
+    },
+    "recipient": {
+      "description": "the lead recipient",
+      "type": "string",
+      "format": "uri",
+      "example": "http://{lead-recipient}.example.com/profile/card#me",
+      "x-parser-schema-id": "<anonymous-schema-283>"
+    },
+    "sender": {
+      "description": "the lead provider",
+      "type": "string",
+      "format": "uri",
+      "example": "http://{lead-sender}.example.com/profile/card#me",
+      "x-parser-schema-id": "<anonymous-schema-284>"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "Lead"
+      ],
+      "description": "Lead",
+      "x-parser-schema-id": "<anonymous-schema-281>"
     }
   },
   "x-parser-schema-id": "Lead",
-  "$id": "https://realestate.yodata.me/schema/Lead.json"
+  "$id": "http://realestate.yodata.me/schema/Lead.json"
 }

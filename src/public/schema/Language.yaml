@@ -3,22 +3,22 @@ type: object
 description: a written or spoken Language
 x-range: Language
 properties:
+  additionalName:
+    type: string
+    description: BCP 47 language code
+    example: en-US
+    x-parser-schema-id: <anonymous-schema-280>
+  name:
+    type: string
+    description: the display name of the language
+    example: English
+    x-parser-schema-id: <anonymous-schema-279>
   type:
     type: string
     description: Language
     enum:
       - Language
-    x-parser-schema-id: <anonymous-schema-277>
-  name:
-    type: string
-    description: the display name of the language
-    example: English
     x-parser-schema-id: <anonymous-schema-278>
-  additionalName:
-    type: string
-    description: BCP 47 language code
-    example: en-US
-    x-parser-schema-id: <anonymous-schema-279>
 x-parser-schema-id: Language
-$id: https://realestate.yodata.me/schema/Language.yaml
+$id: http://realestate.yodata.me/schema/Language.yaml
 

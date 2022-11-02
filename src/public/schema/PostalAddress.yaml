@@ -1,61 +1,9 @@
-$id: https://realestate.yodata.me/schema/PostalAddress.yaml
+$id: http://realestate.yodata.me/schema/PostalAddress.yaml
 title: PostalAddress
 type: object
 x-range: PostalAddress
 description: A physical address.
-required:
-  - type
 properties:
-  type:
-    type: string
-    const: PostalAddress
-    x-parser-schema-id: <anonymous-schema-357>
-  streetAddress:
-    type: string
-    description: the street number and name.
-    examples:
-      - 5046 Ottis Point
-      - 166 Marion Burg
-      - 93044 Haley Stream
-    x-parser-schema-id: <anonymous-schema-358>
-  postOfficeBoxNumber:
-    type: string
-    description: The post office box number for PO box addresses.
-    examples:
-      - Box 1234
-      - Apt. 161
-      - Apt. 623
-    x-parser-schema-id: <anonymous-schema-359>
-  addressRegion:
-    type: string
-    description: State or Province.
-    examples:
-      - New Jersey
-      - California
-      - MI
-      - null
-    x-parser-schema-id: <anonymous-schema-360>
-  addressLocality:
-    type: string
-    description: City, Township.
-    examples:
-      - Gotham City
-      - Kulasmouth
-      - Heidistad
-      - Altamonte Springs
-      - West Ahmed
-      - Blaiseview
-    x-parser-schema-id: <anonymous-schema-361>
-  postalCode:
-    type: string
-    description: Zip/Post Code
-    examples:
-      - '10010'
-      - '38859'
-      - '40387'
-      - 50239-7698
-      - null
-    x-parser-schema-id: <anonymous-schema-362>
   addressCountry:
     type: string
     description: >-
@@ -68,7 +16,7 @@ properties:
       - EG
       - SJ
       - VN
-    x-parser-schema-id: <anonymous-schema-363>
+    x-parser-schema-id: <anonymous-schema-364>
   addressCounty:
     type: string
     description: the county (us real estate extension)
@@ -77,7 +25,28 @@ properties:
       - Buckinghamshire
       - Borders
       - null
-    x-parser-schema-id: <anonymous-schema-364>
+    x-parser-schema-id: <anonymous-schema-365>
+  addressLocality:
+    type: string
+    description: City, Township.
+    examples:
+      - Gotham City
+      - Kulasmouth
+      - Heidistad
+      - Altamonte Springs
+      - West Ahmed
+      - Blaiseview
+    x-parser-schema-id: <anonymous-schema-362>
+  addressRegion:
+    type: string
+    description: State or Province.
+    example: New Jersey
+    examples:
+      - New Jersey
+      - California
+      - MI
+      - null
+    x-parser-schema-id: <anonymous-schema-361>
   addressSubdivision:
     type: string
     description: the subdivision or neighborhood (us real estate extension)
@@ -85,5 +54,38 @@ properties:
       - Gotham Heights
       - null
       - null
-    x-parser-schema-id: <anonymous-schema-365>
+    x-parser-schema-id: <anonymous-schema-366>
+  postOfficeBoxNumber:
+    type: string
+    description: The post office box number for PO box addresses.
+    examples:
+      - Box 1234
+      - Apt. 161
+      - Apt. 623
+    x-parser-schema-id: <anonymous-schema-360>
+  postalCode:
+    type: string
+    description: Zip/Post Code
+    examples:
+      - '10010'
+      - '38859'
+      - '40387'
+      - 50239-7698
+      - null
+    x-parser-schema-id: <anonymous-schema-363>
+  streetAddress:
+    type: string
+    description: the street number and name.
+    example: 1007 Mountain Gate Rd
+    examples:
+      - 5046 Ottis Point
+      - 166 Marion Burg
+      - 93044 Haley Stream
+    x-parser-schema-id: <anonymous-schema-359>
+  type:
+    type: string
+    enum:
+      - PostalAddress
+    x-parser-schema-id: <anonymous-schema-358>
 x-parser-schema-id: PostalAddress
+

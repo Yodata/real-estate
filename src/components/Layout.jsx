@@ -37,6 +37,7 @@ const navigation = [
       { title: 'marketingpreferences', href: '/docs/topic/marketingpreferences' },
       { title: 'profile', href: '/docs/topic/profile' },
       { title: 'servicearea', href: '/docs/topic/servicearea' },
+      { title: 'transaction', href: '/docs/topic/transaction' },
       { title: 'using-service-area', href: '/docs/topic/using-service-area' },
       { title: 'website', href: '/docs/topic/website' }
     ]

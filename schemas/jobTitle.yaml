@@ -1,4 +1,4 @@
-$id: htttp://realestate.yodata.me/schema/jobTitle
+$id: http://realestate.yodata.me/schema/jobTitle
 title: jobTitle
 description: job tiles associated with the item
 type: array

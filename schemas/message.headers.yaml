@@ -1,54 +1,36 @@
+$id: /schema/publish-headers
 type: object
-required:
-  - topic
-  - data
 properties:
   topic:
     title: topic
     type: string
     description: the event topic which determines the schema of event.data
 
-  time:
-    type: string
-    format: date-time
-    description: date & time the event was produced
-
-  agent:
+  recipient:
     type: string
     format: uri
-    description: the user,tema or organization who sent the event
-    example: https://agentid.example.com/profile/card#me
-
-  instrument:
-    type: string
-    format: uri
-    description: the service which created the event
-    example: https://vendorid.example.com/profile/card#me
+    description: >-
+        the user, team or organization who owns the data.
+        Note, the recipient is a user and not another service. The user determines which other services they want to receive the event.
+    examples:
+      - http://sally.example.com/profile/card#me
+      - http://gotham-realty.example.com/profile/card#me
+      - http://team-batman.example.com/profile/card#me
 
   source:
     type: string
     format: uri
-    description: an agent, team or organization who received a copy of the event
-    example: https://companyid.example.com/profile/card#me
-
-  originalRecipient:
-    type: string
-    format: uri
-    description: the original recipient of the event with this id
-    example: https://agentid.example.com/profile/card#me
-
-  id:
-    type: string
-    format: uri
-    description: the shared identifier of the event, akd the event id
-    example: https://instrumentid.example.com/publish/xxxxxxxxxxxxx
-
-  '@id':
-    type: string
-    format: uri
-    description: the url of your instance of the event in your inbox
-    example: https://yourpod.example.com/inbox/xxxxxxxxxxxxx
+    description: addition parties who should receive the event.
+    examples:
+      - http://sally.example.com/profile/card#me
+      - http://gotham-realty.example.com/profile/card#me
+      - http://team-batman.example.com/profile/card#me
 
   data:
     type: object
     description: event payload, typically an Action
+
+required:
+  - topic
+  - recipient
+  - data

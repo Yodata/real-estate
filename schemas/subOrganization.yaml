@@ -1,4 +1,4 @@
-$id: htttp://realestate.yodata.me/schema/subOrganization
+$id: http://realestate.yodata.me/schema/subOrganization
 title: subOrganization
 description: child organizations of the organization
 type: array

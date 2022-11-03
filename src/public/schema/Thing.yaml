@@ -9,10 +9,10 @@ properties:
     type: string
     format: uri
     description: the liked data uri for the Thing
-    x-parser-schema-id: <anonymous-schema-138>
+    x-parser-schema-id: <anonymous-schema-137>
   type:
     type: string
     description: The item type (Linked-Data @type)
-    x-parser-schema-id: <anonymous-schema-137>
+    x-parser-schema-id: <anonymous-schema-136>
 x-parser-schema-id: Thing
 

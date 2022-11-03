@@ -8,8 +8,8 @@
       "baseUrl": "http://realestate.yodata.me/schema/",
       "sortProperties": true,
       "generate": {
-        "schemas": true,
-        "messages": true,
+        "schemas": false,
+        "messages": false,
         "topics": false
       },
       "outputFormats": {
@@ -38,7 +38,7 @@
   "scripts": {
     "cleanup": "rimraf ./__generated__",
     "generate": "npm run cleanup && npx ag test_data/asyncapi.yaml ./ -o __generated__ --force-write",
-    "generate:production-public-schemas": "npx ag /Users/dave/git/yodata/real-estate/schemas/_asyncapi.yaml ./ -o ../../src/public/schema --force-write"
+    "generate:production-public-schemas": "npx ag /Users/dave/git/yodata/real-estate/schemas/asyncapi.yaml ./ -o ../../src/public/schema --force-write"
   },
   "devDependencies": {
     "eslint": "^8.26.0",

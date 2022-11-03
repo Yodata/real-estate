@@ -8,13 +8,13 @@
       "type": "string",
       "description": "BCP 47 language code",
       "example": "en-US",
-      "x-parser-schema-id": "<anonymous-schema-280>"
+      "x-parser-schema-id": "<anonymous-schema-279>"
     },
     "name": {
       "type": "string",
       "description": "the display name of the language",
       "example": "English",
-      "x-parser-schema-id": "<anonymous-schema-279>"
+      "x-parser-schema-id": "<anonymous-schema-278>"
     },
     "type": {
       "type": "string",
@@ -22,7 +22,7 @@
       "enum": [
         "Language"
       ],
-      "x-parser-schema-id": "<anonymous-schema-278>"
+      "x-parser-schema-id": "<anonymous-schema-277>"
     }
   },
   "x-parser-schema-id": "Language",

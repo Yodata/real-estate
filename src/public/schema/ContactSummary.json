@@ -9,20 +9,20 @@
       "format": "uri",
       "description": "ASSOC-ID",
       "example": "https://{userid}.example.com/profile/card#me",
-      "x-parser-schema-id": "<anonymous-schema-249>"
+      "x-parser-schema-id": "<anonymous-schema-248>"
     },
     "author": {
       "type": "string",
       "format": "uri",
       "description": "OFFICE-ID",
       "example": "https://{officeid}.example.com/profile/card#me",
-      "x-parser-schema-id": "<anonymous-schema-244>"
+      "x-parser-schema-id": "<anonymous-schema-243>"
     },
     "batchId": {
       "type": "string",
       "description": "BATCH-ID",
       "example": "0001",
-      "x-parser-schema-id": "<anonymous-schema-243>"
+      "x-parser-schema-id": "<anonymous-schema-242>"
     },
     "object": {
       "type": "object",
@@ -35,47 +35,47 @@
         "type": {
           "type": "string",
           "description": "The item type (Linked-Data @type)",
-          "x-parser-schema-id": "<anonymous-schema-251>"
+          "x-parser-schema-id": "<anonymous-schema-250>"
         },
         "givenName": {
           "type": "string",
           "description": "First Name of a person",
           "example": "Glenn",
-          "x-parser-schema-id": "<anonymous-schema-230>"
+          "x-parser-schema-id": "<anonymous-schema-229>"
         },
         "additionalName": {
           "type": "string",
           "description": "CUSTOMER-MIDDLE-INITIAL",
           "example": "M",
-          "x-parser-schema-id": "<anonymous-schema-252>"
+          "x-parser-schema-id": "<anonymous-schema-251>"
         },
         "familyName": {
           "type": "string",
           "description": "Last Name of a person",
           "example": "Miller",
           "maxLength": 50,
-          "x-parser-schema-id": "<anonymous-schema-253>"
+          "x-parser-schema-id": "<anonymous-schema-252>"
         },
         "gender": {
           "type": "string",
           "description": "gender of the Customer (why?)",
           "example": "M",
-          "x-parser-schema-id": "<anonymous-schema-254>"
+          "x-parser-schema-id": "<anonymous-schema-253>"
         }
       },
-      "x-parser-schema-id": "<anonymous-schema-250>"
+      "x-parser-schema-id": "<anonymous-schema-249>"
     },
     "position": {
       "type": "number",
       "description": "ADJUSTMENT-SEQUENCE",
       "example": 1,
-      "x-parser-schema-id": "<anonymous-schema-248>"
+      "x-parser-schema-id": "<anonymous-schema-247>"
     },
     "transactionId": {
       "type": "string",
       "description": "TRANS-NO",
       "example": "0000097123",
-      "x-parser-schema-id": "<anonymous-schema-246>"
+      "x-parser-schema-id": "<anonymous-schema-245>"
     },
     "transactionRole": {
       "type": "string",
@@ -89,14 +89,14 @@
         "Buyer",
         "Seller"
       ],
-      "x-parser-schema-id": "<anonymous-schema-247>"
+      "x-parser-schema-id": "<anonymous-schema-246>"
     },
     "transactionType": {
       "type": "string",
       "description": "TRANS-TYPE",
       "x-range": "TransactionType",
       "example": "SalesTransactionType",
-      "x-parser-schema-id": "<anonymous-schema-245>"
+      "x-parser-schema-id": "<anonymous-schema-244>"
     },
     "type": {
       "type": "string",
@@ -104,7 +104,7 @@
       "enum": [
         "ContactSummaryReport"
       ],
-      "x-parser-schema-id": "<anonymous-schema-242>"
+      "x-parser-schema-id": "<anonymous-schema-241>"
     }
   },
   "x-parser-schema-id": "ContactSummary",

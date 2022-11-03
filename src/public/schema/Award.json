@@ -11,14 +11,14 @@
         "Organization"
       ],
       "example": "http://agent.example.com/profile/card#me",
-      "x-parser-schema-id": "<anonymous-schema-119>"
+      "x-parser-schema-id": "<anonymous-schema-118>"
     },
     "dateAwarded": {
       "type": "string",
       "description": "date the award was presented or announced.",
       "x-range": "DateTime",
       "example": "2019-11-25T04:23:32.000Z",
-      "x-parser-schema-id": "<anonymous-schema-118>"
+      "x-parser-schema-id": "<anonymous-schema-117>"
     },
     "identifier": {
       "example": {
@@ -26,13 +26,13 @@
       },
       "type": "object",
       "description": "key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.",
-      "x-parser-schema-id": "<anonymous-schema-122>"
+      "x-parser-schema-id": "<anonymous-schema-121>"
     },
     "name": {
       "example": "Top 1%",
       "description": "name of the award",
       "type": "string",
-      "x-parser-schema-id": "<anonymous-schema-117>"
+      "x-parser-schema-id": "<anonymous-schema-116>"
     },
     "recipient": {
       "type": "array",
@@ -49,9 +49,9 @@
           "name": "Randy RealEstateAgent",
           "id": "https://{userid}.example.com/profile/card#me"
         },
-        "x-parser-schema-id": "<anonymous-schema-121>"
+        "x-parser-schema-id": "<anonymous-schema-120>"
       },
-      "x-parser-schema-id": "<anonymous-schema-120>"
+      "x-parser-schema-id": "<anonymous-schema-119>"
     },
     "type": {
       "type": "string",
@@ -59,7 +59,7 @@
         "Award"
       ],
       "description": "\"AwardAction\"",
-      "x-parser-schema-id": "<anonymous-schema-116>"
+      "x-parser-schema-id": "<anonymous-schema-115>"
     }
   },
   "x-parser-schema-id": "Award",

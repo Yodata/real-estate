@@ -7,21 +7,21 @@
       "type": "string",
       "format": "date-time",
       "description": "date the member stopped performing the role",
-      "x-parser-schema-id": "<anonymous-schema-312>"
+      "x-parser-schema-id": "<anonymous-schema-311>"
     },
     "member": {
       "description": "member object or id",
       "type": "string",
       "format": "uri",
       "example": "https://{agent}.example.com/profile/card#me",
-      "x-parser-schema-id": "<anonymous-schema-532>"
+      "x-parser-schema-id": "<anonymous-schema-531>"
     },
     "memberOf": {
       "description": "the org or group where the role is performed",
       "type": "string",
       "format": "uri",
       "example": "https://{team-id}.example.com/profile/card#me",
-      "x-parser-schema-id": "<anonymous-schema-531>"
+      "x-parser-schema-id": "<anonymous-schema-530>"
     },
     "roleName": {
       "description": "the role name",
@@ -32,13 +32,13 @@
         "TeamAdmin",
         "TeamOwner"
       ],
-      "x-parser-schema-id": "<anonymous-schema-530>"
+      "x-parser-schema-id": "<anonymous-schema-529>"
     },
     "startDate": {
       "type": "string",
       "format": "date-time",
       "description": "date the member began performing this role",
-      "x-parser-schema-id": "<anonymous-schema-311>"
+      "x-parser-schema-id": "<anonymous-schema-310>"
     },
     "type": {
       "type": "string",
@@ -47,9 +47,9 @@
         "RealEstateTeamMembership"
       ],
       "example": "RealEstateTeamMembership",
-      "x-parser-schema-id": "<anonymous-schema-529>"
+      "x-parser-schema-id": "<anonymous-schema-528>"
     }
   },
-  "x-parser-schema-id": "<anonymous-schema-528>",
+  "x-parser-schema-id": "<anonymous-schema-527>",
   "$id": "http://realestate.yodata.me/schema/RealEstateTeamMembership.json"
 }

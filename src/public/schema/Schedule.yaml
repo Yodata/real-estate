@@ -22,12 +22,12 @@ properties:
         - Wednesday
         - Thursday
         - Friday
-      x-parser-schema-id: <anonymous-schema-581>
+      x-parser-schema-id: <anonymous-schema-580>
     example:
       - Monday
       - Wednesday
       - Friday
-    x-parser-schema-id: <anonymous-schema-580>
+    x-parser-schema-id: <anonymous-schema-579>
   byMonth:
     description: >-
       Defines the month(s) of the year on which a recurring Event takes place.
@@ -48,10 +48,10 @@ properties:
         - 10
         - 11
         - 12
-      x-parser-schema-id: <anonymous-schema-583>
+      x-parser-schema-id: <anonymous-schema-582>
     example:
       - 1
-    x-parser-schema-id: <anonymous-schema-582>
+    x-parser-schema-id: <anonymous-schema-581>
   byMonthDay:
     type: array
     description: >-
@@ -59,12 +59,12 @@ properties:
       Specified as an Integer between 1-31.
     items:
       type: number
-      x-parser-schema-id: <anonymous-schema-585>
-    x-parser-schema-id: <anonymous-schema-584>
+      x-parser-schema-id: <anonymous-schema-584>
+    x-parser-schema-id: <anonymous-schema-583>
   type:
     type: string
     description: The item type (Linked-Data @type)
-    x-parser-schema-id: <anonymous-schema-251>
+    x-parser-schema-id: <anonymous-schema-250>
 x-parser-schema-id: Schedule
 $id: http://realestate.yodata.me/schema/Schedule.yaml
 

@@ -1,4 +1,4 @@
-$id: htttp://realestate.yodata.me/schema/Thing
+$id: http://realestate.yodata.me/schema/Thing
 type: object
 title: Thing
 summary: The root type of all Things.

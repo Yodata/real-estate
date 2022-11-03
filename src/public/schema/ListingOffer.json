@@ -17,7 +17,7 @@
       "type": "string",
       "format": "uri",
       "description": "the liked data uri for the Thing",
-      "x-parser-schema-id": "<anonymous-schema-138>"
+      "x-parser-schema-id": "<anonymous-schema-137>"
     },
     "agent": {
       "description": "the Person or Contact who makes the offer"
@@ -45,31 +45,31 @@
           "enum": [
             "PriceSpecification"
           ],
-          "x-parser-schema-id": "<anonymous-schema-367>"
+          "x-parser-schema-id": "<anonymous-schema-366>"
         },
         "minPrice": {
           "type": "number",
           "description": "the low price offered if price is a range.",
           "example": 75000,
-          "x-parser-schema-id": "<anonymous-schema-368>"
+          "x-parser-schema-id": "<anonymous-schema-367>"
         },
         "maxPrice": {
           "type": "number",
           "description": "the high price offered if price is a range.",
           "example": 100000,
-          "x-parser-schema-id": "<anonymous-schema-369>"
+          "x-parser-schema-id": "<anonymous-schema-368>"
         },
         "price": {
           "type": "number",
           "description": "the offer price.",
           "example": 75000,
-          "x-parser-schema-id": "<anonymous-schema-370>"
+          "x-parser-schema-id": "<anonymous-schema-369>"
         },
         "priceCurrency": {
           "type": "string",
           "description": "use ISO4217",
           "example": "USD",
-          "x-parser-schema-id": "<anonymous-schema-371>"
+          "x-parser-schema-id": "<anonymous-schema-370>"
         }
       }
     },
@@ -109,11 +109,11 @@
     "type": {
       "type": "string",
       "description": "The item type (Linked-Data @type)",
-      "x-parser-schema-id": "<anonymous-schema-137>",
+      "x-parser-schema-id": "<anonymous-schema-136>",
       "enum": [
         "ListingOffer"
       ]
     }
   },
-  "x-parser-schema-id": "<anonymous-schema-299>"
+  "x-parser-schema-id": "<anonymous-schema-298>"
 }

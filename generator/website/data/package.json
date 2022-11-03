@@ -14,7 +14,7 @@
     "merge-anything": "^5.0.4"
   },
   "scripts": {
-    "test": "rimraf ./__generated__ && npx ag ../../src/schemas/_asyncapi.yaml ./ -o ./__generated__ --force-write"
+    "test": "rimraf ./__generated__ && npx ag ../../src/schemas/asyncapi.yaml ./ -o ./__generated__ --force-write"
   },
   "devDependencies": {
     "eslint": "^8.26.0",

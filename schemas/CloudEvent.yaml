@@ -18,7 +18,7 @@ properties:
   agent:
     type: string
     format: uri
-    description: the user,tema or organization who sent the event
+    description: the user, team, or organization who sent the event
     example: https://agentid.example.com/profile/card#me
 
   instrument:

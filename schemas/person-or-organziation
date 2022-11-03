@@ -1,0 +1,5 @@
+$id: PersonOrOrganization
+type: object
+oneOf:
+  - $ref: Person
+  - $ref: Organization

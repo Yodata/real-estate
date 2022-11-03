@@ -9,7 +9,7 @@ properties:
     type: string
     format: uri
     description: the liked data uri for the Thing
-    x-parser-schema-id: <anonymous-schema-138>
+    x-parser-schema-id: <anonymous-schema-137>
   about:
     type: string
     format: uri
@@ -30,7 +30,7 @@ properties:
     example: fileName.zip
   type:
     description: The item type (Linked-Data @type)
-    x-parser-schema-id: <anonymous-schema-137>
+    x-parser-schema-id: <anonymous-schema-136>
     type: string
     enum:
       - MediaObject
@@ -41,5 +41,5 @@ properties:
     format: uri
     description: URL of the image content
     example: http://user.example.com/public/profile/image.jpg
-x-parser-schema-id: <anonymous-schema-172>
+x-parser-schema-id: <anonymous-schema-171>
 

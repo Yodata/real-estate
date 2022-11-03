@@ -1,4 +1,4 @@
-$id: htttp://realestate.yodata.me/schema/AcceptAction
+$id: http://realestate.yodata.me/schema/AcceptAction
 title: AcceptAction
 description: The act of committing to/adopting an object.
 type: object

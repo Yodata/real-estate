@@ -7,14 +7,14 @@
       "type": "string",
       "format": "date-time",
       "description": "date the member stopped performing the role",
-      "x-parser-schema-id": "<anonymous-schema-312>"
+      "x-parser-schema-id": "<anonymous-schema-311>"
     },
     "member": {
       "description": "member object or id",
       "type": "string",
       "format": "uri",
       "example": "https://memberid.example.com/profile/card#me",
-      "x-parser-schema-id": "<anonymous-schema-310>"
+      "x-parser-schema-id": "<anonymous-schema-309>"
     },
     "memberOf": {
       "description": "the org or group where the role is performed",
@@ -23,19 +23,19 @@
         "type": "RealEstateOrganization",
         "id": "http://orgid.example.com/profile/card#me"
       },
-      "x-parser-schema-id": "<anonymous-schema-309>"
+      "x-parser-schema-id": "<anonymous-schema-308>"
     },
     "roleName": {
       "type": "string",
       "description": "the role name",
       "example": "Owner",
-      "x-parser-schema-id": "<anonymous-schema-308>"
+      "x-parser-schema-id": "<anonymous-schema-307>"
     },
     "startDate": {
       "type": "string",
       "format": "date-time",
       "description": "date the member began performing this role",
-      "x-parser-schema-id": "<anonymous-schema-311>"
+      "x-parser-schema-id": "<anonymous-schema-310>"
     },
     "type": {
       "type": "string",
@@ -43,7 +43,7 @@
       "enum": [
         "OrganizationRole"
       ],
-      "x-parser-schema-id": "<anonymous-schema-307>"
+      "x-parser-schema-id": "<anonymous-schema-306>"
     }
   },
   "x-parser-schema-id": "OrganizationRole",

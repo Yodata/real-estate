@@ -12,7 +12,7 @@ properties:
       minValue: 2
       unitCode: BA
       unitText: Bathrooms
-    x-parser-schema-id: <anonymous-schema-451>
+    x-parser-schema-id: <anonymous-schema-450>
   bedrooms:
     description: number of bedrooms (range)
     type: object
@@ -23,12 +23,12 @@ properties:
       maxValue: 4
       unitCode: BD
       unitText: Bedrooms
-    x-parser-schema-id: <anonymous-schema-450>
+    x-parser-schema-id: <anonymous-schema-449>
   description:
     type: string
     description: optional search description input by the user or generated automatically
     example: ((city=Gotham),(Bedrooms=3+))
-    x-parser-schema-id: <anonymous-schema-419>
+    x-parser-schema-id: <anonymous-schema-418>
   listingStatus:
     type: string
     description: RESO Listing Status Code
@@ -38,7 +38,7 @@ properties:
       - SoldListingStatus
       - ContingentListingStatus
     example: ActiveListingStatus,ContingentListingStatus
-    x-parser-schema-id: <anonymous-schema-448>
+    x-parser-schema-id: <anonymous-schema-447>
   livingArea:
     description: property indoor space
     type: object
@@ -48,7 +48,7 @@ properties:
       minValue: 1500
       unitCode: SqFt
       unitText: Square Feet
-    x-parser-schema-id: <anonymous-schema-452>
+    x-parser-schema-id: <anonymous-schema-451>
   location:
     type: object
     description: a physical location
@@ -66,7 +66,7 @@ properties:
         description: The item type (Linked-Data @type)
         enum:
           - Place
-        x-parser-schema-id: <anonymous-schema-336>
+        x-parser-schema-id: <anonymous-schema-335>
       address:
         type: object
         x-range: PostalAddress
@@ -82,7 +82,7 @@ properties:
           postalCode: '10010'
           postOfficeBoxNumber: Box 1234
           streetAddress: 1007 Mountain Gate Rd
-        x-parser-schema-id: <anonymous-schema-337>
+        x-parser-schema-id: <anonymous-schema-336>
       geo:
         type: object
         description: a geo shape (circle or box)
@@ -101,7 +101,7 @@ properties:
             unitCode: mi,
             unitText: miles
           box: (33.5697,-117.775),(33.6018,-117.707)
-        x-parser-schema-id: <anonymous-schema-338>
+        x-parser-schema-id: <anonymous-schema-337>
     x-parser-schema-id: Place
   lotSize:
     description: outdoor space minValue, maxValue
@@ -112,12 +112,12 @@ properties:
       minValue: 0.5
       unitCode: AC
       unitText: Acres
-    x-parser-schema-id: <anonymous-schema-453>
+    x-parser-schema-id: <anonymous-schema-452>
   name:
     type: string
     description: name of the search, input by the user or generated automatically
     example: 3+ beds in Gotham City
-    x-parser-schema-id: <anonymous-schema-418>
+    x-parser-schema-id: <anonymous-schema-417>
   price:
     type: object
     title: PriceSpecification
@@ -129,28 +129,28 @@ properties:
         description: PriceSpecification
         enum:
           - PriceSpecification
-        x-parser-schema-id: <anonymous-schema-367>
+        x-parser-schema-id: <anonymous-schema-366>
       minPrice:
         type: number
         description: the low price offered if price is a range.
         example: 75000
-        x-parser-schema-id: <anonymous-schema-368>
+        x-parser-schema-id: <anonymous-schema-367>
       maxPrice:
         type: number
         description: the high price offered if price is a range.
         example: 100000
-        x-parser-schema-id: <anonymous-schema-369>
+        x-parser-schema-id: <anonymous-schema-368>
       price:
         type: number
         description: the offer price.
         example: 75000
-        x-parser-schema-id: <anonymous-schema-370>
+        x-parser-schema-id: <anonymous-schema-369>
       priceCurrency:
         type: string
         description: use ISO4217
         example: USD
-        x-parser-schema-id: <anonymous-schema-371>
-    x-parser-schema-id: <anonymous-schema-449>
+        x-parser-schema-id: <anonymous-schema-370>
+    x-parser-schema-id: <anonymous-schema-448>
   propertySubType:
     title: PropertySubType
     type: object
@@ -161,115 +161,115 @@ properties:
       ApartmentPropertyType:
         type: string
         description: Apartment
-        x-parser-schema-id: <anonymous-schema-420>
+        x-parser-schema-id: <anonymous-schema-419>
       BoatSlipPropertyType:
         type: string
         description: Boat Slip
-        x-parser-schema-id: <anonymous-schema-421>
+        x-parser-schema-id: <anonymous-schema-420>
       CabinPropertyType:
         type: string
         description: Cabin
-        x-parser-schema-id: <anonymous-schema-422>
+        x-parser-schema-id: <anonymous-schema-421>
       CondominiumPropertyType:
         type: string
         description: Condominium
-        x-parser-schema-id: <anonymous-schema-423>
+        x-parser-schema-id: <anonymous-schema-422>
       DeededParkingPropertyType:
         type: string
         description: Deeded Parking
-        x-parser-schema-id: <anonymous-schema-424>
+        x-parser-schema-id: <anonymous-schema-423>
       DuplexPropertyType:
         type: string
         description: Residential Duplex
-        x-parser-schema-id: <anonymous-schema-425>
+        x-parser-schema-id: <anonymous-schema-424>
       FarmPropertyType:
         type: string
         description: Farm Property Type
-        x-parser-schema-id: <anonymous-schema-426>
+        x-parser-schema-id: <anonymous-schema-425>
       ManufacturedHomePropertyType:
         type: string
         description: Manufactured Home
-        x-parser-schema-id: <anonymous-schema-427>
+        x-parser-schema-id: <anonymous-schema-426>
       ManufacturedOnLandPropertyType:
         type: string
         description: Manufactured Home + Land
-        x-parser-schema-id: <anonymous-schema-428>
+        x-parser-schema-id: <anonymous-schema-427>
       MobileHomePropertyType:
         type: string
         description: Mobile Home
-        x-parser-schema-id: <anonymous-schema-429>
+        x-parser-schema-id: <anonymous-schema-428>
       OwnYourOwnPropertyType:
         type: string
         description: RESO Own Your Own Property
-        x-parser-schema-id: <anonymous-schema-430>
+        x-parser-schema-id: <anonymous-schema-429>
       QuadruplexPropertyType:
         type: string
         description: A residential property with four units
-        x-parser-schema-id: <anonymous-schema-431>
+        x-parser-schema-id: <anonymous-schema-430>
       RanchPropertyType:
         type: string
         description: A Ranch
-        x-parser-schema-id: <anonymous-schema-432>
+        x-parser-schema-id: <anonymous-schema-431>
       SingleFamilyPropertyType:
         type: string
         description: Single Family Residence
-        x-parser-schema-id: <anonymous-schema-433>
+        x-parser-schema-id: <anonymous-schema-432>
       StockCooperativePropertyType:
         type: string
         description: Stock Co-op.
-        x-parser-schema-id: <anonymous-schema-434>
+        x-parser-schema-id: <anonymous-schema-433>
       TimesharePropertyType:
         type: string
         description: Timeshare
-        x-parser-schema-id: <anonymous-schema-435>
+        x-parser-schema-id: <anonymous-schema-434>
       TownhousePropertyType:
         type: string
         description: Townhouse
-        x-parser-schema-id: <anonymous-schema-436>
+        x-parser-schema-id: <anonymous-schema-435>
       TriplexPropertyType:
         type: string
         description: A residential property with 3 separate units
-        x-parser-schema-id: <anonymous-schema-437>
+        x-parser-schema-id: <anonymous-schema-436>
       AgriculturePropertyType:
         type: string
         description: An agriculture property.
-        x-parser-schema-id: <anonymous-schema-438>
+        x-parser-schema-id: <anonymous-schema-437>
       BusinessPropertyType:
         type: string
         description: a residential property zoned for business operation
-        x-parser-schema-id: <anonymous-schema-439>
+        x-parser-schema-id: <anonymous-schema-438>
       HotelMotelPropertyType:
         type: string
         description: Hotel property for sale.
-        x-parser-schema-id: <anonymous-schema-440>
+        x-parser-schema-id: <anonymous-schema-439>
       IndustrialPropertyType:
         type: string
         description: Industrial property
-        x-parser-schema-id: <anonymous-schema-441>
+        x-parser-schema-id: <anonymous-schema-440>
       MixedUsePropertyType:
         type: string
         description: Residential/Commercial property
-        x-parser-schema-id: <anonymous-schema-442>
+        x-parser-schema-id: <anonymous-schema-441>
       MultiFamilyPropertyType:
         type: string
         description: A single building with multiple units
-        x-parser-schema-id: <anonymous-schema-443>
+        x-parser-schema-id: <anonymous-schema-442>
       OfficePropertyType:
         type: string
         description: An office.
-        x-parser-schema-id: <anonymous-schema-444>
+        x-parser-schema-id: <anonymous-schema-443>
       RetailPropertyType:
         type: string
         description: Retail property
-        x-parser-schema-id: <anonymous-schema-445>
+        x-parser-schema-id: <anonymous-schema-444>
       UnimprovedLandPropertyType:
         type: string
         description: Land for sale
-        x-parser-schema-id: <anonymous-schema-446>
+        x-parser-schema-id: <anonymous-schema-445>
       WarehousePropertyType:
         type: string
         description: A Warehouse property type.
-        x-parser-schema-id: <anonymous-schema-447>
+        x-parser-schema-id: <anonymous-schema-446>
     x-parser-schema-id: PropertySubType
   propertyType:
     type: string
@@ -287,12 +287,12 @@ properties:
       - COMS
       - COML
       - BUSO
-    x-parser-schema-id: <anonymous-schema-410>
+    x-parser-schema-id: <anonymous-schema-409>
   type:
     type: string
     enum:
       - PropertySearch
-    x-parser-schema-id: <anonymous-schema-417>
+    x-parser-schema-id: <anonymous-schema-416>
 x-parser-schema-id: PropertySearch
 $id: http://realestate.yodata.me/schema/PropertySearch.yaml
 

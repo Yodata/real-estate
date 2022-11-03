@@ -31,8 +31,9 @@ export default function TopicPage(props) {
   const { schemaName, schema, params } = props
   if (params?.generate?.schemas === false) return null
 
-  const { baseUrl, sortProperties, outputFormats } = Object.assign(DEFAULT_PARAMS, params)
+  const { baseUrl, sortProperties, outputFormats } = DEFAULT_PARAMS
   const jsonSchema = mergeAllOf(schema)
+  jsonSchema.properties = mergeAllOf(jsonSchema.properties)
   if (sortProperties === true && jsonSchema?.properties) {
     let sortedProperties = {}
        Object.keys(jsonSchema.properties)
@@ -45,10 +46,10 @@ export default function TopicPage(props) {
   const outputFiles = []
   Object.entries(outputFormats).forEach(([ format, options ]) => {
     if (options.enabled) {
-      let fileName = `${schemaName}${options.extension}`
-      const uri = `${baseUrl}${options.basePath}${fileName}`
+      let fileName = `${schemaName}${options.extension}`.replace('#','.')
+      jsonSchema.$id = `${baseUrl}${options.basePath}${fileName}`.replace('#','.')
+
       let fileContent = ''
-      jsonSchema.$id = uri
       switch (format) {
         case 'json':
           fileContent = JSON.stringify(jsonSchema, null, 2)

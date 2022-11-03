@@ -33,7 +33,8 @@ const DEFAULT_PARAMS = {
 
 export default function MessageDataGenerator(props) {
   const { messageName, params } = props
-  const { baseUrl, sortProperties, outputFormats } = Object.assign(DEFAULT_PARAMS, params)
+  console.log('params', params)
+  const { baseUrl, sortProperties, outputFormats } = DEFAULT_PARAMS
   if (params?.generate?.messages === 'false') return null
   const contentType = props.message.contentType()
   const externalDocs = props.message.externalDocs()
@@ -68,9 +69,10 @@ export default function MessageDataGenerator(props) {
   const outputFiles = []
   Object.entries(outputFormats).forEach(([ format, options ]) => {
     if (options.enabled) {
+      let fileName = `${messageName}${options.extension}`.replace('#','.')
+      outputData.$id = `${baseUrl}${options.basePath}${fileName}`.replace('#','.')
+
       let fileContent = ''
-      let fileName = `${messageName}${options.extension}`
-      outputData.$id = `${baseUrl}${options.basePath}${fileName}`
       switch (format) {
         case 'json':
           fileContent = JSON.stringify(outputData, null, 2)

@@ -1,0 +1,18 @@
+{
+  "name": "@yodata/real-estate-schemas",
+  "private": true,
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "validate": "npx asyncapi validate asyncapi.yaml"
+  },
+  "author": "Dave Duran <dave@yodata.io> (https://yodata.io/)",
+  "license": "MIT",
+  "dependencies": {
+    "@asyncapi/cli": "^0.25.4"
+  }
+}

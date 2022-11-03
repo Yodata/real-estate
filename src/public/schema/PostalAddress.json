@@ -16,7 +16,7 @@
         "SJ",
         "VN"
       ],
-      "x-parser-schema-id": "<anonymous-schema-364>"
+      "x-parser-schema-id": "<anonymous-schema-363>"
     },
     "addressCounty": {
       "type": "string",
@@ -27,7 +27,7 @@
         "Borders",
         null
       ],
-      "x-parser-schema-id": "<anonymous-schema-365>"
+      "x-parser-schema-id": "<anonymous-schema-364>"
     },
     "addressLocality": {
       "type": "string",
@@ -40,7 +40,7 @@
         "West Ahmed",
         "Blaiseview"
       ],
-      "x-parser-schema-id": "<anonymous-schema-362>"
+      "x-parser-schema-id": "<anonymous-schema-361>"
     },
     "addressRegion": {
       "type": "string",
@@ -52,7 +52,7 @@
         "MI",
         null
       ],
-      "x-parser-schema-id": "<anonymous-schema-361>"
+      "x-parser-schema-id": "<anonymous-schema-360>"
     },
     "addressSubdivision": {
       "type": "string",
@@ -62,7 +62,7 @@
         null,
         null
       ],
-      "x-parser-schema-id": "<anonymous-schema-366>"
+      "x-parser-schema-id": "<anonymous-schema-365>"
     },
     "postOfficeBoxNumber": {
       "type": "string",
@@ -72,7 +72,7 @@
         "Apt. 161",
         "Apt. 623"
       ],
-      "x-parser-schema-id": "<anonymous-schema-360>"
+      "x-parser-schema-id": "<anonymous-schema-359>"
     },
     "postalCode": {
       "type": "string",
@@ -84,7 +84,7 @@
         "50239-7698",
         null
       ],
-      "x-parser-schema-id": "<anonymous-schema-363>"
+      "x-parser-schema-id": "<anonymous-schema-362>"
     },
     "streetAddress": {
       "type": "string",
@@ -95,14 +95,14 @@
         "166 Marion Burg",
         "93044 Haley Stream"
       ],
-      "x-parser-schema-id": "<anonymous-schema-359>"
+      "x-parser-schema-id": "<anonymous-schema-358>"
     },
     "type": {
       "type": "string",
       "enum": [
         "PostalAddress"
       ],
-      "x-parser-schema-id": "<anonymous-schema-358>"
+      "x-parser-schema-id": "<anonymous-schema-357>"
     }
   },
   "x-parser-schema-id": "PostalAddress"

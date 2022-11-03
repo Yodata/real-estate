@@ -9,13 +9,13 @@ properties:
     type: string
     description: the question content
     example: I would like to view 123 Main Street.
-    x-parser-schema-id: <anonymous-schema-486>
+    x-parser-schema-id: <anonymous-schema-485>
   type:
     type: string
     description: The item type (Linked-Data @type)
     enum:
       - Question
-    x-parser-schema-id: <anonymous-schema-485>
+    x-parser-schema-id: <anonymous-schema-484>
 x-parser-schema-id: Question
 $id: http://realestate.yodata.me/schema/Question.yaml
 

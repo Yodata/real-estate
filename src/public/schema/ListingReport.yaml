@@ -6,31 +6,31 @@ properties:
   batchId:
     type: string
     description: BATCH-ID
-    x-parser-schema-id: <anonymous-schema-301>
+    x-parser-schema-id: <anonymous-schema-300>
   dateCreated:
     type: string
     format: date-time
     description: YEAR-MONTH
-    x-parser-schema-id: <anonymous-schema-303>
+    x-parser-schema-id: <anonymous-schema-302>
   listingsAddedCount:
     type: number
     description: LISTINGS-TAKEN
-    x-parser-schema-id: <anonymous-schema-304>
+    x-parser-schema-id: <anonymous-schema-303>
   reportingOfficeId:
     type: string
     format: uri
     description: OFFICE-ID
     example: https://{officeid}.example.com/profile/card#me
-    x-parser-schema-id: <anonymous-schema-302>
+    x-parser-schema-id: <anonymous-schema-301>
   totalListingsCount:
     type: number
     description: LISTINGS-INVENTORY
-    x-parser-schema-id: <anonymous-schema-305>
+    x-parser-schema-id: <anonymous-schema-304>
   type:
     type: string
     description: RECORD-TYPE
     example: ListingReport
-    x-parser-schema-id: <anonymous-schema-300>
+    x-parser-schema-id: <anonymous-schema-299>
 x-parser-schema-id: ListingReport
 $id: http://realestate.yodata.me/schema/ListingReport.yaml
 

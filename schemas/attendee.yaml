@@ -2,11 +2,4 @@ title: attendee
 description: A person or organization attending the event.
 type: array
 items:
-  type: object
-  x-range:
-    - Person
-    - Organization
-  example:
-    type: Person
-    name: Red Garland
-    email: redg@example.com
+  $ref: person_or_organization

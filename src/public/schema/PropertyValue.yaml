@@ -9,16 +9,16 @@ properties:
   propertyID:
     type: string
     example: UserID
-    x-parser-schema-id: <anonymous-schema-463>
+    x-parser-schema-id: <anonymous-schema-462>
   type:
     type: string
     enum:
       - PropertyValue
-    x-parser-schema-id: <anonymous-schema-462>
+    x-parser-schema-id: <anonymous-schema-461>
   value:
     type: string
     example: '@bobjones'
-    x-parser-schema-id: <anonymous-schema-464>
+    x-parser-schema-id: <anonymous-schema-463>
 x-parser-schema-id: PropertyValue
 $id: http://realestate.yodata.me/schema/PropertyValue.yaml
 

@@ -7,7 +7,7 @@
       "type": "string",
       "description": "middleName or alternate name of the Person",
       "example": "Big",
-      "x-parser-schema-id": "<anonymous-schema-562>"
+      "x-parser-schema-id": "<anonymous-schema-561>"
     },
     "affiliation": {
       "type": "array",
@@ -16,35 +16,35 @@
         "type": "string",
         "format": "uri",
         "example": "https://{agentid}.example.com/profile/card#me",
-        "x-parser-schema-id": "<anonymous-schema-565>"
+        "x-parser-schema-id": "<anonymous-schema-564>"
       },
-      "x-parser-schema-id": "<anonymous-schema-564>"
+      "x-parser-schema-id": "<anonymous-schema-563>"
     },
     "email": {
       "type": "string",
       "format": "email",
       "description": "Primary email address.",
       "example": "user@example.com",
-      "x-parser-schema-id": "<anonymous-schema-499>"
+      "x-parser-schema-id": "<anonymous-schema-498>"
     },
     "familyName": {
       "type": "string",
       "description": "Last Name of a person",
       "example": "Miller",
       "maxLength": 50,
-      "x-parser-schema-id": "<anonymous-schema-253>"
+      "x-parser-schema-id": "<anonymous-schema-252>"
     },
     "givenName": {
       "type": "string",
       "description": "First Name of a person",
       "example": "Glenn",
-      "x-parser-schema-id": "<anonymous-schema-230>"
+      "x-parser-schema-id": "<anonymous-schema-229>"
     },
     "position": {
       "type": "number",
       "description": "numeric position for the participant/roleName.",
       "example": 1,
-      "x-parser-schema-id": "<anonymous-schema-561>"
+      "x-parser-schema-id": "<anonymous-schema-560>"
     },
     "roleName": {
       "type": "string",
@@ -53,13 +53,13 @@
         "Buyer",
         "Seller"
       ],
-      "x-parser-schema-id": "<anonymous-schema-560>"
+      "x-parser-schema-id": "<anonymous-schema-559>"
     },
     "telephone": {
       "type": "string",
       "description": "Primary phone number.",
       "example": "+15558675309",
-      "x-parser-schema-id": "<anonymous-schema-563>"
+      "x-parser-schema-id": "<anonymous-schema-562>"
     },
     "type": {
       "type": "string",
@@ -67,7 +67,7 @@
       "enum": [
         "TransactionParticipant"
       ],
-      "x-parser-schema-id": "<anonymous-schema-559>"
+      "x-parser-schema-id": "<anonymous-schema-558>"
     }
   },
   "x-parser-schema-id": "TransactionParticipant",

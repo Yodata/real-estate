@@ -15,7 +15,7 @@
             "Y",
             "N"
           ],
-          "x-parser-schema-id": "<anonymous-schema-554>"
+          "x-parser-schema-id": "<anonymous-schema-553>"
         },
         "inNetworkReferralYN": {
           "type": "string",
@@ -24,10 +24,10 @@
             "Y",
             "N"
           ],
-          "x-parser-schema-id": "<anonymous-schema-555>"
+          "x-parser-schema-id": "<anonymous-schema-554>"
         }
       },
-      "x-parser-schema-id": "<anonymous-schema-553>"
+      "x-parser-schema-id": "<anonymous-schema-552>"
     },
     "referredBy": {
       "type": "object",
@@ -43,16 +43,16 @@
             "Organization",
             "Person"
           ],
-          "x-parser-schema-id": "<anonymous-schema-557>"
+          "x-parser-schema-id": "<anonymous-schema-556>"
         },
         "id": {
           "type": "string",
           "format": "uri",
           "description": "Linked-Data URI (@id)",
-          "x-parser-schema-id": "<anonymous-schema-192>"
+          "x-parser-schema-id": "<anonymous-schema-191>"
         }
       },
-      "x-parser-schema-id": "<anonymous-schema-556>"
+      "x-parser-schema-id": "<anonymous-schema-555>"
     },
     "type": {
       "type": "string",
@@ -60,7 +60,7 @@
       "enum": [
         "Referral"
       ],
-      "x-parser-schema-id": "<anonymous-schema-552>"
+      "x-parser-schema-id": "<anonymous-schema-551>"
     }
   },
   "x-parser-schema-id": "Referral",

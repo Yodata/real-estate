@@ -1,0 +1,19 @@
+# @format
+# yaml-language-server: $schema=https://asyncapi.com/definitions/2.5.0/message.json
+messageId: profile#add
+name: realestate/profile#add
+summary: an agent, office or organization profile was added
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/profile#add }
+payload:
+  data:
+    x-range: AddAction
+    properties:
+      type: { const: AddAction }
+      object:
+        oneOf:
+          - $ref: ../../RealEstateAgent.yaml
+          - $ref: ../../RealEstateOffice.yaml
+          - $ref: ../../RealEstateOrganization.yaml

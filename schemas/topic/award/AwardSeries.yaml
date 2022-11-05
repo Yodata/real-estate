@@ -1,0 +1,29 @@
+# @format
+# yaml-language-server: $schema=https://www.asyncapi.com/definitions/2.5.0/schema.json
+title: AwardSeries
+type: object
+x-range:
+  - AwardSeries
+description: an award bestowed at regular intervals
+properties:
+  type: { const: AwardSeries }
+  name:
+    $ref: ../../name.yaml
+    example: Top 1% Club
+    description: name of the series
+  description:
+    $ref: ../../description.yaml
+    example: Annual
+  duration:
+    $ref: ../../duration.yaml
+  startDate:
+    $ref: ../../startDate.yaml
+  endDate:
+    $ref: ../../endDate.yaml
+  id:
+    type: string
+    format: uri
+  identifier:
+    $ref: ../../identifier.yaml
+    example:
+      hsfAwardSeriesID: xxxx

@@ -1,0 +1,15 @@
+# @format
+
+type: object
+description: the site, app or service being on which the user action was observed.
+required:
+  - name
+properties:
+  type: { type: string }
+  name: { type: string }
+  url: { type: string, format: uri }
+examples:
+  - type: Website
+    name: 'Agent Website'
+    url: 'https://www.example.com'
+  - name: 'Agent App'

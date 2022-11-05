@@ -1,0 +1,17 @@
+# @format
+
+messageId: profile#teammemberremove
+name: realestate/profile#teammemberremove
+summary: a member (user) is removed from the team
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/profile#teammemberremove }
+payload:
+  type: object
+  properties:
+    data:
+      type: object
+      properties:
+        type: { const: RemoveAction }
+        object: { $ref: ../../RealEstateTeamMembership.yaml }

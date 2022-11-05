@@ -5,133 +5,90 @@ externalDocs: null
 headers:
   type: object
   properties:
-    time:
-      type: string
-      format: date-time
-      description: date & time the event was produced
-      x-parser-schema-id: <anonymous-schema-3>
-    agent:
-      type: string
-      format: uri
-      description: the user, team, or organization who sent the event
-      example: https://agentid.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-4>
-    instrument:
-      type: string
-      format: uri
-      description: the service which created the event
-      example: https://vendorid.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-5>
-    source:
-      type: string
-      format: uri
-      description: an agent, team or organization who received a copy of the event
-      example: https://companyid.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-6>
-    originalRecipient:
-      type: string
-      format: uri
-      description: the original recipient of the event with this id
-      example: https://agentid.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-7>
-    id:
-      type: string
-      format: uri
-      description: the shared identifier of the event, akd the event id
-      example: https://instrumentid.example.com/publish/xxxxxxxxxxxxx
-      x-parser-schema-id: <anonymous-schema-8>
-    '@id':
-      type: string
-      format: uri
-      description: the url of your instance of the event in your inbox
-      example: https://yourpod.example.com/inbox/xxxxxxxxxxxxx
-      x-parser-schema-id: <anonymous-schema-9>
     topic:
-      type: string
-      description: the event topic which determines the event.data schema
-      x-parser-schema-id: <anonymous-schema-2>
-      enum:
-        - realestate/profile#teannenberremove
+      const: realestate/profile#teammemberremove
+      x-parser-schema-id: <anonymous-schema-327>
+  x-parser-schema-id: <anonymous-schema-326>
 payload:
   type: object
-  description: the message payload
-  x-parser-schema-id: <anonymous-schema-10>
-  x-range: RemoveAction
   properties:
-    object:
-      allOf:
-        - title: OrganizationRole
-          type: object
-          description: describes a role played by a member and a group or organization.
-          properties:
-            type:
-              type: string
-              description: a role played by the member in the memberOf group
-              enum:
-                - OrganizationRole
-              x-parser-schema-id: <anonymous-schema-306>
-            roleName:
-              type: string
-              description: the role name
-              example: Owner
-              x-parser-schema-id: <anonymous-schema-307>
-            memberOf:
-              description: the org or group where the role is performed
-              type: object
-              example:
-                type: RealEstateOrganization
-                id: http://orgid.example.com/profile/card#me
-              x-parser-schema-id: <anonymous-schema-308>
-            member:
-              description: member object or id
-              type: string
-              format: uri
-              example: https://memberid.example.com/profile/card#me
-              x-parser-schema-id: <anonymous-schema-309>
-            startDate:
-              type: string
-              format: date-time
-              description: date the member began performing this role
-              x-parser-schema-id: <anonymous-schema-310>
-            endDate:
-              type: string
-              format: date-time
-              description: date the member stopped performing the role
-              x-parser-schema-id: <anonymous-schema-311>
-          x-parser-schema-id: OrganizationRole
-        - type: object
-          title: RealEstateTeamMembership
-          description: a membership relationship.  Subclass of OrganizationRole
-          properties:
-            type:
-              type: string
-              description: a member of a real estate team
-              enum:
-                - RealEstateTeamMembership
-              example: RealEstateTeamMembership
-              x-parser-schema-id: <anonymous-schema-528>
-            roleName:
-              type: string
-              enum:
-                - TeamMember
-                - TeamAdmin
-                - TeamOwner
-              x-parser-schema-id: <anonymous-schema-529>
-            memberOf:
-              type: string
-              format: uri
-              example: https://{team-id}.example.com/profile/card#me
-              x-parser-schema-id: <anonymous-schema-530>
-            member:
-              type: string
-              format: uri
-              example: https://{agent}.example.com/profile/card#me
-              x-parser-schema-id: <anonymous-schema-531>
-          x-parser-schema-id: <anonymous-schema-527>
-      x-range: RealEstateTeamMembership
+    data:
       type: object
-    type:
-      description: RemoveAction
-      enum:
-        - RemoveAction
+      properties:
+        type:
+          const: RemoveAction
+          x-parser-schema-id: <anonymous-schema-330>
+        object:
+          allOf:
+            - title: OrganizationRole
+              type: object
+              description: describes a role played by a member and a group or organization.
+              properties:
+                type:
+                  type: string
+                  description: a role played by the member in the memberOf group
+                  enum:
+                    - OrganizationRole
+                  x-parser-schema-id: <anonymous-schema-281>
+                roleName:
+                  type: string
+                  description: the role name
+                  example: Owner
+                  x-parser-schema-id: <anonymous-schema-282>
+                memberOf:
+                  description: the org or group where the role is performed
+                  type: object
+                  example:
+                    type: RealEstateOrganization
+                    id: http://orgid.example.com/profile/card#me
+                  x-parser-schema-id: <anonymous-schema-283>
+                member:
+                  description: member object or id
+                  type: string
+                  format: uri
+                  example: https://memberid.example.com/profile/card#me
+                  x-parser-schema-id: <anonymous-schema-284>
+                startDate:
+                  type: string
+                  format: date-time
+                  description: date the member began performing this role
+                  x-parser-schema-id: <anonymous-schema-285>
+                endDate:
+                  type: string
+                  format: date-time
+                  description: date the member stopped performing the role
+                  x-parser-schema-id: <anonymous-schema-286>
+              x-parser-schema-id: OrganizationRole
+            - type: object
+              title: RealEstateTeamMembership
+              description: a membership relationship.  Subclass of OrganizationRole
+              properties:
+                type:
+                  type: string
+                  description: a member of a real estate team
+                  enum:
+                    - RealEstateTeamMembership
+                  example: RealEstateTeamMembership
+                  x-parser-schema-id: <anonymous-schema-322>
+                roleName:
+                  type: string
+                  enum:
+                    - TeamMember
+                    - TeamAdmin
+                    - TeamOwner
+                  x-parser-schema-id: <anonymous-schema-323>
+                memberOf:
+                  type: string
+                  format: uri
+                  example: https://{team-id}.example.com/profile/card#me
+                  x-parser-schema-id: <anonymous-schema-324>
+                member:
+                  type: string
+                  format: uri
+                  example: https://{agent}.example.com/profile/card#me
+                  x-parser-schema-id: <anonymous-schema-325>
+              x-parser-schema-id: <anonymous-schema-321>
+          x-parser-schema-id: RealEstateTeamMembership
+      x-parser-schema-id: <anonymous-schema-329>
+  x-parser-schema-id: <anonymous-schema-328>
 

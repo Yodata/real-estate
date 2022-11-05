@@ -1,5 +1,0 @@
-subscribe:
-  message:
-    oneOf:
-      - $ref: franchise.transactionreport.yaml
-      - $ref: franchise.listingreport.yaml

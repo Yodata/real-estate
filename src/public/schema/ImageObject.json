@@ -12,7 +12,7 @@
       "type": "string",
       "format": "uri",
       "description": "the liked data uri for the Thing",
-      "x-parser-schema-id": "<anonymous-schema-137>"
+      "x-parser-schema-id": "<anonymous-schema-160>"
     },
     "about": {
       "type": "string",
@@ -38,7 +38,7 @@
     },
     "type": {
       "description": "The item type (Linked-Data @type)",
-      "x-parser-schema-id": "<anonymous-schema-136>",
+      "x-parser-schema-id": "<anonymous-schema-159>",
       "type": "string",
       "enum": [
         "ImageObject"
@@ -52,5 +52,5 @@
       "example": "http://user.example.com/public/profile/image.jpg"
     }
   },
-  "x-parser-schema-id": "<anonymous-schema-172>"
+  "x-parser-schema-id": "<anonymous-schema-162>"
 }

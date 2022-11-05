@@ -1,0 +1,10 @@
+# @format
+
+properties:
+  data:
+    properties:
+      object:
+        oneOf:
+          - $ref: ../.../RealEstateAgent.yaml
+          - $ref: ../.../RealEstateOffice.yaml
+          - $ref: ../.../RealEstateTeam.yaml

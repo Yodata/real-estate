@@ -1,6 +1,0 @@
-subscribe:
-  message:
-    oneOf:
-      - $ref: servicearea.create.yaml
-      - $ref: servicearea.update.yaml
-      - $ref: servicearea.delete.yaml

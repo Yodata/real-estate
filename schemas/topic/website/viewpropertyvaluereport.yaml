@@ -1,0 +1,26 @@
+# @format
+# yaml-language-server: $schema=https://asyncapi.com/definitions/2.5.0/message.json
+
+messageId: website#viewpropertyvaluereort
+name: realestate/website#viewpropertyvaluereport
+summary: website user (data.agent) has viewed a propvery value report (data.object) on a webiste or mobile app (data.instrument)
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/website#viewpropertyvaluereport }
+payload:
+  type: object
+  properties:
+    data:
+      type: object
+      properties:
+        type: { const: ViewAction }
+        agent:
+          type: object
+          description: the website user who viewed the property value reportt
+          properties:
+            additionalProperty:
+              type: object
+              properties:
+                workingWithAgent: { type: boolean }
+        object: { $ref: ../../PropertyValueReport.yaml }

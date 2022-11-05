@@ -1,12 +1,10 @@
 # @format: https://json-schema.org/draft/2019-09/json-schema-core.html#rfc.section.8.2.2
-$id: http://realestate.yodata.me/schema/subscription_headers
+$id: http://realestate.yodata.me/schema/subscription_headers.json
+$anchor: subscription_headers
 title: CloudEvent
 type: object
 properties:
-  topic:
-    type: string
-    description: the event topic which determines the event.data schema
-
+  topic: true
   time:
     type: string
     format: date-time

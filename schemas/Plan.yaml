@@ -1,19 +1,25 @@
+# @format
+
 title: Plan
 type: object
 description: a collection of related tasks
 required:
-  - 'type'
+  - type
+  - identifier
+  - name
 x-range: Plan
 properties:
-  type:
-    description: Plan
-    type: string
-    enum:
-    - Plan
+  type: { const: Plan }
+  identifier:
+    $ref: identifier.yaml
   name:
     type: string
     description: name of the plan
-    example: Ricky Follow Up Plan
+    examples:
+      - my awesome plan
+      - annoying but effective plan
+      - plan to take over the world
+      - birthdays and anniversaries plan
   description:
     type: string
     description: description of the item

@@ -1,34 +1,20 @@
-title: Comment
+# @format
+
 type: object
-x-range: Comment
+title: Comment
 description: A comment on an item.
+x-range: Comment
 required:
-- type
-- text
+  - type
+  - text
 properties:
-  type:
-    description: Comment
-    type: string
-    enum:
-      - Comment
+  type: { const: Comment }
+  dateCreated: { $ref: dateCreated.yaml }
+  dateModified: { $ref: dateModified.yaml }
+  dateDeleted: { $ref: dateDeleted.yaml }
+  text: { $ref: text.yaml }
+  author: { $ref: author.yaml }
 
-  dateCreated:
-    $ref: dateCreated.yaml
-  dateModified:
-    $ref: dateModified.yaml
-
-  text:
-    description: the comment body
-    type: string
-    example: That's a negative attitude, Robin.
-  
-  author:
-    type: object
-    description: the content author
-    example:
-      type: RealEstateAgent
-      name: Batman
-  
   about:
     $ref: about.yaml
     example:
@@ -36,7 +22,7 @@ properties:
       name: Robin
       identifier:
         redContact_GUID: 6bf62a1b-225e-4fca-87b3-54cc09446a66
-  
+
   identifier:
     $ref: identifier.yaml
     example:

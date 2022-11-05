@@ -1,0 +1,33 @@
+# @format
+
+# any agent, team, or organization can be a recipient
+type: object
+properties:
+  type:
+    {
+      type: string,
+      enum: [RealEstateAgent, RealEstateTeam, RealEstateOrganization],
+    }
+  name: { type: string }
+  id:
+    {
+      type: string,
+      format: uri,
+      example: https://agent.example.com/profile/card#me,
+    }
+  identifier: true
+examples:
+  - type: RealEstateAgent
+    name: John Smith
+    id: https://agentsmith.example.com/profile/card#me
+    identifier: { hsfid: '1234567890' }
+  - type: RealEstateTeam
+    name: Smith & Smith
+    id: https://smithandsmith.example.com/profile/card#me
+  - type: RealEstateOrganization
+    name: Smith & Smith Real Estate
+    identifier: { hsfid: sandsre }
+  - type: RealEstateOrganization
+    name: Smith & Smith Real Estate
+  - type: RealEstateOrganization
+    id: https://smithandsmithrealestate.example.com/profile/card#me

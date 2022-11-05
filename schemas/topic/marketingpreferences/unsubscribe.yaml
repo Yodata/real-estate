@@ -1,0 +1,11 @@
+messageId: marketingpreferences#unsubscribe
+name: realestate/marketingpreferences#unsubscribe
+summary: a consumer (agent) unsubscribes to email or sms for a specific agent (object)
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/marketingpreferences#unsubscribe }
+payload:
+  type: object
+  properties:
+    data: { $ref: ../../UnsubscribeAction.yaml }

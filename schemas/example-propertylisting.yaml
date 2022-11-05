@@ -1,3 +1,6 @@
+# @format
+
+# example only
 type: PropertyListing
 originatingSystemName: GOTHAM-MLS
 originatingSystemKey: '12345'
@@ -9,6 +12,6 @@ addressLocality: Gotham City
 postalCode: '10010'
 addressCountry: USA
 listingPrice:
-    type: PriceSpecification
-    price: 7500000
-    priceCurrency: USD
+  type: PriceSpecification
+  price: 7500000
+  priceCurrency: USD

@@ -1,0 +1,12 @@
+# @format
+# yaml-language-server: $schema=https://asyncapi.com/definitions/2.5.0/channelItem.json
+description: profile events
+subscribe:
+  message:
+    oneOf:
+      - $ref: profile.add.yaml
+      - $ref: profile.update.yaml
+      - $ref: profile.teamcreate.yaml
+      - $ref: profile.teamdelete.yaml
+      - $ref: profile.teammemberadd.yaml
+      - $ref: profile.teammemberremove.yaml

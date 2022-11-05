@@ -1,0 +1,18 @@
+# @format
+
+messageId: marketing#programdelete
+name: realestate/marketing#programdelete
+summary: a marketing program was deleted
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/marketing#programdelete }
+payload:
+  type: object
+  properties:
+    data:
+      type: object
+      properties:
+        type: { const: DeleteAction }
+        agent: { $ref: ../../agent.yaml }
+        object: { $ref: ../../programmembership.yaml }

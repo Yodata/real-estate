@@ -1,0 +1,31 @@
+# @format
+
+messageId: lead#reject
+name: realestate/lead#reject
+summary: a crm lead was rejected
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/lead#reject }
+payload:
+  type: object
+  properties:
+    data:
+      type: object
+      properties:
+        type: { const: RejectAction }
+        object:
+          $ref: ../../Lead.yaml
+        agent:
+          description: the agent who rejected the lead
+          type: string
+          format: uri
+          example: http://andyagent.example.com/profile/card#me
+        reason:
+          description: the reason the lead was rejected
+          type: string
+          example: 'duplicate lead'
+        comment:
+          description: a comment about the rejection
+          type: string
+          example: 'this lead was already in the system'

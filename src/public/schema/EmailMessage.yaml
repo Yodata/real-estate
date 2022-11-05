@@ -11,7 +11,7 @@ properties:
     type: string
     format: uri
     description: the liked data uri for the Thing
-    x-parser-schema-id: <anonymous-schema-137>
+    x-parser-schema-id: <anonymous-schema-160>
   bccRecipient:
     type: array
     description: direct recipient of the message
@@ -71,23 +71,23 @@ properties:
           type: string
           enum:
             - DigitalDocument
-          x-parser-schema-id: <anonymous-schema-254>
+          x-parser-schema-id: <anonymous-schema-551>
         id:
           type: string
           example: http://user.example.com/public/logo/archive.zip
-          x-parser-schema-id: <anonymous-schema-255>
+          x-parser-schema-id: <anonymous-schema-552>
         name:
           type: string
           description: document name or title
           example: archive.zip
-          x-parser-schema-id: <anonymous-schema-256>
+          x-parser-schema-id: <anonymous-schema-553>
         encodingFormat:
           type: string
           description: >-
             [ISO Media
             Type](https://www.iana.org/assignments/media-types/media-types.xhtml)
           example: application/zip
-          x-parser-schema-id: <anonymous-schema-257>
+          x-parser-schema-id: <anonymous-schema-554>
         about:
           type: object
           description: subject of the Document
@@ -96,12 +96,12 @@ properties:
             type: RealEstateTransaction
             identifier:
               bmsTransactionId: xxxx
-          x-parser-schema-id: <anonymous-schema-258>
+          x-parser-schema-id: <anonymous-schema-555>
         url:
           type: string
           description: public URL of the object
           example: https://example.com
-          x-parser-schema-id: <anonymous-schema-259>
+          x-parser-schema-id: <anonymous-schema-556>
       x-parser-schema-id: DigitalDocument
   name:
     type: string
@@ -119,11 +119,11 @@ properties:
       type: string
       example: user@example.com
   type:
-    x-parser-schema-id: <anonymous-schema-136>
+    x-parser-schema-id: <anonymous-schema-159>
     type: string
     description: EmailMessage
     enum:
       - EmailMessage
     example: EmailMessage
-x-parser-schema-id: <anonymous-schema-262>
+x-parser-schema-id: <anonymous-schema-559>
 

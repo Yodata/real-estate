@@ -1,9 +1,10 @@
 messageId: team#update
 x-scope: realestate/team#
 summary: team record Updated.
+headers:
+  $ref: subscription_headers.yaml
 payload:
-  allOf:
-    - $ref: base.event.yaml
+
     - properties:
         topic:
           enum:

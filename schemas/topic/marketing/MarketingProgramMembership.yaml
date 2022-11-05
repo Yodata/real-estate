@@ -1,0 +1,22 @@
+# @format
+# yaml-language-server: $schema=https://asyncapi.com/definitions/2.5.0/schema.json
+
+$id: http://realestate.yodata.me/schema/ProgramMembership.json
+title: MarketingProgramMembership
+description: describes membership relation between a member (Person) and a MarketingProgram
+type: object
+properties:
+  type: { const: ProgramMembership }
+  role: { type: string, enum: [member, owner] }
+  member:
+    type: object
+    properties:
+      type: { type: string, enum: [Person, Contact] }
+      name: { type: string }
+      identifier: { $ref: ../../identifier.yaml }
+  memberOf:
+    type: object
+    properties:
+      type: { const: MarketingProgram }
+      name: { type: string, example: 'Market Activity Report 508 Homewood Ave' }
+      identifier: { $ref: ../../identifier.yaml }

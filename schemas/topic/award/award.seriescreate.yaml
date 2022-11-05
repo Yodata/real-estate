@@ -1,0 +1,15 @@
+messageId: award#seriescreate
+name: realestate/award#seriescreate
+summary: a new award series was created
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/award#seriescreate }
+payload:
+  type: object
+  properties:
+    data:
+      type: object
+      properties:
+        type: { const: CreateAction }
+        object: { $ref: AwardSeries.yaml }

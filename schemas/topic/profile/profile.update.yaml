@@ -1,0 +1,21 @@
+# @format
+
+messageId: profile#update
+name: realestate/profile#update
+summary: an agent, office or organization profile was updated
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/profile#update }
+payload:
+  type: object
+  properties:
+    data:
+      type: object
+      properties:
+        type: { const: UpdateAction }
+        object:
+          oneOf:
+            - { $ref: ../../RealEstateAgent.yaml }
+            - { $ref: ../../RealEstateOffice.yaml }
+            - { $ref: ../../RealEstateOrganization.yaml }

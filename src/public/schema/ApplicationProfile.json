@@ -20,52 +20,52 @@
         "type": {
           "type": "string",
           "example": "SoftwareApplication",
-          "x-parser-schema-id": "<anonymous-schema-143>"
+          "x-parser-schema-id": "<anonymous-schema-482>"
         },
         "inbox": {
           "description": "URI to your Linked-Data-Notifications Inbox",
           "type": "string",
           "example": "/inbox/",
           "default": "/inbox/",
-          "x-parser-schema-id": "<anonymous-schema-144>"
+          "x-parser-schema-id": "<anonymous-schema-483>"
         },
         "outbox": {
           "description": "URI to your Linked-Data-Notifications Outbox",
           "type": "string",
           "example": "/outbox/",
           "default": "/outbox/",
-          "x-parser-schema-id": "<anonymous-schema-145>"
+          "x-parser-schema-id": "<anonymous-schema-484>"
         },
         "storage": {
           "description": "URI to your storage root.",
           "type": "string",
           "example": "/",
           "default": "/",
-          "x-parser-schema-id": "<anonymous-schema-146>"
+          "x-parser-schema-id": "<anonymous-schema-485>"
         },
         "preferencesFile": {
           "description": "URI to shared application prefs.",
           "type": "string",
           "example": "/settings/prefs",
-          "x-parser-schema-id": "<anonymous-schema-147>"
+          "x-parser-schema-id": "<anonymous-schema-486>"
         },
         "account": {
           "description": "discoverable solid:account root",
           "type": "string",
           "example": "/",
-          "x-parser-schema-id": "<anonymous-schema-148>"
+          "x-parser-schema-id": "<anonymous-schema-487>"
         },
         "privateTypeIndex": {
           "description": "type index for your private use",
           "type": "string",
           "example": "/settings/privateTypeIndex",
-          "x-parser-schema-id": "<anonymous-schema-149>"
+          "x-parser-schema-id": "<anonymous-schema-488>"
         },
         "publicTypeIndex": {
           "description": "shared, discoverable type index",
           "type": "string",
           "example": "/settings/publicTypeIndex",
-          "x-parser-schema-id": "<anonymous-schema-150>"
+          "x-parser-schema-id": "<anonymous-schema-489>"
         },
         "permissions": {
           "description": "Permissions required by an linked-data application or service.",
@@ -101,42 +101,42 @@
               "contact",
               "website:events"
             ],
-            "x-parser-schema-id": "<anonymous-schema-152>"
+            "x-parser-schema-id": "<anonymous-schema-491>"
           },
-          "x-parser-schema-id": "<anonymous-schema-151>"
+          "x-parser-schema-id": "<anonymous-schema-490>"
         }
       },
-      "x-parser-schema-id": "<anonymous-schema-142>"
+      "x-parser-schema-id": "<anonymous-schema-481>"
     },
     "@id": {
       "type": "string",
       "format": "uri",
       "description": "the liked data uri for the Thing",
-      "x-parser-schema-id": "<anonymous-schema-137>"
+      "x-parser-schema-id": "<anonymous-schema-160>"
     },
     "account": {
       "description": "discoverable solid:account root",
       "type": "string",
       "example": "/",
-      "x-parser-schema-id": "<anonymous-schema-160>"
+      "x-parser-schema-id": "<anonymous-schema-499>"
     },
     "id": {
       "type": "string",
       "format": "uri",
       "example": "https://user.example.com/profile/card#me",
-      "x-parser-schema-id": "<anonymous-schema-154>"
+      "x-parser-schema-id": "<anonymous-schema-493>"
     },
     "inbox": {
       "description": "discoverable uri to your LDN inbox",
       "type": "string",
       "example": "/inbox/",
-      "x-parser-schema-id": "<anonymous-schema-156>"
+      "x-parser-schema-id": "<anonymous-schema-495>"
     },
     "outbox": {
       "description": "discoverable uri to your LDN outbox",
       "type": "string",
       "example": "/outbox/",
-      "x-parser-schema-id": "<anonymous-schema-157>"
+      "x-parser-schema-id": "<anonymous-schema-496>"
     },
     "permissions": {
       "description": "the subscription types required by your service.",
@@ -149,38 +149,38 @@
           "lead",
           "listing"
         ],
-        "x-parser-schema-id": "<anonymous-schema-164>"
+        "x-parser-schema-id": "<anonymous-schema-503>"
       },
-      "x-parser-schema-id": "<anonymous-schema-163>"
+      "x-parser-schema-id": "<anonymous-schema-502>"
     },
     "preferencesFile": {
       "description": "discoverable uri for shared application preferences",
       "type": "string",
       "example": "/settings/prefs",
-      "x-parser-schema-id": "<anonymous-schema-159>"
+      "x-parser-schema-id": "<anonymous-schema-498>"
     },
     "primaryTopic": {
       "type": "string",
       "default": "#me",
-      "x-parser-schema-id": "<anonymous-schema-141>"
+      "x-parser-schema-id": "<anonymous-schema-480>"
     },
     "privateTypeIndex": {
       "description": "type index for your private use",
       "type": "string",
       "example": "/settings/privateTypeIndex",
-      "x-parser-schema-id": "<anonymous-schema-161>"
+      "x-parser-schema-id": "<anonymous-schema-500>"
     },
     "publicTypeIndex": {
       "description": "shared, discoverable type index",
       "type": "string",
       "example": "/settings/publicTypeIndex",
-      "x-parser-schema-id": "<anonymous-schema-162>"
+      "x-parser-schema-id": "<anonymous-schema-501>"
     },
     "storage": {
       "description": "uri to your linked-data storage root",
       "type": "string",
       "example": "/",
-      "x-parser-schema-id": "<anonymous-schema-158>"
+      "x-parser-schema-id": "<anonymous-schema-497>"
     },
     "type": {
       "description": "The item type (Linked-Data @type)",
@@ -189,8 +189,8 @@
       ],
       "type": "string",
       "example": "SoftwareApplication",
-      "x-parser-schema-id": "<anonymous-schema-155>"
+      "x-parser-schema-id": "<anonymous-schema-494>"
     }
   },
-  "x-parser-schema-id": "<anonymous-schema-153>"
+  "x-parser-schema-id": "<anonymous-schema-492>"
 }

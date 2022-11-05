@@ -1,0 +1,20 @@
+# @format
+# yaml-language-server: $schema=https://www.asyncapi.com/definitions/2.5.0/message.json
+# $id: http://realestate.yodata.me/schenma/servicearea.create.yaml
+messageId: servicearea#create
+name: realestate/servicearea#create
+summary: service area created
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/servicearea#create }
+payload:
+  type: object
+  properties:
+    data:
+      type: object
+      properties:
+        type: { const: CreateAction }
+        object:
+          $ref: ../../ServiceArea.yaml
+          description: the service area being created

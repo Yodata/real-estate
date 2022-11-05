@@ -1,0 +1,17 @@
+# @format
+# yaml-language-server: $schema=https://www.asyncapi.com/definitions/2.5.0/message.json
+messageId: contact#collectioncreate
+name: realestate/contact#collectioncreate
+title: Contact Group Create
+summary: a contact group was created
+headers:
+  $ref: ../../subscription_headers.yaml
+payload:
+  type: object
+  properties:
+    data:
+      type: object
+      properties:
+        type: { const: CreateAction }
+        agent: { $ref: $defs.person.ref.yaml }
+        object: { $ref: $defs.collection.ref.yaml }

@@ -1,0 +1,23 @@
+messageId:  award#teamdelete
+name:  realestate/award#teamdelete
+title:  award#teamdelete
+summary:  an award team was deleted
+contentType:  application/json
+tags:
+  -  name:  action|delete
+  -  name:  topic|award
+  -  name:  domain|realestate
+headers:
+  type:  object
+  properties:
+    topic:  { const:  realestate/award#teamdelete }
+payload:
+  type:  object
+  properties:
+    data:
+      type:  object
+      properties:
+        type:  { const:  DeleteAction }
+        object:
+          $ref:  AwardTeam.yaml
+          description:  the award team being deleted

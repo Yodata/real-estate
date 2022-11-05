@@ -1,0 +1,46 @@
+# @format
+
+messageId: lead#retract
+name: realestate/lead#retract
+summary: a lead (data.object) is taken back from the previous assignee (data.participant) by the previous sender/owner (data.recipient)
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/lead#retract }
+payload:
+  type: object
+  properties:
+    data:
+      type: object
+      description: the message payload
+      x-range: RetractAction
+      properties:
+        type: { const: RetractAction }
+        object:
+          $ref: ../../Lead.yaml
+        agent:
+          type: string
+          description: user who effected the change
+          format: uri
+          example: https://{lead-admin}.bhhs.hsaffailites.com/profile/card
+        participant:
+          type: object
+          properties:
+            type:
+              {
+                type: string,
+                enum:
+                  [RealEstateAgent, RealEstateOffice, RealEstateOrganization],
+              }
+            id: { type: string, format: uri }
+        recipient:
+          type: object
+          description: the lead-owner, to whom the lead is being returned
+          properties:
+            type:
+              {
+                type: string,
+                enum:
+                  [RealEstateAgent, RealEstateOffice, RealEstateOrganization],
+              }
+            id: { type: string, format: uri }

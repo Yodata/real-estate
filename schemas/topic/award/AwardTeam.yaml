@@ -1,0 +1,29 @@
+# @format
+# yaml-language-server: $schema=https://www.asyncapi.com/definitions/2.5.0/schema.json
+
+title: AwardTeam
+type: object
+x-range: AwardTeam
+description: a Collection
+required:
+  - type
+  - identifier
+properties:
+  type: { const: AwardTeam }
+  name:
+    $ref: ../../name.yaml
+    example: Top Producer by Volume
+  identifier:
+    $ref: ../../identifier.yaml
+    example:
+      hsfTeamId: xxxxx
+  member:
+    description: members of the AwardTeam
+    type: array
+    items:
+      type: string
+      format: uri
+      examples:
+        - http://12345.example.com/profile/card#me
+        - http://ma302-001.example.com/profile/card#me
+        - http://ma302.example.com/profile/card#me

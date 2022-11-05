@@ -7,152 +7,121 @@ externalDocs: null
 headers:
   type: object
   properties:
-    time:
-      type: string
-      format: date-time
-      description: date & time the event was produced
-      x-parser-schema-id: <anonymous-schema-3>
-    agent:
-      type: string
-      format: uri
-      description: the user, team, or organization who sent the event
-      example: https://agentid.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-4>
-    instrument:
-      type: string
-      format: uri
-      description: the service which created the event
-      example: https://vendorid.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-5>
-    source:
-      type: string
-      format: uri
-      description: an agent, team or organization who received a copy of the event
-      example: https://companyid.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-6>
-    originalRecipient:
-      type: string
-      format: uri
-      description: the original recipient of the event with this id
-      example: https://agentid.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-7>
-    id:
-      type: string
-      format: uri
-      description: the shared identifier of the event, akd the event id
-      example: https://instrumentid.example.com/publish/xxxxxxxxxxxxx
-      x-parser-schema-id: <anonymous-schema-8>
-    '@id':
-      type: string
-      format: uri
-      description: the url of your instance of the event in your inbox
-      example: https://yourpod.example.com/inbox/xxxxxxxxxxxxx
-      x-parser-schema-id: <anonymous-schema-9>
     topic:
-      type: string
-      description: the event topic which determines the event.data schema
+      const: realestate/award#delete
       x-parser-schema-id: <anonymous-schema-2>
-      enum:
-        - realestate/award#delete
+  x-parser-schema-id: <anonymous-schema-1>
 payload:
   type: object
-  description: the message payload
-  x-parser-schema-id: <anonymous-schema-10>
-  x-range:
-    - DeleteAction
   properties:
-    agent:
-      description: the award presentor
-      $id: http://schema.org/agent
-      title: agent
-      x-range:
-        - Person
-        - Organization
-        - URI
-      oneOf:
-        - type: string
-          format: uri
-          example: http://{user}.example.com/profile/card#me
-        - type: object
-    identifier:
+    data:
       type: object
-      description: >-
-        key/value id assigned to the record in the system where the data was
-        originally created. The identifier should be included along with any
-        statements on the record, or the entity associated to the record.
-      example:
-        salesforceContactID: c28834ca-db69-4da8-90ad-75cdc9907298
-    object:
-      title: AwardSeries
-      type: object
-      x-range:
-        - AwardSeries
-      description: an award bestowed at regular intervals
       properties:
         type:
-          enum:
-            - AwardSeries
-          description: '"AwardSeries"'
-          type: string
-          x-parser-schema-id: <anonymous-schema-122>
-        name:
-          example: Top 1% Club
-          description: name of the series
-          type: string
-          x-parser-schema-id: <anonymous-schema-123>
-        description:
-          example: Annual
-          type: string
-          description: description of the item.
-          x-parser-schema-id: <anonymous-schema-124>
-        duration:
-          title: duration
-          type: string
-          description: The duration of the item in ISO 8601 date format.
-          example: R/P1Y
-          x-parser-schema-id: <anonymous-schema-125>
-        startDate:
-          description: the start date-time (ISO 8601 formated)
-          type: string
-          format: date-time
-          x-parser-schema-id: <anonymous-schema-126>
-        endDate:
-          type: string
-          description: the end date-time (ISO 8601 formated)
-          format: date-time
-          x-parser-schema-id: <anonymous-schema-127>
-        id:
-          example: https://example/com
-          type: string
-          format: uri
-          description: Linked-Data URI (@id)
-          x-parser-schema-id: <anonymous-schema-128>
+          const: DeleteAction
+          x-parser-schema-id: <anonymous-schema-5>
         identifier:
-          example:
-            hsfAwardSeriesID: xxxx
           type: object
           description: >-
             key/value id assigned to the record in the system where the data was
             originally created. The identifier should be included along with any
             statements on the record, or the entity associated to the record.
-          x-parser-schema-id: <anonymous-schema-129>
-      example:
-        type: AwardSeries
-        name: Agent of The Year
-        identifier:
-          hsfAwardSeriesId: xxxx
-    recipient:
-      type: object
-      x-range:
-        - RealEstateAgent
-        - RealEstateOffice
-        - RealEstateOrganiation
-      description: profile URI of the award recipient
-      example:
-        type: RealEstateAgent
-        id: https://user.example.com/profile/card#me
-        name: Joann Agent
-    type:
-      enum:
-        - DeleteAction
+          example:
+            salesforceContactID: c28834ca-db69-4da8-90ad-75cdc9907298
+          x-parser-schema-id: <anonymous-schema-6>
+        agent:
+          description: the award presenter
+          $id: http://schema.org/agent
+          title: agent
+          x-range:
+            - Person
+            - Organization
+            - URI
+          oneOf:
+            - type: string
+              format: uri
+              example: http://{user}.example.com/profile/card#me
+              x-parser-schema-id: <anonymous-schema-7>
+            - type: object
+              x-parser-schema-id: <anonymous-schema-8>
+        object:
+          title: AwardSeries
+          type: object
+          x-range:
+            - AwardSeries
+          description: an award bestowed at regular intervals
+          properties:
+            type:
+              const: AwardSeries
+              x-parser-schema-id: <anonymous-schema-10>
+            name:
+              example: Top 1% Club
+              description: name of the series
+              type: string
+              x-parser-schema-id: <anonymous-schema-11>
+            description:
+              example: Annual
+              type: string
+              description: description of the item.
+              x-parser-schema-id: <anonymous-schema-12>
+            duration:
+              title: duration
+              type: string
+              format: duration
+              description: The duration of the item in ISO 8601 date format.
+              example: R/P1Y
+              x-parser-schema-id: <anonymous-schema-13>
+            startDate:
+              description: the start date-time (ISO 8601 formated)
+              type: string
+              format: date-time
+              x-parser-schema-id: <anonymous-schema-14>
+            endDate:
+              type: string
+              description: the end date-time (ISO 8601 formated)
+              format: date-time
+              x-parser-schema-id: <anonymous-schema-15>
+            id:
+              type: string
+              format: uri
+              x-parser-schema-id: <anonymous-schema-16>
+            identifier:
+              example:
+                hsfAwardSeriesID: xxxx
+              type: object
+              description: >-
+                key/value id assigned to the record in the system where the data
+                was originally created. The identifier should be included along
+                with any statements on the record, or the entity associated to
+                the record.
+              x-parser-schema-id: <anonymous-schema-17>
+          x-parser-schema-id: <anonymous-schema-9>
+        recipient:
+          type: object
+          properties:
+            type:
+              type: string
+              enum:
+                - RealEstateAgent
+                - RealEstateOffice
+                - RealEstateOrganization
+              x-parser-schema-id: <anonymous-schema-19>
+            id:
+              type: string
+              format: uri
+              description: profile URI of the award recipient
+              example: https://user.example.com/profile/card#me
+              x-parser-schema-id: <anonymous-schema-20>
+            name:
+              type: string
+              description: name of the award recipient
+              example: Joann Agent
+              x-parser-schema-id: <anonymous-schema-21>
+          example:
+            type: RealEstateAgent
+            id: https://user.example.com/profile/card#me
+            name: Joann Agent
+          x-parser-schema-id: <anonymous-schema-18>
+      x-parser-schema-id: <anonymous-schema-4>
+  x-parser-schema-id: <anonymous-schema-3>
 

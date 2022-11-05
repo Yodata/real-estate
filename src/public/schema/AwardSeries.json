@@ -10,27 +10,26 @@
       "example": "Annual",
       "type": "string",
       "description": "description of the item.",
-      "x-parser-schema-id": "<anonymous-schema-124>"
+      "x-parser-schema-id": "<anonymous-schema-12>"
     },
     "duration": {
       "title": "duration",
       "type": "string",
+      "format": "duration",
       "description": "The duration of the item in ISO 8601 date format.",
       "example": "R/P1Y",
-      "x-parser-schema-id": "<anonymous-schema-125>"
+      "x-parser-schema-id": "<anonymous-schema-13>"
     },
     "endDate": {
       "type": "string",
       "description": "the end date-time (ISO 8601 formated)",
       "format": "date-time",
-      "x-parser-schema-id": "<anonymous-schema-127>"
+      "x-parser-schema-id": "<anonymous-schema-15>"
     },
     "id": {
-      "example": "https://example/com",
       "type": "string",
       "format": "uri",
-      "description": "Linked-Data URI (@id)",
-      "x-parser-schema-id": "<anonymous-schema-128>"
+      "x-parser-schema-id": "<anonymous-schema-16>"
     },
     "identifier": {
       "example": {
@@ -38,27 +37,23 @@
       },
       "type": "object",
       "description": "key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.",
-      "x-parser-schema-id": "<anonymous-schema-129>"
+      "x-parser-schema-id": "<anonymous-schema-17>"
     },
     "name": {
       "example": "Top 1% Club",
       "description": "name of the series",
       "type": "string",
-      "x-parser-schema-id": "<anonymous-schema-123>"
+      "x-parser-schema-id": "<anonymous-schema-11>"
     },
     "startDate": {
       "description": "the start date-time (ISO 8601 formated)",
       "type": "string",
       "format": "date-time",
-      "x-parser-schema-id": "<anonymous-schema-126>"
+      "x-parser-schema-id": "<anonymous-schema-14>"
     },
     "type": {
-      "enum": [
-        "AwardSeries"
-      ],
-      "description": "\"AwardSeries\"",
-      "type": "string",
-      "x-parser-schema-id": "<anonymous-schema-122>"
+      "const": "AwardSeries",
+      "x-parser-schema-id": "<anonymous-schema-10>"
     }
   },
   "x-parser-schema-id": "AwardSeries",

@@ -6,206 +6,175 @@
   "headers": {
     "type": "object",
     "properties": {
-      "time": {
-        "type": "string",
-        "format": "date-time",
-        "description": "date & time the event was produced",
-        "x-parser-schema-id": "<anonymous-schema-83>"
-      },
-      "agent": {
-        "type": "string",
-        "format": "uri",
-        "description": "the user, team, or organization who sent the event",
-        "example": "https://agentid.example.com/profile/card#me",
-        "x-parser-schema-id": "<anonymous-schema-84>"
-      },
-      "instrument": {
-        "type": "string",
-        "format": "uri",
-        "description": "the service which created the event",
-        "example": "https://vendorid.example.com/profile/card#me",
-        "x-parser-schema-id": "<anonymous-schema-85>"
-      },
-      "source": {
-        "type": "string",
-        "format": "uri",
-        "description": "an agent, team or organization who received a copy of the event",
-        "example": "https://companyid.example.com/profile/card#me",
-        "x-parser-schema-id": "<anonymous-schema-86>"
-      },
-      "originalRecipient": {
-        "type": "string",
-        "format": "uri",
-        "description": "the original recipient of the event with this id",
-        "example": "https://agentid.example.com/profile/card#me",
-        "x-parser-schema-id": "<anonymous-schema-87>"
-      },
-      "id": {
-        "type": "string",
-        "format": "uri",
-        "description": "the shared identifier of the event, akd the event id",
-        "example": "https://instrumentid.example.com/publish/xxxxxxxxxxxxx",
-        "x-parser-schema-id": "<anonymous-schema-88>"
-      },
-      "@id": {
-        "type": "string",
-        "format": "uri",
-        "description": "the url of your instance of the event in your inbox",
-        "example": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
-        "x-parser-schema-id": "<anonymous-schema-89>"
-      },
       "topic": {
-        "type": "string",
-        "x-parser-schema-id": "<anonymous-schema-82>",
-        "description": "\"realestate/website#register\"",
-        "enum": [
-          "realestate/website#register"
-        ]
-      }
-    }
-  },
-  "payload": {
-    "x-parser-schema-id": "<anonymous-schema-90>",
-    "type": "object",
-    "description": "the event payload, typeically a schema.org/Action",
-    "required": [
-      "type",
-      "agent",
-      "object"
-    ],
-    "properties": {
-      "agent": {
-        "type": "object",
-        "description": "the website user who performed the action",
-        "x-range": [
-          "Contact",
-          "Person"
-        ],
-        "example": {
-          "type": "Contact",
-          "name": "Miles Davis",
-          "givenName": "Miles",
-          "familyName": "Davis",
-          "telephone": "067-419-1230",
-          "email": "user@example.com",
-          "identifier": {
-            "hsfconsumerid": "216bf670-0777-43db-9d73-c3377d280fe4"
-          },
-          "additionalProperty": {
-            "userPath": "xxx",
-            "workingWithAgent": true
-          }
-        }
-      },
-      "instrument": {
-        "type": "object",
-        "description": "website or mobile application",
-        "x-range": [
-          "RealEstateWebsite",
-          "MobileApplication",
-          "Thing"
-        ],
-        "example": {
-          "type": "RealEstateWebsite",
-          "url": "http://gotham-city-realestate.example.com"
-        }
-      },
-      "object": {
-        "type": "object"
-      },
-      "participant": {
-        "x-title": "participant",
-        "x-range": [
-          "Person",
-          "RealEstateAgent",
-          "RealEstateTeam",
-          "RealEstateOrganization"
-        ],
-        "description": "Other co-agents with a direct or indirect interest in the action.",
-        "type": "array",
-        "items": {
-          "type": "object",
-          "x-parser-schema-id": "<anonymous-schema-348>"
-        },
-        "example": [
-          {
-            "type": "Contact",
-            "name": "Bruce Wayne",
-            "email": "bruce@example.com",
-            "identifier": {
-              "redContact_GUID": "92d0a096-457e-4643-ace8-fa95b6bdb1c5"
-            }
-          }
-        ]
-      },
-      "type": {
-        "type": "string",
-        "description": "The item type (Linked-Data @type)",
-        "x-parser-schema-id": "<anonymous-schema-250>"
+        "const": "realestate/website#register",
+        "x-parser-schema-id": "<anonymous-schema-428>"
       }
     },
-    "allOf": [
-      {
-        "allOf": [
-          {
-            "$id": "http://realestate.yodata.me/schema/Action",
-            "title": "Action",
+    "x-parser-schema-id": "<anonymous-schema-427>"
+  },
+  "payload": {
+    "type": "object",
+    "properties": {
+      "data": {
+        "type": "object",
+        "properties": {
+          "agent": {
             "type": "object",
-            "description": "An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role.",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "description": "the action type",
-                "type": "string",
-                "x-parser-schema-id": "<anonymous-schema-113>"
-              },
-              "object": {
-                "description": "item on which the action is carried out",
-                "x-parser-schema-id": "<anonymous-schema-114>"
-              }
-            },
-            "externalDocs": {
-              "description": "schema.org/Action",
-              "url": "https://schema.org/Action"
-            },
-            "x-parser-schema-id": "Action"
-          },
-          {
-            "x-range": "RegisterAction",
-            "type": "object",
-            "description": "the user (agent) has created a website account.",
+            "description": "a website user/visitor",
             "properties": {
               "type": {
                 "type": "string",
                 "enum": [
-                  "RegisterAction"
-                ]
+                  "Person",
+                  "Contact"
+                ],
+                "x-parser-schema-id": "<anonymous-schema-378>"
+              },
+              "name": {
+                "type": "string",
+                "x-parser-schema-id": "<anonymous-schema-379>"
+              },
+              "givenName": {
+                "type": "string",
+                "x-parser-schema-id": "<anonymous-schema-380>"
+              },
+              "familyName": {
+                "type": "string",
+                "x-parser-schema-id": "<anonymous-schema-381>"
+              },
+              "email": {
+                "type": "string",
+                "format": "email",
+                "x-parser-schema-id": "<anonymous-schema-382>"
+              },
+              "telephone": {
+                "type": "string",
+                "x-parser-schema-id": "<anonymous-schema-383>"
+              },
+              "identifier": {
+                "type": "object",
+                "description": "key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.",
+                "example": {
+                  "salesforceContactID": "c28834ca-db69-4da8-90ad-75cdc9907298"
+                },
+                "x-parser-schema-id": "<anonymous-schema-96>"
+              },
+              "sameAs": {
+                "title": "sameAs",
+                "type": "string",
+                "format": "uri",
+                "description": "vendor specific identifier for the user can be shared with other vendors to identify the user",
+                "examples": [
+                  {
+                    "amcecrmid": 1234567,
+                    "salesForceId": "parsing"
+                  },
+                  {
+                    "salesForceId": "ad4fa5f4as"
+                  }
+                ],
+                "x-parser-schema-id": "<anonymous-schema-384>"
+              },
+              "contactPoint": {
+                "title": "ContactPoint",
+                "description": "A point of contact for the entity. By convention in the real estate domain, ContactPoints \nare preferred over telephone, email, and faxNumber so the ContactPoint.name property can be used to label values \nfor example, Work Telephone, Home, as named contactPoint values.\n",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "description": "ContactPoint",
+                    "type": "string",
+                    "enum": [
+                      "ContactPoint"
+                    ],
+                    "x-parser-schema-id": "<anonymous-schema-269>"
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "a label for the contactPoint, i.e. 'Work', or 'Home'",
+                    "example": "Work",
+                    "x-parser-schema-id": "<anonymous-schema-270>"
+                  },
+                  "telephone": {
+                    "description": "a telephone number",
+                    "type": "string",
+                    "example": "1-364-127-9618 x20418",
+                    "x-parser-schema-id": "<anonymous-schema-271>"
+                  },
+                  "faxNumber": {
+                    "description": "a fax number",
+                    "type": "string",
+                    "example": "834.320.1602",
+                    "x-parser-schema-id": "<anonymous-schema-272>"
+                  },
+                  "email": {
+                    "description": "an email address for the item.",
+                    "type": "string",
+                    "format": "email",
+                    "example": "user@example.com",
+                    "x-parser-schema-id": "<anonymous-schema-273>"
+                  },
+                  "url": {
+                    "description": "primary URL for the item.",
+                    "type": "string",
+                    "format": "uri",
+                    "example": "https://www.facebook.com/hallandoates",
+                    "x-parser-schema-id": "<anonymous-schema-274>"
+                  }
+                },
+                "x-parser-schema-id": "<anonymous-schema-268>"
+              },
+              "additionalProperties": {
+                "type": "object",
+                "description": "additional properties for the website user",
+                "properties": {
+                  "workingWithAgent": {
+                    "type": "boolean",
+                    "x-parser-schema-id": "<anonymous-schema-386>"
+                  }
+                },
+                "x-parser-schema-id": "<anonymous-schema-385>"
               }
-            }
-          }
-        ]
-      },
-      {
-        "properties": {
-          "agent": {
-            "description": "the registering user"
+            },
+            "x-parser-schema-id": "<anonymous-schema-377>"
           },
-          "object": {
+          "instrument": {
             "type": "object",
-            "description": "the site, app or service being on which the user is registered",
-            "x-range": [
-              "RealEstateWebsite",
-              "MobileApplication"
+            "description": "the site, app or service being on which the user action was observed.",
+            "required": [
+              "name"
             ],
-            "example": {
-              "type": "RealEstateWebsite",
-              "url": "https://gothamcityrealestate.example.com"
-            }
+            "properties": {
+              "type": {
+                "type": "string",
+                "x-parser-schema-id": "<anonymous-schema-432>"
+              },
+              "name": {
+                "type": "string",
+                "x-parser-schema-id": "<anonymous-schema-433>"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "x-parser-schema-id": "<anonymous-schema-434>"
+              }
+            },
+            "examples": [
+              {
+                "type": "Website",
+                "name": "Agent Website",
+                "url": "https://www.example.com"
+              },
+              {
+                "name": "Agent App"
+              }
+            ],
+            "x-parser-schema-id": "<anonymous-schema-431>"
           }
-        }
+        },
+        "x-parser-schema-id": "<anonymous-schema-430>"
       }
-    ]
+    },
+    "x-parser-schema-id": "<anonymous-schema-429>"
   }
 }

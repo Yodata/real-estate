@@ -1,0 +1,5 @@
+$id:  http://realestate.yodata.me/schema/dateDeleted.yaml
+type: string
+format: date-time
+title: Date Deleted
+description: The date on which the item was deleted.

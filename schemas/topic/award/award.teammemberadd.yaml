@@ -1,0 +1,29 @@
+# @format
+
+messageId: award#teammemberadd
+name: realestate/award#teammemberadd
+title: award#teammemberadd
+summary: a new team member (data.object) was added to an award team (data.targetCollection)
+contentType: application/json
+tags:
+  - name: action|add
+  - name: topic|award
+  - name: domain|realestate
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/award#teammemberadd }
+payload:
+  type: object
+  properties:
+    data:
+      type: object
+      properties:
+        type: { const: AddAction }
+        object:
+          description: the profile uri of the team member being added
+          type: string
+          format: uri
+        targetCollection:
+          description: the award team
+          $ref: AwardTeam.yaml

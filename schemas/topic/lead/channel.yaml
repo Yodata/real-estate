@@ -1,0 +1,12 @@
+# @format
+
+description: lead management events
+subscribe:
+  message:
+    oneOf:
+      - $ref: lead.accept.yaml
+      - $ref: lead.add.yaml
+      - $ref: lead.assign.yaml
+      - $ref: lead.update.yaml
+      - $ref: lead.reject.yaml
+      - $ref: lead.retract.yaml

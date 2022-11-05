@@ -1,0 +1,6 @@
+description: franchise events
+subscribe:
+  message:
+    oneOf:
+      - $ref: transactionreport.yaml
+      - $ref: listingreport.yaml

@@ -1,0 +1,18 @@
+# @format
+# yaml-language-server: $schema=https://www.asyncapi.com/definitions/2.5.0/message.json
+messageId: contact#collectionmemberremove
+name: realestate/contact#collectionmemberremove
+summary: a contact was removed from collection
+headers:
+  $ref: ../../subscription_headers.yaml
+payload:
+  type: object
+  properties:
+    topic: { const: realestate/contact#collectionmemberremove }
+    data:
+      type: object
+      properties:
+        type: { const: RemoveAction }
+        agent: { $ref: $defs.person.ref.yaml }
+        object: { $ref: $defs.contact.ref.yaml }
+        targetCollection: { $ref: $defs.collection.ref.yaml }

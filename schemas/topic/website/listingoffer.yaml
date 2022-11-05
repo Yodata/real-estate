@@ -1,0 +1,13 @@
+# @format
+# yaml-language-server: $schema=https://asyncapi.com/definitions/2.5.0/message.json
+messageId: website#listingoffer
+name: realestate/website#listingoffer
+summary: website user makes a listing offer
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/website#listingoffer }
+payload:
+  type: object
+  properties:
+    data: { $ref: ../../ListingOffer.yaml }

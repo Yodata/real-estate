@@ -136,3 +136,4 @@ context
 **/__generated
 __generated__
 .vercel
+**/generated/*

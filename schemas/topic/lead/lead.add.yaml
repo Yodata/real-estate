@@ -1,0 +1,19 @@
+# @format
+
+messageId: lead#add
+name: realestate/lead#add
+summary: a crm lead was created
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/lead#add }
+payload:
+  type: object
+  properties:
+    data:
+      type: object
+      properties:
+        type: { const: lead#add }
+        object:
+          $ref: ../../Lead.yaml
+        # targetCollection TODO check real lead events

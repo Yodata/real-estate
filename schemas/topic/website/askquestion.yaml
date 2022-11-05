@@ -1,0 +1,36 @@
+# @format
+# yaml-language-server: $schema=https://asyncapi.com/definitions/2.5.0/message.json
+messageId: website#askquestion
+name: realestate/website#askquestion
+summary: website user asks a question
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/website#askquestion }
+payload:
+  type: object
+  properties:
+    data:
+      type: object
+      required:
+        - type
+        - agent
+        - object
+        - recipient
+      properties:
+        type: { const: AskAction }
+        agent: { $ref: defs.agent.yaml }
+        object: { $ref: ../../question.yaml }
+
+        recipient:
+          $ref: ../../recipient.yaml
+          description: the agent being asked
+          x-range:
+            - RealEstateAgent
+            - RealEstateOffice
+            - RealEstateOrganization
+
+        about:
+          $ref: ../../PropertyListing.yaml
+          example:
+            $ref: ../../example-propertylisting.yaml

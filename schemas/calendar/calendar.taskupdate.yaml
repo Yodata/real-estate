@@ -1,9 +1,10 @@
 x-title: taskupdate
 x-scope: realestate/calendar#
 summary: a task has been updated
+headers:
+  $ref: subscription_headers.yaml
 payload:
-  allOf:
-    - $ref: base.event.yaml
+
     - properties:
         topic:
           enum:

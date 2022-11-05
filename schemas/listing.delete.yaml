@@ -1,9 +1,10 @@
 messageId: listing#delete
 x-scope: realestate/listing#
 summary: a PropertyListing is deleted
+headers:
+  $ref: subscription_headers.yaml
 payload:
-  allOf:
-    - $ref: base.event.yaml
+
     - properties:
         topic:
           enum:

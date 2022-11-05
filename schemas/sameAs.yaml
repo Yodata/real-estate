@@ -1,7 +1,9 @@
-sameAs:
-  type: string
-  format: uri
-  description:
-    "URL of a reference Web page that unambiguously indicates the item's
-    identity. E.g. the URL of the item's Wikipedia page, Freebase page, or
-    official website."
+# @format
+
+title: sameAs
+type: string
+format: uri
+description: vendor specific identifier for the user can be shared with other vendors to identify the user
+examples:
+  - { amcecrmid: 1234567, salesForceId: parsing }
+  - { salesForceId: ad4fa5f4as }

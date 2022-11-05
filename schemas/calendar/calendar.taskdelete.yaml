@@ -1,9 +1,10 @@
 x-title: taskdelete
 x-scope: realestate/calendar#
 summary: a task was removed from an action plan
+headers:
+  $ref: subscription_headers.yaml
 payload:
-  allOf:
-    - $ref: base.event.yaml
+
     - properties:
         topic:
           enum:

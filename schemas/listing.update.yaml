@@ -1,16 +1,11 @@
 messageId: listing#update
 x-scope: realestate/listing#
 summary: a PropertyListing is created or updated
+headers:
+  $ref: subscription_headers.yaml
+  topic: { const: realestate/listing#update }
 payload:
-  allOf:
-    - $ref: base.event.yaml
-    - properties:
-        topic:
-          enum:
-            - realestate/listing#update
-        data:
-          allOf:
-          - $ref: UpdateAction.yaml
-          - properties:
-              object:
-                $ref: PropertyListing.yaml
+  type: object
+  properties:
+    type: { const: UpdateAction }
+    object: { $ref: PropertyListing.yaml }

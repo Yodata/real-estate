@@ -1,0 +1,23 @@
+messageId: award#seriesupdate
+name: realestate/award#seriesupdate
+title: award#seriesupdate
+summary: an award series was updated
+contentType: application/json
+tags:
+  - name: action|update
+  - name: topic|award
+  - name: domain|realestate
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/award#seriesupdate }
+payload:
+  type: object
+  properties:
+    data:
+      type: object
+      properties:
+        type: { const: UpdateAction }
+        object:
+          $ref: AwardSeries.yaml
+          description: the award series being updated

@@ -1,0 +1,19 @@
+# @format
+
+messageId: website#viewproperty
+name: realestate/website#viewproperty
+summary: website user (data.agent) has viewed a listing (data.object) on a webiste or mobile app (data.instrument)
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/website#viewproperty }
+payload:
+  data:
+    properties:
+      type: { const: ViewAction }
+      object:
+        type: object
+        description: the viewed property
+        x-range: PropertyListing
+        example:
+          $ref: ../../example-propertylisting.yaml

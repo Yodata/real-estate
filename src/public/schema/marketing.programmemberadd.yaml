@@ -1,0 +1,110 @@
+$id: http://realestate.yodata.me/schema/marketing.programmemberadd.yaml
+messageId: marketing#programmemberadd
+summary: a program member was added by the agent
+externalDocs: null
+headers:
+  type: object
+  properties:
+    topic:
+      const: realestate/marketing#programmemberadd
+      x-parser-schema-id: <anonymous-schema-216>
+  x-parser-schema-id: <anonymous-schema-215>
+payload:
+  type: object
+  properties:
+    data:
+      type: object
+      properties:
+        type:
+          const: AddAction
+          x-parser-schema-id: <anonymous-schema-219>
+        agent:
+          type: string
+          format: uri
+          x-parser-schema-id: <anonymous-schema-220>
+        object:
+          $id: http://realestate.yodata.me/schema/ProgramMembership.json
+          title: MarketingProgramMembership
+          description: >-
+            describes membership relation between a member (Person) and a
+            MarketingProgram
+          type: object
+          properties:
+            type:
+              const: ProgramMembership
+              x-parser-schema-id: <anonymous-schema-221>
+            role:
+              type: string
+              enum:
+                - member
+                - owner
+              x-parser-schema-id: <anonymous-schema-222>
+            member:
+              type: object
+              properties:
+                type:
+                  type: string
+                  enum:
+                    - Person
+                    - Contact
+                  x-parser-schema-id: <anonymous-schema-224>
+                name:
+                  type: string
+                  x-parser-schema-id: <anonymous-schema-225>
+                identifier:
+                  type: object
+                  description: >-
+                    key/value id assigned to the record in the system where the
+                    data was originally created. The identifier should be
+                    included along with any statements on the record, or the
+                    entity associated to the record.
+                  example:
+                    salesforceContactID: c28834ca-db69-4da8-90ad-75cdc9907298
+                  x-parser-schema-id: <anonymous-schema-96>
+              x-parser-schema-id: <anonymous-schema-223>
+            memberOf:
+              type: object
+              properties:
+                type:
+                  const: MarketingProgram
+                  x-parser-schema-id: <anonymous-schema-227>
+                name:
+                  type: string
+                  example: Market Activity Report 508 Homewood Ave
+                  x-parser-schema-id: <anonymous-schema-228>
+                identifier:
+                  type: object
+                  description: >-
+                    key/value id assigned to the record in the system where the
+                    data was originally created. The identifier should be
+                    included along with any statements on the record, or the
+                    entity associated to the record.
+                  example:
+                    salesforceContactID: c28834ca-db69-4da8-90ad-75cdc9907298
+                  x-parser-schema-id: <anonymous-schema-96>
+              x-parser-schema-id: <anonymous-schema-226>
+        targetCollection:
+          MarketingProgram:
+            title: MarketingProgram
+            description: a marketing program
+            type: object
+            properties:
+              type:
+                const: MarketingProgram
+              name:
+                type: string
+                example: Market Activity Report 508 Homewood Ave
+              identifier:
+                type: object
+                description: >-
+                  key/value id assigned to the record in the system where the
+                  data was originally created. The identifier should be included
+                  along with any statements on the record, or the entity
+                  associated to the record.
+                example:
+                  salesforceContactID: c28834ca-db69-4da8-90ad-75cdc9907298
+                x-parser-schema-id: <anonymous-schema-96>
+          x-parser-schema-id: <anonymous-schema-200>
+      x-parser-schema-id: <anonymous-schema-218>
+  x-parser-schema-id: <anonymous-schema-217>
+

@@ -1,0 +1,18 @@
+# @format
+
+messageId: profile#teamdelete
+name: realestate/profile#teamdelete
+summary: a team profile was creatd
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/profile#teamdelete }
+payload:
+  type: object
+  properties:
+    data:
+      type: object
+      properties:
+        type: { const: DeleteAction }
+        object:
+          $ref: ../../RealEstateTeam.yaml

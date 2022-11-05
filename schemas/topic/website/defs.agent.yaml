@@ -1,0 +1,19 @@
+# @format
+
+type: object
+description: a website user/visitor
+properties:
+  type: { type: string, enum: [Person, Contact] }
+  name: { type: string }
+  givenName: { type: string }
+  familyName: { type: string }
+  email: { type: string, format: email }
+  telephone: { type: string }
+  identifier: { $ref: ../../identifier.yaml }
+  sameAs: { $ref: ../../sameAs.yaml }
+  contactPoint: { $ref: ../../contactPoint.yaml }
+  additionalProperties:
+    type: object
+    description: additional properties for the website user
+    properties:
+      workingWithAgent: { type: boolean }

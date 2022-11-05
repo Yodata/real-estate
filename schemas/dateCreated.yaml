@@ -1,3 +1,5 @@
-description: The date on which the item was created.
+$id:  http://realestate.yodata.me/schema/dateCreated.yaml
 type: string
 format: date-time
+title: Date Created
+description: The date on which the item was created.

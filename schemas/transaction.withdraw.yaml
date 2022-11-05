@@ -1,9 +1,10 @@
 x-title: withdraw
 x-scope: realestate/withdraw#
 summary: a real estate transaction was withdrawn
+headers:
+  $ref: subscription_headers.yaml
 payload:
-  allOf:
-    - $ref: base.event.yaml
+
     - properties:
         topic:
           enum:

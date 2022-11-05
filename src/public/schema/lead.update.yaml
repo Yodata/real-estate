@@ -5,94 +5,19 @@ externalDocs: null
 headers:
   type: object
   properties:
-    time:
-      type: string
-      format: date-time
-      description: date & time the event was produced
-      x-parser-schema-id: <anonymous-schema-3>
-    agent:
-      type: string
-      format: uri
-      description: the user, team, or organization who sent the event
-      example: https://agentid.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-4>
-    instrument:
-      type: string
-      format: uri
-      description: the service which created the event
-      example: https://vendorid.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-5>
-    source:
-      type: string
-      format: uri
-      description: an agent, team or organization who received a copy of the event
-      example: https://companyid.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-6>
-    originalRecipient:
-      type: string
-      format: uri
-      description: the original recipient of the event with this id
-      example: https://agentid.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-7>
-    id:
-      type: string
-      format: uri
-      description: the shared identifier of the event, akd the event id
-      example: https://instrumentid.example.com/publish/xxxxxxxxxxxxx
-      x-parser-schema-id: <anonymous-schema-8>
-    '@id':
-      type: string
-      format: uri
-      description: the url of your instance of the event in your inbox
-      example: https://yourpod.example.com/inbox/xxxxxxxxxxxxx
-      x-parser-schema-id: <anonymous-schema-9>
     topic:
-      type: string
-      description: the event topic which determines the event.data schema
-      x-parser-schema-id: <anonymous-schema-2>
-      enum:
-        - realestate/lead#update
+      const: realestate/lead#update
+      x-parser-schema-id: <anonymous-schema-120>
+  x-parser-schema-id: <anonymous-schema-119>
 payload:
   type: object
-  description: the message payload
-  x-parser-schema-id: <anonymous-schema-10>
-  allOf:
-    - allOf:
-        - $id: http://realestate.yodata.me/schema/Action
-          title: Action
-          type: object
-          description: >-
-            An action performed by a direct agent and indirect participants upon
-            a direct object. Optionally happens at a location with the help of
-            an inanimate instrument. The execution of the action may produce a
-            result. Specific action sub-type documentation specifies the exact
-            expectation of each argument/role.
-          required:
-            - type
-          properties:
-            type:
-              description: the action type
-              type: string
-              x-parser-schema-id: <anonymous-schema-113>
-            object:
-              description: item on which the action is carried out
-              x-parser-schema-id: <anonymous-schema-114>
-          externalDocs:
-            description: schema.org/Action
-            url: https://schema.org/Action
-          x-parser-schema-id: Action
-        - title: UpdateAction
-          description: the item (object) has been updated by user (agent)
-          properties:
-            type:
-              description: const UpdateAction
-              enum:
-                - UpdateAction
-            object:
-              type: object
-              description: the updated item
-    - x-range: UpdateAction
+  properties:
+    data:
+      type: object
       properties:
+        type:
+          const: UpdateAction
+          x-parser-schema-id: <anonymous-schema-123>
         object:
           title: Lead
           type: object
@@ -104,7 +29,7 @@ payload:
               enum:
                 - Lead
               description: Lead
-              x-parser-schema-id: <anonymous-schema-280>
+              x-parser-schema-id: <anonymous-schema-95>
             identifier:
               type: object
               description: >-
@@ -114,7 +39,7 @@ payload:
                 the record.
               example:
                 salesforceContactID: c28834ca-db69-4da8-90ad-75cdc9907298
-              x-parser-schema-id: <anonymous-schema-202>
+              x-parser-schema-id: <anonymous-schema-96>
             object:
               description: the lead (Contact)
               x-range:
@@ -125,19 +50,19 @@ payload:
                 name: Joe Smith
                 telephone: 731-620-9877 x6155
                 email: Giuseppe.Lang62@hotmail.com
-              x-parser-schema-id: <anonymous-schema-281>
+              x-parser-schema-id: <anonymous-schema-97>
             recipient:
               description: the lead recipient
               type: string
               format: uri
               example: http://{lead-recipient}.example.com/profile/card#me
-              x-parser-schema-id: <anonymous-schema-282>
+              x-parser-schema-id: <anonymous-schema-98>
             sender:
               description: the lead provider
               type: string
               format: uri
               example: http://{lead-sender}.example.com/profile/card#me
-              x-parser-schema-id: <anonymous-schema-283>
+              x-parser-schema-id: <anonymous-schema-99>
             owner:
               description: the original owner of the lead
               x-range:
@@ -147,29 +72,29 @@ payload:
               type: string
               format: uri
               example: http://{lead-owner}.example.com/profile/card#me
-              x-parser-schema-id: <anonymous-schema-284>
+              x-parser-schema-id: <anonymous-schema-100>
             dateAccepted:
               type: string
               description: The date/time the item was accepted by the recipient
               x-range: DateTime
               example: 2019-11-25T04:23:32.000Z
-              x-parser-schema-id: <anonymous-schema-285>
+              x-parser-schema-id: <anonymous-schema-101>
             dateRejected:
               type: string
               format: date-time
               description: The date/time the item was rejected by the recipient
-              x-parser-schema-id: <anonymous-schema-286>
+              x-parser-schema-id: <anonymous-schema-102>
             dateSent:
               description: the date the lead was sent
               type: string
               format: date-time
-              x-parser-schema-id: <anonymous-schema-287>
+              x-parser-schema-id: <anonymous-schema-103>
             dateReceived:
               type: string
               description: The date/time the item was received by it's recipient
               x-range: DateTime
               example: 2019-11-25T04:23:32.000Z
-              x-parser-schema-id: <anonymous-schema-288>
+              x-parser-schema-id: <anonymous-schema-104>
             leadSource:
               description: >-
                 lead origin, may be a website event or a thing such as a
@@ -186,7 +111,15 @@ payload:
                   object:
                     type: Question
                     text: Help me I'm trapped inside documentation.
-                x-parser-schema-id: <anonymous-schema-290>
-              x-parser-schema-id: <anonymous-schema-289>
+                x-parser-schema-id: <anonymous-schema-106>
+              x-parser-schema-id: <anonymous-schema-105>
           x-parser-schema-id: Lead
+        agent:
+          type: string
+          description: user who effected the change
+          format: uri
+          example: https://{lead-admin}.bhhs.hsaffailites.com/profile/card
+          x-parser-schema-id: <anonymous-schema-124>
+      x-parser-schema-id: <anonymous-schema-122>
+  x-parser-schema-id: <anonymous-schema-121>
 

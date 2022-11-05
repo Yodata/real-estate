@@ -1,9 +1,10 @@
 x-title: eventdelete
 x-scope: realestate/calendar#
 summary: an event was deleted
+headers:
+  $ref: subscription_headers.yaml
 payload:
-  allOf:
-    - $ref: base.event.yaml
+
     - properties:
         topic:
           enum:

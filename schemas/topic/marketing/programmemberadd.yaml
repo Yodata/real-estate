@@ -1,0 +1,19 @@
+# @format
+
+messageId: marketing#programmemberadd
+name: realestate/marketing#programmemberadd
+summary: a program member was added by the agent
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/marketing#programmemberadd }
+payload:
+  type: object
+  properties:
+    data:
+      type: object
+      properties:
+        type: { const: AddAction }
+        agent: { type: string, format: uri }
+        object: { $ref: MarketingProgramMembership.yaml }
+        targetCollection: { $ref: MarketingProgram.yaml }

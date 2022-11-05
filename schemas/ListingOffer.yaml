@@ -1,50 +1,33 @@
-allOf:
-  - $ref: Thing.yaml
-  - description: an offer is made to buy a PropertyListing
-    x-range: ListingOffer
-    required:
-    - type
-    - agent
-    - object
-    - recipient
-    - offerPrice
-    properties:
-      type:
-        enum:
-          - ListingOffer
-      agent:
-        description: the Person or Contact who makes the offer
-      
-      offerPrice:
-        $ref: PriceSpecification.yaml
-        description: the offer price or range
+# @format
 
-      object:
-        type: object
-        x-range:
-        - Comment
-        - Question
-        example:
-          type: Comment
-          text: take it or leave it.
-
-      
-      propertyListing:
-        type: object
-        description: the listing on which the offer is made.
-        example:
-          $ref: example-propertylisting.yaml
-      
-      recipient:
-        description: listing agent or offer recipient
-        type: object
-        x-range:
-        - RealEstateAgent
-        - RealEstateOrganization
-
-        example:
-          type: RealEstateAgent
-          name: Randy RealEstateAgent
-          id: https://{agentid}.example.com/profile/card#me
-          
-      
+$id: http://realestate.yodata.me/schemas/ListingOffer.yaml
+type: object
+title: Listing Offer
+description: an offer is made to buy a PropertyListing
+name: ListingOffer
+required:
+  - type
+  - agent
+  - object
+  - recipient
+  - offerPrice
+properties:
+  type: { const: ListingOffer }
+  agent: { $ref: website.visitor.yaml }
+  offerPrice:
+    $ref: PriceSpecification.yaml
+    description: the offer price or range
+  propertyListing:
+    type: object
+    description: the listing on which the offer is made.
+    example:
+      $ref: example-propertylisting.yaml
+  recipient:
+    description: listing agent or offer recipient
+    oneOf:
+      - $ref: RealEstateAgent.yaml
+      - $ref: Person.yaml
+    example:
+      type: RealEstateAgent
+      name: Randy RealEstateAgent
+      id: https://{agentid}.example.com/profile/card#me

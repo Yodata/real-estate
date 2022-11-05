@@ -1,9 +1,10 @@
 messageId: lead#retract
 x-scope: realestate/lead#
 summary: a lead (data.object) is taken back from the previous assignee (data.participant) by the previous sender/owner (data.recipient)
+headers:
+  $ref: subscription_headers.yaml
 payload:
-  allOf:
-    - $ref: base.event.yaml
+
     - properties:
         topic:
           enum:

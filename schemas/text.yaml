@@ -1,0 +1,9 @@
+$id: http://realestate.yodata.me/schema/text.yaml
+title: text
+type: string
+examples:
+- Populus debet control notitia sua
+- Aspicio pinguem in his vestimentis?
+- Et id ipsum vitae.
+- Amici, Romani et cives, aures vestras mihi praebe
+- Heus, ego iustus occurrit tibi et hoc est insanus, sed hic numerus meus est, ut me vocas fortasse.

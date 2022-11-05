@@ -1,0 +1,6 @@
+description: consumer subscription actions (subscribe/unsubscribe)
+subscribe:
+  message:
+      oneOf:
+      - $ref: subscribe.yaml
+      - $ref: unsubscribe.yaml

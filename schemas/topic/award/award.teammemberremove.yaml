@@ -1,0 +1,29 @@
+# @format
+
+messageId: award#teammemberremove
+name: realestate/award#teammemberremove
+title: award#teammemberremove
+summary: an award team member was removed
+contentType: application/json
+tags:
+  - name: action|add
+  - name: topic|award
+  - name: domain|realestate
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/award#teammemberremove }
+payload:
+  type: object
+  properties:
+    data:
+      type: object
+      properties:
+        type: { const: AddAction }
+        object:
+          description: the profile uri of the team member being added
+          type: string
+          format: uri
+        targetCollection:
+          description: the award team
+          $ref: AwardTeam.yaml

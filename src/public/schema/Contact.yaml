@@ -10,7 +10,7 @@ properties:
       maiden name, etc. For multiple names, use a comma without space as a
       separator.
     example: ambassador satch,pops,satchmo
-    x-parser-schema-id: <anonymous-schema-226>
+    x-parser-schema-id: <anonymous-schema-255>
   additionalProperty:
     title: additionalProperty
     type: object
@@ -37,8 +37,8 @@ properties:
         postalCode: '10010'
         postOfficeBoxNumber: Box 1234
         streetAddress: 1007 Mountain Gate Rd
-      x-parser-schema-id: <anonymous-schema-216>
-    x-parser-schema-id: <anonymous-schema-215>
+      x-parser-schema-id: <anonymous-schema-256>
+    x-parser-schema-id: <anonymous-schema-406>
   affiliation:
     type: array
     description: An organization that this person is affiliated with
@@ -46,13 +46,13 @@ properties:
       type: string
       format: uri
       example: https://example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-214>
-    x-parser-schema-id: <anonymous-schema-213>
+      x-parser-schema-id: <anonymous-schema-405>
+    x-parser-schema-id: <anonymous-schema-404>
   birthDate:
     type: string
     format: date
     description: date of birth.
-    x-parser-schema-id: <anonymous-schema-217>
+    x-parser-schema-id: <anonymous-schema-407>
   comment:
     title: comment
     type: array
@@ -113,80 +113,81 @@ properties:
             type: string
             enum:
               - ContactPoint
-            x-parser-schema-id: <anonymous-schema-219>
+            x-parser-schema-id: <anonymous-schema-409>
           name:
             type: string
             description: a label for the contactPoint, i.e. 'Work', or 'Home'
             example: Work
-            x-parser-schema-id: <anonymous-schema-220>
+            x-parser-schema-id: <anonymous-schema-410>
           telephone:
             description: a telephone number
             type: string
             example: 1-364-127-9618 x20418
-            x-parser-schema-id: <anonymous-schema-221>
+            x-parser-schema-id: <anonymous-schema-411>
           faxNumber:
             description: a fax number
             type: string
             example: 834.320.1602
-            x-parser-schema-id: <anonymous-schema-222>
+            x-parser-schema-id: <anonymous-schema-412>
           email:
             description: an email address for the item.
             type: string
             format: email
             example: user@example.com
-            x-parser-schema-id: <anonymous-schema-223>
+            x-parser-schema-id: <anonymous-schema-413>
           url:
             description: primary URL for the item.
             type: string
             format: uri
             example: https://www.facebook.com/hallandoates
-            x-parser-schema-id: <anonymous-schema-224>
+            x-parser-schema-id: <anonymous-schema-414>
         x-parser-schema-id: ContactPoint
-    x-parser-schema-id: <anonymous-schema-218>
+    x-parser-schema-id: <anonymous-schema-408>
   dateCreated:
-    description: The date on which the item was created.
+    $id: http://realestate.yodata.me/schema/dateCreated.yaml
     type: string
     format: date-time
-    x-parser-schema-id: <anonymous-schema-204>
+    title: Date Created
+    description: The date on which the item was created.
   dateModified:
     description: >-
       The date on which the item was most recently modified or when the item's
       entry was modified within a DataFeed.
     type: string
     format: date-time
-    x-parser-schema-id: <anonymous-schema-205>
+    x-parser-schema-id: <anonymous-schema-531>
   email:
     type: string
     description: Primary email address.
     example: user@example.com
-    x-parser-schema-id: <anonymous-schema-225>
+    x-parser-schema-id: <anonymous-schema-415>
   familyName:
     type: string
     description: Last Name of a person
     example: Wayne
-    x-parser-schema-id: <anonymous-schema-227>
+    x-parser-schema-id: <anonymous-schema-416>
   faxNumber:
     type: string
     description: Primary fax number.
     example: (873) 271-4802
-    x-parser-schema-id: <anonymous-schema-228>
+    x-parser-schema-id: <anonymous-schema-417>
   givenName:
     type: string
     description: First Name of a person
     example: Glenn
-    x-parser-schema-id: <anonymous-schema-229>
+    x-parser-schema-id: <anonymous-schema-277>
   honorificPrefix:
     title: honorificPrefix
     description: An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.
     type: string
     example: Dr
-    x-parser-schema-id: <anonymous-schema-230>
+    x-parser-schema-id: <anonymous-schema-418>
   honorifixSuffix:
     title: honorificSuffix
     description: An honorific title following a person's name like M.D.
     type: string
     example: Esq
-    x-parser-schema-id: <anonymous-schema-231>
+    x-parser-schema-id: <anonymous-schema-419>
   identifier:
     type: object
     description: >-
@@ -200,8 +201,8 @@ properties:
     description: job tiles associated with the item
     items:
       type: string
-      x-parser-schema-id: <anonymous-schema-233>
-    x-parser-schema-id: <anonymous-schema-232>
+      x-parser-schema-id: <anonymous-schema-421>
+    x-parser-schema-id: <anonymous-schema-420>
     type: string
     example: Superhero
   keywords:
@@ -213,20 +214,20 @@ properties:
       - Past Customer
     items:
       type: string
-      x-parser-schema-id: <anonymous-schema-352>
-    x-parser-schema-id: <anonymous-schema-351>
+      x-parser-schema-id: <anonymous-schema-630>
+    x-parser-schema-id: <anonymous-schema-629>
   knowsLanguage:
     type: array
     description: languages spoken by the person
     x-range: Language
     items:
       type: object
-      x-parser-schema-id: <anonymous-schema-235>
+      x-parser-schema-id: <anonymous-schema-423>
     example:
       - type: Language
         name: English
         additionalName: en-us
-    x-parser-schema-id: <anonymous-schema-234>
+    x-parser-schema-id: <anonymous-schema-422>
   leadOwner:
     type: object
     description: lead owner
@@ -256,7 +257,7 @@ properties:
     type: string
     description: Full name of the person.
     example: Bruce Wayne
-    x-parser-schema-id: <anonymous-schema-236>
+    x-parser-schema-id: <anonymous-schema-424>
   originatingSystem:
     type: object
     x-range:
@@ -273,11 +274,11 @@ properties:
     description: Primary phone number.
     type: string
     example: 1-339-041-0306 x2866
-    x-parser-schema-id: <anonymous-schema-237>
+    x-parser-schema-id: <anonymous-schema-425>
   type:
     type: string
     description: Person
-    x-parser-schema-id: <anonymous-schema-212>
+    x-parser-schema-id: <anonymous-schema-403>
     example: Contact
     enum:
       - Contact
@@ -285,7 +286,7 @@ properties:
     type: string
     description: Organizations the person works for.
     example: Gotham City Police Department
-    x-parser-schema-id: <anonymous-schema-238>
-x-parser-schema-id: <anonymous-schema-240>
+    x-parser-schema-id: <anonymous-schema-426>
+x-parser-schema-id: <anonymous-schema-538>
 $id: http://realestate.yodata.me/schema/Contact.yaml
 

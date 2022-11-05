@@ -1,0 +1,22 @@
+# @format
+# yaml-language-server: $schema=https://asyncapi.com/definitions/2.5.0/message.json
+messageId: profile#servicearearemove
+name: realestate/profile#servicearearemove
+summary: an agent, office or organization profile was updated
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/profile#servicearearemove }
+payload:
+  type: object
+  properties:
+    data:
+      type: object
+      properties:
+        type: { const: RemoveAction }
+        object:
+          $ref: ../../ServiceArea.yaml
+        targetCollection:
+          type: string
+          format: uri
+          example: https://user.example.com/profile/card#areaServed

@@ -1,9 +1,10 @@
 messageId: team#delete
 x-scope: realestate/award#
 summary: award record deleted.
+headers:
+  $ref: subscription_headers.yaml
 payload:
-  allOf:
-    - $ref: base.event.yaml
+
     - properties:
         topic:
           enum:

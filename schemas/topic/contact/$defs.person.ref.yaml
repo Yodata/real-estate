@@ -1,0 +1,12 @@
+# @format
+
+# a reference to a person with minimal but flexible properties
+type: object
+properties:
+  type: { const: Person }
+  name: { $ref: ../../name.yaml }
+  email: { $ref: ../../email.yaml }
+  identifier: { $ref: ../../identifier.yaml }
+required:
+  - type
+minProperties: 2

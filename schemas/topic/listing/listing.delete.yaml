@@ -1,0 +1,21 @@
+# @format
+
+messageId: listing#delete
+name: realestate/listing#delete
+summary: a PropertyListing is deleted
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/listing#delete }
+payload:
+  type: object
+  properties:
+    data:
+      type: object
+      properties:
+        type: { const: DeleteAction }
+        object:
+          $ref: ../../PropertyListing.yaml
+          example:
+            type: PropertyListing
+            url: https://{lead-admin}.bhhs.hsaffailites.com/listing/12345

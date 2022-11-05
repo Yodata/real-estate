@@ -1,0 +1,18 @@
+# @format
+
+messageId: listing#update
+name: realestate/listing#update
+summary: a PropertyListing is created or updated
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/listing#update }
+payload:
+  type: object
+  properties:
+    data:
+      type: object
+      properties:
+        type: { const: UpdateAction }
+        object:
+          $ref: ../../PropertyListing.yaml

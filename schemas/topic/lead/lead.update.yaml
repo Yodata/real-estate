@@ -1,0 +1,21 @@
+messageId: lead#update
+name: realestate/lead#update
+summary: a crm lead was updated
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/lead#update }
+payload:
+  type: object
+  properties:
+    data:
+      type: object
+      properties:
+        type: { const: UpdateAction }
+        object:
+          $ref: ../../Lead.yaml
+        agent:
+          type: string
+          description: user who effected the change
+          format: uri
+          example: https://{lead-admin}.bhhs.hsaffailites.com/profile/card

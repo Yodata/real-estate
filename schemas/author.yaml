@@ -1,5 +1,15 @@
+title: author
 type: object
-description: the content author
-example:
-  type: Contact
-  name: Sarah Vaughn
+description: the author of something
+examples:
+  - type: Contact
+    name: Mark Twain
+    identifier:
+      originatingSystemName: originating-system-id
+  - type: RealEstateAgent
+    name: Andy Warhol
+    identifier:
+      originatingSystemName: originating-system-id
+  - name: Stan Lee
+  - email: bob@example.com
+  - telephone: 1-800-555-1212

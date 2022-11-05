@@ -1,0 +1,19 @@
+# @format
+# yaml-language-server: $schema=https://www.asyncapi.com/definitions/2.5.0/message.json
+messageId: contact#activity
+name: realestate/contact#activity
+summary: a generic contact activity message for
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/contact#activity }
+payload:
+  type: object
+  properties:
+    data:
+      type: object
+      properties:
+        type: { const: CreateAction }
+        object:
+          $ref: ../../Activity.yaml
+          description: the activity being created

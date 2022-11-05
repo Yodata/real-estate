@@ -1,0 +1,57 @@
+{
+  "$id": "http://realestate.yodata.me/schema/marketing.programcreate.json",
+  "messageId": "marketing#programcreate",
+  "summary": "a marketing program has been created",
+  "externalDocs": null,
+  "headers": {
+    "type": "object",
+    "properties": {
+      "topic": {
+        "const": "realestate/marketing#programcreate",
+        "x-parser-schema-id": "<anonymous-schema-196>"
+      }
+    },
+    "x-parser-schema-id": "<anonymous-schema-195>"
+  },
+  "payload": {
+    "type": "object",
+    "properties": {
+      "data": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "const": "CreateAction",
+            "x-parser-schema-id": "<anonymous-schema-199>"
+          },
+          "object": {
+            "MarketingProgram": {
+              "title": "MarketingProgram",
+              "description": "a marketing program",
+              "type": "object",
+              "properties": {
+                "type": {
+                  "const": "MarketingProgram"
+                },
+                "name": {
+                  "type": "string",
+                  "example": "Market Activity Report 508 Homewood Ave"
+                },
+                "identifier": {
+                  "type": "object",
+                  "description": "key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.",
+                  "example": {
+                    "salesforceContactID": "c28834ca-db69-4da8-90ad-75cdc9907298"
+                  },
+                  "x-parser-schema-id": "<anonymous-schema-96>"
+                }
+              }
+            },
+            "x-parser-schema-id": "<anonymous-schema-200>"
+          }
+        },
+        "x-parser-schema-id": "<anonymous-schema-198>"
+      }
+    },
+    "x-parser-schema-id": "<anonymous-schema-197>"
+  }
+}

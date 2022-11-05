@@ -1,71 +1,55 @@
-type: object
 title: ProgramMembership
 description: describes membership relation between a member (Person) and a MarketingProgram
+type: object
 properties:
-  endDate:
-    type: string
-    format: date-time
-    description: date the member stopped performing the role
-    x-parser-schema-id: <anonymous-schema-311>
   member:
-    format: uri
-    x-parser-schema-id: <anonymous-schema-309>
     type: object
-    x-range: Contact
-    description: a contact
-    example:
-      type: Contact
-      name: Bruce Wayne
-      givenName: Bruce
-      familyName: Wayne
-      jobTitle: Batman
-      contactPoint:
-        - type: ContactPoint
-          name: Mobile Phone
-          telephone: 888.GET-BATMAN
-        - type: ContactPoint
-          name: Email
-          email: batman@example.com
-      address:
-        - type: PostalAddress
-          name: Home
-          streetAddress: 1007 Mountain Gate Rd
-          postOfficeBoxNumber: Box 1234
-          addressRegion: New Jersey
-          addressLocality: Gotham City
-          postalCode: '10010'
-          addressCountry: USA
-      birthDate: '2019-07-09'
-      leadOwner:
-        type: RealEstateOrganization
-        id: https://{lead-owner}.example.com/profile/card#me
-      leadSource:
-        type: RealEstateWebsite
-        url: https://agentwebsite.example.com
+    properties:
+      type:
+        const: Contact
+        x-parser-schema-id: <anonymous-schema-587>
+      name:
+        type: string
+        x-parser-schema-id: <anonymous-schema-588>
+      identifier:
+        type: object
+        description: >-
+          key/value id assigned to the record in the system where the data was
+          originally created. The identifier should be included along with any
+          statements on the record, or the entity associated to the record.
+        example:
+          salesforceContactID: c28834ca-db69-4da8-90ad-75cdc9907298
+        x-parser-schema-id: <anonymous-schema-96>
+    x-parser-schema-id: <anonymous-schema-586>
   memberOf:
-    description: the org or group where the role is performed
     type: object
-    example:
-      type: RealEstateOrganization
-      id: http://orgid.example.com/profile/card#me
-    x-parser-schema-id: <anonymous-schema-308>
-    x-range: MarketingProgram
-  roleName:
+    properties:
+      type:
+        const: MarketingProgram
+        x-parser-schema-id: <anonymous-schema-590>
+      name:
+        type: string
+        example: Market Activity Report 508 Homewood Ave
+        x-parser-schema-id: <anonymous-schema-591>
+      identifier:
+        type: object
+        description: >-
+          key/value id assigned to the record in the system where the data was
+          originally created. The identifier should be included along with any
+          statements on the record, or the entity associated to the record.
+        example:
+          salesforceContactID: c28834ca-db69-4da8-90ad-75cdc9907298
+        x-parser-schema-id: <anonymous-schema-96>
+    x-parser-schema-id: <anonymous-schema-589>
+  role:
     type: string
-    description: the role name
-    example: Owner
-    x-parser-schema-id: <anonymous-schema-307>
-  startDate:
-    type: string
-    format: date-time
-    description: date the member began performing this role
-    x-parser-schema-id: <anonymous-schema-310>
-  type:
-    type: string
-    description: a role played by the member in the memberOf group
-    x-parser-schema-id: <anonymous-schema-306>
     enum:
-      - ProgramMembership
-x-parser-schema-id: <anonymous-schema-383>
+      - member
+      - owner
+    x-parser-schema-id: <anonymous-schema-585>
+  type:
+    const: ProgramMembership
+    x-parser-schema-id: <anonymous-schema-584>
+x-parser-schema-id: ProgramMembership
 $id: http://realestate.yodata.me/schema/ProgramMembership.yaml
 

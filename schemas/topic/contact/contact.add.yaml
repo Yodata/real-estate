@@ -1,0 +1,22 @@
+# @format
+# yaml-language-server: schema=https://www.asyncapi.com/definitions/2.5.0/message.json
+messageId: contact#add
+name: realestate/contact#add
+summary: a contact (data.object) is added by a user (data.agent), optionally to a specific targetCollection
+headers:
+  $ref: ../../subscription_headers.yaml
+payload:
+  type: object
+  required:
+    - topic
+    - data
+  properties:
+    topic: { const: realestate/contact#add }
+    data:
+      type: object
+      required:
+        - object
+      properties:
+        type: { const: AddAction }
+        agent: { $ref: $defs.person.ref.yaml }
+        object: { $ref: ../../Contact.yaml }

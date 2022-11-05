@@ -1,9 +1,10 @@
 messageId: lead#reject
 x-scope: realestate/lead#
 summary: a crm lead was rejected
+headers:
+  $ref: subscription_headers.yaml
 payload:
-  allOf:
-    - $ref: base.event.yaml
+
     - properties:
         topic:
           enum:

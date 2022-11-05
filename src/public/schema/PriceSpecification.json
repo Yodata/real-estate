@@ -8,25 +8,25 @@
       "type": "number",
       "description": "the high price offered if price is a range.",
       "example": 100000,
-      "x-parser-schema-id": "<anonymous-schema-368>"
+      "x-parser-schema-id": "<anonymous-schema-398>"
     },
     "minPrice": {
       "type": "number",
       "description": "the low price offered if price is a range.",
       "example": 75000,
-      "x-parser-schema-id": "<anonymous-schema-367>"
+      "x-parser-schema-id": "<anonymous-schema-397>"
     },
     "price": {
       "type": "number",
       "description": "the offer price.",
       "example": 75000,
-      "x-parser-schema-id": "<anonymous-schema-369>"
+      "x-parser-schema-id": "<anonymous-schema-399>"
     },
     "priceCurrency": {
       "type": "string",
       "description": "use ISO4217",
       "example": "USD",
-      "x-parser-schema-id": "<anonymous-schema-370>"
+      "x-parser-schema-id": "<anonymous-schema-400>"
     },
     "type": {
       "type": "string",
@@ -34,7 +34,7 @@
       "enum": [
         "PriceSpecification"
       ],
-      "x-parser-schema-id": "<anonymous-schema-366>"
+      "x-parser-schema-id": "<anonymous-schema-396>"
     }
   },
   "x-parser-schema-id": "PriceSpecification",

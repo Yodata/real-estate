@@ -1,3 +1,6 @@
+# @format
+
+# yaml-language-server: $schema=https://www.asyncapi.com/definitions/2.5.0/asyncapi.json
 asyncapi: '2.5.0'
 
 info:
@@ -38,13 +41,21 @@ info:
   x-schemas:
     menu: Types
 
+servers:
+  production:
+    url: https://dev.yodata.io/
+    protocol: http
+    description: server description
+
+defaultContentType: application/json
+
 components:
   schemas:
     CloudEvent: { $ref: ./CloudEvent.yaml }
     Action: { $ref: Action.yaml }
-    Award: { $ref: Award.yaml }
-    AwardSeries: { $ref: AwardSeries.yaml }
-    AwardTeam: { $ref: AwardTeam.yaml }
+    Award: { $ref: topic/award/Award.yaml }
+    AwardSeries: { $ref: topic/award/AwardSeries.yaml }
+    AwardTeam: { $ref: topic/award/AwardTeam.yaml }
     ApplicationProfile: { $ref: ApplicationProfile.yaml }
     BlogPosting: { $ref: BlogPosting.yaml }
     Certification: { $ref: Certification.yaml }
@@ -113,102 +124,14 @@ components:
     UnsubscribeAction: { $ref: UnsubscribeAction.yaml }
     BHHSTerms: { $ref: BHHSTerms.yaml }
 
-# securitySchemes:
-#   https:
-#     name: x-api-key
-#     type: httpApiKey
-#     in: header
-# TOPICS
 channels:
-
-  /award#:
-    description: Awards
-    subscribe:
-      message:
-        oneOf:
-          - $ref: award.delete.yaml
-          - $ref: award.seriescreate.yaml
-          - $ref: award.seriesdelete.yaml
-          - $ref: award.seriesupdate.yaml
-          - $ref: award.teamcreate.yaml
-          - $ref: award.teammemberadd.yaml
-          - $ref: award.teammemberremove.yaml
-          - $ref: award.teamupdate.yaml
-          - $ref: award.update.yaml
-
-  /franchise:
-    subscribe:
-      message:
-        $ref: franchise.transactionreport.yaml
-
-  /lead:
-    description: lead management events
-    subscribe:
-      message:
-        oneOf:
-          - $ref: lead.accept.yaml
-          - $ref: lead.add.yaml
-          - $ref: lead.assign.yaml
-          - $ref: lead.update.yaml
-          - $ref: lead.reject.yaml
-          - $ref: lead.retract.yaml
-
-  /listing:
-    subscribe:
-      message:
-        oneOf:
-          - $ref: listing.update.yaml
-          - $ref: listing.delete.yaml
-
-  /marketing:
-    subscribe:
-      message:
-        oneOf:
-          - $ref: programcreate.yaml
-          - $ref: programdelete.yaml
-          - $ref: programmemberadd.yaml
-          - $ref: programmemberremove.yaml
-
-  /marketingpreferences:
-    subscribe:
-      message:
-        oneOf:
-          - $ref: marketingpreferences.subscribe.yaml
-          - $ref: marketingpreferences.unsubscribe.yaml
-
-  /profile:
-    description: 'real estate agent/office profile updates.'
-    subscribe:
-      message:
-        oneOf:
-          - $ref: profile.add.yaml
-          - $ref: profile.update.yaml
-          - $ref: profile.teamcreate.yaml
-          - $ref: profile.teamdelete.yaml
-          - $ref: profile.teammemberadd.yaml
-          - $ref: profile.teammemberremove.yaml
-
-  /servicearea:
-    subscribe:
-      message:
-        oneOf:
-          - $ref: servicearea.create.yaml
-          - $ref: servicearea.update.yaml
-          - $ref: servicearea.delete.yaml
-
-  /website:
-    subscribe:
-      message:
-        oneOf:
-        - $ref: askquestion.yaml
-        # - $ref: listingoffer.yaml
-        - $ref: register.yaml
-        - $ref: requestappointment.yaml
-        - $ref: requestshowing.yaml
-        - $ref: saveproperty.yaml
-        - $ref: savepropertysearch.yaml
-        - $ref: searchproperties.yaml
-        - $ref: shareproperty.yaml
-        - $ref: sharepropertyvaluereport.yaml
-        - $ref: viewproperty.yaml
-        - $ref: viewpropertyvaluereport.yaml
+  award: { $ref: topic/award/channel.yaml }
+  contact: { $ref: topic/contact/channel.yaml }
+  franchise: { $ref: topic/franchise/channel.yaml }
+  lead: { $ref: topic/lead/channel.yaml }
+  listing: { $ref: topic/listing/channel.yaml }
+  marketing: { $ref: topic/marketing/channel.yaml }
+  marketingpreferences: { $ref: topic/marketingpreferences/channel.yaml }
+  profile: { $ref: topic/profile/channel.yaml }
+  servicearea: { $ref: topic/servicearea/channel.yaml }
+  website: { $ref: topic/website/channel.yaml }

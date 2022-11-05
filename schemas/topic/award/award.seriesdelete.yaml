@@ -1,0 +1,17 @@
+messageId: award#seriesdelete
+name: realestate/award#seriesdelete
+summary: an award series was deleted
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/award#seriesdelete }
+payload:
+  type: object
+  properties:
+    data:
+      type: object
+      properties:
+        type: { const: DeleteAction }
+        object:
+          $ref: AwardSeries.yaml
+          description: the award series being deleted

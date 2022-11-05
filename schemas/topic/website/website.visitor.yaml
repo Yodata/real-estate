@@ -1,0 +1,38 @@
+# @format
+
+type: object
+description: a website user/visitor
+properties:
+  type: { type: string, enum: [Person, Contact] }
+  name: { type: string }
+  givenName: { type: string }
+  familyName: { type: string }
+  email: { type: string, format: email }
+  telephone: { type: string }
+  identifier: { $ref: ../../identifier.yaml }
+  sameAs: { $ref: ../../sameAs.yaml }
+  contactPoint: { $ref: ../../contactPoint.yaml }
+  additionalProperties:
+    type: object
+    description: additional properties for the website user
+    properties:
+      workingWithAgent: { type: boolean }
+examples:
+  - type: Contact
+    identifier:
+      hsfconsumerid: 9969
+    sameAs:
+      amcecrmid: '1234567'
+      salesForceId: xxxxxxxxxxxxx
+    name: Bruce Wayne
+    givenName: Bruce
+    familyName: Wayne
+    email: batman@example.com
+    telephone: '1+888-867-5309'
+    contactPoint:
+      - type: ContactPoint
+        name: 'Home'
+        email: batman@example.com,
+      - type: ContactPoint
+        name: 'Work'
+        telephone: '1+888-867-5309'

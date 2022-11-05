@@ -1,36 +1,81 @@
-$id: http://realestate.yodata.me/schema/MarketingProgram.yaml
-type: object
-summary: The root type of all Things.
-required:
-  - type
 title: MarketingProgram
 description: >-
   A collection of pre-defined activities which take place over a period of time
   or in a regular, ongoing schedule.
-x-subClassOf: Organization
+type: object
 properties:
-  '@id':
-    type: string
-    format: uri
-    description: the liked data uri for the Thing
-    x-parser-schema-id: <anonymous-schema-137>
+  about:
+    type: object
+    description: a physical location
+    title: Place
+    x-range:
+      - Place
+      - City
+      - State
+      - PostalCode
+      - GeoCircle
+      - GeoShape
+    properties:
+      type:
+        type: string
+        description: The item type (Linked-Data @type)
+        enum:
+          - Place
+        x-parser-schema-id: <anonymous-schema-593>
+      address:
+        type: object
+        x-range: PostalAddress
+        description: A physical address.
+        example:
+          type: PostalAddress
+          name: Home
+          addressCountry: USA
+          addressCounty: Gotham County
+          addressLocality: Gotham City
+          addressRegion: New Jersey
+          addressSubdivision: Gotham Heights
+          postalCode: '10010'
+          postOfficeBoxNumber: Box 1234
+          streetAddress: 1007 Mountain Gate Rd
+        x-parser-schema-id: <anonymous-schema-594>
+      geo:
+        type: object
+        description: a geo shape (circle or box)
+        x-range:
+          - GeoCircle
+          - GeoShape
+        example:
+          type: GeoShape
+          geoMidpoint:
+            type: GeoCoordinates,
+            longitude: '73.98'
+            latitude: '40.75'
+          geoRadius:
+            type: QuantitativeValue,
+            value: 10,
+            unitCode: mi,
+            unitText: miles
+          box: (33.5697,-117.775),(33.6018,-117.707)
+        x-parser-schema-id: <anonymous-schema-595>
+    x-parser-schema-id: Place
   creator:
     description: creator / author of the item
     type: string
     format: uri
-    example: http://{user}.example.com/profile/card#me
+    x-parser-schema-id: <anonymous-schema-592>
   dateCreated:
-    description: The date on which the item was created.
+    $id: http://realestate.yodata.me/schema/dateCreated.yaml
     type: string
     format: date-time
-    x-parser-schema-id: <anonymous-schema-204>
+    title: Date Created
+    description: The date on which the item was created.
   dateModified:
     description: >-
       The date on which the item was most recently modified or when the item's
       entry was modified within a DataFeed.
     type: string
     format: date-time
-    x-parser-schema-id: <anonymous-schema-205>
+    x-parser-schema-id: <anonymous-schema-531>
   identifier:
     type: object
     description: >-
@@ -39,106 +84,78 @@ properties:
       statements on the record, or the entity associated to the record.
     example:
       salesforceContactID: c28834ca-db69-4da8-90ad-75cdc9907298
-    x-parser-schema-id: <anonymous-schema-202>
+    x-parser-schema-id: <anonymous-schema-96>
   member:
-    description: array of program memberships
-    x-range: ProgramMembership
     type: array
+    x-range:
+      - ProgramMembership
     items:
-      allOf:
-        - title: OrganizationRole
+      title: ProgramMembership
+      description: >-
+        describes membership relation between a member (Person) and a
+        MarketingProgram
+      type: object
+      properties:
+        type:
+          const: ProgramMembership
+          x-parser-schema-id: <anonymous-schema-584>
+        role:
+          type: string
+          enum:
+            - member
+            - owner
+          x-parser-schema-id: <anonymous-schema-585>
+        member:
           type: object
-          description: describes a role played by a member and a group or organization.
           properties:
             type:
+              const: Contact
+              x-parser-schema-id: <anonymous-schema-587>
+            name:
               type: string
-              description: a role played by the member in the memberOf group
-              enum:
-                - OrganizationRole
-              x-parser-schema-id: <anonymous-schema-306>
-            roleName:
-              type: string
-              description: the role name
-              example: Owner
-              x-parser-schema-id: <anonymous-schema-307>
-            memberOf:
-              description: the org or group where the role is performed
+              x-parser-schema-id: <anonymous-schema-588>
+            identifier:
               type: object
+              description: >-
+                key/value id assigned to the record in the system where the data
+                was originally created. The identifier should be included along
+                with any statements on the record, or the entity associated to
+                the record.
               example:
-                type: RealEstateOrganization
-                id: http://orgid.example.com/profile/card#me
-              x-parser-schema-id: <anonymous-schema-308>
-            member:
-              description: member object or id
-              type: string
-              format: uri
-              example: https://memberid.example.com/profile/card#me
-              x-parser-schema-id: <anonymous-schema-309>
-            startDate:
-              type: string
-              format: date-time
-              description: date the member began performing this role
-              x-parser-schema-id: <anonymous-schema-310>
-            endDate:
-              type: string
-              format: date-time
-              description: date the member stopped performing the role
-              x-parser-schema-id: <anonymous-schema-311>
-          x-parser-schema-id: OrganizationRole
-        - title: ProgramMembership
-          description: >-
-            describes membership relation between a member (Person) and a
-            MarketingProgram
+                salesforceContactID: c28834ca-db69-4da8-90ad-75cdc9907298
+              x-parser-schema-id: <anonymous-schema-96>
+          x-parser-schema-id: <anonymous-schema-586>
+        memberOf:
+          type: object
           properties:
             type:
-              enum:
-                - ProgramMembership
-            member:
+              const: MarketingProgram
+              x-parser-schema-id: <anonymous-schema-590>
+            name:
+              type: string
+              example: Market Activity Report 508 Homewood Ave
+              x-parser-schema-id: <anonymous-schema-591>
+            identifier:
               type: object
-              x-range: Contact
-              description: a contact
+              description: >-
+                key/value id assigned to the record in the system where the data
+                was originally created. The identifier should be included along
+                with any statements on the record, or the entity associated to
+                the record.
               example:
-                type: Contact
-                name: Bruce Wayne
-                givenName: Bruce
-                familyName: Wayne
-                jobTitle: Batman
-                contactPoint:
-                  - type: ContactPoint
-                    name: Mobile Phone
-                    telephone: 888.GET-BATMAN
-                  - type: ContactPoint
-                    name: Email
-                    email: batman@example.com
-                address:
-                  - type: PostalAddress
-                    name: Home
-                    streetAddress: 1007 Mountain Gate Rd
-                    postOfficeBoxNumber: Box 1234
-                    addressRegion: New Jersey
-                    addressLocality: Gotham City
-                    postalCode: '10010'
-                    addressCountry: USA
-                birthDate: '2019-07-09'
-                leadOwner:
-                  type: RealEstateOrganization
-                  id: https://{lead-owner}.example.com/profile/card#me
-                leadSource:
-                  type: RealEstateWebsite
-                  url: https://agentwebsite.example.com
-            memberOf:
-              x-range: MarketingProgram
-          x-parser-schema-id: <anonymous-schema-383>
+                salesforceContactID: c28834ca-db69-4da8-90ad-75cdc9907298
+              x-parser-schema-id: <anonymous-schema-96>
+          x-parser-schema-id: <anonymous-schema-589>
       x-parser-schema-id: ProgramMembership
+    x-parser-schema-id: <anonymous-schema-583>
   name:
     type: string
-    description: name of the item
-    example: Market Activity Report 508 Homewood Ave
+    description: the name of the item
+    example: Market Activity Report for 508 Homeward Avenue
+    x-parser-schema-id: <anonymous-schema-582>
   type:
-    type: string
-    description: The item type (Linked-Data @type)
-    x-parser-schema-id: <anonymous-schema-136>
-    enum:
-      - MarketingProgram
-x-parser-schema-id: <anonymous-schema-305>
+    const: MarketingProgram
+    x-parser-schema-id: <anonymous-schema-581>
+x-parser-schema-id: MarketingProgram
+$id: http://realestate.yodata.me/schema/MarketingProgram.yaml
 

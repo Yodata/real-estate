@@ -14,19 +14,19 @@ properties:
         description: GeoCordinates
         enum:
           - GeoCoordinates
-        x-parser-schema-id: <anonymous-schema-271>
+        x-parser-schema-id: <anonymous-schema-561>
       longitude:
         type: number
         description: The longitude of a location.
         x-title: longitude
         example: 73.98
-        x-parser-schema-id: <anonymous-schema-272>
+        x-parser-schema-id: <anonymous-schema-173>
       latitude:
         type: number
         description: The latitude of a location.
         x-title: latitude
         example: 40.75
-        x-parser-schema-id: <anonymous-schema-273>
+        x-parser-schema-id: <anonymous-schema-164>
     x-parser-schema-id: GeoCoordinates
   geoRadius:
     title: geoRadius
@@ -38,12 +38,12 @@ properties:
       value: '10'
       unitCode: mi
       unitText: miles
-    x-parser-schema-id: <anonymous-schema-274>
+    x-parser-schema-id: <anonymous-schema-562>
   type:
     type: string
     enum:
       - GeoCircle
-    x-parser-schema-id: <anonymous-schema-270>
+    x-parser-schema-id: <anonymous-schema-560>
 x-parser-schema-id: GeoCircle
 $id: http://realestate.yodata.me/schema/GeoCircle.yaml
 

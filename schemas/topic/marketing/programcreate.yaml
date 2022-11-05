@@ -1,0 +1,17 @@
+# @format
+# yaml-language-server: $schema=https://asyncapi.com/definitions/2.5.0/message.json
+messageId: marketing#programcreate
+name: realestate/marketing#programcreate
+summary: a marketing program has been created
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/marketing#programcreate }
+payload:
+  type: object
+  properties:
+    data:
+      type: object
+      properties:
+        type: { const: CreateAction }
+        object: { $ref: MarketingProgram.yaml }

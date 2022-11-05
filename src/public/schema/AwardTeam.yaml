@@ -4,6 +4,7 @@ x-range: AwardTeam
 description: a Collection
 required:
   - type
+  - identifier
 properties:
   identifier:
     example:
@@ -13,33 +14,27 @@ properties:
       key/value id assigned to the record in the system where the data was
       originally created. The identifier should be included along with any
       statements on the record, or the entity associated to the record.
-    x-parser-schema-id: <anonymous-schema-132>
+    x-parser-schema-id: <anonymous-schema-47>
   member:
     description: members of the AwardTeam
     type: array
-    x-range:
-      - RealEstateAgent
-      - RealEstateOffice
-      - RealEstateOrganization
     items:
       type: string
-      x-parser-schema-id: <anonymous-schema-134>
-    example:
-      - https://user.example.com/profile/card#me
-      - https://office.example.com/profile/card#me
-      - https://company.example.com/profile/card#me
-    x-parser-schema-id: <anonymous-schema-133>
+      format: uri
+      examples:
+        - http://12345.example.com/profile/card#me
+        - http://ma302-001.example.com/profile/card#me
+        - http://ma302.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-49>
+    x-parser-schema-id: <anonymous-schema-48>
   name:
+    example: Top Producer by Volume
     type: string
-    description: name of the AwardTeam
-    example: Clients
-    x-parser-schema-id: <anonymous-schema-131>
+    description: the name of the item
+    x-parser-schema-id: <anonymous-schema-46>
   type:
-    description: AwardTeam
-    type: string
-    enum:
-      - AwardTeam
-    x-parser-schema-id: <anonymous-schema-130>
+    const: AwardTeam
+    x-parser-schema-id: <anonymous-schema-45>
 x-parser-schema-id: AwardTeam
 $id: http://realestate.yodata.me/schema/AwardTeam.yaml
 

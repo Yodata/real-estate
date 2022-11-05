@@ -1,0 +1,24 @@
+# @format
+# yaml-language-server: schema=https://www.asyncapi.com/definitions/2.5.0/message.json
+messageId: contact#planupdate
+name: realestate/contact#planupdate
+summary: a contact plan (data.object) is updated by a user (data.agent)
+headers:
+  $ref: ../../subscription_headers.yaml
+payload:
+  type: object
+  required:
+    - topic
+    - data
+  properties:
+    topic: { const: realestate/contact#planupdate }
+    data:
+      type: object
+      required:
+        - type
+        - object
+        - agent
+      properties:
+        type: { const: UpdateAction }
+        agent: { $ref: $defs.person.ref.yaml }
+        object: { $ref: ../../Plan.yaml }

@@ -1,0 +1,19 @@
+# @format
+
+messageId: marketing#programmemberremove
+name: realestate/marketing#programmemberremove
+summary: the agent removed a program member (deleted the membership)
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/marketing#programmemberremove }
+payload:
+  type: object
+  properties:
+    data:
+      type: object
+      properties:
+        type: { const: DeleteAction }
+        agent: { type: string, format: uri }
+        object: { $ref: MarketingProgramMembership.yaml }
+        targetCollection: { $ref: MarketingProgram.yaml }

@@ -1,0 +1,23 @@
+# @format
+# yaml-language-server: $schema=https://www.asyncapi.com/definitions/2.5.0/schema.json
+# a reference to a contact group "collection" with minimal properties.
+title: Contact Group Reference
+description: A reference to a contact group "collection" with minimal properties.
+type: object
+properties:
+  type: { const: Collection }
+  name:
+    type: string
+    description: The name of the contact group.
+    examples:
+      - Past Clients
+      - Prospects
+      - Friends
+      - Family
+      - Acquaintances
+      - Business Contacts
+      - Other
+  identifier: { $ref: ../../identifier.yaml }
+required:
+  - type
+  - name

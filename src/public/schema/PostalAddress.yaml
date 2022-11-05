@@ -16,7 +16,7 @@ properties:
       - EG
       - SJ
       - VN
-    x-parser-schema-id: <anonymous-schema-363>
+    x-parser-schema-id: <anonymous-schema-642>
   addressCounty:
     type: string
     description: the county (us real estate extension)
@@ -25,7 +25,7 @@ properties:
       - Buckinghamshire
       - Borders
       - null
-    x-parser-schema-id: <anonymous-schema-364>
+    x-parser-schema-id: <anonymous-schema-643>
   addressLocality:
     type: string
     description: City, Township.
@@ -36,7 +36,7 @@ properties:
       - Altamonte Springs
       - West Ahmed
       - Blaiseview
-    x-parser-schema-id: <anonymous-schema-361>
+    x-parser-schema-id: <anonymous-schema-640>
   addressRegion:
     type: string
     description: State or Province.
@@ -46,7 +46,7 @@ properties:
       - California
       - MI
       - null
-    x-parser-schema-id: <anonymous-schema-360>
+    x-parser-schema-id: <anonymous-schema-639>
   addressSubdivision:
     type: string
     description: the subdivision or neighborhood (us real estate extension)
@@ -54,7 +54,7 @@ properties:
       - Gotham Heights
       - null
       - null
-    x-parser-schema-id: <anonymous-schema-365>
+    x-parser-schema-id: <anonymous-schema-644>
   postOfficeBoxNumber:
     type: string
     description: The post office box number for PO box addresses.
@@ -62,7 +62,7 @@ properties:
       - Box 1234
       - Apt. 161
       - Apt. 623
-    x-parser-schema-id: <anonymous-schema-359>
+    x-parser-schema-id: <anonymous-schema-638>
   postalCode:
     type: string
     description: Zip/Post Code
@@ -72,7 +72,7 @@ properties:
       - '40387'
       - 50239-7698
       - null
-    x-parser-schema-id: <anonymous-schema-362>
+    x-parser-schema-id: <anonymous-schema-641>
   streetAddress:
     type: string
     description: the street number and name.
@@ -81,11 +81,11 @@ properties:
       - 5046 Ottis Point
       - 166 Marion Burg
       - 93044 Haley Stream
-    x-parser-schema-id: <anonymous-schema-358>
+    x-parser-schema-id: <anonymous-schema-637>
   type:
     type: string
     enum:
       - PostalAddress
-    x-parser-schema-id: <anonymous-schema-357>
+    x-parser-schema-id: <anonymous-schema-636>
 x-parser-schema-id: PostalAddress
 

@@ -1,0 +1,30 @@
+# @format
+
+messageId: website#requestshowing
+name: realestate/website#requestshowing
+summary: a website visitor has requested a property showing
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/website#requestshowing }
+payload:
+  type: object
+  properties:
+    data:
+      type: object
+      properties:
+        type: { const: RequestShowingAction }
+        agent: { $ref: defs.agent.yaml }
+        about:
+          type: object
+          x-range: PropertyListing
+          description: the PropertyListing
+          example:
+            $ref: ../../example-propertylisting.yaml
+        event:
+          $ref: ../../Event.yaml
+
+        object:
+          $ref: ../../question.yaml
+
+        recipient: { $ref: ../lead/defs.lead.recipient.yaml }

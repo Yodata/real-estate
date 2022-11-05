@@ -1,6 +1,5 @@
 // runs on the server side
 // import { NextApiRequest, NextApiResponse } from 'next'
-import { request } from 'http2-wrapper'
 import { JSONSchemaFaker } from 'json-schema-faker'
 import assert from 'node:assert'
 // import { isString } from 'node:util/types'
@@ -48,7 +47,9 @@ async function fetchJsonSchemaFromTypeString(schemaUrl) {
   assert(typeof schemaUrl === 'string', 'schemaUrl must be a string')
   return fetch(schemaUrl)
     .then((response) => {
-      return response.json()
+      let result = response.json()
+      console.log('result', result)
+      return result
     })
     .catch((err) => {
       console.error(err)
@@ -108,7 +109,7 @@ async function generateExampleFromSchema(schema = {}, queryParams = {}) {
   if (typeof schema.headers === 'object' || typeof schema.payload === 'object') {
     schema = transformMessageSchema(schema)
   }
-  return JSONSchemaFaker.resolve(schema)
+  return JSONSchemaFaker.generate(schema)
 }
 
 

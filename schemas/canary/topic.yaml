@@ -1,6 +1,0 @@
-x-summary: Events in development can be shared and reviewed here, by submitting a PR at [Github](https://github.com/Yodata/real-estate/tree/master/www/schemas/canary)
-subscribe:
-  oneOf:
-    - $ref: example.event.yaml
-    - $ref: example.event.yaml
-    ## add your event here

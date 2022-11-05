@@ -1,13 +1,18 @@
-allOf:
-- $ref: OrganizationRole.yaml
-- title: ProgramMembership
-  description: describes membership relation between a member (Person) and a MarketingProgram
-  properties:
-    type:
-      enum:
-      - ProgramMembership
-    member:
-      $ref: contact-object.yaml
-      
-    memberOf:
-      x-range: MarketingProgram
+title: ProgramMembership
+description: describes membership relation between a member (Person) and a MarketingProgram
+type: object
+properties:
+  type: { const: ProgramMembership }
+  role: { type: string, enum: [member, owner] }
+  member:
+    type: object
+    properties:
+      type: { const: Contact }
+      name: { type: string }
+      identifier: { $ref: identifier.yaml }
+  memberOf:
+    type: object
+    properties:
+      type: { const: MarketingProgram }
+      name: { type: string, example: "Market Activity Report 508 Homewood Ave" }
+      identifier: { $ref: identifier.yaml }

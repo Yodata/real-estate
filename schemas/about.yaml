@@ -1,4 +1,13 @@
-$id: http://realestate.yodata.me/schema/about
+$id: http://realestate.yodata.me/schema/about.yaml
 title: about
-description: The subject matter of the content
+description: The subject of the content
 type: object
+examples:
+  - type: PropertyListing
+    streetAddress: 123 Main Street
+    addressLocality: Anytown
+    addressRegion: NY
+    postalCode: 12345
+    addressCountry: US
+    identifier:
+      originatingSystemName: originatingsystemid

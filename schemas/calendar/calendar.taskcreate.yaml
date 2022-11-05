@@ -1,9 +1,10 @@
 x-title: taskcreate
 x-scope: realestate/calendar#
 summary: a new task is created and optionally added to plan
+headers:
+  $ref: subscription_headers.yaml
 payload:
-  allOf:
-    - $ref: base.event.yaml
+
     - properties:
         topic:
           enum:

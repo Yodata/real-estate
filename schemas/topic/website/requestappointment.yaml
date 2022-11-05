@@ -1,0 +1,23 @@
+# @format
+
+messageId: website#requestappointment
+name: realestate/website#requestappointment
+summary: website user has requested an appointment
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/website#requestappointment }
+payload:
+  type: object
+  properties:
+    data:
+      properties:
+        type: { const: RequestAppointmentAction }
+        agent:
+          $ref: defs.agent.yaml
+          description: the website user requesting the appointment
+        object:
+          $ref: ../../question.yaml
+          description: webform content submitted by the agent
+        recipient:
+          $ref: ../../recipient.yaml

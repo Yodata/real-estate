@@ -1,7 +1,7 @@
-title: Comment
 type: object
-x-range: Comment
+title: Comment
 description: A comment on an item.
+x-range: Comment
 required:
   - type
   - text
@@ -12,29 +12,55 @@ properties:
       name: Robin
       identifier:
         redContact_GUID: 6bf62a1b-225e-4fca-87b3-54cc09446a66
-    $id: http://realestate.yodata.me/schema/about
+    $id: http://realestate.yodata.me/schema/about.yaml
     title: about
-    description: The subject matter of the content
+    description: The subject of the content
     type: object
+    examples:
+      - type: PropertyListing
+        streetAddress: 123 Main Street
+        addressLocality: Anytown
+        addressRegion: NY
+        postalCode: 12345
+        addressCountry: US
+        identifier:
+          originatingSystemName: originatingsystemid
   author:
+    title: author
     type: object
-    description: the content author
-    example:
-      type: RealEstateAgent
-      name: Batman
-    x-parser-schema-id: <anonymous-schema-210>
+    description: the author of something
+    examples:
+      - type: Contact
+        name: Mark Twain
+        identifier:
+          originatingSystemName: originating-system-id
+      - type: RealEstateAgent
+        name: Andy Warhol
+        identifier:
+          originatingSystemName: originating-system-id
+      - name: Stan Lee
+      - email: bob@example.com
+      - telephone: 1-800-555-1212
+    x-parser-schema-id: <anonymous-schema-535>
   dateCreated:
-    description: The date on which the item was created.
+    $id: http://realestate.yodata.me/schema/dateCreated.yaml
     type: string
     format: date-time
-    x-parser-schema-id: <anonymous-schema-204>
+    title: Date Created
+    description: The date on which the item was created.
+  dateDeleted:
+    $id: http://realestate.yodata.me/schema/dateDeleted.yaml
+    type: string
+    format: date-time
+    title: Date Deleted
+    description: The date on which the item was deleted.
   dateModified:
     description: >-
       The date on which the item was most recently modified or when the item's
       entry was modified within a DataFeed.
     type: string
     format: date-time
-    x-parser-schema-id: <anonymous-schema-205>
+    x-parser-schema-id: <anonymous-schema-531>
   identifier:
     type: object
     description: >-
@@ -43,18 +69,22 @@ properties:
       statements on the record, or the entity associated to the record.
     example:
       salesforceContactID: c28834ca-db69-4da8-90ad-75cdc9907298
-    x-parser-schema-id: <anonymous-schema-211>
+    x-parser-schema-id: <anonymous-schema-536>
   text:
-    description: the comment body
+    $id: http://realestate.yodata.me/schema/text.yaml
+    title: text
     type: string
-    example: That's a negative attitude, Robin.
-    x-parser-schema-id: <anonymous-schema-209>
+    examples:
+      - Populus debet control notitia sua
+      - Aspicio pinguem in his vestimentis?
+      - Et id ipsum vitae.
+      - Amici, Romani et cives, aures vestras mihi praebe
+      - >-
+        Heus, ego iustus occurrit tibi et hoc est insanus, sed hic numerus meus
+        est, ut me vocas fortasse.
   type:
-    description: Comment
-    type: string
-    enum:
-      - Comment
-    x-parser-schema-id: <anonymous-schema-208>
+    const: Comment
+    x-parser-schema-id: <anonymous-schema-534>
 x-parser-schema-id: Comment
 $id: http://realestate.yodata.me/schema/Comment.yaml
 

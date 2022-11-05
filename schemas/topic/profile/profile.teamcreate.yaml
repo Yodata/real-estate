@@ -1,0 +1,18 @@
+# @format
+
+messageId: profile#teamcreate
+name: realestate/profile#teamcreate
+summary: a team profile was creatd
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/profile#teamcreate }
+payload:
+  type: object
+  properties:
+    data:
+      type: object
+      properties:
+        type: { const: CreateAction }
+        object:
+          $ref: ../../RealEstateTeam.yaml

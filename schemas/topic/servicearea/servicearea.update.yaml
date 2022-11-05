@@ -1,0 +1,19 @@
+# @format
+
+# yaml-language-server: $schema=https://www.asyncapi.com/definitions/2.5.0/message.json
+messageId: servicearea#update
+name: realestate/servicearea#update
+summary: service area update
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/servicearea#update }
+payload:
+  type: object
+  properties:
+    data:
+      type: object
+      properties:
+        type: { const: UpdateAction }
+        object:
+          $ref: ../../ServiceArea.yaml

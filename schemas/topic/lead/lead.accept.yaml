@@ -1,0 +1,15 @@
+# @format
+
+messageId: lead#accept
+name: realestate/lead#accept
+summary: a lead (data.object) was accepted by the recipient (data.recipient).
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/lead#accept }
+payload:
+  type: object
+  properties:
+    type: { const: lead#accept }
+    object:
+      $ref: ../../Lead.yaml

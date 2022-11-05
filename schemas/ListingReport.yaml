@@ -1,3 +1,4 @@
+$id: http://realestate.yodata.me/schemas/ListingReport.yaml
 title: ListingReport
 description: summary report of listing inventory count
 x-range: ListingReport

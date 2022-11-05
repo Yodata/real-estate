@@ -1,9 +1,10 @@
 messageId: team#create
 x-scope: realestate/team#
 summary: a real estate team (a kind of RealEstateAgent which has subOrganizations)
+headers:
+  $ref: subscription_headers.yaml
 payload:
-  allOf:
-    - $ref: base.event.yaml
+
     - properties:
         topic:
           enum:

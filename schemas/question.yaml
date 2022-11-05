@@ -1,13 +1,8 @@
+# @format
+
 type: object
 description: A specific question - e.g. from a user seeking answers online, or collected in a Frequently Asked Questions (FAQ) document.
 title: Question
-x-range: Question
 properties:
-  type:
-    $ref: type.yaml
-    enum:
-    - Question
-  text:
-    type: string
-    description: the question content
-    example: I would like to view 123 Main Street.
+  type: { const: Question }
+  text: { $ref: text.yaml }

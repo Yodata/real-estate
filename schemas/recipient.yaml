@@ -1,10 +1,26 @@
+# @format
+
 title: recipient
-description: the recipient
+description: the recipient of an object or action referred to in the message
 type: object
-x-range:
-- Person
-- Organization
-example:
-  type: RealEstateAgent
-  name: Randy RealEstateAgent
-  id: https://{userid}.example.com/profile/card#me
+examples:
+  - type: RealEstateAgent
+    name: Randy Real Estate
+    id: https://8675309.example.com/profile/card#me
+  - type: Contact
+    name: Gretchen Olson
+    telephone: '1+888-867-5309'
+    email: Gretchen_Olson@example.org
+    contactPoint:
+      - type: ContactPoint
+        name: Home
+        contactType: customer service
+        telephone: '(846) 239-2439 x529'
+        email: Justice.Parker2@example.com
+      - type: ContactPoint
+        name: Work
+        telephone: '1+888-867-5309'
+    identifier: { hsfconsumerid: 1234568 }
+    # minimal example
+  - type: Person
+    identifier: { hsfconsumerid: 1234568 }

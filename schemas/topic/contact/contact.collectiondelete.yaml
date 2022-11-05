@@ -1,0 +1,22 @@
+# @format
+# yaml-language-server: $schema=https://www.asyncapi.com/definitions/2.5.0/message.json
+messageId: contact#collectiondelete
+name: realestate/contact#collectiondelete
+summary: a contact collection (data.object) is deleted by a user (data.agent)
+headers:
+  $ref: ../../subscription_headers.yaml
+payload:
+  type: object
+  required:
+    - topic
+    - data
+  properties:
+    topic: { const: realestate/contact#collectiondelete }
+    data:
+      type: object
+      required:
+        - object
+      properties:
+        type: { const: DeleteAction }
+        agent: { $ref: $defs.person.ref.yaml }
+        object: { $ref: $defs.collection.ref.yaml }

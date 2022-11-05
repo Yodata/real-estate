@@ -7,36 +7,36 @@
       "type": "string",
       "description": "The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.",
       "example": "USA",
-      "x-parser-schema-id": "<anonymous-schema-198>"
+      "x-parser-schema-id": "<anonymous-schema-526>"
     },
     "addressCounty": {
       "type": "string",
       "description": "the county (us real estate extension)",
       "example": "Gotham County",
-      "x-parser-schema-id": "<anonymous-schema-199>"
+      "x-parser-schema-id": "<anonymous-schema-527>"
     },
     "addressLocality": {
       "type": "string",
       "description": "City, Township.",
       "example": "Gotham City",
-      "x-parser-schema-id": "<anonymous-schema-196>"
+      "x-parser-schema-id": "<anonymous-schema-524>"
     },
     "addressRegion": {
       "type": "string",
       "description": "State or Province.",
       "example": "New Jersey",
-      "x-parser-schema-id": "<anonymous-schema-195>"
+      "x-parser-schema-id": "<anonymous-schema-523>"
     },
     "name": {
       "type": "string",
       "description": "city name (same as addressLocality)",
-      "x-parser-schema-id": "<anonymous-schema-194>"
+      "x-parser-schema-id": "<anonymous-schema-522>"
     },
     "postalCode": {
       "type": "string",
       "description": "Zip/Post Code",
       "example": "10010",
-      "x-parser-schema-id": "<anonymous-schema-197>"
+      "x-parser-schema-id": "<anonymous-schema-525>"
     },
     "type": {
       "type": "string",
@@ -44,7 +44,7 @@
         "City",
         "PostalCodeArea"
       ],
-      "x-parser-schema-id": "<anonymous-schema-193>"
+      "x-parser-schema-id": "<anonymous-schema-521>"
     }
   },
   "x-parser-schema-id": "City",

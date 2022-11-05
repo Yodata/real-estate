@@ -1,0 +1,24 @@
+# @format
+
+# yaml-language-server: $schema=https://www.asyncapi.com/definitions/2.5.0/message.json
+messageId: servicearea#delete
+name: realestate/servicearea#delete
+summary: ServiceArea (data.object) has been deleted.  Identifier is required.
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/servicearea#delete }
+payload:
+  type: object
+  properties:
+    data:
+      type: object
+      properties:
+        type: { const: DeleteAction }
+        object:
+          $ref: ../../ServiceArea.yaml
+          description: the service area being deleted
+        identifier:
+          $ref: ../../identifier.yaml
+          example:
+            bhhsESAId: abcde

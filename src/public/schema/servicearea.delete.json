@@ -6,84 +6,197 @@
   "headers": {
     "type": "object",
     "properties": {
-      "time": {
-        "type": "string",
-        "format": "date-time",
-        "description": "date & time the event was produced",
-        "x-parser-schema-id": "<anonymous-schema-3>"
-      },
-      "agent": {
-        "type": "string",
-        "format": "uri",
-        "description": "the user, team, or organization who sent the event",
-        "example": "https://agentid.example.com/profile/card#me",
-        "x-parser-schema-id": "<anonymous-schema-4>"
-      },
-      "instrument": {
-        "type": "string",
-        "format": "uri",
-        "description": "the service which created the event",
-        "example": "https://vendorid.example.com/profile/card#me",
-        "x-parser-schema-id": "<anonymous-schema-5>"
-      },
-      "source": {
-        "type": "string",
-        "format": "uri",
-        "description": "an agent, team or organization who received a copy of the event",
-        "example": "https://companyid.example.com/profile/card#me",
-        "x-parser-schema-id": "<anonymous-schema-6>"
-      },
-      "originalRecipient": {
-        "type": "string",
-        "format": "uri",
-        "description": "the original recipient of the event with this id",
-        "example": "https://agentid.example.com/profile/card#me",
-        "x-parser-schema-id": "<anonymous-schema-7>"
-      },
-      "id": {
-        "type": "string",
-        "format": "uri",
-        "description": "the shared identifier of the event, akd the event id",
-        "example": "https://instrumentid.example.com/publish/xxxxxxxxxxxxx",
-        "x-parser-schema-id": "<anonymous-schema-8>"
-      },
-      "@id": {
-        "type": "string",
-        "format": "uri",
-        "description": "the url of your instance of the event in your inbox",
-        "example": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
-        "x-parser-schema-id": "<anonymous-schema-9>"
-      },
       "topic": {
-        "type": "string",
-        "description": "the event topic which determines the event.data schema",
-        "x-parser-schema-id": "<anonymous-schema-2>",
-        "enum": [
-          "realestate/servicearea#delete"
-        ]
+        "const": "realestate/servicearea#delete",
+        "x-parser-schema-id": "<anonymous-schema-366>"
       }
-    }
+    },
+    "x-parser-schema-id": "<anonymous-schema-365>"
   },
   "payload": {
     "type": "object",
-    "description": "the message payload",
-    "x-parser-schema-id": "<anonymous-schema-10>",
     "properties": {
-      "object": {
-        "x-range": "ServiceArea",
+      "data": {
         "type": "object",
-        "example": {
-          "type": "ServiceArea",
+        "properties": {
+          "type": {
+            "const": "DeleteAction",
+            "x-parser-schema-id": "<anonymous-schema-369>"
+          },
+          "object": {
+            "title": "ServiceArea",
+            "type": "object",
+            "description": "an area when a provider provides a service. additional information available; see [Using Service Areas](/reference-using-service-area)",
+            "x-kind": "ServiceArea",
+            "properties": {
+              "type": {
+                "type": "string",
+                "description": "\"ServiceArea\"",
+                "enum": [
+                  "ServiceArea"
+                ],
+                "x-parser-schema-id": "<anonymous-schema-337>"
+              },
+              "kind": {
+                "type": "string",
+                "description": "ServiceArea sub-type.  City or PostalCode",
+                "enum": [
+                  "City",
+                  "PostalCode"
+                ],
+                "example": "PostalCode",
+                "x-parser-schema-id": "<anonymous-schema-338>"
+              },
+              "identifier": {
+                "type": "object",
+                "description": "vendor namespaced item identifiers, value should be stored and included in any future events that reference the same item.",
+                "properties": {
+                  "bhhsESAId": {
+                    "type": "string",
+                    "description": "BHHS internal ESA ID",
+                    "x-parser-schema-id": "<anonymous-schema-340>"
+                  }
+                },
+                "x-parser-schema-id": "<anonymous-schema-339>"
+              },
+              "addressLocality": {
+                "type": "string",
+                "description": "City, Township.",
+                "example": "Woodland Hills",
+                "x-parser-schema-id": "<anonymous-schema-341>"
+              },
+              "postalCode": {
+                "type": "string",
+                "description": "Zip/Post Code",
+                "example": "91371",
+                "x-parser-schema-id": "<anonymous-schema-342>"
+              },
+              "addressRegion": {
+                "type": "string",
+                "description": "State or Province.",
+                "example": "CA",
+                "x-parser-schema-id": "<anonymous-schema-343>"
+              },
+              "addressCountry": {
+                "type": "string",
+                "description": "The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.",
+                "example": "US",
+                "x-parser-schema-id": "<anonymous-schema-344>"
+              },
+              "addressCounty": {
+                "type": "string",
+                "description": "the county (us real estate extension)",
+                "example": "Los Angeles",
+                "x-parser-schema-id": "<anonymous-schema-345>"
+              },
+              "provider": {
+                "type": "object",
+                "description": "a broker or company who provides service in the ServiceArea",
+                "x-range": [
+                  "RealEstateOrganization"
+                ],
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "\"RealEstateOrganization\"",
+                    "enum": [
+                      "RealEstateOrganization"
+                    ],
+                    "x-parser-schema-id": "<anonymous-schema-347>"
+                  },
+                  "id": {
+                    "type": "string",
+                    "description": "profile URI",
+                    "example": "https://org.example.com/profile/card#me",
+                    "x-parser-schema-id": "<anonymous-schema-348>"
+                  }
+                },
+                "x-parser-schema-id": "<anonymous-schema-346>"
+              },
+              "additionalProperty": {
+                "type": "object",
+                "description": "BHHS specific ServiceArea properties",
+                "properties": {
+                  "relocationOffice": {
+                    "type": "object",
+                    "description": "relocation office",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "description": "The item type (Linked-Data @type)",
+                        "enum": [
+                          "RealEstateOffice"
+                        ],
+                        "x-parser-schema-id": "<anonymous-schema-351>"
+                      },
+                      "id": {
+                        "type": "string",
+                        "x-subPropertyOf": "identifier",
+                        "example": "https://org.example.com/profile/card#me",
+                        "x-parser-schema-id": "<anonymous-schema-352>"
+                      }
+                    },
+                    "x-parser-schema-id": "<anonymous-schema-350>"
+                  },
+                  "weight": {
+                    "type": "integer",
+                    "description": "weight",
+                    "x-parser-schema-id": "<anonymous-schema-353>"
+                  },
+                  "officeInPostalCode": {
+                    "type": "boolean",
+                    "description": "true if the service area provider is physically located in the ServiceArea.",
+                    "x-parser-schema-id": "<anonymous-schema-354>"
+                  },
+                  "sortOrder": {
+                    "type": "integer",
+                    "description": "sort order",
+                    "x-parser-schema-id": "<anonymous-schema-355>"
+                  },
+                  "sentToConsumerSite": {
+                    "type": "boolean",
+                    "description": "sent to consumer site",
+                    "x-parser-schema-id": "<anonymous-schema-356>"
+                  },
+                  "sentToCompanyLocator": {
+                    "type": "boolean",
+                    "description": "sent to company locator",
+                    "x-parser-schema-id": "<anonymous-schema-357>"
+                  },
+                  "sentToReferralSolutions": {
+                    "type": "boolean",
+                    "description": "sent to referral solutions",
+                    "x-parser-schema-id": "<anonymous-schema-358>"
+                  },
+                  "luxuryPriceMinimum": {
+                    "description": "minimum price for a property listing in the area to be considered a luxury property",
+                    "type": "object",
+                    "x-range": "PriceSpecification",
+                    "example": {
+                      "type": "PriceSpecification",
+                      "price": 1000000,
+                      "priceCurrency": "USD"
+                    },
+                    "x-parser-schema-id": "<anonymous-schema-359>"
+                  }
+                },
+                "x-parser-schema-id": "<anonymous-schema-349>"
+              }
+            },
+            "x-parser-schema-id": "<anonymous-schema-370>"
+          },
           "identifier": {
-            "bhhsESAId": "abcde"
+            "type": "object",
+            "description": "key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.",
+            "example": {
+              "salesforceContactID": "c28834ca-db69-4da8-90ad-75cdc9907298"
+            },
+            "x-parser-schema-id": "<anonymous-schema-371>"
           }
-        }
-      },
-      "type": {
-        "enum": [
-          "DeleteAction"
-        ]
+        },
+        "x-parser-schema-id": "<anonymous-schema-368>"
       }
-    }
+    },
+    "x-parser-schema-id": "<anonymous-schema-367>"
   }
 }

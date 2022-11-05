@@ -1,0 +1,136 @@
+{
+  "$id": "http://realestate.yodata.me/schema/franchise.listingreport.json",
+  "messageId": "franchise#listingreport",
+  "summary": "franchise listing report",
+  "externalDocs": null,
+  "headers": {
+    "$id": "http://realestate.yodata.me/schema/subscription_headers.json",
+    "$anchor": "subscription_headers",
+    "title": "CloudEvent",
+    "type": "object",
+    "properties": {
+      "topic": true,
+      "time": {
+        "type": "string",
+        "format": "date-time",
+        "description": "date & time the event was produced",
+        "x-parser-schema-id": "<anonymous-schema-82>"
+      },
+      "agent": {
+        "type": "string",
+        "format": "uri",
+        "description": "the user, team, or organization who sent the event",
+        "example": "https://agentid.example.com/profile/card#me",
+        "x-parser-schema-id": "<anonymous-schema-83>"
+      },
+      "instrument": {
+        "type": "string",
+        "format": "uri",
+        "description": "the service which created the event",
+        "example": "https://vendorid.example.com/profile/card#me",
+        "x-parser-schema-id": "<anonymous-schema-84>"
+      },
+      "source": {
+        "type": "string",
+        "format": "uri",
+        "description": "an agent, team or organization who received a copy of the event",
+        "example": "https://companyid.example.com/profile/card#me",
+        "x-parser-schema-id": "<anonymous-schema-85>"
+      },
+      "originalRecipient": {
+        "type": "string",
+        "format": "uri",
+        "description": "the original recipient of the event with this id",
+        "example": "https://agentid.example.com/profile/card#me",
+        "x-parser-schema-id": "<anonymous-schema-86>"
+      },
+      "id": {
+        "type": "string",
+        "format": "uri",
+        "description": "the shared identifier of the event, akd the event id",
+        "example": "https://instrumentid.example.com/publish/xxxxxxxxxxxxx",
+        "x-parser-schema-id": "<anonymous-schema-87>"
+      },
+      "@id": {
+        "type": "string",
+        "format": "uri",
+        "description": "the url of your instance of the event in your inbox",
+        "example": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
+        "x-parser-schema-id": "<anonymous-schema-88>"
+      },
+      "data": {
+        "type": "object",
+        "description": "the message payload",
+        "x-parser-schema-id": "<anonymous-schema-89>"
+      }
+    },
+    "required": [
+      "topic",
+      "agent",
+      "instrument",
+      "time"
+    ],
+    "externalDocs": {
+      "description": "CloudEvents",
+      "url": "https://cloudevents.io/"
+    },
+    "topic": {
+      "const": "realestate/franchise#listingreport"
+    }
+  },
+  "payload": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "UpdateAction"
+        },
+        "object": {
+          "$id": "http://realestate.yodata.me/schemas/ListingReport.yaml",
+          "title": "ListingReport",
+          "description": "summary report of listing inventory count",
+          "x-range": "ListingReport",
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "description": "RECORD-TYPE",
+              "example": "ListingReport",
+              "x-parser-schema-id": "<anonymous-schema-575>"
+            },
+            "batchId": {
+              "type": "string",
+              "description": "BATCH-ID",
+              "x-parser-schema-id": "<anonymous-schema-576>"
+            },
+            "reportingOfficeId": {
+              "type": "string",
+              "format": "uri",
+              "description": "OFFICE-ID",
+              "example": "https://{officeid}.example.com/profile/card#me",
+              "x-parser-schema-id": "<anonymous-schema-577>"
+            },
+            "dateCreated": {
+              "type": "string",
+              "format": "date-time",
+              "description": "YEAR-MONTH",
+              "x-parser-schema-id": "<anonymous-schema-578>"
+            },
+            "listingsAddedCount": {
+              "type": "number",
+              "description": "LISTINGS-TAKEN",
+              "x-parser-schema-id": "<anonymous-schema-579>"
+            },
+            "totalListingsCount": {
+              "type": "number",
+              "description": "LISTINGS-INVENTORY",
+              "x-parser-schema-id": "<anonymous-schema-580>"
+            }
+          },
+          "x-parser-schema-id": "ListingReport"
+        }
+      }
+    },
+    "x-parser-schema-id": "<anonymous-schema-90>"
+  }
+}

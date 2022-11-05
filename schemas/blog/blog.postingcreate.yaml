@@ -1,9 +1,10 @@
 x-title: postingcreate
 x-scope: realestate/blog#
 summary: a blog post was created
+headers:
+  $ref: subscription_headers.yaml
 payload:
-  allOf:
-    - $ref: base.event.yaml
+
     - properties:
         topic:
           enum:

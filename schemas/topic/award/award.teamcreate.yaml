@@ -1,0 +1,23 @@
+messageId: award#teamcreate
+name: realestate/award#teamcreate
+title: award#teamcreate
+summary: an award team was created
+contentType: application/json
+tags:
+  - name: action|create
+  - name: topic|award
+  - name: domain|realestate
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/award#teamcreate }
+payload:
+  type: object
+  properties:
+    data:
+      type: object
+      properties:
+        type: { const: CreateAction }
+        object:
+          $ref: AwardTeam.yaml
+          description: the award team being created

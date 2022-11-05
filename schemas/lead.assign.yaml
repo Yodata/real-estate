@@ -1,9 +1,10 @@
 messageId: lead#asssign
 x-scope: realestate/lead#
 summary: a lead was assigned
+headers:
+  $ref: subscription_headers.yaml
 payload:
-  allOf:
-    - $ref: base.event.yaml
+
     - properties:
         topic:
           enum:

@@ -1,3 +1,5 @@
+$id: http://realestate.yodata.me/schema/RealEstateTransaction
+$anchor: RealEstateTransaction
 type: object
 title: RealEstateTransaction
 x-range: RealEstateTransaction
@@ -12,12 +14,7 @@ required:
   - totalSalesProductionGCIDeduction
   - object
 properties:
-  type:
-    type: string
-    description: '"RealEstateTransaction"'
-    enum:
-      - RealEstateTransaction
-
+  type: { const: RealEstateTransaction }
   identifier:
     type: object
     description: the data producer's id for the transaction.

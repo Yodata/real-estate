@@ -1,9 +1,10 @@
 x-title: expire
 x-scope: realestate/transaction#
 summary: a real estate transaction was expired
+headers:
+  $ref: subscription_headers.yaml
 payload:
-  allOf:
-    - $ref: base.event.yaml
+
     - properties:
         topic:
           enum:

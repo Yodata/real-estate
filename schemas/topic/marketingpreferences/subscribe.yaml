@@ -1,0 +1,11 @@
+messageId: marketingpreferences#subscribe
+name: realestate/marketingpreferences#subscribe
+title: Marketing Preferences Subscribe
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/marketingpreferences#subscribe }
+payload:
+  type: object
+  properties:
+    data: { $ref: ../../SubscribeAction.yaml }

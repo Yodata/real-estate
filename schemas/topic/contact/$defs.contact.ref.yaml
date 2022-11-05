@@ -1,0 +1,10 @@
+# @format
+
+# a reference to the contact object with only the type and identifier properties
+type: object
+properties:
+  type: { const: Contact }
+  identifier: { $ref: ../../identifier.yaml }
+required:
+  - type
+  - identifier

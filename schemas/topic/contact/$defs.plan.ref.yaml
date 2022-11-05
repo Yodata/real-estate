@@ -1,0 +1,12 @@
+# @format
+# yaml-language-server: $schema=https://www.asyncapi.com/definitions/2.5.0/schema.json
+# a reference to a contact action plan with minimal properties
+type: object
+properties:
+  type: { const: Plan }
+  name: { $ref: ../../Plan.yaml#/properties/name }
+  identifier: { $ref: ../../identifier.yaml }
+required:
+  - type
+  - name
+  - identifier

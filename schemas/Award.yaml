@@ -1,3 +1,5 @@
+# @format
+
 title: Award
 type: object
 description: An honor bestowed on one or mote _recipients_ by the message _agent_
@@ -13,15 +15,18 @@ properties:
     description: name of the award
   dateAwarded:
     type: string
+    format: date-time
     description: date the award was presented or announced.
     x-range: DateTime
     example: 2019-11-25T04:23:32Z
   agent:
-    $ref: creator.yaml
+    type: string
+    format: uri
+    description: the agent that presented the award
   recipient:
     type: array
     items:
-      $ref: recipient.yaml
+      $ref: AwardRecipient.yaml
   identifier:
     $ref: identifier.yaml
     example:

@@ -1,135 +1,80 @@
 {
   "$id": "http://realestate.yodata.me/schema/award.teamcreate.json",
   "messageId": "award#teamcreate",
+  "title": "award#teamcreate",
   "summary": "an award team was created",
+  "contentType": "application/json",
   "externalDocs": null,
   "headers": {
     "type": "object",
     "properties": {
-      "time": {
-        "type": "string",
-        "format": "date-time",
-        "description": "date & time the event was produced",
-        "x-parser-schema-id": "<anonymous-schema-3>"
-      },
-      "agent": {
-        "type": "string",
-        "format": "uri",
-        "description": "the user, team, or organization who sent the event",
-        "example": "https://agentid.example.com/profile/card#me",
-        "x-parser-schema-id": "<anonymous-schema-4>"
-      },
-      "instrument": {
-        "type": "string",
-        "format": "uri",
-        "description": "the service which created the event",
-        "example": "https://vendorid.example.com/profile/card#me",
-        "x-parser-schema-id": "<anonymous-schema-5>"
-      },
-      "source": {
-        "type": "string",
-        "format": "uri",
-        "description": "an agent, team or organization who received a copy of the event",
-        "example": "https://companyid.example.com/profile/card#me",
-        "x-parser-schema-id": "<anonymous-schema-6>"
-      },
-      "originalRecipient": {
-        "type": "string",
-        "format": "uri",
-        "description": "the original recipient of the event with this id",
-        "example": "https://agentid.example.com/profile/card#me",
-        "x-parser-schema-id": "<anonymous-schema-7>"
-      },
-      "id": {
-        "type": "string",
-        "format": "uri",
-        "description": "the shared identifier of the event, akd the event id",
-        "example": "https://instrumentid.example.com/publish/xxxxxxxxxxxxx",
-        "x-parser-schema-id": "<anonymous-schema-8>"
-      },
-      "@id": {
-        "type": "string",
-        "format": "uri",
-        "description": "the url of your instance of the event in your inbox",
-        "example": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
-        "x-parser-schema-id": "<anonymous-schema-9>"
-      },
       "topic": {
-        "type": "string",
-        "description": "the event topic which determines the event.data schema",
-        "x-parser-schema-id": "<anonymous-schema-2>",
-        "enum": [
-          "realestate/award#teamcreate"
-        ]
+        "const": "realestate/award#teamcreate",
+        "x-parser-schema-id": "<anonymous-schema-40>"
       }
-    }
+    },
+    "x-parser-schema-id": "<anonymous-schema-39>"
   },
   "payload": {
     "type": "object",
-    "description": "the message payload",
-    "x-parser-schema-id": "<anonymous-schema-10>",
-    "x-range": [
-      "CreateAction"
-    ],
     "properties": {
-      "object": {
-        "title": "AwardTeam",
+      "data": {
         "type": "object",
-        "x-range": "AwardTeam",
-        "description": "a Collection",
-        "required": [
-          "type"
-        ],
         "properties": {
           "type": {
-            "description": "AwardTeam",
-            "type": "string",
-            "enum": [
-              "AwardTeam"
-            ],
-            "x-parser-schema-id": "<anonymous-schema-130>"
+            "const": "CreateAction",
+            "x-parser-schema-id": "<anonymous-schema-43>"
           },
-          "name": {
-            "type": "string",
-            "description": "name of the AwardTeam",
-            "example": "Clients",
-            "x-parser-schema-id": "<anonymous-schema-131>"
-          },
-          "identifier": {
-            "example": {
-              "hsfTeamId": "xxxxx"
-            },
+          "object": {
+            "title": "AwardTeam",
             "type": "object",
-            "description": "key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.",
-            "x-parser-schema-id": "<anonymous-schema-132>"
-          },
-          "member": {
-            "description": "members of the AwardTeam",
-            "type": "array",
-            "x-range": [
-              "RealEstateAgent",
-              "RealEstateOffice",
-              "RealEstateOrganization"
+            "x-range": "AwardTeam",
+            "description": "a Collection",
+            "required": [
+              "type",
+              "identifier"
             ],
-            "items": {
-              "type": "string",
-              "x-parser-schema-id": "<anonymous-schema-134>"
+            "properties": {
+              "type": {
+                "const": "AwardTeam",
+                "x-parser-schema-id": "<anonymous-schema-45>"
+              },
+              "name": {
+                "example": "Top Producer by Volume",
+                "type": "string",
+                "description": "the name of the item",
+                "x-parser-schema-id": "<anonymous-schema-46>"
+              },
+              "identifier": {
+                "example": {
+                  "hsfTeamId": "xxxxx"
+                },
+                "type": "object",
+                "description": "key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.",
+                "x-parser-schema-id": "<anonymous-schema-47>"
+              },
+              "member": {
+                "description": "members of the AwardTeam",
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri",
+                  "examples": [
+                    "http://12345.example.com/profile/card#me",
+                    "http://ma302-001.example.com/profile/card#me",
+                    "http://ma302.example.com/profile/card#me"
+                  ],
+                  "x-parser-schema-id": "<anonymous-schema-49>"
+                },
+                "x-parser-schema-id": "<anonymous-schema-48>"
+              }
             },
-            "example": [
-              "https://user.example.com/profile/card#me",
-              "https://office.example.com/profile/card#me",
-              "https://company.example.com/profile/card#me"
-            ],
-            "x-parser-schema-id": "<anonymous-schema-133>"
+            "x-parser-schema-id": "<anonymous-schema-44>"
           }
         },
-        "x-parser-schema-id": "AwardTeam"
-      },
-      "type": {
-        "enum": [
-          "CreateAction"
-        ]
+        "x-parser-schema-id": "<anonymous-schema-42>"
       }
-    }
+    },
+    "x-parser-schema-id": "<anonymous-schema-41>"
   }
 }

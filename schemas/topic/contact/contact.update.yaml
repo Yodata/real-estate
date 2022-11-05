@@ -1,0 +1,24 @@
+# @format
+
+messageId: contact#update
+name: realestate/contact#update
+summary: a contact (data.object) is updated by a user (data.agent)
+headers:
+  $ref: ../../subscription_headers.yaml
+payload:
+  type: object
+  required:
+    - topic
+    - data
+  properties:
+    topic: { const: realestate/contact#update }
+    data:
+      type: object
+      required:
+        - type
+        - object
+        - agent
+      properties:
+        type: { const: UpdateAction }
+        agent: { $ref: $defs.person.ref.yaml }
+        object: { $ref: ../../Contact.yaml }

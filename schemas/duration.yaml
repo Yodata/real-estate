@@ -1,4 +1,6 @@
+# @format
 title: duration
 type: string
+format: duration
 description: The duration of the item in ISO 8601 date format.
 example: R/P1Y

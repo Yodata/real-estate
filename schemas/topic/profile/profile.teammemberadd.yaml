@@ -1,0 +1,17 @@
+# @format
+
+messageId: profile#teammemberadd
+name: realestate/profile#teammemberadd
+summary: a team member was added
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/profile#teammemberadd }
+payload:
+  type: object
+  properties:
+    data:
+      type: object
+      properties:
+        type: { const: AddAction }
+        object: { $ref: ../../RealEstateTeamMembership.yaml }

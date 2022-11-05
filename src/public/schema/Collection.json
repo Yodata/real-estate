@@ -11,19 +11,20 @@
       "description": "creator of the collection",
       "type": "string",
       "example": "https://{agentid}.example.com/profile/card#me",
-      "x-parser-schema-id": "<anonymous-schema-203>"
+      "x-parser-schema-id": "<anonymous-schema-530>"
     },
     "dateCreated": {
-      "description": "The date on which the item was created.",
+      "$id": "http://realestate.yodata.me/schema/dateCreated.yaml",
       "type": "string",
       "format": "date-time",
-      "x-parser-schema-id": "<anonymous-schema-204>"
+      "title": "Date Created",
+      "description": "The date on which the item was created."
     },
     "dateModified": {
       "description": "The date on which the item was most recently modified or when the item's entry was modified within a DataFeed.",
       "type": "string",
       "format": "date-time",
-      "x-parser-schema-id": "<anonymous-schema-205>"
+      "x-parser-schema-id": "<anonymous-schema-531>"
     },
     "identifier": {
       "type": "object",
@@ -31,22 +32,22 @@
       "example": {
         "salesforceContactID": "c28834ca-db69-4da8-90ad-75cdc9907298"
       },
-      "x-parser-schema-id": "<anonymous-schema-202>"
+      "x-parser-schema-id": "<anonymous-schema-96>"
     },
     "member": {
       "description": "members of the collection",
       "type": "array",
       "items": {
         "type": "object",
-        "x-parser-schema-id": "<anonymous-schema-207>"
+        "x-parser-schema-id": "<anonymous-schema-533>"
       },
-      "x-parser-schema-id": "<anonymous-schema-206>"
+      "x-parser-schema-id": "<anonymous-schema-532>"
     },
     "name": {
       "type": "string",
       "description": "name of the collection",
       "example": "Clients",
-      "x-parser-schema-id": "<anonymous-schema-201>"
+      "x-parser-schema-id": "<anonymous-schema-529>"
     },
     "type": {
       "description": "Collection",
@@ -54,7 +55,7 @@
       "enum": [
         "Collection"
       ],
-      "x-parser-schema-id": "<anonymous-schema-200>"
+      "x-parser-schema-id": "<anonymous-schema-528>"
     }
   },
   "x-parser-schema-id": "Collection",

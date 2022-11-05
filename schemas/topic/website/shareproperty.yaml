@@ -1,0 +1,35 @@
+# @format
+
+messageId: website#shareproperty
+name: realestate/website#shareproperty
+summary: agent shared object with recipient
+headers:
+  type: object
+  properties:
+    topic: { const: realestate/website#shareproperty }
+payload:
+  type: object
+  properties:
+    data:
+      properties:
+        type: { const: ShareAction }
+        agent:
+          type: object
+          description: the website user who performed the action
+          properties:
+            type: { type: string, enum: [Contact, Person] }
+            identifier: { $ref: ../../identifier.yaml }
+          required: [type, identifier]
+        object:
+          type: object
+          description: the property being shared
+          properties:
+            type: { const: PropertyListing }
+            identifier: { $ref: ../../identifier.yaml }
+          required: [type, identifier]
+        recipient:
+          type: object
+          description: the recipient of the share
+          example:
+            type: Person
+            email: user@example.com

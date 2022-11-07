@@ -22,10 +22,10 @@ export default async function handler(request, response) {
     type = type.join('.')
   }
 
-  const schemaUrl = `http://${request.headers.host}/schema/${type}.json`
+  const schemaUrl = `http://${request.headers.host}/api/getSchema/${type}`
   const queryParams = request.query
 
-  return fetchJsonSchemaFromTypeString(schemaUrl)
+  return getSchema(schemaUrl)
     .then((schema) => {
       return generateExampleFromSchema(schema, queryParams)
     })
@@ -43,13 +43,13 @@ export default async function handler(request, response) {
  * @param {string} schemaUrl
  * @returns
  */
-async function fetchJsonSchemaFromTypeString(schemaUrl) {
-  assert(typeof schemaUrl === 'string', 'schemaUrl must be a string')
+async function getSchema(schemaUrl) {
   return fetch(schemaUrl)
     .then((response) => {
-      let result = response.json()
-      console.log('result', result)
-      return result
+      if (!response.ok) {
+        throw new Error(`failed to fetch schema for ${schemaUrl}`)
+      }
+      return response.json()
     })
     .catch((err) => {
       console.error(err)
@@ -61,6 +61,7 @@ async function generateExampleFromSchema(schema = {}, queryParams = {}) {
   console.log('generateExampleFromSchema', { schema, queryParams })
   // defaultOptions = show all optional properties (good for development)
   const defaultOptions = {
+    alwaysFakeOptionals: true,
     // if true, random properties will be generated (not good)
     randomOptionals: false,
     // if true will choose a value from schema examples (or one of example is provided)
@@ -76,7 +77,7 @@ async function generateExampleFromSchema(schema = {}, queryParams = {}) {
     // in other words, the result will be consistent
     fixedProbabilities: true,
     // if true, the properties will be sorted by key
-    sortProperties: true,
+    sortProperties: false,
     // Setup a custom randomness generator, useful for getting deterministic results
     // (default: Math.random)
     // random: 0,
@@ -113,17 +114,10 @@ async function generateExampleFromSchema(schema = {}, queryParams = {}) {
 }
 
 
-
 function transformMessageSchema(schema) {
-  const properties = {}
-  if (typeof schema.headers === 'object') {
-    Object.assign(properties, schema.headers.properties)
+  const result = Object.assign({}, schema.payload, schema.traits, schema.headers)
+  if (String(result[ 'x-parser-schema-id' ]).includes('anonymous-schema')) {
+    delete result['x-parser-schema-id']
   }
-  if (typeof schema.payload === 'object') {
-    Object.assign(properties, { data: schema.payload.properties })
-  }
-  return {
-    type: 'object',
-    properties
-  }
+  return result
 }

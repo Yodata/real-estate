@@ -8,10 +8,10 @@
     "properties": {
       "topic": {
         "const": "realestate/lead#update",
-        "x-parser-schema-id": "<anonymous-schema-120>"
+        "x-parser-schema-id": "<anonymous-schema-233>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-119>"
+    "x-parser-schema-id": "<anonymous-schema-232>"
   },
   "payload": {
     "type": "object",
@@ -21,7 +21,7 @@
         "properties": {
           "type": {
             "const": "UpdateAction",
-            "x-parser-schema-id": "<anonymous-schema-123>"
+            "x-parser-schema-id": "<anonymous-schema-236>"
           },
           "object": {
             "title": "Lead",
@@ -35,15 +35,24 @@
                   "Lead"
                 ],
                 "description": "Lead",
-                "x-parser-schema-id": "<anonymous-schema-95>"
+                "x-parser-schema-id": "<anonymous-schema-209>"
               },
               "identifier": {
+                "title": "identifier",
                 "type": "object",
-                "description": "key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.",
-                "example": {
-                  "salesforceContactID": "c28834ca-db69-4da8-90ad-75cdc9907298"
-                },
-                "x-parser-schema-id": "<anonymous-schema-96>"
+                "description": "identifier assigned to a contact by the vendor who originally created the contact",
+                "examples": [
+                  {
+                    "salesforceid": "0031U00002XW1QWQA1"
+                  },
+                  {
+                    "vendoraid": "123456"
+                  },
+                  {
+                    "originating_system_id": "123456"
+                  }
+                ],
+                "x-parser-schema-id": "<anonymous-schema-94>"
               },
               "object": {
                 "description": "the lead (Contact)",
@@ -57,21 +66,21 @@
                   "telephone": "731-620-9877 x6155",
                   "email": "Giuseppe.Lang62@hotmail.com"
                 },
-                "x-parser-schema-id": "<anonymous-schema-97>"
+                "x-parser-schema-id": "<anonymous-schema-210>"
               },
               "recipient": {
                 "description": "the lead recipient",
                 "type": "string",
                 "format": "uri",
                 "example": "http://{lead-recipient}.example.com/profile/card#me",
-                "x-parser-schema-id": "<anonymous-schema-98>"
+                "x-parser-schema-id": "<anonymous-schema-211>"
               },
               "sender": {
                 "description": "the lead provider",
                 "type": "string",
                 "format": "uri",
                 "example": "http://{lead-sender}.example.com/profile/card#me",
-                "x-parser-schema-id": "<anonymous-schema-99>"
+                "x-parser-schema-id": "<anonymous-schema-212>"
               },
               "owner": {
                 "description": "the original owner of the lead",
@@ -83,33 +92,33 @@
                 "type": "string",
                 "format": "uri",
                 "example": "http://{lead-owner}.example.com/profile/card#me",
-                "x-parser-schema-id": "<anonymous-schema-100>"
+                "x-parser-schema-id": "<anonymous-schema-213>"
               },
               "dateAccepted": {
                 "type": "string",
                 "description": "The date/time the item was accepted by the recipient",
                 "x-range": "DateTime",
                 "example": "2019-11-25T04:23:32.000Z",
-                "x-parser-schema-id": "<anonymous-schema-101>"
+                "x-parser-schema-id": "<anonymous-schema-214>"
               },
               "dateRejected": {
                 "type": "string",
                 "format": "date-time",
                 "description": "The date/time the item was rejected by the recipient",
-                "x-parser-schema-id": "<anonymous-schema-102>"
+                "x-parser-schema-id": "<anonymous-schema-215>"
               },
               "dateSent": {
                 "description": "the date the lead was sent",
                 "type": "string",
                 "format": "date-time",
-                "x-parser-schema-id": "<anonymous-schema-103>"
+                "x-parser-schema-id": "<anonymous-schema-216>"
               },
               "dateReceived": {
                 "type": "string",
                 "description": "The date/time the item was received by it's recipient",
                 "x-range": "DateTime",
                 "example": "2019-11-25T04:23:32.000Z",
-                "x-parser-schema-id": "<anonymous-schema-104>"
+                "x-parser-schema-id": "<anonymous-schema-217>"
               },
               "leadSource": {
                 "description": "lead origin, may be a website event or a thing such as a website, zillow, mobile applicaton.",
@@ -128,9 +137,9 @@
                       "text": "Help me I'm trapped inside documentation."
                     }
                   },
-                  "x-parser-schema-id": "<anonymous-schema-106>"
+                  "x-parser-schema-id": "<anonymous-schema-219>"
                 },
-                "x-parser-schema-id": "<anonymous-schema-105>"
+                "x-parser-schema-id": "<anonymous-schema-218>"
               }
             },
             "x-parser-schema-id": "Lead"
@@ -140,12 +149,12 @@
             "description": "user who effected the change",
             "format": "uri",
             "example": "https://{lead-admin}.bhhs.hsaffailites.com/profile/card",
-            "x-parser-schema-id": "<anonymous-schema-124>"
+            "x-parser-schema-id": "<anonymous-schema-237>"
           }
         },
-        "x-parser-schema-id": "<anonymous-schema-122>"
+        "x-parser-schema-id": "<anonymous-schema-235>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-121>"
+    "x-parser-schema-id": "<anonymous-schema-234>"
   }
 }

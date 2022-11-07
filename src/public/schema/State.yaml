@@ -6,13 +6,13 @@ properties:
   name:
     type: string
     description: the name of the item
-    x-parser-schema-id: <anonymous-schema-267>
+    x-parser-schema-id: <anonymous-schema-92>
   type:
     type: string
     description: The item type (Linked-Data @type)
     enum:
       - State
-    x-parser-schema-id: <anonymous-schema-790>
+    x-parser-schema-id: <anonymous-schema-828>
 example:
   type: State
   name: New Jersey

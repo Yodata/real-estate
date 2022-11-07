@@ -15,15 +15,15 @@ properties:
         enum:
           - 'Y'
           - 'N'
-        x-parser-schema-id: <anonymous-schema-756>
+        x-parser-schema-id: <anonymous-schema-795>
       inNetworkReferralYN:
         type: string
         description: Y if transaction was referred by an in network agent
         enum:
           - 'Y'
           - 'N'
-        x-parser-schema-id: <anonymous-schema-757>
-    x-parser-schema-id: <anonymous-schema-755>
+        x-parser-schema-id: <anonymous-schema-796>
+    x-parser-schema-id: <anonymous-schema-794>
   referredBy:
     type: object
     description: the referring entity
@@ -37,19 +37,19 @@ properties:
           - RealEstateOffice
           - Organization
           - Person
-        x-parser-schema-id: <anonymous-schema-759>
+        x-parser-schema-id: <anonymous-schema-798>
       id:
         type: string
         format: uri
         description: Linked-Data URI (@id)
-        x-parser-schema-id: <anonymous-schema-266>
-    x-parser-schema-id: <anonymous-schema-758>
+        x-parser-schema-id: <anonymous-schema-380>
+    x-parser-schema-id: <anonymous-schema-797>
   type:
     type: string
     description: The item type (Linked-Data @type)
     enum:
       - Referral
-    x-parser-schema-id: <anonymous-schema-754>
+    x-parser-schema-id: <anonymous-schema-793>
 x-parser-schema-id: Referral
 $id: http://realestate.yodata.me/schema/Referral.yaml
 

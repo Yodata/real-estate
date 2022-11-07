@@ -8,45 +8,49 @@ properties:
     example: Annual
     type: string
     description: description of the item.
-    x-parser-schema-id: <anonymous-schema-12>
+    x-parser-schema-id: <anonymous-schema-8>
   duration:
     title: duration
     type: string
     format: duration
     description: The duration of the item in ISO 8601 date format.
     example: R/P1Y
-    x-parser-schema-id: <anonymous-schema-13>
+    x-parser-schema-id: <anonymous-schema-9>
   endDate:
     type: string
     description: the end date-time (ISO 8601 formated)
     format: date-time
-    x-parser-schema-id: <anonymous-schema-15>
+    x-parser-schema-id: <anonymous-schema-11>
   id:
     type: string
     format: uri
-    x-parser-schema-id: <anonymous-schema-16>
+    x-parser-schema-id: <anonymous-schema-12>
   identifier:
     example:
       hsfAwardSeriesID: xxxx
+    title: identifier
     type: object
     description: >-
-      key/value id assigned to the record in the system where the data was
-      originally created. The identifier should be included along with any
-      statements on the record, or the entity associated to the record.
-    x-parser-schema-id: <anonymous-schema-17>
+      identifier assigned to a contact by the vendor who originally created the
+      contact
+    examples:
+      - salesforceid: 0031U00002XW1QWQA1
+      - vendoraid: '123456'
+      - originating_system_id: '123456'
+    x-parser-schema-id: <anonymous-schema-13>
   name:
     example: Top 1% Club
     description: name of the series
     type: string
-    x-parser-schema-id: <anonymous-schema-11>
+    x-parser-schema-id: <anonymous-schema-7>
   startDate:
     description: the start date-time (ISO 8601 formated)
     type: string
     format: date-time
-    x-parser-schema-id: <anonymous-schema-14>
+    x-parser-schema-id: <anonymous-schema-10>
   type:
     const: AwardSeries
-    x-parser-schema-id: <anonymous-schema-10>
+    x-parser-schema-id: <anonymous-schema-6>
 x-parser-schema-id: AwardSeries
 $id: http://realestate.yodata.me/schema/AwardSeries.yaml
 

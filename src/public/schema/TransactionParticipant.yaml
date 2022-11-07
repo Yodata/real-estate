@@ -1,12 +1,14 @@
-type: object
+$id: http://realestate.yodata.me/schema/TransactionParticipant.yaml
 title: TransactionParticipant
+description: a participant in a transaction, i.e. Buyer, Seller, etc...
 x-range: TransactionParticipant
+type: object
 properties:
   additionalName:
     type: string
     description: middleName or alternate name of the Person
     example: Big
-    x-parser-schema-id: <anonymous-schema-764>
+    x-parser-schema-id: <anonymous-schema-803>
   affiliation:
     type: array
     description: person or organization associated with the participant
@@ -14,48 +16,91 @@ properties:
       type: string
       format: uri
       example: https://{agentid}.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-767>
-    x-parser-schema-id: <anonymous-schema-766>
+      x-parser-schema-id: <anonymous-schema-805>
+    x-parser-schema-id: <anonymous-schema-804>
   email:
     type: string
     format: email
-    description: Primary email address.
-    example: user@example.com
-    x-parser-schema-id: <anonymous-schema-275>
+    x-faker: internet.email
+    x-parser-schema-id: <anonymous-schema-93>
   familyName:
+    $id: htttp://realestate.yodata.me/schema/familyName.yaml
     type: string
+    title: Family Name
     description: Last Name of a person
-    example: Miller
+    x-faker: name.lastName
     maxLength: 50
-    x-parser-schema-id: <anonymous-schema-276>
+    externalDocs:
+      description: Family Name
+      url: https://schema.org/familyName
+    examples:
+      - Smith
+      - Jones
+      - Parker
+      - Monk
+      - Brown
+      - Miller
+      - Davis
+      - Wilson
+      - Fitzgerald
+      - Johnson
+      - Williams
   givenName:
     type: string
     description: First Name of a person
-    example: Glenn
-    x-parser-schema-id: <anonymous-schema-277>
+    x-faker: name.firstName
+    examples:
+      - John
+      - Jane
+      - Mary
+      - Joseph
+      - William
+      - David
+      - Richard
+      - Charles
+      - Thomas
+      - Christopher
+      - Daniel
+      - Matthew
+      - Anthony
+      - Donald
+      - Mark
+      - Paul
+      - Steven
+      - Andrew
+      - Kenneth
+      - George
+      - Joshua
+      - Kevin
+      - Brian
+      - Edward
+      - Ronald
+      - Timothy
+      - Jason
+      - Jeffrey
+      - Ryan
+      - Jacob
+    x-parser-schema-id: <anonymous-schema-118>
   position:
     type: number
     description: numeric position for the participant/roleName.
     example: 1
-    x-parser-schema-id: <anonymous-schema-763>
+    x-parser-schema-id: <anonymous-schema-802>
   roleName:
     type: string
-    description: 'enum: Buyer,Seller'
-    enum:
+    description: the role of the participant in the transaction
+    examples:
       - Buyer
       - Seller
-    x-parser-schema-id: <anonymous-schema-762>
+    x-parser-schema-id: <anonymous-schema-801>
   telephone:
     type: string
     description: Primary phone number.
     example: '+15558675309'
-    x-parser-schema-id: <anonymous-schema-765>
+    x-parser-schema-id: <anonymous-schema-128>
   type:
     type: string
-    description: The item type (Linked-Data @type)
-    enum:
-      - TransactionParticipant
-    x-parser-schema-id: <anonymous-schema-761>
+    const: TransactionParticipant
+    x-parser-schema-id: <anonymous-schema-800>
 x-parser-schema-id: TransactionParticipant
-$id: http://realestate.yodata.me/schema/TransactionParticipant.yaml
 

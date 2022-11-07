@@ -3,65 +3,71 @@ messageId: franchise#listingreport
 summary: franchise listing report
 externalDocs: null
 headers:
-  $id: http://realestate.yodata.me/schema/subscription_headers.json
-  $anchor: subscription_headers
+  $id: subscription_headers
   title: CloudEvent
   type: object
   properties:
-    topic: true
     time:
       type: string
       format: date-time
       description: date & time the event was produced
-      x-parser-schema-id: <anonymous-schema-82>
+      x-parser-schema-id: <anonymous-schema-30>
     agent:
       type: string
       format: uri
-      description: the user, team, or organization who sent the event
-      example: https://agentid.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-83>
+      summary: >-
+        the event provider who sent the event via a subscription authorized to
+        your service.
+      description: >
+        if you are a multi-tenant app, then the agent is the user associated
+        with the event data.
+
+        any future events related to this message will be sent to the same
+        agent/recipient
+      example: https://andy_agent.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-31>
     instrument:
       type: string
       format: uri
-      description: the service which created the event
-      example: https://vendorid.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-84>
+      description: the app or service that produced the event on behalf of the agent/user
+      example: https://supercrm.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-32>
     source:
       type: string
       format: uri
       description: an agent, team or organization who received a copy of the event
-      example: https://companyid.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-85>
+      example: https://bigbrandrealestate.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-33>
     originalRecipient:
       type: string
       format: uri
-      description: the original recipient of the event with this id
+      summary: the original recipient of the event
+      description: >
+        the originalRecipient helps you determine the subscription that
+        delivered the event to you.
+
+        if the originalRecipient is the same as the agent, then the you are
+        subscribed to the agent.
+
+        if the originalRecipient is different from the agent, then you are
+        subscribed to the event source
       example: https://agentid.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-86>
+      x-parser-schema-id: <anonymous-schema-34>
     id:
       type: string
       format: uri
-      description: the shared identifier of the event, akd the event id
-      example: https://instrumentid.example.com/publish/xxxxxxxxxxxxx
-      x-parser-schema-id: <anonymous-schema-87>
+      summary: the event id
+      description: |
+        the event id is a unique identifier for the event.
+        all subscribers will receive the same event id.
+      example: https://supercrm.example.com/publish/{eventid}
+      x-parser-schema-id: <anonymous-schema-35>
     '@id':
       type: string
       format: uri
-      description: the url of your instance of the event in your inbox
-      example: https://yourpod.example.com/inbox/xxxxxxxxxxxxx
-      x-parser-schema-id: <anonymous-schema-88>
-    data:
-      type: object
-      description: the message payload
-      x-parser-schema-id: <anonymous-schema-89>
-  required:
-    - topic
-    - agent
-    - instrument
-    - time
-  externalDocs:
-    description: CloudEvents
-    url: https://cloudevents.io/
+      summary: the message id - the uri of the message in your inbox
+      example: https://sumpercrm.example.com/inbox/{eventid}
+      x-parser-schema-id: <anonymous-schema-36>
   topic:
     const: realestate/franchise#listingreport
 payload:
@@ -81,30 +87,30 @@ payload:
             type: string
             description: RECORD-TYPE
             example: ListingReport
-            x-parser-schema-id: <anonymous-schema-575>
+            x-parser-schema-id: <anonymous-schema-642>
           batchId:
             type: string
             description: BATCH-ID
-            x-parser-schema-id: <anonymous-schema-576>
+            x-parser-schema-id: <anonymous-schema-643>
           reportingOfficeId:
             type: string
             format: uri
             description: OFFICE-ID
             example: https://{officeid}.example.com/profile/card#me
-            x-parser-schema-id: <anonymous-schema-577>
+            x-parser-schema-id: <anonymous-schema-644>
           dateCreated:
             type: string
             format: date-time
             description: YEAR-MONTH
-            x-parser-schema-id: <anonymous-schema-578>
+            x-parser-schema-id: <anonymous-schema-645>
           listingsAddedCount:
             type: number
             description: LISTINGS-TAKEN
-            x-parser-schema-id: <anonymous-schema-579>
+            x-parser-schema-id: <anonymous-schema-646>
           totalListingsCount:
             type: number
             description: LISTINGS-INVENTORY
-            x-parser-schema-id: <anonymous-schema-580>
+            x-parser-schema-id: <anonymous-schema-647>
         x-parser-schema-id: ListingReport
-  x-parser-schema-id: <anonymous-schema-90>
+  x-parser-schema-id: <anonymous-schema-204>
 

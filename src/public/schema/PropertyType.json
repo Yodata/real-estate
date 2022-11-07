@@ -7,42 +7,42 @@
     "BUSO": {
       "type": "string",
       "description": "Business Opportunity",
-      "x-parser-schema-id": "<anonymous-schema-701>"
+      "x-parser-schema-id": "<anonymous-schema-739>"
     },
     "COMS": {
       "type": "string",
       "description": "commercial standard applies",
-      "x-parser-schema-id": "<anonymous-schema-700>"
+      "x-parser-schema-id": "<anonymous-schema-738>"
     },
     "FARM": {
       "type": "string",
       "description": "Farm Residential",
-      "x-parser-schema-id": "<anonymous-schema-699>"
+      "x-parser-schema-id": "<anonymous-schema-737>"
     },
     "LAND": {
       "type": "string",
       "description": "Land",
-      "x-parser-schema-id": "<anonymous-schema-697>"
+      "x-parser-schema-id": "<anonymous-schema-735>"
     },
     "MOBI": {
       "type": "string",
       "description": "Mobile home",
-      "x-parser-schema-id": "<anonymous-schema-698>"
+      "x-parser-schema-id": "<anonymous-schema-736>"
     },
     "RESI": {
       "type": "string",
       "description": "Residential",
-      "x-parser-schema-id": "<anonymous-schema-694>"
+      "x-parser-schema-id": "<anonymous-schema-732>"
     },
     "RINC": {
       "type": "string",
       "description": "Residential Income",
-      "x-parser-schema-id": "<anonymous-schema-696>"
+      "x-parser-schema-id": "<anonymous-schema-734>"
     },
     "RLSE": {
       "type": "string",
       "description": "Residential Property Lease",
-      "x-parser-schema-id": "<anonymous-schema-695>"
+      "x-parser-schema-id": "<anonymous-schema-733>"
     }
   },
   "example": {

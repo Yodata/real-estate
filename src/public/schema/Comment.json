@@ -63,7 +63,7 @@
           "telephone": "1-800-555-1212"
         }
       ],
-      "x-parser-schema-id": "<anonymous-schema-535>"
+      "x-parser-schema-id": "<anonymous-schema-137>"
     },
     "dateCreated": {
       "$id": "http://realestate.yodata.me/schema/dateCreated.yaml",
@@ -83,15 +83,27 @@
       "description": "The date on which the item was most recently modified or when the item's entry was modified within a DataFeed.",
       "type": "string",
       "format": "date-time",
-      "x-parser-schema-id": "<anonymous-schema-531>"
+      "x-parser-schema-id": "<anonymous-schema-136>"
     },
     "identifier": {
+      "title": "identifier",
       "type": "object",
-      "description": "key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.",
+      "description": "identifier assigned to a contact by the vendor who originally created the contact",
+      "examples": [
+        {
+          "salesforceid": "0031U00002XW1QWQA1"
+        },
+        {
+          "vendoraid": "123456"
+        },
+        {
+          "originating_system_id": "123456"
+        }
+      ],
       "example": {
-        "salesforceContactID": "c28834ca-db69-4da8-90ad-75cdc9907298"
+        "redContact_Note_ID": "62c4a9ae-eba1-4c27-a2dd-afb4068695f8"
       },
-      "x-parser-schema-id": "<anonymous-schema-536>"
+      "x-parser-schema-id": "<anonymous-schema-138>"
     },
     "text": {
       "$id": "http://realestate.yodata.me/schema/text.yaml",
@@ -107,7 +119,7 @@
     },
     "type": {
       "const": "Comment",
-      "x-parser-schema-id": "<anonymous-schema-534>"
+      "x-parser-schema-id": "<anonymous-schema-135>"
     }
   },
   "x-parser-schema-id": "Comment",

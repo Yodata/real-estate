@@ -1,0 +1,280 @@
+{
+  "$id": "http://realestate.yodata.me/schema/award.publish.json",
+  "messageId": "award#publish",
+  "summary": "an award series was deleted",
+  "contentType": "application/json",
+  "externalDocs": null,
+  "headers": {
+    "type": "object",
+    "properties": {
+      "topic": {
+        "type": "string",
+        "enum": [
+          "realestate/award#seriescreate",
+          "realestate/award#seriesupdate",
+          "realestate/award#seriesdelete",
+          "realestate/award#create",
+          "realestate/award#delete",
+          "realestate/award#teamcreate",
+          "realestate/award#teamupdate",
+          "realestate/award#teamdelete",
+          "realestate/award#teammemberadd",
+          "realestate/award#teammemberremove"
+        ],
+        "x-parser-schema-id": "<anonymous-schema-2>"
+      }
+    }
+  },
+  "payload": {
+    "type": "object",
+    "properties": {
+      "object": {
+        "oneOf": [
+          {
+            "title": "AwardSeries",
+            "type": "object",
+            "x-range": [
+              "AwardSeries"
+            ],
+            "description": "an award bestowed at regular intervals",
+            "properties": {
+              "type": {
+                "const": "AwardSeries",
+                "x-parser-schema-id": "<anonymous-schema-6>"
+              },
+              "name": {
+                "example": "Top 1% Club",
+                "description": "name of the series",
+                "type": "string",
+                "x-parser-schema-id": "<anonymous-schema-7>"
+              },
+              "description": {
+                "example": "Annual",
+                "type": "string",
+                "description": "description of the item.",
+                "x-parser-schema-id": "<anonymous-schema-8>"
+              },
+              "duration": {
+                "title": "duration",
+                "type": "string",
+                "format": "duration",
+                "description": "The duration of the item in ISO 8601 date format.",
+                "example": "R/P1Y",
+                "x-parser-schema-id": "<anonymous-schema-9>"
+              },
+              "startDate": {
+                "description": "the start date-time (ISO 8601 formated)",
+                "type": "string",
+                "format": "date-time",
+                "x-parser-schema-id": "<anonymous-schema-10>"
+              },
+              "endDate": {
+                "type": "string",
+                "description": "the end date-time (ISO 8601 formated)",
+                "format": "date-time",
+                "x-parser-schema-id": "<anonymous-schema-11>"
+              },
+              "id": {
+                "type": "string",
+                "format": "uri",
+                "x-parser-schema-id": "<anonymous-schema-12>"
+              },
+              "identifier": {
+                "example": {
+                  "hsfAwardSeriesID": "xxxx"
+                },
+                "title": "identifier",
+                "type": "object",
+                "description": "identifier assigned to a contact by the vendor who originally created the contact",
+                "examples": [
+                  {
+                    "salesforceid": "0031U00002XW1QWQA1"
+                  },
+                  {
+                    "vendoraid": "123456"
+                  },
+                  {
+                    "originating_system_id": "123456"
+                  }
+                ],
+                "x-parser-schema-id": "<anonymous-schema-13>"
+              }
+            },
+            "x-parser-schema-id": "AwardSeries"
+          },
+          {
+            "title": "Award",
+            "type": "object",
+            "description": "An honor bestowed on one or mote _recipients_ by the message _agent_",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "Award"
+                ],
+                "description": "\"AwardAction\"",
+                "x-parser-schema-id": "<anonymous-schema-14>"
+              },
+              "name": {
+                "example": "Top 1%",
+                "description": "name of the award",
+                "type": "string",
+                "x-parser-schema-id": "<anonymous-schema-15>"
+              },
+              "dateAwarded": {
+                "type": "string",
+                "format": "date-time",
+                "description": "date the award was presented or announced.",
+                "x-range": "DateTime",
+                "example": "2019-11-25T04:23:32.000Z",
+                "x-parser-schema-id": "<anonymous-schema-16>"
+              },
+              "agent": {
+                "type": "string",
+                "format": "uri",
+                "description": "the agent that presented the award",
+                "x-parser-schema-id": "<anonymous-schema-17>"
+              },
+              "recipient": {
+                "type": "array",
+                "description": "recipients of the award",
+                "items": {
+                  "type": "object",
+                  "description": "the award recipient",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "RealEstateAgent",
+                        "RealEstateOffice",
+                        "RealEstateOrganization"
+                      ],
+                      "x-parser-schema-id": "<anonymous-schema-20>"
+                    },
+                    "id": {
+                      "type": "string",
+                      "format": "uri",
+                      "example": "https://user.example.com/profile/card#me",
+                      "x-parser-schema-id": "<anonymous-schema-21>"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "the name of the award recipient",
+                      "x-faker": "name.findName",
+                      "x-parser-schema-id": "<anonymous-schema-22>"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "id",
+                    "name"
+                  ],
+                  "x-parser-schema-id": "<anonymous-schema-19>"
+                },
+                "x-parser-schema-id": "<anonymous-schema-18>"
+              },
+              "identifier": {
+                "example": {
+                  "hsfAwardId": "xxxx"
+                },
+                "title": "identifier",
+                "type": "object",
+                "description": "identifier assigned to a contact by the vendor who originally created the contact",
+                "examples": [
+                  {
+                    "salesforceid": "0031U00002XW1QWQA1"
+                  },
+                  {
+                    "vendoraid": "123456"
+                  },
+                  {
+                    "originating_system_id": "123456"
+                  }
+                ],
+                "x-parser-schema-id": "<anonymous-schema-23>"
+              }
+            },
+            "x-parser-schema-id": "Award"
+          },
+          {
+            "title": "AwardTeam",
+            "type": "object",
+            "x-range": "AwardTeam",
+            "description": "a Collection",
+            "required": [
+              "type",
+              "identifier"
+            ],
+            "properties": {
+              "type": {
+                "const": "AwardTeam",
+                "x-parser-schema-id": "<anonymous-schema-24>"
+              },
+              "name": {
+                "example": "Top Producer by Volume",
+                "type": "string",
+                "description": "the name of the item",
+                "x-parser-schema-id": "<anonymous-schema-25>"
+              },
+              "identifier": {
+                "example": {
+                  "hsfTeamId": "xxxxx"
+                },
+                "title": "identifier",
+                "type": "object",
+                "description": "identifier assigned to a contact by the vendor who originally created the contact",
+                "examples": [
+                  {
+                    "salesforceid": "0031U00002XW1QWQA1"
+                  },
+                  {
+                    "vendoraid": "123456"
+                  },
+                  {
+                    "originating_system_id": "123456"
+                  }
+                ],
+                "x-parser-schema-id": "<anonymous-schema-26>"
+              },
+              "member": {
+                "description": "members of the AwardTeam",
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri",
+                  "examples": [
+                    "http://12345.example.com/profile/card#me",
+                    "http://ma302-001.example.com/profile/card#me",
+                    "http://ma302.example.com/profile/card#me"
+                  ],
+                  "x-parser-schema-id": "<anonymous-schema-28>"
+                },
+                "x-parser-schema-id": "<anonymous-schema-27>"
+              }
+            },
+            "x-parser-schema-id": "AwardTeam"
+          },
+          {
+            "type": "string",
+            "format": "uri",
+            "example": "https://user.example.com/profile/card#me",
+            "x-parser-schema-id": "<anonymous-schema-29>"
+          }
+        ],
+        "x-parser-schema-id": "<anonymous-schema-5>"
+      },
+      "type": {
+        "type": "string",
+        "enum": [
+          "CreateAction",
+          "UpdateAction",
+          "DeleteAction",
+          "AddAction",
+          "RemoveAction"
+        ],
+        "x-parser-schema-id": "<anonymous-schema-4>"
+      }
+    },
+    "x-parser-schema-id": "<anonymous-schema-3>"
+  }
+}

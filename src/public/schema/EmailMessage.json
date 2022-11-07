@@ -5,6 +5,10 @@
   "required": [
     "type"
   ],
+  "propertyNames": {
+    "pattern": "^[a-z@$][a-zA-Z0-9-_]+$",
+    "x-parser-schema-id": "<anonymous-schema-274>"
+  },
   "title": "EmailMessage",
   "x-range": "EamilMessage",
   "description": "an email message",
@@ -13,7 +17,7 @@
       "type": "string",
       "format": "uri",
       "description": "the liked data uri for the Thing",
-      "x-parser-schema-id": "<anonymous-schema-160>"
+      "x-parser-schema-id": "<anonymous-schema-273>"
     },
     "bccRecipient": {
       "type": "array",
@@ -82,24 +86,24 @@
             "enum": [
               "DigitalDocument"
             ],
-            "x-parser-schema-id": "<anonymous-schema-551>"
+            "x-parser-schema-id": "<anonymous-schema-621>"
           },
           "id": {
             "type": "string",
             "example": "http://user.example.com/public/logo/archive.zip",
-            "x-parser-schema-id": "<anonymous-schema-552>"
+            "x-parser-schema-id": "<anonymous-schema-622>"
           },
           "name": {
             "type": "string",
             "description": "document name or title",
             "example": "archive.zip",
-            "x-parser-schema-id": "<anonymous-schema-553>"
+            "x-parser-schema-id": "<anonymous-schema-623>"
           },
           "encodingFormat": {
             "type": "string",
             "description": "[ISO Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml)",
             "example": "application/zip",
-            "x-parser-schema-id": "<anonymous-schema-554>"
+            "x-parser-schema-id": "<anonymous-schema-624>"
           },
           "about": {
             "type": "object",
@@ -111,13 +115,13 @@
                 "bmsTransactionId": "xxxx"
               }
             },
-            "x-parser-schema-id": "<anonymous-schema-555>"
+            "x-parser-schema-id": "<anonymous-schema-625>"
           },
           "url": {
             "type": "string",
             "description": "public URL of the object",
             "example": "https://example.com",
-            "x-parser-schema-id": "<anonymous-schema-556>"
+            "x-parser-schema-id": "<anonymous-schema-626>"
           }
         },
         "x-parser-schema-id": "DigitalDocument"
@@ -143,7 +147,8 @@
       }
     },
     "type": {
-      "x-parser-schema-id": "<anonymous-schema-159>",
+      "pattern": "^[A-Z][a-zA-Z0-9]+$",
+      "x-parser-schema-id": "<anonymous-schema-272>",
       "type": "string",
       "description": "EmailMessage",
       "enum": [
@@ -152,5 +157,5 @@
       "example": "EmailMessage"
     }
   },
-  "x-parser-schema-id": "<anonymous-schema-559>"
+  "x-parser-schema-id": "<anonymous-schema-629>"
 }

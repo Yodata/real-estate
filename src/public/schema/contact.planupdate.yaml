@@ -1,0 +1,319 @@
+$id: http://realestate.yodata.me/schema/contact.planupdate.yaml
+messageId: contact#planupdate
+summary: a contact plan (data.object) is updated by a user (data.agent)
+externalDocs: null
+headers:
+  $id: subscription_headers
+  title: CloudEvent
+  type: object
+  properties:
+    time:
+      type: string
+      format: date-time
+      description: date & time the event was produced
+      x-parser-schema-id: <anonymous-schema-30>
+    agent:
+      type: string
+      format: uri
+      summary: >-
+        the event provider who sent the event via a subscription authorized to
+        your service.
+      description: >
+        if you are a multi-tenant app, then the agent is the user associated
+        with the event data.
+
+        any future events related to this message will be sent to the same
+        agent/recipient
+      example: https://andy_agent.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-31>
+    instrument:
+      type: string
+      format: uri
+      description: the app or service that produced the event on behalf of the agent/user
+      example: https://supercrm.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-32>
+    source:
+      type: string
+      format: uri
+      description: an agent, team or organization who received a copy of the event
+      example: https://bigbrandrealestate.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-33>
+    originalRecipient:
+      type: string
+      format: uri
+      summary: the original recipient of the event
+      description: >
+        the originalRecipient helps you determine the subscription that
+        delivered the event to you.
+
+        if the originalRecipient is the same as the agent, then the you are
+        subscribed to the agent.
+
+        if the originalRecipient is different from the agent, then you are
+        subscribed to the event source
+      example: https://agentid.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-34>
+    id:
+      type: string
+      format: uri
+      summary: the event id
+      description: |
+        the event id is a unique identifier for the event.
+        all subscribers will receive the same event id.
+      example: https://supercrm.example.com/publish/{eventid}
+      x-parser-schema-id: <anonymous-schema-35>
+    '@id':
+      type: string
+      format: uri
+      summary: the message id - the uri of the message in your inbox
+      example: https://sumpercrm.example.com/inbox/{eventid}
+      x-parser-schema-id: <anonymous-schema-36>
+payload:
+  type: object
+  required:
+    - topic
+    - data
+  properties:
+    data:
+      type: object
+      required:
+        - type
+        - object
+        - agent
+      properties:
+        type:
+          const: UpdateAction
+          x-parser-schema-id: <anonymous-schema-159>
+        agent:
+          type: object
+          properties:
+            type:
+              const: Person
+              x-parser-schema-id: <anonymous-schema-91>
+            name:
+              type: string
+              description: the name of the item
+              x-parser-schema-id: <anonymous-schema-92>
+            email:
+              type: string
+              format: email
+              x-faker: internet.email
+              x-parser-schema-id: <anonymous-schema-93>
+            identifier:
+              title: identifier
+              type: object
+              description: >-
+                identifier assigned to a contact by the vendor who originally
+                created the contact
+              examples:
+                - salesforceid: 0031U00002XW1QWQA1
+                - vendoraid: '123456'
+                - originating_system_id: '123456'
+              x-parser-schema-id: <anonymous-schema-94>
+          required:
+            - type
+          minProperties: 2
+          x-parser-schema-id: <anonymous-schema-90>
+        object:
+          title: Plan
+          type: object
+          description: a collection of related tasks
+          required:
+            - type
+            - identifier
+            - name
+          x-range: Plan
+          properties:
+            type:
+              const: Plan
+              x-parser-schema-id: <anonymous-schema-160>
+            identifier:
+              title: identifier
+              type: object
+              description: >-
+                identifier assigned to a contact by the vendor who originally
+                created the contact
+              examples:
+                - salesforceid: 0031U00002XW1QWQA1
+                - vendoraid: '123456'
+                - originating_system_id: '123456'
+              x-parser-schema-id: <anonymous-schema-94>
+            name:
+              type: string
+              description: name of the plan
+              examples:
+                - my awesome plan
+                - annoying but effective plan
+                - plan to take over the world
+                - birthdays and anniversaries plan
+              x-parser-schema-id: <anonymous-schema-155>
+            description:
+              type: string
+              description: description of the item
+              example: this is the description of my awesome plan
+              x-parser-schema-id: <anonymous-schema-161>
+            member:
+              type: array
+              description: tasks which make up the plan
+              items:
+                title: Task
+                type: object
+                description: >-
+                  an action assigned to an agent, typically as part of a set of
+                  interdependent tasks in a Plan
+                x-range: Task
+                properties:
+                  type:
+                    type: string
+                    description: The item type (Linked-Data @type)
+                    enum:
+                      - Task
+                    x-parser-schema-id: <anonymous-schema-163>
+                  identifier:
+                    title: identifier
+                    type: object
+                    description: >-
+                      identifier assigned to a contact by the vendor who
+                      originally created the contact
+                    examples:
+                      - salesforceid: 0031U00002XW1QWQA1
+                      - vendoraid: '123456'
+                      - originating_system_id: '123456'
+                    example:
+                      redEvent_ID: '23445'
+                    x-parser-schema-id: <anonymous-schema-164>
+                  actionStatus:
+                    example: PotentialActionStatus
+                    type: string
+                    description: >-
+                      disposition of the Action at the time of this action
+                      message.
+                    x-range:
+                      - CompletedActionStatus
+                      - FailedActionStatus
+                      - ActiveActionStatus
+                      - PotentialActionStatus
+                    enum:
+                      - CompletedActionStatus
+                      - FailedActionStatus
+                      - ActiveActionStatus
+                      - PotentialActionStatus
+                    x-parser-schema-id: <anonymous-schema-165>
+                  memberOf:
+                    type: object
+                    x-range: Plan
+                    description: a plan the task is associated with
+                    example:
+                      type: Plan
+                      identifier:
+                        redPlan_ID: xxxx
+                    x-parser-schema-id: <anonymous-schema-166>
+                  agent:
+                    type: object
+                    description: the party who completed, or will complete the task
+                    x-range:
+                      - Person
+                      - Organization
+                      - RealEstateAgent
+                      - Contact
+                    example:
+                      type: RealEstateAgent
+                      id: http://user.example.com/profile/card#me
+                    x-parser-schema-id: <anonymous-schema-167>
+                  participant:
+                    x-title: participant
+                    x-range:
+                      - Person
+                      - RealEstateAgent
+                      - RealEstateTeam
+                      - RealEstateOrganization
+                    description: >-
+                      Other co-agents with a direct or indirect interest in the
+                      action.
+                    type: array
+                    items:
+                      type: object
+                      x-parser-schema-id: <anonymous-schema-169>
+                    example:
+                      - type: Contact
+                        name: Bruce Wayne
+                        email: bruce@example.com
+                        identifier:
+                          redContact_GUID: 92d0a096-457e-4643-ace8-fa95b6bdb1c5
+                    x-parser-schema-id: <anonymous-schema-168>
+                  name:
+                    type: string
+                    description: name or title
+                    example: Call Ricky
+                    x-parser-schema-id: <anonymous-schema-170>
+                  description:
+                    type: string
+                    description: task detailed description
+                    example: Agenda 1. Something 2. Something Else ...
+                    x-parser-schema-id: <anonymous-schema-171>
+                  keywords:
+                    type: array
+                    items:
+                      type: string
+                      x-parser-schema-id: <anonymous-schema-173>
+                    x-parser-schema-id: <anonymous-schema-172>
+                  dateDue:
+                    description: the due date-time (ISO 8601 formated)
+                    type: string
+                    format: date-time
+                    x-parser-schema-id: <anonymous-schema-174>
+                  dateCompleted:
+                    type: string
+                    format: date-time
+                    description: date the task was completed
+                    x-parser-schema-id: <anonymous-schema-175>
+                  location:
+                    type: object
+                    description: the physical location where an event takes place
+                    x-range:
+                      - Place
+                    example:
+                      type: Place
+                      address:
+                        streetAddress: 1007 Mountain Gate Rd
+                        addressLocality: Gotham City
+                        addressRegion: NJ
+                        postalCode: '10007'
+                        addressCounty: Gotham addressCounty
+                        addressSubdivision: Gotham Heights
+                    x-parser-schema-id: <anonymous-schema-176>
+                x-parser-schema-id: Task
+              x-parser-schema-id: <anonymous-schema-162>
+            creator:
+              title: creator
+              description: the item creator
+              x-range:
+                - Person
+                - Organization
+              example: http://agent.example.com/profile/card#me
+              x-parser-schema-id: <anonymous-schema-177>
+            dateCreated:
+              $id: http://realestate.yodata.me/schema/dateCreated.yaml
+              type: string
+              format: date-time
+              title: Date Created
+              description: The date on which the item was created.
+            dateModified:
+              description: >-
+                The date on which the item was most recently modified or when
+                the item's entry was modified within a DataFeed.
+              type: string
+              format: date-time
+              x-parser-schema-id: <anonymous-schema-136>
+            dateCompleted:
+              description: The date on which the item was created.
+              type: string
+              format: date-time
+              x-parser-schema-id: <anonymous-schema-178>
+          x-parser-schema-id: Plan
+      x-parser-schema-id: <anonymous-schema-158>
+    topic:
+      const: realestate/contact#planupdate
+      x-parser-schema-id: <anonymous-schema-157>
+  x-parser-schema-id: <anonymous-schema-156>
+

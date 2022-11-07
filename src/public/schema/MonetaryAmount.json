@@ -13,19 +13,19 @@
       "description": "use ISO4217 country codes",
       "maxLength": 3,
       "example": "USD",
-      "x-parser-schema-id": "<anonymous-schema-606>"
+      "x-parser-schema-id": "<anonymous-schema-673>"
     },
     "maxValue": {
       "type": "number",
       "description": "the upper limit of the range",
       "example": 3200000,
-      "x-parser-schema-id": "<anonymous-schema-604>"
+      "x-parser-schema-id": "<anonymous-schema-671>"
     },
     "minValue": {
       "type": "number",
       "description": "the lower limit of the range",
       "example": 2400000,
-      "x-parser-schema-id": "<anonymous-schema-603>"
+      "x-parser-schema-id": "<anonymous-schema-670>"
     },
     "type": {
       "type": "string",
@@ -33,13 +33,13 @@
       "enum": [
         "MonetaryAmount"
       ],
-      "x-parser-schema-id": "<anonymous-schema-602>"
+      "x-parser-schema-id": "<anonymous-schema-669>"
     },
     "value": {
       "type": "number",
       "description": "the actual or expected value",
       "example": 2700000,
-      "x-parser-schema-id": "<anonymous-schema-605>"
+      "x-parser-schema-id": "<anonymous-schema-672>"
     }
   },
   "x-parser-schema-id": "MonetaryAmount",

@@ -13,20 +13,20 @@ properties:
         type: string
         description: typically a RealEstateAgent
         example: RealEstateAgent
-        x-parser-schema-id: <anonymous-schema-773>
+        x-parser-schema-id: <anonymous-schema-811>
       roleName:
         type: string
         description: 'enum: ListingAgent,BuyerAgent'
         enum:
           - ListingAgent
           - BuyerAgent
-        x-parser-schema-id: <anonymous-schema-774>
+        x-parser-schema-id: <anonymous-schema-812>
       id:
         type: string
         format: uri
         description: Linked-Data URI (@id)
         example: https://{entityid}.example.com/profile/card#me
-        x-parser-schema-id: <anonymous-schema-775>
+        x-parser-schema-id: <anonymous-schema-813>
       identifier:
         type: object
         description: unique identifier of the recipient from the data producer
@@ -35,9 +35,9 @@ properties:
             type: string
             maxLength: 12
             example: '1657897'
-            x-parser-schema-id: <anonymous-schema-777>
-        x-parser-schema-id: <anonymous-schema-776>
-    x-parser-schema-id: <anonymous-schema-772>
+            x-parser-schema-id: <anonymous-schema-815>
+        x-parser-schema-id: <anonymous-schema-814>
+    x-parser-schema-id: <anonymous-schema-810>
   salesProductionGCI:
     type: object
     title: MonetaryAmount
@@ -52,47 +52,47 @@ properties:
         description: MonetaryAmount
         enum:
           - MonetaryAmount
-        x-parser-schema-id: <anonymous-schema-602>
+        x-parser-schema-id: <anonymous-schema-669>
       minValue:
         type: number
         description: the lower limit of the range
         example: 2400000
-        x-parser-schema-id: <anonymous-schema-603>
+        x-parser-schema-id: <anonymous-schema-670>
       maxValue:
         type: number
         description: the upper limit of the range
         example: 3200000
-        x-parser-schema-id: <anonymous-schema-604>
+        x-parser-schema-id: <anonymous-schema-671>
       value:
         type: number
         description: the actual or expected value
         example: 2700000
-        x-parser-schema-id: <anonymous-schema-605>
+        x-parser-schema-id: <anonymous-schema-672>
       currency:
         type: string
         description: use ISO4217 country codes
         maxLength: 3
         example: USD
-        x-parser-schema-id: <anonymous-schema-606>
+        x-parser-schema-id: <anonymous-schema-673>
     description: gross commission income credited to the recipient
     example:
       type: MonetaryAmount
       value: 1234.56
       currency: USD
-    x-parser-schema-id: <anonymous-schema-771>
+    x-parser-schema-id: <anonymous-schema-809>
   salesProductionUnit:
     type: number
     minimum: 0.0001
     maximum: 1
     description: the sales production units credited to the recipient
     example: 0.5
-    x-parser-schema-id: <anonymous-schema-770>
+    x-parser-schema-id: <anonymous-schema-808>
   type:
     type: string
     description: TransactionEntry
     enum:
       - TransactionEntry
-    x-parser-schema-id: <anonymous-schema-769>
+    x-parser-schema-id: <anonymous-schema-807>
 x-parser-schema-id: TransactionEntry
 $id: http://realestate.yodata.me/schema/TransactionEntry.yaml
 

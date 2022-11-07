@@ -1,7 +1,8 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, Fragment } from 'react'
 import { useForm, Controller } from 'react-hook-form'
 import { Select, Input } from '@/components/Forms'
 import { Button } from '@/components/Button'
+import Highlight, { defaultProps } from 'prism-react-renderer'
 import clsx from 'clsx'
 import axios from 'axios'
 
@@ -85,28 +86,12 @@ const formData = {
     placeholder: 'select a topic',
     caption: undefined,
     required: true,
-  },
-  // targeturl: {
-  //   name: 'targeturl',
-  //   type: 'url',
-  //   placeholder: 'http://test.dev.yodata.io/inbox/',
-  //   caption: 'url to your inbox or service endpoint'
-  // },
-  // : {
-  //   name: 'Show All Properties',
-  //   type: 'checkbox',
-  //   caption:
-  //     'Uncheck to include required properties + a random number of optionals',
-  // },
-  // additionalProperties: {
-  //   name: 'additionalProperties',
-  //   type: 'checkbox'
-  // }
+  }
 }
 
 export default function MockDataGUI(props) {
   const { className } = props
-  const [apiResponse, setApiResponse] = useState(null)
+  const [apiResponse, setApiResponse] = useState('')
   const [topic, setTopic] = useState('select a topic')
   const formStyle = clsx('form-input', className)
   const {
@@ -126,18 +111,18 @@ export default function MockDataGUI(props) {
       // maxDepth: 3,
     },
   })
+  const frm = useRef(null, handleFrmChange)
+  const editorRef = useRef(null)
 
   const onSubmit = (json) => {
-    const { topic, ...options } = json
-    const query = Object.entries(options)
-      .map(([k, v]) => `${k}=${v}`)
-      .join('&')
-    const target = `/api/mock/${topic}?${query}`
-
+    setTopic(json.topic)
+    const _topic = topic.replace('#', '/')
+    const target = `/api/mock/${_topic}`
     axios
       .get(target)
       .then((res) => {
-        setApiResponse(res.bpdy)
+        let code = JSON.stringify(res.data, null, 2)
+        setApiResponse(code)
       })
       .catch((error) => {
         console.error(error)
@@ -149,7 +134,9 @@ export default function MockDataGUI(props) {
     console.error('ERROR', errors)
     setApiResponse(JSON.stringify(errors))
   }
-  const frm = useRef(null, handleFrmChange)
+
+
+
 
   function handleFrmChange(input) {
     console.log('FORM_CHANGE', input)
@@ -172,13 +159,31 @@ export default function MockDataGUI(props) {
           control={control}
           onSelect={topicSelected}
         />
-        {/* <Input {...formData.targeturl} control={control} />
-        <Input {...formData.additionalProperties} control={control} />
-        <Input {...formData.optionalsProbability} control={control} />
-        <Input {...formData.fixedProbability} control={control} />
-        <Input {...formData.maxItems} control={control} /> <Input {...formData.maxDepth} control={control} /> */}
         <Button type="submit">Submit</Button>
       </form>
+      <Highlight
+      {...defaultProps}
+      code={apiResponse}
+      language={'json'}
+      theme={undefined}
+    >
+      {({ className, style, tokens, getTokenProps }) => (
+        <pre className={className} style={style}>
+          <code>
+            {tokens.map((line, lineIndex) => (
+              <Fragment key={lineIndex}>
+                {line
+                  .filter((token) => !token.empty)
+                  .map((token, tokenIndex) => (
+                    <span key={tokenIndex} {...getTokenProps({ token })} />
+                  ))}
+                {'\n'}
+              </Fragment>
+            ))}
+          </code>
+        </pre>
+      )}
+    </Highlight>
     </>
   )
 }

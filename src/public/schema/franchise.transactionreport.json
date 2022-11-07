@@ -9,10 +9,10 @@
     "properties": {
       "topic": {
         "const": "realestate/franchise#transactionreport",
-        "x-parser-schema-id": "<anonymous-schema-74>"
+        "x-parser-schema-id": "<anonymous-schema-198>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-73>"
+    "x-parser-schema-id": "<anonymous-schema-197>"
   },
   "payload": {
     "title": "data",
@@ -24,7 +24,7 @@
         "properties": {
           "type": {
             "const": "SoftwareApplication",
-            "x-parser-schema-id": "<anonymous-schema-78>"
+            "x-parser-schema-id": "<anonymous-schema-202>"
           },
           "name": {
             "type": "string",
@@ -33,16 +33,16 @@
               "Guru",
               "Lone Wolf"
             ],
-            "x-parser-schema-id": "<anonymous-schema-79>"
+            "x-parser-schema-id": "<anonymous-schema-203>"
           }
         },
-        "x-parser-schema-id": "<anonymous-schema-77>"
+        "x-parser-schema-id": "<anonymous-schema-201>"
       },
       "type": {
         "const": "UpdateAction",
-        "x-parser-schema-id": "<anonymous-schema-76>"
+        "x-parser-schema-id": "<anonymous-schema-200>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-75>"
+    "x-parser-schema-id": "<anonymous-schema-199>"
   }
 }

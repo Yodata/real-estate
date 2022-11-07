@@ -7,8 +7,8 @@ headers:
   properties:
     topic:
       const: realestate/marketing#programdelete
-      x-parser-schema-id: <anonymous-schema-202>
-  x-parser-schema-id: <anonymous-schema-201>
+      x-parser-schema-id: <anonymous-schema-316>
+  x-parser-schema-id: <anonymous-schema-315>
 payload:
   type: object
   properties:
@@ -17,7 +17,7 @@ payload:
       properties:
         type:
           const: DeleteAction
-          x-parser-schema-id: <anonymous-schema-205>
+          x-parser-schema-id: <anonymous-schema-319>
         agent:
           $id: http://schema.org/agent
           title: agent
@@ -30,9 +30,9 @@ payload:
             - type: string
               format: uri
               example: http://{user}.example.com/profile/card#me
-              x-parser-schema-id: <anonymous-schema-7>
+              x-parser-schema-id: <anonymous-schema-320>
             - type: object
-              x-parser-schema-id: <anonymous-schema-8>
+              x-parser-schema-id: <anonymous-schema-321>
         object:
           title: ProgramMembership
           description: >-
@@ -42,55 +42,57 @@ payload:
           properties:
             type:
               const: ProgramMembership
-              x-parser-schema-id: <anonymous-schema-207>
+              x-parser-schema-id: <anonymous-schema-323>
             role:
               type: string
               enum:
                 - member
                 - owner
-              x-parser-schema-id: <anonymous-schema-208>
+              x-parser-schema-id: <anonymous-schema-324>
             member:
               type: object
               properties:
                 type:
                   const: Contact
-                  x-parser-schema-id: <anonymous-schema-210>
+                  x-parser-schema-id: <anonymous-schema-326>
                 name:
                   type: string
-                  x-parser-schema-id: <anonymous-schema-211>
+                  x-parser-schema-id: <anonymous-schema-327>
                 identifier:
+                  title: identifier
                   type: object
                   description: >-
-                    key/value id assigned to the record in the system where the
-                    data was originally created. The identifier should be
-                    included along with any statements on the record, or the
-                    entity associated to the record.
-                  example:
-                    salesforceContactID: c28834ca-db69-4da8-90ad-75cdc9907298
-                  x-parser-schema-id: <anonymous-schema-96>
-              x-parser-schema-id: <anonymous-schema-209>
+                    identifier assigned to a contact by the vendor who
+                    originally created the contact
+                  examples:
+                    - salesforceid: 0031U00002XW1QWQA1
+                    - vendoraid: '123456'
+                    - originating_system_id: '123456'
+                  x-parser-schema-id: <anonymous-schema-94>
+              x-parser-schema-id: <anonymous-schema-325>
             memberOf:
               type: object
               properties:
                 type:
                   const: MarketingProgram
-                  x-parser-schema-id: <anonymous-schema-213>
+                  x-parser-schema-id: <anonymous-schema-329>
                 name:
                   type: string
                   example: Market Activity Report 508 Homewood Ave
-                  x-parser-schema-id: <anonymous-schema-214>
+                  x-parser-schema-id: <anonymous-schema-330>
                 identifier:
+                  title: identifier
                   type: object
                   description: >-
-                    key/value id assigned to the record in the system where the
-                    data was originally created. The identifier should be
-                    included along with any statements on the record, or the
-                    entity associated to the record.
-                  example:
-                    salesforceContactID: c28834ca-db69-4da8-90ad-75cdc9907298
-                  x-parser-schema-id: <anonymous-schema-96>
-              x-parser-schema-id: <anonymous-schema-212>
-          x-parser-schema-id: <anonymous-schema-206>
-      x-parser-schema-id: <anonymous-schema-204>
-  x-parser-schema-id: <anonymous-schema-203>
+                    identifier assigned to a contact by the vendor who
+                    originally created the contact
+                  examples:
+                    - salesforceid: 0031U00002XW1QWQA1
+                    - vendoraid: '123456'
+                    - originating_system_id: '123456'
+                  x-parser-schema-id: <anonymous-schema-94>
+              x-parser-schema-id: <anonymous-schema-328>
+          x-parser-schema-id: <anonymous-schema-322>
+      x-parser-schema-id: <anonymous-schema-318>
+  x-parser-schema-id: <anonymous-schema-317>
 

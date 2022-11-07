@@ -1,0 +1,237 @@
+$id: http://realestate.yodata.me/schema/contact.comment.yaml
+messageId: contact#comment
+summary: >-
+  a comment (data.object) is added by a user (data.agent) to a contact
+  (data.target)
+externalDocs: null
+headers:
+  $id: subscription_headers
+  title: CloudEvent
+  type: object
+  properties:
+    time:
+      type: string
+      format: date-time
+      description: date & time the event was produced
+      x-parser-schema-id: <anonymous-schema-30>
+    agent:
+      type: string
+      format: uri
+      summary: >-
+        the event provider who sent the event via a subscription authorized to
+        your service.
+      description: >
+        if you are a multi-tenant app, then the agent is the user associated
+        with the event data.
+
+        any future events related to this message will be sent to the same
+        agent/recipient
+      example: https://andy_agent.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-31>
+    instrument:
+      type: string
+      format: uri
+      description: the app or service that produced the event on behalf of the agent/user
+      example: https://supercrm.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-32>
+    source:
+      type: string
+      format: uri
+      description: an agent, team or organization who received a copy of the event
+      example: https://bigbrandrealestate.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-33>
+    originalRecipient:
+      type: string
+      format: uri
+      summary: the original recipient of the event
+      description: >
+        the originalRecipient helps you determine the subscription that
+        delivered the event to you.
+
+        if the originalRecipient is the same as the agent, then the you are
+        subscribed to the agent.
+
+        if the originalRecipient is different from the agent, then you are
+        subscribed to the event source
+      example: https://agentid.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-34>
+    id:
+      type: string
+      format: uri
+      summary: the event id
+      description: |
+        the event id is a unique identifier for the event.
+        all subscribers will receive the same event id.
+      example: https://supercrm.example.com/publish/{eventid}
+      x-parser-schema-id: <anonymous-schema-35>
+    '@id':
+      type: string
+      format: uri
+      summary: the message id - the uri of the message in your inbox
+      example: https://sumpercrm.example.com/inbox/{eventid}
+      x-parser-schema-id: <anonymous-schema-36>
+payload:
+  type: object
+  required:
+    - topic
+    - data
+  properties:
+    data:
+      type: object
+      required:
+        - object
+        - target
+      properties:
+        type:
+          const: CommentAction
+          x-parser-schema-id: <anonymous-schema-134>
+        agent:
+          type: object
+          properties:
+            type:
+              const: Person
+              x-parser-schema-id: <anonymous-schema-91>
+            name:
+              type: string
+              description: the name of the item
+              x-parser-schema-id: <anonymous-schema-92>
+            email:
+              type: string
+              format: email
+              x-faker: internet.email
+              x-parser-schema-id: <anonymous-schema-93>
+            identifier:
+              title: identifier
+              type: object
+              description: >-
+                identifier assigned to a contact by the vendor who originally
+                created the contact
+              examples:
+                - salesforceid: 0031U00002XW1QWQA1
+                - vendoraid: '123456'
+                - originating_system_id: '123456'
+              x-parser-schema-id: <anonymous-schema-94>
+          required:
+            - type
+          minProperties: 2
+          x-parser-schema-id: <anonymous-schema-90>
+        object:
+          type: object
+          title: Comment
+          description: A comment on an item.
+          x-range: Comment
+          required:
+            - type
+            - text
+          properties:
+            type:
+              const: Comment
+              x-parser-schema-id: <anonymous-schema-135>
+            dateCreated:
+              $id: http://realestate.yodata.me/schema/dateCreated.yaml
+              type: string
+              format: date-time
+              title: Date Created
+              description: The date on which the item was created.
+            dateModified:
+              description: >-
+                The date on which the item was most recently modified or when
+                the item's entry was modified within a DataFeed.
+              type: string
+              format: date-time
+              x-parser-schema-id: <anonymous-schema-136>
+            dateDeleted:
+              $id: http://realestate.yodata.me/schema/dateDeleted.yaml
+              type: string
+              format: date-time
+              title: Date Deleted
+              description: The date on which the item was deleted.
+            text:
+              $id: http://realestate.yodata.me/schema/text.yaml
+              title: text
+              type: string
+              examples:
+                - Populus debet control notitia sua
+                - Aspicio pinguem in his vestimentis?
+                - Et id ipsum vitae.
+                - Amici, Romani et cives, aures vestras mihi praebe
+                - >-
+                  Heus, ego iustus occurrit tibi et hoc est insanus, sed hic
+                  numerus meus est, ut me vocas fortasse.
+            author:
+              title: author
+              type: object
+              description: the author of something
+              examples:
+                - type: Contact
+                  name: Mark Twain
+                  identifier:
+                    originatingSystemName: originating-system-id
+                - type: RealEstateAgent
+                  name: Andy Warhol
+                  identifier:
+                    originatingSystemName: originating-system-id
+                - name: Stan Lee
+                - email: bob@example.com
+                - telephone: 1-800-555-1212
+              x-parser-schema-id: <anonymous-schema-137>
+            about:
+              example:
+                type: Contact
+                name: Robin
+                identifier:
+                  redContact_GUID: 6bf62a1b-225e-4fca-87b3-54cc09446a66
+              $id: http://realestate.yodata.me/schema/about.yaml
+              title: about
+              description: The subject of the content
+              type: object
+              examples:
+                - type: PropertyListing
+                  streetAddress: 123 Main Street
+                  addressLocality: Anytown
+                  addressRegion: NY
+                  postalCode: 12345
+                  addressCountry: US
+                  identifier:
+                    originatingSystemName: originatingsystemid
+            identifier:
+              title: identifier
+              type: object
+              description: >-
+                identifier assigned to a contact by the vendor who originally
+                created the contact
+              examples:
+                - salesforceid: 0031U00002XW1QWQA1
+                - vendoraid: '123456'
+                - originating_system_id: '123456'
+              example:
+                redContact_Note_ID: 62c4a9ae-eba1-4c27-a2dd-afb4068695f8
+              x-parser-schema-id: <anonymous-schema-138>
+          x-parser-schema-id: Comment
+        target:
+          type: object
+          properties:
+            type:
+              const: Contact
+              x-parser-schema-id: <anonymous-schema-140>
+            identifier:
+              title: identifier
+              type: object
+              description: >-
+                identifier assigned to a contact by the vendor who originally
+                created the contact
+              examples:
+                - salesforceid: 0031U00002XW1QWQA1
+                - vendoraid: '123456'
+                - originating_system_id: '123456'
+              x-parser-schema-id: <anonymous-schema-94>
+          required:
+            - type
+            - identifier
+          x-parser-schema-id: <anonymous-schema-139>
+      x-parser-schema-id: <anonymous-schema-133>
+    topic:
+      const: realestate/contact#comment
+      x-parser-schema-id: <anonymous-schema-132>
+  x-parser-schema-id: <anonymous-schema-131>
+

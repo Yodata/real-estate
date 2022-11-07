@@ -7,8 +7,8 @@ headers:
   properties:
     topic:
       const: realestate/marketing#programcreate
-      x-parser-schema-id: <anonymous-schema-196>
-  x-parser-schema-id: <anonymous-schema-195>
+      x-parser-schema-id: <anonymous-schema-310>
+  x-parser-schema-id: <anonymous-schema-309>
 payload:
   type: object
   properties:
@@ -17,7 +17,7 @@ payload:
       properties:
         type:
           const: CreateAction
-          x-parser-schema-id: <anonymous-schema-199>
+          x-parser-schema-id: <anonymous-schema-313>
         object:
           MarketingProgram:
             title: MarketingProgram
@@ -30,16 +30,17 @@ payload:
                 type: string
                 example: Market Activity Report 508 Homewood Ave
               identifier:
+                title: identifier
                 type: object
                 description: >-
-                  key/value id assigned to the record in the system where the
-                  data was originally created. The identifier should be included
-                  along with any statements on the record, or the entity
-                  associated to the record.
-                example:
-                  salesforceContactID: c28834ca-db69-4da8-90ad-75cdc9907298
-                x-parser-schema-id: <anonymous-schema-96>
-          x-parser-schema-id: <anonymous-schema-200>
-      x-parser-schema-id: <anonymous-schema-198>
-  x-parser-schema-id: <anonymous-schema-197>
+                  identifier assigned to a contact by the vendor who originally
+                  created the contact
+                examples:
+                  - salesforceid: 0031U00002XW1QWQA1
+                  - vendoraid: '123456'
+                  - originating_system_id: '123456'
+                x-parser-schema-id: <anonymous-schema-94>
+          x-parser-schema-id: <anonymous-schema-314>
+      x-parser-schema-id: <anonymous-schema-312>
+  x-parser-schema-id: <anonymous-schema-311>
 

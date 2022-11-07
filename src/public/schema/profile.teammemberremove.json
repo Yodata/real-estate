@@ -8,10 +8,10 @@
     "properties": {
       "topic": {
         "const": "realestate/profile#teammemberremove",
-        "x-parser-schema-id": "<anonymous-schema-327>"
+        "x-parser-schema-id": "<anonymous-schema-436>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-326>"
+    "x-parser-schema-id": "<anonymous-schema-435>"
   },
   "payload": {
     "type": "object",
@@ -21,7 +21,7 @@
         "properties": {
           "type": {
             "const": "RemoveAction",
-            "x-parser-schema-id": "<anonymous-schema-330>"
+            "x-parser-schema-id": "<anonymous-schema-439>"
           },
           "object": {
             "allOf": [
@@ -36,13 +36,13 @@
                     "enum": [
                       "OrganizationRole"
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-281>"
+                    "x-parser-schema-id": "<anonymous-schema-391>"
                   },
                   "roleName": {
                     "type": "string",
                     "description": "the role name",
                     "example": "Owner",
-                    "x-parser-schema-id": "<anonymous-schema-282>"
+                    "x-parser-schema-id": "<anonymous-schema-392>"
                   },
                   "memberOf": {
                     "description": "the org or group where the role is performed",
@@ -51,26 +51,26 @@
                       "type": "RealEstateOrganization",
                       "id": "http://orgid.example.com/profile/card#me"
                     },
-                    "x-parser-schema-id": "<anonymous-schema-283>"
+                    "x-parser-schema-id": "<anonymous-schema-393>"
                   },
                   "member": {
                     "description": "member object or id",
                     "type": "string",
                     "format": "uri",
                     "example": "https://memberid.example.com/profile/card#me",
-                    "x-parser-schema-id": "<anonymous-schema-284>"
+                    "x-parser-schema-id": "<anonymous-schema-394>"
                   },
                   "startDate": {
                     "type": "string",
                     "format": "date-time",
                     "description": "date the member began performing this role",
-                    "x-parser-schema-id": "<anonymous-schema-285>"
+                    "x-parser-schema-id": "<anonymous-schema-395>"
                   },
                   "endDate": {
                     "type": "string",
                     "format": "date-time",
                     "description": "date the member stopped performing the role",
-                    "x-parser-schema-id": "<anonymous-schema-286>"
+                    "x-parser-schema-id": "<anonymous-schema-396>"
                   }
                 },
                 "x-parser-schema-id": "OrganizationRole"
@@ -87,7 +87,7 @@
                       "RealEstateTeamMembership"
                     ],
                     "example": "RealEstateTeamMembership",
-                    "x-parser-schema-id": "<anonymous-schema-322>"
+                    "x-parser-schema-id": "<anonymous-schema-431>"
                   },
                   "roleName": {
                     "type": "string",
@@ -96,30 +96,30 @@
                       "TeamAdmin",
                       "TeamOwner"
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-323>"
+                    "x-parser-schema-id": "<anonymous-schema-432>"
                   },
                   "memberOf": {
                     "type": "string",
                     "format": "uri",
                     "example": "https://{team-id}.example.com/profile/card#me",
-                    "x-parser-schema-id": "<anonymous-schema-324>"
+                    "x-parser-schema-id": "<anonymous-schema-433>"
                   },
                   "member": {
                     "type": "string",
                     "format": "uri",
                     "example": "https://{agent}.example.com/profile/card#me",
-                    "x-parser-schema-id": "<anonymous-schema-325>"
+                    "x-parser-schema-id": "<anonymous-schema-434>"
                   }
                 },
-                "x-parser-schema-id": "<anonymous-schema-321>"
+                "x-parser-schema-id": "<anonymous-schema-430>"
               }
             ],
             "x-parser-schema-id": "RealEstateTeamMembership"
           }
         },
-        "x-parser-schema-id": "<anonymous-schema-329>"
+        "x-parser-schema-id": "<anonymous-schema-438>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-328>"
+    "x-parser-schema-id": "<anonymous-schema-437>"
   }
 }

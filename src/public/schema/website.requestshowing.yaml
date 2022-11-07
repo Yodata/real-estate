@@ -7,8 +7,8 @@ headers:
   properties:
     topic:
       const: realestate/website#requestshowing
-      x-parser-schema-id: <anonymous-schema-440>
-  x-parser-schema-id: <anonymous-schema-439>
+      x-parser-schema-id: <anonymous-schema-525>
+  x-parser-schema-id: <anonymous-schema-524>
 payload:
   type: object
   properties:
@@ -17,7 +17,7 @@ payload:
       properties:
         type:
           const: RequestShowingAction
-          x-parser-schema-id: <anonymous-schema-443>
+          x-parser-schema-id: <anonymous-schema-528>
         agent:
           type: object
           description: a website user/visitor
@@ -27,33 +27,34 @@ payload:
               enum:
                 - Person
                 - Contact
-              x-parser-schema-id: <anonymous-schema-378>
+              x-parser-schema-id: <anonymous-schema-487>
             name:
               type: string
-              x-parser-schema-id: <anonymous-schema-379>
+              x-parser-schema-id: <anonymous-schema-488>
             givenName:
               type: string
-              x-parser-schema-id: <anonymous-schema-380>
+              x-parser-schema-id: <anonymous-schema-489>
             familyName:
               type: string
-              x-parser-schema-id: <anonymous-schema-381>
+              x-parser-schema-id: <anonymous-schema-490>
             email:
               type: string
               format: email
-              x-parser-schema-id: <anonymous-schema-382>
+              x-parser-schema-id: <anonymous-schema-491>
             telephone:
               type: string
-              x-parser-schema-id: <anonymous-schema-383>
+              x-parser-schema-id: <anonymous-schema-492>
             identifier:
+              title: identifier
               type: object
               description: >-
-                key/value id assigned to the record in the system where the data
-                was originally created. The identifier should be included along
-                with any statements on the record, or the entity associated to
-                the record.
-              example:
-                salesforceContactID: c28834ca-db69-4da8-90ad-75cdc9907298
-              x-parser-schema-id: <anonymous-schema-96>
+                identifier assigned to a contact by the vendor who originally
+                created the contact
+              examples:
+                - salesforceid: 0031U00002XW1QWQA1
+                - vendoraid: '123456'
+                - originating_system_id: '123456'
+              x-parser-schema-id: <anonymous-schema-94>
             sameAs:
               title: sameAs
               type: string
@@ -65,62 +66,80 @@ payload:
                 - amcecrmid: 1234567
                   salesForceId: parsing
                 - salesForceId: ad4fa5f4as
-              x-parser-schema-id: <anonymous-schema-384>
+              x-parser-schema-id: <anonymous-schema-493>
             contactPoint:
+              $id: htttp://realestate.yodata.me/schema/ContactPoint.json
               title: ContactPoint
               description: >
                 A point of contact for the entity. By convention in the real
-                estate domain, ContactPoints 
+                estate domain, ContactPoints
 
                 are preferred over telephone, email, and faxNumber so the
-                ContactPoint.name property can be used to label values 
+                ContactPoint.name property can be used to label values
 
                 for example, Work Telephone, Home, as named contactPoint values.
               type: object
+              required:
+                - type
+                - name
+              minProperties: 3
               properties:
                 type:
-                  description: ContactPoint
                   type: string
-                  enum:
-                    - ContactPoint
-                  x-parser-schema-id: <anonymous-schema-269>
+                  const: ContactPoint
+                  x-parser-schema-id: <anonymous-schema-381>
                 name:
                   type: string
                   description: a label for the contactPoint, i.e. 'Work', or 'Home'
-                  example: Work
-                  x-parser-schema-id: <anonymous-schema-270>
+                  examples:
+                    - Work
+                    - Home
+                    - Vacation
+                    - Bob's Cell
+                    - Alice's Work
+                  x-parser-schema-id: <anonymous-schema-382>
                 telephone:
-                  description: a telephone number
                   type: string
-                  example: 1-364-127-9618 x20418
-                  x-parser-schema-id: <anonymous-schema-271>
+                  x-faker: phone.phoneNumber
+                  examples:
+                    - 555-555-5555
+                    - 555-555-5555 x123
+                    - 555-555-5555 ext. 123
+                    - +1-555-555-5555
+                  x-parser-schema-id: <anonymous-schema-383>
                 faxNumber:
-                  description: a fax number
                   type: string
-                  example: 834.320.1602
-                  x-parser-schema-id: <anonymous-schema-272>
+                  x-faker: phone.phoneNumber
+                  examples:
+                    - 555-555-5555
+                    - 555-555-5555 x123
+                    - 555-555-5555 ext. 123
+                    - +1-555-555-5555
+                  x-parser-schema-id: <anonymous-schema-384>
                 email:
                   description: an email address for the item.
                   type: string
                   format: email
-                  example: user@example.com
-                  x-parser-schema-id: <anonymous-schema-273>
+                  x-faker: internet.email
+                  examples:
+                    - bob@example.com
+                    - alice@example.com
+                  x-parser-schema-id: <anonymous-schema-385>
                 url:
                   description: primary URL for the item.
                   type: string
                   format: uri
                   example: https://www.facebook.com/hallandoates
-                  x-parser-schema-id: <anonymous-schema-274>
-              x-parser-schema-id: <anonymous-schema-268>
+                  x-parser-schema-id: <anonymous-schema-386>
             additionalProperties:
               type: object
               description: additional properties for the website user
               properties:
                 workingWithAgent:
                   type: boolean
-                  x-parser-schema-id: <anonymous-schema-386>
-              x-parser-schema-id: <anonymous-schema-385>
-          x-parser-schema-id: <anonymous-schema-377>
+                  x-parser-schema-id: <anonymous-schema-495>
+              x-parser-schema-id: <anonymous-schema-494>
+          x-parser-schema-id: <anonymous-schema-486>
         about:
           type: object
           x-range: PropertyListing
@@ -139,7 +158,7 @@ payload:
               type: PriceSpecification
               price: 7500000
               priceCurrency: USD
-          x-parser-schema-id: <anonymous-schema-444>
+          x-parser-schema-id: <anonymous-schema-529>
         event:
           type: object
           title: Event
@@ -150,17 +169,17 @@ payload:
               type: string
               description: The item type (Linked-Data @type)
               example: Event
-              x-parser-schema-id: <anonymous-schema-445>
+              x-parser-schema-id: <anonymous-schema-530>
             name:
               type: string
               description: name of the event
               example: Property Showing 1007 Mountain Gate Rd
-              x-parser-schema-id: <anonymous-schema-446>
+              x-parser-schema-id: <anonymous-schema-531>
             description:
               type: string
               description: event message content
               example: an example meeting request for 4:00PM to 4:30PM.
-              x-parser-schema-id: <anonymous-schema-447>
+              x-parser-schema-id: <anonymous-schema-532>
             about:
               type: object
               description: a subject of the meeting or event
@@ -178,19 +197,19 @@ payload:
                   type: PriceSpecification
                   price: 7500000
                   priceCurrency: USD
-              x-parser-schema-id: <anonymous-schema-448>
+              x-parser-schema-id: <anonymous-schema-533>
             startDate:
               description: the start date-time (ISO 8601 formated)
               type: string
               format: date-time
               example: 2019-08-01T16:00Z
-              x-parser-schema-id: <anonymous-schema-449>
+              x-parser-schema-id: <anonymous-schema-534>
             endDate:
               type: string
               description: the end date-time (ISO 8601 formated)
               format: date-time
               example: 2019-08-01T16:30Z
-              x-parser-schema-id: <anonymous-schema-450>
+              x-parser-schema-id: <anonymous-schema-535>
             organizer:
               title: organizer
               description: the event organizer
@@ -199,7 +218,7 @@ payload:
                 type: RealEstateAgent
                 name: Bruce Wayne
                 id: https://batman.example.com/profile/card#me
-              x-parser-schema-id: <anonymous-schema-451>
+              x-parser-schema-id: <anonymous-schema-536>
           x-parser-schema-id: Event
         object:
           type: object
@@ -210,7 +229,7 @@ payload:
           properties:
             type:
               const: Question
-              x-parser-schema-id: <anonymous-schema-387>
+              x-parser-schema-id: <anonymous-schema-496>
             text:
               $id: http://realestate.yodata.me/schema/text.yaml
               title: text
@@ -233,15 +252,15 @@ payload:
                 - RealEstateAgent
                 - RealEstateTeam
                 - RealEstateOrganization
-              x-parser-schema-id: <anonymous-schema-453>
+              x-parser-schema-id: <anonymous-schema-538>
             name:
               type: string
-              x-parser-schema-id: <anonymous-schema-454>
+              x-parser-schema-id: <anonymous-schema-539>
             id:
               type: string
               format: uri
               example: https://agent.example.com/profile/card#me
-              x-parser-schema-id: <anonymous-schema-455>
+              x-parser-schema-id: <anonymous-schema-540>
             identifier: true
           examples:
             - type: RealEstateAgent
@@ -260,7 +279,7 @@ payload:
               name: Smith & Smith Real Estate
             - type: RealEstateOrganization
               id: https://smithandsmithrealestate.example.com/profile/card#me
-          x-parser-schema-id: <anonymous-schema-452>
-      x-parser-schema-id: <anonymous-schema-442>
-  x-parser-schema-id: <anonymous-schema-441>
+          x-parser-schema-id: <anonymous-schema-537>
+      x-parser-schema-id: <anonymous-schema-527>
+  x-parser-schema-id: <anonymous-schema-526>
 

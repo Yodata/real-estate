@@ -8,18 +8,18 @@ properties:
     format: uri
     description: ASSOC-ID
     example: https://{userid}.example.com/profile/card#me
-    x-parser-schema-id: <anonymous-schema-546>
+    x-parser-schema-id: <anonymous-schema-616>
   author:
     type: string
     format: uri
     description: OFFICE-ID
     example: https://{officeid}.example.com/profile/card#me
-    x-parser-schema-id: <anonymous-schema-541>
+    x-parser-schema-id: <anonymous-schema-611>
   batchId:
     type: string
     description: BATCH-ID
     example: '0001'
-    x-parser-schema-id: <anonymous-schema-540>
+    x-parser-schema-id: <anonymous-schema-610>
   object:
     type: object
     description: the Customer
@@ -30,39 +30,86 @@ properties:
       type:
         type: string
         description: The item type (Linked-Data @type)
-        x-parser-schema-id: <anonymous-schema-548>
+        x-parser-schema-id: <anonymous-schema-618>
       givenName:
         type: string
         description: First Name of a person
-        example: Glenn
-        x-parser-schema-id: <anonymous-schema-277>
+        x-faker: name.firstName
+        examples:
+          - John
+          - Jane
+          - Mary
+          - Joseph
+          - William
+          - David
+          - Richard
+          - Charles
+          - Thomas
+          - Christopher
+          - Daniel
+          - Matthew
+          - Anthony
+          - Donald
+          - Mark
+          - Paul
+          - Steven
+          - Andrew
+          - Kenneth
+          - George
+          - Joshua
+          - Kevin
+          - Brian
+          - Edward
+          - Ronald
+          - Timothy
+          - Jason
+          - Jeffrey
+          - Ryan
+          - Jacob
+        x-parser-schema-id: <anonymous-schema-118>
       additionalName:
         type: string
         description: CUSTOMER-MIDDLE-INITIAL
         example: M
-        x-parser-schema-id: <anonymous-schema-549>
+        x-parser-schema-id: <anonymous-schema-619>
       familyName:
+        $id: htttp://realestate.yodata.me/schema/familyName.yaml
         type: string
+        title: Family Name
         description: Last Name of a person
-        example: Miller
+        x-faker: name.lastName
         maxLength: 50
-        x-parser-schema-id: <anonymous-schema-276>
+        externalDocs:
+          description: Family Name
+          url: https://schema.org/familyName
+        examples:
+          - Smith
+          - Jones
+          - Parker
+          - Monk
+          - Brown
+          - Miller
+          - Davis
+          - Wilson
+          - Fitzgerald
+          - Johnson
+          - Williams
       gender:
         type: string
         description: gender of the Customer (why?)
         example: M
-        x-parser-schema-id: <anonymous-schema-550>
-    x-parser-schema-id: <anonymous-schema-547>
+        x-parser-schema-id: <anonymous-schema-620>
+    x-parser-schema-id: <anonymous-schema-617>
   position:
     type: number
     description: ADJUSTMENT-SEQUENCE
     example: 1
-    x-parser-schema-id: <anonymous-schema-545>
+    x-parser-schema-id: <anonymous-schema-615>
   transactionId:
     type: string
     description: TRANS-NO
     example: '0000097123'
-    x-parser-schema-id: <anonymous-schema-543>
+    x-parser-schema-id: <anonymous-schema-613>
   transactionRole:
     type: string
     x-range:
@@ -73,19 +120,19 @@ properties:
     enum:
       - Buyer
       - Seller
-    x-parser-schema-id: <anonymous-schema-544>
+    x-parser-schema-id: <anonymous-schema-614>
   transactionType:
     type: string
     description: TRANS-TYPE
     x-range: TransactionType
     example: SalesTransactionType
-    x-parser-schema-id: <anonymous-schema-542>
+    x-parser-schema-id: <anonymous-schema-612>
   type:
     type: string
     description: '"ContactSummary"'
     enum:
       - ContactSummaryReport
-    x-parser-schema-id: <anonymous-schema-539>
+    x-parser-schema-id: <anonymous-schema-609>
 x-parser-schema-id: ContactSummary
 $id: http://realestate.yodata.me/schema/ContactSummary.yaml
 

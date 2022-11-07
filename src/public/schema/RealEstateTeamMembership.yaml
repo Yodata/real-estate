@@ -6,19 +6,19 @@ properties:
     type: string
     format: date-time
     description: date the member stopped performing the role
-    x-parser-schema-id: <anonymous-schema-286>
+    x-parser-schema-id: <anonymous-schema-396>
   member:
     description: member object or id
     type: string
     format: uri
     example: https://{agent}.example.com/profile/card#me
-    x-parser-schema-id: <anonymous-schema-325>
+    x-parser-schema-id: <anonymous-schema-434>
   memberOf:
     description: the org or group where the role is performed
     type: string
     format: uri
     example: https://{team-id}.example.com/profile/card#me
-    x-parser-schema-id: <anonymous-schema-324>
+    x-parser-schema-id: <anonymous-schema-433>
   roleName:
     description: the role name
     example: Owner
@@ -27,19 +27,19 @@ properties:
       - TeamMember
       - TeamAdmin
       - TeamOwner
-    x-parser-schema-id: <anonymous-schema-323>
+    x-parser-schema-id: <anonymous-schema-432>
   startDate:
     type: string
     format: date-time
     description: date the member began performing this role
-    x-parser-schema-id: <anonymous-schema-285>
+    x-parser-schema-id: <anonymous-schema-395>
   type:
     type: string
     description: a member of a real estate team
     enum:
       - RealEstateTeamMembership
     example: RealEstateTeamMembership
-    x-parser-schema-id: <anonymous-schema-322>
-x-parser-schema-id: <anonymous-schema-321>
+    x-parser-schema-id: <anonymous-schema-431>
+x-parser-schema-id: <anonymous-schema-430>
 $id: http://realestate.yodata.me/schema/RealEstateTeamMembership.yaml
 

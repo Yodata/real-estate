@@ -4,134 +4,176 @@
   "summary": "award action is updated",
   "externalDocs": null,
   "headers": {
+    "$id": "subscription_headers",
+    "title": "CloudEvent",
     "type": "object",
     "properties": {
-      "topic": {
-        "const": "realestate/award#update",
-        "x-parser-schema-id": "<anonymous-schema-71>"
+      "time": {
+        "type": "string",
+        "format": "date-time",
+        "description": "date & time the event was produced",
+        "x-parser-schema-id": "<anonymous-schema-30>"
+      },
+      "agent": {
+        "type": "string",
+        "format": "uri",
+        "summary": "the event provider who sent the event via a subscription authorized to your service.",
+        "description": "if you are a multi-tenant app, then the agent is the user associated with the event data.\nany future events related to this message will be sent to the same agent/recipient\n",
+        "example": "https://andy_agent.example.com/profile/card#me",
+        "x-parser-schema-id": "<anonymous-schema-31>"
+      },
+      "instrument": {
+        "type": "string",
+        "format": "uri",
+        "description": "the app or service that produced the event on behalf of the agent/user",
+        "example": "https://supercrm.example.com/profile/card#me",
+        "x-parser-schema-id": "<anonymous-schema-32>"
+      },
+      "source": {
+        "type": "string",
+        "format": "uri",
+        "description": "an agent, team or organization who received a copy of the event",
+        "example": "https://bigbrandrealestate.example.com/profile/card#me",
+        "x-parser-schema-id": "<anonymous-schema-33>"
+      },
+      "originalRecipient": {
+        "type": "string",
+        "format": "uri",
+        "summary": "the original recipient of the event",
+        "description": "the originalRecipient helps you determine the subscription that delivered the event to you.\nif the originalRecipient is the same as the agent, then the you are subscribed to the agent.\nif the originalRecipient is different from the agent, then you are subscribed to the event source\n",
+        "example": "https://agentid.example.com/profile/card#me",
+        "x-parser-schema-id": "<anonymous-schema-34>"
+      },
+      "id": {
+        "type": "string",
+        "format": "uri",
+        "summary": "the event id",
+        "description": "the event id is a unique identifier for the event.\nall subscribers will receive the same event id.\n",
+        "example": "https://supercrm.example.com/publish/{eventid}",
+        "x-parser-schema-id": "<anonymous-schema-35>"
+      },
+      "@id": {
+        "type": "string",
+        "format": "uri",
+        "summary": "the message id - the uri of the message in your inbox",
+        "example": "https://sumpercrm.example.com/inbox/{eventid}",
+        "x-parser-schema-id": "<anonymous-schema-36>"
       }
-    },
-    "x-parser-schema-id": "<anonymous-schema-70>"
+    }
   },
   "payload": {
     "type": "object",
-    "data": {
-      "properties": {
-        "type": {
-          "const": "UpdateAction"
-        },
-        "identifier": {
-          "type": "object",
-          "description": "key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.",
-          "example": {
-            "salesforceContactID": "c28834ca-db69-4da8-90ad-75cdc9907298"
-          }
-        },
-        "agent": {
-          "description": "the award presenter",
-          "$id": "http://schema.org/agent",
-          "title": "agent",
-          "x-range": [
-            "Person",
-            "Organization",
-            "URI"
-          ],
-          "oneOf": [
-            {
-              "type": "string",
-              "format": "uri",
-              "example": "http://{user}.example.com/profile/card#me",
-              "x-parser-schema-id": "<anonymous-schema-7>"
-            },
-            {
-              "type": "object",
-              "x-parser-schema-id": "<anonymous-schema-8>"
-            }
-          ]
-        },
-        "object": {
-          "title": "AwardSeries",
-          "type": "object",
-          "x-range": [
-            "AwardSeries"
-          ],
-          "description": "an award bestowed at regular intervals",
-          "properties": {
-            "type": {
-              "const": "AwardSeries",
-              "x-parser-schema-id": "<anonymous-schema-10>"
-            },
-            "name": {
-              "example": "Top 1% Club",
-              "description": "name of the series",
-              "type": "string",
-              "x-parser-schema-id": "<anonymous-schema-11>"
-            },
-            "description": {
-              "example": "Annual",
-              "type": "string",
-              "description": "description of the item.",
-              "x-parser-schema-id": "<anonymous-schema-12>"
-            },
-            "duration": {
-              "title": "duration",
-              "type": "string",
-              "format": "duration",
-              "description": "The duration of the item in ISO 8601 date format.",
-              "example": "R/P1Y",
-              "x-parser-schema-id": "<anonymous-schema-13>"
-            },
-            "startDate": {
-              "description": "the start date-time (ISO 8601 formated)",
-              "type": "string",
-              "format": "date-time",
-              "x-parser-schema-id": "<anonymous-schema-14>"
-            },
-            "endDate": {
-              "type": "string",
-              "description": "the end date-time (ISO 8601 formated)",
-              "format": "date-time",
-              "x-parser-schema-id": "<anonymous-schema-15>"
-            },
-            "id": {
-              "type": "string",
-              "format": "uri",
-              "x-parser-schema-id": "<anonymous-schema-16>"
-            },
-            "identifier": {
-              "example": {
-                "hsfAwardSeriesID": "xxxx"
+    "properties": {
+      "data": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "const": "UpdateAction",
+            "x-parser-schema-id": "<anonymous-schema-84>"
+          },
+          "object": {
+            "title": "Award",
+            "type": "object",
+            "description": "An honor bestowed on one or mote _recipients_ by the message _agent_",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "Award"
+                ],
+                "description": "\"AwardAction\"",
+                "x-parser-schema-id": "<anonymous-schema-14>"
               },
-              "type": "object",
-              "description": "key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.",
-              "x-parser-schema-id": "<anonymous-schema-17>"
-            }
+              "name": {
+                "example": "Top 1%",
+                "description": "name of the award",
+                "type": "string",
+                "x-parser-schema-id": "<anonymous-schema-15>"
+              },
+              "dateAwarded": {
+                "type": "string",
+                "format": "date-time",
+                "description": "date the award was presented or announced.",
+                "x-range": "DateTime",
+                "example": "2019-11-25T04:23:32.000Z",
+                "x-parser-schema-id": "<anonymous-schema-16>"
+              },
+              "agent": {
+                "type": "string",
+                "format": "uri",
+                "description": "the agent that presented the award",
+                "x-parser-schema-id": "<anonymous-schema-17>"
+              },
+              "recipient": {
+                "type": "array",
+                "description": "recipients of the award",
+                "items": {
+                  "type": "object",
+                  "description": "the award recipient",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "RealEstateAgent",
+                        "RealEstateOffice",
+                        "RealEstateOrganization"
+                      ],
+                      "x-parser-schema-id": "<anonymous-schema-20>"
+                    },
+                    "id": {
+                      "type": "string",
+                      "format": "uri",
+                      "example": "https://user.example.com/profile/card#me",
+                      "x-parser-schema-id": "<anonymous-schema-21>"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "the name of the award recipient",
+                      "x-faker": "name.findName",
+                      "x-parser-schema-id": "<anonymous-schema-22>"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "id",
+                    "name"
+                  ],
+                  "x-parser-schema-id": "<anonymous-schema-19>"
+                },
+                "x-parser-schema-id": "<anonymous-schema-18>"
+              },
+              "identifier": {
+                "example": {
+                  "hsfAwardId": "xxxx"
+                },
+                "title": "identifier",
+                "type": "object",
+                "description": "identifier assigned to a contact by the vendor who originally created the contact",
+                "examples": [
+                  {
+                    "salesforceid": "0031U00002XW1QWQA1"
+                  },
+                  {
+                    "vendoraid": "123456"
+                  },
+                  {
+                    "originating_system_id": "123456"
+                  }
+                ],
+                "x-parser-schema-id": "<anonymous-schema-23>"
+              }
+            },
+            "x-parser-schema-id": "<anonymous-schema-85>"
           }
         },
-        "recipient": {
-          "type": "object",
-          "description": "the award recipient",
-          "properties": {
-            "type": {
-              "type": "string",
-              "enum": [
-                "RealEstateAgent",
-                "RealEstateTeam",
-                "RealEstateOffice",
-                "RealEstateOrganization"
-              ]
-            },
-            "name": {
-              "type": "string"
-            },
-            "id": {
-              "type": "string",
-              "format": "uri"
-            }
-          }
-        }
+        "x-parser-schema-id": "<anonymous-schema-83>"
+      },
+      "topic": {
+        "type": "string",
+        "const": "realestate/award#update",
+        "x-parser-schema-id": "<anonymous-schema-82>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-72>"
+    "x-parser-schema-id": "<anonymous-schema-81>"
   }
 }

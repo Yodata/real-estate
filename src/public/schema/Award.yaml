@@ -6,67 +6,68 @@ properties:
     type: string
     format: uri
     description: the agent that presented the award
-    x-parser-schema-id: <anonymous-schema-470>
+    x-parser-schema-id: <anonymous-schema-17>
   dateAwarded:
     type: string
     format: date-time
     description: date the award was presented or announced.
     x-range: DateTime
     example: 2019-11-25T04:23:32.000Z
-    x-parser-schema-id: <anonymous-schema-469>
+    x-parser-schema-id: <anonymous-schema-16>
   identifier:
     example:
       hsfAwardId: xxxx
+    title: identifier
     type: object
     description: >-
-      key/value id assigned to the record in the system where the data was
-      originally created. The identifier should be included along with any
-      statements on the record, or the entity associated to the record.
-    x-parser-schema-id: <anonymous-schema-475>
+      identifier assigned to a contact by the vendor who originally created the
+      contact
+    examples:
+      - salesforceid: 0031U00002XW1QWQA1
+      - vendoraid: '123456'
+      - originating_system_id: '123456'
+    x-parser-schema-id: <anonymous-schema-23>
   name:
     example: Top 1%
     description: name of the award
     type: string
-    x-parser-schema-id: <anonymous-schema-468>
+    x-parser-schema-id: <anonymous-schema-15>
   recipient:
     type: array
+    description: recipients of the award
     items:
-      $id: http://realestate.yodata.me/schema/AwardRecipient
-      title: AwardRecipient
-      description: A recipient of an award.
       type: object
-      required:
-        - type
-        - name
-        - id
+      description: the award recipient
       properties:
         type:
           type: string
-          x-parser-schema-id: <anonymous-schema-472>
-        name:
-          type: string
-          x-parser-schema-id: <anonymous-schema-473>
+          enum:
+            - RealEstateAgent
+            - RealEstateOffice
+            - RealEstateOrganization
+          x-parser-schema-id: <anonymous-schema-20>
         id:
           type: string
           format: uri
-          x-parser-schema-id: <anonymous-schema-474>
-      examples:
-        - type: RealEstateAgent
-          name: Randy RealEstateAgent
-          id: https://12345.example.com/profile/card#me
-        - type: RealEstateTeam
-          name: Team Tommy
-          id: https://team100.example.com/profile/card#me
-        - type: RealEstateOrganization
-          name: Gotham Realty
-          id: https://gotham.example.com/profile/card#me
-    x-parser-schema-id: <anonymous-schema-471>
+          example: https://user.example.com/profile/card#me
+          x-parser-schema-id: <anonymous-schema-21>
+        name:
+          type: string
+          description: the name of the award recipient
+          x-faker: name.findName
+          x-parser-schema-id: <anonymous-schema-22>
+      required:
+        - type
+        - id
+        - name
+      x-parser-schema-id: <anonymous-schema-19>
+    x-parser-schema-id: <anonymous-schema-18>
   type:
     type: string
     enum:
       - Award
     description: '"AwardAction"'
-    x-parser-schema-id: <anonymous-schema-467>
+    x-parser-schema-id: <anonymous-schema-14>
 x-parser-schema-id: Award
 $id: http://realestate.yodata.me/schema/Award.yaml
 

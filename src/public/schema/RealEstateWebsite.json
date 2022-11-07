@@ -15,7 +15,7 @@
         "type": "RealEstateAgent",
         "id": "http://agent.example.com/profile/card#me"
       },
-      "x-parser-schema-id": "<anonymous-schema-781>"
+      "x-parser-schema-id": "<anonymous-schema-819>"
     },
     "type": {
       "type": "string",
@@ -23,14 +23,14 @@
         "RealEstateWebsite"
       ],
       "description": "RealEstateWebsite",
-      "x-parser-schema-id": "<anonymous-schema-780>"
+      "x-parser-schema-id": "<anonymous-schema-818>"
     },
     "url": {
       "title": "url",
       "type": "string",
       "format": "uri",
       "description": "URL of the item.",
-      "x-parser-schema-id": "<anonymous-schema-298>"
+      "x-parser-schema-id": "<anonymous-schema-408>"
     }
   },
   "x-parser-schema-id": "RealEstateWebsite",

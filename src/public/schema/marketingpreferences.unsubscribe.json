@@ -8,10 +8,10 @@
     "properties": {
       "topic": {
         "const": "realestate/marketingpreferences#unsubscribe",
-        "x-parser-schema-id": "<anonymous-schema-242>"
+        "x-parser-schema-id": "<anonymous-schema-358>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-241>"
+    "x-parser-schema-id": "<anonymous-schema-357>"
   },
   "payload": {
     "type": "object",
@@ -30,11 +30,11 @@
               "type": {
                 "description": "the action type",
                 "type": "string",
-                "x-parser-schema-id": "<anonymous-schema-238>"
+                "x-parser-schema-id": "<anonymous-schema-354>"
               },
               "object": {
                 "description": "item on which the action is carried out",
-                "x-parser-schema-id": "<anonymous-schema-239>"
+                "x-parser-schema-id": "<anonymous-schema-355>"
               }
             },
             "externalDocs": {
@@ -99,12 +99,12 @@
                 }
               }
             },
-            "x-parser-schema-id": "<anonymous-schema-244>"
+            "x-parser-schema-id": "<anonymous-schema-360>"
           }
         ],
         "x-parser-schema-id": "UnsubscribeAction"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-243>"
+    "x-parser-schema-id": "<anonymous-schema-359>"
   }
 }

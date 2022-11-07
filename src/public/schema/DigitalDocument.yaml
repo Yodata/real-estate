@@ -11,33 +11,33 @@ properties:
       type: RealEstateTransaction
       identifier:
         bmsTransactionId: xxxx
-    x-parser-schema-id: <anonymous-schema-555>
+    x-parser-schema-id: <anonymous-schema-625>
   encodingFormat:
     type: string
     description: >-
       [ISO Media
       Type](https://www.iana.org/assignments/media-types/media-types.xhtml)
     example: application/zip
-    x-parser-schema-id: <anonymous-schema-554>
+    x-parser-schema-id: <anonymous-schema-624>
   id:
     type: string
     example: http://user.example.com/public/logo/archive.zip
-    x-parser-schema-id: <anonymous-schema-552>
+    x-parser-schema-id: <anonymous-schema-622>
   name:
     type: string
     description: document name or title
     example: archive.zip
-    x-parser-schema-id: <anonymous-schema-553>
+    x-parser-schema-id: <anonymous-schema-623>
   type:
     type: string
     enum:
       - DigitalDocument
-    x-parser-schema-id: <anonymous-schema-551>
+    x-parser-schema-id: <anonymous-schema-621>
   url:
     type: string
     description: public URL of the object
     example: https://example.com
-    x-parser-schema-id: <anonymous-schema-556>
+    x-parser-schema-id: <anonymous-schema-626>
 x-parser-schema-id: DigitalDocument
 $id: http://realestate.yodata.me/schema/DigitalDocument.yaml
 

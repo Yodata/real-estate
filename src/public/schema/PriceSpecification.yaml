@@ -7,28 +7,28 @@ properties:
     type: number
     description: the high price offered if price is a range.
     example: 100000
-    x-parser-schema-id: <anonymous-schema-398>
+    x-parser-schema-id: <anonymous-schema-507>
   minPrice:
     type: number
     description: the low price offered if price is a range.
     example: 75000
-    x-parser-schema-id: <anonymous-schema-397>
+    x-parser-schema-id: <anonymous-schema-506>
   price:
     type: number
     description: the offer price.
     example: 75000
-    x-parser-schema-id: <anonymous-schema-399>
+    x-parser-schema-id: <anonymous-schema-508>
   priceCurrency:
     type: string
     description: use ISO4217
     example: USD
-    x-parser-schema-id: <anonymous-schema-400>
+    x-parser-schema-id: <anonymous-schema-509>
   type:
     type: string
     description: PriceSpecification
     enum:
       - PriceSpecification
-    x-parser-schema-id: <anonymous-schema-396>
+    x-parser-schema-id: <anonymous-schema-505>
 x-parser-schema-id: PriceSpecification
 $id: http://realestate.yodata.me/schema/PriceSpecification.yaml
 

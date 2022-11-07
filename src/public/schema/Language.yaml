@@ -1,24 +1,66 @@
+$id: http://realestate.yodata.me/schema/Language.yaml
+description: a written or spoken Language
 title: Language
 type: object
-description: a written or spoken Language
-x-range: Language
+required:
+  - type
+  - name
+  - additionalName
 properties:
   additionalName:
     type: string
     description: BCP 47 language code
-    example: en-US
-    x-parser-schema-id: <anonymous-schema-567>
+    x-parser-schema-id: <anonymous-schema-126>
   name:
     type: string
     description: the display name of the language
-    example: English
-    x-parser-schema-id: <anonymous-schema-566>
+    x-parser-schema-id: <anonymous-schema-125>
   type:
     type: string
-    description: Language
-    enum:
-      - Language
-    x-parser-schema-id: <anonymous-schema-565>
+    const: Language
+    x-parser-schema-id: <anonymous-schema-124>
+examples:
+  - type: Language
+    name: English
+    additionalName: en-us
+  - type: Language
+    name: Spanish
+    additionalName: es
+  - type: Language
+    name: French
+    additionalName: fr
+  - type: Language
+    name: German
+    additionalName: de
+  - type: Language
+    name: Italian
+    additionalName: it
+  - type: Language
+    name: Japanese
+    additionalName: ja
+  - type: Language
+    name: Korean
+    additionalName: ko
+  - type: Language
+    name: Portuguese
+    additionalName: pt
+  - type: Language
+    name: Russian
+    additionalName: ru
+  - type: Language
+    name: Chinese
+    additionalName: zh
+  - type: Language
+    name: Arabic
+    additionalName: ar
+  - type: Language
+    name: Hindi
+    additionalName: hi
+  - type: Language
+    name: Bengali
+    additionalName: bn
+  - type: Language
+    name: Portuguese
+    additionalName: pt
 x-parser-schema-id: Language
-$id: http://realestate.yodata.me/schema/Language.yaml
 

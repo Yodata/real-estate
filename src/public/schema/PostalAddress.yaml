@@ -1,7 +1,6 @@
 $id: http://realestate.yodata.me/schema/PostalAddress.yaml
 title: PostalAddress
 type: object
-x-range: PostalAddress
 description: A physical address.
 properties:
   addressCountry:
@@ -16,19 +15,22 @@ properties:
       - EG
       - SJ
       - VN
-    x-parser-schema-id: <anonymous-schema-642>
+    x-faker: address.countryCode
+    x-parser-schema-id: <anonymous-schema-105>
   addressCounty:
     type: string
     description: the county (us real estate extension)
+    faker: address.county
     examples:
       - Gotham County
       - Buckinghamshire
       - Borders
       - null
-    x-parser-schema-id: <anonymous-schema-643>
+    x-parser-schema-id: <anonymous-schema-106>
   addressLocality:
     type: string
     description: City, Township.
+    x-faker: address.city
     examples:
       - Gotham City
       - Kulasmouth
@@ -36,56 +38,59 @@ properties:
       - Altamonte Springs
       - West Ahmed
       - Blaiseview
-    x-parser-schema-id: <anonymous-schema-640>
+    x-parser-schema-id: <anonymous-schema-103>
   addressRegion:
     type: string
     description: State or Province.
-    example: New Jersey
+    x-faker: address.state
     examples:
       - New Jersey
       - California
       - MI
       - null
-    x-parser-schema-id: <anonymous-schema-639>
+    x-parser-schema-id: <anonymous-schema-102>
   addressSubdivision:
     type: string
     description: the subdivision or neighborhood (us real estate extension)
+    x-faker: address.streetName
     examples:
       - Gotham Heights
-      - null
-      - null
-    x-parser-schema-id: <anonymous-schema-644>
+      - South Kensington
+      - SOMA (South of Market)
+      - Nob Hill
+    x-parser-schema-id: <anonymous-schema-107>
   postOfficeBoxNumber:
     type: string
     description: The post office box number for PO box addresses.
+    x-faker: address.secondaryAddress
     examples:
       - Box 1234
       - Apt. 161
       - Apt. 623
-    x-parser-schema-id: <anonymous-schema-638>
+    x-parser-schema-id: <anonymous-schema-101>
   postalCode:
     type: string
     description: Zip/Post Code
+    x-faker: address.zipCode
     examples:
       - '10010'
       - '38859'
       - '40387'
       - 50239-7698
       - null
-    x-parser-schema-id: <anonymous-schema-641>
+    x-parser-schema-id: <anonymous-schema-104>
   streetAddress:
     type: string
     description: the street number and name.
-    example: 1007 Mountain Gate Rd
+    x-faker: address.streetAddress
     examples:
       - 5046 Ottis Point
       - 166 Marion Burg
       - 93044 Haley Stream
-    x-parser-schema-id: <anonymous-schema-637>
+    x-parser-schema-id: <anonymous-schema-100>
   type:
     type: string
-    enum:
-      - PostalAddress
-    x-parser-schema-id: <anonymous-schema-636>
+    const: PostalAddress
+    x-parser-schema-id: <anonymous-schema-99>
 x-parser-schema-id: PostalAddress
 

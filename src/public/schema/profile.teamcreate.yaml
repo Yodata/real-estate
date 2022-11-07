@@ -7,8 +7,8 @@ headers:
   properties:
     topic:
       const: realestate/profile#teamcreate
-      x-parser-schema-id: <anonymous-schema-305>
-  x-parser-schema-id: <anonymous-schema-304>
+      x-parser-schema-id: <anonymous-schema-416>
+  x-parser-schema-id: <anonymous-schema-415>
 payload:
   type: object
   properties:
@@ -17,14 +17,14 @@ payload:
       properties:
         type:
           const: CreateAction
-          x-parser-schema-id: <anonymous-schema-308>
+          x-parser-schema-id: <anonymous-schema-419>
         object:
           allOf:
             - properties:
                 id:
                   type: string
                   example: https://org.example.com/profile/card#me
-              x-parser-schema-id: <anonymous-schema-309>
+              x-parser-schema-id: <anonymous-schema-409>
             - allOf:
                 - $id: http://realestate.yodata.me/schema/Thing
                   type: object
@@ -32,24 +32,28 @@ payload:
                   summary: The root type of all Things.
                   required:
                     - type
+                  propertyNames:
+                    pattern: ^[a-z@$][a-zA-Z0-9-_]+$
+                    x-parser-schema-id: <anonymous-schema-274>
                   properties:
                     type:
                       type: string
+                      pattern: ^[A-Z][a-zA-Z0-9]+$
                       description: The item type (Linked-Data @type)
-                      x-parser-schema-id: <anonymous-schema-159>
+                      x-parser-schema-id: <anonymous-schema-272>
                     '@id':
                       type: string
                       format: uri
                       description: the liked data uri for the Thing
-                      x-parser-schema-id: <anonymous-schema-160>
+                      x-parser-schema-id: <anonymous-schema-273>
                   x-parser-schema-id: Thing
                 - x-kind: Organization
-                  x-parser-schema-id: <anonymous-schema-299>
+                  x-parser-schema-id: <anonymous-schema-410>
                 - x-hasSubclass:
                     - RealEstateOrganization
                     - RealEstateOffice
                     - RealEstateAgent
-                  x-parser-schema-id: <anonymous-schema-300>
+                  x-parser-schema-id: <anonymous-schema-411>
                 - x-subClassOf:
                     - https://schema.org/Organization
                   properties:
@@ -68,7 +72,7 @@ payload:
                         postalCode: '10010'
                         postOfficeBoxNumber: Box 1234
                         streetAddress: 1007 Mountain Gate Rd
-                      x-parser-schema-id: <anonymous-schema-256>
+                      x-parser-schema-id: <anonymous-schema-370>
                     availableLanguage:
                       title: availableLanguage
                       type: array
@@ -77,27 +81,70 @@ payload:
                         47 standard.
                       x-range: Language
                       items:
+                        $id: htttp://realestate.yodata.me/schema/Language.yaml
+                        description: a written or spoken Language
                         title: Language
                         type: object
-                        description: a written or spoken Language
-                        x-range: Language
+                        required:
+                          - type
+                          - name
+                          - additionalName
                         properties:
                           type:
                             type: string
-                            description: Language
-                            enum:
-                              - Language
-                            x-parser-schema-id: <anonymous-schema-565>
+                            const: Language
+                            x-parser-schema-id: <anonymous-schema-124>
                           name:
                             type: string
                             description: the display name of the language
-                            example: English
-                            x-parser-schema-id: <anonymous-schema-566>
+                            x-parser-schema-id: <anonymous-schema-125>
                           additionalName:
                             type: string
                             description: BCP 47 language code
-                            example: en-US
-                            x-parser-schema-id: <anonymous-schema-567>
+                            x-parser-schema-id: <anonymous-schema-126>
+                        examples:
+                          - type: Language
+                            name: English
+                            additionalName: en-us
+                          - type: Language
+                            name: Spanish
+                            additionalName: es
+                          - type: Language
+                            name: French
+                            additionalName: fr
+                          - type: Language
+                            name: German
+                            additionalName: de
+                          - type: Language
+                            name: Italian
+                            additionalName: it
+                          - type: Language
+                            name: Japanese
+                            additionalName: ja
+                          - type: Language
+                            name: Korean
+                            additionalName: ko
+                          - type: Language
+                            name: Portuguese
+                            additionalName: pt
+                          - type: Language
+                            name: Russian
+                            additionalName: ru
+                          - type: Language
+                            name: Chinese
+                            additionalName: zh
+                          - type: Language
+                            name: Arabic
+                            additionalName: ar
+                          - type: Language
+                            name: Hindi
+                            additionalName: hi
+                          - type: Language
+                            name: Bengali
+                            additionalName: bn
+                          - type: Language
+                            name: Portuguese
+                            additionalName: pt
                         x-parser-schema-id: Language
                     branchCode:
                       description: >-
@@ -123,12 +170,12 @@ payload:
                               type: string
                               enum:
                                 - Certification
-                              x-parser-schema-id: <anonymous-schema-518>
+                              x-parser-schema-id: <anonymous-schema-594>
                             name:
                               type: string
                               description: the name of the Certification
                               example: e-Agent Certified
-                              x-parser-schema-id: <anonymous-schema-519>
+                              x-parser-schema-id: <anonymous-schema-595>
                             issuedBy:
                               type: object
                               x-range: RealEstateOrganization
@@ -139,19 +186,19 @@ payload:
                                     - RealEstateOrganization
                                   type: string
                                   description: The item type (Linked-Data @type)
-                                  x-parser-schema-id: <anonymous-schema-261>
+                                  x-parser-schema-id: <anonymous-schema-375>
                                 id:
                                   example: https://example.com/profile/card#me
                                   type: string
                                   format: uri
                                   description: Linked-Data URI (@id)
-                                  x-parser-schema-id: <anonymous-schema-262>
+                                  x-parser-schema-id: <anonymous-schema-376>
                                 name:
                                   type: string
                                   description: name of the issuing organization
                                   example: Gotham City Real Estate
-                                  x-parser-schema-id: <anonymous-schema-263>
-                              x-parser-schema-id: <anonymous-schema-260>
+                                  x-parser-schema-id: <anonymous-schema-377>
+                              x-parser-schema-id: <anonymous-schema-374>
                             issuedTo:
                               x-range: RealEstateAgent
                               type: object
@@ -162,85 +209,104 @@ payload:
                                     - RealEstateAgent
                                   type: string
                                   description: The item type (Linked-Data @type)
-                                  x-parser-schema-id: <anonymous-schema-265>
+                                  x-parser-schema-id: <anonymous-schema-379>
                                 id:
                                   type: string
                                   format: uri
                                   description: Linked-Data URI (@id)
-                                  x-parser-schema-id: <anonymous-schema-266>
+                                  x-parser-schema-id: <anonymous-schema-380>
                                 name:
                                   type: string
                                   description: the name of the item
-                                  x-parser-schema-id: <anonymous-schema-267>
-                              x-parser-schema-id: <anonymous-schema-520>
+                                  x-parser-schema-id: <anonymous-schema-92>
+                              x-parser-schema-id: <anonymous-schema-596>
                           x-parser-schema-id: Certification
                     contactPoint:
-                      $id: http://realestate.yodata.me/schema/contactPoint
+                      $id: >-
+                        http://realestate.yodata.me/definitions/contactPoint.json
                       type: array
                       description: >-
                         a named point of contact - telephone, email, faxNumber,
                         and/or url for the entity
                       items:
+                        $id: htttp://realestate.yodata.me/schema/ContactPoint.json
                         title: ContactPoint
                         description: >
                           A point of contact for the entity. By convention in
-                          the real estate domain, ContactPoints 
+                          the real estate domain, ContactPoints
 
                           are preferred over telephone, email, and faxNumber so
                           the ContactPoint.name property can be used to label
-                          values 
+                          values
 
                           for example, Work Telephone, Home, as named
                           contactPoint values.
                         type: object
+                        required:
+                          - type
+                          - name
+                        minProperties: 3
                         properties:
                           type:
-                            description: ContactPoint
                             type: string
-                            enum:
-                              - ContactPoint
-                            x-parser-schema-id: <anonymous-schema-409>
+                            const: ContactPoint
+                            x-parser-schema-id: <anonymous-schema-110>
                           name:
                             type: string
                             description: >-
                               a label for the contactPoint, i.e. 'Work', or
                               'Home'
-                            example: Work
-                            x-parser-schema-id: <anonymous-schema-410>
+                            examples:
+                              - Work
+                              - Home
+                              - Vacation
+                              - Bob's Cell
+                              - Alice's Work
+                            x-parser-schema-id: <anonymous-schema-111>
                           telephone:
-                            description: a telephone number
                             type: string
-                            example: 1-364-127-9618 x20418
-                            x-parser-schema-id: <anonymous-schema-411>
+                            x-faker: phone.phoneNumber
+                            examples:
+                              - 555-555-5555
+                              - 555-555-5555 x123
+                              - 555-555-5555 ext. 123
+                              - +1-555-555-5555
+                            x-parser-schema-id: <anonymous-schema-112>
                           faxNumber:
-                            description: a fax number
                             type: string
-                            example: 834.320.1602
-                            x-parser-schema-id: <anonymous-schema-412>
+                            x-faker: phone.phoneNumber
+                            examples:
+                              - 555-555-5555
+                              - 555-555-5555 x123
+                              - 555-555-5555 ext. 123
+                              - +1-555-555-5555
+                            x-parser-schema-id: <anonymous-schema-113>
                           email:
                             description: an email address for the item.
                             type: string
                             format: email
-                            example: user@example.com
-                            x-parser-schema-id: <anonymous-schema-413>
+                            x-faker: internet.email
+                            examples:
+                              - bob@example.com
+                              - alice@example.com
+                            x-parser-schema-id: <anonymous-schema-114>
                           url:
                             description: primary URL for the item.
                             type: string
                             format: uri
                             example: https://www.facebook.com/hallandoates
-                            x-parser-schema-id: <anonymous-schema-414>
+                            x-parser-schema-id: <anonymous-schema-115>
                         x-parser-schema-id: ContactPoint
                     email:
                       type: string
                       format: email
-                      description: Primary email address.
-                      example: user@example.com
-                      x-parser-schema-id: <anonymous-schema-275>
+                      x-faker: internet.email
+                      x-parser-schema-id: <anonymous-schema-93>
                     faxNumber:
                       type: string
-                      description: Primary fax number.
-                      example: (873) 271-4802
-                      x-parser-schema-id: <anonymous-schema-417>
+                      description: Do people still use fax machines?
+                      x-faker: phone.phoneNumber
+                      x-parser-schema-id: <anonymous-schema-117>
                     image:
                       title: image
                       description: an ImageObject or URI reference to an image on the web.
@@ -264,16 +330,20 @@ payload:
                                   summary: The root type of all Things.
                                   required:
                                     - type
+                                  propertyNames:
+                                    pattern: ^[a-z@$][a-zA-Z0-9-_]+$
+                                    x-parser-schema-id: <anonymous-schema-274>
                                   properties:
                                     type:
                                       type: string
+                                      pattern: ^[A-Z][a-zA-Z0-9]+$
                                       description: The item type (Linked-Data @type)
-                                      x-parser-schema-id: <anonymous-schema-159>
+                                      x-parser-schema-id: <anonymous-schema-272>
                                     '@id':
                                       type: string
                                       format: uri
                                       description: the liked data uri for the Thing
-                                      x-parser-schema-id: <anonymous-schema-160>
+                                      x-parser-schema-id: <anonymous-schema-273>
                                   x-parser-schema-id: Thing
                                 - properties:
                                     type:
@@ -307,7 +377,7 @@ payload:
                                       description: URL of the image content
                                       example: >-
                                         http://user.example.com/public/profile/image.jpg
-                                  x-parser-schema-id: <anonymous-schema-161>
+                                  x-parser-schema-id: <anonymous-schema-275>
                               x-parser-schema-id: MediaObject
                             - title: ImageObject
                               x-range: ImageObject
@@ -323,8 +393,8 @@ payload:
                                   example: image.jpg
                                 encodingFormat:
                                   example: image/jpeg
-                              x-parser-schema-id: <anonymous-schema-162>
-                          x-parser-schema-id: <anonymous-schema-158>
+                              x-parser-schema-id: <anonymous-schema-276>
+                          x-parser-schema-id: <anonymous-schema-271>
                     logo:
                       description: a logo associated with the organization.
                       items:
@@ -338,24 +408,24 @@ payload:
                                 type: string
                                 enum:
                                   - DigitalDocument
-                                x-parser-schema-id: <anonymous-schema-551>
+                                x-parser-schema-id: <anonymous-schema-621>
                               id:
                                 type: string
                                 example: >-
                                   http://user.example.com/public/logo/archive.zip
-                                x-parser-schema-id: <anonymous-schema-552>
+                                x-parser-schema-id: <anonymous-schema-622>
                               name:
                                 type: string
                                 description: document name or title
                                 example: archive.zip
-                                x-parser-schema-id: <anonymous-schema-553>
+                                x-parser-schema-id: <anonymous-schema-623>
                               encodingFormat:
                                 type: string
                                 description: >-
                                   [ISO Media
                                   Type](https://www.iana.org/assignments/media-types/media-types.xhtml)
                                 example: application/zip
-                                x-parser-schema-id: <anonymous-schema-554>
+                                x-parser-schema-id: <anonymous-schema-624>
                               about:
                                 type: object
                                 description: subject of the Document
@@ -364,12 +434,12 @@ payload:
                                   type: RealEstateTransaction
                                   identifier:
                                     bmsTransactionId: xxxx
-                                x-parser-schema-id: <anonymous-schema-555>
+                                x-parser-schema-id: <anonymous-schema-625>
                               url:
                                 type: string
                                 description: public URL of the object
                                 example: https://example.com
-                                x-parser-schema-id: <anonymous-schema-556>
+                                x-parser-schema-id: <anonymous-schema-626>
                             x-parser-schema-id: DigitalDocument
                           - description: an associated logo
                             type: object
@@ -399,7 +469,7 @@ payload:
                       type: string
                       description: Primary phone number.
                       example: '+15558675309'
-                      x-parser-schema-id: <anonymous-schema-765>
+                      x-parser-schema-id: <anonymous-schema-128>
                     type:
                       enum:
                         - Organization
@@ -408,7 +478,7 @@ payload:
                       description: primary website/url for the entity.
                       format: uri
                       type: string
-                  x-parser-schema-id: <anonymous-schema-301>
+                  x-parser-schema-id: <anonymous-schema-412>
               x-parser-schema-id: Organization
             - title: RealEstateTeam
               description: A real estate team.
@@ -459,35 +529,35 @@ payload:
                             description: a role played by the member in the memberOf group
                             enum:
                               - OrganizationRole
-                            x-parser-schema-id: <anonymous-schema-281>
+                            x-parser-schema-id: <anonymous-schema-391>
                           roleName:
                             type: string
                             description: the role name
                             example: Owner
-                            x-parser-schema-id: <anonymous-schema-282>
+                            x-parser-schema-id: <anonymous-schema-392>
                           memberOf:
                             description: the org or group where the role is performed
                             type: object
                             example:
                               type: RealEstateOrganization
                               id: http://orgid.example.com/profile/card#me
-                            x-parser-schema-id: <anonymous-schema-283>
+                            x-parser-schema-id: <anonymous-schema-393>
                           member:
                             description: member object or id
                             type: string
                             format: uri
                             example: https://memberid.example.com/profile/card#me
-                            x-parser-schema-id: <anonymous-schema-284>
+                            x-parser-schema-id: <anonymous-schema-394>
                           startDate:
                             type: string
                             format: date-time
                             description: date the member began performing this role
-                            x-parser-schema-id: <anonymous-schema-285>
+                            x-parser-schema-id: <anonymous-schema-395>
                           endDate:
                             type: string
                             format: date-time
                             description: date the member stopped performing the role
-                            x-parser-schema-id: <anonymous-schema-286>
+                            x-parser-schema-id: <anonymous-schema-396>
                         x-parser-schema-id: OrganizationRole
                       - type: object
                         title: RealEstateTeamMembership
@@ -501,28 +571,28 @@ payload:
                             enum:
                               - RealEstateTeamMembership
                             example: RealEstateTeamMembership
-                            x-parser-schema-id: <anonymous-schema-322>
+                            x-parser-schema-id: <anonymous-schema-431>
                           roleName:
                             type: string
                             enum:
                               - TeamMember
                               - TeamAdmin
                               - TeamOwner
-                            x-parser-schema-id: <anonymous-schema-323>
+                            x-parser-schema-id: <anonymous-schema-432>
                           memberOf:
                             type: string
                             format: uri
                             example: https://{team-id}.example.com/profile/card#me
-                            x-parser-schema-id: <anonymous-schema-324>
+                            x-parser-schema-id: <anonymous-schema-433>
                           member:
                             type: string
                             format: uri
                             example: https://{agent}.example.com/profile/card#me
-                            x-parser-schema-id: <anonymous-schema-325>
-                        x-parser-schema-id: <anonymous-schema-321>
+                            x-parser-schema-id: <anonymous-schema-434>
+                        x-parser-schema-id: <anonymous-schema-430>
                     x-parser-schema-id: RealEstateTeamMembership
-              x-parser-schema-id: <anonymous-schema-310>
+              x-parser-schema-id: <anonymous-schema-413>
           x-parser-schema-id: RealEstateTeam
-      x-parser-schema-id: <anonymous-schema-307>
-  x-parser-schema-id: <anonymous-schema-306>
+      x-parser-schema-id: <anonymous-schema-418>
+  x-parser-schema-id: <anonymous-schema-417>
 

@@ -22,7 +22,7 @@
           "enum": [
             "Place"
           ],
-          "x-parser-schema-id": "<anonymous-schema-593>"
+          "x-parser-schema-id": "<anonymous-schema-660>"
         },
         "address": {
           "type": "object",
@@ -40,7 +40,7 @@
             "postOfficeBoxNumber": "Box 1234",
             "streetAddress": "1007 Mountain Gate Rd"
           },
-          "x-parser-schema-id": "<anonymous-schema-594>"
+          "x-parser-schema-id": "<anonymous-schema-661>"
         },
         "geo": {
           "type": "object",
@@ -64,7 +64,7 @@
             },
             "box": "(33.5697,-117.775),(33.6018,-117.707)"
           },
-          "x-parser-schema-id": "<anonymous-schema-595>"
+          "x-parser-schema-id": "<anonymous-schema-662>"
         }
       },
       "x-parser-schema-id": "Place"
@@ -73,7 +73,7 @@
       "description": "creator / author of the item",
       "type": "string",
       "format": "uri",
-      "x-parser-schema-id": "<anonymous-schema-592>"
+      "x-parser-schema-id": "<anonymous-schema-659>"
     },
     "dateCreated": {
       "$id": "http://realestate.yodata.me/schema/dateCreated.yaml",
@@ -86,15 +86,24 @@
       "description": "The date on which the item was most recently modified or when the item's entry was modified within a DataFeed.",
       "type": "string",
       "format": "date-time",
-      "x-parser-schema-id": "<anonymous-schema-531>"
+      "x-parser-schema-id": "<anonymous-schema-136>"
     },
     "identifier": {
+      "title": "identifier",
       "type": "object",
-      "description": "key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.",
-      "example": {
-        "salesforceContactID": "c28834ca-db69-4da8-90ad-75cdc9907298"
-      },
-      "x-parser-schema-id": "<anonymous-schema-96>"
+      "description": "identifier assigned to a contact by the vendor who originally created the contact",
+      "examples": [
+        {
+          "salesforceid": "0031U00002XW1QWQA1"
+        },
+        {
+          "vendoraid": "123456"
+        },
+        {
+          "originating_system_id": "123456"
+        }
+      ],
+      "x-parser-schema-id": "<anonymous-schema-94>"
     },
     "member": {
       "type": "array",
@@ -108,7 +117,7 @@
         "properties": {
           "type": {
             "const": "ProgramMembership",
-            "x-parser-schema-id": "<anonymous-schema-584>"
+            "x-parser-schema-id": "<anonymous-schema-651>"
           },
           "role": {
             "type": "string",
@@ -116,67 +125,85 @@
               "member",
               "owner"
             ],
-            "x-parser-schema-id": "<anonymous-schema-585>"
+            "x-parser-schema-id": "<anonymous-schema-652>"
           },
           "member": {
             "type": "object",
             "properties": {
               "type": {
                 "const": "Contact",
-                "x-parser-schema-id": "<anonymous-schema-587>"
+                "x-parser-schema-id": "<anonymous-schema-654>"
               },
               "name": {
                 "type": "string",
-                "x-parser-schema-id": "<anonymous-schema-588>"
+                "x-parser-schema-id": "<anonymous-schema-655>"
               },
               "identifier": {
+                "title": "identifier",
                 "type": "object",
-                "description": "key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.",
-                "example": {
-                  "salesforceContactID": "c28834ca-db69-4da8-90ad-75cdc9907298"
-                },
-                "x-parser-schema-id": "<anonymous-schema-96>"
+                "description": "identifier assigned to a contact by the vendor who originally created the contact",
+                "examples": [
+                  {
+                    "salesforceid": "0031U00002XW1QWQA1"
+                  },
+                  {
+                    "vendoraid": "123456"
+                  },
+                  {
+                    "originating_system_id": "123456"
+                  }
+                ],
+                "x-parser-schema-id": "<anonymous-schema-94>"
               }
             },
-            "x-parser-schema-id": "<anonymous-schema-586>"
+            "x-parser-schema-id": "<anonymous-schema-653>"
           },
           "memberOf": {
             "type": "object",
             "properties": {
               "type": {
                 "const": "MarketingProgram",
-                "x-parser-schema-id": "<anonymous-schema-590>"
+                "x-parser-schema-id": "<anonymous-schema-657>"
               },
               "name": {
                 "type": "string",
                 "example": "Market Activity Report 508 Homewood Ave",
-                "x-parser-schema-id": "<anonymous-schema-591>"
+                "x-parser-schema-id": "<anonymous-schema-658>"
               },
               "identifier": {
+                "title": "identifier",
                 "type": "object",
-                "description": "key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.",
-                "example": {
-                  "salesforceContactID": "c28834ca-db69-4da8-90ad-75cdc9907298"
-                },
-                "x-parser-schema-id": "<anonymous-schema-96>"
+                "description": "identifier assigned to a contact by the vendor who originally created the contact",
+                "examples": [
+                  {
+                    "salesforceid": "0031U00002XW1QWQA1"
+                  },
+                  {
+                    "vendoraid": "123456"
+                  },
+                  {
+                    "originating_system_id": "123456"
+                  }
+                ],
+                "x-parser-schema-id": "<anonymous-schema-94>"
               }
             },
-            "x-parser-schema-id": "<anonymous-schema-589>"
+            "x-parser-schema-id": "<anonymous-schema-656>"
           }
         },
         "x-parser-schema-id": "ProgramMembership"
       },
-      "x-parser-schema-id": "<anonymous-schema-583>"
+      "x-parser-schema-id": "<anonymous-schema-650>"
     },
     "name": {
       "type": "string",
       "description": "the name of the item",
       "example": "Market Activity Report for 508 Homeward Avenue",
-      "x-parser-schema-id": "<anonymous-schema-582>"
+      "x-parser-schema-id": "<anonymous-schema-649>"
     },
     "type": {
       "const": "MarketingProgram",
-      "x-parser-schema-id": "<anonymous-schema-581>"
+      "x-parser-schema-id": "<anonymous-schema-648>"
     }
   },
   "x-parser-schema-id": "MarketingProgram",

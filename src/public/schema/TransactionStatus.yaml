@@ -5,15 +5,15 @@ properties:
   CanceledTransactionStatus:
     type: string
     description: Canceled Status
-    x-parser-schema-id: <anonymous-schema-793>
+    x-parser-schema-id: <anonymous-schema-831>
   ClosedTransactionStatus:
     type: string
     description: Closed Status
-    x-parser-schema-id: <anonymous-schema-792>
+    x-parser-schema-id: <anonymous-schema-830>
   PendingTransactionStatus:
     type: string
     description: Pending Status
-    x-parser-schema-id: <anonymous-schema-791>
+    x-parser-schema-id: <anonymous-schema-829>
 example:
   transactionStatus: ClosedTransactionStatus
 x-parser-schema-id: TransactionStatus

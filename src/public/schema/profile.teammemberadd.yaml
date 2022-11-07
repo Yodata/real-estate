@@ -7,8 +7,8 @@ headers:
   properties:
     topic:
       const: realestate/profile#teammemberadd
-      x-parser-schema-id: <anonymous-schema-317>
-  x-parser-schema-id: <anonymous-schema-316>
+      x-parser-schema-id: <anonymous-schema-426>
+  x-parser-schema-id: <anonymous-schema-425>
 payload:
   type: object
   properties:
@@ -17,7 +17,7 @@ payload:
       properties:
         type:
           const: AddAction
-          x-parser-schema-id: <anonymous-schema-320>
+          x-parser-schema-id: <anonymous-schema-429>
         object:
           allOf:
             - title: OrganizationRole
@@ -29,35 +29,35 @@ payload:
                   description: a role played by the member in the memberOf group
                   enum:
                     - OrganizationRole
-                  x-parser-schema-id: <anonymous-schema-281>
+                  x-parser-schema-id: <anonymous-schema-391>
                 roleName:
                   type: string
                   description: the role name
                   example: Owner
-                  x-parser-schema-id: <anonymous-schema-282>
+                  x-parser-schema-id: <anonymous-schema-392>
                 memberOf:
                   description: the org or group where the role is performed
                   type: object
                   example:
                     type: RealEstateOrganization
                     id: http://orgid.example.com/profile/card#me
-                  x-parser-schema-id: <anonymous-schema-283>
+                  x-parser-schema-id: <anonymous-schema-393>
                 member:
                   description: member object or id
                   type: string
                   format: uri
                   example: https://memberid.example.com/profile/card#me
-                  x-parser-schema-id: <anonymous-schema-284>
+                  x-parser-schema-id: <anonymous-schema-394>
                 startDate:
                   type: string
                   format: date-time
                   description: date the member began performing this role
-                  x-parser-schema-id: <anonymous-schema-285>
+                  x-parser-schema-id: <anonymous-schema-395>
                 endDate:
                   type: string
                   format: date-time
                   description: date the member stopped performing the role
-                  x-parser-schema-id: <anonymous-schema-286>
+                  x-parser-schema-id: <anonymous-schema-396>
               x-parser-schema-id: OrganizationRole
             - type: object
               title: RealEstateTeamMembership
@@ -69,26 +69,26 @@ payload:
                   enum:
                     - RealEstateTeamMembership
                   example: RealEstateTeamMembership
-                  x-parser-schema-id: <anonymous-schema-322>
+                  x-parser-schema-id: <anonymous-schema-431>
                 roleName:
                   type: string
                   enum:
                     - TeamMember
                     - TeamAdmin
                     - TeamOwner
-                  x-parser-schema-id: <anonymous-schema-323>
+                  x-parser-schema-id: <anonymous-schema-432>
                 memberOf:
                   type: string
                   format: uri
                   example: https://{team-id}.example.com/profile/card#me
-                  x-parser-schema-id: <anonymous-schema-324>
+                  x-parser-schema-id: <anonymous-schema-433>
                 member:
                   type: string
                   format: uri
                   example: https://{agent}.example.com/profile/card#me
-                  x-parser-schema-id: <anonymous-schema-325>
-              x-parser-schema-id: <anonymous-schema-321>
+                  x-parser-schema-id: <anonymous-schema-434>
+              x-parser-schema-id: <anonymous-schema-430>
           x-parser-schema-id: RealEstateTeamMembership
-      x-parser-schema-id: <anonymous-schema-319>
-  x-parser-schema-id: <anonymous-schema-318>
+      x-parser-schema-id: <anonymous-schema-428>
+  x-parser-schema-id: <anonymous-schema-427>
 

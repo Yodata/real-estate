@@ -7,58 +7,58 @@ properties:
         type: string
         format: uri
         example: https://user.example.com/profile/card#me
-        x-parser-schema-id: <anonymous-schema-648>
+        x-parser-schema-id: <anonymous-schema-686>
       type:
         type: string
         example: SoftwareApplication
-        x-parser-schema-id: <anonymous-schema-649>
+        x-parser-schema-id: <anonymous-schema-687>
       inbox:
         description: discoverable uri to your LDN inbox
         type: string
         example: /inbox/
-        x-parser-schema-id: <anonymous-schema-650>
+        x-parser-schema-id: <anonymous-schema-688>
       outbox:
         description: discoverable uri to your LDN outbox
         type: string
         example: /outbox/
-        x-parser-schema-id: <anonymous-schema-651>
+        x-parser-schema-id: <anonymous-schema-689>
       storage:
         description: uri to your linked-data storage root
         type: string
         example: /
-        x-parser-schema-id: <anonymous-schema-652>
+        x-parser-schema-id: <anonymous-schema-690>
       preferencesFile:
         description: discoverable uri for shared application preferences
         type: string
         example: /settings/prefs
-        x-parser-schema-id: <anonymous-schema-653>
+        x-parser-schema-id: <anonymous-schema-691>
       account:
         description: discoverable solid:account root
         type: string
         example: /
-        x-parser-schema-id: <anonymous-schema-654>
+        x-parser-schema-id: <anonymous-schema-692>
       privateTypeIndex:
         description: type index for your private use
         type: string
         example: /settings/privateTypeIndex
-        x-parser-schema-id: <anonymous-schema-655>
+        x-parser-schema-id: <anonymous-schema-693>
       publicTypeIndex:
         description: shared, discoverable type index
         type: string
         example: /settings/publicTypeIndex
-        x-parser-schema-id: <anonymous-schema-656>
-    x-parser-schema-id: <anonymous-schema-647>
+        x-parser-schema-id: <anonymous-schema-694>
+    x-parser-schema-id: <anonymous-schema-685>
   id:
     type: string
     format: uri
     description: document uri
     example: https://user.example.com/profile/card
-    x-parser-schema-id: <anonymous-schema-645>
+    x-parser-schema-id: <anonymous-schema-683>
   type:
     type: string
     enum:
       - ProfileDocument
-    x-parser-schema-id: <anonymous-schema-646>
+    x-parser-schema-id: <anonymous-schema-684>
 x-parser-schema-id: Profile
 $id: http://realestate.yodata.me/schema/Profile.yaml
 

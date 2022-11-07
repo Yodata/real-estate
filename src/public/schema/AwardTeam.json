@@ -12,9 +12,21 @@
       "example": {
         "hsfTeamId": "xxxxx"
       },
+      "title": "identifier",
       "type": "object",
-      "description": "key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.",
-      "x-parser-schema-id": "<anonymous-schema-47>"
+      "description": "identifier assigned to a contact by the vendor who originally created the contact",
+      "examples": [
+        {
+          "salesforceid": "0031U00002XW1QWQA1"
+        },
+        {
+          "vendoraid": "123456"
+        },
+        {
+          "originating_system_id": "123456"
+        }
+      ],
+      "x-parser-schema-id": "<anonymous-schema-26>"
     },
     "member": {
       "description": "members of the AwardTeam",
@@ -27,19 +39,19 @@
           "http://ma302-001.example.com/profile/card#me",
           "http://ma302.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-49>"
+        "x-parser-schema-id": "<anonymous-schema-28>"
       },
-      "x-parser-schema-id": "<anonymous-schema-48>"
+      "x-parser-schema-id": "<anonymous-schema-27>"
     },
     "name": {
       "example": "Top Producer by Volume",
       "type": "string",
       "description": "the name of the item",
-      "x-parser-schema-id": "<anonymous-schema-46>"
+      "x-parser-schema-id": "<anonymous-schema-25>"
     },
     "type": {
       "const": "AwardTeam",
-      "x-parser-schema-id": "<anonymous-schema-45>"
+      "x-parser-schema-id": "<anonymous-schema-24>"
     }
   },
   "x-parser-schema-id": "AwardTeam",

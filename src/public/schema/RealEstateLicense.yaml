@@ -15,7 +15,7 @@ properties:
     example:
       type: State
       name: California
-    x-parser-schema-id: <anonymous-schema-728>
+    x-parser-schema-id: <anonymous-schema-766>
   issuedThrough:
     x-range:
       - Organization
@@ -25,12 +25,12 @@ properties:
       type:
         type: string
         example: Service
-        x-parser-schema-id: <anonymous-schema-730>
+        x-parser-schema-id: <anonymous-schema-768>
       name:
         type: string
         example: California Department of Real Estate
-        x-parser-schema-id: <anonymous-schema-731>
-    x-parser-schema-id: <anonymous-schema-729>
+        x-parser-schema-id: <anonymous-schema-769>
+    x-parser-schema-id: <anonymous-schema-767>
   issuedTo:
     type: object
     description: the license recipient
@@ -40,23 +40,23 @@ properties:
     example:
       type: RealEstateAgent
       id: http://{agentid}.example.com/profile/card#me
-    x-parser-schema-id: <anonymous-schema-727>
+    x-parser-schema-id: <anonymous-schema-765>
   name:
     type: string
     description: display value, i.e. 'CA-DRE# 02068375'
     example: CA-DRE# 02068375
-    x-parser-schema-id: <anonymous-schema-726>
+    x-parser-schema-id: <anonymous-schema-764>
   type:
     type: string
     enum:
       - RealEstateLicense
     description: RealEstateLicense
-    x-parser-schema-id: <anonymous-schema-725>
+    x-parser-schema-id: <anonymous-schema-763>
   validFrom:
     type: string
     format: date-time
     description: the first date and time on which the license is valid.
-    x-parser-schema-id: <anonymous-schema-733>
+    x-parser-schema-id: <anonymous-schema-771>
   validIn:
     type: object
     description: the state where the RealEstateLicense is valid
@@ -68,12 +68,12 @@ properties:
     example:
       type: State
       name: California
-    x-parser-schema-id: <anonymous-schema-732>
+    x-parser-schema-id: <anonymous-schema-770>
   validUntil:
     type: string
     format: date-time
     description: the last date and time on which the license is valid.
-    x-parser-schema-id: <anonymous-schema-734>
+    x-parser-schema-id: <anonymous-schema-772>
 x-parser-schema-id: RealEstateLicense
 $id: http://realestate.yodata.me/schema/RealEstateLicense.yaml
 

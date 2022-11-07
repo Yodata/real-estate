@@ -13,19 +13,19 @@ properties:
           - RealEstateOrganization
         type: string
         description: The item type (Linked-Data @type)
-        x-parser-schema-id: <anonymous-schema-261>
+        x-parser-schema-id: <anonymous-schema-375>
       id:
         example: https://example.com/profile/card#me
         type: string
         format: uri
         description: Linked-Data URI (@id)
-        x-parser-schema-id: <anonymous-schema-262>
+        x-parser-schema-id: <anonymous-schema-376>
       name:
         type: string
         description: name of the issuing organization
         example: Gotham City Real Estate
-        x-parser-schema-id: <anonymous-schema-263>
-    x-parser-schema-id: <anonymous-schema-260>
+        x-parser-schema-id: <anonymous-schema-377>
+    x-parser-schema-id: <anonymous-schema-374>
   issuedTo:
     x-range: RealEstateAgent
     type: object
@@ -36,28 +36,28 @@ properties:
           - RealEstateAgent
         type: string
         description: The item type (Linked-Data @type)
-        x-parser-schema-id: <anonymous-schema-265>
+        x-parser-schema-id: <anonymous-schema-379>
       id:
         type: string
         format: uri
         description: Linked-Data URI (@id)
-        x-parser-schema-id: <anonymous-schema-266>
+        x-parser-schema-id: <anonymous-schema-380>
       name:
         type: string
         description: the name of the item
-        x-parser-schema-id: <anonymous-schema-267>
-    x-parser-schema-id: <anonymous-schema-520>
+        x-parser-schema-id: <anonymous-schema-92>
+    x-parser-schema-id: <anonymous-schema-596>
   name:
     type: string
     description: the name of the Certification
     example: e-Agent Certified
-    x-parser-schema-id: <anonymous-schema-519>
+    x-parser-schema-id: <anonymous-schema-595>
   type:
     description: Certification
     type: string
     enum:
       - Certification
-    x-parser-schema-id: <anonymous-schema-518>
+    x-parser-schema-id: <anonymous-schema-594>
 x-parser-schema-id: Certification
 $id: http://realestate.yodata.me/schema/Certification.yaml
 

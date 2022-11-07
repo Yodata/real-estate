@@ -43,7 +43,13 @@ const navigation = [
     ]
   },
   {
-    title: 'Developers',
+    title: 'Types',
+    links: [
+      { title: 'Type Index', href: '/types' }
+    ]
+  },
+  {
+    title: 'Developer Tools & Docs',
     links: [
       { title: 'Mock Data Generator API', href: '/docs/api/mock-data-generator' },
       { title: 'Mock Data Generator GUI', href: '/tools/mock-data-generator' },

@@ -1,76 +1,66 @@
----
-title: All Types
-----
 
-[Action](/types/Action)<br/>
-[Award](/types/Award)<br/>
-[AwardSeries](/types/AwardSeries)<br/>
-[AwardTeam](/types/AwardTeam)<br/>
-[ApplicationProfile](/types/ApplicationProfile)<br/>
-[BlogPosting](/types/BlogPosting)<br/>
-[Certification](/types/Certification)<br/>
-[City](/types/City)<br/>
-[CloudEvent](/types/CloudEvent)<br/>
-[Collection](/types/Collection)<br/>
-[Comment](/types/Comment)<br/>
-[Contact](/types/Contact)<br/>
-[ContactPoint](/types/ContactPoint)<br/>
-[ContactSummary](/types/ContactSummary)<br/>
-[DigitalDocument](/types/DigitalDocument)<br/>
-[EmailMessage](/types/EmailMessage)<br/>
-[Event](/types/Event)<br/>
-[GeoCircle](/types/GeoCircle)<br/>
-[GeoCoordinates](/types/GeoCoordinates)<br/>
-[GeoShape](/types/GeoShape)<br/>
-[ImageObject](/types/ImageObject)<br/>
-[Language](/types/Language)<br/>
-[Lead](/types/Lead)<br/>
-[LogAction](/types/LogAction)<br/>
-[ListingOffer](/types/ListingOffer)<br/>
-[ListingReport](/types/ListingReport)<br/>
-[MarketingProgram](/types/MarketingProgram)<br/>
-[MediaObject](/types/MediaObject)<br/>
-[MLSMembership](/types/MLSMembership)<br/>
-[MonetaryAmount](/types/MonetaryAmount)<br/>
-[MultipleListingService](/types/MultipleListingService)<br/>
-[Organization](/types/Organization)<br/>
-[OrganizationRole](/types/OrganizationRole)<br/>
-[Permit](/types/Permit)<br/>
-[Person](/types/Person)<br/>
-[Place](/types/Place)<br/>
-[Plan](/types/Plan)<br/>
-[PostalAddress](/types/PostalAddress)<br/>
-[PotentialActionStatus](/types/PotentialActionStatus)<br/>
-[PriceSpecification](/types/PriceSpecification)<br/>
-[Profile](/types/Profile)<br/>
-[ProgramMembership](/types/ProgramMembership)<br/>
-[PropertyListing](/types/PropertyListing)<br/>
-[PropertySearch](/types/PropertySearch)<br/>
-[PropertyType](/types/PropertyType)<br/>
-[PropertySubType](/types/PropertySubType)<br/>
-[PropertyValue](/types/PropertyValue)<br/>
-[PropertyValueReport](/types/PropertyValueReport)<br/>
-[QuantitativeValue](/types/QuantitativeValue)<br/>
-[Question](/types/question)<br/>
-[RealEstateAgent](/types/RealEstateAgent)<br/>
-[RealEstateLicense](/types/RealEstateLicense)<br/>
-[RealEstateOffice](/types/RealEstateOffice)<br/>
-[RealEstateOrganization](/types/RealEstateOrganization)<br/>
-[RealEstateProperty](/types/RealEstateProperty)<br/>
-[RealEstateTeam](/types/RealEstateTeam)<br/>
-[RealEstateTeamMembership](/types/RealEstateTeamMembership)<br/>
-[RealEstateTransaction](/types/RealEstateTransaction)<br/>
-[RealEstateWebsite](/types/RealEstateWebsite)<br/>
-[Referral](/types/Referral)<br/>
-[Schedule](/types/Schedule)<br/>
-[Service](/types/Service)<br/>
-[ServiceArea](/types/ServiceArea)<br/>
-[State](/types/State)<br/>
-[SubscribeAction](/types/SubscribeAction)<br/>
-[Task](/types/Task)<br/>
-[Thing](/types/Thing)<br/>
-[TransactionEntry](/types/TransactionEntry)<br/>
-[TransactionParticipant](/types/TransactionParticipant)<br/>
-[TransactionStatus](/types/TransactionStatus)<br/>
-[UnsubscribeAction](/types/UnsubscribeAction)<br/>
-[BHHSTerms](/types/BHHSTerms)<br/>
+- [Certification](/types/Certification)
+- [City](/types/City)
+- [CloudEvent](/types/CloudEvent)
+- [Collection](/types/Collection)
+- [Comment](/types/Comment)
+- [Contact](/types/Contact)
+- [ContactPoint](/types/ContactPoint)
+- [ContactSummary](/types/ContactSummary)
+- [DigitalDocument](/types/DigitalDocument)
+- [EmailMessage](/types/EmailMessage)
+- [Event](/types/Event)
+- [GeoCircle](/types/GeoCircle)
+- [GeoCoordinates](/types/GeoCoordinates)
+- [GeoShape](/types/GeoShape)
+- [ImageObject](/types/ImageObject)
+- [Language](/types/Language)
+- [Lead](/types/Lead)
+- [ListingOffer](/types/ListingOffer)
+- [ListingReport](/types/ListingReport)
+- [MarketingProgram](/types/MarketingProgram)
+- [MediaObject](/types/MediaObject)
+- [MLSMembership](/types/MLSMembership)
+- [MonetaryAmount](/types/MonetaryAmount)
+- [MultipleListingService](/types/MultipleListingService)
+- [Organization](/types/Organization)
+- [OrganizationRole](/types/OrganizationRole)
+- [Permit](/types/Permit)
+- [Person](/types/Person)
+- [Place](/types/Place)
+- [Plan](/types/Plan)
+- [PostalAddress](/types/PostalAddress)
+- [PotentialActionStatus](/types/PotentialActionStatus)
+- [PriceSpecification](/types/PriceSpecification)
+- [Profile](/types/Profile)
+- [ProgramMembership](/types/ProgramMembership)
+- [PropertyListing](/types/PropertyListing)
+- [PropertySearch](/types/PropertySearch)
+- [PropertyType](/types/PropertyType)
+- [PropertySubType](/types/PropertySubType)
+- [PropertyValue](/types/PropertyValue)
+- [PropertyValueReport](/types/PropertyValueReport)
+- [QuantitativeValue](/types/QuantitativeValue)
+- [Question](/types/question)
+- [RealEstateAgent](/types/RealEstateAgent)
+- [RealEstateLicense](/types/RealEstateLicense)
+- [RealEstateOffice](/types/RealEstateOffice)
+- [RealEstateOrganization](/types/RealEstateOrganization)
+- [RealEstateProperty](/types/RealEstateProperty)
+- [RealEstateTeam](/types/RealEstateTeam)
+- [RealEstateTeamMembership](/types/RealEstateTeamMembership)
+- [RealEstateTransaction](/types/RealEstateTransaction)
+- [RealEstateWebsite](/types/RealEstateWebsite)
+- [Referral](/types/Referral)
+- [Schedule](/types/Schedule)
+- [Service](/types/Service)
+- [ServiceArea](/types/ServiceArea)
+- [State](/types/State)
+- [SubscribeAction](/types/SubscribeAction)
+- [Task](/types/Task)
+- [Thing](/types/Thing)
+- [TransactionEntry](/types/TransactionEntry)
+- [TransactionParticipant](/types/TransactionParticipant)
+- [TransactionStatus](/types/TransactionStatus)
+- [UnsubscribeAction](/types/UnsubscribeAction)
+- [BHHSTerms](/types/BHHSTerms)

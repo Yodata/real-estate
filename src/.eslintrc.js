@@ -4,7 +4,7 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: ['next/core-web-vitals'],
+  extends: ['next/core-web-vitals', 'plugin:@next/next/recommended'],
   overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',

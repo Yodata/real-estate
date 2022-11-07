@@ -107,6 +107,7 @@ const jsonSchemaKeywordTypes = {
   // extensions I want to support
   'x-range': 'string',
   'x-domain': 'string',
+  'x-faker': 'string'
 }
 
 const jsonSchemaKeywords = Object.keys(jsonSchemaKeywordTypes)

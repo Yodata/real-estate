@@ -71,7 +71,7 @@
     "search.useParentIgnoreFiles": true,
     "eslint.workingDirectories": [
       "src/components/**",
-      "src/pages/**/*"
+      "src/pages/**/*",
       "generator/**",
       "schemas/**"
     ]

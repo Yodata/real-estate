@@ -1,3 +1,10 @@
-type: string
+# @format
+title: additionalName
 description: any other name(s) associated with the entity, i.e. nickname, middle name, maiden name, etc. For multiple names, use a comma without space as a separator.
-example: ambassador satch,pops,satchmo
+type: string
+examples:
+  - Johnny,John
+  - Prince,The Artist Formerly Known as Prince,The Artist
+  - Babs,Barbara
+  - Katheryn Elizabeth Hudson,Katy Perry
+  - Destiny Hope Cyrus,Miley Cyrus

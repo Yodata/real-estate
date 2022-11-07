@@ -1,13 +1,14 @@
+# @format
+
 messageId: award#seriescreate
 name: realestate/award#seriescreate
 summary: a new award series was created
 headers:
-  type: object
-  properties:
-    topic: { const: realestate/award#seriescreate }
+  $ref: ../../subscription_headers.yaml
 payload:
   type: object
   properties:
+    topic: { type: string, const: realestate/award#seriescreate }
     data:
       type: object
       properties:

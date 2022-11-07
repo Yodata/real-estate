@@ -1,10 +1,13 @@
 # @format
 
 messageId: award#create
-name: award#create
+name: realestate/award#create
 title: award#create
-summary: Action to sign a user up.
-description: A longer description
+summary: an award was created
+description: |
+  An award was created. The award is described in the `object` property.
+  The award presentor is described in the `agent` property.
+  The award recipient is described in the `recipient` property.
 contentType: application/json
 tags:
   - name: action|create
@@ -28,24 +31,8 @@ payload:
           example:
             bhhsAwardId: xxxx
         agent:
-          $ref: ../../agent.yaml
-          description: the award presentor
+          $ref: definitions#/awardPresenter
         object:
-          $ref: AwardSeries.yaml
-          description: the award being bestowed
-          example:
-            type: AwardSeries
-            name: Agent of The Year
-            identifier:
-              hsfAwardSeriesId: xxxx
+          $ref: Award.yaml
         recipient:
-          type: object
-          x-range:
-            - RealEstateAgent
-            - RealEstateOffice
-            - RealEstateOrganiation
-          description: profile URI of the award recipient
-          example:
-            type: RealEstateAgent
-            id: https://user.example.com/profile/card#me
-            name: Joann Agent
+          $ref: definitions#/awardRecipient

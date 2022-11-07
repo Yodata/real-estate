@@ -1,0 +1,42 @@
+# @format
+
+messageId: award#publish
+name: realestate/award#publish
+summary: an award series was deleted
+contentType: application/json
+payload:
+  type: object
+  required:
+    - topic
+    - data
+  properties:
+    topic:
+      type: string
+      enum:
+        - realestate/award#seriescreate
+        - realestate/award#seriesupdate
+        - realestate/award#seriesdelete
+        - realestate/award#create
+        - realestate/award#delete
+        - realestate/award#teamcreate
+        - realestate/award#teamupdate
+        - realestate/award#teamdelete
+        - realestate/award#teammemberadd
+        - realestate/award#teammemberremove
+    data:
+      type: object
+      properties:
+        type:
+          type: string
+          enum:
+            - CreateAction
+            - UpdateAction
+            - DeleteAction
+            - AddAction
+            - RemoveAction
+        object:
+          oneOf:
+            - $ref: AwardSeries.yaml
+            - $ref: Award.yaml
+            - $ref: AwardTeam.yaml
+            - $ref: definitions#/awardTeamMember

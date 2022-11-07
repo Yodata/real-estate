@@ -1,23 +1,24 @@
-messageId:  award#teamdelete
-name:  realestate/award#teamdelete
-title:  award#teamdelete
-summary:  an award team was deleted
-contentType:  application/json
+# @format
+
+messageId: award#teamdelete
+name: realestate/award#teamdelete
+title: award#teamdelete
+summary: an award team was deleted
+contentType: application/json
 tags:
-  -  name:  action|delete
-  -  name:  topic|award
-  -  name:  domain|realestate
+  - name: action|delete
+  - name: topic|award
+  - name: domain|realestate
 headers:
-  type:  object
-  properties:
-    topic:  { const:  realestate/award#teamdelete }
+  $ref: ../../subscription_headers.yaml
 payload:
-  type:  object
+  type: object
   properties:
+    topic: { type: string, const: realestate/award#teamdelete }
     data:
-      type:  object
+      type: object
       properties:
-        type:  { const:  DeleteAction }
+        type: { const: DeleteAction }
         object:
-          $ref:  AwardTeam.yaml
-          description:  the award team being deleted
+          $ref: AwardTeam.yaml
+          description: the award team being deleted

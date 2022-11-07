@@ -1,17 +1,16 @@
+# @format
+
 messageId: award#seriesdelete
 name: realestate/award#seriesdelete
 summary: an award series was deleted
 headers:
-  type: object
-  properties:
-    topic: { const: realestate/award#seriesdelete }
+  $ref: ../../subscription_headers.yaml
 payload:
   type: object
   properties:
+    topic: { type: string, const: realestate/award#seriesdelete }
     data:
       type: object
       properties:
         type: { const: DeleteAction }
-        object:
-          $ref: AwardSeries.yaml
-          description: the award series being deleted
+        object: { $ref: AwardSeries.yaml }

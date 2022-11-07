@@ -4,30 +4,30 @@ title: Award
 type: object
 description: An honor bestowed on one or mote _recipients_ by the message _agent_
 properties:
-  type:
-    type: string
-    enum:
-      - Award
-    description: '"AwardAction"'
+  type: { type: string, const: Award }
   name:
-    $ref: name.yaml
-    example: Top 1%
     description: name of the award
+    type: string
+    examples:
+      - Best of the Best
+      - Top Producer
+      - Top 1 Percent
   dateAwarded:
     type: string
-    format: date-time
+    format: date
     description: date the award was presented or announced.
-    x-range: DateTime
-    example: 2019-11-25T04:23:32Z
+    example: '2019-11-25'
   agent:
+    description: the agent that presented the award
     type: string
     format: uri
-    description: the agent that presented the award
+    examples:
+      - https://{agentid}.example.com/profile/card#me
   recipient:
     type: array
     items:
       $ref: AwardRecipient.yaml
   identifier:
     $ref: identifier.yaml
-    example:
-      hsfAwardId: xxxx
+    examples:
+      - { hsfAwardId: '123456' }

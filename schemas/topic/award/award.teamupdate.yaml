@@ -1,3 +1,5 @@
+# @format
+
 messageId: award#teamupdate
 name: realestate/award#teamupdate
 title: award#teamupdate
@@ -8,12 +10,11 @@ tags:
   - name: topic|award
   - name: domain|realestate
 headers:
-  type: object
-  properties:
-    topic: { const: realestate/award#teamupdate }
+  $ref: ../../subscription_headers.yaml
 payload:
   type: object
   properties:
+    topic: { type: string, const: realestate/award#teamupdate }
     data:
       type: object
       properties:

@@ -4,38 +4,15 @@ messageId: award#update
 name: realestate/award#update
 summary: award action is updated
 headers:
-  type: object
-  properties:
-    topic: { const: realestate/award#update }
+  $ref: ../../subscription_headers.yaml
 payload:
   type: object
-  data:
-    properties:
-      type: { const: UpdateAction }
-      identifier:
-        $ref: ../../identifier.yaml
-        example:
-          bhhsAwardId: xxxx
-      agent:
-        $ref: ../../agent.yaml
-        description: the award presenter
-      object:
-        $ref: AwardSeries.yaml
-        description: the award being bestowed
-      recipient:
-        type: object
-        description: the award recipient
-        properties:
-          type:
-            {
-              type: string,
-              enum:
-                [
-                  RealEstateAgent,
-                  RealEstateTeam,
-                  RealEstateOffice,
-                  RealEstateOrganization,
-                ],
-            }
-          name: { type: string } # the name of the recipient
-          id: { type: string, format: uri } # the profile id of the recipient
+  properties:
+    topic: { type: string, const: realestate/award#update }
+    data:
+      type: object
+      properties:
+        type: { const: UpdateAction }
+        object:
+          $ref: Award.yaml
+          description: the award being updated

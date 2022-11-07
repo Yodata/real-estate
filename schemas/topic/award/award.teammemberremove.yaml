@@ -10,12 +10,11 @@ tags:
   - name: topic|award
   - name: domain|realestate
 headers:
-  type: object
-  properties:
-    topic: { const: realestate/award#teammemberremove }
+  $ref: ../../subscription_headers.yaml
 payload:
   type: object
   properties:
+    topic: { type: string, const: realestate/award#teammemberremove }
     data:
       type: object
       properties:

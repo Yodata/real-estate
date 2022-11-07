@@ -1,3 +1,5 @@
+# @format
+
 title: Task
 type: object
 description: an action assigned to an agent, typically as part of a set of interdependent tasks in a Plan
@@ -6,7 +8,7 @@ properties:
   type:
     $ref: type.yaml
     enum:
-    - Task
+      - Task
   identifier:
     $ref: identifier.yaml
     example:
@@ -26,10 +28,10 @@ properties:
     type: object
     description: the party who completed, or will complete the task
     x-range:
-    - Person
-    - Organization
-    - RealEstateAgent
-    - Contact
+      - Person
+      - Organization
+      - RealEstateAgent
+      - Contact
     example:
       type: RealEstateAgent
       id: http://user.example.com/profile/card#me
@@ -48,7 +50,9 @@ properties:
     example: Agenda 1. Something 2. Something Else ...
 
   keywords:
-    $ref: keywords.yaml
+    type: array
+    items:
+      type: string
 
   dateDue:
     $ref: dueDate.yaml

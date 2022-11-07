@@ -1,21 +1,27 @@
 # @format
-
+# yaml-language-server: schema=https://www.asyncapi.com/definitions/2.5.0/message.json
 messageId: profile#update
 name: realestate/profile#update
+title: profile.update
 summary: an agent, office or organization profile was updated
 headers:
-  type: object
-  properties:
-    topic: { const: realestate/profile#update }
+  $ref: ../../subscription_headers.yaml
 payload:
   type: object
+  required:
+    - topic
+    - data
   properties:
+    topic: { type: string, const: 'realestate/profile#update' }
     data:
       type: object
+      required:
+        - type
+        - object
       properties:
         type: { const: UpdateAction }
         object:
           oneOf:
             - { $ref: ../../RealEstateAgent.yaml }
-            - { $ref: ../../RealEstateOffice.yaml }
+            - { $ref: ../../RealEstateTeam.yaml }
             - { $ref: ../../RealEstateOrganization.yaml }

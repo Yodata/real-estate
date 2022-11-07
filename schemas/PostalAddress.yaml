@@ -1,18 +1,16 @@
+# @format
+# yaml-language-server: $schema=https://json-schema.org/draft/2019-09/schema
 # PostalAddress
-$id: PostalAddress
+$id: http://realestate.yodata.me/schemas/PostalAddress.yaml
 title: PostalAddress
 type: object
-x-range: PostalAddress
 description: A physical address.
 properties:
-  type:
-    type: string
-    enum:
-      - PostalAddress
+  type: { type: string, const: PostalAddress }
   streetAddress:
     type: string
     description: the street number and name.
-    example: '1007 Mountain Gate Rd'
+    x-faker: address.streetAddress
     examples:
       - 5046 Ottis Point
       - 166 Marion Burg
@@ -20,6 +18,7 @@ properties:
   postOfficeBoxNumber:
     type: string
     description: The post office box number for PO box addresses.
+    x-faker: address.secondaryAddress
     examples:
       - Box 1234
       - Apt. 161
@@ -27,7 +26,7 @@ properties:
   addressRegion:
     type: string
     description: State or Province.
-    example: New Jersey
+    x-faker: address.state
     examples:
       - New Jersey
       - California
@@ -36,6 +35,7 @@ properties:
   addressLocality:
     type: string
     description: City, Township.
+    x-faker: address.city
     examples:
       - Gotham City
       - Kulasmouth
@@ -46,6 +46,7 @@ properties:
   postalCode:
     type: string
     description: Zip/Post Code
+    x-faker: address.zipCode
     examples:
       - '10010'
       - '38859'
@@ -62,9 +63,11 @@ properties:
       - EG
       - SJ
       - VN
+    x-faker: address.countryCode
   addressCounty:
     type: string
     description: the county (us real estate extension)
+    faker: address.county
     examples:
       - Gotham County
       - Buckinghamshire
@@ -73,7 +76,9 @@ properties:
   addressSubdivision:
     type: string
     description: the subdivision or neighborhood (us real estate extension)
+    x-faker: address.streetName
     examples:
       - Gotham Heights
-      - NULL
-      - NULL
+      - South Kensington
+      - SOMA (South of Market)
+      - Nob Hill

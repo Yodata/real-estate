@@ -1,3 +1,4 @@
+# @format
 
 messageId: award#delete
 name: realestate/award#delete
@@ -9,41 +10,15 @@ tags:
   - name: topic|award
   - name: domain|realestate
 headers:
-  type: object
-  properties:
-    topic: { const: realestate/award#delete }
+  $ref: ../../subscription_headers.yaml
 payload:
   type: object
   properties:
+    topic: { type: string, const: realestate/award#delete }
     data:
       type: object
       properties:
         type: { const: DeleteAction }
+        agent: { $ref: definitions#/awardPresenter }
         identifier:
-          $ref: ../../identifier.yaml
-          description: the award identifier
-          example:
-            hsfAwardId: xxxx
-        agent:
-          $ref: ../../agent.yaml
-          description: the award presenter
-        object:
-          $ref: AwardSeries.yaml
-          description: the award being bestowed
-        recipient:
-          type: object
-          properties:
-            type: { type: string, enum: [RealEstateAgent, RealEstateOffice, RealEstateOrganization]}
-            id:
-              type: string
-              format: uri
-              description: profile URI of the award recipient
-              example: https://user.example.com/profile/card#me
-            name:
-              type: string
-              description: name of the award recipient
-              example: Joann Agent
-          example:
-            type: RealEstateAgent
-            id: https://user.example.com/profile/card#me
-            name: Joann Agent
+          { $ref: ../../identifier.yaml, example: { bhhsAwardId: xxxx } }

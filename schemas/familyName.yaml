@@ -1,4 +1,22 @@
+# @format
+$id: htttp://realestate.yodata.me/schema/familyName.yaml
 type: string
+title: Family Name
 description: Last Name of a person
-example: Miller
+x-faker: name.lastName
 maxLength: 50
+externalDocs:
+  description: Family Name
+  url: https://schema.org/familyName
+examples:
+  - Smith
+  - Jones
+  - Parker
+  - Monk
+  - Brown
+  - Miller
+  - Davis
+  - Wilson
+  - Fitzgerald
+  - Johnson
+  - Williams

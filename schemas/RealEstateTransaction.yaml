@@ -1,5 +1,6 @@
-$id: http://realestate.yodata.me/schema/RealEstateTransaction
-$anchor: RealEstateTransaction
+# @format
+
+$id: RealEstateTransaction
 type: object
 title: RealEstateTransaction
 x-range: RealEstateTransaction
@@ -21,10 +22,10 @@ properties:
     required:
       - bmsTransactionId
     properties:
-        bmsTransactionId:
-            type: string
-            maxLength: 12
-            example: '0000074792'
+      bmsTransactionId:
+        type: string
+        maxLength: 12
+        example: '0000074792'
 
   additionalProperty:
     type: object
@@ -53,9 +54,9 @@ properties:
     x-range: TransactionStatus
     example: ClosedTransactionStatus
     enum:
-    - PendingTransactionStatus
-    - ClosedTransactionStatus
-    - CanceledTransactionStatus
+      - PendingTransactionStatus
+      - ClosedTransactionStatus
+      - CanceledTransactionStatus
 
   transactionType:
     type: string
@@ -145,7 +146,6 @@ properties:
     x-range: TransactionParticipant
     items:
       $ref: TransactionParticipant.yaml
-
 
   transactionEntry:
     type: array

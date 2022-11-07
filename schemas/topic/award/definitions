@@ -1,0 +1,54 @@
+# @format
+
+# language=YAML
+# yaml-language-server: $schema=https://json-schema.org/draft/2020-12/schema
+# Path: schemas/topic/award/award.create.yaml
+
+awardRecipient:
+  type: object
+  description: the award recipient
+  properties:
+    type:
+      type: string
+      enum:
+        - RealEstateAgent
+        - RealEstateOffice
+        - RealEstateOrganization
+    id:
+      type: string
+      format: uri
+      example: https://user.example.com/profile/card#me
+    name:
+      type: string
+      description: the name of the award recipient
+      x-faker: name.findName
+  required:
+    - type
+    - id
+    - name
+awardPresenter:
+  type: object
+  description: the award presenter
+  properties:
+    type:
+      type: string
+      enum:
+        - RealEstateAgent
+        - RealEstateOffice
+        - RealEstateOrganization
+    id:
+      type: string
+      format: uri
+      example: https://user.example.com/profile/card#me
+    name:
+      type: string
+      description: the name of the award presenter
+      x-faker: name.findName
+  required:
+    - type
+    - id
+    - name
+awardTeamMember:
+  type: string
+  format: uri
+  example: https://user.example.com/profile/card#me

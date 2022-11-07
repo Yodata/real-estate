@@ -1,38 +1,38 @@
-type: object
+# @format
+
+$id: TransactionParticipant
 title: TransactionParticipant
+description: a participant in a transaction, i.e. Buyer, Seller, etc...
 x-range: TransactionParticipant
+type: object
 properties:
-    type:
-        $ref: type.yaml
-        description: '"TransactionParticipant"'
-        enum:
-        - TransactionParticipant
-    roleName:
-        type: string
-        description: 'enum: Buyer,Seller'
-        enum:
-        - Buyer
-        - Seller
-    position:
-        type: number
-        description: numeric position for the participant/roleName.
-        example: 1
-    givenName:
-        $ref: givenName.yaml
-    familyName:
-        $ref: familyName.yaml
-    additionalName:
-        type: string
-        description: middleName or alternate name of the Person
-        example: Big
-    email:
-        $ref: email.yaml
-    telephone:
-        $ref: telephone.yaml
-    affiliation:
-        type: array
-        description: person or organization associated with the participant
-        items:
-            type: string
-            format: uri
-            example: https://{agentid}.example.com/profile/card#me
+  type: { type: string, const: TransactionParticipant }
+  roleName:
+    type: string
+    description: the role of the participant in the transaction
+    examples:
+      - Buyer
+      - Seller
+  position:
+    type: number
+    description: numeric position for the participant/roleName.
+    example: 1
+  givenName:
+    $ref: givenName.yaml
+  familyName:
+    $ref: familyName.yaml
+  additionalName:
+    type: string
+    description: middleName or alternate name of the Person
+    example: Big
+  email:
+    $ref: email.yaml
+  telephone:
+    $ref: telephone.yaml
+  affiliation:
+    type: array
+    description: person or organization associated with the participant
+    items:
+      type: string
+      format: uri
+      example: https://{agentid}.example.com/profile/card#me

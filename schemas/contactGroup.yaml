@@ -1,13 +1,23 @@
-
-$id: '#contactGroup'
-title: contactGroup
+# @format
+$id: htttp://realestate.yodata.me/schema/ContactGroup.json
+title: ContactGroup
 description: groups the contact is a member of.
-x-range: Collection
-type: array
-items:
-  type: object
-example:
-- type: Collection
-  name: Superheros
-  identifier:
-    vendoraid: xxx
+type: object
+required:
+  - type
+  - name
+properties:
+  type: { type: string, enum: [ContactGroup, Collection] }
+  identifier: { $ref: identifier.yaml }
+  name:
+    type: string
+    examples:
+      - Past Clients
+      - Prospects
+      - Leads
+      - Referrals
+      - Friends
+      - Family
+      - Neighbors
+      - Business Associates
+      - Personal

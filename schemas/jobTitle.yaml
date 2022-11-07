@@ -1,9 +1,30 @@
-$id: http://realestate.yodata.me/schema/jobTitle
+# @format
+
 title: jobTitle
-description: job tiles associated with the item
-type: array
-items:
-  type: string
-example:
-- Chief Data Officer
-- Sanitation Engineer
+description: The job title of the person (for example, Financial Manager).
+type: string
+x-faker: name.jobTitle
+examples:
+  - CEO
+  - Sales Manager
+  - Escrow Officer
+  - Transaction Coordinator
+  - Director of Marketing
+  - Senior Loan Officer
+  - Loan Officer
+  - Sanitation Engineer
+  - Owner
+  - Cofounder
+  - Founder
+  - President
+  - Vice President of Sales
+  - NULL
+  - NULL
+  - NULL
+  - NULL
+  - NULL
+  - NULL
+  - NULL
+  - NULL
+  - NULL
+  - NULL

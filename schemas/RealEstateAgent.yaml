@@ -1,12 +1,14 @@
+# @format
+
 $id: http://realestate.yodata.me/schema/RealEstateAgent
 title: RealEstateAgent
 description: A real estate agent who represents buyers and sellers
 type: object
 additionalProperties: true
 properties:
-  type: { const: RealEStateAgent }
+  type: { type: string, const: RealEstateAgent }
   additionalName: { $ref: additionalName.yaml }
-  address:  { $ref: address.yaml }
+  address: { $ref: address.yaml }
   certification: { $ref: certification.yaml }
   contactPoint: { $ref: contactPoint.yaml }
   email: { $ref: email.yaml }
@@ -15,7 +17,9 @@ properties:
   id: { $ref: id.yaml }
   identifier: { $ref: identifier.yaml }
   image: { $ref: image.yaml }
-  jobTitle: { $ref: jobTitle.yaml }
+  jobTitle:
+    type: array
+    items: { $ref: jobTitle.yaml }
   memberOf: { $ref: memberOf.yaml }
   name: { $ref: name.yaml }
   parentOrganization: { $ref: parentOrganization.yaml }

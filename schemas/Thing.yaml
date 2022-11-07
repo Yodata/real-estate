@@ -1,12 +1,18 @@
+# @format
+# yaml-language-server: $schema=https://json-schema.org/draft/2020-12/schema
+
 $id: http://realestate.yodata.me/schema/Thing
 type: object
 title: Thing
 summary: The root type of all Things.
 required:
   - type
+propertyNames:
+  pattern: '^[a-z@$][a-zA-Z0-9-_]+$'
 properties:
   type:
     type: string
+    pattern: '^[A-Z][a-zA-Z0-9]+$'
     description: The item type (Linked-Data @type)
   '@id':
     type: string

@@ -1,3 +1,5 @@
+# @format
+
 type: string
-description: Primary fax number.
-example: (873) 271-4802
+description: Do people still use fax machines?
+x-faker: phone.phoneNumber

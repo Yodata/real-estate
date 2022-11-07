@@ -2,6 +2,7 @@
 /// @page getSchema/[...type]
 /// @desc
 ////
+import { merge } from 'merge-anything'
 
 const DEBUG =
   process.env.NEXT_PUBLIC_DEBUG === true ||
@@ -139,8 +140,7 @@ function isMessageSchema(schema) {
 function transformMessageSchema(schema) {
   let result = JSON.parse(JSON.stringify(schema))
   if (isMessageSchema(result)) {
-    let properties = Object.assign({}, result.payload.properties, result.headers.properties)
-    result = Object.assign({}, result.headers, result.payload, { properties })
+    result = merge(result.payload, result.headers, result.traits)
   }
   return result
 }

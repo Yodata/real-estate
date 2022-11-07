@@ -35,9 +35,12 @@ export default function ValidateSchemaObject(props) {
     const textValue = editorRef.current.innerText
     if (isValidJson(textValue)) {
       const jsonValue = JSON.parse(textValue)
+      const subject = jsonValue.topic || jsonValue.type
+      setSchemaName(subject)
       axios.post('/api/validate', jsonValue).then((res) => {
         if (res.status === 200) {
           let { isValid, error, schemaName } = res.data
+          console.log(res.data)
           if (isValid) {
             setValidationStatus('success')
             setValidationMessage(
@@ -45,7 +48,14 @@ export default function ValidateSchemaObject(props) {
             )
           } else {
             setValidationStatus('error')
-            setValidationMessage(error.message)
+            if (error && error.message) {
+              setValidationMessage(error.message)
+            } else {
+              setValidationMessage(
+                `Sorry somthing unexpected happened. Please try again.`
+              )
+            }
+
           }
         }
       })
@@ -67,7 +77,6 @@ export default function ValidateSchemaObject(props) {
         return
       }
     } else {
-      setSchemaName('')
       setValidationStatus('error')
       setValidationMessage('your json is not valid')
       return

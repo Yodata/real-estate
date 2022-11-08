@@ -7,5 +7,5 @@ description: |
 subscribe:
   message:
     oneOf:
-      - $ref: listing.update.yaml
-      - $ref: listing.delete.yaml
+      - $ref: update.yaml
+      - $ref: delete.yaml

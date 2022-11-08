@@ -8,8 +8,15 @@
 			"type": "npm",
 			"script": "validate",
 			"problemMatcher": [],
-			"label": "npm: validate",
+			"label": "validate:schemas",
 			"detail": "npx asyncapi validate asyncapi.yaml"
+		},
+		{
+			"type": "npm",
+			"script": "generate:data",
+			"problemMatcher": [],
+			"label": "npm: generate:data",
+			"detail": "npx asyncapi generate fromTemplate asyncapi.yaml ../generator/data -o ./generated/schema"
 		}
 	]
 }

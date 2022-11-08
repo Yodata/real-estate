@@ -15,12 +15,12 @@ const DEFAULT_PARAMS = {
   },
   "outputFormats": {
     "json": {
-      "enabled": true,
+      "enabled": false,
       "extension": ".json",
       "basePath": ""
     },
     "yaml": {
-      "enabled": true,
+      "enabled": false,
       "extension": ".yaml",
       "basePath": ""
     }

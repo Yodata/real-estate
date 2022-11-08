@@ -1,3 +1,5 @@
+# @format
+
 publish:
   headers:
     $ref: ../publish-headers.yaml
@@ -6,12 +8,12 @@ publish:
     description: the event payload
 subscribe:
   oneOf:
-    - $ref: contact.add.yaml
-    - $ref: contact.collectioncreate.yaml
-    - $ref: contact.collectiondelete.yaml
-    - $ref: contact.collectionmemberadd.yaml
-    - $ref: contact.collectionmemberremove.yaml
-    - $ref: contact.plancreate.yaml
-    - $ref: contact.plandelete.yaml
-    - $ref: contact.delete.yaml
-    - $ref: contact.update.yaml
+    - $ref: add.yaml
+    - $ref: collectioncreate.yaml
+    - $ref: collectiondelete.yaml
+    - $ref: collectionmemberadd.yaml
+    - $ref: collectionmemberremove.yaml
+    - $ref: plancreate.yaml
+    - $ref: plandelete.yaml
+    - $ref: delete.yaml
+    - $ref: update.yaml

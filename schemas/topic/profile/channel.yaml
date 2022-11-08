@@ -4,9 +4,9 @@ description: profile events
 subscribe:
   message:
     oneOf:
-      - $ref: profile.add.yaml
-      - $ref: profile.update.yaml
-      - $ref: profile.teamcreate.yaml
-      - $ref: profile.teamdelete.yaml
-      - $ref: profile.teammemberadd.yaml
-      - $ref: profile.teammemberremove.yaml
+      - $ref: add.yaml
+      - $ref: update.yaml
+      - $ref: teamcreate.yaml
+      - $ref: teamdelete.yaml
+      - $ref: teammemberadd.yaml
+      - $ref: teammemberremove.yaml

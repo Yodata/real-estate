@@ -1,3 +1,5 @@
+# @format
+
 publish:
   headers:
     $ref: ../publish-headers.yaml
@@ -6,5 +8,5 @@ publish:
     description: the event payload
 subscribe:
   oneOf:
-    - $ref: listing.update.yaml
+    - $ref: update.yaml
     - $ref: listing.delete.yaml

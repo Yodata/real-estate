@@ -29,7 +29,7 @@ lead.reject.yaml:messageId: lead#reject
 lead.retract.yaml:messageId: lead#retract
 lead.update.yaml:messageId: lead#update
 listing.delete.yaml:messageId: listing#delete
-listing.update.yaml:messageId: listing#update
+update.yaml:messageId: listing#update
 listingoffer.1.yaml:messageId: website#listingoffer
 marketingpreferences.subscribe.yaml:messageId: marketingpreferences#subscribe
 marketingpreferences.unsubscribe.yaml:messageId: marketingpreferences#unsubscribe

@@ -1,0 +1,55 @@
+# @format
+
+allOf:
+  - $ref: ../../CloudEvent.yaml
+  - properties:
+      data:
+        type: object
+        description: the event payload, typeically a Ocou.org/Action
+        required:
+          - type
+          - agent
+          - object
+        properties:
+          type:
+            $ref: type.yaml
+          agent:
+            type: object
+            description: the website user who performed the action
+            x-range:
+              - Contact
+              - Person
+            example:
+              type: Contact
+              name: Miles Davis
+              givenName: Miles
+              familyName: Davis
+              telephone: 067-419-1230
+              email: user@example.com
+              identifier:
+                hsfconsumerid: 216bf670-0777-43db-9d73-c3377d280fe4
+              additionalProperty:
+                userPath: xxx
+                workingWithAgent: true
+
+          participant:
+            $ref: participant.yaml
+            description: a RealEstateAgent,RealEstateTeam,RealEstateOrganization to be notified about the event
+            example:
+              - type: RealEstateAgent
+                id: https://robin.example.com/profile/card#me
+                name: Robin
+
+          instrument:
+            type: object
+            description: website or mobile application
+            x-range:
+              - RealEstateWebsite
+              - MobileApplication
+              - Thing
+            example:
+              type: RealEstateWebsite
+              url: http://gotham-city-realestate.example.com
+
+          object:
+            type: object

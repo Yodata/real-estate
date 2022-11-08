@@ -124,6 +124,60 @@ components:
     UnsubscribeAction: { $ref: UnsubscribeAction.yaml }
     BHHSTerms: { $ref: BHHSTerms.yaml }
 
+  messages:
+    # award events
+    award/create: { $ref: topic/award/award.create.yaml }
+    award/delete: { $ref: topic/award/award.delete.yaml }
+    award/seriescreate: { $ref: topic/award/award.seriescreate.yaml }
+    award/seriesdelete: { $ref: topic/award/award.seriesdelete.yaml }
+    award/seriesupdate: { $ref: topic/award/award.seriesupdate.yaml }
+    award/teamcreate: { $ref: topic/award/award.teamcreate.yaml }
+    award/teammemberadd: { $ref: topic/award/award.teammemberadd.yaml }
+    award/teammemberremove: { $ref: topic/award/award.teammemberremove.yaml }
+    award/teamupdate: { $ref: topic/award/award.teamupdate.yaml }
+    # contact events
+    contact/add: { $ref: topic/contact/add.yaml }
+    contact/comment: { $ref: topic/contact/comment.yaml }
+    contact/delete: { $ref: topic/contact/delete.yaml }
+    contact/update: { $ref: topic/contact/update.yaml }
+    contact/plandelete: { $ref: topic/contact/plandelete.yaml }
+    contact/planupdate: { $ref: topic/contact/planupdate.yaml }
+    contact/collectioncreate: { $ref: topic/contact/collectioncreate.yaml }
+    contact/collectiondelete: { $ref: topic/contact/collectiondelete.yaml }
+    contact/collectionmemberadd:
+      { $ref: topic/contact/collectionmemberadd.yaml }
+    contact/collectionmemberremove:
+      { $ref: topic/contact/collectionmemberremove.yaml }
+    # lead events
+    lead/accept: { $ref: topic/lead/lead.accept.yaml }
+    lead/add: { $ref: topic/lead/lead.add.yaml }
+    lead/assign: { $ref: topic/lead/lead.assign.yaml }
+    lead/update: { $ref: topic/lead/lead.update.yaml }
+    lead/reject: { $ref: topic/lead/lead.reject.yaml }
+    lead/retract: { $ref: topic/lead/lead.retract.yaml }
+
+    # franchise events
+    franchise/listingreport: { $ref: topic/franchise/listingreport.yaml }
+    franchise/transactionreport:
+      { $ref: topic/franchise/transactionreport.yaml }
+
+    # listing events
+    listing/update: { $ref: topic/listing/update.yaml }
+    listing/delete: { $ref: topic/listing/delete.yaml }
+
+    # marketing events
+    marketing/programcreate: { $ref: topic/marketing/programcreate.yaml }
+    marketing/programdelete: { $ref: topic/marketing/programdelete.yaml }
+    marketing/programmemberadd: { $ref: topic/marketing/programmemberadd.yaml }
+    marketing/programmemberremove:
+      { $ref: topic/marketing/programmemberremove.yaml }
+
+    # marketingpreferences events
+    marketingpreferences/subscribe:
+      { $ref: topic/marketingpreferences/subscribe.yaml }
+    marketingpreferences/unsubscribe:
+      { $ref: topic/marketingpreferences/unsubscribe.yaml }
+
 channels:
   award: { $ref: topic/award/channel.yaml }
   contact: { $ref: topic/contact/channel.yaml }

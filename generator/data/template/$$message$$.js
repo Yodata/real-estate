@@ -19,20 +19,21 @@ const DEFAULT_PARAMS = {
   },
   "outputFormats": {
     "json": {
-      "enabled": true,
+      "enabled": false,
       "extension": ".json",
       "basePath": ""
     },
     "yaml": {
-      "enabled": true,
+      "enabled": false,
       "extension": ".yaml",
       "basePath": ""
     }
   }
 }
 
-export default function MessageDataGenerator(props) {
+export default function (props) {
   const { messageName, params } = props
+  console.log('messageName', messageName)
   console.log('params', params)
   const { baseUrl, sortProperties, outputFormats } = DEFAULT_PARAMS
   if (params?.generate?.messages === 'false') return null

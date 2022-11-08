@@ -1,6 +1,7 @@
+# @format
+
 # @format: https://json-schema.org/draft/2019-09/json-schema-core.html#rfc.section.8.2.2
-$id: http://realestate.yodata.me/schema/subscription_headers
-title: CloudEvent
+
 type: object
 properties:
   topic:

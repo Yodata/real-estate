@@ -4,9 +4,7 @@ messageId: lead#accept
 name: realestate/lead#accept
 summary: a lead (data.object) was accepted by the recipient (data.recipient).
 headers:
-  type: object
-  properties:
-    topic: { const: realestate/lead#accept }
+  $ref: ../../subscription_headers.yaml
 payload:
   type: object
   properties:

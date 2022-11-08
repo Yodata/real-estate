@@ -9,12 +9,12 @@ const DEFAULT_PARAMS = {
   sortKeys: true,
   outputFormats: {
     json: {
-      enabled: true,
+      enabled: false,
       extension: '.json',
       basePath: '',
     },
     yaml: {
-      enabled: true,
+      enabled: false,
       extension: '.yaml',
       basePath: '',
     },

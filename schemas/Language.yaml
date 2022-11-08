@@ -1,5 +1,5 @@
 # @format
-$id: htttp://realestate.yodata.me/schema/Language.yaml
+$id: http://realestate.yodata.me/schema/Language.yaml
 description: a written or spoken Language
 title: Language
 type: object

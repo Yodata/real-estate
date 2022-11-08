@@ -6,31 +6,31 @@ properties:
   maxValue:
     type: number
     description: the upper value of a range
-    x-parser-schema-id: <anonymous-schema-772>
+    x-parser-schema-id: <anonymous-schema-776>
   minValue:
     type: number
     description: the lower value of a range
-    x-parser-schema-id: <anonymous-schema-771>
+    x-parser-schema-id: <anonymous-schema-775>
   type:
     type: string
     description: QuantitativeValue
     enum:
       - QuantitativeValue
-    x-parser-schema-id: <anonymous-schema-769>
+    x-parser-schema-id: <anonymous-schema-773>
   unitCode:
     type: string
     description: unit code (RESO or UN/CEFACT)
     example: AC
-    x-parser-schema-id: <anonymous-schema-773>
+    x-parser-schema-id: <anonymous-schema-777>
   unitText:
     type: string
     description: unit code in common text
     example: acres
-    x-parser-schema-id: <anonymous-schema-774>
+    x-parser-schema-id: <anonymous-schema-778>
   value:
     type: number
     description: the value (if a static value)
-    x-parser-schema-id: <anonymous-schema-770>
+    x-parser-schema-id: <anonymous-schema-774>
 x-parser-schema-id: QuantitativeValue
 $id: http://realestate.yodata.me/schema/QuantitativeValue.yaml
 

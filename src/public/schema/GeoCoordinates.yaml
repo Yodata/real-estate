@@ -8,19 +8,19 @@ properties:
     description: The latitude of a location.
     x-title: latitude
     example: 40.75
-    x-parser-schema-id: <anonymous-schema-278>
+    x-parser-schema-id: <anonymous-schema-279>
   longitude:
     type: number
     description: The longitude of a location.
     x-title: longitude
     example: 73.98
-    x-parser-schema-id: <anonymous-schema-287>
+    x-parser-schema-id: <anonymous-schema-288>
   type:
     type: string
     description: GeoCordinates
     enum:
       - GeoCoordinates
-    x-parser-schema-id: <anonymous-schema-643>
+    x-parser-schema-id: <anonymous-schema-647>
 x-parser-schema-id: GeoCoordinates
 $id: http://realestate.yodata.me/schema/GeoCoordinates.yaml
 

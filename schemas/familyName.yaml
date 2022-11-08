@@ -1,5 +1,5 @@
 # @format
-$id: htttp://realestate.yodata.me/schema/familyName.yaml
+$id: http://realestate.yodata.me/schema/familyName.yaml
 type: string
 title: Family Name
 description: Last Name of a person

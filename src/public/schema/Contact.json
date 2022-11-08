@@ -18,7 +18,7 @@
         "Katheryn Elizabeth Hudson,Katy Perry",
         "Destiny Hope Cyrus,Miley Cyrus"
       ],
-      "x-parser-schema-id": "<anonymous-schema-116>"
+      "x-parser-schema-id": "<anonymous-schema-117>"
     },
     "additionalProperty": {
       "title": "additionalProperty",
@@ -40,7 +40,7 @@
           "type": {
             "type": "string",
             "const": "PostalAddress",
-            "x-parser-schema-id": "<anonymous-schema-99>"
+            "x-parser-schema-id": "<anonymous-schema-100>"
           },
           "streetAddress": {
             "type": "string",
@@ -51,7 +51,7 @@
               "166 Marion Burg",
               "93044 Haley Stream"
             ],
-            "x-parser-schema-id": "<anonymous-schema-100>"
+            "x-parser-schema-id": "<anonymous-schema-101>"
           },
           "postOfficeBoxNumber": {
             "type": "string",
@@ -62,7 +62,7 @@
               "Apt. 161",
               "Apt. 623"
             ],
-            "x-parser-schema-id": "<anonymous-schema-101>"
+            "x-parser-schema-id": "<anonymous-schema-102>"
           },
           "addressRegion": {
             "type": "string",
@@ -74,7 +74,7 @@
               "MI",
               null
             ],
-            "x-parser-schema-id": "<anonymous-schema-102>"
+            "x-parser-schema-id": "<anonymous-schema-103>"
           },
           "addressLocality": {
             "type": "string",
@@ -88,7 +88,7 @@
               "West Ahmed",
               "Blaiseview"
             ],
-            "x-parser-schema-id": "<anonymous-schema-103>"
+            "x-parser-schema-id": "<anonymous-schema-104>"
           },
           "postalCode": {
             "type": "string",
@@ -101,7 +101,7 @@
               "50239-7698",
               null
             ],
-            "x-parser-schema-id": "<anonymous-schema-104>"
+            "x-parser-schema-id": "<anonymous-schema-105>"
           },
           "addressCountry": {
             "type": "string",
@@ -115,7 +115,7 @@
               "VN"
             ],
             "x-faker": "address.countryCode",
-            "x-parser-schema-id": "<anonymous-schema-105>"
+            "x-parser-schema-id": "<anonymous-schema-106>"
           },
           "addressCounty": {
             "type": "string",
@@ -127,7 +127,7 @@
               "Borders",
               null
             ],
-            "x-parser-schema-id": "<anonymous-schema-106>"
+            "x-parser-schema-id": "<anonymous-schema-107>"
           },
           "addressSubdivision": {
             "type": "string",
@@ -139,12 +139,12 @@
               "SOMA (South of Market)",
               "Nob Hill"
             ],
-            "x-parser-schema-id": "<anonymous-schema-107>"
+            "x-parser-schema-id": "<anonymous-schema-108>"
           }
         },
         "x-parser-schema-id": "PostalAddress"
       },
-      "x-parser-schema-id": "<anonymous-schema-98>"
+      "x-parser-schema-id": "<anonymous-schema-99>"
     },
     "affiliation": {
       "description": "An organization that this person is affiliated with",
@@ -153,15 +153,15 @@
         "type": "string",
         "format": "uri",
         "example": "https://example.com/profile/card#me",
-        "x-parser-schema-id": "<anonymous-schema-97>"
+        "x-parser-schema-id": "<anonymous-schema-98>"
       },
-      "x-parser-schema-id": "<anonymous-schema-96>"
+      "x-parser-schema-id": "<anonymous-schema-97>"
     },
     "birthDate": {
       "description": "date of birth.",
       "type": "string",
       "format": "date",
-      "x-parser-schema-id": "<anonymous-schema-108>"
+      "x-parser-schema-id": "<anonymous-schema-109>"
     },
     "comment": {
       "title": "comment",
@@ -191,7 +191,7 @@
     "contactGroup": {
       "type": "array",
       "items": {
-        "$id": "htttp://realestate.yodata.me/schema/ContactGroup.json",
+        "$id": "http://realestate.yodata.me/schema/ContactGroup.json",
         "title": "ContactGroup",
         "description": "groups the contact is a member of.",
         "type": "object",
@@ -222,7 +222,7 @@
                 "originating_system_id": "123456"
               }
             ],
-            "x-parser-schema-id": "<anonymous-schema-94>"
+            "x-parser-schema-id": "<anonymous-schema-95>"
           },
           "name": {
             "type": "string",
@@ -245,7 +245,7 @@
       "description": "contact points for the person",
       "type": "array",
       "items": {
-        "$id": "htttp://realestate.yodata.me/schema/ContactPoint.json",
+        "$id": "http://realestate.yodata.me/schema/ContactPoint.json",
         "title": "ContactPoint",
         "description": "A point of contact for the entity. By convention in the real estate domain, ContactPoints\nare preferred over telephone, email, and faxNumber so the ContactPoint.name property can be used to label values\nfor example, Work Telephone, Home, as named contactPoint values.\n",
         "type": "object",
@@ -258,7 +258,7 @@
           "type": {
             "type": "string",
             "const": "ContactPoint",
-            "x-parser-schema-id": "<anonymous-schema-110>"
+            "x-parser-schema-id": "<anonymous-schema-111>"
           },
           "name": {
             "type": "string",
@@ -270,7 +270,7 @@
               "Bob's Cell",
               "Alice's Work"
             ],
-            "x-parser-schema-id": "<anonymous-schema-111>"
+            "x-parser-schema-id": "<anonymous-schema-112>"
           },
           "telephone": {
             "type": "string",
@@ -281,7 +281,7 @@
               "555-555-5555 ext. 123",
               "+1-555-555-5555"
             ],
-            "x-parser-schema-id": "<anonymous-schema-112>"
+            "x-parser-schema-id": "<anonymous-schema-113>"
           },
           "faxNumber": {
             "type": "string",
@@ -292,7 +292,7 @@
               "555-555-5555 ext. 123",
               "+1-555-555-5555"
             ],
-            "x-parser-schema-id": "<anonymous-schema-113>"
+            "x-parser-schema-id": "<anonymous-schema-114>"
           },
           "email": {
             "description": "an email address for the item.",
@@ -303,19 +303,19 @@
               "bob@example.com",
               "alice@example.com"
             ],
-            "x-parser-schema-id": "<anonymous-schema-114>"
+            "x-parser-schema-id": "<anonymous-schema-115>"
           },
           "url": {
             "description": "primary URL for the item.",
             "type": "string",
             "format": "uri",
             "example": "https://www.facebook.com/hallandoates",
-            "x-parser-schema-id": "<anonymous-schema-115>"
+            "x-parser-schema-id": "<anonymous-schema-116>"
           }
         },
         "x-parser-schema-id": "ContactPoint"
       },
-      "x-parser-schema-id": "<anonymous-schema-109>"
+      "x-parser-schema-id": "<anonymous-schema-110>"
     },
     "dateCreated": {
       "$id": "http://realestate.yodata.me/schema/dateCreated.yaml",
@@ -328,16 +328,16 @@
       "description": "The date on which the item was most recently modified or when the item's entry was modified within a DataFeed.",
       "type": "string",
       "format": "date-time",
-      "x-parser-schema-id": "<anonymous-schema-136>"
+      "x-parser-schema-id": "<anonymous-schema-137>"
     },
     "email": {
       "type": "string",
       "format": "email",
       "x-faker": "internet.email",
-      "x-parser-schema-id": "<anonymous-schema-93>"
+      "x-parser-schema-id": "<anonymous-schema-94>"
     },
     "familyName": {
-      "$id": "htttp://realestate.yodata.me/schema/familyName.yaml",
+      "$id": "http://realestate.yodata.me/schema/familyName.yaml",
       "type": "string",
       "title": "Family Name",
       "description": "Last Name of a person",
@@ -365,7 +365,7 @@
       "type": "string",
       "description": "Do people still use fax machines?",
       "x-faker": "phone.phoneNumber",
-      "x-parser-schema-id": "<anonymous-schema-117>"
+      "x-parser-schema-id": "<anonymous-schema-118>"
     },
     "givenName": {
       "type": "string",
@@ -403,21 +403,21 @@
         "Ryan",
         "Jacob"
       ],
-      "x-parser-schema-id": "<anonymous-schema-118>"
+      "x-parser-schema-id": "<anonymous-schema-119>"
     },
     "honorificPrefix": {
       "title": "honorificPrefix",
       "description": "An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.",
       "type": "string",
       "example": "Dr",
-      "x-parser-schema-id": "<anonymous-schema-119>"
+      "x-parser-schema-id": "<anonymous-schema-120>"
     },
     "honorificSuffix": {
       "title": "honorificSuffix",
       "description": "An honorific title following a person's name like M.D.",
       "type": "string",
       "example": "Esq",
-      "x-parser-schema-id": "<anonymous-schema-120>"
+      "x-parser-schema-id": "<anonymous-schema-121>"
     },
     "identifier": {
       "title": "identifier",
@@ -434,12 +434,12 @@
           "originating_system_id": "123456"
         }
       ],
-      "x-parser-schema-id": "<anonymous-schema-94>"
+      "x-parser-schema-id": "<anonymous-schema-95>"
     },
     "jobTitle": {
       "items": {
         "type": "string",
-        "x-parser-schema-id": "<anonymous-schema-122>"
+        "x-parser-schema-id": "<anonymous-schema-123>"
       },
       "example": [
         "Chief Data Officer",
@@ -474,7 +474,7 @@
         null,
         null
       ],
-      "x-parser-schema-id": "<anonymous-schema-388>"
+      "x-parser-schema-id": "<anonymous-schema-389>"
     },
     "keywords": {
       "type": "array",
@@ -486,7 +486,7 @@
       "description": "languages spoken by the person",
       "type": "array",
       "items": {
-        "$id": "htttp://realestate.yodata.me/schema/Language.yaml",
+        "$id": "http://realestate.yodata.me/schema/Language.yaml",
         "description": "a written or spoken Language",
         "title": "Language",
         "type": "object",
@@ -499,17 +499,17 @@
           "type": {
             "type": "string",
             "const": "Language",
-            "x-parser-schema-id": "<anonymous-schema-124>"
+            "x-parser-schema-id": "<anonymous-schema-125>"
           },
           "name": {
             "type": "string",
             "description": "the display name of the language",
-            "x-parser-schema-id": "<anonymous-schema-125>"
+            "x-parser-schema-id": "<anonymous-schema-126>"
           },
           "additionalName": {
             "type": "string",
             "description": "BCP 47 language code",
-            "x-parser-schema-id": "<anonymous-schema-126>"
+            "x-parser-schema-id": "<anonymous-schema-127>"
           }
         },
         "examples": [
@@ -586,7 +586,7 @@
         ],
         "x-parser-schema-id": "Language"
       },
-      "x-parser-schema-id": "<anonymous-schema-123>"
+      "x-parser-schema-id": "<anonymous-schema-124>"
     },
     "leadOwner": {
       "type": "object",
@@ -622,7 +622,7 @@
       "description": "Full name of the person.",
       "type": "string",
       "x-faker": "name.findName",
-      "x-parser-schema-id": "<anonymous-schema-127>"
+      "x-parser-schema-id": "<anonymous-schema-128>"
     },
     "originatingSystem": {
       "type": "object",
@@ -643,10 +643,10 @@
       "type": "string",
       "description": "Primary phone number.",
       "example": "+15558675309",
-      "x-parser-schema-id": "<anonymous-schema-128>"
+      "x-parser-schema-id": "<anonymous-schema-129>"
     },
     "type": {
-      "x-parser-schema-id": "<anonymous-schema-95>",
+      "x-parser-schema-id": "<anonymous-schema-96>",
       "type": "string",
       "const": "Contact"
     },
@@ -654,9 +654,9 @@
       "type": "string",
       "description": "Organizations the person works for.",
       "x-faker": "company.companyName",
-      "x-parser-schema-id": "<anonymous-schema-129>"
+      "x-parser-schema-id": "<anonymous-schema-130>"
     }
   },
-  "x-parser-schema-id": "<anonymous-schema-130>",
+  "x-parser-schema-id": "<anonymous-schema-131>",
   "$id": "http://realestate.yodata.me/schema/Contact.json"
 }

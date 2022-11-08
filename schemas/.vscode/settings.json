@@ -1,0 +1,88 @@
+{
+  "json.schemas": [
+
+    {
+      "url": "http://www.asyncapi.com/definitions/2.5.0/channelItem.json",
+      "fileMatch": [
+        "channel.*",
+      ]
+    },
+    {
+      "url": "http://www.asyncapi.com/definitions/2.5.0/message.json",
+      "fileMatch": [
+        "award.*",
+        "franchise.*",
+        "lead.*",
+        "listing.*",
+        "marketing.*",
+        "profile.*",
+        "servicearea.*",
+        "team.*",
+        "website.*",
+        "*.message.*",
+        "!topic",
+      ]
+    },
+    {
+      "url": "http://www.asyncapi.com/definitions/2.4.0/schema.json",
+      "fileMatch": [
+        "*.schema.*",
+        "*.yaml",
+        "!*.award.*",
+        "!*.franchise.*",
+        "!*.lead.*",
+        "!*.listing.*",
+        "!*.website.*",
+      ]
+    },
+  ],
+  "awsconsole.ec2.region": "us-west-2",
+  "cSpell.words": [
+    "Arwe",
+    "Ashok",
+    "askquestion",
+    "Berners",
+    "Capadisli",
+    "debet",
+    "listingoffer",
+    "Malhotra",
+    "marketingpreferences",
+    "Populus",
+    "programcreate",
+    "programdelete",
+    "programmemberadd",
+    "programmemberremove",
+    "requestappointment",
+    "requestshowing",
+    "Sarven",
+    "saveproperty",
+    "savepropertysearch",
+    "searchproperties",
+    "seriescreate",
+    "seriesdelete",
+    "seriesupdate",
+    "servicearea",
+    "shareproperty",
+    "sharepropertyvaluereport",
+    "Speicher",
+    "teamcreate",
+    "teamdelete",
+    "teammemberadd",
+    "teammemberremove",
+    "teamupdate",
+    "transactionreport",
+    "viewproperty",
+    "viewpropertyvaluereport"
+  ],
+  "cSpell.ignoreWords": [
+    "Homewood"
+  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "search.collapseResults": "alwaysExpand",
+  "search.useGlobalIgnoreFiles": true,
+  "search.smartCase": true,
+  "yaml.schemas": {
+    "https://www.asyncapi.com/definitions/2.5.0/message.json": "file:///Users/dave/git/yodata/real-estate/schemas/topic/contact/activity.yaml"
+  },
+  "search.useParentIgnoreFiles": true,
+}

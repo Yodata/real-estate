@@ -3,15 +3,14 @@ messageId: contact#update
 summary: a contact (data.object) is updated by a user (data.agent)
 externalDocs: null
 headers:
-  $id: subscription_headers
-  title: CloudEvent
   type: object
   properties:
     time:
       type: string
       format: date-time
       description: date & time the event was produced
-      x-parser-schema-id: <anonymous-schema-30>
+      x-faker: date.past
+      x-parser-schema-id: <anonymous-schema-31>
     agent:
       type: string
       format: uri
@@ -24,20 +23,29 @@ headers:
 
         any future events related to this message will be sent to the same
         agent/recipient
-      example: https://andy_agent.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-31>
+      examples:
+        - https://teamsupermario.example.com/profile/card#me
+        - https://bigbrandrealestate.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-32>
     instrument:
       type: string
       format: uri
       description: the app or service that produced the event on behalf of the agent/user
-      example: https://supercrm.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-32>
+      examples:
+        - http://supercrm.example.com/profile/card#me
+        - http://reliance.example.com/profile/card#me
+        - http://moxiworks.example.com/profile/card#me
+        - http://listing-manager.example.com/profile/card#me
+        - http://ace.example.com/profile/card#me
+        - http://roqlogic.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-33>
     source:
       type: string
       format: uri
-      description: an agent, team or organization who received a copy of the event
-      example: https://bigbrandrealestate.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-33>
+      description: a copy of the event was sent to the source(s).
+      examples:
+        - https://bigbrandrealestate.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-34>
     originalRecipient:
       type: string
       format: uri
@@ -51,23 +59,47 @@ headers:
 
         if the originalRecipient is different from the agent, then you are
         subscribed to the event source
-      example: https://agentid.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-34>
+      example:
+        - http://bigbrandrealestate.example.com/profile/card#me
+        - http://teamsupermario.example.com/profile/card#me
+        - http://bob.example.com/profile/card#me
+        - http://jane.example.com/profile/card#me
+        - http://joe.example.com/profile/card#me
+        - http://jill.example.com/profile/card#me
+        - http://jim.example.com/profile/card#me
+        - http://jennifer.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-35>
     id:
       type: string
       format: uri
-      summary: the event id
-      description: |
-        the event id is a unique identifier for the event.
-        all subscribers will receive the same event id.
-      example: https://supercrm.example.com/publish/{eventid}
-      x-parser-schema-id: <anonymous-schema-35>
+      summary: the event id - the cannonical identifier for the event
+      description: >
+        the Event ID (aka "Publish ID") is the immutable canonical identifier
+        for the event.
+
+        it is a URI that is unique to the event and will not change.
+
+        all subscribers will receive the same id for the same event.
+      examples:
+        - http://supercrm.example.com/publish/12345
+        - http://reliance.example.com/publish/23456
+        - http://moxiworks.example.com/publish/34567
+        - http://listing-manager.example.com/publish/45678
+        - http://ace.example.com/publish/56789
+        - http://roqlogic.example.com/publish/67890
+      x-parser-schema-id: <anonymous-schema-36>
     '@id':
       type: string
       format: uri
-      summary: the message id - the uri of the message in your inbox
-      example: https://sumpercrm.example.com/inbox/{eventid}
-      x-parser-schema-id: <anonymous-schema-36>
+      summary: the @id is the url in your inbox where you can retrieve the event
+      examples:
+        - http://reliance.example.com/inbox/23456
+        - http://moxiworks.example.com/inbox/34567
+        - http://listing-manager.example.com/inbox/45678
+        - http://ace.example.com/inbox/56789
+        - http://roqlogic.example.com/inbox/67890
+      x-parser-schema-id: <anonymous-schema-37>
+  x-parser-schema-id: <anonymous-schema-30>
 payload:
   type: object
   required:
@@ -83,22 +115,22 @@ payload:
       properties:
         type:
           const: UpdateAction
-          x-parser-schema-id: <anonymous-schema-148>
+          x-parser-schema-id: <anonymous-schema-149>
         agent:
           type: object
           properties:
             type:
               const: Person
-              x-parser-schema-id: <anonymous-schema-91>
+              x-parser-schema-id: <anonymous-schema-92>
             name:
               type: string
               description: the name of the item
-              x-parser-schema-id: <anonymous-schema-92>
+              x-parser-schema-id: <anonymous-schema-93>
             email:
               type: string
               format: email
               x-faker: internet.email
-              x-parser-schema-id: <anonymous-schema-93>
+              x-parser-schema-id: <anonymous-schema-94>
             identifier:
               title: identifier
               type: object
@@ -109,11 +141,11 @@ payload:
                 - salesforceid: 0031U00002XW1QWQA1
                 - vendoraid: '123456'
                 - originating_system_id: '123456'
-              x-parser-schema-id: <anonymous-schema-94>
+              x-parser-schema-id: <anonymous-schema-95>
           required:
             - type
           minProperties: 2
-          x-parser-schema-id: <anonymous-schema-90>
+          x-parser-schema-id: <anonymous-schema-91>
         object:
           allOf:
             - title: Person
@@ -124,7 +156,7 @@ payload:
               properties:
                 type:
                   type: string
-                  x-parser-schema-id: <anonymous-schema-95>
+                  x-parser-schema-id: <anonymous-schema-96>
                 affiliation:
                   description: An organization that this person is affiliated with
                   type: array
@@ -132,8 +164,8 @@ payload:
                     type: string
                     format: uri
                     example: https://example.com/profile/card#me
-                    x-parser-schema-id: <anonymous-schema-97>
-                  x-parser-schema-id: <anonymous-schema-96>
+                    x-parser-schema-id: <anonymous-schema-98>
+                  x-parser-schema-id: <anonymous-schema-97>
                 address:
                   type: array
                   items:
@@ -145,7 +177,7 @@ payload:
                       type:
                         type: string
                         const: PostalAddress
-                        x-parser-schema-id: <anonymous-schema-99>
+                        x-parser-schema-id: <anonymous-schema-100>
                       streetAddress:
                         type: string
                         description: the street number and name.
@@ -154,7 +186,7 @@ payload:
                           - 5046 Ottis Point
                           - 166 Marion Burg
                           - 93044 Haley Stream
-                        x-parser-schema-id: <anonymous-schema-100>
+                        x-parser-schema-id: <anonymous-schema-101>
                       postOfficeBoxNumber:
                         type: string
                         description: The post office box number for PO box addresses.
@@ -163,7 +195,7 @@ payload:
                           - Box 1234
                           - Apt. 161
                           - Apt. 623
-                        x-parser-schema-id: <anonymous-schema-101>
+                        x-parser-schema-id: <anonymous-schema-102>
                       addressRegion:
                         type: string
                         description: State or Province.
@@ -173,7 +205,7 @@ payload:
                           - California
                           - MI
                           - null
-                        x-parser-schema-id: <anonymous-schema-102>
+                        x-parser-schema-id: <anonymous-schema-103>
                       addressLocality:
                         type: string
                         description: City, Township.
@@ -185,7 +217,7 @@ payload:
                           - Altamonte Springs
                           - West Ahmed
                           - Blaiseview
-                        x-parser-schema-id: <anonymous-schema-103>
+                        x-parser-schema-id: <anonymous-schema-104>
                       postalCode:
                         type: string
                         description: Zip/Post Code
@@ -196,7 +228,7 @@ payload:
                           - '40387'
                           - 50239-7698
                           - null
-                        x-parser-schema-id: <anonymous-schema-104>
+                        x-parser-schema-id: <anonymous-schema-105>
                       addressCountry:
                         type: string
                         description: >-
@@ -210,7 +242,7 @@ payload:
                           - SJ
                           - VN
                         x-faker: address.countryCode
-                        x-parser-schema-id: <anonymous-schema-105>
+                        x-parser-schema-id: <anonymous-schema-106>
                       addressCounty:
                         type: string
                         description: the county (us real estate extension)
@@ -220,7 +252,7 @@ payload:
                           - Buckinghamshire
                           - Borders
                           - null
-                        x-parser-schema-id: <anonymous-schema-106>
+                        x-parser-schema-id: <anonymous-schema-107>
                       addressSubdivision:
                         type: string
                         description: >-
@@ -232,19 +264,19 @@ payload:
                           - South Kensington
                           - SOMA (South of Market)
                           - Nob Hill
-                        x-parser-schema-id: <anonymous-schema-107>
+                        x-parser-schema-id: <anonymous-schema-108>
                     x-parser-schema-id: PostalAddress
-                  x-parser-schema-id: <anonymous-schema-98>
+                  x-parser-schema-id: <anonymous-schema-99>
                 birthDate:
                   description: date of birth.
                   type: string
                   format: date
-                  x-parser-schema-id: <anonymous-schema-108>
+                  x-parser-schema-id: <anonymous-schema-109>
                 contactPoint:
                   description: contact points for the person
                   type: array
                   items:
-                    $id: htttp://realestate.yodata.me/schema/ContactPoint.json
+                    $id: http://realestate.yodata.me/schema/ContactPoint.json
                     title: ContactPoint
                     description: >
                       A point of contact for the entity. By convention in the
@@ -264,7 +296,7 @@ payload:
                       type:
                         type: string
                         const: ContactPoint
-                        x-parser-schema-id: <anonymous-schema-110>
+                        x-parser-schema-id: <anonymous-schema-111>
                       name:
                         type: string
                         description: a label for the contactPoint, i.e. 'Work', or 'Home'
@@ -274,7 +306,7 @@ payload:
                           - Vacation
                           - Bob's Cell
                           - Alice's Work
-                        x-parser-schema-id: <anonymous-schema-111>
+                        x-parser-schema-id: <anonymous-schema-112>
                       telephone:
                         type: string
                         x-faker: phone.phoneNumber
@@ -283,7 +315,7 @@ payload:
                           - 555-555-5555 x123
                           - 555-555-5555 ext. 123
                           - +1-555-555-5555
-                        x-parser-schema-id: <anonymous-schema-112>
+                        x-parser-schema-id: <anonymous-schema-113>
                       faxNumber:
                         type: string
                         x-faker: phone.phoneNumber
@@ -292,7 +324,7 @@ payload:
                           - 555-555-5555 x123
                           - 555-555-5555 ext. 123
                           - +1-555-555-5555
-                        x-parser-schema-id: <anonymous-schema-113>
+                        x-parser-schema-id: <anonymous-schema-114>
                       email:
                         description: an email address for the item.
                         type: string
@@ -301,20 +333,20 @@ payload:
                         examples:
                           - bob@example.com
                           - alice@example.com
-                        x-parser-schema-id: <anonymous-schema-114>
+                        x-parser-schema-id: <anonymous-schema-115>
                       url:
                         description: primary URL for the item.
                         type: string
                         format: uri
                         example: https://www.facebook.com/hallandoates
-                        x-parser-schema-id: <anonymous-schema-115>
+                        x-parser-schema-id: <anonymous-schema-116>
                     x-parser-schema-id: ContactPoint
-                  x-parser-schema-id: <anonymous-schema-109>
+                  x-parser-schema-id: <anonymous-schema-110>
                 email:
                   type: string
                   format: email
                   x-faker: internet.email
-                  x-parser-schema-id: <anonymous-schema-93>
+                  x-parser-schema-id: <anonymous-schema-94>
                 additionalName:
                   title: additionalName
                   description: >-
@@ -328,9 +360,9 @@ payload:
                     - Babs,Barbara
                     - Katheryn Elizabeth Hudson,Katy Perry
                     - Destiny Hope Cyrus,Miley Cyrus
-                  x-parser-schema-id: <anonymous-schema-116>
+                  x-parser-schema-id: <anonymous-schema-117>
                 familyName:
-                  $id: htttp://realestate.yodata.me/schema/familyName.yaml
+                  $id: http://realestate.yodata.me/schema/familyName.yaml
                   type: string
                   title: Family Name
                   description: Last Name of a person
@@ -355,7 +387,7 @@ payload:
                   type: string
                   description: Do people still use fax machines?
                   x-faker: phone.phoneNumber
-                  x-parser-schema-id: <anonymous-schema-117>
+                  x-parser-schema-id: <anonymous-schema-118>
                 givenName:
                   type: string
                   description: First Name of a person
@@ -391,7 +423,7 @@ payload:
                     - Jeffrey
                     - Ryan
                     - Jacob
-                  x-parser-schema-id: <anonymous-schema-118>
+                  x-parser-schema-id: <anonymous-schema-119>
                 honorificPrefix:
                   title: honorificPrefix
                   description: >-
@@ -399,29 +431,29 @@ payload:
                     Dr/Mrs/Mr.
                   type: string
                   example: Dr
-                  x-parser-schema-id: <anonymous-schema-119>
+                  x-parser-schema-id: <anonymous-schema-120>
                 honorificSuffix:
                   title: honorificSuffix
                   description: An honorific title following a person's name like M.D.
                   type: string
                   example: Esq
-                  x-parser-schema-id: <anonymous-schema-120>
+                  x-parser-schema-id: <anonymous-schema-121>
                 jobTitle:
                   title: jobTitle
                   description: job tiles associated with the item
                   type: array
                   items:
                     type: string
-                    x-parser-schema-id: <anonymous-schema-122>
+                    x-parser-schema-id: <anonymous-schema-123>
                   example:
                     - Chief Data Officer
                     - Sanitation Engineer
-                  x-parser-schema-id: <anonymous-schema-121>
+                  x-parser-schema-id: <anonymous-schema-122>
                 knowsLanguage:
                   description: languages spoken by the person
                   type: array
                   items:
-                    $id: htttp://realestate.yodata.me/schema/Language.yaml
+                    $id: http://realestate.yodata.me/schema/Language.yaml
                     description: a written or spoken Language
                     title: Language
                     type: object
@@ -433,15 +465,15 @@ payload:
                       type:
                         type: string
                         const: Language
-                        x-parser-schema-id: <anonymous-schema-124>
+                        x-parser-schema-id: <anonymous-schema-125>
                       name:
                         type: string
                         description: the display name of the language
-                        x-parser-schema-id: <anonymous-schema-125>
+                        x-parser-schema-id: <anonymous-schema-126>
                       additionalName:
                         type: string
                         description: BCP 47 language code
-                        x-parser-schema-id: <anonymous-schema-126>
+                        x-parser-schema-id: <anonymous-schema-127>
                     examples:
                       - type: Language
                         name: English
@@ -486,22 +518,22 @@ payload:
                         name: Portuguese
                         additionalName: pt
                     x-parser-schema-id: Language
-                  x-parser-schema-id: <anonymous-schema-123>
+                  x-parser-schema-id: <anonymous-schema-124>
                 name:
                   description: Full name of the person.
                   type: string
                   x-faker: name.findName
-                  x-parser-schema-id: <anonymous-schema-127>
+                  x-parser-schema-id: <anonymous-schema-128>
                 telephone:
                   type: string
                   description: Primary phone number.
                   example: '+15558675309'
-                  x-parser-schema-id: <anonymous-schema-128>
+                  x-parser-schema-id: <anonymous-schema-129>
                 worksFor:
                   type: string
                   description: Organizations the person works for.
                   x-faker: company.companyName
-                  x-parser-schema-id: <anonymous-schema-129>
+                  x-parser-schema-id: <anonymous-schema-130>
               x-parser-schema-id: Person
             - title: Contact
               description: a CRM contact.
@@ -519,7 +551,7 @@ payload:
                     - salesforceid: 0031U00002XW1QWQA1
                     - vendoraid: '123456'
                     - originating_system_id: '123456'
-                  x-parser-schema-id: <anonymous-schema-94>
+                  x-parser-schema-id: <anonymous-schema-95>
                 additionalProperty:
                   title: additionalProperty
                   type: object
@@ -576,11 +608,11 @@ payload:
                     - null
                     - null
                     - null
-                  x-parser-schema-id: <anonymous-schema-388>
+                  x-parser-schema-id: <anonymous-schema-389>
                 contactGroup:
                   type: array
                   items:
-                    $id: htttp://realestate.yodata.me/schema/ContactGroup.json
+                    $id: http://realestate.yodata.me/schema/ContactGroup.json
                     title: ContactGroup
                     description: groups the contact is a member of.
                     type: object
@@ -603,7 +635,7 @@ payload:
                           - salesforceid: 0031U00002XW1QWQA1
                           - vendoraid: '123456'
                           - originating_system_id: '123456'
-                        x-parser-schema-id: <anonymous-schema-94>
+                        x-parser-schema-id: <anonymous-schema-95>
                       name:
                         type: string
                         examples:
@@ -669,12 +701,12 @@ payload:
                     when the item's entry was modified within a DataFeed.
                   type: string
                   format: date-time
-                  x-parser-schema-id: <anonymous-schema-136>
-              x-parser-schema-id: <anonymous-schema-130>
+                  x-parser-schema-id: <anonymous-schema-137>
+              x-parser-schema-id: <anonymous-schema-131>
           x-parser-schema-id: Contact
-      x-parser-schema-id: <anonymous-schema-147>
+      x-parser-schema-id: <anonymous-schema-148>
     topic:
       const: realestate/contact#update
-      x-parser-schema-id: <anonymous-schema-146>
-  x-parser-schema-id: <anonymous-schema-145>
+      x-parser-schema-id: <anonymous-schema-147>
+  x-parser-schema-id: <anonymous-schema-146>
 

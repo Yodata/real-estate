@@ -4,13 +4,18 @@ messageId: website#requestappointment
 name: realestate/website#requestappointment
 summary: website user has requested an appointment
 headers:
-  type: object
-  properties:
-    topic: { const: realestate/website#requestappointment }
+  $ref: ../../subscription_headers.yaml
 payload:
   type: object
   properties:
+    topic: { type: string, const: realestate/website#requestappointment }
     data:
+      type: object
+      required:
+        - type
+        - agent
+        - object
+        - recipient
       properties:
         type: { const: RequestAppointmentAction }
         agent:

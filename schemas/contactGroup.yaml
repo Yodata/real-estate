@@ -1,5 +1,5 @@
 # @format
-$id: htttp://realestate.yodata.me/schema/ContactGroup.json
+$id: http://realestate.yodata.me/schema/ContactGroup.json
 title: ContactGroup
 description: groups the contact is a member of.
 type: object

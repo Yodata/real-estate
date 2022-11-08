@@ -16,14 +16,14 @@
           "Thursday",
           "Friday"
         ],
-        "x-parser-schema-id": "<anonymous-schema-833>"
+        "x-parser-schema-id": "<anonymous-schema-837>"
       },
       "example": [
         "Monday",
         "Wednesday",
         "Friday"
       ],
-      "x-parser-schema-id": "<anonymous-schema-832>"
+      "x-parser-schema-id": "<anonymous-schema-836>"
     },
     "byMonth": {
       "description": "Defines the month(s) of the year on which a recurring Event takes place. Specified as an Integer between 1-12. January is 1.",
@@ -44,26 +44,26 @@
           11,
           12
         ],
-        "x-parser-schema-id": "<anonymous-schema-835>"
+        "x-parser-schema-id": "<anonymous-schema-839>"
       },
       "example": [
         1
       ],
-      "x-parser-schema-id": "<anonymous-schema-834>"
+      "x-parser-schema-id": "<anonymous-schema-838>"
     },
     "byMonthDay": {
       "type": "array",
       "description": "Defines the day(s) of the month on which a recurring Event takes place. Specified as an Integer between 1-31.",
       "items": {
         "type": "number",
-        "x-parser-schema-id": "<anonymous-schema-837>"
+        "x-parser-schema-id": "<anonymous-schema-841>"
       },
-      "x-parser-schema-id": "<anonymous-schema-836>"
+      "x-parser-schema-id": "<anonymous-schema-840>"
     },
     "type": {
       "type": "string",
       "description": "The item type (Linked-Data @type)",
-      "x-parser-schema-id": "<anonymous-schema-630>"
+      "x-parser-schema-id": "<anonymous-schema-634>"
     }
   },
   "x-parser-schema-id": "Schedule",

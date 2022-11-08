@@ -9,7 +9,7 @@ properties:
     description: creator of the collection
     type: string
     example: https://{agentid}.example.com/profile/card#me
-    x-parser-schema-id: <anonymous-schema-618>
+    x-parser-schema-id: <anonymous-schema-622>
   dateCreated:
     $id: http://realestate.yodata.me/schema/dateCreated.yaml
     type: string
@@ -22,7 +22,7 @@ properties:
       entry was modified within a DataFeed.
     type: string
     format: date-time
-    x-parser-schema-id: <anonymous-schema-136>
+    x-parser-schema-id: <anonymous-schema-137>
   identifier:
     title: identifier
     type: object
@@ -33,25 +33,25 @@ properties:
       - salesforceid: 0031U00002XW1QWQA1
       - vendoraid: '123456'
       - originating_system_id: '123456'
-    x-parser-schema-id: <anonymous-schema-94>
+    x-parser-schema-id: <anonymous-schema-95>
   member:
     description: members of the collection
     type: array
     items:
       type: object
-      x-parser-schema-id: <anonymous-schema-620>
-    x-parser-schema-id: <anonymous-schema-619>
+      x-parser-schema-id: <anonymous-schema-624>
+    x-parser-schema-id: <anonymous-schema-623>
   name:
     type: string
     description: name of the collection
     example: Clients
-    x-parser-schema-id: <anonymous-schema-617>
+    x-parser-schema-id: <anonymous-schema-621>
   type:
     description: Collection
     type: string
     enum:
       - Collection
-    x-parser-schema-id: <anonymous-schema-616>
+    x-parser-schema-id: <anonymous-schema-620>
 x-parser-schema-id: Collection
 $id: http://realestate.yodata.me/schema/Collection.yaml
 

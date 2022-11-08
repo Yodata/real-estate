@@ -9,20 +9,20 @@
       "format": "uri",
       "description": "ASSOC-ID",
       "example": "https://{userid}.example.com/profile/card#me",
-      "x-parser-schema-id": "<anonymous-schema-628>"
+      "x-parser-schema-id": "<anonymous-schema-632>"
     },
     "author": {
       "type": "string",
       "format": "uri",
       "description": "OFFICE-ID",
       "example": "https://{officeid}.example.com/profile/card#me",
-      "x-parser-schema-id": "<anonymous-schema-623>"
+      "x-parser-schema-id": "<anonymous-schema-627>"
     },
     "batchId": {
       "type": "string",
       "description": "BATCH-ID",
       "example": "0001",
-      "x-parser-schema-id": "<anonymous-schema-622>"
+      "x-parser-schema-id": "<anonymous-schema-626>"
     },
     "object": {
       "type": "object",
@@ -35,7 +35,7 @@
         "type": {
           "type": "string",
           "description": "The item type (Linked-Data @type)",
-          "x-parser-schema-id": "<anonymous-schema-630>"
+          "x-parser-schema-id": "<anonymous-schema-634>"
         },
         "givenName": {
           "type": "string",
@@ -73,16 +73,16 @@
             "Ryan",
             "Jacob"
           ],
-          "x-parser-schema-id": "<anonymous-schema-118>"
+          "x-parser-schema-id": "<anonymous-schema-119>"
         },
         "additionalName": {
           "type": "string",
           "description": "CUSTOMER-MIDDLE-INITIAL",
           "example": "M",
-          "x-parser-schema-id": "<anonymous-schema-631>"
+          "x-parser-schema-id": "<anonymous-schema-635>"
         },
         "familyName": {
-          "$id": "htttp://realestate.yodata.me/schema/familyName.yaml",
+          "$id": "http://realestate.yodata.me/schema/familyName.yaml",
           "type": "string",
           "title": "Family Name",
           "description": "Last Name of a person",
@@ -110,22 +110,22 @@
           "type": "string",
           "description": "gender of the Customer (why?)",
           "example": "M",
-          "x-parser-schema-id": "<anonymous-schema-632>"
+          "x-parser-schema-id": "<anonymous-schema-636>"
         }
       },
-      "x-parser-schema-id": "<anonymous-schema-629>"
+      "x-parser-schema-id": "<anonymous-schema-633>"
     },
     "position": {
       "type": "number",
       "description": "ADJUSTMENT-SEQUENCE",
       "example": 1,
-      "x-parser-schema-id": "<anonymous-schema-627>"
+      "x-parser-schema-id": "<anonymous-schema-631>"
     },
     "transactionId": {
       "type": "string",
       "description": "TRANS-NO",
       "example": "0000097123",
-      "x-parser-schema-id": "<anonymous-schema-625>"
+      "x-parser-schema-id": "<anonymous-schema-629>"
     },
     "transactionRole": {
       "type": "string",
@@ -139,14 +139,14 @@
         "Buyer",
         "Seller"
       ],
-      "x-parser-schema-id": "<anonymous-schema-626>"
+      "x-parser-schema-id": "<anonymous-schema-630>"
     },
     "transactionType": {
       "type": "string",
       "description": "TRANS-TYPE",
       "x-range": "TransactionType",
       "example": "SalesTransactionType",
-      "x-parser-schema-id": "<anonymous-schema-624>"
+      "x-parser-schema-id": "<anonymous-schema-628>"
     },
     "type": {
       "type": "string",
@@ -154,7 +154,7 @@
       "enum": [
         "ContactSummaryReport"
       ],
-      "x-parser-schema-id": "<anonymous-schema-621>"
+      "x-parser-schema-id": "<anonymous-schema-625>"
     }
   },
   "x-parser-schema-id": "ContactSummary",

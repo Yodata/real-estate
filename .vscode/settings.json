@@ -1,0 +1,72 @@
+{
+  "markdown.preview.typographer": true,
+  "eslint.alwaysShowStatus": true,
+  "eslint.codeActionsOnSave.mode": "problems",
+  "eslint.codeActionsOnSave.rules": null,
+  "eslint.nodeEnv": "",
+  "importCost.bundleSizeDecoration": "minified",
+  "importCost.javascriptExtensions": [
+    ".js",
+    ".jsx",
+    ".ts",
+    ".tsx"
+  ],
+  "eslint.format.enable": true,
+  "gitHistory.includeRemoteBranches": true,
+  "gitProjectManager.displayProjectPath": true,
+  "gitProjectManager.ignoredFolders": [
+    "node_modules"
+  ],
+  "markdown.allAvailableLanguages": false,
+  "markdown.docsetLanguages": [
+    "HTML",
+    "HTTP",
+    "JavaScript",
+    "Bash"
+  ],
+  "markdown.enableMetadataDateReminder": false,
+  "markdown.validate.enabled": true,
+  "markdown.validate.referenceLinks.enabled": "error",
+  "markdown-preview-enhanced.enableTypographer": true,
+  "npm.enableRunFromFolder": true,
+  "npm.exclude": "",
+  "editor.fontSize": 16,
+  "editor.cursorStyle": "block",
+  "files.associations": {
+    "/template/*.js": "javascriptreact"
+  },
+  "workbench.editor.autoLockGroups": {
+    "vscode.markdown.preview.editor": true
+  },
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.minimumContrastRatio": 7,
+  "terminal.integrated.confirmOnExit": "hasChildProcesses",
+  "terminal.integrated.defaultLocation": "editor",
+  "jest.testExplorer": {
+    "enabled": true
+  },
+  "jest.jestCommandLine": "NODE_OPTIONS=--experimental-vm-modules npx jest",
+  "yaml.schemas": {
+    "https://raw.githubusercontent.com/awslabs/goformation/master/schema/sam.schema.json": [
+      "sam.yaml",
+      "sam.json"
+    ],
+    "http://asyncapi.com/definitions/2.5.0/asyncapi.json": [
+      "asyncapi.yaml"
+    ],
+    "http://asyncapi.com/definitions/2.5.0/message.json": [
+      "src/schemas/award/*.yaml",
+      "src/schemas/contact/*.yaml",
+      "src/schemas/franchise/*.yaml",
+      "src/schemas/listing/*.yaml",
+      "src/schemas/marketing/*.yaml",
+      "src/schemas/profile/*.yaml",
+      "src/schemas/servicearea/*.yaml",
+      "src/schemas/team/*.yaml",
+      "src/schemas/website/*.yaml"
+    ],
+    "http://asyncapi.com/definitions/2.5.0/schema.json": [],
+    "https://www.asyncapi.com/definitions/2.4.0/asyncapi.json": "file:///Users/dave/git/yodata/real-estate/schemas/asyncapi.yaml"
+  },
+  "zenMode.hideLineNumbers": false
+}

@@ -11,39 +11,39 @@ properties:
     example:
       type: State
       name: California
-    x-parser-schema-id: <anonymous-schema-690>
+    x-parser-schema-id: <anonymous-schema-694>
   issuedThrough:
     type: object
     description: the service through which the permit was granted
     example:
       type: Service
       name: Department of Real Estate
-    x-parser-schema-id: <anonymous-schema-691>
+    x-parser-schema-id: <anonymous-schema-695>
   name:
     type: string
     description: Common or display value of the Permit.
     example: DRE Number
-    x-parser-schema-id: <anonymous-schema-689>
+    x-parser-schema-id: <anonymous-schema-693>
   type:
     type: string
     description: Permit type.
     enum:
       - Permit
-    x-parser-schema-id: <anonymous-schema-688>
+    x-parser-schema-id: <anonymous-schema-692>
   validFrom:
     type: string
     format: date-time
     description: start date
-    x-parser-schema-id: <anonymous-schema-693>
+    x-parser-schema-id: <anonymous-schema-697>
   validIn:
     type: object
     x-range: Place
-    x-parser-schema-id: <anonymous-schema-692>
+    x-parser-schema-id: <anonymous-schema-696>
   validUntil:
     type: string
     format: date-time
     description: end date
-    x-parser-schema-id: <anonymous-schema-694>
+    x-parser-schema-id: <anonymous-schema-698>
 x-parser-schema-id: Permit
 $id: http://realestate.yodata.me/schema/Permit.yaml
 

@@ -8,36 +8,36 @@
     "batchId": {
       "type": "string",
       "description": "BATCH-ID",
-      "x-parser-schema-id": "<anonymous-schema-655>"
+      "x-parser-schema-id": "<anonymous-schema-659>"
     },
     "dateCreated": {
       "type": "string",
       "format": "date-time",
       "description": "YEAR-MONTH",
-      "x-parser-schema-id": "<anonymous-schema-657>"
+      "x-parser-schema-id": "<anonymous-schema-661>"
     },
     "listingsAddedCount": {
       "type": "number",
       "description": "LISTINGS-TAKEN",
-      "x-parser-schema-id": "<anonymous-schema-658>"
+      "x-parser-schema-id": "<anonymous-schema-662>"
     },
     "reportingOfficeId": {
       "type": "string",
       "format": "uri",
       "description": "OFFICE-ID",
       "example": "https://{officeid}.example.com/profile/card#me",
-      "x-parser-schema-id": "<anonymous-schema-656>"
+      "x-parser-schema-id": "<anonymous-schema-660>"
     },
     "totalListingsCount": {
       "type": "number",
       "description": "LISTINGS-INVENTORY",
-      "x-parser-schema-id": "<anonymous-schema-659>"
+      "x-parser-schema-id": "<anonymous-schema-663>"
     },
     "type": {
       "type": "string",
       "description": "RECORD-TYPE",
       "example": "ListingReport",
-      "x-parser-schema-id": "<anonymous-schema-654>"
+      "x-parser-schema-id": "<anonymous-schema-658>"
     }
   },
   "x-parser-schema-id": "ListingReport"

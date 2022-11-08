@@ -6,35 +6,35 @@ properties:
   BUSO:
     type: string
     description: Business Opportunity
-    x-parser-schema-id: <anonymous-schema-751>
+    x-parser-schema-id: <anonymous-schema-755>
   COMS:
     type: string
     description: commercial standard applies
-    x-parser-schema-id: <anonymous-schema-750>
+    x-parser-schema-id: <anonymous-schema-754>
   FARM:
     type: string
     description: Farm Residential
-    x-parser-schema-id: <anonymous-schema-749>
+    x-parser-schema-id: <anonymous-schema-753>
   LAND:
     type: string
     description: Land
-    x-parser-schema-id: <anonymous-schema-747>
+    x-parser-schema-id: <anonymous-schema-751>
   MOBI:
     type: string
     description: Mobile home
-    x-parser-schema-id: <anonymous-schema-748>
+    x-parser-schema-id: <anonymous-schema-752>
   RESI:
     type: string
     description: Residential
-    x-parser-schema-id: <anonymous-schema-744>
+    x-parser-schema-id: <anonymous-schema-748>
   RINC:
     type: string
     description: Residential Income
-    x-parser-schema-id: <anonymous-schema-746>
+    x-parser-schema-id: <anonymous-schema-750>
   RLSE:
     type: string
     description: Residential Property Lease
-    x-parser-schema-id: <anonymous-schema-745>
+    x-parser-schema-id: <anonymous-schema-749>
 example:
   propertyType: RESI
 x-parser-schema-id: PropertyType

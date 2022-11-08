@@ -14,12 +14,12 @@ properties:
       - Person
       - Organization
     example: http://agent.example.com/profile/card#me
-    x-parser-schema-id: <anonymous-schema-177>
+    x-parser-schema-id: <anonymous-schema-178>
   dateCompleted:
     description: The date on which the item was created.
     type: string
     format: date-time
-    x-parser-schema-id: <anonymous-schema-178>
+    x-parser-schema-id: <anonymous-schema-179>
   dateCreated:
     $id: http://realestate.yodata.me/schema/dateCreated.yaml
     type: string
@@ -32,12 +32,12 @@ properties:
       entry was modified within a DataFeed.
     type: string
     format: date-time
-    x-parser-schema-id: <anonymous-schema-136>
+    x-parser-schema-id: <anonymous-schema-137>
   description:
     type: string
     description: description of the item
     example: this is the description of my awesome plan
-    x-parser-schema-id: <anonymous-schema-161>
+    x-parser-schema-id: <anonymous-schema-162>
   identifier:
     title: identifier
     type: object
@@ -48,7 +48,7 @@ properties:
       - salesforceid: 0031U00002XW1QWQA1
       - vendoraid: '123456'
       - originating_system_id: '123456'
-    x-parser-schema-id: <anonymous-schema-94>
+    x-parser-schema-id: <anonymous-schema-95>
   member:
     type: array
     description: tasks which make up the plan
@@ -65,7 +65,7 @@ properties:
           description: The item type (Linked-Data @type)
           enum:
             - Task
-          x-parser-schema-id: <anonymous-schema-163>
+          x-parser-schema-id: <anonymous-schema-164>
         identifier:
           title: identifier
           type: object
@@ -78,7 +78,7 @@ properties:
             - originating_system_id: '123456'
           example:
             redEvent_ID: '23445'
-          x-parser-schema-id: <anonymous-schema-164>
+          x-parser-schema-id: <anonymous-schema-165>
         actionStatus:
           example: PotentialActionStatus
           type: string
@@ -93,7 +93,7 @@ properties:
             - FailedActionStatus
             - ActiveActionStatus
             - PotentialActionStatus
-          x-parser-schema-id: <anonymous-schema-165>
+          x-parser-schema-id: <anonymous-schema-166>
         memberOf:
           type: object
           x-range: Plan
@@ -102,7 +102,7 @@ properties:
             type: Plan
             identifier:
               redPlan_ID: xxxx
-          x-parser-schema-id: <anonymous-schema-166>
+          x-parser-schema-id: <anonymous-schema-167>
         agent:
           type: object
           description: the party who completed, or will complete the task
@@ -114,7 +114,7 @@ properties:
           example:
             type: RealEstateAgent
             id: http://user.example.com/profile/card#me
-          x-parser-schema-id: <anonymous-schema-167>
+          x-parser-schema-id: <anonymous-schema-168>
         participant:
           x-title: participant
           x-range:
@@ -126,40 +126,40 @@ properties:
           type: array
           items:
             type: object
-            x-parser-schema-id: <anonymous-schema-169>
+            x-parser-schema-id: <anonymous-schema-170>
           example:
             - type: Contact
               name: Bruce Wayne
               email: bruce@example.com
               identifier:
                 redContact_GUID: 92d0a096-457e-4643-ace8-fa95b6bdb1c5
-          x-parser-schema-id: <anonymous-schema-168>
+          x-parser-schema-id: <anonymous-schema-169>
         name:
           type: string
           description: name or title
           example: Call Ricky
-          x-parser-schema-id: <anonymous-schema-170>
+          x-parser-schema-id: <anonymous-schema-171>
         description:
           type: string
           description: task detailed description
           example: Agenda 1. Something 2. Something Else ...
-          x-parser-schema-id: <anonymous-schema-171>
+          x-parser-schema-id: <anonymous-schema-172>
         keywords:
           type: array
           items:
             type: string
-            x-parser-schema-id: <anonymous-schema-173>
-          x-parser-schema-id: <anonymous-schema-172>
+            x-parser-schema-id: <anonymous-schema-174>
+          x-parser-schema-id: <anonymous-schema-173>
         dateDue:
           description: the due date-time (ISO 8601 formated)
           type: string
           format: date-time
-          x-parser-schema-id: <anonymous-schema-174>
+          x-parser-schema-id: <anonymous-schema-175>
         dateCompleted:
           type: string
           format: date-time
           description: date the task was completed
-          x-parser-schema-id: <anonymous-schema-175>
+          x-parser-schema-id: <anonymous-schema-176>
         location:
           type: object
           description: the physical location where an event takes place
@@ -174,9 +174,9 @@ properties:
               postalCode: '10007'
               addressCounty: Gotham addressCounty
               addressSubdivision: Gotham Heights
-          x-parser-schema-id: <anonymous-schema-176>
+          x-parser-schema-id: <anonymous-schema-177>
       x-parser-schema-id: Task
-    x-parser-schema-id: <anonymous-schema-162>
+    x-parser-schema-id: <anonymous-schema-163>
   name:
     type: string
     description: name of the plan
@@ -185,10 +185,10 @@ properties:
       - annoying but effective plan
       - plan to take over the world
       - birthdays and anniversaries plan
-    x-parser-schema-id: <anonymous-schema-155>
+    x-parser-schema-id: <anonymous-schema-156>
   type:
     const: Plan
-    x-parser-schema-id: <anonymous-schema-160>
+    x-parser-schema-id: <anonymous-schema-161>
 x-parser-schema-id: Plan
 $id: http://realestate.yodata.me/schema/Plan.yaml
 

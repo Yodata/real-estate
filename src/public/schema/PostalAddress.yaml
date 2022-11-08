@@ -16,7 +16,7 @@ properties:
       - SJ
       - VN
     x-faker: address.countryCode
-    x-parser-schema-id: <anonymous-schema-105>
+    x-parser-schema-id: <anonymous-schema-106>
   addressCounty:
     type: string
     description: the county (us real estate extension)
@@ -26,7 +26,7 @@ properties:
       - Buckinghamshire
       - Borders
       - null
-    x-parser-schema-id: <anonymous-schema-106>
+    x-parser-schema-id: <anonymous-schema-107>
   addressLocality:
     type: string
     description: City, Township.
@@ -38,7 +38,7 @@ properties:
       - Altamonte Springs
       - West Ahmed
       - Blaiseview
-    x-parser-schema-id: <anonymous-schema-103>
+    x-parser-schema-id: <anonymous-schema-104>
   addressRegion:
     type: string
     description: State or Province.
@@ -48,7 +48,7 @@ properties:
       - California
       - MI
       - null
-    x-parser-schema-id: <anonymous-schema-102>
+    x-parser-schema-id: <anonymous-schema-103>
   addressSubdivision:
     type: string
     description: the subdivision or neighborhood (us real estate extension)
@@ -58,7 +58,7 @@ properties:
       - South Kensington
       - SOMA (South of Market)
       - Nob Hill
-    x-parser-schema-id: <anonymous-schema-107>
+    x-parser-schema-id: <anonymous-schema-108>
   postOfficeBoxNumber:
     type: string
     description: The post office box number for PO box addresses.
@@ -67,7 +67,7 @@ properties:
       - Box 1234
       - Apt. 161
       - Apt. 623
-    x-parser-schema-id: <anonymous-schema-101>
+    x-parser-schema-id: <anonymous-schema-102>
   postalCode:
     type: string
     description: Zip/Post Code
@@ -78,7 +78,7 @@ properties:
       - '40387'
       - 50239-7698
       - null
-    x-parser-schema-id: <anonymous-schema-104>
+    x-parser-schema-id: <anonymous-schema-105>
   streetAddress:
     type: string
     description: the street number and name.
@@ -87,10 +87,10 @@ properties:
       - 5046 Ottis Point
       - 166 Marion Burg
       - 93044 Haley Stream
-    x-parser-schema-id: <anonymous-schema-100>
+    x-parser-schema-id: <anonymous-schema-101>
   type:
     type: string
     const: PostalAddress
-    x-parser-schema-id: <anonymous-schema-99>
+    x-parser-schema-id: <anonymous-schema-100>
 x-parser-schema-id: PostalAddress
 

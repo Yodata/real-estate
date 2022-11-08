@@ -7,7 +7,7 @@
     "name": {
       "type": "string",
       "description": "the name of the item",
-      "x-parser-schema-id": "<anonymous-schema-92>"
+      "x-parser-schema-id": "<anonymous-schema-93>"
     },
     "type": {
       "type": "string",
@@ -15,7 +15,7 @@
       "enum": [
         "State"
       ],
-      "x-parser-schema-id": "<anonymous-schema-840>"
+      "x-parser-schema-id": "<anonymous-schema-844>"
     }
   },
   "example": {

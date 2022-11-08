@@ -14,7 +14,7 @@
         "CompletedActionStatus",
         "FailedActionStatus"
       ],
-      "x-parser-schema-id": "<anonymous-schema-648>"
+      "x-parser-schema-id": "<anonymous-schema-652>"
     },
     "error": {
       "type": "object",
@@ -24,15 +24,15 @@
           "description": "the error message",
           "type": "string",
           "example": "sorry dave",
-          "x-parser-schema-id": "<anonymous-schema-652>"
+          "x-parser-schema-id": "<anonymous-schema-656>"
         },
         "stack": {
           "description": "the error stack",
           "type": "string",
-          "x-parser-schema-id": "<anonymous-schema-653>"
+          "x-parser-schema-id": "<anonymous-schema-657>"
         }
       },
-      "x-parser-schema-id": "<anonymous-schema-651>"
+      "x-parser-schema-id": "<anonymous-schema-655>"
     },
     "object": {
       "type": "object",
@@ -47,17 +47,17 @@
           }
         }
       },
-      "x-parser-schema-id": "<anonymous-schema-649>"
+      "x-parser-schema-id": "<anonymous-schema-653>"
     },
     "result": {
       "type": "object",
       "description": "the output of a sucessful execution",
-      "x-parser-schema-id": "<anonymous-schema-650>"
+      "x-parser-schema-id": "<anonymous-schema-654>"
     },
     "type": {
       "type": "string",
       "description": "the action type (LogAction)",
-      "x-parser-schema-id": "<anonymous-schema-647>"
+      "x-parser-schema-id": "<anonymous-schema-651>"
     }
   },
   "x-parser-schema-id": "LogAction",

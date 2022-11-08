@@ -1,6 +1,7 @@
 # @format
 # yaml-language-server: $schema=https://www.asyncapi.com/definitions/2.5.0/schema.json
 # a reference to a contact group "collection" with minimal properties.
+
 title: Contact Group Reference
 description: A reference to a contact group "collection" with minimal properties.
 type: object

@@ -8,23 +8,23 @@ properties:
     description: The date/time the item was accepted by the recipient
     x-range: DateTime
     example: 2019-11-25T04:23:32.000Z
-    x-parser-schema-id: <anonymous-schema-214>
+    x-parser-schema-id: <anonymous-schema-216>
   dateReceived:
     type: string
     description: The date/time the item was received by it's recipient
     x-range: DateTime
     example: 2019-11-25T04:23:32.000Z
-    x-parser-schema-id: <anonymous-schema-217>
+    x-parser-schema-id: <anonymous-schema-219>
   dateRejected:
     type: string
     format: date-time
     description: The date/time the item was rejected by the recipient
-    x-parser-schema-id: <anonymous-schema-215>
+    x-parser-schema-id: <anonymous-schema-217>
   dateSent:
     description: the date the lead was sent
     type: string
     format: date-time
-    x-parser-schema-id: <anonymous-schema-216>
+    x-parser-schema-id: <anonymous-schema-218>
   identifier:
     title: identifier
     type: object
@@ -35,7 +35,7 @@ properties:
       - salesforceid: 0031U00002XW1QWQA1
       - vendoraid: '123456'
       - originating_system_id: '123456'
-    x-parser-schema-id: <anonymous-schema-94>
+    x-parser-schema-id: <anonymous-schema-95>
   leadSource:
     description: >-
       lead origin, may be a website event or a thing such as a website, zillow,
@@ -52,8 +52,8 @@ properties:
         object:
           type: Question
           text: Help me I'm trapped inside documentation.
-      x-parser-schema-id: <anonymous-schema-219>
-    x-parser-schema-id: <anonymous-schema-218>
+      x-parser-schema-id: <anonymous-schema-221>
+    x-parser-schema-id: <anonymous-schema-220>
   object:
     description: the lead (Contact)
     x-range:
@@ -64,7 +64,7 @@ properties:
       name: Joe Smith
       telephone: 731-620-9877 x6155
       email: Giuseppe.Lang62@hotmail.com
-    x-parser-schema-id: <anonymous-schema-210>
+    x-parser-schema-id: <anonymous-schema-212>
   owner:
     description: the original owner of the lead
     x-range:
@@ -74,25 +74,25 @@ properties:
     type: string
     format: uri
     example: http://{lead-owner}.example.com/profile/card#me
-    x-parser-schema-id: <anonymous-schema-213>
+    x-parser-schema-id: <anonymous-schema-215>
   recipient:
     description: the lead recipient
     type: string
     format: uri
     example: http://{lead-recipient}.example.com/profile/card#me
-    x-parser-schema-id: <anonymous-schema-211>
+    x-parser-schema-id: <anonymous-schema-213>
   sender:
     description: the lead provider
     type: string
     format: uri
     example: http://{lead-sender}.example.com/profile/card#me
-    x-parser-schema-id: <anonymous-schema-212>
+    x-parser-schema-id: <anonymous-schema-214>
   type:
     type: string
     enum:
       - Lead
     description: Lead
-    x-parser-schema-id: <anonymous-schema-209>
+    x-parser-schema-id: <anonymous-schema-211>
 x-parser-schema-id: Lead
 $id: http://realestate.yodata.me/schema/Lead.yaml
 

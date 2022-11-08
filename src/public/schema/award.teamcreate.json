@@ -6,62 +6,96 @@
   "contentType": "application/json",
   "externalDocs": null,
   "headers": {
-    "$id": "subscription_headers",
-    "title": "CloudEvent",
     "type": "object",
     "properties": {
       "time": {
         "type": "string",
         "format": "date-time",
         "description": "date & time the event was produced",
-        "x-parser-schema-id": "<anonymous-schema-30>"
+        "x-faker": "date.past",
+        "x-parser-schema-id": "<anonymous-schema-31>"
       },
       "agent": {
         "type": "string",
         "format": "uri",
         "summary": "the event provider who sent the event via a subscription authorized to your service.",
         "description": "if you are a multi-tenant app, then the agent is the user associated with the event data.\nany future events related to this message will be sent to the same agent/recipient\n",
-        "example": "https://andy_agent.example.com/profile/card#me",
-        "x-parser-schema-id": "<anonymous-schema-31>"
+        "examples": [
+          "https://teamsupermario.example.com/profile/card#me",
+          "https://bigbrandrealestate.example.com/profile/card#me"
+        ],
+        "x-parser-schema-id": "<anonymous-schema-32>"
       },
       "instrument": {
         "type": "string",
         "format": "uri",
         "description": "the app or service that produced the event on behalf of the agent/user",
-        "example": "https://supercrm.example.com/profile/card#me",
-        "x-parser-schema-id": "<anonymous-schema-32>"
+        "examples": [
+          "http://supercrm.example.com/profile/card#me",
+          "http://reliance.example.com/profile/card#me",
+          "http://moxiworks.example.com/profile/card#me",
+          "http://listing-manager.example.com/profile/card#me",
+          "http://ace.example.com/profile/card#me",
+          "http://roqlogic.example.com/profile/card#me"
+        ],
+        "x-parser-schema-id": "<anonymous-schema-33>"
       },
       "source": {
         "type": "string",
         "format": "uri",
-        "description": "an agent, team or organization who received a copy of the event",
-        "example": "https://bigbrandrealestate.example.com/profile/card#me",
-        "x-parser-schema-id": "<anonymous-schema-33>"
+        "description": "a copy of the event was sent to the source(s).",
+        "examples": [
+          "https://bigbrandrealestate.example.com/profile/card#me"
+        ],
+        "x-parser-schema-id": "<anonymous-schema-34>"
       },
       "originalRecipient": {
         "type": "string",
         "format": "uri",
         "summary": "the original recipient of the event",
         "description": "the originalRecipient helps you determine the subscription that delivered the event to you.\nif the originalRecipient is the same as the agent, then the you are subscribed to the agent.\nif the originalRecipient is different from the agent, then you are subscribed to the event source\n",
-        "example": "https://agentid.example.com/profile/card#me",
-        "x-parser-schema-id": "<anonymous-schema-34>"
+        "example": [
+          "http://bigbrandrealestate.example.com/profile/card#me",
+          "http://teamsupermario.example.com/profile/card#me",
+          "http://bob.example.com/profile/card#me",
+          "http://jane.example.com/profile/card#me",
+          "http://joe.example.com/profile/card#me",
+          "http://jill.example.com/profile/card#me",
+          "http://jim.example.com/profile/card#me",
+          "http://jennifer.example.com/profile/card#me"
+        ],
+        "x-parser-schema-id": "<anonymous-schema-35>"
       },
       "id": {
         "type": "string",
         "format": "uri",
-        "summary": "the event id",
-        "description": "the event id is a unique identifier for the event.\nall subscribers will receive the same event id.\n",
-        "example": "https://supercrm.example.com/publish/{eventid}",
-        "x-parser-schema-id": "<anonymous-schema-35>"
+        "summary": "the event id - the cannonical identifier for the event",
+        "description": "the Event ID (aka \"Publish ID\") is the immutable canonical identifier for the event.\nit is a URI that is unique to the event and will not change.\nall subscribers will receive the same id for the same event.\n",
+        "examples": [
+          "http://supercrm.example.com/publish/12345",
+          "http://reliance.example.com/publish/23456",
+          "http://moxiworks.example.com/publish/34567",
+          "http://listing-manager.example.com/publish/45678",
+          "http://ace.example.com/publish/56789",
+          "http://roqlogic.example.com/publish/67890"
+        ],
+        "x-parser-schema-id": "<anonymous-schema-36>"
       },
       "@id": {
         "type": "string",
         "format": "uri",
-        "summary": "the message id - the uri of the message in your inbox",
-        "example": "https://sumpercrm.example.com/inbox/{eventid}",
-        "x-parser-schema-id": "<anonymous-schema-36>"
+        "summary": "the @id is the url in your inbox where you can retrieve the event",
+        "examples": [
+          "http://reliance.example.com/inbox/23456",
+          "http://moxiworks.example.com/inbox/34567",
+          "http://listing-manager.example.com/inbox/45678",
+          "http://ace.example.com/inbox/56789",
+          "http://roqlogic.example.com/inbox/67890"
+        ],
+        "x-parser-schema-id": "<anonymous-schema-37>"
       }
-    }
+    },
+    "x-parser-schema-id": "<anonymous-schema-30>"
   },
   "payload": {
     "type": "object",
@@ -71,7 +105,7 @@
         "properties": {
           "type": {
             "const": "CreateAction",
-            "x-parser-schema-id": "<anonymous-schema-62>"
+            "x-parser-schema-id": "<anonymous-schema-63>"
           },
           "object": {
             "title": "AwardTeam",
@@ -129,17 +163,17 @@
                 "x-parser-schema-id": "<anonymous-schema-27>"
               }
             },
-            "x-parser-schema-id": "<anonymous-schema-63>"
+            "x-parser-schema-id": "<anonymous-schema-64>"
           }
         },
-        "x-parser-schema-id": "<anonymous-schema-61>"
+        "x-parser-schema-id": "<anonymous-schema-62>"
       },
       "topic": {
         "type": "string",
         "const": "realestate/award#teamcreate",
-        "x-parser-schema-id": "<anonymous-schema-60>"
+        "x-parser-schema-id": "<anonymous-schema-61>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-59>"
+    "x-parser-schema-id": "<anonymous-schema-60>"
   }
 }

@@ -1,4 +1,7 @@
+# @format
+
+$id: addressLocality
 type: string
 description: City, Township.
-example: Gotham City
 maxLength: 50
+x-faker: address.city

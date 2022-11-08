@@ -1,0 +1,15 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"runOptions": {
+				"runOn": "default"
+			},
+			"type": "npm",
+			"script": "validate",
+			"problemMatcher": [],
+			"label": "npm: validate",
+			"detail": "npx asyncapi validate asyncapi.yaml"
+		}
+	]
+}

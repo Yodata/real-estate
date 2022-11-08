@@ -7,8 +7,8 @@ headers:
   properties:
     topic:
       const: realestate/marketingpreferences#subscribe
-      x-parser-schema-id: <anonymous-schema-352>
-  x-parser-schema-id: <anonymous-schema-351>
+      x-parser-schema-id: <anonymous-schema-353>
+  x-parser-schema-id: <anonymous-schema-352>
 payload:
   type: object
   properties:
@@ -30,10 +30,10 @@ payload:
             type:
               description: the action type
               type: string
-              x-parser-schema-id: <anonymous-schema-354>
+              x-parser-schema-id: <anonymous-schema-355>
             object:
               description: item on which the action is carried out
-              x-parser-schema-id: <anonymous-schema-355>
+              x-parser-schema-id: <anonymous-schema-356>
           externalDocs:
             description: schema.org/Action
             url: https://schema.org/Action
@@ -81,7 +81,7 @@ payload:
                     properties:
                       isCompanyQueue:
                         type: boolean
-          x-parser-schema-id: <anonymous-schema-356>
+          x-parser-schema-id: <anonymous-schema-357>
       x-parser-schema-id: SubscribeAction
-  x-parser-schema-id: <anonymous-schema-353>
+  x-parser-schema-id: <anonymous-schema-354>
 

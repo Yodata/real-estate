@@ -16,7 +16,7 @@
         "VN"
       ],
       "x-faker": "address.countryCode",
-      "x-parser-schema-id": "<anonymous-schema-105>"
+      "x-parser-schema-id": "<anonymous-schema-106>"
     },
     "addressCounty": {
       "type": "string",
@@ -28,7 +28,7 @@
         "Borders",
         null
       ],
-      "x-parser-schema-id": "<anonymous-schema-106>"
+      "x-parser-schema-id": "<anonymous-schema-107>"
     },
     "addressLocality": {
       "type": "string",
@@ -42,7 +42,7 @@
         "West Ahmed",
         "Blaiseview"
       ],
-      "x-parser-schema-id": "<anonymous-schema-103>"
+      "x-parser-schema-id": "<anonymous-schema-104>"
     },
     "addressRegion": {
       "type": "string",
@@ -54,7 +54,7 @@
         "MI",
         null
       ],
-      "x-parser-schema-id": "<anonymous-schema-102>"
+      "x-parser-schema-id": "<anonymous-schema-103>"
     },
     "addressSubdivision": {
       "type": "string",
@@ -66,7 +66,7 @@
         "SOMA (South of Market)",
         "Nob Hill"
       ],
-      "x-parser-schema-id": "<anonymous-schema-107>"
+      "x-parser-schema-id": "<anonymous-schema-108>"
     },
     "postOfficeBoxNumber": {
       "type": "string",
@@ -77,7 +77,7 @@
         "Apt. 161",
         "Apt. 623"
       ],
-      "x-parser-schema-id": "<anonymous-schema-101>"
+      "x-parser-schema-id": "<anonymous-schema-102>"
     },
     "postalCode": {
       "type": "string",
@@ -90,7 +90,7 @@
         "50239-7698",
         null
       ],
-      "x-parser-schema-id": "<anonymous-schema-104>"
+      "x-parser-schema-id": "<anonymous-schema-105>"
     },
     "streetAddress": {
       "type": "string",
@@ -101,12 +101,12 @@
         "166 Marion Burg",
         "93044 Haley Stream"
       ],
-      "x-parser-schema-id": "<anonymous-schema-100>"
+      "x-parser-schema-id": "<anonymous-schema-101>"
     },
     "type": {
       "type": "string",
       "const": "PostalAddress",
-      "x-parser-schema-id": "<anonymous-schema-99>"
+      "x-parser-schema-id": "<anonymous-schema-100>"
     }
   },
   "x-parser-schema-id": "PostalAddress"

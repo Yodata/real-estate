@@ -1,6 +1,6 @@
 # @format
 # yaml-language-server: $schema=https://json-schema.org/draft/2019-09/schema
-$id: htttp://realestate.yodata.me/schema/ContactPoint.json
+$id: http://realestate.yodata.me/schema/ContactPoint.json
 title: ContactPoint
 description: |
   A point of contact for the entity. By convention in the real estate domain, ContactPoints

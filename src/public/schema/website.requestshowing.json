@@ -8,10 +8,10 @@
     "properties": {
       "topic": {
         "const": "realestate/website#requestshowing",
-        "x-parser-schema-id": "<anonymous-schema-525>"
+        "x-parser-schema-id": "<anonymous-schema-529>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-524>"
+    "x-parser-schema-id": "<anonymous-schema-528>"
   },
   "payload": {
     "type": "object",
@@ -21,7 +21,7 @@
         "properties": {
           "type": {
             "const": "RequestShowingAction",
-            "x-parser-schema-id": "<anonymous-schema-528>"
+            "x-parser-schema-id": "<anonymous-schema-532>"
           },
           "agent": {
             "type": "object",
@@ -33,28 +33,28 @@
                   "Person",
                   "Contact"
                 ],
-                "x-parser-schema-id": "<anonymous-schema-487>"
+                "x-parser-schema-id": "<anonymous-schema-488>"
               },
               "name": {
                 "type": "string",
-                "x-parser-schema-id": "<anonymous-schema-488>"
+                "x-parser-schema-id": "<anonymous-schema-489>"
               },
               "givenName": {
                 "type": "string",
-                "x-parser-schema-id": "<anonymous-schema-489>"
+                "x-parser-schema-id": "<anonymous-schema-490>"
               },
               "familyName": {
                 "type": "string",
-                "x-parser-schema-id": "<anonymous-schema-490>"
+                "x-parser-schema-id": "<anonymous-schema-491>"
               },
               "email": {
                 "type": "string",
                 "format": "email",
-                "x-parser-schema-id": "<anonymous-schema-491>"
+                "x-parser-schema-id": "<anonymous-schema-492>"
               },
               "telephone": {
                 "type": "string",
-                "x-parser-schema-id": "<anonymous-schema-492>"
+                "x-parser-schema-id": "<anonymous-schema-493>"
               },
               "identifier": {
                 "title": "identifier",
@@ -71,7 +71,7 @@
                     "originating_system_id": "123456"
                   }
                 ],
-                "x-parser-schema-id": "<anonymous-schema-94>"
+                "x-parser-schema-id": "<anonymous-schema-95>"
               },
               "sameAs": {
                 "title": "sameAs",
@@ -87,10 +87,10 @@
                     "salesForceId": "ad4fa5f4as"
                   }
                 ],
-                "x-parser-schema-id": "<anonymous-schema-493>"
+                "x-parser-schema-id": "<anonymous-schema-494>"
               },
               "contactPoint": {
-                "$id": "htttp://realestate.yodata.me/schema/ContactPoint.json",
+                "$id": "http://realestate.yodata.me/schema/ContactPoint.json",
                 "title": "ContactPoint",
                 "description": "A point of contact for the entity. By convention in the real estate domain, ContactPoints\nare preferred over telephone, email, and faxNumber so the ContactPoint.name property can be used to label values\nfor example, Work Telephone, Home, as named contactPoint values.\n",
                 "type": "object",
@@ -103,7 +103,7 @@
                   "type": {
                     "type": "string",
                     "const": "ContactPoint",
-                    "x-parser-schema-id": "<anonymous-schema-381>"
+                    "x-parser-schema-id": "<anonymous-schema-382>"
                   },
                   "name": {
                     "type": "string",
@@ -115,7 +115,7 @@
                       "Bob's Cell",
                       "Alice's Work"
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-382>"
+                    "x-parser-schema-id": "<anonymous-schema-383>"
                   },
                   "telephone": {
                     "type": "string",
@@ -126,7 +126,7 @@
                       "555-555-5555 ext. 123",
                       "+1-555-555-5555"
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-383>"
+                    "x-parser-schema-id": "<anonymous-schema-384>"
                   },
                   "faxNumber": {
                     "type": "string",
@@ -137,7 +137,7 @@
                       "555-555-5555 ext. 123",
                       "+1-555-555-5555"
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-384>"
+                    "x-parser-schema-id": "<anonymous-schema-385>"
                   },
                   "email": {
                     "description": "an email address for the item.",
@@ -148,14 +148,14 @@
                       "bob@example.com",
                       "alice@example.com"
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-385>"
+                    "x-parser-schema-id": "<anonymous-schema-386>"
                   },
                   "url": {
                     "description": "primary URL for the item.",
                     "type": "string",
                     "format": "uri",
                     "example": "https://www.facebook.com/hallandoates",
-                    "x-parser-schema-id": "<anonymous-schema-386>"
+                    "x-parser-schema-id": "<anonymous-schema-387>"
                   }
                 }
               },
@@ -165,13 +165,13 @@
                 "properties": {
                   "workingWithAgent": {
                     "type": "boolean",
-                    "x-parser-schema-id": "<anonymous-schema-495>"
+                    "x-parser-schema-id": "<anonymous-schema-496>"
                   }
                 },
-                "x-parser-schema-id": "<anonymous-schema-494>"
+                "x-parser-schema-id": "<anonymous-schema-495>"
               }
             },
-            "x-parser-schema-id": "<anonymous-schema-486>"
+            "x-parser-schema-id": "<anonymous-schema-487>"
           },
           "about": {
             "type": "object",
@@ -193,7 +193,7 @@
                 "priceCurrency": "USD"
               }
             },
-            "x-parser-schema-id": "<anonymous-schema-529>"
+            "x-parser-schema-id": "<anonymous-schema-533>"
           },
           "event": {
             "type": "object",
@@ -205,19 +205,19 @@
                 "type": "string",
                 "description": "The item type (Linked-Data @type)",
                 "example": "Event",
-                "x-parser-schema-id": "<anonymous-schema-530>"
+                "x-parser-schema-id": "<anonymous-schema-534>"
               },
               "name": {
                 "type": "string",
                 "description": "name of the event",
                 "example": "Property Showing 1007 Mountain Gate Rd",
-                "x-parser-schema-id": "<anonymous-schema-531>"
+                "x-parser-schema-id": "<anonymous-schema-535>"
               },
               "description": {
                 "type": "string",
                 "description": "event message content",
                 "example": "an example meeting request for 4:00PM to 4:30PM.",
-                "x-parser-schema-id": "<anonymous-schema-532>"
+                "x-parser-schema-id": "<anonymous-schema-536>"
               },
               "about": {
                 "type": "object",
@@ -238,21 +238,21 @@
                     "priceCurrency": "USD"
                   }
                 },
-                "x-parser-schema-id": "<anonymous-schema-533>"
+                "x-parser-schema-id": "<anonymous-schema-537>"
               },
               "startDate": {
                 "description": "the start date-time (ISO 8601 formated)",
                 "type": "string",
                 "format": "date-time",
                 "example": "2019-08-01T16:00Z",
-                "x-parser-schema-id": "<anonymous-schema-534>"
+                "x-parser-schema-id": "<anonymous-schema-538>"
               },
               "endDate": {
                 "type": "string",
                 "description": "the end date-time (ISO 8601 formated)",
                 "format": "date-time",
                 "example": "2019-08-01T16:30Z",
-                "x-parser-schema-id": "<anonymous-schema-535>"
+                "x-parser-schema-id": "<anonymous-schema-539>"
               },
               "organizer": {
                 "title": "organizer",
@@ -263,7 +263,7 @@
                   "name": "Bruce Wayne",
                   "id": "https://batman.example.com/profile/card#me"
                 },
-                "x-parser-schema-id": "<anonymous-schema-536>"
+                "x-parser-schema-id": "<anonymous-schema-540>"
               }
             },
             "x-parser-schema-id": "Event"
@@ -275,7 +275,7 @@
             "properties": {
               "type": {
                 "const": "Question",
-                "x-parser-schema-id": "<anonymous-schema-496>"
+                "x-parser-schema-id": "<anonymous-schema-497>"
               },
               "text": {
                 "$id": "http://realestate.yodata.me/schema/text.yaml",
@@ -302,17 +302,17 @@
                   "RealEstateTeam",
                   "RealEstateOrganization"
                 ],
-                "x-parser-schema-id": "<anonymous-schema-538>"
+                "x-parser-schema-id": "<anonymous-schema-542>"
               },
               "name": {
                 "type": "string",
-                "x-parser-schema-id": "<anonymous-schema-539>"
+                "x-parser-schema-id": "<anonymous-schema-543>"
               },
               "id": {
                 "type": "string",
                 "format": "uri",
                 "example": "https://agent.example.com/profile/card#me",
-                "x-parser-schema-id": "<anonymous-schema-540>"
+                "x-parser-schema-id": "<anonymous-schema-544>"
               },
               "identifier": true
             },
@@ -346,12 +346,12 @@
                 "id": "https://smithandsmithrealestate.example.com/profile/card#me"
               }
             ],
-            "x-parser-schema-id": "<anonymous-schema-537>"
+            "x-parser-schema-id": "<anonymous-schema-541>"
           }
         },
-        "x-parser-schema-id": "<anonymous-schema-527>"
+        "x-parser-schema-id": "<anonymous-schema-531>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-526>"
+    "x-parser-schema-id": "<anonymous-schema-530>"
   }
 }

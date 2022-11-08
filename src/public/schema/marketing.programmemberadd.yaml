@@ -7,8 +7,8 @@ headers:
   properties:
     topic:
       const: realestate/marketing#programmemberadd
-      x-parser-schema-id: <anonymous-schema-332>
-  x-parser-schema-id: <anonymous-schema-331>
+      x-parser-schema-id: <anonymous-schema-333>
+  x-parser-schema-id: <anonymous-schema-332>
 payload:
   type: object
   properties:
@@ -17,11 +17,11 @@ payload:
       properties:
         type:
           const: AddAction
-          x-parser-schema-id: <anonymous-schema-335>
+          x-parser-schema-id: <anonymous-schema-336>
         agent:
           type: string
           format: uri
-          x-parser-schema-id: <anonymous-schema-336>
+          x-parser-schema-id: <anonymous-schema-337>
         object:
           $id: http://realestate.yodata.me/schema/ProgramMembership.json
           title: MarketingProgramMembership
@@ -32,13 +32,13 @@ payload:
           properties:
             type:
               const: ProgramMembership
-              x-parser-schema-id: <anonymous-schema-337>
+              x-parser-schema-id: <anonymous-schema-338>
             role:
               type: string
               enum:
                 - member
                 - owner
-              x-parser-schema-id: <anonymous-schema-338>
+              x-parser-schema-id: <anonymous-schema-339>
             member:
               type: object
               properties:
@@ -47,10 +47,10 @@ payload:
                   enum:
                     - Person
                     - Contact
-                  x-parser-schema-id: <anonymous-schema-340>
+                  x-parser-schema-id: <anonymous-schema-341>
                 name:
                   type: string
-                  x-parser-schema-id: <anonymous-schema-341>
+                  x-parser-schema-id: <anonymous-schema-342>
                 identifier:
                   title: identifier
                   type: object
@@ -61,18 +61,18 @@ payload:
                     - salesforceid: 0031U00002XW1QWQA1
                     - vendoraid: '123456'
                     - originating_system_id: '123456'
-                  x-parser-schema-id: <anonymous-schema-94>
-              x-parser-schema-id: <anonymous-schema-339>
+                  x-parser-schema-id: <anonymous-schema-95>
+              x-parser-schema-id: <anonymous-schema-340>
             memberOf:
               type: object
               properties:
                 type:
                   const: MarketingProgram
-                  x-parser-schema-id: <anonymous-schema-343>
+                  x-parser-schema-id: <anonymous-schema-344>
                 name:
                   type: string
                   example: Market Activity Report 508 Homewood Ave
-                  x-parser-schema-id: <anonymous-schema-344>
+                  x-parser-schema-id: <anonymous-schema-345>
                 identifier:
                   title: identifier
                   type: object
@@ -83,8 +83,8 @@ payload:
                     - salesforceid: 0031U00002XW1QWQA1
                     - vendoraid: '123456'
                     - originating_system_id: '123456'
-                  x-parser-schema-id: <anonymous-schema-94>
-              x-parser-schema-id: <anonymous-schema-342>
+                  x-parser-schema-id: <anonymous-schema-95>
+              x-parser-schema-id: <anonymous-schema-343>
         targetCollection:
           MarketingProgram:
             title: MarketingProgram
@@ -106,8 +106,8 @@ payload:
                   - salesforceid: 0031U00002XW1QWQA1
                   - vendoraid: '123456'
                   - originating_system_id: '123456'
-                x-parser-schema-id: <anonymous-schema-94>
-          x-parser-schema-id: <anonymous-schema-314>
-      x-parser-schema-id: <anonymous-schema-334>
-  x-parser-schema-id: <anonymous-schema-333>
+                x-parser-schema-id: <anonymous-schema-95>
+          x-parser-schema-id: <anonymous-schema-315>
+      x-parser-schema-id: <anonymous-schema-335>
+  x-parser-schema-id: <anonymous-schema-334>
 

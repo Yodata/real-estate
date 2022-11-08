@@ -79,5 +79,11 @@
       "generator/**",
       "schemas/**"
     ]
+  },
+  "extensions": {
+    "recommendations": [
+      "mark-tucker.aws-cli-configure",
+      "amazonwebservices.aws-toolkit-vscode"
+    ]
   }
 }

@@ -21,7 +21,7 @@ properties:
         description: The item type (Linked-Data @type)
         enum:
           - Place
-        x-parser-schema-id: <anonymous-schema-672>
+        x-parser-schema-id: <anonymous-schema-676>
       address:
         type: object
         x-range: PostalAddress
@@ -37,7 +37,7 @@ properties:
           postalCode: '10010'
           postOfficeBoxNumber: Box 1234
           streetAddress: 1007 Mountain Gate Rd
-        x-parser-schema-id: <anonymous-schema-673>
+        x-parser-schema-id: <anonymous-schema-677>
       geo:
         type: object
         description: a geo shape (circle or box)
@@ -56,13 +56,13 @@ properties:
             unitCode: mi,
             unitText: miles
           box: (33.5697,-117.775),(33.6018,-117.707)
-        x-parser-schema-id: <anonymous-schema-674>
+        x-parser-schema-id: <anonymous-schema-678>
     x-parser-schema-id: Place
   creator:
     description: creator / author of the item
     type: string
     format: uri
-    x-parser-schema-id: <anonymous-schema-671>
+    x-parser-schema-id: <anonymous-schema-675>
   dateCreated:
     $id: http://realestate.yodata.me/schema/dateCreated.yaml
     type: string
@@ -75,7 +75,7 @@ properties:
       entry was modified within a DataFeed.
     type: string
     format: date-time
-    x-parser-schema-id: <anonymous-schema-136>
+    x-parser-schema-id: <anonymous-schema-137>
   identifier:
     title: identifier
     type: object
@@ -86,7 +86,7 @@ properties:
       - salesforceid: 0031U00002XW1QWQA1
       - vendoraid: '123456'
       - originating_system_id: '123456'
-    x-parser-schema-id: <anonymous-schema-94>
+    x-parser-schema-id: <anonymous-schema-95>
   member:
     type: array
     x-range:
@@ -100,22 +100,22 @@ properties:
       properties:
         type:
           const: ProgramMembership
-          x-parser-schema-id: <anonymous-schema-663>
+          x-parser-schema-id: <anonymous-schema-667>
         role:
           type: string
           enum:
             - member
             - owner
-          x-parser-schema-id: <anonymous-schema-664>
+          x-parser-schema-id: <anonymous-schema-668>
         member:
           type: object
           properties:
             type:
               const: Contact
-              x-parser-schema-id: <anonymous-schema-666>
+              x-parser-schema-id: <anonymous-schema-670>
             name:
               type: string
-              x-parser-schema-id: <anonymous-schema-667>
+              x-parser-schema-id: <anonymous-schema-671>
             identifier:
               title: identifier
               type: object
@@ -126,18 +126,18 @@ properties:
                 - salesforceid: 0031U00002XW1QWQA1
                 - vendoraid: '123456'
                 - originating_system_id: '123456'
-              x-parser-schema-id: <anonymous-schema-94>
-          x-parser-schema-id: <anonymous-schema-665>
+              x-parser-schema-id: <anonymous-schema-95>
+          x-parser-schema-id: <anonymous-schema-669>
         memberOf:
           type: object
           properties:
             type:
               const: MarketingProgram
-              x-parser-schema-id: <anonymous-schema-669>
+              x-parser-schema-id: <anonymous-schema-673>
             name:
               type: string
               example: Market Activity Report 508 Homewood Ave
-              x-parser-schema-id: <anonymous-schema-670>
+              x-parser-schema-id: <anonymous-schema-674>
             identifier:
               title: identifier
               type: object
@@ -148,18 +148,18 @@ properties:
                 - salesforceid: 0031U00002XW1QWQA1
                 - vendoraid: '123456'
                 - originating_system_id: '123456'
-              x-parser-schema-id: <anonymous-schema-94>
-          x-parser-schema-id: <anonymous-schema-668>
+              x-parser-schema-id: <anonymous-schema-95>
+          x-parser-schema-id: <anonymous-schema-672>
       x-parser-schema-id: ProgramMembership
-    x-parser-schema-id: <anonymous-schema-662>
+    x-parser-schema-id: <anonymous-schema-666>
   name:
     type: string
     description: the name of the item
     example: Market Activity Report for 508 Homeward Avenue
-    x-parser-schema-id: <anonymous-schema-661>
+    x-parser-schema-id: <anonymous-schema-665>
   type:
     const: MarketingProgram
-    x-parser-schema-id: <anonymous-schema-660>
+    x-parser-schema-id: <anonymous-schema-664>
 x-parser-schema-id: MarketingProgram
 $id: http://realestate.yodata.me/schema/MarketingProgram.yaml
 

@@ -20,23 +20,23 @@ properties:
         type: PriceSpecification
         price: 7500000
         priceCurrency: USD
-    x-parser-schema-id: <anonymous-schema-533>
+    x-parser-schema-id: <anonymous-schema-537>
   description:
     type: string
     description: event message content
     example: an example meeting request for 4:00PM to 4:30PM.
-    x-parser-schema-id: <anonymous-schema-532>
+    x-parser-schema-id: <anonymous-schema-536>
   endDate:
     type: string
     description: the end date-time (ISO 8601 formated)
     format: date-time
     example: 2019-08-01T16:30Z
-    x-parser-schema-id: <anonymous-schema-535>
+    x-parser-schema-id: <anonymous-schema-539>
   name:
     type: string
     description: name of the event
     example: Property Showing 1007 Mountain Gate Rd
-    x-parser-schema-id: <anonymous-schema-531>
+    x-parser-schema-id: <anonymous-schema-535>
   organizer:
     title: organizer
     description: the event organizer
@@ -45,18 +45,18 @@ properties:
       type: RealEstateAgent
       name: Bruce Wayne
       id: https://batman.example.com/profile/card#me
-    x-parser-schema-id: <anonymous-schema-536>
+    x-parser-schema-id: <anonymous-schema-540>
   startDate:
     description: the start date-time (ISO 8601 formated)
     type: string
     format: date-time
     example: 2019-08-01T16:00Z
-    x-parser-schema-id: <anonymous-schema-534>
+    x-parser-schema-id: <anonymous-schema-538>
   type:
     type: string
     description: The item type (Linked-Data @type)
     example: Event
-    x-parser-schema-id: <anonymous-schema-530>
+    x-parser-schema-id: <anonymous-schema-534>
 x-parser-schema-id: Event
 $id: http://realestate.yodata.me/schema/Event.yaml
 

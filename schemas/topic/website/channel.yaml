@@ -3,15 +3,15 @@
 subscribe:
   message:
     oneOf:
-      - $ref: askquestion.yaml
-      - $ref: listingoffer.yaml
-      - $ref: register.yaml
-      - $ref: requestappointment.yaml
-      - $ref: requestshowing.yaml
-      # - $ref: saveproperty.yaml
-      # - $ref: savepropertysearch.yaml
-      # - $ref: searchproperties.yaml
+      - $ref: website.askquestion.yaml
+      - $ref: website.listingoffer.yaml
+      - $ref: website.register.yaml
+      - $ref: website.requestappointment.yaml
+      - $ref: website.requestshowing.yaml
+      # - $ref: website.saveproperty.yaml
+      # - $ref: website.savepropertysearch.yaml
+      # - $ref: website.searchproperties.yaml
       - $ref: website.shareproperty.yaml
-      # - $ref: sharepropertyvaluereport.yaml
-      # - $ref: viewproperty.yaml
-      # - $ref: viewpropertyvaluereport.yaml
+      # - $ref: website.sharepropertyvaluereport.yaml
+      # - $ref: website.viewproperty.yaml
+      # - $ref: website.viewpropertyvaluereport.yaml

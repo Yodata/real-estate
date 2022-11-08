@@ -13,7 +13,7 @@
     },
     {
       "name": "API/GET_SCHEMA",
-      "path": "src/pages/api/getSchema"
+      "path": "src/pages/api/schema/get/"
     },
     {
       "name": "API/REPLAY",
@@ -21,15 +21,15 @@
     },
     {
       "name": "API/MOCK",
-      "path": "src/pages/api/mock"
+      "path": "src/pages/api/schema/mock/"
     },
     {
       "name": "API/VALIDATE",
-      "path": "src/pages/api/validate"
+      "path": "src/pages/api/schema/validate/"
     },
     {
       "name": "GENERATOR",
-      "path": "generator"
+      "path": "generator/"
     }
   ],
   "settings": {

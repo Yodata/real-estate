@@ -37,7 +37,7 @@ export default function ValidateSchemaObject(props) {
       const jsonValue = JSON.parse(textValue)
       const subject = jsonValue.topic || jsonValue.type
       setSchemaName(subject)
-      axios.post('/api/validate', jsonValue).then((res) => {
+      axios.post('/api/schema/validate', jsonValue).then((res) => {
         if (res.status === 200) {
           let { isValid, error, schemaName } = res.data
           console.log(res.data)

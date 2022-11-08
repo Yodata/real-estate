@@ -61,7 +61,7 @@ async function validateJsonSchema({schema, object}) {
 
 async function getSchema(request /** {string} **/) {
   const object = request.body
-  let target = `http://${request.headers.host}/api/getSchema/`
+  let target = `http://${request.headers.host}/api/schema/get/`
   if (typeof object.topic === 'string') {
      target += object.topic.replace('#', '.')
    } else if (typeof object.type === 'string') {

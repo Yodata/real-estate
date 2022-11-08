@@ -8,7 +8,7 @@ generates a message or schema object, and
 optionally sends it to your service.
 
 ```http
-GET /api/mock/PostalAddress HTTP/1.1 200
+GET /api/schema/mock/PostalAddress HTTP/1.1 200
 HOST realestate.yodata.me
 
 RESPONSE:

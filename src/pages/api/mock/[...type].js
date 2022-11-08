@@ -22,7 +22,7 @@ export default async function handler(request, response) {
     type = type.join('.')
   }
 
-  const schemaUrl = `http://${request.headers.host}/api/getSchema/${type}`
+  const schemaUrl = `http://${request.headers.host}/api/schema/get/${type}`
   const queryParams = request.query
 
   return getSchema(schemaUrl)

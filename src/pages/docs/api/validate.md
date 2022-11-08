@@ -9,7 +9,7 @@ You can validate any event message (with a "topic" property) or any Schema objec
 ```http
   POST / HTTP/1.1
   Content-Type: application/json
-  Host: http://realestate.yodata.me/api/validate
+  Host: http://realestate.yodata.me/api/schema/validate
 
   {
     "object": {

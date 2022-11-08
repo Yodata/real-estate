@@ -117,7 +117,7 @@ export default function MockDataGUI(props) {
   const onSubmit = (json) => {
     setTopic(json.topic)
     const _topic = topic.replace('#', '/')
-    const target = `/api/mock/${_topic}`
+    const target = `/api/schema/mock/${_topic}`
     axios
       .get(target)
       .then((res) => {

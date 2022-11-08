@@ -4,12 +4,11 @@ messageId: website#askquestion
 name: realestate/website#askquestion
 summary: website user asks a question
 headers:
-  type: object
-  properties:
-    topic: { const: realestate/website#askquestion }
+  $ref: ../../subscription_headers.yaml
 payload:
   type: object
   properties:
+    topic: { type: string, const: realestate/website#askquestion }
     data:
       type: object
       required:
@@ -18,7 +17,7 @@ payload:
         - object
         - recipient
       properties:
-        type: { const: AskAction }
+        type: { type: string, const: AskAction }
         agent: { $ref: defs.agent.yaml }
         object: { $ref: ../../question.yaml }
 

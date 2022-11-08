@@ -27,7 +27,7 @@
         "postOfficeBoxNumber": "Box 1234",
         "streetAddress": "1007 Mountain Gate Rd"
       },
-      "x-parser-schema-id": "<anonymous-schema-661>"
+      "x-parser-schema-id": "<anonymous-schema-673>"
     },
     "geo": {
       "type": "object",
@@ -51,7 +51,7 @@
         },
         "box": "(33.5697,-117.775),(33.6018,-117.707)"
       },
-      "x-parser-schema-id": "<anonymous-schema-662>"
+      "x-parser-schema-id": "<anonymous-schema-674>"
     },
     "type": {
       "type": "string",
@@ -59,7 +59,7 @@
       "enum": [
         "Place"
       ],
-      "x-parser-schema-id": "<anonymous-schema-660>"
+      "x-parser-schema-id": "<anonymous-schema-672>"
     }
   },
   "x-parser-schema-id": "Place",

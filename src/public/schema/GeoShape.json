@@ -12,7 +12,7 @@
       "title": "box",
       "description": "A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character.",
       "example": "(33.5697,-117.775),(33.6018,-117.707)",
-      "x-parser-schema-id": "<anonymous-schema-634>"
+      "x-parser-schema-id": "<anonymous-schema-646>"
     },
     "geoMidpoint": {
       "title": "GeoCoordinates",
@@ -26,7 +26,7 @@
           "enum": [
             "GeoCoordinates"
           ],
-          "x-parser-schema-id": "<anonymous-schema-631>"
+          "x-parser-schema-id": "<anonymous-schema-643>"
         },
         "longitude": {
           "type": "number",
@@ -56,7 +56,7 @@
         "unitCode": "mi",
         "unitText": "miles"
       },
-      "x-parser-schema-id": "<anonymous-schema-632>"
+      "x-parser-schema-id": "<anonymous-schema-644>"
     },
     "type": {
       "type": "string",
@@ -64,7 +64,7 @@
         "GeoShape",
         "GeoCircle"
       ],
-      "x-parser-schema-id": "<anonymous-schema-633>"
+      "x-parser-schema-id": "<anonymous-schema-645>"
     }
   },
   "x-parser-schema-id": "GeoShape",

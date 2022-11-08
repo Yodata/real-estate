@@ -1,0 +1,84 @@
+# @format
+
+messageId: website#shareproperty
+name: realestate/website#shareproperty
+title: website#shareproperty
+summary: a website user shares a property listing
+description: |
+  A website user (agent) shared a (PropertyListing)[/types/PropertyListing]
+  with the recipient (a Person or Audience).
+headers:
+  $ref: ../../subscription_headers.yaml
+payload:
+  type: object
+  required:
+    - topic
+    - data
+  properties:
+    topic: { type: string, const: realestate/website#shareproperty }
+    data:
+      title: ShareAction
+      type: object
+      required:
+        - type
+        - agent
+        - object
+        - recipient
+      properties:
+        type: { type: string, const: ShareAction }
+        agent:
+          $ref: ../../Person.yaml
+        object:
+          $ref: ../../PropertyListing.yaml
+        recipient:
+          type: object
+          properties:
+            type: { type: string, enum: [Person, Audience] }
+            name:
+              type: string
+              description: |
+                The name of the person or audience to whom the property listing
+                was shared.
+              examples:
+                - 'John Doe'
+                - 'Family'
+                - 'Friends'
+            email:
+              type: string
+              format: email
+              x-faker: internet.email
+              description: |
+                The email address of the person or audience to whom the property
+                listing was shared.
+            url:
+              type: string
+              format: uri
+              x-faker: internet.url
+              description: |
+                A URL to the shared item if available.
+              examples:
+                - http://facebook.com/1234567890
+                - http://twitter.com/userx/status/1234567890
+            instrument:
+              type: object
+              description: |
+                The instrument used to share the property listing.
+              properties:
+                type: { type: string, const: Organization }
+                name:
+                  type: string
+                  description: |
+                    The name of the instrument used to share the property listing.
+                  examples:
+                    - 'Facebook'
+                    - 'Twitter'
+                    - 'LinkedIn'
+                    - 'Instagram'
+                    - 'WhatsApp'
+                    - 'Email'
+                    - 'SMS'
+                    - 'Messenger'
+                    - 'Snapchat'
+                    - 'WeChat'
+                    - 'Truth Social'
+                    - 'Other'

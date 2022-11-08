@@ -191,13 +191,13 @@
               "enum": [
                 "Certification"
               ],
-              "x-parser-schema-id": "<anonymous-schema-594>"
+              "x-parser-schema-id": "<anonymous-schema-606>"
             },
             "name": {
               "type": "string",
               "description": "the name of the Certification",
               "example": "e-Agent Certified",
-              "x-parser-schema-id": "<anonymous-schema-595>"
+              "x-parser-schema-id": "<anonymous-schema-607>"
             },
             "issuedBy": {
               "type": "object",
@@ -253,7 +253,7 @@
                   "x-parser-schema-id": "<anonymous-schema-92>"
                 }
               },
-              "x-parser-schema-id": "<anonymous-schema-596>"
+              "x-parser-schema-id": "<anonymous-schema-608>"
             }
           },
           "x-parser-schema-id": "Certification"
@@ -490,24 +490,24 @@
                 "enum": [
                   "DigitalDocument"
                 ],
-                "x-parser-schema-id": "<anonymous-schema-621>"
+                "x-parser-schema-id": "<anonymous-schema-633>"
               },
               "id": {
                 "type": "string",
                 "example": "http://user.example.com/public/logo/archive.zip",
-                "x-parser-schema-id": "<anonymous-schema-622>"
+                "x-parser-schema-id": "<anonymous-schema-634>"
               },
               "name": {
                 "type": "string",
                 "description": "document name or title",
                 "example": "archive.zip",
-                "x-parser-schema-id": "<anonymous-schema-623>"
+                "x-parser-schema-id": "<anonymous-schema-635>"
               },
               "encodingFormat": {
                 "type": "string",
                 "description": "[ISO Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml)",
                 "example": "application/zip",
-                "x-parser-schema-id": "<anonymous-schema-624>"
+                "x-parser-schema-id": "<anonymous-schema-636>"
               },
               "about": {
                 "type": "object",
@@ -519,13 +519,13 @@
                     "bmsTransactionId": "xxxx"
                   }
                 },
-                "x-parser-schema-id": "<anonymous-schema-625>"
+                "x-parser-schema-id": "<anonymous-schema-637>"
               },
               "url": {
                 "type": "string",
                 "description": "public URL of the object",
                 "example": "https://example.com",
-                "x-parser-schema-id": "<anonymous-schema-626>"
+                "x-parser-schema-id": "<anonymous-schema-638>"
               }
             },
             "x-parser-schema-id": "DigitalDocument"

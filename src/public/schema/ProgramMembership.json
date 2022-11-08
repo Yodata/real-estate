@@ -8,11 +8,11 @@
       "properties": {
         "type": {
           "const": "Contact",
-          "x-parser-schema-id": "<anonymous-schema-654>"
+          "x-parser-schema-id": "<anonymous-schema-666>"
         },
         "name": {
           "type": "string",
-          "x-parser-schema-id": "<anonymous-schema-655>"
+          "x-parser-schema-id": "<anonymous-schema-667>"
         },
         "identifier": {
           "title": "identifier",
@@ -32,19 +32,19 @@
           "x-parser-schema-id": "<anonymous-schema-94>"
         }
       },
-      "x-parser-schema-id": "<anonymous-schema-653>"
+      "x-parser-schema-id": "<anonymous-schema-665>"
     },
     "memberOf": {
       "type": "object",
       "properties": {
         "type": {
           "const": "MarketingProgram",
-          "x-parser-schema-id": "<anonymous-schema-657>"
+          "x-parser-schema-id": "<anonymous-schema-669>"
         },
         "name": {
           "type": "string",
           "example": "Market Activity Report 508 Homewood Ave",
-          "x-parser-schema-id": "<anonymous-schema-658>"
+          "x-parser-schema-id": "<anonymous-schema-670>"
         },
         "identifier": {
           "title": "identifier",
@@ -64,7 +64,7 @@
           "x-parser-schema-id": "<anonymous-schema-94>"
         }
       },
-      "x-parser-schema-id": "<anonymous-schema-656>"
+      "x-parser-schema-id": "<anonymous-schema-668>"
     },
     "role": {
       "type": "string",
@@ -72,11 +72,11 @@
         "member",
         "owner"
       ],
-      "x-parser-schema-id": "<anonymous-schema-652>"
+      "x-parser-schema-id": "<anonymous-schema-664>"
     },
     "type": {
       "const": "ProgramMembership",
-      "x-parser-schema-id": "<anonymous-schema-651>"
+      "x-parser-schema-id": "<anonymous-schema-663>"
     }
   },
   "x-parser-schema-id": "ProgramMembership",

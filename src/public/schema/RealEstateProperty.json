@@ -46,7 +46,7 @@
       "type": "string",
       "description": "Assessors Parcel Number",
       "example": "ABC-12345-XX-XXXX",
-      "x-parser-schema-id": "<anonymous-schema-748>"
+      "x-parser-schema-id": "<anonymous-schema-760>"
     },
     "image": {
       "title": "image",
@@ -177,7 +177,7 @@
     "listingId": {
       "description": "the local identifier for the listing (MLS #)",
       "type": "string",
-      "x-parser-schema-id": "<anonymous-schema-749>"
+      "x-parser-schema-id": "<anonymous-schema-761>"
     },
     "livingArea": {
       "description": "property indoor space",
@@ -189,7 +189,7 @@
       },
       "type": "object",
       "x-range": "QuantitativeValue",
-      "x-parser-schema-id": "<anonymous-schema-750>"
+      "x-parser-schema-id": "<anonymous-schema-762>"
     },
     "longitude": {
       "type": "number",
@@ -208,25 +208,25 @@
       },
       "type": "object",
       "x-range": "QuantitativeValue",
-      "x-parser-schema-id": "<anonymous-schema-751>"
+      "x-parser-schema-id": "<anonymous-schema-763>"
     },
     "numberOfBathrooms": {
       "description": "the number of bathrooms",
       "example": "2",
       "type": "string",
-      "x-parser-schema-id": "<anonymous-schema-752>"
+      "x-parser-schema-id": "<anonymous-schema-764>"
     },
     "numberOfBedrooms": {
       "description": "the number of bedrooms",
       "example": "3",
       "type": "string",
-      "x-parser-schema-id": "<anonymous-schema-753>"
+      "x-parser-schema-id": "<anonymous-schema-765>"
     },
     "numberOfRooms": {
       "description": "the total number of rooms in the building",
       "type": "string",
       "example": 7,
-      "x-parser-schema-id": "<anonymous-schema-754>"
+      "x-parser-schema-id": "<anonymous-schema-766>"
     },
     "postalCode": {
       "type": "string",
@@ -310,7 +310,7 @@
         "RealEstateProperty"
       ],
       "type": "string",
-      "x-parser-schema-id": "<anonymous-schema-747>"
+      "x-parser-schema-id": "<anonymous-schema-759>"
     },
     "yearBuilt": {
       "type": "number",

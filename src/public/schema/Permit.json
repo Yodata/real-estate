@@ -14,7 +14,7 @@
         "type": "State",
         "name": "California"
       },
-      "x-parser-schema-id": "<anonymous-schema-678>"
+      "x-parser-schema-id": "<anonymous-schema-690>"
     },
     "issuedThrough": {
       "type": "object",
@@ -23,13 +23,13 @@
         "type": "Service",
         "name": "Department of Real Estate"
       },
-      "x-parser-schema-id": "<anonymous-schema-679>"
+      "x-parser-schema-id": "<anonymous-schema-691>"
     },
     "name": {
       "type": "string",
       "description": "Common or display value of the Permit.",
       "example": "DRE Number",
-      "x-parser-schema-id": "<anonymous-schema-677>"
+      "x-parser-schema-id": "<anonymous-schema-689>"
     },
     "type": {
       "type": "string",
@@ -37,24 +37,24 @@
       "enum": [
         "Permit"
       ],
-      "x-parser-schema-id": "<anonymous-schema-676>"
+      "x-parser-schema-id": "<anonymous-schema-688>"
     },
     "validFrom": {
       "type": "string",
       "format": "date-time",
       "description": "start date",
-      "x-parser-schema-id": "<anonymous-schema-681>"
+      "x-parser-schema-id": "<anonymous-schema-693>"
     },
     "validIn": {
       "type": "object",
       "x-range": "Place",
-      "x-parser-schema-id": "<anonymous-schema-680>"
+      "x-parser-schema-id": "<anonymous-schema-692>"
     },
     "validUntil": {
       "type": "string",
       "format": "date-time",
       "description": "end date",
-      "x-parser-schema-id": "<anonymous-schema-682>"
+      "x-parser-schema-id": "<anonymous-schema-694>"
     }
   },
   "x-parser-schema-id": "Permit",

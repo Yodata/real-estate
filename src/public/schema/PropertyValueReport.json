@@ -22,7 +22,7 @@
                 "RealEstateProperty"
               ],
               "type": "string",
-              "x-parser-schema-id": "<anonymous-schema-747>"
+              "x-parser-schema-id": "<anonymous-schema-759>"
             },
             "propertyType": {
               "type": "string",
@@ -81,7 +81,7 @@
               "type": "string",
               "description": "Assessors Parcel Number",
               "example": "ABC-12345-XX-XXXX",
-              "x-parser-schema-id": "<anonymous-schema-748>"
+              "x-parser-schema-id": "<anonymous-schema-760>"
             },
             "image": {
               "title": "image",
@@ -212,7 +212,7 @@
             "listingId": {
               "description": "the local identifier for the listing (MLS #)",
               "type": "string",
-              "x-parser-schema-id": "<anonymous-schema-749>"
+              "x-parser-schema-id": "<anonymous-schema-761>"
             },
             "livingArea": {
               "description": "property indoor space",
@@ -224,7 +224,7 @@
               },
               "type": "object",
               "x-range": "QuantitativeValue",
-              "x-parser-schema-id": "<anonymous-schema-750>"
+              "x-parser-schema-id": "<anonymous-schema-762>"
             },
             "longitude": {
               "type": "number",
@@ -243,25 +243,25 @@
               },
               "type": "object",
               "x-range": "QuantitativeValue",
-              "x-parser-schema-id": "<anonymous-schema-751>"
+              "x-parser-schema-id": "<anonymous-schema-763>"
             },
             "numberOfBathrooms": {
               "description": "the number of bathrooms",
               "example": "2",
               "type": "string",
-              "x-parser-schema-id": "<anonymous-schema-752>"
+              "x-parser-schema-id": "<anonymous-schema-764>"
             },
             "numberOfBedrooms": {
               "description": "the number of bedrooms",
               "example": "3",
               "type": "string",
-              "x-parser-schema-id": "<anonymous-schema-753>"
+              "x-parser-schema-id": "<anonymous-schema-765>"
             },
             "numberOfRooms": {
               "description": "the total number of rooms in the building",
               "type": "string",
               "example": 7,
-              "x-parser-schema-id": "<anonymous-schema-754>"
+              "x-parser-schema-id": "<anonymous-schema-766>"
             },
             "postalCode": {
               "type": "string",
@@ -331,7 +331,7 @@
         },
         {
           "description": "the subject property",
-          "x-parser-schema-id": "<anonymous-schema-755>"
+          "x-parser-schema-id": "<anonymous-schema-767>"
         },
         {
           "properties": {
@@ -396,10 +396,10 @@
               }
             }
           },
-          "x-parser-schema-id": "<anonymous-schema-756>"
+          "x-parser-schema-id": "<anonymous-schema-768>"
         }
       ],
-      "x-parser-schema-id": "<anonymous-schema-746>"
+      "x-parser-schema-id": "<anonymous-schema-758>"
     },
     "dateCreated": {
       "$id": "http://realestate.yodata.me/schema/dateCreated.yaml",
@@ -412,7 +412,7 @@
       "type": "string",
       "description": "document name or title",
       "example": "LOT:45 DIST:33 CITY/MUNI/TWP:LADUE LINDWORTH...",
-      "x-parser-schema-id": "<anonymous-schema-744>"
+      "x-parser-schema-id": "<anonymous-schema-756>"
     },
     "result": {
       "type": "object",
@@ -430,36 +430,36 @@
           "enum": [
             "MonetaryAmount"
           ],
-          "x-parser-schema-id": "<anonymous-schema-669>"
+          "x-parser-schema-id": "<anonymous-schema-681>"
         },
         "minValue": {
           "type": "number",
           "description": "the lower limit of the range",
           "example": 2400000,
-          "x-parser-schema-id": "<anonymous-schema-670>"
+          "x-parser-schema-id": "<anonymous-schema-682>"
         },
         "maxValue": {
           "type": "number",
           "description": "the upper limit of the range",
           "example": 3200000,
-          "x-parser-schema-id": "<anonymous-schema-671>"
+          "x-parser-schema-id": "<anonymous-schema-683>"
         },
         "value": {
           "type": "number",
           "description": "the actual or expected value",
           "example": 2700000,
-          "x-parser-schema-id": "<anonymous-schema-672>"
+          "x-parser-schema-id": "<anonymous-schema-684>"
         },
         "currency": {
           "type": "string",
           "description": "use ISO4217 country codes",
           "maxLength": 3,
           "example": "USD",
-          "x-parser-schema-id": "<anonymous-schema-673>"
+          "x-parser-schema-id": "<anonymous-schema-685>"
         }
       },
       "description": "the estimated value of the property",
-      "x-parser-schema-id": "<anonymous-schema-745>"
+      "x-parser-schema-id": "<anonymous-schema-757>"
     },
     "type": {
       "type": "string",
@@ -467,7 +467,7 @@
       "enum": [
         "PropertyValueReport"
       ],
-      "x-parser-schema-id": "<anonymous-schema-743>"
+      "x-parser-schema-id": "<anonymous-schema-755>"
     }
   },
   "x-parser-schema-id": "PropertyValueReport",

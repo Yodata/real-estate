@@ -1,5 +1,8 @@
 title: Person
 type: object
+required:
+  - type
+  - name
 properties:
   additionalName:
     title: additionalName

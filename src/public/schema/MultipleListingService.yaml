@@ -141,12 +141,12 @@ properties:
             type: string
             enum:
               - Certification
-            x-parser-schema-id: <anonymous-schema-594>
+            x-parser-schema-id: <anonymous-schema-606>
           name:
             type: string
             description: the name of the Certification
             example: e-Agent Certified
-            x-parser-schema-id: <anonymous-schema-595>
+            x-parser-schema-id: <anonymous-schema-607>
           issuedBy:
             type: object
             x-range: RealEstateOrganization
@@ -190,7 +190,7 @@ properties:
                 type: string
                 description: the name of the item
                 x-parser-schema-id: <anonymous-schema-92>
-            x-parser-schema-id: <anonymous-schema-596>
+            x-parser-schema-id: <anonymous-schema-608>
         x-parser-schema-id: Certification
   contactPoint:
     $id: http://realestate.yodata.me/definitions/contactPoint.json
@@ -380,23 +380,23 @@ properties:
               type: string
               enum:
                 - DigitalDocument
-              x-parser-schema-id: <anonymous-schema-621>
+              x-parser-schema-id: <anonymous-schema-633>
             id:
               type: string
               example: http://user.example.com/public/logo/archive.zip
-              x-parser-schema-id: <anonymous-schema-622>
+              x-parser-schema-id: <anonymous-schema-634>
             name:
               type: string
               description: document name or title
               example: archive.zip
-              x-parser-schema-id: <anonymous-schema-623>
+              x-parser-schema-id: <anonymous-schema-635>
             encodingFormat:
               type: string
               description: >-
                 [ISO Media
                 Type](https://www.iana.org/assignments/media-types/media-types.xhtml)
               example: application/zip
-              x-parser-schema-id: <anonymous-schema-624>
+              x-parser-schema-id: <anonymous-schema-636>
             about:
               type: object
               description: subject of the Document
@@ -405,12 +405,12 @@ properties:
                 type: RealEstateTransaction
                 identifier:
                   bmsTransactionId: xxxx
-              x-parser-schema-id: <anonymous-schema-625>
+              x-parser-schema-id: <anonymous-schema-637>
             url:
               type: string
               description: public URL of the object
               example: https://example.com
-              x-parser-schema-id: <anonymous-schema-626>
+              x-parser-schema-id: <anonymous-schema-638>
           x-parser-schema-id: DigitalDocument
         - description: an associated logo
           type: object
@@ -447,7 +447,7 @@ properties:
     type: string
     enum:
       - MultipleListingService
-    x-parser-schema-id: <anonymous-schema-675>
+    x-parser-schema-id: <anonymous-schema-687>
   url:
     description: primary website/url for the entity.
     format: uri
@@ -458,5 +458,5 @@ example:
   identifier:
     resoouid: M00000101
     bhhsmlsid: xxxxxx
-x-parser-schema-id: <anonymous-schema-674>
+x-parser-schema-id: <anonymous-schema-686>
 

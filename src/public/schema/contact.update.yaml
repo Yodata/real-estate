@@ -118,6 +118,9 @@ payload:
           allOf:
             - title: Person
               type: object
+              required:
+                - type
+                - name
               properties:
                 type:
                   type: string

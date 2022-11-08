@@ -8,18 +8,18 @@ properties:
     format: uri
     description: ASSOC-ID
     example: https://{userid}.example.com/profile/card#me
-    x-parser-schema-id: <anonymous-schema-616>
+    x-parser-schema-id: <anonymous-schema-628>
   author:
     type: string
     format: uri
     description: OFFICE-ID
     example: https://{officeid}.example.com/profile/card#me
-    x-parser-schema-id: <anonymous-schema-611>
+    x-parser-schema-id: <anonymous-schema-623>
   batchId:
     type: string
     description: BATCH-ID
     example: '0001'
-    x-parser-schema-id: <anonymous-schema-610>
+    x-parser-schema-id: <anonymous-schema-622>
   object:
     type: object
     description: the Customer
@@ -30,7 +30,7 @@ properties:
       type:
         type: string
         description: The item type (Linked-Data @type)
-        x-parser-schema-id: <anonymous-schema-618>
+        x-parser-schema-id: <anonymous-schema-630>
       givenName:
         type: string
         description: First Name of a person
@@ -71,7 +71,7 @@ properties:
         type: string
         description: CUSTOMER-MIDDLE-INITIAL
         example: M
-        x-parser-schema-id: <anonymous-schema-619>
+        x-parser-schema-id: <anonymous-schema-631>
       familyName:
         $id: htttp://realestate.yodata.me/schema/familyName.yaml
         type: string
@@ -98,18 +98,18 @@ properties:
         type: string
         description: gender of the Customer (why?)
         example: M
-        x-parser-schema-id: <anonymous-schema-620>
-    x-parser-schema-id: <anonymous-schema-617>
+        x-parser-schema-id: <anonymous-schema-632>
+    x-parser-schema-id: <anonymous-schema-629>
   position:
     type: number
     description: ADJUSTMENT-SEQUENCE
     example: 1
-    x-parser-schema-id: <anonymous-schema-615>
+    x-parser-schema-id: <anonymous-schema-627>
   transactionId:
     type: string
     description: TRANS-NO
     example: '0000097123'
-    x-parser-schema-id: <anonymous-schema-613>
+    x-parser-schema-id: <anonymous-schema-625>
   transactionRole:
     type: string
     x-range:
@@ -120,19 +120,19 @@ properties:
     enum:
       - Buyer
       - Seller
-    x-parser-schema-id: <anonymous-schema-614>
+    x-parser-schema-id: <anonymous-schema-626>
   transactionType:
     type: string
     description: TRANS-TYPE
     x-range: TransactionType
     example: SalesTransactionType
-    x-parser-schema-id: <anonymous-schema-612>
+    x-parser-schema-id: <anonymous-schema-624>
   type:
     type: string
     description: '"ContactSummary"'
     enum:
       - ContactSummaryReport
-    x-parser-schema-id: <anonymous-schema-609>
+    x-parser-schema-id: <anonymous-schema-621>
 x-parser-schema-id: ContactSummary
 $id: http://realestate.yodata.me/schema/ContactSummary.yaml
 

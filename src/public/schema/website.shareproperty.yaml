@@ -1,0 +1,937 @@
+$id: http://realestate.yodata.me/schema/website.shareproperty.yaml
+messageId: website#shareproperty
+title: website#shareproperty
+summary: a website user shares a property listing
+externalDocs: null
+headers:
+  $id: subscription_headers
+  title: CloudEvent
+  type: object
+  properties:
+    time:
+      type: string
+      format: date-time
+      description: date & time the event was produced
+      x-parser-schema-id: <anonymous-schema-30>
+    agent:
+      type: string
+      format: uri
+      summary: >-
+        the event provider who sent the event via a subscription authorized to
+        your service.
+      description: >
+        if you are a multi-tenant app, then the agent is the user associated
+        with the event data.
+
+        any future events related to this message will be sent to the same
+        agent/recipient
+      example: https://andy_agent.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-31>
+    instrument:
+      type: string
+      format: uri
+      description: the app or service that produced the event on behalf of the agent/user
+      example: https://supercrm.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-32>
+    source:
+      type: string
+      format: uri
+      description: an agent, team or organization who received a copy of the event
+      example: https://bigbrandrealestate.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-33>
+    originalRecipient:
+      type: string
+      format: uri
+      summary: the original recipient of the event
+      description: >
+        the originalRecipient helps you determine the subscription that
+        delivered the event to you.
+
+        if the originalRecipient is the same as the agent, then the you are
+        subscribed to the agent.
+
+        if the originalRecipient is different from the agent, then you are
+        subscribed to the event source
+      example: https://agentid.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-34>
+    id:
+      type: string
+      format: uri
+      summary: the event id
+      description: |
+        the event id is a unique identifier for the event.
+        all subscribers will receive the same event id.
+      example: https://supercrm.example.com/publish/{eventid}
+      x-parser-schema-id: <anonymous-schema-35>
+    '@id':
+      type: string
+      format: uri
+      summary: the message id - the uri of the message in your inbox
+      example: https://sumpercrm.example.com/inbox/{eventid}
+      x-parser-schema-id: <anonymous-schema-36>
+payload:
+  type: object
+  required:
+    - topic
+    - data
+  properties:
+    data:
+      title: ShareAction
+      type: object
+      required:
+        - type
+        - agent
+        - object
+        - recipient
+      properties:
+        type:
+          type: string
+          const: ShareAction
+          x-parser-schema-id: <anonymous-schema-546>
+        agent:
+          title: Person
+          type: object
+          required:
+            - type
+            - name
+          properties:
+            type:
+              type: string
+              x-parser-schema-id: <anonymous-schema-95>
+            affiliation:
+              description: An organization that this person is affiliated with
+              type: array
+              items:
+                type: string
+                format: uri
+                example: https://example.com/profile/card#me
+                x-parser-schema-id: <anonymous-schema-97>
+              x-parser-schema-id: <anonymous-schema-96>
+            address:
+              type: array
+              items:
+                $id: http://realestate.yodata.me/schemas/PostalAddress.yaml
+                title: PostalAddress
+                type: object
+                description: A physical address.
+                properties:
+                  type:
+                    type: string
+                    const: PostalAddress
+                    x-parser-schema-id: <anonymous-schema-99>
+                  streetAddress:
+                    type: string
+                    description: the street number and name.
+                    x-faker: address.streetAddress
+                    examples:
+                      - 5046 Ottis Point
+                      - 166 Marion Burg
+                      - 93044 Haley Stream
+                    x-parser-schema-id: <anonymous-schema-100>
+                  postOfficeBoxNumber:
+                    type: string
+                    description: The post office box number for PO box addresses.
+                    x-faker: address.secondaryAddress
+                    examples:
+                      - Box 1234
+                      - Apt. 161
+                      - Apt. 623
+                    x-parser-schema-id: <anonymous-schema-101>
+                  addressRegion:
+                    type: string
+                    description: State or Province.
+                    x-faker: address.state
+                    examples:
+                      - New Jersey
+                      - California
+                      - MI
+                      - null
+                    x-parser-schema-id: <anonymous-schema-102>
+                  addressLocality:
+                    type: string
+                    description: City, Township.
+                    x-faker: address.city
+                    examples:
+                      - Gotham City
+                      - Kulasmouth
+                      - Heidistad
+                      - Altamonte Springs
+                      - West Ahmed
+                      - Blaiseview
+                    x-parser-schema-id: <anonymous-schema-103>
+                  postalCode:
+                    type: string
+                    description: Zip/Post Code
+                    x-faker: address.zipCode
+                    examples:
+                      - '10010'
+                      - '38859'
+                      - '40387'
+                      - 50239-7698
+                      - null
+                    x-parser-schema-id: <anonymous-schema-104>
+                  addressCountry:
+                    type: string
+                    description: >-
+                      The country. For example, USA. You can also provide the
+                      two-letter ISO 3166-1 alpha-2 country code.
+                    examples:
+                      - USA
+                      - TH
+                      - NZ
+                      - EG
+                      - SJ
+                      - VN
+                    x-faker: address.countryCode
+                    x-parser-schema-id: <anonymous-schema-105>
+                  addressCounty:
+                    type: string
+                    description: the county (us real estate extension)
+                    faker: address.county
+                    examples:
+                      - Gotham County
+                      - Buckinghamshire
+                      - Borders
+                      - null
+                    x-parser-schema-id: <anonymous-schema-106>
+                  addressSubdivision:
+                    type: string
+                    description: the subdivision or neighborhood (us real estate extension)
+                    x-faker: address.streetName
+                    examples:
+                      - Gotham Heights
+                      - South Kensington
+                      - SOMA (South of Market)
+                      - Nob Hill
+                    x-parser-schema-id: <anonymous-schema-107>
+                x-parser-schema-id: PostalAddress
+              x-parser-schema-id: <anonymous-schema-98>
+            birthDate:
+              description: date of birth.
+              type: string
+              format: date
+              x-parser-schema-id: <anonymous-schema-108>
+            contactPoint:
+              description: contact points for the person
+              type: array
+              items:
+                $id: htttp://realestate.yodata.me/schema/ContactPoint.json
+                title: ContactPoint
+                description: >
+                  A point of contact for the entity. By convention in the real
+                  estate domain, ContactPoints
+
+                  are preferred over telephone, email, and faxNumber so the
+                  ContactPoint.name property can be used to label values
+
+                  for example, Work Telephone, Home, as named contactPoint
+                  values.
+                type: object
+                required:
+                  - type
+                  - name
+                minProperties: 3
+                properties:
+                  type:
+                    type: string
+                    const: ContactPoint
+                    x-parser-schema-id: <anonymous-schema-110>
+                  name:
+                    type: string
+                    description: a label for the contactPoint, i.e. 'Work', or 'Home'
+                    examples:
+                      - Work
+                      - Home
+                      - Vacation
+                      - Bob's Cell
+                      - Alice's Work
+                    x-parser-schema-id: <anonymous-schema-111>
+                  telephone:
+                    type: string
+                    x-faker: phone.phoneNumber
+                    examples:
+                      - 555-555-5555
+                      - 555-555-5555 x123
+                      - 555-555-5555 ext. 123
+                      - +1-555-555-5555
+                    x-parser-schema-id: <anonymous-schema-112>
+                  faxNumber:
+                    type: string
+                    x-faker: phone.phoneNumber
+                    examples:
+                      - 555-555-5555
+                      - 555-555-5555 x123
+                      - 555-555-5555 ext. 123
+                      - +1-555-555-5555
+                    x-parser-schema-id: <anonymous-schema-113>
+                  email:
+                    description: an email address for the item.
+                    type: string
+                    format: email
+                    x-faker: internet.email
+                    examples:
+                      - bob@example.com
+                      - alice@example.com
+                    x-parser-schema-id: <anonymous-schema-114>
+                  url:
+                    description: primary URL for the item.
+                    type: string
+                    format: uri
+                    example: https://www.facebook.com/hallandoates
+                    x-parser-schema-id: <anonymous-schema-115>
+                x-parser-schema-id: ContactPoint
+              x-parser-schema-id: <anonymous-schema-109>
+            email:
+              type: string
+              format: email
+              x-faker: internet.email
+              x-parser-schema-id: <anonymous-schema-93>
+            additionalName:
+              title: additionalName
+              description: >-
+                any other name(s) associated with the entity, i.e. nickname,
+                middle name, maiden name, etc. For multiple names, use a comma
+                without space as a separator.
+              type: string
+              examples:
+                - Johnny,John
+                - Prince,The Artist Formerly Known as Prince,The Artist
+                - Babs,Barbara
+                - Katheryn Elizabeth Hudson,Katy Perry
+                - Destiny Hope Cyrus,Miley Cyrus
+              x-parser-schema-id: <anonymous-schema-116>
+            familyName:
+              $id: htttp://realestate.yodata.me/schema/familyName.yaml
+              type: string
+              title: Family Name
+              description: Last Name of a person
+              x-faker: name.lastName
+              maxLength: 50
+              externalDocs:
+                description: Family Name
+                url: https://schema.org/familyName
+              examples:
+                - Smith
+                - Jones
+                - Parker
+                - Monk
+                - Brown
+                - Miller
+                - Davis
+                - Wilson
+                - Fitzgerald
+                - Johnson
+                - Williams
+            faxNumber:
+              type: string
+              description: Do people still use fax machines?
+              x-faker: phone.phoneNumber
+              x-parser-schema-id: <anonymous-schema-117>
+            givenName:
+              type: string
+              description: First Name of a person
+              x-faker: name.firstName
+              examples:
+                - John
+                - Jane
+                - Mary
+                - Joseph
+                - William
+                - David
+                - Richard
+                - Charles
+                - Thomas
+                - Christopher
+                - Daniel
+                - Matthew
+                - Anthony
+                - Donald
+                - Mark
+                - Paul
+                - Steven
+                - Andrew
+                - Kenneth
+                - George
+                - Joshua
+                - Kevin
+                - Brian
+                - Edward
+                - Ronald
+                - Timothy
+                - Jason
+                - Jeffrey
+                - Ryan
+                - Jacob
+              x-parser-schema-id: <anonymous-schema-118>
+            honorificPrefix:
+              title: honorificPrefix
+              description: An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.
+              type: string
+              example: Dr
+              x-parser-schema-id: <anonymous-schema-119>
+            honorificSuffix:
+              title: honorificSuffix
+              description: An honorific title following a person's name like M.D.
+              type: string
+              example: Esq
+              x-parser-schema-id: <anonymous-schema-120>
+            jobTitle:
+              title: jobTitle
+              description: job tiles associated with the item
+              type: array
+              items:
+                type: string
+                x-parser-schema-id: <anonymous-schema-122>
+              example:
+                - Chief Data Officer
+                - Sanitation Engineer
+              x-parser-schema-id: <anonymous-schema-121>
+            knowsLanguage:
+              description: languages spoken by the person
+              type: array
+              items:
+                $id: htttp://realestate.yodata.me/schema/Language.yaml
+                description: a written or spoken Language
+                title: Language
+                type: object
+                required:
+                  - type
+                  - name
+                  - additionalName
+                properties:
+                  type:
+                    type: string
+                    const: Language
+                    x-parser-schema-id: <anonymous-schema-124>
+                  name:
+                    type: string
+                    description: the display name of the language
+                    x-parser-schema-id: <anonymous-schema-125>
+                  additionalName:
+                    type: string
+                    description: BCP 47 language code
+                    x-parser-schema-id: <anonymous-schema-126>
+                examples:
+                  - type: Language
+                    name: English
+                    additionalName: en-us
+                  - type: Language
+                    name: Spanish
+                    additionalName: es
+                  - type: Language
+                    name: French
+                    additionalName: fr
+                  - type: Language
+                    name: German
+                    additionalName: de
+                  - type: Language
+                    name: Italian
+                    additionalName: it
+                  - type: Language
+                    name: Japanese
+                    additionalName: ja
+                  - type: Language
+                    name: Korean
+                    additionalName: ko
+                  - type: Language
+                    name: Portuguese
+                    additionalName: pt
+                  - type: Language
+                    name: Russian
+                    additionalName: ru
+                  - type: Language
+                    name: Chinese
+                    additionalName: zh
+                  - type: Language
+                    name: Arabic
+                    additionalName: ar
+                  - type: Language
+                    name: Hindi
+                    additionalName: hi
+                  - type: Language
+                    name: Bengali
+                    additionalName: bn
+                  - type: Language
+                    name: Portuguese
+                    additionalName: pt
+                x-parser-schema-id: Language
+              x-parser-schema-id: <anonymous-schema-123>
+            name:
+              description: Full name of the person.
+              type: string
+              x-faker: name.findName
+              x-parser-schema-id: <anonymous-schema-127>
+            telephone:
+              type: string
+              description: Primary phone number.
+              example: '+15558675309'
+              x-parser-schema-id: <anonymous-schema-128>
+            worksFor:
+              type: string
+              description: Organizations the person works for.
+              x-faker: company.companyName
+              x-parser-schema-id: <anonymous-schema-129>
+          x-parser-schema-id: Person
+        object:
+          title: PropertyListing
+          type: object
+          x-range: PropertyListing
+          description: a real estate property listed for sale
+          properties:
+            type:
+              enum:
+                - PropertyListing
+              type: string
+              x-parser-schema-id: <anonymous-schema-263>
+            addressCountry:
+              type: string
+              description: two-letter ISO 3166-1 alpha-2 country code
+              example: US
+              enum:
+                - CA
+                - DE
+                - GR
+                - IN
+                - IT
+                - MX
+                - PE
+                - PT
+                - ES
+                - AE
+                - GB
+                - US
+              x-parser-schema-id: <anonymous-schema-264>
+            addressLocality:
+              type: string
+              description: City, Township.
+              example: Gotham City
+              maxLength: 50
+              x-parser-schema-id: <anonymous-schema-265>
+            addressRegion:
+              type: string
+              description: State or Province.
+              example: New Jersey
+              maxLength: 3
+              x-parser-schema-id: <anonymous-schema-266>
+            buyerAgent:
+              description: the buyer's RealEstateAgent
+              example:
+                email: butch.byers@example.com
+                identifier:
+                  agentKey: xxxx
+                name: Butch Byers
+                type: RealEstateAgent
+              type: object
+              x-range: RealEstateAgent
+              x-parser-schema-id: <anonymous-schema-267>
+            buyerOffice:
+              description: the buyer's RealEstateOffice
+              example:
+                email: gcr@example.com
+                identifier:
+                  officeKey: grc1
+                name: Gotham City Real Estate
+                type: RealEstateOffice
+              type: object
+              x-range: RealEstateOffice
+              x-parser-schema-id: <anonymous-schema-268>
+            closeDate:
+              title: closeDate
+              type: string
+              format: date-time
+              description: >-
+                With for-sale listings, the date the purchase agreement was
+                fulfilled. With lease listings, the date the requirements were
+                fulfilled, such as contract and/or deposit.
+              x-range: DateTime
+              x-parser-schema-id: <anonymous-schema-269>
+            image:
+              title: image
+              description: an ImageObject or URI reference to an image on the web.
+              type: array
+              x-range:
+                - ImageObject
+              items:
+                - type: object
+                  allOf:
+                    - title: MediaObject
+                      description: an image, video or document availble for download
+                      x-subclass:
+                        - ImageObject
+                        - DigitalDocument
+                      allOf:
+                        - $id: http://realestate.yodata.me/schema/Thing
+                          type: object
+                          title: Thing
+                          summary: The root type of all Things.
+                          required:
+                            - type
+                          propertyNames:
+                            pattern: ^[a-z@$][a-zA-Z0-9-_]+$
+                            x-parser-schema-id: <anonymous-schema-274>
+                          properties:
+                            type:
+                              type: string
+                              pattern: ^[A-Z][a-zA-Z0-9]+$
+                              description: The item type (Linked-Data @type)
+                              x-parser-schema-id: <anonymous-schema-272>
+                            '@id':
+                              type: string
+                              format: uri
+                              description: the liked data uri for the Thing
+                              x-parser-schema-id: <anonymous-schema-273>
+                          x-parser-schema-id: Thing
+                        - properties:
+                            type:
+                              type: string
+                              enum:
+                                - MediaObject
+                                - ImageObject
+                                - DigitalDocument
+                            id:
+                              description: the URL to access the item.
+                              example: http://user.example.com/public/logo/fileName.zip
+                              type: string
+                              format: uri
+                            name:
+                              type: string
+                              description: the file name of the object.
+                              example: fileName.zip
+                            encodingFormat:
+                              type: string
+                              description: MIME type
+                              example: application/zip
+                            about:
+                              type: string
+                              format: uri
+                              description: URI to the subject of the image or logo
+                              example: http://user.example.com/profile/card#me
+                            url:
+                              type: string
+                              format: uri
+                              description: URL of the image content
+                              example: http://user.example.com/public/profile/image.jpg
+                          x-parser-schema-id: <anonymous-schema-275>
+                      x-parser-schema-id: MediaObject
+                    - title: ImageObject
+                      x-range: ImageObject
+                      properties:
+                        type:
+                          enum:
+                            - ImageObject
+                          example: ImageObject
+                        id:
+                          example: http://user.example.com/public/logo/image.jpg
+                        name:
+                          example: image.jpg
+                        encodingFormat:
+                          example: image/jpeg
+                      x-parser-schema-id: <anonymous-schema-276>
+                  x-parser-schema-id: <anonymous-schema-271>
+              x-parser-schema-id: <anonymous-schema-270>
+            internetAddressDisplayYN:
+              enum:
+                - 'Y'
+                - 'N'
+              type: string
+              x-parser-schema-id: <anonymous-schema-277>
+            latitude:
+              type: number
+              description: The latitude of a location.
+              x-title: latitude
+              example: 40.75
+              x-parser-schema-id: <anonymous-schema-278>
+            listingAgent:
+              type: object
+              description: >-
+                the agent/broker representing the seller in a real estate
+                transaction
+              x-range:
+                - RealEstateAgent
+                - RealEstateOrganization
+              example:
+                type: RealEstateAgent
+                name: Lori Listagent
+                telephone: 1-252-574-0160
+                email: lorilistagent@example.com
+              x-parser-schema-id: <anonymous-schema-279>
+            listingContractDate:
+              description: >-
+                The effective date of the agreement between the seller and the
+                seller's broker.
+              format: date-time
+              type: string
+              x-parser-schema-id: <anonymous-schema-280>
+            listingId:
+              description: the local identifier for the listing
+              example: GOTHAM-MLS+12345
+              type: string
+              x-parser-schema-id: <anonymous-schema-281>
+            listingOffice:
+              description: the listing office
+              example:
+                name: Gotham City Real Estate
+                type: RealEstateOffice
+              type: object
+              x-range: RealEstateOrganization
+              x-parser-schema-id: <anonymous-schema-282>
+            listingOriginatingSystem:
+              description: The place where the item is originally input by the user.
+              example:
+                identifier:
+                  bhhsmlsid: xxxx
+                  resoouid: not-yet-available
+                name: MLSListings
+                type: MultipleListingService
+              type: object
+              x-range: MultipleListingService
+              x-subPropertyOf: instrument
+              x-parser-schema-id: <anonymous-schema-283>
+            listingPrice:
+              type: object
+              x-range: PriceSpecification
+              example:
+                type: PriceSpecification
+                price: 75000
+                priceCurrency: USD
+              x-parser-schema-id: <anonymous-schema-284>
+            listingStatus:
+              enum:
+                - Active
+                - Pending
+                - Sold
+                - Canceled
+                - Prelisted
+                - OffMarket
+                - Private
+              type: string
+              x-parser-schema-id: <anonymous-schema-285>
+            livingArea:
+              description: property indoor space
+              example:
+                type: QuantitativeValue
+                unitCode: SqFt
+                unitText: Square Feet
+                value: 1500
+              type: object
+              x-range: QuantitativeValue
+              x-parser-schema-id: <anonymous-schema-286>
+            longitude:
+              type: number
+              description: The longitude of a location.
+              x-title: longitude
+              example: 73.98
+              x-parser-schema-id: <anonymous-schema-287>
+            lotSize:
+              description: outdoor space minValue, maxValue
+              example:
+                type: QuantitativeValue
+                unitCode: AC
+                unitText: Acres
+                value: 0.5
+              type: object
+              x-range: QuantitativeValue
+              x-parser-schema-id: <anonymous-schema-288>
+            numberOfBathrooms:
+              description: the number of bathrooms
+              example: '2'
+              type: string
+              x-parser-schema-id: <anonymous-schema-289>
+            numberOfBedrooms:
+              description: the number of bedrooms
+              example: '3'
+              type: string
+              x-parser-schema-id: <anonymous-schema-290>
+            numberOfRooms:
+              description: the total number of rooms in the building
+              example: '7'
+              type: string
+              x-parser-schema-id: <anonymous-schema-291>
+            originatingSystemKey:
+              description: the listing identifier from the original MLS, aka MLSID.
+              example: 12345
+              type: string
+              x-parser-schema-id: <anonymous-schema-292>
+            originatingSystemName:
+              description: the name of the MLS where the listing was originally input
+              example: GOTHAM-MLS
+              type: string
+              x-parser-schema-id: <anonymous-schema-293>
+            postalCode:
+              type: string
+              description: Zip/Post Code
+              example: '10010'
+              maxLength: 12
+              x-parser-schema-id: <anonymous-schema-294>
+            propertySubType:
+              title: propertySubType
+              type: string
+              x-range: PropertySubType
+              description: RESO property sub-type (see range for allowed values)
+              enum:
+                - ApartmentPropertyType
+                - BoatSlipPropertyType
+                - CabinPropertyType
+                - CondominiumPropertyType
+                - DeededParkingPropertyType
+                - DuplexPropertyType
+                - FarmPropertyType
+                - ManufacturedHomePropertyType
+                - ManufacturedOnLandPropertyType
+                - MobileHomePropertyType
+                - OwnYourOwnPropertyType
+                - QuadruplexPropertyType
+                - RanchPropertyType
+                - SingleFamilyPropertyType
+                - StockCooperativePropertyType
+                - TimesharePropertyType
+                - TownhousePropertyType
+                - TriplexPropertyType
+                - AgriculturePropertyType
+                - BusinessPropertyType
+                - HotelMotelPropertyType
+                - IndustrialPropertyType
+                - MixedUsePropertyType
+                - MultiFamilyPropertyType
+                - OfficePropertyType
+                - RetailPropertyType
+                - UnimprovedLandPropertyType
+                - WarehousePropertyType
+              x-parser-schema-id: <anonymous-schema-295>
+            propertyType:
+              type: string
+              description: RESO property type (see range for allowed values)
+              x-range: PropertyType
+              minLength: 4
+              maxLength: 4
+              enum:
+                - RESI
+                - RLSE
+                - RINC
+                - LAND
+                - MOBI
+                - FARM
+                - COMS
+                - COML
+                - BUSO
+              x-parser-schema-id: <anonymous-schema-296>
+            purchaseContractDate:
+              description: >-
+                With for-sale listings, the date an offer was accepted and the
+                listing was no longer on market. With lease listings this may
+                represent a meeting of the minds to lease, but some contractual
+                requirements are yet to be fulfilled, such as contract signing
+                or receipt of the deposit.
+              format: date-time
+              type: string
+              x-parser-schema-id: <anonymous-schema-297>
+            stories:
+              type: number
+              description: he number of floors in the property
+              example: 2
+              x-parser-schema-id: <anonymous-schema-298>
+            streetAddress:
+              type: string
+              description: the street address
+              example: 1007 Mountain Gate Rd
+              maxLength: 75
+              x-parser-schema-id: <anonymous-schema-299>
+            universalPropertyId:
+              type: string
+              title: universalPropertyId
+              description: >-
+                The Universal Property Identifier is a unique identifier for all
+                real property in the US and Canada.  It is based on country and
+                local identification methods and is limited to real property. 
+                For cases such as shares of real property, units, and other more
+                granular cases, please utilize the UniversalPropertySubId.
+              example: US-04015-N-R-11022331-N
+              x-parser-schema-id: <anonymous-schema-300>
+            url:
+              title: url
+              type: string
+              format: uri
+              description: URL of the item.
+              example: >-
+                https://www.example.com/homedetails/1007-Mountain-Gate-Rd-Gotham-City-Gotham/10007
+              x-parser-schema-id: <anonymous-schema-301>
+            yearBuilt:
+              type: number
+              description: the year the structure was created
+              example: 1988
+              x-parser-schema-id: <anonymous-schema-302>
+          x-parser-schema-id: PropertyListing
+        recipient:
+          type: object
+          properties:
+            type:
+              type: string
+              enum:
+                - Person
+                - Audience
+              x-parser-schema-id: <anonymous-schema-548>
+            name:
+              type: string
+              description: |
+                The name of the person or audience to whom the property listing
+                was shared.
+              examples:
+                - John Doe
+                - Family
+                - Friends
+              x-parser-schema-id: <anonymous-schema-549>
+            email:
+              type: string
+              format: email
+              x-faker: internet.email
+              description: |
+                The email address of the person or audience to whom the property
+                listing was shared.
+              x-parser-schema-id: <anonymous-schema-550>
+            url:
+              type: string
+              format: uri
+              x-faker: internet.url
+              description: |
+                A URL to the shared item if available.
+              examples:
+                - http://facebook.com/1234567890
+                - http://twitter.com/userx/status/1234567890
+              x-parser-schema-id: <anonymous-schema-551>
+            instrument:
+              type: object
+              description: |
+                The instrument used to share the property listing.
+              properties:
+                type:
+                  type: string
+                  const: Organization
+                  x-parser-schema-id: <anonymous-schema-553>
+                name:
+                  type: string
+                  description: >
+                    The name of the instrument used to share the property
+                    listing.
+                  examples:
+                    - Facebook
+                    - Twitter
+                    - LinkedIn
+                    - Instagram
+                    - WhatsApp
+                    - Email
+                    - SMS
+                    - Messenger
+                    - Snapchat
+                    - WeChat
+                    - Truth Social
+                    - Other
+                  x-parser-schema-id: <anonymous-schema-554>
+              x-parser-schema-id: <anonymous-schema-552>
+          x-parser-schema-id: <anonymous-schema-547>
+      x-parser-schema-id: <anonymous-schema-545>
+    topic:
+      type: string
+      const: realestate/website#shareproperty
+      x-parser-schema-id: <anonymous-schema-544>
+  x-parser-schema-id: <anonymous-schema-543>
+

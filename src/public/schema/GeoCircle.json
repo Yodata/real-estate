@@ -16,7 +16,7 @@
           "enum": [
             "GeoCoordinates"
           ],
-          "x-parser-schema-id": "<anonymous-schema-631>"
+          "x-parser-schema-id": "<anonymous-schema-643>"
         },
         "longitude": {
           "type": "number",
@@ -46,14 +46,14 @@
         "unitCode": "mi",
         "unitText": "miles"
       },
-      "x-parser-schema-id": "<anonymous-schema-632>"
+      "x-parser-schema-id": "<anonymous-schema-644>"
     },
     "type": {
       "type": "string",
       "enum": [
         "GeoCircle"
       ],
-      "x-parser-schema-id": "<anonymous-schema-630>"
+      "x-parser-schema-id": "<anonymous-schema-642>"
     }
   },
   "x-parser-schema-id": "GeoCircle",

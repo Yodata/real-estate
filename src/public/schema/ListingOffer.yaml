@@ -583,6 +583,9 @@ properties:
         x-parser-schema-id: RealEstateAgent
       - title: Person
         type: object
+        required:
+          - type
+          - name
         properties:
           type:
             type: string

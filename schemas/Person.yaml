@@ -2,6 +2,9 @@
 # yaml-language-server: schema=https://www.asyncapi.com/definitions/2.5.0/schema.json
 title: Person
 type: object
+required:
+  - type
+  - name
 properties:
   type: { type: string }
   affiliation:

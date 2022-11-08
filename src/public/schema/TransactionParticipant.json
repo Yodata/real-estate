@@ -9,7 +9,7 @@
       "type": "string",
       "description": "middleName or alternate name of the Person",
       "example": "Big",
-      "x-parser-schema-id": "<anonymous-schema-803>"
+      "x-parser-schema-id": "<anonymous-schema-815>"
     },
     "affiliation": {
       "type": "array",
@@ -18,9 +18,9 @@
         "type": "string",
         "format": "uri",
         "example": "https://{agentid}.example.com/profile/card#me",
-        "x-parser-schema-id": "<anonymous-schema-805>"
+        "x-parser-schema-id": "<anonymous-schema-817>"
       },
-      "x-parser-schema-id": "<anonymous-schema-804>"
+      "x-parser-schema-id": "<anonymous-schema-816>"
     },
     "email": {
       "type": "string",
@@ -95,7 +95,7 @@
       "type": "number",
       "description": "numeric position for the participant/roleName.",
       "example": 1,
-      "x-parser-schema-id": "<anonymous-schema-802>"
+      "x-parser-schema-id": "<anonymous-schema-814>"
     },
     "roleName": {
       "type": "string",
@@ -104,7 +104,7 @@
         "Buyer",
         "Seller"
       ],
-      "x-parser-schema-id": "<anonymous-schema-801>"
+      "x-parser-schema-id": "<anonymous-schema-813>"
     },
     "telephone": {
       "type": "string",
@@ -115,7 +115,7 @@
     "type": {
       "type": "string",
       "const": "TransactionParticipant",
-      "x-parser-schema-id": "<anonymous-schema-800>"
+      "x-parser-schema-id": "<anonymous-schema-812>"
     }
   },
   "x-parser-schema-id": "TransactionParticipant"

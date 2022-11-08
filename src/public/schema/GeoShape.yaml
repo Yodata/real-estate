@@ -13,7 +13,7 @@ properties:
       first point is the lower corner, the second point is the upper corner. A
       box is expressed as two points separated by a space character.
     example: (33.5697,-117.775),(33.6018,-117.707)
-    x-parser-schema-id: <anonymous-schema-634>
+    x-parser-schema-id: <anonymous-schema-646>
   geoMidpoint:
     title: GeoCoordinates
     type: object
@@ -25,7 +25,7 @@ properties:
         description: GeoCordinates
         enum:
           - GeoCoordinates
-        x-parser-schema-id: <anonymous-schema-631>
+        x-parser-schema-id: <anonymous-schema-643>
       longitude:
         type: number
         description: The longitude of a location.
@@ -49,13 +49,13 @@ properties:
       value: '10'
       unitCode: mi
       unitText: miles
-    x-parser-schema-id: <anonymous-schema-632>
+    x-parser-schema-id: <anonymous-schema-644>
   type:
     type: string
     enum:
       - GeoShape
       - GeoCircle
-    x-parser-schema-id: <anonymous-schema-633>
+    x-parser-schema-id: <anonymous-schema-645>
 x-parser-schema-id: GeoShape
 $id: http://realestate.yodata.me/schema/GeoShape.yaml
 

@@ -20,7 +20,7 @@ properties:
     description: GeoCordinates
     enum:
       - GeoCoordinates
-    x-parser-schema-id: <anonymous-schema-631>
+    x-parser-schema-id: <anonymous-schema-643>
 x-parser-schema-id: GeoCoordinates
 $id: http://realestate.yodata.me/schema/GeoCoordinates.yaml
 

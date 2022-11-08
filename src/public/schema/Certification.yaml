@@ -46,18 +46,18 @@ properties:
         type: string
         description: the name of the item
         x-parser-schema-id: <anonymous-schema-92>
-    x-parser-schema-id: <anonymous-schema-596>
+    x-parser-schema-id: <anonymous-schema-608>
   name:
     type: string
     description: the name of the Certification
     example: e-Agent Certified
-    x-parser-schema-id: <anonymous-schema-595>
+    x-parser-schema-id: <anonymous-schema-607>
   type:
     description: Certification
     type: string
     enum:
       - Certification
-    x-parser-schema-id: <anonymous-schema-594>
+    x-parser-schema-id: <anonymous-schema-606>
 x-parser-schema-id: Certification
 $id: http://realestate.yodata.me/schema/Certification.yaml
 

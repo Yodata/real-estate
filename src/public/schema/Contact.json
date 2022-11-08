@@ -1,5 +1,9 @@
 {
   "type": "object",
+  "required": [
+    "type",
+    "name"
+  ],
   "title": "Contact",
   "description": "a CRM contact.",
   "properties": {

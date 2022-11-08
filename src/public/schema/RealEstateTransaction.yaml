@@ -25,7 +25,7 @@ properties:
         type: integer
         description: identifies the batch for the current transaction
         example: 4136
-        x-parser-schema-id: <anonymous-schema-778>
+        x-parser-schema-id: <anonymous-schema-790>
       transactionSequence:
         type: integer
         description: >-
@@ -33,18 +33,18 @@ properties:
           reports of the the same RealEstateTransaction
         minimum: 0
         example: 1
-        x-parser-schema-id: <anonymous-schema-779>
+        x-parser-schema-id: <anonymous-schema-791>
       unimprovedLandFlag:
         type: boolean
         description: true if the transaction subject property is an unimproved lot.
-        x-parser-schema-id: <anonymous-schema-780>
-    x-parser-schema-id: <anonymous-schema-777>
+        x-parser-schema-id: <anonymous-schema-792>
+    x-parser-schema-id: <anonymous-schema-789>
   buyerOffice:
     type: string
     format: uri
     description: the office representing the buyer
     example: https://{officeid}.example.com/profile/card#me
-    x-parser-schema-id: <anonymous-schema-785>
+    x-parser-schema-id: <anonymous-schema-797>
   closeDate:
     type: string
     format: date-time
@@ -52,7 +52,7 @@ properties:
     description: >-
       With purchase the date the purchase agreement was fulfilled. With lease,
       the date the requirements were fulfilled, such as contract and/or deposit.
-    x-parser-schema-id: <anonymous-schema-787>
+    x-parser-schema-id: <anonymous-schema-799>
   closePrice:
     type: object
     title: MonetaryAmount
@@ -67,40 +67,40 @@ properties:
         description: MonetaryAmount
         enum:
           - MonetaryAmount
-        x-parser-schema-id: <anonymous-schema-669>
+        x-parser-schema-id: <anonymous-schema-681>
       minValue:
         type: number
         description: the lower limit of the range
         example: 2400000
-        x-parser-schema-id: <anonymous-schema-670>
+        x-parser-schema-id: <anonymous-schema-682>
       maxValue:
         type: number
         description: the upper limit of the range
         example: 3200000
-        x-parser-schema-id: <anonymous-schema-671>
+        x-parser-schema-id: <anonymous-schema-683>
       value:
         type: number
         description: the actual or expected value
         example: 2700000
-        x-parser-schema-id: <anonymous-schema-672>
+        x-parser-schema-id: <anonymous-schema-684>
       currency:
         type: string
         description: use ISO4217 country codes
         maxLength: 3
         example: USD
-        x-parser-schema-id: <anonymous-schema-673>
+        x-parser-schema-id: <anonymous-schema-685>
     description: the final sale price of the subject
     example:
       type: MonetaryAmount
       value: 123456.78
       currency: USD
-    x-parser-schema-id: <anonymous-schema-789>
+    x-parser-schema-id: <anonymous-schema-801>
   commissionDate:
     type: string
     format: date-time
     x-range: DateTime
     description: date the purchase offer was presented
-    x-parser-schema-id: <anonymous-schema-786>
+    x-parser-schema-id: <anonymous-schema-798>
   document:
     type: array
     description: any documents, images, etc... related to the transaction.
@@ -116,8 +116,8 @@ properties:
           identifier:
             guruTransactionId: '0000074792'
         url: https://example.com/path/to/document.pdf
-      x-parser-schema-id: <anonymous-schema-817>
-    x-parser-schema-id: <anonymous-schema-816>
+      x-parser-schema-id: <anonymous-schema-829>
+    x-parser-schema-id: <anonymous-schema-828>
   identifier:
     type: object
     description: the data producer's id for the transaction.
@@ -128,14 +128,14 @@ properties:
         type: string
         maxLength: 12
         example: '0000074792'
-        x-parser-schema-id: <anonymous-schema-776>
-    x-parser-schema-id: <anonymous-schema-775>
+        x-parser-schema-id: <anonymous-schema-788>
+    x-parser-schema-id: <anonymous-schema-787>
   listingOffice:
     type: string
     format: uri
     description: the office representing the seller
     example: https://{officeid}.example.com/profile/card#me
-    x-parser-schema-id: <anonymous-schema-784>
+    x-parser-schema-id: <anonymous-schema-796>
   object:
     title: RealEstateProperty
     x-range: RealEstateProperty
@@ -150,7 +150,7 @@ properties:
         enum:
           - RealEstateProperty
         type: string
-        x-parser-schema-id: <anonymous-schema-747>
+        x-parser-schema-id: <anonymous-schema-759>
       propertyType:
         type: string
         description: RESO property type (see range for allowed values)
@@ -202,7 +202,7 @@ properties:
         type: string
         description: Assessors Parcel Number
         example: ABC-12345-XX-XXXX
-        x-parser-schema-id: <anonymous-schema-748>
+        x-parser-schema-id: <anonymous-schema-760>
       image:
         title: image
         description: an ImageObject or URI reference to an image on the web.
@@ -296,7 +296,7 @@ properties:
       listingId:
         description: 'the local identifier for the listing (MLS #)'
         type: string
-        x-parser-schema-id: <anonymous-schema-749>
+        x-parser-schema-id: <anonymous-schema-761>
       livingArea:
         description: property indoor space
         example:
@@ -306,7 +306,7 @@ properties:
           value: 1500
         type: object
         x-range: QuantitativeValue
-        x-parser-schema-id: <anonymous-schema-750>
+        x-parser-schema-id: <anonymous-schema-762>
       longitude:
         type: number
         description: The longitude of a location.
@@ -322,22 +322,22 @@ properties:
           value: 0.5
         type: object
         x-range: QuantitativeValue
-        x-parser-schema-id: <anonymous-schema-751>
+        x-parser-schema-id: <anonymous-schema-763>
       numberOfBathrooms:
         description: the number of bathrooms
         example: '2'
         type: string
-        x-parser-schema-id: <anonymous-schema-752>
+        x-parser-schema-id: <anonymous-schema-764>
       numberOfBedrooms:
         description: the number of bedrooms
         example: '3'
         type: string
-        x-parser-schema-id: <anonymous-schema-753>
+        x-parser-schema-id: <anonymous-schema-765>
       numberOfRooms:
         description: the total number of rooms in the building
         type: string
         example: 7
-        x-parser-schema-id: <anonymous-schema-754>
+        x-parser-schema-id: <anonymous-schema-766>
       postalCode:
         type: string
         description: Zip/Post Code
@@ -410,19 +410,19 @@ properties:
         type:
           type: string
           const: TransactionParticipant
-          x-parser-schema-id: <anonymous-schema-800>
+          x-parser-schema-id: <anonymous-schema-812>
         roleName:
           type: string
           description: the role of the participant in the transaction
           examples:
             - Buyer
             - Seller
-          x-parser-schema-id: <anonymous-schema-801>
+          x-parser-schema-id: <anonymous-schema-813>
         position:
           type: number
           description: numeric position for the participant/roleName.
           example: 1
-          x-parser-schema-id: <anonymous-schema-802>
+          x-parser-schema-id: <anonymous-schema-814>
         givenName:
           type: string
           description: First Name of a person
@@ -485,7 +485,7 @@ properties:
           type: string
           description: middleName or alternate name of the Person
           example: Big
-          x-parser-schema-id: <anonymous-schema-803>
+          x-parser-schema-id: <anonymous-schema-815>
         email:
           type: string
           format: email
@@ -503,16 +503,16 @@ properties:
             type: string
             format: uri
             example: https://{agentid}.example.com/profile/card#me
-            x-parser-schema-id: <anonymous-schema-805>
-          x-parser-schema-id: <anonymous-schema-804>
+            x-parser-schema-id: <anonymous-schema-817>
+          x-parser-schema-id: <anonymous-schema-816>
       x-parser-schema-id: TransactionParticipant
-    x-parser-schema-id: <anonymous-schema-799>
+    x-parser-schema-id: <anonymous-schema-811>
   purchaseContractDate:
     type: string
     format: date-time
     description: date of purchase agreement execution (aka sale date)
     x-range: DateTime
-    x-parser-schema-id: <anonymous-schema-788>
+    x-parser-schema-id: <anonymous-schema-800>
   referral:
     description: referring agent details
     title: Referral
@@ -524,7 +524,7 @@ properties:
         description: The item type (Linked-Data @type)
         enum:
           - Referral
-        x-parser-schema-id: <anonymous-schema-793>
+        x-parser-schema-id: <anonymous-schema-805>
       additionalProperty:
         type: object
         description: context specific custom properties
@@ -535,15 +535,15 @@ properties:
             enum:
               - 'Y'
               - 'N'
-            x-parser-schema-id: <anonymous-schema-795>
+            x-parser-schema-id: <anonymous-schema-807>
           inNetworkReferralYN:
             type: string
             description: Y if transaction was referred by an in network agent
             enum:
               - 'Y'
               - 'N'
-            x-parser-schema-id: <anonymous-schema-796>
-        x-parser-schema-id: <anonymous-schema-794>
+            x-parser-schema-id: <anonymous-schema-808>
+        x-parser-schema-id: <anonymous-schema-806>
       referredBy:
         type: object
         description: the referring entity
@@ -559,20 +559,20 @@ properties:
               - RealEstateOffice
               - Organization
               - Person
-            x-parser-schema-id: <anonymous-schema-798>
+            x-parser-schema-id: <anonymous-schema-810>
           id:
             type: string
             format: uri
             description: Linked-Data URI (@id)
             x-parser-schema-id: <anonymous-schema-380>
-        x-parser-schema-id: <anonymous-schema-797>
-    x-parser-schema-id: <anonymous-schema-792>
+        x-parser-schema-id: <anonymous-schema-809>
+    x-parser-schema-id: <anonymous-schema-804>
   reportingOffice:
     type: string
     format: uri
     description: the reporting office
     example: https://{officeid}.example.com/profile/card#me
-    x-parser-schema-id: <anonymous-schema-783>
+    x-parser-schema-id: <anonymous-schema-795>
   totalSalesProductionGCI:
     type: object
     title: MonetaryAmount
@@ -587,34 +587,34 @@ properties:
         description: MonetaryAmount
         enum:
           - MonetaryAmount
-        x-parser-schema-id: <anonymous-schema-669>
+        x-parser-schema-id: <anonymous-schema-681>
       minValue:
         type: number
         description: the lower limit of the range
         example: 2400000
-        x-parser-schema-id: <anonymous-schema-670>
+        x-parser-schema-id: <anonymous-schema-682>
       maxValue:
         type: number
         description: the upper limit of the range
         example: 3200000
-        x-parser-schema-id: <anonymous-schema-671>
+        x-parser-schema-id: <anonymous-schema-683>
       value:
         type: number
         description: the actual or expected value
         example: 2700000
-        x-parser-schema-id: <anonymous-schema-672>
+        x-parser-schema-id: <anonymous-schema-684>
       currency:
         type: string
         description: use ISO4217 country codes
         maxLength: 3
         example: USD
-        x-parser-schema-id: <anonymous-schema-673>
+        x-parser-schema-id: <anonymous-schema-685>
     description: the total gci of the transaction
     example:
       type: MonetaryAmount
       value: 123456.78
       currency: USD
-    x-parser-schema-id: <anonymous-schema-790>
+    x-parser-schema-id: <anonymous-schema-802>
   totalSalesProductionGCIDeduction:
     type: object
     title: MonetaryAmount
@@ -629,34 +629,34 @@ properties:
         description: MonetaryAmount
         enum:
           - MonetaryAmount
-        x-parser-schema-id: <anonymous-schema-669>
+        x-parser-schema-id: <anonymous-schema-681>
       minValue:
         type: number
         description: the lower limit of the range
         example: 2400000
-        x-parser-schema-id: <anonymous-schema-670>
+        x-parser-schema-id: <anonymous-schema-682>
       maxValue:
         type: number
         description: the upper limit of the range
         example: 3200000
-        x-parser-schema-id: <anonymous-schema-671>
+        x-parser-schema-id: <anonymous-schema-683>
       value:
         type: number
         description: the actual or expected value
         example: 2700000
-        x-parser-schema-id: <anonymous-schema-672>
+        x-parser-schema-id: <anonymous-schema-684>
       currency:
         type: string
         description: use ISO4217 country codes
         maxLength: 3
         example: USD
-        x-parser-schema-id: <anonymous-schema-673>
+        x-parser-schema-id: <anonymous-schema-685>
     description: total gci deductions for the transaction
     example:
       type: MonetaryAmount
       value: 1234.56
       currency: USD
-    x-parser-schema-id: <anonymous-schema-791>
+    x-parser-schema-id: <anonymous-schema-803>
   transactionEntry:
     type: array
     description: commissions and unit entries
@@ -674,14 +674,14 @@ properties:
           description: TransactionEntry
           enum:
             - TransactionEntry
-          x-parser-schema-id: <anonymous-schema-807>
+          x-parser-schema-id: <anonymous-schema-819>
         salesProductionUnit:
           type: number
           minimum: 0.0001
           maximum: 1
           description: the sales production units credited to the recipient
           example: 0.5
-          x-parser-schema-id: <anonymous-schema-808>
+          x-parser-schema-id: <anonymous-schema-820>
         salesProductionGCI:
           type: object
           title: MonetaryAmount
@@ -696,34 +696,34 @@ properties:
               description: MonetaryAmount
               enum:
                 - MonetaryAmount
-              x-parser-schema-id: <anonymous-schema-669>
+              x-parser-schema-id: <anonymous-schema-681>
             minValue:
               type: number
               description: the lower limit of the range
               example: 2400000
-              x-parser-schema-id: <anonymous-schema-670>
+              x-parser-schema-id: <anonymous-schema-682>
             maxValue:
               type: number
               description: the upper limit of the range
               example: 3200000
-              x-parser-schema-id: <anonymous-schema-671>
+              x-parser-schema-id: <anonymous-schema-683>
             value:
               type: number
               description: the actual or expected value
               example: 2700000
-              x-parser-schema-id: <anonymous-schema-672>
+              x-parser-schema-id: <anonymous-schema-684>
             currency:
               type: string
               description: use ISO4217 country codes
               maxLength: 3
               example: USD
-              x-parser-schema-id: <anonymous-schema-673>
+              x-parser-schema-id: <anonymous-schema-685>
           description: gross commission income credited to the recipient
           example:
             type: MonetaryAmount
             value: 1234.56
             currency: USD
-          x-parser-schema-id: <anonymous-schema-809>
+          x-parser-schema-id: <anonymous-schema-821>
         recipient:
           description: >-
             the agent credited with the sales production and who receives the
@@ -734,20 +734,20 @@ properties:
               type: string
               description: typically a RealEstateAgent
               example: RealEstateAgent
-              x-parser-schema-id: <anonymous-schema-811>
+              x-parser-schema-id: <anonymous-schema-823>
             roleName:
               type: string
               description: 'enum: ListingAgent,BuyerAgent'
               enum:
                 - ListingAgent
                 - BuyerAgent
-              x-parser-schema-id: <anonymous-schema-812>
+              x-parser-schema-id: <anonymous-schema-824>
             id:
               type: string
               format: uri
               description: Linked-Data URI (@id)
               example: https://{entityid}.example.com/profile/card#me
-              x-parser-schema-id: <anonymous-schema-813>
+              x-parser-schema-id: <anonymous-schema-825>
             identifier:
               type: object
               description: unique identifier of the recipient from the data producer
@@ -756,11 +756,11 @@ properties:
                   type: string
                   maxLength: 12
                   example: '1657897'
-                  x-parser-schema-id: <anonymous-schema-815>
-              x-parser-schema-id: <anonymous-schema-814>
-          x-parser-schema-id: <anonymous-schema-810>
+                  x-parser-schema-id: <anonymous-schema-827>
+              x-parser-schema-id: <anonymous-schema-826>
+          x-parser-schema-id: <anonymous-schema-822>
       x-parser-schema-id: TransactionEntry
-    x-parser-schema-id: <anonymous-schema-806>
+    x-parser-schema-id: <anonymous-schema-818>
   transactionStatus:
     type: string
     description: transaction status
@@ -770,7 +770,7 @@ properties:
       - PendingTransactionStatus
       - ClosedTransactionStatus
       - CanceledTransactionStatus
-    x-parser-schema-id: <anonymous-schema-781>
+    x-parser-schema-id: <anonymous-schema-793>
   transactionType:
     type: string
     description: transaction type
@@ -782,9 +782,9 @@ properties:
       - OI
       - PM
       - RF
-    x-parser-schema-id: <anonymous-schema-782>
+    x-parser-schema-id: <anonymous-schema-794>
   type:
     const: RealEstateTransaction
-    x-parser-schema-id: <anonymous-schema-774>
+    x-parser-schema-id: <anonymous-schema-786>
 x-parser-schema-id: RealEstateTransaction
 

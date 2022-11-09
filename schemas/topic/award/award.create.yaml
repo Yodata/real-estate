@@ -1,6 +1,6 @@
 # @format
 
-messageId: award#create
+messageId: realestate/award#create
 name: realestate/award#create
 title: award#create
 summary: an award was created
@@ -9,6 +9,8 @@ description: |
   The award presentor is described in the `agent` property.
   The award recipient is described in the `recipient` property.
 contentType: application/json
+headers:
+  $ref: ../../subscription_headers.yaml
 tags:
   - name: action|create
   - name: topic|award

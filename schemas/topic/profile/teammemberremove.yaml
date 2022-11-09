@@ -2,14 +2,15 @@
 
 messageId: profile#teammemberremove
 name: realestate/profile#teammemberremove
+title: profile#teammemberremove
 summary: a member (user) is removed from the team
+contentType: application/json
 headers:
-  type: object
-  properties:
-    topic: { const: realestate/profile#teammemberremove }
+  $ref: ../../subscription_headers.yaml
 payload:
   type: object
   properties:
+    topic: { const: realestate/profile#teammemberremove }
     data:
       type: object
       properties:

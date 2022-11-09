@@ -2,14 +2,15 @@
 # yaml-language-server: $schema=https://asyncapi.com/definitions/2.5.0/message.json
 messageId: profile#servicearearemove
 name: realestate/profile#servicearearemove
+title: profile#servicearearemove
 summary: an agent, office or organization profile was updated
+contentType: application/json
 headers:
-  type: object
-  properties:
-    topic: { const: realestate/profile#servicearearemove }
+  $ref: ../../subscription_headers.yaml
 payload:
   type: object
   properties:
+    topic: { const: realestate/profile#servicearearemove }
     data:
       type: object
       properties:

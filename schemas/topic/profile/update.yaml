@@ -2,8 +2,9 @@
 # yaml-language-server: schema=https://www.asyncapi.com/definitions/2.5.0/message.json
 messageId: profile#update
 name: realestate/profile#update
-title: profile.update
+title: profile#update
 summary: an agent, office or organization profile was updated
+contentType: application/json
 headers:
   $ref: ../../subscription_headers.yaml
 payload:

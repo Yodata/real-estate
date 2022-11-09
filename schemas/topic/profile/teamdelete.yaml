@@ -2,14 +2,15 @@
 
 messageId: profile#teamdelete
 name: realestate/profile#teamdelete
-summary: a team profile was creatd
+title: profile#teamdelete
+summary: a team profile was created
+contentType: application/json
 headers:
-  type: object
-  properties:
-    topic: { const: realestate/profile#teamdelete }
+  $ref: ../../subscription_headers.yaml
 payload:
   type: object
   properties:
+    topic: { const: realestate/profile#teamdelete }
     data:
       type: object
       properties:

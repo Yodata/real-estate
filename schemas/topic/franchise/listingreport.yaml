@@ -1,11 +1,13 @@
 # $id: http://realestate.yodata.me/schema/topic/franchise/franchise.listingreport.json
-messageId: franchise#listingreport
+messageId: realestate/franchise#listingreport
 x-scope: realestate/franchise#
 summary: franchise listing report
 headers:
   $ref: ../../subscription_headers.yaml
-  topic: { const: realestate/franchise#listingreport }
 payload:
+ type: object
+ properties: 
+  topic: { const: realestate/franchise#listingreport }
   data:
     type: object
     properties:

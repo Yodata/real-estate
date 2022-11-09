@@ -4,7 +4,7 @@ title: lead#update
 summary: a crm lead was updated
 contentType: application/json
 headers:
-  topic: { const: realestate/lead#update }
+  $ref: ../../subscription_headers.yaml
 payload:
   type: object
   properties:

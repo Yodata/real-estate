@@ -1,8 +1,11 @@
 # @format
 
-messageId: award#seriescreate
+messageId: realestate/award#seriescreate
 name: realestate/award#seriescreate
+title: award#seriescreate
 summary: a new award series was created
+contentType: 
+  $ref: ../../subscription_headers.yaml
 headers:
   $ref: ../../subscription_headers.yaml
 payload:

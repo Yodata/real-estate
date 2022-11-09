@@ -1,6 +1,6 @@
 # @format
 
-messageId: award#teammemberremove
+messageId: realestate/award#teammemberremove
 name: realestate/award#teammemberremove
 title: award#teammemberremove
 summary: an award team member was removed

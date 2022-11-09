@@ -1,8 +1,10 @@
 # @format
 # yaml-language-server: $schema=https://www.asyncapi.com/definitions/2.5.0/message.json
-messageId: contact#collectionmemberremove
+messageId: realestate/contact#collectionmemberremove
 name: realestate/contact#collectionmemberremove
+title: contact#collectionmemberremove
 summary: a contact was removed from collection
+contentType: application/json
 headers:
   $ref: ../../subscription_headers.yaml
 payload:

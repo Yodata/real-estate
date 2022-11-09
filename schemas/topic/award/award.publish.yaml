@@ -2,8 +2,11 @@
 
 messageId: award#publish
 name: realestate/award#publish
+title: award#publish
 summary: an award series was deleted
 contentType: application/json
+headers:
+  $ref: ../../subscription_headers.yaml
 payload:
   type: object
   required:

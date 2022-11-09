@@ -1,7 +1,9 @@
 # $id: http://realestate.yodata.me/schema/topic/franchise/franchise.listingreport.json
-messageId: realestate/franchise#listingreport
-x-scope: realestate/franchise#
+messageId: franchise#listingreport
+name: realestate/franchise#listingreport
+title: franchise#listingreport
 summary: franchise listing report
+contentType: application/json
 headers:
   $ref: ../../subscription_headers.yaml
 payload:

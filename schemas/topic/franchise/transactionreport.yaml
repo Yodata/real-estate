@@ -1,6 +1,6 @@
 # $id: /schema/topic/franchise/franchise.transactionreport.yaml
-messageId: realestate/franchise#transactionreport
-name: franchise#transactionreport
+messageId: franchise#transactionreport
+name: realestate/franchise#transactionreport
 title: franchise#transactionreport
 summary: Franchise transaction report of transaction for sales production reporting.
 contentType: application/json

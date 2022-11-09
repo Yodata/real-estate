@@ -19,8 +19,8 @@ export function Schema ({ schema, schemaName, hideTitle = false }) {
 
 function SchemaContent ({ schema, schemaName, path = '' }) {
   const dependentSchemas = SchemaHelpers.getDependentSchemas(schema)
-  // const extensions = SchemaHelpers.getCustomExtensions(schema);
-  const extensions = null
+  const extensions = SchemaHelpers.getCustomExtensions(schema);
+  // const extensions = null
   const extensionsSchema = (extensions || Object.keys(extensions).length)
     ? SchemaHelpers.jsonToSchema(extensions)
     : null

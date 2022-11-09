@@ -4,7 +4,7 @@ import { React } from 'react'
 import { Text, File, render } from '@asyncapi/generator-react-sdk'
 import { mergeAllOf } from '../helpers/merge-schema-items'
 import YAML from 'js-yaml'
-
+import { Schema } from '../components/Schema'
 const DEFAULT_PARAMS = {
   "baseUrl": "http://realestate.yodata.me/schema/",
   "sortProperties": true,
@@ -23,6 +23,11 @@ const DEFAULT_PARAMS = {
       "enabled": false,
       "extension": ".yaml",
       "basePath": ""
+    },
+    "markdown": {
+      "enabled": true,
+      "extension": ".md",
+      "basePath": "docs/"
     }
   }
 }
@@ -44,7 +49,7 @@ export default function TopicPage(props) {
     jsonSchema.properties = sortedProperties
   }
   const outputFiles = []
-  Object.entries(outputFormats).forEach(([ format, options ]) => {
+  Object.entries(outputFormats).forEach(async ([ format, options ]) => {
     if (options.enabled) {
       let fileName = `${schemaName}${options.extension}`.replace('#','.')
       jsonSchema.$id = `${baseUrl}${options.basePath}${fileName}`.replace('#','.')
@@ -61,11 +66,18 @@ export default function TopicPage(props) {
             sortKeys: (options.sortKeys === true) ? true : false
           })
           break
+        case 'markdown':
+          console.log(`rendering markdown for ${schemaName}`)
+          fileContent = render(<Schema schema={schema} schemaName={schemaName} />)
+          console.log(`${schemaName} rendered`)
+          break
         default:
           throw new Error(`${format} is not supported`)
       }
-      fileContent = fileContent.replace('.schema.yaml', options.extension)
-      fileContent = fileContent.replace('.schema.yaml', options.extension)
+      if (format !== 'markdown') {
+        fileContent = fileContent.replace('.schema.yaml', options.extension)
+        fileContent = fileContent.replace('.schema.yaml', options.extension)
+      }
       outputFiles.push(
         <File name={fileName}>
           <Text>{fileContent}</Text>

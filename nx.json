@@ -1,0 +1,57 @@
+{
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx/tasks-runners/default",
+      "options": {
+        "cacheableOperations": []
+      }
+    }
+  },
+  "targetDefaults": {
+    "generate:assets": {
+      "dependsOn": [
+        "^generate:assets"
+      ]
+    },
+    "generate:production": {
+      "dependsOn": [
+        "^generate:production"
+      ]
+    },
+    "generate": {
+      "dependsOn": [
+        "^generate"
+      ]
+    },
+    "lint": {
+      "dependsOn": [
+        "^lint"
+      ],
+      "inputs": [
+        "default",
+        "{workspaceRoot}/.eslintrc.json",
+        "{workspaceRoot}/tools/eslint-rules/**/*"
+      ]
+    },
+    "validate": {
+      "dependsOn": [
+        "^validate"
+      ]
+    },
+    "test": {
+      "inputs": [
+        "default",
+        "^default",
+        "{workspaceRoot}/jest.preset.js"
+      ]
+    }
+  },
+  "defaultBase": "master",
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "babel": true
+      }
+    }
+  }
+}

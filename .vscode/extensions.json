@@ -1,15 +1,9 @@
 {
-	// See https://go.microsoft.com/fwlink/?LinkId=827846 to learn about workspace recommendations.
-	// Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
-
-	// List of extensions which should be recommended for users of this workspace.
-	"recommendations": [
-		"asyncapi.asyncapi-preview",
-		"dbaeumer.vscode-eslint",
-		"docsmsft.docs-markdown"
-	],
-	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
-	"unwantedRecommendations": [
-
-	]
+  "recommendations": [
+    "asyncapi.asyncapi-preview",
+    "dbaeumer.vscode-eslint",
+    "docsmsft.docs-markdown",
+    "firsttris.vscode-jest-runner"
+  ],
+  "unwantedRecommendations": []
 }

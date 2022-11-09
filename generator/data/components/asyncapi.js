@@ -1,7 +1,7 @@
 /** @format */
 
 import { React } from 'react'
-import { Text, File } from '@asyncapi/generator-react-sdk'
+import { Text, File, render } from '@asyncapi/generator-react-sdk'
 import YAML from 'js-yaml'
 
 const DEFAULT_PARAMS = {
@@ -16,9 +16,9 @@ const DEFAULT_PARAMS = {
     yaml: {
       enabled: false,
       extension: '.yaml',
-      basePath: '',
-    },
-  },
+      basePath: ''
+    }
+  }
 }
 
 export default function AsyncapiPage(props) {

@@ -1,8 +1,10 @@
 # @format
 
-messageId: contact#plandelete
+messageId: realestate/contact#plandelete
 name: realestate/contact#plandelete
+title: contact#plandelete
 summary: a contact plan (data.object) is deleted by a user (data.agent)
+contentType: application/json
 headers:
   $ref: ../../subscription_headers.yaml
 payload:

@@ -4,7 +4,7 @@ messageId: lead#reject
 name: realestate/lead#reject
 title: lead#reject
 summary: a crm lead was rejected
-contetType: application/json
+contentType: application/json
 headers:
   $ref: ../../subscription_headers.yaml
 payload:

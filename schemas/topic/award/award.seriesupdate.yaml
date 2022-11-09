@@ -1,6 +1,6 @@
 # @format
 
-messageId: award#seriesupdate
+messageId: realestate/award#seriesupdate
 name: realestate/award#seriesupdate
 title: award#seriesupdate
 summary: an award series was updated

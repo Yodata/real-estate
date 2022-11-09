@@ -10,19 +10,19 @@ payload:
   type: object
   properties:
     properties:
-    topic: { const: realestate/franchise#transactionreport }
-    data:
-     type: object
-     properties:
-      type: { const: UpdateAction }
-      instrument:
-        type: object
-        description: the application or service used that generated the report
-        properties:
-          type: { const: SoftwareApplication }
-          name:
-            type: string
-            maxLength: 10
-            examples:
-              - Guru
-              - Lone Wolf
+      topic: { const: realestate/franchise#transactionreport }
+      data:
+      type: object
+      properties:
+        type: { const: UpdateAction }
+        instrument:
+          type: object
+          description: the application or service used that generated the report
+          properties:
+            type: { const: SoftwareApplication }
+            name:
+              type: string
+              maxLength: 10
+              examples:
+                - Guru
+                - Lone Wolf

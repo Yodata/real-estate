@@ -1,11 +1,12 @@
 messageId: marketingpreferences#subscribe
 name: realestate/marketingpreferences#subscribe
-title: Marketing Preferences Subscribe
+title: marketingpreferences#subscribe
+summary: a consumer (agent) subscribes to email or sms for a specific agent (object)
+contentType: application/json
 headers:
-  type: object
-  properties:
-    topic: { const: realestate/marketingpreferences#subscribe }
+  $ref: ../../subscription_headers.yaml
 payload:
   type: object
   properties:
+    topic: { const: realestate/marketingpreferences#subscribe }
     data: { $ref: ../../SubscribeAction.yaml }

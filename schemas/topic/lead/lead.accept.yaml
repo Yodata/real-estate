@@ -2,7 +2,9 @@
 
 messageId: lead#accept
 name: realestate/lead#accept
+title: lead#accept
 summary: a lead (data.object) was accepted by the recipient (data.recipient).
+contentType: application/json
 headers:
   $ref: ../../subscription_headers.yaml
 payload:

@@ -1,13 +1,14 @@
 messageId: lead#update
 name: realestate/lead#update
+title: lead#update
 summary: a crm lead was updated
+contentType: application/json
 headers:
-  type: object
-  properties:
-    topic: { const: realestate/lead#update }
+  topic: { const: realestate/lead#update }
 payload:
   type: object
   properties:
+    topic: { const: realestate/lead#update }
     data:
       type: object
       properties:

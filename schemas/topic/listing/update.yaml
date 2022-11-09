@@ -2,14 +2,15 @@
 
 messageId: listing#update
 name: realestate/listing#update
+title: listing#update
 summary: a PropertyListing is created or updated
+contentType: application/json
 headers:
-  type: object
-  properties:
-    topic: { const: realestate/listing#update }
+  $ref: ../../subscription_headers.yaml
 payload:
   type: object
   properties:
+    topic: { const: realestate/listing#update }
     data:
       type: object
       properties:

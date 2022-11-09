@@ -2,14 +2,15 @@
 
 messageId: lead#retract
 name: realestate/lead#retract
+title: lead#retract
 summary: a lead (data.object) is taken back from the previous assignee (data.participant) by the previous sender/owner (data.recipient)
+contentType: application/json
 headers:
-  type: object
-  properties:
-    topic: { const: realestate/lead#retract }
+  $ref: ../../subscription_headers.yaml
 payload:
   type: object
   properties:
+    topic: { const: realestate/lead#retract }
     data:
       type: object
       description: the message payload

@@ -3,7 +3,7 @@
 messageId: award#publish
 name: realestate/award#publish
 title: award#publish
-summary: an award series was deleted
+summary: an award was published
 contentType: application/json
 headers:
   $ref: ../../subscription_headers.yaml

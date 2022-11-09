@@ -3,14 +3,15 @@
 # $id: http://realestate.yodata.me/schenma/servicearea.create.yaml
 messageId: servicearea#create
 name: realestate/servicearea#create
+title: servicearea#create
 summary: service area created
+contentType: application/json
 headers:
-  type: object
-  properties:
-    topic: { const: realestate/servicearea#create }
+  $ref: ../../subscription_headers.yaml
 payload:
   type: object
   properties:
+    topic: { const: realestate/servicearea#create }
     data:
       type: object
       properties:

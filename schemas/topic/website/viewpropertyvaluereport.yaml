@@ -3,14 +3,15 @@
 
 messageId: website#viewpropertyvaluereort
 name: realestate/website#viewpropertyvaluereport
-summary: website user (data.agent) has viewed a propvery value report (data.object) on a webiste or mobile app (data.instrument)
+title: website#viewpropertyvaluereport
+summary: website user (data.agent) has viewed a property value report (data.object) on a webiste or mobile app (data.instrument)
+contentType: application/json
 headers:
-  type: object
-  properties:
-    topic: { const: realestate/website#viewpropertyvaluereport }
+  $ref: ../../subscription_headers.yaml
 payload:
   type: object
   properties:
+    topic: { const: realestate/website#viewpropertyvaluereport }
     data:
       type: object
       properties:

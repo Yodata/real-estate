@@ -7,6 +7,7 @@ summary: a website user shares a property listing
 description: |
   A website user (agent) shared a (PropertyListing)[/types/PropertyListing]
   with the recipient (a Person or Audience).
+contentType: application/json
 headers:
   $ref: ../../subscription_headers.yaml
 payload:

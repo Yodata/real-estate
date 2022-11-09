@@ -2,7 +2,9 @@
 
 messageId: website#requestappointment
 name: realestate/website#requestappointment
+title: website#requestappointment
 summary: website user has requested an appointment
+contentType: application/json
 headers:
   $ref: ../../subscription_headers.yaml
 payload:

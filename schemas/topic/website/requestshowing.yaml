@@ -2,14 +2,15 @@
 
 messageId: website#requestshowing
 name: realestate/website#requestshowing
+title: website#requestshowing
 summary: a website visitor has requested a property showing
+contentType: application/json
 headers:
-  type: object
-  properties:
-    topic: { const: realestate/website#requestshowing }
+  $ref: ../../subscription_headers.yaml
 payload:
   type: object
   properties:
+    topic: { const: realestate/website#requestshowing }
     data:
       type: object
       properties:

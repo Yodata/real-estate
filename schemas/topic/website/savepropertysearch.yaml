@@ -2,21 +2,24 @@
 
 messageId: website#propertysearchsave
 name: realestate/website#propertysearchsave
+title: website#propertysearchsave
 summary: website user (agent) saves a property search (object), on a website or mobile app (instrument)
+contentType: application/json
 headers:
+  $ref: ../../subscription_headers.yaml
+payload:
   type: object
   properties:
     topic: { const: realestate/website#propertysearchsave }
-payload:
-  data:
-    properties:
-      type: { const: SaveAction }
-      agent:
-        type: object
-        description: the website user who performed the action
-        properties:
-          type: { type: string, enum: [Contact, Person] }
-          identifier: { $ref: ../../identifier.yaml }
-        required: [type, identifier]
-      object:
-        $ref: ../../PropertySearch.yaml
+    data:
+      properties:
+        type: { const: SaveAction }
+        agent:
+          type: object
+          description: the website user who performed the action
+          properties:
+            type: { type: string, enum: [Contact, Person] }
+            identifier: { $ref: ../../identifier.yaml }
+          required: [type, identifier]
+        object:
+          $ref: ../../PropertySearch.yaml

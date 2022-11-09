@@ -2,23 +2,26 @@
 
 messageId: website#saveproperty
 name: realestate/website#saveproperty
+title: website#saveproperty
 summary: website user (agent) saved a property
+contentType: application/json
 headers:
+  $ref: ../../subscription_headers.yaml
+payload:
   type: object
   properties:
     topic: { const: realestate/website#saveproperty }
-payload:
-  data:
-    properties:
-      type: { const: SaveAction }
-      object:
-        type: object
-        description: the properting that was saved
-        x-range: PropertyListing
-        required:
-          - type
-          - originatingSystemName
-          - originatingSystemKey
-          - listingId
-        example:
-          $ref: ../../example-propertylisting.yaml
+    data:
+      properties:
+        type: { const: SaveAction }
+        object:
+          type: object
+          description: the properting that was saved
+          x-range: PropertyListing
+          required:
+            - type
+            - originatingSystemName
+            - originatingSystemKey
+            - listingId
+          example:
+            $ref: ../../example-propertylisting.yaml

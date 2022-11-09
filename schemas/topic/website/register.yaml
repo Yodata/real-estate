@@ -2,14 +2,15 @@
 # yaml-language-server: $schema=https://asyncapi.com/definitions/2.5.0/message.json
 messageId: website#register
 name: realestate/website#register
-summary: website user has registered on the website.
+title: website#register
+summary: website user has registered on the website
+contentType: application/json
 headers:
-  type: object
-  properties:
-    topic: { const: realestate/website#register }
+  $ref: ../../subscription_headers.yaml
 payload:
   type: object
   properties:
+    topic: { const: realestate/website#register }
     data:
       type: object
       properties:

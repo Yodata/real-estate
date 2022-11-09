@@ -2,14 +2,15 @@
 # yaml-language-server: $schema=http://asyncapi.com/definitions/2.5.0/message.json
 messageId: website#sharepropertyvaluereport
 name: realestate/website#sharepropertyvaluereport
+title: website#sharepropertyvaluereport
 summary: agent shared object with recipient
+contentType: application/json
 headers:
-  type: object
-  properties:
-    topic: { const: realestate/website#sharepropertyvaluereport }
+  topic: { const: realestate/website#searchproperties }
 payload:
   type: object
   properties:
+    topic: { const: realestate/website#sharepropertyvaluereport }
     data:
       properties:
         type: { const: ShareAction }

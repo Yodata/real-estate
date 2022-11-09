@@ -1,6 +1,6 @@
 # @format
 
-messageId: award#delete
+messageId: realestate/award#delete
 name: realestate/award#delete
 title: award#delete
 summary: award deleted

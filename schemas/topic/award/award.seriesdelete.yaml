@@ -1,8 +1,10 @@
 # @format
 
-messageId: award#seriesdelete
+messageId: realestate/award#seriesdelete
 name: realestate/award#seriesdelete
+title: award#seriesdelete
 summary: an award series was deleted
+contentType: application/json
 headers:
   $ref: ../../subscription_headers.yaml
 payload:

@@ -1,6 +1,6 @@
 # @format
 
-messageId: realestate/award#publish
+messageId: award#publish
 name: realestate/award#publish
 title: award#publish
 summary: an award was published

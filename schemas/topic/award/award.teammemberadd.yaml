@@ -1,6 +1,6 @@
 # @format
 
-messageId: realestate/award#teammemberadd
+messageId: award#teammemberadd
 name: realestate/award#teammemberadd
 title: award#teammemberadd
 summary: a new team member (data.object) was added to an award team (data.targetCollection)

@@ -1,6 +1,6 @@
 # @format
 
-messageId: realestate/award#create
+messageId: award#create
 name: realestate/award#create
 title: award#create
 summary: an award was created

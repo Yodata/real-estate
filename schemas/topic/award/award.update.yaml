@@ -1,9 +1,10 @@
 # @format
 
-messageId: award#update
+messageId: realestate/award#update
 name: realestate/award#update
 title: award#update
 summary: award action is updated
+contentType: application/json
 headers:
   $ref: ../../subscription_headers.yaml
 payload:

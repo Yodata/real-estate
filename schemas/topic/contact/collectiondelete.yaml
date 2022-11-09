@@ -1,8 +1,10 @@
 # @format
 # yaml-language-server: $schema=https://www.asyncapi.com/definitions/2.5.0/message.json
-messageId: contact#collectiondelete
+messageId: realestate/contact#collectiondelete
 name: realestate/contact#collectiondelete
+title: contact#collectiondelete
 summary: a contact collection (data.object) is deleted by a user (data.agent)
+contentType: application/json
 headers:
   $ref: ../../subscription_headers.yaml
 payload:

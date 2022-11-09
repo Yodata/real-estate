@@ -2,14 +2,15 @@
 
 messageId: marketing#programdelete
 name: realestate/marketing#programdelete
+title: marketing#programdelete
 summary: a marketing program was deleted
+contentType: application/json
 headers:
-  type: object
-  properties:
-    topic: { const: realestate/marketing#programdelete }
+  $ref: ../../subscription_headers.yaml
 payload:
   type: object
   properties:
+    topic: { const: realestate/marketing#programdelete }
     data:
       type: object
       properties:

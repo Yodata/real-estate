@@ -1,7 +1,7 @@
 # @format
 # yaml-language-server: $schema=http://www.asyncapi.com/definitions/2.5.0/message.json
 
-messageId: realestate/contact#activity
+messageId: contact#activity
 name: realestate/contact#activity
 title: contact#activity
 summary: a generic contact activity message

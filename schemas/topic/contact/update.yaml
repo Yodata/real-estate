@@ -1,6 +1,6 @@
 # @format
 
-messageId: realestate/contact#update
+messageId: contact#update
 name: realestate/contact#update
 title: contact#update
 summary: a contact (data.object) is updated by a user (data.agent)

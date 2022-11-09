@@ -1,6 +1,6 @@
 # @format
 # yaml-language-server: $schema=https://www.asyncapi.com/definitions/2.5.0/message.json
-messageId: realestate/contact#collectioncreate
+messageId: contact#collectioncreate
 name: realestate/contact#collectioncreate
 title: Contact Group Create
 summary: a contact group was created

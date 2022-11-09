@@ -1,6 +1,6 @@
 # @format
 # yaml-language-server: schema=https://www.asyncapi.com/definitions/2.5.0/message.json
-messageId: realestate/contact#delete
+messageId: contact#delete
 name: realestate/contact#delete
 title: contact#delete
 summary: a contact (data.object) is deleted by a user (data.agent)

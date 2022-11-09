@@ -1,6 +1,6 @@
 # @format
 # yaml-language-server: schema=https://www.asyncapi.com/definitions/2.5.0/message.json
-messageId: realestate/contact#planupdate
+messageId: contact#planupdate
 name: realestate/contact#planupdate
 title: contact#planupdate
 summary: a contact plan (data.object) is updated by a user (data.agent)

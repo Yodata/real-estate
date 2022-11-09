@@ -1,6 +1,6 @@
 # @format
 
-messageId: realestate/contact#plandelete
+messageId: contact#plandelete
 name: realestate/contact#plandelete
 title: contact#plandelete
 summary: a contact plan (data.object) is deleted by a user (data.agent)

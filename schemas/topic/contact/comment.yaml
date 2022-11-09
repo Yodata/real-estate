@@ -1,7 +1,7 @@
 # @format
 
 # yaml-language-server: $schema=https://www.asyncapi.com/definitions/2.5.0/message.json
-messageId: realestate/contact#comment
+messageId: contact#comment
 name: realestate/contact#comment
 title: contact#comment
 summary: a comment (data.object) is added by a user (data.agent) to a contact (data.target)

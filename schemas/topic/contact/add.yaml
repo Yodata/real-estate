@@ -1,6 +1,6 @@
 # @format
 # yaml-language-server: schema=https://www.asyncapi.com/definitions/2.5.0/message.json
-messageId: realestate/contact#add
+messageId: contact#add
 name: realestate/contact#add
 title: contact#add
 summary: a contact (data.object) is added by a user (data.agent), optionally to a specific targetCollection

@@ -1,8 +1,10 @@
 # @format
 # yaml-language-server: schema=https://www.asyncapi.com/definitions/2.5.0/message.json
-messageId: contact#plancreate
+messageId: realestate/contact#plancreate
 name: realestate/contact#plancreate
+title: contact#plancreate
 summary: a contact plan (data.object) is created by a user (data.agent)
+contentType: application/json
 headers:
   $ref: ../../subscription_headers.yaml
 payload:

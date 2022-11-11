@@ -224,7 +224,11 @@ function SchemaPropRow ({
   const notes = schemaNotes({ schema, required, dependentRequired, isCircular, tryRenderAdditionalNotes })
 
   if (constraints.length > 0) {
-    description = `${description} <span class='constraints'>${constraints}</span>`
+    description = `${constraints} ${description}`
+  }
+
+  if (values) {
+    description = `${values} ${description}`
   }
 
   let renderedName = ''

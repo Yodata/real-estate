@@ -6,10 +6,10 @@ title: Profile
 | Name | Type | Description |
 |---|---|---|
 | (root) | object | - |
-| id | string | format (`uri`) document uri |
+| id | string | document uri format (`uri`) |
 | type | string | allowed (`"ProfileDocument"`)  |
 | #me | object | - |
-| #me.id | string | format (`uri`)  |
+| #me.id | string |  format (`uri`) |
 | #me.type | string | - |
 | #me.inbox | string | discoverable uri to your LDN inbox |
 | #me.outbox | string | discoverable uri to your LDN outbox |

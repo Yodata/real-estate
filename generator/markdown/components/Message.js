@@ -25,7 +25,7 @@ export function Message ({ message }) { // NOSONAR
 
   return (
     <>
-      <Header type={2}>{header}</Header>
+      <Header type={2}>Message</Header>
 
       {message.summary() && (
         <Text newLines={2}>
@@ -89,7 +89,7 @@ export function Message ({ message }) { // NOSONAR
         <>
           <Header type={3}>Payload</Header>
           <Schema schema={payload} hideTitle />
-          <Examples type='payload' message={message} />
+          <Example type='payload' message={message} />
         </>
       )}
 

@@ -14,8 +14,8 @@ title: RealEstateLicense
 | issuedThrough.type | string | - |
 | issuedThrough.name | string | - |
 | validIn | object | the state where the RealEstateLicense is valid |
-| validFrom | string | format (`date-time`) the first date and time on which the license is valid. |
-| validUntil | string | format (`date-time`) the last date and time on which the license is valid. |
+| validFrom | string | the first date and time on which the license is valid. format (`date-time`) |
+| validUntil | string | the last date and time on which the license is valid. format (`date-time`) |
 
 ## Example
 

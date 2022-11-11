@@ -7,7 +7,7 @@ title: Task
 |---|---|---|
 | (root) | object | an action assigned to an agent, typically as part of a set of interdependent tasks in a Plan |
 | type | string | allowed (`"Task"`) The item type (Linked-Data @type) |
-| identifier | object | examples (`{"salesforceid":"0031U00002XW1QWQA1"}`, `{"vendoraid":"123456"}`, `{"originating_system_id":"123456"}`) identifier assigned to a contact by the vendor who originally created the contact |
+| identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
 | actionStatus | string | allowed (`"CompletedActionStatus"`, `"FailedActionStatus"`, `"ActiveActionStatus"`, `"PotentialActionStatus"`) disposition of the Action at the time of this action message. |
 | memberOf | object | a plan the task is associated with |
 | agent | object | the party who completed, or will complete the task |
@@ -17,8 +17,8 @@ title: Task
 | description | string | task detailed description |
 | keywords | array<string> | - |
 | keywords (single item) | string | - |
-| dateDue | string | format (`date-time`) the due date-time (ISO 8601 formated) |
-| dateCompleted | string | format (`date-time`) date the task was completed |
+| dateDue | string | the due date-time (ISO 8601 formated) format (`date-time`) |
+| dateCompleted | string | date the task was completed format (`date-time`) |
 | location | object | the physical location where an event takes place |
 
 ## Example

@@ -224,7 +224,7 @@ function SchemaPropRow ({
   const notes = schemaNotes({ schema, required, dependentRequired, isCircular, tryRenderAdditionalNotes })
 
   if (constraints.length > 0) {
-    description = `${constraints} ${description}`
+    description = `${description} ${constraints}`
   }
 
   if (values) {
@@ -287,10 +287,11 @@ function schemaValues (schema) {
     const allowed = schema.enum().map(v => `\`${SchemaHelpers.prettifyValue(v)}\``).join(', ')
     values.push(`allowed (${allowed})`)
   }
-  if (schema.examples()) {
-    const examples = schema.examples().map(v => `\`${SchemaHelpers.prettifyValue(v)}\``).join(', ')
-    values.push(`examples (${examples})`)
-  }
+
+  // if (schema.examples()) {
+  //   const examples = schema.examples().map(v => `\`${SchemaHelpers.prettifyValue(v)}\``).join(', ')
+  //   values.push(`examples (${examples})`)
+  // }
 
   return values.join(', ')
 }

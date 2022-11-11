@@ -8,7 +8,7 @@ title: RealEstateWebsite
 | (root) | object | - |
 | type | string | allowed (`"RealEstateWebsite"`) RealEstateWebsite |
 | about | object | subject of the website |
-| url | string | format (`uri`) URL of the item. |
+| url | string | URL of the item. format (`uri`) |
 
 ## Example
 

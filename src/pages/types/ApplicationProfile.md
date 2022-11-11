@@ -8,11 +8,11 @@ title: ApplicationProfile
 | (root) | allOf | - |
 | 0 (allOf item) | allOf | - |
 | 0 (allOf item) | object | - |
-| type | string | pattern (`^[A-Z][a-zA-Z0-9]+$`) The item type (Linked-Data @type) |
-| @id | string | format (`uri`) the liked data uri for the Thing |
-| 0 (property names) | - | pattern (`^[a-z@$][a-zA-Z0-9-_]+$`)  |
+| type | string | The item type (Linked-Data @type) pattern (`^[A-Z][a-zA-Z0-9]+$`) |
+| @id | string | the liked data uri for the Thing format (`uri`) |
+| 0 (property names) | - |  pattern (`^[a-z@$][a-zA-Z0-9-_]+$`) |
 | 1 (allOf item) | object | a solid profile document |
-| 1.id | string | format (`uri`)  |
+| 1.id | string |  format (`uri`) |
 | 1.type | string | allowed (`"PersonalProfileDocument"`)  |
 | 1.primaryTopic | string | default (`"#me"`)  |
 | 1.#me | object | - |
@@ -27,7 +27,7 @@ title: ApplicationProfile
 | 1.#me.permissions | array<object> | Permissions required by an linked-data application or service. |
 | 1.#me.permissions (single item) | object | allowed (`"profile:read"`, `"profile:write"`, `"lead"`, `"contact"`, `"website:events"`)  |
 | 1 (allOf item) | object | - |
-| 1.id | string | format (`uri`)  |
+| 1.id | string |  format (`uri`) |
 | 1.type | string | - |
 | 1.inbox | string | discoverable uri to your LDN inbox |
 | 1.outbox | string | discoverable uri to your LDN outbox |

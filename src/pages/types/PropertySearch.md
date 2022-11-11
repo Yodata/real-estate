@@ -9,7 +9,7 @@ title: PropertySearch
 | type | string | allowed (`"PropertySearch"`)  |
 | name | string | name of the search, input by the user or generated automatically |
 | description | string | optional search description input by the user or generated automatically |
-| propertyType | string | allowed (`"RESI"`, `"RLSE"`, `"RINC"`, `"LAND"`, `"MOBI"`, `"FARM"`, `"COMS"`, `"COML"`, `"BUSO"`) 4 characters RESO property type (see range for allowed values) |
+| propertyType | string | allowed (`"RESI"`, `"RLSE"`, `"RINC"`, `"LAND"`, `"MOBI"`, `"FARM"`, `"COMS"`, `"COML"`, `"BUSO"`) RESO property type (see range for allowed values) 4 characters |
 | propertySubType | object | Property sub-type enumeration values derived from RESO data dictionary. |
 | propertySubType.ApartmentPropertyType | string | Apartment |
 | propertySubType.BoatSlipPropertyType | string | Boat Slip |

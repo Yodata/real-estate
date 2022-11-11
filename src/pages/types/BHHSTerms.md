@@ -49,10 +49,10 @@ title: BHHSTerms
 | additionalProperty.primaryOffice | any | primay office of company |
 | additionalProperty.transactionReportingMethod | string | allowed (`"Batch File Upload"`, `"Direct Data Entry"`, `"Summary Reporting"`) method of reporting transaction |
 | additionalProperty.databridgeVersion | string | allowed (`"DB4.0"`, `"DB3.0"`) version of data bridge |
-| additionalProperty.systemDeactivationDate | string | format (`date-time`)  |
-| additionalProperty.inactiveDate | string | format (`date-time`)  |
-| additionalProperty.goLiveDate | string | format (`date-time`)  |
-| additionalProperty.originalAffiliationDate | string | format (`date-time`)  |
+| additionalProperty.systemDeactivationDate | string |  format (`date-time`) |
+| additionalProperty.inactiveDate | string |  format (`date-time`) |
+| additionalProperty.goLiveDate | string |  format (`date-time`) |
+| additionalProperty.originalAffiliationDate | string |  format (`date-time`) |
 | additionalProperty.numberOfSubOrganizations | integer | - |
 | additionalProperty.PublicOffice | string | office's public name |
 | additionalProperty.OfficeContact | any | office contact |

@@ -7,23 +7,23 @@ title: BlogPosting
 |---|---|---|
 | (root) | object | A blog post. |
 | type | string | allowed (`"BlogPosting"`)  |
-| identifier | object | examples (`{"salesforceid":"0031U00002XW1QWQA1"}`, `{"vendoraid":"123456"}`, `{"originating_system_id":"123456"}`) identifier assigned to a contact by the vendor who originally created the contact |
+| identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
 | headline | string | headline of the post. |
 | articleBody | string | the actual body of the post in HTML format. |
 | image | tuple<object allOf, ...optional<any>> | by convention the first image item is the article hero image.  note: image tags can also be embeded in the articleBody. |
 | image.0 (index) | object allOf | - |
 | image.0.0 (allOf item) | allOf | an image, video or document availble for download |
 | image.0.0.0 (allOf item) | object | - |
-| image.0.0.0.type | string | pattern (`^[A-Z][a-zA-Z0-9]+$`) The item type (Linked-Data @type) |
-| image.0.0.0.@id | string | format (`uri`) the liked data uri for the Thing |
-| image.0.0.0 (property names) | - | pattern (`^[a-z@$][a-zA-Z0-9-_]+$`)  |
+| image.0.0.0.type | string | The item type (Linked-Data @type) pattern (`^[A-Z][a-zA-Z0-9]+$`) |
+| image.0.0.0.@id | string | the liked data uri for the Thing format (`uri`) |
+| image.0.0.0 (property names) | - |  pattern (`^[a-z@$][a-zA-Z0-9-_]+$`) |
 | image.0.0.1 (allOf item) | - | - |
 | image.0.0.1.type | string | allowed (`"MediaObject"`, `"ImageObject"`, `"DigitalDocument"`)  |
-| image.0.0.1.id | string | format (`uri`) the URL to access the item. |
+| image.0.0.1.id | string | the URL to access the item. format (`uri`) |
 | image.0.0.1.name | string | the file name of the object. |
 | image.0.0.1.encodingFormat | string | MIME type |
-| image.0.0.1.about | string | format (`uri`) URI to the subject of the image or logo |
-| image.0.0.1.url | string | format (`uri`) URL of the image content |
+| image.0.0.1.about | string | URI to the subject of the image or logo format (`uri`) |
+| image.0.0.1.url | string | URL of the image content format (`uri`) |
 | image.0.1 (allOf item) | - | - |
 | image.0.1.type | string | allowed (`"ImageObject"`)  |
 | image.0.1.id | any | - |
@@ -31,13 +31,13 @@ title: BlogPosting
 | image.0.1.encodingFormat | any | - |
 | author | object | author of the work |
 | author.type | string | allowed (`"RealEstateAgent"`, `"RealEstateOffice"`, `"RealEstateTeam"`, `"RealEstateOrganization"`)  |
-| author.id | string | format (`uri`) the profile URI of the author |
+| author.id | string | the profile URI of the author format (`uri`) |
 | provider | object | if the article is provided as a template or stock content to be shared by mutliple authors, the provider should be included. |
 | provider.type | string | allowed (`"RealEstateOrganization"`, `"RealEstateTeam"`, `"RealEstateOffice"`, `"RealEstateAgent"`)  |
-| provider.id | string | format (`uri`) the profile URI of the provider |
-| dateCreated | string | format (`date-time`) The date on which the BlogPosting was created or the item was added to a DataFeed. |
-| dateModified | string | format (`date-time`) The date on which the BlogPosting was most recently modified or when the item's entry was modified within a DataFeed. |
-| url | string | format (`uri`) URL of the item. |
+| provider.id | string | the profile URI of the provider format (`uri`) |
+| dateCreated | string | The date on which the BlogPosting was created or the item was added to a DataFeed. format (`date-time`) |
+| dateModified | string | The date on which the BlogPosting was most recently modified or when the item's entry was modified within a DataFeed. format (`date-time`) |
+| url | string | URL of the item. format (`uri`) |
 | urlTemplate | string | urlTemplate in [IETF rfc6570 format](https://datatracker.ietf.org/doc/html/rfc6570) |
 
 ## Example

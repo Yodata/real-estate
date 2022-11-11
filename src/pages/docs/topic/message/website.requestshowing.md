@@ -1,7 +1,7 @@
 ---
 title: website#requestshowing
 ---
-## website#requestshowing
+## Message
 
 *a website visitor has requested a property showing*
 
@@ -13,13 +13,13 @@ title: website#requestshowing
 | Name | Type | Description |
 |---|---|---|
 | (root) | object | - |
-| time | string | format (`date-time`) date & time the event was produced |
-| agent | string | examples (`"https://teamsupermario.example.com/profile/card#me"`, `"https://bigbrandrealestate.example.com/profile/card#me"`) format (`uri`) if you are a multi-tenant app, then the agent is the user associated with the event data. any future events related to this message will be sent to the same agent/recipient |
-| instrument | string | examples (`"http://supercrm.example.com/profile/card#me"`, `"http://reliance.example.com/profile/card#me"`, `"http://moxiworks.example.com/profile/card#me"`, `"http://listing-manager.example.com/profile/card#me"`, `"http://ace.example.com/profile/card#me"`, `"http://roqlogic.example.com/profile/card#me"`) format (`uri`) the app or service that produced the event on behalf of the agent/user |
-| source | string | examples (`"https://bigbrandrealestate.example.com/profile/card#me"`) format (`uri`) a copy of the event was sent to the source(s). |
-| originalRecipient | string | examples (`"http://bigbrandrealestate.example.com/profile/card#me"`, `"http://teamsupermario.example.com/profile/card#me"`, `"http://bob.example.com/profile/card#me"`, `"http://jane.example.com/profile/card#me"`, `"http://joe.example.com/profile/card#me"`, `"http://jill.example.com/profile/card#me"`, `"http://jim.example.com/profile/card#me"`, `"http://jennifer.example.com/profile/card#me"`) format (`uri`) the originalRecipient helps you determine the subscription that delivered the event to you. if the originalRecipient is the same as the agent, then the you are subscribed to the agent. if the originalRecipient is different from the agent, then you are subscribed to the event source |
-| id | string | examples (`"http://supercrm.example.com/publish/12345"`, `"http://reliance.example.com/publish/23456"`, `"http://moxiworks.example.com/publish/34567"`, `"http://listing-manager.example.com/publish/45678"`, `"http://ace.example.com/publish/56789"`, `"http://roqlogic.example.com/publish/67890"`) format (`uri`) the Event ID (aka "Publish ID") is the immutable canonical identifier for the event. it is a URI that is unique to the event and will not change. all subscribers will receive the same id for the same event. |
-| @id | string | examples (`"http://reliance.example.com/inbox/23456"`, `"http://moxiworks.example.com/inbox/34567"`, `"http://listing-manager.example.com/inbox/45678"`, `"http://ace.example.com/inbox/56789"`, `"http://roqlogic.example.com/inbox/67890"`) format (`uri`)  |
+| time | string | date & time the event was produced format (`date-time`) |
+| agent | string | if you are a multi-tenant app, then the agent is the user associated with the event data. any future events related to this message will be sent to the same agent/recipient format (`uri`) |
+| instrument | string | the app or service that produced the event on behalf of the agent/user format (`uri`) |
+| source | string | a copy of the event was sent to the source(s). format (`uri`) |
+| originalRecipient | string | the originalRecipient helps you determine the subscription that delivered the event to you. if the originalRecipient is the same as the agent, then the you are subscribed to the agent. if the originalRecipient is different from the agent, then you are subscribed to the event source format (`uri`) |
+| id | string | the Event ID (aka "Publish ID") is the immutable canonical identifier for the event. it is a URI that is unique to the event and will not change. all subscribers will receive the same id for the same event. format (`uri`) |
+| @id | string |  format (`uri`) |
 
 ### Payload
 
@@ -34,17 +34,17 @@ title: website#requestshowing
 | data.agent.name | string | - |
 | data.agent.givenName | string | - |
 | data.agent.familyName | string | - |
-| data.agent.email | string | format (`email`)  |
+| data.agent.email | string |  format (`email`) |
 | data.agent.telephone | string | - |
-| data.agent.identifier | object | examples (`{"salesforceid":"0031U00002XW1QWQA1"}`, `{"vendoraid":"123456"}`, `{"originating_system_id":"123456"}`) identifier assigned to a contact by the vendor who originally created the contact |
-| data.agent.sameAs | string | examples (`{"amcecrmid":1234567,"salesForceId":"parsing"}`, `{"salesForceId":"ad4fa5f4as"}`) format (`uri`) vendor specific identifier for the user can be shared with other vendors to identify the user |
-| data.agent.contactPoint | object | >= 3 properties A point of contact for the entity. By convention in the real estate domain, ContactPoints are preferred over telephone, email, and faxNumber so the ContactPoint.name property can be used to label values for example, Work Telephone, Home, as named contactPoint values. |
+| data.agent.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| data.agent.sameAs | string | vendor specific identifier for the user can be shared with other vendors to identify the user format (`uri`) |
+| data.agent.contactPoint | object | A point of contact for the entity. By convention in the real estate domain, ContactPoints are preferred over telephone, email, and faxNumber so the ContactPoint.name property can be used to label values for example, Work Telephone, Home, as named contactPoint values. >= 3 properties |
 | data.agent.contactPoint.type | string | const (`"ContactPoint"`)  |
-| data.agent.contactPoint.name | string | examples (`"Work"`, `"Home"`, `"Vacation"`, `"Bob's Cell"`, `"Alice's Work"`) a label for the contactPoint, i.e. 'Work', or 'Home' |
-| data.agent.contactPoint.telephone | string | examples (`"555-555-5555"`, `"555-555-5555 x123"`, `"555-555-5555 ext. 123"`, `"+1-555-555-5555"`)  |
-| data.agent.contactPoint.faxNumber | string | examples (`"555-555-5555"`, `"555-555-5555 x123"`, `"555-555-5555 ext. 123"`, `"+1-555-555-5555"`)  |
-| data.agent.contactPoint.email | string | examples (`"bob@example.com"`, `"alice@example.com"`) format (`email`) an email address for the item. |
-| data.agent.contactPoint.url | string | format (`uri`) primary URL for the item. |
+| data.agent.contactPoint.name | string | a label for the contactPoint, i.e. 'Work', or 'Home' |
+| data.agent.contactPoint.telephone | string | - |
+| data.agent.contactPoint.faxNumber | string | - |
+| data.agent.contactPoint.email | string | an email address for the item. format (`email`) |
+| data.agent.contactPoint.url | string | primary URL for the item. format (`uri`) |
 | data.agent.additionalProperties | object | additional properties for the website user |
 | data.agent.additionalProperties.workingWithAgent | boolean | - |
 | data.about | object | the PropertyListing |
@@ -53,17 +53,111 @@ title: website#requestshowing
 | data.event.name | string | name of the event |
 | data.event.description | string | event message content |
 | data.event.about | object | a subject of the meeting or event |
-| data.event.startDate | string | format (`date-time`) the start date-time (ISO 8601 formated) |
-| data.event.endDate | string | format (`date-time`) the end date-time (ISO 8601 formated) |
+| data.event.startDate | string | the start date-time (ISO 8601 formated) format (`date-time`) |
+| data.event.endDate | string | the end date-time (ISO 8601 formated) format (`date-time`) |
 | data.event.organizer | object | the event organizer |
 | data.object | object | A specific question - e.g. from a user seeking answers online, or collected in a Frequently Asked Questions (FAQ) document. |
 | data.object.type | string | const (`"Question"`)  |
-| data.object.text | string | examples (`"Populus debet control notitia sua"`, `"Aspicio pinguem in his vestimentis?"`, `"Et id ipsum vitae."`, `"Amici, Romani et cives, aures vestras mihi praebe"`, `"Heus, ego iustus occurrit tibi et hoc est insanus, sed hic numerus meus est, ut me vocas fortasse."`)  |
-| data.recipient | object | examples (`{"type":"RealEstateAgent","name":"John Smith","id":"https://agentsmith.example.com/profile/card#me","identifier":{"hsfid":"1234567890"}}`, `{"type":"RealEstateTeam","name":"Smith & Smith","id":"https://smithandsmith.example.com/profile/card#me"}`, `{"type":"RealEstateOrganization","name":"Smith & Smith Real Estate","identifier":{"hsfid":"sandsre"}}`, `{"type":"RealEstateOrganization","name":"Smith & Smith Real Estate"}`, `{"type":"RealEstateOrganization","id":"https://smithandsmithrealestate.example.com/profile/card#me"}`)  |
+| data.object.text | string | - |
+| data.recipient | object | - |
 | data.recipient.type | string | allowed (`"RealEstateAgent"`, `"RealEstateTeam"`, `"RealEstateOrganization"`)  |
 | data.recipient.name | string | - |
-| data.recipient.id | string | format (`uri`)  |
+| data.recipient.id | string |  format (`uri`) |
 | data.recipient.identifier | any | - |
+
+### Payload Example(s) (generated)
+
+```json
+{
+  "topic": "realestate/website#requestshowing",
+  "data": {
+    "type": "RequestShowingAction",
+    "agent": {
+      "type": "Person",
+      "name": "string",
+      "givenName": "string",
+      "familyName": "string",
+      "email": "user@example.com",
+      "telephone": "string",
+      "identifier": {
+        "salesforceid": "0031U00002XW1QWQA1"
+      },
+      "sameAs": {
+        "amcecrmid": 1234567,
+        "salesForceId": "parsing"
+      },
+      "contactPoint": {
+        "type": "ContactPoint",
+        "name": "Work",
+        "telephone": "555-555-5555",
+        "faxNumber": "555-555-5555",
+        "email": "bob@example.com",
+        "url": "https://www.facebook.com/hallandoates"
+      },
+      "additionalProperties": {
+        "workingWithAgent": true
+      }
+    },
+    "about": {
+      "type": "PropertyListing",
+      "originatingSystemName": "GOTHAM-MLS",
+      "originatingSystemKey": "12345",
+      "url": "https://{company-website-url}/{path-to-listing}",
+      "streetAddress": "1007 Mountain Gate Rd",
+      "addressRegion": "New Jersey",
+      "addressLocality": "Gotham City",
+      "postalCode": "10010",
+      "addressCountry": "USA",
+      "listingPrice": {
+        "type": "PriceSpecification",
+        "price": 7500000,
+        "priceCurrency": "USD"
+      }
+    },
+    "event": {
+      "type": "Event",
+      "name": "Property Showing 1007 Mountain Gate Rd",
+      "description": "an example meeting request for 4:00PM to 4:30PM.",
+      "about": {
+        "type": "PropertyListing",
+        "originatingSystemName": "GOTHAM-MLS",
+        "originatingSystemKey": "12345",
+        "url": "https://{company-website-url}/{path-to-listing}",
+        "streetAddress": "1007 Mountain Gate Rd",
+        "addressRegion": "New Jersey",
+        "addressLocality": "Gotham City",
+        "postalCode": "10010",
+        "addressCountry": "USA",
+        "listingPrice": {
+          "type": "PriceSpecification",
+          "price": 7500000,
+          "priceCurrency": "USD"
+        }
+      },
+      "startDate": "2019-08-01T16:00Z",
+      "endDate": "2019-08-01T16:30Z",
+      "organizer": {
+        "type": "RealEstateAgent",
+        "name": "Bruce Wayne",
+        "id": "https://batman.example.com/profile/card#me"
+      }
+    },
+    "object": {
+      "type": "Question",
+      "text": "Populus debet control notitia sua"
+    },
+    "recipient": {
+      "type": "RealEstateAgent",
+      "name": "John Smith",
+      "id": "https://agentsmith.example.com/profile/card#me",
+      "identifier": {
+        "hsfid": "1234567890"
+      }
+    }
+  }
+}
+```
+
 
 ### Tools
 

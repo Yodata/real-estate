@@ -1,7 +1,7 @@
 ---
 title: contact#planupdate
 ---
-## contact#planupdate
+## Message
 
 *a contact plan (data.object) is updated by a user (data.agent)*
 
@@ -13,13 +13,13 @@ title: contact#planupdate
 | Name | Type | Description |
 |---|---|---|
 | (root) | object | - |
-| time | string | format (`date-time`) date & time the event was produced |
-| agent | string | examples (`"https://teamsupermario.example.com/profile/card#me"`, `"https://bigbrandrealestate.example.com/profile/card#me"`) format (`uri`) if you are a multi-tenant app, then the agent is the user associated with the event data. any future events related to this message will be sent to the same agent/recipient |
-| instrument | string | examples (`"http://supercrm.example.com/profile/card#me"`, `"http://reliance.example.com/profile/card#me"`, `"http://moxiworks.example.com/profile/card#me"`, `"http://listing-manager.example.com/profile/card#me"`, `"http://ace.example.com/profile/card#me"`, `"http://roqlogic.example.com/profile/card#me"`) format (`uri`) the app or service that produced the event on behalf of the agent/user |
-| source | string | examples (`"https://bigbrandrealestate.example.com/profile/card#me"`) format (`uri`) a copy of the event was sent to the source(s). |
-| originalRecipient | string | examples (`"http://bigbrandrealestate.example.com/profile/card#me"`, `"http://teamsupermario.example.com/profile/card#me"`, `"http://bob.example.com/profile/card#me"`, `"http://jane.example.com/profile/card#me"`, `"http://joe.example.com/profile/card#me"`, `"http://jill.example.com/profile/card#me"`, `"http://jim.example.com/profile/card#me"`, `"http://jennifer.example.com/profile/card#me"`) format (`uri`) the originalRecipient helps you determine the subscription that delivered the event to you. if the originalRecipient is the same as the agent, then the you are subscribed to the agent. if the originalRecipient is different from the agent, then you are subscribed to the event source |
-| id | string | examples (`"http://supercrm.example.com/publish/12345"`, `"http://reliance.example.com/publish/23456"`, `"http://moxiworks.example.com/publish/34567"`, `"http://listing-manager.example.com/publish/45678"`, `"http://ace.example.com/publish/56789"`, `"http://roqlogic.example.com/publish/67890"`) format (`uri`) the Event ID (aka "Publish ID") is the immutable canonical identifier for the event. it is a URI that is unique to the event and will not change. all subscribers will receive the same id for the same event. |
-| @id | string | examples (`"http://reliance.example.com/inbox/23456"`, `"http://moxiworks.example.com/inbox/34567"`, `"http://listing-manager.example.com/inbox/45678"`, `"http://ace.example.com/inbox/56789"`, `"http://roqlogic.example.com/inbox/67890"`) format (`uri`)  |
+| time | string | date & time the event was produced format (`date-time`) |
+| agent | string | if you are a multi-tenant app, then the agent is the user associated with the event data. any future events related to this message will be sent to the same agent/recipient format (`uri`) |
+| instrument | string | the app or service that produced the event on behalf of the agent/user format (`uri`) |
+| source | string | a copy of the event was sent to the source(s). format (`uri`) |
+| originalRecipient | string | the originalRecipient helps you determine the subscription that delivered the event to you. if the originalRecipient is the same as the agent, then the you are subscribed to the agent. if the originalRecipient is different from the agent, then you are subscribed to the event source format (`uri`) |
+| id | string | the Event ID (aka "Publish ID") is the immutable canonical identifier for the event. it is a URI that is unique to the event and will not change. all subscribers will receive the same id for the same event. format (`uri`) |
+| @id | string |  format (`uri`) |
 
 ### Payload
 
@@ -29,19 +29,19 @@ title: contact#planupdate
 | topic | string | const (`"realestate/contact#planupdate"`)  |
 | data | object | - |
 | data.type | string | const (`"UpdateAction"`)  |
-| data.agent | object | >= 2 properties  |
+| data.agent | object |  >= 2 properties |
 | data.agent.type | string | const (`"Person"`)  |
 | data.agent.name | string | the name of the item |
-| data.agent.email | string | format (`email`)  |
-| data.agent.identifier | object | examples (`{"salesforceid":"0031U00002XW1QWQA1"}`, `{"vendoraid":"123456"}`, `{"originating_system_id":"123456"}`) identifier assigned to a contact by the vendor who originally created the contact |
+| data.agent.email | string |  format (`email`) |
+| data.agent.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
 | data.object | object | a collection of related tasks |
 | data.object.type | string | const (`"Plan"`)  |
-| data.object.identifier | object | examples (`{"salesforceid":"0031U00002XW1QWQA1"}`, `{"vendoraid":"123456"}`, `{"originating_system_id":"123456"}`) identifier assigned to a contact by the vendor who originally created the contact |
-| data.object.name | string | examples (`"my awesome plan"`, `"annoying but effective plan"`, `"plan to take over the world"`, `"birthdays and anniversaries plan"`) name of the plan |
+| data.object.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| data.object.name | string | name of the plan |
 | data.object.description | string | description of the item |
 | data.object.member | array<object> | tasks which make up the plan |
 | data.object.member.type | string | allowed (`"Task"`) The item type (Linked-Data @type) |
-| data.object.member.identifier | object | examples (`{"salesforceid":"0031U00002XW1QWQA1"}`, `{"vendoraid":"123456"}`, `{"originating_system_id":"123456"}`) identifier assigned to a contact by the vendor who originally created the contact |
+| data.object.member.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
 | data.object.member.actionStatus | string | allowed (`"CompletedActionStatus"`, `"FailedActionStatus"`, `"ActiveActionStatus"`, `"PotentialActionStatus"`) disposition of the Action at the time of this action message. |
 | data.object.member.memberOf | object | a plan the task is associated with |
 | data.object.member.agent | object | the party who completed, or will complete the task |
@@ -51,13 +51,92 @@ title: contact#planupdate
 | data.object.member.description | string | task detailed description |
 | data.object.member.keywords | array<string> | - |
 | data.object.member.keywords (single item) | string | - |
-| data.object.member.dateDue | string | format (`date-time`) the due date-time (ISO 8601 formated) |
-| data.object.member.dateCompleted | string | format (`date-time`) date the task was completed |
+| data.object.member.dateDue | string | the due date-time (ISO 8601 formated) format (`date-time`) |
+| data.object.member.dateCompleted | string | date the task was completed format (`date-time`) |
 | data.object.member.location | object | the physical location where an event takes place |
 | data.object.creator | any | the item creator |
-| data.object.dateCreated | string | format (`date-time`) The date on which the item was created. |
-| data.object.dateModified | string | format (`date-time`) The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. |
-| data.object.dateCompleted | string | format (`date-time`) The date on which the item was created. |
+| data.object.dateCreated | string | The date on which the item was created. format (`date-time`) |
+| data.object.dateModified | string | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. format (`date-time`) |
+| data.object.dateCompleted | string | The date on which the item was created. format (`date-time`) |
+
+### Payload Example(s) (generated)
+
+```json
+{
+  "topic": "realestate/contact#planupdate",
+  "data": {
+    "type": "UpdateAction",
+    "agent": {
+      "type": "Person",
+      "name": "string",
+      "email": "user@example.com",
+      "identifier": {
+        "salesforceid": "0031U00002XW1QWQA1"
+      }
+    },
+    "object": {
+      "type": "Plan",
+      "identifier": {
+        "salesforceid": "0031U00002XW1QWQA1"
+      },
+      "name": "my awesome plan",
+      "description": "this is the description of my awesome plan",
+      "member": [
+        {
+          "type": "Task",
+          "identifier": {
+            "redEvent_ID": "23445"
+          },
+          "actionStatus": "PotentialActionStatus",
+          "memberOf": {
+            "type": "Plan",
+            "identifier": {
+              "redPlan_ID": "xxxx"
+            }
+          },
+          "agent": {
+            "type": "RealEstateAgent",
+            "id": "http://user.example.com/profile/card#me"
+          },
+          "participant": [
+            {
+              "type": "Contact",
+              "name": "Bruce Wayne",
+              "email": "bruce@example.com",
+              "identifier": {
+                "redContact_GUID": "92d0a096-457e-4643-ace8-fa95b6bdb1c5"
+              }
+            }
+          ],
+          "name": "Call Ricky",
+          "description": "Agenda 1. Something 2. Something Else ...",
+          "keywords": [
+            "string"
+          ],
+          "dateDue": "2019-08-24T14:15:22Z",
+          "dateCompleted": "2019-08-24T14:15:22Z",
+          "location": {
+            "type": "Place",
+            "address": {
+              "streetAddress": "1007 Mountain Gate Rd",
+              "addressLocality": "Gotham City",
+              "addressRegion": "NJ",
+              "postalCode": "10007",
+              "addressCounty": "Gotham addressCounty",
+              "addressSubdivision": "Gotham Heights"
+            }
+          }
+        }
+      ],
+      "creator": "http://agent.example.com/profile/card#me",
+      "dateCreated": "2019-08-24T14:15:22Z",
+      "dateModified": "2019-08-24T14:15:22Z",
+      "dateCompleted": "2019-08-24T14:15:22Z"
+    }
+  }
+}
+```
+
 
 ### Tools
 

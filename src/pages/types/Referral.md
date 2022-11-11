@@ -12,7 +12,7 @@ title: Referral
 | additionalProperty.inNetworkReferralYN | string | allowed (`"Y"`, `"N"`) Y if transaction was referred by an in network agent |
 | referredBy | object | the referring entity |
 | referredBy.type | string | allowed (`"RealEstateOrganization"`, `"RealEstateAgent"`, `"RealEstateOffice"`, `"Organization"`, `"Person"`) the referring entity type i.e RealEstateOrganization, RealEstateAgent |
-| referredBy.id | string | format (`uri`) Linked-Data URI (@id) |
+| referredBy.id | string | Linked-Data URI (@id) format (`uri`) |
 
 ## Example
 

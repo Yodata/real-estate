@@ -10,7 +10,7 @@ title: MonetaryAmount
 | minValue | number | the lower limit of the range |
 | maxValue | number | the upper limit of the range |
 | value | number | the actual or expected value |
-| currency | string | <= 3 characters use ISO4217 country codes |
+| currency | string | use ISO4217 country codes <= 3 characters |
 
 ## Example
 

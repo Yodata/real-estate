@@ -11,11 +11,11 @@ title: ProgramMembership
 | member | object | - |
 | member.type | string | const (`"Contact"`)  |
 | member.name | string | - |
-| member.identifier | object | examples (`{"salesforceid":"0031U00002XW1QWQA1"}`, `{"vendoraid":"123456"}`, `{"originating_system_id":"123456"}`) identifier assigned to a contact by the vendor who originally created the contact |
+| member.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
 | memberOf | object | - |
 | memberOf.type | string | const (`"MarketingProgram"`)  |
 | memberOf.name | string | - |
-| memberOf.identifier | object | examples (`{"salesforceid":"0031U00002XW1QWQA1"}`, `{"vendoraid":"123456"}`, `{"originating_system_id":"123456"}`) identifier assigned to a contact by the vendor who originally created the contact |
+| memberOf.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
 
 ## Example
 

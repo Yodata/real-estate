@@ -14,7 +14,7 @@ title: SubscribeAction
 | 1.agent | object | the subscriber |
 | 1.participant | array<object> | the subscription provider, an Agent, Team, Office or Organization |
 | 1.participant.roleName | string | allowed (`"SubscriptionProvider"`)  |
-| 1.participant.id | string | format (`uri`)  |
+| 1.participant.id | string |  format (`uri`) |
 | 1.participant.additionalProperty | object | - |
 | 1.participant.additionalProperty.isCompanyQueue | boolean | - |
 

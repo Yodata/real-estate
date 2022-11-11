@@ -11,8 +11,8 @@ title: Permit
 | issuedBy | object | The issuing authority |
 | issuedThrough | object | the service through which the permit was granted |
 | validIn | object | - |
-| validFrom | string | format (`date-time`) start date |
-| validUntil | string | format (`date-time`) end date |
+| validFrom | string | start date format (`date-time`) |
+| validUntil | string | end date format (`date-time`) |
 
 ## Example
 

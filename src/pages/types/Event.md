@@ -10,8 +10,8 @@ title: Event
 | name | string | name of the event |
 | description | string | event message content |
 | about | object | a subject of the meeting or event |
-| startDate | string | format (`date-time`) the start date-time (ISO 8601 formated) |
-| endDate | string | format (`date-time`) the end date-time (ISO 8601 formated) |
+| startDate | string | the start date-time (ISO 8601 formated) format (`date-time`) |
+| endDate | string | the end date-time (ISO 8601 formated) format (`date-time`) |
 | organizer | object | the event organizer |
 
 ## Example

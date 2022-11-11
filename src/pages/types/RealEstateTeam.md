@@ -10,9 +10,9 @@ title: RealEstateTeam
 | id | string | - |
 | 1 (allOf item) | allOf | - |
 | 1.0 (allOf item) | object | - |
-| 1.0.type | string | pattern (`^[A-Z][a-zA-Z0-9]+$`) The item type (Linked-Data @type) |
-| 1.0.@id | string | format (`uri`) the liked data uri for the Thing |
-| 1.0 (property names) | - | pattern (`^[a-z@$][a-zA-Z0-9-_]+$`)  |
+| 1.0.type | string | The item type (Linked-Data @type) pattern (`^[A-Z][a-zA-Z0-9]+$`) |
+| 1.0.@id | string | the liked data uri for the Thing format (`uri`) |
+| 1.0 (property names) | - |  pattern (`^[a-z@$][a-zA-Z0-9-_]+$`) |
 | 1.1 (allOf item) | any | - |
 | 1.2 (allOf item) | any | - |
 | 1.3 (allOf item) | - | - |
@@ -28,35 +28,35 @@ title: RealEstateTeam
 | 1.3.certification.0.name | string | the name of the Certification |
 | 1.3.certification.0.issuedBy | object | the issuing authority |
 | 1.3.certification.0.issuedBy.type | string | allowed (`"RealEstateOrganization"`) The item type (Linked-Data @type) |
-| 1.3.certification.0.issuedBy.id | string | format (`uri`) Linked-Data URI (@id) |
+| 1.3.certification.0.issuedBy.id | string | Linked-Data URI (@id) format (`uri`) |
 | 1.3.certification.0.issuedBy.name | string | name of the issuing organization |
 | 1.3.certification.0.issuedTo | object | the subject |
 | 1.3.certification.0.issuedTo.type | string | allowed (`"RealEstateAgent"`) The item type (Linked-Data @type) |
-| 1.3.certification.0.issuedTo.id | string | format (`uri`) Linked-Data URI (@id) |
+| 1.3.certification.0.issuedTo.id | string | Linked-Data URI (@id) format (`uri`) |
 | 1.3.certification.0.issuedTo.name | string | the name of the item |
 | 1.3.contactPoint | array<object> | a named point of contact - telephone, email, faxNumber, and/or url for the entity |
 | 1.3.contactPoint.type | string | const (`"ContactPoint"`)  |
-| 1.3.contactPoint.name | string | examples (`"Work"`, `"Home"`, `"Vacation"`, `"Bob's Cell"`, `"Alice's Work"`) a label for the contactPoint, i.e. 'Work', or 'Home' |
-| 1.3.contactPoint.telephone | string | examples (`"555-555-5555"`, `"555-555-5555 x123"`, `"555-555-5555 ext. 123"`, `"+1-555-555-5555"`)  |
-| 1.3.contactPoint.faxNumber | string | examples (`"555-555-5555"`, `"555-555-5555 x123"`, `"555-555-5555 ext. 123"`, `"+1-555-555-5555"`)  |
-| 1.3.contactPoint.email | string | examples (`"bob@example.com"`, `"alice@example.com"`) format (`email`) an email address for the item. |
-| 1.3.contactPoint.url | string | format (`uri`) primary URL for the item. |
-| 1.3.email | string | format (`email`)  |
+| 1.3.contactPoint.name | string | a label for the contactPoint, i.e. 'Work', or 'Home' |
+| 1.3.contactPoint.telephone | string | - |
+| 1.3.contactPoint.faxNumber | string | - |
+| 1.3.contactPoint.email | string | an email address for the item. format (`email`) |
+| 1.3.contactPoint.url | string | primary URL for the item. format (`uri`) |
+| 1.3.email | string |  format (`email`) |
 | 1.3.faxNumber | string | Do people still use fax machines? |
 | 1.3.image | tuple<object allOf, ...optional<any>> | an ImageObject or URI reference to an image on the web. |
 | 1.3.image.0 (index) | object allOf | - |
 | 1.3.image.0.0 (allOf item) | allOf | an image, video or document availble for download |
 | 1.3.image.0.0.0 (allOf item) | object | - |
-| 1.3.image.0.0.0.type | string | pattern (`^[A-Z][a-zA-Z0-9]+$`) The item type (Linked-Data @type) |
-| 1.3.image.0.0.0.@id | string | format (`uri`) the liked data uri for the Thing |
-| 1.3.image.0.0.0 (property names) | - | pattern (`^[a-z@$][a-zA-Z0-9-_]+$`)  |
+| 1.3.image.0.0.0.type | string | The item type (Linked-Data @type) pattern (`^[A-Z][a-zA-Z0-9]+$`) |
+| 1.3.image.0.0.0.@id | string | the liked data uri for the Thing format (`uri`) |
+| 1.3.image.0.0.0 (property names) | - |  pattern (`^[a-z@$][a-zA-Z0-9-_]+$`) |
 | 1.3.image.0.0.1 (allOf item) | - | - |
 | 1.3.image.0.0.1.type | string | allowed (`"MediaObject"`, `"ImageObject"`, `"DigitalDocument"`)  |
-| 1.3.image.0.0.1.id | string | format (`uri`) the URL to access the item. |
+| 1.3.image.0.0.1.id | string | the URL to access the item. format (`uri`) |
 | 1.3.image.0.0.1.name | string | the file name of the object. |
 | 1.3.image.0.0.1.encodingFormat | string | MIME type |
-| 1.3.image.0.0.1.about | string | format (`uri`) URI to the subject of the image or logo |
-| 1.3.image.0.0.1.url | string | format (`uri`) URL of the image content |
+| 1.3.image.0.0.1.about | string | URI to the subject of the image or logo format (`uri`) |
+| 1.3.image.0.0.1.url | string | URL of the image content format (`uri`) |
 | 1.3.image.0.1 (allOf item) | - | - |
 | 1.3.image.0.1.type | string | allowed (`"ImageObject"`)  |
 | 1.3.image.0.1.id | any | - |
@@ -74,32 +74,32 @@ title: RealEstateTeam
 | 1.3.logo.1 (allOf item) | object | an associated logo |
 | 1.3.name | string | Name or DBA. |
 | 1.3.parentOrganization | array<string> | - |
-| 1.3.parentOrganization (single item) | string | format (`uri`)  |
+| 1.3.parentOrganization (single item) | string |  format (`uri`) |
 | 1.3.subOrganization | array<string> | a child organization |
-| 1.3.subOrganization (single item) | string | format (`uri`)  |
+| 1.3.subOrganization (single item) | string |  format (`uri`) |
 | 1.3.telephone | string | Primary phone number. |
 | 1.3.type | string | allowed (`"Organization"`)  |
-| 1.3.url | string | format (`uri`) primary website/url for the entity. |
+| 1.3.url | string | primary website/url for the entity. format (`uri`) |
 | 2 (allOf item) | - | A real estate team. |
 | 2.type | string | allowed (`"RealEstateTeam"`) RealEstateTeam |
 | 2.areaServed | object | the physical areas that make up the ServiceArea |
 | 2.description | string | description of the item. |
 | 2.parentOrganization | array<string> | A franchisor or affiliate network of which this organization plays a membership role. |
-| 2.parentOrganization (single item) | string | format (`uri`)  |
+| 2.parentOrganization (single item) | string |  format (`uri`) |
 | 2.member | array<allOf> | - |
 | 2.member (single item) | allOf | - |
 | 2.member.0 (allOf item) | object | describes a role played by a member and a group or organization. |
 | 2.member.0.type | string | allowed (`"OrganizationRole"`) a role played by the member in the memberOf group |
 | 2.member.0.roleName | string | the role name |
 | 2.member.0.memberOf | object | the org or group where the role is performed |
-| 2.member.0.member | string | format (`uri`) member object or id |
-| 2.member.0.startDate | string | format (`date-time`) date the member began performing this role |
-| 2.member.0.endDate | string | format (`date-time`) date the member stopped performing the role |
+| 2.member.0.member | string | member object or id format (`uri`) |
+| 2.member.0.startDate | string | date the member began performing this role format (`date-time`) |
+| 2.member.0.endDate | string | date the member stopped performing the role format (`date-time`) |
 | 2.member.1 (allOf item) | object | a membership relationship.  Subclass of OrganizationRole |
 | 2.member.1.type | string | allowed (`"RealEstateTeamMembership"`) a member of a real estate team |
 | 2.member.1.roleName | string | allowed (`"TeamMember"`, `"TeamAdmin"`, `"TeamOwner"`)  |
-| 2.member.1.memberOf | string | format (`uri`)  |
-| 2.member.1.member | string | format (`uri`)  |
+| 2.member.1.memberOf | string |  format (`uri`) |
+| 2.member.1.member | string |  format (`uri`) |
 
 ## Example
 

@@ -5,10 +5,7 @@ title: TransactionStatus
 
 | Name | Type | Description |
 |---|---|---|
-| (TransactionStatus) | object | Transaction Status Enumeration Values |
-| PendingTransactionStatus | string | Pending Status |
-| ClosedTransactionStatus | string | Closed Status |
-| CanceledTransactionStatus | string | Canceled Status |
+| (root) | object | Transaction Status Enumeration Values |
 | PendingTransactionStatus | string | Pending Status |
 | ClosedTransactionStatus | string | Closed Status |
 | CanceledTransactionStatus | string | Canceled Status |

@@ -5,13 +5,7 @@ title: ListingReport
 
 | Name | Type | Description |
 |---|---|---|
-| (ListingReport) | object | summary report of listing inventory count |
-| type | string | RECORD-TYPE |
-| batchId | string | BATCH-ID |
-| reportingOfficeId | string | format (`uri`) OFFICE-ID |
-| dateCreated | string | format (`date-time`) YEAR-MONTH |
-| listingsAddedCount | number | LISTINGS-TAKEN |
-| totalListingsCount | number | LISTINGS-INVENTORY |
+| (root) | object | summary report of listing inventory count |
 | type | string | RECORD-TYPE |
 | batchId | string | BATCH-ID |
 | reportingOfficeId | string | format (`uri`) OFFICE-ID |

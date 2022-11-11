@@ -5,10 +5,7 @@ title: RealEstateWebsite
 
 | Name | Type | Description |
 |---|---|---|
-| (RealEstateWebsite) | object | - |
-| type | string | allowed (`"RealEstateWebsite"`) RealEstateWebsite |
-| about | object | subject of the website |
-| url | string | format (`uri`) URL of the item. |
+| (root) | object | - |
 | type | string | allowed (`"RealEstateWebsite"`) RealEstateWebsite |
 | about | object | subject of the website |
 | url | string | format (`uri`) URL of the item. |

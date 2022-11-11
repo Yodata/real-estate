@@ -5,12 +5,7 @@ title: MonetaryAmount
 
 | Name | Type | Description |
 |---|---|---|
-| (MonetaryAmount) | object | - |
-| type | string | allowed (`"MonetaryAmount"`) MonetaryAmount |
-| minValue | number | the lower limit of the range |
-| maxValue | number | the upper limit of the range |
-| value | number | the actual or expected value |
-| currency | string | <= 3 characters use ISO4217 country codes |
+| (root) | object | - |
 | type | string | allowed (`"MonetaryAmount"`) MonetaryAmount |
 | minValue | number | the lower limit of the range |
 | maxValue | number | the upper limit of the range |

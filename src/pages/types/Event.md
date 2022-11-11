@@ -5,14 +5,7 @@ title: Event
 
 | Name | Type | Description |
 |---|---|---|
-| (Event) | object | An event happening at a certain time and location |
-| type | string | The item type (Linked-Data @type) |
-| name | string | name of the event |
-| description | string | event message content |
-| about | object | a subject of the meeting or event |
-| startDate | string | format (`date-time`) the start date-time (ISO 8601 formated) |
-| endDate | string | format (`date-time`) the end date-time (ISO 8601 formated) |
-| organizer | object | the event organizer |
+| (root) | object | An event happening at a certain time and location |
 | type | string | The item type (Linked-Data @type) |
 | name | string | name of the event |
 | description | string | event message content |

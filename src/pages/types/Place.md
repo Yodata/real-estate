@@ -5,10 +5,7 @@ title: Place
 
 | Name | Type | Description |
 |---|---|---|
-| (Place) | object | a physical location |
-| type | string | allowed (`"Place"`) The item type (Linked-Data @type) |
-| address | object | A physical address. |
-| geo | object | a geo shape (circle or box) |
+| (root) | object | a physical location |
 | type | string | allowed (`"Place"`) The item type (Linked-Data @type) |
 | address | object | A physical address. |
 | geo | object | a geo shape (circle or box) |

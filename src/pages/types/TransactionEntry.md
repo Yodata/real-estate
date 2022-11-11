@@ -5,21 +5,7 @@ title: TransactionEntry
 
 | Name | Type | Description |
 |---|---|---|
-| (TransactionEntry) | object | describes a unit of sales credit in unit or commission value relative to a parent transaction |
-| type | string | allowed (`"TransactionEntry"`) TransactionEntry |
-| salesProductionUnit | number | [ 0.0001 .. 1 ] the sales production units credited to the recipient |
-| salesProductionGCI | object | gross commission income credited to the recipient |
-| salesProductionGCI.type | string | allowed (`"MonetaryAmount"`) MonetaryAmount |
-| salesProductionGCI.minValue | number | the lower limit of the range |
-| salesProductionGCI.maxValue | number | the upper limit of the range |
-| salesProductionGCI.value | number | the actual or expected value |
-| salesProductionGCI.currency | string | <= 3 characters use ISO4217 country codes |
-| recipient | object | the agent credited with the sales production and who receives the value |
-| recipient.type | string | typically a RealEstateAgent |
-| recipient.roleName | string | allowed (`"ListingAgent"`, `"BuyerAgent"`) enum: ListingAgent,BuyerAgent |
-| recipient.id | string | format (`uri`) Linked-Data URI (@id) |
-| recipient.identifier | object | unique identifier of the recipient from the data producer |
-| recipient.identifier.bmsAgentId | string | <= 12 characters  |
+| (root) | object | describes a unit of sales credit in unit or commission value relative to a parent transaction |
 | type | string | allowed (`"TransactionEntry"`) TransactionEntry |
 | salesProductionUnit | number | [ 0.0001 .. 1 ] the sales production units credited to the recipient |
 | salesProductionGCI | object | gross commission income credited to the recipient |

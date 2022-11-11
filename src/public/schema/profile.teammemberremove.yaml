@@ -110,7 +110,7 @@ payload:
       properties:
         type:
           const: RemoveAction
-          x-parser-schema-id: <anonymous-schema-428>
+          x-parser-schema-id: <anonymous-schema-486>
         object:
           allOf:
             - title: OrganizationRole
@@ -122,35 +122,35 @@ payload:
                   description: a role played by the member in the memberOf group
                   enum:
                     - OrganizationRole
-                  x-parser-schema-id: <anonymous-schema-384>
+                  x-parser-schema-id: <anonymous-schema-442>
                 roleName:
                   type: string
                   description: the role name
                   example: Owner
-                  x-parser-schema-id: <anonymous-schema-385>
+                  x-parser-schema-id: <anonymous-schema-443>
                 memberOf:
                   description: the org or group where the role is performed
                   type: object
                   example:
                     type: RealEstateOrganization
                     id: http://orgid.example.com/profile/card#me
-                  x-parser-schema-id: <anonymous-schema-386>
+                  x-parser-schema-id: <anonymous-schema-444>
                 member:
                   description: member object or id
                   type: string
                   format: uri
                   example: https://memberid.example.com/profile/card#me
-                  x-parser-schema-id: <anonymous-schema-387>
+                  x-parser-schema-id: <anonymous-schema-445>
                 startDate:
                   type: string
                   format: date-time
                   description: date the member began performing this role
-                  x-parser-schema-id: <anonymous-schema-388>
+                  x-parser-schema-id: <anonymous-schema-446>
                 endDate:
                   type: string
                   format: date-time
                   description: date the member stopped performing the role
-                  x-parser-schema-id: <anonymous-schema-389>
+                  x-parser-schema-id: <anonymous-schema-447>
               x-parser-schema-id: OrganizationRole
             - type: object
               title: RealEstateTeamMembership
@@ -162,29 +162,29 @@ payload:
                   enum:
                     - RealEstateTeamMembership
                   example: RealEstateTeamMembership
-                  x-parser-schema-id: <anonymous-schema-421>
+                  x-parser-schema-id: <anonymous-schema-479>
                 roleName:
                   type: string
                   enum:
                     - TeamMember
                     - TeamAdmin
                     - TeamOwner
-                  x-parser-schema-id: <anonymous-schema-422>
+                  x-parser-schema-id: <anonymous-schema-480>
                 memberOf:
                   type: string
                   format: uri
                   example: https://{team-id}.example.com/profile/card#me
-                  x-parser-schema-id: <anonymous-schema-423>
+                  x-parser-schema-id: <anonymous-schema-481>
                 member:
                   type: string
                   format: uri
                   example: https://{agent}.example.com/profile/card#me
-                  x-parser-schema-id: <anonymous-schema-424>
-              x-parser-schema-id: <anonymous-schema-420>
+                  x-parser-schema-id: <anonymous-schema-482>
+              x-parser-schema-id: <anonymous-schema-478>
           x-parser-schema-id: RealEstateTeamMembership
-      x-parser-schema-id: <anonymous-schema-427>
+      x-parser-schema-id: <anonymous-schema-485>
     topic:
       const: realestate/profile#teammemberremove
-      x-parser-schema-id: <anonymous-schema-426>
-  x-parser-schema-id: <anonymous-schema-425>
+      x-parser-schema-id: <anonymous-schema-484>
+  x-parser-schema-id: <anonymous-schema-483>
 

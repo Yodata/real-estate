@@ -22,8 +22,7 @@
           "description": "The item type (Linked-Data @type)",
           "enum": [
             "Place"
-          ],
-          "x-parser-schema-id": "<anonymous-schema-654>"
+          ]
         },
         "address": {
           "type": "object",
@@ -40,8 +39,7 @@
             "postalCode": "10010",
             "postOfficeBoxNumber": "Box 1234",
             "streetAddress": "1007 Mountain Gate Rd"
-          },
-          "x-parser-schema-id": "<anonymous-schema-655>"
+          }
         },
         "geo": {
           "type": "object",
@@ -64,23 +62,20 @@
               "unitText": "miles"
             },
             "box": "(33.5697,-117.775),(33.6018,-117.707)"
-          },
-          "x-parser-schema-id": "<anonymous-schema-656>"
+          }
         }
       },
       "x-parser-schema-id": "Place"
     },
     "name": {
       "type": "string",
-      "description": "name of the service.",
-      "x-parser-schema-id": "<anonymous-schema-821>"
+      "description": "name of the service."
     },
     "type": {
       "type": "string",
       "enum": [
         "Service"
-      ],
-      "x-parser-schema-id": "<anonymous-schema-820>"
+      ]
     }
   },
   "x-parser-schema-id": "Service",

@@ -25,8 +25,7 @@
         {
           "originating_system_id": "123456"
         }
-      ],
-      "x-parser-schema-id": "<anonymous-schema-34>"
+      ]
     },
     "member": {
       "description": "members of the AwardTeam",
@@ -40,18 +39,15 @@
           "http://ma302.example.com/profile/card#me"
         ],
         "x-parser-schema-id": "<anonymous-schema-36>"
-      },
-      "x-parser-schema-id": "<anonymous-schema-35>"
+      }
     },
     "name": {
       "example": "Top Producer by Volume",
       "type": "string",
-      "description": "the name of the item",
-      "x-parser-schema-id": "<anonymous-schema-33>"
+      "description": "the name of the item"
     },
     "type": {
-      "const": "AwardTeam",
-      "x-parser-schema-id": "<anonymous-schema-32>"
+      "const": "AwardTeam"
     }
   },
   "x-parser-schema-id": "AwardTeam",

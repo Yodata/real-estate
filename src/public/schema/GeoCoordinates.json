@@ -8,23 +8,20 @@
       "type": "number",
       "description": "The latitude of a location.",
       "x-title": "latitude",
-      "example": 40.75,
-      "x-parser-schema-id": "<anonymous-schema-278>"
+      "example": 40.75
     },
     "longitude": {
       "type": "number",
       "description": "The longitude of a location.",
       "x-title": "longitude",
-      "example": 73.98,
-      "x-parser-schema-id": "<anonymous-schema-287>"
+      "example": 73.98
     },
     "type": {
       "type": "string",
       "description": "GeoCordinates",
       "enum": [
         "GeoCoordinates"
-      ],
-      "x-parser-schema-id": "<anonymous-schema-631>"
+      ]
     }
   },
   "x-parser-schema-id": "GeoCoordinates",

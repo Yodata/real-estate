@@ -24,7 +24,6 @@ properties:
       postalCode: '10010'
       postOfficeBoxNumber: Box 1234
       streetAddress: 1007 Mountain Gate Rd
-    x-parser-schema-id: <anonymous-schema-655>
   geo:
     type: object
     description: a geo shape (circle or box)
@@ -43,13 +42,11 @@ properties:
         unitCode: mi,
         unitText: miles
       box: (33.5697,-117.775),(33.6018,-117.707)
-    x-parser-schema-id: <anonymous-schema-656>
   type:
     type: string
     description: The item type (Linked-Data @type)
     enum:
       - Place
-    x-parser-schema-id: <anonymous-schema-654>
 x-parser-schema-id: Place
 $id: http://realestate.yodata.me/schema/Place.yaml
 

@@ -11,50 +11,41 @@ properties:
     format: uri
     description: the url of your instance of the event in your inbox
     example: https://yourpod.example.com/inbox/xxxxxxxxxxxxx
-    x-parser-schema-id: <anonymous-schema-550>
   agent:
     type: string
     format: uri
     description: the user, team, or organization who sent the event
     example: https://agentid.example.com/profile/card#me
-    x-parser-schema-id: <anonymous-schema-545>
   data:
     type: object
     description: event payload, typically an Action
-    x-parser-schema-id: <anonymous-schema-551>
   id:
     type: string
     format: uri
     description: the shared identifier of the event, akd the event id
     example: https://instrumentid.example.com/publish/xxxxxxxxxxxxx
-    x-parser-schema-id: <anonymous-schema-549>
   instrument:
     type: string
     format: uri
     description: the service which created the event
     example: https://vendorid.example.com/profile/card#me
-    x-parser-schema-id: <anonymous-schema-546>
   originalRecipient:
     type: string
     format: uri
     description: the original recipient of the event with this id
     example: https://agentid.example.com/profile/card#me
-    x-parser-schema-id: <anonymous-schema-548>
   source:
     type: string
     format: uri
     description: an agent, team or organization who received a copy of the event
     example: https://companyid.example.com/profile/card#me
-    x-parser-schema-id: <anonymous-schema-547>
   time:
     type: string
     format: date-time
     description: date & time the event was produced
-    x-parser-schema-id: <anonymous-schema-544>
   topic:
     type: string
     description: the event topic which determines the event.data schema
-    x-parser-schema-id: <anonymous-schema-543>
 x-parser-schema-id: CloudEvent
 $id: http://realestate.yodata.me/schema/CloudEvent.yaml
 

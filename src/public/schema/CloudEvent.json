@@ -12,59 +12,50 @@
       "type": "string",
       "format": "uri",
       "description": "the url of your instance of the event in your inbox",
-      "example": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
-      "x-parser-schema-id": "<anonymous-schema-550>"
+      "example": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx"
     },
     "agent": {
       "type": "string",
       "format": "uri",
       "description": "the user, team, or organization who sent the event",
-      "example": "https://agentid.example.com/profile/card#me",
-      "x-parser-schema-id": "<anonymous-schema-545>"
+      "example": "https://agentid.example.com/profile/card#me"
     },
     "data": {
       "type": "object",
-      "description": "event payload, typically an Action",
-      "x-parser-schema-id": "<anonymous-schema-551>"
+      "description": "event payload, typically an Action"
     },
     "id": {
       "type": "string",
       "format": "uri",
       "description": "the shared identifier of the event, akd the event id",
-      "example": "https://instrumentid.example.com/publish/xxxxxxxxxxxxx",
-      "x-parser-schema-id": "<anonymous-schema-549>"
+      "example": "https://instrumentid.example.com/publish/xxxxxxxxxxxxx"
     },
     "instrument": {
       "type": "string",
       "format": "uri",
       "description": "the service which created the event",
-      "example": "https://vendorid.example.com/profile/card#me",
-      "x-parser-schema-id": "<anonymous-schema-546>"
+      "example": "https://vendorid.example.com/profile/card#me"
     },
     "originalRecipient": {
       "type": "string",
       "format": "uri",
       "description": "the original recipient of the event with this id",
-      "example": "https://agentid.example.com/profile/card#me",
-      "x-parser-schema-id": "<anonymous-schema-548>"
+      "example": "https://agentid.example.com/profile/card#me"
     },
     "source": {
       "type": "string",
       "format": "uri",
       "description": "an agent, team or organization who received a copy of the event",
-      "example": "https://companyid.example.com/profile/card#me",
-      "x-parser-schema-id": "<anonymous-schema-547>"
+      "example": "https://companyid.example.com/profile/card#me"
     },
     "time": {
       "type": "string",
       "format": "date-time",
-      "description": "date & time the event was produced",
-      "x-parser-schema-id": "<anonymous-schema-544>"
+      "description": "date & time the event was produced"
     },
     "topic": {
       "type": "string",
-      "description": "the event topic which determines the event.data schema",
-      "x-parser-schema-id": "<anonymous-schema-543>"
+      "description": "the event topic which determines the event.data schema"
     }
   },
   "x-parser-schema-id": "CloudEvent",

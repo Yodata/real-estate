@@ -15,8 +15,7 @@
         "SJ",
         "VN"
       ],
-      "x-faker": "address.countryCode",
-      "x-parser-schema-id": "<anonymous-schema-106>"
+      "x-faker": "address.countryCode"
     },
     "addressCounty": {
       "type": "string",
@@ -27,8 +26,7 @@
         "Buckinghamshire",
         "Borders",
         null
-      ],
-      "x-parser-schema-id": "<anonymous-schema-107>"
+      ]
     },
     "addressLocality": {
       "type": "string",
@@ -41,8 +39,7 @@
         "Altamonte Springs",
         "West Ahmed",
         "Blaiseview"
-      ],
-      "x-parser-schema-id": "<anonymous-schema-104>"
+      ]
     },
     "addressRegion": {
       "type": "string",
@@ -53,8 +50,7 @@
         "California",
         "MI",
         null
-      ],
-      "x-parser-schema-id": "<anonymous-schema-103>"
+      ]
     },
     "addressSubdivision": {
       "type": "string",
@@ -65,8 +61,7 @@
         "South Kensington",
         "SOMA (South of Market)",
         "Nob Hill"
-      ],
-      "x-parser-schema-id": "<anonymous-schema-108>"
+      ]
     },
     "postOfficeBoxNumber": {
       "type": "string",
@@ -76,8 +71,7 @@
         "Box 1234",
         "Apt. 161",
         "Apt. 623"
-      ],
-      "x-parser-schema-id": "<anonymous-schema-102>"
+      ]
     },
     "postalCode": {
       "type": "string",
@@ -89,8 +83,7 @@
         "40387",
         "50239-7698",
         null
-      ],
-      "x-parser-schema-id": "<anonymous-schema-105>"
+      ]
     },
     "streetAddress": {
       "type": "string",
@@ -100,13 +93,11 @@
         "5046 Ottis Point",
         "166 Marion Burg",
         "93044 Haley Stream"
-      ],
-      "x-parser-schema-id": "<anonymous-schema-101>"
+      ]
     },
     "type": {
       "type": "string",
-      "const": "PostalAddress",
-      "x-parser-schema-id": "<anonymous-schema-100>"
+      "const": "PostalAddress"
     }
   },
   "x-parser-schema-id": "PostalAddress"

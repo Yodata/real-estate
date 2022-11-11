@@ -22,7 +22,6 @@ properties:
     examples:
       - bob@example.com
       - alice@example.com
-    x-parser-schema-id: <anonymous-schema-115>
   faxNumber:
     type: string
     x-faker: phone.phoneNumber
@@ -31,7 +30,6 @@ properties:
       - 555-555-5555 x123
       - 555-555-5555 ext. 123
       - +1-555-555-5555
-    x-parser-schema-id: <anonymous-schema-114>
   name:
     type: string
     description: a label for the contactPoint, i.e. 'Work', or 'Home'
@@ -41,7 +39,6 @@ properties:
       - Vacation
       - Bob's Cell
       - Alice's Work
-    x-parser-schema-id: <anonymous-schema-112>
   telephone:
     type: string
     x-faker: phone.phoneNumber
@@ -50,16 +47,13 @@ properties:
       - 555-555-5555 x123
       - 555-555-5555 ext. 123
       - +1-555-555-5555
-    x-parser-schema-id: <anonymous-schema-113>
   type:
     type: string
     const: ContactPoint
-    x-parser-schema-id: <anonymous-schema-111>
   url:
     description: primary URL for the item.
     type: string
     format: uri
     example: https://www.facebook.com/hallandoates
-    x-parser-schema-id: <anonymous-schema-116>
 x-parser-schema-id: ContactPoint
 

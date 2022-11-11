@@ -20,7 +20,6 @@ properties:
       - AE
       - GB
       - US
-    x-parser-schema-id: <anonymous-schema-265>
   addressLocality:
     $id: addressLocality
     type: string
@@ -32,7 +31,6 @@ properties:
     description: State or Province.
     example: New Jersey
     maxLength: 3
-    x-parser-schema-id: <anonymous-schema-266>
   buyerAgent:
     description: the buyer's RealEstateAgent
     example:
@@ -43,7 +41,6 @@ properties:
       type: RealEstateAgent
     type: object
     x-range: RealEstateAgent
-    x-parser-schema-id: <anonymous-schema-267>
   buyerOffice:
     description: the buyer's RealEstateOffice
     example:
@@ -54,7 +51,6 @@ properties:
       type: RealEstateOffice
     type: object
     x-range: RealEstateOffice
-    x-parser-schema-id: <anonymous-schema-268>
   closeDate:
     title: closeDate
     type: string
@@ -64,7 +60,6 @@ properties:
       With lease listings, the date the requirements were fulfilled, such as
       contract and/or deposit.
     x-range: DateTime
-    x-parser-schema-id: <anonymous-schema-269>
   image:
     title: image
     description: an ImageObject or URI reference to an image on the web.
@@ -88,18 +83,17 @@ properties:
                   - type
                 propertyNames:
                   pattern: ^[a-z@$][a-zA-Z0-9-_]+$
-                  x-parser-schema-id: <anonymous-schema-274>
+                  x-parser-schema-id: <anonymous-schema-237>
                 properties:
                   type:
                     type: string
                     pattern: ^[A-Z][a-zA-Z0-9]+$
                     description: The item type (Linked-Data @type)
-                    x-parser-schema-id: <anonymous-schema-272>
+                    x-parser-schema-id: <anonymous-schema-235>
                   '@id':
                     type: string
                     format: uri
                     description: the liked data uri for the Thing
-                    x-parser-schema-id: <anonymous-schema-273>
                 x-parser-schema-id: Thing
               - properties:
                   type:
@@ -131,7 +125,7 @@ properties:
                     format: uri
                     description: URL of the image content
                     example: http://user.example.com/public/profile/image.jpg
-                x-parser-schema-id: <anonymous-schema-275>
+                x-parser-schema-id: <anonymous-schema-238>
             x-parser-schema-id: MediaObject
           - title: ImageObject
             x-range: ImageObject
@@ -146,21 +140,18 @@ properties:
                 example: image.jpg
               encodingFormat:
                 example: image/jpeg
-            x-parser-schema-id: <anonymous-schema-276>
-        x-parser-schema-id: <anonymous-schema-271>
-    x-parser-schema-id: <anonymous-schema-270>
+            x-parser-schema-id: <anonymous-schema-239>
+        x-parser-schema-id: <anonymous-schema-234>
   internetAddressDisplayYN:
     enum:
       - 'Y'
       - 'N'
     type: string
-    x-parser-schema-id: <anonymous-schema-277>
   latitude:
     type: number
     description: The latitude of a location.
     x-title: latitude
     example: 40.75
-    x-parser-schema-id: <anonymous-schema-278>
   listingAgent:
     type: object
     description: the agent/broker representing the seller in a real estate transaction
@@ -172,19 +163,16 @@ properties:
       name: Lori Listagent
       telephone: 1-252-574-0160
       email: lorilistagent@example.com
-    x-parser-schema-id: <anonymous-schema-279>
   listingContractDate:
     description: >-
       The effective date of the agreement between the seller and the seller's
       broker.
     format: date-time
     type: string
-    x-parser-schema-id: <anonymous-schema-280>
   listingId:
     description: the local identifier for the listing
     example: GOTHAM-MLS+12345
     type: string
-    x-parser-schema-id: <anonymous-schema-281>
   listingOffice:
     description: the listing office
     example:
@@ -192,7 +180,6 @@ properties:
       type: RealEstateOffice
     type: object
     x-range: RealEstateOrganization
-    x-parser-schema-id: <anonymous-schema-282>
   listingOriginatingSystem:
     description: The place where the item is originally input by the user.
     example:
@@ -204,7 +191,6 @@ properties:
     type: object
     x-range: MultipleListingService
     x-subPropertyOf: instrument
-    x-parser-schema-id: <anonymous-schema-283>
   listingPrice:
     type: object
     x-range: PriceSpecification
@@ -212,7 +198,6 @@ properties:
       type: PriceSpecification
       price: 75000
       priceCurrency: USD
-    x-parser-schema-id: <anonymous-schema-284>
   listingStatus:
     enum:
       - Active
@@ -223,7 +208,6 @@ properties:
       - OffMarket
       - Private
     type: string
-    x-parser-schema-id: <anonymous-schema-285>
   livingArea:
     description: property indoor space
     example:
@@ -233,13 +217,11 @@ properties:
       value: 1500
     type: object
     x-range: QuantitativeValue
-    x-parser-schema-id: <anonymous-schema-286>
   longitude:
     type: number
     description: The longitude of a location.
     x-title: longitude
     example: 73.98
-    x-parser-schema-id: <anonymous-schema-287>
   lotSize:
     description: outdoor space minValue, maxValue
     example:
@@ -249,38 +231,31 @@ properties:
       value: 0.5
     type: object
     x-range: QuantitativeValue
-    x-parser-schema-id: <anonymous-schema-288>
   numberOfBathrooms:
     description: the number of bathrooms
     example: '2'
     type: string
-    x-parser-schema-id: <anonymous-schema-289>
   numberOfBedrooms:
     description: the number of bedrooms
     example: '3'
     type: string
-    x-parser-schema-id: <anonymous-schema-290>
   numberOfRooms:
     description: the total number of rooms in the building
     example: '7'
     type: string
-    x-parser-schema-id: <anonymous-schema-291>
   originatingSystemKey:
     description: the listing identifier from the original MLS, aka MLSID.
     example: 12345
     type: string
-    x-parser-schema-id: <anonymous-schema-292>
   originatingSystemName:
     description: the name of the MLS where the listing was originally input
     example: GOTHAM-MLS
     type: string
-    x-parser-schema-id: <anonymous-schema-293>
   postalCode:
     type: string
     description: Zip/Post Code
     example: '10010'
     maxLength: 12
-    x-parser-schema-id: <anonymous-schema-294>
   propertySubType:
     title: propertySubType
     type: string
@@ -315,7 +290,6 @@ properties:
       - RetailPropertyType
       - UnimprovedLandPropertyType
       - WarehousePropertyType
-    x-parser-schema-id: <anonymous-schema-295>
   propertyType:
     type: string
     description: RESO property type (see range for allowed values)
@@ -332,7 +306,6 @@ properties:
       - COMS
       - COML
       - BUSO
-    x-parser-schema-id: <anonymous-schema-296>
   purchaseContractDate:
     description: >-
       With for-sale listings, the date an offer was accepted and the listing was
@@ -341,23 +314,19 @@ properties:
       fulfilled, such as contract signing or receipt of the deposit.
     format: date-time
     type: string
-    x-parser-schema-id: <anonymous-schema-297>
   stories:
     type: number
     description: he number of floors in the property
     example: 2
-    x-parser-schema-id: <anonymous-schema-298>
   streetAddress:
     type: string
     description: the street address
     example: 1007 Mountain Gate Rd
     maxLength: 75
-    x-parser-schema-id: <anonymous-schema-299>
   type:
     enum:
       - PropertyListing
     type: string
-    x-parser-schema-id: <anonymous-schema-264>
   universalPropertyId:
     type: string
     title: universalPropertyId
@@ -368,7 +337,6 @@ properties:
       shares of real property, units, and other more granular cases, please
       utilize the UniversalPropertySubId.
     example: US-04015-N-R-11022331-N
-    x-parser-schema-id: <anonymous-schema-300>
   url:
     title: url
     type: string
@@ -376,12 +344,10 @@ properties:
     description: URL of the item.
     example: >-
       https://www.example.com/homedetails/1007-Mountain-Gate-Rd-Gotham-City-Gotham/10007
-    x-parser-schema-id: <anonymous-schema-301>
   yearBuilt:
     type: number
     description: the year the structure was created
     example: 1988
-    x-parser-schema-id: <anonymous-schema-302>
 x-parser-schema-id: PropertyListing
 $id: http://realestate.yodata.me/schema/PropertyListing.yaml
 

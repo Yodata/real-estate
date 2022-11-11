@@ -17,7 +17,6 @@ properties:
       - Babs,Barbara
       - Katheryn Elizabeth Hudson,Katy Perry
       - Destiny Hope Cyrus,Miley Cyrus
-    x-parser-schema-id: <anonymous-schema-117>
   address:
     type: array
     items:
@@ -116,7 +115,6 @@ properties:
             - Nob Hill
           x-parser-schema-id: <anonymous-schema-108>
       x-parser-schema-id: PostalAddress
-    x-parser-schema-id: <anonymous-schema-99>
   affiliation:
     description: An organization that this person is affiliated with
     type: array
@@ -125,12 +123,10 @@ properties:
       format: uri
       example: https://example.com/profile/card#me
       x-parser-schema-id: <anonymous-schema-98>
-    x-parser-schema-id: <anonymous-schema-97>
   birthDate:
     description: date of birth.
     type: string
     format: date
-    x-parser-schema-id: <anonymous-schema-109>
   contactPoint:
     description: contact points for the person
     type: array
@@ -154,7 +150,6 @@ properties:
         type:
           type: string
           const: ContactPoint
-          x-parser-schema-id: <anonymous-schema-111>
         name:
           type: string
           description: a label for the contactPoint, i.e. 'Work', or 'Home'
@@ -164,7 +159,6 @@ properties:
             - Vacation
             - Bob's Cell
             - Alice's Work
-          x-parser-schema-id: <anonymous-schema-112>
         telephone:
           type: string
           x-faker: phone.phoneNumber
@@ -173,7 +167,6 @@ properties:
             - 555-555-5555 x123
             - 555-555-5555 ext. 123
             - +1-555-555-5555
-          x-parser-schema-id: <anonymous-schema-113>
         faxNumber:
           type: string
           x-faker: phone.phoneNumber
@@ -182,7 +175,6 @@ properties:
             - 555-555-5555 x123
             - 555-555-5555 ext. 123
             - +1-555-555-5555
-          x-parser-schema-id: <anonymous-schema-114>
         email:
           description: an email address for the item.
           type: string
@@ -191,20 +183,16 @@ properties:
           examples:
             - bob@example.com
             - alice@example.com
-          x-parser-schema-id: <anonymous-schema-115>
         url:
           description: primary URL for the item.
           type: string
           format: uri
           example: https://www.facebook.com/hallandoates
-          x-parser-schema-id: <anonymous-schema-116>
       x-parser-schema-id: ContactPoint
-    x-parser-schema-id: <anonymous-schema-110>
   email:
     type: string
     format: email
     x-faker: internet.email
-    x-parser-schema-id: <anonymous-schema-94>
   familyName:
     $id: http://realestate.yodata.me/schema/familyName.yaml
     type: string
@@ -231,7 +219,6 @@ properties:
     type: string
     description: Do people still use fax machines?
     x-faker: phone.phoneNumber
-    x-parser-schema-id: <anonymous-schema-118>
   givenName:
     type: string
     description: First Name of a person
@@ -267,19 +254,16 @@ properties:
       - Jeffrey
       - Ryan
       - Jacob
-    x-parser-schema-id: <anonymous-schema-119>
   honorificPrefix:
     title: honorificPrefix
     description: An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.
     type: string
     example: Dr
-    x-parser-schema-id: <anonymous-schema-120>
   honorificSuffix:
     title: honorificSuffix
     description: An honorific title following a person's name like M.D.
     type: string
     example: Esq
-    x-parser-schema-id: <anonymous-schema-121>
   jobTitle:
     title: jobTitle
     description: job tiles associated with the item
@@ -290,7 +274,6 @@ properties:
     example:
       - Chief Data Officer
       - Sanitation Engineer
-    x-parser-schema-id: <anonymous-schema-122>
   knowsLanguage:
     description: languages spoken by the person
     type: array
@@ -307,15 +290,12 @@ properties:
         type:
           type: string
           const: Language
-          x-parser-schema-id: <anonymous-schema-125>
         name:
           type: string
           description: the display name of the language
-          x-parser-schema-id: <anonymous-schema-126>
         additionalName:
           type: string
           description: BCP 47 language code
-          x-parser-schema-id: <anonymous-schema-127>
       examples:
         - type: Language
           name: English
@@ -360,25 +340,20 @@ properties:
           name: Portuguese
           additionalName: pt
       x-parser-schema-id: Language
-    x-parser-schema-id: <anonymous-schema-124>
   name:
     description: Full name of the person.
     type: string
     x-faker: name.findName
-    x-parser-schema-id: <anonymous-schema-128>
   telephone:
     type: string
     description: Primary phone number.
     example: '+15558675309'
-    x-parser-schema-id: <anonymous-schema-129>
   type:
     type: string
-    x-parser-schema-id: <anonymous-schema-96>
   worksFor:
     type: string
     description: Organizations the person works for.
     x-faker: company.companyName
-    x-parser-schema-id: <anonymous-schema-130>
 x-parser-schema-id: Person
 $id: http://realestate.yodata.me/schema/Person.yaml
 

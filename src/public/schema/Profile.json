@@ -8,71 +8,68 @@
           "type": "string",
           "format": "uri",
           "example": "https://user.example.com/profile/card#me",
-          "x-parser-schema-id": "<anonymous-schema-680>"
+          "x-parser-schema-id": "<anonymous-schema-733>"
         },
         "type": {
           "type": "string",
           "example": "SoftwareApplication",
-          "x-parser-schema-id": "<anonymous-schema-681>"
+          "x-parser-schema-id": "<anonymous-schema-734>"
         },
         "inbox": {
           "description": "discoverable uri to your LDN inbox",
           "type": "string",
           "example": "/inbox/",
-          "x-parser-schema-id": "<anonymous-schema-682>"
+          "x-parser-schema-id": "<anonymous-schema-735>"
         },
         "outbox": {
           "description": "discoverable uri to your LDN outbox",
           "type": "string",
           "example": "/outbox/",
-          "x-parser-schema-id": "<anonymous-schema-683>"
+          "x-parser-schema-id": "<anonymous-schema-736>"
         },
         "storage": {
           "description": "uri to your linked-data storage root",
           "type": "string",
           "example": "/",
-          "x-parser-schema-id": "<anonymous-schema-684>"
+          "x-parser-schema-id": "<anonymous-schema-737>"
         },
         "preferencesFile": {
           "description": "discoverable uri for shared application preferences",
           "type": "string",
           "example": "/settings/prefs",
-          "x-parser-schema-id": "<anonymous-schema-685>"
+          "x-parser-schema-id": "<anonymous-schema-738>"
         },
         "account": {
           "description": "discoverable solid:account root",
           "type": "string",
           "example": "/",
-          "x-parser-schema-id": "<anonymous-schema-686>"
+          "x-parser-schema-id": "<anonymous-schema-739>"
         },
         "privateTypeIndex": {
           "description": "type index for your private use",
           "type": "string",
           "example": "/settings/privateTypeIndex",
-          "x-parser-schema-id": "<anonymous-schema-687>"
+          "x-parser-schema-id": "<anonymous-schema-740>"
         },
         "publicTypeIndex": {
           "description": "shared, discoverable type index",
           "type": "string",
           "example": "/settings/publicTypeIndex",
-          "x-parser-schema-id": "<anonymous-schema-688>"
+          "x-parser-schema-id": "<anonymous-schema-741>"
         }
-      },
-      "x-parser-schema-id": "<anonymous-schema-679>"
+      }
     },
     "id": {
       "type": "string",
       "format": "uri",
       "description": "document uri",
-      "example": "https://user.example.com/profile/card",
-      "x-parser-schema-id": "<anonymous-schema-677>"
+      "example": "https://user.example.com/profile/card"
     },
     "type": {
       "type": "string",
       "enum": [
         "ProfileDocument"
-      ],
-      "x-parser-schema-id": "<anonymous-schema-678>"
+      ]
     }
   },
   "x-parser-schema-id": "Profile",

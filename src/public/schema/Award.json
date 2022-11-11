@@ -6,16 +6,14 @@
     "agent": {
       "type": "string",
       "format": "uri",
-      "description": "the agent that presented the award",
-      "x-parser-schema-id": "<anonymous-schema-25>"
+      "description": "the agent that presented the award"
     },
     "dateAwarded": {
       "type": "string",
       "format": "date-time",
       "description": "date the award was presented or announced.",
       "x-range": "DateTime",
-      "example": "2019-11-25T04:23:32.000Z",
-      "x-parser-schema-id": "<anonymous-schema-24>"
+      "example": "2019-11-25T04:23:32.000Z"
     },
     "identifier": {
       "example": {
@@ -34,14 +32,12 @@
         {
           "originating_system_id": "123456"
         }
-      ],
-      "x-parser-schema-id": "<anonymous-schema-31>"
+      ]
     },
     "name": {
       "example": "Top 1%",
       "description": "name of the award",
-      "type": "string",
-      "x-parser-schema-id": "<anonymous-schema-23>"
+      "type": "string"
     },
     "recipient": {
       "type": "array",
@@ -78,16 +74,14 @@
           "name"
         ],
         "x-parser-schema-id": "<anonymous-schema-27>"
-      },
-      "x-parser-schema-id": "<anonymous-schema-26>"
+      }
     },
     "type": {
       "type": "string",
       "enum": [
         "Award"
       ],
-      "description": "\"AwardAction\"",
-      "x-parser-schema-id": "<anonymous-schema-22>"
+      "description": "\"AwardAction\""
     }
   },
   "x-parser-schema-id": "Award",

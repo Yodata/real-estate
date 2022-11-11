@@ -5,18 +5,15 @@
   "properties": {
     "CanceledTransactionStatus": {
       "type": "string",
-      "description": "Canceled Status",
-      "x-parser-schema-id": "<anonymous-schema-825>"
+      "description": "Canceled Status"
     },
     "ClosedTransactionStatus": {
       "type": "string",
-      "description": "Closed Status",
-      "x-parser-schema-id": "<anonymous-schema-824>"
+      "description": "Closed Status"
     },
     "PendingTransactionStatus": {
       "type": "string",
-      "description": "Pending Status",
-      "x-parser-schema-id": "<anonymous-schema-823>"
+      "description": "Pending Status"
     }
   },
   "example": {

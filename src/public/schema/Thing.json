@@ -8,20 +8,18 @@
   ],
   "propertyNames": {
     "pattern": "^[a-z@$][a-zA-Z0-9-_]+$",
-    "x-parser-schema-id": "<anonymous-schema-274>"
+    "x-parser-schema-id": "<anonymous-schema-237>"
   },
   "properties": {
     "@id": {
       "type": "string",
       "format": "uri",
-      "description": "the liked data uri for the Thing",
-      "x-parser-schema-id": "<anonymous-schema-273>"
+      "description": "the liked data uri for the Thing"
     },
     "type": {
       "type": "string",
       "pattern": "^[A-Z][a-zA-Z0-9]+$",
-      "description": "The item type (Linked-Data @type)",
-      "x-parser-schema-id": "<anonymous-schema-272>"
+      "description": "The item type (Linked-Data @type)"
     }
   },
   "x-parser-schema-id": "Thing"

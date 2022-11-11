@@ -8,8 +8,7 @@
     "additionalName": {
       "type": "string",
       "description": "middleName or alternate name of the Person",
-      "example": "Big",
-      "x-parser-schema-id": "<anonymous-schema-797>"
+      "example": "Big"
     },
     "affiliation": {
       "type": "array",
@@ -18,15 +17,13 @@
         "type": "string",
         "format": "uri",
         "example": "https://{agentid}.example.com/profile/card#me",
-        "x-parser-schema-id": "<anonymous-schema-799>"
-      },
-      "x-parser-schema-id": "<anonymous-schema-798>"
+        "x-parser-schema-id": "<anonymous-schema-267>"
+      }
     },
     "email": {
       "type": "string",
       "format": "email",
-      "x-faker": "internet.email",
-      "x-parser-schema-id": "<anonymous-schema-94>"
+      "x-faker": "internet.email"
     },
     "familyName": {
       "$id": "http://realestate.yodata.me/schema/familyName.yaml",
@@ -88,14 +85,12 @@
         "Jeffrey",
         "Ryan",
         "Jacob"
-      ],
-      "x-parser-schema-id": "<anonymous-schema-119>"
+      ]
     },
     "position": {
       "type": "number",
       "description": "numeric position for the participant/roleName.",
-      "example": 1,
-      "x-parser-schema-id": "<anonymous-schema-796>"
+      "example": 1
     },
     "roleName": {
       "type": "string",
@@ -103,19 +98,16 @@
       "examples": [
         "Buyer",
         "Seller"
-      ],
-      "x-parser-schema-id": "<anonymous-schema-795>"
+      ]
     },
     "telephone": {
       "type": "string",
       "description": "Primary phone number.",
-      "example": "+15558675309",
-      "x-parser-schema-id": "<anonymous-schema-129>"
+      "example": "+15558675309"
     },
     "type": {
       "type": "string",
-      "const": "TransactionParticipant",
-      "x-parser-schema-id": "<anonymous-schema-794>"
+      "const": "TransactionParticipant"
     }
   },
   "x-parser-schema-id": "TransactionParticipant"

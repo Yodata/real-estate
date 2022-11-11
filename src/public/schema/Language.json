@@ -11,18 +11,15 @@
   "properties": {
     "additionalName": {
       "type": "string",
-      "description": "BCP 47 language code",
-      "x-parser-schema-id": "<anonymous-schema-127>"
+      "description": "BCP 47 language code"
     },
     "name": {
       "type": "string",
-      "description": "the display name of the language",
-      "x-parser-schema-id": "<anonymous-schema-126>"
+      "description": "the display name of the language"
     },
     "type": {
       "type": "string",
-      "const": "Language",
-      "x-parser-schema-id": "<anonymous-schema-125>"
+      "const": "Language"
     }
   },
   "examples": [

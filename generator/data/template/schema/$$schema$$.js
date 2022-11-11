@@ -27,27 +27,33 @@ const DEFAULT_PARAMS = {
   }
 }
 
-export default function TopicPage(props) {
+export default function JsonSchemaDoc(props) {
   const { schemaName, schema, params } = props
   if (params?.generate?.schemas === false) return null
+
 
   const { baseUrl, sortProperties, outputFormats } = DEFAULT_PARAMS
   const jsonSchema = mergeAllOf(schema)
   jsonSchema.properties = mergeAllOf(jsonSchema.properties)
-  // Object.entries(jsonSchema.properties).forEach(([ key, value ]) => {
-  //   if (typeof value === 'object' && value[ 'x-parser-schema-id' ]) {
-  //     delete value[ 'x-parser-schema-id' ]
-  //     jsonSchema.properties[key] = value
-  //   }
-
-  // })
+  // remove anonymous schemas-ids
+  Object.entries(jsonSchema.properties).forEach(([ key, value ]) => {
+    if (typeof value === 'object' && value[ 'x-parser-schema-id' ]) {
+      if (value[ 'x-parser-schema-id' ].startsWith('<anonymous-schema-')) {
+        delete value[ 'x-parser-schema-id' ]
+      }
+    }
+  })
   if (sortProperties === true && jsonSchema?.properties) {
     let sortedProperties = {}
        Object.keys(jsonSchema.properties)
       .sort()
          .forEach(key => {
-        if (key.startsWith('x-parser-')) return
-        sortedProperties[key] = jsonSchema.properties[key]
+           let value = jsonSchema.properties[ key ]
+           let schemaId = value['x-parser-schema-id']
+           if (String(schemaId).startsWith('<anonymous-schema-')) {
+             delete value[ key ]
+           }
+        sortedProperties[key] = value
       })
     jsonSchema.properties = sortedProperties
   }

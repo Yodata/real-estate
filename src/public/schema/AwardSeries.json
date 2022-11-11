@@ -9,27 +9,23 @@
     "description": {
       "example": "Annual",
       "type": "string",
-      "description": "description of the item.",
-      "x-parser-schema-id": "<anonymous-schema-16>"
+      "description": "description of the item."
     },
     "duration": {
       "title": "duration",
       "type": "string",
       "format": "duration",
       "description": "The duration of the item in ISO 8601 date format.",
-      "example": "R/P1Y",
-      "x-parser-schema-id": "<anonymous-schema-17>"
+      "example": "R/P1Y"
     },
     "endDate": {
       "type": "string",
       "description": "the end date-time (ISO 8601 formated)",
-      "format": "date-time",
-      "x-parser-schema-id": "<anonymous-schema-19>"
+      "format": "date-time"
     },
     "id": {
       "type": "string",
-      "format": "uri",
-      "x-parser-schema-id": "<anonymous-schema-20>"
+      "format": "uri"
     },
     "identifier": {
       "example": {
@@ -48,24 +44,20 @@
         {
           "originating_system_id": "123456"
         }
-      ],
-      "x-parser-schema-id": "<anonymous-schema-21>"
+      ]
     },
     "name": {
       "example": "Top 1% Club",
       "description": "name of the series",
-      "type": "string",
-      "x-parser-schema-id": "<anonymous-schema-15>"
+      "type": "string"
     },
     "startDate": {
       "description": "the start date-time (ISO 8601 formated)",
       "type": "string",
-      "format": "date-time",
-      "x-parser-schema-id": "<anonymous-schema-18>"
+      "format": "date-time"
     },
     "type": {
-      "const": "AwardSeries",
-      "x-parser-schema-id": "<anonymous-schema-14>"
+      "const": "AwardSeries"
     }
   },
   "x-parser-schema-id": "AwardSeries",

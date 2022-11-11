@@ -16,8 +16,7 @@
       ]
     },
     "type": {
-      "const": "Question",
-      "x-parser-schema-id": "<anonymous-schema-481>"
+      "const": "Question"
     }
   },
   "x-parser-schema-id": "Question",

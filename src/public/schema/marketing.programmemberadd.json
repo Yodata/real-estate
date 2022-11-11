@@ -105,12 +105,12 @@
         "properties": {
           "type": {
             "const": "AddAction",
-            "x-parser-schema-id": "<anonymous-schema-331>"
+            "x-parser-schema-id": "<anonymous-schema-390>"
           },
           "agent": {
             "type": "string",
             "format": "uri",
-            "x-parser-schema-id": "<anonymous-schema-332>"
+            "x-parser-schema-id": "<anonymous-schema-391>"
           },
           "object": {
             "$id": "http://realestate.yodata.me/schema/ProgramMembership.json",
@@ -120,7 +120,7 @@
             "properties": {
               "type": {
                 "const": "ProgramMembership",
-                "x-parser-schema-id": "<anonymous-schema-333>"
+                "x-parser-schema-id": "<anonymous-schema-392>"
               },
               "role": {
                 "type": "string",
@@ -128,7 +128,7 @@
                   "member",
                   "owner"
                 ],
-                "x-parser-schema-id": "<anonymous-schema-334>"
+                "x-parser-schema-id": "<anonymous-schema-393>"
               },
               "member": {
                 "type": "object",
@@ -139,11 +139,11 @@
                       "Person",
                       "Contact"
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-336>"
+                    "x-parser-schema-id": "<anonymous-schema-395>"
                   },
                   "name": {
                     "type": "string",
-                    "x-parser-schema-id": "<anonymous-schema-337>"
+                    "x-parser-schema-id": "<anonymous-schema-396>"
                   },
                   "identifier": {
                     "title": "identifier",
@@ -163,19 +163,19 @@
                     "x-parser-schema-id": "<anonymous-schema-95>"
                   }
                 },
-                "x-parser-schema-id": "<anonymous-schema-335>"
+                "x-parser-schema-id": "<anonymous-schema-394>"
               },
               "memberOf": {
                 "type": "object",
                 "properties": {
                   "type": {
                     "const": "MarketingProgram",
-                    "x-parser-schema-id": "<anonymous-schema-339>"
+                    "x-parser-schema-id": "<anonymous-schema-398>"
                   },
                   "name": {
                     "type": "string",
                     "example": "Market Activity Report 508 Homewood Ave",
-                    "x-parser-schema-id": "<anonymous-schema-340>"
+                    "x-parser-schema-id": "<anonymous-schema-399>"
                   },
                   "identifier": {
                     "title": "identifier",
@@ -195,7 +195,7 @@
                     "x-parser-schema-id": "<anonymous-schema-95>"
                   }
                 },
-                "x-parser-schema-id": "<anonymous-schema-338>"
+                "x-parser-schema-id": "<anonymous-schema-397>"
               }
             }
           },
@@ -231,16 +231,16 @@
                 }
               }
             },
-            "x-parser-schema-id": "<anonymous-schema-312>"
+            "x-parser-schema-id": "<anonymous-schema-371>"
           }
         },
-        "x-parser-schema-id": "<anonymous-schema-330>"
+        "x-parser-schema-id": "<anonymous-schema-389>"
       },
       "topic": {
         "const": "realestate/marketing#programmemberadd",
-        "x-parser-schema-id": "<anonymous-schema-329>"
+        "x-parser-schema-id": "<anonymous-schema-388>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-328>"
+    "x-parser-schema-id": "<anonymous-schema-387>"
   }
 }

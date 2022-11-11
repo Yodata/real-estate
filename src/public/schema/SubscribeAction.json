@@ -25,8 +25,7 @@
       }
     },
     "object": {
-      "description": "item on which the action is carried out",
-      "x-parser-schema-id": "<anonymous-schema-349>"
+      "description": "item on which the action is carried out"
     },
     "participant": {
       "description": "the subscription provider, an Agent, Team, Office or Organization",
@@ -65,11 +64,10 @@
     "type": {
       "description": "the action type",
       "type": "string",
-      "x-parser-schema-id": "<anonymous-schema-348>",
       "enum": [
         "SubscribeAction"
       ]
     }
   },
-  "x-parser-schema-id": "<anonymous-schema-350>"
+  "x-parser-schema-id": "<anonymous-schema-409>"
 }

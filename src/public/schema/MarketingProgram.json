@@ -22,7 +22,7 @@
           "enum": [
             "Place"
           ],
-          "x-parser-schema-id": "<anonymous-schema-654>"
+          "x-parser-schema-id": "<anonymous-schema-712>"
         },
         "address": {
           "type": "object",
@@ -40,7 +40,7 @@
             "postOfficeBoxNumber": "Box 1234",
             "streetAddress": "1007 Mountain Gate Rd"
           },
-          "x-parser-schema-id": "<anonymous-schema-655>"
+          "x-parser-schema-id": "<anonymous-schema-713>"
         },
         "geo": {
           "type": "object",
@@ -64,7 +64,7 @@
             },
             "box": "(33.5697,-117.775),(33.6018,-117.707)"
           },
-          "x-parser-schema-id": "<anonymous-schema-656>"
+          "x-parser-schema-id": "<anonymous-schema-714>"
         }
       },
       "x-parser-schema-id": "Place"
@@ -72,8 +72,7 @@
     "creator": {
       "description": "creator / author of the item",
       "type": "string",
-      "format": "uri",
-      "x-parser-schema-id": "<anonymous-schema-653>"
+      "format": "uri"
     },
     "dateCreated": {
       "$id": "http://realestate.yodata.me/schema/dateCreated.yaml",
@@ -85,8 +84,7 @@
     "dateModified": {
       "description": "The date on which the item was most recently modified or when the item's entry was modified within a DataFeed.",
       "type": "string",
-      "format": "date-time",
-      "x-parser-schema-id": "<anonymous-schema-137>"
+      "format": "date-time"
     },
     "identifier": {
       "title": "identifier",
@@ -102,8 +100,7 @@
         {
           "originating_system_id": "123456"
         }
-      ],
-      "x-parser-schema-id": "<anonymous-schema-95>"
+      ]
     },
     "member": {
       "type": "array",
@@ -117,7 +114,7 @@
         "properties": {
           "type": {
             "const": "ProgramMembership",
-            "x-parser-schema-id": "<anonymous-schema-645>"
+            "x-parser-schema-id": "<anonymous-schema-703>"
           },
           "role": {
             "type": "string",
@@ -125,18 +122,18 @@
               "member",
               "owner"
             ],
-            "x-parser-schema-id": "<anonymous-schema-646>"
+            "x-parser-schema-id": "<anonymous-schema-704>"
           },
           "member": {
             "type": "object",
             "properties": {
               "type": {
                 "const": "Contact",
-                "x-parser-schema-id": "<anonymous-schema-648>"
+                "x-parser-schema-id": "<anonymous-schema-706>"
               },
               "name": {
                 "type": "string",
-                "x-parser-schema-id": "<anonymous-schema-649>"
+                "x-parser-schema-id": "<anonymous-schema-707>"
               },
               "identifier": {
                 "title": "identifier",
@@ -152,23 +149,22 @@
                   {
                     "originating_system_id": "123456"
                   }
-                ],
-                "x-parser-schema-id": "<anonymous-schema-95>"
+                ]
               }
             },
-            "x-parser-schema-id": "<anonymous-schema-647>"
+            "x-parser-schema-id": "<anonymous-schema-705>"
           },
           "memberOf": {
             "type": "object",
             "properties": {
               "type": {
                 "const": "MarketingProgram",
-                "x-parser-schema-id": "<anonymous-schema-651>"
+                "x-parser-schema-id": "<anonymous-schema-709>"
               },
               "name": {
                 "type": "string",
                 "example": "Market Activity Report 508 Homewood Ave",
-                "x-parser-schema-id": "<anonymous-schema-652>"
+                "x-parser-schema-id": "<anonymous-schema-710>"
               },
               "identifier": {
                 "title": "identifier",
@@ -184,26 +180,22 @@
                   {
                     "originating_system_id": "123456"
                   }
-                ],
-                "x-parser-schema-id": "<anonymous-schema-95>"
+                ]
               }
             },
-            "x-parser-schema-id": "<anonymous-schema-650>"
+            "x-parser-schema-id": "<anonymous-schema-708>"
           }
         },
         "x-parser-schema-id": "ProgramMembership"
-      },
-      "x-parser-schema-id": "<anonymous-schema-644>"
+      }
     },
     "name": {
       "type": "string",
       "description": "the name of the item",
-      "example": "Market Activity Report for 508 Homeward Avenue",
-      "x-parser-schema-id": "<anonymous-schema-643>"
+      "example": "Market Activity Report for 508 Homeward Avenue"
     },
     "type": {
-      "const": "MarketingProgram",
-      "x-parser-schema-id": "<anonymous-schema-642>"
+      "const": "MarketingProgram"
     }
   },
   "x-parser-schema-id": "MarketingProgram",

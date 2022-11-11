@@ -6,45 +6,38 @@
     "addressCountry": {
       "type": "string",
       "description": "The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.",
-      "example": "USA",
-      "x-parser-schema-id": "<anonymous-schema-602>"
+      "example": "USA"
     },
     "addressCounty": {
       "type": "string",
       "description": "the county (us real estate extension)",
-      "example": "Gotham County",
-      "x-parser-schema-id": "<anonymous-schema-603>"
+      "example": "Gotham County"
     },
     "addressLocality": {
       "type": "string",
       "description": "City, Township.",
-      "example": "Gotham City",
-      "x-parser-schema-id": "<anonymous-schema-600>"
+      "example": "Gotham City"
     },
     "addressRegion": {
       "type": "string",
       "description": "State or Province.",
-      "example": "New Jersey",
-      "x-parser-schema-id": "<anonymous-schema-599>"
+      "example": "New Jersey"
     },
     "name": {
       "type": "string",
-      "description": "city name (same as addressLocality)",
-      "x-parser-schema-id": "<anonymous-schema-598>"
+      "description": "city name (same as addressLocality)"
     },
     "postalCode": {
       "type": "string",
       "description": "Zip/Post Code",
-      "example": "10010",
-      "x-parser-schema-id": "<anonymous-schema-601>"
+      "example": "10010"
     },
     "type": {
       "type": "string",
       "enum": [
         "City",
         "PostalCodeArea"
-      ],
-      "x-parser-schema-id": "<anonymous-schema-597>"
+      ]
     }
   },
   "x-parser-schema-id": "City",

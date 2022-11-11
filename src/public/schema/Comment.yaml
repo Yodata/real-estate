@@ -41,7 +41,6 @@ properties:
       - name: Stan Lee
       - email: bob@example.com
       - telephone: 1-800-555-1212
-    x-parser-schema-id: <anonymous-schema-138>
   dateCreated:
     $id: http://realestate.yodata.me/schema/dateCreated.yaml
     type: string
@@ -60,7 +59,6 @@ properties:
       entry was modified within a DataFeed.
     type: string
     format: date-time
-    x-parser-schema-id: <anonymous-schema-137>
   identifier:
     title: identifier
     type: object
@@ -73,7 +71,6 @@ properties:
       - originating_system_id: '123456'
     example:
       redContact_Note_ID: 62c4a9ae-eba1-4c27-a2dd-afb4068695f8
-    x-parser-schema-id: <anonymous-schema-139>
   text:
     $id: http://realestate.yodata.me/schema/text.yaml
     title: text
@@ -88,7 +85,6 @@ properties:
         est, ut me vocas fortasse.
   type:
     const: Comment
-    x-parser-schema-id: <anonymous-schema-136>
 x-parser-schema-id: Comment
 $id: http://realestate.yodata.me/schema/Comment.yaml
 

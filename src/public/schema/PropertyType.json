@@ -6,43 +6,35 @@
   "properties": {
     "BUSO": {
       "type": "string",
-      "description": "Business Opportunity",
-      "x-parser-schema-id": "<anonymous-schema-733>"
+      "description": "Business Opportunity"
     },
     "COMS": {
       "type": "string",
-      "description": "commercial standard applies",
-      "x-parser-schema-id": "<anonymous-schema-732>"
+      "description": "commercial standard applies"
     },
     "FARM": {
       "type": "string",
-      "description": "Farm Residential",
-      "x-parser-schema-id": "<anonymous-schema-731>"
+      "description": "Farm Residential"
     },
     "LAND": {
       "type": "string",
-      "description": "Land",
-      "x-parser-schema-id": "<anonymous-schema-729>"
+      "description": "Land"
     },
     "MOBI": {
       "type": "string",
-      "description": "Mobile home",
-      "x-parser-schema-id": "<anonymous-schema-730>"
+      "description": "Mobile home"
     },
     "RESI": {
       "type": "string",
-      "description": "Residential",
-      "x-parser-schema-id": "<anonymous-schema-726>"
+      "description": "Residential"
     },
     "RINC": {
       "type": "string",
-      "description": "Residential Income",
-      "x-parser-schema-id": "<anonymous-schema-728>"
+      "description": "Residential Income"
     },
     "RLSE": {
       "type": "string",
-      "description": "Residential Property Lease",
-      "x-parser-schema-id": "<anonymous-schema-727>"
+      "description": "Residential Property Lease"
     }
   },
   "example": {

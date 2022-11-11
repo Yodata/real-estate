@@ -7,8 +7,7 @@
     "articleBody": {
       "type": "string",
       "description": "the actual body of the post in HTML format.",
-      "example": "<HTML><body>lorem ipsum dolor sit amet, consectetur adipiscing</body></HTML>",
-      "x-parser-schema-id": "<anonymous-schema-583>"
+      "example": "<HTML><body>lorem ipsum dolor sit amet, consectetur adipiscing</body></HTML>"
     },
     "author": {
       "description": "author of the work",
@@ -22,35 +21,31 @@
             "RealEstateTeam",
             "RealEstateOrganization"
           ],
-          "x-parser-schema-id": "<anonymous-schema-586>"
+          "x-parser-schema-id": "<anonymous-schema-644>"
         },
         "id": {
           "type": "string",
           "format": "uri",
           "description": "the profile URI of the author",
           "example": "https://agent123.example.com/profile/card#me",
-          "x-parser-schema-id": "<anonymous-schema-587>"
+          "x-parser-schema-id": "<anonymous-schema-645>"
         }
-      },
-      "x-parser-schema-id": "<anonymous-schema-585>"
+      }
     },
     "dateCreated": {
       "description": "The date on which the BlogPosting was created or the item was added to a DataFeed.",
       "type": "string",
-      "format": "date-time",
-      "x-parser-schema-id": "<anonymous-schema-591>"
+      "format": "date-time"
     },
     "dateModified": {
       "description": "The date on which the BlogPosting was most recently modified or when the item's entry was modified within a DataFeed.",
       "type": "string",
-      "format": "date-time",
-      "x-parser-schema-id": "<anonymous-schema-592>"
+      "format": "date-time"
     },
     "headline": {
       "type": "string",
       "description": "headline of the post.",
-      "example": "Top 10 Spring Cleeaning Tips",
-      "x-parser-schema-id": "<anonymous-schema-582>"
+      "example": "Top 10 Spring Cleeaning Tips"
     },
     "identifier": {
       "example": {
@@ -69,8 +64,7 @@
         {
           "originating_system_id": "123456"
         }
-      ],
-      "x-parser-schema-id": "<anonymous-schema-581>"
+      ]
     },
     "image": {
       "description": "by convention the first image item is the article hero image.  note: image tags can also be embeded in the articleBody.",
@@ -101,20 +95,19 @@
                   ],
                   "propertyNames": {
                     "pattern": "^[a-z@$][a-zA-Z0-9-_]+$",
-                    "x-parser-schema-id": "<anonymous-schema-274>"
+                    "x-parser-schema-id": "<anonymous-schema-237>"
                   },
                   "properties": {
                     "type": {
                       "type": "string",
                       "pattern": "^[A-Z][a-zA-Z0-9]+$",
                       "description": "The item type (Linked-Data @type)",
-                      "x-parser-schema-id": "<anonymous-schema-272>"
+                      "x-parser-schema-id": "<anonymous-schema-235>"
                     },
                     "@id": {
                       "type": "string",
                       "format": "uri",
-                      "description": "the liked data uri for the Thing",
-                      "x-parser-schema-id": "<anonymous-schema-273>"
+                      "description": "the liked data uri for the Thing"
                     }
                   },
                   "x-parser-schema-id": "Thing"
@@ -158,7 +151,7 @@
                       "example": "http://user.example.com/public/profile/image.jpg"
                     }
                   },
-                  "x-parser-schema-id": "<anonymous-schema-275>"
+                  "x-parser-schema-id": "<anonymous-schema-238>"
                 }
               ],
               "x-parser-schema-id": "MediaObject"
@@ -183,13 +176,12 @@
                   "example": "image/jpeg"
                 }
               },
-              "x-parser-schema-id": "<anonymous-schema-276>"
+              "x-parser-schema-id": "<anonymous-schema-239>"
             }
           ],
-          "x-parser-schema-id": "<anonymous-schema-271>"
+          "x-parser-schema-id": "<anonymous-schema-234>"
         }
-      ],
-      "x-parser-schema-id": "<anonymous-schema-584>"
+      ]
     },
     "provider": {
       "description": "if the article is provided as a template or stock content to be shared by mutliple authors, the provider should be included.",
@@ -203,36 +195,32 @@
             "RealEstateOffice",
             "RealEstateAgent"
           ],
-          "x-parser-schema-id": "<anonymous-schema-589>"
+          "x-parser-schema-id": "<anonymous-schema-647>"
         },
         "id": {
           "type": "string",
           "format": "uri",
           "description": "the profile URI of the provider",
           "example": "https://example.com/profile/card#me",
-          "x-parser-schema-id": "<anonymous-schema-590>"
+          "x-parser-schema-id": "<anonymous-schema-648>"
         }
-      },
-      "x-parser-schema-id": "<anonymous-schema-588>"
+      }
     },
     "type": {
       "enum": [
         "BlogPosting"
-      ],
-      "x-parser-schema-id": "<anonymous-schema-580>"
+      ]
     },
     "url": {
       "title": "url",
       "type": "string",
       "format": "uri",
-      "description": "URL of the item.",
-      "x-parser-schema-id": "<anonymous-schema-401>"
+      "description": "URL of the item."
     },
     "urlTemplate": {
       "type": "string",
       "description": "urlTemplate in [IETF rfc6570 format](https://datatracker.ietf.org/doc/html/rfc6570)",
-      "example": "https://example.com/{author/name}/blog/post?{slug}",
-      "x-parser-schema-id": "<anonymous-schema-593>"
+      "example": "https://example.com/{author/name}/blog/post?{slug}"
     }
   },
   "x-parser-schema-id": "BlogPosting",

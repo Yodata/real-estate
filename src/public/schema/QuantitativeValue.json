@@ -6,38 +6,32 @@
   "properties": {
     "maxValue": {
       "type": "number",
-      "description": "the upper value of a range",
-      "x-parser-schema-id": "<anonymous-schema-754>"
+      "description": "the upper value of a range"
     },
     "minValue": {
       "type": "number",
-      "description": "the lower value of a range",
-      "x-parser-schema-id": "<anonymous-schema-753>"
+      "description": "the lower value of a range"
     },
     "type": {
       "type": "string",
       "description": "QuantitativeValue",
       "enum": [
         "QuantitativeValue"
-      ],
-      "x-parser-schema-id": "<anonymous-schema-751>"
+      ]
     },
     "unitCode": {
       "type": "string",
       "description": "unit code (RESO or UN/CEFACT)",
-      "example": "AC",
-      "x-parser-schema-id": "<anonymous-schema-755>"
+      "example": "AC"
     },
     "unitText": {
       "type": "string",
       "description": "unit code in common text",
-      "example": "acres",
-      "x-parser-schema-id": "<anonymous-schema-756>"
+      "example": "acres"
     },
     "value": {
       "type": "number",
-      "description": "the value (if a static value)",
-      "x-parser-schema-id": "<anonymous-schema-752>"
+      "description": "the value (if a static value)"
     }
   },
   "x-parser-schema-id": "QuantitativeValue",

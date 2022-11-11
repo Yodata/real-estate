@@ -248,10 +248,10 @@ payload:
             - id
             - name
           x-parser-schema-id: <anonymous-schema-27>
-      x-parser-schema-id: <anonymous-schema-542>
+      x-parser-schema-id: <anonymous-schema-600>
     topic:
       enum:
         - realestate/award#create
-      x-parser-schema-id: <anonymous-schema-541>
-  x-parser-schema-id: <anonymous-schema-540>
+      x-parser-schema-id: <anonymous-schema-599>
+  x-parser-schema-id: <anonymous-schema-598>
 

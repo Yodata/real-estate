@@ -11,28 +11,23 @@ properties:
     description: use ISO4217 country codes
     maxLength: 3
     example: USD
-    x-parser-schema-id: <anonymous-schema-667>
   maxValue:
     type: number
     description: the upper limit of the range
     example: 3200000
-    x-parser-schema-id: <anonymous-schema-665>
   minValue:
     type: number
     description: the lower limit of the range
     example: 2400000
-    x-parser-schema-id: <anonymous-schema-664>
   type:
     type: string
     description: MonetaryAmount
     enum:
       - MonetaryAmount
-    x-parser-schema-id: <anonymous-schema-663>
   value:
     type: number
     description: the actual or expected value
     example: 2700000
-    x-parser-schema-id: <anonymous-schema-666>
 x-parser-schema-id: MonetaryAmount
 $id: http://realestate.yodata.me/schema/MonetaryAmount.yaml
 

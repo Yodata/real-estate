@@ -16,8 +16,7 @@
         "Babs,Barbara",
         "Katheryn Elizabeth Hudson,Katy Perry",
         "Destiny Hope Cyrus,Miley Cyrus"
-      ],
-      "x-parser-schema-id": "<anonymous-schema-117>"
+      ]
     },
     "address": {
       "type": "array",
@@ -133,8 +132,7 @@
           }
         },
         "x-parser-schema-id": "PostalAddress"
-      },
-      "x-parser-schema-id": "<anonymous-schema-99>"
+      }
     },
     "affiliation": {
       "description": "An organization that this person is affiliated with",
@@ -144,14 +142,12 @@
         "format": "uri",
         "example": "https://example.com/profile/card#me",
         "x-parser-schema-id": "<anonymous-schema-98>"
-      },
-      "x-parser-schema-id": "<anonymous-schema-97>"
+      }
     },
     "birthDate": {
       "description": "date of birth.",
       "type": "string",
-      "format": "date",
-      "x-parser-schema-id": "<anonymous-schema-109>"
+      "format": "date"
     },
     "contactPoint": {
       "description": "contact points for the person",
@@ -169,8 +165,7 @@
         "properties": {
           "type": {
             "type": "string",
-            "const": "ContactPoint",
-            "x-parser-schema-id": "<anonymous-schema-111>"
+            "const": "ContactPoint"
           },
           "name": {
             "type": "string",
@@ -181,8 +176,7 @@
               "Vacation",
               "Bob's Cell",
               "Alice's Work"
-            ],
-            "x-parser-schema-id": "<anonymous-schema-112>"
+            ]
           },
           "telephone": {
             "type": "string",
@@ -192,8 +186,7 @@
               "555-555-5555 x123",
               "555-555-5555 ext. 123",
               "+1-555-555-5555"
-            ],
-            "x-parser-schema-id": "<anonymous-schema-113>"
+            ]
           },
           "faxNumber": {
             "type": "string",
@@ -203,8 +196,7 @@
               "555-555-5555 x123",
               "555-555-5555 ext. 123",
               "+1-555-555-5555"
-            ],
-            "x-parser-schema-id": "<anonymous-schema-114>"
+            ]
           },
           "email": {
             "description": "an email address for the item.",
@@ -214,26 +206,22 @@
             "examples": [
               "bob@example.com",
               "alice@example.com"
-            ],
-            "x-parser-schema-id": "<anonymous-schema-115>"
+            ]
           },
           "url": {
             "description": "primary URL for the item.",
             "type": "string",
             "format": "uri",
-            "example": "https://www.facebook.com/hallandoates",
-            "x-parser-schema-id": "<anonymous-schema-116>"
+            "example": "https://www.facebook.com/hallandoates"
           }
         },
         "x-parser-schema-id": "ContactPoint"
-      },
-      "x-parser-schema-id": "<anonymous-schema-110>"
+      }
     },
     "email": {
       "type": "string",
       "format": "email",
-      "x-faker": "internet.email",
-      "x-parser-schema-id": "<anonymous-schema-94>"
+      "x-faker": "internet.email"
     },
     "familyName": {
       "$id": "http://realestate.yodata.me/schema/familyName.yaml",
@@ -263,8 +251,7 @@
     "faxNumber": {
       "type": "string",
       "description": "Do people still use fax machines?",
-      "x-faker": "phone.phoneNumber",
-      "x-parser-schema-id": "<anonymous-schema-118>"
+      "x-faker": "phone.phoneNumber"
     },
     "givenName": {
       "type": "string",
@@ -301,22 +288,19 @@
         "Jeffrey",
         "Ryan",
         "Jacob"
-      ],
-      "x-parser-schema-id": "<anonymous-schema-119>"
+      ]
     },
     "honorificPrefix": {
       "title": "honorificPrefix",
       "description": "An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.",
       "type": "string",
-      "example": "Dr",
-      "x-parser-schema-id": "<anonymous-schema-120>"
+      "example": "Dr"
     },
     "honorificSuffix": {
       "title": "honorificSuffix",
       "description": "An honorific title following a person's name like M.D.",
       "type": "string",
-      "example": "Esq",
-      "x-parser-schema-id": "<anonymous-schema-121>"
+      "example": "Esq"
     },
     "jobTitle": {
       "title": "jobTitle",
@@ -329,8 +313,7 @@
       "example": [
         "Chief Data Officer",
         "Sanitation Engineer"
-      ],
-      "x-parser-schema-id": "<anonymous-schema-122>"
+      ]
     },
     "knowsLanguage": {
       "description": "languages spoken by the person",
@@ -348,18 +331,15 @@
         "properties": {
           "type": {
             "type": "string",
-            "const": "Language",
-            "x-parser-schema-id": "<anonymous-schema-125>"
+            "const": "Language"
           },
           "name": {
             "type": "string",
-            "description": "the display name of the language",
-            "x-parser-schema-id": "<anonymous-schema-126>"
+            "description": "the display name of the language"
           },
           "additionalName": {
             "type": "string",
-            "description": "BCP 47 language code",
-            "x-parser-schema-id": "<anonymous-schema-127>"
+            "description": "BCP 47 language code"
           }
         },
         "examples": [
@@ -435,30 +415,25 @@
           }
         ],
         "x-parser-schema-id": "Language"
-      },
-      "x-parser-schema-id": "<anonymous-schema-124>"
+      }
     },
     "name": {
       "description": "Full name of the person.",
       "type": "string",
-      "x-faker": "name.findName",
-      "x-parser-schema-id": "<anonymous-schema-128>"
+      "x-faker": "name.findName"
     },
     "telephone": {
       "type": "string",
       "description": "Primary phone number.",
-      "example": "+15558675309",
-      "x-parser-schema-id": "<anonymous-schema-129>"
+      "example": "+15558675309"
     },
     "type": {
-      "type": "string",
-      "x-parser-schema-id": "<anonymous-schema-96>"
+      "type": "string"
     },
     "worksFor": {
       "type": "string",
       "description": "Organizations the person works for.",
-      "x-faker": "company.companyName",
-      "x-parser-schema-id": "<anonymous-schema-130>"
+      "x-faker": "company.companyName"
     }
   },
   "x-parser-schema-id": "Person",

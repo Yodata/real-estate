@@ -19,8 +19,7 @@
         "FailedActionStatus",
         "ActiveActionStatus",
         "PotentialActionStatus"
-      ],
-      "x-parser-schema-id": "<anonymous-schema-166>"
+      ]
     },
     "agent": {
       "type": "object",
@@ -34,26 +33,22 @@
       "example": {
         "type": "RealEstateAgent",
         "id": "http://user.example.com/profile/card#me"
-      },
-      "x-parser-schema-id": "<anonymous-schema-168>"
+      }
     },
     "dateCompleted": {
       "type": "string",
       "format": "date-time",
-      "description": "date the task was completed",
-      "x-parser-schema-id": "<anonymous-schema-176>"
+      "description": "date the task was completed"
     },
     "dateDue": {
       "description": "the due date-time (ISO 8601 formated)",
       "type": "string",
-      "format": "date-time",
-      "x-parser-schema-id": "<anonymous-schema-175>"
+      "format": "date-time"
     },
     "description": {
       "type": "string",
       "description": "task detailed description",
-      "example": "Agenda 1. Something 2. Something Else ...",
-      "x-parser-schema-id": "<anonymous-schema-172>"
+      "example": "Agenda 1. Something 2. Something Else ..."
     },
     "identifier": {
       "title": "identifier",
@@ -72,16 +67,14 @@
       ],
       "example": {
         "redEvent_ID": "23445"
-      },
-      "x-parser-schema-id": "<anonymous-schema-165>"
+      }
     },
     "keywords": {
       "type": "array",
       "items": {
         "type": "string",
         "x-parser-schema-id": "<anonymous-schema-174>"
-      },
-      "x-parser-schema-id": "<anonymous-schema-173>"
+      }
     },
     "location": {
       "type": "object",
@@ -99,8 +92,7 @@
           "addressCounty": "Gotham addressCounty",
           "addressSubdivision": "Gotham Heights"
         }
-      },
-      "x-parser-schema-id": "<anonymous-schema-177>"
+      }
     },
     "memberOf": {
       "type": "object",
@@ -111,14 +103,12 @@
         "identifier": {
           "redPlan_ID": "xxxx"
         }
-      },
-      "x-parser-schema-id": "<anonymous-schema-167>"
+      }
     },
     "name": {
       "type": "string",
       "description": "name or title",
-      "example": "Call Ricky",
-      "x-parser-schema-id": "<anonymous-schema-171>"
+      "example": "Call Ricky"
     },
     "participant": {
       "x-title": "participant",
@@ -143,16 +133,14 @@
             "redContact_GUID": "92d0a096-457e-4643-ace8-fa95b6bdb1c5"
           }
         }
-      ],
-      "x-parser-schema-id": "<anonymous-schema-169>"
+      ]
     },
     "type": {
       "type": "string",
       "description": "The item type (Linked-Data @type)",
       "enum": [
         "Task"
-      ],
-      "x-parser-schema-id": "<anonymous-schema-164>"
+      ]
     }
   },
   "x-parser-schema-id": "Task",

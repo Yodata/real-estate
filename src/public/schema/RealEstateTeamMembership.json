@@ -6,22 +6,19 @@
     "endDate": {
       "type": "string",
       "format": "date-time",
-      "description": "date the member stopped performing the role",
-      "x-parser-schema-id": "<anonymous-schema-389>"
+      "description": "date the member stopped performing the role"
     },
     "member": {
       "description": "member object or id",
       "type": "string",
       "format": "uri",
-      "example": "https://{agent}.example.com/profile/card#me",
-      "x-parser-schema-id": "<anonymous-schema-424>"
+      "example": "https://{agent}.example.com/profile/card#me"
     },
     "memberOf": {
       "description": "the org or group where the role is performed",
       "type": "string",
       "format": "uri",
-      "example": "https://{team-id}.example.com/profile/card#me",
-      "x-parser-schema-id": "<anonymous-schema-423>"
+      "example": "https://{team-id}.example.com/profile/card#me"
     },
     "roleName": {
       "description": "the role name",
@@ -31,14 +28,12 @@
         "TeamMember",
         "TeamAdmin",
         "TeamOwner"
-      ],
-      "x-parser-schema-id": "<anonymous-schema-422>"
+      ]
     },
     "startDate": {
       "type": "string",
       "format": "date-time",
-      "description": "date the member began performing this role",
-      "x-parser-schema-id": "<anonymous-schema-388>"
+      "description": "date the member began performing this role"
     },
     "type": {
       "type": "string",
@@ -46,10 +41,9 @@
       "enum": [
         "RealEstateTeamMembership"
       ],
-      "example": "RealEstateTeamMembership",
-      "x-parser-schema-id": "<anonymous-schema-421>"
+      "example": "RealEstateTeamMembership"
     }
   },
-  "x-parser-schema-id": "<anonymous-schema-420>",
+  "x-parser-schema-id": "<anonymous-schema-478>",
   "$id": "http://realestate.yodata.me/schema/RealEstateTeamMembership.json"
 }

@@ -12,19 +12,16 @@ properties:
     example:
       type: RealEstateAgent
       id: http://agent.example.com/profile/card#me
-    x-parser-schema-id: <anonymous-schema-813>
   type:
     type: string
     enum:
       - RealEstateWebsite
     description: RealEstateWebsite
-    x-parser-schema-id: <anonymous-schema-812>
   url:
     title: url
     type: string
     format: uri
     description: URL of the item.
-    x-parser-schema-id: <anonymous-schema-401>
 x-parser-schema-id: RealEstateWebsite
 $id: http://realestate.yodata.me/schema/RealEstateWebsite.yaml
 

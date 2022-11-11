@@ -6,36 +6,30 @@ properties:
     type: string
     format: date-time
     description: date the member stopped performing the role
-    x-parser-schema-id: <anonymous-schema-389>
   member:
     description: member object or id
     type: string
     format: uri
     example: https://memberid.example.com/profile/card#me
-    x-parser-schema-id: <anonymous-schema-387>
   memberOf:
     description: the org or group where the role is performed
     type: object
     example:
       type: RealEstateOrganization
       id: http://orgid.example.com/profile/card#me
-    x-parser-schema-id: <anonymous-schema-386>
   roleName:
     type: string
     description: the role name
     example: Owner
-    x-parser-schema-id: <anonymous-schema-385>
   startDate:
     type: string
     format: date-time
     description: date the member began performing this role
-    x-parser-schema-id: <anonymous-schema-388>
   type:
     type: string
     description: a role played by the member in the memberOf group
     enum:
       - OrganizationRole
-    x-parser-schema-id: <anonymous-schema-384>
 x-parser-schema-id: OrganizationRole
 $id: http://realestate.yodata.me/schema/OrganizationRole.yaml
 

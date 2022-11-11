@@ -105,7 +105,7 @@
         "properties": {
           "type": {
             "const": "CreateAction",
-            "x-parser-schema-id": "<anonymous-schema-311>"
+            "x-parser-schema-id": "<anonymous-schema-370>"
           },
           "object": {
             "MarketingProgram": {
@@ -139,16 +139,16 @@
                 }
               }
             },
-            "x-parser-schema-id": "<anonymous-schema-312>"
+            "x-parser-schema-id": "<anonymous-schema-371>"
           }
         },
-        "x-parser-schema-id": "<anonymous-schema-310>"
+        "x-parser-schema-id": "<anonymous-schema-369>"
       },
       "topic": {
         "const": "realestate/marketing#programcreate",
-        "x-parser-schema-id": "<anonymous-schema-309>"
+        "x-parser-schema-id": "<anonymous-schema-368>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-308>"
+    "x-parser-schema-id": "<anonymous-schema-367>"
   }
 }

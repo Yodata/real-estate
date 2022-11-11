@@ -14,8 +14,7 @@
       "example": {
         "type": "State",
         "name": "California"
-      },
-      "x-parser-schema-id": "<anonymous-schema-760>"
+      }
     },
     "issuedThrough": {
       "x-range": [
@@ -27,15 +26,14 @@
         "type": {
           "type": "string",
           "example": "Service",
-          "x-parser-schema-id": "<anonymous-schema-762>"
+          "x-parser-schema-id": "<anonymous-schema-807>"
         },
         "name": {
           "type": "string",
           "example": "California Department of Real Estate",
-          "x-parser-schema-id": "<anonymous-schema-763>"
+          "x-parser-schema-id": "<anonymous-schema-808>"
         }
-      },
-      "x-parser-schema-id": "<anonymous-schema-761>"
+      }
     },
     "issuedTo": {
       "type": "object",
@@ -47,28 +45,24 @@
       "example": {
         "type": "RealEstateAgent",
         "id": "http://{agentid}.example.com/profile/card#me"
-      },
-      "x-parser-schema-id": "<anonymous-schema-759>"
+      }
     },
     "name": {
       "type": "string",
       "description": "display value, i.e. 'CA-DRE# 02068375'",
-      "example": "CA-DRE# 02068375",
-      "x-parser-schema-id": "<anonymous-schema-758>"
+      "example": "CA-DRE# 02068375"
     },
     "type": {
       "type": "string",
       "enum": [
         "RealEstateLicense"
       ],
-      "description": "RealEstateLicense",
-      "x-parser-schema-id": "<anonymous-schema-757>"
+      "description": "RealEstateLicense"
     },
     "validFrom": {
       "type": "string",
       "format": "date-time",
-      "description": "the first date and time on which the license is valid.",
-      "x-parser-schema-id": "<anonymous-schema-765>"
+      "description": "the first date and time on which the license is valid."
     },
     "validIn": {
       "type": "object",
@@ -82,14 +76,12 @@
       "example": {
         "type": "State",
         "name": "California"
-      },
-      "x-parser-schema-id": "<anonymous-schema-764>"
+      }
     },
     "validUntil": {
       "type": "string",
       "format": "date-time",
-      "description": "the last date and time on which the license is valid.",
-      "x-parser-schema-id": "<anonymous-schema-766>"
+      "description": "the last date and time on which the license is valid."
     }
   },
   "x-parser-schema-id": "RealEstateLicense",

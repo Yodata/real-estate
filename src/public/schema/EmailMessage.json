@@ -7,7 +7,7 @@
   ],
   "propertyNames": {
     "pattern": "^[a-z@$][a-zA-Z0-9-_]+$",
-    "x-parser-schema-id": "<anonymous-schema-274>"
+    "x-parser-schema-id": "<anonymous-schema-237>"
   },
   "title": "EmailMessage",
   "x-range": "EamilMessage",
@@ -16,8 +16,7 @@
     "@id": {
       "type": "string",
       "format": "uri",
-      "description": "the liked data uri for the Thing",
-      "x-parser-schema-id": "<anonymous-schema-273>"
+      "description": "the liked data uri for the Thing"
     },
     "bccRecipient": {
       "type": "array",
@@ -85,25 +84,21 @@
             "type": "string",
             "enum": [
               "DigitalDocument"
-            ],
-            "x-parser-schema-id": "<anonymous-schema-621>"
+            ]
           },
           "id": {
             "type": "string",
-            "example": "http://user.example.com/public/logo/archive.zip",
-            "x-parser-schema-id": "<anonymous-schema-622>"
+            "example": "http://user.example.com/public/logo/archive.zip"
           },
           "name": {
             "type": "string",
             "description": "document name or title",
-            "example": "archive.zip",
-            "x-parser-schema-id": "<anonymous-schema-623>"
+            "example": "archive.zip"
           },
           "encodingFormat": {
             "type": "string",
             "description": "[ISO Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml)",
-            "example": "application/zip",
-            "x-parser-schema-id": "<anonymous-schema-624>"
+            "example": "application/zip"
           },
           "about": {
             "type": "object",
@@ -114,14 +109,12 @@
               "identifier": {
                 "bmsTransactionId": "xxxx"
               }
-            },
-            "x-parser-schema-id": "<anonymous-schema-625>"
+            }
           },
           "url": {
             "type": "string",
             "description": "public URL of the object",
-            "example": "https://example.com",
-            "x-parser-schema-id": "<anonymous-schema-626>"
+            "example": "https://example.com"
           }
         },
         "x-parser-schema-id": "DigitalDocument"
@@ -148,7 +141,6 @@
     },
     "type": {
       "pattern": "^[A-Z][a-zA-Z0-9]+$",
-      "x-parser-schema-id": "<anonymous-schema-272>",
       "type": "string",
       "description": "EmailMessage",
       "enum": [
@@ -157,5 +149,5 @@
       "example": "EmailMessage"
     }
   },
-  "x-parser-schema-id": "<anonymous-schema-629>"
+  "x-parser-schema-id": "<anonymous-schema-687>"
 }

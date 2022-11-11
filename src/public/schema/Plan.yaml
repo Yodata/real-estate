@@ -14,12 +14,10 @@ properties:
       - Person
       - Organization
     example: http://agent.example.com/profile/card#me
-    x-parser-schema-id: <anonymous-schema-178>
   dateCompleted:
     description: The date on which the item was created.
     type: string
     format: date-time
-    x-parser-schema-id: <anonymous-schema-179>
   dateCreated:
     $id: http://realestate.yodata.me/schema/dateCreated.yaml
     type: string
@@ -32,12 +30,10 @@ properties:
       entry was modified within a DataFeed.
     type: string
     format: date-time
-    x-parser-schema-id: <anonymous-schema-137>
   description:
     type: string
     description: description of the item
     example: this is the description of my awesome plan
-    x-parser-schema-id: <anonymous-schema-162>
   identifier:
     title: identifier
     type: object
@@ -48,7 +44,6 @@ properties:
       - salesforceid: 0031U00002XW1QWQA1
       - vendoraid: '123456'
       - originating_system_id: '123456'
-    x-parser-schema-id: <anonymous-schema-95>
   member:
     type: array
     description: tasks which make up the plan
@@ -176,7 +171,6 @@ properties:
               addressSubdivision: Gotham Heights
           x-parser-schema-id: <anonymous-schema-177>
       x-parser-schema-id: Task
-    x-parser-schema-id: <anonymous-schema-163>
   name:
     type: string
     description: name of the plan
@@ -185,10 +179,8 @@ properties:
       - annoying but effective plan
       - plan to take over the world
       - birthdays and anniversaries plan
-    x-parser-schema-id: <anonymous-schema-156>
   type:
     const: Plan
-    x-parser-schema-id: <anonymous-schema-161>
 x-parser-schema-id: Plan
 $id: http://realestate.yodata.me/schema/Plan.yaml
 

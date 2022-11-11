@@ -10,15 +10,12 @@ properties:
   additionalName:
     type: string
     description: BCP 47 language code
-    x-parser-schema-id: <anonymous-schema-127>
   name:
     type: string
     description: the display name of the language
-    x-parser-schema-id: <anonymous-schema-126>
   type:
     type: string
     const: Language
-    x-parser-schema-id: <anonymous-schema-125>
 examples:
   - type: Language
     name: English

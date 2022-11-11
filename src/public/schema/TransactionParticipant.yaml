@@ -8,7 +8,6 @@ properties:
     type: string
     description: middleName or alternate name of the Person
     example: Big
-    x-parser-schema-id: <anonymous-schema-797>
   affiliation:
     type: array
     description: person or organization associated with the participant
@@ -16,13 +15,11 @@ properties:
       type: string
       format: uri
       example: https://{agentid}.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-799>
-    x-parser-schema-id: <anonymous-schema-798>
+      x-parser-schema-id: <anonymous-schema-267>
   email:
     type: string
     format: email
     x-faker: internet.email
-    x-parser-schema-id: <anonymous-schema-94>
   familyName:
     $id: http://realestate.yodata.me/schema/familyName.yaml
     type: string
@@ -80,27 +77,22 @@ properties:
       - Jeffrey
       - Ryan
       - Jacob
-    x-parser-schema-id: <anonymous-schema-119>
   position:
     type: number
     description: numeric position for the participant/roleName.
     example: 1
-    x-parser-schema-id: <anonymous-schema-796>
   roleName:
     type: string
     description: the role of the participant in the transaction
     examples:
       - Buyer
       - Seller
-    x-parser-schema-id: <anonymous-schema-795>
   telephone:
     type: string
     description: Primary phone number.
     example: '+15558675309'
-    x-parser-schema-id: <anonymous-schema-129>
   type:
     type: string
     const: TransactionParticipant
-    x-parser-schema-id: <anonymous-schema-794>
 x-parser-schema-id: TransactionParticipant
 

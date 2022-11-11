@@ -22,27 +22,23 @@
           "price": 7500000,
           "priceCurrency": "USD"
         }
-      },
-      "x-parser-schema-id": "<anonymous-schema-518>"
+      }
     },
     "description": {
       "type": "string",
       "description": "event message content",
-      "example": "an example meeting request for 4:00PM to 4:30PM.",
-      "x-parser-schema-id": "<anonymous-schema-517>"
+      "example": "an example meeting request for 4:00PM to 4:30PM."
     },
     "endDate": {
       "type": "string",
       "description": "the end date-time (ISO 8601 formated)",
       "format": "date-time",
-      "example": "2019-08-01T16:30Z",
-      "x-parser-schema-id": "<anonymous-schema-520>"
+      "example": "2019-08-01T16:30Z"
     },
     "name": {
       "type": "string",
       "description": "name of the event",
-      "example": "Property Showing 1007 Mountain Gate Rd",
-      "x-parser-schema-id": "<anonymous-schema-516>"
+      "example": "Property Showing 1007 Mountain Gate Rd"
     },
     "organizer": {
       "title": "organizer",
@@ -52,21 +48,18 @@
         "type": "RealEstateAgent",
         "name": "Bruce Wayne",
         "id": "https://batman.example.com/profile/card#me"
-      },
-      "x-parser-schema-id": "<anonymous-schema-521>"
+      }
     },
     "startDate": {
       "description": "the start date-time (ISO 8601 formated)",
       "type": "string",
       "format": "date-time",
-      "example": "2019-08-01T16:00Z",
-      "x-parser-schema-id": "<anonymous-schema-519>"
+      "example": "2019-08-01T16:00Z"
     },
     "type": {
       "type": "string",
       "description": "The item type (Linked-Data @type)",
-      "example": "Event",
-      "x-parser-schema-id": "<anonymous-schema-515>"
+      "example": "Event"
     }
   },
   "x-parser-schema-id": "Event",

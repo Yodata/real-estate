@@ -169,12 +169,14 @@ function OperationMessages ({ operation }) {
     <>
       {messages.length > 1 && (
         <Text newLines={2}>
-          Accepts **one of** the following messages:
+          Subscribers receive one of the following messages per event.
         </Text>
       )}
       {messages.map(msg => (
         <Text key={msg.uid()}>
-           <Link href={`message/${msg.uid().replace('#','.')}`}>{msg.uid()}</Link>
+          <ListItem>
+            <Link href={`message/${msg.uid().replace('#','.')}`}>{msg.uid()}</Link>
+          </ListItem>
         </Text>
       ))}
     </>

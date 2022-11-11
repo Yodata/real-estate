@@ -4,43 +4,43 @@ title: Person
 | Name | Type | Description |
 |---|---|---|
 | (root) | object | - |
-| Person.type | string | - |
-| Person.affiliation | array<string> | An organization that this person is affiliated with |
-| Person.affiliation (single item) | string | - |
-| Person.address | array<object> | - |
-| Person.address.type | string | - |
-| Person.address.streetAddress | string | the street number and name. |
-| Person.address.postOfficeBoxNumber | string | The post office box number for PO box addresses. |
-| Person.address.addressRegion | string | State or Province. |
-| Person.address.addressLocality | string | City, Township. |
-| Person.address.postalCode | string | Zip/Post Code |
-| Person.address.addressCountry | string | The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code. |
-| Person.address.addressCounty | string | the county (us real estate extension) |
-| Person.address.addressSubdivision | string | the subdivision or neighborhood (us real estate extension) |
-| Person.birthDate | string | date of birth. |
-| Person.contactPoint | array<object> | contact points for the person |
-| Person.contactPoint.type | string | - |
-| Person.contactPoint.name | string | a label for the contactPoint, i.e. 'Work', or 'Home' |
-| Person.contactPoint.telephone | string | - |
-| Person.contactPoint.faxNumber | string | - |
-| Person.contactPoint.email | string | an email address for the item. |
-| Person.contactPoint.url | string | primary URL for the item. |
-| Person.email | string | - |
-| Person.additionalName | string | any other name(s) associated with the entity, i.e. nickname, middle name, maiden name, etc. For multiple names, use a comma without space as a separator. |
-| Person.familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) |
-| Person.faxNumber | string | Do people still use fax machines? |
-| Person.givenName | string | First Name of a person |
-| Person.honorificPrefix | string | An honorific prefix preceding a Person's name such as Dr/Mrs/Mr. |
-| Person.honorificSuffix | string | An honorific title following a person's name like M.D. |
-| Person.jobTitle | array<string> | job tiles associated with the item |
-| Person.jobTitle (single item) | string | - |
-| Person.knowsLanguage | array<object> | languages spoken by the person |
-| Person.knowsLanguage.type | string | - |
-| Person.knowsLanguage.name | string | the display name of the language |
-| Person.knowsLanguage.additionalName | string | BCP 47 language code |
-| Person.name | string | Full name of the person. |
-| Person.telephone | string | Primary phone number. |
-| Person.worksFor | string | Organizations the person works for. |
+| type | string | - |
+| affiliation | array<string> | An organization that this person is affiliated with |
+| affiliation (single item) | string | - |
+| address | array<object> | - |
+| address.type | string | - |
+| address.streetAddress | string | the street number and name. |
+| address.postOfficeBoxNumber | string | The post office box number for PO box addresses. |
+| address.addressRegion | string | State or Province. |
+| address.addressLocality | string | City, Township. |
+| address.postalCode | string | Zip/Post Code |
+| address.addressCountry | string | The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code. |
+| address.addressCounty | string | the county (us real estate extension) |
+| address.addressSubdivision | string | the subdivision or neighborhood (us real estate extension) |
+| birthDate | string | date of birth. |
+| contactPoint | array<object> | contact points for the person |
+| contactPoint.type | string | - |
+| contactPoint.name | string | a label for the contactPoint, i.e. 'Work', or 'Home' |
+| contactPoint.telephone | string | - |
+| contactPoint.faxNumber | string | - |
+| contactPoint.email | string | an email address for the item. |
+| contactPoint.url | string | primary URL for the item. |
+| email | string | - |
+| additionalName | string | any other name(s) associated with the entity, i.e. nickname, middle name, maiden name, etc. For multiple names, use a comma without space as a separator. |
+| familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) |
+| faxNumber | string | Do people still use fax machines? |
+| givenName | string | First Name of a person |
+| honorificPrefix | string | An honorific prefix preceding a Person's name such as Dr/Mrs/Mr. |
+| honorificSuffix | string | An honorific title following a person's name like M.D. |
+| jobTitle | array<string> | job tiles associated with the item |
+| jobTitle (single item) | string | - |
+| knowsLanguage | array<object> | languages spoken by the person |
+| knowsLanguage.type | string | - |
+| knowsLanguage.name | string | the display name of the language |
+| knowsLanguage.additionalName | string | BCP 47 language code |
+| name | string | Full name of the person. |
+| telephone | string | Primary phone number. |
+| worksFor | string | Organizations the person works for. |
 
 > Examples of Person
 

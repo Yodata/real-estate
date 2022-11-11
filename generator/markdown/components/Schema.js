@@ -13,7 +13,7 @@ export function Schema ({ schema, schemaName, hideTitle = false }) {
       {schemaName && hideTitle === false ? <Header type={4}>{schemaName}</Header> : null}
       <TableHead headers={headers} />
       <SchemaPropRow schema={schema} path='' nameNote='root' />
-      <SchemaContent schema={schema} schemaName={schemaName} />
+      <SchemaContent schema={schema} schemaName='' />
     </Text>
   )
 }

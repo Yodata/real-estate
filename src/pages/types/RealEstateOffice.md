@@ -4,124 +4,124 @@ title: RealEstateOffice
 | Name | Type | Description |
 |---|---|---|
 | (root) | object allOf | A real estate office / place of business. |
-| RealEstateOffice.0 (allOf item) | allOf | - |
-| RealEstateOffice.0.0 (allOf item) | allOf | - |
-| RealEstateOffice.0.0.0 (allOf item) | object | - |
-| RealEstateOffice.0.0.0.type | string | The item type (Linked-Data @type) |
-| RealEstateOffice.0.0.0.@id | string | the liked data uri for the Thing |
-| RealEstateOffice.0.0.0 (property names) | - | - |
-| RealEstateOffice.0.0.1 (allOf item) | any | - |
-| RealEstateOffice.0.0.2 (allOf item) | any | - |
-| RealEstateOffice.0.0.3 (allOf item) | - | - |
-| RealEstateOffice.0.0.3.address | object | A physical address. |
-| RealEstateOffice.0.0.3.availableLanguage | array<object> | Please use one of the language codes from the IETF BCP 47 standard. |
-| RealEstateOffice.0.0.3.availableLanguage.type | string | - |
-| RealEstateOffice.0.0.3.availableLanguage.name | string | the display name of the language |
-| RealEstateOffice.0.0.3.availableLanguage.additionalName | string | BCP 47 language code |
-| RealEstateOffice.0.0.3.branchCode | string | A short textual code that uniquely identifies a place of business. |
-| RealEstateOffice.0.0.3.certification | tuple<object, ...optional<any>> | certifications granted to a person or organization |
-| RealEstateOffice.0.0.3.certification.0 (index) | object | A certification issued by an organization to an individual or business. |
-| RealEstateOffice.0.0.3.certification.0.type | string | Certification |
-| RealEstateOffice.0.0.3.certification.0.name | string | the name of the Certification |
-| RealEstateOffice.0.0.3.certification.0.issuedBy | object | the issuing authority |
-| RealEstateOffice.0.0.3.certification.0.issuedBy.type | string | The item type (Linked-Data @type) |
-| RealEstateOffice.0.0.3.certification.0.issuedBy.id | string | Linked-Data URI (@id) |
-| RealEstateOffice.0.0.3.certification.0.issuedBy.name | string | name of the issuing organization |
-| RealEstateOffice.0.0.3.certification.0.issuedTo | object | the subject |
-| RealEstateOffice.0.0.3.certification.0.issuedTo.type | string | The item type (Linked-Data @type) |
-| RealEstateOffice.0.0.3.certification.0.issuedTo.id | string | Linked-Data URI (@id) |
-| RealEstateOffice.0.0.3.certification.0.issuedTo.name | string | the name of the item |
-| RealEstateOffice.0.0.3.contactPoint | array<object> | a named point of contact - telephone, email, faxNumber, and/or url for the entity |
-| RealEstateOffice.0.0.3.contactPoint.type | string | - |
-| RealEstateOffice.0.0.3.contactPoint.name | string | a label for the contactPoint, i.e. 'Work', or 'Home' |
-| RealEstateOffice.0.0.3.contactPoint.telephone | string | - |
-| RealEstateOffice.0.0.3.contactPoint.faxNumber | string | - |
-| RealEstateOffice.0.0.3.contactPoint.email | string | an email address for the item. |
-| RealEstateOffice.0.0.3.contactPoint.url | string | primary URL for the item. |
-| RealEstateOffice.0.0.3.email | string | - |
-| RealEstateOffice.0.0.3.faxNumber | string | Do people still use fax machines? |
-| RealEstateOffice.0.0.3.image | tuple<object allOf, ...optional<any>> | an ImageObject or URI reference to an image on the web. |
-| RealEstateOffice.0.0.3.image.0 (index) | object allOf | - |
-| RealEstateOffice.0.0.3.image.0.0 (allOf item) | allOf | an image, video or document availble for download |
-| RealEstateOffice.0.0.3.image.0.0.0 (allOf item) | object | - |
-| RealEstateOffice.0.0.3.image.0.0.0.type | string | The item type (Linked-Data @type) |
-| RealEstateOffice.0.0.3.image.0.0.0.@id | string | the liked data uri for the Thing |
-| RealEstateOffice.0.0.3.image.0.0.0 (property names) | - | - |
-| RealEstateOffice.0.0.3.image.0.0.1 (allOf item) | - | - |
-| RealEstateOffice.0.0.3.image.0.0.1.type | string | - |
-| RealEstateOffice.0.0.3.image.0.0.1.id | string | the URL to access the item. |
-| RealEstateOffice.0.0.3.image.0.0.1.name | string | the file name of the object. |
-| RealEstateOffice.0.0.3.image.0.0.1.encodingFormat | string | MIME type |
-| RealEstateOffice.0.0.3.image.0.0.1.about | string | URI to the subject of the image or logo |
-| RealEstateOffice.0.0.3.image.0.0.1.url | string | URL of the image content |
-| RealEstateOffice.0.0.3.image.0.1 (allOf item) | - | - |
-| RealEstateOffice.0.0.3.image.0.1.type | string | - |
-| RealEstateOffice.0.0.3.image.0.1.id | any | - |
-| RealEstateOffice.0.0.3.image.0.1.name | any | - |
-| RealEstateOffice.0.0.3.image.0.1.encodingFormat | any | - |
-| RealEstateOffice.0.0.3.logo | array<object allOf> | a logo associated with the organization. |
-| RealEstateOffice.0.0.3.logo (single item) | object allOf | - |
-| RealEstateOffice.0.0.3.logo.0 (allOf item) | object | an electronic file. |
-| RealEstateOffice.0.0.3.logo.0.type | string | - |
-| RealEstateOffice.0.0.3.logo.0.id | string | - |
-| RealEstateOffice.0.0.3.logo.0.name | string | document name or title |
-| RealEstateOffice.0.0.3.logo.0.encodingFormat | string | [ISO Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml) |
-| RealEstateOffice.0.0.3.logo.0.about | object | subject of the Document |
-| RealEstateOffice.0.0.3.logo.0.url | string | public URL of the object |
-| RealEstateOffice.0.0.3.logo.1 (allOf item) | object | an associated logo |
-| RealEstateOffice.0.0.3.name | string | Name or DBA. |
-| RealEstateOffice.0.0.3.parentOrganization | array<string> | - |
-| RealEstateOffice.0.0.3.parentOrganization (single item) | string | - |
-| RealEstateOffice.0.0.3.subOrganization | array<string> | a child organization |
-| RealEstateOffice.0.0.3.subOrganization (single item) | string | - |
-| RealEstateOffice.0.0.3.telephone | string | Primary phone number. |
-| RealEstateOffice.0.0.3.type | string | - |
-| RealEstateOffice.0.0.3.url | string | primary website/url for the entity. |
-| RealEstateOffice.0.1 (allOf item) | - | A real estate franchisor, broker or business |
-| RealEstateOffice.0.1.type | string | RealEstateOrganzation |
-| RealEstateOffice.0.1.areaServed | object | the physical areas that make up the ServiceArea |
-| RealEstateOffice.0.1.description | string | description of the item. |
-| RealEstateOffice.0.1.parentOrganization | array<string> | A franchisor or affiliate network of which this organization plays a membership role. |
-| RealEstateOffice.0.1.parentOrganization (single item) | string | - |
-| RealEstateOffice.0.1.numberOfSubOrganizations | number | the number of offices for an affiliate. |
-| RealEstateOffice.0.1.member | array<anyOf> | A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals. |
-| RealEstateOffice.0.1.member (single item) | anyOf | - |
-| RealEstateOffice.0.1.member.0 (anyOf item) | object | describes a role played by a member and a group or organization. |
-| RealEstateOffice.0.1.member.0.type | string | a role played by the member in the memberOf group |
-| RealEstateOffice.0.1.member.0.roleName | string | the role name |
-| RealEstateOffice.0.1.member.0.memberOf | object | the org or group where the role is performed |
-| RealEstateOffice.0.1.member.0.member | string | member object or id |
-| RealEstateOffice.0.1.member.0.startDate | string | date the member began performing this role |
-| RealEstateOffice.0.1.member.0.endDate | string | date the member stopped performing the role |
-| RealEstateOffice.0.1.member.1 (anyOf item) | string | - |
-| RealEstateOffice.0.1.memberOf | array<allOf> | An Organization (or ProgramMembership) to which this Person or Organization belongs. |
-| RealEstateOffice.0.1.memberOf (single item) | allOf | - |
-| RealEstateOffice.0.1.memberOf.0 (allOf item) | object | describes a role played by a member and a group or organization. |
-| RealEstateOffice.0.1.memberOf.0.type | string | a role played by the member in the memberOf group |
-| RealEstateOffice.0.1.memberOf.0.roleName | string | the role name |
-| RealEstateOffice.0.1.memberOf.0.memberOf | object | the org or group where the role is performed |
-| RealEstateOffice.0.1.memberOf.0.member | string | member object or id |
-| RealEstateOffice.0.1.memberOf.0.startDate | string | date the member began performing this role |
-| RealEstateOffice.0.1.memberOf.0.endDate | string | date the member stopped performing the role |
-| RealEstateOffice.0.1.memberOf.1 (allOf item) | object | a membership relationship |
-| RealEstateOffice.0.1.memberOf.1.type | string | an MLS member relationship |
-| RealEstateOffice.0.1.memberOf.1.roleName | string | - |
-| RealEstateOffice.0.1.memberOf.1.memberOf | object | - |
-| RealEstateOffice.0.1.memberOf.1.member | string | - |
-| RealEstateOffice.0.1.memberOf.1.memberId | string | the user's MLSID |
-| RealEstateOffice.0.1.permit | array<object> | - |
-| RealEstateOffice.0.1.permit (single item) | object | - |
-| RealEstateOffice.1 (allOf item) | - | - |
-| RealEstateOffice.1.type | string | RealEstateOffice |
-| RealEstateOffice.1.contactPoint | any | department or role specific contact points, i.e. relocation. |
-| RealEstateOffice.1.description | any | - |
-| RealEstateOffice.1.parentOrganization | any | Office broker or franchisor. |
-| RealEstateOffice.1.subOrganization | array<string> | Agents and teams associated with the office. |
-| RealEstateOffice.1.subOrganization (single item) | string | - |
-| RealEstateOffice.1.geoCoordinates | object | a lat/long point. |
-| RealEstateOffice.1.geoCoordinates.type | string | GeoCordinates |
-| RealEstateOffice.1.geoCoordinates.longitude | number | The longitude of a location. |
-| RealEstateOffice.1.geoCoordinates.latitude | number | The latitude of a location. |
+| 0 (allOf item) | allOf | - |
+| 0 (allOf item) | allOf | - |
+| 0 (allOf item) | object | - |
+| type | string | The item type (Linked-Data @type) |
+| @id | string | the liked data uri for the Thing |
+| 0 (property names) | - | - |
+| 1 (allOf item) | any | - |
+| 2 (allOf item) | any | - |
+| 3 (allOf item) | - | - |
+| 3.address | object | A physical address. |
+| 3.availableLanguage | array<object> | Please use one of the language codes from the IETF BCP 47 standard. |
+| 3.availableLanguage.type | string | - |
+| 3.availableLanguage.name | string | the display name of the language |
+| 3.availableLanguage.additionalName | string | BCP 47 language code |
+| 3.branchCode | string | A short textual code that uniquely identifies a place of business. |
+| 3.certification | tuple<object, ...optional<any>> | certifications granted to a person or organization |
+| 3.certification.0 (index) | object | A certification issued by an organization to an individual or business. |
+| 3.certification.0.type | string | Certification |
+| 3.certification.0.name | string | the name of the Certification |
+| 3.certification.0.issuedBy | object | the issuing authority |
+| 3.certification.0.issuedBy.type | string | The item type (Linked-Data @type) |
+| 3.certification.0.issuedBy.id | string | Linked-Data URI (@id) |
+| 3.certification.0.issuedBy.name | string | name of the issuing organization |
+| 3.certification.0.issuedTo | object | the subject |
+| 3.certification.0.issuedTo.type | string | The item type (Linked-Data @type) |
+| 3.certification.0.issuedTo.id | string | Linked-Data URI (@id) |
+| 3.certification.0.issuedTo.name | string | the name of the item |
+| 3.contactPoint | array<object> | a named point of contact - telephone, email, faxNumber, and/or url for the entity |
+| 3.contactPoint.type | string | - |
+| 3.contactPoint.name | string | a label for the contactPoint, i.e. 'Work', or 'Home' |
+| 3.contactPoint.telephone | string | - |
+| 3.contactPoint.faxNumber | string | - |
+| 3.contactPoint.email | string | an email address for the item. |
+| 3.contactPoint.url | string | primary URL for the item. |
+| 3.email | string | - |
+| 3.faxNumber | string | Do people still use fax machines? |
+| 3.image | tuple<object allOf, ...optional<any>> | an ImageObject or URI reference to an image on the web. |
+| 3.image.0 (index) | object allOf | - |
+| 3.image.0.0 (allOf item) | allOf | an image, video or document availble for download |
+| 3.image.0.0.0 (allOf item) | object | - |
+| 3.image.0.0.0.type | string | The item type (Linked-Data @type) |
+| 3.image.0.0.0.@id | string | the liked data uri for the Thing |
+| 3.image.0.0.0 (property names) | - | - |
+| 3.image.0.0.1 (allOf item) | - | - |
+| 3.image.0.0.1.type | string | - |
+| 3.image.0.0.1.id | string | the URL to access the item. |
+| 3.image.0.0.1.name | string | the file name of the object. |
+| 3.image.0.0.1.encodingFormat | string | MIME type |
+| 3.image.0.0.1.about | string | URI to the subject of the image or logo |
+| 3.image.0.0.1.url | string | URL of the image content |
+| 3.image.0.1 (allOf item) | - | - |
+| 3.image.0.1.type | string | - |
+| 3.image.0.1.id | any | - |
+| 3.image.0.1.name | any | - |
+| 3.image.0.1.encodingFormat | any | - |
+| 3.logo | array<object allOf> | a logo associated with the organization. |
+| 3.logo (single item) | object allOf | - |
+| 3.logo.0 (allOf item) | object | an electronic file. |
+| 3.logo.0.type | string | - |
+| 3.logo.0.id | string | - |
+| 3.logo.0.name | string | document name or title |
+| 3.logo.0.encodingFormat | string | [ISO Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml) |
+| 3.logo.0.about | object | subject of the Document |
+| 3.logo.0.url | string | public URL of the object |
+| 3.logo.1 (allOf item) | object | an associated logo |
+| 3.name | string | Name or DBA. |
+| 3.parentOrganization | array<string> | - |
+| 3.parentOrganization (single item) | string | - |
+| 3.subOrganization | array<string> | a child organization |
+| 3.subOrganization (single item) | string | - |
+| 3.telephone | string | Primary phone number. |
+| 3.type | string | - |
+| 3.url | string | primary website/url for the entity. |
+| 1 (allOf item) | - | A real estate franchisor, broker or business |
+| 1.type | string | RealEstateOrganzation |
+| 1.areaServed | object | the physical areas that make up the ServiceArea |
+| 1.description | string | description of the item. |
+| 1.parentOrganization | array<string> | A franchisor or affiliate network of which this organization plays a membership role. |
+| 1.parentOrganization (single item) | string | - |
+| 1.numberOfSubOrganizations | number | the number of offices for an affiliate. |
+| 1.member | array<anyOf> | A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals. |
+| 1.member (single item) | anyOf | - |
+| 1.member.0 (anyOf item) | object | describes a role played by a member and a group or organization. |
+| 1.member.0.type | string | a role played by the member in the memberOf group |
+| 1.member.0.roleName | string | the role name |
+| 1.member.0.memberOf | object | the org or group where the role is performed |
+| 1.member.0.member | string | member object or id |
+| 1.member.0.startDate | string | date the member began performing this role |
+| 1.member.0.endDate | string | date the member stopped performing the role |
+| 1.member.1 (anyOf item) | string | - |
+| 1.memberOf | array<allOf> | An Organization (or ProgramMembership) to which this Person or Organization belongs. |
+| 1.memberOf (single item) | allOf | - |
+| 1.memberOf.0 (allOf item) | object | describes a role played by a member and a group or organization. |
+| 1.memberOf.0.type | string | a role played by the member in the memberOf group |
+| 1.memberOf.0.roleName | string | the role name |
+| 1.memberOf.0.memberOf | object | the org or group where the role is performed |
+| 1.memberOf.0.member | string | member object or id |
+| 1.memberOf.0.startDate | string | date the member began performing this role |
+| 1.memberOf.0.endDate | string | date the member stopped performing the role |
+| 1.memberOf.1 (allOf item) | object | a membership relationship |
+| 1.memberOf.1.type | string | an MLS member relationship |
+| 1.memberOf.1.roleName | string | - |
+| 1.memberOf.1.memberOf | object | - |
+| 1.memberOf.1.member | string | - |
+| 1.memberOf.1.memberId | string | the user's MLSID |
+| 1.permit | array<object> | - |
+| 1.permit (single item) | object | - |
+| 1 (allOf item) | - | - |
+| 1.type | string | RealEstateOffice |
+| 1.contactPoint | any | department or role specific contact points, i.e. relocation. |
+| 1.description | any | - |
+| 1.parentOrganization | any | Office broker or franchisor. |
+| 1.subOrganization | array<string> | Agents and teams associated with the office. |
+| 1.subOrganization (single item) | string | - |
+| 1.geoCoordinates | object | a lat/long point. |
+| 1.geoCoordinates.type | string | GeoCordinates |
+| 1.geoCoordinates.longitude | number | The longitude of a location. |
+| 1.geoCoordinates.latitude | number | The latitude of a location. |
 
 > Examples of RealEstateOffice
 

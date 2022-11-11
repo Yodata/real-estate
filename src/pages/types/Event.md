@@ -4,13 +4,13 @@ title: Event
 | Name | Type | Description |
 |---|---|---|
 | (root) | object | An event happening at a certain time and location |
-| Event.type | string | The item type (Linked-Data @type) |
-| Event.name | string | name of the event |
-| Event.description | string | event message content |
-| Event.about | object | a subject of the meeting or event |
-| Event.startDate | string | the start date-time (ISO 8601 formated) |
-| Event.endDate | string | the end date-time (ISO 8601 formated) |
-| Event.organizer | object | the event organizer |
+| type | string | The item type (Linked-Data @type) |
+| name | string | name of the event |
+| description | string | event message content |
+| about | object | a subject of the meeting or event |
+| startDate | string | the start date-time (ISO 8601 formated) |
+| endDate | string | the end date-time (ISO 8601 formated) |
+| organizer | object | the event organizer |
 
 > Examples of Event
 

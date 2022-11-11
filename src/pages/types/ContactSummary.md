@@ -4,20 +4,20 @@ title: ContactSummary
 | Name | Type | Description |
 |---|---|---|
 | (root) | object | minimal schema of a customer for report messages |
-| ContactSummary.type | string | "ContactSummary" |
-| ContactSummary.batchId | string | BATCH-ID |
-| ContactSummary.author | string | OFFICE-ID |
-| ContactSummary.transactionType | string | TRANS-TYPE |
-| ContactSummary.transactionId | string | TRANS-NO |
-| ContactSummary.transactionRole | string | - |
-| ContactSummary.position | number | ADJUSTMENT-SEQUENCE |
-| ContactSummary.assoicatedAgent | string | ASSOC-ID |
-| ContactSummary.object | object | the Customer |
-| ContactSummary.object.type | string | The item type (Linked-Data @type) |
-| ContactSummary.object.givenName | string | First Name of a person |
-| ContactSummary.object.additionalName | string | CUSTOMER-MIDDLE-INITIAL |
-| ContactSummary.object.familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) |
-| ContactSummary.object.gender | string | gender of the Customer (why?) |
+| type | string | "ContactSummary" |
+| batchId | string | BATCH-ID |
+| author | string | OFFICE-ID |
+| transactionType | string | TRANS-TYPE |
+| transactionId | string | TRANS-NO |
+| transactionRole | string | - |
+| position | number | ADJUSTMENT-SEQUENCE |
+| assoicatedAgent | string | ASSOC-ID |
+| object | object | the Customer |
+| object.type | string | The item type (Linked-Data @type) |
+| object.givenName | string | First Name of a person |
+| object.additionalName | string | CUSTOMER-MIDDLE-INITIAL |
+| object.familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) |
+| object.gender | string | gender of the Customer (why?) |
 
 > Examples of ContactSummary
 

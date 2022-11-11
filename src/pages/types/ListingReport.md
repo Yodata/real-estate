@@ -4,12 +4,12 @@ title: ListingReport
 | Name | Type | Description |
 |---|---|---|
 | (root) | object | summary report of listing inventory count |
-| ListingReport.type | string | RECORD-TYPE |
-| ListingReport.batchId | string | BATCH-ID |
-| ListingReport.reportingOfficeId | string | OFFICE-ID |
-| ListingReport.dateCreated | string | YEAR-MONTH |
-| ListingReport.listingsAddedCount | number | LISTINGS-TAKEN |
-| ListingReport.totalListingsCount | number | LISTINGS-INVENTORY |
+| type | string | RECORD-TYPE |
+| batchId | string | BATCH-ID |
+| reportingOfficeId | string | OFFICE-ID |
+| dateCreated | string | YEAR-MONTH |
+| listingsAddedCount | number | LISTINGS-TAKEN |
+| totalListingsCount | number | LISTINGS-INVENTORY |
 
 > Examples of ListingReport
 

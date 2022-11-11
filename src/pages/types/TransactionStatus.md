@@ -4,9 +4,9 @@ title: TransactionStatus
 | Name | Type | Description |
 |---|---|---|
 | (root) | object | Transaction Status Enumeration Values |
-| TransactionStatus.PendingTransactionStatus | string | Pending Status |
-| TransactionStatus.ClosedTransactionStatus | string | Closed Status |
-| TransactionStatus.CanceledTransactionStatus | string | Canceled Status |
+| PendingTransactionStatus | string | Pending Status |
+| ClosedTransactionStatus | string | Closed Status |
+| CanceledTransactionStatus | string | Canceled Status |
 
 > Examples of TransactionStatus
 

@@ -4,8 +4,8 @@ title: Question
 | Name | Type | Description |
 |---|---|---|
 | (root) | object | A specific question - e.g. from a user seeking answers online, or collected in a Frequently Asked Questions (FAQ) document. |
-| Question.type | string | - |
-| Question.text | string | - |
+| type | string | - |
+| text | string | - |
 
 > Examples of Question
 

@@ -4,114 +4,114 @@ title: RealEstateTransaction
 | Name | Type | Description |
 |---|---|---|
 | (root) | object | describes a sale, purchase and transfer of a real estate property. |
-| RealEstateTransaction.type | string | - |
-| RealEstateTransaction.identifier | object | the data producer's id for the transaction. |
-| RealEstateTransaction.identifier.bmsTransactionId | string | - |
-| RealEstateTransaction.additionalProperty | object | vendor/context specific custom properties |
-| RealEstateTransaction.additionalProperty.batchId | integer | identifies the batch for the current transaction |
-| RealEstateTransaction.additionalProperty.transactionSequence | integer | the sequentail order of this transaction report relative to previous reports of the the same RealEstateTransaction |
-| RealEstateTransaction.additionalProperty.unimprovedLandFlag | boolean | true if the transaction subject property is an unimproved lot. |
-| RealEstateTransaction.transactionStatus | string | transaction status |
-| RealEstateTransaction.transactionType | string | transaction type |
-| RealEstateTransaction.reportingOffice | string | the reporting office |
-| RealEstateTransaction.listingOffice | string | the office representing the seller |
-| RealEstateTransaction.buyerOffice | string | the office representing the buyer |
-| RealEstateTransaction.commissionDate | string | date the purchase offer was presented |
-| RealEstateTransaction.closeDate | string | With purchase the date the purchase agreement was fulfilled. With lease, the date the requirements were fulfilled, such as contract and/or deposit. |
-| RealEstateTransaction.purchaseContractDate | string | date of purchase agreement execution (aka sale date) |
-| RealEstateTransaction.closePrice | object | the final sale price of the subject |
-| RealEstateTransaction.closePrice.type | string | MonetaryAmount |
-| RealEstateTransaction.closePrice.minValue | number | the lower limit of the range |
-| RealEstateTransaction.closePrice.maxValue | number | the upper limit of the range |
-| RealEstateTransaction.closePrice.value | number | the actual or expected value |
-| RealEstateTransaction.closePrice.currency | string | use ISO4217 country codes |
-| RealEstateTransaction.totalSalesProductionGCI | object | the total gci of the transaction |
-| RealEstateTransaction.totalSalesProductionGCI.type | string | MonetaryAmount |
-| RealEstateTransaction.totalSalesProductionGCI.minValue | number | the lower limit of the range |
-| RealEstateTransaction.totalSalesProductionGCI.maxValue | number | the upper limit of the range |
-| RealEstateTransaction.totalSalesProductionGCI.value | number | the actual or expected value |
-| RealEstateTransaction.totalSalesProductionGCI.currency | string | use ISO4217 country codes |
-| RealEstateTransaction.totalSalesProductionGCIDeduction | object | total gci deductions for the transaction |
-| RealEstateTransaction.totalSalesProductionGCIDeduction.type | string | MonetaryAmount |
-| RealEstateTransaction.totalSalesProductionGCIDeduction.minValue | number | the lower limit of the range |
-| RealEstateTransaction.totalSalesProductionGCIDeduction.maxValue | number | the upper limit of the range |
-| RealEstateTransaction.totalSalesProductionGCIDeduction.value | number | the actual or expected value |
-| RealEstateTransaction.totalSalesProductionGCIDeduction.currency | string | use ISO4217 country codes |
-| RealEstateTransaction.object | object | a property in the real estate transaction context |
-| RealEstateTransaction.object.type | string | "RealEstateProperty" |
-| RealEstateTransaction.object.propertyType | string | RESO property type (see range for allowed values) |
-| RealEstateTransaction.object.addressCountry | string | two-letter ISO 3166-1 alpha-2 country code |
-| RealEstateTransaction.object.addressLocality | string | City, Township. |
-| RealEstateTransaction.object.addressRegion | string | State or Province. |
-| RealEstateTransaction.object.apn | string | Assessors Parcel Number |
-| RealEstateTransaction.object.image | tuple<object allOf, ...optional<any>> | an ImageObject or URI reference to an image on the web. |
-| RealEstateTransaction.object.image.0 (index) | object allOf | - |
-| RealEstateTransaction.object.image.0.0 (allOf item) | allOf | an image, video or document availble for download |
-| RealEstateTransaction.object.image.0.0.0 (allOf item) | object | - |
-| RealEstateTransaction.object.image.0.0.0.type | string | The item type (Linked-Data @type) |
-| RealEstateTransaction.object.image.0.0.0.@id | string | the liked data uri for the Thing |
-| RealEstateTransaction.object.image.0.0.0 (property names) | - | - |
-| RealEstateTransaction.object.image.0.0.1 (allOf item) | - | - |
-| RealEstateTransaction.object.image.0.0.1.type | string | - |
-| RealEstateTransaction.object.image.0.0.1.id | string | the URL to access the item. |
-| RealEstateTransaction.object.image.0.0.1.name | string | the file name of the object. |
-| RealEstateTransaction.object.image.0.0.1.encodingFormat | string | MIME type |
-| RealEstateTransaction.object.image.0.0.1.about | string | URI to the subject of the image or logo |
-| RealEstateTransaction.object.image.0.0.1.url | string | URL of the image content |
-| RealEstateTransaction.object.image.0.1 (allOf item) | - | - |
-| RealEstateTransaction.object.image.0.1.type | string | - |
-| RealEstateTransaction.object.image.0.1.id | any | - |
-| RealEstateTransaction.object.image.0.1.name | any | - |
-| RealEstateTransaction.object.image.0.1.encodingFormat | any | - |
-| RealEstateTransaction.object.latitude | number | The latitude of a location. |
-| RealEstateTransaction.object.listingId | string | the local identifier for the listing (MLS #) |
-| RealEstateTransaction.object.livingArea | object | property indoor space |
-| RealEstateTransaction.object.longitude | number | The longitude of a location. |
-| RealEstateTransaction.object.lotSize | object | outdoor space minValue, maxValue |
-| RealEstateTransaction.object.numberOfBathrooms | string | the number of bathrooms |
-| RealEstateTransaction.object.numberOfBedrooms | string | the number of bedrooms |
-| RealEstateTransaction.object.numberOfRooms | string | the total number of rooms in the building |
-| RealEstateTransaction.object.postalCode | string | Zip/Post Code |
-| RealEstateTransaction.object.propertySubType | string | RESO property sub-type (see range for allowed values) |
-| RealEstateTransaction.object.stories | number | he number of floors in the property |
-| RealEstateTransaction.object.streetAddress | string | the street address |
-| RealEstateTransaction.object.yearBuilt | number | the year the structure was created |
-| RealEstateTransaction.referral | object | referring agent details |
-| RealEstateTransaction.referral.type | string | The item type (Linked-Data @type) |
-| RealEstateTransaction.referral.additionalProperty | object | context specific custom properties |
-| RealEstateTransaction.referral.additionalProperty.isReferralYN | string | Y if transaction was a referral |
-| RealEstateTransaction.referral.additionalProperty.inNetworkReferralYN | string | Y if transaction was referred by an in network agent |
-| RealEstateTransaction.referral.referredBy | object | the referring entity |
-| RealEstateTransaction.referral.referredBy.type | string | the referring entity type i.e RealEstateOrganization, RealEstateAgent |
-| RealEstateTransaction.referral.referredBy.id | string | Linked-Data URI (@id) |
-| RealEstateTransaction.participant | array<object> | parties with a direct or indirect interest or role in the transaction |
-| RealEstateTransaction.participant.type | string | - |
-| RealEstateTransaction.participant.roleName | string | the role of the participant in the transaction |
-| RealEstateTransaction.participant.position | number | numeric position for the participant/roleName. |
-| RealEstateTransaction.participant.givenName | string | First Name of a person |
-| RealEstateTransaction.participant.familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) |
-| RealEstateTransaction.participant.additionalName | string | middleName or alternate name of the Person |
-| RealEstateTransaction.participant.email | string | - |
-| RealEstateTransaction.participant.telephone | string | Primary phone number. |
-| RealEstateTransaction.participant.affiliation | array<string> | person or organization associated with the participant |
-| RealEstateTransaction.participant.affiliation (single item) | string | - |
-| RealEstateTransaction.transactionEntry | array<object> | commissions and unit entries |
-| RealEstateTransaction.transactionEntry.type | string | TransactionEntry |
-| RealEstateTransaction.transactionEntry.salesProductionUnit | number | the sales production units credited to the recipient |
-| RealEstateTransaction.transactionEntry.salesProductionGCI | object | gross commission income credited to the recipient |
-| RealEstateTransaction.transactionEntry.salesProductionGCI.type | string | MonetaryAmount |
-| RealEstateTransaction.transactionEntry.salesProductionGCI.minValue | number | the lower limit of the range |
-| RealEstateTransaction.transactionEntry.salesProductionGCI.maxValue | number | the upper limit of the range |
-| RealEstateTransaction.transactionEntry.salesProductionGCI.value | number | the actual or expected value |
-| RealEstateTransaction.transactionEntry.salesProductionGCI.currency | string | use ISO4217 country codes |
-| RealEstateTransaction.transactionEntry.recipient | object | the agent credited with the sales production and who receives the value |
-| RealEstateTransaction.transactionEntry.recipient.type | string | typically a RealEstateAgent |
-| RealEstateTransaction.transactionEntry.recipient.roleName | string | enum: ListingAgent,BuyerAgent |
-| RealEstateTransaction.transactionEntry.recipient.id | string | Linked-Data URI (@id) |
-| RealEstateTransaction.transactionEntry.recipient.identifier | object | unique identifier of the recipient from the data producer |
-| RealEstateTransaction.transactionEntry.recipient.identifier.bmsAgentId | string | - |
-| RealEstateTransaction.document | array<object> | any documents, images, etc... related to the transaction. |
-| RealEstateTransaction.document (single item) | object | - |
+| type | string | - |
+| identifier | object | the data producer's id for the transaction. |
+| identifier.bmsTransactionId | string | - |
+| additionalProperty | object | vendor/context specific custom properties |
+| additionalProperty.batchId | integer | identifies the batch for the current transaction |
+| additionalProperty.transactionSequence | integer | the sequentail order of this transaction report relative to previous reports of the the same RealEstateTransaction |
+| additionalProperty.unimprovedLandFlag | boolean | true if the transaction subject property is an unimproved lot. |
+| transactionStatus | string | transaction status |
+| transactionType | string | transaction type |
+| reportingOffice | string | the reporting office |
+| listingOffice | string | the office representing the seller |
+| buyerOffice | string | the office representing the buyer |
+| commissionDate | string | date the purchase offer was presented |
+| closeDate | string | With purchase the date the purchase agreement was fulfilled. With lease, the date the requirements were fulfilled, such as contract and/or deposit. |
+| purchaseContractDate | string | date of purchase agreement execution (aka sale date) |
+| closePrice | object | the final sale price of the subject |
+| closePrice.type | string | MonetaryAmount |
+| closePrice.minValue | number | the lower limit of the range |
+| closePrice.maxValue | number | the upper limit of the range |
+| closePrice.value | number | the actual or expected value |
+| closePrice.currency | string | use ISO4217 country codes |
+| totalSalesProductionGCI | object | the total gci of the transaction |
+| totalSalesProductionGCI.type | string | MonetaryAmount |
+| totalSalesProductionGCI.minValue | number | the lower limit of the range |
+| totalSalesProductionGCI.maxValue | number | the upper limit of the range |
+| totalSalesProductionGCI.value | number | the actual or expected value |
+| totalSalesProductionGCI.currency | string | use ISO4217 country codes |
+| totalSalesProductionGCIDeduction | object | total gci deductions for the transaction |
+| totalSalesProductionGCIDeduction.type | string | MonetaryAmount |
+| totalSalesProductionGCIDeduction.minValue | number | the lower limit of the range |
+| totalSalesProductionGCIDeduction.maxValue | number | the upper limit of the range |
+| totalSalesProductionGCIDeduction.value | number | the actual or expected value |
+| totalSalesProductionGCIDeduction.currency | string | use ISO4217 country codes |
+| object | object | a property in the real estate transaction context |
+| object.type | string | "RealEstateProperty" |
+| object.propertyType | string | RESO property type (see range for allowed values) |
+| object.addressCountry | string | two-letter ISO 3166-1 alpha-2 country code |
+| object.addressLocality | string | City, Township. |
+| object.addressRegion | string | State or Province. |
+| object.apn | string | Assessors Parcel Number |
+| object.image | tuple<object allOf, ...optional<any>> | an ImageObject or URI reference to an image on the web. |
+| object.image.0 (index) | object allOf | - |
+| object.image.0.0 (allOf item) | allOf | an image, video or document availble for download |
+| object.image.0.0.0 (allOf item) | object | - |
+| object.image.0.0.0.type | string | The item type (Linked-Data @type) |
+| object.image.0.0.0.@id | string | the liked data uri for the Thing |
+| object.image.0.0.0 (property names) | - | - |
+| object.image.0.0.1 (allOf item) | - | - |
+| object.image.0.0.1.type | string | - |
+| object.image.0.0.1.id | string | the URL to access the item. |
+| object.image.0.0.1.name | string | the file name of the object. |
+| object.image.0.0.1.encodingFormat | string | MIME type |
+| object.image.0.0.1.about | string | URI to the subject of the image or logo |
+| object.image.0.0.1.url | string | URL of the image content |
+| object.image.0.1 (allOf item) | - | - |
+| object.image.0.1.type | string | - |
+| object.image.0.1.id | any | - |
+| object.image.0.1.name | any | - |
+| object.image.0.1.encodingFormat | any | - |
+| object.latitude | number | The latitude of a location. |
+| object.listingId | string | the local identifier for the listing (MLS #) |
+| object.livingArea | object | property indoor space |
+| object.longitude | number | The longitude of a location. |
+| object.lotSize | object | outdoor space minValue, maxValue |
+| object.numberOfBathrooms | string | the number of bathrooms |
+| object.numberOfBedrooms | string | the number of bedrooms |
+| object.numberOfRooms | string | the total number of rooms in the building |
+| object.postalCode | string | Zip/Post Code |
+| object.propertySubType | string | RESO property sub-type (see range for allowed values) |
+| object.stories | number | he number of floors in the property |
+| object.streetAddress | string | the street address |
+| object.yearBuilt | number | the year the structure was created |
+| referral | object | referring agent details |
+| referral.type | string | The item type (Linked-Data @type) |
+| referral.additionalProperty | object | context specific custom properties |
+| referral.additionalProperty.isReferralYN | string | Y if transaction was a referral |
+| referral.additionalProperty.inNetworkReferralYN | string | Y if transaction was referred by an in network agent |
+| referral.referredBy | object | the referring entity |
+| referral.referredBy.type | string | the referring entity type i.e RealEstateOrganization, RealEstateAgent |
+| referral.referredBy.id | string | Linked-Data URI (@id) |
+| participant | array<object> | parties with a direct or indirect interest or role in the transaction |
+| participant.type | string | - |
+| participant.roleName | string | the role of the participant in the transaction |
+| participant.position | number | numeric position for the participant/roleName. |
+| participant.givenName | string | First Name of a person |
+| participant.familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) |
+| participant.additionalName | string | middleName or alternate name of the Person |
+| participant.email | string | - |
+| participant.telephone | string | Primary phone number. |
+| participant.affiliation | array<string> | person or organization associated with the participant |
+| participant.affiliation (single item) | string | - |
+| transactionEntry | array<object> | commissions and unit entries |
+| transactionEntry.type | string | TransactionEntry |
+| transactionEntry.salesProductionUnit | number | the sales production units credited to the recipient |
+| transactionEntry.salesProductionGCI | object | gross commission income credited to the recipient |
+| transactionEntry.salesProductionGCI.type | string | MonetaryAmount |
+| transactionEntry.salesProductionGCI.minValue | number | the lower limit of the range |
+| transactionEntry.salesProductionGCI.maxValue | number | the upper limit of the range |
+| transactionEntry.salesProductionGCI.value | number | the actual or expected value |
+| transactionEntry.salesProductionGCI.currency | string | use ISO4217 country codes |
+| transactionEntry.recipient | object | the agent credited with the sales production and who receives the value |
+| transactionEntry.recipient.type | string | typically a RealEstateAgent |
+| transactionEntry.recipient.roleName | string | enum: ListingAgent,BuyerAgent |
+| transactionEntry.recipient.id | string | Linked-Data URI (@id) |
+| transactionEntry.recipient.identifier | object | unique identifier of the recipient from the data producer |
+| transactionEntry.recipient.identifier.bmsAgentId | string | - |
+| document | array<object> | any documents, images, etc... related to the transaction. |
+| document (single item) | object | - |
 
 > Examples of RealEstateTransaction
 

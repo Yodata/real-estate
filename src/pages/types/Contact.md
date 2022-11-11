@@ -4,62 +4,62 @@ title: Contact
 | Name | Type | Description |
 |---|---|---|
 | (root) | allOf | - |
-| Contact.0 (allOf item) | object | - |
-| Contact.0.type | string | - |
-| Contact.0.affiliation | array<string> | An organization that this person is affiliated with |
-| Contact.0.affiliation (single item) | string | - |
-| Contact.0.address | array<object> | - |
-| Contact.0.address.type | string | - |
-| Contact.0.address.streetAddress | string | the street number and name. |
-| Contact.0.address.postOfficeBoxNumber | string | The post office box number for PO box addresses. |
-| Contact.0.address.addressRegion | string | State or Province. |
-| Contact.0.address.addressLocality | string | City, Township. |
-| Contact.0.address.postalCode | string | Zip/Post Code |
-| Contact.0.address.addressCountry | string | The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code. |
-| Contact.0.address.addressCounty | string | the county (us real estate extension) |
-| Contact.0.address.addressSubdivision | string | the subdivision or neighborhood (us real estate extension) |
-| Contact.0.birthDate | string | date of birth. |
-| Contact.0.contactPoint | array<object> | contact points for the person |
-| Contact.0.contactPoint.type | string | - |
-| Contact.0.contactPoint.name | string | a label for the contactPoint, i.e. 'Work', or 'Home' |
-| Contact.0.contactPoint.telephone | string | - |
-| Contact.0.contactPoint.faxNumber | string | - |
-| Contact.0.contactPoint.email | string | an email address for the item. |
-| Contact.0.contactPoint.url | string | primary URL for the item. |
-| Contact.0.email | string | - |
-| Contact.0.additionalName | string | any other name(s) associated with the entity, i.e. nickname, middle name, maiden name, etc. For multiple names, use a comma without space as a separator. |
-| Contact.0.familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) |
-| Contact.0.faxNumber | string | Do people still use fax machines? |
-| Contact.0.givenName | string | First Name of a person |
-| Contact.0.honorificPrefix | string | An honorific prefix preceding a Person's name such as Dr/Mrs/Mr. |
-| Contact.0.honorificSuffix | string | An honorific title following a person's name like M.D. |
-| Contact.0.jobTitle | array<string> | job tiles associated with the item |
-| Contact.0.jobTitle (single item) | string | - |
-| Contact.0.knowsLanguage | array<object> | languages spoken by the person |
-| Contact.0.knowsLanguage.type | string | - |
-| Contact.0.knowsLanguage.name | string | the display name of the language |
-| Contact.0.knowsLanguage.additionalName | string | BCP 47 language code |
-| Contact.0.name | string | Full name of the person. |
-| Contact.0.telephone | string | Primary phone number. |
-| Contact.0.worksFor | string | Organizations the person works for. |
-| Contact.1 (allOf item) | - | a CRM contact. |
-| Contact.1.type | string | - |
-| Contact.1.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
-| Contact.1.additionalProperty | object | additionalProperty are |
-| Contact.1.comment | array<object> | comments by, for or about the item |
-| Contact.1.comment (single item) | object | - |
-| Contact.1.jobTitle | string | The job title of the person (for example, Financial Manager). |
-| Contact.1.contactGroup | array<object> | - |
-| Contact.1.contactGroup.type | string | - |
-| Contact.1.contactGroup.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
-| Contact.1.contactGroup.name | string | - |
-| Contact.1.keywords | array<string> | - |
-| Contact.1.keywords (single item) | string | - |
-| Contact.1.leadOwner | object | lead owner |
-| Contact.1.leadSource | object | origin of the lead |
-| Contact.1.originatingSystem | object | the original system where this item was created.  Can be of type Thing or any sub-type. |
-| Contact.1.dateCreated | string | The date on which the item was created. |
-| Contact.1.dateModified | string | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. |
+| 0 (allOf item) | object | - |
+| type | string | - |
+| affiliation | array<string> | An organization that this person is affiliated with |
+| affiliation (single item) | string | - |
+| address | array<object> | - |
+| address.type | string | - |
+| address.streetAddress | string | the street number and name. |
+| address.postOfficeBoxNumber | string | The post office box number for PO box addresses. |
+| address.addressRegion | string | State or Province. |
+| address.addressLocality | string | City, Township. |
+| address.postalCode | string | Zip/Post Code |
+| address.addressCountry | string | The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code. |
+| address.addressCounty | string | the county (us real estate extension) |
+| address.addressSubdivision | string | the subdivision or neighborhood (us real estate extension) |
+| birthDate | string | date of birth. |
+| contactPoint | array<object> | contact points for the person |
+| contactPoint.type | string | - |
+| contactPoint.name | string | a label for the contactPoint, i.e. 'Work', or 'Home' |
+| contactPoint.telephone | string | - |
+| contactPoint.faxNumber | string | - |
+| contactPoint.email | string | an email address for the item. |
+| contactPoint.url | string | primary URL for the item. |
+| email | string | - |
+| additionalName | string | any other name(s) associated with the entity, i.e. nickname, middle name, maiden name, etc. For multiple names, use a comma without space as a separator. |
+| familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) |
+| faxNumber | string | Do people still use fax machines? |
+| givenName | string | First Name of a person |
+| honorificPrefix | string | An honorific prefix preceding a Person's name such as Dr/Mrs/Mr. |
+| honorificSuffix | string | An honorific title following a person's name like M.D. |
+| jobTitle | array<string> | job tiles associated with the item |
+| jobTitle (single item) | string | - |
+| knowsLanguage | array<object> | languages spoken by the person |
+| knowsLanguage.type | string | - |
+| knowsLanguage.name | string | the display name of the language |
+| knowsLanguage.additionalName | string | BCP 47 language code |
+| name | string | Full name of the person. |
+| telephone | string | Primary phone number. |
+| worksFor | string | Organizations the person works for. |
+| 1 (allOf item) | - | a CRM contact. |
+| 1.type | string | - |
+| 1.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| 1.additionalProperty | object | additionalProperty are |
+| 1.comment | array<object> | comments by, for or about the item |
+| 1.comment (single item) | object | - |
+| 1.jobTitle | string | The job title of the person (for example, Financial Manager). |
+| 1.contactGroup | array<object> | - |
+| 1.contactGroup.type | string | - |
+| 1.contactGroup.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| 1.contactGroup.name | string | - |
+| 1.keywords | array<string> | - |
+| 1.keywords (single item) | string | - |
+| 1.leadOwner | object | lead owner |
+| 1.leadSource | object | origin of the lead |
+| 1.originatingSystem | object | the original system where this item was created.  Can be of type Thing or any sub-type. |
+| 1.dateCreated | string | The date on which the item was created. |
+| 1.dateModified | string | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. |
 
 > Examples of Contact
 

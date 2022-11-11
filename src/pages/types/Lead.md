@@ -4,18 +4,18 @@ title: Lead
 | Name | Type | Description |
 |---|---|---|
 | (root) | object | a sales opportunity (object) offered by a sender to a recipient. |
-| Lead.type | string | Lead |
-| Lead.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
-| Lead.object | object | the lead (Contact) |
-| Lead.recipient | string | the lead recipient |
-| Lead.sender | string | the lead provider |
-| Lead.owner | string | the original owner of the lead |
-| Lead.dateAccepted | string | The date/time the item was accepted by the recipient |
-| Lead.dateRejected | string | The date/time the item was rejected by the recipient |
-| Lead.dateSent | string | the date the lead was sent |
-| Lead.dateReceived | string | The date/time the item was received by it's recipient |
-| Lead.leadSource | array<object> | lead origin, may be a website event or a thing such as a website, zillow, mobile applicaton. |
-| Lead.leadSource (single item) | object | - |
+| type | string | Lead |
+| identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| object | object | the lead (Contact) |
+| recipient | string | the lead recipient |
+| sender | string | the lead provider |
+| owner | string | the original owner of the lead |
+| dateAccepted | string | The date/time the item was accepted by the recipient |
+| dateRejected | string | The date/time the item was rejected by the recipient |
+| dateSent | string | the date the lead was sent |
+| dateReceived | string | The date/time the item was received by it's recipient |
+| leadSource | array<object> | lead origin, may be a website event or a thing such as a website, zillow, mobile applicaton. |
+| leadSource (single item) | object | - |
 
 > Examples of Lead
 

@@ -4,16 +4,16 @@ title: Certification
 | Name | Type | Description |
 |---|---|---|
 | (root) | object | A certification issued by an organization to an individual or business. |
-| Certification.type | string | Certification |
-| Certification.name | string | the name of the Certification |
-| Certification.issuedBy | object | the issuing authority |
-| Certification.issuedBy.type | string | The item type (Linked-Data @type) |
-| Certification.issuedBy.id | string | Linked-Data URI (@id) |
-| Certification.issuedBy.name | string | name of the issuing organization |
-| Certification.issuedTo | object | the subject |
-| Certification.issuedTo.type | string | The item type (Linked-Data @type) |
-| Certification.issuedTo.id | string | Linked-Data URI (@id) |
-| Certification.issuedTo.name | string | the name of the item |
+| type | string | Certification |
+| name | string | the name of the Certification |
+| issuedBy | object | the issuing authority |
+| issuedBy.type | string | The item type (Linked-Data @type) |
+| issuedBy.id | string | Linked-Data URI (@id) |
+| issuedBy.name | string | name of the issuing organization |
+| issuedTo | object | the subject |
+| issuedTo.type | string | The item type (Linked-Data @type) |
+| issuedTo.id | string | Linked-Data URI (@id) |
+| issuedTo.name | string | the name of the item |
 
 > Examples of Certification
 

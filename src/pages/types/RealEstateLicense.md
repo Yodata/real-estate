@@ -4,16 +4,16 @@ title: RealEstateLicense
 | Name | Type | Description |
 |---|---|---|
 | (root) | object | Real estate licenses, authorizations issued by state governments, give agents and brokers the legal ability to represent a home seller or buyer in the process of buying or selling real estate. |
-| RealEstateLicense.type | string | RealEstateLicense |
-| RealEstateLicense.name | string | display value, i.e. 'CA-DRE# 02068375' |
-| RealEstateLicense.issuedTo | object | the license recipient |
-| RealEstateLicense.issuedBy | object | the issuing organization or service |
-| RealEstateLicense.issuedThrough | object | The service through with the permit was granted. |
-| RealEstateLicense.issuedThrough.type | string | - |
-| RealEstateLicense.issuedThrough.name | string | - |
-| RealEstateLicense.validIn | object | the state where the RealEstateLicense is valid |
-| RealEstateLicense.validFrom | string | the first date and time on which the license is valid. |
-| RealEstateLicense.validUntil | string | the last date and time on which the license is valid. |
+| type | string | RealEstateLicense |
+| name | string | display value, i.e. 'CA-DRE# 02068375' |
+| issuedTo | object | the license recipient |
+| issuedBy | object | the issuing organization or service |
+| issuedThrough | object | The service through with the permit was granted. |
+| issuedThrough.type | string | - |
+| issuedThrough.name | string | - |
+| validIn | object | the state where the RealEstateLicense is valid |
+| validFrom | string | the first date and time on which the license is valid. |
+| validUntil | string | the last date and time on which the license is valid. |
 
 > Examples of RealEstateLicense
 

@@ -4,13 +4,13 @@ title: City
 | Name | Type | Description |
 |---|---|---|
 | (root) | object | A city or town. |
-| City.type | string | - |
-| City.name | string | city name (same as addressLocality) |
-| City.addressRegion | string | State or Province. |
-| City.addressLocality | string | City, Township. |
-| City.postalCode | string | Zip/Post Code |
-| City.addressCountry | string | The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code. |
-| City.addressCounty | string | the county (us real estate extension) |
+| type | string | - |
+| name | string | city name (same as addressLocality) |
+| addressRegion | string | State or Province. |
+| addressLocality | string | City, Township. |
+| postalCode | string | Zip/Post Code |
+| addressCountry | string | The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code. |
+| addressCounty | string | the county (us real estate extension) |
 
 > Examples of City
 

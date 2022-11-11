@@ -4,9 +4,9 @@ title: RealEstateWebsite
 | Name | Type | Description |
 |---|---|---|
 | (root) | object | - |
-| RealEstateWebsite.type | string | RealEstateWebsite |
-| RealEstateWebsite.about | object | subject of the website |
-| RealEstateWebsite.url | string | URL of the item. |
+| type | string | RealEstateWebsite |
+| about | object | subject of the website |
+| url | string | URL of the item. |
 
 > Examples of RealEstateWebsite
 

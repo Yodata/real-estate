@@ -4,14 +4,14 @@ title: Comment
 | Name | Type | Description |
 |---|---|---|
 | (root) | object | A comment on an item. |
-| Comment.type | string | - |
-| Comment.dateCreated | string | The date on which the item was created. |
-| Comment.dateModified | string | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. |
-| Comment.dateDeleted | string | The date on which the item was deleted. |
-| Comment.text | string | - |
-| Comment.author | object | the author of something |
-| Comment.about | object | The subject of the content |
-| Comment.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| type | string | - |
+| dateCreated | string | The date on which the item was created. |
+| dateModified | string | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. |
+| dateDeleted | string | The date on which the item was deleted. |
+| text | string | - |
+| author | object | the author of something |
+| about | object | The subject of the content |
+| identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
 
 > Examples of Comment
 

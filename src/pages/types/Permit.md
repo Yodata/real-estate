@@ -4,13 +4,13 @@ title: Permit
 | Name | Type | Description |
 |---|---|---|
 | (root) | object | A permit issued by an organization to an individual or business. |
-| Permit.type | string | Permit type. |
-| Permit.name | string | Common or display value of the Permit. |
-| Permit.issuedBy | object | The issuing authority |
-| Permit.issuedThrough | object | the service through which the permit was granted |
-| Permit.validIn | object | - |
-| Permit.validFrom | string | start date |
-| Permit.validUntil | string | end date |
+| type | string | Permit type. |
+| name | string | Common or display value of the Permit. |
+| issuedBy | object | The issuing authority |
+| issuedThrough | object | the service through which the permit was granted |
+| validIn | object | - |
+| validFrom | string | start date |
+| validUntil | string | end date |
 
 > Examples of Permit
 

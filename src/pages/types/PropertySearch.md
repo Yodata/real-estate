@@ -4,54 +4,54 @@ title: PropertySearch
 | Name | Type | Description |
 |---|---|---|
 | (root) | object | property search parameters |
-| PropertySearch.type | string | - |
-| PropertySearch.name | string | name of the search, input by the user or generated automatically |
-| PropertySearch.description | string | optional search description input by the user or generated automatically |
-| PropertySearch.propertyType | string | RESO property type (see range for allowed values) |
-| PropertySearch.propertySubType | object | Property sub-type enumeration values derived from RESO data dictionary. |
-| PropertySearch.propertySubType.ApartmentPropertyType | string | Apartment |
-| PropertySearch.propertySubType.BoatSlipPropertyType | string | Boat Slip |
-| PropertySearch.propertySubType.CabinPropertyType | string | Cabin |
-| PropertySearch.propertySubType.CondominiumPropertyType | string | Condominium |
-| PropertySearch.propertySubType.DeededParkingPropertyType | string | Deeded Parking |
-| PropertySearch.propertySubType.DuplexPropertyType | string | Residential Duplex |
-| PropertySearch.propertySubType.FarmPropertyType | string | Farm Property Type |
-| PropertySearch.propertySubType.ManufacturedHomePropertyType | string | Manufactured Home |
-| PropertySearch.propertySubType.ManufacturedOnLandPropertyType | string | Manufactured Home + Land |
-| PropertySearch.propertySubType.MobileHomePropertyType | string | Mobile Home |
-| PropertySearch.propertySubType.OwnYourOwnPropertyType | string | RESO Own Your Own Property |
-| PropertySearch.propertySubType.QuadruplexPropertyType | string | A residential property with four units |
-| PropertySearch.propertySubType.RanchPropertyType | string | A Ranch |
-| PropertySearch.propertySubType.SingleFamilyPropertyType | string | Single Family Residence |
-| PropertySearch.propertySubType.StockCooperativePropertyType | string | Stock Co-op. |
-| PropertySearch.propertySubType.TimesharePropertyType | string | Timeshare |
-| PropertySearch.propertySubType.TownhousePropertyType | string | Townhouse |
-| PropertySearch.propertySubType.TriplexPropertyType | string | A residential property with 3 separate units |
-| PropertySearch.propertySubType.AgriculturePropertyType | string | An agriculture property. |
-| PropertySearch.propertySubType.BusinessPropertyType | string | a residential property zoned for business operation |
-| PropertySearch.propertySubType.HotelMotelPropertyType | string | Hotel property for sale. |
-| PropertySearch.propertySubType.IndustrialPropertyType | string | Industrial property |
-| PropertySearch.propertySubType.MixedUsePropertyType | string | Residential/Commercial property |
-| PropertySearch.propertySubType.MultiFamilyPropertyType | string | A single building with multiple units |
-| PropertySearch.propertySubType.OfficePropertyType | string | An office. |
-| PropertySearch.propertySubType.RetailPropertyType | string | Retail property |
-| PropertySearch.propertySubType.UnimprovedLandPropertyType | string | Land for sale |
-| PropertySearch.propertySubType.WarehousePropertyType | string | A Warehouse property type. |
-| PropertySearch.listingStatus | string | RESO Listing Status Code |
-| PropertySearch.location | object | a physical location |
-| PropertySearch.location.type | string | The item type (Linked-Data @type) |
-| PropertySearch.location.address | object | A physical address. |
-| PropertySearch.location.geo | object | a geo shape (circle or box) |
-| PropertySearch.price | object | a price offered for transfer of ownership of an item |
-| PropertySearch.price.type | string | PriceSpecification |
-| PropertySearch.price.minPrice | number | the low price offered if price is a range. |
-| PropertySearch.price.maxPrice | number | the high price offered if price is a range. |
-| PropertySearch.price.price | number | the offer price. |
-| PropertySearch.price.priceCurrency | string | use ISO4217 |
-| PropertySearch.bedrooms | object | number of bedrooms (range) |
-| PropertySearch.bathrooms | object | number of bathrooms (range) |
-| PropertySearch.livingArea | object | property indoor space |
-| PropertySearch.lotSize | object | outdoor space minValue, maxValue |
+| type | string | - |
+| name | string | name of the search, input by the user or generated automatically |
+| description | string | optional search description input by the user or generated automatically |
+| propertyType | string | RESO property type (see range for allowed values) |
+| propertySubType | object | Property sub-type enumeration values derived from RESO data dictionary. |
+| propertySubType.ApartmentPropertyType | string | Apartment |
+| propertySubType.BoatSlipPropertyType | string | Boat Slip |
+| propertySubType.CabinPropertyType | string | Cabin |
+| propertySubType.CondominiumPropertyType | string | Condominium |
+| propertySubType.DeededParkingPropertyType | string | Deeded Parking |
+| propertySubType.DuplexPropertyType | string | Residential Duplex |
+| propertySubType.FarmPropertyType | string | Farm Property Type |
+| propertySubType.ManufacturedHomePropertyType | string | Manufactured Home |
+| propertySubType.ManufacturedOnLandPropertyType | string | Manufactured Home + Land |
+| propertySubType.MobileHomePropertyType | string | Mobile Home |
+| propertySubType.OwnYourOwnPropertyType | string | RESO Own Your Own Property |
+| propertySubType.QuadruplexPropertyType | string | A residential property with four units |
+| propertySubType.RanchPropertyType | string | A Ranch |
+| propertySubType.SingleFamilyPropertyType | string | Single Family Residence |
+| propertySubType.StockCooperativePropertyType | string | Stock Co-op. |
+| propertySubType.TimesharePropertyType | string | Timeshare |
+| propertySubType.TownhousePropertyType | string | Townhouse |
+| propertySubType.TriplexPropertyType | string | A residential property with 3 separate units |
+| propertySubType.AgriculturePropertyType | string | An agriculture property. |
+| propertySubType.BusinessPropertyType | string | a residential property zoned for business operation |
+| propertySubType.HotelMotelPropertyType | string | Hotel property for sale. |
+| propertySubType.IndustrialPropertyType | string | Industrial property |
+| propertySubType.MixedUsePropertyType | string | Residential/Commercial property |
+| propertySubType.MultiFamilyPropertyType | string | A single building with multiple units |
+| propertySubType.OfficePropertyType | string | An office. |
+| propertySubType.RetailPropertyType | string | Retail property |
+| propertySubType.UnimprovedLandPropertyType | string | Land for sale |
+| propertySubType.WarehousePropertyType | string | A Warehouse property type. |
+| listingStatus | string | RESO Listing Status Code |
+| location | object | a physical location |
+| location.type | string | The item type (Linked-Data @type) |
+| location.address | object | A physical address. |
+| location.geo | object | a geo shape (circle or box) |
+| price | object | a price offered for transfer of ownership of an item |
+| price.type | string | PriceSpecification |
+| price.minPrice | number | the low price offered if price is a range. |
+| price.maxPrice | number | the high price offered if price is a range. |
+| price.price | number | the offer price. |
+| price.priceCurrency | string | use ISO4217 |
+| bedrooms | object | number of bedrooms (range) |
+| bathrooms | object | number of bathrooms (range) |
+| livingArea | object | property indoor space |
+| lotSize | object | outdoor space minValue, maxValue |
 
 > Examples of PropertySearch
 

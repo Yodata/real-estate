@@ -4,27 +4,27 @@ title: MarketingProgram
 | Name | Type | Description |
 |---|---|---|
 | (root) | object | A collection of pre-defined activities which take place over a period of time or in a regular, ongoing schedule. |
-| MarketingProgram.type | string | - |
-| MarketingProgram.name | string | the name of the item |
-| MarketingProgram.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
-| MarketingProgram.member | array<object> | - |
-| MarketingProgram.member.type | string | - |
-| MarketingProgram.member.role | string | - |
-| MarketingProgram.member.member | object | - |
-| MarketingProgram.member.member.type | string | - |
-| MarketingProgram.member.member.name | string | - |
-| MarketingProgram.member.member.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
-| MarketingProgram.member.memberOf | object | - |
-| MarketingProgram.member.memberOf.type | string | - |
-| MarketingProgram.member.memberOf.name | string | - |
-| MarketingProgram.member.memberOf.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
-| MarketingProgram.creator | string | creator / author of the item |
-| MarketingProgram.dateCreated | string | The date on which the item was created. |
-| MarketingProgram.dateModified | string | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. |
-| MarketingProgram.about | object | a physical location |
-| MarketingProgram.about.type | string | The item type (Linked-Data @type) |
-| MarketingProgram.about.address | object | A physical address. |
-| MarketingProgram.about.geo | object | a geo shape (circle or box) |
+| type | string | - |
+| name | string | the name of the item |
+| identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| member | array<object> | - |
+| member.type | string | - |
+| member.role | string | - |
+| member.member | object | - |
+| member.member.type | string | - |
+| member.member.name | string | - |
+| member.member.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| member.memberOf | object | - |
+| member.memberOf.type | string | - |
+| member.memberOf.name | string | - |
+| member.memberOf.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| creator | string | creator / author of the item |
+| dateCreated | string | The date on which the item was created. |
+| dateModified | string | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. |
+| about | object | a physical location |
+| about.type | string | The item type (Linked-Data @type) |
+| about.address | object | A physical address. |
+| about.geo | object | a geo shape (circle or box) |
 
 > Examples of MarketingProgram
 

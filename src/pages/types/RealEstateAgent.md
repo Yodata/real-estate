@@ -4,77 +4,77 @@ title: RealEstateAgent
 | Name | Type | Description |
 |---|---|---|
 | (root) | object | A real estate agent who represents buyers and sellers |
-| RealEstateAgent.type | string | - |
-| RealEstateAgent.additionalName | string | any other name(s) associated with the entity, i.e. nickname, middle name, maiden name, etc. For multiple names, use a comma without space as a separator. |
-| RealEstateAgent.address | object | A physical address. |
-| RealEstateAgent.certification | object | A certification issued by an organization to an individual or business. |
-| RealEstateAgent.certification.type | string | Certification |
-| RealEstateAgent.certification.name | string | the name of the Certification |
-| RealEstateAgent.certification.issuedBy | object | the issuing authority |
-| RealEstateAgent.certification.issuedBy.type | string | The item type (Linked-Data @type) |
-| RealEstateAgent.certification.issuedBy.id | string | Linked-Data URI (@id) |
-| RealEstateAgent.certification.issuedBy.name | string | name of the issuing organization |
-| RealEstateAgent.certification.issuedTo | object | the subject |
-| RealEstateAgent.certification.issuedTo.type | string | The item type (Linked-Data @type) |
-| RealEstateAgent.certification.issuedTo.id | string | Linked-Data URI (@id) |
-| RealEstateAgent.certification.issuedTo.name | string | the name of the item |
-| RealEstateAgent.contactPoint | object | A point of contact for the entity. By convention in the real estate domain, ContactPoints are preferred over telephone, email, and faxNumber so the ContactPoint.name property can be used to label values for example, Work Telephone, Home, as named contactPoint values. |
-| RealEstateAgent.contactPoint.type | string | - |
-| RealEstateAgent.contactPoint.name | string | a label for the contactPoint, i.e. 'Work', or 'Home' |
-| RealEstateAgent.contactPoint.telephone | string | - |
-| RealEstateAgent.contactPoint.faxNumber | string | - |
-| RealEstateAgent.contactPoint.email | string | an email address for the item. |
-| RealEstateAgent.contactPoint.url | string | primary URL for the item. |
-| RealEstateAgent.email | string | - |
-| RealEstateAgent.familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) |
-| RealEstateAgent.givenName | string | First Name of a person |
-| RealEstateAgent.id | string | Linked-Data URI (@id) |
-| RealEstateAgent.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
-| RealEstateAgent.image | tuple<object allOf, ...optional<any>> | an ImageObject or URI reference to an image on the web. |
-| RealEstateAgent.image.0 (index) | object allOf | - |
-| RealEstateAgent.image.0.0 (allOf item) | allOf | an image, video or document availble for download |
-| RealEstateAgent.image.0.0.0 (allOf item) | object | - |
-| RealEstateAgent.image.0.0.0.type | string | The item type (Linked-Data @type) |
-| RealEstateAgent.image.0.0.0.@id | string | the liked data uri for the Thing |
-| RealEstateAgent.image.0.0.0 (property names) | - | - |
-| RealEstateAgent.image.0.0.1 (allOf item) | - | - |
-| RealEstateAgent.image.0.0.1.type | string | - |
-| RealEstateAgent.image.0.0.1.id | string | the URL to access the item. |
-| RealEstateAgent.image.0.0.1.name | string | the file name of the object. |
-| RealEstateAgent.image.0.0.1.encodingFormat | string | MIME type |
-| RealEstateAgent.image.0.0.1.about | string | URI to the subject of the image or logo |
-| RealEstateAgent.image.0.0.1.url | string | URL of the image content |
-| RealEstateAgent.image.0.1 (allOf item) | - | - |
-| RealEstateAgent.image.0.1.type | string | - |
-| RealEstateAgent.image.0.1.id | any | - |
-| RealEstateAgent.image.0.1.name | any | - |
-| RealEstateAgent.image.0.1.encodingFormat | any | - |
-| RealEstateAgent.jobTitle | array<string> | - |
-| RealEstateAgent.jobTitle (single item) | string | The job title of the person (for example, Financial Manager). |
-| RealEstateAgent.memberOf | array<anyOf> | an Organization (or ProgramMembership) to which this Person or Organization belongs. |
-| RealEstateAgent.memberOf (single item) | anyOf | - |
-| RealEstateAgent.memberOf.0 (anyOf item) | object | describes a role played by a member and a group or organization. |
-| RealEstateAgent.memberOf.0.type | string | a role played by the member in the memberOf group |
-| RealEstateAgent.memberOf.0.roleName | string | the role name |
-| RealEstateAgent.memberOf.0.memberOf | object | the org or group where the role is performed |
-| RealEstateAgent.memberOf.0.member | string | member object or id |
-| RealEstateAgent.memberOf.0.startDate | string | date the member began performing this role |
-| RealEstateAgent.memberOf.0.endDate | string | date the member stopped performing the role |
-| RealEstateAgent.memberOf.1 (anyOf item) | string | - |
-| RealEstateAgent.name | string | the name of the item |
-| RealEstateAgent.parentOrganization | array<string> | organizations of which this org is a part. |
-| RealEstateAgent.parentOrganization (single item) | string | - |
-| RealEstateAgent.permit | object | A permit issued by an organization to an individual or business. |
-| RealEstateAgent.permit.type | string | Permit type. |
-| RealEstateAgent.permit.name | string | Common or display value of the Permit. |
-| RealEstateAgent.permit.issuedBy | object | The issuing authority |
-| RealEstateAgent.permit.issuedThrough | object | the service through which the permit was granted |
-| RealEstateAgent.permit.validIn | object | - |
-| RealEstateAgent.permit.validFrom | string | start date |
-| RealEstateAgent.permit.validUntil | string | end date |
-| RealEstateAgent.subOrganization | array<string> | child organizations of the organization |
-| RealEstateAgent.subOrganization (single item) | string | - |
-| RealEstateAgent.url | string | URL of the item. |
+| type | string | - |
+| additionalName | string | any other name(s) associated with the entity, i.e. nickname, middle name, maiden name, etc. For multiple names, use a comma without space as a separator. |
+| address | object | A physical address. |
+| certification | object | A certification issued by an organization to an individual or business. |
+| certification.type | string | Certification |
+| certification.name | string | the name of the Certification |
+| certification.issuedBy | object | the issuing authority |
+| certification.issuedBy.type | string | The item type (Linked-Data @type) |
+| certification.issuedBy.id | string | Linked-Data URI (@id) |
+| certification.issuedBy.name | string | name of the issuing organization |
+| certification.issuedTo | object | the subject |
+| certification.issuedTo.type | string | The item type (Linked-Data @type) |
+| certification.issuedTo.id | string | Linked-Data URI (@id) |
+| certification.issuedTo.name | string | the name of the item |
+| contactPoint | object | A point of contact for the entity. By convention in the real estate domain, ContactPoints are preferred over telephone, email, and faxNumber so the ContactPoint.name property can be used to label values for example, Work Telephone, Home, as named contactPoint values. |
+| contactPoint.type | string | - |
+| contactPoint.name | string | a label for the contactPoint, i.e. 'Work', or 'Home' |
+| contactPoint.telephone | string | - |
+| contactPoint.faxNumber | string | - |
+| contactPoint.email | string | an email address for the item. |
+| contactPoint.url | string | primary URL for the item. |
+| email | string | - |
+| familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) |
+| givenName | string | First Name of a person |
+| id | string | Linked-Data URI (@id) |
+| identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| image | tuple<object allOf, ...optional<any>> | an ImageObject or URI reference to an image on the web. |
+| image.0 (index) | object allOf | - |
+| image.0.0 (allOf item) | allOf | an image, video or document availble for download |
+| image.0.0.0 (allOf item) | object | - |
+| image.0.0.0.type | string | The item type (Linked-Data @type) |
+| image.0.0.0.@id | string | the liked data uri for the Thing |
+| image.0.0.0 (property names) | - | - |
+| image.0.0.1 (allOf item) | - | - |
+| image.0.0.1.type | string | - |
+| image.0.0.1.id | string | the URL to access the item. |
+| image.0.0.1.name | string | the file name of the object. |
+| image.0.0.1.encodingFormat | string | MIME type |
+| image.0.0.1.about | string | URI to the subject of the image or logo |
+| image.0.0.1.url | string | URL of the image content |
+| image.0.1 (allOf item) | - | - |
+| image.0.1.type | string | - |
+| image.0.1.id | any | - |
+| image.0.1.name | any | - |
+| image.0.1.encodingFormat | any | - |
+| jobTitle | array<string> | - |
+| jobTitle (single item) | string | The job title of the person (for example, Financial Manager). |
+| memberOf | array<anyOf> | an Organization (or ProgramMembership) to which this Person or Organization belongs. |
+| memberOf (single item) | anyOf | - |
+| memberOf.0 (anyOf item) | object | describes a role played by a member and a group or organization. |
+| memberOf.0.type | string | a role played by the member in the memberOf group |
+| memberOf.0.roleName | string | the role name |
+| memberOf.0.memberOf | object | the org or group where the role is performed |
+| memberOf.0.member | string | member object or id |
+| memberOf.0.startDate | string | date the member began performing this role |
+| memberOf.0.endDate | string | date the member stopped performing the role |
+| memberOf.1 (anyOf item) | string | - |
+| name | string | the name of the item |
+| parentOrganization | array<string> | organizations of which this org is a part. |
+| parentOrganization (single item) | string | - |
+| permit | object | A permit issued by an organization to an individual or business. |
+| permit.type | string | Permit type. |
+| permit.name | string | Common or display value of the Permit. |
+| permit.issuedBy | object | The issuing authority |
+| permit.issuedThrough | object | the service through which the permit was granted |
+| permit.validIn | object | - |
+| permit.validFrom | string | start date |
+| permit.validUntil | string | end date |
+| subOrganization | array<string> | child organizations of the organization |
+| subOrganization (single item) | string | - |
+| url | string | URL of the item. |
 
 > Examples of RealEstateAgent
 

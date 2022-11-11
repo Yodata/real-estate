@@ -4,15 +4,15 @@ title: CloudEvent
 | Name | Type | Description |
 |---|---|---|
 | (root) | object | - |
-| CloudEvent.topic | string | the event topic which determines the event.data schema |
-| CloudEvent.time | string | date & time the event was produced |
-| CloudEvent.agent | string | the user, team, or organization who sent the event |
-| CloudEvent.instrument | string | the service which created the event |
-| CloudEvent.source | string | an agent, team or organization who received a copy of the event |
-| CloudEvent.originalRecipient | string | the original recipient of the event with this id |
-| CloudEvent.id | string | the shared identifier of the event, akd the event id |
-| CloudEvent.@id | string | the url of your instance of the event in your inbox |
-| CloudEvent.data | object | event payload, typically an Action |
+| topic | string | the event topic which determines the event.data schema |
+| time | string | date & time the event was produced |
+| agent | string | the user, team, or organization who sent the event |
+| instrument | string | the service which created the event |
+| source | string | an agent, team or organization who received a copy of the event |
+| originalRecipient | string | the original recipient of the event with this id |
+| id | string | the shared identifier of the event, akd the event id |
+| @id | string | the url of your instance of the event in your inbox |
+| data | object | event payload, typically an Action |
 
 > Examples of CloudEvent
 

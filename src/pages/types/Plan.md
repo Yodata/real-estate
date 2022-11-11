@@ -4,29 +4,29 @@ title: Plan
 | Name | Type | Description |
 |---|---|---|
 | (root) | object | a collection of related tasks |
-| Plan.type | string | - |
-| Plan.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
-| Plan.name | string | name of the plan |
-| Plan.description | string | description of the item |
-| Plan.member | array<object> | tasks which make up the plan |
-| Plan.member.type | string | The item type (Linked-Data @type) |
-| Plan.member.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
-| Plan.member.actionStatus | string | disposition of the Action at the time of this action message. |
-| Plan.member.memberOf | object | a plan the task is associated with |
-| Plan.member.agent | object | the party who completed, or will complete the task |
-| Plan.member.participant | array<object> | Other co-agents with a direct or indirect interest in the action. |
-| Plan.member.participant (single item) | object | - |
-| Plan.member.name | string | name or title |
-| Plan.member.description | string | task detailed description |
-| Plan.member.keywords | array<string> | - |
-| Plan.member.keywords (single item) | string | - |
-| Plan.member.dateDue | string | the due date-time (ISO 8601 formated) |
-| Plan.member.dateCompleted | string | date the task was completed |
-| Plan.member.location | object | the physical location where an event takes place |
-| Plan.creator | any | the item creator |
-| Plan.dateCreated | string | The date on which the item was created. |
-| Plan.dateModified | string | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. |
-| Plan.dateCompleted | string | The date on which the item was created. |
+| type | string | - |
+| identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| name | string | name of the plan |
+| description | string | description of the item |
+| member | array<object> | tasks which make up the plan |
+| member.type | string | The item type (Linked-Data @type) |
+| member.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| member.actionStatus | string | disposition of the Action at the time of this action message. |
+| member.memberOf | object | a plan the task is associated with |
+| member.agent | object | the party who completed, or will complete the task |
+| member.participant | array<object> | Other co-agents with a direct or indirect interest in the action. |
+| member.participant (single item) | object | - |
+| member.name | string | name or title |
+| member.description | string | task detailed description |
+| member.keywords | array<string> | - |
+| member.keywords (single item) | string | - |
+| member.dateDue | string | the due date-time (ISO 8601 formated) |
+| member.dateCompleted | string | date the task was completed |
+| member.location | object | the physical location where an event takes place |
+| creator | any | the item creator |
+| dateCreated | string | The date on which the item was created. |
+| dateModified | string | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. |
+| dateCompleted | string | The date on which the item was created. |
 
 > Examples of Plan
 

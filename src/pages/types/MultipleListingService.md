@@ -4,81 +4,81 @@ title: MultipleListingService
 | Name | Type | Description |
 |---|---|---|
 | (root) | allOf | - |
-| MultipleListingService.0 (allOf item) | allOf | - |
-| MultipleListingService.0.0 (allOf item) | object | - |
-| MultipleListingService.0.0.type | string | The item type (Linked-Data @type) |
-| MultipleListingService.0.0.@id | string | the liked data uri for the Thing |
-| MultipleListingService.0.0 (property names) | - | - |
-| MultipleListingService.0.1 (allOf item) | any | - |
-| MultipleListingService.0.2 (allOf item) | any | - |
-| MultipleListingService.0.3 (allOf item) | - | - |
-| MultipleListingService.0.3.address | object | A physical address. |
-| MultipleListingService.0.3.availableLanguage | array<object> | Please use one of the language codes from the IETF BCP 47 standard. |
-| MultipleListingService.0.3.availableLanguage.type | string | - |
-| MultipleListingService.0.3.availableLanguage.name | string | the display name of the language |
-| MultipleListingService.0.3.availableLanguage.additionalName | string | BCP 47 language code |
-| MultipleListingService.0.3.branchCode | string | A short textual code that uniquely identifies a place of business. |
-| MultipleListingService.0.3.certification | tuple<object, ...optional<any>> | certifications granted to a person or organization |
-| MultipleListingService.0.3.certification.0 (index) | object | A certification issued by an organization to an individual or business. |
-| MultipleListingService.0.3.certification.0.type | string | Certification |
-| MultipleListingService.0.3.certification.0.name | string | the name of the Certification |
-| MultipleListingService.0.3.certification.0.issuedBy | object | the issuing authority |
-| MultipleListingService.0.3.certification.0.issuedBy.type | string | The item type (Linked-Data @type) |
-| MultipleListingService.0.3.certification.0.issuedBy.id | string | Linked-Data URI (@id) |
-| MultipleListingService.0.3.certification.0.issuedBy.name | string | name of the issuing organization |
-| MultipleListingService.0.3.certification.0.issuedTo | object | the subject |
-| MultipleListingService.0.3.certification.0.issuedTo.type | string | The item type (Linked-Data @type) |
-| MultipleListingService.0.3.certification.0.issuedTo.id | string | Linked-Data URI (@id) |
-| MultipleListingService.0.3.certification.0.issuedTo.name | string | the name of the item |
-| MultipleListingService.0.3.contactPoint | array<object> | a named point of contact - telephone, email, faxNumber, and/or url for the entity |
-| MultipleListingService.0.3.contactPoint.type | string | - |
-| MultipleListingService.0.3.contactPoint.name | string | a label for the contactPoint, i.e. 'Work', or 'Home' |
-| MultipleListingService.0.3.contactPoint.telephone | string | - |
-| MultipleListingService.0.3.contactPoint.faxNumber | string | - |
-| MultipleListingService.0.3.contactPoint.email | string | an email address for the item. |
-| MultipleListingService.0.3.contactPoint.url | string | primary URL for the item. |
-| MultipleListingService.0.3.email | string | - |
-| MultipleListingService.0.3.faxNumber | string | Do people still use fax machines? |
-| MultipleListingService.0.3.image | tuple<object allOf, ...optional<any>> | an ImageObject or URI reference to an image on the web. |
-| MultipleListingService.0.3.image.0 (index) | object allOf | - |
-| MultipleListingService.0.3.image.0.0 (allOf item) | allOf | an image, video or document availble for download |
-| MultipleListingService.0.3.image.0.0.0 (allOf item) | object | - |
-| MultipleListingService.0.3.image.0.0.0.type | string | The item type (Linked-Data @type) |
-| MultipleListingService.0.3.image.0.0.0.@id | string | the liked data uri for the Thing |
-| MultipleListingService.0.3.image.0.0.0 (property names) | - | - |
-| MultipleListingService.0.3.image.0.0.1 (allOf item) | - | - |
-| MultipleListingService.0.3.image.0.0.1.type | string | - |
-| MultipleListingService.0.3.image.0.0.1.id | string | the URL to access the item. |
-| MultipleListingService.0.3.image.0.0.1.name | string | the file name of the object. |
-| MultipleListingService.0.3.image.0.0.1.encodingFormat | string | MIME type |
-| MultipleListingService.0.3.image.0.0.1.about | string | URI to the subject of the image or logo |
-| MultipleListingService.0.3.image.0.0.1.url | string | URL of the image content |
-| MultipleListingService.0.3.image.0.1 (allOf item) | - | - |
-| MultipleListingService.0.3.image.0.1.type | string | - |
-| MultipleListingService.0.3.image.0.1.id | any | - |
-| MultipleListingService.0.3.image.0.1.name | any | - |
-| MultipleListingService.0.3.image.0.1.encodingFormat | any | - |
-| MultipleListingService.0.3.logo | array<object allOf> | a logo associated with the organization. |
-| MultipleListingService.0.3.logo (single item) | object allOf | - |
-| MultipleListingService.0.3.logo.0 (allOf item) | object | an electronic file. |
-| MultipleListingService.0.3.logo.0.type | string | - |
-| MultipleListingService.0.3.logo.0.id | string | - |
-| MultipleListingService.0.3.logo.0.name | string | document name or title |
-| MultipleListingService.0.3.logo.0.encodingFormat | string | [ISO Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml) |
-| MultipleListingService.0.3.logo.0.about | object | subject of the Document |
-| MultipleListingService.0.3.logo.0.url | string | public URL of the object |
-| MultipleListingService.0.3.logo.1 (allOf item) | object | an associated logo |
-| MultipleListingService.0.3.name | string | Name or DBA. |
-| MultipleListingService.0.3.parentOrganization | array<string> | - |
-| MultipleListingService.0.3.parentOrganization (single item) | string | - |
-| MultipleListingService.0.3.subOrganization | array<string> | a child organization |
-| MultipleListingService.0.3.subOrganization (single item) | string | - |
-| MultipleListingService.0.3.telephone | string | Primary phone number. |
-| MultipleListingService.0.3.type | string | - |
-| MultipleListingService.0.3.url | string | primary website/url for the entity. |
-| MultipleListingService.1 (allOf item) | object | A multiple listing service (MLS, also multiple listing system or multiple listings service) is a suite of services that real estate brokers use to establish contractual offers of compensation (among brokers) and accumulate and disseminate information to enable appraisals. A multiple listing service's database and software is used by real estate brokers in real estate (or aircraft broker[1] in other industries for example), representing sellers under a listing contract to widely share information about properties with other brokers who may represent potential buyers or wish to work with a seller's broker in finding a buyer for the property or asset. The listing data stored in a multiple listing service's database is the proprietary information of the broker who has obtained a listing agreement with a property's seller. |
-| MultipleListingService.1.type | string | - |
-| MultipleListingService.1.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| 0 (allOf item) | allOf | - |
+| 0 (allOf item) | object | - |
+| type | string | The item type (Linked-Data @type) |
+| @id | string | the liked data uri for the Thing |
+| 0 (property names) | - | - |
+| 1 (allOf item) | any | - |
+| 2 (allOf item) | any | - |
+| 3 (allOf item) | - | - |
+| 3.address | object | A physical address. |
+| 3.availableLanguage | array<object> | Please use one of the language codes from the IETF BCP 47 standard. |
+| 3.availableLanguage.type | string | - |
+| 3.availableLanguage.name | string | the display name of the language |
+| 3.availableLanguage.additionalName | string | BCP 47 language code |
+| 3.branchCode | string | A short textual code that uniquely identifies a place of business. |
+| 3.certification | tuple<object, ...optional<any>> | certifications granted to a person or organization |
+| 3.certification.0 (index) | object | A certification issued by an organization to an individual or business. |
+| 3.certification.0.type | string | Certification |
+| 3.certification.0.name | string | the name of the Certification |
+| 3.certification.0.issuedBy | object | the issuing authority |
+| 3.certification.0.issuedBy.type | string | The item type (Linked-Data @type) |
+| 3.certification.0.issuedBy.id | string | Linked-Data URI (@id) |
+| 3.certification.0.issuedBy.name | string | name of the issuing organization |
+| 3.certification.0.issuedTo | object | the subject |
+| 3.certification.0.issuedTo.type | string | The item type (Linked-Data @type) |
+| 3.certification.0.issuedTo.id | string | Linked-Data URI (@id) |
+| 3.certification.0.issuedTo.name | string | the name of the item |
+| 3.contactPoint | array<object> | a named point of contact - telephone, email, faxNumber, and/or url for the entity |
+| 3.contactPoint.type | string | - |
+| 3.contactPoint.name | string | a label for the contactPoint, i.e. 'Work', or 'Home' |
+| 3.contactPoint.telephone | string | - |
+| 3.contactPoint.faxNumber | string | - |
+| 3.contactPoint.email | string | an email address for the item. |
+| 3.contactPoint.url | string | primary URL for the item. |
+| 3.email | string | - |
+| 3.faxNumber | string | Do people still use fax machines? |
+| 3.image | tuple<object allOf, ...optional<any>> | an ImageObject or URI reference to an image on the web. |
+| 3.image.0 (index) | object allOf | - |
+| 3.image.0.0 (allOf item) | allOf | an image, video or document availble for download |
+| 3.image.0.0.0 (allOf item) | object | - |
+| 3.image.0.0.0.type | string | The item type (Linked-Data @type) |
+| 3.image.0.0.0.@id | string | the liked data uri for the Thing |
+| 3.image.0.0.0 (property names) | - | - |
+| 3.image.0.0.1 (allOf item) | - | - |
+| 3.image.0.0.1.type | string | - |
+| 3.image.0.0.1.id | string | the URL to access the item. |
+| 3.image.0.0.1.name | string | the file name of the object. |
+| 3.image.0.0.1.encodingFormat | string | MIME type |
+| 3.image.0.0.1.about | string | URI to the subject of the image or logo |
+| 3.image.0.0.1.url | string | URL of the image content |
+| 3.image.0.1 (allOf item) | - | - |
+| 3.image.0.1.type | string | - |
+| 3.image.0.1.id | any | - |
+| 3.image.0.1.name | any | - |
+| 3.image.0.1.encodingFormat | any | - |
+| 3.logo | array<object allOf> | a logo associated with the organization. |
+| 3.logo (single item) | object allOf | - |
+| 3.logo.0 (allOf item) | object | an electronic file. |
+| 3.logo.0.type | string | - |
+| 3.logo.0.id | string | - |
+| 3.logo.0.name | string | document name or title |
+| 3.logo.0.encodingFormat | string | [ISO Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml) |
+| 3.logo.0.about | object | subject of the Document |
+| 3.logo.0.url | string | public URL of the object |
+| 3.logo.1 (allOf item) | object | an associated logo |
+| 3.name | string | Name or DBA. |
+| 3.parentOrganization | array<string> | - |
+| 3.parentOrganization (single item) | string | - |
+| 3.subOrganization | array<string> | a child organization |
+| 3.subOrganization (single item) | string | - |
+| 3.telephone | string | Primary phone number. |
+| 3.type | string | - |
+| 3.url | string | primary website/url for the entity. |
+| 1 (allOf item) | object | A multiple listing service (MLS, also multiple listing system or multiple listings service) is a suite of services that real estate brokers use to establish contractual offers of compensation (among brokers) and accumulate and disseminate information to enable appraisals. A multiple listing service's database and software is used by real estate brokers in real estate (or aircraft broker[1] in other industries for example), representing sellers under a listing contract to widely share information about properties with other brokers who may represent potential buyers or wish to work with a seller's broker in finding a buyer for the property or asset. The listing data stored in a multiple listing service's database is the proprietary information of the broker who has obtained a listing agreement with a property's seller. |
+| 1.type | string | - |
+| 1.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
 
 > Examples of MultipleListingService
 

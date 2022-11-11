@@ -4,13 +4,13 @@ title: LogAction
 | Name | Type | Description |
 |---|---|---|
 | (root) | object | a LogAction should be produced at the end of service execution |
-| LogAction.type | string | the action type (LogAction) |
-| LogAction.actionStatus | string | CompletedActionStatus \| FailedActionStatus |
-| LogAction.object | object | the data input |
-| LogAction.result | object | the output of a sucessful execution |
-| LogAction.error | object | details the error of an unsucessful execution |
-| LogAction.error.message | string | the error message |
-| LogAction.error.stack | string | the error stack |
+| type | string | the action type (LogAction) |
+| actionStatus | string | CompletedActionStatus \| FailedActionStatus |
+| object | object | the data input |
+| result | object | the output of a sucessful execution |
+| error | object | details the error of an unsucessful execution |
+| error.message | string | the error message |
+| error.stack | string | the error stack |
 
 > Examples of LogAction
 

@@ -4,12 +4,12 @@ title: OrganizationRole
 | Name | Type | Description |
 |---|---|---|
 | (root) | object | describes a role played by a member and a group or organization. |
-| OrganizationRole.type | string | a role played by the member in the memberOf group |
-| OrganizationRole.roleName | string | the role name |
-| OrganizationRole.memberOf | object | the org or group where the role is performed |
-| OrganizationRole.member | string | member object or id |
-| OrganizationRole.startDate | string | date the member began performing this role |
-| OrganizationRole.endDate | string | date the member stopped performing the role |
+| type | string | a role played by the member in the memberOf group |
+| roleName | string | the role name |
+| memberOf | object | the org or group where the role is performed |
+| member | string | member object or id |
+| startDate | string | date the member began performing this role |
+| endDate | string | date the member stopped performing the role |
 
 > Examples of OrganizationRole
 

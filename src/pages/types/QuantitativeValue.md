@@ -4,12 +4,12 @@ title: QuantitativeValue
 | Name | Type | Description |
 |---|---|---|
 | (root) | object | A point value or interval. |
-| QuantitativeValue.type | string | QuantitativeValue |
-| QuantitativeValue.value | number | the value (if a static value) |
-| QuantitativeValue.minValue | number | the lower value of a range |
-| QuantitativeValue.maxValue | number | the upper value of a range |
-| QuantitativeValue.unitCode | string | unit code (RESO or UN/CEFACT) |
-| QuantitativeValue.unitText | string | unit code in common text |
+| type | string | QuantitativeValue |
+| value | number | the value (if a static value) |
+| minValue | number | the lower value of a range |
+| maxValue | number | the upper value of a range |
+| unitCode | string | unit code (RESO or UN/CEFACT) |
+| unitText | string | unit code in common text |
 
 > Examples of QuantitativeValue
 

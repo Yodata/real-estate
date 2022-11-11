@@ -10,6 +10,74 @@ import { Prose } from '@/components/Prose'
 import { Search } from '@/components/Search'
 import { ThemeSelector } from '@/components/ThemeSelector'
 
+const types = [
+, "Certification"
+, "City"
+, "CloudEvent"
+, "Collection"
+, "Comment"
+, "Contact"
+, "ContactPoint"
+, "ContactSummary"
+, "DigitalDocument"
+, "EmailMessage"
+, "Event"
+, "GeoCircle"
+, "GeoCoordinates"
+, "GeoShape"
+, "ImageObject"
+, "Language"
+, "Lead"
+, "ListingOffer"
+, "ListingReport"
+, "MarketingProgram"
+, "MediaObject"
+, "MLSMembership"
+, "MonetaryAmount"
+, "MultipleListingService"
+, "Organization"
+, "OrganizationRole"
+, "Permit"
+, "Person"
+, "Place"
+, "Plan"
+, "PostalAddress"
+, "PotentialActionStatus"
+, "PriceSpecification"
+, "Profile"
+, "ProgramMembership"
+, "PropertyListing"
+, "PropertySearch"
+, "PropertyType"
+, "PropertySubType"
+, "PropertyValue"
+, "PropertyValueReport"
+, "QuantitativeValue"
+, "Question"
+, "RealEstateAgent"
+, "RealEstateLicense"
+, "RealEstateOffice"
+, "RealEstateOrganization"
+, "RealEstateProperty"
+, "RealEstateTeam"
+, "RealEstateTeamMembership"
+, "RealEstateTransaction"
+, "RealEstateWebsite"
+, "Referral"
+, "Schedule"
+, "Service"
+, "ServiceArea"
+, "State"
+, "SubscribeAction"
+, "Task"
+, "Thing"
+, "TransactionEntry"
+, "TransactionParticipant"
+, "TransactionStatus"
+, "UnsubscribeAction"
+, "BHHSTerms"
+]
+
 const navigation = [
   {
     title: 'Introduction',
@@ -26,7 +94,7 @@ const navigation = [
     ]
   },
   {
-    title: 'Topics (/realestate/)',
+    title: 'Topics',
     links: [
       { title: 'award', href: '/docs/topic/award' },
       { title: 'contact', href: '/docs/topic/contact' },
@@ -38,15 +106,12 @@ const navigation = [
       { title: 'profile', href: '/docs/topic/profile' },
       { title: 'servicearea', href: '/docs/topic/servicearea' },
       { title: 'transaction', href: '/docs/topic/transaction' },
-      { title: 'using-service-area', href: '/docs/topic/using-service-area' },
       { title: 'website', href: '/docs/topic/website' }
     ]
   },
   {
     title: 'Types',
-    links: [
-      { title: 'Type Index', href: '/types' }
-    ]
+    links: types.map(type => ({ title: type, href: `/types/${type}` }))
   },
   {
     title: 'Developer Tools & Docs',
@@ -98,7 +163,7 @@ function Header ({ navigation }) {
       className={clsx(
         'sticky top-0 z-50 flex flex-wrap items-center justify-between bg-white px-4 py-5 shadow-md shadow-slate-900/5 transition duration-500 dark:shadow-none sm:px-6 lg:px-8',
         isScrolled
-          ? 'dark:bg-slate-900/95 dark:backdrop-blur dark:[@supports(backdrop-filter:blur(0))]:bg-slate-900/75'
+          ? 'dark:bg-slate-900]:bg-slate-900/75'
           : 'dark:bg-transparent'
       )}
     >

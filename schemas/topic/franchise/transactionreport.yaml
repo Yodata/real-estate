@@ -1,3 +1,5 @@
+# @format
+
 # $id: /schema/topic/franchise/franchise.transactionreport.yaml
 messageId: franchise#transactionreport
 name: realestate/franchise#transactionreport
@@ -9,9 +11,8 @@ headers:
 payload:
   type: object
   properties:
-    properties:
-      topic: { const: realestate/franchise#transactionreport }
-      data:
+    topic: { const: realestate/franchise#transactionreport }
+    data:
       type: object
       properties:
         type: { const: UpdateAction }
@@ -26,3 +27,5 @@ payload:
               examples:
                 - Guru
                 - Lone Wolf
+        object:
+          $ref: ../../RealEstateTransaction.yaml

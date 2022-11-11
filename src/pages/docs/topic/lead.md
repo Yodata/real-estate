@@ -5,14 +5,20 @@ title: lead
 
 lead management events
 
-Accepts **one of** the following messages:
+Subscribers receive one of the following messages per event.
 
-[lead#accept](message/lead.accept)
-[lead#add](message/lead.add)
-[lead#asssign](message/lead.asssign)
-[lead#update](message/lead.update)
-[lead#reject](message/lead.reject)
-[lead#retract](message/lead.retract)
+* [lead#accept](message/lead.accept)
+
+* [lead#add](message/lead.add)
+
+* [lead#asssign](message/lead.asssign)
+
+* [lead#update](message/lead.update)
+
+* [lead#reject](message/lead.reject)
+
+* [lead#retract](message/lead.retract)
+
 
 
 

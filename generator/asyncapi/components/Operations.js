@@ -167,13 +167,8 @@ function OperationMessages ({ operation }) {
 
   return (
     <>
-      {messages.length > 1 && (
-        <Text newLines={2}>
-          Accepts **one of** the following messages:
-        </Text>
-      )}
       {messages.map(msg => (
-        <Message title={`Message \`${msg.uid()}\``} message={msg} key={msg.uid()} />
+        <Message title={msg.uid()} message={msg} key={msg.uid()} />
       ))}
     </>
   )

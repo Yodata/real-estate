@@ -1,12 +1,18 @@
 ---
 title: award#teammemberremove
 ---
-## Message award#teammemberremove `award#teammemberremove`
+## award#teammemberremove
 
 *an award team member was removed*
 
-* Message ID: `award#teammemberremove`
-* Content type: [application/json](https://www.iana.org/assignments/media-types/application/json)
+* MessageId: award#teammemberremove
+* Content type: application/json
+
+### Tools
+
+* [Mock Data Generator](/tools/mock-data-generator)
+* [Schema Validator](/tools/validate)
+
 
 ### Headers
 
@@ -20,21 +26,6 @@ title: award#teammemberremove
 | originalRecipient | string | the originalRecipient helps you determine the subscription that delivered the event to you. if the originalRecipient is the same as the agent, then the you are subscribed to the agent. if the originalRecipient is different from the agent, then you are subscribed to the event source |
 | id | string | the Event ID (aka "Publish ID") is the immutable canonical identifier for the event. it is a URI that is unique to the event and will not change. all subscribers will receive the same id for the same event. |
 | @id | string | - |
-
-> Examples of headers _(generated)_
-
-```json
-{
-  "time": "2019-08-24T14:15:22Z",
-  "agent": "https://teamsupermario.example.com/profile/card#me",
-  "instrument": "http://supercrm.example.com/profile/card#me",
-  "source": "https://bigbrandrealestate.example.com/profile/card#me",
-  "originalRecipient": "http://bigbrandrealestate.example.com/profile/card#me",
-  "id": "http://supercrm.example.com/publish/12345",
-  "@id": "http://reliance.example.com/inbox/23456"
-}
-```
-
 
 ### Payload
 

@@ -9,10 +9,12 @@ The message payload is a JSON-LD object with the following properties:
 - `object` - the listing, as a JSON-LD object
 
 
-Accepts **one of** the following messages:
+Subscribers receive one of the following messages per event.
 
-[listing#update](message/listing.update)
-[listing#delete](message/listing.delete)
+* [listing#update](message/listing.update)
+
+* [listing#delete](message/listing.delete)
+
 
 
 

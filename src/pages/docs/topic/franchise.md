@@ -5,10 +5,12 @@ title: franchise
 
 franchise events
 
-Accepts **one of** the following messages:
+Subscribers receive one of the following messages per event.
 
-[franchise#transactionreport](message/franchise.transactionreport)
-[franchise#listingreport](message/franchise.listingreport)
+* [franchise#transactionreport](message/franchise.transactionreport)
+
+* [franchise#listingreport](message/franchise.listingreport)
+
 
 
 

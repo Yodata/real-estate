@@ -3,11 +3,14 @@ title: servicearea
 ---
 ## Operations### SUB `servicearea` Operation
 
-Accepts **one of** the following messages:
+Subscribers receive one of the following messages per event.
 
-[servicearea#create](message/servicearea.create)
-[servicearea#update](message/servicearea.update)
-[servicearea#delete](message/servicearea.delete)
+* [servicearea#create](message/servicearea.create)
+
+* [servicearea#update](message/servicearea.update)
+
+* [servicearea#delete](message/servicearea.delete)
+
 
 
 

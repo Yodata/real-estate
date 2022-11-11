@@ -21,13 +21,7 @@ export function Message ({ message }) { // NOSONAR
   const externalDocs = message.externalDocs()
   const showInfoList = contentType || externalDocs
 
-  let header = 'Message'
-  if (message.title()) {
-    header += ` ${message.title()}`
-  }
-  if (message.uid()) {
-    header += ` \`${message.uid()}\``
-  }
+  let header = message.uid()
 
   return (
     <>
@@ -42,16 +36,9 @@ export function Message ({ message }) { // NOSONAR
       {showInfoList
         ? (
           <Text>
-            {messageId && <ListItem>Message ID: `{messageId}`</ListItem>}
+            {messageId && <ListItem>MessageId: {messageId}</ListItem>}
             {contentType && (
-              <ListItem>
-                Content type:{' '}
-                <Link
-                  href={`https://www.iana.org/assignments/media-types/${contentType}`}
-                >
-                  {contentType}
-                </Link>
-              </ListItem>
+              <ListItem>Content type: {contentType}</ListItem>
             )}
             {correlationId && (
               <>
@@ -88,11 +75,13 @@ export function Message ({ message }) { // NOSONAR
         </Text>
       )}
 
+      <Tools/>
+
       {headers && (
         <>
           <Header type={3}>Headers</Header>
           <Schema schema={headers} hideTitle />
-          <Examples type='headers' message={message} />
+          {/* <Examples type='headers' message={message} /> */}
         </>
       )}
 
@@ -103,6 +92,8 @@ export function Message ({ message }) { // NOSONAR
           <Examples type='payload' message={message} />
         </>
       )}
+
+
 
       <Bindings
         name='Message specific information'
@@ -123,7 +114,7 @@ function Examples ({ type = 'headers', message }) {
     if (ex) {
       return (
         <>
-          <BlockQuote>Examples of headers</BlockQuote>
+          <BlockQuote>Header Example(s)</BlockQuote>
           <Example examples={ex} />
         </>
       )
@@ -131,7 +122,7 @@ function Examples ({ type = 'headers', message }) {
 
     return (
       <>
-        <BlockQuote>Examples of headers _(generated)_</BlockQuote>
+        <BlockQuote>Header Example(s) (generated)</BlockQuote>
         <Text newLines={2}>
           <CodeBlock language='json'>{generateExample(message.headers().json())}</CodeBlock>
         </Text>
@@ -171,4 +162,17 @@ function Example ({ examples = [] }) {
       <CodeBlock language='json'>{JSON.stringify(ex.example, null, 2)}</CodeBlock>
     </Text>
   ))
+}
+
+
+function Tools(message) {
+  return (
+    <>
+      <Header type={3}>Tools</Header>
+      <Text newLines={2}>
+        <ListItem><Link href={`/tools/mock-data-generator`}>Mock Data Generator</Link></ListItem>
+        <ListItem><Link href={`/tools/validate`}>Schema Validator</Link></ListItem>
+      </Text>
+    </>
+  )
 }

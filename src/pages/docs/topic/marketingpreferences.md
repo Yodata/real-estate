@@ -5,10 +5,12 @@ title: marketingpreferences
 
 consumer subscription actions (subscribe/unsubscribe)
 
-Accepts **one of** the following messages:
+Subscribers receive one of the following messages per event.
 
-[marketingpreferences#subscribe](message/marketingpreferences.subscribe)
-[marketingpreferences#unsubscribe](message/marketingpreferences.unsubscribe)
+* [marketingpreferences#subscribe](message/marketingpreferences.subscribe)
+
+* [marketingpreferences#unsubscribe](message/marketingpreferences.unsubscribe)
+
 
 
 

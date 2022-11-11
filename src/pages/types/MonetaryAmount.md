@@ -6,16 +6,16 @@ title: MonetaryAmount
 | Name | Type | Description |
 |---|---|---|
 | (MonetaryAmount) | object | - |
-| type | string | MonetaryAmount |
+| type | string | allowed (`"MonetaryAmount"`) MonetaryAmount |
 | minValue | number | the lower limit of the range |
 | maxValue | number | the upper limit of the range |
 | value | number | the actual or expected value |
-| currency | string | use ISO4217 country codes <span class='constraints'><= 3 characters</span> |
-| type | string | MonetaryAmount |
+| currency | string | <= 3 characters use ISO4217 country codes |
+| type | string | allowed (`"MonetaryAmount"`) MonetaryAmount |
 | minValue | number | the lower limit of the range |
 | maxValue | number | the upper limit of the range |
 | value | number | the actual or expected value |
-| currency | string | use ISO4217 country codes <span class='constraints'><= 3 characters</span> |
+| currency | string | <= 3 characters use ISO4217 country codes |
 
 ## Example
 

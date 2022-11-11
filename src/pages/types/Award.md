@@ -6,24 +6,24 @@ title: Award
 | Name | Type | Description |
 |---|---|---|
 | (Award) | object | An honor bestowed on one or mote _recipients_ by the message _agent_ |
-| type | string | "AwardAction" |
+| type | string | allowed (`"Award"`) "AwardAction" |
 | name | string | name of the award |
-| dateAwarded | string | date the award was presented or announced. <span class='constraints'>format (`date-time`)</span> |
-| agent | string | the agent that presented the award <span class='constraints'>format (`uri`)</span> |
+| dateAwarded | string | format (`date-time`) date the award was presented or announced. |
+| agent | string | format (`uri`) the agent that presented the award |
 | recipient | array<object> | recipients of the award |
-| recipient.type | string | - |
-| recipient.id | string |  <span class='constraints'>format (`uri`)</span> |
+| recipient.type | string | allowed (`"RealEstateAgent"`, `"RealEstateOffice"`, `"RealEstateOrganization"`)  |
+| recipient.id | string | format (`uri`)  |
 | recipient.name | string | the name of the award recipient |
-| identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
-| type | string | "AwardAction" |
+| identifier | object | examples (`{"salesforceid":"0031U00002XW1QWQA1"}`, `{"vendoraid":"123456"}`, `{"originating_system_id":"123456"}`) identifier assigned to a contact by the vendor who originally created the contact |
+| type | string | allowed (`"Award"`) "AwardAction" |
 | name | string | name of the award |
-| dateAwarded | string | date the award was presented or announced. <span class='constraints'>format (`date-time`)</span> |
-| agent | string | the agent that presented the award <span class='constraints'>format (`uri`)</span> |
+| dateAwarded | string | format (`date-time`) date the award was presented or announced. |
+| agent | string | format (`uri`) the agent that presented the award |
 | recipient | array<object> | recipients of the award |
-| recipient.type | string | - |
-| recipient.id | string |  <span class='constraints'>format (`uri`)</span> |
+| recipient.type | string | allowed (`"RealEstateAgent"`, `"RealEstateOffice"`, `"RealEstateOrganization"`)  |
+| recipient.id | string | format (`uri`)  |
 | recipient.name | string | the name of the award recipient |
-| identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| identifier | object | examples (`{"salesforceid":"0031U00002XW1QWQA1"}`, `{"vendoraid":"123456"}`, `{"originating_system_id":"123456"}`) identifier assigned to a contact by the vendor who originally created the contact |
 
 ## Example
 

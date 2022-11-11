@@ -6,39 +6,39 @@ title: PropertyValueReport
 | Name | Type | Description |
 |---|---|---|
 | (PropertyValueReport) | object | an automated property value esmation |
-| type | string | PropertyValueReport |
+| type | string | allowed (`"PropertyValueReport"`) PropertyValueReport |
 | name | string | document name or title |
-| dateCreated | string | The date on which the item was created. <span class='constraints'>format (`date-time`)</span> |
+| dateCreated | string | format (`date-time`) The date on which the item was created. |
 | result | object | the estimated value of the property |
-| result.type | string | MonetaryAmount |
+| result.type | string | allowed (`"MonetaryAmount"`) MonetaryAmount |
 | result.minValue | number | the lower limit of the range |
 | result.maxValue | number | the upper limit of the range |
 | result.value | number | the actual or expected value |
-| result.currency | string | use ISO4217 country codes <span class='constraints'><= 3 characters</span> |
+| result.currency | string | <= 3 characters use ISO4217 country codes |
 | about | allOf | - |
 | about.0 (allOf item) | object | a property in the real estate transaction context |
-| about.0.type | string | "RealEstateProperty" |
-| about.0.propertyType | string | RESO property type (see range for allowed values) <span class='constraints'>4 characters</span> |
-| about.0.addressCountry | string | two-letter ISO 3166-1 alpha-2 country code |
-| about.0.addressLocality | string | City, Township. <span class='constraints'><= 50 characters</span> |
-| about.0.addressRegion | string | State or Province. <span class='constraints'><= 3 characters</span> |
+| about.0.type | string | allowed (`"RealEstateProperty"`) "RealEstateProperty" |
+| about.0.propertyType | string | allowed (`"RESI"`, `"RLSE"`, `"RINC"`, `"LAND"`, `"MOBI"`, `"FARM"`, `"COMS"`, `"COML"`, `"BUSO"`) 4 characters RESO property type (see range for allowed values) |
+| about.0.addressCountry | string | allowed (`"CA"`, `"DE"`, `"GR"`, `"IN"`, `"IT"`, `"MX"`, `"PE"`, `"PT"`, `"ES"`, `"AE"`, `"GB"`, `"US"`) two-letter ISO 3166-1 alpha-2 country code |
+| about.0.addressLocality | string | <= 50 characters City, Township. |
+| about.0.addressRegion | string | <= 3 characters State or Province. |
 | about.0.apn | string | Assessors Parcel Number |
 | about.0.image | tuple<object allOf, ...optional<any>> | an ImageObject or URI reference to an image on the web. |
 | about.0.image.0 (index) | object allOf | - |
 | about.0.image.0.0 (allOf item) | allOf | an image, video or document availble for download |
 | about.0.image.0.0.0 (allOf item) | object | - |
-| about.0.image.0.0.0.type | string | The item type (Linked-Data @type) <span class='constraints'>pattern (`^[A-Z][a-zA-Z0-9]+$`)</span> |
-| about.0.image.0.0.0.@id | string | the liked data uri for the Thing <span class='constraints'>format (`uri`)</span> |
-| about.0.image.0.0.0 (property names) | - |  <span class='constraints'>pattern (`^[a-z@$][a-zA-Z0-9-_]+$`)</span> |
+| about.0.image.0.0.0.type | string | pattern (`^[A-Z][a-zA-Z0-9]+$`) The item type (Linked-Data @type) |
+| about.0.image.0.0.0.@id | string | format (`uri`) the liked data uri for the Thing |
+| about.0.image.0.0.0 (property names) | - | pattern (`^[a-z@$][a-zA-Z0-9-_]+$`)  |
 | about.0.image.0.0.1 (allOf item) | - | - |
-| about.0.image.0.0.1.type | string | - |
-| about.0.image.0.0.1.id | string | the URL to access the item. <span class='constraints'>format (`uri`)</span> |
+| about.0.image.0.0.1.type | string | allowed (`"MediaObject"`, `"ImageObject"`, `"DigitalDocument"`)  |
+| about.0.image.0.0.1.id | string | format (`uri`) the URL to access the item. |
 | about.0.image.0.0.1.name | string | the file name of the object. |
 | about.0.image.0.0.1.encodingFormat | string | MIME type |
-| about.0.image.0.0.1.about | string | URI to the subject of the image or logo <span class='constraints'>format (`uri`)</span> |
-| about.0.image.0.0.1.url | string | URL of the image content <span class='constraints'>format (`uri`)</span> |
+| about.0.image.0.0.1.about | string | format (`uri`) URI to the subject of the image or logo |
+| about.0.image.0.0.1.url | string | format (`uri`) URL of the image content |
 | about.0.image.0.1 (allOf item) | - | - |
-| about.0.image.0.1.type | string | - |
+| about.0.image.0.1.type | string | allowed (`"ImageObject"`)  |
 | about.0.image.0.1.id | any | - |
 | about.0.image.0.1.name | any | - |
 | about.0.image.0.1.encodingFormat | any | - |
@@ -50,47 +50,47 @@ title: PropertyValueReport
 | about.0.numberOfBathrooms | string | the number of bathrooms |
 | about.0.numberOfBedrooms | string | the number of bedrooms |
 | about.0.numberOfRooms | string | the total number of rooms in the building |
-| about.0.postalCode | string | Zip/Post Code <span class='constraints'><= 12 characters</span> |
-| about.0.propertySubType | string | RESO property sub-type (see range for allowed values) |
+| about.0.postalCode | string | <= 12 characters Zip/Post Code |
+| about.0.propertySubType | string | allowed (`"ApartmentPropertyType"`, `"BoatSlipPropertyType"`, `"CabinPropertyType"`, `"CondominiumPropertyType"`, `"DeededParkingPropertyType"`, `"DuplexPropertyType"`, `"FarmPropertyType"`, `"ManufacturedHomePropertyType"`, `"ManufacturedOnLandPropertyType"`, `"MobileHomePropertyType"`, `"OwnYourOwnPropertyType"`, `"QuadruplexPropertyType"`, `"RanchPropertyType"`, `"SingleFamilyPropertyType"`, `"StockCooperativePropertyType"`, `"TimesharePropertyType"`, `"TownhousePropertyType"`, `"TriplexPropertyType"`, `"AgriculturePropertyType"`, `"BusinessPropertyType"`, `"HotelMotelPropertyType"`, `"IndustrialPropertyType"`, `"MixedUsePropertyType"`, `"MultiFamilyPropertyType"`, `"OfficePropertyType"`, `"RetailPropertyType"`, `"UnimprovedLandPropertyType"`, `"WarehousePropertyType"`) RESO property sub-type (see range for allowed values) |
 | about.0.stories | number | he number of floors in the property |
-| about.0.streetAddress | string | the street address <span class='constraints'><= 75 characters</span> |
+| about.0.streetAddress | string | <= 75 characters the street address |
 | about.0.yearBuilt | number | the year the structure was created |
 | about.1 (allOf item) | any | the subject property |
 | about.2 (allOf item) | - | - |
 | about.2.additionalProperty | any | - |
-| type | string | PropertyValueReport |
+| type | string | allowed (`"PropertyValueReport"`) PropertyValueReport |
 | name | string | document name or title |
-| dateCreated | string | The date on which the item was created. <span class='constraints'>format (`date-time`)</span> |
+| dateCreated | string | format (`date-time`) The date on which the item was created. |
 | result | object | the estimated value of the property |
-| result.type | string | MonetaryAmount |
+| result.type | string | allowed (`"MonetaryAmount"`) MonetaryAmount |
 | result.minValue | number | the lower limit of the range |
 | result.maxValue | number | the upper limit of the range |
 | result.value | number | the actual or expected value |
-| result.currency | string | use ISO4217 country codes <span class='constraints'><= 3 characters</span> |
+| result.currency | string | <= 3 characters use ISO4217 country codes |
 | about | allOf | - |
 | about.0 (allOf item) | object | a property in the real estate transaction context |
-| about.0.type | string | "RealEstateProperty" |
-| about.0.propertyType | string | RESO property type (see range for allowed values) <span class='constraints'>4 characters</span> |
-| about.0.addressCountry | string | two-letter ISO 3166-1 alpha-2 country code |
-| about.0.addressLocality | string | City, Township. <span class='constraints'><= 50 characters</span> |
-| about.0.addressRegion | string | State or Province. <span class='constraints'><= 3 characters</span> |
+| about.0.type | string | allowed (`"RealEstateProperty"`) "RealEstateProperty" |
+| about.0.propertyType | string | allowed (`"RESI"`, `"RLSE"`, `"RINC"`, `"LAND"`, `"MOBI"`, `"FARM"`, `"COMS"`, `"COML"`, `"BUSO"`) 4 characters RESO property type (see range for allowed values) |
+| about.0.addressCountry | string | allowed (`"CA"`, `"DE"`, `"GR"`, `"IN"`, `"IT"`, `"MX"`, `"PE"`, `"PT"`, `"ES"`, `"AE"`, `"GB"`, `"US"`) two-letter ISO 3166-1 alpha-2 country code |
+| about.0.addressLocality | string | <= 50 characters City, Township. |
+| about.0.addressRegion | string | <= 3 characters State or Province. |
 | about.0.apn | string | Assessors Parcel Number |
 | about.0.image | tuple<object allOf, ...optional<any>> | an ImageObject or URI reference to an image on the web. |
 | about.0.image.0 (index) | object allOf | - |
 | about.0.image.0.0 (allOf item) | allOf | an image, video or document availble for download |
 | about.0.image.0.0.0 (allOf item) | object | - |
-| about.0.image.0.0.0.type | string | The item type (Linked-Data @type) <span class='constraints'>pattern (`^[A-Z][a-zA-Z0-9]+$`)</span> |
-| about.0.image.0.0.0.@id | string | the liked data uri for the Thing <span class='constraints'>format (`uri`)</span> |
-| about.0.image.0.0.0 (property names) | - |  <span class='constraints'>pattern (`^[a-z@$][a-zA-Z0-9-_]+$`)</span> |
+| about.0.image.0.0.0.type | string | pattern (`^[A-Z][a-zA-Z0-9]+$`) The item type (Linked-Data @type) |
+| about.0.image.0.0.0.@id | string | format (`uri`) the liked data uri for the Thing |
+| about.0.image.0.0.0 (property names) | - | pattern (`^[a-z@$][a-zA-Z0-9-_]+$`)  |
 | about.0.image.0.0.1 (allOf item) | - | - |
-| about.0.image.0.0.1.type | string | - |
-| about.0.image.0.0.1.id | string | the URL to access the item. <span class='constraints'>format (`uri`)</span> |
+| about.0.image.0.0.1.type | string | allowed (`"MediaObject"`, `"ImageObject"`, `"DigitalDocument"`)  |
+| about.0.image.0.0.1.id | string | format (`uri`) the URL to access the item. |
 | about.0.image.0.0.1.name | string | the file name of the object. |
 | about.0.image.0.0.1.encodingFormat | string | MIME type |
-| about.0.image.0.0.1.about | string | URI to the subject of the image or logo <span class='constraints'>format (`uri`)</span> |
-| about.0.image.0.0.1.url | string | URL of the image content <span class='constraints'>format (`uri`)</span> |
+| about.0.image.0.0.1.about | string | format (`uri`) URI to the subject of the image or logo |
+| about.0.image.0.0.1.url | string | format (`uri`) URL of the image content |
 | about.0.image.0.1 (allOf item) | - | - |
-| about.0.image.0.1.type | string | - |
+| about.0.image.0.1.type | string | allowed (`"ImageObject"`)  |
 | about.0.image.0.1.id | any | - |
 | about.0.image.0.1.name | any | - |
 | about.0.image.0.1.encodingFormat | any | - |
@@ -102,10 +102,10 @@ title: PropertyValueReport
 | about.0.numberOfBathrooms | string | the number of bathrooms |
 | about.0.numberOfBedrooms | string | the number of bedrooms |
 | about.0.numberOfRooms | string | the total number of rooms in the building |
-| about.0.postalCode | string | Zip/Post Code <span class='constraints'><= 12 characters</span> |
-| about.0.propertySubType | string | RESO property sub-type (see range for allowed values) |
+| about.0.postalCode | string | <= 12 characters Zip/Post Code |
+| about.0.propertySubType | string | allowed (`"ApartmentPropertyType"`, `"BoatSlipPropertyType"`, `"CabinPropertyType"`, `"CondominiumPropertyType"`, `"DeededParkingPropertyType"`, `"DuplexPropertyType"`, `"FarmPropertyType"`, `"ManufacturedHomePropertyType"`, `"ManufacturedOnLandPropertyType"`, `"MobileHomePropertyType"`, `"OwnYourOwnPropertyType"`, `"QuadruplexPropertyType"`, `"RanchPropertyType"`, `"SingleFamilyPropertyType"`, `"StockCooperativePropertyType"`, `"TimesharePropertyType"`, `"TownhousePropertyType"`, `"TriplexPropertyType"`, `"AgriculturePropertyType"`, `"BusinessPropertyType"`, `"HotelMotelPropertyType"`, `"IndustrialPropertyType"`, `"MixedUsePropertyType"`, `"MultiFamilyPropertyType"`, `"OfficePropertyType"`, `"RetailPropertyType"`, `"UnimprovedLandPropertyType"`, `"WarehousePropertyType"`) RESO property sub-type (see range for allowed values) |
 | about.0.stories | number | he number of floors in the property |
-| about.0.streetAddress | string | the street address <span class='constraints'><= 75 characters</span> |
+| about.0.streetAddress | string | <= 75 characters the street address |
 | about.0.yearBuilt | number | the year the structure was created |
 | about.1 (allOf item) | any | the subject property |
 | about.2 (allOf item) | - | - |

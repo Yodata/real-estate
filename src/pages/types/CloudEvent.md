@@ -7,22 +7,22 @@ title: CloudEvent
 |---|---|---|
 | (CloudEvent) | object | - |
 | topic | string | the event topic which determines the event.data schema |
-| time | string | date & time the event was produced <span class='constraints'>format (`date-time`)</span> |
-| agent | string | the user, team, or organization who sent the event <span class='constraints'>format (`uri`)</span> |
-| instrument | string | the service which created the event <span class='constraints'>format (`uri`)</span> |
-| source | string | an agent, team or organization who received a copy of the event <span class='constraints'>format (`uri`)</span> |
-| originalRecipient | string | the original recipient of the event with this id <span class='constraints'>format (`uri`)</span> |
-| id | string | the shared identifier of the event, akd the event id <span class='constraints'>format (`uri`)</span> |
-| @id | string | the url of your instance of the event in your inbox <span class='constraints'>format (`uri`)</span> |
+| time | string | format (`date-time`) date & time the event was produced |
+| agent | string | format (`uri`) the user, team, or organization who sent the event |
+| instrument | string | format (`uri`) the service which created the event |
+| source | string | format (`uri`) an agent, team or organization who received a copy of the event |
+| originalRecipient | string | format (`uri`) the original recipient of the event with this id |
+| id | string | format (`uri`) the shared identifier of the event, akd the event id |
+| @id | string | format (`uri`) the url of your instance of the event in your inbox |
 | data | object | event payload, typically an Action |
 | topic | string | the event topic which determines the event.data schema |
-| time | string | date & time the event was produced <span class='constraints'>format (`date-time`)</span> |
-| agent | string | the user, team, or organization who sent the event <span class='constraints'>format (`uri`)</span> |
-| instrument | string | the service which created the event <span class='constraints'>format (`uri`)</span> |
-| source | string | an agent, team or organization who received a copy of the event <span class='constraints'>format (`uri`)</span> |
-| originalRecipient | string | the original recipient of the event with this id <span class='constraints'>format (`uri`)</span> |
-| id | string | the shared identifier of the event, akd the event id <span class='constraints'>format (`uri`)</span> |
-| @id | string | the url of your instance of the event in your inbox <span class='constraints'>format (`uri`)</span> |
+| time | string | format (`date-time`) date & time the event was produced |
+| agent | string | format (`uri`) the user, team, or organization who sent the event |
+| instrument | string | format (`uri`) the service which created the event |
+| source | string | format (`uri`) an agent, team or organization who received a copy of the event |
+| originalRecipient | string | format (`uri`) the original recipient of the event with this id |
+| id | string | format (`uri`) the shared identifier of the event, akd the event id |
+| @id | string | format (`uri`) the url of your instance of the event in your inbox |
 | data | object | event payload, typically an Action |
 
 ## Example

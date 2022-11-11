@@ -6,34 +6,34 @@ title: TransactionEntry
 | Name | Type | Description |
 |---|---|---|
 | (TransactionEntry) | object | describes a unit of sales credit in unit or commission value relative to a parent transaction |
-| type | string | TransactionEntry |
-| salesProductionUnit | number | the sales production units credited to the recipient <span class='constraints'>[ 0.0001 .. 1 ]</span> |
+| type | string | allowed (`"TransactionEntry"`) TransactionEntry |
+| salesProductionUnit | number | [ 0.0001 .. 1 ] the sales production units credited to the recipient |
 | salesProductionGCI | object | gross commission income credited to the recipient |
-| salesProductionGCI.type | string | MonetaryAmount |
+| salesProductionGCI.type | string | allowed (`"MonetaryAmount"`) MonetaryAmount |
 | salesProductionGCI.minValue | number | the lower limit of the range |
 | salesProductionGCI.maxValue | number | the upper limit of the range |
 | salesProductionGCI.value | number | the actual or expected value |
-| salesProductionGCI.currency | string | use ISO4217 country codes <span class='constraints'><= 3 characters</span> |
+| salesProductionGCI.currency | string | <= 3 characters use ISO4217 country codes |
 | recipient | object | the agent credited with the sales production and who receives the value |
 | recipient.type | string | typically a RealEstateAgent |
-| recipient.roleName | string | enum: ListingAgent,BuyerAgent |
-| recipient.id | string | Linked-Data URI (@id) <span class='constraints'>format (`uri`)</span> |
+| recipient.roleName | string | allowed (`"ListingAgent"`, `"BuyerAgent"`) enum: ListingAgent,BuyerAgent |
+| recipient.id | string | format (`uri`) Linked-Data URI (@id) |
 | recipient.identifier | object | unique identifier of the recipient from the data producer |
-| recipient.identifier.bmsAgentId | string |  <span class='constraints'><= 12 characters</span> |
-| type | string | TransactionEntry |
-| salesProductionUnit | number | the sales production units credited to the recipient <span class='constraints'>[ 0.0001 .. 1 ]</span> |
+| recipient.identifier.bmsAgentId | string | <= 12 characters  |
+| type | string | allowed (`"TransactionEntry"`) TransactionEntry |
+| salesProductionUnit | number | [ 0.0001 .. 1 ] the sales production units credited to the recipient |
 | salesProductionGCI | object | gross commission income credited to the recipient |
-| salesProductionGCI.type | string | MonetaryAmount |
+| salesProductionGCI.type | string | allowed (`"MonetaryAmount"`) MonetaryAmount |
 | salesProductionGCI.minValue | number | the lower limit of the range |
 | salesProductionGCI.maxValue | number | the upper limit of the range |
 | salesProductionGCI.value | number | the actual or expected value |
-| salesProductionGCI.currency | string | use ISO4217 country codes <span class='constraints'><= 3 characters</span> |
+| salesProductionGCI.currency | string | <= 3 characters use ISO4217 country codes |
 | recipient | object | the agent credited with the sales production and who receives the value |
 | recipient.type | string | typically a RealEstateAgent |
-| recipient.roleName | string | enum: ListingAgent,BuyerAgent |
-| recipient.id | string | Linked-Data URI (@id) <span class='constraints'>format (`uri`)</span> |
+| recipient.roleName | string | allowed (`"ListingAgent"`, `"BuyerAgent"`) enum: ListingAgent,BuyerAgent |
+| recipient.id | string | format (`uri`) Linked-Data URI (@id) |
 | recipient.identifier | object | unique identifier of the recipient from the data producer |
-| recipient.identifier.bmsAgentId | string |  <span class='constraints'><= 12 characters</span> |
+| recipient.identifier.bmsAgentId | string | <= 12 characters  |
 
 ## Example
 

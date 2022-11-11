@@ -6,12 +6,12 @@ title: RealEstateWebsite
 | Name | Type | Description |
 |---|---|---|
 | (RealEstateWebsite) | object | - |
-| type | string | RealEstateWebsite |
+| type | string | allowed (`"RealEstateWebsite"`) RealEstateWebsite |
 | about | object | subject of the website |
-| url | string | URL of the item. <span class='constraints'>format (`uri`)</span> |
-| type | string | RealEstateWebsite |
+| url | string | format (`uri`) URL of the item. |
+| type | string | allowed (`"RealEstateWebsite"`) RealEstateWebsite |
 | about | object | subject of the website |
-| url | string | URL of the item. <span class='constraints'>format (`uri`)</span> |
+| url | string | format (`uri`) URL of the item. |
 
 ## Example
 

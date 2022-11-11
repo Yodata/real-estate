@@ -6,14 +6,14 @@ title: Plan
 | Name | Type | Description |
 |---|---|---|
 | (Plan) | object | a collection of related tasks |
-| type | string | - |
-| identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
-| name | string | name of the plan |
+| type | string | const (`"Plan"`)  |
+| identifier | object | examples (`{"salesforceid":"0031U00002XW1QWQA1"}`, `{"vendoraid":"123456"}`, `{"originating_system_id":"123456"}`) identifier assigned to a contact by the vendor who originally created the contact |
+| name | string | examples (`"my awesome plan"`, `"annoying but effective plan"`, `"plan to take over the world"`, `"birthdays and anniversaries plan"`) name of the plan |
 | description | string | description of the item |
 | member | array<object> | tasks which make up the plan |
-| member.type | string | The item type (Linked-Data @type) |
-| member.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
-| member.actionStatus | string | disposition of the Action at the time of this action message. |
+| member.type | string | allowed (`"Task"`) The item type (Linked-Data @type) |
+| member.identifier | object | examples (`{"salesforceid":"0031U00002XW1QWQA1"}`, `{"vendoraid":"123456"}`, `{"originating_system_id":"123456"}`) identifier assigned to a contact by the vendor who originally created the contact |
+| member.actionStatus | string | allowed (`"CompletedActionStatus"`, `"FailedActionStatus"`, `"ActiveActionStatus"`, `"PotentialActionStatus"`) disposition of the Action at the time of this action message. |
 | member.memberOf | object | a plan the task is associated with |
 | member.agent | object | the party who completed, or will complete the task |
 | member.participant | array<object> | Other co-agents with a direct or indirect interest in the action. |
@@ -22,21 +22,21 @@ title: Plan
 | member.description | string | task detailed description |
 | member.keywords | array<string> | - |
 | member.keywords (single item) | string | - |
-| member.dateDue | string | the due date-time (ISO 8601 formated) <span class='constraints'>format (`date-time`)</span> |
-| member.dateCompleted | string | date the task was completed <span class='constraints'>format (`date-time`)</span> |
+| member.dateDue | string | format (`date-time`) the due date-time (ISO 8601 formated) |
+| member.dateCompleted | string | format (`date-time`) date the task was completed |
 | member.location | object | the physical location where an event takes place |
 | creator | any | the item creator |
-| dateCreated | string | The date on which the item was created. <span class='constraints'>format (`date-time`)</span> |
-| dateModified | string | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. <span class='constraints'>format (`date-time`)</span> |
-| dateCompleted | string | The date on which the item was created. <span class='constraints'>format (`date-time`)</span> |
-| type | string | - |
-| identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
-| name | string | name of the plan |
+| dateCreated | string | format (`date-time`) The date on which the item was created. |
+| dateModified | string | format (`date-time`) The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. |
+| dateCompleted | string | format (`date-time`) The date on which the item was created. |
+| type | string | const (`"Plan"`)  |
+| identifier | object | examples (`{"salesforceid":"0031U00002XW1QWQA1"}`, `{"vendoraid":"123456"}`, `{"originating_system_id":"123456"}`) identifier assigned to a contact by the vendor who originally created the contact |
+| name | string | examples (`"my awesome plan"`, `"annoying but effective plan"`, `"plan to take over the world"`, `"birthdays and anniversaries plan"`) name of the plan |
 | description | string | description of the item |
 | member | array<object> | tasks which make up the plan |
-| member.type | string | The item type (Linked-Data @type) |
-| member.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
-| member.actionStatus | string | disposition of the Action at the time of this action message. |
+| member.type | string | allowed (`"Task"`) The item type (Linked-Data @type) |
+| member.identifier | object | examples (`{"salesforceid":"0031U00002XW1QWQA1"}`, `{"vendoraid":"123456"}`, `{"originating_system_id":"123456"}`) identifier assigned to a contact by the vendor who originally created the contact |
+| member.actionStatus | string | allowed (`"CompletedActionStatus"`, `"FailedActionStatus"`, `"ActiveActionStatus"`, `"PotentialActionStatus"`) disposition of the Action at the time of this action message. |
 | member.memberOf | object | a plan the task is associated with |
 | member.agent | object | the party who completed, or will complete the task |
 | member.participant | array<object> | Other co-agents with a direct or indirect interest in the action. |
@@ -45,13 +45,13 @@ title: Plan
 | member.description | string | task detailed description |
 | member.keywords | array<string> | - |
 | member.keywords (single item) | string | - |
-| member.dateDue | string | the due date-time (ISO 8601 formated) <span class='constraints'>format (`date-time`)</span> |
-| member.dateCompleted | string | date the task was completed <span class='constraints'>format (`date-time`)</span> |
+| member.dateDue | string | format (`date-time`) the due date-time (ISO 8601 formated) |
+| member.dateCompleted | string | format (`date-time`) date the task was completed |
 | member.location | object | the physical location where an event takes place |
 | creator | any | the item creator |
-| dateCreated | string | The date on which the item was created. <span class='constraints'>format (`date-time`)</span> |
-| dateModified | string | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. <span class='constraints'>format (`date-time`)</span> |
-| dateCompleted | string | The date on which the item was created. <span class='constraints'>format (`date-time`)</span> |
+| dateCreated | string | format (`date-time`) The date on which the item was created. |
+| dateModified | string | format (`date-time`) The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. |
+| dateCompleted | string | format (`date-time`) The date on which the item was created. |
 
 ## Example
 

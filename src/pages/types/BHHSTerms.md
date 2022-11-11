@@ -6,9 +6,9 @@ title: BHHSTerms
 | Name | Type | Description |
 |---|---|---|
 | (BHHSTerms) | object | additional properties for BHHS. |
-| contactPoint.name | string | - |
+| contactPoint.name | string | allowed (`"BHHSWebsiteURL"`, `"BHHSWebsiteVanityURL"`)  |
 | additionalProperty | object | - |
-| additionalProperty.Status | string | - |
+| additionalProperty.Status | string | allowed (`"Active"`, `"Inactive"`, `"Pre-Active"`)  |
 | additionalProperty.UserType | string | employee type. For backward compatibility |
 | additionalProperty.AffiliateID | string | BHHS affiliate identifier |
 | additionalProperty.BrokerID | string | BHHS affiliate identifier. For backward compatibility |
@@ -16,9 +16,9 @@ title: BHHSTerms
 | additionalProperty.OfficeDBA | string | name of office. For backward compatibility |
 | additionalProperty.AffiliateStatus | string | status of affiliate. For backward compatibility |
 | additionalProperty.OfficeStatus | string | status of office. For backward compatibility |
-| additionalProperty.EmployeeType | string | type of employee |
+| additionalProperty.EmployeeType | string | allowed (`"Full Time Sales Professional"`, `"Part Time Sales Professional"`, `"Non-Agent"`, `"Marketing Team"`, `"In-House Admin. Profile"`) type of employee |
 | additionalProperty.IsCompanyQueue | boolean | if the real estate agent accepts company's lead |
-| additionalProperty.agentWebsiteType | string | agent's website type |
+| additionalProperty.agentWebsiteType | string | allowed (`"Agent Profile"`, `"Agent Page with IDX Search"`) agent's website type |
 | additionalProperty.RoqLogicTCVersion | string | version of RoqLogic terms and conditions agent accepted. |
 | additionalProperty.bhhsLeadNotificationPreference | object | lead notification preference |
 | additionalProperty.bhhsLeadNotificationPreference.timeZone | string | - |
@@ -29,13 +29,13 @@ title: BHHSTerms
 | additionalProperty.bhhsLeadNotificationPreference.leadNotificationSchedule | array<object> | - |
 | additionalProperty.bhhsLeadNotificationPreference.leadNotificationSchedule.type | string | The item type (Linked-Data @type) |
 | additionalProperty.bhhsLeadNotificationPreference.leadNotificationSchedule.byDay | array<string> | Defines the day(s) of the week on which a recurring Event takes place |
-| additionalProperty.bhhsLeadNotificationPreference.leadNotificationSchedule.byDay (single item) | string | - |
+| additionalProperty.bhhsLeadNotificationPreference.leadNotificationSchedule.byDay (single item) | string | allowed (`"Sunday"`, `"Monday"`, `"Tuesday"`, `"Wednesday"`, `"Thursday"`, `"Friday"`)  |
 | additionalProperty.bhhsLeadNotificationPreference.leadNotificationSchedule.byMonth | array<number> | Defines the month(s) of the year on which a recurring Event takes place. Specified as an Integer between 1-12. January is 1. |
-| additionalProperty.bhhsLeadNotificationPreference.leadNotificationSchedule.byMonth (single item) | number | - |
+| additionalProperty.bhhsLeadNotificationPreference.leadNotificationSchedule.byMonth (single item) | number | allowed (`1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`)  |
 | additionalProperty.bhhsLeadNotificationPreference.leadNotificationSchedule.byMonthDay | array<number> | Defines the day(s) of the month on which a recurring Event takes place. Specified as an Integer between 1-31. |
 | additionalProperty.bhhsLeadNotificationPreference.leadNotificationSchedule.byMonthDay (single item) | number | - |
 | additionalProperty.IsDisplayed | boolean | if an affiliate/office/agent is listed in company/office/agent finder. |
-| additionalProperty.OfficeType | string | type of office |
+| additionalProperty.OfficeType | string | allowed (`"Administrative Office"`, `"Branch Office"`, `"Kiosk"`, `"Primary Office"`, `"Srvice Center"`, `"Subdivision Sales Office"`) type of office |
 | additionalProperty.FullTimeCount | integer | the number of full time sales professional |
 | additionalProperty.PartTimeCount | integer | the number of part time sales professional |
 | additionalProperty.franchiseCommitmentNotes | string | - |
@@ -47,12 +47,12 @@ title: BHHSTerms
 | additionalProperty.companyContactFirstName | string | first name of company contact |
 | additionalProperty.companyCFO | string | full name of company CFO |
 | additionalProperty.primaryOffice | any | primay office of company |
-| additionalProperty.transactionReportingMethod | string | method of reporting transaction |
-| additionalProperty.databridgeVersion | string | version of data bridge |
-| additionalProperty.systemDeactivationDate | string |  <span class='constraints'>format (`date-time`)</span> |
-| additionalProperty.inactiveDate | string |  <span class='constraints'>format (`date-time`)</span> |
-| additionalProperty.goLiveDate | string |  <span class='constraints'>format (`date-time`)</span> |
-| additionalProperty.originalAffiliationDate | string |  <span class='constraints'>format (`date-time`)</span> |
+| additionalProperty.transactionReportingMethod | string | allowed (`"Batch File Upload"`, `"Direct Data Entry"`, `"Summary Reporting"`) method of reporting transaction |
+| additionalProperty.databridgeVersion | string | allowed (`"DB4.0"`, `"DB3.0"`) version of data bridge |
+| additionalProperty.systemDeactivationDate | string | format (`date-time`)  |
+| additionalProperty.inactiveDate | string | format (`date-time`)  |
+| additionalProperty.goLiveDate | string | format (`date-time`)  |
+| additionalProperty.originalAffiliationDate | string | format (`date-time`)  |
 | additionalProperty.numberOfSubOrganizations | integer | - |
 | additionalProperty.PublicOffice | string | office's public name |
 | additionalProperty.OfficeContact | any | office contact |
@@ -68,9 +68,9 @@ title: BHHSTerms
 | additionalProperty.transactionSequence | string | The adjustment sequence number. Must be zeros if STR is closed but not an adjustment or if STR is open or canceled. If adjusting a closed transaction, the first adjustment must have 001 in the adjustment sequence, the second must have 002, the third, 003, etc. Sequence number cannot be equal or less than the last adjustment sequence number reported for the transaction if the Status has not changed. |
 | additionalProperty.unimprovedLandFlag | string | A Yes/No flag identifying where or not the property involved in the transaction is considered unimproved land. Valid codes are Y = unimproved land  N= not an unimproved land |
 | additionalProperty.workingWithAgent | boolean | is consumer already working with an Agent? |
-| contactPoint.name | string | - |
+| contactPoint.name | string | allowed (`"BHHSWebsiteURL"`, `"BHHSWebsiteVanityURL"`)  |
 | additionalProperty | object | - |
-| additionalProperty.Status | string | - |
+| additionalProperty.Status | string | allowed (`"Active"`, `"Inactive"`, `"Pre-Active"`)  |
 | additionalProperty.UserType | string | employee type. For backward compatibility |
 | additionalProperty.AffiliateID | string | BHHS affiliate identifier |
 | additionalProperty.BrokerID | string | BHHS affiliate identifier. For backward compatibility |
@@ -78,9 +78,9 @@ title: BHHSTerms
 | additionalProperty.OfficeDBA | string | name of office. For backward compatibility |
 | additionalProperty.AffiliateStatus | string | status of affiliate. For backward compatibility |
 | additionalProperty.OfficeStatus | string | status of office. For backward compatibility |
-| additionalProperty.EmployeeType | string | type of employee |
+| additionalProperty.EmployeeType | string | allowed (`"Full Time Sales Professional"`, `"Part Time Sales Professional"`, `"Non-Agent"`, `"Marketing Team"`, `"In-House Admin. Profile"`) type of employee |
 | additionalProperty.IsCompanyQueue | boolean | if the real estate agent accepts company's lead |
-| additionalProperty.agentWebsiteType | string | agent's website type |
+| additionalProperty.agentWebsiteType | string | allowed (`"Agent Profile"`, `"Agent Page with IDX Search"`) agent's website type |
 | additionalProperty.RoqLogicTCVersion | string | version of RoqLogic terms and conditions agent accepted. |
 | additionalProperty.bhhsLeadNotificationPreference | object | lead notification preference |
 | additionalProperty.bhhsLeadNotificationPreference.timeZone | string | - |
@@ -91,13 +91,13 @@ title: BHHSTerms
 | additionalProperty.bhhsLeadNotificationPreference.leadNotificationSchedule | array<object> | - |
 | additionalProperty.bhhsLeadNotificationPreference.leadNotificationSchedule.type | string | The item type (Linked-Data @type) |
 | additionalProperty.bhhsLeadNotificationPreference.leadNotificationSchedule.byDay | array<string> | Defines the day(s) of the week on which a recurring Event takes place |
-| additionalProperty.bhhsLeadNotificationPreference.leadNotificationSchedule.byDay (single item) | string | - |
+| additionalProperty.bhhsLeadNotificationPreference.leadNotificationSchedule.byDay (single item) | string | allowed (`"Sunday"`, `"Monday"`, `"Tuesday"`, `"Wednesday"`, `"Thursday"`, `"Friday"`)  |
 | additionalProperty.bhhsLeadNotificationPreference.leadNotificationSchedule.byMonth | array<number> | Defines the month(s) of the year on which a recurring Event takes place. Specified as an Integer between 1-12. January is 1. |
-| additionalProperty.bhhsLeadNotificationPreference.leadNotificationSchedule.byMonth (single item) | number | - |
+| additionalProperty.bhhsLeadNotificationPreference.leadNotificationSchedule.byMonth (single item) | number | allowed (`1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`)  |
 | additionalProperty.bhhsLeadNotificationPreference.leadNotificationSchedule.byMonthDay | array<number> | Defines the day(s) of the month on which a recurring Event takes place. Specified as an Integer between 1-31. |
 | additionalProperty.bhhsLeadNotificationPreference.leadNotificationSchedule.byMonthDay (single item) | number | - |
 | additionalProperty.IsDisplayed | boolean | if an affiliate/office/agent is listed in company/office/agent finder. |
-| additionalProperty.OfficeType | string | type of office |
+| additionalProperty.OfficeType | string | allowed (`"Administrative Office"`, `"Branch Office"`, `"Kiosk"`, `"Primary Office"`, `"Srvice Center"`, `"Subdivision Sales Office"`) type of office |
 | additionalProperty.FullTimeCount | integer | the number of full time sales professional |
 | additionalProperty.PartTimeCount | integer | the number of part time sales professional |
 | additionalProperty.franchiseCommitmentNotes | string | - |
@@ -109,12 +109,12 @@ title: BHHSTerms
 | additionalProperty.companyContactFirstName | string | first name of company contact |
 | additionalProperty.companyCFO | string | full name of company CFO |
 | additionalProperty.primaryOffice | any | primay office of company |
-| additionalProperty.transactionReportingMethod | string | method of reporting transaction |
-| additionalProperty.databridgeVersion | string | version of data bridge |
-| additionalProperty.systemDeactivationDate | string |  <span class='constraints'>format (`date-time`)</span> |
-| additionalProperty.inactiveDate | string |  <span class='constraints'>format (`date-time`)</span> |
-| additionalProperty.goLiveDate | string |  <span class='constraints'>format (`date-time`)</span> |
-| additionalProperty.originalAffiliationDate | string |  <span class='constraints'>format (`date-time`)</span> |
+| additionalProperty.transactionReportingMethod | string | allowed (`"Batch File Upload"`, `"Direct Data Entry"`, `"Summary Reporting"`) method of reporting transaction |
+| additionalProperty.databridgeVersion | string | allowed (`"DB4.0"`, `"DB3.0"`) version of data bridge |
+| additionalProperty.systemDeactivationDate | string | format (`date-time`)  |
+| additionalProperty.inactiveDate | string | format (`date-time`)  |
+| additionalProperty.goLiveDate | string | format (`date-time`)  |
+| additionalProperty.originalAffiliationDate | string | format (`date-time`)  |
 | additionalProperty.numberOfSubOrganizations | integer | - |
 | additionalProperty.PublicOffice | string | office's public name |
 | additionalProperty.OfficeContact | any | office contact |

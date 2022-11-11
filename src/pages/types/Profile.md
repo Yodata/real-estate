@@ -6,10 +6,10 @@ title: Profile
 | Name | Type | Description |
 |---|---|---|
 | (Profile) | object | - |
-| id | string | document uri <span class='constraints'>format (`uri`)</span> |
-| type | string | - |
+| id | string | format (`uri`) document uri |
+| type | string | allowed (`"ProfileDocument"`)  |
 | #me | object | - |
-| #me.id | string |  <span class='constraints'>format (`uri`)</span> |
+| #me.id | string | format (`uri`)  |
 | #me.type | string | - |
 | #me.inbox | string | discoverable uri to your LDN inbox |
 | #me.outbox | string | discoverable uri to your LDN outbox |
@@ -18,10 +18,10 @@ title: Profile
 | #me.account | string | discoverable solid:account root |
 | #me.privateTypeIndex | string | type index for your private use |
 | #me.publicTypeIndex | string | shared, discoverable type index |
-| id | string | document uri <span class='constraints'>format (`uri`)</span> |
-| type | string | - |
+| id | string | format (`uri`) document uri |
+| type | string | allowed (`"ProfileDocument"`)  |
 | #me | object | - |
-| #me.id | string |  <span class='constraints'>format (`uri`)</span> |
+| #me.id | string | format (`uri`)  |
 | #me.type | string | - |
 | #me.inbox | string | discoverable uri to your LDN inbox |
 | #me.outbox | string | discoverable uri to your LDN outbox |

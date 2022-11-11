@@ -6,9 +6,9 @@ title: State
 | Name | Type | Description |
 |---|---|---|
 | (State) | object | a State or Region |
-| type | string | The item type (Linked-Data @type) |
+| type | string | allowed (`"State"`) The item type (Linked-Data @type) |
 | name | string | the name of the item |
-| type | string | The item type (Linked-Data @type) |
+| type | string | allowed (`"State"`) The item type (Linked-Data @type) |
 | name | string | the name of the item |
 
 ## Example

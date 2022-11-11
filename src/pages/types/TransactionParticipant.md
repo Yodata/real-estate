@@ -6,26 +6,26 @@ title: TransactionParticipant
 | Name | Type | Description |
 |---|---|---|
 | (TransactionParticipant) | object | a participant in a transaction, i.e. Buyer, Seller, etc... |
-| type | string | - |
-| roleName | string | the role of the participant in the transaction |
+| type | string | const (`"TransactionParticipant"`)  |
+| roleName | string | examples (`"Buyer"`, `"Seller"`) the role of the participant in the transaction |
 | position | number | numeric position for the participant/roleName. |
-| givenName | string | First Name of a person |
-| familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) <span class='constraints'><= 50 characters</span> |
+| givenName | string | examples (`"John"`, `"Jane"`, `"Mary"`, `"Joseph"`, `"William"`, `"David"`, `"Richard"`, `"Charles"`, `"Thomas"`, `"Christopher"`, `"Daniel"`, `"Matthew"`, `"Anthony"`, `"Donald"`, `"Mark"`, `"Paul"`, `"Steven"`, `"Andrew"`, `"Kenneth"`, `"George"`, `"Joshua"`, `"Kevin"`, `"Brian"`, `"Edward"`, `"Ronald"`, `"Timothy"`, `"Jason"`, `"Jeffrey"`, `"Ryan"`, `"Jacob"`) First Name of a person |
+| familyName | string | examples (`"Smith"`, `"Jones"`, `"Parker"`, `"Monk"`, `"Brown"`, `"Miller"`, `"Davis"`, `"Wilson"`, `"Fitzgerald"`, `"Johnson"`, `"Williams"`) <= 50 characters Last Name of a person. [Family Name](https://schema.org/familyName) |
 | additionalName | string | middleName or alternate name of the Person |
-| email | string |  <span class='constraints'>format (`email`)</span> |
+| email | string | format (`email`)  |
 | telephone | string | Primary phone number. |
 | affiliation | array<string> | person or organization associated with the participant |
-| affiliation (single item) | string |  <span class='constraints'>format (`uri`)</span> |
-| type | string | - |
-| roleName | string | the role of the participant in the transaction |
+| affiliation (single item) | string | format (`uri`)  |
+| type | string | const (`"TransactionParticipant"`)  |
+| roleName | string | examples (`"Buyer"`, `"Seller"`) the role of the participant in the transaction |
 | position | number | numeric position for the participant/roleName. |
-| givenName | string | First Name of a person |
-| familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) <span class='constraints'><= 50 characters</span> |
+| givenName | string | examples (`"John"`, `"Jane"`, `"Mary"`, `"Joseph"`, `"William"`, `"David"`, `"Richard"`, `"Charles"`, `"Thomas"`, `"Christopher"`, `"Daniel"`, `"Matthew"`, `"Anthony"`, `"Donald"`, `"Mark"`, `"Paul"`, `"Steven"`, `"Andrew"`, `"Kenneth"`, `"George"`, `"Joshua"`, `"Kevin"`, `"Brian"`, `"Edward"`, `"Ronald"`, `"Timothy"`, `"Jason"`, `"Jeffrey"`, `"Ryan"`, `"Jacob"`) First Name of a person |
+| familyName | string | examples (`"Smith"`, `"Jones"`, `"Parker"`, `"Monk"`, `"Brown"`, `"Miller"`, `"Davis"`, `"Wilson"`, `"Fitzgerald"`, `"Johnson"`, `"Williams"`) <= 50 characters Last Name of a person. [Family Name](https://schema.org/familyName) |
 | additionalName | string | middleName or alternate name of the Person |
-| email | string |  <span class='constraints'>format (`email`)</span> |
+| email | string | format (`email`)  |
 | telephone | string | Primary phone number. |
 | affiliation | array<string> | person or organization associated with the participant |
-| affiliation (single item) | string |  <span class='constraints'>format (`uri`)</span> |
+| affiliation (single item) | string | format (`uri`)  |
 
 ## Example
 

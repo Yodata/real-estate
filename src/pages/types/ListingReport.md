@@ -8,14 +8,14 @@ title: ListingReport
 | (ListingReport) | object | summary report of listing inventory count |
 | type | string | RECORD-TYPE |
 | batchId | string | BATCH-ID |
-| reportingOfficeId | string | OFFICE-ID <span class='constraints'>format (`uri`)</span> |
-| dateCreated | string | YEAR-MONTH <span class='constraints'>format (`date-time`)</span> |
+| reportingOfficeId | string | format (`uri`) OFFICE-ID |
+| dateCreated | string | format (`date-time`) YEAR-MONTH |
 | listingsAddedCount | number | LISTINGS-TAKEN |
 | totalListingsCount | number | LISTINGS-INVENTORY |
 | type | string | RECORD-TYPE |
 | batchId | string | BATCH-ID |
-| reportingOfficeId | string | OFFICE-ID <span class='constraints'>format (`uri`)</span> |
-| dateCreated | string | YEAR-MONTH <span class='constraints'>format (`date-time`)</span> |
+| reportingOfficeId | string | format (`uri`) OFFICE-ID |
+| dateCreated | string | format (`date-time`) YEAR-MONTH |
 | listingsAddedCount | number | LISTINGS-TAKEN |
 | totalListingsCount | number | LISTINGS-INVENTORY |
 

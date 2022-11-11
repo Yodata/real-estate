@@ -6,20 +6,20 @@ title: Collection
 | Name | Type | Description |
 |---|---|---|
 | (Collection) | object | a set of items. |
-| type | string | Collection |
+| type | string | allowed (`"Collection"`) Collection |
 | name | string | name of the collection |
-| identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| identifier | object | examples (`{"salesforceid":"0031U00002XW1QWQA1"}`, `{"vendoraid":"123456"}`, `{"originating_system_id":"123456"}`) identifier assigned to a contact by the vendor who originally created the contact |
 | creator | string | creator of the collection |
-| dateCreated | string | The date on which the item was created. <span class='constraints'>format (`date-time`)</span> |
-| dateModified | string | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. <span class='constraints'>format (`date-time`)</span> |
+| dateCreated | string | format (`date-time`) The date on which the item was created. |
+| dateModified | string | format (`date-time`) The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. |
 | member | array<object> | members of the collection |
 | member (single item) | object | - |
-| type | string | Collection |
+| type | string | allowed (`"Collection"`) Collection |
 | name | string | name of the collection |
-| identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| identifier | object | examples (`{"salesforceid":"0031U00002XW1QWQA1"}`, `{"vendoraid":"123456"}`, `{"originating_system_id":"123456"}`) identifier assigned to a contact by the vendor who originally created the contact |
 | creator | string | creator of the collection |
-| dateCreated | string | The date on which the item was created. <span class='constraints'>format (`date-time`)</span> |
-| dateModified | string | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. <span class='constraints'>format (`date-time`)</span> |
+| dateCreated | string | format (`date-time`) The date on which the item was created. |
+| dateModified | string | format (`date-time`) The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. |
 | member | array<object> | members of the collection |
 | member (single item) | object | - |
 

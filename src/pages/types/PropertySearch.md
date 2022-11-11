@@ -6,10 +6,10 @@ title: PropertySearch
 | Name | Type | Description |
 |---|---|---|
 | (PropertySearch) | object | property search parameters |
-| type | string | - |
+| type | string | allowed (`"PropertySearch"`)  |
 | name | string | name of the search, input by the user or generated automatically |
 | description | string | optional search description input by the user or generated automatically |
-| propertyType | string | RESO property type (see range for allowed values) <span class='constraints'>4 characters</span> |
+| propertyType | string | allowed (`"RESI"`, `"RLSE"`, `"RINC"`, `"LAND"`, `"MOBI"`, `"FARM"`, `"COMS"`, `"COML"`, `"BUSO"`) 4 characters RESO property type (see range for allowed values) |
 | propertySubType | object | Property sub-type enumeration values derived from RESO data dictionary. |
 | propertySubType.ApartmentPropertyType | string | Apartment |
 | propertySubType.BoatSlipPropertyType | string | Boat Slip |
@@ -41,11 +41,11 @@ title: PropertySearch
 | propertySubType.WarehousePropertyType | string | A Warehouse property type. |
 | listingStatus | string | RESO Listing Status Code |
 | location | object | a physical location |
-| location.type | string | The item type (Linked-Data @type) |
+| location.type | string | allowed (`"Place"`) The item type (Linked-Data @type) |
 | location.address | object | A physical address. |
 | location.geo | object | a geo shape (circle or box) |
 | price | object | a price offered for transfer of ownership of an item |
-| price.type | string | PriceSpecification |
+| price.type | string | allowed (`"PriceSpecification"`) PriceSpecification |
 | price.minPrice | number | the low price offered if price is a range. |
 | price.maxPrice | number | the high price offered if price is a range. |
 | price.price | number | the offer price. |
@@ -54,10 +54,10 @@ title: PropertySearch
 | bathrooms | object | number of bathrooms (range) |
 | livingArea | object | property indoor space |
 | lotSize | object | outdoor space minValue, maxValue |
-| type | string | - |
+| type | string | allowed (`"PropertySearch"`)  |
 | name | string | name of the search, input by the user or generated automatically |
 | description | string | optional search description input by the user or generated automatically |
-| propertyType | string | RESO property type (see range for allowed values) <span class='constraints'>4 characters</span> |
+| propertyType | string | allowed (`"RESI"`, `"RLSE"`, `"RINC"`, `"LAND"`, `"MOBI"`, `"FARM"`, `"COMS"`, `"COML"`, `"BUSO"`) 4 characters RESO property type (see range for allowed values) |
 | propertySubType | object | Property sub-type enumeration values derived from RESO data dictionary. |
 | propertySubType.ApartmentPropertyType | string | Apartment |
 | propertySubType.BoatSlipPropertyType | string | Boat Slip |
@@ -89,11 +89,11 @@ title: PropertySearch
 | propertySubType.WarehousePropertyType | string | A Warehouse property type. |
 | listingStatus | string | RESO Listing Status Code |
 | location | object | a physical location |
-| location.type | string | The item type (Linked-Data @type) |
+| location.type | string | allowed (`"Place"`) The item type (Linked-Data @type) |
 | location.address | object | A physical address. |
 | location.geo | object | a geo shape (circle or box) |
 | price | object | a price offered for transfer of ownership of an item |
-| price.type | string | PriceSpecification |
+| price.type | string | allowed (`"PriceSpecification"`) PriceSpecification |
 | price.minPrice | number | the low price offered if price is a range. |
 | price.maxPrice | number | the high price offered if price is a range. |
 | price.price | number | the offer price. |

@@ -6,18 +6,18 @@ title: OrganizationRole
 | Name | Type | Description |
 |---|---|---|
 | (OrganizationRole) | object | describes a role played by a member and a group or organization. |
-| type | string | a role played by the member in the memberOf group |
+| type | string | allowed (`"OrganizationRole"`) a role played by the member in the memberOf group |
 | roleName | string | the role name |
 | memberOf | object | the org or group where the role is performed |
-| member | string | member object or id <span class='constraints'>format (`uri`)</span> |
-| startDate | string | date the member began performing this role <span class='constraints'>format (`date-time`)</span> |
-| endDate | string | date the member stopped performing the role <span class='constraints'>format (`date-time`)</span> |
-| type | string | a role played by the member in the memberOf group |
+| member | string | format (`uri`) member object or id |
+| startDate | string | format (`date-time`) date the member began performing this role |
+| endDate | string | format (`date-time`) date the member stopped performing the role |
+| type | string | allowed (`"OrganizationRole"`) a role played by the member in the memberOf group |
 | roleName | string | the role name |
 | memberOf | object | the org or group where the role is performed |
-| member | string | member object or id <span class='constraints'>format (`uri`)</span> |
-| startDate | string | date the member began performing this role <span class='constraints'>format (`date-time`)</span> |
-| endDate | string | date the member stopped performing the role <span class='constraints'>format (`date-time`)</span> |
+| member | string | format (`uri`) member object or id |
+| startDate | string | format (`date-time`) date the member began performing this role |
+| endDate | string | format (`date-time`) date the member stopped performing the role |
 
 ## Example
 

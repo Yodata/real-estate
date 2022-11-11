@@ -6,25 +6,25 @@ title: Certification
 | Name | Type | Description |
 |---|---|---|
 | (Certification) | object | A certification issued by an organization to an individual or business. |
-| type | string | Certification |
+| type | string | allowed (`"Certification"`) Certification |
 | name | string | the name of the Certification |
 | issuedBy | object | the issuing authority |
-| issuedBy.type | string | The item type (Linked-Data @type) |
-| issuedBy.id | string | Linked-Data URI (@id) <span class='constraints'>format (`uri`)</span> |
+| issuedBy.type | string | allowed (`"RealEstateOrganization"`) The item type (Linked-Data @type) |
+| issuedBy.id | string | format (`uri`) Linked-Data URI (@id) |
 | issuedBy.name | string | name of the issuing organization |
 | issuedTo | object | the subject |
-| issuedTo.type | string | The item type (Linked-Data @type) |
-| issuedTo.id | string | Linked-Data URI (@id) <span class='constraints'>format (`uri`)</span> |
+| issuedTo.type | string | allowed (`"RealEstateAgent"`) The item type (Linked-Data @type) |
+| issuedTo.id | string | format (`uri`) Linked-Data URI (@id) |
 | issuedTo.name | string | the name of the item |
-| type | string | Certification |
+| type | string | allowed (`"Certification"`) Certification |
 | name | string | the name of the Certification |
 | issuedBy | object | the issuing authority |
-| issuedBy.type | string | The item type (Linked-Data @type) |
-| issuedBy.id | string | Linked-Data URI (@id) <span class='constraints'>format (`uri`)</span> |
+| issuedBy.type | string | allowed (`"RealEstateOrganization"`) The item type (Linked-Data @type) |
+| issuedBy.id | string | format (`uri`) Linked-Data URI (@id) |
 | issuedBy.name | string | name of the issuing organization |
 | issuedTo | object | the subject |
-| issuedTo.type | string | The item type (Linked-Data @type) |
-| issuedTo.id | string | Linked-Data URI (@id) <span class='constraints'>format (`uri`)</span> |
+| issuedTo.type | string | allowed (`"RealEstateAgent"`) The item type (Linked-Data @type) |
+| issuedTo.id | string | format (`uri`) Linked-Data URI (@id) |
 | issuedTo.name | string | the name of the item |
 
 ## Example

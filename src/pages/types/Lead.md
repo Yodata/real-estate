@@ -6,27 +6,27 @@ title: Lead
 | Name | Type | Description |
 |---|---|---|
 | (Lead) | object | a sales opportunity (object) offered by a sender to a recipient. |
-| type | string | Lead |
-| identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| type | string | allowed (`"Lead"`) Lead |
+| identifier | object | examples (`{"salesforceid":"0031U00002XW1QWQA1"}`, `{"vendoraid":"123456"}`, `{"originating_system_id":"123456"}`) identifier assigned to a contact by the vendor who originally created the contact |
 | object | object | the lead (Contact) |
-| recipient | string | the lead recipient <span class='constraints'>format (`uri`)</span> |
-| sender | string | the lead provider <span class='constraints'>format (`uri`)</span> |
-| owner | string | the original owner of the lead <span class='constraints'>format (`uri`)</span> |
+| recipient | string | format (`uri`) the lead recipient |
+| sender | string | format (`uri`) the lead provider |
+| owner | string | format (`uri`) the original owner of the lead |
 | dateAccepted | string | The date/time the item was accepted by the recipient |
-| dateRejected | string | The date/time the item was rejected by the recipient <span class='constraints'>format (`date-time`)</span> |
-| dateSent | string | the date the lead was sent <span class='constraints'>format (`date-time`)</span> |
+| dateRejected | string | format (`date-time`) The date/time the item was rejected by the recipient |
+| dateSent | string | format (`date-time`) the date the lead was sent |
 | dateReceived | string | The date/time the item was received by it's recipient |
 | leadSource | array<object> | lead origin, may be a website event or a thing such as a website, zillow, mobile applicaton. |
 | leadSource (single item) | object | - |
-| type | string | Lead |
-| identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| type | string | allowed (`"Lead"`) Lead |
+| identifier | object | examples (`{"salesforceid":"0031U00002XW1QWQA1"}`, `{"vendoraid":"123456"}`, `{"originating_system_id":"123456"}`) identifier assigned to a contact by the vendor who originally created the contact |
 | object | object | the lead (Contact) |
-| recipient | string | the lead recipient <span class='constraints'>format (`uri`)</span> |
-| sender | string | the lead provider <span class='constraints'>format (`uri`)</span> |
-| owner | string | the original owner of the lead <span class='constraints'>format (`uri`)</span> |
+| recipient | string | format (`uri`) the lead recipient |
+| sender | string | format (`uri`) the lead provider |
+| owner | string | format (`uri`) the original owner of the lead |
 | dateAccepted | string | The date/time the item was accepted by the recipient |
-| dateRejected | string | The date/time the item was rejected by the recipient <span class='constraints'>format (`date-time`)</span> |
-| dateSent | string | the date the lead was sent <span class='constraints'>format (`date-time`)</span> |
+| dateRejected | string | format (`date-time`) The date/time the item was rejected by the recipient |
+| dateSent | string | format (`date-time`) the date the lead was sent |
 | dateReceived | string | The date/time the item was received by it's recipient |
 | leadSource | array<object> | lead origin, may be a website event or a thing such as a website, zillow, mobile applicaton. |
 | leadSource (single item) | object | - |

@@ -6,13 +6,13 @@ title: DigitalDocument
 | Name | Type | Description |
 |---|---|---|
 | (DigitalDocument) | object | an electronic file. |
-| type | string | - |
+| type | string | allowed (`"DigitalDocument"`)  |
 | id | string | - |
 | name | string | document name or title |
 | encodingFormat | string | [ISO Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml) |
 | about | object | subject of the Document |
 | url | string | public URL of the object |
-| type | string | - |
+| type | string | allowed (`"DigitalDocument"`)  |
 | id | string | - |
 | name | string | document name or title |
 | encodingFormat | string | [ISO Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml) |

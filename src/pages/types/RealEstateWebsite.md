@@ -1,14 +1,21 @@
 ---
 title: RealEstateWebsite
 ---
+## Schema
+
 | Name | Type | Description |
 |---|---|---|
-| (root) | object | - |
+| (RealEstateWebsite) | object | - |
 | type | string | RealEstateWebsite |
 | about | object | subject of the website |
-| url | string | URL of the item. |
+| url | string | URL of the item. <span class='constraints'>format (`uri`)</span> |
+| type | string | RealEstateWebsite |
+| about | object | subject of the website |
+| url | string | URL of the item. <span class='constraints'>format (`uri`)</span> |
 
-> Examples of RealEstateWebsite
+## Example
+
+
 
 ```json
 {
@@ -20,5 +27,3 @@ title: RealEstateWebsite
   "url": "http://example.com"
 }
 ```
-
-

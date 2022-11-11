@@ -1,23 +1,39 @@
 ---
 title: Lead
 ---
+## Schema
+
 | Name | Type | Description |
 |---|---|---|
-| (root) | object | a sales opportunity (object) offered by a sender to a recipient. |
+| (Lead) | object | a sales opportunity (object) offered by a sender to a recipient. |
 | type | string | Lead |
 | identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
 | object | object | the lead (Contact) |
-| recipient | string | the lead recipient |
-| sender | string | the lead provider |
-| owner | string | the original owner of the lead |
+| recipient | string | the lead recipient <span class='constraints'>format (`uri`)</span> |
+| sender | string | the lead provider <span class='constraints'>format (`uri`)</span> |
+| owner | string | the original owner of the lead <span class='constraints'>format (`uri`)</span> |
 | dateAccepted | string | The date/time the item was accepted by the recipient |
-| dateRejected | string | The date/time the item was rejected by the recipient |
-| dateSent | string | the date the lead was sent |
+| dateRejected | string | The date/time the item was rejected by the recipient <span class='constraints'>format (`date-time`)</span> |
+| dateSent | string | the date the lead was sent <span class='constraints'>format (`date-time`)</span> |
+| dateReceived | string | The date/time the item was received by it's recipient |
+| leadSource | array<object> | lead origin, may be a website event or a thing such as a website, zillow, mobile applicaton. |
+| leadSource (single item) | object | - |
+| type | string | Lead |
+| identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| object | object | the lead (Contact) |
+| recipient | string | the lead recipient <span class='constraints'>format (`uri`)</span> |
+| sender | string | the lead provider <span class='constraints'>format (`uri`)</span> |
+| owner | string | the original owner of the lead <span class='constraints'>format (`uri`)</span> |
+| dateAccepted | string | The date/time the item was accepted by the recipient |
+| dateRejected | string | The date/time the item was rejected by the recipient <span class='constraints'>format (`date-time`)</span> |
+| dateSent | string | the date the lead was sent <span class='constraints'>format (`date-time`)</span> |
 | dateReceived | string | The date/time the item was received by it's recipient |
 | leadSource | array<object> | lead origin, may be a website event or a thing such as a website, zillow, mobile applicaton. |
 | leadSource (single item) | object | - |
 
-> Examples of Lead
+## Example
+
+
 
 ```json
 {
@@ -49,5 +65,3 @@ title: Lead
   ]
 }
 ```
-
-

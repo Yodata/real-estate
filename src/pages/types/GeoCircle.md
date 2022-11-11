@@ -1,9 +1,17 @@
 ---
 title: GeoCircle
 ---
+## Schema
+
 | Name | Type | Description |
 |---|---|---|
-| (root) | object | a circle with a mid point and radius |
+| (GeoCircle) | object | a circle with a mid point and radius |
+| type | string | - |
+| geoMidpoint | object | a lat/long point. |
+| geoMidpoint.type | string | GeoCordinates |
+| geoMidpoint.longitude | number | The longitude of a location. |
+| geoMidpoint.latitude | number | The latitude of a location. |
+| geoRadius | object | the radius of a geo-shape in meters if unitCode is not indicated |
 | type | string | - |
 | geoMidpoint | object | a lat/long point. |
 | geoMidpoint.type | string | GeoCordinates |
@@ -11,7 +19,9 @@ title: GeoCircle
 | geoMidpoint.latitude | number | The latitude of a location. |
 | geoRadius | object | the radius of a geo-shape in meters if unitCode is not indicated |
 
-> Examples of GeoCircle
+## Example
+
+
 
 ```json
 {
@@ -29,5 +39,3 @@ title: GeoCircle
   }
 }
 ```
-
-

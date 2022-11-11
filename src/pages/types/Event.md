@@ -1,18 +1,29 @@
 ---
 title: Event
 ---
+## Schema
+
 | Name | Type | Description |
 |---|---|---|
-| (root) | object | An event happening at a certain time and location |
+| (Event) | object | An event happening at a certain time and location |
 | type | string | The item type (Linked-Data @type) |
 | name | string | name of the event |
 | description | string | event message content |
 | about | object | a subject of the meeting or event |
-| startDate | string | the start date-time (ISO 8601 formated) |
-| endDate | string | the end date-time (ISO 8601 formated) |
+| startDate | string | the start date-time (ISO 8601 formated) <span class='constraints'>format (`date-time`)</span> |
+| endDate | string | the end date-time (ISO 8601 formated) <span class='constraints'>format (`date-time`)</span> |
+| organizer | object | the event organizer |
+| type | string | The item type (Linked-Data @type) |
+| name | string | name of the event |
+| description | string | event message content |
+| about | object | a subject of the meeting or event |
+| startDate | string | the start date-time (ISO 8601 formated) <span class='constraints'>format (`date-time`)</span> |
+| endDate | string | the end date-time (ISO 8601 formated) <span class='constraints'>format (`date-time`)</span> |
 | organizer | object | the event organizer |
 
-> Examples of Event
+## Example
+
+
 
 ```json
 {
@@ -44,5 +55,3 @@ title: Event
   }
 }
 ```
-
-

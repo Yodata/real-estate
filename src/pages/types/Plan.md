@@ -1,9 +1,11 @@
 ---
 title: Plan
 ---
+## Schema
+
 | Name | Type | Description |
 |---|---|---|
-| (root) | object | a collection of related tasks |
+| (Plan) | object | a collection of related tasks |
 | type | string | - |
 | identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
 | name | string | name of the plan |
@@ -20,15 +22,40 @@ title: Plan
 | member.description | string | task detailed description |
 | member.keywords | array<string> | - |
 | member.keywords (single item) | string | - |
-| member.dateDue | string | the due date-time (ISO 8601 formated) |
-| member.dateCompleted | string | date the task was completed |
+| member.dateDue | string | the due date-time (ISO 8601 formated) <span class='constraints'>format (`date-time`)</span> |
+| member.dateCompleted | string | date the task was completed <span class='constraints'>format (`date-time`)</span> |
 | member.location | object | the physical location where an event takes place |
 | creator | any | the item creator |
-| dateCreated | string | The date on which the item was created. |
-| dateModified | string | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. |
-| dateCompleted | string | The date on which the item was created. |
+| dateCreated | string | The date on which the item was created. <span class='constraints'>format (`date-time`)</span> |
+| dateModified | string | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. <span class='constraints'>format (`date-time`)</span> |
+| dateCompleted | string | The date on which the item was created. <span class='constraints'>format (`date-time`)</span> |
+| type | string | - |
+| identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| name | string | name of the plan |
+| description | string | description of the item |
+| member | array<object> | tasks which make up the plan |
+| member.type | string | The item type (Linked-Data @type) |
+| member.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| member.actionStatus | string | disposition of the Action at the time of this action message. |
+| member.memberOf | object | a plan the task is associated with |
+| member.agent | object | the party who completed, or will complete the task |
+| member.participant | array<object> | Other co-agents with a direct or indirect interest in the action. |
+| member.participant (single item) | object | - |
+| member.name | string | name or title |
+| member.description | string | task detailed description |
+| member.keywords | array<string> | - |
+| member.keywords (single item) | string | - |
+| member.dateDue | string | the due date-time (ISO 8601 formated) <span class='constraints'>format (`date-time`)</span> |
+| member.dateCompleted | string | date the task was completed <span class='constraints'>format (`date-time`)</span> |
+| member.location | object | the physical location where an event takes place |
+| creator | any | the item creator |
+| dateCreated | string | The date on which the item was created. <span class='constraints'>format (`date-time`)</span> |
+| dateModified | string | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. <span class='constraints'>format (`date-time`)</span> |
+| dateCompleted | string | The date on which the item was created. <span class='constraints'>format (`date-time`)</span> |
 
-> Examples of Plan
+## Example
+
+
 
 ```json
 {
@@ -91,5 +118,3 @@ title: Plan
   "dateCompleted": "2019-08-24T14:15:22Z"
 }
 ```
-
-

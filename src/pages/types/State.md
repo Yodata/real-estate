@@ -1,13 +1,19 @@
 ---
 title: State
 ---
+## Schema
+
 | Name | Type | Description |
 |---|---|---|
-| (root) | object | a State or Region |
+| (State) | object | a State or Region |
+| type | string | The item type (Linked-Data @type) |
+| name | string | the name of the item |
 | type | string | The item type (Linked-Data @type) |
 | name | string | the name of the item |
 
-> Examples of State
+## Example
+
+
 
 ```json
 {
@@ -15,5 +21,3 @@ title: State
   "name": "New Jersey"
 }
 ```
-
-

@@ -75,7 +75,7 @@ export function Message ({ message }) { // NOSONAR
         </Text>
       )}
 
-      <Tools/>
+
 
       {headers && (
         <>
@@ -93,7 +93,7 @@ export function Message ({ message }) { // NOSONAR
         </>
       )}
 
-
+      <Tools/>
 
       <Bindings
         name='Message specific information'
@@ -108,13 +108,13 @@ export function Message ({ message }) { // NOSONAR
   )
 }
 
-function Examples ({ type = 'headers', message }) {
+function Example ({ type = 'headers', message }) {
   if (type === 'headers') {
     const ex = getHeadersExamples(message)
     if (ex) {
       return (
         <>
-          <BlockQuote>Header Example(s)</BlockQuote>
+          <Header type={3}>Header Example(s)</Header>
           <Example examples={ex} />
         </>
       )
@@ -122,10 +122,8 @@ function Examples ({ type = 'headers', message }) {
 
     return (
       <>
-        <BlockQuote>Header Example(s) (generated)</BlockQuote>
-        <Text newLines={2}>
-          <CodeBlock language='json'>{generateExample(message.headers().json())}</CodeBlock>
-        </Text>
+        <Header type={3}>Header Example(s) (generated)</Header>
+        <CodeBlock language='json'>{generateExample(message.headers().json())}</CodeBlock>
       </>
     )
   }
@@ -134,7 +132,7 @@ function Examples ({ type = 'headers', message }) {
   if (examples) {
     return (
       <>
-        <BlockQuote>Examples of payload</BlockQuote>
+        <Header type={3}>Payload Example(s)</Header>
         <Example examples={examples} />
       </>
     )
@@ -142,7 +140,7 @@ function Examples ({ type = 'headers', message }) {
 
   return (
     <>
-      <BlockQuote>Examples of payload _(generated)_</BlockQuote>
+      <Header type={3}>Payload Example(s) (generated)</Header>
       <Text newLines={2}>
         <CodeBlock language='json'>{generateExample(message.payload().json())}</CodeBlock>
       </Text>
@@ -150,7 +148,7 @@ function Examples ({ type = 'headers', message }) {
   )
 }
 
-function Example ({ examples = [] }) {
+function Examples ({ examples = [] }) {
   if (examples.length === 0) {
     return null
   }

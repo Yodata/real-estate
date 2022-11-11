@@ -1,19 +1,31 @@
 ---
 title: Comment
 ---
+## Schema
+
 | Name | Type | Description |
 |---|---|---|
-| (root) | object | A comment on an item. |
+| (Comment) | object | A comment on an item. |
 | type | string | - |
-| dateCreated | string | The date on which the item was created. |
-| dateModified | string | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. |
-| dateDeleted | string | The date on which the item was deleted. |
+| dateCreated | string | The date on which the item was created. <span class='constraints'>format (`date-time`)</span> |
+| dateModified | string | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. <span class='constraints'>format (`date-time`)</span> |
+| dateDeleted | string | The date on which the item was deleted. <span class='constraints'>format (`date-time`)</span> |
+| text | string | - |
+| author | object | the author of something |
+| about | object | The subject of the content |
+| identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| type | string | - |
+| dateCreated | string | The date on which the item was created. <span class='constraints'>format (`date-time`)</span> |
+| dateModified | string | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. <span class='constraints'>format (`date-time`)</span> |
+| dateDeleted | string | The date on which the item was deleted. <span class='constraints'>format (`date-time`)</span> |
 | text | string | - |
 | author | object | the author of something |
 | about | object | The subject of the content |
 | identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
 
-> Examples of Comment
+## Example
+
+
 
 ```json
 {
@@ -41,5 +53,3 @@ title: Comment
   }
 }
 ```
-
-

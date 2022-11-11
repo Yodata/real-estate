@@ -1,9 +1,17 @@
 ---
 title: DigitalDocument
 ---
+## Schema
+
 | Name | Type | Description |
 |---|---|---|
-| (root) | object | an electronic file. |
+| (DigitalDocument) | object | an electronic file. |
+| type | string | - |
+| id | string | - |
+| name | string | document name or title |
+| encodingFormat | string | [ISO Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml) |
+| about | object | subject of the Document |
+| url | string | public URL of the object |
 | type | string | - |
 | id | string | - |
 | name | string | document name or title |
@@ -11,7 +19,9 @@ title: DigitalDocument
 | about | object | subject of the Document |
 | url | string | public URL of the object |
 
-> Examples of DigitalDocument
+## Example
+
+
 
 ```json
 {
@@ -28,5 +38,3 @@ title: DigitalDocument
   "url": "https://example.com"
 }
 ```
-
-

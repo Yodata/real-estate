@@ -1,29 +1,31 @@
 ---
 title: RealEstateProperty
 ---
+## Schema
+
 | Name | Type | Description |
 |---|---|---|
-| (root) | object | a property in the real estate transaction context |
+| (RealEstateProperty) | object | a property in the real estate transaction context |
 | type | string | "RealEstateProperty" |
-| propertyType | string | RESO property type (see range for allowed values) |
+| propertyType | string | RESO property type (see range for allowed values) <span class='constraints'>4 characters</span> |
 | addressCountry | string | two-letter ISO 3166-1 alpha-2 country code |
-| addressLocality | string | City, Township. |
-| addressRegion | string | State or Province. |
+| addressLocality | string | City, Township. <span class='constraints'><= 50 characters</span> |
+| addressRegion | string | State or Province. <span class='constraints'><= 3 characters</span> |
 | apn | string | Assessors Parcel Number |
 | image | tuple<object allOf, ...optional<any>> | an ImageObject or URI reference to an image on the web. |
 | image.0 (index) | object allOf | - |
 | image.0.0 (allOf item) | allOf | an image, video or document availble for download |
 | image.0.0.0 (allOf item) | object | - |
-| image.0.0.0.type | string | The item type (Linked-Data @type) |
-| image.0.0.0.@id | string | the liked data uri for the Thing |
-| image.0.0.0 (property names) | - | - |
+| image.0.0.0.type | string | The item type (Linked-Data @type) <span class='constraints'>pattern (`^[A-Z][a-zA-Z0-9]+$`)</span> |
+| image.0.0.0.@id | string | the liked data uri for the Thing <span class='constraints'>format (`uri`)</span> |
+| image.0.0.0 (property names) | - |  <span class='constraints'>pattern (`^[a-z@$][a-zA-Z0-9-_]+$`)</span> |
 | image.0.0.1 (allOf item) | - | - |
 | image.0.0.1.type | string | - |
-| image.0.0.1.id | string | the URL to access the item. |
+| image.0.0.1.id | string | the URL to access the item. <span class='constraints'>format (`uri`)</span> |
 | image.0.0.1.name | string | the file name of the object. |
 | image.0.0.1.encodingFormat | string | MIME type |
-| image.0.0.1.about | string | URI to the subject of the image or logo |
-| image.0.0.1.url | string | URL of the image content |
+| image.0.0.1.about | string | URI to the subject of the image or logo <span class='constraints'>format (`uri`)</span> |
+| image.0.0.1.url | string | URL of the image content <span class='constraints'>format (`uri`)</span> |
 | image.0.1 (allOf item) | - | - |
 | image.0.1.type | string | - |
 | image.0.1.id | any | - |
@@ -37,13 +39,53 @@ title: RealEstateProperty
 | numberOfBathrooms | string | the number of bathrooms |
 | numberOfBedrooms | string | the number of bedrooms |
 | numberOfRooms | string | the total number of rooms in the building |
-| postalCode | string | Zip/Post Code |
+| postalCode | string | Zip/Post Code <span class='constraints'><= 12 characters</span> |
 | propertySubType | string | RESO property sub-type (see range for allowed values) |
 | stories | number | he number of floors in the property |
-| streetAddress | string | the street address |
+| streetAddress | string | the street address <span class='constraints'><= 75 characters</span> |
+| yearBuilt | number | the year the structure was created |
+| type | string | "RealEstateProperty" |
+| propertyType | string | RESO property type (see range for allowed values) <span class='constraints'>4 characters</span> |
+| addressCountry | string | two-letter ISO 3166-1 alpha-2 country code |
+| addressLocality | string | City, Township. <span class='constraints'><= 50 characters</span> |
+| addressRegion | string | State or Province. <span class='constraints'><= 3 characters</span> |
+| apn | string | Assessors Parcel Number |
+| image | tuple<object allOf, ...optional<any>> | an ImageObject or URI reference to an image on the web. |
+| image.0 (index) | object allOf | - |
+| image.0.0 (allOf item) | allOf | an image, video or document availble for download |
+| image.0.0.0 (allOf item) | object | - |
+| image.0.0.0.type | string | The item type (Linked-Data @type) <span class='constraints'>pattern (`^[A-Z][a-zA-Z0-9]+$`)</span> |
+| image.0.0.0.@id | string | the liked data uri for the Thing <span class='constraints'>format (`uri`)</span> |
+| image.0.0.0 (property names) | - |  <span class='constraints'>pattern (`^[a-z@$][a-zA-Z0-9-_]+$`)</span> |
+| image.0.0.1 (allOf item) | - | - |
+| image.0.0.1.type | string | - |
+| image.0.0.1.id | string | the URL to access the item. <span class='constraints'>format (`uri`)</span> |
+| image.0.0.1.name | string | the file name of the object. |
+| image.0.0.1.encodingFormat | string | MIME type |
+| image.0.0.1.about | string | URI to the subject of the image or logo <span class='constraints'>format (`uri`)</span> |
+| image.0.0.1.url | string | URL of the image content <span class='constraints'>format (`uri`)</span> |
+| image.0.1 (allOf item) | - | - |
+| image.0.1.type | string | - |
+| image.0.1.id | any | - |
+| image.0.1.name | any | - |
+| image.0.1.encodingFormat | any | - |
+| latitude | number | The latitude of a location. |
+| listingId | string | the local identifier for the listing (MLS #) |
+| livingArea | object | property indoor space |
+| longitude | number | The longitude of a location. |
+| lotSize | object | outdoor space minValue, maxValue |
+| numberOfBathrooms | string | the number of bathrooms |
+| numberOfBedrooms | string | the number of bedrooms |
+| numberOfRooms | string | the total number of rooms in the building |
+| postalCode | string | Zip/Post Code <span class='constraints'><= 12 characters</span> |
+| propertySubType | string | RESO property sub-type (see range for allowed values) |
+| stories | number | he number of floors in the property |
+| streetAddress | string | the street address <span class='constraints'><= 75 characters</span> |
 | yearBuilt | number | the year the structure was created |
 
-> Examples of RealEstateProperty
+## Example
+
+
 
 ```json
 {
@@ -89,5 +131,3 @@ title: RealEstateProperty
   "yearBuilt": 1988
 }
 ```
-
-

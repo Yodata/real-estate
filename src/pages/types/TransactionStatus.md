@@ -1,19 +1,24 @@
 ---
 title: TransactionStatus
 ---
+## Schema
+
 | Name | Type | Description |
 |---|---|---|
-| (root) | object | Transaction Status Enumeration Values |
+| (TransactionStatus) | object | Transaction Status Enumeration Values |
+| PendingTransactionStatus | string | Pending Status |
+| ClosedTransactionStatus | string | Closed Status |
+| CanceledTransactionStatus | string | Canceled Status |
 | PendingTransactionStatus | string | Pending Status |
 | ClosedTransactionStatus | string | Closed Status |
 | CanceledTransactionStatus | string | Canceled Status |
 
-> Examples of TransactionStatus
+## Example
+
+
 
 ```json
 {
   "transactionStatus": "ClosedTransactionStatus"
 }
 ```
-
-

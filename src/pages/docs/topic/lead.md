@@ -1,7 +1,11 @@
 ---
 title: lead
 ---
-## Operations### SUB `lead` Operation
+## ## Operations
+
+
+
+### SUB `lead` Operation
 
 lead management events
 
@@ -18,7 +22,5 @@ Subscribers receive one of the following messages per event.
 * [lead#reject](message/lead.reject)
 
 * [lead#retract](message/lead.retract)
-
-
 
 

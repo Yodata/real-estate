@@ -1,9 +1,21 @@
 ---
 title: ProgramMembership
 ---
+## Schema
+
 | Name | Type | Description |
 |---|---|---|
-| (root) | object | describes membership relation between a member (Person) and a MarketingProgram |
+| (ProgramMembership) | object | describes membership relation between a member (Person) and a MarketingProgram |
+| type | string | - |
+| role | string | - |
+| member | object | - |
+| member.type | string | - |
+| member.name | string | - |
+| member.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| memberOf | object | - |
+| memberOf.type | string | - |
+| memberOf.name | string | - |
+| memberOf.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
 | type | string | - |
 | role | string | - |
 | member | object | - |
@@ -15,7 +27,9 @@ title: ProgramMembership
 | memberOf.name | string | - |
 | memberOf.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
 
-> Examples of ProgramMembership
+## Example
+
+
 
 ```json
 {
@@ -37,5 +51,3 @@ title: ProgramMembership
   }
 }
 ```
-
-

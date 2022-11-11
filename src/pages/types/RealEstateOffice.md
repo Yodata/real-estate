@@ -1,15 +1,17 @@
 ---
 title: RealEstateOffice
 ---
+## Schema
+
 | Name | Type | Description |
 |---|---|---|
-| (root) | object allOf | A real estate office / place of business. |
+| (RealEstateOffice) | object allOf | A real estate office / place of business. |
 | 0 (allOf item) | allOf | - |
 | 0 (allOf item) | allOf | - |
 | 0 (allOf item) | object | - |
-| type | string | The item type (Linked-Data @type) |
-| @id | string | the liked data uri for the Thing |
-| 0 (property names) | - | - |
+| type | string | The item type (Linked-Data @type) <span class='constraints'>pattern (`^[A-Z][a-zA-Z0-9]+$`)</span> |
+| @id | string | the liked data uri for the Thing <span class='constraints'>format (`uri`)</span> |
+| 0 (property names) | - |  <span class='constraints'>pattern (`^[a-z@$][a-zA-Z0-9-_]+$`)</span> |
 | 1 (allOf item) | any | - |
 | 2 (allOf item) | any | - |
 | 3 (allOf item) | - | - |
@@ -25,35 +27,35 @@ title: RealEstateOffice
 | 3.certification.0.name | string | the name of the Certification |
 | 3.certification.0.issuedBy | object | the issuing authority |
 | 3.certification.0.issuedBy.type | string | The item type (Linked-Data @type) |
-| 3.certification.0.issuedBy.id | string | Linked-Data URI (@id) |
+| 3.certification.0.issuedBy.id | string | Linked-Data URI (@id) <span class='constraints'>format (`uri`)</span> |
 | 3.certification.0.issuedBy.name | string | name of the issuing organization |
 | 3.certification.0.issuedTo | object | the subject |
 | 3.certification.0.issuedTo.type | string | The item type (Linked-Data @type) |
-| 3.certification.0.issuedTo.id | string | Linked-Data URI (@id) |
+| 3.certification.0.issuedTo.id | string | Linked-Data URI (@id) <span class='constraints'>format (`uri`)</span> |
 | 3.certification.0.issuedTo.name | string | the name of the item |
 | 3.contactPoint | array<object> | a named point of contact - telephone, email, faxNumber, and/or url for the entity |
 | 3.contactPoint.type | string | - |
 | 3.contactPoint.name | string | a label for the contactPoint, i.e. 'Work', or 'Home' |
 | 3.contactPoint.telephone | string | - |
 | 3.contactPoint.faxNumber | string | - |
-| 3.contactPoint.email | string | an email address for the item. |
-| 3.contactPoint.url | string | primary URL for the item. |
-| 3.email | string | - |
+| 3.contactPoint.email | string | an email address for the item. <span class='constraints'>format (`email`)</span> |
+| 3.contactPoint.url | string | primary URL for the item. <span class='constraints'>format (`uri`)</span> |
+| 3.email | string |  <span class='constraints'>format (`email`)</span> |
 | 3.faxNumber | string | Do people still use fax machines? |
 | 3.image | tuple<object allOf, ...optional<any>> | an ImageObject or URI reference to an image on the web. |
 | 3.image.0 (index) | object allOf | - |
 | 3.image.0.0 (allOf item) | allOf | an image, video or document availble for download |
 | 3.image.0.0.0 (allOf item) | object | - |
-| 3.image.0.0.0.type | string | The item type (Linked-Data @type) |
-| 3.image.0.0.0.@id | string | the liked data uri for the Thing |
-| 3.image.0.0.0 (property names) | - | - |
+| 3.image.0.0.0.type | string | The item type (Linked-Data @type) <span class='constraints'>pattern (`^[A-Z][a-zA-Z0-9]+$`)</span> |
+| 3.image.0.0.0.@id | string | the liked data uri for the Thing <span class='constraints'>format (`uri`)</span> |
+| 3.image.0.0.0 (property names) | - |  <span class='constraints'>pattern (`^[a-z@$][a-zA-Z0-9-_]+$`)</span> |
 | 3.image.0.0.1 (allOf item) | - | - |
 | 3.image.0.0.1.type | string | - |
-| 3.image.0.0.1.id | string | the URL to access the item. |
+| 3.image.0.0.1.id | string | the URL to access the item. <span class='constraints'>format (`uri`)</span> |
 | 3.image.0.0.1.name | string | the file name of the object. |
 | 3.image.0.0.1.encodingFormat | string | MIME type |
-| 3.image.0.0.1.about | string | URI to the subject of the image or logo |
-| 3.image.0.0.1.url | string | URL of the image content |
+| 3.image.0.0.1.about | string | URI to the subject of the image or logo <span class='constraints'>format (`uri`)</span> |
+| 3.image.0.0.1.url | string | URL of the image content <span class='constraints'>format (`uri`)</span> |
 | 3.image.0.1 (allOf item) | - | - |
 | 3.image.0.1.type | string | - |
 | 3.image.0.1.id | any | - |
@@ -71,18 +73,18 @@ title: RealEstateOffice
 | 3.logo.1 (allOf item) | object | an associated logo |
 | 3.name | string | Name or DBA. |
 | 3.parentOrganization | array<string> | - |
-| 3.parentOrganization (single item) | string | - |
+| 3.parentOrganization (single item) | string |  <span class='constraints'>format (`uri`)</span> |
 | 3.subOrganization | array<string> | a child organization |
-| 3.subOrganization (single item) | string | - |
+| 3.subOrganization (single item) | string |  <span class='constraints'>format (`uri`)</span> |
 | 3.telephone | string | Primary phone number. |
 | 3.type | string | - |
-| 3.url | string | primary website/url for the entity. |
+| 3.url | string | primary website/url for the entity. <span class='constraints'>format (`uri`)</span> |
 | 1 (allOf item) | - | A real estate franchisor, broker or business |
 | 1.type | string | RealEstateOrganzation |
 | 1.areaServed | object | the physical areas that make up the ServiceArea |
 | 1.description | string | description of the item. |
 | 1.parentOrganization | array<string> | A franchisor or affiliate network of which this organization plays a membership role. |
-| 1.parentOrganization (single item) | string | - |
+| 1.parentOrganization (single item) | string |  <span class='constraints'>format (`uri`)</span> |
 | 1.numberOfSubOrganizations | number | the number of offices for an affiliate. |
 | 1.member | array<anyOf> | A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals. |
 | 1.member (single item) | anyOf | - |
@@ -90,24 +92,24 @@ title: RealEstateOffice
 | 1.member.0.type | string | a role played by the member in the memberOf group |
 | 1.member.0.roleName | string | the role name |
 | 1.member.0.memberOf | object | the org or group where the role is performed |
-| 1.member.0.member | string | member object or id |
-| 1.member.0.startDate | string | date the member began performing this role |
-| 1.member.0.endDate | string | date the member stopped performing the role |
-| 1.member.1 (anyOf item) | string | - |
+| 1.member.0.member | string | member object or id <span class='constraints'>format (`uri`)</span> |
+| 1.member.0.startDate | string | date the member began performing this role <span class='constraints'>format (`date-time`)</span> |
+| 1.member.0.endDate | string | date the member stopped performing the role <span class='constraints'>format (`date-time`)</span> |
+| 1.member.1 (anyOf item) | string |  <span class='constraints'>format (`uri`)</span> |
 | 1.memberOf | array<allOf> | An Organization (or ProgramMembership) to which this Person or Organization belongs. |
 | 1.memberOf (single item) | allOf | - |
 | 1.memberOf.0 (allOf item) | object | describes a role played by a member and a group or organization. |
 | 1.memberOf.0.type | string | a role played by the member in the memberOf group |
 | 1.memberOf.0.roleName | string | the role name |
 | 1.memberOf.0.memberOf | object | the org or group where the role is performed |
-| 1.memberOf.0.member | string | member object or id |
-| 1.memberOf.0.startDate | string | date the member began performing this role |
-| 1.memberOf.0.endDate | string | date the member stopped performing the role |
+| 1.memberOf.0.member | string | member object or id <span class='constraints'>format (`uri`)</span> |
+| 1.memberOf.0.startDate | string | date the member began performing this role <span class='constraints'>format (`date-time`)</span> |
+| 1.memberOf.0.endDate | string | date the member stopped performing the role <span class='constraints'>format (`date-time`)</span> |
 | 1.memberOf.1 (allOf item) | object | a membership relationship |
 | 1.memberOf.1.type | string | an MLS member relationship |
 | 1.memberOf.1.roleName | string | - |
 | 1.memberOf.1.memberOf | object | - |
-| 1.memberOf.1.member | string | - |
+| 1.memberOf.1.member | string |  <span class='constraints'>format (`uri`)</span> |
 | 1.memberOf.1.memberId | string | the user's MLSID |
 | 1.permit | array<object> | - |
 | 1.permit (single item) | object | - |
@@ -117,13 +119,133 @@ title: RealEstateOffice
 | 1.description | any | - |
 | 1.parentOrganization | any | Office broker or franchisor. |
 | 1.subOrganization | array<string> | Agents and teams associated with the office. |
-| 1.subOrganization (single item) | string | - |
+| 1.subOrganization (single item) | string |  <span class='constraints'>format (`uri`)</span> |
+| 1.geoCoordinates | object | a lat/long point. |
+| 1.geoCoordinates.type | string | GeoCordinates |
+| 1.geoCoordinates.longitude | number | The longitude of a location. |
+| 1.geoCoordinates.latitude | number | The latitude of a location. |
+| 0 (allOf item) | allOf | - |
+| 0 (allOf item) | allOf | - |
+| 0 (allOf item) | object | - |
+| type | string | The item type (Linked-Data @type) <span class='constraints'>pattern (`^[A-Z][a-zA-Z0-9]+$`)</span> |
+| @id | string | the liked data uri for the Thing <span class='constraints'>format (`uri`)</span> |
+| 0 (property names) | - |  <span class='constraints'>pattern (`^[a-z@$][a-zA-Z0-9-_]+$`)</span> |
+| 1 (allOf item) | any | - |
+| 2 (allOf item) | any | - |
+| 3 (allOf item) | - | - |
+| 3.address | object | A physical address. |
+| 3.availableLanguage | array<object> | Please use one of the language codes from the IETF BCP 47 standard. |
+| 3.availableLanguage.type | string | - |
+| 3.availableLanguage.name | string | the display name of the language |
+| 3.availableLanguage.additionalName | string | BCP 47 language code |
+| 3.branchCode | string | A short textual code that uniquely identifies a place of business. |
+| 3.certification | tuple<object, ...optional<any>> | certifications granted to a person or organization |
+| 3.certification.0 (index) | object | A certification issued by an organization to an individual or business. |
+| 3.certification.0.type | string | Certification |
+| 3.certification.0.name | string | the name of the Certification |
+| 3.certification.0.issuedBy | object | the issuing authority |
+| 3.certification.0.issuedBy.type | string | The item type (Linked-Data @type) |
+| 3.certification.0.issuedBy.id | string | Linked-Data URI (@id) <span class='constraints'>format (`uri`)</span> |
+| 3.certification.0.issuedBy.name | string | name of the issuing organization |
+| 3.certification.0.issuedTo | object | the subject |
+| 3.certification.0.issuedTo.type | string | The item type (Linked-Data @type) |
+| 3.certification.0.issuedTo.id | string | Linked-Data URI (@id) <span class='constraints'>format (`uri`)</span> |
+| 3.certification.0.issuedTo.name | string | the name of the item |
+| 3.contactPoint | array<object> | a named point of contact - telephone, email, faxNumber, and/or url for the entity |
+| 3.contactPoint.type | string | - |
+| 3.contactPoint.name | string | a label for the contactPoint, i.e. 'Work', or 'Home' |
+| 3.contactPoint.telephone | string | - |
+| 3.contactPoint.faxNumber | string | - |
+| 3.contactPoint.email | string | an email address for the item. <span class='constraints'>format (`email`)</span> |
+| 3.contactPoint.url | string | primary URL for the item. <span class='constraints'>format (`uri`)</span> |
+| 3.email | string |  <span class='constraints'>format (`email`)</span> |
+| 3.faxNumber | string | Do people still use fax machines? |
+| 3.image | tuple<object allOf, ...optional<any>> | an ImageObject or URI reference to an image on the web. |
+| 3.image.0 (index) | object allOf | - |
+| 3.image.0.0 (allOf item) | allOf | an image, video or document availble for download |
+| 3.image.0.0.0 (allOf item) | object | - |
+| 3.image.0.0.0.type | string | The item type (Linked-Data @type) <span class='constraints'>pattern (`^[A-Z][a-zA-Z0-9]+$`)</span> |
+| 3.image.0.0.0.@id | string | the liked data uri for the Thing <span class='constraints'>format (`uri`)</span> |
+| 3.image.0.0.0 (property names) | - |  <span class='constraints'>pattern (`^[a-z@$][a-zA-Z0-9-_]+$`)</span> |
+| 3.image.0.0.1 (allOf item) | - | - |
+| 3.image.0.0.1.type | string | - |
+| 3.image.0.0.1.id | string | the URL to access the item. <span class='constraints'>format (`uri`)</span> |
+| 3.image.0.0.1.name | string | the file name of the object. |
+| 3.image.0.0.1.encodingFormat | string | MIME type |
+| 3.image.0.0.1.about | string | URI to the subject of the image or logo <span class='constraints'>format (`uri`)</span> |
+| 3.image.0.0.1.url | string | URL of the image content <span class='constraints'>format (`uri`)</span> |
+| 3.image.0.1 (allOf item) | - | - |
+| 3.image.0.1.type | string | - |
+| 3.image.0.1.id | any | - |
+| 3.image.0.1.name | any | - |
+| 3.image.0.1.encodingFormat | any | - |
+| 3.logo | array<object allOf> | a logo associated with the organization. |
+| 3.logo (single item) | object allOf | - |
+| 3.logo.0 (allOf item) | object | an electronic file. |
+| 3.logo.0.type | string | - |
+| 3.logo.0.id | string | - |
+| 3.logo.0.name | string | document name or title |
+| 3.logo.0.encodingFormat | string | [ISO Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml) |
+| 3.logo.0.about | object | subject of the Document |
+| 3.logo.0.url | string | public URL of the object |
+| 3.logo.1 (allOf item) | object | an associated logo |
+| 3.name | string | Name or DBA. |
+| 3.parentOrganization | array<string> | - |
+| 3.parentOrganization (single item) | string |  <span class='constraints'>format (`uri`)</span> |
+| 3.subOrganization | array<string> | a child organization |
+| 3.subOrganization (single item) | string |  <span class='constraints'>format (`uri`)</span> |
+| 3.telephone | string | Primary phone number. |
+| 3.type | string | - |
+| 3.url | string | primary website/url for the entity. <span class='constraints'>format (`uri`)</span> |
+| 1 (allOf item) | - | A real estate franchisor, broker or business |
+| 1.type | string | RealEstateOrganzation |
+| 1.areaServed | object | the physical areas that make up the ServiceArea |
+| 1.description | string | description of the item. |
+| 1.parentOrganization | array<string> | A franchisor or affiliate network of which this organization plays a membership role. |
+| 1.parentOrganization (single item) | string |  <span class='constraints'>format (`uri`)</span> |
+| 1.numberOfSubOrganizations | number | the number of offices for an affiliate. |
+| 1.member | array<anyOf> | A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals. |
+| 1.member (single item) | anyOf | - |
+| 1.member.0 (anyOf item) | object | describes a role played by a member and a group or organization. |
+| 1.member.0.type | string | a role played by the member in the memberOf group |
+| 1.member.0.roleName | string | the role name |
+| 1.member.0.memberOf | object | the org or group where the role is performed |
+| 1.member.0.member | string | member object or id <span class='constraints'>format (`uri`)</span> |
+| 1.member.0.startDate | string | date the member began performing this role <span class='constraints'>format (`date-time`)</span> |
+| 1.member.0.endDate | string | date the member stopped performing the role <span class='constraints'>format (`date-time`)</span> |
+| 1.member.1 (anyOf item) | string |  <span class='constraints'>format (`uri`)</span> |
+| 1.memberOf | array<allOf> | An Organization (or ProgramMembership) to which this Person or Organization belongs. |
+| 1.memberOf (single item) | allOf | - |
+| 1.memberOf.0 (allOf item) | object | describes a role played by a member and a group or organization. |
+| 1.memberOf.0.type | string | a role played by the member in the memberOf group |
+| 1.memberOf.0.roleName | string | the role name |
+| 1.memberOf.0.memberOf | object | the org or group where the role is performed |
+| 1.memberOf.0.member | string | member object or id <span class='constraints'>format (`uri`)</span> |
+| 1.memberOf.0.startDate | string | date the member began performing this role <span class='constraints'>format (`date-time`)</span> |
+| 1.memberOf.0.endDate | string | date the member stopped performing the role <span class='constraints'>format (`date-time`)</span> |
+| 1.memberOf.1 (allOf item) | object | a membership relationship |
+| 1.memberOf.1.type | string | an MLS member relationship |
+| 1.memberOf.1.roleName | string | - |
+| 1.memberOf.1.memberOf | object | - |
+| 1.memberOf.1.member | string |  <span class='constraints'>format (`uri`)</span> |
+| 1.memberOf.1.memberId | string | the user's MLSID |
+| 1.permit | array<object> | - |
+| 1.permit (single item) | object | - |
+| 1 (allOf item) | - | - |
+| 1.type | string | RealEstateOffice |
+| 1.contactPoint | any | department or role specific contact points, i.e. relocation. |
+| 1.description | any | - |
+| 1.parentOrganization | any | Office broker or franchisor. |
+| 1.subOrganization | array<string> | Agents and teams associated with the office. |
+| 1.subOrganization (single item) | string |  <span class='constraints'>format (`uri`)</span> |
 | 1.geoCoordinates | object | a lat/long point. |
 | 1.geoCoordinates.type | string | GeoCordinates |
 | 1.geoCoordinates.longitude | number | The longitude of a location. |
 | 1.geoCoordinates.latitude | number | The latitude of a location. |
 
-> Examples of RealEstateOffice
+## Example
+
+
 
 ```json
 {
@@ -280,5 +402,3 @@ title: RealEstateOffice
   }
 }
 ```
-
-

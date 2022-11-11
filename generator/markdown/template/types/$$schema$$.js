@@ -3,6 +3,7 @@ import { File, Text } from '@asyncapi/generator-react-sdk'
 import { FrontMatter } from '../../components/FrontMatter'
 import { Schema } from '../../components/Schema'
 import { Example } from '../../components/Examples'
+import { Header } from '../../components/common'
 
 // eslint-disable-next-line react/display-name
 export default function MarkdownSchema(props) {
@@ -10,8 +11,10 @@ export default function MarkdownSchema(props) {
   return (
     <File name={`${schemaName}.md`}>
       <FrontMatter params={{ title: schemaName }} />
-      <Schema schema={schema} schemaName={schemaName} hideTitle={hideTitle} />
-      <Example schema={schema} schemaName={schemaName} />
+      <Header type={2}>Schema</Header>
+      <Schema schema={schema} schemaName={schemaName} hideTitle={true} />
+      <Header type={2}>Example</Header>
+      <Example schema={schema} schemaName={schemaName} hideTitle={true} />
     </File>
   )
 }
@@ -53,7 +56,7 @@ function typespec (property) {
     const prop = isArray ? property.items : property
     let spec = typeSpec(prop)
     if (property && property.required) {
-      spec += '!'
+      spec += ' (required)'
     }
     return isArray ? `[${spec}]` : spec
   }

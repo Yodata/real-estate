@@ -1,12 +1,14 @@
 ---
 title: Person
 ---
+## Schema
+
 | Name | Type | Description |
 |---|---|---|
-| (root) | object | - |
+| (Person) | object | - |
 | type | string | - |
 | affiliation | array<string> | An organization that this person is affiliated with |
-| affiliation (single item) | string | - |
+| affiliation (single item) | string |  <span class='constraints'>format (`uri`)</span> |
 | address | array<object> | - |
 | address.type | string | - |
 | address.streetAddress | string | the street number and name. |
@@ -17,17 +19,54 @@ title: Person
 | address.addressCountry | string | The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code. |
 | address.addressCounty | string | the county (us real estate extension) |
 | address.addressSubdivision | string | the subdivision or neighborhood (us real estate extension) |
-| birthDate | string | date of birth. |
+| birthDate | string | date of birth. <span class='constraints'>format (`date`)</span> |
 | contactPoint | array<object> | contact points for the person |
 | contactPoint.type | string | - |
 | contactPoint.name | string | a label for the contactPoint, i.e. 'Work', or 'Home' |
 | contactPoint.telephone | string | - |
 | contactPoint.faxNumber | string | - |
-| contactPoint.email | string | an email address for the item. |
-| contactPoint.url | string | primary URL for the item. |
-| email | string | - |
+| contactPoint.email | string | an email address for the item. <span class='constraints'>format (`email`)</span> |
+| contactPoint.url | string | primary URL for the item. <span class='constraints'>format (`uri`)</span> |
+| email | string |  <span class='constraints'>format (`email`)</span> |
 | additionalName | string | any other name(s) associated with the entity, i.e. nickname, middle name, maiden name, etc. For multiple names, use a comma without space as a separator. |
-| familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) |
+| familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) <span class='constraints'><= 50 characters</span> |
+| faxNumber | string | Do people still use fax machines? |
+| givenName | string | First Name of a person |
+| honorificPrefix | string | An honorific prefix preceding a Person's name such as Dr/Mrs/Mr. |
+| honorificSuffix | string | An honorific title following a person's name like M.D. |
+| jobTitle | array<string> | job tiles associated with the item |
+| jobTitle (single item) | string | - |
+| knowsLanguage | array<object> | languages spoken by the person |
+| knowsLanguage.type | string | - |
+| knowsLanguage.name | string | the display name of the language |
+| knowsLanguage.additionalName | string | BCP 47 language code |
+| name | string | Full name of the person. |
+| telephone | string | Primary phone number. |
+| worksFor | string | Organizations the person works for. |
+| type | string | - |
+| affiliation | array<string> | An organization that this person is affiliated with |
+| affiliation (single item) | string |  <span class='constraints'>format (`uri`)</span> |
+| address | array<object> | - |
+| address.type | string | - |
+| address.streetAddress | string | the street number and name. |
+| address.postOfficeBoxNumber | string | The post office box number for PO box addresses. |
+| address.addressRegion | string | State or Province. |
+| address.addressLocality | string | City, Township. |
+| address.postalCode | string | Zip/Post Code |
+| address.addressCountry | string | The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code. |
+| address.addressCounty | string | the county (us real estate extension) |
+| address.addressSubdivision | string | the subdivision or neighborhood (us real estate extension) |
+| birthDate | string | date of birth. <span class='constraints'>format (`date`)</span> |
+| contactPoint | array<object> | contact points for the person |
+| contactPoint.type | string | - |
+| contactPoint.name | string | a label for the contactPoint, i.e. 'Work', or 'Home' |
+| contactPoint.telephone | string | - |
+| contactPoint.faxNumber | string | - |
+| contactPoint.email | string | an email address for the item. <span class='constraints'>format (`email`)</span> |
+| contactPoint.url | string | primary URL for the item. <span class='constraints'>format (`uri`)</span> |
+| email | string |  <span class='constraints'>format (`email`)</span> |
+| additionalName | string | any other name(s) associated with the entity, i.e. nickname, middle name, maiden name, etc. For multiple names, use a comma without space as a separator. |
+| familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) <span class='constraints'><= 50 characters</span> |
 | faxNumber | string | Do people still use fax machines? |
 | givenName | string | First Name of a person |
 | honorificPrefix | string | An honorific prefix preceding a Person's name such as Dr/Mrs/Mr. |
@@ -42,7 +81,9 @@ title: Person
 | telephone | string | Primary phone number. |
 | worksFor | string | Organizations the person works for. |
 
-> Examples of Person
+## Example
+
+
 
 ```json
 {
@@ -97,5 +138,3 @@ title: Person
   "worksFor": "string"
 }
 ```
-
-

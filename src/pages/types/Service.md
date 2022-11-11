@@ -1,9 +1,17 @@
 ---
 title: Service
 ---
+## Schema
+
 | Name | Type | Description |
 |---|---|---|
-| (root) | object | A service provided by an organization. |
+| (Service) | object | A service provided by an organization. |
+| type | string | - |
+| name | string | name of the service. |
+| areaServed | object | a physical location |
+| areaServed.type | string | The item type (Linked-Data @type) |
+| areaServed.address | object | A physical address. |
+| areaServed.geo | object | a geo shape (circle or box) |
 | type | string | - |
 | name | string | name of the service. |
 | areaServed | object | a physical location |
@@ -11,7 +19,9 @@ title: Service
 | areaServed.address | object | A physical address. |
 | areaServed.geo | object | a geo shape (circle or box) |
 
-> Examples of Service
+## Example
+
+
 
 ```json
 {
@@ -49,5 +59,3 @@ title: Service
   }
 }
 ```
-
-

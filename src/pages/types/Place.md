@@ -1,14 +1,21 @@
 ---
 title: Place
 ---
+## Schema
+
 | Name | Type | Description |
 |---|---|---|
-| (root) | object | a physical location |
+| (Place) | object | a physical location |
+| type | string | The item type (Linked-Data @type) |
+| address | object | A physical address. |
+| geo | object | a geo shape (circle or box) |
 | type | string | The item type (Linked-Data @type) |
 | address | object | A physical address. |
 | geo | object | a geo shape (circle or box) |
 
-> Examples of Place
+## Example
+
+
 
 ```json
 {
@@ -42,5 +49,3 @@ title: Place
   }
 }
 ```
-
-

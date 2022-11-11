@@ -1,20 +1,33 @@
 ---
 title: Award
 ---
+## Schema
+
 | Name | Type | Description |
 |---|---|---|
-| (root) | object | An honor bestowed on one or mote _recipients_ by the message _agent_ |
+| (Award) | object | An honor bestowed on one or mote _recipients_ by the message _agent_ |
 | type | string | "AwardAction" |
 | name | string | name of the award |
-| dateAwarded | string | date the award was presented or announced. |
-| agent | string | the agent that presented the award |
+| dateAwarded | string | date the award was presented or announced. <span class='constraints'>format (`date-time`)</span> |
+| agent | string | the agent that presented the award <span class='constraints'>format (`uri`)</span> |
 | recipient | array<object> | recipients of the award |
 | recipient.type | string | - |
-| recipient.id | string | - |
+| recipient.id | string |  <span class='constraints'>format (`uri`)</span> |
+| recipient.name | string | the name of the award recipient |
+| identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| type | string | "AwardAction" |
+| name | string | name of the award |
+| dateAwarded | string | date the award was presented or announced. <span class='constraints'>format (`date-time`)</span> |
+| agent | string | the agent that presented the award <span class='constraints'>format (`uri`)</span> |
+| recipient | array<object> | recipients of the award |
+| recipient.type | string | - |
+| recipient.id | string |  <span class='constraints'>format (`uri`)</span> |
 | recipient.name | string | the name of the award recipient |
 | identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
 
-> Examples of Award
+## Example
+
+
 
 ```json
 {
@@ -34,5 +47,3 @@ title: Award
   }
 }
 ```
-
-

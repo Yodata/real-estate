@@ -1,9 +1,34 @@
 ---
 title: ServiceArea
 ---
+## Schema
+
 | Name | Type | Description |
 |---|---|---|
-| (root) | object | an area when a provider provides a service. additional information available; see [Using Service Areas](/reference-using-service-area) |
+| (ServiceArea) | object | an area when a provider provides a service. additional information available; see [Using Service Areas](/reference-using-service-area) |
+| type | string | "ServiceArea" |
+| kind | string | ServiceArea sub-type.  City or PostalCode |
+| identifier | object | vendor namespaced item identifiers, value should be stored and included in any future events that reference the same item. |
+| identifier.bhhsESAId | string | BHHS internal ESA ID |
+| addressLocality | string | City, Township. |
+| postalCode | string | Zip/Post Code |
+| addressRegion | string | State or Province. |
+| addressCountry | string | The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code. |
+| addressCounty | string | the county (us real estate extension) |
+| provider | object | a broker or company who provides service in the ServiceArea |
+| provider.type | string | "RealEstateOrganization" |
+| provider.id | string | profile URI |
+| additionalProperty | object | BHHS specific ServiceArea properties |
+| additionalProperty.relocationOffice | object | relocation office |
+| additionalProperty.relocationOffice.type | string | The item type (Linked-Data @type) |
+| additionalProperty.relocationOffice.id | string | - |
+| additionalProperty.weight | integer | weight |
+| additionalProperty.officeInPostalCode | boolean | true if the service area provider is physically located in the ServiceArea. |
+| additionalProperty.sortOrder | integer | sort order |
+| additionalProperty.sentToConsumerSite | boolean | sent to consumer site |
+| additionalProperty.sentToCompanyLocator | boolean | sent to company locator |
+| additionalProperty.sentToReferralSolutions | boolean | sent to referral solutions |
+| additionalProperty.luxuryPriceMinimum | object | minimum price for a property listing in the area to be considered a luxury property |
 | type | string | "ServiceArea" |
 | kind | string | ServiceArea sub-type.  City or PostalCode |
 | identifier | object | vendor namespaced item identifiers, value should be stored and included in any future events that reference the same item. |
@@ -28,7 +53,9 @@ title: ServiceArea
 | additionalProperty.sentToReferralSolutions | boolean | sent to referral solutions |
 | additionalProperty.luxuryPriceMinimum | object | minimum price for a property listing in the area to be considered a luxury property |
 
-> Examples of ServiceArea
+## Example
+
+
 
 ```json
 {
@@ -65,5 +92,3 @@ title: ServiceArea
   }
 }
 ```
-
-

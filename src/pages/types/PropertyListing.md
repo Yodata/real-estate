@@ -1,30 +1,32 @@
 ---
 title: PropertyListing
 ---
+## Schema
+
 | Name | Type | Description |
 |---|---|---|
-| (root) | object | a real estate property listed for sale |
+| (PropertyListing) | object | a real estate property listed for sale |
 | type | string | - |
 | addressCountry | string | two-letter ISO 3166-1 alpha-2 country code |
-| addressLocality | string | City, Township. |
-| addressRegion | string | State or Province. |
+| addressLocality | string | City, Township. <span class='constraints'><= 50 characters</span> |
+| addressRegion | string | State or Province. <span class='constraints'><= 3 characters</span> |
 | buyerAgent | object | the buyer's RealEstateAgent |
 | buyerOffice | object | the buyer's RealEstateOffice |
-| closeDate | string | With for-sale listings, the date the purchase agreement was fulfilled. With lease listings, the date the requirements were fulfilled, such as contract and/or deposit. |
+| closeDate | string | With for-sale listings, the date the purchase agreement was fulfilled. With lease listings, the date the requirements were fulfilled, such as contract and/or deposit. <span class='constraints'>format (`date-time`)</span> |
 | image | tuple<object allOf, ...optional<any>> | an ImageObject or URI reference to an image on the web. |
 | image.0 (index) | object allOf | - |
 | image.0.0 (allOf item) | allOf | an image, video or document availble for download |
 | image.0.0.0 (allOf item) | object | - |
-| image.0.0.0.type | string | The item type (Linked-Data @type) |
-| image.0.0.0.@id | string | the liked data uri for the Thing |
-| image.0.0.0 (property names) | - | - |
+| image.0.0.0.type | string | The item type (Linked-Data @type) <span class='constraints'>pattern (`^[A-Z][a-zA-Z0-9]+$`)</span> |
+| image.0.0.0.@id | string | the liked data uri for the Thing <span class='constraints'>format (`uri`)</span> |
+| image.0.0.0 (property names) | - |  <span class='constraints'>pattern (`^[a-z@$][a-zA-Z0-9-_]+$`)</span> |
 | image.0.0.1 (allOf item) | - | - |
 | image.0.0.1.type | string | - |
-| image.0.0.1.id | string | the URL to access the item. |
+| image.0.0.1.id | string | the URL to access the item. <span class='constraints'>format (`uri`)</span> |
 | image.0.0.1.name | string | the file name of the object. |
 | image.0.0.1.encodingFormat | string | MIME type |
-| image.0.0.1.about | string | URI to the subject of the image or logo |
-| image.0.0.1.url | string | URL of the image content |
+| image.0.0.1.about | string | URI to the subject of the image or logo <span class='constraints'>format (`uri`)</span> |
+| image.0.0.1.url | string | URL of the image content <span class='constraints'>format (`uri`)</span> |
 | image.0.1 (allOf item) | - | - |
 | image.0.1.type | string | - |
 | image.0.1.id | any | - |
@@ -33,7 +35,7 @@ title: PropertyListing
 | internetAddressDisplayYN | string | - |
 | latitude | number | The latitude of a location. |
 | listingAgent | object | the agent/broker representing the seller in a real estate transaction |
-| listingContractDate | string | The effective date of the agreement between the seller and the seller's broker. |
+| listingContractDate | string | The effective date of the agreement between the seller and the seller's broker. <span class='constraints'>format (`date-time`)</span> |
 | listingId | string | the local identifier for the listing |
 | listingOffice | object | the listing office |
 | listingOriginatingSystem | object | The place where the item is originally input by the user. |
@@ -47,17 +49,71 @@ title: PropertyListing
 | numberOfRooms | string | the total number of rooms in the building |
 | originatingSystemKey | string | the listing identifier from the original MLS, aka MLSID. |
 | originatingSystemName | string | the name of the MLS where the listing was originally input |
-| postalCode | string | Zip/Post Code |
+| postalCode | string | Zip/Post Code <span class='constraints'><= 12 characters</span> |
 | propertySubType | string | RESO property sub-type (see range for allowed values) |
-| propertyType | string | RESO property type (see range for allowed values) |
-| purchaseContractDate | string | With for-sale listings, the date an offer was accepted and the listing was no longer on market. With lease listings this may represent a meeting of the minds to lease, but some contractual requirements are yet to be fulfilled, such as contract signing or receipt of the deposit. |
+| propertyType | string | RESO property type (see range for allowed values) <span class='constraints'>4 characters</span> |
+| purchaseContractDate | string | With for-sale listings, the date an offer was accepted and the listing was no longer on market. With lease listings this may represent a meeting of the minds to lease, but some contractual requirements are yet to be fulfilled, such as contract signing or receipt of the deposit. <span class='constraints'>format (`date-time`)</span> |
 | stories | number | he number of floors in the property |
-| streetAddress | string | the street address |
+| streetAddress | string | the street address <span class='constraints'><= 75 characters</span> |
 | universalPropertyId | string | The Universal Property Identifier is a unique identifier for all real property in the US and Canada.  It is based on country and local identification methods and is limited to real property.  For cases such as shares of real property, units, and other more granular cases, please utilize the UniversalPropertySubId. |
-| url | string | URL of the item. |
+| url | string | URL of the item. <span class='constraints'>format (`uri`)</span> |
+| yearBuilt | number | the year the structure was created |
+| type | string | - |
+| addressCountry | string | two-letter ISO 3166-1 alpha-2 country code |
+| addressLocality | string | City, Township. <span class='constraints'><= 50 characters</span> |
+| addressRegion | string | State or Province. <span class='constraints'><= 3 characters</span> |
+| buyerAgent | object | the buyer's RealEstateAgent |
+| buyerOffice | object | the buyer's RealEstateOffice |
+| closeDate | string | With for-sale listings, the date the purchase agreement was fulfilled. With lease listings, the date the requirements were fulfilled, such as contract and/or deposit. <span class='constraints'>format (`date-time`)</span> |
+| image | tuple<object allOf, ...optional<any>> | an ImageObject or URI reference to an image on the web. |
+| image.0 (index) | object allOf | - |
+| image.0.0 (allOf item) | allOf | an image, video or document availble for download |
+| image.0.0.0 (allOf item) | object | - |
+| image.0.0.0.type | string | The item type (Linked-Data @type) <span class='constraints'>pattern (`^[A-Z][a-zA-Z0-9]+$`)</span> |
+| image.0.0.0.@id | string | the liked data uri for the Thing <span class='constraints'>format (`uri`)</span> |
+| image.0.0.0 (property names) | - |  <span class='constraints'>pattern (`^[a-z@$][a-zA-Z0-9-_]+$`)</span> |
+| image.0.0.1 (allOf item) | - | - |
+| image.0.0.1.type | string | - |
+| image.0.0.1.id | string | the URL to access the item. <span class='constraints'>format (`uri`)</span> |
+| image.0.0.1.name | string | the file name of the object. |
+| image.0.0.1.encodingFormat | string | MIME type |
+| image.0.0.1.about | string | URI to the subject of the image or logo <span class='constraints'>format (`uri`)</span> |
+| image.0.0.1.url | string | URL of the image content <span class='constraints'>format (`uri`)</span> |
+| image.0.1 (allOf item) | - | - |
+| image.0.1.type | string | - |
+| image.0.1.id | any | - |
+| image.0.1.name | any | - |
+| image.0.1.encodingFormat | any | - |
+| internetAddressDisplayYN | string | - |
+| latitude | number | The latitude of a location. |
+| listingAgent | object | the agent/broker representing the seller in a real estate transaction |
+| listingContractDate | string | The effective date of the agreement between the seller and the seller's broker. <span class='constraints'>format (`date-time`)</span> |
+| listingId | string | the local identifier for the listing |
+| listingOffice | object | the listing office |
+| listingOriginatingSystem | object | The place where the item is originally input by the user. |
+| listingPrice | object | - |
+| listingStatus | string | - |
+| livingArea | object | property indoor space |
+| longitude | number | The longitude of a location. |
+| lotSize | object | outdoor space minValue, maxValue |
+| numberOfBathrooms | string | the number of bathrooms |
+| numberOfBedrooms | string | the number of bedrooms |
+| numberOfRooms | string | the total number of rooms in the building |
+| originatingSystemKey | string | the listing identifier from the original MLS, aka MLSID. |
+| originatingSystemName | string | the name of the MLS where the listing was originally input |
+| postalCode | string | Zip/Post Code <span class='constraints'><= 12 characters</span> |
+| propertySubType | string | RESO property sub-type (see range for allowed values) |
+| propertyType | string | RESO property type (see range for allowed values) <span class='constraints'>4 characters</span> |
+| purchaseContractDate | string | With for-sale listings, the date an offer was accepted and the listing was no longer on market. With lease listings this may represent a meeting of the minds to lease, but some contractual requirements are yet to be fulfilled, such as contract signing or receipt of the deposit. <span class='constraints'>format (`date-time`)</span> |
+| stories | number | he number of floors in the property |
+| streetAddress | string | the street address <span class='constraints'><= 75 characters</span> |
+| universalPropertyId | string | The Universal Property Identifier is a unique identifier for all real property in the US and Canada.  It is based on country and local identification methods and is limited to real property.  For cases such as shares of real property, units, and other more granular cases, please utilize the UniversalPropertySubId. |
+| url | string | URL of the item. <span class='constraints'>format (`uri`)</span> |
 | yearBuilt | number | the year the structure was created |
 
-> Examples of PropertyListing
+## Example
+
+
 
 ```json
 {
@@ -150,5 +206,3 @@ title: PropertyListing
   "yearBuilt": 1988
 }
 ```
-
-

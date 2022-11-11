@@ -1,7 +1,11 @@
 ---
 title: contact
 ---
-## Operations### SUB `contact` Operation
+## ## Operations
+
+
+
+### SUB `contact` Operation
 
 Subscribers receive one of the following messages per event.
 
@@ -24,7 +28,5 @@ Subscribers receive one of the following messages per event.
 * [contact#collectionmemberadd](message/contact.collectionmemberadd)
 
 * [contact#collectionmemberremove](message/contact.collectionmemberremove)
-
-
 
 

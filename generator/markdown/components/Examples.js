@@ -1,6 +1,6 @@
 import { Text } from '@asyncapi/generator-react-sdk';
 import { generateExample } from '@asyncapi/generator-filters'
-import { BlockQuote, CodeBlock } from './common';
+import { Header, CodeBlock } from './common';
 
 
 // options (optional) - object Available options:
@@ -9,7 +9,7 @@ import { BlockQuote, CodeBlock } from './common';
 // skipWriteOnly - boolean Don't include writeOnly object properties
 // quiet - boolean Don't log console warning messages
 
-export function Example({ schema = {}, schemaName = '' }) {
+export function Example({ schema = {}, schemaName = '', hideTitle = true, options = {} }) {
   if (!schemaName) { return null; }
   let example
   if (typeof schema.hasExamples === 'function' && !schema.hasExamples()) {
@@ -24,10 +24,9 @@ export function Example({ schema = {}, schemaName = '' }) {
   }
   return (
     <>
-      <BlockQuote>Examples of {schemaName}</BlockQuote>
-      <Text newLines={2}>
-        <CodeBlock language='json'>{example}</CodeBlock>
-      </Text>
+      {!hideTitle && <Header type={2}>Example</Header>}
+      <Text newLines={2} />
+      <CodeBlock language='json'>{example}</CodeBlock>
     </>
   )
 }

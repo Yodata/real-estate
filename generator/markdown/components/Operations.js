@@ -50,6 +50,7 @@ export function Operations ({ asyncapi }) {
       <Header type={2}>
         Operations
       </Header>
+      <Text newLines={1}/>
       {operationsList}
     </>
   )

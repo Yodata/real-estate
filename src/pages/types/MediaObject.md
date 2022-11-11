@@ -1,22 +1,37 @@
 ---
 title: MediaObject
 ---
+## Schema
+
 | Name | Type | Description |
 |---|---|---|
-| (root) | allOf | an image, video or document availble for download |
+| (MediaObject) | allOf | an image, video or document availble for download |
 | 0 (allOf item) | object | - |
-| type | string | The item type (Linked-Data @type) |
-| @id | string | the liked data uri for the Thing |
-| 0 (property names) | - | - |
+| type | string | The item type (Linked-Data @type) <span class='constraints'>pattern (`^[A-Z][a-zA-Z0-9]+$`)</span> |
+| @id | string | the liked data uri for the Thing <span class='constraints'>format (`uri`)</span> |
+| 0 (property names) | - |  <span class='constraints'>pattern (`^[a-z@$][a-zA-Z0-9-_]+$`)</span> |
 | 1 (allOf item) | - | - |
 | 1.type | string | - |
-| 1.id | string | the URL to access the item. |
+| 1.id | string | the URL to access the item. <span class='constraints'>format (`uri`)</span> |
 | 1.name | string | the file name of the object. |
 | 1.encodingFormat | string | MIME type |
-| 1.about | string | URI to the subject of the image or logo |
-| 1.url | string | URL of the image content |
+| 1.about | string | URI to the subject of the image or logo <span class='constraints'>format (`uri`)</span> |
+| 1.url | string | URL of the image content <span class='constraints'>format (`uri`)</span> |
+| 0 (allOf item) | object | - |
+| type | string | The item type (Linked-Data @type) <span class='constraints'>pattern (`^[A-Z][a-zA-Z0-9]+$`)</span> |
+| @id | string | the liked data uri for the Thing <span class='constraints'>format (`uri`)</span> |
+| 0 (property names) | - |  <span class='constraints'>pattern (`^[a-z@$][a-zA-Z0-9-_]+$`)</span> |
+| 1 (allOf item) | - | - |
+| 1.type | string | - |
+| 1.id | string | the URL to access the item. <span class='constraints'>format (`uri`)</span> |
+| 1.name | string | the file name of the object. |
+| 1.encodingFormat | string | MIME type |
+| 1.about | string | URI to the subject of the image or logo <span class='constraints'>format (`uri`)</span> |
+| 1.url | string | URL of the image content <span class='constraints'>format (`uri`)</span> |
 
-> Examples of MediaObject
+## Example
+
+
 
 ```json
 {
@@ -29,5 +44,3 @@ title: MediaObject
   "url": "http://user.example.com/public/profile/image.jpg"
 }
 ```
-
-

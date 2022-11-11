@@ -1,9 +1,11 @@
 ---
 title: MarketingProgram
 ---
+## Schema
+
 | Name | Type | Description |
 |---|---|---|
-| (root) | object | A collection of pre-defined activities which take place over a period of time or in a regular, ongoing schedule. |
+| (MarketingProgram) | object | A collection of pre-defined activities which take place over a period of time or in a regular, ongoing schedule. |
 | type | string | - |
 | name | string | the name of the item |
 | identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
@@ -18,15 +20,38 @@ title: MarketingProgram
 | member.memberOf.type | string | - |
 | member.memberOf.name | string | - |
 | member.memberOf.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
-| creator | string | creator / author of the item |
-| dateCreated | string | The date on which the item was created. |
-| dateModified | string | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. |
+| creator | string | creator / author of the item <span class='constraints'>format (`uri`)</span> |
+| dateCreated | string | The date on which the item was created. <span class='constraints'>format (`date-time`)</span> |
+| dateModified | string | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. <span class='constraints'>format (`date-time`)</span> |
+| about | object | a physical location |
+| about.type | string | The item type (Linked-Data @type) |
+| about.address | object | A physical address. |
+| about.geo | object | a geo shape (circle or box) |
+| type | string | - |
+| name | string | the name of the item |
+| identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| member | array<object> | - |
+| member.type | string | - |
+| member.role | string | - |
+| member.member | object | - |
+| member.member.type | string | - |
+| member.member.name | string | - |
+| member.member.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| member.memberOf | object | - |
+| member.memberOf.type | string | - |
+| member.memberOf.name | string | - |
+| member.memberOf.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| creator | string | creator / author of the item <span class='constraints'>format (`uri`)</span> |
+| dateCreated | string | The date on which the item was created. <span class='constraints'>format (`date-time`)</span> |
+| dateModified | string | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. <span class='constraints'>format (`date-time`)</span> |
 | about | object | a physical location |
 | about.type | string | The item type (Linked-Data @type) |
 | about.address | object | A physical address. |
 | about.geo | object | a geo shape (circle or box) |
 
-> Examples of MarketingProgram
+## Example
+
+
 
 ```json
 {
@@ -90,5 +115,3 @@ title: MarketingProgram
   }
 }
 ```
-
-

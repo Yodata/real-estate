@@ -1,7 +1,11 @@
 ---
 title: award
 ---
-## Operations### PUB `award` Operation
+## ## Operations
+
+
+
+### PUB `award` Operation
 
 * [award#publish](message/award.publish)
 
@@ -27,7 +31,5 @@ Subscribers receive one of the following messages per event.
 * [award#teamupdate](message/award.teamupdate)
 
 * [award#update](message/award.update)
-
-
 
 

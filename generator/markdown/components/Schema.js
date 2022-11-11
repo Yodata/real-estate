@@ -10,9 +10,9 @@ export function Schema ({ schema, schemaName, hideTitle = false }) {
   const headers = ['Name', 'Type', 'Description']
   return (
     <Text>
-      {schemaName && hideTitle === false ? <Header type={4}>{schemaName}</Header> : null}
+      {schemaName && hideTitle === false ? <Header type={2}>{schemaName}</Header> : null}
       <TableHead headers={headers} />
-      <SchemaPropRow schema={schema} path='' nameNote='root' />
+      <SchemaPropRow schema={schema} path='' nameNote={schemaName} />
       <SchemaContent schema={schema} schemaName='' />
     </Text>
   )
@@ -222,6 +222,10 @@ function SchemaPropRow ({
   const values = rawValue ? `\`${SchemaHelpers.prettifyValue(schema.const())}\`` : schemaValues(schema)
   const constraints = schemaConstraints(schema)
   const notes = schemaNotes({ schema, required, dependentRequired, isCircular, tryRenderAdditionalNotes })
+
+  if (constraints.length > 0) {
+    description = `${description} <span class='constraints'>${constraints}</span>`
+  }
 
   let renderedName = ''
   if (nameNote) {

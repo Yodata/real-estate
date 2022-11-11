@@ -1,21 +1,35 @@
 ---
 title: TransactionParticipant
 ---
+## Schema
+
 | Name | Type | Description |
 |---|---|---|
-| (root) | object | a participant in a transaction, i.e. Buyer, Seller, etc... |
+| (TransactionParticipant) | object | a participant in a transaction, i.e. Buyer, Seller, etc... |
 | type | string | - |
 | roleName | string | the role of the participant in the transaction |
 | position | number | numeric position for the participant/roleName. |
 | givenName | string | First Name of a person |
-| familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) |
+| familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) <span class='constraints'><= 50 characters</span> |
 | additionalName | string | middleName or alternate name of the Person |
-| email | string | - |
+| email | string |  <span class='constraints'>format (`email`)</span> |
 | telephone | string | Primary phone number. |
 | affiliation | array<string> | person or organization associated with the participant |
-| affiliation (single item) | string | - |
+| affiliation (single item) | string |  <span class='constraints'>format (`uri`)</span> |
+| type | string | - |
+| roleName | string | the role of the participant in the transaction |
+| position | number | numeric position for the participant/roleName. |
+| givenName | string | First Name of a person |
+| familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) <span class='constraints'><= 50 characters</span> |
+| additionalName | string | middleName or alternate name of the Person |
+| email | string |  <span class='constraints'>format (`email`)</span> |
+| telephone | string | Primary phone number. |
+| affiliation | array<string> | person or organization associated with the participant |
+| affiliation (single item) | string |  <span class='constraints'>format (`uri`)</span> |
 
-> Examples of TransactionParticipant
+## Example
+
+
 
 ```json
 {
@@ -32,5 +46,3 @@ title: TransactionParticipant
   ]
 }
 ```
-
-

@@ -1,9 +1,20 @@
 ---
 title: PostalAddress
 ---
+## Schema
+
 | Name | Type | Description |
 |---|---|---|
-| (root) | object | A physical address. |
+| (PostalAddress) | object | A physical address. |
+| type | string | - |
+| streetAddress | string | the street number and name. |
+| postOfficeBoxNumber | string | The post office box number for PO box addresses. |
+| addressRegion | string | State or Province. |
+| addressLocality | string | City, Township. |
+| postalCode | string | Zip/Post Code |
+| addressCountry | string | The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code. |
+| addressCounty | string | the county (us real estate extension) |
+| addressSubdivision | string | the subdivision or neighborhood (us real estate extension) |
 | type | string | - |
 | streetAddress | string | the street number and name. |
 | postOfficeBoxNumber | string | The post office box number for PO box addresses. |
@@ -14,7 +25,9 @@ title: PostalAddress
 | addressCounty | string | the county (us real estate extension) |
 | addressSubdivision | string | the subdivision or neighborhood (us real estate extension) |
 
-> Examples of PostalAddress
+## Example
+
+
 
 ```json
 {
@@ -29,5 +42,3 @@ title: PostalAddress
   "addressSubdivision": "Gotham Heights"
 }
 ```
-
-

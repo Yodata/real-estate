@@ -1,25 +1,43 @@
 ---
 title: ContactSummary
 ---
+## Schema
+
 | Name | Type | Description |
 |---|---|---|
-| (root) | object | minimal schema of a customer for report messages |
+| (ContactSummary) | object | minimal schema of a customer for report messages |
 | type | string | "ContactSummary" |
 | batchId | string | BATCH-ID |
-| author | string | OFFICE-ID |
+| author | string | OFFICE-ID <span class='constraints'>format (`uri`)</span> |
 | transactionType | string | TRANS-TYPE |
 | transactionId | string | TRANS-NO |
 | transactionRole | string | - |
 | position | number | ADJUSTMENT-SEQUENCE |
-| assoicatedAgent | string | ASSOC-ID |
+| assoicatedAgent | string | ASSOC-ID <span class='constraints'>format (`uri`)</span> |
 | object | object | the Customer |
 | object.type | string | The item type (Linked-Data @type) |
 | object.givenName | string | First Name of a person |
 | object.additionalName | string | CUSTOMER-MIDDLE-INITIAL |
-| object.familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) |
+| object.familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) <span class='constraints'><= 50 characters</span> |
+| object.gender | string | gender of the Customer (why?) |
+| type | string | "ContactSummary" |
+| batchId | string | BATCH-ID |
+| author | string | OFFICE-ID <span class='constraints'>format (`uri`)</span> |
+| transactionType | string | TRANS-TYPE |
+| transactionId | string | TRANS-NO |
+| transactionRole | string | - |
+| position | number | ADJUSTMENT-SEQUENCE |
+| assoicatedAgent | string | ASSOC-ID <span class='constraints'>format (`uri`)</span> |
+| object | object | the Customer |
+| object.type | string | The item type (Linked-Data @type) |
+| object.givenName | string | First Name of a person |
+| object.additionalName | string | CUSTOMER-MIDDLE-INITIAL |
+| object.familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) <span class='constraints'><= 50 characters</span> |
 | object.gender | string | gender of the Customer (why?) |
 
-> Examples of ContactSummary
+## Example
+
+
 
 ```json
 {
@@ -40,5 +58,3 @@ title: ContactSummary
   }
 }
 ```
-
-

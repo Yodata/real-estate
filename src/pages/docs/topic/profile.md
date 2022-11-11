@@ -1,7 +1,11 @@
 ---
 title: profile
 ---
-## Operations### SUB `profile` Operation
+## ## Operations
+
+
+
+### SUB `profile` Operation
 
 profile events
 
@@ -18,7 +22,5 @@ Subscribers receive one of the following messages per event.
 * [profile#teammemberadd](message/profile.teammemberadd)
 
 * [profile#teammemberremove](message/profile.teammemberremove)
-
-
 
 

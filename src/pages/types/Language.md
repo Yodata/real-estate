@@ -1,14 +1,21 @@
 ---
 title: Language
 ---
+## Schema
+
 | Name | Type | Description |
 |---|---|---|
-| (root) | object | a written or spoken Language |
+| (Language) | object | a written or spoken Language |
+| type | string | - |
+| name | string | the display name of the language |
+| additionalName | string | BCP 47 language code |
 | type | string | - |
 | name | string | the display name of the language |
 | additionalName | string | BCP 47 language code |
 
-> Examples of Language
+## Example
+
+
 
 ```json
 {
@@ -17,5 +24,3 @@ title: Language
   "additionalName": "en-us"
 }
 ```
-
-

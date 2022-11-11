@@ -1,19 +1,31 @@
 ---
 title: Collection
 ---
+## Schema
+
 | Name | Type | Description |
 |---|---|---|
-| (root) | object | a set of items. |
+| (Collection) | object | a set of items. |
 | type | string | Collection |
 | name | string | name of the collection |
 | identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
 | creator | string | creator of the collection |
-| dateCreated | string | The date on which the item was created. |
-| dateModified | string | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. |
+| dateCreated | string | The date on which the item was created. <span class='constraints'>format (`date-time`)</span> |
+| dateModified | string | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. <span class='constraints'>format (`date-time`)</span> |
+| member | array<object> | members of the collection |
+| member (single item) | object | - |
+| type | string | Collection |
+| name | string | name of the collection |
+| identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| creator | string | creator of the collection |
+| dateCreated | string | The date on which the item was created. <span class='constraints'>format (`date-time`)</span> |
+| dateModified | string | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. <span class='constraints'>format (`date-time`)</span> |
 | member | array<object> | members of the collection |
 | member (single item) | object | - |
 
-> Examples of Collection
+## Example
+
+
 
 ```json
 {
@@ -30,5 +42,3 @@ title: Collection
   ]
 }
 ```
-
-

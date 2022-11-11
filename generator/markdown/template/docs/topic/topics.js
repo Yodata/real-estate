@@ -2,6 +2,7 @@ import { React } from 'react'
 import { File, Text } from '@asyncapi/generator-react-sdk'
 import { FrontMatter } from '../../../components/FrontMatter'
 import { Operation } from '../../../components/Operations'
+import { Header } from '../../../components/common'
 
 export function ChannelOperations (props) {
   const { asyncapi, channel, channelName } = props
@@ -31,11 +32,11 @@ export function ChannelOperations (props) {
     )
   }
   return (
-    <Text newLines={2}>
-      ## Operations
-
+    <>
+      <Header type={2}>## Operations</Header>
+      <Text newLines={2} />
       {operationsList}
-    </Text>
+    </>
   )
 }
 

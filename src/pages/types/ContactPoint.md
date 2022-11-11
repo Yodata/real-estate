@@ -1,17 +1,27 @@
 ---
 title: ContactPoint
 ---
+## Schema
+
 | Name | Type | Description |
 |---|---|---|
-| (root) | object | A point of contact for the entity. By convention in the real estate domain, ContactPoints are preferred over telephone, email, and faxNumber so the ContactPoint.name property can be used to label values for example, Work Telephone, Home, as named contactPoint values. |
+| (ContactPoint) | object | A point of contact for the entity. By convention in the real estate domain, ContactPoints are preferred over telephone, email, and faxNumber so the ContactPoint.name property can be used to label values for example, Work Telephone, Home, as named contactPoint values. <span class='constraints'>>= 3 properties</span> |
 | type | string | - |
 | name | string | a label for the contactPoint, i.e. 'Work', or 'Home' |
 | telephone | string | - |
 | faxNumber | string | - |
-| email | string | an email address for the item. |
-| url | string | primary URL for the item. |
+| email | string | an email address for the item. <span class='constraints'>format (`email`)</span> |
+| url | string | primary URL for the item. <span class='constraints'>format (`uri`)</span> |
+| type | string | - |
+| name | string | a label for the contactPoint, i.e. 'Work', or 'Home' |
+| telephone | string | - |
+| faxNumber | string | - |
+| email | string | an email address for the item. <span class='constraints'>format (`email`)</span> |
+| url | string | primary URL for the item. <span class='constraints'>format (`uri`)</span> |
 
-> Examples of ContactPoint
+## Example
+
+
 
 ```json
 {
@@ -23,5 +33,3 @@ title: ContactPoint
   "url": "https://www.facebook.com/hallandoates"
 }
 ```
-
-

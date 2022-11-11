@@ -1,5 +1,5 @@
 {
-  "name": "@yodata/real-estate/website",
+  "name": "@yodata/real-estate-website",
   "private": true,
   "scripts": {
     "dev": "npx next dev",
@@ -7,7 +7,8 @@
     "start": "npx next start",
     "lint": "npx next lint",
     "test": "npx jest",
-    "generate:production-public-schemas": "npx @asyncapi/cli generate fromTemplate ../schemas/asyncapi.yaml ../generator/data -o ./public/schema"
+    "generate:production-public-schemas": "npx @asyncapi/cli generate fromTemplate ../schemas/asyncapi.yaml ../generator/data -o ./public --force-write",
+    "generate:production-markdown": "npx @asyncapi/cli generate fromTemplate ../schemas/asyncapi.yaml ../generator/markdown -o ./pages --force-write"
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {

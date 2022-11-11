@@ -6,23 +6,25 @@ import { Header, TableHead, TableRow } from './common'
 import { SchemaHelpers } from '../helpers/schema'
 
 export function Schema ({ schema, schemaName, hideTitle = false }) {
-  const headers = ['Name', 'Type', 'Description', 'Value', 'Constraints', 'Notes']
+  // const headers = ['Name', 'Type', 'Description', 'Value', 'Constraints', 'Notes']
+  const headers = ['Name', 'Type', 'Description']
   return (
     <Text>
       {schemaName && hideTitle === false ? <Header type={4}>{schemaName}</Header> : null}
       <TableHead headers={headers} />
       <SchemaPropRow schema={schema} path='' nameNote='root' />
-      {/* <SchemaContent schema={schema} schemaName='' /> */}
+      <SchemaContent schema={schema} schemaName={schemaName} />
     </Text>
   )
 }
 
 function SchemaContent ({ schema, schemaName, path = '' }) {
   const dependentSchemas = SchemaHelpers.getDependentSchemas(schema)
-  // const extensions = SchemaHelpers.getCustomExtensions(schema);
-  const extensions = null
+  const extensions = SchemaHelpers.getCustomExtensions(schema);
   const extensionsSchema = (extensions || Object.keys(extensions).length)
-    ? SchemaHelpers.jsonToSchema(extensions)
+    // temporary solution to NOT render extensions in the table
+    // ? SchemaHelpers.jsonToSchema(extensions)
+    ? null
     : null
 
   return (
@@ -231,10 +233,10 @@ function SchemaPropRow ({
   const rowRenderer = () => [
     renderedName || '-',
     schemaType || '-',
-    description || '-',
-    values || '-',
-    constraints || '-',
-    notes || '-'
+    description || '-'
+    // values || '-',
+    // constraints || '-',
+    // notes || '-'
   ]
 
   if (

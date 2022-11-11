@@ -45,8 +45,7 @@ properties:
       the originalRecipient helps you determine the subscription that delivered the event to you.
       if the originalRecipient is the same as the agent, then the you are subscribed to the agent.
       if the originalRecipient is different from the agent, then you are subscribed to the event source
-
-    example:
+    examples:
       - http://bigbrandrealestate.example.com/profile/card#me
       - http://teamsupermario.example.com/profile/card#me
       - http://bob.example.com/profile/card#me

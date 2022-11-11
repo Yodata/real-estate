@@ -6,7 +6,7 @@
 
 import { React } from 'react'
 import { Text, File } from '@asyncapi/generator-react-sdk'
-import { mergeAllOf } from '../helpers/merge-schema-items'
+import { mergeAllOf } from '../../helpers/merge-schema-items'
 import YAML from 'js-yaml'
 
 const DEFAULT_PARAMS = {
@@ -19,12 +19,12 @@ const DEFAULT_PARAMS = {
   },
   "outputFormats": {
     "json": {
-      "enabled": false,
+      "enabled": true,
       "extension": ".json",
       "basePath": ""
     },
     "yaml": {
-      "enabled": false,
+      "enabled": true,
       "extension": ".yaml",
       "basePath": ""
     }
@@ -33,8 +33,6 @@ const DEFAULT_PARAMS = {
 
 export default function (props) {
   const { messageName, params } = props
-  console.log('messageName', messageName)
-  console.log('params', params)
   const { baseUrl, sortProperties, outputFormats } = DEFAULT_PARAMS
   if (params?.generate?.messages === 'false') return null
   const contentType = props.message.contentType()
@@ -51,8 +49,9 @@ export default function (props) {
     let sortedProperties = {}
        Object.keys(message.payload.properties)
       .sort()
-      .forEach(key => {
-        sortedProperties[key] = message.payload.properties[key]
+         .forEach(key => {
+           if (key.startsWith('x-parser-')) return
+          sortedProperties[key] = message.payload.properties[key]
       })
     message.payload.properties = sortedProperties
   }

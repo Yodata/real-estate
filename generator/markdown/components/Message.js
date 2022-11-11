@@ -31,7 +31,7 @@ export function Message ({ message }) { // NOSONAR
 
   return (
     <>
-      <Header type={4}>{header}</Header>
+      <Header type={2}>{header}</Header>
 
       {message.summary() && (
         <Text newLines={2}>
@@ -90,7 +90,7 @@ export function Message ({ message }) { // NOSONAR
 
       {headers && (
         <>
-          <Header type={5}>Headers</Header>
+          <Header type={3}>Headers</Header>
           <Schema schema={headers} hideTitle />
           <Examples type='headers' message={message} />
         </>
@@ -98,7 +98,7 @@ export function Message ({ message }) { // NOSONAR
 
       {payload && (
         <>
-          <Header type={5}>Payload</Header>
+          <Header type={3}>Payload</Header>
           <Schema schema={payload} hideTitle />
           <Examples type='payload' message={message} />
         </>

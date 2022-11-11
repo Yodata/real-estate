@@ -3,7 +3,6 @@ import { Text } from '@asyncapi/generator-react-sdk'
 
 import { Bindings } from './Bindings'
 import { Extensions } from './Extensions'
-import { Message } from './Message'
 import { Schema } from './Schema'
 import { Security } from './Servers'
 import { Tags } from './Tags'
@@ -174,7 +173,9 @@ function OperationMessages ({ operation }) {
         </Text>
       )}
       {messages.map(msg => (
-        <Message title={`Message \`${msg.uid()}\``} message={msg} key={msg.uid()} />
+        <Text key={msg.uid()}>
+           <Link href={`message/${msg.uid().replace('#','.')}`}>{msg.uid()}</Link>
+        </Text>
       ))}
     </>
   )

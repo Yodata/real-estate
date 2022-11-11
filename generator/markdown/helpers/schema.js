@@ -367,7 +367,6 @@ export class SchemaHelpers {
    * @param schema
    */
   static getDependentSchemas (schema) {
-    return
     const dependencies = schema.dependencies()
     if (!dependencies) {
       return

@@ -2,9 +2,9 @@
 
 import { React } from 'react'
 import { Text, File, render } from '@asyncapi/generator-react-sdk'
-import { mergeAllOf } from '../helpers/merge-schema-items'
+import { mergeAllOf } from '../../helpers/merge-schema-items'
 import YAML from 'js-yaml'
-import { Schema } from '../components/Schema'
+
 const DEFAULT_PARAMS = {
   "baseUrl": "http://realestate.yodata.me/schema/",
   "sortProperties": true,
@@ -15,19 +15,14 @@ const DEFAULT_PARAMS = {
   },
   "outputFormats": {
     "json": {
-      "enabled": false,
+      "enabled": true,
       "extension": ".json",
       "basePath": ""
     },
     "yaml": {
-      "enabled": false,
+      "enabled": true,
       "extension": ".yaml",
       "basePath": ""
-    },
-    "markdown": {
-      "enabled": true,
-      "extension": ".md",
-      "basePath": "docs/"
     }
   }
 }
@@ -65,11 +60,6 @@ export default function TopicPage(props) {
             noRefs: true,
             sortKeys: (options.sortKeys === true) ? true : false
           })
-          break
-        case 'markdown':
-          console.log(`rendering markdown for ${schemaName}`)
-          fileContent = render(<Schema schema={schema} schemaName={schemaName} />)
-          console.log(`${schemaName} rendered`)
           break
         default:
           throw new Error(`${format} is not supported`)

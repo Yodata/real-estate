@@ -10,8 +10,10 @@
   "scripts": {
     "cleanup": "rm -rf ./generated",
     "validate": "npx asyncapi validate asyncapi.yaml",
-    "generate:data": "npx asyncapi generate fromTemplate asyncapi.yaml ../generator/data -o ./generated/schema",
-    "generate:data:production": "npx asyncapi generate fromTemplate asyncapi.yaml ../generator/data -o ../src/public/schema --force-write"
+    "generate:data": "npx asyncapi generate fromTemplate asyncapi.yaml ../generator/data -o ./generated/data",
+    "generate:markdown": "npx asyncapi generate fromTemplate asyncapi.yaml ../generator/markdown -o ./generated/markdown",
+    "generate:markdown:production": "npx asyncapi generate fromTemplate asyncapi.yaml ../generator/markdown -o ../src/pages --force-write",
+    "generate:data:production": "npx asyncapi generate fromTemplate asyncapi.yaml ../generator/data -o ../src/public --force-write"
   },
   "author": "Dave Duran <dave@yodata.io> (https://yodata.io/)",
   "license": "MIT",

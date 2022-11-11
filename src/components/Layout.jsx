@@ -11,7 +11,7 @@ import { Search } from '@/components/Search'
 import { ThemeSelector } from '@/components/ThemeSelector'
 
 const types = [
-, "Certification"
+  "Certification"
 , "City"
 , "CloudEvent"
 , "Collection"

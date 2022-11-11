@@ -1,27 +1,25 @@
 ---
 title: CloudEvent
-route: /types/CloudEvent
-menu: Types
----# CloudEvent
-
-## Schema
+---
 | Name | Type | Description |
-|:-----| :--- | :---------- |
-| topic | string! | the event topic which determines the event.data schema  |
-| time | string&lt;date-time&gt; ! | date & time the event was produced  |
-| agent | string&lt;uri&gt; ! | the user,tema or organization who sent the event  |
-| instrument | string&lt;uri&gt; ! | the service which created the event  |
-| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
-| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
-| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
-| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
-| data | object | event payload, typically an Action  |
+|---|---|---|
+| (root) | object | - |
+| CloudEvent.topic | string | the event topic which determines the event.data schema |
+| CloudEvent.time | string | date & time the event was produced |
+| CloudEvent.agent | string | the user, team, or organization who sent the event |
+| CloudEvent.instrument | string | the service which created the event |
+| CloudEvent.source | string | an agent, team or organization who received a copy of the event |
+| CloudEvent.originalRecipient | string | the original recipient of the event with this id |
+| CloudEvent.id | string | the shared identifier of the event, akd the event id |
+| CloudEvent.@id | string | the url of your instance of the event in your inbox |
+| CloudEvent.data | object | event payload, typically an Action |
 
-### Example
+> Examples of CloudEvent
+
 ```json
 {
   "topic": "string",
-  "time": "2022-10-12T01:13:43Z",
+  "time": "2019-08-24T14:15:22Z",
   "agent": "https://agentid.example.com/profile/card#me",
   "instrument": "https://vendorid.example.com/profile/card#me",
   "source": "https://companyid.example.com/profile/card#me",
@@ -31,3 +29,5 @@ menu: Types
   "data": {}
 }
 ```
+
+

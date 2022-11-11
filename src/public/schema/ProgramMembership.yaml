@@ -7,10 +7,10 @@ properties:
     properties:
       type:
         const: Contact
-        x-parser-schema-id: <anonymous-schema-670>
+        x-parser-schema-id: <anonymous-schema-648>
       name:
         type: string
-        x-parser-schema-id: <anonymous-schema-671>
+        x-parser-schema-id: <anonymous-schema-649>
       identifier:
         title: identifier
         type: object
@@ -22,17 +22,17 @@ properties:
           - vendoraid: '123456'
           - originating_system_id: '123456'
         x-parser-schema-id: <anonymous-schema-95>
-    x-parser-schema-id: <anonymous-schema-669>
+    x-parser-schema-id: <anonymous-schema-647>
   memberOf:
     type: object
     properties:
       type:
         const: MarketingProgram
-        x-parser-schema-id: <anonymous-schema-673>
+        x-parser-schema-id: <anonymous-schema-651>
       name:
         type: string
         example: Market Activity Report 508 Homewood Ave
-        x-parser-schema-id: <anonymous-schema-674>
+        x-parser-schema-id: <anonymous-schema-652>
       identifier:
         title: identifier
         type: object
@@ -44,16 +44,16 @@ properties:
           - vendoraid: '123456'
           - originating_system_id: '123456'
         x-parser-schema-id: <anonymous-schema-95>
-    x-parser-schema-id: <anonymous-schema-672>
+    x-parser-schema-id: <anonymous-schema-650>
   role:
     type: string
     enum:
       - member
       - owner
-    x-parser-schema-id: <anonymous-schema-668>
+    x-parser-schema-id: <anonymous-schema-646>
   type:
     const: ProgramMembership
-    x-parser-schema-id: <anonymous-schema-667>
+    x-parser-schema-id: <anonymous-schema-645>
 x-parser-schema-id: ProgramMembership
 $id: http://realestate.yodata.me/schema/ProgramMembership.yaml
 

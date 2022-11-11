@@ -1,22 +1,18 @@
 ---
 title: DigitalDocument
-route: /types/DigitalDocument
-menu: Types
----# DigitalDocument
-an electronic file.
-
-
-## Schema
+---
 | Name | Type | Description |
-|:-----| :--- | :---------- |
-| type | string |   |
-| id | string |   |
-| name | string | document name or title  |
-| encodingFormat | string | [ISO Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml)  |
-| about | object | subject of the Document <br/>RANGE: [Thing](/types/Thing) |
-| url | string | public URL of the object  |
+|---|---|---|
+| (root) | object | an electronic file. |
+| DigitalDocument.type | string | - |
+| DigitalDocument.id | string | - |
+| DigitalDocument.name | string | document name or title |
+| DigitalDocument.encodingFormat | string | [ISO Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml) |
+| DigitalDocument.about | object | subject of the Document |
+| DigitalDocument.url | string | public URL of the object |
 
-### Example
+> Examples of DigitalDocument
+
 ```json
 {
   "type": "DigitalDocument",
@@ -32,3 +28,5 @@ an electronic file.
   "url": "https://example.com"
 }
 ```
+
+

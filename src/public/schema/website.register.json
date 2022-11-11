@@ -1,17 +1,101 @@
 {
   "$id": "http://realestate.yodata.me/schema/website.register.json",
   "messageId": "website#register",
-  "summary": "website user has registered on the website.",
+  "title": "website#register",
+  "summary": "website user has registered on the website",
+  "contentType": "application/json",
   "externalDocs": null,
   "headers": {
     "type": "object",
     "properties": {
-      "topic": {
-        "const": "realestate/website#register",
-        "x-parser-schema-id": "<anonymous-schema-514>"
+      "time": {
+        "type": "string",
+        "format": "date-time",
+        "description": "date & time the event was produced",
+        "x-faker": "date.past",
+        "x-parser-schema-id": "<anonymous-schema-2>"
+      },
+      "agent": {
+        "type": "string",
+        "format": "uri",
+        "summary": "the event provider who sent the event via a subscription authorized to your service.",
+        "description": "if you are a multi-tenant app, then the agent is the user associated with the event data.\nany future events related to this message will be sent to the same agent/recipient\n",
+        "examples": [
+          "https://teamsupermario.example.com/profile/card#me",
+          "https://bigbrandrealestate.example.com/profile/card#me"
+        ],
+        "x-parser-schema-id": "<anonymous-schema-3>"
+      },
+      "instrument": {
+        "type": "string",
+        "format": "uri",
+        "description": "the app or service that produced the event on behalf of the agent/user",
+        "examples": [
+          "http://supercrm.example.com/profile/card#me",
+          "http://reliance.example.com/profile/card#me",
+          "http://moxiworks.example.com/profile/card#me",
+          "http://listing-manager.example.com/profile/card#me",
+          "http://ace.example.com/profile/card#me",
+          "http://roqlogic.example.com/profile/card#me"
+        ],
+        "x-parser-schema-id": "<anonymous-schema-4>"
+      },
+      "source": {
+        "type": "string",
+        "format": "uri",
+        "description": "a copy of the event was sent to the source(s).",
+        "examples": [
+          "https://bigbrandrealestate.example.com/profile/card#me"
+        ],
+        "x-parser-schema-id": "<anonymous-schema-5>"
+      },
+      "originalRecipient": {
+        "type": "string",
+        "format": "uri",
+        "summary": "the original recipient of the event",
+        "description": "the originalRecipient helps you determine the subscription that delivered the event to you.\nif the originalRecipient is the same as the agent, then the you are subscribed to the agent.\nif the originalRecipient is different from the agent, then you are subscribed to the event source\n",
+        "examples": [
+          "http://bigbrandrealestate.example.com/profile/card#me",
+          "http://teamsupermario.example.com/profile/card#me",
+          "http://bob.example.com/profile/card#me",
+          "http://jane.example.com/profile/card#me",
+          "http://joe.example.com/profile/card#me",
+          "http://jill.example.com/profile/card#me",
+          "http://jim.example.com/profile/card#me",
+          "http://jennifer.example.com/profile/card#me"
+        ],
+        "x-parser-schema-id": "<anonymous-schema-6>"
+      },
+      "id": {
+        "type": "string",
+        "format": "uri",
+        "summary": "the event id - the cannonical identifier for the event",
+        "description": "the Event ID (aka \"Publish ID\") is the immutable canonical identifier for the event.\nit is a URI that is unique to the event and will not change.\nall subscribers will receive the same id for the same event.\n",
+        "examples": [
+          "http://supercrm.example.com/publish/12345",
+          "http://reliance.example.com/publish/23456",
+          "http://moxiworks.example.com/publish/34567",
+          "http://listing-manager.example.com/publish/45678",
+          "http://ace.example.com/publish/56789",
+          "http://roqlogic.example.com/publish/67890"
+        ],
+        "x-parser-schema-id": "<anonymous-schema-7>"
+      },
+      "@id": {
+        "type": "string",
+        "format": "uri",
+        "summary": "the @id is the url in your inbox where you can retrieve the event",
+        "examples": [
+          "http://reliance.example.com/inbox/23456",
+          "http://moxiworks.example.com/inbox/34567",
+          "http://listing-manager.example.com/inbox/45678",
+          "http://ace.example.com/inbox/56789",
+          "http://roqlogic.example.com/inbox/67890"
+        ],
+        "x-parser-schema-id": "<anonymous-schema-8>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-513>"
+    "x-parser-schema-id": "<anonymous-schema-1>"
   },
   "payload": {
     "type": "object",
@@ -29,28 +113,28 @@
                   "Person",
                   "Contact"
                 ],
-                "x-parser-schema-id": "<anonymous-schema-488>"
+                "x-parser-schema-id": "<anonymous-schema-472>"
               },
               "name": {
                 "type": "string",
-                "x-parser-schema-id": "<anonymous-schema-489>"
+                "x-parser-schema-id": "<anonymous-schema-473>"
               },
               "givenName": {
                 "type": "string",
-                "x-parser-schema-id": "<anonymous-schema-490>"
+                "x-parser-schema-id": "<anonymous-schema-474>"
               },
               "familyName": {
                 "type": "string",
-                "x-parser-schema-id": "<anonymous-schema-491>"
+                "x-parser-schema-id": "<anonymous-schema-475>"
               },
               "email": {
                 "type": "string",
                 "format": "email",
-                "x-parser-schema-id": "<anonymous-schema-492>"
+                "x-parser-schema-id": "<anonymous-schema-476>"
               },
               "telephone": {
                 "type": "string",
-                "x-parser-schema-id": "<anonymous-schema-493>"
+                "x-parser-schema-id": "<anonymous-schema-477>"
               },
               "identifier": {
                 "title": "identifier",
@@ -83,7 +167,7 @@
                     "salesForceId": "ad4fa5f4as"
                   }
                 ],
-                "x-parser-schema-id": "<anonymous-schema-494>"
+                "x-parser-schema-id": "<anonymous-schema-478>"
               },
               "contactPoint": {
                 "$id": "http://realestate.yodata.me/schema/ContactPoint.json",
@@ -99,7 +183,7 @@
                   "type": {
                     "type": "string",
                     "const": "ContactPoint",
-                    "x-parser-schema-id": "<anonymous-schema-382>"
+                    "x-parser-schema-id": "<anonymous-schema-374>"
                   },
                   "name": {
                     "type": "string",
@@ -111,7 +195,7 @@
                       "Bob's Cell",
                       "Alice's Work"
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-383>"
+                    "x-parser-schema-id": "<anonymous-schema-375>"
                   },
                   "telephone": {
                     "type": "string",
@@ -122,7 +206,7 @@
                       "555-555-5555 ext. 123",
                       "+1-555-555-5555"
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-384>"
+                    "x-parser-schema-id": "<anonymous-schema-376>"
                   },
                   "faxNumber": {
                     "type": "string",
@@ -133,7 +217,7 @@
                       "555-555-5555 ext. 123",
                       "+1-555-555-5555"
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-385>"
+                    "x-parser-schema-id": "<anonymous-schema-377>"
                   },
                   "email": {
                     "description": "an email address for the item.",
@@ -144,14 +228,14 @@
                       "bob@example.com",
                       "alice@example.com"
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-386>"
+                    "x-parser-schema-id": "<anonymous-schema-378>"
                   },
                   "url": {
                     "description": "primary URL for the item.",
                     "type": "string",
                     "format": "uri",
                     "example": "https://www.facebook.com/hallandoates",
-                    "x-parser-schema-id": "<anonymous-schema-387>"
+                    "x-parser-schema-id": "<anonymous-schema-379>"
                   }
                 }
               },
@@ -161,13 +245,13 @@
                 "properties": {
                   "workingWithAgent": {
                     "type": "boolean",
-                    "x-parser-schema-id": "<anonymous-schema-496>"
+                    "x-parser-schema-id": "<anonymous-schema-480>"
                   }
                 },
-                "x-parser-schema-id": "<anonymous-schema-495>"
+                "x-parser-schema-id": "<anonymous-schema-479>"
               }
             },
-            "x-parser-schema-id": "<anonymous-schema-487>"
+            "x-parser-schema-id": "<anonymous-schema-471>"
           },
           "instrument": {
             "type": "object",
@@ -178,16 +262,16 @@
             "properties": {
               "type": {
                 "type": "string",
-                "x-parser-schema-id": "<anonymous-schema-518>"
+                "x-parser-schema-id": "<anonymous-schema-500>"
               },
               "name": {
                 "type": "string",
-                "x-parser-schema-id": "<anonymous-schema-519>"
+                "x-parser-schema-id": "<anonymous-schema-501>"
               },
               "url": {
                 "type": "string",
                 "format": "uri",
-                "x-parser-schema-id": "<anonymous-schema-520>"
+                "x-parser-schema-id": "<anonymous-schema-502>"
               }
             },
             "examples": [
@@ -200,12 +284,16 @@
                 "name": "Agent App"
               }
             ],
-            "x-parser-schema-id": "<anonymous-schema-517>"
+            "x-parser-schema-id": "<anonymous-schema-499>"
           }
         },
-        "x-parser-schema-id": "<anonymous-schema-516>"
+        "x-parser-schema-id": "<anonymous-schema-498>"
+      },
+      "topic": {
+        "const": "realestate/website#register",
+        "x-parser-schema-id": "<anonymous-schema-497>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-515>"
+    "x-parser-schema-id": "<anonymous-schema-496>"
   }
 }

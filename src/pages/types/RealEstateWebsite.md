@@ -1,17 +1,15 @@
 ---
 title: RealEstateWebsite
-route: /types/RealEstateWebsite
-menu: Types
----# RealEstateWebsite
-
-## Schema
+---
 | Name | Type | Description |
-|:-----| :--- | :---------- |
-| type | string | RealEstateWebsite  |
-| about | object | subject of the website <br/>RANGE: [RealEstateAgent](/types/RealEstateAgent), [RealEstateOffice](/types/RealEstateOffice), [RealEstateOrganization](/types/RealEstateOrganization) |
-| url | string&lt;uri&gt;  | URL of the item.  |
+|---|---|---|
+| (root) | object | - |
+| RealEstateWebsite.type | string | RealEstateWebsite |
+| RealEstateWebsite.about | object | subject of the website |
+| RealEstateWebsite.url | string | URL of the item. |
 
-### Example
+> Examples of RealEstateWebsite
+
 ```json
 {
   "type": "RealEstateWebsite",
@@ -22,3 +20,5 @@ menu: Types
   "url": "http://example.com"
 }
 ```
+
+

@@ -1,34 +1,32 @@
 ---
 title: Award
-route: /types/Award
-menu: Types
----# Award
-An honor bestowed on one or mote _recipients_ by the message _agent_
-
-## Award
-
-## Schema
+---
 | Name | Type | Description |
-|:-----| :--- | :---------- |
-| type | string | "AwardAction"  |
-| name | string | name of the award  |
-| dateAwarded | string | date the award was presented or announced. <br/>RANGE: [DateTime](/types/DateTime) |
-| agent | * | the item creator <br/>RANGE: [Person](/types/Person), [Organization](/types/Organization) |
-| recipient | [object] |   |
-| identifier | object | key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.  |
+|---|---|---|
+| (root) | object | An honor bestowed on one or mote _recipients_ by the message _agent_ |
+| Award.type | string | "AwardAction" |
+| Award.name | string | name of the award |
+| Award.dateAwarded | string | date the award was presented or announced. |
+| Award.agent | string | the agent that presented the award |
+| Award.recipient | array<object> | recipients of the award |
+| Award.recipient.type | string | - |
+| Award.recipient.id | string | - |
+| Award.recipient.name | string | the name of the award recipient |
+| Award.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
 
-### Example
+> Examples of Award
+
 ```json
 {
   "type": "Award",
   "name": "Top 1%",
   "dateAwarded": "2019-11-25T04:23:32.000Z",
-  "agent": "http://agent.example.com/profile/card#me",
+  "agent": "http://example.com",
   "recipient": [
     {
       "type": "RealEstateAgent",
-      "name": "Randy RealEstateAgent",
-      "id": "https://{userid}.example.com/profile/card#me"
+      "id": "https://user.example.com/profile/card#me",
+      "name": "string"
     }
   ],
   "identifier": {
@@ -36,3 +34,5 @@ An honor bestowed on one or mote _recipients_ by the message _agent_
   }
 }
 ```
+
+

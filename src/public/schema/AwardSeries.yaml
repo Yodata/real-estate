@@ -8,23 +8,23 @@ properties:
     example: Annual
     type: string
     description: description of the item.
-    x-parser-schema-id: <anonymous-schema-8>
+    x-parser-schema-id: <anonymous-schema-16>
   duration:
     title: duration
     type: string
     format: duration
     description: The duration of the item in ISO 8601 date format.
     example: R/P1Y
-    x-parser-schema-id: <anonymous-schema-9>
+    x-parser-schema-id: <anonymous-schema-17>
   endDate:
     type: string
     description: the end date-time (ISO 8601 formated)
     format: date-time
-    x-parser-schema-id: <anonymous-schema-11>
+    x-parser-schema-id: <anonymous-schema-19>
   id:
     type: string
     format: uri
-    x-parser-schema-id: <anonymous-schema-12>
+    x-parser-schema-id: <anonymous-schema-20>
   identifier:
     example:
       hsfAwardSeriesID: xxxx
@@ -37,20 +37,20 @@ properties:
       - salesforceid: 0031U00002XW1QWQA1
       - vendoraid: '123456'
       - originating_system_id: '123456'
-    x-parser-schema-id: <anonymous-schema-13>
+    x-parser-schema-id: <anonymous-schema-21>
   name:
     example: Top 1% Club
     description: name of the series
     type: string
-    x-parser-schema-id: <anonymous-schema-7>
+    x-parser-schema-id: <anonymous-schema-15>
   startDate:
     description: the start date-time (ISO 8601 formated)
     type: string
     format: date-time
-    x-parser-schema-id: <anonymous-schema-10>
+    x-parser-schema-id: <anonymous-schema-18>
   type:
     const: AwardSeries
-    x-parser-schema-id: <anonymous-schema-6>
+    x-parser-schema-id: <anonymous-schema-14>
 x-parser-schema-id: AwardSeries
 $id: http://realestate.yodata.me/schema/AwardSeries.yaml
 

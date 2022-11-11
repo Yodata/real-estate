@@ -9,7 +9,7 @@ properties:
     example: >-
       <HTML><body>lorem ipsum dolor sit amet, consectetur
       adipiscing</body></HTML>
-    x-parser-schema-id: <anonymous-schema-599>
+    x-parser-schema-id: <anonymous-schema-583>
   author:
     description: author of the work
     type: object
@@ -21,33 +21,33 @@ properties:
           - RealEstateOffice
           - RealEstateTeam
           - RealEstateOrganization
-        x-parser-schema-id: <anonymous-schema-602>
+        x-parser-schema-id: <anonymous-schema-586>
       id:
         type: string
         format: uri
         description: the profile URI of the author
         example: https://agent123.example.com/profile/card#me
-        x-parser-schema-id: <anonymous-schema-603>
-    x-parser-schema-id: <anonymous-schema-601>
+        x-parser-schema-id: <anonymous-schema-587>
+    x-parser-schema-id: <anonymous-schema-585>
   dateCreated:
     description: >-
       The date on which the BlogPosting was created or the item was added to a
       DataFeed.
     type: string
     format: date-time
-    x-parser-schema-id: <anonymous-schema-607>
+    x-parser-schema-id: <anonymous-schema-591>
   dateModified:
     description: >-
       The date on which the BlogPosting was most recently modified or when the
       item's entry was modified within a DataFeed.
     type: string
     format: date-time
-    x-parser-schema-id: <anonymous-schema-608>
+    x-parser-schema-id: <anonymous-schema-592>
   headline:
     type: string
     description: headline of the post.
     example: Top 10 Spring Cleeaning Tips
-    x-parser-schema-id: <anonymous-schema-598>
+    x-parser-schema-id: <anonymous-schema-582>
   identifier:
     example:
       aempostid: xxxx
@@ -60,7 +60,7 @@ properties:
       - salesforceid: 0031U00002XW1QWQA1
       - vendoraid: '123456'
       - originating_system_id: '123456'
-    x-parser-schema-id: <anonymous-schema-597>
+    x-parser-schema-id: <anonymous-schema-581>
   image:
     description: >-
       by convention the first image item is the article hero image.  note: image
@@ -86,18 +86,18 @@ properties:
                   - type
                 propertyNames:
                   pattern: ^[a-z@$][a-zA-Z0-9-_]+$
-                  x-parser-schema-id: <anonymous-schema-275>
+                  x-parser-schema-id: <anonymous-schema-274>
                 properties:
                   type:
                     type: string
                     pattern: ^[A-Z][a-zA-Z0-9]+$
                     description: The item type (Linked-Data @type)
-                    x-parser-schema-id: <anonymous-schema-273>
+                    x-parser-schema-id: <anonymous-schema-272>
                   '@id':
                     type: string
                     format: uri
                     description: the liked data uri for the Thing
-                    x-parser-schema-id: <anonymous-schema-274>
+                    x-parser-schema-id: <anonymous-schema-273>
                 x-parser-schema-id: Thing
               - properties:
                   type:
@@ -129,7 +129,7 @@ properties:
                     format: uri
                     description: URL of the image content
                     example: http://user.example.com/public/profile/image.jpg
-                x-parser-schema-id: <anonymous-schema-276>
+                x-parser-schema-id: <anonymous-schema-275>
             x-parser-schema-id: MediaObject
           - title: ImageObject
             x-range: ImageObject
@@ -144,9 +144,9 @@ properties:
                 example: image.jpg
               encodingFormat:
                 example: image/jpeg
-            x-parser-schema-id: <anonymous-schema-277>
-        x-parser-schema-id: <anonymous-schema-272>
-    x-parser-schema-id: <anonymous-schema-600>
+            x-parser-schema-id: <anonymous-schema-276>
+        x-parser-schema-id: <anonymous-schema-271>
+    x-parser-schema-id: <anonymous-schema-584>
   provider:
     description: >-
       if the article is provided as a template or stock content to be shared by
@@ -160,31 +160,31 @@ properties:
           - RealEstateTeam
           - RealEstateOffice
           - RealEstateAgent
-        x-parser-schema-id: <anonymous-schema-605>
+        x-parser-schema-id: <anonymous-schema-589>
       id:
         type: string
         format: uri
         description: the profile URI of the provider
         example: https://example.com/profile/card#me
-        x-parser-schema-id: <anonymous-schema-606>
-    x-parser-schema-id: <anonymous-schema-604>
+        x-parser-schema-id: <anonymous-schema-590>
+    x-parser-schema-id: <anonymous-schema-588>
   type:
     enum:
       - BlogPosting
-    x-parser-schema-id: <anonymous-schema-596>
+    x-parser-schema-id: <anonymous-schema-580>
   url:
     title: url
     type: string
     format: uri
     description: URL of the item.
-    x-parser-schema-id: <anonymous-schema-409>
+    x-parser-schema-id: <anonymous-schema-401>
   urlTemplate:
     type: string
     description: >-
       urlTemplate in [IETF rfc6570
       format](https://datatracker.ietf.org/doc/html/rfc6570)
     example: https://example.com/{author/name}/blog/post?{slug}
-    x-parser-schema-id: <anonymous-schema-609>
+    x-parser-schema-id: <anonymous-schema-593>
 x-parser-schema-id: BlogPosting
 $id: http://realestate.yodata.me/schema/BlogPosting.yaml
 

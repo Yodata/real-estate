@@ -1,19 +1,15 @@
 ---
 title: GeoCoordinates
-route: /types/GeoCoordinates
-menu: Types
----# GeoCoordinates
-a lat/long point.
-
-
-## Schema
+---
 | Name | Type | Description |
-|:-----| :--- | :---------- |
-| type | string | GeoCordinates  |
-| longitude | number | The longitude of a location.  |
-| latitude | number | The latitude of a location.  |
+|---|---|---|
+| (root) | object | a lat/long point. |
+| GeoCoordinates.type | string | GeoCordinates |
+| GeoCoordinates.longitude | number | The longitude of a location. |
+| GeoCoordinates.latitude | number | The latitude of a location. |
 
-### Example
+> Examples of GeoCoordinates
+
 ```json
 {
   "type": "GeoCoordinates",
@@ -21,3 +17,5 @@ a lat/long point.
   "latitude": 40.75
 }
 ```
+
+

@@ -12,7 +12,7 @@
       "title": "box",
       "description": "A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character.",
       "example": "(33.5697,-117.775),(33.6018,-117.707)",
-      "x-parser-schema-id": "<anonymous-schema-650>"
+      "x-parser-schema-id": "<anonymous-schema-634>"
     },
     "geoMidpoint": {
       "title": "GeoCoordinates",
@@ -26,21 +26,21 @@
           "enum": [
             "GeoCoordinates"
           ],
-          "x-parser-schema-id": "<anonymous-schema-647>"
+          "x-parser-schema-id": "<anonymous-schema-631>"
         },
         "longitude": {
           "type": "number",
           "description": "The longitude of a location.",
           "x-title": "longitude",
           "example": 73.98,
-          "x-parser-schema-id": "<anonymous-schema-288>"
+          "x-parser-schema-id": "<anonymous-schema-287>"
         },
         "latitude": {
           "type": "number",
           "description": "The latitude of a location.",
           "x-title": "latitude",
           "example": 40.75,
-          "x-parser-schema-id": "<anonymous-schema-279>"
+          "x-parser-schema-id": "<anonymous-schema-278>"
         }
       },
       "x-parser-schema-id": "GeoCoordinates"
@@ -56,7 +56,7 @@
         "unitCode": "mi",
         "unitText": "miles"
       },
-      "x-parser-schema-id": "<anonymous-schema-648>"
+      "x-parser-schema-id": "<anonymous-schema-632>"
     },
     "type": {
       "type": "string",
@@ -64,7 +64,7 @@
         "GeoShape",
         "GeoCircle"
       ],
-      "x-parser-schema-id": "<anonymous-schema-649>"
+      "x-parser-schema-id": "<anonymous-schema-633>"
     }
   },
   "x-parser-schema-id": "GeoShape",

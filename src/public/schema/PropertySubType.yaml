@@ -7,115 +7,115 @@ properties:
   AgriculturePropertyType:
     type: string
     description: An agriculture property.
-    x-parser-schema-id: <anonymous-schema-732>
+    x-parser-schema-id: <anonymous-schema-710>
   ApartmentPropertyType:
     type: string
     description: Apartment
-    x-parser-schema-id: <anonymous-schema-714>
+    x-parser-schema-id: <anonymous-schema-692>
   BoatSlipPropertyType:
     type: string
     description: Boat Slip
-    x-parser-schema-id: <anonymous-schema-715>
+    x-parser-schema-id: <anonymous-schema-693>
   BusinessPropertyType:
     type: string
     description: a residential property zoned for business operation
-    x-parser-schema-id: <anonymous-schema-733>
+    x-parser-schema-id: <anonymous-schema-711>
   CabinPropertyType:
     type: string
     description: Cabin
-    x-parser-schema-id: <anonymous-schema-716>
+    x-parser-schema-id: <anonymous-schema-694>
   CondominiumPropertyType:
     type: string
     description: Condominium
-    x-parser-schema-id: <anonymous-schema-717>
+    x-parser-schema-id: <anonymous-schema-695>
   DeededParkingPropertyType:
     type: string
     description: Deeded Parking
-    x-parser-schema-id: <anonymous-schema-718>
+    x-parser-schema-id: <anonymous-schema-696>
   DuplexPropertyType:
     type: string
     description: Residential Duplex
-    x-parser-schema-id: <anonymous-schema-719>
+    x-parser-schema-id: <anonymous-schema-697>
   FarmPropertyType:
     type: string
     description: Farm Property Type
-    x-parser-schema-id: <anonymous-schema-720>
+    x-parser-schema-id: <anonymous-schema-698>
   HotelMotelPropertyType:
     type: string
     description: Hotel property for sale.
-    x-parser-schema-id: <anonymous-schema-734>
+    x-parser-schema-id: <anonymous-schema-712>
   IndustrialPropertyType:
     type: string
     description: Industrial property
-    x-parser-schema-id: <anonymous-schema-735>
+    x-parser-schema-id: <anonymous-schema-713>
   ManufacturedHomePropertyType:
     type: string
     description: Manufactured Home
-    x-parser-schema-id: <anonymous-schema-721>
+    x-parser-schema-id: <anonymous-schema-699>
   ManufacturedOnLandPropertyType:
     type: string
     description: Manufactured Home + Land
-    x-parser-schema-id: <anonymous-schema-722>
+    x-parser-schema-id: <anonymous-schema-700>
   MixedUsePropertyType:
     type: string
     description: Residential/Commercial property
-    x-parser-schema-id: <anonymous-schema-736>
+    x-parser-schema-id: <anonymous-schema-714>
   MobileHomePropertyType:
     type: string
     description: Mobile Home
-    x-parser-schema-id: <anonymous-schema-723>
+    x-parser-schema-id: <anonymous-schema-701>
   MultiFamilyPropertyType:
     type: string
     description: A single building with multiple units
-    x-parser-schema-id: <anonymous-schema-737>
+    x-parser-schema-id: <anonymous-schema-715>
   OfficePropertyType:
     type: string
     description: An office.
-    x-parser-schema-id: <anonymous-schema-738>
+    x-parser-schema-id: <anonymous-schema-716>
   OwnYourOwnPropertyType:
     type: string
     description: RESO Own Your Own Property
-    x-parser-schema-id: <anonymous-schema-724>
+    x-parser-schema-id: <anonymous-schema-702>
   QuadruplexPropertyType:
     type: string
     description: A residential property with four units
-    x-parser-schema-id: <anonymous-schema-725>
+    x-parser-schema-id: <anonymous-schema-703>
   RanchPropertyType:
     type: string
     description: A Ranch
-    x-parser-schema-id: <anonymous-schema-726>
+    x-parser-schema-id: <anonymous-schema-704>
   RetailPropertyType:
     type: string
     description: Retail property
-    x-parser-schema-id: <anonymous-schema-739>
+    x-parser-schema-id: <anonymous-schema-717>
   SingleFamilyPropertyType:
     type: string
     description: Single Family Residence
-    x-parser-schema-id: <anonymous-schema-727>
+    x-parser-schema-id: <anonymous-schema-705>
   StockCooperativePropertyType:
     type: string
     description: Stock Co-op.
-    x-parser-schema-id: <anonymous-schema-728>
+    x-parser-schema-id: <anonymous-schema-706>
   TimesharePropertyType:
     type: string
     description: Timeshare
-    x-parser-schema-id: <anonymous-schema-729>
+    x-parser-schema-id: <anonymous-schema-707>
   TownhousePropertyType:
     type: string
     description: Townhouse
-    x-parser-schema-id: <anonymous-schema-730>
+    x-parser-schema-id: <anonymous-schema-708>
   TriplexPropertyType:
     type: string
     description: A residential property with 3 separate units
-    x-parser-schema-id: <anonymous-schema-731>
+    x-parser-schema-id: <anonymous-schema-709>
   UnimprovedLandPropertyType:
     type: string
     description: Land for sale
-    x-parser-schema-id: <anonymous-schema-740>
+    x-parser-schema-id: <anonymous-schema-718>
   WarehousePropertyType:
     type: string
     description: A Warehouse property type.
-    x-parser-schema-id: <anonymous-schema-741>
+    x-parser-schema-id: <anonymous-schema-719>
 x-parser-schema-id: PropertySubType
 $id: http://realestate.yodata.me/schema/PropertySubType.yaml
 

@@ -1,32 +1,33 @@
 ---
 title: Comment
-route: /types/Comment
-menu: Types
----# Comment
-A comment on an item.
-
-
-## Schema
+---
 | Name | Type | Description |
-|:-----| :--- | :---------- |
-| type | string! | Comment  |
-| dateCreated | string&lt;date-time&gt;  | The date on which the item was created.  |
-| dateModified | string&lt;date-time&gt;  | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed.  |
-| text | string! | the comment body  |
-| author | object | the content author  |
-| about | object | the action subject  |
-| identifier | object | key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.  |
+|---|---|---|
+| (root) | object | A comment on an item. |
+| Comment.type | string | - |
+| Comment.dateCreated | string | The date on which the item was created. |
+| Comment.dateModified | string | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. |
+| Comment.dateDeleted | string | The date on which the item was deleted. |
+| Comment.text | string | - |
+| Comment.author | object | the author of something |
+| Comment.about | object | The subject of the content |
+| Comment.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
 
-### Example
+> Examples of Comment
+
 ```json
 {
   "type": "Comment",
-  "dateCreated": "2022-10-12T01:13:43Z",
-  "dateModified": "2022-10-12T01:13:43Z",
-  "text": "That's a negative attitude, Robin.",
+  "dateCreated": "2019-08-24T14:15:22Z",
+  "dateModified": "2019-08-24T14:15:22Z",
+  "dateDeleted": "2019-08-24T14:15:22Z",
+  "text": "Populus debet control notitia sua",
   "author": {
-    "type": "RealEstateAgent",
-    "name": "Batman"
+    "type": "Contact",
+    "name": "Mark Twain",
+    "identifier": {
+      "originatingSystemName": "originating-system-id"
+    }
   },
   "about": {
     "type": "Contact",
@@ -40,3 +41,5 @@ A comment on an item.
   }
 }
 ```
+
+

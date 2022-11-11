@@ -1,19 +1,17 @@
 ---
 title: MonetaryAmount
-route: /types/MonetaryAmount
-menu: Types
----# MonetaryAmount
-
-## Schema
+---
 | Name | Type | Description |
-|:-----| :--- | :---------- |
-| type | string! | MonetaryAmount  |
-| minValue | number | the lower limit of the range  |
-| maxValue | number | the upper limit of the range  |
-| value | number! | the actual or expected value  |
-| currency | string! | use ISO4217 country codes  |
+|---|---|---|
+| (root) | object | - |
+| MonetaryAmount.type | string | MonetaryAmount |
+| MonetaryAmount.minValue | number | the lower limit of the range |
+| MonetaryAmount.maxValue | number | the upper limit of the range |
+| MonetaryAmount.value | number | the actual or expected value |
+| MonetaryAmount.currency | string | use ISO4217 country codes |
 
-### Example
+> Examples of MonetaryAmount
+
 ```json
 {
   "type": "MonetaryAmount",
@@ -23,3 +21,5 @@ menu: Types
   "currency": "USD"
 }
 ```
+
+

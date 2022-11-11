@@ -12,7 +12,7 @@ headers:
       format: date-time
       description: date & time the event was produced
       x-faker: date.past
-      x-parser-schema-id: <anonymous-schema-31>
+      x-parser-schema-id: <anonymous-schema-2>
     agent:
       type: string
       format: uri
@@ -28,7 +28,7 @@ headers:
       examples:
         - https://teamsupermario.example.com/profile/card#me
         - https://bigbrandrealestate.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-32>
+      x-parser-schema-id: <anonymous-schema-3>
     instrument:
       type: string
       format: uri
@@ -40,14 +40,14 @@ headers:
         - http://listing-manager.example.com/profile/card#me
         - http://ace.example.com/profile/card#me
         - http://roqlogic.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-33>
+      x-parser-schema-id: <anonymous-schema-4>
     source:
       type: string
       format: uri
       description: a copy of the event was sent to the source(s).
       examples:
         - https://bigbrandrealestate.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-34>
+      x-parser-schema-id: <anonymous-schema-5>
     originalRecipient:
       type: string
       format: uri
@@ -61,7 +61,7 @@ headers:
 
         if the originalRecipient is different from the agent, then you are
         subscribed to the event source
-      example:
+      examples:
         - http://bigbrandrealestate.example.com/profile/card#me
         - http://teamsupermario.example.com/profile/card#me
         - http://bob.example.com/profile/card#me
@@ -70,7 +70,7 @@ headers:
         - http://jill.example.com/profile/card#me
         - http://jim.example.com/profile/card#me
         - http://jennifer.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-35>
+      x-parser-schema-id: <anonymous-schema-6>
     id:
       type: string
       format: uri
@@ -89,7 +89,7 @@ headers:
         - http://listing-manager.example.com/publish/45678
         - http://ace.example.com/publish/56789
         - http://roqlogic.example.com/publish/67890
-      x-parser-schema-id: <anonymous-schema-36>
+      x-parser-schema-id: <anonymous-schema-7>
     '@id':
       type: string
       format: uri
@@ -100,8 +100,8 @@ headers:
         - http://listing-manager.example.com/inbox/45678
         - http://ace.example.com/inbox/56789
         - http://roqlogic.example.com/inbox/67890
-      x-parser-schema-id: <anonymous-schema-37>
-  x-parser-schema-id: <anonymous-schema-30>
+      x-parser-schema-id: <anonymous-schema-8>
+  x-parser-schema-id: <anonymous-schema-1>
 payload:
   type: object
   properties:

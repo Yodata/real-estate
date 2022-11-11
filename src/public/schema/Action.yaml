@@ -11,11 +11,11 @@ required:
 properties:
   object:
     description: item on which the action is carried out
-    x-parser-schema-id: <anonymous-schema-356>
+    x-parser-schema-id: <anonymous-schema-349>
   type:
     description: the action type
     type: string
-    x-parser-schema-id: <anonymous-schema-355>
+    x-parser-schema-id: <anonymous-schema-348>
 externalDocs:
   description: schema.org/Action
   url: https://schema.org/Action

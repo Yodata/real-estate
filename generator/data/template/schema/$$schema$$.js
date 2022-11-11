@@ -34,11 +34,19 @@ export default function TopicPage(props) {
   const { baseUrl, sortProperties, outputFormats } = DEFAULT_PARAMS
   const jsonSchema = mergeAllOf(schema)
   jsonSchema.properties = mergeAllOf(jsonSchema.properties)
+  // Object.entries(jsonSchema.properties).forEach(([ key, value ]) => {
+  //   if (typeof value === 'object' && value[ 'x-parser-schema-id' ]) {
+  //     delete value[ 'x-parser-schema-id' ]
+  //     jsonSchema.properties[key] = value
+  //   }
+
+  // })
   if (sortProperties === true && jsonSchema?.properties) {
     let sortedProperties = {}
        Object.keys(jsonSchema.properties)
       .sort()
-      .forEach(key => {
+         .forEach(key => {
+        if (key.startsWith('x-parser-')) return
         sortedProperties[key] = jsonSchema.properties[key]
       })
     jsonSchema.properties = sortedProperties

@@ -1,17 +1,101 @@
 {
   "$id": "http://realestate.yodata.me/schema/profile.teammemberremove.json",
   "messageId": "profile#teammemberremove",
+  "title": "profile#teammemberremove",
   "summary": "a member (user) is removed from the team",
+  "contentType": "application/json",
   "externalDocs": null,
   "headers": {
     "type": "object",
     "properties": {
-      "topic": {
-        "const": "realestate/profile#teammemberremove",
-        "x-parser-schema-id": "<anonymous-schema-437>"
+      "time": {
+        "type": "string",
+        "format": "date-time",
+        "description": "date & time the event was produced",
+        "x-faker": "date.past",
+        "x-parser-schema-id": "<anonymous-schema-2>"
+      },
+      "agent": {
+        "type": "string",
+        "format": "uri",
+        "summary": "the event provider who sent the event via a subscription authorized to your service.",
+        "description": "if you are a multi-tenant app, then the agent is the user associated with the event data.\nany future events related to this message will be sent to the same agent/recipient\n",
+        "examples": [
+          "https://teamsupermario.example.com/profile/card#me",
+          "https://bigbrandrealestate.example.com/profile/card#me"
+        ],
+        "x-parser-schema-id": "<anonymous-schema-3>"
+      },
+      "instrument": {
+        "type": "string",
+        "format": "uri",
+        "description": "the app or service that produced the event on behalf of the agent/user",
+        "examples": [
+          "http://supercrm.example.com/profile/card#me",
+          "http://reliance.example.com/profile/card#me",
+          "http://moxiworks.example.com/profile/card#me",
+          "http://listing-manager.example.com/profile/card#me",
+          "http://ace.example.com/profile/card#me",
+          "http://roqlogic.example.com/profile/card#me"
+        ],
+        "x-parser-schema-id": "<anonymous-schema-4>"
+      },
+      "source": {
+        "type": "string",
+        "format": "uri",
+        "description": "a copy of the event was sent to the source(s).",
+        "examples": [
+          "https://bigbrandrealestate.example.com/profile/card#me"
+        ],
+        "x-parser-schema-id": "<anonymous-schema-5>"
+      },
+      "originalRecipient": {
+        "type": "string",
+        "format": "uri",
+        "summary": "the original recipient of the event",
+        "description": "the originalRecipient helps you determine the subscription that delivered the event to you.\nif the originalRecipient is the same as the agent, then the you are subscribed to the agent.\nif the originalRecipient is different from the agent, then you are subscribed to the event source\n",
+        "examples": [
+          "http://bigbrandrealestate.example.com/profile/card#me",
+          "http://teamsupermario.example.com/profile/card#me",
+          "http://bob.example.com/profile/card#me",
+          "http://jane.example.com/profile/card#me",
+          "http://joe.example.com/profile/card#me",
+          "http://jill.example.com/profile/card#me",
+          "http://jim.example.com/profile/card#me",
+          "http://jennifer.example.com/profile/card#me"
+        ],
+        "x-parser-schema-id": "<anonymous-schema-6>"
+      },
+      "id": {
+        "type": "string",
+        "format": "uri",
+        "summary": "the event id - the cannonical identifier for the event",
+        "description": "the Event ID (aka \"Publish ID\") is the immutable canonical identifier for the event.\nit is a URI that is unique to the event and will not change.\nall subscribers will receive the same id for the same event.\n",
+        "examples": [
+          "http://supercrm.example.com/publish/12345",
+          "http://reliance.example.com/publish/23456",
+          "http://moxiworks.example.com/publish/34567",
+          "http://listing-manager.example.com/publish/45678",
+          "http://ace.example.com/publish/56789",
+          "http://roqlogic.example.com/publish/67890"
+        ],
+        "x-parser-schema-id": "<anonymous-schema-7>"
+      },
+      "@id": {
+        "type": "string",
+        "format": "uri",
+        "summary": "the @id is the url in your inbox where you can retrieve the event",
+        "examples": [
+          "http://reliance.example.com/inbox/23456",
+          "http://moxiworks.example.com/inbox/34567",
+          "http://listing-manager.example.com/inbox/45678",
+          "http://ace.example.com/inbox/56789",
+          "http://roqlogic.example.com/inbox/67890"
+        ],
+        "x-parser-schema-id": "<anonymous-schema-8>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-436>"
+    "x-parser-schema-id": "<anonymous-schema-1>"
   },
   "payload": {
     "type": "object",
@@ -21,7 +105,7 @@
         "properties": {
           "type": {
             "const": "RemoveAction",
-            "x-parser-schema-id": "<anonymous-schema-440>"
+            "x-parser-schema-id": "<anonymous-schema-428>"
           },
           "object": {
             "allOf": [
@@ -36,13 +120,13 @@
                     "enum": [
                       "OrganizationRole"
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-392>"
+                    "x-parser-schema-id": "<anonymous-schema-384>"
                   },
                   "roleName": {
                     "type": "string",
                     "description": "the role name",
                     "example": "Owner",
-                    "x-parser-schema-id": "<anonymous-schema-393>"
+                    "x-parser-schema-id": "<anonymous-schema-385>"
                   },
                   "memberOf": {
                     "description": "the org or group where the role is performed",
@@ -51,26 +135,26 @@
                       "type": "RealEstateOrganization",
                       "id": "http://orgid.example.com/profile/card#me"
                     },
-                    "x-parser-schema-id": "<anonymous-schema-394>"
+                    "x-parser-schema-id": "<anonymous-schema-386>"
                   },
                   "member": {
                     "description": "member object or id",
                     "type": "string",
                     "format": "uri",
                     "example": "https://memberid.example.com/profile/card#me",
-                    "x-parser-schema-id": "<anonymous-schema-395>"
+                    "x-parser-schema-id": "<anonymous-schema-387>"
                   },
                   "startDate": {
                     "type": "string",
                     "format": "date-time",
                     "description": "date the member began performing this role",
-                    "x-parser-schema-id": "<anonymous-schema-396>"
+                    "x-parser-schema-id": "<anonymous-schema-388>"
                   },
                   "endDate": {
                     "type": "string",
                     "format": "date-time",
                     "description": "date the member stopped performing the role",
-                    "x-parser-schema-id": "<anonymous-schema-397>"
+                    "x-parser-schema-id": "<anonymous-schema-389>"
                   }
                 },
                 "x-parser-schema-id": "OrganizationRole"
@@ -87,7 +171,7 @@
                       "RealEstateTeamMembership"
                     ],
                     "example": "RealEstateTeamMembership",
-                    "x-parser-schema-id": "<anonymous-schema-432>"
+                    "x-parser-schema-id": "<anonymous-schema-421>"
                   },
                   "roleName": {
                     "type": "string",
@@ -96,30 +180,34 @@
                       "TeamAdmin",
                       "TeamOwner"
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-433>"
+                    "x-parser-schema-id": "<anonymous-schema-422>"
                   },
                   "memberOf": {
                     "type": "string",
                     "format": "uri",
                     "example": "https://{team-id}.example.com/profile/card#me",
-                    "x-parser-schema-id": "<anonymous-schema-434>"
+                    "x-parser-schema-id": "<anonymous-schema-423>"
                   },
                   "member": {
                     "type": "string",
                     "format": "uri",
                     "example": "https://{agent}.example.com/profile/card#me",
-                    "x-parser-schema-id": "<anonymous-schema-435>"
+                    "x-parser-schema-id": "<anonymous-schema-424>"
                   }
                 },
-                "x-parser-schema-id": "<anonymous-schema-431>"
+                "x-parser-schema-id": "<anonymous-schema-420>"
               }
             ],
             "x-parser-schema-id": "RealEstateTeamMembership"
           }
         },
-        "x-parser-schema-id": "<anonymous-schema-439>"
+        "x-parser-schema-id": "<anonymous-schema-427>"
+      },
+      "topic": {
+        "const": "realestate/profile#teammemberremove",
+        "x-parser-schema-id": "<anonymous-schema-426>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-438>"
+    "x-parser-schema-id": "<anonymous-schema-425>"
   }
 }

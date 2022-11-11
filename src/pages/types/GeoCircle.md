@@ -1,22 +1,18 @@
 ---
 title: GeoCircle
-route: /types/GeoCircle
-menu: Types
----# GeoCircle
-a circle with a mid point and radius
-
-
-## Schema
+---
 | Name | Type | Description |
-|:-----| :--- | :---------- |
-| type | string |   |
-| geoMidpoint | object | a lat/long point. <br/>RANGE: [GeoCoordinates](/types/GeoCoordinates) |
-| geoMidpoint.type | string | GeoCordinates  |
-| geoMidpoint.longitude | number | The longitude of a location.  |
-| geoMidpoint.latitude | number | The latitude of a location.  |
-| geoRadius | object | the radius of a geo-shape in meters if unitCode is not indicated <br/>RANGE: [QuantitativeValue](/types/QuantitativeValue) |
+|---|---|---|
+| (root) | object | a circle with a mid point and radius |
+| GeoCircle.type | string | - |
+| GeoCircle.geoMidpoint | object | a lat/long point. |
+| GeoCircle.geoMidpoint.type | string | GeoCordinates |
+| GeoCircle.geoMidpoint.longitude | number | The longitude of a location. |
+| GeoCircle.geoMidpoint.latitude | number | The latitude of a location. |
+| GeoCircle.geoRadius | object | the radius of a geo-shape in meters if unitCode is not indicated |
 
-### Example
+> Examples of GeoCircle
+
 ```json
 {
   "type": "GeoCircle",
@@ -33,3 +29,5 @@ a circle with a mid point and radius
   }
 }
 ```
+
+

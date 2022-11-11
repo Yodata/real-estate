@@ -11,7 +11,7 @@
       "description": "creator of the collection",
       "type": "string",
       "example": "https://{agentid}.example.com/profile/card#me",
-      "x-parser-schema-id": "<anonymous-schema-622>"
+      "x-parser-schema-id": "<anonymous-schema-606>"
     },
     "dateCreated": {
       "$id": "http://realestate.yodata.me/schema/dateCreated.yaml",
@@ -48,15 +48,15 @@
       "type": "array",
       "items": {
         "type": "object",
-        "x-parser-schema-id": "<anonymous-schema-624>"
+        "x-parser-schema-id": "<anonymous-schema-608>"
       },
-      "x-parser-schema-id": "<anonymous-schema-623>"
+      "x-parser-schema-id": "<anonymous-schema-607>"
     },
     "name": {
       "type": "string",
       "description": "name of the collection",
       "example": "Clients",
-      "x-parser-schema-id": "<anonymous-schema-621>"
+      "x-parser-schema-id": "<anonymous-schema-605>"
     },
     "type": {
       "description": "Collection",
@@ -64,7 +64,7 @@
       "enum": [
         "Collection"
       ],
-      "x-parser-schema-id": "<anonymous-schema-620>"
+      "x-parser-schema-id": "<anonymous-schema-604>"
     }
   },
   "x-parser-schema-id": "Collection",

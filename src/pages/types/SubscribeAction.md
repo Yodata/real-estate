@@ -1,23 +1,23 @@
 ---
-title: Action
-route: /types/Action
-menu: Types
----# Action
-the consumer (agent) has subscribed to content from the participant with roleName SubscriptionProvider.
-
-
-## Schema
+title: SubscribeAction
+---
 | Name | Type | Description |
-|:-----| :--- | :---------- |
-| type | string! | the action type  |
-| object | * | item on which the action is carried out  |
-| agent | object | the subscriber <br/>RANGE: [Contact](/types/Contact) |
-| participant | [object] | the subscription provider, an Agent, Team, Office or Organization <br/>RANGE: [RealEstateAgent](/types/RealEstateAgent), [RealEstateTeam](/types/RealEstateTeam), [RealEstateOffice](/types/RealEstateOffice), [RealEstateOrganization](/types/RealEstateOrganization) |
-| participant.roleName | string |   |
-| participant.id | string&lt;uri&gt;  |   |
-| participant.additionalProperty | object |   |
+|---|---|---|
+| (root) | allOf | - |
+| SubscribeAction.0 (allOf item) | object | An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role. [schema.org/Action](https://schema.org/Action) |
+| SubscribeAction.0.type | string | the action type |
+| SubscribeAction.0.object | any | item on which the action is carried out |
+| SubscribeAction.1 (allOf item) | - | the consumer (agent) has subscribed to content from the participant with roleName SubscriptionProvider. |
+| SubscribeAction.1.type | string | - |
+| SubscribeAction.1.agent | object | the subscriber |
+| SubscribeAction.1.participant | array<object> | the subscription provider, an Agent, Team, Office or Organization |
+| SubscribeAction.1.participant.roleName | string | - |
+| SubscribeAction.1.participant.id | string | - |
+| SubscribeAction.1.participant.additionalProperty | object | - |
+| SubscribeAction.1.participant.additionalProperty.isCompanyQueue | boolean | - |
 
-### Example
+> Examples of SubscribeAction
+
 ```json
 {
   "type": "SubscribeAction",
@@ -40,3 +40,5 @@ the consumer (agent) has subscribed to content from the participant with roleNam
   ]
 }
 ```
+
+

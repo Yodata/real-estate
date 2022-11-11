@@ -6,14 +6,14 @@ properties:
     type: string
     format: uri
     description: the agent that presented the award
-    x-parser-schema-id: <anonymous-schema-17>
+    x-parser-schema-id: <anonymous-schema-25>
   dateAwarded:
     type: string
     format: date-time
     description: date the award was presented or announced.
     x-range: DateTime
     example: 2019-11-25T04:23:32.000Z
-    x-parser-schema-id: <anonymous-schema-16>
+    x-parser-schema-id: <anonymous-schema-24>
   identifier:
     example:
       hsfAwardId: xxxx
@@ -26,12 +26,12 @@ properties:
       - salesforceid: 0031U00002XW1QWQA1
       - vendoraid: '123456'
       - originating_system_id: '123456'
-    x-parser-schema-id: <anonymous-schema-23>
+    x-parser-schema-id: <anonymous-schema-31>
   name:
     example: Top 1%
     description: name of the award
     type: string
-    x-parser-schema-id: <anonymous-schema-15>
+    x-parser-schema-id: <anonymous-schema-23>
   recipient:
     type: array
     description: recipients of the award
@@ -45,29 +45,29 @@ properties:
             - RealEstateAgent
             - RealEstateOffice
             - RealEstateOrganization
-          x-parser-schema-id: <anonymous-schema-20>
+          x-parser-schema-id: <anonymous-schema-28>
         id:
           type: string
           format: uri
           example: https://user.example.com/profile/card#me
-          x-parser-schema-id: <anonymous-schema-21>
+          x-parser-schema-id: <anonymous-schema-29>
         name:
           type: string
           description: the name of the award recipient
           x-faker: name.findName
-          x-parser-schema-id: <anonymous-schema-22>
+          x-parser-schema-id: <anonymous-schema-30>
       required:
         - type
         - id
         - name
-      x-parser-schema-id: <anonymous-schema-19>
-    x-parser-schema-id: <anonymous-schema-18>
+      x-parser-schema-id: <anonymous-schema-27>
+    x-parser-schema-id: <anonymous-schema-26>
   type:
     type: string
     enum:
       - Award
     description: '"AwardAction"'
-    x-parser-schema-id: <anonymous-schema-14>
+    x-parser-schema-id: <anonymous-schema-22>
 x-parser-schema-id: Award
 $id: http://realestate.yodata.me/schema/Award.yaml
 

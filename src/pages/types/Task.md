@@ -1,28 +1,26 @@
 ---
 title: Task
-route: /types/Task
-menu: Types
----# Task
-an action assigned to an agent, typically as part of a set of interdependent tasks in a Plan
-
-
-## Schema
+---
 | Name | Type | Description |
-|:-----| :--- | :---------- |
-| type | string | The item type (Linked-Data @type)  |
-| identifier | object | key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.  |
-| actionStatus | string | disposition of the Action at the time of this action message. <br/>RANGE: [CompletedActionStatus](/types/CompletedActionStatus), [FailedActionStatus](/types/FailedActionStatus), [ActiveActionStatus](/types/ActiveActionStatus), [PotentialActionStatus](/types/PotentialActionStatus) |
-| memberOf | object | a plan the task is associated with <br/>RANGE: [Plan](/types/Plan) |
-| agent | object | the party who completed, or will complete the task <br/>RANGE: [Person](/types/Person), [Organization](/types/Organization), [RealEstateAgent](/types/RealEstateAgent), [Contact](/types/Contact) |
-| participant | [object] | Other co-agents with a direct or indirect interest in the action. <br/>RANGE: [Person](/types/Person), [RealEstateAgent](/types/RealEstateAgent), [RealEstateTeam](/types/RealEstateTeam), [RealEstateOrganization](/types/RealEstateOrganization) |
-| name | string | name or title  |
-| description | string | task detailed description  |
-| keywords | [string] | keywords/tags for grouping and organizing the item in collections  |
-| dateDue | string&lt;date-time&gt;  | the due date-time (ISO 8601 formated)  |
-| dateCompleted | string&lt;date-time&gt;  | date the task was completed  |
-| location | object | the physical location where an event takes place <br/>RANGE: [Place](/types/Place) |
+|---|---|---|
+| (root) | object | an action assigned to an agent, typically as part of a set of interdependent tasks in a Plan |
+| Task.type | string | The item type (Linked-Data @type) |
+| Task.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| Task.actionStatus | string | disposition of the Action at the time of this action message. |
+| Task.memberOf | object | a plan the task is associated with |
+| Task.agent | object | the party who completed, or will complete the task |
+| Task.participant | array<object> | Other co-agents with a direct or indirect interest in the action. |
+| Task.participant (single item) | object | - |
+| Task.name | string | name or title |
+| Task.description | string | task detailed description |
+| Task.keywords | array<string> | - |
+| Task.keywords (single item) | string | - |
+| Task.dateDue | string | the due date-time (ISO 8601 formated) |
+| Task.dateCompleted | string | date the task was completed |
+| Task.location | object | the physical location where an event takes place |
 
-### Example
+> Examples of Task
+
 ```json
 {
   "type": "Task",
@@ -53,11 +51,10 @@ an action assigned to an agent, typically as part of a set of interdependent tas
   "name": "Call Ricky",
   "description": "Agenda 1. Something 2. Something Else ...",
   "keywords": [
-    "Sphere of Influence",
-    "Past Customer"
+    "string"
   ],
-  "dateDue": "2022-10-12T01:13:43Z",
-  "dateCompleted": "2022-10-12T01:13:43Z",
+  "dateDue": "2019-08-24T14:15:22Z",
+  "dateCompleted": "2019-08-24T14:15:22Z",
   "location": {
     "type": "Place",
     "address": {
@@ -71,3 +68,5 @@ an action assigned to an agent, typically as part of a set of interdependent tas
   }
 }
 ```
+
+

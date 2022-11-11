@@ -13,19 +13,19 @@ properties:
           - RealEstateOrganization
         type: string
         description: The item type (Linked-Data @type)
-        x-parser-schema-id: <anonymous-schema-376>
+        x-parser-schema-id: <anonymous-schema-368>
       id:
         example: https://example.com/profile/card#me
         type: string
         format: uri
         description: Linked-Data URI (@id)
-        x-parser-schema-id: <anonymous-schema-377>
+        x-parser-schema-id: <anonymous-schema-369>
       name:
         type: string
         description: name of the issuing organization
         example: Gotham City Real Estate
-        x-parser-schema-id: <anonymous-schema-378>
-    x-parser-schema-id: <anonymous-schema-375>
+        x-parser-schema-id: <anonymous-schema-370>
+    x-parser-schema-id: <anonymous-schema-367>
   issuedTo:
     x-range: RealEstateAgent
     type: object
@@ -36,28 +36,28 @@ properties:
           - RealEstateAgent
         type: string
         description: The item type (Linked-Data @type)
-        x-parser-schema-id: <anonymous-schema-380>
+        x-parser-schema-id: <anonymous-schema-372>
       id:
         type: string
         format: uri
         description: Linked-Data URI (@id)
-        x-parser-schema-id: <anonymous-schema-381>
+        x-parser-schema-id: <anonymous-schema-373>
       name:
         type: string
         description: the name of the item
         x-parser-schema-id: <anonymous-schema-93>
-    x-parser-schema-id: <anonymous-schema-612>
+    x-parser-schema-id: <anonymous-schema-596>
   name:
     type: string
     description: the name of the Certification
     example: e-Agent Certified
-    x-parser-schema-id: <anonymous-schema-611>
+    x-parser-schema-id: <anonymous-schema-595>
   type:
     description: Certification
     type: string
     enum:
       - Certification
-    x-parser-schema-id: <anonymous-schema-610>
+    x-parser-schema-id: <anonymous-schema-594>
 x-parser-schema-id: Certification
 $id: http://realestate.yodata.me/schema/Certification.yaml
 

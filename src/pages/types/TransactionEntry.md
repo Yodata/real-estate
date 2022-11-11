@@ -1,29 +1,26 @@
 ---
 title: TransactionEntry
-route: /types/TransactionEntry
-menu: Types
----# TransactionEntry
-describes a unit of sales credit in unit or commission value relative to a parent transaction
-
-
-## Schema
+---
 | Name | Type | Description |
-|:-----| :--- | :---------- |
-| type | string | TransactionEntry  |
-| salesProductionUnit | number | the sales production units credited to the recipient  |
-| salesProductionGCI | object | gross commission income credited to the recipient <br/>RANGE: [MonetaryAmount](/types/MonetaryAmount) |
-| salesProductionGCI.type | string! | MonetaryAmount  |
-| salesProductionGCI.minValue | number | the lower limit of the range  |
-| salesProductionGCI.maxValue | number | the upper limit of the range  |
-| salesProductionGCI.value | number! | the actual or expected value  |
-| salesProductionGCI.currency | string! | use ISO4217 country codes  |
-| recipient | object | the agent credited with the sales production and who receives the value  |
-| recipient.type | string | typically a RealEstateAgent  |
-| recipient.roleName | string | enum: ListingAgent,BuyerAgent  |
-| recipient.id | string&lt;uri&gt;  | bhhs profile id for the referring entity  |
-| recipient.identifier | object | unique identifier of the recipient from the data producer  |
+|---|---|---|
+| (root) | object | describes a unit of sales credit in unit or commission value relative to a parent transaction |
+| TransactionEntry.type | string | TransactionEntry |
+| TransactionEntry.salesProductionUnit | number | the sales production units credited to the recipient |
+| TransactionEntry.salesProductionGCI | object | gross commission income credited to the recipient |
+| TransactionEntry.salesProductionGCI.type | string | MonetaryAmount |
+| TransactionEntry.salesProductionGCI.minValue | number | the lower limit of the range |
+| TransactionEntry.salesProductionGCI.maxValue | number | the upper limit of the range |
+| TransactionEntry.salesProductionGCI.value | number | the actual or expected value |
+| TransactionEntry.salesProductionGCI.currency | string | use ISO4217 country codes |
+| TransactionEntry.recipient | object | the agent credited with the sales production and who receives the value |
+| TransactionEntry.recipient.type | string | typically a RealEstateAgent |
+| TransactionEntry.recipient.roleName | string | enum: ListingAgent,BuyerAgent |
+| TransactionEntry.recipient.id | string | Linked-Data URI (@id) |
+| TransactionEntry.recipient.identifier | object | unique identifier of the recipient from the data producer |
+| TransactionEntry.recipient.identifier.bmsAgentId | string | - |
 
-### Example
+> Examples of TransactionEntry
+
 ```json
 {
   "type": "TransactionEntry",
@@ -43,3 +40,5 @@ describes a unit of sales credit in unit or commission value relative to a paren
   }
 }
 ```
+
+

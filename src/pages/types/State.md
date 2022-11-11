@@ -1,21 +1,19 @@
 ---
 title: State
-route: /types/State
-menu: Types
----# State
-a State or Region
-
-
-## Schema
+---
 | Name | Type | Description |
-|:-----| :--- | :---------- |
-| type | string | The item type (Linked-Data @type)  |
-| name | string | the name of the item  |
+|---|---|---|
+| (root) | object | a State or Region |
+| State.type | string | The item type (Linked-Data @type) |
+| State.name | string | the name of the item |
 
-### Example
+> Examples of State
+
 ```json
 {
   "type": "State",
   "name": "New Jersey"
 }
 ```
+
+

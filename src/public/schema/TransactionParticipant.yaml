@@ -8,7 +8,7 @@ properties:
     type: string
     description: middleName or alternate name of the Person
     example: Big
-    x-parser-schema-id: <anonymous-schema-819>
+    x-parser-schema-id: <anonymous-schema-797>
   affiliation:
     type: array
     description: person or organization associated with the participant
@@ -16,8 +16,8 @@ properties:
       type: string
       format: uri
       example: https://{agentid}.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-821>
-    x-parser-schema-id: <anonymous-schema-820>
+      x-parser-schema-id: <anonymous-schema-799>
+    x-parser-schema-id: <anonymous-schema-798>
   email:
     type: string
     format: email
@@ -85,14 +85,14 @@ properties:
     type: number
     description: numeric position for the participant/roleName.
     example: 1
-    x-parser-schema-id: <anonymous-schema-818>
+    x-parser-schema-id: <anonymous-schema-796>
   roleName:
     type: string
     description: the role of the participant in the transaction
     examples:
       - Buyer
       - Seller
-    x-parser-schema-id: <anonymous-schema-817>
+    x-parser-schema-id: <anonymous-schema-795>
   telephone:
     type: string
     description: Primary phone number.
@@ -101,6 +101,6 @@ properties:
   type:
     type: string
     const: TransactionParticipant
-    x-parser-schema-id: <anonymous-schema-816>
+    x-parser-schema-id: <anonymous-schema-794>
 x-parser-schema-id: TransactionParticipant
 

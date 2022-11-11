@@ -1,31 +1,29 @@
 ---
 title: Place
-route: /types/Place
-menu: Types
----# Place
-a physical location
-
-
-## Schema
+---
 | Name | Type | Description |
-|:-----| :--- | :---------- |
-| type | string | The item type (Linked-Data @type)  |
-| address | object | A physical address. <br/>RANGE: [PostalAddress](/types/PostalAddress) |
-| geo | object | a geo shape (circle or box) <br/>RANGE: [GeoCircle](/types/GeoCircle), [GeoShape](/types/GeoShape) |
+|---|---|---|
+| (root) | object | a physical location |
+| Place.type | string | The item type (Linked-Data @type) |
+| Place.address | object | A physical address. |
+| Place.geo | object | a geo shape (circle or box) |
 
-### Example
+> Examples of Place
+
 ```json
 {
   "type": "Place",
   "address": {
     "type": "PostalAddress",
-    "streetAddress": "1007 Mountain Gate Rd",
-    "addressRegion": "New Jersey",
-    "addressLocality": "Gotham City",
-    "postalCode": "10010",
+    "name": "Home",
     "addressCountry": "USA",
     "addressCounty": "Gotham County",
-    "addressSubdivision": "Gotham Heights"
+    "addressLocality": "Gotham City",
+    "addressRegion": "New Jersey",
+    "addressSubdivision": "Gotham Heights",
+    "postalCode": "10010",
+    "postOfficeBoxNumber": "Box 1234",
+    "streetAddress": "1007 Mountain Gate Rd"
   },
   "geo": {
     "type": "GeoShape",
@@ -44,3 +42,5 @@ a physical location
   }
 }
 ```
+
+

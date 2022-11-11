@@ -1,22 +1,18 @@
 ---
 title: QuantitativeValue
-route: /types/QuantitativeValue
-menu: Types
----# QuantitativeValue
-A point value or interval.
-
-
-## Schema
+---
 | Name | Type | Description |
-|:-----| :--- | :---------- |
-| type | string | QuantitativeValue  |
-| value | number | the value (if a static value)  |
-| minValue | number | the lower value of a range  |
-| maxValue | number | the upper value of a range  |
-| unitCode | string | unit code (RESO or UN/CEFACT)  |
-| unitText | string | unit code in common text  |
+|---|---|---|
+| (root) | object | A point value or interval. |
+| QuantitativeValue.type | string | QuantitativeValue |
+| QuantitativeValue.value | number | the value (if a static value) |
+| QuantitativeValue.minValue | number | the lower value of a range |
+| QuantitativeValue.maxValue | number | the upper value of a range |
+| QuantitativeValue.unitCode | string | unit code (RESO or UN/CEFACT) |
+| QuantitativeValue.unitText | string | unit code in common text |
 
-### Example
+> Examples of QuantitativeValue
+
 ```json
 {
   "type": "QuantitativeValue",
@@ -27,3 +23,5 @@ A point value or interval.
   "unitText": "acres"
 }
 ```
+
+

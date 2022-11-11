@@ -23,7 +23,7 @@ properties:
       - AE
       - GB
       - US
-    x-parser-schema-id: <anonymous-schema-266>
+    x-parser-schema-id: <anonymous-schema-265>
   addressLocality:
     $id: addressLocality
     type: string
@@ -35,12 +35,12 @@ properties:
     description: State or Province.
     example: New Jersey
     maxLength: 3
-    x-parser-schema-id: <anonymous-schema-267>
+    x-parser-schema-id: <anonymous-schema-266>
   apn:
     type: string
     description: Assessors Parcel Number
     example: ABC-12345-XX-XXXX
-    x-parser-schema-id: <anonymous-schema-764>
+    x-parser-schema-id: <anonymous-schema-742>
   image:
     title: image
     description: an ImageObject or URI reference to an image on the web.
@@ -64,18 +64,18 @@ properties:
                   - type
                 propertyNames:
                   pattern: ^[a-z@$][a-zA-Z0-9-_]+$
-                  x-parser-schema-id: <anonymous-schema-275>
+                  x-parser-schema-id: <anonymous-schema-274>
                 properties:
                   type:
                     type: string
                     pattern: ^[A-Z][a-zA-Z0-9]+$
                     description: The item type (Linked-Data @type)
-                    x-parser-schema-id: <anonymous-schema-273>
+                    x-parser-schema-id: <anonymous-schema-272>
                   '@id':
                     type: string
                     format: uri
                     description: the liked data uri for the Thing
-                    x-parser-schema-id: <anonymous-schema-274>
+                    x-parser-schema-id: <anonymous-schema-273>
                 x-parser-schema-id: Thing
               - properties:
                   type:
@@ -107,7 +107,7 @@ properties:
                     format: uri
                     description: URL of the image content
                     example: http://user.example.com/public/profile/image.jpg
-                x-parser-schema-id: <anonymous-schema-276>
+                x-parser-schema-id: <anonymous-schema-275>
             x-parser-schema-id: MediaObject
           - title: ImageObject
             x-range: ImageObject
@@ -122,19 +122,19 @@ properties:
                 example: image.jpg
               encodingFormat:
                 example: image/jpeg
-            x-parser-schema-id: <anonymous-schema-277>
-        x-parser-schema-id: <anonymous-schema-272>
-    x-parser-schema-id: <anonymous-schema-271>
+            x-parser-schema-id: <anonymous-schema-276>
+        x-parser-schema-id: <anonymous-schema-271>
+    x-parser-schema-id: <anonymous-schema-270>
   latitude:
     type: number
     description: The latitude of a location.
     x-title: latitude
     example: 40.75
-    x-parser-schema-id: <anonymous-schema-279>
+    x-parser-schema-id: <anonymous-schema-278>
   listingId:
     description: 'the local identifier for the listing (MLS #)'
     type: string
-    x-parser-schema-id: <anonymous-schema-765>
+    x-parser-schema-id: <anonymous-schema-743>
   livingArea:
     description: property indoor space
     example:
@@ -144,13 +144,13 @@ properties:
       value: 1500
     type: object
     x-range: QuantitativeValue
-    x-parser-schema-id: <anonymous-schema-766>
+    x-parser-schema-id: <anonymous-schema-744>
   longitude:
     type: number
     description: The longitude of a location.
     x-title: longitude
     example: 73.98
-    x-parser-schema-id: <anonymous-schema-288>
+    x-parser-schema-id: <anonymous-schema-287>
   lotSize:
     description: outdoor space minValue, maxValue
     example:
@@ -160,28 +160,28 @@ properties:
       value: 0.5
     type: object
     x-range: QuantitativeValue
-    x-parser-schema-id: <anonymous-schema-767>
+    x-parser-schema-id: <anonymous-schema-745>
   numberOfBathrooms:
     description: the number of bathrooms
     example: '2'
     type: string
-    x-parser-schema-id: <anonymous-schema-768>
+    x-parser-schema-id: <anonymous-schema-746>
   numberOfBedrooms:
     description: the number of bedrooms
     example: '3'
     type: string
-    x-parser-schema-id: <anonymous-schema-769>
+    x-parser-schema-id: <anonymous-schema-747>
   numberOfRooms:
     description: the total number of rooms in the building
     type: string
     example: 7
-    x-parser-schema-id: <anonymous-schema-770>
+    x-parser-schema-id: <anonymous-schema-748>
   postalCode:
     type: string
     description: Zip/Post Code
     example: '10010'
     maxLength: 12
-    x-parser-schema-id: <anonymous-schema-295>
+    x-parser-schema-id: <anonymous-schema-294>
   propertySubType:
     title: propertySubType
     type: string
@@ -216,7 +216,7 @@ properties:
       - RetailPropertyType
       - UnimprovedLandPropertyType
       - WarehousePropertyType
-    x-parser-schema-id: <anonymous-schema-296>
+    x-parser-schema-id: <anonymous-schema-295>
   propertyType:
     type: string
     description: RESO property type (see range for allowed values)
@@ -233,29 +233,29 @@ properties:
       - COMS
       - COML
       - BUSO
-    x-parser-schema-id: <anonymous-schema-297>
+    x-parser-schema-id: <anonymous-schema-296>
   stories:
     type: number
     description: he number of floors in the property
     example: 2
-    x-parser-schema-id: <anonymous-schema-299>
+    x-parser-schema-id: <anonymous-schema-298>
   streetAddress:
     type: string
     description: the street address
     example: 1007 Mountain Gate Rd
     maxLength: 75
-    x-parser-schema-id: <anonymous-schema-300>
+    x-parser-schema-id: <anonymous-schema-299>
   type:
     description: '"RealEstateProperty"'
     enum:
       - RealEstateProperty
     type: string
-    x-parser-schema-id: <anonymous-schema-763>
+    x-parser-schema-id: <anonymous-schema-741>
   yearBuilt:
     type: number
     description: the year the structure was created
     example: 1988
-    x-parser-schema-id: <anonymous-schema-303>
+    x-parser-schema-id: <anonymous-schema-302>
 x-parser-schema-id: RealEstateProperty
 $id: http://realestate.yodata.me/schema/RealEstateProperty.yaml
 

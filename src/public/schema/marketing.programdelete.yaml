@@ -1,14 +1,107 @@
 $id: http://realestate.yodata.me/schema/marketing.programdelete.yaml
 messageId: marketing#programdelete
+title: marketing#programdelete
 summary: a marketing program was deleted
+contentType: application/json
 externalDocs: null
 headers:
   type: object
   properties:
-    topic:
-      const: realestate/marketing#programdelete
-      x-parser-schema-id: <anonymous-schema-317>
-  x-parser-schema-id: <anonymous-schema-316>
+    time:
+      type: string
+      format: date-time
+      description: date & time the event was produced
+      x-faker: date.past
+      x-parser-schema-id: <anonymous-schema-2>
+    agent:
+      type: string
+      format: uri
+      summary: >-
+        the event provider who sent the event via a subscription authorized to
+        your service.
+      description: >
+        if you are a multi-tenant app, then the agent is the user associated
+        with the event data.
+
+        any future events related to this message will be sent to the same
+        agent/recipient
+      examples:
+        - https://teamsupermario.example.com/profile/card#me
+        - https://bigbrandrealestate.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-3>
+    instrument:
+      type: string
+      format: uri
+      description: the app or service that produced the event on behalf of the agent/user
+      examples:
+        - http://supercrm.example.com/profile/card#me
+        - http://reliance.example.com/profile/card#me
+        - http://moxiworks.example.com/profile/card#me
+        - http://listing-manager.example.com/profile/card#me
+        - http://ace.example.com/profile/card#me
+        - http://roqlogic.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-4>
+    source:
+      type: string
+      format: uri
+      description: a copy of the event was sent to the source(s).
+      examples:
+        - https://bigbrandrealestate.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-5>
+    originalRecipient:
+      type: string
+      format: uri
+      summary: the original recipient of the event
+      description: >
+        the originalRecipient helps you determine the subscription that
+        delivered the event to you.
+
+        if the originalRecipient is the same as the agent, then the you are
+        subscribed to the agent.
+
+        if the originalRecipient is different from the agent, then you are
+        subscribed to the event source
+      examples:
+        - http://bigbrandrealestate.example.com/profile/card#me
+        - http://teamsupermario.example.com/profile/card#me
+        - http://bob.example.com/profile/card#me
+        - http://jane.example.com/profile/card#me
+        - http://joe.example.com/profile/card#me
+        - http://jill.example.com/profile/card#me
+        - http://jim.example.com/profile/card#me
+        - http://jennifer.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-6>
+    id:
+      type: string
+      format: uri
+      summary: the event id - the cannonical identifier for the event
+      description: >
+        the Event ID (aka "Publish ID") is the immutable canonical identifier
+        for the event.
+
+        it is a URI that is unique to the event and will not change.
+
+        all subscribers will receive the same id for the same event.
+      examples:
+        - http://supercrm.example.com/publish/12345
+        - http://reliance.example.com/publish/23456
+        - http://moxiworks.example.com/publish/34567
+        - http://listing-manager.example.com/publish/45678
+        - http://ace.example.com/publish/56789
+        - http://roqlogic.example.com/publish/67890
+      x-parser-schema-id: <anonymous-schema-7>
+    '@id':
+      type: string
+      format: uri
+      summary: the @id is the url in your inbox where you can retrieve the event
+      examples:
+        - http://reliance.example.com/inbox/23456
+        - http://moxiworks.example.com/inbox/34567
+        - http://listing-manager.example.com/inbox/45678
+        - http://ace.example.com/inbox/56789
+        - http://roqlogic.example.com/inbox/67890
+      x-parser-schema-id: <anonymous-schema-8>
+  x-parser-schema-id: <anonymous-schema-1>
 payload:
   type: object
   properties:
@@ -17,7 +110,7 @@ payload:
       properties:
         type:
           const: DeleteAction
-          x-parser-schema-id: <anonymous-schema-320>
+          x-parser-schema-id: <anonymous-schema-316>
         agent:
           $id: http://schema.org/agent
           title: agent
@@ -30,9 +123,9 @@ payload:
             - type: string
               format: uri
               example: http://{user}.example.com/profile/card#me
-              x-parser-schema-id: <anonymous-schema-321>
+              x-parser-schema-id: <anonymous-schema-317>
             - type: object
-              x-parser-schema-id: <anonymous-schema-322>
+              x-parser-schema-id: <anonymous-schema-318>
         object:
           title: ProgramMembership
           description: >-
@@ -42,22 +135,22 @@ payload:
           properties:
             type:
               const: ProgramMembership
-              x-parser-schema-id: <anonymous-schema-324>
+              x-parser-schema-id: <anonymous-schema-320>
             role:
               type: string
               enum:
                 - member
                 - owner
-              x-parser-schema-id: <anonymous-schema-325>
+              x-parser-schema-id: <anonymous-schema-321>
             member:
               type: object
               properties:
                 type:
                   const: Contact
-                  x-parser-schema-id: <anonymous-schema-327>
+                  x-parser-schema-id: <anonymous-schema-323>
                 name:
                   type: string
-                  x-parser-schema-id: <anonymous-schema-328>
+                  x-parser-schema-id: <anonymous-schema-324>
                 identifier:
                   title: identifier
                   type: object
@@ -69,17 +162,17 @@ payload:
                     - vendoraid: '123456'
                     - originating_system_id: '123456'
                   x-parser-schema-id: <anonymous-schema-95>
-              x-parser-schema-id: <anonymous-schema-326>
+              x-parser-schema-id: <anonymous-schema-322>
             memberOf:
               type: object
               properties:
                 type:
                   const: MarketingProgram
-                  x-parser-schema-id: <anonymous-schema-330>
+                  x-parser-schema-id: <anonymous-schema-326>
                 name:
                   type: string
                   example: Market Activity Report 508 Homewood Ave
-                  x-parser-schema-id: <anonymous-schema-331>
+                  x-parser-schema-id: <anonymous-schema-327>
                 identifier:
                   title: identifier
                   type: object
@@ -91,8 +184,11 @@ payload:
                     - vendoraid: '123456'
                     - originating_system_id: '123456'
                   x-parser-schema-id: <anonymous-schema-95>
-              x-parser-schema-id: <anonymous-schema-329>
-          x-parser-schema-id: <anonymous-schema-323>
-      x-parser-schema-id: <anonymous-schema-319>
-  x-parser-schema-id: <anonymous-schema-318>
+              x-parser-schema-id: <anonymous-schema-325>
+          x-parser-schema-id: <anonymous-schema-319>
+      x-parser-schema-id: <anonymous-schema-315>
+    topic:
+      const: realestate/marketing#programdelete
+      x-parser-schema-id: <anonymous-schema-314>
+  x-parser-schema-id: <anonymous-schema-313>
 

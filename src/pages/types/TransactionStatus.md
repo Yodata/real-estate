@@ -1,22 +1,19 @@
-
 ---
 title: TransactionStatus
-route: /types/TransactionStatus
-menu: Types
----# TransactionStatus
-Transaction Status Enumeration Values
-
-
-## Schema
+---
 | Name | Type | Description |
-|:-----| :--- | :---------- |
-| PendingTransactionStatus | string | Pending Status  |
-| ClosedTransactionStatus | string | Closed Status  |
-| CanceledTransactionStatus | string | Canceled Status  |
+|---|---|---|
+| (root) | object | Transaction Status Enumeration Values |
+| TransactionStatus.PendingTransactionStatus | string | Pending Status |
+| TransactionStatus.ClosedTransactionStatus | string | Closed Status |
+| TransactionStatus.CanceledTransactionStatus | string | Canceled Status |
 
-### Example
+> Examples of TransactionStatus
+
 ```json
 {
   "transactionStatus": "ClosedTransactionStatus"
 }
 ```
+
+

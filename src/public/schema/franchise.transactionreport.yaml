@@ -1,36 +1,134 @@
 $id: http://realestate.yodata.me/schema/franchise.transactionreport.yaml
 messageId: franchise#transactionreport
-title: Franchise Transaction Report
+title: franchise#transactionreport
 summary: Franchise transaction report of transaction for sales production reporting.
+contentType: application/json
 externalDocs: null
 headers:
   type: object
   properties:
-    topic:
-      const: realestate/franchise#transactionreport
-      x-parser-schema-id: <anonymous-schema-199>
-  x-parser-schema-id: <anonymous-schema-198>
+    time:
+      type: string
+      format: date-time
+      description: date & time the event was produced
+      x-faker: date.past
+      x-parser-schema-id: <anonymous-schema-2>
+    agent:
+      type: string
+      format: uri
+      summary: >-
+        the event provider who sent the event via a subscription authorized to
+        your service.
+      description: >
+        if you are a multi-tenant app, then the agent is the user associated
+        with the event data.
+
+        any future events related to this message will be sent to the same
+        agent/recipient
+      examples:
+        - https://teamsupermario.example.com/profile/card#me
+        - https://bigbrandrealestate.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-3>
+    instrument:
+      type: string
+      format: uri
+      description: the app or service that produced the event on behalf of the agent/user
+      examples:
+        - http://supercrm.example.com/profile/card#me
+        - http://reliance.example.com/profile/card#me
+        - http://moxiworks.example.com/profile/card#me
+        - http://listing-manager.example.com/profile/card#me
+        - http://ace.example.com/profile/card#me
+        - http://roqlogic.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-4>
+    source:
+      type: string
+      format: uri
+      description: a copy of the event was sent to the source(s).
+      examples:
+        - https://bigbrandrealestate.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-5>
+    originalRecipient:
+      type: string
+      format: uri
+      summary: the original recipient of the event
+      description: >
+        the originalRecipient helps you determine the subscription that
+        delivered the event to you.
+
+        if the originalRecipient is the same as the agent, then the you are
+        subscribed to the agent.
+
+        if the originalRecipient is different from the agent, then you are
+        subscribed to the event source
+      examples:
+        - http://bigbrandrealestate.example.com/profile/card#me
+        - http://teamsupermario.example.com/profile/card#me
+        - http://bob.example.com/profile/card#me
+        - http://jane.example.com/profile/card#me
+        - http://joe.example.com/profile/card#me
+        - http://jill.example.com/profile/card#me
+        - http://jim.example.com/profile/card#me
+        - http://jennifer.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-6>
+    id:
+      type: string
+      format: uri
+      summary: the event id - the cannonical identifier for the event
+      description: >
+        the Event ID (aka "Publish ID") is the immutable canonical identifier
+        for the event.
+
+        it is a URI that is unique to the event and will not change.
+
+        all subscribers will receive the same id for the same event.
+      examples:
+        - http://supercrm.example.com/publish/12345
+        - http://reliance.example.com/publish/23456
+        - http://moxiworks.example.com/publish/34567
+        - http://listing-manager.example.com/publish/45678
+        - http://ace.example.com/publish/56789
+        - http://roqlogic.example.com/publish/67890
+      x-parser-schema-id: <anonymous-schema-7>
+    '@id':
+      type: string
+      format: uri
+      summary: the @id is the url in your inbox where you can retrieve the event
+      examples:
+        - http://reliance.example.com/inbox/23456
+        - http://moxiworks.example.com/inbox/34567
+        - http://listing-manager.example.com/inbox/45678
+        - http://ace.example.com/inbox/56789
+        - http://roqlogic.example.com/inbox/67890
+      x-parser-schema-id: <anonymous-schema-8>
+  x-parser-schema-id: <anonymous-schema-1>
 payload:
-  title: data
   type: object
   properties:
-    instrument:
+    properties:
+      topic:
+        const: realestate/franchise#transactionreport
+      data: null
       type: object
-      description: the application or service used that generated the report
       properties:
         type:
-          const: SoftwareApplication
-          x-parser-schema-id: <anonymous-schema-203>
-        name:
-          type: string
-          maxLength: 10
-          examples:
-            - Guru
-            - Lone Wolf
-          x-parser-schema-id: <anonymous-schema-204>
-      x-parser-schema-id: <anonymous-schema-202>
-    type:
-      const: UpdateAction
-      x-parser-schema-id: <anonymous-schema-201>
-  x-parser-schema-id: <anonymous-schema-200>
+          const: UpdateAction
+          x-parser-schema-id: <anonymous-schema-200>
+        instrument:
+          type: object
+          description: the application or service used that generated the report
+          properties:
+            type:
+              const: SoftwareApplication
+              x-parser-schema-id: <anonymous-schema-202>
+            name:
+              type: string
+              maxLength: 10
+              examples:
+                - Guru
+                - Lone Wolf
+              x-parser-schema-id: <anonymous-schema-203>
+          x-parser-schema-id: <anonymous-schema-201>
+      x-parser-schema-id: <anonymous-schema-199>
+  x-parser-schema-id: <anonymous-schema-198>
 

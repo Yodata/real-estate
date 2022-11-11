@@ -1,26 +1,24 @@
 ---
 title: PropertyType
-route: /types/PropertyType
-menu: Types
----# PropertyType
-RESO property type enumeration values
-
-
-## Schema
+---
 | Name | Type | Description |
-|:-----| :--- | :---------- |
-| RESI | string | Residential  |
-| RLSE | string | Residential Property Lease  |
-| RINC | string | Residential Income  |
-| LAND | string | Land  |
-| MOBI | string | Mobile home  |
-| FARM | string | Farm Residential  |
-| COMS | string | commercial standard applies  |
-| BUSO | string | Business Opportunity  |
+|---|---|---|
+| (root) | object | RESO property type enumeration values |
+| PropertyType.RESI | string | Residential |
+| PropertyType.RLSE | string | Residential Property Lease |
+| PropertyType.RINC | string | Residential Income |
+| PropertyType.LAND | string | Land |
+| PropertyType.MOBI | string | Mobile home |
+| PropertyType.FARM | string | Farm Residential |
+| PropertyType.COMS | string | commercial standard applies |
+| PropertyType.BUSO | string | Business Opportunity |
 
-### Example
+> Examples of PropertyType
+
 ```json
 {
   "propertyType": "RESI"
 }
 ```
+
+

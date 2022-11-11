@@ -1,17 +1,101 @@
 {
   "$id": "http://realestate.yodata.me/schema/lead.add.json",
   "messageId": "lead#add",
+  "title": "lead#add",
   "summary": "a crm lead was created",
+  "contentType": "application/json",
   "externalDocs": null,
   "headers": {
     "type": "object",
     "properties": {
-      "topic": {
-        "const": "realestate/lead#add",
-        "x-parser-schema-id": "<anonymous-schema-223>"
+      "time": {
+        "type": "string",
+        "format": "date-time",
+        "description": "date & time the event was produced",
+        "x-faker": "date.past",
+        "x-parser-schema-id": "<anonymous-schema-2>"
+      },
+      "agent": {
+        "type": "string",
+        "format": "uri",
+        "summary": "the event provider who sent the event via a subscription authorized to your service.",
+        "description": "if you are a multi-tenant app, then the agent is the user associated with the event data.\nany future events related to this message will be sent to the same agent/recipient\n",
+        "examples": [
+          "https://teamsupermario.example.com/profile/card#me",
+          "https://bigbrandrealestate.example.com/profile/card#me"
+        ],
+        "x-parser-schema-id": "<anonymous-schema-3>"
+      },
+      "instrument": {
+        "type": "string",
+        "format": "uri",
+        "description": "the app or service that produced the event on behalf of the agent/user",
+        "examples": [
+          "http://supercrm.example.com/profile/card#me",
+          "http://reliance.example.com/profile/card#me",
+          "http://moxiworks.example.com/profile/card#me",
+          "http://listing-manager.example.com/profile/card#me",
+          "http://ace.example.com/profile/card#me",
+          "http://roqlogic.example.com/profile/card#me"
+        ],
+        "x-parser-schema-id": "<anonymous-schema-4>"
+      },
+      "source": {
+        "type": "string",
+        "format": "uri",
+        "description": "a copy of the event was sent to the source(s).",
+        "examples": [
+          "https://bigbrandrealestate.example.com/profile/card#me"
+        ],
+        "x-parser-schema-id": "<anonymous-schema-5>"
+      },
+      "originalRecipient": {
+        "type": "string",
+        "format": "uri",
+        "summary": "the original recipient of the event",
+        "description": "the originalRecipient helps you determine the subscription that delivered the event to you.\nif the originalRecipient is the same as the agent, then the you are subscribed to the agent.\nif the originalRecipient is different from the agent, then you are subscribed to the event source\n",
+        "examples": [
+          "http://bigbrandrealestate.example.com/profile/card#me",
+          "http://teamsupermario.example.com/profile/card#me",
+          "http://bob.example.com/profile/card#me",
+          "http://jane.example.com/profile/card#me",
+          "http://joe.example.com/profile/card#me",
+          "http://jill.example.com/profile/card#me",
+          "http://jim.example.com/profile/card#me",
+          "http://jennifer.example.com/profile/card#me"
+        ],
+        "x-parser-schema-id": "<anonymous-schema-6>"
+      },
+      "id": {
+        "type": "string",
+        "format": "uri",
+        "summary": "the event id - the cannonical identifier for the event",
+        "description": "the Event ID (aka \"Publish ID\") is the immutable canonical identifier for the event.\nit is a URI that is unique to the event and will not change.\nall subscribers will receive the same id for the same event.\n",
+        "examples": [
+          "http://supercrm.example.com/publish/12345",
+          "http://reliance.example.com/publish/23456",
+          "http://moxiworks.example.com/publish/34567",
+          "http://listing-manager.example.com/publish/45678",
+          "http://ace.example.com/publish/56789",
+          "http://roqlogic.example.com/publish/67890"
+        ],
+        "x-parser-schema-id": "<anonymous-schema-7>"
+      },
+      "@id": {
+        "type": "string",
+        "format": "uri",
+        "summary": "the @id is the url in your inbox where you can retrieve the event",
+        "examples": [
+          "http://reliance.example.com/inbox/23456",
+          "http://moxiworks.example.com/inbox/34567",
+          "http://listing-manager.example.com/inbox/45678",
+          "http://ace.example.com/inbox/56789",
+          "http://roqlogic.example.com/inbox/67890"
+        ],
+        "x-parser-schema-id": "<anonymous-schema-8>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-222>"
+    "x-parser-schema-id": "<anonymous-schema-1>"
   },
   "payload": {
     "type": "object",
@@ -21,7 +105,7 @@
         "properties": {
           "type": {
             "const": "lead#add",
-            "x-parser-schema-id": "<anonymous-schema-226>"
+            "x-parser-schema-id": "<anonymous-schema-230>"
           },
           "object": {
             "title": "Lead",
@@ -35,7 +119,7 @@
                   "Lead"
                 ],
                 "description": "Lead",
-                "x-parser-schema-id": "<anonymous-schema-211>"
+                "x-parser-schema-id": "<anonymous-schema-216>"
               },
               "identifier": {
                 "title": "identifier",
@@ -66,21 +150,21 @@
                   "telephone": "731-620-9877 x6155",
                   "email": "Giuseppe.Lang62@hotmail.com"
                 },
-                "x-parser-schema-id": "<anonymous-schema-212>"
+                "x-parser-schema-id": "<anonymous-schema-217>"
               },
               "recipient": {
                 "description": "the lead recipient",
                 "type": "string",
                 "format": "uri",
                 "example": "http://{lead-recipient}.example.com/profile/card#me",
-                "x-parser-schema-id": "<anonymous-schema-213>"
+                "x-parser-schema-id": "<anonymous-schema-218>"
               },
               "sender": {
                 "description": "the lead provider",
                 "type": "string",
                 "format": "uri",
                 "example": "http://{lead-sender}.example.com/profile/card#me",
-                "x-parser-schema-id": "<anonymous-schema-214>"
+                "x-parser-schema-id": "<anonymous-schema-219>"
               },
               "owner": {
                 "description": "the original owner of the lead",
@@ -92,33 +176,33 @@
                 "type": "string",
                 "format": "uri",
                 "example": "http://{lead-owner}.example.com/profile/card#me",
-                "x-parser-schema-id": "<anonymous-schema-215>"
+                "x-parser-schema-id": "<anonymous-schema-220>"
               },
               "dateAccepted": {
                 "type": "string",
                 "description": "The date/time the item was accepted by the recipient",
                 "x-range": "DateTime",
                 "example": "2019-11-25T04:23:32.000Z",
-                "x-parser-schema-id": "<anonymous-schema-216>"
+                "x-parser-schema-id": "<anonymous-schema-221>"
               },
               "dateRejected": {
                 "type": "string",
                 "format": "date-time",
                 "description": "The date/time the item was rejected by the recipient",
-                "x-parser-schema-id": "<anonymous-schema-217>"
+                "x-parser-schema-id": "<anonymous-schema-222>"
               },
               "dateSent": {
                 "description": "the date the lead was sent",
                 "type": "string",
                 "format": "date-time",
-                "x-parser-schema-id": "<anonymous-schema-218>"
+                "x-parser-schema-id": "<anonymous-schema-223>"
               },
               "dateReceived": {
                 "type": "string",
                 "description": "The date/time the item was received by it's recipient",
                 "x-range": "DateTime",
                 "example": "2019-11-25T04:23:32.000Z",
-                "x-parser-schema-id": "<anonymous-schema-219>"
+                "x-parser-schema-id": "<anonymous-schema-224>"
               },
               "leadSource": {
                 "description": "lead origin, may be a website event or a thing such as a website, zillow, mobile applicaton.",
@@ -137,17 +221,21 @@
                       "text": "Help me I'm trapped inside documentation."
                     }
                   },
-                  "x-parser-schema-id": "<anonymous-schema-221>"
+                  "x-parser-schema-id": "<anonymous-schema-226>"
                 },
-                "x-parser-schema-id": "<anonymous-schema-220>"
+                "x-parser-schema-id": "<anonymous-schema-225>"
               }
             },
             "x-parser-schema-id": "Lead"
           }
         },
-        "x-parser-schema-id": "<anonymous-schema-225>"
+        "x-parser-schema-id": "<anonymous-schema-229>"
+      },
+      "topic": {
+        "const": "realestate/lead#add",
+        "x-parser-schema-id": "<anonymous-schema-228>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-224>"
+    "x-parser-schema-id": "<anonymous-schema-227>"
   }
 }

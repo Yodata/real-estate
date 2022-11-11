@@ -1,31 +1,45 @@
 ---
 title: BlogPosting
-route: /types/BlogPosting
-menu: Types
----# BlogPosting
-A blog post.
-
-
-## Schema
+---
 | Name | Type | Description |
-|:-----| :--- | :---------- |
-| type | * |   |
-| identifier | object | key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.  |
-| headline | string | headline of the post.  |
-| articleBody | string | the actual body of the post in HTML format.  |
-| image | [*] | by convention the first image item is the article hero image.  note: image tags can also be embeded in the articleBody. <br/>RANGE: [ImageObject](/types/ImageObject) |
-| author | object | author of the work  |
-| author.type | string |   |
-| author.id | string&lt;uri&gt;  | the profile URI of the author  |
-| provider | object | if the article is provided as a template or stock content to be shared by mutliple authors, the provider should be included.  |
-| provider.type | string |   |
-| provider.id | string&lt;uri&gt;  | the profile URI of the provider  |
-| dateCreated | string&lt;date-time&gt;  | The date on which the BlogPosting was created or the item was added to a DataFeed.  |
-| dateModified | string&lt;date-time&gt;  | The date on which the BlogPosting was most recently modified or when the item's entry was modified within a DataFeed.  |
-| url | string&lt;uri&gt;  | URL of the item.  |
-| urlTemplate | string | urlTemplate in [IETF rfc6570 format](https://datatracker.ietf.org/doc/html/rfc6570)  |
+|---|---|---|
+| (root) | object | A blog post. |
+| BlogPosting.type | string | - |
+| BlogPosting.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| BlogPosting.headline | string | headline of the post. |
+| BlogPosting.articleBody | string | the actual body of the post in HTML format. |
+| BlogPosting.image | tuple<object allOf, ...optional<any>> | by convention the first image item is the article hero image.  note: image tags can also be embeded in the articleBody. |
+| BlogPosting.image.0 (index) | object allOf | - |
+| BlogPosting.image.0.0 (allOf item) | allOf | an image, video or document availble for download |
+| BlogPosting.image.0.0.0 (allOf item) | object | - |
+| BlogPosting.image.0.0.0.type | string | The item type (Linked-Data @type) |
+| BlogPosting.image.0.0.0.@id | string | the liked data uri for the Thing |
+| BlogPosting.image.0.0.0 (property names) | - | - |
+| BlogPosting.image.0.0.1 (allOf item) | - | - |
+| BlogPosting.image.0.0.1.type | string | - |
+| BlogPosting.image.0.0.1.id | string | the URL to access the item. |
+| BlogPosting.image.0.0.1.name | string | the file name of the object. |
+| BlogPosting.image.0.0.1.encodingFormat | string | MIME type |
+| BlogPosting.image.0.0.1.about | string | URI to the subject of the image or logo |
+| BlogPosting.image.0.0.1.url | string | URL of the image content |
+| BlogPosting.image.0.1 (allOf item) | - | - |
+| BlogPosting.image.0.1.type | string | - |
+| BlogPosting.image.0.1.id | any | - |
+| BlogPosting.image.0.1.name | any | - |
+| BlogPosting.image.0.1.encodingFormat | any | - |
+| BlogPosting.author | object | author of the work |
+| BlogPosting.author.type | string | - |
+| BlogPosting.author.id | string | the profile URI of the author |
+| BlogPosting.provider | object | if the article is provided as a template or stock content to be shared by mutliple authors, the provider should be included. |
+| BlogPosting.provider.type | string | - |
+| BlogPosting.provider.id | string | the profile URI of the provider |
+| BlogPosting.dateCreated | string | The date on which the BlogPosting was created or the item was added to a DataFeed. |
+| BlogPosting.dateModified | string | The date on which the BlogPosting was most recently modified or when the item's entry was modified within a DataFeed. |
+| BlogPosting.url | string | URL of the item. |
+| BlogPosting.urlTemplate | string | urlTemplate in [IETF rfc6570 format](https://datatracker.ietf.org/doc/html/rfc6570) |
 
-### Example
+> Examples of BlogPosting
+
 ```json
 {
   "type": "BlogPosting",
@@ -37,6 +51,7 @@ A blog post.
   "image": [
     {
       "type": "ImageObject",
+      "@id": "http://example.com",
       "id": "http://user.example.com/public/logo/image.jpg",
       "name": "image.jpg",
       "encodingFormat": "image/jpeg",
@@ -52,9 +67,11 @@ A blog post.
     "type": "RealEstateOrganization",
     "id": "https://example.com/profile/card#me"
   },
-  "dateCreated": "2022-10-12T01:13:43Z",
-  "dateModified": "2022-10-12T01:13:43Z",
+  "dateCreated": "2019-08-24T14:15:22Z",
+  "dateModified": "2019-08-24T14:15:22Z",
   "url": "http://example.com",
   "urlTemplate": "https://example.com/{author/name}/blog/post?{slug}"
 }
 ```
+
+

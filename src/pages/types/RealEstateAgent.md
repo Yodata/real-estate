@@ -1,97 +1,132 @@
 ---
 title: RealEstateAgent
-route: /types/RealEstateAgent
-menu: Types
----# RealEstateAgent
-A real estate agent
-
-
-## Schema
+---
 | Name | Type | Description |
-|:-----| :--- | :---------- |
-| type | string! | RealEstateAgent  |
-| id | string&lt;uri&gt;  | Linked-Data URI (@id)  |
-| name | string | Name or DBA.  |
-| givenName | string | First Name of a person  |
-| familyName | string | Last Name of a person  |
-| address | object | A physical address. <br/>RANGE: [PostalAddress](/types/PostalAddress) |
-| availableLanguage | [object] | Please use one of the language codes from the IETF BCP 47 standard. <br/>RANGE: [Language](/types/Language) |
-| availableLanguage.type | string | Language  |
-| availableLanguage.name | string | the display name of the language  |
-| availableLanguage.additionalName | string | BCP 47 language code  |
-| branchCode | string | A short textual code that uniquely identifies a place of business.  |
-| certification | [object] | certifications granted to a person or organization <br/>RANGE: [Certification](/types/Certification) |
-| contactPoint | object | a named point of contact - telephone, email, faxNumber, and/or url for the entity <br/>RANGE: [ContactPoint](/types/ContactPoint) |
-| email | string&lt;email&gt;  | Primary email address.  |
-| faxNumber | string | Primary fax number.  |
-| image | [*] | an ImageObject or URI reference to an image of the entity on the web. <br/>RANGE: [ImageObject](/types/ImageObject) |
-| logo | [object] | a logo associated with the organization. <br/>RANGE: [ImageObject](/types/ImageObject), [DigitalDocument](/types/DigitalDocument) |
-| parentOrganization | [string&lt;uri&gt; ] | URI reference to the agent's office. For teams, this can be a reference to the team leader/primary profile. <br/>RANGE: [RealEstateOffice](/types/RealEstateOffice), [RealEstateAgent](/types/RealEstateAgent) |
-| subOrganization | [string&lt;uri&gt; ] | for teams: URI reference to a team member <br/>RANGE: [RealEstateAgent](/types/RealEstateAgent) |
-| telephone | string | Primary phone number.  |
-| url | string&lt;uri&gt;  | primary website/url for the entity.  |
-| areaServed | object | the physical areas that make up the ServiceArea <br/>RANGE: [City](/types/City), [PostalCodeArea](/types/PostalCodeArea) |
-| description | string | description of the item.  |
-| numberOfSubOrganizations | number | the number of offices for an affiliate.  |
-| member | [object&#124;string&lt;uri&gt; ] | A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals. <br/>RANGE: [OrganizationRole](/types/OrganizationRole), [URI](/types/URI) |
-| memberOf | [*] | An Organization (or ProgramMembership) to which this Person or Organization belongs. <br/>RANGE: [OrganizationRole](/types/OrganizationRole), [MLSMembership](/types/MLSMembership) |
-| permit | [object] |  <br/>RANGE: [RealEstateLicense](/types/RealEstateLicense) |
-| identifier | object | key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.  |
-| jobTitle | [string] | agent's job titles  |
-| additionalName | string | any other name(s) associated with the entity, i.e. nickname, middle name, maiden name, etc. For multiple names, use a comma without space as a separator.  |
-| sameAs | object | key/value id assigned to the record  |
+|---|---|---|
+| (root) | object | A real estate agent who represents buyers and sellers |
+| RealEstateAgent.type | string | - |
+| RealEstateAgent.additionalName | string | any other name(s) associated with the entity, i.e. nickname, middle name, maiden name, etc. For multiple names, use a comma without space as a separator. |
+| RealEstateAgent.address | object | A physical address. |
+| RealEstateAgent.certification | object | A certification issued by an organization to an individual or business. |
+| RealEstateAgent.certification.type | string | Certification |
+| RealEstateAgent.certification.name | string | the name of the Certification |
+| RealEstateAgent.certification.issuedBy | object | the issuing authority |
+| RealEstateAgent.certification.issuedBy.type | string | The item type (Linked-Data @type) |
+| RealEstateAgent.certification.issuedBy.id | string | Linked-Data URI (@id) |
+| RealEstateAgent.certification.issuedBy.name | string | name of the issuing organization |
+| RealEstateAgent.certification.issuedTo | object | the subject |
+| RealEstateAgent.certification.issuedTo.type | string | The item type (Linked-Data @type) |
+| RealEstateAgent.certification.issuedTo.id | string | Linked-Data URI (@id) |
+| RealEstateAgent.certification.issuedTo.name | string | the name of the item |
+| RealEstateAgent.contactPoint | object | A point of contact for the entity. By convention in the real estate domain, ContactPoints are preferred over telephone, email, and faxNumber so the ContactPoint.name property can be used to label values for example, Work Telephone, Home, as named contactPoint values. |
+| RealEstateAgent.contactPoint.type | string | - |
+| RealEstateAgent.contactPoint.name | string | a label for the contactPoint, i.e. 'Work', or 'Home' |
+| RealEstateAgent.contactPoint.telephone | string | - |
+| RealEstateAgent.contactPoint.faxNumber | string | - |
+| RealEstateAgent.contactPoint.email | string | an email address for the item. |
+| RealEstateAgent.contactPoint.url | string | primary URL for the item. |
+| RealEstateAgent.email | string | - |
+| RealEstateAgent.familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) |
+| RealEstateAgent.givenName | string | First Name of a person |
+| RealEstateAgent.id | string | Linked-Data URI (@id) |
+| RealEstateAgent.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| RealEstateAgent.image | tuple<object allOf, ...optional<any>> | an ImageObject or URI reference to an image on the web. |
+| RealEstateAgent.image.0 (index) | object allOf | - |
+| RealEstateAgent.image.0.0 (allOf item) | allOf | an image, video or document availble for download |
+| RealEstateAgent.image.0.0.0 (allOf item) | object | - |
+| RealEstateAgent.image.0.0.0.type | string | The item type (Linked-Data @type) |
+| RealEstateAgent.image.0.0.0.@id | string | the liked data uri for the Thing |
+| RealEstateAgent.image.0.0.0 (property names) | - | - |
+| RealEstateAgent.image.0.0.1 (allOf item) | - | - |
+| RealEstateAgent.image.0.0.1.type | string | - |
+| RealEstateAgent.image.0.0.1.id | string | the URL to access the item. |
+| RealEstateAgent.image.0.0.1.name | string | the file name of the object. |
+| RealEstateAgent.image.0.0.1.encodingFormat | string | MIME type |
+| RealEstateAgent.image.0.0.1.about | string | URI to the subject of the image or logo |
+| RealEstateAgent.image.0.0.1.url | string | URL of the image content |
+| RealEstateAgent.image.0.1 (allOf item) | - | - |
+| RealEstateAgent.image.0.1.type | string | - |
+| RealEstateAgent.image.0.1.id | any | - |
+| RealEstateAgent.image.0.1.name | any | - |
+| RealEstateAgent.image.0.1.encodingFormat | any | - |
+| RealEstateAgent.jobTitle | array<string> | - |
+| RealEstateAgent.jobTitle (single item) | string | The job title of the person (for example, Financial Manager). |
+| RealEstateAgent.memberOf | array<anyOf> | an Organization (or ProgramMembership) to which this Person or Organization belongs. |
+| RealEstateAgent.memberOf (single item) | anyOf | - |
+| RealEstateAgent.memberOf.0 (anyOf item) | object | describes a role played by a member and a group or organization. |
+| RealEstateAgent.memberOf.0.type | string | a role played by the member in the memberOf group |
+| RealEstateAgent.memberOf.0.roleName | string | the role name |
+| RealEstateAgent.memberOf.0.memberOf | object | the org or group where the role is performed |
+| RealEstateAgent.memberOf.0.member | string | member object or id |
+| RealEstateAgent.memberOf.0.startDate | string | date the member began performing this role |
+| RealEstateAgent.memberOf.0.endDate | string | date the member stopped performing the role |
+| RealEstateAgent.memberOf.1 (anyOf item) | string | - |
+| RealEstateAgent.name | string | the name of the item |
+| RealEstateAgent.parentOrganization | array<string> | organizations of which this org is a part. |
+| RealEstateAgent.parentOrganization (single item) | string | - |
+| RealEstateAgent.permit | object | A permit issued by an organization to an individual or business. |
+| RealEstateAgent.permit.type | string | Permit type. |
+| RealEstateAgent.permit.name | string | Common or display value of the Permit. |
+| RealEstateAgent.permit.issuedBy | object | The issuing authority |
+| RealEstateAgent.permit.issuedThrough | object | the service through which the permit was granted |
+| RealEstateAgent.permit.validIn | object | - |
+| RealEstateAgent.permit.validFrom | string | start date |
+| RealEstateAgent.permit.validUntil | string | end date |
+| RealEstateAgent.subOrganization | array<string> | child organizations of the organization |
+| RealEstateAgent.subOrganization (single item) | string | - |
+| RealEstateAgent.url | string | URL of the item. |
 
-### Example
+> Examples of RealEstateAgent
+
 ```json
 {
   "type": "RealEstateAgent",
-  "id": "http://example.com",
-  "name": "Louis Armstrong",
-  "givenName": "Louis",
-  "familyName": "Armstrong",
+  "additionalName": "Johnny,John",
   "address": {
     "type": "PostalAddress",
     "name": "Home",
-    "streetAddress": "1007 Mountain Gate Rd",
-    "postOfficeBoxNumber": "Box 1234",
-    "addressRegion": "New Jersey",
-    "addressLocality": "Gotham City",
-    "postalCode": "10010",
     "addressCountry": "USA",
     "addressCounty": "Gotham County",
-    "addressSubdivision": "Gotham Heights"
+    "addressLocality": "Gotham City",
+    "addressRegion": "New Jersey",
+    "addressSubdivision": "Gotham Heights",
+    "postalCode": "10010",
+    "postOfficeBoxNumber": "Box 1234",
+    "streetAddress": "1007 Mountain Gate Rd"
   },
-  "availableLanguage": [
-    {
-      "type": "Language",
-      "name": "English",
-      "additionalName": "en-US"
+  "certification": {
+    "type": "Certification",
+    "name": "e-Agent Certified",
+    "issuedBy": {
+      "type": "RealEstateOrganization",
+      "id": "https://example.com/profile/card#me",
+      "name": "Gotham City Real Estate"
+    },
+    "issuedTo": {
+      "type": "RealEstateAgent",
+      "id": "http://example.com",
+      "name": "string"
     }
-  ],
-  "branchCode": "for BHHS profile events, see additionalProperty.OfficeId",
-  "certification": [
-    {
-      "type": "Certification",
-      "name": "E-Agent Certified",
-      "validFrom": "2019-06-13T07:00:00.000Z",
-      "additionalProperty": {
-        "ceritificationTypeId": "86afafd3-ac25-4a89-9a6e-bebb3753c4b2"
-      }
-    }
-  ],
+  },
   "contactPoint": {
     "type": "ContactPoint",
     "name": "Work",
-    "telephone": "800-555-5555",
-    "faxNumber": "888-4BA-TMAN",
-    "email": "bruce@example.com",
-    "url": "https://example.com"
+    "telephone": "555-555-5555",
+    "faxNumber": "555-555-5555",
+    "email": "bob@example.com",
+    "url": "https://www.facebook.com/hallandoates"
   },
   "email": "user@example.com",
-  "faxNumber": "(873) 271-4802",
+  "familyName": "Smith",
+  "givenName": "John",
+  "id": "http://example.com",
+  "identifier": {
+    "salesforceid": "0031U00002XW1QWQA1"
+  },
   "image": [
     {
       "type": "ImageObject",
+      "@id": "http://example.com",
       "id": "http://user.example.com/public/logo/image.jpg",
       "name": "image.jpg",
       "encodingFormat": "image/jpeg",
@@ -99,41 +134,10 @@ A real estate agent
       "url": "http://user.example.com/public/profile/image.jpg"
     }
   ],
-  "logo": [
-    {
-      "type": "DigitalDocument",
-      "id": "http://user.example.com/public/logo/archive.zip",
-      "name": "archive.zip",
-      "encodingFormat": "application/zip",
-      "about": {
-        "type": "RealEstateTransaction",
-        "identifier": {
-          "bmsTransactionId": "xxxx"
-        }
-      },
-      "url": "https://example.com"
-    }
+  "jobTitle": [
+    "CEO"
   ],
-  "parentOrganization": [
-    "http://office-real-estate.example.com/",
-    "http://batmanandrobinteam.example.com/"
-  ],
-  "subOrganization": [
-    "http://org.example.com/profile/card#me"
-  ],
-  "telephone": "+15558675309",
-  "url": "http://example.com",
-  "areaServed": {
-    "type": "PostalCode",
-    "postalCode": "91371",
-    "addressLocality": "Woodland Hills",
-    "addressCounty": "Los Angeles",
-    "addressRegion": "CA",
-    "addressCountry": "US"
-  },
-  "description": "The leading Gotham City Real Estate Agent.",
-  "numberOfSubOrganizations": 0,
-  "member": [
+  "memberOf": [
     {
       "type": "OrganizationRole",
       "roleName": "Owner",
@@ -142,62 +146,34 @@ A real estate agent
         "id": "http://orgid.example.com/profile/card#me"
       },
       "member": "https://memberid.example.com/profile/card#me",
-      "startDate": "2022-10-12T01:13:43Z",
-      "endDate": "2022-10-12T01:13:43Z"
+      "startDate": "2019-08-24T14:15:22Z",
+      "endDate": "2019-08-24T14:15:22Z"
     }
   ],
-  "memberOf": [
-    {
-      "type": "MLSMembership",
-      "roleName": "MLSMember",
-      "memberOf": {
-        "type": "MultipleListingService",
-        "id": "http://orgid.example.com/profile/card#me",
-        "name": "GreatScottMLS"
-      },
-      "member": "https://{agent}.example.com/profile/card#me",
-      "startDate": "2022-10-12T01:13:43Z",
-      "endDate": "2022-10-12T01:13:43Z",
-      "memberId": "memberid123"
-    }
+  "name": "string",
+  "parentOrganization": [
+    "http://example.com"
   ],
-  "permit": [
-    {
-      "type": "RealEstateLicense",
-      "name": "CA-DRE# 02068375",
-      "identifier": {
-        "type": "PropertyValue",
-        "name": "CA-DRE",
-        "value": "02068375"
-      },
-      "issuedBy": {
-        "type": "State",
-        "name": "California"
-      },
-      "issuedThrough": {
-        "type": "Service",
-        "name": "California Department of Real Estate"
-      },
-      "validIn": {
-        "type": "State",
-        "name": "California"
-      },
-      "validFrom": "2019-07-07T10:55:02Z",
-      "validUntil": "2019-07-07T10:55:02Z"
-    }
-  ],
-  "identifier": {
-    "ContactID": "1234567"
+  "permit": {
+    "type": "Permit",
+    "name": "DRE Number",
+    "issuedBy": {
+      "type": "State",
+      "name": "California"
+    },
+    "issuedThrough": {
+      "type": "Service",
+      "name": "Department of Real Estate"
+    },
+    "validIn": {},
+    "validFrom": "2019-08-24T14:15:22Z",
+    "validUntil": "2019-08-24T14:15:22Z"
   },
-  "jobTitle": [
-    [
-      "Accounting Department",
-      "Awards Coordinator"
-    ]
+  "subOrganization": [
+    "http://example.com"
   ],
-  "additionalName": "ambassador satch,pops,satchmo",
-  "sameAs": {
-    "bmsID": "1234"
-  }
+  "url": "http://example.com"
 }
 ```
+
+

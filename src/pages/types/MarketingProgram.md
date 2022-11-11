@@ -1,81 +1,94 @@
 ---
 title: MarketingProgram
-route: /types/MarketingProgram
-menu: Types
----# MarketingProgram
-A collection of pre-defined activities which take place over a period of time or in a regular, ongoing schedule.
-
-
-## Schema
+---
 | Name | Type | Description |
-|:-----| :--- | :---------- |
-| type | string! | The item type (Linked-Data @type)  |
-| name | string | name of the item  |
-| identifier | object | key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.  |
-| member | [*] | array of program memberships <br/>RANGE: [ProgramMembership](/types/ProgramMembership) |
-| creator | string&lt;uri&gt;  | creator / author of the item  |
-| dateCreated | string&lt;date-time&gt;  | The date on which the item was created.  |
-| dateModified | string&lt;date-time&gt;  | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed.  |
+|---|---|---|
+| (root) | object | A collection of pre-defined activities which take place over a period of time or in a regular, ongoing schedule. |
+| MarketingProgram.type | string | - |
+| MarketingProgram.name | string | the name of the item |
+| MarketingProgram.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| MarketingProgram.member | array<object> | - |
+| MarketingProgram.member.type | string | - |
+| MarketingProgram.member.role | string | - |
+| MarketingProgram.member.member | object | - |
+| MarketingProgram.member.member.type | string | - |
+| MarketingProgram.member.member.name | string | - |
+| MarketingProgram.member.member.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| MarketingProgram.member.memberOf | object | - |
+| MarketingProgram.member.memberOf.type | string | - |
+| MarketingProgram.member.memberOf.name | string | - |
+| MarketingProgram.member.memberOf.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| MarketingProgram.creator | string | creator / author of the item |
+| MarketingProgram.dateCreated | string | The date on which the item was created. |
+| MarketingProgram.dateModified | string | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. |
+| MarketingProgram.about | object | a physical location |
+| MarketingProgram.about.type | string | The item type (Linked-Data @type) |
+| MarketingProgram.about.address | object | A physical address. |
+| MarketingProgram.about.geo | object | a geo shape (circle or box) |
 
-### Example
+> Examples of MarketingProgram
+
 ```json
 {
   "type": "MarketingProgram",
-  "name": "Market Activity Report 508 Homewood Ave",
+  "name": "Market Activity Report for 508 Homeward Avenue",
   "identifier": {
-    "salesforceContactID": "c28834ca-db69-4da8-90ad-75cdc9907298"
+    "salesforceid": "0031U00002XW1QWQA1"
   },
   "member": [
     {
       "type": "ProgramMembership",
-      "roleName": "Owner",
-      "memberOf": null,
+      "role": "member",
       "member": {
         "type": "Contact",
-        "name": "Bruce Wayne",
-        "givenName": "Bruce",
-        "familyName": "Wayne",
-        "jobTitle": "Batman",
-        "contactPoint": [
-          {
-            "type": "ContactPoint",
-            "name": "Mobile Phone",
-            "telephone": "888.GET-BATMAN"
-          },
-          {
-            "type": "ContactPoint",
-            "name": "Email",
-            "email": "batman@example.com"
-          }
-        ],
-        "address": [
-          {
-            "type": "PostalAddress",
-            "name": "Home",
-            "streetAddress": "1007 Mountain Gate Rd",
-            "postOfficeBoxNumber": "Box 1234",
-            "addressRegion": "New Jersey",
-            "addressLocality": "Gotham City",
-            "postalCode": "10010",
-            "addressCountry": "USA"
-          }
-        ],
-        "birthDate": "2019-07-09",
-        "leadOwner": {
-          "type": "RealEstateOrganization",
-          "id": "https://{lead-owner}.example.com/profile/card#me"
-        },
-        "leadSource": {
-          "type": "RealEstateWebsite",
-          "url": "https://agentwebsite.example.com"
+        "name": "string",
+        "identifier": {
+          "salesforceid": "0031U00002XW1QWQA1"
         }
       },
-      "startDate": "2022-10-12T01:13:43Z",
-      "endDate": "2022-10-12T01:13:43Z"
+      "memberOf": {
+        "type": "MarketingProgram",
+        "name": "Market Activity Report 508 Homewood Ave",
+        "identifier": {
+          "salesforceid": "0031U00002XW1QWQA1"
+        }
+      }
     }
   ],
-  "creator": "http://{user}.example.com/profile/card#me",
-  "dateCreated": "2022-10-12T01:13:43Z",
-  "dateModified": "2022-10-12T01:13:43Z"
+  "creator": "http://example.com",
+  "dateCreated": "2019-08-24T14:15:22Z",
+  "dateModified": "2019-08-24T14:15:22Z",
+  "about": {
+    "type": "Place",
+    "address": {
+      "type": "PostalAddress",
+      "name": "Home",
+      "addressCountry": "USA",
+      "addressCounty": "Gotham County",
+      "addressLocality": "Gotham City",
+      "addressRegion": "New Jersey",
+      "addressSubdivision": "Gotham Heights",
+      "postalCode": "10010",
+      "postOfficeBoxNumber": "Box 1234",
+      "streetAddress": "1007 Mountain Gate Rd"
+    },
+    "geo": {
+      "type": "GeoShape",
+      "geoMidpoint": {
+        "type": "GeoCoordinates,",
+        "longitude": "73.98",
+        "latitude": "40.75"
+      },
+      "geoRadius": {
+        "type": "QuantitativeValue,",
+        "value": "10,",
+        "unitCode": "mi,",
+        "unitText": "miles"
+      },
+      "box": "(33.5697,-117.775),(33.6018,-117.707)"
+    }
+  }
 }
 ```
+
+

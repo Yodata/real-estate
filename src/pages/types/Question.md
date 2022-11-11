@@ -1,21 +1,19 @@
 ---
 title: Question
-route: /types/Question
-menu: Types
----# Question
-A specific question - e.g. from a user seeking answers online, or collected in a Frequently Asked Questions (FAQ) document.
-
-
-## Schema
+---
 | Name | Type | Description |
-|:-----| :--- | :---------- |
-| type | string | The item type (Linked-Data @type)  |
-| text | string | the question content  |
+|---|---|---|
+| (root) | object | A specific question - e.g. from a user seeking answers online, or collected in a Frequently Asked Questions (FAQ) document. |
+| Question.type | string | - |
+| Question.text | string | - |
 
-### Example
+> Examples of Question
+
 ```json
 {
   "type": "Question",
-  "text": "I would like to view 123 Main Street."
+  "text": "Populus debet control notitia sua"
 }
 ```
+
+

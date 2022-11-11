@@ -23,7 +23,7 @@
           "enum": [
             "Place"
           ],
-          "x-parser-schema-id": "<anonymous-schema-676>"
+          "x-parser-schema-id": "<anonymous-schema-654>"
         },
         "address": {
           "type": "object",
@@ -41,7 +41,7 @@
             "postOfficeBoxNumber": "Box 1234",
             "streetAddress": "1007 Mountain Gate Rd"
           },
-          "x-parser-schema-id": "<anonymous-schema-677>"
+          "x-parser-schema-id": "<anonymous-schema-655>"
         },
         "geo": {
           "type": "object",
@@ -65,7 +65,7 @@
             },
             "box": "(33.5697,-117.775),(33.6018,-117.707)"
           },
-          "x-parser-schema-id": "<anonymous-schema-678>"
+          "x-parser-schema-id": "<anonymous-schema-656>"
         }
       },
       "x-parser-schema-id": "Place"
@@ -73,14 +73,14 @@
     "name": {
       "type": "string",
       "description": "name of the service.",
-      "x-parser-schema-id": "<anonymous-schema-843>"
+      "x-parser-schema-id": "<anonymous-schema-821>"
     },
     "type": {
       "type": "string",
       "enum": [
         "Service"
       ],
-      "x-parser-schema-id": "<anonymous-schema-842>"
+      "x-parser-schema-id": "<anonymous-schema-820>"
     }
   },
   "x-parser-schema-id": "Service",

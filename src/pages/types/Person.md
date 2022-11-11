@@ -1,42 +1,59 @@
 ---
 title: Person
-route: /types/Person
-menu: Types
----# Person
-
-## Schema
+---
 | Name | Type | Description |
-|:-----| :--- | :---------- |
-| type | string | Person  |
-| affiliation | [string&lt;uri&gt; ] | An organization that this person is affiliated with  |
-| address | [object] | addresses for the item <br/>RANGE: [PostalAddress](/types/PostalAddress) |
-| birthDate | string&lt;date&gt;  | date of birth.  |
-| contactPoint | [object] | a named point of contact - telephone, email, faxNumber, and/or url for the entity <br/>RANGE: [ContactPoint](/types/ContactPoint) |
-| email | string | Primary email address.  |
-| additionalName | string | any other name(s) associated with the entity, i.e. nickname, middle name, maiden name, etc. For multiple names, use a comma without space as a separator.  |
-| familyName | string | Last Name of a person  |
-| faxNumber | string | Primary fax number.  |
-| givenName | string | First Name of a person  |
-| honorificPrefix | string | An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.  |
-| honorifixSuffix | string | An honorific title following a person's name like M.D.  |
-| jobTitle | [string] | job tiles associated with the item  |
-| knowsLanguage | [object] | languages spoken by the person <br/>RANGE: [Language](/types/Language) |
-| name | string | Full name of the person.  |
-| telephone | string | Primary phone number.  |
-| worksFor | string | Organizations the person works for.  |
+|---|---|---|
+| (root) | object | - |
+| Person.type | string | - |
+| Person.affiliation | array<string> | An organization that this person is affiliated with |
+| Person.affiliation (single item) | string | - |
+| Person.address | array<object> | - |
+| Person.address.type | string | - |
+| Person.address.streetAddress | string | the street number and name. |
+| Person.address.postOfficeBoxNumber | string | The post office box number for PO box addresses. |
+| Person.address.addressRegion | string | State or Province. |
+| Person.address.addressLocality | string | City, Township. |
+| Person.address.postalCode | string | Zip/Post Code |
+| Person.address.addressCountry | string | The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code. |
+| Person.address.addressCounty | string | the county (us real estate extension) |
+| Person.address.addressSubdivision | string | the subdivision or neighborhood (us real estate extension) |
+| Person.birthDate | string | date of birth. |
+| Person.contactPoint | array<object> | contact points for the person |
+| Person.contactPoint.type | string | - |
+| Person.contactPoint.name | string | a label for the contactPoint, i.e. 'Work', or 'Home' |
+| Person.contactPoint.telephone | string | - |
+| Person.contactPoint.faxNumber | string | - |
+| Person.contactPoint.email | string | an email address for the item. |
+| Person.contactPoint.url | string | primary URL for the item. |
+| Person.email | string | - |
+| Person.additionalName | string | any other name(s) associated with the entity, i.e. nickname, middle name, maiden name, etc. For multiple names, use a comma without space as a separator. |
+| Person.familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) |
+| Person.faxNumber | string | Do people still use fax machines? |
+| Person.givenName | string | First Name of a person |
+| Person.honorificPrefix | string | An honorific prefix preceding a Person's name such as Dr/Mrs/Mr. |
+| Person.honorificSuffix | string | An honorific title following a person's name like M.D. |
+| Person.jobTitle | array<string> | job tiles associated with the item |
+| Person.jobTitle (single item) | string | - |
+| Person.knowsLanguage | array<object> | languages spoken by the person |
+| Person.knowsLanguage.type | string | - |
+| Person.knowsLanguage.name | string | the display name of the language |
+| Person.knowsLanguage.additionalName | string | BCP 47 language code |
+| Person.name | string | Full name of the person. |
+| Person.telephone | string | Primary phone number. |
+| Person.worksFor | string | Organizations the person works for. |
 
-### Example
+> Examples of Person
+
 ```json
 {
-  "type": "Person",
+  "type": "string",
   "affiliation": [
     "https://example.com/profile/card#me"
   ],
   "address": [
     {
       "type": "PostalAddress",
-      "name": "Home",
-      "streetAddress": "1007 Mountain Gate Rd",
+      "streetAddress": "5046 Ottis Point",
       "postOfficeBoxNumber": "Box 1234",
       "addressRegion": "New Jersey",
       "addressLocality": "Gotham City",
@@ -46,24 +63,24 @@ menu: Types
       "addressSubdivision": "Gotham Heights"
     }
   ],
-  "birthDate": "2022-10-12",
+  "birthDate": "2019-08-24",
   "contactPoint": [
     {
       "type": "ContactPoint",
       "name": "Work",
-      "telephone": "800-555-5555",
-      "faxNumber": "888-4BA-TMAN",
-      "email": "bruce@example.com",
-      "url": "https://example.com"
+      "telephone": "555-555-5555",
+      "faxNumber": "555-555-5555",
+      "email": "bob@example.com",
+      "url": "https://www.facebook.com/hallandoates"
     }
   ],
   "email": "user@example.com",
-  "additionalName": "ambassador satch,pops,satchmo",
-  "familyName": "Wayne",
-  "faxNumber": "(873) 271-4802",
-  "givenName": "Glenn",
+  "additionalName": "Johnny,John",
+  "familyName": "Smith",
+  "faxNumber": "string",
+  "givenName": "John",
   "honorificPrefix": "Dr",
-  "honorifixSuffix": "Esq",
+  "honorificSuffix": "Esq",
   "jobTitle": [
     "Chief Data Officer",
     "Sanitation Engineer"
@@ -75,8 +92,10 @@ menu: Types
       "additionalName": "en-us"
     }
   ],
-  "name": "Bruce Wayne",
-  "telephone": "1-339-041-0306 x2866",
-  "worksFor": "Gotham City Police Department"
+  "name": "string",
+  "telephone": "+15558675309",
+  "worksFor": "string"
 }
 ```
+
+

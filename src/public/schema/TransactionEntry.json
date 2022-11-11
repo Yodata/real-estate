@@ -12,7 +12,7 @@
           "type": "string",
           "description": "typically a RealEstateAgent",
           "example": "RealEstateAgent",
-          "x-parser-schema-id": "<anonymous-schema-827>"
+          "x-parser-schema-id": "<anonymous-schema-805>"
         },
         "roleName": {
           "type": "string",
@@ -21,14 +21,14 @@
             "ListingAgent",
             "BuyerAgent"
           ],
-          "x-parser-schema-id": "<anonymous-schema-828>"
+          "x-parser-schema-id": "<anonymous-schema-806>"
         },
         "id": {
           "type": "string",
           "format": "uri",
           "description": "Linked-Data URI (@id)",
           "example": "https://{entityid}.example.com/profile/card#me",
-          "x-parser-schema-id": "<anonymous-schema-829>"
+          "x-parser-schema-id": "<anonymous-schema-807>"
         },
         "identifier": {
           "type": "object",
@@ -38,13 +38,13 @@
               "type": "string",
               "maxLength": 12,
               "example": "1657897",
-              "x-parser-schema-id": "<anonymous-schema-831>"
+              "x-parser-schema-id": "<anonymous-schema-809>"
             }
           },
-          "x-parser-schema-id": "<anonymous-schema-830>"
+          "x-parser-schema-id": "<anonymous-schema-808>"
         }
       },
-      "x-parser-schema-id": "<anonymous-schema-826>"
+      "x-parser-schema-id": "<anonymous-schema-804>"
     },
     "salesProductionGCI": {
       "type": "object",
@@ -62,32 +62,32 @@
           "enum": [
             "MonetaryAmount"
           ],
-          "x-parser-schema-id": "<anonymous-schema-685>"
+          "x-parser-schema-id": "<anonymous-schema-663>"
         },
         "minValue": {
           "type": "number",
           "description": "the lower limit of the range",
           "example": 2400000,
-          "x-parser-schema-id": "<anonymous-schema-686>"
+          "x-parser-schema-id": "<anonymous-schema-664>"
         },
         "maxValue": {
           "type": "number",
           "description": "the upper limit of the range",
           "example": 3200000,
-          "x-parser-schema-id": "<anonymous-schema-687>"
+          "x-parser-schema-id": "<anonymous-schema-665>"
         },
         "value": {
           "type": "number",
           "description": "the actual or expected value",
           "example": 2700000,
-          "x-parser-schema-id": "<anonymous-schema-688>"
+          "x-parser-schema-id": "<anonymous-schema-666>"
         },
         "currency": {
           "type": "string",
           "description": "use ISO4217 country codes",
           "maxLength": 3,
           "example": "USD",
-          "x-parser-schema-id": "<anonymous-schema-689>"
+          "x-parser-schema-id": "<anonymous-schema-667>"
         }
       },
       "description": "gross commission income credited to the recipient",
@@ -96,7 +96,7 @@
         "value": 1234.56,
         "currency": "USD"
       },
-      "x-parser-schema-id": "<anonymous-schema-825>"
+      "x-parser-schema-id": "<anonymous-schema-803>"
     },
     "salesProductionUnit": {
       "type": "number",
@@ -104,7 +104,7 @@
       "maximum": 1,
       "description": "the sales production units credited to the recipient",
       "example": 0.5,
-      "x-parser-schema-id": "<anonymous-schema-824>"
+      "x-parser-schema-id": "<anonymous-schema-802>"
     },
     "type": {
       "type": "string",
@@ -112,7 +112,7 @@
       "enum": [
         "TransactionEntry"
       ],
-      "x-parser-schema-id": "<anonymous-schema-823>"
+      "x-parser-schema-id": "<anonymous-schema-801>"
     }
   },
   "x-parser-schema-id": "TransactionEntry",

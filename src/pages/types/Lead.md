@@ -1,32 +1,29 @@
 ---
 title: Lead
-route: /types/Lead
-menu: Types
----# Lead
-a sales opportunity (object) offered by a sender to a recipient.
-
-
-## Schema
+---
 | Name | Type | Description |
-|:-----| :--- | :---------- |
-| type | string | Lead  |
-| identifier | object | key/value id assigned to the record in the system where the data was originally created. The identifier should be included along with any statements on the record, or the entity associated to the record.  |
-| object | object | the lead (Contact) <br/>RANGE: [Contact](/types/Contact) |
-| recipient | string&lt;uri&gt;  | the lead recipient  |
-| sender | string&lt;uri&gt;  | the lead provider  |
-| owner | string&lt;uri&gt;  | the original owner of the lead <br/>RANGE: [RealEstateOrganization](/types/RealEstateOrganization), [RealEstateAgent](/types/RealEstateAgent), [Person](/types/Person) |
-| dateAccepted | string | The date/time the item was accepted by the recipient <br/>RANGE: [DateTime](/types/DateTime) |
-| dateRejected | string&lt;date-time&gt;  | The date/time the item was rejected by the recipient  |
-| dateSent | string&lt;date-time&gt;  | the date the lead was sent  |
-| dateReceived | string | The date/time the item was received by it's recipient <br/>RANGE: [DateTime](/types/DateTime) |
-| leadSource | [object] | lead origin, may be a website event or a thing such as a website, zillow, mobile applicaton. <br/>RANGE: [Action](/types/Action), [RealEstateWebSite](/types/RealEstateWebSite), [MobileApplication](/types/MobileApplication) |
+|---|---|---|
+| (root) | object | a sales opportunity (object) offered by a sender to a recipient. |
+| Lead.type | string | Lead |
+| Lead.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| Lead.object | object | the lead (Contact) |
+| Lead.recipient | string | the lead recipient |
+| Lead.sender | string | the lead provider |
+| Lead.owner | string | the original owner of the lead |
+| Lead.dateAccepted | string | The date/time the item was accepted by the recipient |
+| Lead.dateRejected | string | The date/time the item was rejected by the recipient |
+| Lead.dateSent | string | the date the lead was sent |
+| Lead.dateReceived | string | The date/time the item was received by it's recipient |
+| Lead.leadSource | array<object> | lead origin, may be a website event or a thing such as a website, zillow, mobile applicaton. |
+| Lead.leadSource (single item) | object | - |
 
-### Example
+> Examples of Lead
+
 ```json
 {
   "type": "Lead",
   "identifier": {
-    "salesforceContactID": "c28834ca-db69-4da8-90ad-75cdc9907298"
+    "salesforceid": "0031U00002XW1QWQA1"
   },
   "object": {
     "type": "Contact",
@@ -38,8 +35,8 @@ a sales opportunity (object) offered by a sender to a recipient.
   "sender": "http://{lead-sender}.example.com/profile/card#me",
   "owner": "http://{lead-owner}.example.com/profile/card#me",
   "dateAccepted": "2019-11-25T04:23:32.000Z",
-  "dateRejected": "2022-10-12T01:13:43Z",
-  "dateSent": "2022-10-12T01:13:43Z",
+  "dateRejected": "2019-08-24T14:15:22Z",
+  "dateSent": "2019-08-24T14:15:22Z",
   "dateReceived": "2019-11-25T04:23:32.000Z",
   "leadSource": [
     {
@@ -52,3 +49,5 @@ a sales opportunity (object) offered by a sender to a recipient.
   ]
 }
 ```
+
+

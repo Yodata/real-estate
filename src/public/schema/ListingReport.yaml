@@ -7,30 +7,30 @@ properties:
   batchId:
     type: string
     description: BATCH-ID
-    x-parser-schema-id: <anonymous-schema-659>
+    x-parser-schema-id: <anonymous-schema-209>
   dateCreated:
     type: string
     format: date-time
     description: YEAR-MONTH
-    x-parser-schema-id: <anonymous-schema-661>
+    x-parser-schema-id: <anonymous-schema-211>
   listingsAddedCount:
     type: number
     description: LISTINGS-TAKEN
-    x-parser-schema-id: <anonymous-schema-662>
+    x-parser-schema-id: <anonymous-schema-212>
   reportingOfficeId:
     type: string
     format: uri
     description: OFFICE-ID
     example: https://{officeid}.example.com/profile/card#me
-    x-parser-schema-id: <anonymous-schema-660>
+    x-parser-schema-id: <anonymous-schema-210>
   totalListingsCount:
     type: number
     description: LISTINGS-INVENTORY
-    x-parser-schema-id: <anonymous-schema-663>
+    x-parser-schema-id: <anonymous-schema-213>
   type:
     type: string
     description: RECORD-TYPE
     example: ListingReport
-    x-parser-schema-id: <anonymous-schema-658>
+    x-parser-schema-id: <anonymous-schema-208>
 x-parser-schema-id: ListingReport
 

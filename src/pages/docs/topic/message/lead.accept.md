@@ -29,7 +29,7 @@ title: lead#accept
 | type | string | const (`"lead#accept"`)  |
 | object | object | a sales opportunity (object) offered by a sender to a recipient. |
 | object.type | string | allowed (`"Lead"`) Lead |
-| object.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| object.identifier | object |  1 properties |
 | object.object | object | the lead (Contact) |
 | object.recipient | string | the lead recipient format (`uri`) |
 | object.sender | string | the lead provider format (`uri`) |
@@ -49,7 +49,7 @@ title: lead#accept
   "object": {
     "type": "Lead",
     "identifier": {
-      "salesforceid": "0031U00002XW1QWQA1"
+      "bhhsconsumerid": "12345"
     },
     "object": {
       "type": "Contact",

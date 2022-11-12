@@ -1,4 +1,5 @@
 {
+  "$id": "http://realestate.yodata.me/schema/MLSMembership.json",
   "type": "object",
   "title": "MLSMembership",
   "description": "a membership relationship",
@@ -48,6 +49,5 @@
       "example": "MLSMembership"
     }
   },
-  "x-parser-schema-id": "<anonymous-schema-715>",
-  "$id": "http://realestate.yodata.me/schema/MLSMembership.json"
+  "x-parser-schema-id": "<anonymous-schema-694>"
 }

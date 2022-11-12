@@ -1,7 +1,10 @@
+# @format
+
+title: publish-payload
 type: object
 required:
-- topic
-- recipient
+  - topic
+  - recipient
 properties:
   topic:
     type: string

@@ -10,7 +10,7 @@ title: RealEstateProperty
 | propertyType | string | allowed (`"RESI"`, `"RLSE"`, `"RINC"`, `"LAND"`, `"MOBI"`, `"FARM"`, `"COMS"`, `"COML"`, `"BUSO"`) RESO property type (see range for allowed values) 4 characters |
 | addressCountry | string | allowed (`"CA"`, `"DE"`, `"GR"`, `"IN"`, `"IT"`, `"MX"`, `"PE"`, `"PT"`, `"ES"`, `"AE"`, `"GB"`, `"US"`) two-letter ISO 3166-1 alpha-2 country code |
 | addressLocality | string | City, Township. <= 50 characters |
-| addressRegion | string | State or Province. <= 3 characters |
+| addressRegion | string | abbreviated state or province |
 | apn | string | Assessors Parcel Number |
 | image | tuple<object allOf, ...optional<any>> | an ImageObject or URI reference to an image on the web. |
 | image.0 (index) | object allOf | - |
@@ -53,9 +53,9 @@ title: RealEstateProperty
 {
   "type": "RealEstateProperty",
   "propertyType": "RESI",
-  "addressCountry": "US",
-  "addressLocality": "string",
-  "addressRegion": "New Jersey",
+  "addressCountry": "CA",
+  "addressLocality": "Gotham City",
+  "addressRegion": "NJ",
   "apn": "ABC-12345-XX-XXXX",
   "image": [
     {

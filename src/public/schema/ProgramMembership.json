@@ -8,27 +8,27 @@
       "properties": {
         "type": {
           "const": "Contact",
-          "x-parser-schema-id": "<anonymous-schema-706>"
+          "x-parser-schema-id": "<anonymous-schema-685>"
         },
         "name": {
           "type": "string",
-          "x-parser-schema-id": "<anonymous-schema-707>"
+          "x-parser-schema-id": "<anonymous-schema-686>"
         },
         "identifier": {
           "title": "identifier",
           "type": "object",
-          "description": "identifier assigned to a contact by the vendor who originally created the contact",
+          "summary": "identifier assigned to a contact by the vendor who originally created the contact",
+          "maxProperties": 1,
+          "minProperties": 1,
           "examples": [
             {
-              "salesforceid": "0031U00002XW1QWQA1"
+              "bhhsconsumerid": "12345"
             },
             {
-              "vendoraid": "123456"
-            },
-            {
-              "originating_system_id": "123456"
+              "salesforceid": "56789"
             }
-          ]
+          ],
+          "x-parser-schema-id": "identifier"
         }
       }
     },
@@ -37,28 +37,28 @@
       "properties": {
         "type": {
           "const": "MarketingProgram",
-          "x-parser-schema-id": "<anonymous-schema-709>"
+          "x-parser-schema-id": "<anonymous-schema-688>"
         },
         "name": {
           "type": "string",
           "example": "Market Activity Report 508 Homewood Ave",
-          "x-parser-schema-id": "<anonymous-schema-710>"
+          "x-parser-schema-id": "<anonymous-schema-689>"
         },
         "identifier": {
           "title": "identifier",
           "type": "object",
-          "description": "identifier assigned to a contact by the vendor who originally created the contact",
+          "summary": "identifier assigned to a contact by the vendor who originally created the contact",
+          "maxProperties": 1,
+          "minProperties": 1,
           "examples": [
             {
-              "salesforceid": "0031U00002XW1QWQA1"
+              "bhhsconsumerid": "12345"
             },
             {
-              "vendoraid": "123456"
-            },
-            {
-              "originating_system_id": "123456"
+              "salesforceid": "56789"
             }
-          ]
+          ],
+          "x-parser-schema-id": "identifier"
         }
       }
     },

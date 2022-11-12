@@ -25,7 +25,7 @@ properties:
         type: integer
         description: identifies the batch for the current transaction
         example: 4136
-        x-parser-schema-id: <anonymous-schema-209>
+        x-parser-schema-id: <anonymous-schema-195>
       transactionSequence:
         type: integer
         description: >-
@@ -33,11 +33,11 @@ properties:
           reports of the the same RealEstateTransaction
         minimum: 0
         example: 1
-        x-parser-schema-id: <anonymous-schema-210>
+        x-parser-schema-id: <anonymous-schema-196>
       unimprovedLandFlag:
         type: boolean
         description: true if the transaction subject property is an unimproved lot.
-        x-parser-schema-id: <anonymous-schema-211>
+        x-parser-schema-id: <anonymous-schema-197>
   buyerOffice:
     type: string
     format: uri
@@ -106,7 +106,7 @@ properties:
           identifier:
             guruTransactionId: '0000074792'
         url: https://example.com/path/to/document.pdf
-      x-parser-schema-id: <anonymous-schema-279>
+      x-parser-schema-id: <anonymous-schema-261>
   identifier:
     type: object
     description: the data producer's id for the transaction.
@@ -117,7 +117,7 @@ properties:
         type: string
         maxLength: 12
         example: '0000074792'
-        x-parser-schema-id: <anonymous-schema-207>
+        x-parser-schema-id: <anonymous-schema-193>
   listingOffice:
     type: string
     format: uri
@@ -154,9 +154,10 @@ properties:
           - COML
           - BUSO
       addressCountry:
-        type: string
+        $id: http://realestate.yodata.me/schema/addressCountry
+        title: addressCountry
         description: two-letter ISO 3166-1 alpha-2 country code
-        example: US
+        type: string
         enum:
           - CA
           - DE
@@ -170,17 +171,35 @@ properties:
           - AE
           - GB
           - US
+        x-parser-schema-id: addressCountry
       addressLocality:
         $id: addressLocality
         type: string
         description: City, Township.
         maxLength: 50
         x-faker: address.city
+        examples:
+          - Gotham City
+          - Kulasmouth
+          - Heidistad
+          - Altamonte Springs
+          - West Ahmed
+          - Blaiseview
+          - null
+        x-parser-schema-id: addressLocality
       addressRegion:
+        $id: addressRegion
+        title: addressRegion
         type: string
-        description: State or Province.
-        example: New Jersey
-        maxLength: 3
+        description: abbreviated state or province
+        max-length: 2
+        examples:
+          - NJ
+          - CA
+          - MI
+          - null
+        x-faker: address.stateAbbr
+        x-parser-schema-id: addressRegion
       apn:
         type: string
         description: Assessors Parcel Number
@@ -208,13 +227,13 @@ properties:
                       - type
                     propertyNames:
                       pattern: ^[a-z@$][a-zA-Z0-9-_]+$
-                      x-parser-schema-id: <anonymous-schema-237>
+                      x-parser-schema-id: <anonymous-schema-221>
                     properties:
                       type:
                         type: string
                         pattern: ^[A-Z][a-zA-Z0-9]+$
                         description: The item type (Linked-Data @type)
-                        x-parser-schema-id: <anonymous-schema-235>
+                        x-parser-schema-id: <anonymous-schema-219>
                       '@id':
                         type: string
                         format: uri
@@ -250,7 +269,7 @@ properties:
                         format: uri
                         description: URL of the image content
                         example: http://user.example.com/public/profile/image.jpg
-                    x-parser-schema-id: <anonymous-schema-238>
+                    x-parser-schema-id: <anonymous-schema-222>
                 x-parser-schema-id: MediaObject
               - title: ImageObject
                 x-range: ImageObject
@@ -265,8 +284,8 @@ properties:
                     example: image.jpg
                   encodingFormat:
                     example: image/jpeg
-                x-parser-schema-id: <anonymous-schema-239>
-            x-parser-schema-id: <anonymous-schema-234>
+                x-parser-schema-id: <anonymous-schema-223>
+            x-parser-schema-id: <anonymous-schema-218>
       latitude:
         type: number
         description: The latitude of a location.
@@ -311,10 +330,16 @@ properties:
         type: string
         example: 7
       postalCode:
+        $id: http://realestate.yodata.me/schema/postalCode
+        title: postalCode
         type: string
         description: Zip/Post Code
-        example: '10010'
         maxLength: 12
+        examples:
+          - '10010'
+          - 50239-7698
+          - null
+        x-parser-schema-id: postalCode
       propertySubType:
         title: propertySubType
         type: string
@@ -354,10 +379,14 @@ properties:
         description: he number of floors in the property
         example: 2
       streetAddress:
+        $id: streetAddress.yaml
+        title: streetAddress
         type: string
         description: the street address
         example: 1007 Mountain Gate Rd
         maxLength: 75
+        x-faker: address.streetAddress
+        x-parser-schema-id: streetAddress
       yearBuilt:
         type: number
         description: the year the structure was created
@@ -377,19 +406,19 @@ properties:
         type:
           type: string
           const: TransactionParticipant
-          x-parser-schema-id: <anonymous-schema-262>
+          x-parser-schema-id: <anonymous-schema-244>
         roleName:
           type: string
           description: the role of the participant in the transaction
           examples:
             - Buyer
             - Seller
-          x-parser-schema-id: <anonymous-schema-263>
+          x-parser-schema-id: <anonymous-schema-245>
         position:
           type: number
           description: numeric position for the participant/roleName.
           example: 1
-          x-parser-schema-id: <anonymous-schema-264>
+          x-parser-schema-id: <anonymous-schema-246>
         givenName:
           type: string
           description: First Name of a person
@@ -451,12 +480,16 @@ properties:
           type: string
           description: middleName or alternate name of the Person
           example: Big
-          x-parser-schema-id: <anonymous-schema-265>
+          x-parser-schema-id: <anonymous-schema-247>
         email:
+          title: email
+          description: a valid email address
           type: string
           format: email
           x-faker: internet.email
         telephone:
+          $id: telephone
+          title: telephone
           type: string
           description: Primary phone number.
           example: '+15558675309'
@@ -467,8 +500,8 @@ properties:
             type: string
             format: uri
             example: https://{agentid}.example.com/profile/card#me
-            x-parser-schema-id: <anonymous-schema-267>
-          x-parser-schema-id: <anonymous-schema-266>
+            x-parser-schema-id: <anonymous-schema-249>
+          x-parser-schema-id: <anonymous-schema-248>
       x-parser-schema-id: TransactionParticipant
   purchaseContractDate:
     type: string
@@ -486,7 +519,7 @@ properties:
         description: The item type (Linked-Data @type)
         enum:
           - Referral
-        x-parser-schema-id: <anonymous-schema-254>
+        x-parser-schema-id: <anonymous-schema-236>
       additionalProperty:
         type: object
         description: context specific custom properties
@@ -497,15 +530,15 @@ properties:
             enum:
               - 'Y'
               - 'N'
-            x-parser-schema-id: <anonymous-schema-256>
+            x-parser-schema-id: <anonymous-schema-238>
           inNetworkReferralYN:
             type: string
             description: Y if transaction was referred by an in network agent
             enum:
               - 'Y'
               - 'N'
-            x-parser-schema-id: <anonymous-schema-257>
-        x-parser-schema-id: <anonymous-schema-255>
+            x-parser-schema-id: <anonymous-schema-239>
+        x-parser-schema-id: <anonymous-schema-237>
       referredBy:
         type: object
         description: the referring entity
@@ -521,12 +554,12 @@ properties:
               - RealEstateOffice
               - Organization
               - Person
-            x-parser-schema-id: <anonymous-schema-259>
+            x-parser-schema-id: <anonymous-schema-241>
           id:
             type: string
             format: uri
             description: Linked-Data URI (@id)
-        x-parser-schema-id: <anonymous-schema-258>
+        x-parser-schema-id: <anonymous-schema-240>
   reportingOffice:
     type: string
     format: uri
@@ -621,14 +654,14 @@ properties:
           description: TransactionEntry
           enum:
             - TransactionEntry
-          x-parser-schema-id: <anonymous-schema-269>
+          x-parser-schema-id: <anonymous-schema-251>
         salesProductionUnit:
           type: number
           minimum: 0.0001
           maximum: 1
           description: the sales production units credited to the recipient
           example: 0.5
-          x-parser-schema-id: <anonymous-schema-270>
+          x-parser-schema-id: <anonymous-schema-252>
         salesProductionGCI:
           type: object
           title: MonetaryAmount
@@ -665,7 +698,7 @@ properties:
             type: MonetaryAmount
             value: 1234.56
             currency: USD
-          x-parser-schema-id: <anonymous-schema-271>
+          x-parser-schema-id: <anonymous-schema-253>
         recipient:
           description: >-
             the agent credited with the sales production and who receives the
@@ -676,20 +709,20 @@ properties:
               type: string
               description: typically a RealEstateAgent
               example: RealEstateAgent
-              x-parser-schema-id: <anonymous-schema-273>
+              x-parser-schema-id: <anonymous-schema-255>
             roleName:
               type: string
               description: 'enum: ListingAgent,BuyerAgent'
               enum:
                 - ListingAgent
                 - BuyerAgent
-              x-parser-schema-id: <anonymous-schema-274>
+              x-parser-schema-id: <anonymous-schema-256>
             id:
               type: string
               format: uri
               description: Linked-Data URI (@id)
               example: https://{entityid}.example.com/profile/card#me
-              x-parser-schema-id: <anonymous-schema-275>
+              x-parser-schema-id: <anonymous-schema-257>
             identifier:
               type: object
               description: unique identifier of the recipient from the data producer
@@ -698,9 +731,9 @@ properties:
                   type: string
                   maxLength: 12
                   example: '1657897'
-                  x-parser-schema-id: <anonymous-schema-277>
-              x-parser-schema-id: <anonymous-schema-276>
-          x-parser-schema-id: <anonymous-schema-272>
+                  x-parser-schema-id: <anonymous-schema-259>
+              x-parser-schema-id: <anonymous-schema-258>
+          x-parser-schema-id: <anonymous-schema-254>
       x-parser-schema-id: TransactionEntry
   transactionStatus:
     type: string

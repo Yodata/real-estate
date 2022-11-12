@@ -7,12 +7,12 @@ title: Plan
 |---|---|---|
 | (root) | object | a collection of related tasks |
 | type | string | const (`"Plan"`)  |
-| identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| identifier | object |  1 properties |
 | name | string | name of the plan |
 | description | string | description of the item |
 | member | array<object> | tasks which make up the plan |
 | member.type | string | allowed (`"Task"`) The item type (Linked-Data @type) |
-| member.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| member.identifier | object |  1 properties |
 | member.actionStatus | string | allowed (`"CompletedActionStatus"`, `"FailedActionStatus"`, `"ActiveActionStatus"`, `"PotentialActionStatus"`) disposition of the Action at the time of this action message. |
 | member.memberOf | object | a plan the task is associated with |
 | member.agent | object | the party who completed, or will complete the task |
@@ -38,7 +38,7 @@ title: Plan
 {
   "type": "Plan",
   "identifier": {
-    "salesforceid": "0031U00002XW1QWQA1"
+    "bhhsconsumerid": "12345"
   },
   "name": "my awesome plan",
   "description": "this is the description of my awesome plan",

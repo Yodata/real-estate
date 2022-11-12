@@ -26,12 +26,12 @@
         "type": {
           "type": "string",
           "example": "Service",
-          "x-parser-schema-id": "<anonymous-schema-807>"
+          "x-parser-schema-id": "<anonymous-schema-786>"
         },
         "name": {
           "type": "string",
           "example": "California Department of Real Estate",
-          "x-parser-schema-id": "<anonymous-schema-808>"
+          "x-parser-schema-id": "<anonymous-schema-787>"
         }
       }
     },

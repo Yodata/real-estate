@@ -19,7 +19,7 @@ title: RealEstateAgent
 | certification.issuedTo | object | the subject |
 | certification.issuedTo.type | string | allowed (`"RealEstateAgent"`) The item type (Linked-Data @type) |
 | certification.issuedTo.id | string | Linked-Data URI (@id) format (`uri`) |
-| certification.issuedTo.name | string | the name of the item |
+| certification.issuedTo.name | string | - |
 | contactPoint | object | A point of contact for the entity. By convention in the real estate domain, ContactPoints are preferred over telephone, email, and faxNumber so the ContactPoint.name property can be used to label values for example, Work Telephone, Home, as named contactPoint values. >= 3 properties |
 | contactPoint.type | string | const (`"ContactPoint"`)  |
 | contactPoint.name | string | a label for the contactPoint, i.e. 'Work', or 'Home' |
@@ -27,11 +27,11 @@ title: RealEstateAgent
 | contactPoint.faxNumber | string | - |
 | contactPoint.email | string | an email address for the item. format (`email`) |
 | contactPoint.url | string | primary URL for the item. format (`uri`) |
-| email | string |  format (`email`) |
+| email | string | a valid email address format (`email`) |
 | familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) <= 50 characters |
 | givenName | string | First Name of a person |
 | id | string | Linked-Data URI (@id) format (`uri`) |
-| identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| identifier | object |  1 properties |
 | image | tuple<object allOf, ...optional<any>> | an ImageObject or URI reference to an image on the web. |
 | image.0 (index) | object allOf | - |
 | image.0.0 (allOf item) | allOf | an image, video or document availble for download |
@@ -63,7 +63,7 @@ title: RealEstateAgent
 | memberOf.0.startDate | string | date the member began performing this role format (`date-time`) |
 | memberOf.0.endDate | string | date the member stopped performing the role format (`date-time`) |
 | memberOf.1 (anyOf item) | string |  format (`uri`) |
-| name | string | the name of the item |
+| name | string | - |
 | parentOrganization | array<string> | organizations of which this org is a part. |
 | parentOrganization (single item) | string |  format (`uri`) |
 | permit | object | A permit issued by an organization to an individual or business. |
@@ -125,7 +125,7 @@ title: RealEstateAgent
   "givenName": "John",
   "id": "http://example.com",
   "identifier": {
-    "salesforceid": "0031U00002XW1QWQA1"
+    "bhhsconsumerid": "12345"
   },
   "image": [
     {

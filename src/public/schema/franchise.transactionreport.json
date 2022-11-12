@@ -13,7 +13,7 @@
         "format": "date-time",
         "description": "date & time the event was produced",
         "x-faker": "date.past",
-        "x-parser-schema-id": "<anonymous-schema-2>"
+        "x-parser-schema-id": "<anonymous-schema-7>"
       },
       "agent": {
         "type": "string",
@@ -24,7 +24,7 @@
           "https://teamsupermario.example.com/profile/card#me",
           "https://bigbrandrealestate.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-3>"
+        "x-parser-schema-id": "<anonymous-schema-8>"
       },
       "instrument": {
         "type": "string",
@@ -38,7 +38,7 @@
           "http://ace.example.com/profile/card#me",
           "http://roqlogic.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-4>"
+        "x-parser-schema-id": "<anonymous-schema-9>"
       },
       "source": {
         "type": "string",
@@ -47,7 +47,7 @@
         "examples": [
           "https://bigbrandrealestate.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-5>"
+        "x-parser-schema-id": "<anonymous-schema-10>"
       },
       "originalRecipient": {
         "type": "string",
@@ -64,7 +64,7 @@
           "http://jim.example.com/profile/card#me",
           "http://jennifer.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-6>"
+        "x-parser-schema-id": "<anonymous-schema-11>"
       },
       "id": {
         "type": "string",
@@ -79,7 +79,7 @@
           "http://ace.example.com/publish/56789",
           "http://roqlogic.example.com/publish/67890"
         ],
-        "x-parser-schema-id": "<anonymous-schema-7>"
+        "x-parser-schema-id": "<anonymous-schema-12>"
       },
       "@id": {
         "type": "string",
@@ -92,10 +92,10 @@
           "http://ace.example.com/inbox/56789",
           "http://roqlogic.example.com/inbox/67890"
         ],
-        "x-parser-schema-id": "<anonymous-schema-8>"
+        "x-parser-schema-id": "<anonymous-schema-13>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-1>"
+    "x-parser-schema-id": "<anonymous-schema-6>"
   },
   "payload": {
     "type": "object",
@@ -105,7 +105,7 @@
         "properties": {
           "type": {
             "const": "UpdateAction",
-            "x-parser-schema-id": "<anonymous-schema-201>"
+            "x-parser-schema-id": "<anonymous-schema-187>"
           },
           "instrument": {
             "type": "object",
@@ -113,7 +113,7 @@
             "properties": {
               "type": {
                 "const": "SoftwareApplication",
-                "x-parser-schema-id": "<anonymous-schema-203>"
+                "x-parser-schema-id": "<anonymous-schema-189>"
               },
               "name": {
                 "type": "string",
@@ -122,10 +122,10 @@
                   "Guru",
                   "Lone Wolf"
                 ],
-                "x-parser-schema-id": "<anonymous-schema-204>"
+                "x-parser-schema-id": "<anonymous-schema-190>"
               }
             },
-            "x-parser-schema-id": "<anonymous-schema-202>"
+            "x-parser-schema-id": "<anonymous-schema-188>"
           },
           "object": {
             "$id": "RealEstateTransaction",
@@ -146,7 +146,7 @@
             "properties": {
               "type": {
                 "const": "RealEstateTransaction",
-                "x-parser-schema-id": "<anonymous-schema-205>"
+                "x-parser-schema-id": "<anonymous-schema-191>"
               },
               "identifier": {
                 "type": "object",
@@ -159,10 +159,10 @@
                     "type": "string",
                     "maxLength": 12,
                     "example": "0000074792",
-                    "x-parser-schema-id": "<anonymous-schema-207>"
+                    "x-parser-schema-id": "<anonymous-schema-193>"
                   }
                 },
-                "x-parser-schema-id": "<anonymous-schema-206>"
+                "x-parser-schema-id": "<anonymous-schema-192>"
               },
               "additionalProperty": {
                 "type": "object",
@@ -177,22 +177,22 @@
                     "type": "integer",
                     "description": "identifies the batch for the current transaction",
                     "example": 4136,
-                    "x-parser-schema-id": "<anonymous-schema-209>"
+                    "x-parser-schema-id": "<anonymous-schema-195>"
                   },
                   "transactionSequence": {
                     "type": "integer",
                     "description": "the sequentail order of this transaction report relative to previous reports of the the same RealEstateTransaction",
                     "minimum": 0,
                     "example": 1,
-                    "x-parser-schema-id": "<anonymous-schema-210>"
+                    "x-parser-schema-id": "<anonymous-schema-196>"
                   },
                   "unimprovedLandFlag": {
                     "type": "boolean",
                     "description": "true if the transaction subject property is an unimproved lot.",
-                    "x-parser-schema-id": "<anonymous-schema-211>"
+                    "x-parser-schema-id": "<anonymous-schema-197>"
                   }
                 },
-                "x-parser-schema-id": "<anonymous-schema-208>"
+                "x-parser-schema-id": "<anonymous-schema-194>"
               },
               "transactionStatus": {
                 "type": "string",
@@ -204,7 +204,7 @@
                   "ClosedTransactionStatus",
                   "CanceledTransactionStatus"
                 ],
-                "x-parser-schema-id": "<anonymous-schema-212>"
+                "x-parser-schema-id": "<anonymous-schema-198>"
               },
               "transactionType": {
                 "type": "string",
@@ -218,49 +218,49 @@
                   "PM",
                   "RF"
                 ],
-                "x-parser-schema-id": "<anonymous-schema-213>"
+                "x-parser-schema-id": "<anonymous-schema-199>"
               },
               "reportingOffice": {
                 "type": "string",
                 "format": "uri",
                 "description": "the reporting office",
                 "example": "https://{officeid}.example.com/profile/card#me",
-                "x-parser-schema-id": "<anonymous-schema-214>"
+                "x-parser-schema-id": "<anonymous-schema-200>"
               },
               "listingOffice": {
                 "type": "string",
                 "format": "uri",
                 "description": "the office representing the seller",
                 "example": "https://{officeid}.example.com/profile/card#me",
-                "x-parser-schema-id": "<anonymous-schema-215>"
+                "x-parser-schema-id": "<anonymous-schema-201>"
               },
               "buyerOffice": {
                 "type": "string",
                 "format": "uri",
                 "description": "the office representing the buyer",
                 "example": "https://{officeid}.example.com/profile/card#me",
-                "x-parser-schema-id": "<anonymous-schema-216>"
+                "x-parser-schema-id": "<anonymous-schema-202>"
               },
               "commissionDate": {
                 "type": "string",
                 "format": "date-time",
                 "x-range": "DateTime",
                 "description": "date the purchase offer was presented",
-                "x-parser-schema-id": "<anonymous-schema-217>"
+                "x-parser-schema-id": "<anonymous-schema-203>"
               },
               "closeDate": {
                 "type": "string",
                 "format": "date-time",
                 "x-range": "DateTime",
                 "description": "With purchase the date the purchase agreement was fulfilled. With lease, the date the requirements were fulfilled, such as contract and/or deposit.",
-                "x-parser-schema-id": "<anonymous-schema-218>"
+                "x-parser-schema-id": "<anonymous-schema-204>"
               },
               "purchaseContractDate": {
                 "type": "string",
                 "format": "date-time",
                 "description": "date of purchase agreement execution (aka sale date)",
                 "x-range": "DateTime",
-                "x-parser-schema-id": "<anonymous-schema-219>"
+                "x-parser-schema-id": "<anonymous-schema-205>"
               },
               "closePrice": {
                 "type": "object",
@@ -278,32 +278,32 @@
                     "enum": [
                       "MonetaryAmount"
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-221>"
+                    "x-parser-schema-id": "<anonymous-schema-207>"
                   },
                   "minValue": {
                     "type": "number",
                     "description": "the lower limit of the range",
                     "example": 2400000,
-                    "x-parser-schema-id": "<anonymous-schema-222>"
+                    "x-parser-schema-id": "<anonymous-schema-208>"
                   },
                   "maxValue": {
                     "type": "number",
                     "description": "the upper limit of the range",
                     "example": 3200000,
-                    "x-parser-schema-id": "<anonymous-schema-223>"
+                    "x-parser-schema-id": "<anonymous-schema-209>"
                   },
                   "value": {
                     "type": "number",
                     "description": "the actual or expected value",
                     "example": 2700000,
-                    "x-parser-schema-id": "<anonymous-schema-224>"
+                    "x-parser-schema-id": "<anonymous-schema-210>"
                   },
                   "currency": {
                     "type": "string",
                     "description": "use ISO4217 country codes",
                     "maxLength": 3,
                     "example": "USD",
-                    "x-parser-schema-id": "<anonymous-schema-225>"
+                    "x-parser-schema-id": "<anonymous-schema-211>"
                   }
                 },
                 "description": "the final sale price of the subject",
@@ -312,7 +312,7 @@
                   "value": 123456.78,
                   "currency": "USD"
                 },
-                "x-parser-schema-id": "<anonymous-schema-220>"
+                "x-parser-schema-id": "<anonymous-schema-206>"
               },
               "totalSalesProductionGCI": {
                 "type": "object",
@@ -330,32 +330,32 @@
                     "enum": [
                       "MonetaryAmount"
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-221>"
+                    "x-parser-schema-id": "<anonymous-schema-207>"
                   },
                   "minValue": {
                     "type": "number",
                     "description": "the lower limit of the range",
                     "example": 2400000,
-                    "x-parser-schema-id": "<anonymous-schema-222>"
+                    "x-parser-schema-id": "<anonymous-schema-208>"
                   },
                   "maxValue": {
                     "type": "number",
                     "description": "the upper limit of the range",
                     "example": 3200000,
-                    "x-parser-schema-id": "<anonymous-schema-223>"
+                    "x-parser-schema-id": "<anonymous-schema-209>"
                   },
                   "value": {
                     "type": "number",
                     "description": "the actual or expected value",
                     "example": 2700000,
-                    "x-parser-schema-id": "<anonymous-schema-224>"
+                    "x-parser-schema-id": "<anonymous-schema-210>"
                   },
                   "currency": {
                     "type": "string",
                     "description": "use ISO4217 country codes",
                     "maxLength": 3,
                     "example": "USD",
-                    "x-parser-schema-id": "<anonymous-schema-225>"
+                    "x-parser-schema-id": "<anonymous-schema-211>"
                   }
                 },
                 "description": "the total gci of the transaction",
@@ -364,7 +364,7 @@
                   "value": 123456.78,
                   "currency": "USD"
                 },
-                "x-parser-schema-id": "<anonymous-schema-226>"
+                "x-parser-schema-id": "<anonymous-schema-212>"
               },
               "totalSalesProductionGCIDeduction": {
                 "type": "object",
@@ -382,32 +382,32 @@
                     "enum": [
                       "MonetaryAmount"
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-221>"
+                    "x-parser-schema-id": "<anonymous-schema-207>"
                   },
                   "minValue": {
                     "type": "number",
                     "description": "the lower limit of the range",
                     "example": 2400000,
-                    "x-parser-schema-id": "<anonymous-schema-222>"
+                    "x-parser-schema-id": "<anonymous-schema-208>"
                   },
                   "maxValue": {
                     "type": "number",
                     "description": "the upper limit of the range",
                     "example": 3200000,
-                    "x-parser-schema-id": "<anonymous-schema-223>"
+                    "x-parser-schema-id": "<anonymous-schema-209>"
                   },
                   "value": {
                     "type": "number",
                     "description": "the actual or expected value",
                     "example": 2700000,
-                    "x-parser-schema-id": "<anonymous-schema-224>"
+                    "x-parser-schema-id": "<anonymous-schema-210>"
                   },
                   "currency": {
                     "type": "string",
                     "description": "use ISO4217 country codes",
                     "maxLength": 3,
                     "example": "USD",
-                    "x-parser-schema-id": "<anonymous-schema-225>"
+                    "x-parser-schema-id": "<anonymous-schema-211>"
                   }
                 },
                 "description": "total gci deductions for the transaction",
@@ -416,7 +416,7 @@
                   "value": 1234.56,
                   "currency": "USD"
                 },
-                "x-parser-schema-id": "<anonymous-schema-227>"
+                "x-parser-schema-id": "<anonymous-schema-213>"
               },
               "object": {
                 "title": "RealEstateProperty",
@@ -434,7 +434,7 @@
                       "RealEstateProperty"
                     ],
                     "type": "string",
-                    "x-parser-schema-id": "<anonymous-schema-228>"
+                    "x-parser-schema-id": "<anonymous-schema-214>"
                   },
                   "propertyType": {
                     "type": "string",
@@ -453,12 +453,13 @@
                       "COML",
                       "BUSO"
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-229>"
+                    "x-parser-schema-id": "<anonymous-schema-215>"
                   },
                   "addressCountry": {
-                    "type": "string",
+                    "$id": "http://realestate.yodata.me/schema/addressCountry",
+                    "title": "addressCountry",
                     "description": "two-letter ISO 3166-1 alpha-2 country code",
-                    "example": "US",
+                    "type": "string",
                     "enum": [
                       "CA",
                       "DE",
@@ -473,27 +474,45 @@
                       "GB",
                       "US"
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-230>"
+                    "x-parser-schema-id": "addressCountry"
                   },
                   "addressLocality": {
                     "$id": "addressLocality",
                     "type": "string",
                     "description": "City, Township.",
                     "maxLength": 50,
-                    "x-faker": "address.city"
+                    "x-faker": "address.city",
+                    "examples": [
+                      "Gotham City",
+                      "Kulasmouth",
+                      "Heidistad",
+                      "Altamonte Springs",
+                      "West Ahmed",
+                      "Blaiseview",
+                      null
+                    ],
+                    "x-parser-schema-id": "addressLocality"
                   },
                   "addressRegion": {
+                    "$id": "addressRegion",
+                    "title": "addressRegion",
                     "type": "string",
-                    "description": "State or Province.",
-                    "example": "New Jersey",
-                    "maxLength": 3,
-                    "x-parser-schema-id": "<anonymous-schema-231>"
+                    "description": "abbreviated state or province",
+                    "max-length": 2,
+                    "examples": [
+                      "NJ",
+                      "CA",
+                      "MI",
+                      null
+                    ],
+                    "x-faker": "address.stateAbbr",
+                    "x-parser-schema-id": "addressRegion"
                   },
                   "apn": {
                     "type": "string",
                     "description": "Assessors Parcel Number",
                     "example": "ABC-12345-XX-XXXX",
-                    "x-parser-schema-id": "<anonymous-schema-232>"
+                    "x-parser-schema-id": "<anonymous-schema-216>"
                   },
                   "image": {
                     "title": "image",
@@ -524,20 +543,20 @@
                                 ],
                                 "propertyNames": {
                                   "pattern": "^[a-z@$][a-zA-Z0-9-_]+$",
-                                  "x-parser-schema-id": "<anonymous-schema-237>"
+                                  "x-parser-schema-id": "<anonymous-schema-221>"
                                 },
                                 "properties": {
                                   "type": {
                                     "type": "string",
                                     "pattern": "^[A-Z][a-zA-Z0-9]+$",
                                     "description": "The item type (Linked-Data @type)",
-                                    "x-parser-schema-id": "<anonymous-schema-235>"
+                                    "x-parser-schema-id": "<anonymous-schema-219>"
                                   },
                                   "@id": {
                                     "type": "string",
                                     "format": "uri",
                                     "description": "the liked data uri for the Thing",
-                                    "x-parser-schema-id": "<anonymous-schema-236>"
+                                    "x-parser-schema-id": "<anonymous-schema-220>"
                                   }
                                 },
                                 "x-parser-schema-id": "Thing"
@@ -581,7 +600,7 @@
                                     "example": "http://user.example.com/public/profile/image.jpg"
                                   }
                                 },
-                                "x-parser-schema-id": "<anonymous-schema-238>"
+                                "x-parser-schema-id": "<anonymous-schema-222>"
                               }
                             ],
                             "x-parser-schema-id": "MediaObject"
@@ -606,25 +625,25 @@
                                 "example": "image/jpeg"
                               }
                             },
-                            "x-parser-schema-id": "<anonymous-schema-239>"
+                            "x-parser-schema-id": "<anonymous-schema-223>"
                           }
                         ],
-                        "x-parser-schema-id": "<anonymous-schema-234>"
+                        "x-parser-schema-id": "<anonymous-schema-218>"
                       }
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-233>"
+                    "x-parser-schema-id": "<anonymous-schema-217>"
                   },
                   "latitude": {
                     "type": "number",
                     "description": "The latitude of a location.",
                     "x-title": "latitude",
                     "example": 40.75,
-                    "x-parser-schema-id": "<anonymous-schema-240>"
+                    "x-parser-schema-id": "<anonymous-schema-224>"
                   },
                   "listingId": {
                     "description": "the local identifier for the listing (MLS #)",
                     "type": "string",
-                    "x-parser-schema-id": "<anonymous-schema-241>"
+                    "x-parser-schema-id": "<anonymous-schema-225>"
                   },
                   "livingArea": {
                     "description": "property indoor space",
@@ -636,14 +655,14 @@
                     },
                     "type": "object",
                     "x-range": "QuantitativeValue",
-                    "x-parser-schema-id": "<anonymous-schema-242>"
+                    "x-parser-schema-id": "<anonymous-schema-226>"
                   },
                   "longitude": {
                     "type": "number",
                     "description": "The longitude of a location.",
                     "x-title": "longitude",
                     "example": 73.98,
-                    "x-parser-schema-id": "<anonymous-schema-243>"
+                    "x-parser-schema-id": "<anonymous-schema-227>"
                   },
                   "lotSize": {
                     "description": "outdoor space minValue, maxValue",
@@ -655,32 +674,38 @@
                     },
                     "type": "object",
                     "x-range": "QuantitativeValue",
-                    "x-parser-schema-id": "<anonymous-schema-244>"
+                    "x-parser-schema-id": "<anonymous-schema-228>"
                   },
                   "numberOfBathrooms": {
                     "description": "the number of bathrooms",
                     "example": "2",
                     "type": "string",
-                    "x-parser-schema-id": "<anonymous-schema-245>"
+                    "x-parser-schema-id": "<anonymous-schema-229>"
                   },
                   "numberOfBedrooms": {
                     "description": "the number of bedrooms",
                     "example": "3",
                     "type": "string",
-                    "x-parser-schema-id": "<anonymous-schema-246>"
+                    "x-parser-schema-id": "<anonymous-schema-230>"
                   },
                   "numberOfRooms": {
                     "description": "the total number of rooms in the building",
                     "type": "string",
                     "example": 7,
-                    "x-parser-schema-id": "<anonymous-schema-247>"
+                    "x-parser-schema-id": "<anonymous-schema-231>"
                   },
                   "postalCode": {
+                    "$id": "http://realestate.yodata.me/schema/postalCode",
+                    "title": "postalCode",
                     "type": "string",
                     "description": "Zip/Post Code",
-                    "example": "10010",
                     "maxLength": 12,
-                    "x-parser-schema-id": "<anonymous-schema-248>"
+                    "examples": [
+                      "10010",
+                      "50239-7698",
+                      null
+                    ],
+                    "x-parser-schema-id": "postalCode"
                   },
                   "propertySubType": {
                     "title": "propertySubType",
@@ -717,26 +742,29 @@
                       "UnimprovedLandPropertyType",
                       "WarehousePropertyType"
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-249>"
+                    "x-parser-schema-id": "<anonymous-schema-232>"
                   },
                   "stories": {
                     "type": "number",
                     "description": "he number of floors in the property",
                     "example": 2,
-                    "x-parser-schema-id": "<anonymous-schema-250>"
+                    "x-parser-schema-id": "<anonymous-schema-233>"
                   },
                   "streetAddress": {
+                    "$id": "streetAddress.yaml",
+                    "title": "streetAddress",
                     "type": "string",
                     "description": "the street address",
                     "example": "1007 Mountain Gate Rd",
                     "maxLength": 75,
-                    "x-parser-schema-id": "<anonymous-schema-251>"
+                    "x-faker": "address.streetAddress",
+                    "x-parser-schema-id": "streetAddress"
                   },
                   "yearBuilt": {
                     "type": "number",
                     "description": "the year the structure was created",
                     "example": 1988,
-                    "x-parser-schema-id": "<anonymous-schema-252>"
+                    "x-parser-schema-id": "<anonymous-schema-234>"
                   }
                 },
                 "x-parser-schema-id": "RealEstateProperty"
@@ -753,7 +781,7 @@
                     "enum": [
                       "Referral"
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-254>"
+                    "x-parser-schema-id": "<anonymous-schema-236>"
                   },
                   "additionalProperty": {
                     "type": "object",
@@ -766,7 +794,7 @@
                           "Y",
                           "N"
                         ],
-                        "x-parser-schema-id": "<anonymous-schema-256>"
+                        "x-parser-schema-id": "<anonymous-schema-238>"
                       },
                       "inNetworkReferralYN": {
                         "type": "string",
@@ -775,10 +803,10 @@
                           "Y",
                           "N"
                         ],
-                        "x-parser-schema-id": "<anonymous-schema-257>"
+                        "x-parser-schema-id": "<anonymous-schema-239>"
                       }
                     },
-                    "x-parser-schema-id": "<anonymous-schema-255>"
+                    "x-parser-schema-id": "<anonymous-schema-237>"
                   },
                   "referredBy": {
                     "type": "object",
@@ -794,19 +822,19 @@
                           "Organization",
                           "Person"
                         ],
-                        "x-parser-schema-id": "<anonymous-schema-259>"
+                        "x-parser-schema-id": "<anonymous-schema-241>"
                       },
                       "id": {
                         "type": "string",
                         "format": "uri",
                         "description": "Linked-Data URI (@id)",
-                        "x-parser-schema-id": "<anonymous-schema-260>"
+                        "x-parser-schema-id": "<anonymous-schema-242>"
                       }
                     },
-                    "x-parser-schema-id": "<anonymous-schema-258>"
+                    "x-parser-schema-id": "<anonymous-schema-240>"
                   }
                 },
-                "x-parser-schema-id": "<anonymous-schema-253>"
+                "x-parser-schema-id": "<anonymous-schema-235>"
               },
               "participant": {
                 "type": "array",
@@ -822,7 +850,7 @@
                     "type": {
                       "type": "string",
                       "const": "TransactionParticipant",
-                      "x-parser-schema-id": "<anonymous-schema-262>"
+                      "x-parser-schema-id": "<anonymous-schema-244>"
                     },
                     "roleName": {
                       "type": "string",
@@ -831,13 +859,13 @@
                         "Buyer",
                         "Seller"
                       ],
-                      "x-parser-schema-id": "<anonymous-schema-263>"
+                      "x-parser-schema-id": "<anonymous-schema-245>"
                     },
                     "position": {
                       "type": "number",
                       "description": "numeric position for the participant/roleName.",
                       "example": 1,
-                      "x-parser-schema-id": "<anonymous-schema-264>"
+                      "x-parser-schema-id": "<anonymous-schema-246>"
                     },
                     "givenName": {
                       "type": "string",
@@ -875,7 +903,7 @@
                         "Ryan",
                         "Jacob"
                       ],
-                      "x-parser-schema-id": "<anonymous-schema-119>"
+                      "x-parser-schema-id": "<anonymous-schema-105>"
                     },
                     "familyName": {
                       "$id": "http://realestate.yodata.me/schema/familyName.yaml",
@@ -906,19 +934,22 @@
                       "type": "string",
                       "description": "middleName or alternate name of the Person",
                       "example": "Big",
-                      "x-parser-schema-id": "<anonymous-schema-265>"
+                      "x-parser-schema-id": "<anonymous-schema-247>"
                     },
                     "email": {
+                      "title": "email",
+                      "description": "a valid email address",
                       "type": "string",
                       "format": "email",
                       "x-faker": "internet.email",
-                      "x-parser-schema-id": "<anonymous-schema-94>"
+                      "x-parser-schema-id": "<anonymous-schema-89>"
                     },
                     "telephone": {
+                      "$id": "telephone",
+                      "title": "telephone",
                       "type": "string",
                       "description": "Primary phone number.",
-                      "example": "+15558675309",
-                      "x-parser-schema-id": "<anonymous-schema-129>"
+                      "example": "+15558675309"
                     },
                     "affiliation": {
                       "type": "array",
@@ -927,14 +958,14 @@
                         "type": "string",
                         "format": "uri",
                         "example": "https://{agentid}.example.com/profile/card#me",
-                        "x-parser-schema-id": "<anonymous-schema-267>"
+                        "x-parser-schema-id": "<anonymous-schema-249>"
                       },
-                      "x-parser-schema-id": "<anonymous-schema-266>"
+                      "x-parser-schema-id": "<anonymous-schema-248>"
                     }
                   },
                   "x-parser-schema-id": "TransactionParticipant"
                 },
-                "x-parser-schema-id": "<anonymous-schema-261>"
+                "x-parser-schema-id": "<anonymous-schema-243>"
               },
               "transactionEntry": {
                 "type": "array",
@@ -952,7 +983,7 @@
                       "enum": [
                         "TransactionEntry"
                       ],
-                      "x-parser-schema-id": "<anonymous-schema-269>"
+                      "x-parser-schema-id": "<anonymous-schema-251>"
                     },
                     "salesProductionUnit": {
                       "type": "number",
@@ -960,7 +991,7 @@
                       "maximum": 1,
                       "description": "the sales production units credited to the recipient",
                       "example": 0.5,
-                      "x-parser-schema-id": "<anonymous-schema-270>"
+                      "x-parser-schema-id": "<anonymous-schema-252>"
                     },
                     "salesProductionGCI": {
                       "type": "object",
@@ -978,32 +1009,32 @@
                           "enum": [
                             "MonetaryAmount"
                           ],
-                          "x-parser-schema-id": "<anonymous-schema-221>"
+                          "x-parser-schema-id": "<anonymous-schema-207>"
                         },
                         "minValue": {
                           "type": "number",
                           "description": "the lower limit of the range",
                           "example": 2400000,
-                          "x-parser-schema-id": "<anonymous-schema-222>"
+                          "x-parser-schema-id": "<anonymous-schema-208>"
                         },
                         "maxValue": {
                           "type": "number",
                           "description": "the upper limit of the range",
                           "example": 3200000,
-                          "x-parser-schema-id": "<anonymous-schema-223>"
+                          "x-parser-schema-id": "<anonymous-schema-209>"
                         },
                         "value": {
                           "type": "number",
                           "description": "the actual or expected value",
                           "example": 2700000,
-                          "x-parser-schema-id": "<anonymous-schema-224>"
+                          "x-parser-schema-id": "<anonymous-schema-210>"
                         },
                         "currency": {
                           "type": "string",
                           "description": "use ISO4217 country codes",
                           "maxLength": 3,
                           "example": "USD",
-                          "x-parser-schema-id": "<anonymous-schema-225>"
+                          "x-parser-schema-id": "<anonymous-schema-211>"
                         }
                       },
                       "description": "gross commission income credited to the recipient",
@@ -1012,7 +1043,7 @@
                         "value": 1234.56,
                         "currency": "USD"
                       },
-                      "x-parser-schema-id": "<anonymous-schema-271>"
+                      "x-parser-schema-id": "<anonymous-schema-253>"
                     },
                     "recipient": {
                       "description": "the agent credited with the sales production and who receives the value",
@@ -1022,7 +1053,7 @@
                           "type": "string",
                           "description": "typically a RealEstateAgent",
                           "example": "RealEstateAgent",
-                          "x-parser-schema-id": "<anonymous-schema-273>"
+                          "x-parser-schema-id": "<anonymous-schema-255>"
                         },
                         "roleName": {
                           "type": "string",
@@ -1031,14 +1062,14 @@
                             "ListingAgent",
                             "BuyerAgent"
                           ],
-                          "x-parser-schema-id": "<anonymous-schema-274>"
+                          "x-parser-schema-id": "<anonymous-schema-256>"
                         },
                         "id": {
                           "type": "string",
                           "format": "uri",
                           "description": "Linked-Data URI (@id)",
                           "example": "https://{entityid}.example.com/profile/card#me",
-                          "x-parser-schema-id": "<anonymous-schema-275>"
+                          "x-parser-schema-id": "<anonymous-schema-257>"
                         },
                         "identifier": {
                           "type": "object",
@@ -1048,18 +1079,18 @@
                               "type": "string",
                               "maxLength": 12,
                               "example": "1657897",
-                              "x-parser-schema-id": "<anonymous-schema-277>"
+                              "x-parser-schema-id": "<anonymous-schema-259>"
                             }
                           },
-                          "x-parser-schema-id": "<anonymous-schema-276>"
+                          "x-parser-schema-id": "<anonymous-schema-258>"
                         }
                       },
-                      "x-parser-schema-id": "<anonymous-schema-272>"
+                      "x-parser-schema-id": "<anonymous-schema-254>"
                     }
                   },
                   "x-parser-schema-id": "TransactionEntry"
                 },
-                "x-parser-schema-id": "<anonymous-schema-268>"
+                "x-parser-schema-id": "<anonymous-schema-250>"
               },
               "document": {
                 "type": "array",
@@ -1079,21 +1110,21 @@
                     },
                     "url": "https://example.com/path/to/document.pdf"
                   },
-                  "x-parser-schema-id": "<anonymous-schema-279>"
+                  "x-parser-schema-id": "<anonymous-schema-261>"
                 },
-                "x-parser-schema-id": "<anonymous-schema-278>"
+                "x-parser-schema-id": "<anonymous-schema-260>"
               }
             },
             "x-parser-schema-id": "RealEstateTransaction"
           }
         },
-        "x-parser-schema-id": "<anonymous-schema-200>"
+        "x-parser-schema-id": "<anonymous-schema-186>"
       },
       "topic": {
         "const": "realestate/franchise#transactionreport",
-        "x-parser-schema-id": "<anonymous-schema-199>"
+        "x-parser-schema-id": "<anonymous-schema-185>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-198>"
+    "x-parser-schema-id": "<anonymous-schema-184>"
   }
 }

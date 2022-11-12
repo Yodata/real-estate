@@ -13,7 +13,7 @@ title: Comment
 | text | string | - |
 | author | object | the author of something |
 | about | object | The subject of the content |
-| identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| identifier | object |  1 properties |
 
 ## Example
 

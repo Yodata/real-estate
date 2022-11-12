@@ -19,7 +19,6 @@ payload:
       required:
         - type
         - object
-        - agent
       properties:
         type: { const: CreateAction }
         agent: { $ref: $defs.person.ref.yaml }

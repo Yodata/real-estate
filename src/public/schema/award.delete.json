@@ -13,7 +13,7 @@
         "format": "date-time",
         "description": "date & time the event was produced",
         "x-faker": "date.past",
-        "x-parser-schema-id": "<anonymous-schema-2>"
+        "x-parser-schema-id": "<anonymous-schema-7>"
       },
       "agent": {
         "type": "string",
@@ -24,7 +24,7 @@
           "https://teamsupermario.example.com/profile/card#me",
           "https://bigbrandrealestate.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-3>"
+        "x-parser-schema-id": "<anonymous-schema-8>"
       },
       "instrument": {
         "type": "string",
@@ -38,7 +38,7 @@
           "http://ace.example.com/profile/card#me",
           "http://roqlogic.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-4>"
+        "x-parser-schema-id": "<anonymous-schema-9>"
       },
       "source": {
         "type": "string",
@@ -47,7 +47,7 @@
         "examples": [
           "https://bigbrandrealestate.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-5>"
+        "x-parser-schema-id": "<anonymous-schema-10>"
       },
       "originalRecipient": {
         "type": "string",
@@ -64,7 +64,7 @@
           "http://jim.example.com/profile/card#me",
           "http://jennifer.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-6>"
+        "x-parser-schema-id": "<anonymous-schema-11>"
       },
       "id": {
         "type": "string",
@@ -79,7 +79,7 @@
           "http://ace.example.com/publish/56789",
           "http://roqlogic.example.com/publish/67890"
         ],
-        "x-parser-schema-id": "<anonymous-schema-7>"
+        "x-parser-schema-id": "<anonymous-schema-12>"
       },
       "@id": {
         "type": "string",
@@ -92,10 +92,10 @@
           "http://ace.example.com/inbox/56789",
           "http://roqlogic.example.com/inbox/67890"
         ],
-        "x-parser-schema-id": "<anonymous-schema-8>"
+        "x-parser-schema-id": "<anonymous-schema-13>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-1>"
+    "x-parser-schema-id": "<anonymous-schema-6>"
   },
   "payload": {
     "type": "object",
@@ -105,7 +105,7 @@
         "properties": {
           "type": {
             "const": "DeleteAction",
-            "x-parser-schema-id": "<anonymous-schema-41>"
+            "x-parser-schema-id": "<anonymous-schema-17>"
           },
           "agent": {
             "type": "object",
@@ -118,19 +118,19 @@
                   "RealEstateOffice",
                   "RealEstateOrganization"
                 ],
-                "x-parser-schema-id": "<anonymous-schema-43>"
+                "x-parser-schema-id": "<anonymous-schema-19>"
               },
               "id": {
                 "type": "string",
                 "format": "uri",
                 "example": "https://user.example.com/profile/card#me",
-                "x-parser-schema-id": "<anonymous-schema-44>"
+                "x-parser-schema-id": "<anonymous-schema-20>"
               },
               "name": {
                 "type": "string",
                 "description": "the name of the award presenter",
                 "x-faker": "name.findName",
-                "x-parser-schema-id": "<anonymous-schema-45>"
+                "x-parser-schema-id": "<anonymous-schema-21>"
               }
             },
             "required": [
@@ -138,37 +138,36 @@
               "id",
               "name"
             ],
-            "x-parser-schema-id": "<anonymous-schema-42>"
+            "x-parser-schema-id": "<anonymous-schema-18>"
           },
           "identifier": {
             "title": "identifier",
             "type": "object",
-            "description": "identifier assigned to a contact by the vendor who originally created the contact",
+            "summary": "identifier assigned to a contact by the vendor who originally created the contact",
+            "maxProperties": 1,
+            "minProperties": 1,
             "examples": [
               {
-                "salesforceid": "0031U00002XW1QWQA1"
+                "bhhsconsumerid": "12345"
               },
               {
-                "vendoraid": "123456"
-              },
-              {
-                "originating_system_id": "123456"
+                "salesforceid": "56789"
               }
             ],
             "example": {
               "bhhsAwardId": "xxxx"
             },
-            "x-parser-schema-id": "<anonymous-schema-46>"
+            "x-parser-schema-id": "<anonymous-schema-22>"
           }
         },
-        "x-parser-schema-id": "<anonymous-schema-40>"
+        "x-parser-schema-id": "<anonymous-schema-16>"
       },
       "topic": {
         "type": "string",
         "const": "realestate/award#delete",
-        "x-parser-schema-id": "<anonymous-schema-39>"
+        "x-parser-schema-id": "<anonymous-schema-15>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-38>"
+    "x-parser-schema-id": "<anonymous-schema-14>"
   }
 }

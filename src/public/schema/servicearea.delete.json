@@ -13,7 +13,7 @@
         "format": "date-time",
         "description": "date & time the event was produced",
         "x-faker": "date.past",
-        "x-parser-schema-id": "<anonymous-schema-2>"
+        "x-parser-schema-id": "<anonymous-schema-7>"
       },
       "agent": {
         "type": "string",
@@ -24,7 +24,7 @@
           "https://teamsupermario.example.com/profile/card#me",
           "https://bigbrandrealestate.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-3>"
+        "x-parser-schema-id": "<anonymous-schema-8>"
       },
       "instrument": {
         "type": "string",
@@ -38,7 +38,7 @@
           "http://ace.example.com/profile/card#me",
           "http://roqlogic.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-4>"
+        "x-parser-schema-id": "<anonymous-schema-9>"
       },
       "source": {
         "type": "string",
@@ -47,7 +47,7 @@
         "examples": [
           "https://bigbrandrealestate.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-5>"
+        "x-parser-schema-id": "<anonymous-schema-10>"
       },
       "originalRecipient": {
         "type": "string",
@@ -64,7 +64,7 @@
           "http://jim.example.com/profile/card#me",
           "http://jennifer.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-6>"
+        "x-parser-schema-id": "<anonymous-schema-11>"
       },
       "id": {
         "type": "string",
@@ -79,7 +79,7 @@
           "http://ace.example.com/publish/56789",
           "http://roqlogic.example.com/publish/67890"
         ],
-        "x-parser-schema-id": "<anonymous-schema-7>"
+        "x-parser-schema-id": "<anonymous-schema-12>"
       },
       "@id": {
         "type": "string",
@@ -92,10 +92,10 @@
           "http://ace.example.com/inbox/56789",
           "http://roqlogic.example.com/inbox/67890"
         ],
-        "x-parser-schema-id": "<anonymous-schema-8>"
+        "x-parser-schema-id": "<anonymous-schema-13>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-1>"
+    "x-parser-schema-id": "<anonymous-schema-6>"
   },
   "payload": {
     "type": "object",
@@ -105,7 +105,7 @@
         "properties": {
           "type": {
             "const": "DeleteAction",
-            "x-parser-schema-id": "<anonymous-schema-522>"
+            "x-parser-schema-id": "<anonymous-schema-513>"
           },
           "object": {
             "title": "ServiceArea",
@@ -119,7 +119,7 @@
                 "enum": [
                   "ServiceArea"
                 ],
-                "x-parser-schema-id": "<anonymous-schema-492>"
+                "x-parser-schema-id": "<anonymous-schema-483>"
               },
               "kind": {
                 "type": "string",
@@ -129,7 +129,7 @@
                   "PostalCode"
                 ],
                 "example": "PostalCode",
-                "x-parser-schema-id": "<anonymous-schema-493>"
+                "x-parser-schema-id": "<anonymous-schema-484>"
               },
               "identifier": {
                 "type": "object",
@@ -138,40 +138,40 @@
                   "bhhsESAId": {
                     "type": "string",
                     "description": "BHHS internal ESA ID",
-                    "x-parser-schema-id": "<anonymous-schema-495>"
+                    "x-parser-schema-id": "<anonymous-schema-486>"
                   }
                 },
-                "x-parser-schema-id": "<anonymous-schema-494>"
+                "x-parser-schema-id": "<anonymous-schema-485>"
               },
               "addressLocality": {
                 "type": "string",
                 "description": "City, Township.",
                 "example": "Woodland Hills",
-                "x-parser-schema-id": "<anonymous-schema-496>"
+                "x-parser-schema-id": "<anonymous-schema-487>"
               },
               "postalCode": {
                 "type": "string",
                 "description": "Zip/Post Code",
                 "example": "91371",
-                "x-parser-schema-id": "<anonymous-schema-497>"
+                "x-parser-schema-id": "<anonymous-schema-488>"
               },
               "addressRegion": {
                 "type": "string",
                 "description": "State or Province.",
                 "example": "CA",
-                "x-parser-schema-id": "<anonymous-schema-498>"
+                "x-parser-schema-id": "<anonymous-schema-489>"
               },
               "addressCountry": {
                 "type": "string",
                 "description": "The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.",
                 "example": "US",
-                "x-parser-schema-id": "<anonymous-schema-499>"
+                "x-parser-schema-id": "<anonymous-schema-490>"
               },
               "addressCounty": {
                 "type": "string",
                 "description": "the county (us real estate extension)",
                 "example": "Los Angeles",
-                "x-parser-schema-id": "<anonymous-schema-500>"
+                "x-parser-schema-id": "<anonymous-schema-491>"
               },
               "provider": {
                 "type": "object",
@@ -186,16 +186,16 @@
                     "enum": [
                       "RealEstateOrganization"
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-502>"
+                    "x-parser-schema-id": "<anonymous-schema-493>"
                   },
                   "id": {
                     "type": "string",
                     "description": "profile URI",
                     "example": "https://org.example.com/profile/card#me",
-                    "x-parser-schema-id": "<anonymous-schema-503>"
+                    "x-parser-schema-id": "<anonymous-schema-494>"
                   }
                 },
-                "x-parser-schema-id": "<anonymous-schema-501>"
+                "x-parser-schema-id": "<anonymous-schema-492>"
               },
               "additionalProperty": {
                 "type": "object",
@@ -211,46 +211,46 @@
                         "enum": [
                           "RealEstateOffice"
                         ],
-                        "x-parser-schema-id": "<anonymous-schema-506>"
+                        "x-parser-schema-id": "<anonymous-schema-497>"
                       },
                       "id": {
                         "type": "string",
                         "x-subPropertyOf": "identifier",
                         "example": "https://org.example.com/profile/card#me",
-                        "x-parser-schema-id": "<anonymous-schema-507>"
+                        "x-parser-schema-id": "<anonymous-schema-498>"
                       }
                     },
-                    "x-parser-schema-id": "<anonymous-schema-505>"
+                    "x-parser-schema-id": "<anonymous-schema-496>"
                   },
                   "weight": {
                     "type": "integer",
                     "description": "weight",
-                    "x-parser-schema-id": "<anonymous-schema-508>"
+                    "x-parser-schema-id": "<anonymous-schema-499>"
                   },
                   "officeInPostalCode": {
                     "type": "boolean",
                     "description": "true if the service area provider is physically located in the ServiceArea.",
-                    "x-parser-schema-id": "<anonymous-schema-509>"
+                    "x-parser-schema-id": "<anonymous-schema-500>"
                   },
                   "sortOrder": {
                     "type": "integer",
                     "description": "sort order",
-                    "x-parser-schema-id": "<anonymous-schema-510>"
+                    "x-parser-schema-id": "<anonymous-schema-501>"
                   },
                   "sentToConsumerSite": {
                     "type": "boolean",
                     "description": "sent to consumer site",
-                    "x-parser-schema-id": "<anonymous-schema-511>"
+                    "x-parser-schema-id": "<anonymous-schema-502>"
                   },
                   "sentToCompanyLocator": {
                     "type": "boolean",
                     "description": "sent to company locator",
-                    "x-parser-schema-id": "<anonymous-schema-512>"
+                    "x-parser-schema-id": "<anonymous-schema-503>"
                   },
                   "sentToReferralSolutions": {
                     "type": "boolean",
                     "description": "sent to referral solutions",
-                    "x-parser-schema-id": "<anonymous-schema-513>"
+                    "x-parser-schema-id": "<anonymous-schema-504>"
                   },
                   "luxuryPriceMinimum": {
                     "description": "minimum price for a property listing in the area to be considered a luxury property",
@@ -261,42 +261,41 @@
                       "price": 1000000,
                       "priceCurrency": "USD"
                     },
-                    "x-parser-schema-id": "<anonymous-schema-514>"
+                    "x-parser-schema-id": "<anonymous-schema-505>"
                   }
                 },
-                "x-parser-schema-id": "<anonymous-schema-504>"
+                "x-parser-schema-id": "<anonymous-schema-495>"
               }
             },
-            "x-parser-schema-id": "<anonymous-schema-523>"
+            "x-parser-schema-id": "<anonymous-schema-514>"
           },
           "identifier": {
             "title": "identifier",
             "type": "object",
-            "description": "identifier assigned to a contact by the vendor who originally created the contact",
+            "summary": "identifier assigned to a contact by the vendor who originally created the contact",
+            "maxProperties": 1,
+            "minProperties": 1,
             "examples": [
               {
-                "salesforceid": "0031U00002XW1QWQA1"
+                "bhhsconsumerid": "12345"
               },
               {
-                "vendoraid": "123456"
-              },
-              {
-                "originating_system_id": "123456"
+                "salesforceid": "56789"
               }
             ],
             "example": {
               "bhhsESAId": "abcde"
             },
-            "x-parser-schema-id": "<anonymous-schema-524>"
+            "x-parser-schema-id": "<anonymous-schema-515>"
           }
         },
-        "x-parser-schema-id": "<anonymous-schema-521>"
+        "x-parser-schema-id": "<anonymous-schema-512>"
       },
       "topic": {
         "const": "realestate/servicearea#delete",
-        "x-parser-schema-id": "<anonymous-schema-520>"
+        "x-parser-schema-id": "<anonymous-schema-511>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-519>"
+    "x-parser-schema-id": "<anonymous-schema-510>"
   }
 }

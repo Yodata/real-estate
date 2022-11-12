@@ -18,7 +18,7 @@ properties:
             enum:
               - RealEstateProperty
             type: string
-            x-parser-schema-id: <anonymous-schema-228>
+            x-parser-schema-id: <anonymous-schema-214>
           propertyType:
             type: string
             description: RESO property type (see range for allowed values)
@@ -36,9 +36,10 @@ properties:
               - COML
               - BUSO
           addressCountry:
-            type: string
+            $id: http://realestate.yodata.me/schema/addressCountry
+            title: addressCountry
             description: two-letter ISO 3166-1 alpha-2 country code
-            example: US
+            type: string
             enum:
               - CA
               - DE
@@ -52,22 +53,40 @@ properties:
               - AE
               - GB
               - US
+            x-parser-schema-id: addressCountry
           addressLocality:
             $id: addressLocality
             type: string
             description: City, Township.
             maxLength: 50
             x-faker: address.city
+            examples:
+              - Gotham City
+              - Kulasmouth
+              - Heidistad
+              - Altamonte Springs
+              - West Ahmed
+              - Blaiseview
+              - null
+            x-parser-schema-id: addressLocality
           addressRegion:
+            $id: addressRegion
+            title: addressRegion
             type: string
-            description: State or Province.
-            example: New Jersey
-            maxLength: 3
+            description: abbreviated state or province
+            max-length: 2
+            examples:
+              - NJ
+              - CA
+              - MI
+              - null
+            x-faker: address.stateAbbr
+            x-parser-schema-id: addressRegion
           apn:
             type: string
             description: Assessors Parcel Number
             example: ABC-12345-XX-XXXX
-            x-parser-schema-id: <anonymous-schema-232>
+            x-parser-schema-id: <anonymous-schema-216>
           image:
             title: image
             description: an ImageObject or URI reference to an image on the web.
@@ -91,13 +110,13 @@ properties:
                           - type
                         propertyNames:
                           pattern: ^[a-z@$][a-zA-Z0-9-_]+$
-                          x-parser-schema-id: <anonymous-schema-237>
+                          x-parser-schema-id: <anonymous-schema-221>
                         properties:
                           type:
                             type: string
                             pattern: ^[A-Z][a-zA-Z0-9]+$
                             description: The item type (Linked-Data @type)
-                            x-parser-schema-id: <anonymous-schema-235>
+                            x-parser-schema-id: <anonymous-schema-219>
                           '@id':
                             type: string
                             format: uri
@@ -133,7 +152,7 @@ properties:
                             format: uri
                             description: URL of the image content
                             example: http://user.example.com/public/profile/image.jpg
-                        x-parser-schema-id: <anonymous-schema-238>
+                        x-parser-schema-id: <anonymous-schema-222>
                     x-parser-schema-id: MediaObject
                   - title: ImageObject
                     x-range: ImageObject
@@ -148,8 +167,8 @@ properties:
                         example: image.jpg
                       encodingFormat:
                         example: image/jpeg
-                    x-parser-schema-id: <anonymous-schema-239>
-                x-parser-schema-id: <anonymous-schema-234>
+                    x-parser-schema-id: <anonymous-schema-223>
+                x-parser-schema-id: <anonymous-schema-218>
           latitude:
             type: number
             description: The latitude of a location.
@@ -158,7 +177,7 @@ properties:
           listingId:
             description: 'the local identifier for the listing (MLS #)'
             type: string
-            x-parser-schema-id: <anonymous-schema-241>
+            x-parser-schema-id: <anonymous-schema-225>
           livingArea:
             description: property indoor space
             example:
@@ -168,7 +187,7 @@ properties:
               value: 1500
             type: object
             x-range: QuantitativeValue
-            x-parser-schema-id: <anonymous-schema-242>
+            x-parser-schema-id: <anonymous-schema-226>
           longitude:
             type: number
             description: The longitude of a location.
@@ -183,27 +202,33 @@ properties:
               value: 0.5
             type: object
             x-range: QuantitativeValue
-            x-parser-schema-id: <anonymous-schema-244>
+            x-parser-schema-id: <anonymous-schema-228>
           numberOfBathrooms:
             description: the number of bathrooms
             example: '2'
             type: string
-            x-parser-schema-id: <anonymous-schema-245>
+            x-parser-schema-id: <anonymous-schema-229>
           numberOfBedrooms:
             description: the number of bedrooms
             example: '3'
             type: string
-            x-parser-schema-id: <anonymous-schema-246>
+            x-parser-schema-id: <anonymous-schema-230>
           numberOfRooms:
             description: the total number of rooms in the building
             type: string
             example: 7
-            x-parser-schema-id: <anonymous-schema-247>
+            x-parser-schema-id: <anonymous-schema-231>
           postalCode:
+            $id: http://realestate.yodata.me/schema/postalCode
+            title: postalCode
             type: string
             description: Zip/Post Code
-            example: '10010'
             maxLength: 12
+            examples:
+              - '10010'
+              - 50239-7698
+              - null
+            x-parser-schema-id: postalCode
           propertySubType:
             title: propertySubType
             type: string
@@ -243,17 +268,21 @@ properties:
             description: he number of floors in the property
             example: 2
           streetAddress:
+            $id: streetAddress.yaml
+            title: streetAddress
             type: string
             description: the street address
             example: 1007 Mountain Gate Rd
             maxLength: 75
+            x-faker: address.streetAddress
+            x-parser-schema-id: streetAddress
           yearBuilt:
             type: number
             description: the year the structure was created
             example: 1988
         x-parser-schema-id: RealEstateProperty
       - description: the subject property
-        x-parser-schema-id: <anonymous-schema-794>
+        x-parser-schema-id: <anonymous-schema-773>
       - properties:
           additionalProperty:
             example:
@@ -306,7 +335,7 @@ properties:
                 currency: null
               lastRefinanceLenderName2: N/A
               Title_Company: ''
-        x-parser-schema-id: <anonymous-schema-795>
+        x-parser-schema-id: <anonymous-schema-774>
   dateCreated:
     $id: http://realestate.yodata.me/schema/dateCreated.yaml
     type: string

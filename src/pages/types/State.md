@@ -7,7 +7,7 @@ title: State
 |---|---|---|
 | (root) | object | a State or Region |
 | type | string | allowed (`"State"`) The item type (Linked-Data @type) |
-| name | string | the name of the item |
+| name | string | - |
 
 ## Example
 

@@ -7,13 +7,13 @@ title: PostalAddress
 |---|---|---|
 | (root) | object | A physical address. |
 | type | string | const (`"PostalAddress"`)  |
-| streetAddress | string | the street number and name. |
+| streetAddress | string | the street address <= 75 characters |
 | postOfficeBoxNumber | string | The post office box number for PO box addresses. |
-| addressRegion | string | State or Province. |
-| addressLocality | string | City, Township. |
-| postalCode | string | Zip/Post Code |
-| addressCountry | string | The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code. |
-| addressCounty | string | the county (us real estate extension) |
+| addressRegion | string | abbreviated state or province |
+| addressLocality | string | City, Township. <= 50 characters |
+| postalCode | string | Zip/Post Code <= 12 characters |
+| addressCountry | string | allowed (`"CA"`, `"DE"`, `"GR"`, `"IN"`, `"IT"`, `"MX"`, `"PE"`, `"PT"`, `"ES"`, `"AE"`, `"GB"`, `"US"`) two-letter ISO 3166-1 alpha-2 country code |
+| addressCounty | string | County |
 | addressSubdivision | string | the subdivision or neighborhood (us real estate extension) |
 
 ## Example
@@ -23,13 +23,13 @@ title: PostalAddress
 ```json
 {
   "type": "PostalAddress",
-  "streetAddress": "5046 Ottis Point",
+  "streetAddress": "1007 Mountain Gate Rd",
   "postOfficeBoxNumber": "Box 1234",
-  "addressRegion": "New Jersey",
+  "addressRegion": "NJ",
   "addressLocality": "Gotham City",
   "postalCode": "10010",
-  "addressCountry": "USA",
-  "addressCounty": "Gotham County",
+  "addressCountry": "CA",
+  "addressCounty": "string",
   "addressSubdivision": "Gotham Heights"
 }
 ```

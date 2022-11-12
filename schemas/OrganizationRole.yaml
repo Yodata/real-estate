@@ -1,3 +1,6 @@
+# @format
+
+$id: OrganizationRole
 title: OrganizationRole
 type: object
 description: describes a role played by a member and a group or organization.
@@ -6,7 +9,7 @@ properties:
     type: string
     description: a role played by the member in the memberOf group
     enum:
-    - OrganizationRole
+      - OrganizationRole
   roleName:
     type: string
     description: the role name

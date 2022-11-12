@@ -1,46 +1,124 @@
 {
-  "$id": "http://realestate.yodata.me/schema/Organization.json",
   "type": "object",
-  "title": "Thing",
-  "summary": "The root type of all Things.",
-  "required": [
-    "type"
-  ],
-  "propertyNames": {
-    "pattern": "^[a-z@$][a-zA-Z0-9-_]+$",
-    "x-parser-schema-id": "<anonymous-schema-237>"
-  },
-  "x-kind": "Organization",
-  "x-hasSubclass": [
-    "RealEstateOrganization",
-    "RealEstateOffice",
-    "RealEstateAgent"
-  ],
-  "x-subClassOf": [
-    "https://schema.org/Organization"
-  ],
   "properties": {
-    "@id": {
-      "type": "string",
-      "format": "uri",
-      "description": "the liked data uri for the Thing"
-    },
     "address": {
+      "$id": "http://realestate.yodata.me/schemas/PostalAddress.yaml",
+      "title": "PostalAddress",
       "type": "object",
-      "x-range": "PostalAddress",
       "description": "A physical address.",
-      "example": {
-        "type": "PostalAddress",
-        "name": "Home",
-        "addressCountry": "USA",
-        "addressCounty": "Gotham County",
-        "addressLocality": "Gotham City",
-        "addressRegion": "New Jersey",
-        "addressSubdivision": "Gotham Heights",
-        "postalCode": "10010",
-        "postOfficeBoxNumber": "Box 1234",
-        "streetAddress": "1007 Mountain Gate Rd"
-      }
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "PostalAddress",
+          "x-parser-schema-id": "<anonymous-schema-94>"
+        },
+        "streetAddress": {
+          "$id": "streetAddress.yaml",
+          "title": "streetAddress",
+          "type": "string",
+          "description": "the street address",
+          "example": "1007 Mountain Gate Rd",
+          "maxLength": 75,
+          "x-faker": "address.streetAddress",
+          "x-parser-schema-id": "streetAddress"
+        },
+        "postOfficeBoxNumber": {
+          "$id": "http://realestate.yodata.me/schema/postOfficeBoxNumber",
+          "title": "postOfficeBoxNumber",
+          "type": "string",
+          "description": "The post office box number for PO box addresses.",
+          "x-faker": "address.secondaryAddress",
+          "example": "Box 1234"
+        },
+        "addressRegion": {
+          "$id": "addressRegion",
+          "title": "addressRegion",
+          "type": "string",
+          "description": "abbreviated state or province",
+          "max-length": 2,
+          "examples": [
+            "NJ",
+            "CA",
+            "MI",
+            null
+          ],
+          "x-faker": "address.stateAbbr",
+          "x-parser-schema-id": "addressRegion"
+        },
+        "addressLocality": {
+          "$id": "addressLocality",
+          "type": "string",
+          "description": "City, Township.",
+          "maxLength": 50,
+          "x-faker": "address.city",
+          "examples": [
+            "Gotham City",
+            "Kulasmouth",
+            "Heidistad",
+            "Altamonte Springs",
+            "West Ahmed",
+            "Blaiseview",
+            null
+          ],
+          "x-parser-schema-id": "addressLocality"
+        },
+        "postalCode": {
+          "$id": "http://realestate.yodata.me/schema/postalCode",
+          "title": "postalCode",
+          "type": "string",
+          "description": "Zip/Post Code",
+          "maxLength": 12,
+          "examples": [
+            "10010",
+            "50239-7698",
+            null
+          ],
+          "x-parser-schema-id": "postalCode"
+        },
+        "addressCountry": {
+          "$id": "http://realestate.yodata.me/schema/addressCountry",
+          "title": "addressCountry",
+          "description": "two-letter ISO 3166-1 alpha-2 country code",
+          "type": "string",
+          "enum": [
+            "CA",
+            "DE",
+            "GR",
+            "IN",
+            "IT",
+            "MX",
+            "PE",
+            "PT",
+            "ES",
+            "AE",
+            "GB",
+            "US"
+          ],
+          "x-parser-schema-id": "addressCountry"
+        },
+        "addressCounty": {
+          "$id": "http://realestate.yodata.me/schema/addressCounty",
+          "title": "addressCounty",
+          "description": "County",
+          "type": "string",
+          "x-faker": "address.county",
+          "x-parser-schema-id": "addressCounty"
+        },
+        "addressSubdivision": {
+          "$id": "http://realestate.yodata.me/schema/addressSubdivision",
+          "title": "addressSubdivision",
+          "description": "the subdivision or neighborhood (us real estate extension)",
+          "type": "string",
+          "x-faker": "address.streetName",
+          "examples": [
+            "Gotham Heights",
+            "South Kensington",
+            "SOMA (South of Market)",
+            "Nob Hill"
+          ]
+        }
+      },
+      "x-parser-schema-id": "PostalAddress"
     },
     "availableLanguage": {
       "title": "availableLanguage",
@@ -186,20 +264,20 @@
                   ],
                   "type": "string",
                   "description": "The item type (Linked-Data @type)",
-                  "x-parser-schema-id": "<anonymous-schema-427>"
+                  "x-parser-schema-id": "<anonymous-schema-409>"
                 },
                 "id": {
                   "example": "https://example.com/profile/card#me",
                   "type": "string",
                   "format": "uri",
                   "description": "Linked-Data URI (@id)",
-                  "x-parser-schema-id": "<anonymous-schema-428>"
+                  "x-parser-schema-id": "<anonymous-schema-410>"
                 },
                 "name": {
                   "type": "string",
                   "description": "name of the issuing organization",
                   "example": "Gotham City Real Estate",
-                  "x-parser-schema-id": "<anonymous-schema-429>"
+                  "x-parser-schema-id": "<anonymous-schema-411>"
                 }
               }
             },
@@ -214,18 +292,19 @@
                   ],
                   "type": "string",
                   "description": "The item type (Linked-Data @type)",
-                  "x-parser-schema-id": "<anonymous-schema-431>"
+                  "x-parser-schema-id": "<anonymous-schema-413>"
                 },
                 "id": {
                   "type": "string",
                   "format": "uri",
                   "description": "Linked-Data URI (@id)",
-                  "x-parser-schema-id": "<anonymous-schema-260>"
+                  "x-parser-schema-id": "<anonymous-schema-242>"
                 },
                 "name": {
+                  "$id": "http://realestate.yodata.me/schema/name.yaml",
+                  "title": "name",
                   "type": "string",
-                  "description": "the name of the item",
-                  "x-parser-schema-id": "<anonymous-schema-93>"
+                  "x-parser-schema-id": "name"
                 }
               }
             }
@@ -305,6 +384,8 @@
       }
     },
     "email": {
+      "title": "email",
+      "description": "a valid email address",
       "type": "string",
       "format": "email",
       "x-faker": "internet.email"
@@ -343,14 +424,14 @@
                   ],
                   "propertyNames": {
                     "pattern": "^[a-z@$][a-zA-Z0-9-_]+$",
-                    "x-parser-schema-id": "<anonymous-schema-237>"
+                    "x-parser-schema-id": "<anonymous-schema-221>"
                   },
                   "properties": {
                     "type": {
                       "type": "string",
                       "pattern": "^[A-Z][a-zA-Z0-9]+$",
                       "description": "The item type (Linked-Data @type)",
-                      "x-parser-schema-id": "<anonymous-schema-235>"
+                      "x-parser-schema-id": "<anonymous-schema-219>"
                     },
                     "@id": {
                       "type": "string",
@@ -399,7 +480,7 @@
                       "example": "http://user.example.com/public/profile/image.jpg"
                     }
                   },
-                  "x-parser-schema-id": "<anonymous-schema-238>"
+                  "x-parser-schema-id": "<anonymous-schema-222>"
                 }
               ],
               "x-parser-schema-id": "MediaObject"
@@ -424,116 +505,108 @@
                   "example": "image/jpeg"
                 }
               },
-              "x-parser-schema-id": "<anonymous-schema-239>"
+              "x-parser-schema-id": "<anonymous-schema-223>"
             }
           ],
-          "x-parser-schema-id": "<anonymous-schema-234>"
+          "x-parser-schema-id": "<anonymous-schema-218>"
         }
       ]
     },
     "logo": {
-      "description": "a logo associated with the organization.",
-      "items": {
-        "allOf": [
-          {
-            "type": "object",
-            "title": "DigitalDocument",
-            "x-range": "DigitalDocument",
-            "description": "an electronic file.",
-            "properties": {
-              "type": {
-                "type": "string",
-                "enum": [
-                  "DigitalDocument"
-                ]
-              },
-              "id": {
-                "type": "string",
-                "example": "http://user.example.com/public/logo/archive.zip"
-              },
-              "name": {
-                "type": "string",
-                "description": "document name or title",
-                "example": "archive.zip"
-              },
-              "encodingFormat": {
-                "type": "string",
-                "description": "[ISO Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml)",
-                "example": "application/zip"
-              },
-              "about": {
-                "type": "object",
-                "description": "subject of the Document",
-                "x-range": "Thing",
-                "example": {
-                  "type": "RealEstateTransaction",
-                  "identifier": {
-                    "bmsTransactionId": "xxxx"
-                  }
-                }
-              },
-              "url": {
-                "type": "string",
-                "description": "public URL of the object",
-                "example": "https://example.com"
-              }
-            },
-            "x-parser-schema-id": "DigitalDocument"
-          },
-          {
-            "description": "an associated logo",
-            "type": "object"
-          }
-        ],
-        "type": "object"
-      },
+      "$id": "http://realestate.yodata.me/schema/logo.yaml",
+      "title": "logo",
       "type": "array",
-      "x-range": [
-        "ImageObject",
-        "DigitalDocument"
-      ]
+      "items": {
+        "type": "object",
+        "title": "DigitalDocument",
+        "x-range": "DigitalDocument",
+        "description": "an electronic file.",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "DigitalDocument"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "example": "http://user.example.com/public/logo/archive.zip"
+          },
+          "name": {
+            "type": "string",
+            "description": "document name or title",
+            "example": "archive.zip"
+          },
+          "encodingFormat": {
+            "type": "string",
+            "description": "[ISO Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml)",
+            "example": "application/zip"
+          },
+          "about": {
+            "type": "object",
+            "description": "subject of the Document",
+            "x-range": "Thing",
+            "example": {
+              "type": "RealEstateTransaction",
+              "identifier": {
+                "bmsTransactionId": "xxxx"
+              }
+            }
+          },
+          "url": {
+            "type": "string",
+            "description": "public URL of the object",
+            "example": "https://example.com"
+          }
+        },
+        "x-parser-schema-id": "DigitalDocument"
+      }
     },
     "name": {
-      "description": "Name or DBA.",
-      "type": "string"
+      "$id": "http://realestate.yodata.me/schema/name.yaml",
+      "title": "name",
+      "type": "string",
+      "x-parser-schema-id": "name"
     },
     "parentOrganization": {
-      "items": {
-        "format": "uri",
-        "type": "string"
-      },
-      "type": "array"
-    },
-    "subOrganization": {
-      "description": "a child organization",
-      "x-range": [
-        "RealEstateOrganization"
-      ],
+      "$id": "http://realestate.yodata.me/schema/parentOrganization",
+      "title": "parentOrganization",
+      "description": "organizations of which this org is a part.",
       "type": "array",
       "items": {
         "type": "string",
         "format": "uri",
-        "example": "http://org.example.com/profile/card#me"
+        "x-parser-schema-id": "<anonymous-schema-431>"
+      }
+    },
+    "subOrganization": {
+      "$id": "http://realestate.yodata.me/schema/subOrganization",
+      "title": "subOrganization",
+      "description": "child organizations of the organization",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri",
+        "x-parser-schema-id": "<anonymous-schema-440>"
       }
     },
     "telephone": {
+      "$id": "telephone",
+      "title": "telephone",
       "type": "string",
       "description": "Primary phone number.",
       "example": "+15558675309"
     },
     "type": {
-      "pattern": "^[A-Z][a-zA-Z0-9]+$",
-      "description": "The item type (Linked-Data @type)",
-      "enum": [
-        "Organization"
-      ],
       "type": "string"
     },
     "url": {
-      "description": "primary website/url for the entity.",
+      "title": "url",
+      "type": "string",
       "format": "uri",
-      "type": "string"
+      "description": "URL of the item."
     }
   },
-  "x-parser-schema-id": "<anonymous-schema-463>"
+  "x-parser-schema-id": "Organization",
+  "$id": "http://realestate.yodata.me/schema/Organization.json"
 }

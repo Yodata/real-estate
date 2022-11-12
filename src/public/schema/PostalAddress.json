@@ -5,32 +5,39 @@
   "description": "A physical address.",
   "properties": {
     "addressCountry": {
+      "$id": "http://realestate.yodata.me/schema/addressCountry",
+      "title": "addressCountry",
+      "description": "two-letter ISO 3166-1 alpha-2 country code",
       "type": "string",
-      "description": "The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.",
-      "examples": [
-        "USA",
-        "TH",
-        "NZ",
-        "EG",
-        "SJ",
-        "VN"
+      "enum": [
+        "CA",
+        "DE",
+        "GR",
+        "IN",
+        "IT",
+        "MX",
+        "PE",
+        "PT",
+        "ES",
+        "AE",
+        "GB",
+        "US"
       ],
-      "x-faker": "address.countryCode"
+      "x-parser-schema-id": "addressCountry"
     },
     "addressCounty": {
+      "$id": "http://realestate.yodata.me/schema/addressCounty",
+      "title": "addressCounty",
+      "description": "County",
       "type": "string",
-      "description": "the county (us real estate extension)",
-      "faker": "address.county",
-      "examples": [
-        "Gotham County",
-        "Buckinghamshire",
-        "Borders",
-        null
-      ]
+      "x-faker": "address.county",
+      "x-parser-schema-id": "addressCounty"
     },
     "addressLocality": {
+      "$id": "addressLocality",
       "type": "string",
       "description": "City, Township.",
+      "maxLength": 50,
       "x-faker": "address.city",
       "examples": [
         "Gotham City",
@@ -38,23 +45,31 @@
         "Heidistad",
         "Altamonte Springs",
         "West Ahmed",
-        "Blaiseview"
-      ]
+        "Blaiseview",
+        null
+      ],
+      "x-parser-schema-id": "addressLocality"
     },
     "addressRegion": {
+      "$id": "addressRegion",
+      "title": "addressRegion",
       "type": "string",
-      "description": "State or Province.",
-      "x-faker": "address.state",
+      "description": "abbreviated state or province",
+      "max-length": 2,
       "examples": [
-        "New Jersey",
-        "California",
+        "NJ",
+        "CA",
         "MI",
         null
-      ]
+      ],
+      "x-faker": "address.stateAbbr",
+      "x-parser-schema-id": "addressRegion"
     },
     "addressSubdivision": {
-      "type": "string",
+      "$id": "http://realestate.yodata.me/schema/addressSubdivision",
+      "title": "addressSubdivision",
       "description": "the subdivision or neighborhood (us real estate extension)",
+      "type": "string",
       "x-faker": "address.streetName",
       "examples": [
         "Gotham Heights",
@@ -64,36 +79,35 @@
       ]
     },
     "postOfficeBoxNumber": {
+      "$id": "http://realestate.yodata.me/schema/postOfficeBoxNumber",
+      "title": "postOfficeBoxNumber",
       "type": "string",
       "description": "The post office box number for PO box addresses.",
       "x-faker": "address.secondaryAddress",
-      "examples": [
-        "Box 1234",
-        "Apt. 161",
-        "Apt. 623"
-      ]
+      "example": "Box 1234"
     },
     "postalCode": {
+      "$id": "http://realestate.yodata.me/schema/postalCode",
+      "title": "postalCode",
       "type": "string",
       "description": "Zip/Post Code",
-      "x-faker": "address.zipCode",
+      "maxLength": 12,
       "examples": [
         "10010",
-        "38859",
-        "40387",
         "50239-7698",
         null
-      ]
+      ],
+      "x-parser-schema-id": "postalCode"
     },
     "streetAddress": {
+      "$id": "streetAddress.yaml",
+      "title": "streetAddress",
       "type": "string",
-      "description": "the street number and name.",
+      "description": "the street address",
+      "example": "1007 Mountain Gate Rd",
+      "maxLength": 75,
       "x-faker": "address.streetAddress",
-      "examples": [
-        "5046 Ottis Point",
-        "166 Marion Burg",
-        "93044 Haley Stream"
-      ]
+      "x-parser-schema-id": "streetAddress"
     },
     "type": {
       "type": "string",

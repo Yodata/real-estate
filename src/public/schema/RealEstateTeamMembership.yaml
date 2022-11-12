@@ -1,3 +1,4 @@
+$id: http://realestate.yodata.me/schema/RealEstateTeamMembership.yaml
 type: object
 title: RealEstateTeamMembership
 description: a membership relationship.  Subclass of OrganizationRole
@@ -34,6 +35,5 @@ properties:
     enum:
       - RealEstateTeamMembership
     example: RealEstateTeamMembership
-x-parser-schema-id: <anonymous-schema-478>
-$id: http://realestate.yodata.me/schema/RealEstateTeamMembership.yaml
+x-parser-schema-id: <anonymous-schema-469>
 

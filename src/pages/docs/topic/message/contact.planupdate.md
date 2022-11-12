@@ -31,17 +31,17 @@ title: contact#planupdate
 | data.type | string | const (`"UpdateAction"`)  |
 | data.agent | object |  >= 2 properties |
 | data.agent.type | string | const (`"Person"`)  |
-| data.agent.name | string | the name of the item |
-| data.agent.email | string |  format (`email`) |
-| data.agent.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| data.agent.name | string | - |
+| data.agent.email | string | a valid email address format (`email`) |
+| data.agent.identifier | object |  1 properties |
 | data.object | object | a collection of related tasks |
 | data.object.type | string | const (`"Plan"`)  |
-| data.object.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| data.object.identifier | object |  1 properties |
 | data.object.name | string | name of the plan |
 | data.object.description | string | description of the item |
 | data.object.member | array<object> | tasks which make up the plan |
 | data.object.member.type | string | allowed (`"Task"`) The item type (Linked-Data @type) |
-| data.object.member.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| data.object.member.identifier | object |  1 properties |
 | data.object.member.actionStatus | string | allowed (`"CompletedActionStatus"`, `"FailedActionStatus"`, `"ActiveActionStatus"`, `"PotentialActionStatus"`) disposition of the Action at the time of this action message. |
 | data.object.member.memberOf | object | a plan the task is associated with |
 | data.object.member.agent | object | the party who completed, or will complete the task |
@@ -71,13 +71,13 @@ title: contact#planupdate
       "name": "string",
       "email": "user@example.com",
       "identifier": {
-        "salesforceid": "0031U00002XW1QWQA1"
+        "bhhsconsumerid": "12345"
       }
     },
     "object": {
       "type": "Plan",
       "identifier": {
-        "salesforceid": "0031U00002XW1QWQA1"
+        "bhhsconsumerid": "12345"
       },
       "name": "my awesome plan",
       "description": "this is the description of my awesome plan",

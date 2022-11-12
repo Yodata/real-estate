@@ -26,22 +26,24 @@ title: contact#collectioncreate
 | Name | Type | Description |
 |---|---|---|
 | (root) | object | - |
+| topic | string | const (`"realestate/contact#collectioncreate"`)  |
 | data | object | - |
 | data.type | string | const (`"CreateAction"`)  |
 | data.agent | object |  >= 2 properties |
 | data.agent.type | string | const (`"Person"`)  |
-| data.agent.name | string | the name of the item |
-| data.agent.email | string |  format (`email`) |
-| data.agent.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| data.agent.name | string | - |
+| data.agent.email | string | a valid email address format (`email`) |
+| data.agent.identifier | object |  1 properties |
 | data.object | object | A reference to a contact group "collection" with minimal properties. |
 | data.object.type | string | const (`"Collection"`)  |
 | data.object.name | string | The name of the contact group. |
-| data.object.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| data.object.identifier | object |  1 properties |
 
 ### Payload Example(s) (generated)
 
 ```json
 {
+  "topic": "realestate/contact#collectioncreate",
   "data": {
     "type": "CreateAction",
     "agent": {
@@ -49,14 +51,14 @@ title: contact#collectioncreate
       "name": "string",
       "email": "user@example.com",
       "identifier": {
-        "salesforceid": "0031U00002XW1QWQA1"
+        "bhhsconsumerid": "12345"
       }
     },
     "object": {
       "type": "Collection",
       "name": "Past Clients",
       "identifier": {
-        "salesforceid": "0031U00002XW1QWQA1"
+        "bhhsconsumerid": "12345"
       }
     }
   }

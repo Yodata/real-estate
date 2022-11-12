@@ -1,0 +1,7 @@
+{
+  "type": "string",
+  "description": "The item type (Linked-Data @type)",
+  "x-parser-schema-id": "type",
+  "properties": {},
+  "$id": "http://realestate.yodata.me/schema/type.json"
+}

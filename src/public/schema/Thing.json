@@ -8,7 +8,7 @@
   ],
   "propertyNames": {
     "pattern": "^[a-z@$][a-zA-Z0-9-_]+$",
-    "x-parser-schema-id": "<anonymous-schema-237>"
+    "x-parser-schema-id": "<anonymous-schema-221>"
   },
   "properties": {
     "@id": {

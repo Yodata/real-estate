@@ -1,0 +1,7 @@
+# @format
+
+$id: http://realestate.yodata.me/schema/addressCounty
+title: addressCounty
+description: County
+type: string
+x-faker: address.county

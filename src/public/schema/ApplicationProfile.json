@@ -4,7 +4,7 @@
   "summary": "The root type of all Things.",
   "propertyNames": {
     "pattern": "^[a-z@$][a-zA-Z0-9-_]+$",
-    "x-parser-schema-id": "<anonymous-schema-237>"
+    "x-parser-schema-id": "<anonymous-schema-221>"
   },
   "description": "a solid profile document",
   "type": "object",
@@ -24,52 +24,52 @@
         "type": {
           "type": "string",
           "example": "SoftwareApplication",
-          "x-parser-schema-id": "<anonymous-schema-616>"
+          "x-parser-schema-id": "<anonymous-schema-606>"
         },
         "inbox": {
           "description": "URI to your Linked-Data-Notifications Inbox",
           "type": "string",
           "example": "/inbox/",
           "default": "/inbox/",
-          "x-parser-schema-id": "<anonymous-schema-617>"
+          "x-parser-schema-id": "<anonymous-schema-607>"
         },
         "outbox": {
           "description": "URI to your Linked-Data-Notifications Outbox",
           "type": "string",
           "example": "/outbox/",
           "default": "/outbox/",
-          "x-parser-schema-id": "<anonymous-schema-618>"
+          "x-parser-schema-id": "<anonymous-schema-608>"
         },
         "storage": {
           "description": "URI to your storage root.",
           "type": "string",
           "example": "/",
           "default": "/",
-          "x-parser-schema-id": "<anonymous-schema-619>"
+          "x-parser-schema-id": "<anonymous-schema-609>"
         },
         "preferencesFile": {
           "description": "URI to shared application prefs.",
           "type": "string",
           "example": "/settings/prefs",
-          "x-parser-schema-id": "<anonymous-schema-620>"
+          "x-parser-schema-id": "<anonymous-schema-610>"
         },
         "account": {
           "description": "discoverable solid:account root",
           "type": "string",
           "example": "/",
-          "x-parser-schema-id": "<anonymous-schema-621>"
+          "x-parser-schema-id": "<anonymous-schema-611>"
         },
         "privateTypeIndex": {
           "description": "type index for your private use",
           "type": "string",
           "example": "/settings/privateTypeIndex",
-          "x-parser-schema-id": "<anonymous-schema-622>"
+          "x-parser-schema-id": "<anonymous-schema-612>"
         },
         "publicTypeIndex": {
           "description": "shared, discoverable type index",
           "type": "string",
           "example": "/settings/publicTypeIndex",
-          "x-parser-schema-id": "<anonymous-schema-623>"
+          "x-parser-schema-id": "<anonymous-schema-613>"
         },
         "permissions": {
           "description": "Permissions required by an linked-data application or service.",
@@ -105,9 +105,9 @@
               "contact",
               "website:events"
             ],
-            "x-parser-schema-id": "<anonymous-schema-625>"
+            "x-parser-schema-id": "<anonymous-schema-615>"
           },
-          "x-parser-schema-id": "<anonymous-schema-624>"
+          "x-parser-schema-id": "<anonymous-schema-614>"
         }
       }
     },
@@ -147,7 +147,7 @@
           "lead",
           "listing"
         ],
-        "x-parser-schema-id": "<anonymous-schema-637>"
+        "x-parser-schema-id": "<anonymous-schema-627>"
       }
     },
     "preferencesFile": {
@@ -184,5 +184,5 @@
       "example": "SoftwareApplication"
     }
   },
-  "x-parser-schema-id": "<anonymous-schema-626>"
+  "x-parser-schema-id": "<anonymous-schema-616>"
 }

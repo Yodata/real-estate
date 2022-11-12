@@ -12,7 +12,7 @@ headers:
       format: date-time
       description: date & time the event was produced
       x-faker: date.past
-      x-parser-schema-id: <anonymous-schema-2>
+      x-parser-schema-id: <anonymous-schema-7>
     agent:
       type: string
       format: uri
@@ -28,7 +28,7 @@ headers:
       examples:
         - https://teamsupermario.example.com/profile/card#me
         - https://bigbrandrealestate.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-3>
+      x-parser-schema-id: <anonymous-schema-8>
     instrument:
       type: string
       format: uri
@@ -40,14 +40,14 @@ headers:
         - http://listing-manager.example.com/profile/card#me
         - http://ace.example.com/profile/card#me
         - http://roqlogic.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-4>
+      x-parser-schema-id: <anonymous-schema-9>
     source:
       type: string
       format: uri
       description: a copy of the event was sent to the source(s).
       examples:
         - https://bigbrandrealestate.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-5>
+      x-parser-schema-id: <anonymous-schema-10>
     originalRecipient:
       type: string
       format: uri
@@ -70,7 +70,7 @@ headers:
         - http://jill.example.com/profile/card#me
         - http://jim.example.com/profile/card#me
         - http://jennifer.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-6>
+      x-parser-schema-id: <anonymous-schema-11>
     id:
       type: string
       format: uri
@@ -89,7 +89,7 @@ headers:
         - http://listing-manager.example.com/publish/45678
         - http://ace.example.com/publish/56789
         - http://roqlogic.example.com/publish/67890
-      x-parser-schema-id: <anonymous-schema-7>
+      x-parser-schema-id: <anonymous-schema-12>
     '@id':
       type: string
       format: uri
@@ -100,8 +100,8 @@ headers:
         - http://listing-manager.example.com/inbox/45678
         - http://ace.example.com/inbox/56789
         - http://roqlogic.example.com/inbox/67890
-      x-parser-schema-id: <anonymous-schema-8>
-  x-parser-schema-id: <anonymous-schema-1>
+      x-parser-schema-id: <anonymous-schema-13>
+  x-parser-schema-id: <anonymous-schema-6>
 payload:
   type: object
   required:
@@ -113,65 +113,69 @@ payload:
       required:
         - type
         - object
-        - agent
       properties:
         type:
           const: DeleteAction
-          x-parser-schema-id: <anonymous-schema-145>
+          x-parser-schema-id: <anonymous-schema-130>
         agent:
           type: object
           properties:
             type:
               const: Person
-              x-parser-schema-id: <anonymous-schema-92>
+              x-parser-schema-id: <anonymous-schema-88>
             name:
+              $id: http://realestate.yodata.me/schema/name.yaml
+              title: name
               type: string
-              description: the name of the item
-              x-parser-schema-id: <anonymous-schema-93>
+              x-parser-schema-id: name
             email:
+              title: email
+              description: a valid email address
               type: string
               format: email
               x-faker: internet.email
-              x-parser-schema-id: <anonymous-schema-94>
+              x-parser-schema-id: <anonymous-schema-89>
             identifier:
               title: identifier
               type: object
-              description: >-
+              summary: >-
                 identifier assigned to a contact by the vendor who originally
                 created the contact
+              maxProperties: 1
+              minProperties: 1
               examples:
-                - salesforceid: 0031U00002XW1QWQA1
-                - vendoraid: '123456'
-                - originating_system_id: '123456'
-              x-parser-schema-id: <anonymous-schema-95>
+                - bhhsconsumerid: '12345'
+                - salesforceid: '56789'
+              x-parser-schema-id: identifier
           required:
             - type
           minProperties: 2
-          x-parser-schema-id: <anonymous-schema-91>
+          x-parser-schema-id: <anonymous-schema-87>
         object:
           type: object
           properties:
             type:
               const: Contact
-              x-parser-schema-id: <anonymous-schema-141>
+              x-parser-schema-id: <anonymous-schema-126>
             identifier:
               title: identifier
               type: object
-              description: >-
+              summary: >-
                 identifier assigned to a contact by the vendor who originally
                 created the contact
+              maxProperties: 1
+              minProperties: 1
               examples:
-                - salesforceid: 0031U00002XW1QWQA1
-                - vendoraid: '123456'
-                - originating_system_id: '123456'
-              x-parser-schema-id: <anonymous-schema-95>
+                - bhhsconsumerid: '12345'
+                - salesforceid: '56789'
+              x-parser-schema-id: identifier
           required:
             - type
             - identifier
-          x-parser-schema-id: <anonymous-schema-140>
-      x-parser-schema-id: <anonymous-schema-144>
+          x-parser-schema-id: <anonymous-schema-125>
+      x-parser-schema-id: <anonymous-schema-129>
     topic:
       const: realestate/contact#delete
-      x-parser-schema-id: <anonymous-schema-143>
-  x-parser-schema-id: <anonymous-schema-142>
+      x-parser-schema-id: <anonymous-schema-128>
+  x-parser-schema-id: <anonymous-schema-127>
 

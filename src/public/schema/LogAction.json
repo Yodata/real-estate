@@ -23,12 +23,12 @@
           "description": "the error message",
           "type": "string",
           "example": "sorry dave",
-          "x-parser-schema-id": "<anonymous-schema-698>"
+          "x-parser-schema-id": "<anonymous-schema-678>"
         },
         "stack": {
           "description": "the error stack",
           "type": "string",
-          "x-parser-schema-id": "<anonymous-schema-699>"
+          "x-parser-schema-id": "<anonymous-schema-679>"
         }
       }
     },

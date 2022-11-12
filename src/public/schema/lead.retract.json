@@ -13,7 +13,7 @@
         "format": "date-time",
         "description": "date & time the event was produced",
         "x-faker": "date.past",
-        "x-parser-schema-id": "<anonymous-schema-2>"
+        "x-parser-schema-id": "<anonymous-schema-7>"
       },
       "agent": {
         "type": "string",
@@ -24,7 +24,7 @@
           "https://teamsupermario.example.com/profile/card#me",
           "https://bigbrandrealestate.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-3>"
+        "x-parser-schema-id": "<anonymous-schema-8>"
       },
       "instrument": {
         "type": "string",
@@ -38,7 +38,7 @@
           "http://ace.example.com/profile/card#me",
           "http://roqlogic.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-4>"
+        "x-parser-schema-id": "<anonymous-schema-9>"
       },
       "source": {
         "type": "string",
@@ -47,7 +47,7 @@
         "examples": [
           "https://bigbrandrealestate.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-5>"
+        "x-parser-schema-id": "<anonymous-schema-10>"
       },
       "originalRecipient": {
         "type": "string",
@@ -64,7 +64,7 @@
           "http://jim.example.com/profile/card#me",
           "http://jennifer.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-6>"
+        "x-parser-schema-id": "<anonymous-schema-11>"
       },
       "id": {
         "type": "string",
@@ -79,7 +79,7 @@
           "http://ace.example.com/publish/56789",
           "http://roqlogic.example.com/publish/67890"
         ],
-        "x-parser-schema-id": "<anonymous-schema-7>"
+        "x-parser-schema-id": "<anonymous-schema-12>"
       },
       "@id": {
         "type": "string",
@@ -92,10 +92,10 @@
           "http://ace.example.com/inbox/56789",
           "http://roqlogic.example.com/inbox/67890"
         ],
-        "x-parser-schema-id": "<anonymous-schema-8>"
+        "x-parser-schema-id": "<anonymous-schema-13>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-1>"
+    "x-parser-schema-id": "<anonymous-schema-6>"
   },
   "payload": {
     "type": "object",
@@ -107,7 +107,7 @@
         "properties": {
           "type": {
             "const": "RetractAction",
-            "x-parser-schema-id": "<anonymous-schema-328>"
+            "x-parser-schema-id": "<anonymous-schema-310>"
           },
           "object": {
             "title": "Lead",
@@ -121,24 +121,23 @@
                   "Lead"
                 ],
                 "description": "Lead",
-                "x-parser-schema-id": "<anonymous-schema-292>"
+                "x-parser-schema-id": "<anonymous-schema-274>"
               },
               "identifier": {
                 "title": "identifier",
                 "type": "object",
-                "description": "identifier assigned to a contact by the vendor who originally created the contact",
+                "summary": "identifier assigned to a contact by the vendor who originally created the contact",
+                "maxProperties": 1,
+                "minProperties": 1,
                 "examples": [
                   {
-                    "salesforceid": "0031U00002XW1QWQA1"
+                    "bhhsconsumerid": "12345"
                   },
                   {
-                    "vendoraid": "123456"
-                  },
-                  {
-                    "originating_system_id": "123456"
+                    "salesforceid": "56789"
                   }
                 ],
-                "x-parser-schema-id": "<anonymous-schema-95>"
+                "x-parser-schema-id": "identifier"
               },
               "object": {
                 "description": "the lead (Contact)",
@@ -152,21 +151,21 @@
                   "telephone": "731-620-9877 x6155",
                   "email": "Giuseppe.Lang62@hotmail.com"
                 },
-                "x-parser-schema-id": "<anonymous-schema-293>"
+                "x-parser-schema-id": "<anonymous-schema-275>"
               },
               "recipient": {
                 "description": "the lead recipient",
                 "type": "string",
                 "format": "uri",
                 "example": "http://{lead-recipient}.example.com/profile/card#me",
-                "x-parser-schema-id": "<anonymous-schema-294>"
+                "x-parser-schema-id": "<anonymous-schema-276>"
               },
               "sender": {
                 "description": "the lead provider",
                 "type": "string",
                 "format": "uri",
                 "example": "http://{lead-sender}.example.com/profile/card#me",
-                "x-parser-schema-id": "<anonymous-schema-295>"
+                "x-parser-schema-id": "<anonymous-schema-277>"
               },
               "owner": {
                 "description": "the original owner of the lead",
@@ -178,33 +177,33 @@
                 "type": "string",
                 "format": "uri",
                 "example": "http://{lead-owner}.example.com/profile/card#me",
-                "x-parser-schema-id": "<anonymous-schema-296>"
+                "x-parser-schema-id": "<anonymous-schema-278>"
               },
               "dateAccepted": {
                 "type": "string",
                 "description": "The date/time the item was accepted by the recipient",
                 "x-range": "DateTime",
                 "example": "2019-11-25T04:23:32.000Z",
-                "x-parser-schema-id": "<anonymous-schema-297>"
+                "x-parser-schema-id": "<anonymous-schema-279>"
               },
               "dateRejected": {
                 "type": "string",
                 "format": "date-time",
                 "description": "The date/time the item was rejected by the recipient",
-                "x-parser-schema-id": "<anonymous-schema-298>"
+                "x-parser-schema-id": "<anonymous-schema-280>"
               },
               "dateSent": {
                 "description": "the date the lead was sent",
                 "type": "string",
                 "format": "date-time",
-                "x-parser-schema-id": "<anonymous-schema-299>"
+                "x-parser-schema-id": "<anonymous-schema-281>"
               },
               "dateReceived": {
                 "type": "string",
                 "description": "The date/time the item was received by it's recipient",
                 "x-range": "DateTime",
                 "example": "2019-11-25T04:23:32.000Z",
-                "x-parser-schema-id": "<anonymous-schema-300>"
+                "x-parser-schema-id": "<anonymous-schema-282>"
               },
               "leadSource": {
                 "description": "lead origin, may be a website event or a thing such as a website, zillow, mobile applicaton.",
@@ -223,9 +222,9 @@
                       "text": "Help me I'm trapped inside documentation."
                     }
                   },
-                  "x-parser-schema-id": "<anonymous-schema-302>"
+                  "x-parser-schema-id": "<anonymous-schema-284>"
                 },
-                "x-parser-schema-id": "<anonymous-schema-301>"
+                "x-parser-schema-id": "<anonymous-schema-283>"
               }
             },
             "x-parser-schema-id": "Lead"
@@ -235,7 +234,7 @@
             "description": "user who effected the change",
             "format": "uri",
             "example": "https://{lead-admin}.bhhs.hsaffailites.com/profile/card",
-            "x-parser-schema-id": "<anonymous-schema-329>"
+            "x-parser-schema-id": "<anonymous-schema-311>"
           },
           "participant": {
             "type": "object",
@@ -247,15 +246,15 @@
                   "RealEstateOffice",
                   "RealEstateOrganization"
                 ],
-                "x-parser-schema-id": "<anonymous-schema-331>"
+                "x-parser-schema-id": "<anonymous-schema-313>"
               },
               "id": {
                 "type": "string",
                 "format": "uri",
-                "x-parser-schema-id": "<anonymous-schema-332>"
+                "x-parser-schema-id": "<anonymous-schema-314>"
               }
             },
-            "x-parser-schema-id": "<anonymous-schema-330>"
+            "x-parser-schema-id": "<anonymous-schema-312>"
           },
           "recipient": {
             "type": "object",
@@ -268,24 +267,24 @@
                   "RealEstateOffice",
                   "RealEstateOrganization"
                 ],
-                "x-parser-schema-id": "<anonymous-schema-334>"
+                "x-parser-schema-id": "<anonymous-schema-316>"
               },
               "id": {
                 "type": "string",
                 "format": "uri",
-                "x-parser-schema-id": "<anonymous-schema-335>"
+                "x-parser-schema-id": "<anonymous-schema-317>"
               }
             },
-            "x-parser-schema-id": "<anonymous-schema-333>"
+            "x-parser-schema-id": "<anonymous-schema-315>"
           }
         },
-        "x-parser-schema-id": "<anonymous-schema-327>"
+        "x-parser-schema-id": "<anonymous-schema-309>"
       },
       "topic": {
         "const": "realestate/lead#retract",
-        "x-parser-schema-id": "<anonymous-schema-326>"
+        "x-parser-schema-id": "<anonymous-schema-308>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-325>"
+    "x-parser-schema-id": "<anonymous-schema-307>"
   }
 }

@@ -1,0 +1,18 @@
+{
+  "$id": "http://realestate.yodata.me/schema/addressLocality.json",
+  "type": "string",
+  "description": "City, Township.",
+  "maxLength": 50,
+  "x-faker": "address.city",
+  "examples": [
+    "Gotham City",
+    "Kulasmouth",
+    "Heidistad",
+    "Altamonte Springs",
+    "West Ahmed",
+    "Blaiseview",
+    null
+  ],
+  "x-parser-schema-id": "addressLocality",
+  "properties": {}
+}

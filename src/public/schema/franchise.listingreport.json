@@ -13,7 +13,7 @@
         "format": "date-time",
         "description": "date & time the event was produced",
         "x-faker": "date.past",
-        "x-parser-schema-id": "<anonymous-schema-2>"
+        "x-parser-schema-id": "<anonymous-schema-7>"
       },
       "agent": {
         "type": "string",
@@ -24,7 +24,7 @@
           "https://teamsupermario.example.com/profile/card#me",
           "https://bigbrandrealestate.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-3>"
+        "x-parser-schema-id": "<anonymous-schema-8>"
       },
       "instrument": {
         "type": "string",
@@ -38,7 +38,7 @@
           "http://ace.example.com/profile/card#me",
           "http://roqlogic.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-4>"
+        "x-parser-schema-id": "<anonymous-schema-9>"
       },
       "source": {
         "type": "string",
@@ -47,7 +47,7 @@
         "examples": [
           "https://bigbrandrealestate.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-5>"
+        "x-parser-schema-id": "<anonymous-schema-10>"
       },
       "originalRecipient": {
         "type": "string",
@@ -64,7 +64,7 @@
           "http://jim.example.com/profile/card#me",
           "http://jennifer.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-6>"
+        "x-parser-schema-id": "<anonymous-schema-11>"
       },
       "id": {
         "type": "string",
@@ -79,7 +79,7 @@
           "http://ace.example.com/publish/56789",
           "http://roqlogic.example.com/publish/67890"
         ],
-        "x-parser-schema-id": "<anonymous-schema-7>"
+        "x-parser-schema-id": "<anonymous-schema-12>"
       },
       "@id": {
         "type": "string",
@@ -92,10 +92,10 @@
           "http://ace.example.com/inbox/56789",
           "http://roqlogic.example.com/inbox/67890"
         ],
-        "x-parser-schema-id": "<anonymous-schema-8>"
+        "x-parser-schema-id": "<anonymous-schema-13>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-1>"
+    "x-parser-schema-id": "<anonymous-schema-6>"
   },
   "payload": {
     "type": "object",
@@ -105,7 +105,7 @@
         "properties": {
           "type": {
             "const": "UpdateAction",
-            "x-parser-schema-id": "<anonymous-schema-283>"
+            "x-parser-schema-id": "<anonymous-schema-265>"
           },
           "object": {
             "$id": "http://realestate.yodata.me/schemas/ListingReport.yaml",
@@ -118,47 +118,47 @@
                 "type": "string",
                 "description": "RECORD-TYPE",
                 "example": "ListingReport",
-                "x-parser-schema-id": "<anonymous-schema-284>"
+                "x-parser-schema-id": "<anonymous-schema-266>"
               },
               "batchId": {
                 "type": "string",
                 "description": "BATCH-ID",
-                "x-parser-schema-id": "<anonymous-schema-285>"
+                "x-parser-schema-id": "<anonymous-schema-267>"
               },
               "reportingOfficeId": {
                 "type": "string",
                 "format": "uri",
                 "description": "OFFICE-ID",
                 "example": "https://{officeid}.example.com/profile/card#me",
-                "x-parser-schema-id": "<anonymous-schema-286>"
+                "x-parser-schema-id": "<anonymous-schema-268>"
               },
               "dateCreated": {
                 "type": "string",
                 "format": "date-time",
                 "description": "YEAR-MONTH",
-                "x-parser-schema-id": "<anonymous-schema-287>"
+                "x-parser-schema-id": "<anonymous-schema-269>"
               },
               "listingsAddedCount": {
                 "type": "number",
                 "description": "LISTINGS-TAKEN",
-                "x-parser-schema-id": "<anonymous-schema-288>"
+                "x-parser-schema-id": "<anonymous-schema-270>"
               },
               "totalListingsCount": {
                 "type": "number",
                 "description": "LISTINGS-INVENTORY",
-                "x-parser-schema-id": "<anonymous-schema-289>"
+                "x-parser-schema-id": "<anonymous-schema-271>"
               }
             },
             "x-parser-schema-id": "ListingReport"
           }
         },
-        "x-parser-schema-id": "<anonymous-schema-282>"
+        "x-parser-schema-id": "<anonymous-schema-264>"
       },
       "topic": {
         "const": "realestate/franchise#listingreport",
-        "x-parser-schema-id": "<anonymous-schema-281>"
+        "x-parser-schema-id": "<anonymous-schema-263>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-280>"
+    "x-parser-schema-id": "<anonymous-schema-262>"
   }
 }

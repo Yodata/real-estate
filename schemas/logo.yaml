@@ -1,0 +1,6 @@
+# @format
+$id: http://realestate.yodata.me/schema/logo.yaml
+title: logo
+type: array
+items:
+  $ref: DigitalDocument.yaml

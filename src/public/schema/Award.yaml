@@ -17,16 +17,19 @@ properties:
       hsfAwardId: xxxx
     title: identifier
     type: object
-    description: >-
+    summary: >-
       identifier assigned to a contact by the vendor who originally created the
       contact
+    maxProperties: 1
+    minProperties: 1
     examples:
-      - salesforceid: 0031U00002XW1QWQA1
-      - vendoraid: '123456'
-      - originating_system_id: '123456'
+      - bhhsconsumerid: '12345'
+      - salesforceid: '56789'
   name:
     example: Top 1%
     description: name of the award
+    $id: http://realestate.yodata.me/schema/name.yaml
+    title: name
     type: string
   recipient:
     type: array
@@ -41,22 +44,22 @@ properties:
             - RealEstateAgent
             - RealEstateOffice
             - RealEstateOrganization
-          x-parser-schema-id: <anonymous-schema-28>
+          x-parser-schema-id: <anonymous-schema-79>
         id:
           type: string
           format: uri
           example: https://user.example.com/profile/card#me
-          x-parser-schema-id: <anonymous-schema-29>
+          x-parser-schema-id: <anonymous-schema-80>
         name:
           type: string
           description: the name of the award recipient
           x-faker: name.findName
-          x-parser-schema-id: <anonymous-schema-30>
+          x-parser-schema-id: <anonymous-schema-81>
       required:
         - type
         - id
         - name
-      x-parser-schema-id: <anonymous-schema-27>
+      x-parser-schema-id: <anonymous-schema-78>
   type:
     type: string
     enum:

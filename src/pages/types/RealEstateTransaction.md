@@ -44,7 +44,7 @@ title: RealEstateTransaction
 | object.propertyType | string | allowed (`"RESI"`, `"RLSE"`, `"RINC"`, `"LAND"`, `"MOBI"`, `"FARM"`, `"COMS"`, `"COML"`, `"BUSO"`) RESO property type (see range for allowed values) 4 characters |
 | object.addressCountry | string | allowed (`"CA"`, `"DE"`, `"GR"`, `"IN"`, `"IT"`, `"MX"`, `"PE"`, `"PT"`, `"ES"`, `"AE"`, `"GB"`, `"US"`) two-letter ISO 3166-1 alpha-2 country code |
 | object.addressLocality | string | City, Township. <= 50 characters |
-| object.addressRegion | string | State or Province. <= 3 characters |
+| object.addressRegion | string | abbreviated state or province |
 | object.apn | string | Assessors Parcel Number |
 | object.image | tuple<object allOf, ...optional<any>> | an ImageObject or URI reference to an image on the web. |
 | object.image.0 (index) | object allOf | - |
@@ -93,7 +93,7 @@ title: RealEstateTransaction
 | participant.givenName | string | First Name of a person |
 | participant.familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) <= 50 characters |
 | participant.additionalName | string | middleName or alternate name of the Person |
-| participant.email | string |  format (`email`) |
+| participant.email | string | a valid email address format (`email`) |
 | participant.telephone | string | Primary phone number. |
 | participant.affiliation | array<string> | person or organization associated with the participant |
 | participant.affiliation (single item) | string |  format (`uri`) |
@@ -156,9 +156,9 @@ title: RealEstateTransaction
   "object": {
     "type": "RealEstateProperty",
     "propertyType": "RESI",
-    "addressCountry": "US",
-    "addressLocality": "string",
-    "addressRegion": "New Jersey",
+    "addressCountry": "CA",
+    "addressLocality": "Gotham City",
+    "addressRegion": "NJ",
     "apn": "ABC-12345-XX-XXXX",
     "image": [
       {

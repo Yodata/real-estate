@@ -33,7 +33,7 @@ title: website#askquestion
 | data.agent.familyName | string | - |
 | data.agent.email | string |  format (`email`) |
 | data.agent.telephone | string | - |
-| data.agent.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| data.agent.identifier | object |  1 properties |
 | data.agent.sameAs | string | vendor specific identifier for the user can be shared with other vendors to identify the user format (`uri`) |
 | data.agent.contactPoint | object | A point of contact for the entity. By convention in the real estate domain, ContactPoints are preferred over telephone, email, and faxNumber so the ContactPoint.name property can be used to label values for example, Work Telephone, Home, as named contactPoint values. >= 3 properties |
 | data.agent.contactPoint.type | string | const (`"ContactPoint"`)  |
@@ -52,7 +52,7 @@ title: website#askquestion
 | data.about.type | string | allowed (`"PropertyListing"`)  |
 | data.about.addressCountry | string | allowed (`"CA"`, `"DE"`, `"GR"`, `"IN"`, `"IT"`, `"MX"`, `"PE"`, `"PT"`, `"ES"`, `"AE"`, `"GB"`, `"US"`) two-letter ISO 3166-1 alpha-2 country code |
 | data.about.addressLocality | string | City, Township. <= 50 characters |
-| data.about.addressRegion | string | State or Province. <= 3 characters |
+| data.about.addressRegion | string | abbreviated state or province |
 | data.about.buyerAgent | object | the buyer's RealEstateAgent |
 | data.about.buyerOffice | object | the buyer's RealEstateOffice |
 | data.about.closeDate | string | With for-sale listings, the date the purchase agreement was fulfilled. With lease listings, the date the requirements were fulfilled, such as contract and/or deposit. format (`date-time`) |
@@ -117,7 +117,7 @@ title: website#askquestion
       "email": "user@example.com",
       "telephone": "string",
       "identifier": {
-        "salesforceid": "0031U00002XW1QWQA1"
+        "bhhsconsumerid": "12345"
       },
       "sameAs": {
         "amcecrmid": 1234567,

@@ -8,77 +8,18 @@ description: A physical address.
 properties:
   type: { type: string, const: PostalAddress }
   streetAddress:
-    type: string
-    description: the street number and name.
-    x-faker: address.streetAddress
-    examples:
-      - 5046 Ottis Point
-      - 166 Marion Burg
-      - 93044 Haley Stream
+    $ref: streetAddress.yaml
   postOfficeBoxNumber:
-    type: string
-    description: The post office box number for PO box addresses.
-    x-faker: address.secondaryAddress
-    examples:
-      - Box 1234
-      - Apt. 161
-      - Apt. 623
+    $ref: postOfficeBoxNumber.yaml
   addressRegion:
-    type: string
-    description: State or Province.
-    x-faker: address.state
-    examples:
-      - New Jersey
-      - California
-      - MI
-      - NULL
+    $ref: addressRegion.yaml
   addressLocality:
-    type: string
-    description: City, Township.
-    x-faker: address.city
-    examples:
-      - Gotham City
-      - Kulasmouth
-      - Heidistad
-      - Altamonte Springs
-      - West Ahmed
-      - Blaiseview
+    $ref: addressLocality.yaml
   postalCode:
-    type: string
-    description: Zip/Post Code
-    x-faker: address.zipCode
-    examples:
-      - '10010'
-      - '38859'
-      - '40387'
-      - '50239-7698'
-      - NULL
+    $ref: postalCode.yaml
   addressCountry:
-    type: string
-    description: The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
-    examples:
-      - USA
-      - TH
-      - NZ
-      - EG
-      - SJ
-      - VN
-    x-faker: address.countryCode
+    $ref: addressCountry.yaml
   addressCounty:
-    type: string
-    description: the county (us real estate extension)
-    faker: address.county
-    examples:
-      - Gotham County
-      - Buckinghamshire
-      - Borders
-      - NULL
+    $ref: addressCounty.yaml
   addressSubdivision:
-    type: string
-    description: the subdivision or neighborhood (us real estate extension)
-    x-faker: address.streetName
-    examples:
-      - Gotham Heights
-      - South Kensington
-      - SOMA (South of Market)
-      - Nob Hill
+    $ref: addressSubdivision.yaml

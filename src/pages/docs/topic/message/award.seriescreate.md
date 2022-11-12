@@ -37,7 +37,7 @@ title: award#seriescreate
 | data.object.startDate | string | the start date-time (ISO 8601 formated) format (`date-time`) |
 | data.object.endDate | string | the end date-time (ISO 8601 formated) format (`date-time`) |
 | data.object.id | string |  format (`uri`) |
-| data.object.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| data.object.identifier | object |  1 properties |
 
 ### Payload Example(s) (generated)
 

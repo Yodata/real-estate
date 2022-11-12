@@ -9,9 +9,10 @@
   ],
   "properties": {
     "addressCountry": {
-      "type": "string",
+      "$id": "http://realestate.yodata.me/schema/addressCountry",
+      "title": "addressCountry",
       "description": "two-letter ISO 3166-1 alpha-2 country code",
-      "example": "US",
+      "type": "string",
       "enum": [
         "CA",
         "DE",
@@ -25,20 +26,40 @@
         "AE",
         "GB",
         "US"
-      ]
+      ],
+      "x-parser-schema-id": "addressCountry"
     },
     "addressLocality": {
       "$id": "addressLocality",
       "type": "string",
       "description": "City, Township.",
       "maxLength": 50,
-      "x-faker": "address.city"
+      "x-faker": "address.city",
+      "examples": [
+        "Gotham City",
+        "Kulasmouth",
+        "Heidistad",
+        "Altamonte Springs",
+        "West Ahmed",
+        "Blaiseview",
+        null
+      ],
+      "x-parser-schema-id": "addressLocality"
     },
     "addressRegion": {
+      "$id": "addressRegion",
+      "title": "addressRegion",
       "type": "string",
-      "description": "State or Province.",
-      "example": "New Jersey",
-      "maxLength": 3
+      "description": "abbreviated state or province",
+      "max-length": 2,
+      "examples": [
+        "NJ",
+        "CA",
+        "MI",
+        null
+      ],
+      "x-faker": "address.stateAbbr",
+      "x-parser-schema-id": "addressRegion"
     },
     "apn": {
       "type": "string",
@@ -74,14 +95,14 @@
                   ],
                   "propertyNames": {
                     "pattern": "^[a-z@$][a-zA-Z0-9-_]+$",
-                    "x-parser-schema-id": "<anonymous-schema-237>"
+                    "x-parser-schema-id": "<anonymous-schema-221>"
                   },
                   "properties": {
                     "type": {
                       "type": "string",
                       "pattern": "^[A-Z][a-zA-Z0-9]+$",
                       "description": "The item type (Linked-Data @type)",
-                      "x-parser-schema-id": "<anonymous-schema-235>"
+                      "x-parser-schema-id": "<anonymous-schema-219>"
                     },
                     "@id": {
                       "type": "string",
@@ -130,7 +151,7 @@
                       "example": "http://user.example.com/public/profile/image.jpg"
                     }
                   },
-                  "x-parser-schema-id": "<anonymous-schema-238>"
+                  "x-parser-schema-id": "<anonymous-schema-222>"
                 }
               ],
               "x-parser-schema-id": "MediaObject"
@@ -155,10 +176,10 @@
                   "example": "image/jpeg"
                 }
               },
-              "x-parser-schema-id": "<anonymous-schema-239>"
+              "x-parser-schema-id": "<anonymous-schema-223>"
             }
           ],
-          "x-parser-schema-id": "<anonymous-schema-234>"
+          "x-parser-schema-id": "<anonymous-schema-218>"
         }
       ]
     },
@@ -216,10 +237,17 @@
       "example": 7
     },
     "postalCode": {
+      "$id": "http://realestate.yodata.me/schema/postalCode",
+      "title": "postalCode",
       "type": "string",
       "description": "Zip/Post Code",
-      "example": "10010",
-      "maxLength": 12
+      "maxLength": 12,
+      "examples": [
+        "10010",
+        "50239-7698",
+        null
+      ],
+      "x-parser-schema-id": "postalCode"
     },
     "propertySubType": {
       "title": "propertySubType",
@@ -281,10 +309,14 @@
       "example": 2
     },
     "streetAddress": {
+      "$id": "streetAddress.yaml",
+      "title": "streetAddress",
       "type": "string",
       "description": "the street address",
       "example": "1007 Mountain Gate Rd",
-      "maxLength": 75
+      "maxLength": 75,
+      "x-faker": "address.streetAddress",
+      "x-parser-schema-id": "streetAddress"
     },
     "type": {
       "description": "\"RealEstateProperty\"",

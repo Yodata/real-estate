@@ -7,7 +7,7 @@ title: Lead
 |---|---|---|
 | (root) | object | a sales opportunity (object) offered by a sender to a recipient. |
 | type | string | allowed (`"Lead"`) Lead |
-| identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| identifier | object |  1 properties |
 | object | object | the lead (Contact) |
 | recipient | string | the lead recipient format (`uri`) |
 | sender | string | the lead provider format (`uri`) |
@@ -27,7 +27,7 @@ title: Lead
 {
   "type": "Lead",
   "identifier": {
-    "salesforceid": "0031U00002XW1QWQA1"
+    "bhhsconsumerid": "12345"
   },
   "object": {
     "type": "Contact",

@@ -13,7 +13,7 @@
         "format": "date-time",
         "description": "date & time the event was produced",
         "x-faker": "date.past",
-        "x-parser-schema-id": "<anonymous-schema-2>"
+        "x-parser-schema-id": "<anonymous-schema-7>"
       },
       "agent": {
         "type": "string",
@@ -24,7 +24,7 @@
           "https://teamsupermario.example.com/profile/card#me",
           "https://bigbrandrealestate.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-3>"
+        "x-parser-schema-id": "<anonymous-schema-8>"
       },
       "instrument": {
         "type": "string",
@@ -38,7 +38,7 @@
           "http://ace.example.com/profile/card#me",
           "http://roqlogic.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-4>"
+        "x-parser-schema-id": "<anonymous-schema-9>"
       },
       "source": {
         "type": "string",
@@ -47,7 +47,7 @@
         "examples": [
           "https://bigbrandrealestate.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-5>"
+        "x-parser-schema-id": "<anonymous-schema-10>"
       },
       "originalRecipient": {
         "type": "string",
@@ -64,7 +64,7 @@
           "http://jim.example.com/profile/card#me",
           "http://jennifer.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-6>"
+        "x-parser-schema-id": "<anonymous-schema-11>"
       },
       "id": {
         "type": "string",
@@ -79,7 +79,7 @@
           "http://ace.example.com/publish/56789",
           "http://roqlogic.example.com/publish/67890"
         ],
-        "x-parser-schema-id": "<anonymous-schema-7>"
+        "x-parser-schema-id": "<anonymous-schema-12>"
       },
       "@id": {
         "type": "string",
@@ -92,10 +92,10 @@
           "http://ace.example.com/inbox/56789",
           "http://roqlogic.example.com/inbox/67890"
         ],
-        "x-parser-schema-id": "<anonymous-schema-8>"
+        "x-parser-schema-id": "<anonymous-schema-13>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-1>"
+    "x-parser-schema-id": "<anonymous-schema-6>"
   },
   "payload": {
     "type": "object",
@@ -111,7 +111,7 @@
         "properties": {
           "type": {
             "const": "RequestAppointmentAction",
-            "x-parser-schema-id": "<anonymous-schema-564>"
+            "x-parser-schema-id": "<anonymous-schema-554>"
           },
           "agent": {
             "type": "object",
@@ -123,45 +123,44 @@
                   "Person",
                   "Contact"
                 ],
-                "x-parser-schema-id": "<anonymous-schema-530>"
+                "x-parser-schema-id": "<anonymous-schema-521>"
               },
               "name": {
                 "type": "string",
-                "x-parser-schema-id": "<anonymous-schema-531>"
+                "x-parser-schema-id": "<anonymous-schema-522>"
               },
               "givenName": {
                 "type": "string",
-                "x-parser-schema-id": "<anonymous-schema-532>"
+                "x-parser-schema-id": "<anonymous-schema-523>"
               },
               "familyName": {
                 "type": "string",
-                "x-parser-schema-id": "<anonymous-schema-533>"
+                "x-parser-schema-id": "<anonymous-schema-524>"
               },
               "email": {
                 "type": "string",
                 "format": "email",
-                "x-parser-schema-id": "<anonymous-schema-534>"
+                "x-parser-schema-id": "<anonymous-schema-525>"
               },
               "telephone": {
                 "type": "string",
-                "x-parser-schema-id": "<anonymous-schema-535>"
+                "x-parser-schema-id": "<anonymous-schema-526>"
               },
               "identifier": {
                 "title": "identifier",
                 "type": "object",
-                "description": "identifier assigned to a contact by the vendor who originally created the contact",
+                "summary": "identifier assigned to a contact by the vendor who originally created the contact",
+                "maxProperties": 1,
+                "minProperties": 1,
                 "examples": [
                   {
-                    "salesforceid": "0031U00002XW1QWQA1"
+                    "bhhsconsumerid": "12345"
                   },
                   {
-                    "vendoraid": "123456"
-                  },
-                  {
-                    "originating_system_id": "123456"
+                    "salesforceid": "56789"
                   }
                 ],
-                "x-parser-schema-id": "<anonymous-schema-95>"
+                "x-parser-schema-id": "identifier"
               },
               "sameAs": {
                 "title": "sameAs",
@@ -177,7 +176,7 @@
                     "salesForceId": "ad4fa5f4as"
                   }
                 ],
-                "x-parser-schema-id": "<anonymous-schema-536>"
+                "x-parser-schema-id": "sameAs"
               },
               "contactPoint": {
                 "$id": "http://realestate.yodata.me/schema/ContactPoint.json",
@@ -193,7 +192,7 @@
                   "type": {
                     "type": "string",
                     "const": "ContactPoint",
-                    "x-parser-schema-id": "<anonymous-schema-432>"
+                    "x-parser-schema-id": "<anonymous-schema-414>"
                   },
                   "name": {
                     "type": "string",
@@ -205,7 +204,7 @@
                       "Bob's Cell",
                       "Alice's Work"
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-433>"
+                    "x-parser-schema-id": "<anonymous-schema-415>"
                   },
                   "telephone": {
                     "type": "string",
@@ -216,7 +215,7 @@
                       "555-555-5555 ext. 123",
                       "+1-555-555-5555"
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-434>"
+                    "x-parser-schema-id": "<anonymous-schema-416>"
                   },
                   "faxNumber": {
                     "type": "string",
@@ -227,7 +226,7 @@
                       "555-555-5555 ext. 123",
                       "+1-555-555-5555"
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-435>"
+                    "x-parser-schema-id": "<anonymous-schema-417>"
                   },
                   "email": {
                     "description": "an email address for the item.",
@@ -238,14 +237,14 @@
                       "bob@example.com",
                       "alice@example.com"
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-436>"
+                    "x-parser-schema-id": "<anonymous-schema-418>"
                   },
                   "url": {
                     "description": "primary URL for the item.",
                     "type": "string",
                     "format": "uri",
                     "example": "https://www.facebook.com/hallandoates",
-                    "x-parser-schema-id": "<anonymous-schema-437>"
+                    "x-parser-schema-id": "<anonymous-schema-419>"
                   }
                 }
               },
@@ -255,13 +254,13 @@
                 "properties": {
                   "workingWithAgent": {
                     "type": "boolean",
-                    "x-parser-schema-id": "<anonymous-schema-538>"
+                    "x-parser-schema-id": "<anonymous-schema-528>"
                   }
                 },
-                "x-parser-schema-id": "<anonymous-schema-537>"
+                "x-parser-schema-id": "<anonymous-schema-527>"
               }
             },
-            "x-parser-schema-id": "<anonymous-schema-565>"
+            "x-parser-schema-id": "<anonymous-schema-555>"
           },
           "object": {
             "type": "object",
@@ -270,7 +269,7 @@
             "properties": {
               "type": {
                 "const": "Question",
-                "x-parser-schema-id": "<anonymous-schema-539>"
+                "x-parser-schema-id": "<anonymous-schema-529>"
               },
               "text": {
                 "$id": "http://realestate.yodata.me/schema/text.yaml",
@@ -285,7 +284,7 @@
                 ]
               }
             },
-            "x-parser-schema-id": "<anonymous-schema-566>"
+            "x-parser-schema-id": "<anonymous-schema-556>"
           },
           "recipient": {
             "title": "recipient",
@@ -327,17 +326,17 @@
                 }
               }
             ],
-            "x-parser-schema-id": "<anonymous-schema-567>"
+            "x-parser-schema-id": "<anonymous-schema-557>"
           }
         },
-        "x-parser-schema-id": "<anonymous-schema-563>"
+        "x-parser-schema-id": "<anonymous-schema-553>"
       },
       "topic": {
         "type": "string",
         "const": "realestate/website#requestappointment",
-        "x-parser-schema-id": "<anonymous-schema-562>"
+        "x-parser-schema-id": "<anonymous-schema-552>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-561>"
+    "x-parser-schema-id": "<anonymous-schema-551>"
   }
 }

@@ -15,7 +15,7 @@ title: Certification
 | issuedTo | object | the subject |
 | issuedTo.type | string | allowed (`"RealEstateAgent"`) The item type (Linked-Data @type) |
 | issuedTo.id | string | Linked-Data URI (@id) format (`uri`) |
-| issuedTo.name | string | the name of the item |
+| issuedTo.name | string | - |
 
 ## Example
 

@@ -13,20 +13,20 @@ properties:
         type: string
         description: typically a RealEstateAgent
         example: RealEstateAgent
-        x-parser-schema-id: <anonymous-schema-273>
+        x-parser-schema-id: <anonymous-schema-255>
       roleName:
         type: string
         description: 'enum: ListingAgent,BuyerAgent'
         enum:
           - ListingAgent
           - BuyerAgent
-        x-parser-schema-id: <anonymous-schema-274>
+        x-parser-schema-id: <anonymous-schema-256>
       id:
         type: string
         format: uri
         description: Linked-Data URI (@id)
         example: https://{entityid}.example.com/profile/card#me
-        x-parser-schema-id: <anonymous-schema-275>
+        x-parser-schema-id: <anonymous-schema-257>
       identifier:
         type: object
         description: unique identifier of the recipient from the data producer
@@ -35,8 +35,8 @@ properties:
             type: string
             maxLength: 12
             example: '1657897'
-            x-parser-schema-id: <anonymous-schema-277>
-        x-parser-schema-id: <anonymous-schema-276>
+            x-parser-schema-id: <anonymous-schema-259>
+        x-parser-schema-id: <anonymous-schema-258>
   salesProductionGCI:
     type: object
     title: MonetaryAmount

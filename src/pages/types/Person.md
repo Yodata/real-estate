@@ -11,13 +11,13 @@ title: Person
 | affiliation (single item) | string |  format (`uri`) |
 | address | array<object> | - |
 | address.type | string | const (`"PostalAddress"`)  |
-| address.streetAddress | string | the street number and name. |
+| address.streetAddress | string | the street address <= 75 characters |
 | address.postOfficeBoxNumber | string | The post office box number for PO box addresses. |
-| address.addressRegion | string | State or Province. |
-| address.addressLocality | string | City, Township. |
-| address.postalCode | string | Zip/Post Code |
-| address.addressCountry | string | The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code. |
-| address.addressCounty | string | the county (us real estate extension) |
+| address.addressRegion | string | abbreviated state or province |
+| address.addressLocality | string | City, Township. <= 50 characters |
+| address.postalCode | string | Zip/Post Code <= 12 characters |
+| address.addressCountry | string | allowed (`"CA"`, `"DE"`, `"GR"`, `"IN"`, `"IT"`, `"MX"`, `"PE"`, `"PT"`, `"ES"`, `"AE"`, `"GB"`, `"US"`) two-letter ISO 3166-1 alpha-2 country code |
+| address.addressCounty | string | County |
 | address.addressSubdivision | string | the subdivision or neighborhood (us real estate extension) |
 | birthDate | string | date of birth. format (`date`) |
 | contactPoint | array<object> | contact points for the person |
@@ -27,7 +27,7 @@ title: Person
 | contactPoint.faxNumber | string | - |
 | contactPoint.email | string | an email address for the item. format (`email`) |
 | contactPoint.url | string | primary URL for the item. format (`uri`) |
-| email | string |  format (`email`) |
+| email | string | a valid email address format (`email`) |
 | additionalName | string | any other name(s) associated with the entity, i.e. nickname, middle name, maiden name, etc. For multiple names, use a comma without space as a separator. |
 | familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) <= 50 characters |
 | faxNumber | string | Do people still use fax machines? |
@@ -57,13 +57,13 @@ title: Person
   "address": [
     {
       "type": "PostalAddress",
-      "streetAddress": "5046 Ottis Point",
+      "streetAddress": "1007 Mountain Gate Rd",
       "postOfficeBoxNumber": "Box 1234",
-      "addressRegion": "New Jersey",
+      "addressRegion": "NJ",
       "addressLocality": "Gotham City",
       "postalCode": "10010",
-      "addressCountry": "USA",
-      "addressCounty": "Gotham County",
+      "addressCountry": "CA",
+      "addressCounty": "string",
       "addressSubdivision": "Gotham Heights"
     }
   ],

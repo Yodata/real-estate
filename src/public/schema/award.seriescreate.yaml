@@ -12,7 +12,7 @@ headers:
       format: date-time
       description: date & time the event was produced
       x-faker: date.past
-      x-parser-schema-id: <anonymous-schema-2>
+      x-parser-schema-id: <anonymous-schema-7>
     agent:
       type: string
       format: uri
@@ -28,7 +28,7 @@ headers:
       examples:
         - https://teamsupermario.example.com/profile/card#me
         - https://bigbrandrealestate.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-3>
+      x-parser-schema-id: <anonymous-schema-8>
     instrument:
       type: string
       format: uri
@@ -40,14 +40,14 @@ headers:
         - http://listing-manager.example.com/profile/card#me
         - http://ace.example.com/profile/card#me
         - http://roqlogic.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-4>
+      x-parser-schema-id: <anonymous-schema-9>
     source:
       type: string
       format: uri
       description: a copy of the event was sent to the source(s).
       examples:
         - https://bigbrandrealestate.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-5>
+      x-parser-schema-id: <anonymous-schema-10>
     originalRecipient:
       type: string
       format: uri
@@ -70,7 +70,7 @@ headers:
         - http://jill.example.com/profile/card#me
         - http://jim.example.com/profile/card#me
         - http://jennifer.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-6>
+      x-parser-schema-id: <anonymous-schema-11>
     id:
       type: string
       format: uri
@@ -89,7 +89,7 @@ headers:
         - http://listing-manager.example.com/publish/45678
         - http://ace.example.com/publish/56789
         - http://roqlogic.example.com/publish/67890
-      x-parser-schema-id: <anonymous-schema-7>
+      x-parser-schema-id: <anonymous-schema-12>
     '@id':
       type: string
       format: uri
@@ -100,8 +100,8 @@ headers:
         - http://listing-manager.example.com/inbox/45678
         - http://ace.example.com/inbox/56789
         - http://roqlogic.example.com/inbox/67890
-      x-parser-schema-id: <anonymous-schema-8>
-  x-parser-schema-id: <anonymous-schema-1>
+      x-parser-schema-id: <anonymous-schema-13>
+  x-parser-schema-id: <anonymous-schema-6>
 payload:
   type: object
   properties:
@@ -110,7 +110,7 @@ payload:
       properties:
         type:
           const: CreateAction
-          x-parser-schema-id: <anonymous-schema-50>
+          x-parser-schema-id: <anonymous-schema-26>
         object:
           title: AwardSeries
           type: object
@@ -120,56 +120,58 @@ payload:
           properties:
             type:
               const: AwardSeries
-              x-parser-schema-id: <anonymous-schema-14>
+              x-parser-schema-id: <anonymous-schema-27>
             name:
               example: Top 1% Club
               description: name of the series
+              $id: http://realestate.yodata.me/schema/name.yaml
+              title: name
               type: string
-              x-parser-schema-id: <anonymous-schema-15>
             description:
               example: Annual
               type: string
               description: description of the item.
-              x-parser-schema-id: <anonymous-schema-16>
+              x-parser-schema-id: <anonymous-schema-28>
             duration:
               title: duration
               type: string
               format: duration
               description: The duration of the item in ISO 8601 date format.
               example: R/P1Y
-              x-parser-schema-id: <anonymous-schema-17>
+              x-parser-schema-id: <anonymous-schema-29>
             startDate:
               description: the start date-time (ISO 8601 formated)
               type: string
               format: date-time
-              x-parser-schema-id: <anonymous-schema-18>
+              x-parser-schema-id: <anonymous-schema-30>
             endDate:
               type: string
               description: the end date-time (ISO 8601 formated)
               format: date-time
-              x-parser-schema-id: <anonymous-schema-19>
+              x-parser-schema-id: <anonymous-schema-31>
             id:
               type: string
               format: uri
-              x-parser-schema-id: <anonymous-schema-20>
+              x-parser-schema-id: <anonymous-schema-32>
             identifier:
               example:
                 hsfAwardSeriesID: xxxx
               title: identifier
               type: object
-              description: >-
+              summary: >-
                 identifier assigned to a contact by the vendor who originally
                 created the contact
+              maxProperties: 1
+              minProperties: 1
               examples:
-                - salesforceid: 0031U00002XW1QWQA1
-                - vendoraid: '123456'
-                - originating_system_id: '123456'
-              x-parser-schema-id: <anonymous-schema-21>
+                - bhhsconsumerid: '12345'
+                - salesforceid: '56789'
+              x-parser-schema-id: <anonymous-schema-33>
           x-parser-schema-id: AwardSeries
-      x-parser-schema-id: <anonymous-schema-49>
+      x-parser-schema-id: <anonymous-schema-25>
     topic:
       type: string
       const: realestate/award#seriescreate
-      x-parser-schema-id: <anonymous-schema-48>
-  x-parser-schema-id: <anonymous-schema-47>
+      x-parser-schema-id: <anonymous-schema-24>
+  x-parser-schema-id: <anonymous-schema-23>
 

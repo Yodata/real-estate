@@ -1,0 +1,9 @@
+{
+  "$id": "http://realestate.yodata.me/schema/addressCounty.json",
+  "title": "addressCounty",
+  "description": "County",
+  "type": "string",
+  "x-faker": "address.county",
+  "x-parser-schema-id": "addressCounty",
+  "properties": {}
+}

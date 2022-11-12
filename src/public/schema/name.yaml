@@ -1,0 +1,6 @@
+$id: http://realestate.yodata.me/schema/name.yaml
+title: name
+type: string
+x-parser-schema-id: name
+properties: {}
+

@@ -123,6 +123,22 @@ components:
     TransactionStatus: { $ref: TransactionStatus.yaml }
     UnsubscribeAction: { $ref: UnsubscribeAction.yaml }
     BHHSTerms: { $ref: BHHSTerms.yaml }
+    # properties
+    type: { $ref: type.yaml }
+    identifier: { $ref: identifier.yaml }
+    name: { $ref: name.yaml }
+    instrument: { $ref: instrument.yaml }
+    description: { $ref: description.yaml }
+    addressRegion: { $ref: addressRegion.yaml }
+    addressLocality: { $ref: addressLocality.yaml }
+    addressCountry: { $ref: addressCountry.yaml }
+    addressCounty: { $ref: addressCounty.yaml }
+    streetAddress: { $ref: streetAddress.yaml }
+    postalCode: { $ref: postalCode.yaml }
+    additionalProperty: { $ref: additionalProperty.yaml }
+    sameAs: { $ref: sameAs.yaml }
+    target: { $ref: target.yaml }
+    
 
   messages:
     # award events

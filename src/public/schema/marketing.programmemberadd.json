@@ -13,7 +13,7 @@
         "format": "date-time",
         "description": "date & time the event was produced",
         "x-faker": "date.past",
-        "x-parser-schema-id": "<anonymous-schema-2>"
+        "x-parser-schema-id": "<anonymous-schema-7>"
       },
       "agent": {
         "type": "string",
@@ -24,7 +24,7 @@
           "https://teamsupermario.example.com/profile/card#me",
           "https://bigbrandrealestate.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-3>"
+        "x-parser-schema-id": "<anonymous-schema-8>"
       },
       "instrument": {
         "type": "string",
@@ -38,7 +38,7 @@
           "http://ace.example.com/profile/card#me",
           "http://roqlogic.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-4>"
+        "x-parser-schema-id": "<anonymous-schema-9>"
       },
       "source": {
         "type": "string",
@@ -47,7 +47,7 @@
         "examples": [
           "https://bigbrandrealestate.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-5>"
+        "x-parser-schema-id": "<anonymous-schema-10>"
       },
       "originalRecipient": {
         "type": "string",
@@ -64,7 +64,7 @@
           "http://jim.example.com/profile/card#me",
           "http://jennifer.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-6>"
+        "x-parser-schema-id": "<anonymous-schema-11>"
       },
       "id": {
         "type": "string",
@@ -79,7 +79,7 @@
           "http://ace.example.com/publish/56789",
           "http://roqlogic.example.com/publish/67890"
         ],
-        "x-parser-schema-id": "<anonymous-schema-7>"
+        "x-parser-schema-id": "<anonymous-schema-12>"
       },
       "@id": {
         "type": "string",
@@ -92,10 +92,10 @@
           "http://ace.example.com/inbox/56789",
           "http://roqlogic.example.com/inbox/67890"
         ],
-        "x-parser-schema-id": "<anonymous-schema-8>"
+        "x-parser-schema-id": "<anonymous-schema-13>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-1>"
+    "x-parser-schema-id": "<anonymous-schema-6>"
   },
   "payload": {
     "type": "object",
@@ -105,12 +105,12 @@
         "properties": {
           "type": {
             "const": "AddAction",
-            "x-parser-schema-id": "<anonymous-schema-390>"
+            "x-parser-schema-id": "<anonymous-schema-372>"
           },
           "agent": {
             "type": "string",
             "format": "uri",
-            "x-parser-schema-id": "<anonymous-schema-391>"
+            "x-parser-schema-id": "<anonymous-schema-373>"
           },
           "object": {
             "$id": "http://realestate.yodata.me/schema/ProgramMembership.json",
@@ -120,7 +120,7 @@
             "properties": {
               "type": {
                 "const": "ProgramMembership",
-                "x-parser-schema-id": "<anonymous-schema-392>"
+                "x-parser-schema-id": "<anonymous-schema-374>"
               },
               "role": {
                 "type": "string",
@@ -128,7 +128,7 @@
                   "member",
                   "owner"
                 ],
-                "x-parser-schema-id": "<anonymous-schema-393>"
+                "x-parser-schema-id": "<anonymous-schema-375>"
               },
               "member": {
                 "type": "object",
@@ -139,63 +139,61 @@
                       "Person",
                       "Contact"
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-395>"
+                    "x-parser-schema-id": "<anonymous-schema-377>"
                   },
                   "name": {
                     "type": "string",
-                    "x-parser-schema-id": "<anonymous-schema-396>"
+                    "x-parser-schema-id": "<anonymous-schema-378>"
                   },
                   "identifier": {
                     "title": "identifier",
                     "type": "object",
-                    "description": "identifier assigned to a contact by the vendor who originally created the contact",
+                    "summary": "identifier assigned to a contact by the vendor who originally created the contact",
+                    "maxProperties": 1,
+                    "minProperties": 1,
                     "examples": [
                       {
-                        "salesforceid": "0031U00002XW1QWQA1"
+                        "bhhsconsumerid": "12345"
                       },
                       {
-                        "vendoraid": "123456"
-                      },
-                      {
-                        "originating_system_id": "123456"
+                        "salesforceid": "56789"
                       }
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-95>"
+                    "x-parser-schema-id": "identifier"
                   }
                 },
-                "x-parser-schema-id": "<anonymous-schema-394>"
+                "x-parser-schema-id": "<anonymous-schema-376>"
               },
               "memberOf": {
                 "type": "object",
                 "properties": {
                   "type": {
                     "const": "MarketingProgram",
-                    "x-parser-schema-id": "<anonymous-schema-398>"
+                    "x-parser-schema-id": "<anonymous-schema-380>"
                   },
                   "name": {
                     "type": "string",
                     "example": "Market Activity Report 508 Homewood Ave",
-                    "x-parser-schema-id": "<anonymous-schema-399>"
+                    "x-parser-schema-id": "<anonymous-schema-381>"
                   },
                   "identifier": {
                     "title": "identifier",
                     "type": "object",
-                    "description": "identifier assigned to a contact by the vendor who originally created the contact",
+                    "summary": "identifier assigned to a contact by the vendor who originally created the contact",
+                    "maxProperties": 1,
+                    "minProperties": 1,
                     "examples": [
                       {
-                        "salesforceid": "0031U00002XW1QWQA1"
+                        "bhhsconsumerid": "12345"
                       },
                       {
-                        "vendoraid": "123456"
-                      },
-                      {
-                        "originating_system_id": "123456"
+                        "salesforceid": "56789"
                       }
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-95>"
+                    "x-parser-schema-id": "identifier"
                   }
                 },
-                "x-parser-schema-id": "<anonymous-schema-397>"
+                "x-parser-schema-id": "<anonymous-schema-379>"
               }
             }
           },
@@ -215,32 +213,31 @@
                 "identifier": {
                   "title": "identifier",
                   "type": "object",
-                  "description": "identifier assigned to a contact by the vendor who originally created the contact",
+                  "summary": "identifier assigned to a contact by the vendor who originally created the contact",
+                  "maxProperties": 1,
+                  "minProperties": 1,
                   "examples": [
                     {
-                      "salesforceid": "0031U00002XW1QWQA1"
+                      "bhhsconsumerid": "12345"
                     },
                     {
-                      "vendoraid": "123456"
-                    },
-                    {
-                      "originating_system_id": "123456"
+                      "salesforceid": "56789"
                     }
                   ],
-                  "x-parser-schema-id": "<anonymous-schema-95>"
+                  "x-parser-schema-id": "identifier"
                 }
               }
             },
-            "x-parser-schema-id": "<anonymous-schema-371>"
+            "x-parser-schema-id": "<anonymous-schema-353>"
           }
         },
-        "x-parser-schema-id": "<anonymous-schema-389>"
+        "x-parser-schema-id": "<anonymous-schema-371>"
       },
       "topic": {
         "const": "realestate/marketing#programmemberadd",
-        "x-parser-schema-id": "<anonymous-schema-388>"
+        "x-parser-schema-id": "<anonymous-schema-370>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-387>"
+    "x-parser-schema-id": "<anonymous-schema-369>"
   }
 }

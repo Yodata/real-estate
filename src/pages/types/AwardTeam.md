@@ -7,8 +7,8 @@ title: AwardTeam
 |---|---|---|
 | (root) | object | a Collection |
 | type | string | const (`"AwardTeam"`)  |
-| name | string | the name of the item |
-| identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| name | string | - |
+| identifier | object |  1 properties |
 | member | array<string> | members of the AwardTeam |
 | member (single item) | string |  format (`uri`) |
 

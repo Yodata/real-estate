@@ -1,3 +1,4 @@
+$id: http://realestate.yodata.me/schema/MLSMembership.yaml
 type: object
 title: MLSMembership
 description: a membership relationship
@@ -37,6 +38,5 @@ properties:
     enum:
       - MLSMembership
     example: MLSMembership
-x-parser-schema-id: <anonymous-schema-715>
-$id: http://realestate.yodata.me/schema/MLSMembership.yaml
+x-parser-schema-id: <anonymous-schema-694>
 

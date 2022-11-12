@@ -2,7 +2,7 @@
 # yaml-language-server: $schema=https://www.asyncapi.com/definitions/2.5.0/message.json
 messageId: contact#collectioncreate
 name: realestate/contact#collectioncreate
-title: Contact Group Create
+title: contact#collectioncreate
 summary: a contact group was created
 contentType: application/json
 headers:
@@ -10,6 +10,7 @@ headers:
 payload:
   type: object
   properties:
+    topic: { type: string, const: realestate/contact#collectioncreate }
     data:
       type: object
       properties:

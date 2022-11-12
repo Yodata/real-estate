@@ -1,0 +1,14 @@
+title: identifier
+type: object
+summary: >-
+  identifier assigned to a contact by the vendor who originally created the
+  contact
+maxProperties: 1
+minProperties: 1
+examples:
+  - bhhsconsumerid: '12345'
+  - salesforceid: '56789'
+x-parser-schema-id: identifier
+properties: {}
+$id: http://realestate.yodata.me/schema/identifier.yaml
+

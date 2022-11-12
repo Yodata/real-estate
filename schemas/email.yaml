@@ -1,4 +1,6 @@
 # @format
+title: email
+description: a valid email address
 type: string
 format: email
 x-faker: internet.email

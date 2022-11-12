@@ -14,19 +14,19 @@ properties:
         description: GeoCordinates
         enum:
           - GeoCoordinates
-        x-parser-schema-id: <anonymous-schema-689>
+        x-parser-schema-id: <anonymous-schema-669>
       longitude:
         type: number
         description: The longitude of a location.
         x-title: longitude
         example: 73.98
-        x-parser-schema-id: <anonymous-schema-243>
+        x-parser-schema-id: <anonymous-schema-227>
       latitude:
         type: number
         description: The latitude of a location.
         x-title: latitude
         example: 40.75
-        x-parser-schema-id: <anonymous-schema-240>
+        x-parser-schema-id: <anonymous-schema-224>
     x-parser-schema-id: GeoCoordinates
   geoRadius:
     title: geoRadius

@@ -31,7 +31,7 @@ title: lead#update
 | data.type | string | const (`"UpdateAction"`)  |
 | data.object | object | a sales opportunity (object) offered by a sender to a recipient. |
 | data.object.type | string | allowed (`"Lead"`) Lead |
-| data.object.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| data.object.identifier | object |  1 properties |
 | data.object.object | object | the lead (Contact) |
 | data.object.recipient | string | the lead recipient format (`uri`) |
 | data.object.sender | string | the lead provider format (`uri`) |
@@ -54,7 +54,7 @@ title: lead#update
     "object": {
       "type": "Lead",
       "identifier": {
-        "salesforceid": "0031U00002XW1QWQA1"
+        "bhhsconsumerid": "12345"
       },
       "object": {
         "type": "Contact",

@@ -1,0 +1,16 @@
+# @format
+
+title: TNIRef
+description: a Type, Name, Idenfitier Reference is commonly use to reference a person or organization.
+type: object
+properties:
+  type: { type: string }
+  name: { type: string }
+  identifier: { $ref: identifier.yaml }
+examples:
+  - type: Person
+    name: John Doe
+    identifier: { salesforceid: '12345' }
+  - type: Organization
+    name: Acme, Inc.
+    identifier: { supercrmid: '67890' }

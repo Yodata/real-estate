@@ -39,13 +39,13 @@ with the recipient (a Person or Audience).
 | data.agent.affiliation (single item) | string |  format (`uri`) |
 | data.agent.address | array<object> | - |
 | data.agent.address.type | string | const (`"PostalAddress"`)  |
-| data.agent.address.streetAddress | string | the street number and name. |
+| data.agent.address.streetAddress | string | the street address <= 75 characters |
 | data.agent.address.postOfficeBoxNumber | string | The post office box number for PO box addresses. |
-| data.agent.address.addressRegion | string | State or Province. |
-| data.agent.address.addressLocality | string | City, Township. |
-| data.agent.address.postalCode | string | Zip/Post Code |
-| data.agent.address.addressCountry | string | The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code. |
-| data.agent.address.addressCounty | string | the county (us real estate extension) |
+| data.agent.address.addressRegion | string | abbreviated state or province |
+| data.agent.address.addressLocality | string | City, Township. <= 50 characters |
+| data.agent.address.postalCode | string | Zip/Post Code <= 12 characters |
+| data.agent.address.addressCountry | string | allowed (`"CA"`, `"DE"`, `"GR"`, `"IN"`, `"IT"`, `"MX"`, `"PE"`, `"PT"`, `"ES"`, `"AE"`, `"GB"`, `"US"`) two-letter ISO 3166-1 alpha-2 country code |
+| data.agent.address.addressCounty | string | County |
 | data.agent.address.addressSubdivision | string | the subdivision or neighborhood (us real estate extension) |
 | data.agent.birthDate | string | date of birth. format (`date`) |
 | data.agent.contactPoint | array<object> | contact points for the person |
@@ -55,7 +55,7 @@ with the recipient (a Person or Audience).
 | data.agent.contactPoint.faxNumber | string | - |
 | data.agent.contactPoint.email | string | an email address for the item. format (`email`) |
 | data.agent.contactPoint.url | string | primary URL for the item. format (`uri`) |
-| data.agent.email | string |  format (`email`) |
+| data.agent.email | string | a valid email address format (`email`) |
 | data.agent.additionalName | string | any other name(s) associated with the entity, i.e. nickname, middle name, maiden name, etc. For multiple names, use a comma without space as a separator. |
 | data.agent.familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) <= 50 characters |
 | data.agent.faxNumber | string | Do people still use fax machines? |
@@ -75,7 +75,7 @@ with the recipient (a Person or Audience).
 | data.object.type | string | allowed (`"PropertyListing"`)  |
 | data.object.addressCountry | string | allowed (`"CA"`, `"DE"`, `"GR"`, `"IN"`, `"IT"`, `"MX"`, `"PE"`, `"PT"`, `"ES"`, `"AE"`, `"GB"`, `"US"`) two-letter ISO 3166-1 alpha-2 country code |
 | data.object.addressLocality | string | City, Township. <= 50 characters |
-| data.object.addressRegion | string | State or Province. <= 3 characters |
+| data.object.addressRegion | string | abbreviated state or province |
 | data.object.buyerAgent | object | the buyer's RealEstateAgent |
 | data.object.buyerOffice | object | the buyer's RealEstateOffice |
 | data.object.closeDate | string | With for-sale listings, the date the purchase agreement was fulfilled. With lease listings, the date the requirements were fulfilled, such as contract and/or deposit. format (`date-time`) |
@@ -148,13 +148,13 @@ with the recipient (a Person or Audience).
       "address": [
         {
           "type": "PostalAddress",
-          "streetAddress": "5046 Ottis Point",
+          "streetAddress": "1007 Mountain Gate Rd",
           "postOfficeBoxNumber": "Box 1234",
-          "addressRegion": "New Jersey",
+          "addressRegion": "NJ",
           "addressLocality": "Gotham City",
           "postalCode": "10010",
-          "addressCountry": "USA",
-          "addressCounty": "Gotham County",
+          "addressCountry": "CA",
+          "addressCounty": "string",
           "addressSubdivision": "Gotham Heights"
         }
       ],
@@ -193,9 +193,9 @@ with the recipient (a Person or Audience).
     },
     "object": {
       "type": "PropertyListing",
-      "addressCountry": "US",
-      "addressLocality": "string",
-      "addressRegion": "New Jersey",
+      "addressCountry": "CA",
+      "addressLocality": "Gotham City",
+      "addressRegion": "NJ",
       "buyerAgent": {
         "email": "butch.byers@example.com",
         "identifier": {

@@ -12,7 +12,7 @@ headers:
       format: date-time
       description: date & time the event was produced
       x-faker: date.past
-      x-parser-schema-id: <anonymous-schema-2>
+      x-parser-schema-id: <anonymous-schema-7>
     agent:
       type: string
       format: uri
@@ -28,7 +28,7 @@ headers:
       examples:
         - https://teamsupermario.example.com/profile/card#me
         - https://bigbrandrealestate.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-3>
+      x-parser-schema-id: <anonymous-schema-8>
     instrument:
       type: string
       format: uri
@@ -40,14 +40,14 @@ headers:
         - http://listing-manager.example.com/profile/card#me
         - http://ace.example.com/profile/card#me
         - http://roqlogic.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-4>
+      x-parser-schema-id: <anonymous-schema-9>
     source:
       type: string
       format: uri
       description: a copy of the event was sent to the source(s).
       examples:
         - https://bigbrandrealestate.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-5>
+      x-parser-schema-id: <anonymous-schema-10>
     originalRecipient:
       type: string
       format: uri
@@ -70,7 +70,7 @@ headers:
         - http://jill.example.com/profile/card#me
         - http://jim.example.com/profile/card#me
         - http://jennifer.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-6>
+      x-parser-schema-id: <anonymous-schema-11>
     id:
       type: string
       format: uri
@@ -89,7 +89,7 @@ headers:
         - http://listing-manager.example.com/publish/45678
         - http://ace.example.com/publish/56789
         - http://roqlogic.example.com/publish/67890
-      x-parser-schema-id: <anonymous-schema-7>
+      x-parser-schema-id: <anonymous-schema-12>
     '@id':
       type: string
       format: uri
@@ -100,8 +100,8 @@ headers:
         - http://listing-manager.example.com/inbox/45678
         - http://ace.example.com/inbox/56789
         - http://roqlogic.example.com/inbox/67890
-      x-parser-schema-id: <anonymous-schema-8>
-  x-parser-schema-id: <anonymous-schema-1>
+      x-parser-schema-id: <anonymous-schema-13>
+  x-parser-schema-id: <anonymous-schema-6>
 payload:
   type: object
   properties:
@@ -110,7 +110,7 @@ payload:
       properties:
         type:
           const: lead#assign
-          x-parser-schema-id: <anonymous-schema-310>
+          x-parser-schema-id: <anonymous-schema-292>
         object:
           title: Lead
           type: object
@@ -122,18 +122,19 @@ payload:
               enum:
                 - Lead
               description: Lead
-              x-parser-schema-id: <anonymous-schema-292>
+              x-parser-schema-id: <anonymous-schema-274>
             identifier:
               title: identifier
               type: object
-              description: >-
+              summary: >-
                 identifier assigned to a contact by the vendor who originally
                 created the contact
+              maxProperties: 1
+              minProperties: 1
               examples:
-                - salesforceid: 0031U00002XW1QWQA1
-                - vendoraid: '123456'
-                - originating_system_id: '123456'
-              x-parser-schema-id: <anonymous-schema-95>
+                - bhhsconsumerid: '12345'
+                - salesforceid: '56789'
+              x-parser-schema-id: identifier
             object:
               description: the lead (Contact)
               x-range:
@@ -144,19 +145,19 @@ payload:
                 name: Joe Smith
                 telephone: 731-620-9877 x6155
                 email: Giuseppe.Lang62@hotmail.com
-              x-parser-schema-id: <anonymous-schema-293>
+              x-parser-schema-id: <anonymous-schema-275>
             recipient:
               description: the lead recipient
               type: string
               format: uri
               example: http://{lead-recipient}.example.com/profile/card#me
-              x-parser-schema-id: <anonymous-schema-294>
+              x-parser-schema-id: <anonymous-schema-276>
             sender:
               description: the lead provider
               type: string
               format: uri
               example: http://{lead-sender}.example.com/profile/card#me
-              x-parser-schema-id: <anonymous-schema-295>
+              x-parser-schema-id: <anonymous-schema-277>
             owner:
               description: the original owner of the lead
               x-range:
@@ -166,29 +167,29 @@ payload:
               type: string
               format: uri
               example: http://{lead-owner}.example.com/profile/card#me
-              x-parser-schema-id: <anonymous-schema-296>
+              x-parser-schema-id: <anonymous-schema-278>
             dateAccepted:
               type: string
               description: The date/time the item was accepted by the recipient
               x-range: DateTime
               example: 2019-11-25T04:23:32.000Z
-              x-parser-schema-id: <anonymous-schema-297>
+              x-parser-schema-id: <anonymous-schema-279>
             dateRejected:
               type: string
               format: date-time
               description: The date/time the item was rejected by the recipient
-              x-parser-schema-id: <anonymous-schema-298>
+              x-parser-schema-id: <anonymous-schema-280>
             dateSent:
               description: the date the lead was sent
               type: string
               format: date-time
-              x-parser-schema-id: <anonymous-schema-299>
+              x-parser-schema-id: <anonymous-schema-281>
             dateReceived:
               type: string
               description: The date/time the item was received by it's recipient
               x-range: DateTime
               example: 2019-11-25T04:23:32.000Z
-              x-parser-schema-id: <anonymous-schema-300>
+              x-parser-schema-id: <anonymous-schema-282>
             leadSource:
               description: >-
                 lead origin, may be a website event or a thing such as a
@@ -205,23 +206,23 @@ payload:
                   object:
                     type: Question
                     text: Help me I'm trapped inside documentation.
-                x-parser-schema-id: <anonymous-schema-302>
-              x-parser-schema-id: <anonymous-schema-301>
+                x-parser-schema-id: <anonymous-schema-284>
+              x-parser-schema-id: <anonymous-schema-283>
           x-parser-schema-id: Lead
         agent:
           description: the assignor, typically the lead owner
           type: string
           format: uri
-          x-parser-schema-id: <anonymous-schema-311>
+          x-parser-schema-id: <anonymous-schema-293>
         recipient:
           description: the assignee of the lead.
           type: string
           format: uri
           example: http://andyagent.example.com/profile/card#me
-          x-parser-schema-id: <anonymous-schema-312>
-      x-parser-schema-id: <anonymous-schema-309>
+          x-parser-schema-id: <anonymous-schema-294>
+      x-parser-schema-id: <anonymous-schema-291>
     topic:
       const: realestate/lead#assign
-      x-parser-schema-id: <anonymous-schema-308>
-  x-parser-schema-id: <anonymous-schema-307>
+      x-parser-schema-id: <anonymous-schema-290>
+  x-parser-schema-id: <anonymous-schema-289>
 

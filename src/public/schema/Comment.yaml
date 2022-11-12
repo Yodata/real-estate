@@ -62,13 +62,14 @@ properties:
   identifier:
     title: identifier
     type: object
-    description: >-
+    summary: >-
       identifier assigned to a contact by the vendor who originally created the
       contact
+    maxProperties: 1
+    minProperties: 1
     examples:
-      - salesforceid: 0031U00002XW1QWQA1
-      - vendoraid: '123456'
-      - originating_system_id: '123456'
+      - bhhsconsumerid: '12345'
+      - salesforceid: '56789'
     example:
       redContact_Note_ID: 62c4a9ae-eba1-4c27-a2dd-afb4068695f8
   text:

@@ -1,4 +1,11 @@
+# @format
+
+$id: http://realestate.yodata.me/schema/postalCode
+title: postalCode
 type: string
 description: Zip/Post Code
-example: '10010'
 maxLength: 12
+examples:
+  - '10010'
+  - 50239-7698
+  - null

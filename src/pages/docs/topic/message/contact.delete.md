@@ -31,12 +31,12 @@ title: contact#delete
 | data.type | string | const (`"DeleteAction"`)  |
 | data.agent | object |  >= 2 properties |
 | data.agent.type | string | const (`"Person"`)  |
-| data.agent.name | string | the name of the item |
-| data.agent.email | string |  format (`email`) |
-| data.agent.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| data.agent.name | string | - |
+| data.agent.email | string | a valid email address format (`email`) |
+| data.agent.identifier | object |  1 properties |
 | data.object | object | - |
 | data.object.type | string | const (`"Contact"`)  |
-| data.object.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| data.object.identifier | object |  1 properties |
 
 ### Payload Example(s) (generated)
 
@@ -50,13 +50,13 @@ title: contact#delete
       "name": "string",
       "email": "user@example.com",
       "identifier": {
-        "salesforceid": "0031U00002XW1QWQA1"
+        "bhhsconsumerid": "12345"
       }
     },
     "object": {
       "type": "Contact",
       "identifier": {
-        "salesforceid": "0031U00002XW1QWQA1"
+        "bhhsconsumerid": "12345"
       }
     }
   }

@@ -24,19 +24,21 @@ properties:
   identifier:
     title: identifier
     type: object
-    description: >-
+    summary: >-
       identifier assigned to a contact by the vendor who originally created the
       contact
+    maxProperties: 1
+    minProperties: 1
     examples:
-      - salesforceid: 0031U00002XW1QWQA1
-      - vendoraid: '123456'
-      - originating_system_id: '123456'
+      - bhhsconsumerid: '12345'
+      - salesforceid: '56789'
+    x-parser-schema-id: identifier
   member:
     description: members of the collection
     type: array
     items:
       type: object
-      x-parser-schema-id: <anonymous-schema-666>
+      x-parser-schema-id: <anonymous-schema-653>
   name:
     type: string
     description: name of the collection

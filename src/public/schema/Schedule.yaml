@@ -22,7 +22,7 @@ properties:
         - Wednesday
         - Thursday
         - Friday
-      x-parser-schema-id: <anonymous-schema-816>
+      x-parser-schema-id: <anonymous-schema-795>
     example:
       - Monday
       - Wednesday
@@ -47,7 +47,7 @@ properties:
         - 10
         - 11
         - 12
-      x-parser-schema-id: <anonymous-schema-818>
+      x-parser-schema-id: <anonymous-schema-797>
     example:
       - 1
   byMonthDay:
@@ -57,10 +57,11 @@ properties:
       Specified as an Integer between 1-31.
     items:
       type: number
-      x-parser-schema-id: <anonymous-schema-820>
+      x-parser-schema-id: <anonymous-schema-799>
   type:
     type: string
     description: The item type (Linked-Data @type)
+    x-parser-schema-id: type
 x-parser-schema-id: Schedule
 $id: http://realestate.yodata.me/schema/Schedule.yaml
 

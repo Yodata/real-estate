@@ -13,6 +13,10 @@ payload:
     topic: { const: realestate/contact#collectionmemberremove }
     data:
       type: object
+      required:
+        - type
+        - object
+        - targetCollection
       properties:
         type: { const: RemoveAction }
         agent: { $ref: $defs.person.ref.yaml }

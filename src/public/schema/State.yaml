@@ -4,8 +4,10 @@ description: a State or Region
 type: object
 properties:
   name:
+    $id: http://realestate.yodata.me/schema/name.yaml
+    title: name
     type: string
-    description: the name of the item
+    x-parser-schema-id: name
   type:
     type: string
     description: The item type (Linked-Data @type)

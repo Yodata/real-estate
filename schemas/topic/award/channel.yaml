@@ -2,7 +2,7 @@
 # yaml-language-server: schema=https://www.asyncapi.com/definitions/2.5.0/channelItem.json
 publish:
   message:
-    $ref: award.publish.yaml
+    $ref: ../../publish-message.yaml
 subscribe:
   message:
     oneOf:

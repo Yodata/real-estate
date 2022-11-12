@@ -1,4 +1,13 @@
+# @format
+
+$id: addressRegion
+title: addressRegion
 type: string
-description: State or Province.
-example: New Jersey
-maxLength: 3
+description: abbreviated state or province
+max-length: 2
+examples:
+  - NJ
+  - CA
+  - MI
+  - null
+x-faker: address.stateAbbr

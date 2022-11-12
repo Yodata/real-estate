@@ -17,10 +17,12 @@
         "type": "string",
         "format": "uri",
         "example": "https://{agentid}.example.com/profile/card#me",
-        "x-parser-schema-id": "<anonymous-schema-267>"
+        "x-parser-schema-id": "<anonymous-schema-249>"
       }
     },
     "email": {
+      "title": "email",
+      "description": "a valid email address",
       "type": "string",
       "format": "email",
       "x-faker": "internet.email"
@@ -101,6 +103,8 @@
       ]
     },
     "telephone": {
+      "$id": "telephone",
+      "title": "telephone",
       "type": "string",
       "description": "Primary phone number.",
       "example": "+15558675309"

@@ -13,10 +13,11 @@ payload:
     - topic
     - data
   properties:
-    topic: { const: realestate/contact#collectiondelete }
+    topic: { type: string, const: realestate/contact#collectiondelete }
     data:
       type: object
       required:
+        - type
         - object
       properties:
         type: { const: DeleteAction }

@@ -1,0 +1,8 @@
+$id: http://realestate.yodata.me/schema/addressCounty.yaml
+title: addressCounty
+description: County
+type: string
+x-faker: address.county
+x-parser-schema-id: addressCounty
+properties: {}
+

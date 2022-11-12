@@ -34,7 +34,7 @@ The award recipient is described in the `recipient` property.
 | topic | string | allowed (`"realestate/award#create"`)  |
 | data | - | - |
 | data.type | string | allowed (`"CreateAction"`)  |
-| data.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| data.identifier | object |  1 properties |
 | data.agent | object | the award presenter |
 | data.agent.type | string | allowed (`"RealEstateAgent"`, `"RealEstateOffice"`, `"RealEstateOrganization"`)  |
 | data.agent.id | string |  format (`uri`) |
@@ -48,7 +48,7 @@ The award recipient is described in the `recipient` property.
 | data.object.recipient.type | string | allowed (`"RealEstateAgent"`, `"RealEstateOffice"`, `"RealEstateOrganization"`)  |
 | data.object.recipient.id | string |  format (`uri`) |
 | data.object.recipient.name | string | the name of the award recipient |
-| data.object.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| data.object.identifier | object |  1 properties |
 | data.recipient | object | the award recipient |
 | data.recipient.type | string | allowed (`"RealEstateAgent"`, `"RealEstateOffice"`, `"RealEstateOrganization"`)  |
 | data.recipient.id | string |  format (`uri`) |

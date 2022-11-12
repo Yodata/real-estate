@@ -52,7 +52,7 @@ title: website#listingoffer
 | data.recipient.0.certification.issuedTo | object | the subject |
 | data.recipient.0.certification.issuedTo.type | string | allowed (`"RealEstateAgent"`) The item type (Linked-Data @type) |
 | data.recipient.0.certification.issuedTo.id | string | Linked-Data URI (@id) format (`uri`) |
-| data.recipient.0.certification.issuedTo.name | string | the name of the item |
+| data.recipient.0.certification.issuedTo.name | string | - |
 | data.recipient.0.contactPoint | object | A point of contact for the entity. By convention in the real estate domain, ContactPoints are preferred over telephone, email, and faxNumber so the ContactPoint.name property can be used to label values for example, Work Telephone, Home, as named contactPoint values. >= 3 properties |
 | data.recipient.0.contactPoint.type | string | const (`"ContactPoint"`)  |
 | data.recipient.0.contactPoint.name | string | a label for the contactPoint, i.e. 'Work', or 'Home' |
@@ -60,11 +60,11 @@ title: website#listingoffer
 | data.recipient.0.contactPoint.faxNumber | string | - |
 | data.recipient.0.contactPoint.email | string | an email address for the item. format (`email`) |
 | data.recipient.0.contactPoint.url | string | primary URL for the item. format (`uri`) |
-| data.recipient.0.email | string |  format (`email`) |
+| data.recipient.0.email | string | a valid email address format (`email`) |
 | data.recipient.0.familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) <= 50 characters |
 | data.recipient.0.givenName | string | First Name of a person |
 | data.recipient.0.id | string | Linked-Data URI (@id) format (`uri`) |
-| data.recipient.0.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| data.recipient.0.identifier | object |  1 properties |
 | data.recipient.0.image | tuple<object allOf, ...optional<any>> | an ImageObject or URI reference to an image on the web. |
 | data.recipient.0.image.0 (index) | object allOf | - |
 | data.recipient.0.image.0.0 (allOf item) | allOf | an image, video or document availble for download |
@@ -96,7 +96,7 @@ title: website#listingoffer
 | data.recipient.0.memberOf.0.startDate | string | date the member began performing this role format (`date-time`) |
 | data.recipient.0.memberOf.0.endDate | string | date the member stopped performing the role format (`date-time`) |
 | data.recipient.0.memberOf.1 (anyOf item) | string |  format (`uri`) |
-| data.recipient.0.name | string | the name of the item |
+| data.recipient.0.name | string | - |
 | data.recipient.0.parentOrganization | array<string> | organizations of which this org is a part. |
 | data.recipient.0.parentOrganization (single item) | string |  format (`uri`) |
 | data.recipient.0.permit | object | A permit issued by an organization to an individual or business. |
@@ -116,13 +116,13 @@ title: website#listingoffer
 | data.recipient.1.affiliation (single item) | string |  format (`uri`) |
 | data.recipient.1.address | array<object> | - |
 | data.recipient.1.address.type | string | const (`"PostalAddress"`)  |
-| data.recipient.1.address.streetAddress | string | the street number and name. |
+| data.recipient.1.address.streetAddress | string | the street address <= 75 characters |
 | data.recipient.1.address.postOfficeBoxNumber | string | The post office box number for PO box addresses. |
-| data.recipient.1.address.addressRegion | string | State or Province. |
-| data.recipient.1.address.addressLocality | string | City, Township. |
-| data.recipient.1.address.postalCode | string | Zip/Post Code |
-| data.recipient.1.address.addressCountry | string | The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code. |
-| data.recipient.1.address.addressCounty | string | the county (us real estate extension) |
+| data.recipient.1.address.addressRegion | string | abbreviated state or province |
+| data.recipient.1.address.addressLocality | string | City, Township. <= 50 characters |
+| data.recipient.1.address.postalCode | string | Zip/Post Code <= 12 characters |
+| data.recipient.1.address.addressCountry | string | allowed (`"CA"`, `"DE"`, `"GR"`, `"IN"`, `"IT"`, `"MX"`, `"PE"`, `"PT"`, `"ES"`, `"AE"`, `"GB"`, `"US"`) two-letter ISO 3166-1 alpha-2 country code |
+| data.recipient.1.address.addressCounty | string | County |
 | data.recipient.1.address.addressSubdivision | string | the subdivision or neighborhood (us real estate extension) |
 | data.recipient.1.birthDate | string | date of birth. format (`date`) |
 | data.recipient.1.contactPoint | array<object> | contact points for the person |
@@ -132,7 +132,7 @@ title: website#listingoffer
 | data.recipient.1.contactPoint.faxNumber | string | - |
 | data.recipient.1.contactPoint.email | string | an email address for the item. format (`email`) |
 | data.recipient.1.contactPoint.url | string | primary URL for the item. format (`uri`) |
-| data.recipient.1.email | string |  format (`email`) |
+| data.recipient.1.email | string | a valid email address format (`email`) |
 | data.recipient.1.additionalName | string | any other name(s) associated with the entity, i.e. nickname, middle name, maiden name, etc. For multiple names, use a comma without space as a separator. |
 | data.recipient.1.familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) <= 50 characters |
 | data.recipient.1.faxNumber | string | Do people still use fax machines? |

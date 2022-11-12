@@ -5,7 +5,7 @@ required:
   - type
 propertyNames:
   pattern: ^[a-z@$][a-zA-Z0-9-_]+$
-  x-parser-schema-id: <anonymous-schema-237>
+  x-parser-schema-id: <anonymous-schema-221>
 title: ImageObject
 x-range: ImageObject
 properties:
@@ -43,5 +43,5 @@ properties:
     format: uri
     description: URL of the image content
     example: http://user.example.com/public/profile/image.jpg
-x-parser-schema-id: <anonymous-schema-239>
+x-parser-schema-id: <anonymous-schema-223>
 

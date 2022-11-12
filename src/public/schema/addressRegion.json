@@ -1,0 +1,16 @@
+{
+  "$id": "http://realestate.yodata.me/schema/addressRegion.json",
+  "title": "addressRegion",
+  "type": "string",
+  "description": "abbreviated state or province",
+  "max-length": 2,
+  "examples": [
+    "NJ",
+    "CA",
+    "MI",
+    null
+  ],
+  "x-faker": "address.stateAbbr",
+  "x-parser-schema-id": "addressRegion",
+  "properties": {}
+}

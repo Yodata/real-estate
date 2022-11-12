@@ -13,7 +13,7 @@
         "format": "date-time",
         "description": "date & time the event was produced",
         "x-faker": "date.past",
-        "x-parser-schema-id": "<anonymous-schema-2>"
+        "x-parser-schema-id": "<anonymous-schema-7>"
       },
       "agent": {
         "type": "string",
@@ -24,7 +24,7 @@
           "https://teamsupermario.example.com/profile/card#me",
           "https://bigbrandrealestate.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-3>"
+        "x-parser-schema-id": "<anonymous-schema-8>"
       },
       "instrument": {
         "type": "string",
@@ -38,7 +38,7 @@
           "http://ace.example.com/profile/card#me",
           "http://roqlogic.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-4>"
+        "x-parser-schema-id": "<anonymous-schema-9>"
       },
       "source": {
         "type": "string",
@@ -47,7 +47,7 @@
         "examples": [
           "https://bigbrandrealestate.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-5>"
+        "x-parser-schema-id": "<anonymous-schema-10>"
       },
       "originalRecipient": {
         "type": "string",
@@ -64,7 +64,7 @@
           "http://jim.example.com/profile/card#me",
           "http://jennifer.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-6>"
+        "x-parser-schema-id": "<anonymous-schema-11>"
       },
       "id": {
         "type": "string",
@@ -79,7 +79,7 @@
           "http://ace.example.com/publish/56789",
           "http://roqlogic.example.com/publish/67890"
         ],
-        "x-parser-schema-id": "<anonymous-schema-7>"
+        "x-parser-schema-id": "<anonymous-schema-12>"
       },
       "@id": {
         "type": "string",
@@ -92,10 +92,10 @@
           "http://ace.example.com/inbox/56789",
           "http://roqlogic.example.com/inbox/67890"
         ],
-        "x-parser-schema-id": "<anonymous-schema-8>"
+        "x-parser-schema-id": "<anonymous-schema-13>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-1>"
+    "x-parser-schema-id": "<anonymous-schema-6>"
   },
   "payload": {
     "type": "object",
@@ -107,86 +107,88 @@
       "data": {
         "type": "object",
         "required": [
+          "type",
           "object",
           "targetCollection"
         ],
         "properties": {
           "type": {
             "const": "AddAction",
-            "x-parser-schema-id": "<anonymous-schema-193>"
+            "x-parser-schema-id": "<anonymous-schema-179>"
           },
           "agent": {
             "type": "object",
             "properties": {
               "type": {
                 "const": "Person",
-                "x-parser-schema-id": "<anonymous-schema-92>"
+                "x-parser-schema-id": "<anonymous-schema-88>"
               },
               "name": {
+                "$id": "http://realestate.yodata.me/schema/name.yaml",
+                "title": "name",
                 "type": "string",
-                "description": "the name of the item",
-                "x-parser-schema-id": "<anonymous-schema-93>"
+                "x-parser-schema-id": "name"
               },
               "email": {
+                "title": "email",
+                "description": "a valid email address",
                 "type": "string",
                 "format": "email",
                 "x-faker": "internet.email",
-                "x-parser-schema-id": "<anonymous-schema-94>"
+                "x-parser-schema-id": "<anonymous-schema-89>"
               },
               "identifier": {
                 "title": "identifier",
                 "type": "object",
-                "description": "identifier assigned to a contact by the vendor who originally created the contact",
+                "summary": "identifier assigned to a contact by the vendor who originally created the contact",
+                "maxProperties": 1,
+                "minProperties": 1,
                 "examples": [
                   {
-                    "salesforceid": "0031U00002XW1QWQA1"
+                    "bhhsconsumerid": "12345"
                   },
                   {
-                    "vendoraid": "123456"
-                  },
-                  {
-                    "originating_system_id": "123456"
+                    "salesforceid": "56789"
                   }
                 ],
-                "x-parser-schema-id": "<anonymous-schema-95>"
+                "x-parser-schema-id": "identifier"
               }
             },
             "required": [
               "type"
             ],
             "minProperties": 2,
-            "x-parser-schema-id": "<anonymous-schema-91>"
+            "x-parser-schema-id": "<anonymous-schema-87>"
           },
           "object": {
             "type": "object",
             "properties": {
               "type": {
                 "const": "Contact",
-                "x-parser-schema-id": "<anonymous-schema-141>"
+                "x-parser-schema-id": "<anonymous-schema-126>"
               },
               "identifier": {
                 "title": "identifier",
                 "type": "object",
-                "description": "identifier assigned to a contact by the vendor who originally created the contact",
+                "summary": "identifier assigned to a contact by the vendor who originally created the contact",
+                "maxProperties": 1,
+                "minProperties": 1,
                 "examples": [
                   {
-                    "salesforceid": "0031U00002XW1QWQA1"
+                    "bhhsconsumerid": "12345"
                   },
                   {
-                    "vendoraid": "123456"
-                  },
-                  {
-                    "originating_system_id": "123456"
+                    "salesforceid": "56789"
                   }
                 ],
-                "x-parser-schema-id": "<anonymous-schema-95>"
+                "x-parser-schema-id": "identifier"
               }
             },
             "required": [
               "type",
               "identifier"
             ],
-            "x-parser-schema-id": "<anonymous-schema-140>"
+            "x-parser-schema-id": "<anonymous-schema-125>"
           },
           "targetCollection": {
             "title": "Contact Group Reference",
@@ -195,7 +197,7 @@
             "properties": {
               "type": {
                 "const": "Collection",
-                "x-parser-schema-id": "<anonymous-schema-184>"
+                "x-parser-schema-id": "<anonymous-schema-170>"
               },
               "name": {
                 "type": "string",
@@ -209,40 +211,40 @@
                   "Business Contacts",
                   "Other"
                 ],
-                "x-parser-schema-id": "<anonymous-schema-185>"
+                "x-parser-schema-id": "<anonymous-schema-171>"
               },
               "identifier": {
                 "title": "identifier",
                 "type": "object",
-                "description": "identifier assigned to a contact by the vendor who originally created the contact",
+                "summary": "identifier assigned to a contact by the vendor who originally created the contact",
+                "maxProperties": 1,
+                "minProperties": 1,
                 "examples": [
                   {
-                    "salesforceid": "0031U00002XW1QWQA1"
+                    "bhhsconsumerid": "12345"
                   },
                   {
-                    "vendoraid": "123456"
-                  },
-                  {
-                    "originating_system_id": "123456"
+                    "salesforceid": "56789"
                   }
                 ],
-                "x-parser-schema-id": "<anonymous-schema-95>"
+                "x-parser-schema-id": "identifier"
               }
             },
             "required": [
               "type",
               "name"
             ],
-            "x-parser-schema-id": "<anonymous-schema-183>"
+            "x-parser-schema-id": "<anonymous-schema-169>"
           }
         },
-        "x-parser-schema-id": "<anonymous-schema-192>"
+        "x-parser-schema-id": "<anonymous-schema-178>"
       },
       "topic": {
+        "type": "string",
         "const": "realestate/contact#collectionmemberadd",
-        "x-parser-schema-id": "<anonymous-schema-191>"
+        "x-parser-schema-id": "<anonymous-schema-177>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-190>"
+    "x-parser-schema-id": "<anonymous-schema-176>"
   }
 }

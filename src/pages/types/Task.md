@@ -7,7 +7,7 @@ title: Task
 |---|---|---|
 | (root) | object | an action assigned to an agent, typically as part of a set of interdependent tasks in a Plan |
 | type | string | allowed (`"Task"`) The item type (Linked-Data @type) |
-| identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| identifier | object |  1 properties |
 | actionStatus | string | allowed (`"CompletedActionStatus"`, `"FailedActionStatus"`, `"ActiveActionStatus"`, `"PotentialActionStatus"`) disposition of the Action at the time of this action message. |
 | memberOf | object | a plan the task is associated with |
 | agent | object | the party who completed, or will complete the task |

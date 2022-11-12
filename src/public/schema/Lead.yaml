@@ -24,13 +24,15 @@ properties:
   identifier:
     title: identifier
     type: object
-    description: >-
+    summary: >-
       identifier assigned to a contact by the vendor who originally created the
       contact
+    maxProperties: 1
+    minProperties: 1
     examples:
-      - salesforceid: 0031U00002XW1QWQA1
-      - vendoraid: '123456'
-      - originating_system_id: '123456'
+      - bhhsconsumerid: '12345'
+      - salesforceid: '56789'
+    x-parser-schema-id: identifier
   leadSource:
     description: >-
       lead origin, may be a website event or a thing such as a website, zillow,
@@ -47,7 +49,7 @@ properties:
         object:
           type: Question
           text: Help me I'm trapped inside documentation.
-      x-parser-schema-id: <anonymous-schema-302>
+      x-parser-schema-id: <anonymous-schema-284>
   object:
     description: the lead (Contact)
     x-range:

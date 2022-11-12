@@ -38,11 +38,11 @@ title: marketing#programdelete
 | data.object.member | object | - |
 | data.object.member.type | string | const (`"Contact"`)  |
 | data.object.member.name | string | - |
-| data.object.member.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| data.object.member.identifier | object |  1 properties |
 | data.object.memberOf | object | - |
 | data.object.memberOf.type | string | const (`"MarketingProgram"`)  |
 | data.object.memberOf.name | string | - |
-| data.object.memberOf.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| data.object.memberOf.identifier | object |  1 properties |
 
 ### Payload Example(s) (generated)
 
@@ -59,14 +59,14 @@ title: marketing#programdelete
         "type": "Contact",
         "name": "string",
         "identifier": {
-          "salesforceid": "0031U00002XW1QWQA1"
+          "bhhsconsumerid": "12345"
         }
       },
       "memberOf": {
         "type": "MarketingProgram",
         "name": "Market Activity Report 508 Homewood Ave",
         "identifier": {
-          "salesforceid": "0031U00002XW1QWQA1"
+          "bhhsconsumerid": "12345"
         }
       }
     }

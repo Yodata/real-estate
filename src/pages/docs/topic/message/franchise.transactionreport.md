@@ -71,7 +71,7 @@ title: franchise#transactionreport
 | data.object.object.propertyType | string | allowed (`"RESI"`, `"RLSE"`, `"RINC"`, `"LAND"`, `"MOBI"`, `"FARM"`, `"COMS"`, `"COML"`, `"BUSO"`) RESO property type (see range for allowed values) 4 characters |
 | data.object.object.addressCountry | string | allowed (`"CA"`, `"DE"`, `"GR"`, `"IN"`, `"IT"`, `"MX"`, `"PE"`, `"PT"`, `"ES"`, `"AE"`, `"GB"`, `"US"`) two-letter ISO 3166-1 alpha-2 country code |
 | data.object.object.addressLocality | string | City, Township. <= 50 characters |
-| data.object.object.addressRegion | string | State or Province. <= 3 characters |
+| data.object.object.addressRegion | string | abbreviated state or province |
 | data.object.object.apn | string | Assessors Parcel Number |
 | data.object.object.image | tuple<object allOf, ...optional<any>> | an ImageObject or URI reference to an image on the web. |
 | data.object.object.image.0 (index) | object allOf | - |
@@ -120,7 +120,7 @@ title: franchise#transactionreport
 | data.object.participant.givenName | string | First Name of a person |
 | data.object.participant.familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) <= 50 characters |
 | data.object.participant.additionalName | string | middleName or alternate name of the Person |
-| data.object.participant.email | string |  format (`email`) |
+| data.object.participant.email | string | a valid email address format (`email`) |
 | data.object.participant.telephone | string | Primary phone number. |
 | data.object.participant.affiliation | array<string> | person or organization associated with the participant |
 | data.object.participant.affiliation (single item) | string |  format (`uri`) |
@@ -189,9 +189,9 @@ title: franchise#transactionreport
       "object": {
         "type": "RealEstateProperty",
         "propertyType": "RESI",
-        "addressCountry": "US",
-        "addressLocality": "string",
-        "addressRegion": "New Jersey",
+        "addressCountry": "CA",
+        "addressLocality": "Gotham City",
+        "addressRegion": "NJ",
         "apn": "ABC-12345-XX-XXXX",
         "image": [
           {

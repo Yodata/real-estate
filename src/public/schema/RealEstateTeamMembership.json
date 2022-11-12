@@ -1,4 +1,5 @@
 {
+  "$id": "http://realestate.yodata.me/schema/RealEstateTeamMembership.json",
   "type": "object",
   "title": "RealEstateTeamMembership",
   "description": "a membership relationship.  Subclass of OrganizationRole",
@@ -44,6 +45,5 @@
       "example": "RealEstateTeamMembership"
     }
   },
-  "x-parser-schema-id": "<anonymous-schema-478>",
-  "$id": "http://realestate.yodata.me/schema/RealEstateTeamMembership.json"
+  "x-parser-schema-id": "<anonymous-schema-469>"
 }

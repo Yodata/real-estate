@@ -43,12 +43,12 @@ properties:
         type: string
         enum:
           - Certification
-        x-parser-schema-id: <anonymous-schema-424>
+        x-parser-schema-id: <anonymous-schema-406>
       name:
         type: string
         description: the name of the Certification
         example: e-Agent Certified
-        x-parser-schema-id: <anonymous-schema-425>
+        x-parser-schema-id: <anonymous-schema-407>
       issuedBy:
         type: object
         x-range: RealEstateOrganization
@@ -59,18 +59,18 @@ properties:
               - RealEstateOrganization
             type: string
             description: The item type (Linked-Data @type)
-            x-parser-schema-id: <anonymous-schema-427>
+            x-parser-schema-id: <anonymous-schema-409>
           id:
             example: https://example.com/profile/card#me
             type: string
             format: uri
             description: Linked-Data URI (@id)
-            x-parser-schema-id: <anonymous-schema-428>
+            x-parser-schema-id: <anonymous-schema-410>
           name:
             type: string
             description: name of the issuing organization
             example: Gotham City Real Estate
-            x-parser-schema-id: <anonymous-schema-429>
+            x-parser-schema-id: <anonymous-schema-411>
       issuedTo:
         x-range: RealEstateAgent
         type: object
@@ -81,15 +81,17 @@ properties:
               - RealEstateAgent
             type: string
             description: The item type (Linked-Data @type)
-            x-parser-schema-id: <anonymous-schema-431>
+            x-parser-schema-id: <anonymous-schema-413>
           id:
             type: string
             format: uri
             description: Linked-Data URI (@id)
           name:
+            $id: http://realestate.yodata.me/schema/name.yaml
+            title: name
             type: string
-            description: the name of the item
-        x-parser-schema-id: <anonymous-schema-430>
+            x-parser-schema-id: name
+        x-parser-schema-id: <anonymous-schema-412>
   contactPoint:
     $id: http://realestate.yodata.me/schema/ContactPoint.json
     title: ContactPoint
@@ -110,7 +112,7 @@ properties:
       type:
         type: string
         const: ContactPoint
-        x-parser-schema-id: <anonymous-schema-432>
+        x-parser-schema-id: <anonymous-schema-414>
       name:
         type: string
         description: a label for the contactPoint, i.e. 'Work', or 'Home'
@@ -120,7 +122,7 @@ properties:
           - Vacation
           - Bob's Cell
           - Alice's Work
-        x-parser-schema-id: <anonymous-schema-433>
+        x-parser-schema-id: <anonymous-schema-415>
       telephone:
         type: string
         x-faker: phone.phoneNumber
@@ -129,7 +131,7 @@ properties:
           - 555-555-5555 x123
           - 555-555-5555 ext. 123
           - +1-555-555-5555
-        x-parser-schema-id: <anonymous-schema-434>
+        x-parser-schema-id: <anonymous-schema-416>
       faxNumber:
         type: string
         x-faker: phone.phoneNumber
@@ -138,7 +140,7 @@ properties:
           - 555-555-5555 x123
           - 555-555-5555 ext. 123
           - +1-555-555-5555
-        x-parser-schema-id: <anonymous-schema-435>
+        x-parser-schema-id: <anonymous-schema-417>
       email:
         description: an email address for the item.
         type: string
@@ -147,14 +149,16 @@ properties:
         examples:
           - bob@example.com
           - alice@example.com
-        x-parser-schema-id: <anonymous-schema-436>
+        x-parser-schema-id: <anonymous-schema-418>
       url:
         description: primary URL for the item.
         type: string
         format: uri
         example: https://www.facebook.com/hallandoates
-        x-parser-schema-id: <anonymous-schema-437>
+        x-parser-schema-id: <anonymous-schema-419>
   email:
+    title: email
+    description: a valid email address
     type: string
     format: email
     x-faker: internet.email
@@ -222,13 +226,15 @@ properties:
   identifier:
     title: identifier
     type: object
-    description: >-
+    summary: >-
       identifier assigned to a contact by the vendor who originally created the
       contact
+    maxProperties: 1
+    minProperties: 1
     examples:
-      - salesforceid: 0031U00002XW1QWQA1
-      - vendoraid: '123456'
-      - originating_system_id: '123456'
+      - bhhsconsumerid: '12345'
+      - salesforceid: '56789'
+    x-parser-schema-id: identifier
   image:
     title: image
     description: an ImageObject or URI reference to an image on the web.
@@ -252,13 +258,13 @@ properties:
                   - type
                 propertyNames:
                   pattern: ^[a-z@$][a-zA-Z0-9-_]+$
-                  x-parser-schema-id: <anonymous-schema-237>
+                  x-parser-schema-id: <anonymous-schema-221>
                 properties:
                   type:
                     type: string
                     pattern: ^[A-Z][a-zA-Z0-9]+$
                     description: The item type (Linked-Data @type)
-                    x-parser-schema-id: <anonymous-schema-235>
+                    x-parser-schema-id: <anonymous-schema-219>
                   '@id':
                     type: string
                     format: uri
@@ -294,7 +300,7 @@ properties:
                     format: uri
                     description: URL of the image content
                     example: http://user.example.com/public/profile/image.jpg
-                x-parser-schema-id: <anonymous-schema-238>
+                x-parser-schema-id: <anonymous-schema-222>
             x-parser-schema-id: MediaObject
           - title: ImageObject
             x-range: ImageObject
@@ -309,8 +315,8 @@ properties:
                 example: image.jpg
               encodingFormat:
                 example: image/jpeg
-            x-parser-schema-id: <anonymous-schema-239>
-        x-parser-schema-id: <anonymous-schema-234>
+            x-parser-schema-id: <anonymous-schema-223>
+        x-parser-schema-id: <anonymous-schema-218>
   jobTitle:
     type: array
     items:
@@ -342,7 +348,7 @@ properties:
         - null
         - null
         - null
-      x-parser-schema-id: <anonymous-schema-439>
+      x-parser-schema-id: <anonymous-schema-421>
   memberOf:
     title: memberOf
     description: >-
@@ -354,7 +360,8 @@ properties:
       - URI
     items:
       anyOf:
-        - title: OrganizationRole
+        - $id: OrganizationRole
+          title: OrganizationRole
           type: object
           description: describes a role played by a member and a group or organization.
           properties:
@@ -389,11 +396,13 @@ properties:
           x-parser-schema-id: OrganizationRole
         - type: string
           format: uri
-          x-parser-schema-id: <anonymous-schema-448>
-      x-parser-schema-id: <anonymous-schema-441>
+          x-parser-schema-id: <anonymous-schema-430>
+      x-parser-schema-id: <anonymous-schema-423>
   name:
+    $id: http://realestate.yodata.me/schema/name.yaml
+    title: name
     type: string
-    description: the name of the item
+    x-parser-schema-id: name
   parentOrganization:
     $id: http://realestate.yodata.me/schema/parentOrganization
     title: parentOrganization
@@ -402,7 +411,7 @@ properties:
     items:
       type: string
       format: uri
-      x-parser-schema-id: <anonymous-schema-449>
+      x-parser-schema-id: <anonymous-schema-431>
   permit:
     title: Permit
     description: A permit issued by an organization to an individual or business.
@@ -415,12 +424,12 @@ properties:
         description: Permit type.
         enum:
           - Permit
-        x-parser-schema-id: <anonymous-schema-451>
+        x-parser-schema-id: <anonymous-schema-433>
       name:
         type: string
         description: Common or display value of the Permit.
         example: DRE Number
-        x-parser-schema-id: <anonymous-schema-452>
+        x-parser-schema-id: <anonymous-schema-434>
       issuedBy:
         type: object
         x-range: Organization
@@ -428,28 +437,28 @@ properties:
         example:
           type: State
           name: California
-        x-parser-schema-id: <anonymous-schema-453>
+        x-parser-schema-id: <anonymous-schema-435>
       issuedThrough:
         type: object
         description: the service through which the permit was granted
         example:
           type: Service
           name: Department of Real Estate
-        x-parser-schema-id: <anonymous-schema-454>
+        x-parser-schema-id: <anonymous-schema-436>
       validIn:
         type: object
         x-range: Place
-        x-parser-schema-id: <anonymous-schema-455>
+        x-parser-schema-id: <anonymous-schema-437>
       validFrom:
         type: string
         format: date-time
         description: start date
-        x-parser-schema-id: <anonymous-schema-456>
+        x-parser-schema-id: <anonymous-schema-438>
       validUntil:
         type: string
         format: date-time
         description: end date
-        x-parser-schema-id: <anonymous-schema-457>
+        x-parser-schema-id: <anonymous-schema-439>
   subOrganization:
     $id: http://realestate.yodata.me/schema/subOrganization
     title: subOrganization
@@ -458,7 +467,7 @@ properties:
     items:
       type: string
       format: uri
-      x-parser-schema-id: <anonymous-schema-458>
+      x-parser-schema-id: <anonymous-schema-440>
   type:
     type: string
     const: RealEstateAgent

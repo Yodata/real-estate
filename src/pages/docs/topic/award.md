@@ -5,7 +5,7 @@ title: award
 
 ### publish award events
 
-* [award#publish](message/award.publish)
+* [publishMessage](message/publishMessage)
 
 ### subscribe award events
 

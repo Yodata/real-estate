@@ -11,13 +11,14 @@ properties:
       hsfTeamId: xxxxx
     title: identifier
     type: object
-    description: >-
+    summary: >-
       identifier assigned to a contact by the vendor who originally created the
       contact
+    maxProperties: 1
+    minProperties: 1
     examples:
-      - salesforceid: 0031U00002XW1QWQA1
-      - vendoraid: '123456'
-      - originating_system_id: '123456'
+      - bhhsconsumerid: '12345'
+      - salesforceid: '56789'
   member:
     description: members of the AwardTeam
     type: array
@@ -28,11 +29,12 @@ properties:
         - http://12345.example.com/profile/card#me
         - http://ma302-001.example.com/profile/card#me
         - http://ma302.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-36>
+      x-parser-schema-id: <anonymous-schema-51>
   name:
     example: Top Producer by Volume
+    $id: http://realestate.yodata.me/schema/name.yaml
+    title: name
     type: string
-    description: the name of the item
   type:
     const: AwardTeam
 x-parser-schema-id: AwardTeam

@@ -1,0 +1,18 @@
+{
+  "title": "sameAs",
+  "type": "string",
+  "format": "uri",
+  "description": "vendor specific identifier for the user can be shared with other vendors to identify the user",
+  "examples": [
+    {
+      "amcecrmid": 1234567,
+      "salesForceId": "parsing"
+    },
+    {
+      "salesForceId": "ad4fa5f4as"
+    }
+  ],
+  "x-parser-schema-id": "sameAs",
+  "properties": {},
+  "$id": "http://realestate.yodata.me/schema/sameAs.json"
+}

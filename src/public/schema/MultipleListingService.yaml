@@ -1,19 +1,5 @@
 $id: http://realestate.yodata.me/schema/MultipleListingService.yaml
-summary: The root type of all Things.
-required:
-  - type
-propertyNames:
-  pattern: ^[a-z@$][a-zA-Z0-9-_]+$
-  x-parser-schema-id: <anonymous-schema-237>
-x-kind: Organization
-x-hasSubclass:
-  - RealEstateOrganization
-  - RealEstateOffice
-  - RealEstateAgent
-title: MultipleListingService
-x-hideProps: true
-x-subClassOf: Organization
-type: object
+title: Multiple Listing Service
 description: >
   A multiple listing service (MLS, also multiple listing system or multiple
   listings service) is a suite of services that real estate brokers use to
@@ -26,410 +12,47 @@ description: >
   seller's broker in finding a buyer for the property or asset. The listing data
   stored in a multiple listing service's database is the proprietary information
   of the broker who has obtained a listing agreement with a property's seller.
+type: object
+required:
+  - type
+  - name
+  - identifier
 properties:
-  '@id':
-    type: string
-    format: uri
-    description: the liked data uri for the Thing
-  address:
-    type: object
-    x-range: PostalAddress
-    description: A physical address.
-    example:
-      type: PostalAddress
-      name: Home
-      addressCountry: USA
-      addressCounty: Gotham County
-      addressLocality: Gotham City
-      addressRegion: New Jersey
-      addressSubdivision: Gotham Heights
-      postalCode: '10010'
-      postOfficeBoxNumber: Box 1234
-      streetAddress: 1007 Mountain Gate Rd
-  availableLanguage:
-    title: availableLanguage
-    type: array
-    description: Please use one of the language codes from the IETF BCP 47 standard.
-    x-range: Language
-    items:
-      $id: http://realestate.yodata.me/schema/Language.yaml
-      description: a written or spoken Language
-      title: Language
-      type: object
-      required:
-        - type
-        - name
-        - additionalName
-      properties:
-        type:
-          type: string
-          const: Language
-        name:
-          type: string
-          description: the display name of the language
-        additionalName:
-          type: string
-          description: BCP 47 language code
-      examples:
-        - type: Language
-          name: English
-          additionalName: en-us
-        - type: Language
-          name: Spanish
-          additionalName: es
-        - type: Language
-          name: French
-          additionalName: fr
-        - type: Language
-          name: German
-          additionalName: de
-        - type: Language
-          name: Italian
-          additionalName: it
-        - type: Language
-          name: Japanese
-          additionalName: ja
-        - type: Language
-          name: Korean
-          additionalName: ko
-        - type: Language
-          name: Portuguese
-          additionalName: pt
-        - type: Language
-          name: Russian
-          additionalName: ru
-        - type: Language
-          name: Chinese
-          additionalName: zh
-        - type: Language
-          name: Arabic
-          additionalName: ar
-        - type: Language
-          name: Hindi
-          additionalName: hi
-        - type: Language
-          name: Bengali
-          additionalName: bn
-        - type: Language
-          name: Portuguese
-          additionalName: pt
-      x-parser-schema-id: Language
-  branchCode:
-    description: A short textual code that uniquely identifies a place of business.
-    example: for BHHS profile events, see additionalProperty.OfficeId
-    type: string
-  certification:
-    $id: http://realestate.yodata.me/schema/certification
-    title: certifications
-    description: certifications granted to a person or organization
-    type: array
-    items:
-      - type: object
-        title: Certification
-        description: >-
-          A certification issued by an organization to an individual or
-          business.
-        x-range: Certification
-        properties:
-          type:
-            description: Certification
-            type: string
-            enum:
-              - Certification
-          name:
-            type: string
-            description: the name of the Certification
-            example: e-Agent Certified
-          issuedBy:
-            type: object
-            x-range: RealEstateOrganization
-            description: the issuing authority
-            properties:
-              type:
-                enum:
-                  - RealEstateOrganization
-                type: string
-                description: The item type (Linked-Data @type)
-                x-parser-schema-id: <anonymous-schema-427>
-              id:
-                example: https://example.com/profile/card#me
-                type: string
-                format: uri
-                description: Linked-Data URI (@id)
-                x-parser-schema-id: <anonymous-schema-428>
-              name:
-                type: string
-                description: name of the issuing organization
-                example: Gotham City Real Estate
-                x-parser-schema-id: <anonymous-schema-429>
-          issuedTo:
-            x-range: RealEstateAgent
-            type: object
-            description: the subject
-            properties:
-              type:
-                enum:
-                  - RealEstateAgent
-                type: string
-                description: The item type (Linked-Data @type)
-                x-parser-schema-id: <anonymous-schema-431>
-              id:
-                type: string
-                format: uri
-                description: Linked-Data URI (@id)
-                x-parser-schema-id: <anonymous-schema-260>
-              name:
-                type: string
-                description: the name of the item
-                x-parser-schema-id: <anonymous-schema-93>
-        x-parser-schema-id: Certification
-  contactPoint:
-    $id: http://realestate.yodata.me/definitions/contactPoint.json
-    type: array
-    description: >-
-      a named point of contact - telephone, email, faxNumber, and/or url for the
-      entity
-    items:
-      $id: http://realestate.yodata.me/schema/ContactPoint.json
-      title: ContactPoint
-      description: >
-        A point of contact for the entity. By convention in the real estate
-        domain, ContactPoints
-
-        are preferred over telephone, email, and faxNumber so the
-        ContactPoint.name property can be used to label values
-
-        for example, Work Telephone, Home, as named contactPoint values.
-      type: object
-      required:
-        - type
-        - name
-      minProperties: 3
-      properties:
-        type:
-          type: string
-          const: ContactPoint
-        name:
-          type: string
-          description: a label for the contactPoint, i.e. 'Work', or 'Home'
-          examples:
-            - Work
-            - Home
-            - Vacation
-            - Bob's Cell
-            - Alice's Work
-        telephone:
-          type: string
-          x-faker: phone.phoneNumber
-          examples:
-            - 555-555-5555
-            - 555-555-5555 x123
-            - 555-555-5555 ext. 123
-            - +1-555-555-5555
-        faxNumber:
-          type: string
-          x-faker: phone.phoneNumber
-          examples:
-            - 555-555-5555
-            - 555-555-5555 x123
-            - 555-555-5555 ext. 123
-            - +1-555-555-5555
-        email:
-          description: an email address for the item.
-          type: string
-          format: email
-          x-faker: internet.email
-          examples:
-            - bob@example.com
-            - alice@example.com
-        url:
-          description: primary URL for the item.
-          type: string
-          format: uri
-          example: https://www.facebook.com/hallandoates
-      x-parser-schema-id: ContactPoint
-  email:
-    type: string
-    format: email
-    x-faker: internet.email
-  faxNumber:
-    type: string
-    description: Do people still use fax machines?
-    x-faker: phone.phoneNumber
   identifier:
     title: identifier
     type: object
-    description: >-
+    summary: >-
       identifier assigned to a contact by the vendor who originally created the
       contact
+    maxProperties: 1
+    minProperties: 1
     examples:
-      - salesforceid: 0031U00002XW1QWQA1
-      - vendoraid: '123456'
-      - originating_system_id: '123456'
-  image:
-    title: image
-    description: an ImageObject or URI reference to an image on the web.
-    type: array
-    x-range:
-      - ImageObject
-    items:
-      - type: object
-        allOf:
-          - title: MediaObject
-            description: an image, video or document availble for download
-            x-subclass:
-              - ImageObject
-              - DigitalDocument
-            allOf:
-              - $id: http://realestate.yodata.me/schema/Thing
-                type: object
-                title: Thing
-                summary: The root type of all Things.
-                required:
-                  - type
-                propertyNames:
-                  pattern: ^[a-z@$][a-zA-Z0-9-_]+$
-                  x-parser-schema-id: <anonymous-schema-237>
-                properties:
-                  type:
-                    type: string
-                    pattern: ^[A-Z][a-zA-Z0-9]+$
-                    description: The item type (Linked-Data @type)
-                    x-parser-schema-id: <anonymous-schema-235>
-                  '@id':
-                    type: string
-                    format: uri
-                    description: the liked data uri for the Thing
-                x-parser-schema-id: Thing
-              - properties:
-                  type:
-                    type: string
-                    enum:
-                      - MediaObject
-                      - ImageObject
-                      - DigitalDocument
-                  id:
-                    description: the URL to access the item.
-                    example: http://user.example.com/public/logo/fileName.zip
-                    type: string
-                    format: uri
-                  name:
-                    type: string
-                    description: the file name of the object.
-                    example: fileName.zip
-                  encodingFormat:
-                    type: string
-                    description: MIME type
-                    example: application/zip
-                  about:
-                    type: string
-                    format: uri
-                    description: URI to the subject of the image or logo
-                    example: http://user.example.com/profile/card#me
-                  url:
-                    type: string
-                    format: uri
-                    description: URL of the image content
-                    example: http://user.example.com/public/profile/image.jpg
-                x-parser-schema-id: <anonymous-schema-238>
-            x-parser-schema-id: MediaObject
-          - title: ImageObject
-            x-range: ImageObject
-            properties:
-              type:
-                enum:
-                  - ImageObject
-                example: ImageObject
-              id:
-                example: http://user.example.com/public/logo/image.jpg
-              name:
-                example: image.jpg
-              encodingFormat:
-                example: image/jpeg
-            x-parser-schema-id: <anonymous-schema-239>
-        x-parser-schema-id: <anonymous-schema-234>
-  logo:
-    description: a logo associated with the organization.
-    items:
-      allOf:
-        - type: object
-          title: DigitalDocument
-          x-range: DigitalDocument
-          description: an electronic file.
-          properties:
-            type:
-              type: string
-              enum:
-                - DigitalDocument
-            id:
-              type: string
-              example: http://user.example.com/public/logo/archive.zip
-            name:
-              type: string
-              description: document name or title
-              example: archive.zip
-            encodingFormat:
-              type: string
-              description: >-
-                [ISO Media
-                Type](https://www.iana.org/assignments/media-types/media-types.xhtml)
-              example: application/zip
-            about:
-              type: object
-              description: subject of the Document
-              x-range: Thing
-              example:
-                type: RealEstateTransaction
-                identifier:
-                  bmsTransactionId: xxxx
-            url:
-              type: string
-              description: public URL of the object
-              example: https://example.com
-          x-parser-schema-id: DigitalDocument
-        - description: an associated logo
-          type: object
-      type: object
-    type: array
-    x-range:
-      - ImageObject
-      - DigitalDocument
+      - bhhsconsumerid: '12345'
+      - salesforceid: '56789'
+    x-parser-schema-id: identifier
   name:
-    description: Name or DBA.
     type: string
-  parentOrganization:
-    items:
-      format: uri
-      type: string
-    type: array
-  subOrganization:
-    description: a child organization
-    x-range:
-      - RealEstateOrganization
-    type: array
-    items:
-      type: string
-      format: uri
-      example: http://org.example.com/profile/card#me
-  telephone:
+  sameAs:
+    title: sameAs
     type: string
-    description: Primary phone number.
-    example: '+15558675309'
-  type:
-    pattern: ^[A-Z][a-zA-Z0-9]+$
-    description: The item type (Linked-Data @type)
-    type: string
-    enum:
-      - MultipleListingService
-  url:
-    description: primary website/url for the entity.
     format: uri
+    description: >-
+      vendor specific identifier for the user can be shared with other vendors
+      to identify the user
+    examples:
+      - amcecrmid: 1234567
+        salesForceId: parsing
+      - salesForceId: ad4fa5f4as
+    x-parser-schema-id: sameAs
+  type:
     type: string
+    const: MultipleListingService
 example:
   type: MultipleListingService
   name: MLSListings
   identifier:
     resoouid: M00000101
-    bhhsmlsid: xxxxxx
-x-parser-schema-id: <anonymous-schema-721>
+  sameAs:
+    supercrmmlsid: MLSListings
+x-parser-schema-id: MultipleListingService
 

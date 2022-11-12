@@ -31,9 +31,9 @@ title: contact#comment
 | data.type | string | const (`"CommentAction"`)  |
 | data.agent | object |  >= 2 properties |
 | data.agent.type | string | const (`"Person"`)  |
-| data.agent.name | string | the name of the item |
-| data.agent.email | string |  format (`email`) |
-| data.agent.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| data.agent.name | string | - |
+| data.agent.email | string | a valid email address format (`email`) |
+| data.agent.identifier | object |  1 properties |
 | data.object | object | A comment on an item. |
 | data.object.type | string | const (`"Comment"`)  |
 | data.object.dateCreated | string | The date on which the item was created. format (`date-time`) |
@@ -42,10 +42,10 @@ title: contact#comment
 | data.object.text | string | - |
 | data.object.author | object | the author of something |
 | data.object.about | object | The subject of the content |
-| data.object.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| data.object.identifier | object |  1 properties |
 | data.target | object | - |
 | data.target.type | string | const (`"Contact"`)  |
-| data.target.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| data.target.identifier | object |  1 properties |
 
 ### Payload Example(s) (generated)
 
@@ -59,7 +59,7 @@ title: contact#comment
       "name": "string",
       "email": "user@example.com",
       "identifier": {
-        "salesforceid": "0031U00002XW1QWQA1"
+        "bhhsconsumerid": "12345"
       }
     },
     "object": {
@@ -89,7 +89,7 @@ title: contact#comment
     "target": {
       "type": "Contact",
       "identifier": {
-        "salesforceid": "0031U00002XW1QWQA1"
+        "bhhsconsumerid": "12345"
       }
     }
   }

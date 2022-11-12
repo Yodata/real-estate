@@ -36,7 +36,7 @@ title: website#requestshowing
 | data.agent.familyName | string | - |
 | data.agent.email | string |  format (`email`) |
 | data.agent.telephone | string | - |
-| data.agent.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| data.agent.identifier | object |  1 properties |
 | data.agent.sameAs | string | vendor specific identifier for the user can be shared with other vendors to identify the user format (`uri`) |
 | data.agent.contactPoint | object | A point of contact for the entity. By convention in the real estate domain, ContactPoints are preferred over telephone, email, and faxNumber so the ContactPoint.name property can be used to label values for example, Work Telephone, Home, as named contactPoint values. >= 3 properties |
 | data.agent.contactPoint.type | string | const (`"ContactPoint"`)  |
@@ -80,7 +80,7 @@ title: website#requestshowing
       "email": "user@example.com",
       "telephone": "string",
       "identifier": {
-        "salesforceid": "0031U00002XW1QWQA1"
+        "bhhsconsumerid": "12345"
       },
       "sameAs": {
         "amcecrmid": 1234567,

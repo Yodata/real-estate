@@ -1,3 +1,4 @@
+$id: http://realestate.yodata.me/schema/OrganizationRole.yaml
 title: OrganizationRole
 type: object
 description: describes a role played by a member and a group or organization.
@@ -31,5 +32,4 @@ properties:
     enum:
       - OrganizationRole
 x-parser-schema-id: OrganizationRole
-$id: http://realestate.yodata.me/schema/OrganizationRole.yaml
 

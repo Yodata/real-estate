@@ -32,7 +32,7 @@
         "type": {
           "type": "string",
           "description": "The item type (Linked-Data @type)",
-          "x-parser-schema-id": "<anonymous-schema-676>"
+          "x-parser-schema-id": "type"
         },
         "givenName": {
           "type": "string",
@@ -75,7 +75,7 @@
           "type": "string",
           "description": "CUSTOMER-MIDDLE-INITIAL",
           "example": "M",
-          "x-parser-schema-id": "<anonymous-schema-677>"
+          "x-parser-schema-id": "<anonymous-schema-663>"
         },
         "familyName": {
           "$id": "http://realestate.yodata.me/schema/familyName.yaml",
@@ -106,7 +106,7 @@
           "type": "string",
           "description": "gender of the Customer (why?)",
           "example": "M",
-          "x-parser-schema-id": "<anonymous-schema-678>"
+          "x-parser-schema-id": "<anonymous-schema-664>"
         }
       }
     },

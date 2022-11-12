@@ -1,0 +1,6 @@
+type: string
+description: description of the item.
+x-parser-schema-id: description
+properties: {}
+$id: http://realestate.yodata.me/schema/description.yaml
+

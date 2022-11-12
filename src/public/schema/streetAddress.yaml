@@ -1,0 +1,10 @@
+$id: http://realestate.yodata.me/schema/streetAddress.yaml
+title: streetAddress
+type: string
+description: the street address
+example: 1007 Mountain Gate Rd
+maxLength: 75
+x-faker: address.streetAddress
+x-parser-schema-id: streetAddress
+properties: {}
+

@@ -1,0 +1,12 @@
+$id: http://realestate.yodata.me/schema/postalCode.yaml
+title: postalCode
+type: string
+description: Zip/Post Code
+maxLength: 12
+examples:
+  - '10010'
+  - 50239-7698
+  - null
+x-parser-schema-id: postalCode
+properties: {}
+

@@ -7,7 +7,7 @@
   ],
   "propertyNames": {
     "pattern": "^[a-z@$][a-zA-Z0-9-_]+$",
-    "x-parser-schema-id": "<anonymous-schema-237>"
+    "x-parser-schema-id": "<anonymous-schema-221>"
   },
   "title": "EmailMessage",
   "x-range": "EamilMessage",
@@ -149,5 +149,5 @@
       "example": "EmailMessage"
     }
   },
-  "x-parser-schema-id": "<anonymous-schema-687>"
+  "x-parser-schema-id": "<anonymous-schema-667>"
 }

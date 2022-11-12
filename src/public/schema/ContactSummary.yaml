@@ -27,7 +27,7 @@ properties:
       type:
         type: string
         description: The item type (Linked-Data @type)
-        x-parser-schema-id: <anonymous-schema-676>
+        x-parser-schema-id: type
       givenName:
         type: string
         description: First Name of a person
@@ -67,7 +67,7 @@ properties:
         type: string
         description: CUSTOMER-MIDDLE-INITIAL
         example: M
-        x-parser-schema-id: <anonymous-schema-677>
+        x-parser-schema-id: <anonymous-schema-663>
       familyName:
         $id: http://realestate.yodata.me/schema/familyName.yaml
         type: string
@@ -94,7 +94,7 @@ properties:
         type: string
         description: gender of the Customer (why?)
         example: M
-        x-parser-schema-id: <anonymous-schema-678>
+        x-parser-schema-id: <anonymous-schema-664>
   position:
     type: number
     description: ADJUSTMENT-SEQUENCE

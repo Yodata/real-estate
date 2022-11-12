@@ -32,8 +32,8 @@ title: award#teammemberadd
 | data.object | string | the profile uri of the team member being added format (`uri`) |
 | data.targetCollection | object | a Collection |
 | data.targetCollection.type | string | const (`"AwardTeam"`)  |
-| data.targetCollection.name | string | the name of the item |
-| data.targetCollection.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| data.targetCollection.name | string | - |
+| data.targetCollection.identifier | object |  1 properties |
 | data.targetCollection.member | array<string> | members of the AwardTeam |
 | data.targetCollection.member (single item) | string |  format (`uri`) |
 

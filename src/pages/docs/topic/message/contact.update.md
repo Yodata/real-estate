@@ -31,9 +31,9 @@ title: contact#update
 | data.type | string | const (`"UpdateAction"`)  |
 | data.agent | object |  >= 2 properties |
 | data.agent.type | string | const (`"Person"`)  |
-| data.agent.name | string | the name of the item |
-| data.agent.email | string |  format (`email`) |
-| data.agent.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| data.agent.name | string | - |
+| data.agent.email | string | a valid email address format (`email`) |
+| data.agent.identifier | object |  1 properties |
 | data.object | allOf | - |
 | data.object.0 (allOf item) | object | - |
 | data.object.0.type | string | - |
@@ -41,13 +41,13 @@ title: contact#update
 | data.object.0.affiliation (single item) | string |  format (`uri`) |
 | data.object.0.address | array<object> | - |
 | data.object.0.address.type | string | const (`"PostalAddress"`)  |
-| data.object.0.address.streetAddress | string | the street number and name. |
+| data.object.0.address.streetAddress | string | the street address <= 75 characters |
 | data.object.0.address.postOfficeBoxNumber | string | The post office box number for PO box addresses. |
-| data.object.0.address.addressRegion | string | State or Province. |
-| data.object.0.address.addressLocality | string | City, Township. |
-| data.object.0.address.postalCode | string | Zip/Post Code |
-| data.object.0.address.addressCountry | string | The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code. |
-| data.object.0.address.addressCounty | string | the county (us real estate extension) |
+| data.object.0.address.addressRegion | string | abbreviated state or province |
+| data.object.0.address.addressLocality | string | City, Township. <= 50 characters |
+| data.object.0.address.postalCode | string | Zip/Post Code <= 12 characters |
+| data.object.0.address.addressCountry | string | allowed (`"CA"`, `"DE"`, `"GR"`, `"IN"`, `"IT"`, `"MX"`, `"PE"`, `"PT"`, `"ES"`, `"AE"`, `"GB"`, `"US"`) two-letter ISO 3166-1 alpha-2 country code |
+| data.object.0.address.addressCounty | string | County |
 | data.object.0.address.addressSubdivision | string | the subdivision or neighborhood (us real estate extension) |
 | data.object.0.birthDate | string | date of birth. format (`date`) |
 | data.object.0.contactPoint | array<object> | contact points for the person |
@@ -57,7 +57,7 @@ title: contact#update
 | data.object.0.contactPoint.faxNumber | string | - |
 | data.object.0.contactPoint.email | string | an email address for the item. format (`email`) |
 | data.object.0.contactPoint.url | string | primary URL for the item. format (`uri`) |
-| data.object.0.email | string |  format (`email`) |
+| data.object.0.email | string | a valid email address format (`email`) |
 | data.object.0.additionalName | string | any other name(s) associated with the entity, i.e. nickname, middle name, maiden name, etc. For multiple names, use a comma without space as a separator. |
 | data.object.0.familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) <= 50 characters |
 | data.object.0.faxNumber | string | Do people still use fax machines? |
@@ -75,14 +75,14 @@ title: contact#update
 | data.object.0.worksFor | string | Organizations the person works for. |
 | data.object.1 (allOf item) | - | a CRM contact. |
 | data.object.1.type | string | const (`"Contact"`)  |
-| data.object.1.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| data.object.1.identifier | object |  1 properties |
 | data.object.1.additionalProperty | object | additionalProperty are |
 | data.object.1.comment | array<object> | comments by, for or about the item |
 | data.object.1.comment (single item) | object | - |
 | data.object.1.jobTitle | string | The job title of the person (for example, Financial Manager). |
 | data.object.1.contactGroup | array<object> | - |
 | data.object.1.contactGroup.type | string | allowed (`"ContactGroup"`, `"Collection"`)  |
-| data.object.1.contactGroup.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| data.object.1.contactGroup.identifier | object |  1 properties |
 | data.object.1.contactGroup.name | string | - |
 | data.object.1.keywords | array<string> | - |
 | data.object.1.keywords (single item) | string | - |
@@ -104,7 +104,7 @@ title: contact#update
       "name": "string",
       "email": "user@example.com",
       "identifier": {
-        "salesforceid": "0031U00002XW1QWQA1"
+        "bhhsconsumerid": "12345"
       }
     },
     "object": {
@@ -115,13 +115,13 @@ title: contact#update
       "address": [
         {
           "type": "PostalAddress",
-          "streetAddress": "5046 Ottis Point",
+          "streetAddress": "1007 Mountain Gate Rd",
           "postOfficeBoxNumber": "Box 1234",
-          "addressRegion": "New Jersey",
+          "addressRegion": "NJ",
           "addressLocality": "Gotham City",
           "postalCode": "10010",
-          "addressCountry": "USA",
-          "addressCounty": "Gotham County",
+          "addressCountry": "CA",
+          "addressCounty": "string",
           "addressSubdivision": "Gotham Heights"
         }
       ],
@@ -155,7 +155,7 @@ title: contact#update
       "telephone": "+15558675309",
       "worksFor": "string",
       "identifier": {
-        "salesforceid": "0031U00002XW1QWQA1"
+        "bhhsconsumerid": "12345"
       },
       "additionalProperty": {
         "supercrmuserid": 1234,
@@ -181,7 +181,7 @@ title: contact#update
         {
           "type": "ContactGroup",
           "identifier": {
-            "salesforceid": "0031U00002XW1QWQA1"
+            "bhhsconsumerid": "12345"
           },
           "name": "Past Clients"
         }

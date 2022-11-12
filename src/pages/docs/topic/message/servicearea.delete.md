@@ -53,7 +53,7 @@ title: servicearea#delete
 | data.object.additionalProperty.sentToCompanyLocator | boolean | sent to company locator |
 | data.object.additionalProperty.sentToReferralSolutions | boolean | sent to referral solutions |
 | data.object.additionalProperty.luxuryPriceMinimum | object | minimum price for a property listing in the area to be considered a luxury property |
-| data.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| data.identifier | object |  1 properties |
 
 ### Payload Example(s) (generated)
 

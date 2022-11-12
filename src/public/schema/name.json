@@ -1,0 +1,7 @@
+{
+  "$id": "http://realestate.yodata.me/schema/name.json",
+  "title": "name",
+  "type": "string",
+  "x-parser-schema-id": "name",
+  "properties": {}
+}

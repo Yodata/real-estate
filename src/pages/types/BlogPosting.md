@@ -7,7 +7,7 @@ title: BlogPosting
 |---|---|---|
 | (root) | object | A blog post. |
 | type | string | allowed (`"BlogPosting"`)  |
-| identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| identifier | object |  1 properties |
 | headline | string | headline of the post. |
 | articleBody | string | the actual body of the post in HTML format. |
 | image | tuple<object allOf, ...optional<any>> | by convention the first image item is the article hero image.  note: image tags can also be embeded in the articleBody. |

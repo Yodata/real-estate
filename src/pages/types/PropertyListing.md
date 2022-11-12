@@ -9,7 +9,7 @@ title: PropertyListing
 | type | string | allowed (`"PropertyListing"`)  |
 | addressCountry | string | allowed (`"CA"`, `"DE"`, `"GR"`, `"IN"`, `"IT"`, `"MX"`, `"PE"`, `"PT"`, `"ES"`, `"AE"`, `"GB"`, `"US"`) two-letter ISO 3166-1 alpha-2 country code |
 | addressLocality | string | City, Township. <= 50 characters |
-| addressRegion | string | State or Province. <= 3 characters |
+| addressRegion | string | abbreviated state or province |
 | buyerAgent | object | the buyer's RealEstateAgent |
 | buyerOffice | object | the buyer's RealEstateOffice |
 | closeDate | string | With for-sale listings, the date the purchase agreement was fulfilled. With lease listings, the date the requirements were fulfilled, such as contract and/or deposit. format (`date-time`) |
@@ -66,9 +66,9 @@ title: PropertyListing
 ```json
 {
   "type": "PropertyListing",
-  "addressCountry": "US",
-  "addressLocality": "string",
-  "addressRegion": "New Jersey",
+  "addressCountry": "CA",
+  "addressLocality": "Gotham City",
+  "addressRegion": "NJ",
   "buyerAgent": {
     "email": "butch.byers@example.com",
     "identifier": {

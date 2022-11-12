@@ -1,0 +1,12 @@
+# @format
+
+$id: http://realestate.yodata.me/schema/addressSubdivision
+title: addressSubdivision
+description: the subdivision or neighborhood (us real estate extension)
+type: string
+x-faker: address.streetName
+examples:
+  - Gotham Heights
+  - South Kensington
+  - SOMA (South of Market)
+  - Nob Hill

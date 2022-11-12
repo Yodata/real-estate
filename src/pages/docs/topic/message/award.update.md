@@ -38,7 +38,7 @@ title: award#update
 | data.object.recipient.type | string | allowed (`"RealEstateAgent"`, `"RealEstateOffice"`, `"RealEstateOrganization"`)  |
 | data.object.recipient.id | string |  format (`uri`) |
 | data.object.recipient.name | string | the name of the award recipient |
-| data.object.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| data.object.identifier | object |  1 properties |
 
 ### Payload Example(s) (generated)
 

@@ -1,2 +1,5 @@
+# @format
+
+$id: http://realestate.yodata.me/schema/name.yaml
+title: name
 type: string
-description: the name of the item

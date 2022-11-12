@@ -78,7 +78,12 @@
       "src/pages/**/*",
       "generator/**",
       "schemas/**"
-    ]
+    ],
+    "path-intellisense.extensionOnImport": true,
+    "search.exclude": {
+      "**/_transpiled": true,
+      "/www/*": true
+    }
   },
   "extensions": {
     "recommendations": [

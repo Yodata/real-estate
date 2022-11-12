@@ -5,78 +5,77 @@ title: Organization
 
 | Name | Type | Description |
 |---|---|---|
-| (root) | allOf | - |
-| 0 (allOf item) | object | - |
-| type | string | The item type (Linked-Data @type) pattern (`^[A-Z][a-zA-Z0-9]+$`) |
-| @id | string | the liked data uri for the Thing format (`uri`) |
-| 0 (property names) | - |  pattern (`^[a-z@$][a-zA-Z0-9-_]+$`) |
-| 1 (allOf item) | any | - |
-| 2 (allOf item) | any | - |
-| 3 (allOf item) | - | - |
-| 3.address | object | A physical address. |
-| 3.availableLanguage | array<object> | Please use one of the language codes from the IETF BCP 47 standard. |
-| 3.availableLanguage.type | string | const (`"Language"`)  |
-| 3.availableLanguage.name | string | the display name of the language |
-| 3.availableLanguage.additionalName | string | BCP 47 language code |
-| 3.branchCode | string | A short textual code that uniquely identifies a place of business. |
-| 3.certification | tuple<object, ...optional<any>> | certifications granted to a person or organization |
-| 3.certification.0 (index) | object | A certification issued by an organization to an individual or business. |
-| 3.certification.0.type | string | allowed (`"Certification"`) Certification |
-| 3.certification.0.name | string | the name of the Certification |
-| 3.certification.0.issuedBy | object | the issuing authority |
-| 3.certification.0.issuedBy.type | string | allowed (`"RealEstateOrganization"`) The item type (Linked-Data @type) |
-| 3.certification.0.issuedBy.id | string | Linked-Data URI (@id) format (`uri`) |
-| 3.certification.0.issuedBy.name | string | name of the issuing organization |
-| 3.certification.0.issuedTo | object | the subject |
-| 3.certification.0.issuedTo.type | string | allowed (`"RealEstateAgent"`) The item type (Linked-Data @type) |
-| 3.certification.0.issuedTo.id | string | Linked-Data URI (@id) format (`uri`) |
-| 3.certification.0.issuedTo.name | string | the name of the item |
-| 3.contactPoint | array<object> | a named point of contact - telephone, email, faxNumber, and/or url for the entity |
-| 3.contactPoint.type | string | const (`"ContactPoint"`)  |
-| 3.contactPoint.name | string | a label for the contactPoint, i.e. 'Work', or 'Home' |
-| 3.contactPoint.telephone | string | - |
-| 3.contactPoint.faxNumber | string | - |
-| 3.contactPoint.email | string | an email address for the item. format (`email`) |
-| 3.contactPoint.url | string | primary URL for the item. format (`uri`) |
-| 3.email | string |  format (`email`) |
-| 3.faxNumber | string | Do people still use fax machines? |
-| 3.image | tuple<object allOf, ...optional<any>> | an ImageObject or URI reference to an image on the web. |
-| 3.image.0 (index) | object allOf | - |
-| 3.image.0.0 (allOf item) | allOf | an image, video or document availble for download |
-| 3.image.0.0.0 (allOf item) | object | - |
-| 3.image.0.0.0.type | string | The item type (Linked-Data @type) pattern (`^[A-Z][a-zA-Z0-9]+$`) |
-| 3.image.0.0.0.@id | string | the liked data uri for the Thing format (`uri`) |
-| 3.image.0.0.0 (property names) | - |  pattern (`^[a-z@$][a-zA-Z0-9-_]+$`) |
-| 3.image.0.0.1 (allOf item) | - | - |
-| 3.image.0.0.1.type | string | allowed (`"MediaObject"`, `"ImageObject"`, `"DigitalDocument"`)  |
-| 3.image.0.0.1.id | string | the URL to access the item. format (`uri`) |
-| 3.image.0.0.1.name | string | the file name of the object. |
-| 3.image.0.0.1.encodingFormat | string | MIME type |
-| 3.image.0.0.1.about | string | URI to the subject of the image or logo format (`uri`) |
-| 3.image.0.0.1.url | string | URL of the image content format (`uri`) |
-| 3.image.0.1 (allOf item) | - | - |
-| 3.image.0.1.type | string | allowed (`"ImageObject"`)  |
-| 3.image.0.1.id | any | - |
-| 3.image.0.1.name | any | - |
-| 3.image.0.1.encodingFormat | any | - |
-| 3.logo | array<object allOf> | a logo associated with the organization. |
-| 3.logo (single item) | object allOf | - |
-| 3.logo.0 (allOf item) | object | an electronic file. |
-| 3.logo.0.type | string | allowed (`"DigitalDocument"`)  |
-| 3.logo.0.id | string | - |
-| 3.logo.0.name | string | document name or title |
-| 3.logo.0.encodingFormat | string | [ISO Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml) |
-| 3.logo.0.about | object | subject of the Document |
-| 3.logo.0.url | string | public URL of the object |
-| 3.logo.1 (allOf item) | object | an associated logo |
-| 3.name | string | Name or DBA. |
-| 3.parentOrganization | array<string> | - |
-| 3.parentOrganization (single item) | string |  format (`uri`) |
-| 3.subOrganization | array<string> | a child organization |
-| 3.subOrganization (single item) | string |  format (`uri`) |
-| 3.telephone | string | Primary phone number. |
-| 3.type | string | allowed (`"Organization"`)  |
-| 3.url | string | primary website/url for the entity. format (`uri`) |
+| (root) | object | - |
+| type | string | - |
+| address | object | A physical address. |
+| address.type | string | const (`"PostalAddress"`)  |
+| address.streetAddress | string | the street address <= 75 characters |
+| address.postOfficeBoxNumber | string | The post office box number for PO box addresses. |
+| address.addressRegion | string | abbreviated state or province |
+| address.addressLocality | string | City, Township. <= 50 characters |
+| address.postalCode | string | Zip/Post Code <= 12 characters |
+| address.addressCountry | string | allowed (`"CA"`, `"DE"`, `"GR"`, `"IN"`, `"IT"`, `"MX"`, `"PE"`, `"PT"`, `"ES"`, `"AE"`, `"GB"`, `"US"`) two-letter ISO 3166-1 alpha-2 country code |
+| address.addressCounty | string | County |
+| address.addressSubdivision | string | the subdivision or neighborhood (us real estate extension) |
+| availableLanguage | array<object> | Please use one of the language codes from the IETF BCP 47 standard. |
+| availableLanguage.type | string | const (`"Language"`)  |
+| availableLanguage.name | string | the display name of the language |
+| availableLanguage.additionalName | string | BCP 47 language code |
+| branchCode | string | A short textual code that uniquely identifies a place of business. |
+| certification | tuple<object, ...optional<any>> | certifications granted to a person or organization |
+| certification.0 (index) | object | A certification issued by an organization to an individual or business. |
+| certification.0.type | string | allowed (`"Certification"`) Certification |
+| certification.0.name | string | the name of the Certification |
+| certification.0.issuedBy | object | the issuing authority |
+| certification.0.issuedBy.type | string | allowed (`"RealEstateOrganization"`) The item type (Linked-Data @type) |
+| certification.0.issuedBy.id | string | Linked-Data URI (@id) format (`uri`) |
+| certification.0.issuedBy.name | string | name of the issuing organization |
+| certification.0.issuedTo | object | the subject |
+| certification.0.issuedTo.type | string | allowed (`"RealEstateAgent"`) The item type (Linked-Data @type) |
+| certification.0.issuedTo.id | string | Linked-Data URI (@id) format (`uri`) |
+| certification.0.issuedTo.name | string | - |
+| contactPoint | array<object> | a named point of contact - telephone, email, faxNumber, and/or url for the entity |
+| contactPoint.type | string | const (`"ContactPoint"`)  |
+| contactPoint.name | string | a label for the contactPoint, i.e. 'Work', or 'Home' |
+| contactPoint.telephone | string | - |
+| contactPoint.faxNumber | string | - |
+| contactPoint.email | string | an email address for the item. format (`email`) |
+| contactPoint.url | string | primary URL for the item. format (`uri`) |
+| email | string | a valid email address format (`email`) |
+| faxNumber | string | Do people still use fax machines? |
+| image | tuple<object allOf, ...optional<any>> | an ImageObject or URI reference to an image on the web. |
+| image.0 (index) | object allOf | - |
+| image.0.0 (allOf item) | allOf | an image, video or document availble for download |
+| image.0.0.0 (allOf item) | object | - |
+| image.0.0.0.type | string | The item type (Linked-Data @type) pattern (`^[A-Z][a-zA-Z0-9]+$`) |
+| image.0.0.0.@id | string | the liked data uri for the Thing format (`uri`) |
+| image.0.0.0 (property names) | - |  pattern (`^[a-z@$][a-zA-Z0-9-_]+$`) |
+| image.0.0.1 (allOf item) | - | - |
+| image.0.0.1.type | string | allowed (`"MediaObject"`, `"ImageObject"`, `"DigitalDocument"`)  |
+| image.0.0.1.id | string | the URL to access the item. format (`uri`) |
+| image.0.0.1.name | string | the file name of the object. |
+| image.0.0.1.encodingFormat | string | MIME type |
+| image.0.0.1.about | string | URI to the subject of the image or logo format (`uri`) |
+| image.0.0.1.url | string | URL of the image content format (`uri`) |
+| image.0.1 (allOf item) | - | - |
+| image.0.1.type | string | allowed (`"ImageObject"`)  |
+| image.0.1.id | any | - |
+| image.0.1.name | any | - |
+| image.0.1.encodingFormat | any | - |
+| logo | array<object> | - |
+| logo.type | string | allowed (`"DigitalDocument"`)  |
+| logo.id | string | - |
+| logo.name | string | document name or title |
+| logo.encodingFormat | string | [ISO Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml) |
+| logo.about | object | subject of the Document |
+| logo.url | string | public URL of the object |
+| name | string | - |
+| parentOrganization | array<string> | organizations of which this org is a part. |
+| parentOrganization (single item) | string |  format (`uri`) |
+| subOrganization | array<string> | child organizations of the organization |
+| subOrganization (single item) | string |  format (`uri`) |
+| telephone | string | Primary phone number. |
+| url | string | URL of the item. format (`uri`) |
 
 ## Example
 
@@ -84,19 +83,17 @@ title: Organization
 
 ```json
 {
-  "type": "Organization",
-  "@id": "http://example.com",
+  "type": "string",
   "address": {
     "type": "PostalAddress",
-    "name": "Home",
-    "addressCountry": "USA",
-    "addressCounty": "Gotham County",
-    "addressLocality": "Gotham City",
-    "addressRegion": "New Jersey",
-    "addressSubdivision": "Gotham Heights",
-    "postalCode": "10010",
+    "streetAddress": "1007 Mountain Gate Rd",
     "postOfficeBoxNumber": "Box 1234",
-    "streetAddress": "1007 Mountain Gate Rd"
+    "addressRegion": "NJ",
+    "addressLocality": "Gotham City",
+    "postalCode": "10010",
+    "addressCountry": "CA",
+    "addressCounty": "string",
+    "addressSubdivision": "Gotham Heights"
   },
   "availableLanguage": [
     {
@@ -165,7 +162,7 @@ title: Organization
     "http://example.com"
   ],
   "subOrganization": [
-    "http://org.example.com/profile/card#me"
+    "http://example.com"
   ],
   "telephone": "+15558675309",
   "url": "http://example.com"

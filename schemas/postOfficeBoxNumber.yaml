@@ -1,0 +1,8 @@
+# @format
+
+$id: http://realestate.yodata.me/schema/postOfficeBoxNumber
+title: postOfficeBoxNumber
+type: string
+description: The post office box number for PO box addresses.
+x-faker: address.secondaryAddress
+example: Box 1234

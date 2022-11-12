@@ -30,7 +30,7 @@ title: ListingOffer
 | recipient.0.certification.issuedTo | object | the subject |
 | recipient.0.certification.issuedTo.type | string | allowed (`"RealEstateAgent"`) The item type (Linked-Data @type) |
 | recipient.0.certification.issuedTo.id | string | Linked-Data URI (@id) format (`uri`) |
-| recipient.0.certification.issuedTo.name | string | the name of the item |
+| recipient.0.certification.issuedTo.name | string | - |
 | recipient.0.contactPoint | object | A point of contact for the entity. By convention in the real estate domain, ContactPoints are preferred over telephone, email, and faxNumber so the ContactPoint.name property can be used to label values for example, Work Telephone, Home, as named contactPoint values. >= 3 properties |
 | recipient.0.contactPoint.type | string | const (`"ContactPoint"`)  |
 | recipient.0.contactPoint.name | string | a label for the contactPoint, i.e. 'Work', or 'Home' |
@@ -38,11 +38,11 @@ title: ListingOffer
 | recipient.0.contactPoint.faxNumber | string | - |
 | recipient.0.contactPoint.email | string | an email address for the item. format (`email`) |
 | recipient.0.contactPoint.url | string | primary URL for the item. format (`uri`) |
-| recipient.0.email | string |  format (`email`) |
+| recipient.0.email | string | a valid email address format (`email`) |
 | recipient.0.familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) <= 50 characters |
 | recipient.0.givenName | string | First Name of a person |
 | recipient.0.id | string | Linked-Data URI (@id) format (`uri`) |
-| recipient.0.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| recipient.0.identifier | object |  1 properties |
 | recipient.0.image | tuple<object allOf, ...optional<any>> | an ImageObject or URI reference to an image on the web. |
 | recipient.0.image.0 (index) | object allOf | - |
 | recipient.0.image.0.0 (allOf item) | allOf | an image, video or document availble for download |
@@ -74,7 +74,7 @@ title: ListingOffer
 | recipient.0.memberOf.0.startDate | string | date the member began performing this role format (`date-time`) |
 | recipient.0.memberOf.0.endDate | string | date the member stopped performing the role format (`date-time`) |
 | recipient.0.memberOf.1 (anyOf item) | string |  format (`uri`) |
-| recipient.0.name | string | the name of the item |
+| recipient.0.name | string | - |
 | recipient.0.parentOrganization | array<string> | organizations of which this org is a part. |
 | recipient.0.parentOrganization (single item) | string |  format (`uri`) |
 | recipient.0.permit | object | A permit issued by an organization to an individual or business. |
@@ -94,13 +94,13 @@ title: ListingOffer
 | recipient.1.affiliation (single item) | string |  format (`uri`) |
 | recipient.1.address | array<object> | - |
 | recipient.1.address.type | string | const (`"PostalAddress"`)  |
-| recipient.1.address.streetAddress | string | the street number and name. |
+| recipient.1.address.streetAddress | string | the street address <= 75 characters |
 | recipient.1.address.postOfficeBoxNumber | string | The post office box number for PO box addresses. |
-| recipient.1.address.addressRegion | string | State or Province. |
-| recipient.1.address.addressLocality | string | City, Township. |
-| recipient.1.address.postalCode | string | Zip/Post Code |
-| recipient.1.address.addressCountry | string | The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code. |
-| recipient.1.address.addressCounty | string | the county (us real estate extension) |
+| recipient.1.address.addressRegion | string | abbreviated state or province |
+| recipient.1.address.addressLocality | string | City, Township. <= 50 characters |
+| recipient.1.address.postalCode | string | Zip/Post Code <= 12 characters |
+| recipient.1.address.addressCountry | string | allowed (`"CA"`, `"DE"`, `"GR"`, `"IN"`, `"IT"`, `"MX"`, `"PE"`, `"PT"`, `"ES"`, `"AE"`, `"GB"`, `"US"`) two-letter ISO 3166-1 alpha-2 country code |
+| recipient.1.address.addressCounty | string | County |
 | recipient.1.address.addressSubdivision | string | the subdivision or neighborhood (us real estate extension) |
 | recipient.1.birthDate | string | date of birth. format (`date`) |
 | recipient.1.contactPoint | array<object> | contact points for the person |
@@ -110,7 +110,7 @@ title: ListingOffer
 | recipient.1.contactPoint.faxNumber | string | - |
 | recipient.1.contactPoint.email | string | an email address for the item. format (`email`) |
 | recipient.1.contactPoint.url | string | primary URL for the item. format (`uri`) |
-| recipient.1.email | string |  format (`email`) |
+| recipient.1.email | string | a valid email address format (`email`) |
 | recipient.1.additionalName | string | any other name(s) associated with the entity, i.e. nickname, middle name, maiden name, etc. For multiple names, use a comma without space as a separator. |
 | recipient.1.familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) <= 50 characters |
 | recipient.1.faxNumber | string | Do people still use fax machines? |

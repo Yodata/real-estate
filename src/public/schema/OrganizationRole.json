@@ -1,4 +1,5 @@
 {
+  "$id": "http://realestate.yodata.me/schema/OrganizationRole.json",
   "title": "OrganizationRole",
   "type": "object",
   "description": "describes a role played by a member and a group or organization.",
@@ -40,6 +41,5 @@
       ]
     }
   },
-  "x-parser-schema-id": "OrganizationRole",
-  "$id": "http://realestate.yodata.me/schema/OrganizationRole.json"
+  "x-parser-schema-id": "OrganizationRole"
 }

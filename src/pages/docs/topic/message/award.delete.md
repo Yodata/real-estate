@@ -33,7 +33,7 @@ title: award#delete
 | data.agent.type | string | allowed (`"RealEstateAgent"`, `"RealEstateOffice"`, `"RealEstateOrganization"`)  |
 | data.agent.id | string |  format (`uri`) |
 | data.agent.name | string | the name of the award presenter |
-| data.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| data.identifier | object |  1 properties |
 
 ### Payload Example(s) (generated)
 

@@ -7,19 +7,19 @@ title: MarketingProgram
 |---|---|---|
 | (root) | object | A collection of pre-defined activities which take place over a period of time or in a regular, ongoing schedule. |
 | type | string | const (`"MarketingProgram"`)  |
-| name | string | the name of the item |
-| identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| name | string | - |
+| identifier | object |  1 properties |
 | member | array<object> | - |
 | member.type | string | const (`"ProgramMembership"`)  |
 | member.role | string | allowed (`"member"`, `"owner"`)  |
 | member.member | object | - |
 | member.member.type | string | const (`"Contact"`)  |
 | member.member.name | string | - |
-| member.member.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| member.member.identifier | object |  1 properties |
 | member.memberOf | object | - |
 | member.memberOf.type | string | const (`"MarketingProgram"`)  |
 | member.memberOf.name | string | - |
-| member.memberOf.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| member.memberOf.identifier | object |  1 properties |
 | creator | string | creator / author of the item format (`uri`) |
 | dateCreated | string | The date on which the item was created. format (`date-time`) |
 | dateModified | string | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. format (`date-time`) |
@@ -37,7 +37,7 @@ title: MarketingProgram
   "type": "MarketingProgram",
   "name": "Market Activity Report for 508 Homeward Avenue",
   "identifier": {
-    "salesforceid": "0031U00002XW1QWQA1"
+    "bhhsconsumerid": "12345"
   },
   "member": [
     {
@@ -47,14 +47,14 @@ title: MarketingProgram
         "type": "Contact",
         "name": "string",
         "identifier": {
-          "salesforceid": "0031U00002XW1QWQA1"
+          "bhhsconsumerid": "12345"
         }
       },
       "memberOf": {
         "type": "MarketingProgram",
         "name": "Market Activity Report 508 Homewood Ave",
         "identifier": {
-          "salesforceid": "0031U00002XW1QWQA1"
+          "bhhsconsumerid": "12345"
         }
       }
     }

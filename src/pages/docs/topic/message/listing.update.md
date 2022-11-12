@@ -33,7 +33,7 @@ title: listing#update
 | data.object.type | string | allowed (`"PropertyListing"`)  |
 | data.object.addressCountry | string | allowed (`"CA"`, `"DE"`, `"GR"`, `"IN"`, `"IT"`, `"MX"`, `"PE"`, `"PT"`, `"ES"`, `"AE"`, `"GB"`, `"US"`) two-letter ISO 3166-1 alpha-2 country code |
 | data.object.addressLocality | string | City, Township. <= 50 characters |
-| data.object.addressRegion | string | State or Province. <= 3 characters |
+| data.object.addressRegion | string | abbreviated state or province |
 | data.object.buyerAgent | object | the buyer's RealEstateAgent |
 | data.object.buyerOffice | object | the buyer's RealEstateOffice |
 | data.object.closeDate | string | With for-sale listings, the date the purchase agreement was fulfilled. With lease listings, the date the requirements were fulfilled, such as contract and/or deposit. format (`date-time`) |
@@ -92,9 +92,9 @@ title: listing#update
     "type": "UpdateAction",
     "object": {
       "type": "PropertyListing",
-      "addressCountry": "US",
-      "addressLocality": "string",
-      "addressRegion": "New Jersey",
+      "addressCountry": "CA",
+      "addressLocality": "Gotham City",
+      "addressRegion": "NJ",
       "buyerAgent": {
         "email": "butch.byers@example.com",
         "identifier": {

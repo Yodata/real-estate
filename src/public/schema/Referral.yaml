@@ -15,14 +15,14 @@ properties:
         enum:
           - 'Y'
           - 'N'
-        x-parser-schema-id: <anonymous-schema-256>
+        x-parser-schema-id: <anonymous-schema-238>
       inNetworkReferralYN:
         type: string
         description: Y if transaction was referred by an in network agent
         enum:
           - 'Y'
           - 'N'
-        x-parser-schema-id: <anonymous-schema-257>
+        x-parser-schema-id: <anonymous-schema-239>
   referredBy:
     type: object
     description: the referring entity
@@ -36,7 +36,7 @@ properties:
           - RealEstateOffice
           - Organization
           - Person
-        x-parser-schema-id: <anonymous-schema-259>
+        x-parser-schema-id: <anonymous-schema-241>
       id:
         type: string
         format: uri

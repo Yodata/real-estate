@@ -1,68 +1,35 @@
-allOf:
-  - $ref: Thing.yaml
-  - x-kind: Organization
-  - x-hasSubclass:
-      - RealEstateOrganization
-      - RealEstateOffice
-      - RealEstateAgent
-  - x-subClassOf:
-      - 'https://schema.org/Organization'
-    properties:
-      address:
-        $ref: address.yaml
-      availableLanguage:
-        $ref: availableLanguage.yaml
-      branchCode:
-        description: 'A short textual code that uniquely identifies a place of business.'
-        example: for BHHS profile events, see additionalProperty.OfficeId
-        type: string
-      certification:
-        $ref: certification-prop.yaml
-      contactPoint:
-        $ref: contact-point.yaml
-      email:
-        $ref: email.yaml
-      faxNumber:
-        $ref: faxNumber.yaml
-      image:
-        $ref: image.yaml
-        description: an ImageObject or URI reference to an image of the entity on the web.
-      logo:
-        description: a logo associated with the organization.
-        items:
-          allOf:
-            - $ref: DigitalDocument.yaml
-            - description: an associated logo
-              type: object
-          type: object
-        type: array
-        x-range:
-          - ImageObject
-          - DigitalDocument
-      name:
-        description: Name or DBA.
-        type: string
-      parentOrganization:
-        items:
-          format: uri
-          type: string
-        type: array
-      subOrganization:
-        description: a child organization
-        x-range:
-          - RealEstateOrganization
-        type: array
-        items:
-          type: string
-          format: uri
-          example: http://org.example.com/profile/card#me
-      telephone:
-        $ref: telephone.yaml
-      type:
-        enum:
-          - Organization
-        type: string
-      url:
-        description: primary website/url for the entity.
-        format: uri
-        type: string
+# @format
+
+type: object
+properties:
+  type: { type: string }
+  address:
+    $ref: PostalAddress.yaml
+  availableLanguage:
+    $ref: availableLanguage.yaml
+  branchCode:
+    description: 'A short textual code that uniquely identifies a place of business.'
+    example: for BHHS profile events, see additionalProperty.OfficeId
+    type: string
+  certification:
+    $ref: certification-prop.yaml
+  contactPoint:
+    $ref: contact-point.yaml
+  email:
+    $ref: email.yaml
+  faxNumber:
+    $ref: faxNumber.yaml
+  image:
+    $ref: image.yaml
+  logo:
+    $ref: logo.yaml
+  name:
+    $ref: name.yaml
+  parentOrganization:
+    $ref: parentOrganization.yaml
+  subOrganization:
+    $ref: subOrganization.yaml
+  telephone:
+    $ref: telephone.yaml
+  url:
+    $ref: url.yaml

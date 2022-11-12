@@ -31,8 +31,8 @@ title: award#teamupdate
 | data.type | string | const (`"UpdateAction"`)  |
 | data.object | object | a Collection |
 | data.object.type | string | const (`"AwardTeam"`)  |
-| data.object.name | string | the name of the item |
-| data.object.identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| data.object.name | string | - |
+| data.object.identifier | object |  1 properties |
 | data.object.member | array<string> | members of the AwardTeam |
 | data.object.member (single item) | string |  format (`uri`) |
 

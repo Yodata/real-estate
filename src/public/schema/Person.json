@@ -29,45 +29,46 @@
           "type": {
             "type": "string",
             "const": "PostalAddress",
-            "x-parser-schema-id": "<anonymous-schema-100>"
+            "x-parser-schema-id": "<anonymous-schema-94>"
           },
           "streetAddress": {
+            "$id": "streetAddress.yaml",
+            "title": "streetAddress",
             "type": "string",
-            "description": "the street number and name.",
+            "description": "the street address",
+            "example": "1007 Mountain Gate Rd",
+            "maxLength": 75,
             "x-faker": "address.streetAddress",
-            "examples": [
-              "5046 Ottis Point",
-              "166 Marion Burg",
-              "93044 Haley Stream"
-            ],
-            "x-parser-schema-id": "<anonymous-schema-101>"
+            "x-parser-schema-id": "streetAddress"
           },
           "postOfficeBoxNumber": {
+            "$id": "http://realestate.yodata.me/schema/postOfficeBoxNumber",
+            "title": "postOfficeBoxNumber",
             "type": "string",
             "description": "The post office box number for PO box addresses.",
             "x-faker": "address.secondaryAddress",
-            "examples": [
-              "Box 1234",
-              "Apt. 161",
-              "Apt. 623"
-            ],
-            "x-parser-schema-id": "<anonymous-schema-102>"
+            "example": "Box 1234"
           },
           "addressRegion": {
+            "$id": "addressRegion",
+            "title": "addressRegion",
             "type": "string",
-            "description": "State or Province.",
-            "x-faker": "address.state",
+            "description": "abbreviated state or province",
+            "max-length": 2,
             "examples": [
-              "New Jersey",
-              "California",
+              "NJ",
+              "CA",
               "MI",
               null
             ],
-            "x-parser-schema-id": "<anonymous-schema-103>"
+            "x-faker": "address.stateAbbr",
+            "x-parser-schema-id": "addressRegion"
           },
           "addressLocality": {
+            "$id": "addressLocality",
             "type": "string",
             "description": "City, Township.",
+            "maxLength": 50,
             "x-faker": "address.city",
             "examples": [
               "Gotham City",
@@ -75,60 +76,65 @@
               "Heidistad",
               "Altamonte Springs",
               "West Ahmed",
-              "Blaiseview"
+              "Blaiseview",
+              null
             ],
-            "x-parser-schema-id": "<anonymous-schema-104>"
+            "x-parser-schema-id": "addressLocality"
           },
           "postalCode": {
+            "$id": "http://realestate.yodata.me/schema/postalCode",
+            "title": "postalCode",
             "type": "string",
             "description": "Zip/Post Code",
-            "x-faker": "address.zipCode",
+            "maxLength": 12,
             "examples": [
               "10010",
-              "38859",
-              "40387",
               "50239-7698",
               null
             ],
-            "x-parser-schema-id": "<anonymous-schema-105>"
+            "x-parser-schema-id": "postalCode"
           },
           "addressCountry": {
+            "$id": "http://realestate.yodata.me/schema/addressCountry",
+            "title": "addressCountry",
+            "description": "two-letter ISO 3166-1 alpha-2 country code",
             "type": "string",
-            "description": "The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.",
-            "examples": [
-              "USA",
-              "TH",
-              "NZ",
-              "EG",
-              "SJ",
-              "VN"
+            "enum": [
+              "CA",
+              "DE",
+              "GR",
+              "IN",
+              "IT",
+              "MX",
+              "PE",
+              "PT",
+              "ES",
+              "AE",
+              "GB",
+              "US"
             ],
-            "x-faker": "address.countryCode",
-            "x-parser-schema-id": "<anonymous-schema-106>"
+            "x-parser-schema-id": "addressCountry"
           },
           "addressCounty": {
+            "$id": "http://realestate.yodata.me/schema/addressCounty",
+            "title": "addressCounty",
+            "description": "County",
             "type": "string",
-            "description": "the county (us real estate extension)",
-            "faker": "address.county",
-            "examples": [
-              "Gotham County",
-              "Buckinghamshire",
-              "Borders",
-              null
-            ],
-            "x-parser-schema-id": "<anonymous-schema-107>"
+            "x-faker": "address.county",
+            "x-parser-schema-id": "addressCounty"
           },
           "addressSubdivision": {
-            "type": "string",
+            "$id": "http://realestate.yodata.me/schema/addressSubdivision",
+            "title": "addressSubdivision",
             "description": "the subdivision or neighborhood (us real estate extension)",
+            "type": "string",
             "x-faker": "address.streetName",
             "examples": [
               "Gotham Heights",
               "South Kensington",
               "SOMA (South of Market)",
               "Nob Hill"
-            ],
-            "x-parser-schema-id": "<anonymous-schema-108>"
+            ]
           }
         },
         "x-parser-schema-id": "PostalAddress"
@@ -141,7 +147,7 @@
         "type": "string",
         "format": "uri",
         "example": "https://example.com/profile/card#me",
-        "x-parser-schema-id": "<anonymous-schema-98>"
+        "x-parser-schema-id": "<anonymous-schema-92>"
       }
     },
     "birthDate": {
@@ -219,6 +225,8 @@
       }
     },
     "email": {
+      "title": "email",
+      "description": "a valid email address",
       "type": "string",
       "format": "email",
       "x-faker": "internet.email"
@@ -308,7 +316,7 @@
       "type": "array",
       "items": {
         "type": "string",
-        "x-parser-schema-id": "<anonymous-schema-123>"
+        "x-parser-schema-id": "<anonymous-schema-109>"
       },
       "example": [
         "Chief Data Officer",
@@ -423,6 +431,8 @@
       "x-faker": "name.findName"
     },
     "telephone": {
+      "$id": "telephone",
+      "title": "telephone",
       "type": "string",
       "description": "Primary phone number.",
       "example": "+15558675309"

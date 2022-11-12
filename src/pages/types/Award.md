@@ -14,7 +14,7 @@ title: Award
 | recipient.type | string | allowed (`"RealEstateAgent"`, `"RealEstateOffice"`, `"RealEstateOrganization"`)  |
 | recipient.id | string |  format (`uri`) |
 | recipient.name | string | the name of the award recipient |
-| identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| identifier | object |  1 properties |
 
 ## Example
 

@@ -20,13 +20,13 @@ properties:
           - RealEstateOffice
           - RealEstateTeam
           - RealEstateOrganization
-        x-parser-schema-id: <anonymous-schema-644>
+        x-parser-schema-id: <anonymous-schema-634>
       id:
         type: string
         format: uri
         description: the profile URI of the author
         example: https://agent123.example.com/profile/card#me
-        x-parser-schema-id: <anonymous-schema-645>
+        x-parser-schema-id: <anonymous-schema-635>
   dateCreated:
     description: >-
       The date on which the BlogPosting was created or the item was added to a
@@ -48,13 +48,14 @@ properties:
       aempostid: xxxx
     title: identifier
     type: object
-    description: >-
+    summary: >-
       identifier assigned to a contact by the vendor who originally created the
       contact
+    maxProperties: 1
+    minProperties: 1
     examples:
-      - salesforceid: 0031U00002XW1QWQA1
-      - vendoraid: '123456'
-      - originating_system_id: '123456'
+      - bhhsconsumerid: '12345'
+      - salesforceid: '56789'
   image:
     description: >-
       by convention the first image item is the article hero image.  note: image
@@ -80,13 +81,13 @@ properties:
                   - type
                 propertyNames:
                   pattern: ^[a-z@$][a-zA-Z0-9-_]+$
-                  x-parser-schema-id: <anonymous-schema-237>
+                  x-parser-schema-id: <anonymous-schema-221>
                 properties:
                   type:
                     type: string
                     pattern: ^[A-Z][a-zA-Z0-9]+$
                     description: The item type (Linked-Data @type)
-                    x-parser-schema-id: <anonymous-schema-235>
+                    x-parser-schema-id: <anonymous-schema-219>
                   '@id':
                     type: string
                     format: uri
@@ -122,7 +123,7 @@ properties:
                     format: uri
                     description: URL of the image content
                     example: http://user.example.com/public/profile/image.jpg
-                x-parser-schema-id: <anonymous-schema-238>
+                x-parser-schema-id: <anonymous-schema-222>
             x-parser-schema-id: MediaObject
           - title: ImageObject
             x-range: ImageObject
@@ -137,8 +138,8 @@ properties:
                 example: image.jpg
               encodingFormat:
                 example: image/jpeg
-            x-parser-schema-id: <anonymous-schema-239>
-        x-parser-schema-id: <anonymous-schema-234>
+            x-parser-schema-id: <anonymous-schema-223>
+        x-parser-schema-id: <anonymous-schema-218>
   provider:
     description: >-
       if the article is provided as a template or stock content to be shared by
@@ -152,13 +153,13 @@ properties:
           - RealEstateTeam
           - RealEstateOffice
           - RealEstateAgent
-        x-parser-schema-id: <anonymous-schema-647>
+        x-parser-schema-id: <anonymous-schema-637>
       id:
         type: string
         format: uri
         description: the profile URI of the provider
         example: https://example.com/profile/card#me
-        x-parser-schema-id: <anonymous-schema-648>
+        x-parser-schema-id: <anonymous-schema-638>
   type:
     enum:
       - BlogPosting

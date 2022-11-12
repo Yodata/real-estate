@@ -13,7 +13,7 @@ title: AwardSeries
 | startDate | string | the start date-time (ISO 8601 formated) format (`date-time`) |
 | endDate | string | the end date-time (ISO 8601 formated) format (`date-time`) |
 | id | string |  format (`uri`) |
-| identifier | object | identifier assigned to a contact by the vendor who originally created the contact |
+| identifier | object |  1 properties |
 
 ## Example
 

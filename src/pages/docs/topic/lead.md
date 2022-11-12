@@ -1,7 +1,7 @@
 ---
 title: lead
 ---
-## ## Operations
+## Operations
 
 
 

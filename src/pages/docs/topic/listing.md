@@ -1,7 +1,7 @@
 ---
 title: listing
 ---
-## ## Operations
+## Operations
 
 
 

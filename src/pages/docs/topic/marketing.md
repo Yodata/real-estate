@@ -1,7 +1,7 @@
 ---
 title: marketing
 ---
-## ## Operations
+## Operations
 
 
 

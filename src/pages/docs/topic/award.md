@@ -1,35 +1,21 @@
 ---
 title: award
 ---
-## Operations
+## award operations
 
-
-
-### PUB `award` Operation
+### publish award events
 
 * [award#publish](message/award.publish)
 
-
-### SUB `award` Operation
-
-Subscribers receive one of the following messages per event.
+### subscribe award events
 
 * [award#delete](message/award.delete)
-
 * [award#seriescreate](message/award.seriescreate)
-
 * [award#seriesdelete](message/award.seriesdelete)
-
 * [award#seriesupdate](message/award.seriesupdate)
-
 * [award#teamcreate](message/award.teamcreate)
-
 * [award#teammemberadd](message/award.teammemberadd)
-
 * [award#teammemberremove](message/award.teammemberremove)
-
 * [award#teamupdate](message/award.teamupdate)
-
 * [award#update](message/award.update)
-
 

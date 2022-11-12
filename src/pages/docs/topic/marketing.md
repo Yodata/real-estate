@@ -1,22 +1,14 @@
 ---
 title: marketing
 ---
-## Operations
+## marketing operations
 
-
-
-### SUB `marketing` Operation
+### subscribe marketing events
 
 automated marketing program events
 
-Subscribers receive one of the following messages per event.
-
 * [marketing#programcreate](message/marketing.programcreate)
-
 * [marketing#programdelete](message/marketing.programdelete)
-
 * [marketing#programmemberadd](message/marketing.programmemberadd)
-
 * [marketing#programmemberremove](message/marketing.programmemberremove)
-
 

@@ -1,11 +1,9 @@
 ---
 title: listing
 ---
-## Operations
+## listing operations
 
-
-
-### SUB `listing` Operation
+### subscribe listing events
 
 A message is published to this topic when a listing is created, updated, or deleted.
 The message payload is a JSON-LD object with the following properties:
@@ -13,10 +11,6 @@ The message payload is a JSON-LD object with the following properties:
 - `object` - the listing, as a JSON-LD object
 
 
-Subscribers receive one of the following messages per event.
-
 * [listing#update](message/listing.update)
-
 * [listing#delete](message/listing.delete)
-
 

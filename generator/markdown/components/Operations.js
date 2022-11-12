@@ -47,10 +47,7 @@ export function Operations ({ asyncapi }) {
 
   return (
     <>
-      <Header type={2}>
-        Operations
-      </Header>
-      <Text newLines={1}/>
+      <Header type={2}>{channelName} operations</Header>
       {operationsList}
     </>
   )
@@ -67,15 +64,12 @@ export function Operation ({ type, asyncapi, operation, channelName, channel }) 
   const servers = typeof channel.servers === 'function' && channel.servers()
   // check typeof as fallback for older version than `2.4.0`
   const security = typeof operation.security === 'function' && operation.security()
-  const renderedType = type === 'publish' ? 'PUB' : 'SUB'
+  const renderedType = type === 'publish' ? 'publish' : 'subscribe'
   const showInfoList = operationId || (servers && servers.length)
 
   return (
     <Text>
-      <Header type={3}>
-        {`${renderedType} \`${channelName}\` Operation`}
-      </Header>
-
+      <Header type={3}>{renderedType} {channelName} events</Header>
       {operation.summary() && (
         <Text newLines={2}>
           *{operation.summary()}*
@@ -153,7 +147,7 @@ function OperationParameters ({ channel }) {
 
   return (
     <Text>
-      <Header type={4}>Parameters</Header>
+      <Header type={3}>Parameters</Header>
       <Schema schema={parameters} hideTitle />
     </Text>
   )
@@ -168,17 +162,10 @@ function OperationMessages ({ operation }) {
 
   return (
     <>
-      {messages.length > 1 && (
-        <Text newLines={2}>
-          Subscribers receive one of the following messages per event.
-        </Text>
-      )}
       {messages.map(msg => (
-        <Text key={msg.uid()}>
-          <ListItem>
-            <Link href={`message/${msg.uid().replace('#','.')}`}>{msg.uid()}</Link>
-          </ListItem>
-        </Text>
+        <ListItem key={msg.uid()}>
+          <Link href={`message/${msg.uid().replace('#','.')}`}>{msg.uid()}</Link>
+        </ListItem>
       ))}
     </>
   )

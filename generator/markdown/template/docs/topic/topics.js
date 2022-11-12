@@ -1,5 +1,5 @@
 import { React } from 'react'
-import { File, Text } from '@asyncapi/generator-react-sdk'
+import { File } from '@asyncapi/generator-react-sdk'
 import { FrontMatter } from '../../../components/FrontMatter'
 import { Operation } from '../../../components/Operations'
 import { Header } from '../../../components/common'
@@ -33,8 +33,7 @@ export function ChannelOperations (props) {
   }
   return (
     <>
-      <Header type={2}>Operations</Header>
-      <Text newLines={2} />
+      <Header type={2}>{channelName} operations</Header>
       {operationsList}
     </>
   )
@@ -57,7 +56,6 @@ export default function Channels ({ asyncapi }) {
         <FrontMatter
           params={{ title: channelName }}
         />
-
         <ChannelOperations
           asyncapi={asyncapi}
           channelName={channelName}

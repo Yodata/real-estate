@@ -1,18 +1,11 @@
 ---
 title: servicearea
 ---
-## Operations
+## servicearea operations
 
-
-
-### SUB `servicearea` Operation
-
-Subscribers receive one of the following messages per event.
+### subscribe servicearea events
 
 * [servicearea#create](message/servicearea.create)
-
 * [servicearea#update](message/servicearea.update)
-
 * [servicearea#delete](message/servicearea.delete)
-
 

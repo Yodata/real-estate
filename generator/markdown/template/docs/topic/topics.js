@@ -33,7 +33,7 @@ export function ChannelOperations (props) {
   }
   return (
     <>
-      <Header type={2}>## Operations</Header>
+      <Header type={2}>Operations</Header>
       <Text newLines={2} />
       {operationsList}
     </>

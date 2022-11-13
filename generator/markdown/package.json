@@ -16,7 +16,8 @@
     "react-dom": "17"
   },
   "scripts": {
-    "test": "rimraf ./__generated__ && npx ag ../../src/schemas/asyncapi.yaml ./ -o ./__generated__ --force-write"
+    "pretest": "rimraf generated",
+    "test": " npx @asyncapi/cli generate fromTemplate ../../schemas/asyncapi.yaml ./ -o ../generator/markdown/generated --force-write"
   },
   "devDependencies": {
     "eslint": "^8.26.0",

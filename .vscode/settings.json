@@ -68,5 +68,8 @@
     "http://asyncapi.com/definitions/2.5.0/schema.json": [],
     "https://www.asyncapi.com/definitions/2.4.0/asyncapi.json": "file:///Users/dave/git/yodata/real-estate/schemas/asyncapi.yaml"
   },
-  "zenMode.hideLineNumbers": false
+  "zenMode.hideLineNumbers": false,
+  "cSpell.words": [
+    "Markdoc"
+  ]
 }

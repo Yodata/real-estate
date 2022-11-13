@@ -1,10 +1,13 @@
+# @format
+
+$id: /schema/CloudEvent.json
 title: CloudEvent
 type: object
 required:
-- topic
-- agent
-- instrument
-- time
+  - topic
+  - agent
+  - instrument
+  - time
 properties:
   topic:
     type: string
@@ -43,14 +46,13 @@ properties:
     type: string
     format: uri
     description: the shared identifier of the event, akd the event id
-    example:  https://instrumentid.example.com/publish/xxxxxxxxxxxxx
+    example: https://instrumentid.example.com/publish/xxxxxxxxxxxxx
 
   '@id':
     type: string
     format: uri
     description: the url of your instance of the event in your inbox
-    example:  https://yourpod.example.com/inbox/xxxxxxxxxxxxx
-
+    example: https://yourpod.example.com/inbox/xxxxxxxxxxxxx
 
   data:
     type: object

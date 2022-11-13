@@ -16,6 +16,7 @@ title: ImageObject
   "url": "http://user.example.com/public/profile/image.jpg"
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

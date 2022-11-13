@@ -15,6 +15,7 @@ title: ContactPoint
   "url": "https://www.facebook.com/hallandoates"
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

@@ -35,6 +35,7 @@ title: Lead
   ]
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

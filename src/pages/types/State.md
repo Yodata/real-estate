@@ -11,6 +11,7 @@ title: State
   "name": "New Jersey"
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

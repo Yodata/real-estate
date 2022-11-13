@@ -5,8 +5,6 @@ title: award#teammemberremove
 
 *an award team member was removed*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -29,6 +27,9 @@ title: award#teammemberremove
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

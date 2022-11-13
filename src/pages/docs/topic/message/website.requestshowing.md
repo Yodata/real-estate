@@ -5,8 +5,6 @@ title: website#requestshowing
 
 *a website visitor has requested a property showing*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -100,6 +98,9 @@ title: website#requestshowing
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

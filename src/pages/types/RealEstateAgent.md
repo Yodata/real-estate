@@ -102,6 +102,7 @@ title: RealEstateAgent
   "url": "http://example.com"
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

@@ -3,7 +3,9 @@ title: Comment
 ---
 ## Example
 
-```javascript
+
+
+```json
 {
   "type": "Comment",
   "dateCreated": "2019-08-24T14:15:22Z",
@@ -29,6 +31,7 @@ title: Comment
   }
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |
@@ -42,3 +45,4 @@ title: Comment
 | author | object | the author of something |
 | about | object | The subject of the content |
 | identifier | object |  1 properties |
+

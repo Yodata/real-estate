@@ -5,8 +5,6 @@ title: lead#asssign
 
 *a lead was assigned*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -48,6 +46,9 @@ title: lead#asssign
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

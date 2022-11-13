@@ -5,8 +5,6 @@ title: profile#teammemberadd
 
 *a team member was added*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -26,6 +24,9 @@ title: profile#teammemberadd
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

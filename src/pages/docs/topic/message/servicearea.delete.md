@@ -5,8 +5,6 @@ title: servicearea#delete
 
 *ServiceArea (data.object) has been deleted.  Identifier is required.*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -54,6 +52,9 @@ title: servicearea#delete
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

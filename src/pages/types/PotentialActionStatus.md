@@ -8,6 +8,7 @@ title: PotentialActionStatus
 ```json
 "PotentialActionStatus"
 ```
+
 ## Schema
 
 | Name | Type | Description |

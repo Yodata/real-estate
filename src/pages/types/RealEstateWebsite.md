@@ -15,6 +15,7 @@ title: RealEstateWebsite
   "url": "http://example.com"
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

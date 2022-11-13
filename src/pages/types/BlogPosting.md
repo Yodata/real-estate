@@ -38,6 +38,7 @@ title: BlogPosting
   "urlTemplate": "https://example.com/{author/name}/blog/post?{slug}"
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

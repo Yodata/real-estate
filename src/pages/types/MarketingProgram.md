@@ -67,6 +67,7 @@ title: MarketingProgram
   }
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

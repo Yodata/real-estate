@@ -79,6 +79,7 @@ title: PropertySearch
   }
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

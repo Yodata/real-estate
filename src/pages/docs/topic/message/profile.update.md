@@ -5,8 +5,6 @@ title: profile#update
 
 *an agent, office or organization profile was updated*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -113,6 +111,9 @@ title: profile#update
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

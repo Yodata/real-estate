@@ -23,6 +23,7 @@ title: Award
   }
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

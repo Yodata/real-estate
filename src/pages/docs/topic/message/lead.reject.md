@@ -5,8 +5,6 @@ title: lead#reject
 
 *a crm lead was rejected*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -49,6 +47,9 @@ title: lead#reject
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

@@ -27,6 +27,7 @@ title: SubscribeAction
   ]
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

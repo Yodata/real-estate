@@ -18,6 +18,7 @@ title: CloudEvent
   "data": {}
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

@@ -17,6 +17,7 @@ title: MultipleListingService
   }
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

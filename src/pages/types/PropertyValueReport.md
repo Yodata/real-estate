@@ -119,6 +119,7 @@ title: PropertyValueReport
   }
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

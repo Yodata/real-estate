@@ -5,8 +5,6 @@ title: award#teamupdate
 
 *an award team was updated*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -28,6 +26,9 @@ title: award#teamupdate
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

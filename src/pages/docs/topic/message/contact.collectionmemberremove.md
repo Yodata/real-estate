@@ -5,8 +5,6 @@ title: contact#collectionmemberremove
 
 *a contact was removed from collection*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -39,6 +37,9 @@ title: contact#collectionmemberremove
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

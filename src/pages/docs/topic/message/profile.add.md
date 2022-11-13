@@ -5,8 +5,6 @@ title: profile#add
 
 *an agent, office or organization profile was added*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -113,6 +111,9 @@ title: profile#add
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

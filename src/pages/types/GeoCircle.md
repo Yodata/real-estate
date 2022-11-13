@@ -21,6 +21,7 @@ title: GeoCircle
   }
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

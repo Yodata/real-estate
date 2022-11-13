@@ -58,6 +58,7 @@ title: Person
   "worksFor": "string"
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

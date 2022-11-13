@@ -25,6 +25,7 @@ title: ProgramMembership
   }
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

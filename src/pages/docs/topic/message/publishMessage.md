@@ -3,8 +3,6 @@ title: publishMessage
 ---
 ## Message
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -16,6 +14,9 @@ title: publishMessage
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

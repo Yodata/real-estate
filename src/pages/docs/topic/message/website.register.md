@@ -5,8 +5,6 @@ title: website#register
 
 *website user has registered on the website*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -48,6 +46,9 @@ title: website#register
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

@@ -5,8 +5,6 @@ title: contact#comment
 
 *a comment (data.object) is added by a user (data.agent) to a contact (data.target)*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -56,6 +54,9 @@ title: contact#comment
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

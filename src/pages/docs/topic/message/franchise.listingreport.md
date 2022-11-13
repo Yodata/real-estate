@@ -5,8 +5,6 @@ title: franchise#listingreport
 
 *franchise listing report*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -26,6 +24,9 @@ title: franchise#listingreport
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

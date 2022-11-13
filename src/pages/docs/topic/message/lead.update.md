@@ -5,8 +5,6 @@ title: lead#update
 
 *a crm lead was updated*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -47,6 +45,9 @@ title: lead#update
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

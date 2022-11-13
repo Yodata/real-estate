@@ -5,8 +5,6 @@ title: website#askquestion
 
 *website user asks a question*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -56,6 +54,9 @@ title: website#askquestion
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

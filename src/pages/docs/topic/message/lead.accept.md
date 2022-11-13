@@ -5,8 +5,6 @@ title: lead#accept
 
 *a lead (data.object) was accepted by the recipient (data.recipient).*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -43,6 +41,9 @@ title: lead#accept
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

@@ -5,8 +5,6 @@ title: contact#delete
 
 *a contact (data.object) is deleted by a user (data.agent)*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -32,6 +30,9 @@ title: contact#delete
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

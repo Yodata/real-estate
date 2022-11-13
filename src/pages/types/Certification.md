@@ -21,6 +21,7 @@ title: Certification
   }
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

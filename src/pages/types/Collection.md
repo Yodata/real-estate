@@ -20,6 +20,7 @@ title: Collection
   ]
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

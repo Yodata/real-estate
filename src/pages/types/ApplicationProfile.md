@@ -36,6 +36,7 @@ title: ApplicationProfile
   ]
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

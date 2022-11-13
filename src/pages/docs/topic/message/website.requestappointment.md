@@ -5,8 +5,6 @@ title: website#requestappointment
 
 *website user has requested an appointment*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -53,6 +51,9 @@ title: website#requestappointment
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

@@ -8,6 +8,7 @@ title: addressRegion
 ```json
 "NJ"
 ```
+
 ## Schema
 
 | Name | Type | Description |

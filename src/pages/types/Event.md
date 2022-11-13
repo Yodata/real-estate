@@ -35,6 +35,7 @@ title: Event
   }
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

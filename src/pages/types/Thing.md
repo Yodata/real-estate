@@ -11,6 +11,7 @@ title: Thing
   "@id": "http://example.com"
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

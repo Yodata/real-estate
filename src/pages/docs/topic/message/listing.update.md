@@ -5,8 +5,6 @@ title: listing#update
 
 *a PropertyListing is created or updated*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -107,6 +105,9 @@ title: listing#update
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

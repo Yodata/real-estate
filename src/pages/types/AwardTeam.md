@@ -17,6 +17,7 @@ title: AwardTeam
   ]
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

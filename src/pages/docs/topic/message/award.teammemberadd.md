@@ -5,8 +5,6 @@ title: award#teammemberadd
 
 *a new team member (data.object) was added to an award team (data.targetCollection)*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -29,6 +27,9 @@ title: award#teammemberadd
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

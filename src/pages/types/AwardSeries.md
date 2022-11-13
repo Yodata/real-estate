@@ -19,6 +19,7 @@ title: AwardSeries
   }
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

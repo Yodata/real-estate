@@ -83,6 +83,7 @@ title: BHHSTerms
   }
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

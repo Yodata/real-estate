@@ -5,8 +5,6 @@ title: listing#delete
 
 *a PropertyListing is deleted*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -22,6 +20,9 @@ title: listing#delete
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

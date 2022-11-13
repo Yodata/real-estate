@@ -22,6 +22,7 @@ title: GeoShape
   "box": "(33.5697,-117.775),(33.6018,-117.707)"
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

@@ -39,15 +39,15 @@ export function Message ({ message }) { // NOSONAR
       )}
       {payload && (
         <>
+          <Example type='payload' message={message} />
           <Header type={3}>Payload</Header>
-          <Example type='payload' message={message}/>
           <Schema schema={payload} hideTitle />
         </>
       )}
       {headers && (
         <>
-          <Header type={3}>Headers</Header>
           <Examples type='headers' message={message} />
+          <Header type={3}>Headers</Header>
           <Schema schema={headers} hideTitle />
         </>
       )}

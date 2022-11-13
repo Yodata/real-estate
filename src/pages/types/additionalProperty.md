@@ -11,6 +11,7 @@ title: additionalProperty
   "doNotSell": true
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

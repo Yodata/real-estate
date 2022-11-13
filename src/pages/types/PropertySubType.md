@@ -10,6 +10,7 @@ title: PropertySubType
   "propertySubType": "ApartmentPropertyType"
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

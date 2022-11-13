@@ -11,6 +11,7 @@ title: sameAs
   "salesForceId": "parsing"
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

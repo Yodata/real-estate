@@ -10,6 +10,7 @@ title: PropertyType
   "propertyType": "RESI"
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

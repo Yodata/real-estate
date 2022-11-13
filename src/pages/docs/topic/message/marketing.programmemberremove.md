@@ -5,8 +5,6 @@ title: marketing#programmemberremove
 
 *the agent removed a program member (deleted the membership)*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -38,6 +36,9 @@ title: marketing#programmemberremove
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

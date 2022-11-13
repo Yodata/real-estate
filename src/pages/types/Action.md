@@ -11,6 +11,7 @@ title: Action
   "object": null
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

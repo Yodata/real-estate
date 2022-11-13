@@ -8,6 +8,7 @@ title: type
 ```json
 "string"
 ```
+
 ## Schema
 
 | Name | Type | Description |

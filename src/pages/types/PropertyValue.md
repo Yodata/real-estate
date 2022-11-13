@@ -12,6 +12,7 @@ title: PropertyValue
   "value": "@bobjones"
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

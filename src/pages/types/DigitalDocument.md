@@ -20,6 +20,7 @@ title: DigitalDocument
   "url": "https://example.com"
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

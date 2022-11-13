@@ -8,6 +8,7 @@ title: instrument
 ```json
 "https://{app}.example.com/profile/card#me"
 ```
+
 ## Schema
 
 | Name | Type | Description |

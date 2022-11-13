@@ -5,8 +5,6 @@ title: contact#update
 
 *a contact (data.object) is updated by a user (data.agent)*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -128,6 +126,9 @@ title: contact#update
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

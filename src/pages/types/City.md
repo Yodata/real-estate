@@ -16,6 +16,7 @@ title: City
   "addressCounty": "Gotham County"
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

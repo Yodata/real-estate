@@ -15,6 +15,7 @@ title: QuantitativeValue
   "unitText": "acres"
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

@@ -20,6 +20,7 @@ title: TransactionParticipant
   ]
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

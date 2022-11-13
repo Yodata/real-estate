@@ -5,8 +5,6 @@ title: website#listingoffer
 
 *website user makes a listing offer*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -61,6 +59,9 @@ title: website#listingoffer
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

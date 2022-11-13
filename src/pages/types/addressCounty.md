@@ -8,6 +8,7 @@ title: addressCounty
 ```json
 "string"
 ```
+
 ## Schema
 
 | Name | Type | Description |

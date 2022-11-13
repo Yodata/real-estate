@@ -8,6 +8,7 @@ title: postalCode
 ```json
 "10010"
 ```
+
 ## Schema
 
 | Name | Type | Description |

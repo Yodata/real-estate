@@ -5,8 +5,6 @@ title: marketing#programdelete
 
 *a marketing program was deleted*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -37,6 +35,9 @@ title: marketing#programdelete
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

@@ -15,6 +15,7 @@ title: ListingReport
   "totalListingsCount": 0
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

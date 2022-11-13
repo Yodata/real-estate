@@ -22,6 +22,7 @@ title: Permit
   "validUntil": "2019-08-24T14:15:22Z"
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

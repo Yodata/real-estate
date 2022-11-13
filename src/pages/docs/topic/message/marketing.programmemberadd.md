@@ -5,8 +5,6 @@ title: marketing#programmemberadd
 
 *a program member was added by the agent*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -38,6 +36,9 @@ title: marketing#programmemberadd
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

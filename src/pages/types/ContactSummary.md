@@ -24,6 +24,7 @@ title: ContactSummary
   }
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

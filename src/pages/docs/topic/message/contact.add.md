@@ -5,8 +5,6 @@ title: contact#add
 
 *a contact (data.object) is added by a user (data.agent), optionally to a specific targetCollection*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -128,6 +126,9 @@ title: contact#add
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

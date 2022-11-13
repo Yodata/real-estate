@@ -53,6 +53,7 @@ title: ListingOffer
   }
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

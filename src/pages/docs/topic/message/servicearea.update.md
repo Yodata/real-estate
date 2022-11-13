@@ -5,8 +5,6 @@ title: servicearea#update
 
 *service area update*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -51,6 +49,9 @@ title: servicearea#update
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

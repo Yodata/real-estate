@@ -5,8 +5,6 @@ title: contact#collectioncreate
 
 *a contact group was created*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -33,6 +31,9 @@ title: contact#collectioncreate
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

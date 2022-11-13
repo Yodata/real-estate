@@ -26,6 +26,7 @@ title: LogAction
   }
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

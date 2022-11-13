@@ -27,6 +27,7 @@ title: UnsubscribeAction
   ]
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

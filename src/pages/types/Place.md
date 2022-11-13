@@ -37,6 +37,7 @@ title: Place
   }
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

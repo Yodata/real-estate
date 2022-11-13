@@ -24,6 +24,7 @@ title: TransactionEntry
   }
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

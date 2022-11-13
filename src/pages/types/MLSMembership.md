@@ -20,6 +20,7 @@ title: MLSMembership
   "memberId": "memberid123"
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

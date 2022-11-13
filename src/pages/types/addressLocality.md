@@ -8,6 +8,7 @@ title: addressLocality
 ```json
 "Gotham City"
 ```
+
 ## Schema
 
 | Name | Type | Description |

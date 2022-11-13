@@ -5,8 +5,6 @@ title: franchise#transactionreport
 
 *Franchise transaction report of transaction for sales production reporting.*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -157,6 +155,9 @@ title: franchise#transactionreport
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

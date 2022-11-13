@@ -5,8 +5,6 @@ title: servicearea#create
 
 *service area created*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -51,6 +49,9 @@ title: servicearea#create
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

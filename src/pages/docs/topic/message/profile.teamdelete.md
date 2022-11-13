@@ -5,8 +5,6 @@ title: profile#teamdelete
 
 *a team profile was created*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -122,6 +120,9 @@ title: profile#teamdelete
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

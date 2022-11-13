@@ -18,6 +18,7 @@ title: Referral
   }
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

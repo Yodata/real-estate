@@ -5,8 +5,6 @@ title: lead#retract
 
 *a lead (data.object) is taken back from the previous assignee (data.participant) by the previous sender/owner (data.recipient)*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -55,6 +53,9 @@ title: lead#retract
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

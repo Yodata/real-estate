@@ -9,8 +9,6 @@ A website user (agent) shared a (PropertyListing)[/types/PropertyListing]
 with the recipient (a Person or Audience).
 
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -172,6 +170,9 @@ with the recipient (a Person or Audience).
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

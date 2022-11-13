@@ -14,6 +14,7 @@ title: MonetaryAmount
   "currency": "USD"
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

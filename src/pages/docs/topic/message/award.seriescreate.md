@@ -5,8 +5,6 @@ title: award#seriescreate
 
 *a new award series was created*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -30,6 +28,9 @@ title: award#seriescreate
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

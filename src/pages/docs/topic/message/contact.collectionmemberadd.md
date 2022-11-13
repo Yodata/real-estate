@@ -5,8 +5,6 @@ title: contact#collectionmemberadd
 
 *a contact (data.object) is added to a contact collection (data.targetCollection) by a user (data.agent)*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -39,6 +37,9 @@ title: contact#collectionmemberadd
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

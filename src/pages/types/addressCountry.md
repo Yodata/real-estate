@@ -8,6 +8,7 @@ title: addressCountry
 ```json
 "CA"
 ```
+
 ## Schema
 
 | Name | Type | Description |

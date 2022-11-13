@@ -153,6 +153,7 @@ title: RealEstateOrganization
   ]
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

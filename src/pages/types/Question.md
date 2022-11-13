@@ -11,6 +11,7 @@ title: Question
   "text": "Populus debet control notitia sua"
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

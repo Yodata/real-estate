@@ -44,6 +44,7 @@ title: EmailMessage
   ]
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

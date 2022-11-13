@@ -12,6 +12,7 @@ title: GeoCoordinates
   "latitude": 40.75
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

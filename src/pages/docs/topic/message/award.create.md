@@ -10,8 +10,6 @@ The award presentor is described in the `agent` property.
 The award recipient is described in the `recipient` property.
 
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -52,6 +50,9 @@ The award recipient is described in the `recipient` property.
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

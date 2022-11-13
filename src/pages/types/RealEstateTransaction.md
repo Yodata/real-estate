@@ -142,6 +142,7 @@ title: RealEstateTransaction
   ]
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

@@ -5,8 +5,6 @@ title: profile#teammemberremove
 
 *a member (user) is removed from the team*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -26,6 +24,9 @@ title: profile#teammemberremove
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

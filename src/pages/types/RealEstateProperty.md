@@ -49,6 +49,7 @@ title: RealEstateProperty
   "yearBuilt": 1988
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

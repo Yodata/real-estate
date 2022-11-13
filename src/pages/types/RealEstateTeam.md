@@ -111,6 +111,7 @@ title: RealEstateTeam
   ]
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

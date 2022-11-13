@@ -5,8 +5,6 @@ title: marketingpreferences#unsubscribe
 
 *a consumer (agent) unsubscribes to email or sms for a specific agent (object)*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -35,6 +33,9 @@ title: marketingpreferences#unsubscribe
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

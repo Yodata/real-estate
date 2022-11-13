@@ -18,6 +18,7 @@ title: PostalAddress
   "addressSubdivision": "Gotham Heights"
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

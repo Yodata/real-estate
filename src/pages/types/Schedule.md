@@ -21,6 +21,7 @@ title: Schedule
   ]
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

@@ -10,6 +10,7 @@ title: TransactionStatus
   "transactionStatus": "ClosedTransactionStatus"
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

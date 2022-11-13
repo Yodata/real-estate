@@ -14,6 +14,7 @@ title: PriceSpecification
   "priceCurrency": "USD"
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

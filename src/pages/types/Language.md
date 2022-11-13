@@ -12,6 +12,7 @@ title: Language
   "additionalName": "en-us"
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

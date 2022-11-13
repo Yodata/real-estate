@@ -22,6 +22,7 @@ title: Profile
   }
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

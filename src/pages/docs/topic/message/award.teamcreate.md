@@ -5,8 +5,6 @@ title: award#teamcreate
 
 *an award team was created*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -28,6 +26,9 @@ title: award#teamcreate
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

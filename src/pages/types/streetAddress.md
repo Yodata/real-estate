@@ -8,6 +8,7 @@ title: streetAddress
 ```json
 "1007 Mountain Gate Rd"
 ```
+
 ## Schema
 
 | Name | Type | Description |

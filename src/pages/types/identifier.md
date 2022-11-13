@@ -10,6 +10,7 @@ title: identifier
   "bhhsconsumerid": "12345"
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

@@ -40,6 +40,7 @@ title: ServiceArea
   }
 }
 ```
+
 ## Schema
 
 | Name | Type | Description |

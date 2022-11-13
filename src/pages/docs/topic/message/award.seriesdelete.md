@@ -5,8 +5,6 @@ title: award#seriesdelete
 
 *an award series was deleted*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -30,6 +28,9 @@ title: award#seriesdelete
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

@@ -5,8 +5,6 @@ title: marketingpreferences#subscribe
 
 *a consumer (agent) subscribes to email or sms for a specific agent (object)*
 
-### Payload
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -35,6 +33,9 @@ title: marketingpreferences#subscribe
 }
 ```
 
+
+
+### Payload
 
 | Name | Type | Description |
 |---|---|---|

@@ -1,6 +1,41 @@
 ---
 title: ApplicationProfile
 ---
+## Example
+
+
+
+```json
+{
+  "type": "SoftwareApplication",
+  "@id": "http://example.com",
+  "id": "https://user.example.com/profile/card#me",
+  "primaryTopic": "#me",
+  "#me": {
+    "type": "SoftwareApplication",
+    "inbox": "/inbox/",
+    "outbox": "/outbox/",
+    "storage": "/",
+    "preferencesFile": "/settings/prefs",
+    "account": "/",
+    "privateTypeIndex": "/settings/privateTypeIndex",
+    "publicTypeIndex": "/settings/publicTypeIndex",
+    "permissions": [
+      "profile:read"
+    ]
+  },
+  "inbox": "/inbox/",
+  "outbox": "/outbox/",
+  "storage": "/",
+  "preferencesFile": "/settings/prefs",
+  "account": "/",
+  "privateTypeIndex": "/settings/privateTypeIndex",
+  "publicTypeIndex": "/settings/publicTypeIndex",
+  "permissions": [
+    "profile:read"
+  ]
+}
+```
 ## Schema
 
 | Name | Type | Description |
@@ -39,38 +74,3 @@ title: ApplicationProfile
 | 1.permissions | array<string> | the subscription types required by your service. |
 | 1.permissions (single item) | string | allowed (`"profile:read"`, `"contact"`, `"lead"`, `"listing"`)  |
 
-## Example
-
-
-
-```json
-{
-  "type": "SoftwareApplication",
-  "@id": "http://example.com",
-  "id": "https://user.example.com/profile/card#me",
-  "primaryTopic": "#me",
-  "#me": {
-    "type": "SoftwareApplication",
-    "inbox": "/inbox/",
-    "outbox": "/outbox/",
-    "storage": "/",
-    "preferencesFile": "/settings/prefs",
-    "account": "/",
-    "privateTypeIndex": "/settings/privateTypeIndex",
-    "publicTypeIndex": "/settings/publicTypeIndex",
-    "permissions": [
-      "profile:read"
-    ]
-  },
-  "inbox": "/inbox/",
-  "outbox": "/outbox/",
-  "storage": "/",
-  "preferencesFile": "/settings/prefs",
-  "account": "/",
-  "privateTypeIndex": "/settings/privateTypeIndex",
-  "publicTypeIndex": "/settings/publicTypeIndex",
-  "permissions": [
-    "profile:read"
-  ]
-}
-```

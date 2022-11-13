@@ -1,12 +1,6 @@
 ---
 title: addressCounty
 ---
-## Schema
-
-| Name | Type | Description |
-|---|---|---|
-| (root) | string | County |
-
 ## Example
 
 
@@ -14,3 +8,9 @@ title: addressCounty
 ```json
 "string"
 ```
+## Schema
+
+| Name | Type | Description |
+|---|---|---|
+| (root) | string | County |
+

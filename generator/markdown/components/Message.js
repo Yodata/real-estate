@@ -1,11 +1,11 @@
-import { IndentationTypes, Text } from '@asyncapi/generator-react-sdk'
+import { Text } from '@asyncapi/generator-react-sdk'
 import { generateExample, getPayloadExamples, getHeadersExamples } from '@asyncapi/generator-filters'
 
 import { Bindings } from './Bindings'
 import { Extensions } from './Extensions'
 import { Schema } from './Schema'
 import { Tags } from './Tags'
-import { Header, ListItem, Link, BlockQuote, CodeBlock, NewLine } from './common'
+import { Header, ListItem, Link, CodeBlock } from './common'
 
 export function Message ({ message }) { // NOSONAR
   if (!message) {
@@ -13,94 +13,50 @@ export function Message ({ message }) { // NOSONAR
   }
 
   // check typeof as fallback for older version than `2.4.0`
-  const messageId = typeof message.id === 'function' && message.id()
   const headers = message.headers()
   const payload = message.payload()
-  const correlationId = message.correlationId()
-  const contentType = message.contentType()
   const externalDocs = message.externalDocs()
-  const showInfoList = contentType || externalDocs
-
-  let header = message.uid()
 
   return (
     <>
       <Header type={2}>Message</Header>
-
       {message.summary() && (
         <Text newLines={2}>
           *{message.summary()}*
         </Text>
       )}
-
-      {showInfoList
-        ? (
-          <Text>
-            {messageId && <ListItem>MessageId: {messageId}</ListItem>}
-            {contentType && (
-              <ListItem>Content type: {contentType}</ListItem>
-            )}
-            {correlationId && (
-              <>
-                <ListItem>
-                  Correlation ID: `{correlationId.location()}`
-                </ListItem>
-                {correlationId.hasDescription() && (
-                  <>
-                    <NewLine />
-                    <Text indent={2} type={IndentationTypes.SPACES}>
-                      {correlationId.description()}
-                    </Text>
-                  </>
-                )}
-              </>
-            )}
-          </Text>
-          )
-        : null}
-
       {message.hasDescription() && (
         <Text newLines={2}>
           {message.description()}
         </Text>
       )}
-
       {externalDocs && (
         <Text newLines={2}>
-          <Link
-            href={externalDocs.url()}
-          >
+          <Link href={externalDocs.url()}>
             {externalDocs.hasDescription() ? externalDocs.description() : 'Find more info here.'}
           </Link>
         </Text>
       )}
-
-
-
-      {headers && (
-        <>
-          <Header type={3}>Headers</Header>
-          <Schema schema={headers} hideTitle />
-          {/* <Examples type='headers' message={message} /> */}
-        </>
-      )}
-
       {payload && (
         <>
           <Header type={3}>Payload</Header>
+          <Example type='payload' message={message}/>
           <Schema schema={payload} hideTitle />
-          <Example type='payload' message={message} />
         </>
       )}
-
+      {headers && (
+        <>
+          <Header type={3}>Headers</Header>
+          <Examples type='headers' message={message} />
+          <Schema schema={headers} hideTitle />
+        </>
+      )}
       <Tools/>
-
       <Bindings
         name='Message specific information'
         item={message}
       />
       <Extensions name='Message extensions' item={message} />
-
       {message.hasTags() && (
         <Tags name='Message tags' tags={message.tags()} />
       )}

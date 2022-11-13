@@ -51,7 +51,7 @@ defaultContentType: application/json
 
 components:
   schemas:
-    CloudEvent: { $ref: ./CloudEvent.yaml }
+    CloudEvent: { $ref: CloudEvent.yaml }
     Action: { $ref: Action.yaml }
     Award: { $ref: topic/award/Award.yaml }
     AwardSeries: { $ref: topic/award/AwardSeries.yaml }
@@ -138,7 +138,6 @@ components:
     additionalProperty: { $ref: additionalProperty.yaml }
     sameAs: { $ref: sameAs.yaml }
     target: { $ref: target.yaml }
-    
 
   messages:
     # award events

@@ -1,15 +1,6 @@
 ---
 title: RealEstateWebsite
 ---
-## Schema
-
-| Name | Type | Description |
-|---|---|---|
-| (root) | object | - |
-| type | string | allowed (`"RealEstateWebsite"`) RealEstateWebsite |
-| about | object | subject of the website |
-| url | string | URL of the item. format (`uri`) |
-
 ## Example
 
 
@@ -24,3 +15,12 @@ title: RealEstateWebsite
   "url": "http://example.com"
 }
 ```
+## Schema
+
+| Name | Type | Description |
+|---|---|---|
+| (root) | object | - |
+| type | string | allowed (`"RealEstateWebsite"`) RealEstateWebsite |
+| about | object | subject of the website |
+| url | string | URL of the item. format (`uri`) |
+

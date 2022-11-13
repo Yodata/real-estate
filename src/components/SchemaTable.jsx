@@ -1,5 +1,4 @@
 import React from 'react'
-import entries from 'lodash/entries'
 
 const COLUMNS = [
   { title: 'Property', key: 'name' },
@@ -30,7 +29,7 @@ export const PropertyTable = ({ items = [], columns = COLUMNS }) => {
         </tr>
       </thead>
       <tbody>
-          {entries(items).map(([key, value]) => <ListItem key={key} property={value} />)}
+          {Object.entries(items).map(([key, value]) => <ListItem key={key} property={value} />)}
       </tbody>
     </table>
   )

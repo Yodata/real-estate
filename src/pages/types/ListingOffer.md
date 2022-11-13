@@ -1,6 +1,58 @@
 ---
 title: ListingOffer
 ---
+## Example
+
+
+
+```json
+{
+  "type": "ListingOffer",
+  "agent": {
+    "type": "Contact",
+    "name": "Bruce Wayne",
+    "givenName": "Bruce",
+    "familyName": "Wayne",
+    "email": "batman@example.com",
+    "telephone": "1+888-867-5309",
+    "identifier": {
+      "hsfconsumerid": "xxxxxxxxxxxxx"
+    },
+    "sameAs": {
+      "amcecrmid": "1234567",
+      "salesForceId": "xxxxxxxxxxxxx"
+    }
+  },
+  "offerPrice": {
+    "type": "PriceSpecification",
+    "minPrice": 75000,
+    "maxPrice": 100000,
+    "price": 75000,
+    "priceCurrency": "USD"
+  },
+  "propertyListing": {
+    "type": "PropertyListing",
+    "originatingSystemName": "GOTHAM-MLS",
+    "originatingSystemKey": "12345",
+    "url": "https://{company-website-url}/{path-to-listing}",
+    "streetAddress": "1007 Mountain Gate Rd",
+    "addressRegion": "New Jersey",
+    "addressLocality": "Gotham City",
+    "postalCode": "10010",
+    "addressCountry": "USA",
+    "listingPrice": {
+      "type": "PriceSpecification",
+      "price": 7500000,
+      "priceCurrency": "USD"
+    }
+  },
+  "recipient": {
+    "type": "RealEstateAgent",
+    "name": "Randy RealEstateAgent",
+    "id": "https://{agentid}.example.com/profile/card#me"
+  }
+}
+```
 ## Schema
 
 | Name | Type | Description |
@@ -127,55 +179,3 @@ title: ListingOffer
 | recipient.1.telephone | string | Primary phone number. |
 | recipient.1.worksFor | string | Organizations the person works for. |
 
-## Example
-
-
-
-```json
-{
-  "type": "ListingOffer",
-  "agent": {
-    "type": "Contact",
-    "name": "Bruce Wayne",
-    "givenName": "Bruce",
-    "familyName": "Wayne",
-    "email": "batman@example.com",
-    "telephone": "1+888-867-5309",
-    "identifier": {
-      "hsfconsumerid": "xxxxxxxxxxxxx"
-    },
-    "sameAs": {
-      "amcecrmid": "1234567",
-      "salesForceId": "xxxxxxxxxxxxx"
-    }
-  },
-  "offerPrice": {
-    "type": "PriceSpecification",
-    "minPrice": 75000,
-    "maxPrice": 100000,
-    "price": 75000,
-    "priceCurrency": "USD"
-  },
-  "propertyListing": {
-    "type": "PropertyListing",
-    "originatingSystemName": "GOTHAM-MLS",
-    "originatingSystemKey": "12345",
-    "url": "https://{company-website-url}/{path-to-listing}",
-    "streetAddress": "1007 Mountain Gate Rd",
-    "addressRegion": "New Jersey",
-    "addressLocality": "Gotham City",
-    "postalCode": "10010",
-    "addressCountry": "USA",
-    "listingPrice": {
-      "type": "PriceSpecification",
-      "price": 7500000,
-      "priceCurrency": "USD"
-    }
-  },
-  "recipient": {
-    "type": "RealEstateAgent",
-    "name": "Randy RealEstateAgent",
-    "id": "https://{agentid}.example.com/profile/card#me"
-  }
-}
-```

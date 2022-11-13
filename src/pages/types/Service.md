@@ -1,18 +1,6 @@
 ---
 title: Service
 ---
-## Schema
-
-| Name | Type | Description |
-|---|---|---|
-| (root) | object | A service provided by an organization. |
-| type | string | allowed (`"Service"`)  |
-| name | string | name of the service. |
-| areaServed | object | a physical location |
-| areaServed.type | string | allowed (`"Place"`) The item type (Linked-Data @type) |
-| areaServed.address | object | A physical address. |
-| areaServed.geo | object | a geo shape (circle or box) |
-
 ## Example
 
 
@@ -53,3 +41,15 @@ title: Service
   }
 }
 ```
+## Schema
+
+| Name | Type | Description |
+|---|---|---|
+| (root) | object | A service provided by an organization. |
+| type | string | allowed (`"Service"`)  |
+| name | string | name of the service. |
+| areaServed | object | a physical location |
+| areaServed.type | string | allowed (`"Place"`) The item type (Linked-Data @type) |
+| areaServed.address | object | A physical address. |
+| areaServed.geo | object | a geo shape (circle or box) |
+

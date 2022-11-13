@@ -1,6 +1,15 @@
 ---
 title: PropertyType
 ---
+## Example
+
+
+
+```json
+{
+  "propertyType": "RESI"
+}
+```
 ## Schema
 
 | Name | Type | Description |
@@ -15,12 +24,3 @@ title: PropertyType
 | COMS | string | commercial standard applies |
 | BUSO | string | Business Opportunity |
 
-## Example
-
-
-
-```json
-{
-  "propertyType": "RESI"
-}
-```

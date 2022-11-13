@@ -1,8 +1,34 @@
 pre[class*='language-'] {
   color: theme('colors.slate.50');
+  background: theme('colors.slate.900');
+  font-family: 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+  font-size: 1rem;
+  font-variant: normal;
 }
 
-.token.tag,
+pre[class='language-http'] {
+  color: greenyellow;
+  background: theme('colors.slate.900');
+  font-family: 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+}
+
+pre[class='language-json'] {
+  color: lightblue;
+  background: theme('colors.slate.900');
+  font-family: 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+}
+
+/* JSON tokens */
+.token.property {
+  color: lightcoral;
+}
+.token.string {
+  color: lightskyblue;
+}
+
+
+
+/* .token.tag,
 .token.class-name,
 .token.selector,
 .token.selector .class,
@@ -44,4 +70,4 @@ pre[class*='language-'] {
 .token.operator,
 .token.combinator {
   color: theme('colors.slate.400');
-}
+} */

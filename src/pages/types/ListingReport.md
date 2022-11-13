@@ -1,18 +1,6 @@
 ---
 title: ListingReport
 ---
-## Schema
-
-| Name | Type | Description |
-|---|---|---|
-| (root) | object | summary report of listing inventory count |
-| type | string | RECORD-TYPE |
-| batchId | string | BATCH-ID |
-| reportingOfficeId | string | OFFICE-ID format (`uri`) |
-| dateCreated | string | YEAR-MONTH format (`date-time`) |
-| listingsAddedCount | number | LISTINGS-TAKEN |
-| totalListingsCount | number | LISTINGS-INVENTORY |
-
 ## Example
 
 
@@ -27,3 +15,15 @@ title: ListingReport
   "totalListingsCount": 0
 }
 ```
+## Schema
+
+| Name | Type | Description |
+|---|---|---|
+| (root) | object | summary report of listing inventory count |
+| type | string | RECORD-TYPE |
+| batchId | string | BATCH-ID |
+| reportingOfficeId | string | OFFICE-ID format (`uri`) |
+| dateCreated | string | YEAR-MONTH format (`date-time`) |
+| listingsAddedCount | number | LISTINGS-TAKEN |
+| totalListingsCount | number | LISTINGS-INVENTORY |
+

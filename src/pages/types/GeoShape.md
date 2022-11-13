@@ -1,19 +1,6 @@
 ---
 title: GeoShape
 ---
-## Schema
-
-| Name | Type | Description |
-|---|---|---|
-| (root) | object | a geo shape |
-| type | string | allowed (`"GeoShape"`, `"GeoCircle"`)  |
-| geoMidpoint | object | a lat/long point. |
-| geoMidpoint.type | string | allowed (`"GeoCoordinates"`) GeoCordinates |
-| geoMidpoint.longitude | number | The longitude of a location. |
-| geoMidpoint.latitude | number | The latitude of a location. |
-| geoRadius | object | the radius of a geo-shape in meters if unitCode is not indicated |
-| box | string | A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character. |
-
 ## Example
 
 
@@ -35,3 +22,16 @@ title: GeoShape
   "box": "(33.5697,-117.775),(33.6018,-117.707)"
 }
 ```
+## Schema
+
+| Name | Type | Description |
+|---|---|---|
+| (root) | object | a geo shape |
+| type | string | allowed (`"GeoShape"`, `"GeoCircle"`)  |
+| geoMidpoint | object | a lat/long point. |
+| geoMidpoint.type | string | allowed (`"GeoCoordinates"`) GeoCordinates |
+| geoMidpoint.longitude | number | The longitude of a location. |
+| geoMidpoint.latitude | number | The latitude of a location. |
+| geoRadius | object | the radius of a geo-shape in meters if unitCode is not indicated |
+| box | string | A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character. |
+

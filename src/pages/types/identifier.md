@@ -1,12 +1,6 @@
 ---
 title: identifier
 ---
-## Schema
-
-| Name | Type | Description |
-|---|---|---|
-| (root) | object |  1 properties |
-
 ## Example
 
 
@@ -16,3 +10,9 @@ title: identifier
   "bhhsconsumerid": "12345"
 }
 ```
+## Schema
+
+| Name | Type | Description |
+|---|---|---|
+| (root) | object |  1 properties |
+

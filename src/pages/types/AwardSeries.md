@@ -1,20 +1,6 @@
 ---
 title: AwardSeries
 ---
-## Schema
-
-| Name | Type | Description |
-|---|---|---|
-| (root) | object | an award bestowed at regular intervals |
-| type | string | const (`"AwardSeries"`)  |
-| name | string | name of the series |
-| description | string | description of the item. |
-| duration | string | The duration of the item in ISO 8601 date format. format (`duration`) |
-| startDate | string | the start date-time (ISO 8601 formated) format (`date-time`) |
-| endDate | string | the end date-time (ISO 8601 formated) format (`date-time`) |
-| id | string |  format (`uri`) |
-| identifier | object |  1 properties |
-
 ## Example
 
 
@@ -33,3 +19,17 @@ title: AwardSeries
   }
 }
 ```
+## Schema
+
+| Name | Type | Description |
+|---|---|---|
+| (root) | object | an award bestowed at regular intervals |
+| type | string | const (`"AwardSeries"`)  |
+| name | string | name of the series |
+| description | string | description of the item. |
+| duration | string | The duration of the item in ISO 8601 date format. format (`duration`) |
+| startDate | string | the start date-time (ISO 8601 formated) format (`date-time`) |
+| endDate | string | the end date-time (ISO 8601 formated) format (`date-time`) |
+| id | string |  format (`uri`) |
+| identifier | object |  1 properties |
+

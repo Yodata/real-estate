@@ -1,6 +1,43 @@
 ---
 title: BlogPosting
 ---
+## Example
+
+
+
+```json
+{
+  "type": "BlogPosting",
+  "identifier": {
+    "aempostid": "xxxx"
+  },
+  "headline": "Top 10 Spring Cleeaning Tips",
+  "articleBody": "<HTML><body>lorem ipsum dolor sit amet, consectetur adipiscing</body></HTML>",
+  "image": [
+    {
+      "type": "ImageObject",
+      "@id": "http://example.com",
+      "id": "http://user.example.com/public/logo/image.jpg",
+      "name": "image.jpg",
+      "encodingFormat": "image/jpeg",
+      "about": "http://user.example.com/profile/card#me",
+      "url": "http://user.example.com/public/profile/image.jpg"
+    }
+  ],
+  "author": {
+    "type": "RealEstateAgent",
+    "id": "https://agent123.example.com/profile/card#me"
+  },
+  "provider": {
+    "type": "RealEstateOrganization",
+    "id": "https://example.com/profile/card#me"
+  },
+  "dateCreated": "2019-08-24T14:15:22Z",
+  "dateModified": "2019-08-24T14:15:22Z",
+  "url": "http://example.com",
+  "urlTemplate": "https://example.com/{author/name}/blog/post?{slug}"
+}
+```
 ## Schema
 
 | Name | Type | Description |
@@ -40,40 +77,3 @@ title: BlogPosting
 | url | string | URL of the item. format (`uri`) |
 | urlTemplate | string | urlTemplate in [IETF rfc6570 format](https://datatracker.ietf.org/doc/html/rfc6570) |
 
-## Example
-
-
-
-```json
-{
-  "type": "BlogPosting",
-  "identifier": {
-    "aempostid": "xxxx"
-  },
-  "headline": "Top 10 Spring Cleeaning Tips",
-  "articleBody": "<HTML><body>lorem ipsum dolor sit amet, consectetur adipiscing</body></HTML>",
-  "image": [
-    {
-      "type": "ImageObject",
-      "@id": "http://example.com",
-      "id": "http://user.example.com/public/logo/image.jpg",
-      "name": "image.jpg",
-      "encodingFormat": "image/jpeg",
-      "about": "http://user.example.com/profile/card#me",
-      "url": "http://user.example.com/public/profile/image.jpg"
-    }
-  ],
-  "author": {
-    "type": "RealEstateAgent",
-    "id": "https://agent123.example.com/profile/card#me"
-  },
-  "provider": {
-    "type": "RealEstateOrganization",
-    "id": "https://example.com/profile/card#me"
-  },
-  "dateCreated": "2019-08-24T14:15:22Z",
-  "dateModified": "2019-08-24T14:15:22Z",
-  "url": "http://example.com",
-  "urlTemplate": "https://example.com/{author/name}/blog/post?{slug}"
-}
-```

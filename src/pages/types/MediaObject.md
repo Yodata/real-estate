@@ -1,6 +1,21 @@
 ---
 title: MediaObject
 ---
+## Example
+
+
+
+```json
+{
+  "type": "MediaObject",
+  "@id": "http://example.com",
+  "id": "http://user.example.com/public/logo/fileName.zip",
+  "name": "fileName.zip",
+  "encodingFormat": "application/zip",
+  "about": "http://user.example.com/profile/card#me",
+  "url": "http://user.example.com/public/profile/image.jpg"
+}
+```
 ## Schema
 
 | Name | Type | Description |
@@ -18,18 +33,3 @@ title: MediaObject
 | 1.about | string | URI to the subject of the image or logo format (`uri`) |
 | 1.url | string | URL of the image content format (`uri`) |
 
-## Example
-
-
-
-```json
-{
-  "type": "MediaObject",
-  "@id": "http://example.com",
-  "id": "http://user.example.com/public/logo/fileName.zip",
-  "name": "fileName.zip",
-  "encodingFormat": "application/zip",
-  "about": "http://user.example.com/profile/card#me",
-  "url": "http://user.example.com/public/profile/image.jpg"
-}
-```

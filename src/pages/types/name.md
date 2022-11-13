@@ -1,12 +1,6 @@
 ---
 title: name
 ---
-## Schema
-
-| Name | Type | Description |
-|---|---|---|
-| (root) | string | - |
-
 ## Example
 
 
@@ -14,3 +8,9 @@ title: name
 ```json
 "string"
 ```
+## Schema
+
+| Name | Type | Description |
+|---|---|---|
+| (root) | string | - |
+

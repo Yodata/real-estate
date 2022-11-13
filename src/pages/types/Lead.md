@@ -1,24 +1,6 @@
 ---
 title: Lead
 ---
-## Schema
-
-| Name | Type | Description |
-|---|---|---|
-| (root) | object | a sales opportunity (object) offered by a sender to a recipient. |
-| type | string | allowed (`"Lead"`) Lead |
-| identifier | object |  1 properties |
-| object | object | the lead (Contact) |
-| recipient | string | the lead recipient format (`uri`) |
-| sender | string | the lead provider format (`uri`) |
-| owner | string | the original owner of the lead format (`uri`) |
-| dateAccepted | string | The date/time the item was accepted by the recipient |
-| dateRejected | string | The date/time the item was rejected by the recipient format (`date-time`) |
-| dateSent | string | the date the lead was sent format (`date-time`) |
-| dateReceived | string | The date/time the item was received by it's recipient |
-| leadSource | array<object> | lead origin, may be a website event or a thing such as a website, zillow, mobile applicaton. |
-| leadSource (single item) | object | - |
-
 ## Example
 
 
@@ -53,3 +35,21 @@ title: Lead
   ]
 }
 ```
+## Schema
+
+| Name | Type | Description |
+|---|---|---|
+| (root) | object | a sales opportunity (object) offered by a sender to a recipient. |
+| type | string | allowed (`"Lead"`) Lead |
+| identifier | object |  1 properties |
+| object | object | the lead (Contact) |
+| recipient | string | the lead recipient format (`uri`) |
+| sender | string | the lead provider format (`uri`) |
+| owner | string | the original owner of the lead format (`uri`) |
+| dateAccepted | string | The date/time the item was accepted by the recipient |
+| dateRejected | string | The date/time the item was rejected by the recipient format (`date-time`) |
+| dateSent | string | the date the lead was sent format (`date-time`) |
+| dateReceived | string | The date/time the item was received by it's recipient |
+| leadSource | array<object> | lead origin, may be a website event or a thing such as a website, zillow, mobile applicaton. |
+| leadSource (single item) | object | - |
+

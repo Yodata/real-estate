@@ -53,7 +53,7 @@ export function TableRow ({ rowRenderer = () => [], entry }) {
 
 export function CodeBlock ({ language = 'json', childrenContent = '' }) {
   return (
-    <Text>
+    <Text newLines={2} >
       {'```'}{language}{'\n'}
       {childrenContent}{'\n'}
       ```

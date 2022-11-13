@@ -1,12 +1,6 @@
 ---
 title: streetAddress
 ---
-## Schema
-
-| Name | Type | Description |
-|---|---|---|
-| (root) | string | the street address <= 75 characters |
-
 ## Example
 
 
@@ -14,3 +8,9 @@ title: streetAddress
 ```json
 "1007 Mountain Gate Rd"
 ```
+## Schema
+
+| Name | Type | Description |
+|---|---|---|
+| (root) | string | the street address <= 75 characters |
+

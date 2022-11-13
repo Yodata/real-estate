@@ -1,15 +1,6 @@
 ---
 title: Language
 ---
-## Schema
-
-| Name | Type | Description |
-|---|---|---|
-| (root) | object | a written or spoken Language |
-| type | string | const (`"Language"`)  |
-| name | string | the display name of the language |
-| additionalName | string | BCP 47 language code |
-
 ## Example
 
 
@@ -21,3 +12,12 @@ title: Language
   "additionalName": "en-us"
 }
 ```
+## Schema
+
+| Name | Type | Description |
+|---|---|---|
+| (root) | object | a written or spoken Language |
+| type | string | const (`"Language"`)  |
+| name | string | the display name of the language |
+| additionalName | string | BCP 47 language code |
+

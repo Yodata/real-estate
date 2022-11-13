@@ -21,3 +21,12 @@
   font-named-instance: 'Italic';
   src: url('/fonts/Inter-italic.var.woff2') format('woff2');
 }
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 100 900;
+  font-display: block;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url('/fonts/SourceSansPro-Regular.ttf') format('ttf');
+}

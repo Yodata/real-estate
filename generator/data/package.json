@@ -37,7 +37,7 @@
   },
   "scripts": {
     "cleanup": "rimraf ./__generated__",
-    "generate": "npm run cleanup && npx ag test_data/asyncapi.yaml ./ -o __generated__ --force-write",
+    "generate": "cleanup && npx ag test_data/asyncapi.yaml ./ -o __generated__ --force-write",
     "generate:production-public-schemas": "npx ag /Users/dave/git/yodata/real-estate/schemas/asyncapi.yaml ./ -o ../../src/public/schema --force-write"
   },
   "devDependencies": {

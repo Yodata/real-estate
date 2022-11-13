@@ -1,6 +1,21 @@
 ---
 title: ImageObject
 ---
+## Example
+
+
+
+```json
+{
+  "type": "ImageObject",
+  "@id": "http://example.com",
+  "id": "http://user.example.com/public/logo/image.jpg",
+  "name": "image.jpg",
+  "encodingFormat": "image/jpeg",
+  "about": "http://user.example.com/profile/card#me",
+  "url": "http://user.example.com/public/profile/image.jpg"
+}
+```
 ## Schema
 
 | Name | Type | Description |
@@ -24,18 +39,3 @@ title: ImageObject
 | 1.name | any | - |
 | 1.encodingFormat | any | - |
 
-## Example
-
-
-
-```json
-{
-  "type": "ImageObject",
-  "@id": "http://example.com",
-  "id": "http://user.example.com/public/logo/image.jpg",
-  "name": "image.jpg",
-  "encodingFormat": "image/jpeg",
-  "about": "http://user.example.com/profile/card#me",
-  "url": "http://user.example.com/public/profile/image.jpg"
-}
-```

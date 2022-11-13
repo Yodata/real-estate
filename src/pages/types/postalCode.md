@@ -1,12 +1,6 @@
 ---
 title: postalCode
 ---
-## Schema
-
-| Name | Type | Description |
-|---|---|---|
-| (root) | string | Zip/Post Code <= 12 characters |
-
 ## Example
 
 
@@ -14,3 +8,9 @@ title: postalCode
 ```json
 "10010"
 ```
+## Schema
+
+| Name | Type | Description |
+|---|---|---|
+| (root) | string | Zip/Post Code <= 12 characters |
+

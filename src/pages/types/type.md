@@ -1,12 +1,6 @@
 ---
 title: type
 ---
-## Schema
-
-| Name | Type | Description |
-|---|---|---|
-| (root) | string | The item type (Linked-Data @type) |
-
 ## Example
 
 
@@ -14,3 +8,9 @@ title: type
 ```json
 "string"
 ```
+## Schema
+
+| Name | Type | Description |
+|---|---|---|
+| (root) | string | The item type (Linked-Data @type) |
+

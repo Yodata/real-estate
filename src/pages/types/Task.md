@@ -1,26 +1,6 @@
 ---
 title: Task
 ---
-## Schema
-
-| Name | Type | Description |
-|---|---|---|
-| (root) | object | an action assigned to an agent, typically as part of a set of interdependent tasks in a Plan |
-| type | string | allowed (`"Task"`) The item type (Linked-Data @type) |
-| identifier | object |  1 properties |
-| actionStatus | string | allowed (`"CompletedActionStatus"`, `"FailedActionStatus"`, `"ActiveActionStatus"`, `"PotentialActionStatus"`) disposition of the Action at the time of this action message. |
-| memberOf | object | a plan the task is associated with |
-| agent | object | the party who completed, or will complete the task |
-| participant | array<object> | Other co-agents with a direct or indirect interest in the action. |
-| participant (single item) | object | - |
-| name | string | name or title |
-| description | string | task detailed description |
-| keywords | array<string> | - |
-| keywords (single item) | string | - |
-| dateDue | string | the due date-time (ISO 8601 formated) format (`date-time`) |
-| dateCompleted | string | date the task was completed format (`date-time`) |
-| location | object | the physical location where an event takes place |
-
 ## Example
 
 
@@ -72,3 +52,23 @@ title: Task
   }
 }
 ```
+## Schema
+
+| Name | Type | Description |
+|---|---|---|
+| (root) | object | an action assigned to an agent, typically as part of a set of interdependent tasks in a Plan |
+| type | string | allowed (`"Task"`) The item type (Linked-Data @type) |
+| identifier | object |  1 properties |
+| actionStatus | string | allowed (`"CompletedActionStatus"`, `"FailedActionStatus"`, `"ActiveActionStatus"`, `"PotentialActionStatus"`) disposition of the Action at the time of this action message. |
+| memberOf | object | a plan the task is associated with |
+| agent | object | the party who completed, or will complete the task |
+| participant | array<object> | Other co-agents with a direct or indirect interest in the action. |
+| participant (single item) | object | - |
+| name | string | name or title |
+| description | string | task detailed description |
+| keywords | array<string> | - |
+| keywords (single item) | string | - |
+| dateDue | string | the due date-time (ISO 8601 formated) format (`date-time`) |
+| dateCompleted | string | date the task was completed format (`date-time`) |
+| location | object | the physical location where an event takes place |
+

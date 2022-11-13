@@ -1,18 +1,6 @@
 ---
 title: DigitalDocument
 ---
-## Schema
-
-| Name | Type | Description |
-|---|---|---|
-| (root) | object | an electronic file. |
-| type | string | allowed (`"DigitalDocument"`)  |
-| id | string | - |
-| name | string | document name or title |
-| encodingFormat | string | [ISO Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml) |
-| about | object | subject of the Document |
-| url | string | public URL of the object |
-
 ## Example
 
 
@@ -32,3 +20,15 @@ title: DigitalDocument
   "url": "https://example.com"
 }
 ```
+## Schema
+
+| Name | Type | Description |
+|---|---|---|
+| (root) | object | an electronic file. |
+| type | string | allowed (`"DigitalDocument"`)  |
+| id | string | - |
+| name | string | document name or title |
+| encodingFormat | string | [ISO Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml) |
+| about | object | subject of the Document |
+| url | string | public URL of the object |
+

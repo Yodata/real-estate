@@ -1,12 +1,6 @@
 ---
 title: target
 ---
-## Schema
-
-| Name | Type | Description |
-|---|---|---|
-| (root) | object | an ldp:Collection (schema:EntryPoint) |
-
 ## Example
 
 
@@ -19,3 +13,9 @@ title: target
   "httpMethod": "POST"
 }
 ```
+## Schema
+
+| Name | Type | Description |
+|---|---|---|
+| (root) | object | an ldp:Collection (schema:EntryPoint) |
+

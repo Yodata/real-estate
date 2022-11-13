@@ -11,10 +11,10 @@ export default function MarkdownSchema(props) {
   return (
     <File name={`${schemaName}.md`}>
       <FrontMatter params={{ title: schemaName }} />
-      <Header type={2}>Schema</Header>
-      <Schema schema={schema} schemaName={schemaName} hideTitle={true} />
       <Header type={2}>Example</Header>
-      <Example schema={schema} schemaName={schemaName} hideTitle={true} />
+      <Example schema={schema} schemaName={schemaName} hideTitle />
+      <Header type={2}>Schema</Header>
+      <Schema schema={schema} schemaName={schemaName} hideTitle />
     </File>
   )
 }

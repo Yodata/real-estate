@@ -5,14 +5,6 @@ title: publishMessage
 
 ### Payload
 
-| Name | Type | Description |
-|---|---|---|
-| (root) | object | - |
-| topic | string | event group |
-| recipient | string | event publisher format (`uri`) |
-| source | string | agent, office or company assoicated with the event. format (`uri`) |
-| data | object | event payload |
-
 ### Payload Example(s) (generated)
 
 ```json
@@ -24,6 +16,14 @@ title: publishMessage
 }
 ```
 
+
+| Name | Type | Description |
+|---|---|---|
+| (root) | object | - |
+| topic | string | event group |
+| recipient | string | event publisher format (`uri`) |
+| source | string | agent, office or company assoicated with the event. format (`uri`) |
+| data | object | event payload |
 
 ### Tools
 

@@ -1,12 +1,6 @@
 ---
 title: addressRegion
 ---
-## Schema
-
-| Name | Type | Description |
-|---|---|---|
-| (root) | string | abbreviated state or province |
-
 ## Example
 
 
@@ -14,3 +8,9 @@ title: addressRegion
 ```json
 "NJ"
 ```
+## Schema
+
+| Name | Type | Description |
+|---|---|---|
+| (root) | string | abbreviated state or province |
+

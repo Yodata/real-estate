@@ -1,6 +1,15 @@
 ---
 title: PropertySubType
 ---
+## Example
+
+
+
+```json
+{
+  "propertySubType": "ApartmentPropertyType"
+}
+```
 ## Schema
 
 | Name | Type | Description |
@@ -35,12 +44,3 @@ title: PropertySubType
 | UnimprovedLandPropertyType | string | Land for sale |
 | WarehousePropertyType | string | A Warehouse property type. |
 
-## Example
-
-
-
-```json
-{
-  "propertySubType": "ApartmentPropertyType"
-}
-```

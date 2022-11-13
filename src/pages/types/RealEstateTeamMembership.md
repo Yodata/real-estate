@@ -1,6 +1,20 @@
 ---
 title: RealEstateTeamMembership
 ---
+## Example
+
+
+
+```json
+{
+  "type": "RealEstateTeamMembership",
+  "roleName": "TeamMember",
+  "memberOf": "https://{team-id}.example.com/profile/card#me",
+  "member": "https://{agent}.example.com/profile/card#me",
+  "startDate": "2019-08-24T14:15:22Z",
+  "endDate": "2019-08-24T14:15:22Z"
+}
+```
 ## Schema
 
 | Name | Type | Description |
@@ -19,17 +33,3 @@ title: RealEstateTeamMembership
 | 1.memberOf | string |  format (`uri`) |
 | 1.member | string |  format (`uri`) |
 
-## Example
-
-
-
-```json
-{
-  "type": "RealEstateTeamMembership",
-  "roleName": "TeamMember",
-  "memberOf": "https://{team-id}.example.com/profile/card#me",
-  "member": "https://{agent}.example.com/profile/card#me",
-  "startDate": "2019-08-24T14:15:22Z",
-  "endDate": "2019-08-24T14:15:22Z"
-}
-```

@@ -1,25 +1,9 @@
 ---
 title: Comment
 ---
-## Schema
-
-| Name | Type | Description |
-|---|---|---|
-| (root) | object | A comment on an item. |
-| type | string | const (`"Comment"`)  |
-| dateCreated | string | The date on which the item was created. format (`date-time`) |
-| dateModified | string | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. format (`date-time`) |
-| dateDeleted | string | The date on which the item was deleted. format (`date-time`) |
-| text | string | - |
-| author | object | the author of something |
-| about | object | The subject of the content |
-| identifier | object |  1 properties |
-
 ## Example
 
-
-
-```json
+```javascript
 {
   "type": "Comment",
   "dateCreated": "2019-08-24T14:15:22Z",
@@ -45,3 +29,16 @@ title: Comment
   }
 }
 ```
+## Schema
+
+| Name | Type | Description |
+|---|---|---|
+| (root) | object | A comment on an item. |
+| type | string | const (`"Comment"`)  |
+| dateCreated | string | The date on which the item was created. format (`date-time`) |
+| dateModified | string | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. format (`date-time`) |
+| dateDeleted | string | The date on which the item was deleted. format (`date-time`) |
+| text | string | - |
+| author | object | the author of something |
+| about | object | The subject of the content |
+| identifier | object |  1 properties |

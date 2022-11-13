@@ -1,12 +1,6 @@
 ---
 title: additionalProperty
 ---
-## Schema
-
-| Name | Type | Description |
-|---|---|---|
-| (root) | object | additionalProperty are |
-
 ## Example
 
 
@@ -17,3 +11,9 @@ title: additionalProperty
   "doNotSell": true
 }
 ```
+## Schema
+
+| Name | Type | Description |
+|---|---|---|
+| (root) | object | additionalProperty are |
+

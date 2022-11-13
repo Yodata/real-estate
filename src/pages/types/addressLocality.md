@@ -1,12 +1,6 @@
 ---
 title: addressLocality
 ---
-## Schema
-
-| Name | Type | Description |
-|---|---|---|
-| (root) | string | City, Township. <= 50 characters |
-
 ## Example
 
 
@@ -14,3 +8,9 @@ title: addressLocality
 ```json
 "Gotham City"
 ```
+## Schema
+
+| Name | Type | Description |
+|---|---|---|
+| (root) | string | City, Township. <= 50 characters |
+

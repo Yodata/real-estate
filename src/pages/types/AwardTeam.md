@@ -1,17 +1,6 @@
 ---
 title: AwardTeam
 ---
-## Schema
-
-| Name | Type | Description |
-|---|---|---|
-| (root) | object | a Collection |
-| type | string | const (`"AwardTeam"`)  |
-| name | string | - |
-| identifier | object |  1 properties |
-| member | array<string> | members of the AwardTeam |
-| member (single item) | string |  format (`uri`) |
-
 ## Example
 
 
@@ -28,3 +17,14 @@ title: AwardTeam
   ]
 }
 ```
+## Schema
+
+| Name | Type | Description |
+|---|---|---|
+| (root) | object | a Collection |
+| type | string | const (`"AwardTeam"`)  |
+| name | string | - |
+| identifier | object |  1 properties |
+| member | array<string> | members of the AwardTeam |
+| member (single item) | string |  format (`uri`) |
+

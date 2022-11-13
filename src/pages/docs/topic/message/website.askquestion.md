@@ -5,20 +5,57 @@ title: website#askquestion
 
 *website user asks a question*
 
-### Headers
-
-| Name | Type | Description |
-|---|---|---|
-| (root) | object | - |
-| time | string | date & time the event was produced format (`date-time`) |
-| agent | string | if you are a multi-tenant app, then the agent is the user associated with the event data. any future events related to this message will be sent to the same agent/recipient format (`uri`) |
-| instrument | string | the app or service that produced the event on behalf of the agent/user format (`uri`) |
-| source | string | a copy of the event was sent to the source(s). format (`uri`) |
-| originalRecipient | string | the originalRecipient helps you determine the subscription that delivered the event to you. if the originalRecipient is the same as the agent, then the you are subscribed to the agent. if the originalRecipient is different from the agent, then you are subscribed to the event source format (`uri`) |
-| id | string | the Event ID (aka "Publish ID") is the immutable canonical identifier for the event. it is a URI that is unique to the event and will not change. all subscribers will receive the same id for the same event. format (`uri`) |
-| @id | string |  format (`uri`) |
-
 ### Payload
+
+### Payload Example(s) (generated)
+
+```json
+{
+  "topic": "realestate/website#askquestion",
+  "data": {
+    "type": "AskAction",
+    "agent": {
+      "type": "Person",
+      "name": "string",
+      "givenName": "string",
+      "familyName": "string",
+      "email": "user@example.com",
+      "telephone": "string",
+      "identifier": {
+        "bhhsconsumerid": "12345"
+      },
+      "sameAs": {
+        "amcecrmid": 1234567,
+        "salesForceId": "parsing"
+      },
+      "contactPoint": {
+        "type": "ContactPoint",
+        "name": "Work",
+        "telephone": "555-555-5555",
+        "faxNumber": "555-555-5555",
+        "email": "bob@example.com",
+        "url": "https://www.facebook.com/hallandoates"
+      },
+      "additionalProperties": {
+        "workingWithAgent": true
+      }
+    },
+    "object": {
+      "type": "Question",
+      "text": "Populus debet control notitia sua"
+    },
+    "recipient": {
+      "type": "RealEstateAgent",
+      "name": "Randy Real Estate",
+      "id": "https://8675309.example.com/profile/card#me"
+    },
+    "about": {
+      "$ref": "../../example-propertylisting.yaml"
+    }
+  }
+}
+```
+
 
 | Name | Type | Description |
 |---|---|---|
@@ -102,55 +139,18 @@ title: website#askquestion
 | data.about.url | string | URL of the item. format (`uri`) |
 | data.about.yearBuilt | number | the year the structure was created |
 
-### Payload Example(s) (generated)
+### Headers
 
-```json
-{
-  "topic": "realestate/website#askquestion",
-  "data": {
-    "type": "AskAction",
-    "agent": {
-      "type": "Person",
-      "name": "string",
-      "givenName": "string",
-      "familyName": "string",
-      "email": "user@example.com",
-      "telephone": "string",
-      "identifier": {
-        "bhhsconsumerid": "12345"
-      },
-      "sameAs": {
-        "amcecrmid": 1234567,
-        "salesForceId": "parsing"
-      },
-      "contactPoint": {
-        "type": "ContactPoint",
-        "name": "Work",
-        "telephone": "555-555-5555",
-        "faxNumber": "555-555-5555",
-        "email": "bob@example.com",
-        "url": "https://www.facebook.com/hallandoates"
-      },
-      "additionalProperties": {
-        "workingWithAgent": true
-      }
-    },
-    "object": {
-      "type": "Question",
-      "text": "Populus debet control notitia sua"
-    },
-    "recipient": {
-      "type": "RealEstateAgent",
-      "name": "Randy Real Estate",
-      "id": "https://8675309.example.com/profile/card#me"
-    },
-    "about": {
-      "$ref": "../../example-propertylisting.yaml"
-    }
-  }
-}
-```
-
+| Name | Type | Description |
+|---|---|---|
+| (root) | object | - |
+| time | string | date & time the event was produced format (`date-time`) |
+| agent | string | if you are a multi-tenant app, then the agent is the user associated with the event data. any future events related to this message will be sent to the same agent/recipient format (`uri`) |
+| instrument | string | the app or service that produced the event on behalf of the agent/user format (`uri`) |
+| source | string | a copy of the event was sent to the source(s). format (`uri`) |
+| originalRecipient | string | the originalRecipient helps you determine the subscription that delivered the event to you. if the originalRecipient is the same as the agent, then the you are subscribed to the agent. if the originalRecipient is different from the agent, then you are subscribed to the event source format (`uri`) |
+| id | string | the Event ID (aka "Publish ID") is the immutable canonical identifier for the event. it is a URI that is unique to the event and will not change. all subscribers will receive the same id for the same event. format (`uri`) |
+| @id | string |  format (`uri`) |
 
 ### Tools
 

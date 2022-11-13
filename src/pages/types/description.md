@@ -1,12 +1,6 @@
 ---
 title: description
 ---
-## Schema
-
-| Name | Type | Description |
-|---|---|---|
-| (root) | string | description of the item. |
-
 ## Example
 
 
@@ -14,3 +8,9 @@ title: description
 ```json
 "string"
 ```
+## Schema
+
+| Name | Type | Description |
+|---|---|---|
+| (root) | string | description of the item. |
+

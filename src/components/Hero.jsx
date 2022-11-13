@@ -8,17 +8,18 @@ import { HeroBackground } from '@/components/HeroBackground'
 import blurCyanImage from '@/images/blur-cyan.png'
 import blurIndigoImage from '@/images/blur-indigo.png'
 
-const codeLanguage = 'javascript'
+const codeLanguage = 'json'
 const code = `
 {
-  "topic": "realestate/listing#update",
-  "agent": "https://examplerealestate.com/profile/card#me.",
+  "topic": "realestate/website#askquestion",
+  "recipient": "http://andrew-agent.example.com",
   "data": {
-    "type": "UpdateAction",
-    "object": {
-      "type": "PropertyListing",
-
-    }
+    "type": "AskAction",
+    "question": "When can we tour this property?",
+    "agent": {
+      "type": "Person",
+      "name": "Betty Buyer",
+      "email": "betty@example.com"
   }
 
 }`

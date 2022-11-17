@@ -2,7 +2,7 @@
 
 title: Award
 type: object
-description: An honor bestowed on one or mote _recipients_ by the message _agent_
+description: An honor bestowed on one or more _recipients_ by the message _agent_
 properties:
   type:
     type: string

@@ -32,9 +32,7 @@ payload:
           $ref: ../../identifier.yaml
           example:
             bhhsAwardId: xxxx
-        agent:
-          $ref: definitions#/awardPresenter
+
         object:
           $ref: Award.yaml
-        recipient:
-          $ref: definitions#/awardRecipient
+       

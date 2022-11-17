@@ -22,6 +22,7 @@ awardRecipient:
       type: string
       description: the name of the award recipient
       x-faker: name.findName
+      example: John Smith
   required:
     - type
     - id

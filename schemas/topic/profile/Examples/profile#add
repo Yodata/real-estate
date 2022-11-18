@@ -1,0 +1,99 @@
+{
+  "topic": "realestate/profile#add",
+  "data": {
+    "type": "AddAction",
+    "object": {
+      "type": "RealEstateAgent",
+      "id": "https://3047549.bhhs.hsfaffiliates.com/profile/card#me",
+      "description": "",
+      "name": "Brian James Choi",
+      "givenName": "Brian",
+      "familyName": "Choi",
+      "additionalName": "James",
+      "telephone": "(510) 274-9660",
+      "faxNumber": "(907) 646-3605",
+      "email": "brianc@bhhsalaska.com",
+      "url": "",
+      "identifier": {
+        "ContactID": "3047549"
+      },
+      "availableLanguage": [],
+      "jobTitle": [
+        "Licensed Real Estate Salesperson"
+      ],
+      "image": [],
+      "parentOrganization": [
+        "https://ak301-001.bhhs.hsfaffiliates.com/profile/card#me"
+      ],
+      "additionalProperty": {
+        "UserType": "Full Time Sales Professional",
+        "AffiliateID": "AK301",
+        "BrokerID": "AK301",
+        "OfficeID": "AK301-001",
+        "TeamID": "",
+        "TeamName": "",
+        "OfficeDBA": "Alaska Realty",
+        "OfficeStatus": "Active",
+        "EmployeeType": "Full Time Sales Professional",
+        "IsDisplayed": true,
+        "Status": "Active",
+        "IsCompanyQueue": false,
+        "IsTeamQueue": false,
+        "TeamQueueTeamId": "https://null.bhhs.hsfaffiliates.com/profile/card#me",
+        "agentWebsiteType": "Agent Profile",
+        "displayTestimonials": true,
+        "appointmentAppURL": "",
+        "vendorEmailOptout": false,
+        "bhhsLeadNotificationPreference": {
+          "timeZone": "America/Anchorage",
+          "emailNotification": true,
+          "textNotification": false,
+          "email": "brianc@bhhsalaska.com",
+          "leadNotificationSchedule": [
+            {
+              "type": "Schedule",
+              "name": "Weekday",
+              "byDay": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ]
+            },
+            {
+              "type": "Schedule",
+              "name": "Saturday",
+              "byDay": [
+                "Saturday"
+              ]
+            },
+            {
+              "type": "Schedule",
+              "name": "Sunday",
+              "byDay": [
+                "Sunday"
+              ]
+            }
+          ]
+        }
+      },
+      "address": {
+        "type": "PostalAddress",
+        "streetAddress": "561 E. 36th Avenue Suite 200",
+        "addressLocality": "Anchorage",
+        "addressRegion": "AK",
+        "postalCode": "99503",
+        "addressCountry": "US"
+      },
+      "contactPoint": []
+    }
+  },
+  "@id": "https://profile-patcher.bhhs.hsfaffiliates.com/outbox/8016f0727444439b98e14346d32fabee",
+  "id": "https://profile-events-next.bhhs.hsfaffiliates.com/publish/90f5081c50ec4766b541d197ea291766",
+  "time": "2022-11-17T23:50:17.479Z",
+  "timestamp": 1668729017479,
+  "originalRecipient": "https://profile-events-next-handler.bhhs.hsfaffiliates.com/profile/card#me",
+  "instrument": "https://profile-events-next-handler.bhhs.hsfaffiliates.com/profile/card#me",
+  "@to": "aws-sqs://sqs.us-west-2.amazonaws.com/540541948463/solid-server-profile-patcher-processor"
+}

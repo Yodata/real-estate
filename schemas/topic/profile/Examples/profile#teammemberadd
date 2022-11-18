@@ -1,0 +1,23 @@
+{
+  "topic": "realestate/profile#teammemberadd",
+  "data": {
+    "type": "AddAction",
+    "id": "https://t-5283011239.bhhs.hsfaffiliates.com/profile/card#me",
+    "object": {
+      "type": "RealEstateTeamMembership",
+      "roleName": "TeamAdmin",
+      "memberOf": "https://t-528.bhhs.hsfaffiliates.com/profile/card#me",
+      "member": "https://3011239.bhhs.hsfaffiliates.com/profile/card#me",
+      "identifier": {
+        "bhhsmembershipid": "4d682d66"
+      }
+    }
+  },
+  "@id": "https://coleinformation.bhhs.hsfaffiliates.com/inbox/ea6c4ac42e74479a8836bcf1606b9fb9",
+  "id": "https://profile-events-next.bhhs.hsfaffiliates.com/publish/52a974ea2c644ab896e73ce9b07c9de4",
+  "time": "2022-11-17T18:14:42.189Z",
+  "timestamp": 1668708882189,
+  "originalRecipient": "https://profile-events-next-handler.bhhs.hsfaffiliates.com/profile/card#me",
+  "instrument": "https://bhhs.hsfaffiliates.com/profile/card#me",
+  "agent": "https://bhhs.hsfaffiliates.com/profile/card#me"
+}

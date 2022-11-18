@@ -1,0 +1,133 @@
+{
+  "topic": "realestate/website#sharepropertyvaluereport",
+  "time": "2022-10-31T12:52:12.033Z",
+  "instrument": "https://aem.bhhs.hsfaffiliates.com/profile/card#me",
+  "source": "https://ny301.bhhs.hsfaffiliates.com/profile/card#me",
+  "originalRecipient": "https://ny301.bhhs.hsfaffiliates.com/profile/card#me",
+  "data": {
+    "type": "ShareAction",
+    "agent": {
+      "type": "Contact",
+      "name": "Carolyn Reynolds",
+      "givenName": "Carolyn",
+      "familyName": "Reynolds",
+      "email": "carolynreynoldsrealtor@gmail.com",
+      "identifier": {
+        "hsfconsumerid": "E522AFDE-3B18-4EF0-B3CA-6A6A99031507"
+      },
+      "additionalProperty": {
+        "userPath": "https://www.google.com/%3BHome%20|%20Berkshire%20Hathaway%20HomeServices%20Hudson%20Valley%20Properties%20|%20Berkshire%20Hathaway%20HomeServices%3BHome%20Value%20Hudson%20Valley%20Properties%20|%20Berkshire%20Hathaway%20HomeServices%3B0",
+        "workingWithAgent": false
+      }
+    },
+    "participant": {
+      "type": "RealEstateAgent",
+      "id": "https://ny301.bhhs.hsfaffiliates.com/profile/card#me",
+      "name": "Carolyn  Reynolds"
+    },
+    "instrument": {
+      "type": "RealEstateWebsite",
+      "url": "https://ny301.bhhs.hsfaffiliates.com/profile/card#me"
+    },
+    "object": {
+      "type": "PropertyValueReport",
+      "name": "LOT:738.191 SEC:6.161 DIST:131300 CITY/MUNI/TWP:POUGHKEEPSIE 20 X 140 1828 0747 1640 0724 ",
+      "dateCreated": "2022-10-31T12:52:11",
+      "result": {
+        "type": "MonetaryAmount",
+        "minValue": 227200,
+        "maxValue": 266800,
+        "value": 247000,
+        "currency": "USD"
+      },
+      "about": {
+        "type": "RealEstateProperty",
+        "propertyType": "Condominium",
+        "addressCountry": "US",
+        "addressLocality": "POUGHKEEPSIE",
+        "addressRegion": "NY",
+        "image": [],
+        "latitude": 41.67885,
+        "livingArea": {
+          "type": "QuantitativeValue",
+          "unitCode": "SqFt",
+          "unitText": "Square Feet",
+          "value": 1168
+        },
+        "longitude": -73.90324,
+        "lotSize": {
+          "type": "QuantitativeValue",
+          "unitCode": "SqFt",
+          "unitText": "Square Feet",
+          "value": 2614
+        },
+        "numberOfBathrooms": 1.1,
+        "numberOfBedrooms": 3,
+        "postalCode": "12603",
+        "streetAddress": "12 GREENHOUSE LN",
+        "yearBuilt": 1984,
+        "additionalProperty": {
+          "score": 92,
+          "parcelId": "131300 6161-74-738191-0000",
+          "averageSalePrice": {
+            "type": "PriceSpecification",
+            "price": 246400,
+            "priceCurrency": "USD"
+          },
+          "nonDisclosureProperty": false,
+          "taxAssessedValue": {
+            "type": "MonetaryAmount",
+            "amount": 157300,
+            "currency": "USD"
+          },
+          "taxAssessedYear": 2021,
+          "neighborhoodName": "RICHMOND HILL",
+          "useNeighborhoodDataForCharts": true,
+          "ownerName": "HART,LAURA",
+          "ownerOccupied": "Y",
+          "ownersEstimatedEquity": {
+            "@type": "MonetaryAmount",
+            "amount": 124000,
+            "currency": "USD"
+          },
+          "firstLoanPrice": {
+            "@type": "MonetaryAmount",
+            "amount": 0,
+            "currency": "USD"
+          },
+          "secondLoanPrice": {
+            "@type": "MonetaryAmount",
+            "amount": 0,
+            "currency": "USD"
+          },
+          "lastRefinanceLoanVal1": {
+            "@type": "MonetaryAmount",
+            "amount": 123193,
+            "currency": "USD"
+          },
+          "lastRefinanceLenderName1": "UNITED WHOLESALE MORTGAGE               ",
+          "lastRefinanceLoanVal2": {
+            "@type": "MonetaryAmount",
+            "amount": 0,
+            "currency": "USD"
+          }
+        }
+      }
+    },
+    "event": {
+      "type": "Event",
+      "name": "Property Showing  12 Greenhouse Lane, Poughkeepsie, NY, USA",
+      "description": "Estimate of value"
+    },
+    "recipient": {
+      "type": "Person",
+      "email": "carolynreynoldsrealtor@gmail.com",
+      "givenName": "Carolyn ",
+      "familyName": "Reynolds"
+    }
+  },
+  "@id": "https://buyside.bhhs.hsfaffiliates.com/inbox/8c0d8bcd97a4489987fa11d2028994f5",
+  "id": "https://aem.bhhs.hsfaffiliates.com/publish/7074dac8174a48beaf5695cc32657668",
+  "timestamp": 1667220732033,
+  "agent": "https://bhhs.hsfaffiliates.com/profile/card#me"
+}

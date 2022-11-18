@@ -1,0 +1,103 @@
+{
+  "topic": "realestate/profile#teamcreate",
+  "data": {
+    "type": "CreateAction",
+    "object": {
+      "type": "RealEstateTeam",
+      "id": "https://t-528.bhhs.hsfaffiliates.com/profile/card#me",
+      "name": "The Anchor",
+      "email": "theanchorteam@bhhsne.com",
+      "telephone": "",
+      "identifier": {
+        "AgentTeamID": "T-528"
+      },
+      "url": "",
+      "availableLanguage": [],
+      "certification": [],
+      "image": [],
+      "address": {
+        "type": "PostalAddress",
+        "streetAddress": "2 Williams Ave.",
+        "addressLocality": "Mystic",
+        "addressRegion": "Connecticut",
+        "postalCode": "06355",
+        "addressCountry": "United States",
+        "addressCounty": "New London"
+      },
+      "parentOrganization": [
+        "https://ct301-055.bhhs.hsfaffiliates.com/profile/card#me"
+      ],
+      "contactPoint": [
+        {
+          "type": "ContactPoint",
+          "name": "Consumer",
+          "email": "theanchorteam@bhhsne.com",
+          "telephone": ""
+        }
+      ],
+      "additionalProperty": {
+        "BrokerID": "CT301",
+        "alternateEmail": "",
+        "primaryEmail": "theanchorteam@bhhsne.com",
+        "primaryPhone": "",
+        "tollFreePhone": "",
+        "biography": "",
+        "brand": "Berkshire Hathaway HomeServices",
+        "Status": "Active",
+        "IsDisplayed": false,
+        "isBlogDisplayed": true,
+        "isLuxury": false,
+        "teamLeadsToTeamMembers": true,
+        "leadsToTeamMembers": true,
+        "listingLeadsToTeamMembers": true,
+        "wordpressURL": "",
+        "heroshowcaseTitle": "",
+        "socialWallID": "",
+        "websiteType": "Team Website",
+        "isDisplayAVM": true,
+        "appointmentURL": "",
+        "unassignedLeadOwner": "https://3047531.bhhs.hsfaffiliates.com/profile/card#me",
+        "bhhsWebsiteWPHeader": {},
+        "bhhsLeadNotificationPreference": {
+          "timeZone": "America/New_York",
+          "emailNotification": false,
+          "textNotification": false,
+          "leadNotificationSchedule": [
+            {
+              "type": "Schedule",
+              "name": "Weekday",
+              "byDay": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ]
+            },
+            {
+              "type": "Schedule",
+              "name": "Saturday",
+              "byDay": [
+                "Saturday"
+              ]
+            },
+            {
+              "type": "Schedule",
+              "name": "Sunday",
+              "byDay": [
+                "Sunday"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "@id": "https://chalkdigital.bhhs.hsfaffiliates.com/inbox/92658679d57a481195673aba57374bf1",
+  "id": "https://profile-events-next.bhhs.hsfaffiliates.com/publish/3bc4f279fa5544b5acf644269b220441",
+  "time": "2022-11-17T18:13:08.083Z",
+  "timestamp": 1668708788083,
+  "originalRecipient": "https://profile-events-next-handler.bhhs.hsfaffiliates.com/profile/card#me",
+  "instrument": "https://bhhs.hsfaffiliates.com/profile/card#me",
+  "agent": "https://bhhs.hsfaffiliates.com/profile/card#me"
+}

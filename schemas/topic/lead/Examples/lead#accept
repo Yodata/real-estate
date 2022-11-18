@@ -1,0 +1,58 @@
+{
+  "topic": "realestate/lead#accept",
+  "agent": "https://bhhs.hsfaffiliates.com/profile/card#me",
+  "data": {
+    "type": "AcceptAction",
+    "object": {
+      "type": "Lead",
+      "identifier": {
+        "homeSpotterLeadId": "email:kareneva720@hotmail.com"
+      },
+      "object": {
+        "type": "Contact",
+        "name": "Karen Wohlfarth Noonan",
+        "email": "kareneva720@hotmail.com"
+      },
+      "recipient": "https://nc301.bhhs.hsfaffiliates.com/profile/card#me",
+      "sender": "https://homespotter.bhhs.hsfaffiliates.com/profile/card#me",
+      "owner": "https://nc301.bhhs.hsfaffiliates.com/profile/card#me",
+      "dateAccepted": "2022-11-17T23:45:41+0000",
+      "dateSent": "2022-11-17T23:45:41+0000",
+      "dateReceived": "2022-11-17T23:45:41+0000",
+      "leadSource": [
+        {
+          "type": "AskAction",
+          "object": {
+            "type": "Question",
+            "text": "Inquiry from Boost By HomeSpotter\n========= Inquiry regarding listing ==========\nMLS#: 100353263\nAddress: 115 Beulah Hill Road N # 104, Pinehurst, NC 28374\nList Price (at time of inquiry): 375000\nListing Status (at time of inquiry): Active\nBeds: 2\nTotal Baths: 2\n==============================================\n\n"
+          },
+          "about": {
+            "type": "PropertyListing",
+            "identifier": {
+              "homespotterPropertyId": "437:1367_28374_100353263"
+            },
+            "originatingSystemKey": "1367_28374_100353263",
+            "originatingSystemName": "HomeSpotter - Zillow Interchange Format",
+            "streetAddress": "115 Beulah Hill Road N # 104",
+            "addressLocality": "Pinehurst",
+            "addressRegion": "NC",
+            "postalCode": "28374",
+            "numberOfBedrooms": "2",
+            "numberOfBathrooms": "2",
+            "listingPrice": {
+              "type": "PriceSpecification",
+              "price": 375000,
+              "priceCurrency": "USD"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "@id": "https://buyside.bhhs.hsfaffiliates.com/inbox/028212ae68624d4cbe00b79f4663fd8c",
+  "id": "https://homespotter.bhhs.hsfaffiliates.com/publish/591713a1edc240a6997c1cd657c48ece",
+  "time": "2022-11-17T23:45:41.940Z",
+  "timestamp": 1668728741940,
+  "originalRecipient": "https://nc301.bhhs.hsfaffiliates.com/profile/card#me",
+  "instrument": "https://homespotter.bhhs.hsfaffiliates.com/profile/card#me"
+}

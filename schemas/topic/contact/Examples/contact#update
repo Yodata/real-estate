@@ -1,0 +1,69 @@
+{
+  "topic": "realestate/contact#update",
+  "data": {
+    "type": "UpdateAction",
+    "actionStatus": "CompletedActionStatus",
+    "agent": "https://1026118.bhhs.hsfaffiliates.com/profile/card#me",
+    "instrument": "https://ace.bhhs.hsfaffiliates.com/profile/card#me",
+    "object": {
+      "type": "Contact",
+      "email": "demoreno85@yahoo.com",
+      "identifier": {
+        "redContact_Guid": "933A2E0A-2C35-42BE-B10B-7EF27B220B86",
+        "redRW_InternalCustomerID": 8286899
+      },
+      "sameAs": {
+        "salesforceId": "0034N000024tvqgQAA"
+      },
+      "givenName": "Daniel",
+      "familyName": "Moreno",
+      "address": [
+        {
+          "streetAddress": "612 North Nestor Avenue",
+          "addressLocality": "Compton",
+          "addressRegion": "California",
+          "addressCountry": "United States",
+          "postalCode": "90220"
+        }
+      ],
+      "leadOwner": {
+        "type": "RealEstateAgent",
+        "id": "https://1026118.bhhs.hsfaffiliates.com/profile/card#me"
+      },
+      "additionalProperty": {
+        "salesforceId": "0034N000024tvqgQAA",
+        "doNotSellPersonalInformation": false
+      },
+      "contactGroup": [
+        {
+          "type": "Collection",
+          "name": "Lead"
+        },
+        {
+          "type": "Collection",
+          "name": "Seller"
+        }
+      ],
+      "contactPoint": [
+        {
+          "type": "ContactPoint",
+          "name": "WorkPhone",
+          "telephone": "909-569-4184"
+        },
+        {
+          "type": "ContactPoint",
+          "name": "HomePhone",
+          "telephone": "909-569-4184"
+        }
+      ]
+    }
+  },
+  "source": "https://1026118.bhhs.hsfaffiliates.com/profile/card#me",
+  "instrument": "https://ace.bhhs.hsfaffiliates.com/profile/card#me",
+  "@id": "https://chalkdigital.bhhs.hsfaffiliates.com/inbox/2062399b41b44321993063cb091a11d6",
+  "id": "https://ace.bhhs.hsfaffiliates.com/publish/2821f8fb029a4436b428a5e3081e52e1",
+  "time": "2022-11-18T00:24:40.311Z",
+  "timestamp": 1668731080311,
+  "originalRecipient": "https://1026118.bhhs.hsfaffiliates.com/profile/card#me",
+  "agent": "https://bhhs.hsfaffiliates.com/profile/card#me"
+}

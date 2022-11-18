@@ -1,0 +1,52 @@
+{
+  "data": {
+    "agent": {
+      "name": "Debbie Johnson",
+      "email": "faye1104@yahoo.com",
+      "telephone": "2392222509",
+      "identifier": {
+        "hsfconsumerid": "98F7DBCC-E26E-412F-9186-8EFE342A3168"
+      },
+      "additionalProperty": {
+        "userPath": "https%3A%2F%2Fwww.google.com%2F|Home+%7C+Berkshire+Hathaway+HomeServices+Metro+%26+Fields+Realty+%7C+Berkshire+Hathaway+HomeServices|Home+Value+Metro+%26+Fields+Realty+%7C+Berkshire+Hathaway+HomeServices|0"
+      },
+      "mortgage": false,
+      "type": "Contact"
+    },
+    "object": {
+      "text": "Hello, I am interested in learning more about this property.\nThe mobile home is not livable. New well pump. This is my brothers estate.\nUser Type: I am a Seller\nProperty Address: 7719 Catawba-Mechanicsburg Road, Mechanicsburg, OH, USA\nWhat I think my property is worth? : \nSelling Time Frame: 1 TO 3 MONTHS\nWorking with Agent: No\n",
+      "type": "Question"
+    },
+    "recipient": {
+      "id": "https://oh316.bhhs.hsfaffiliates.com/profile/card#me",
+      "name": "Metro & Fields Realty",
+      "type": "RealEstateOrganization"
+    },
+    "about": {
+      "url": "https%3A%2F%2Fwww.google.com%2F|Home+%7C+Berkshire+Hathaway+HomeServices+Metro+%26+Fields+Realty+%7C+Berkshire+Hathaway+HomeServices|Home+Value+Metro+%26+Fields+Realty+%7C+Berkshire+Hathaway+HomeServices|0",
+      "postalCode": "9727",
+      "addressRegion": "OH",
+      "streetAddress": "7719 MECHANICSBURG CATAWBA RD",
+      "addressCountry": "USA",
+      "addressLocality": "MECHANICSBURG",
+      "listingPrice": {
+        "price": 220000,
+        "priceCurrency": "USD",
+        "type": "PriceSpecification"
+      },
+      "type": "PropertyListing"
+    },
+    "additionalProperty": {
+      "eventOrigination": "Home Value Report"
+    },
+    "type": "AskAction"
+  },
+  "topic": "realestate/website#askquestion",
+  "@id": "https://buyside.bhhs.hsfaffiliates.com/inbox/b8b1750bdaef4cab9606ef68caaab585",
+  "id": "https://aem.bhhs.hsfaffiliates.com/publish/d5f9e1da6dee4a79a25843cc18135c99",
+  "time": "2022-11-17T23:48:12.835Z",
+  "timestamp": 1668728892835,
+  "originalRecipient": "https://bhhs.hsfaffiliates.com/profile/card#me",
+  "instrument": "https://aem.bhhs.hsfaffiliates.com/profile/card#me",
+  "agent": "https://bhhs.hsfaffiliates.com/profile/card#me"
+}

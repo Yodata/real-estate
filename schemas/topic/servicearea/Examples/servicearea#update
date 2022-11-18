@@ -1,0 +1,47 @@
+{
+  "topic": "realestate/servicearea#update",
+  "data": {
+    "type": "UpdateAction",
+    "object": {
+      "type": "ServiceArea",
+      "kind": "PostalCode",
+      "identifier": {
+        "bhhsESAId": "ESA-326399"
+      },
+      "postalCode": "53536",
+      "addressLocality": "Evansville",
+      "addressRegion": "WI",
+      "addressCountry": "US",
+      "addressCounty": "Rock",
+      "provider": {
+        "type": "RealEstateOrganization",
+        "id": "https://wi307.bhhs.hsfaffiliates.com/profile/card#me"
+      },
+      "additionalProperty": {
+        "relocationOffice": {
+          "type": "RealEstateOffice",
+          "id": "https://wi307-001.bhhs.hsfaffiliates.com/profile/card#me"
+        },
+        "weight": 97,
+        "officeInPostalCode": false,
+        "sortOrder": 9,
+        "sentToConsumerSite": true,
+        "sentToMLSESA": false,
+        "sentToCompanyLocator": true,
+        "sentToReferralSolutions": true,
+        "luxuryPriceMinimum": {
+          "type": "PriceSpecification",
+          "price": 276195,
+          "priceCurrency": "USD"
+        }
+      }
+    }
+  },
+  "@id": "https://erelocation.bhhs.hsfaffiliates.com/inbox/16c0b3c4e94f4de08f663c0a25c0eefa",
+  "id": "https://esa.bhhs.hsfaffiliates.com/publish/1b20656eb986472986b28899b6510a42",
+  "time": "2022-11-17T18:32:21.807Z",
+  "timestamp": 1668709941807,
+  "originalRecipient": "https://bhhs.hsfaffiliates.com/profile/card#me",
+  "instrument": "https://esa.bhhs.hsfaffiliates.com/profile/card#me",
+  "agent": "https://bhhs.hsfaffiliates.com/profile/card#me"
+}

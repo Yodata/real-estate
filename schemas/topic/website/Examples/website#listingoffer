@@ -1,0 +1,56 @@
+{
+  "data": {
+    "agent": {
+      "name": "Merlyn Martinez",
+      "email": "merlyn.martinez424@gmail.com",
+      "telephone": "4134785936",
+      "identifier": {
+        "hsfconsumerid": "832E5394-C9EE-46CE-9AEC-B99861FEEE66"
+      },
+      "additionalProperty": {
+        "userPath": "https%3A%2F%2Fwww.bhhs.com%2F|79+Lynebrook+Road%2C+Springfield%2C+MA+01118+-+MLS+73059171+-+Berkshire+Hathaway+HomeServices||0"
+      },
+      "mortgage": true,
+      "type": "Contact"
+    },
+    "object": {
+      "text": "Name: Merlyn Martinez\nEmail: merlyn.martinez424@gmail.com\nPhone: 4134785936\nGood day, I am making this offer with a prayer I will offer what I could afford I know it is lower than asking price, but I know it is up to the agent on the final decision most of the time. I tried a few weeks ago on one of your home but unfortunately I lost, but there are no win if you don't try. My offer is 300 cash. Thanks  - Property Address: 79 Lynebrook Road\nYes, I am pre-approved for a home mortgage",
+      "type": "Comment"
+    },
+    "recipient": {
+      "id": "https://3002282.bhhs.hsfaffiliates.com/profile/card#me",
+      "name": "Barbara Robinson",
+      "type": "RealEstateAgent"
+    },
+    "offerPrice": {
+      "price": 300,
+      "priceCurrency": "USD",
+      "type": "PriceSpecification"
+    },
+    "propertyListing": {
+      "url": "https%3A%2F%2Fwww.bhhs.com%2F|79+Lynebrook+Road%2C+Springfield%2C+MA+01118+-+MLS+73059171+-+Berkshire+Hathaway+HomeServices||0",
+      "postalCode": "01118",
+      "addressRegion": "MA",
+      "streetAddress": "79 Lynebrook Road",
+      "addressLocality": "Springfield",
+      "listingId": "338856387",
+      "listingOriginatingSystem": {
+        "identifier": {
+          "bhhsmlsid": "73059171"
+        },
+        "name": "MLSPIN - MLS Property Information Network",
+        "type": "MultipleListingService"
+      },
+      "type": "PropertyListing"
+    },
+    "type": "ListingOffer"
+  },
+  "topic": "realestate/website#listingoffer",
+  "@id": "https://buyside.bhhs.hsfaffiliates.com/inbox/5090562749044a1682ab00835896967a",
+  "id": "https://aem.bhhs.hsfaffiliates.com/publish/6bbe04220dea4a659aa622b4f4da3aaa",
+  "time": "2022-11-17T17:45:51.585Z",
+  "timestamp": 1668707151585,
+  "originalRecipient": "https://bhhs.hsfaffiliates.com/profile/card#me",
+  "instrument": "https://aem.bhhs.hsfaffiliates.com/profile/card#me",
+  "agent": "https://bhhs.hsfaffiliates.com/profile/card#me"
+}

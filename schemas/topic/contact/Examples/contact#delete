@@ -1,0 +1,43 @@
+{
+  "topic": "realestate/contact#delete",
+  "data": {
+    "type": "DeleteAction",
+    "actionStatus": "CompletedActionStatus",
+    "agent": "https://nc301.bhhs.hsfaffiliates.com/profile/card#me",
+    "instrument": "https://ace.bhhs.hsfaffiliates.com/profile/card#me",
+    "object": {
+      "type": "Contact",
+      "email": "nc2boca51@gmail.com",
+      "identifier": {
+        "salesforceId": "0034N00003P4E2dQAF"
+      },
+      "sameAs": {
+        "salesforceId": "0034N00003P4E2dQAF"
+      },
+      "givenName": "Baleka",
+      "familyName": "Beach Williams",
+      "address": [
+        {
+          "addressCountry": "United States"
+        }
+      ],
+      "leadOwner": {
+        "type": "RealEstateOrganization",
+        "id": "https://nc301.bhhs.hsfaffiliates.com/profile/card#me"
+      },
+      "additionalProperty": {
+        "salesforceId": "0034N00003P4E2dQAF",
+        "doNotSellPersonalInformation": false
+      },
+      "contactPoint": []
+    }
+  },
+  "source": "https://nc301.bhhs.hsfaffiliates.com/profile/card#me",
+  "instrument": "https://ace.bhhs.hsfaffiliates.com/profile/card#me",
+  "@id": "https://chalkdigital.bhhs.hsfaffiliates.com/inbox/efe02115159147dc8cfc20404abf4ed4",
+  "id": "https://ace.bhhs.hsfaffiliates.com/publish/4defd1fc6db64fddb6a547dbf61a3dd2",
+  "time": "2022-11-17T22:27:14.676Z",
+  "timestamp": 1668724034676,
+  "originalRecipient": "https://nc301.bhhs.hsfaffiliates.com/profile/card#me",
+  "agent": "https://bhhs.hsfaffiliates.com/profile/card#me"
+}

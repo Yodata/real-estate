@@ -1,0 +1,104 @@
+{
+  "topic": "realestate/website#saveproperty",
+  "source": "https://13640.bhhs.hsfaffiliates.com/profile/card#me",
+  "data": {
+    "type": "SaveAction",
+    "object": {
+      "type": "PropertyListing",
+      "redListingKey": "690dd83c-b29c-484a-b3d7-f59b859063b0",
+      "originatingSystemName": "GAMLS",
+      "originatingSystemKey": "20015846",
+      "listingStatus": "Active",
+      "streetAddress": "12230 Highway 46",
+      "addressLocality": "Statesboro",
+      "addressRegion": "GA",
+      "postalCode": "30458",
+      "addressCountry": "USA",
+      "addressCounty": "Bulloch",
+      "url": "http://www.bhhs.com/kennedy-realty-ga305/ga/12230-highway-46-statesboro-30458/pid-326420478",
+      "listingTypeName": "Commercial",
+      "propertyType": "Retail, Industrial, Farm",
+      "propertySubType": "Other",
+      "daysOnMarket": 289,
+      "listingPrice": {
+        "type": "PriceSpecification",
+        "priceCurrency": "USD",
+        "price": 1900
+      },
+      "purchaseContractDate": "2022-02-01T00:00:00.000Z",
+      "listingAgent": {
+        "type": "RealEstateAgent",
+        "name": "Everett Kennedy",
+        "givenName": "Everett",
+        "familyName": "Kennedy",
+        "email": "ekennedy@bhhskennedyrealty.com"
+      },
+      "listingOffice": {
+        "type": "RealEstateOffice",
+        "identifier": "BHHS63",
+        "name": "BHHS Kennedy Realty",
+        "telephone": "(912) 764-6249"
+      },
+      "yearBuilt": 1978,
+      "lotSize": {
+        "type": "QuantitativeValue",
+        "value": 3
+      },
+      "description": "Great Leasing Potential.  Convenient to I 16.  Perfect for Farm Equipment, Retail, Wholesale, and Warehouse Use.  $1,900 per month, 2 Year Lease.",
+      "additionalProperty": {
+        "heating": "Electric Heating",
+        "cooling": "Electric",
+        "interiorFeatures": "Delivery Door,Delivery Dock,Other",
+        "roof": "Metal"
+      },
+      "dateCreated": "2022-11-17T20:32:35.407Z",
+      "dateModified": "2022-11-17T20:32:35.407Z"
+    },
+    "agent": {
+      "type": "Contact",
+      "identifier": {
+        "hsfconsumerid": "9E75EF38-FEC1-4761-A9B9-1712A63FEAF1"
+      },
+      "sameAs": {
+        "cregcontactkey": "13352672",
+        "redContact_Guid": "99966c29-75a4-46e7-a4fb-590021a0c639"
+      },
+      "name": "Jodi Palmer",
+      "givenName": "Jodi",
+      "familyName": "Palmer",
+      "email": "jodilpalmer17@gmail.com",
+      "dateCreated": "2022-11-17T20:32:34.827Z",
+      "dateModified": "2022-11-17T20:32:35.093Z",
+      "contactPoint": [
+        {
+          "type": "ContactPoint",
+          "kind": "EmailAddress",
+          "name": "primary",
+          "email": "jodilpalmer17@gmail.com"
+        }
+      ],
+      "additionalProperty": {
+        "redPreferredContactMethod": "No Preference",
+        "redPreferredTime": "",
+        "preferredLanguage": "en-US",
+        "preferredCurrency": "USD",
+        "preferredUnits": "Imperial",
+        "marketingViaEmailOptIn": true,
+        "marketingViaSmsOptIn": false,
+        "userPath": "https://www.google.com/;Home | Berkshire Hathaway HomeServices Kennedy Realty | Berkshire Hathaway HomeServices;12230 Highway 46, Statesboro, GA 30458 - MLS 20015846 - Berkshire Hathaway HomeServices;0"
+      }
+    },
+    "description": "ExternalCreate Accepted AutoAccepted Created Created PropertyAdded Created",
+    "instrument": {
+      "type": "RealEstateWebsite",
+      "name": "User Website"
+    }
+  },
+  "@id": "https://buyside.bhhs.hsfaffiliates.com/inbox/f569ab7a3abb4a4e905c25f621db01a3",
+  "id": "https://creg.bhhs.hsfaffiliates.com/publish/07ed14e51d184d5a9af3b29b63e4286f",
+  "time": "2022-11-17T20:32:36.249Z",
+  "timestamp": 1668717156249,
+  "originalRecipient": "https://bhhs.hsfaffiliates.com/profile/card#me",
+  "instrument": "https://creg.bhhs.hsfaffiliates.com/profile/card#me",
+  "agent": "https://bhhs.hsfaffiliates.com/profile/card#me"
+}

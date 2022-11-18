@@ -1,0 +1,97 @@
+{
+  "data": {
+    "agent": "https://pa315.bhhs.hsfaffiliates.com/profile/card#me",
+    "recipient": "https://3029533.bhhs.hsfaffiliates.com/profile/card#me",
+    "type": "UpdateAction",
+    "dateSent": "2022-11-17T23:47:50.294898892Z",
+    "object": {
+      "owner": "https://pa315.bhhs.hsfaffiliates.com/profile/card#me",
+      "identifier": {
+        "ProspectConverterId": "124995291"
+      },
+      "additionalProperty": {
+        "isRegisteredConsumer": false
+      },
+      "sender": "https://aem.bhhs.hsfaffiliates.com/profile/card#me",
+      "leadSource": [
+        {
+          "agent": {
+            "name": "Rachel Johnson",
+            "email": "rjohnson.cy@gmail.com",
+            "telephone": "9038025335",
+            "identifier": {
+              "hsfconsumerid": "7341D92A-CE73-44FE-8E82-3C955E2796A7"
+            },
+            "additionalProperty": {
+              "userPath": "https%3A%2F%2Fwww.bhhs.com%2F|Property+Search+Results+The+Preferred+Realty+%7C+Berkshire+Hathaway+HomeServices|123+Greenbriar+Drive%2C+Scott+Township%2C+PA+15220+-+MLS+1582815+-+Berkshire+Hathaway+HomeServices|0"
+            },
+            "mortgage": false,
+            "type": "Contact"
+          },
+          "object": {
+            "text": "I would like to request a visit to 123 Greenbriar Drive Scott Township, PA 15220 between 12-2 PM on November 19.",
+            "type": "Question"
+          },
+          "recipient": {
+            "id": "https://pa315.bhhs.hsfaffiliates.com/profile/card#me",
+            "name": "The Preferred Realty",
+            "type": "RealEstateOrganization"
+          },
+          "about": {
+            "url": "https://www.bhhsthepreferredrealty.com/pa/123-greenbriar-drive-scott-township-15220/pid-338459636?SearchInput=Pittsburgh%2C%20PA&SearchType=Map&PropertyType=1%2C2%2C3%2C4%2C5%2C6&ApplicationType=FOR_RENT&ListingStatus=1&NewListing=false&Sort=PRICE_ASCENDING&PageSize=20&Page=1&NorthEastLatitude=40.45669274653702&NorthEastLongitude=-80.05689442035838&SouthWestLatitude=40.193378508873245&SouthWestLongitude=-80.30408680317088&SearchParameter=%7B%22type%22%3A%22FeatureCollection%22%2C%22features%22%3A%5B%7B%22type%22%3A%22Feature%22%2C%22properties%22%3A%7B%7D%2C%22geometry%22%3A%7B%22type%22%3A%22Polygon%22%2C%22coordinates%22%3A%5B%5B%5B-80.30408680317088%2C40.45669274653702%5D%2C%5B-80.30408680317088%2C40.193378508873245%5D%2C%5B-80.05689442035838%2C40.193378508873245%5D%2C%5B-80.05689442035838%2C40.45669274653702%5D%2C%5B-80.30408680317088%2C40.45669274653702%5D%5D%5D%7D%7D%5D%7D&MapSearchType=MapBounds",
+            "postalCode": "15220",
+            "addressRegion": "PA",
+            "streetAddress": "123 Greenbriar Drive Scott Township, PA 15220",
+            "addressLocality": "Scott Township",
+            "listingId": "338459636",
+            "listingPrice": {
+              "price": 1500,
+              "priceCurrency": "USD",
+              "type": "PriceSpecification"
+            },
+            "listingOriginatingSystem": {
+              "type": "MultipleListingService",
+              "name": "West Penn MLS",
+              "identifier": {
+                "orgId": "pawpml"
+              },
+              "originatingSystemName": "West Penn MLS",
+              "originatingSystemKey": "1582815"
+            },
+            "type": "PropertyListing"
+          },
+          "type": "RequestShowingAction"
+        }
+      ],
+      "recipient": "https://3029533.bhhs.hsfaffiliates.com/profile/card#me",
+      "type": "Lead",
+      "object": {
+        "name": "Rachel Johnson",
+        "email": "rjohnson.cy@gmail.com",
+        "telephone": "9038025335",
+        "identifier": {
+          "hsfconsumerid": "7341D92A-CE73-44FE-8E82-3C955E2796A7"
+        },
+        "additionalProperty": {
+          "userPath": "https%3A%2F%2Fwww.bhhs.com%2F|Property+Search+Results+The+Preferred+Realty+%7C+Berkshire+Hathaway+HomeServices|204+Carriage+Hill+Dr%2C+Canonsburg%2C+PA+15317+-+MLS+1535413+-+Berkshire+Hathaway+HomeServices|0"
+        },
+        "mortgage": false,
+        "type": "Contact",
+        "givenName": "Rachel",
+        "familyName": "Johnson",
+        "sameAs": {
+          "ProspectConverterId": 124995291
+        }
+      }
+    }
+  },
+  "topic": "realestate/lead#update",
+  "source": "https://3029533.bhhs.hsfaffiliates.com/profile/card#me",
+  "@id": "https://roqlogic.bhhs.hsfaffiliates.com/inbox/aff6b7dc86434a30a8626dda59f67ad1",
+  "id": "https://lead-manager.bhhs.hsfaffiliates.com/publish/5b48e02cdbbe44259b8ee0ec3eabb8be",
+  "time": "2022-11-17T23:47:50.649Z",
+  "timestamp": 1668728870649,
+  "originalRecipient": "https://bhhs.hsfaffiliates.com/profile/card#me",
+  "instrument": "https://lead-manager.bhhs.hsfaffiliates.com/profile/card#me",
+  "agent": "https://bhhs.hsfaffiliates.com/profile/card#me"
+}

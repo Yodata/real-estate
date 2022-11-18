@@ -1,0 +1,62 @@
+{
+  "topic": "realestate/website#propertysearchsave",
+  "source": "https://NE301.bhhs.hsfaffiliates.com/profile/card#me",
+  "data": {
+    "type": "SaveAction",
+    "object": {
+      "type": "PropertySearch",
+      "name": "68123",
+      "price": {
+        "type": "PriceSpecification",
+        "priceCurrency": "USD",
+        "minPrice": 275000,
+        "maxPrice": 325000
+      }
+    },
+    "agent": {
+      "type": "Contact",
+      "identifier": {
+        "hsfconsumerid": "715EF2C7-78D6-4DCC-AC5C-19EFB3F05BC4"
+      },
+      "sameAs": {
+        "cregcontactkey": "13352560",
+        "redContact_Guid": "0845447a-fb46-4211-b00b-627f6a07bfa2"
+      },
+      "name": "Charles Fraley",
+      "givenName": "Charles",
+      "familyName": "Fraley",
+      "email": "charlesjfraley@yahoo.com",
+      "dateCreated": "2022-11-16T20:35:30.863Z",
+      "dateModified": "2022-11-17T01:29:02.297Z",
+      "contactPoint": [
+        {
+          "type": "ContactPoint",
+          "kind": "EmailAddress",
+          "name": "primary",
+          "email": "charlesjfraley@yahoo.com"
+        }
+      ],
+      "additionalProperty": {
+        "redPreferredContactMethod": "No Preference",
+        "redPreferredTime": "",
+        "preferredLanguage": "en-US",
+        "preferredCurrency": "USD",
+        "preferredUnits": "Imperial",
+        "marketingViaEmailOptIn": false,
+        "marketingViaSmsOptIn": false,
+        "userPath": "https://www.google.com/;Find Your Next Home | Berkshire Hathaway HomeServices;Property Search Results Ambassador Real Estate | Berkshire Hathaway HomeServices;0"
+      }
+    },
+    "instrument": {
+      "type": "RealEstateWebsite",
+      "name": "Office Website"
+    }
+  },
+  "@id": "https://buyside.bhhs.hsfaffiliates.com/inbox/864b8514bd1942bda415b7f5f918a7bf",
+  "id": "https://creg.bhhs.hsfaffiliates.com/publish/654c42533a30439c97560cb5098bcba3",
+  "time": "2022-11-17T01:29:03.454Z",
+  "timestamp": 1668648543454,
+  "originalRecipient": "https://bhhs.hsfaffiliates.com/profile/card#me",
+  "instrument": "https://creg.bhhs.hsfaffiliates.com/profile/card#me",
+  "agent": "https://bhhs.hsfaffiliates.com/profile/card#me"
+}

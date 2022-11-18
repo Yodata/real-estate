@@ -1,0 +1,59 @@
+{
+  "data": {
+    "agent": {
+      "identifier": {
+        "hsfconsumerid": "1F2D31A2-CB2D-4845-999B-3424B830420A"
+      },
+      "additionalProperty": {
+        "userPath": "https%3A%2F%2Fwww.google.com%2F|Gettysburg%2C+PA+-+Homes+for+Sale+-+Berkshire+Hathaway+HomeServices|325+BON+OX+RD+ROAD%2C+Gettysburg+-+MLS+PAAD2007286+-+Berkshire+Hathaway+HomeServices|0",
+        "coListingAgentType": "Primary"
+      },
+      "mortgage": false,
+      "type": "Contact"
+    },
+    "object": {
+      "type": "Question"
+    },
+    "recipient": {
+      "name": "Homesale Realty",
+      "url": "https://www.facebook.com/sharer/sharer.php?u=https://www.bhhs.com/homes-for-sale/pa/325-bon-ox-rd-road-gettysburg-17325/pid-338856950&cregLeadBrand=%7B%22broker%22%3A%7B%22name%22%3A%22Berkshire+Hathaway+HomeServices+Homesale+Realty%22%2C%22websiteKey%22%3A%22257839%22%2C%22officeKey%22%3A%22110787%22%2C%22officeCode%22%3A%22PA305%22%7D%2C%22leads%22%3A%7B%22brokers%22%3A%5B%7B%22officeCode%22%3A%22PA305%22%2C%22leadType%22%3A%22ListingAgent%22%7D%5D%2C%22agents%22%3A%5B%5D%2C%22teams%22%3A%5B%5D%7D%7D",
+      "instrument": {
+        "type": "Organization",
+        "name": "Facebook"
+      },
+      "type": "Person"
+    },
+    "about": {
+      "url": "https://www.bhhs.com/homes-for-sale/pa/325-bon-ox-rd-road-gettysburg-17325/pid-338856950",
+      "postalCode": "17325",
+      "addressRegion": "PA",
+      "streetAddress": "325 BON OX RD ROAD, Gettysburg, PA 17325",
+      "addressLocality": "Gettysburg",
+      "listingId": "338856950",
+      "listingPrice": {
+        "price": 239900,
+        "priceCurrency": "USD",
+        "type": "PriceSpecification"
+      },
+      "listingOriginatingSystem": {
+        "type": "MultipleListingService",
+        "name": "Bright MLS (MDBMLS-R)",
+        "identifier": {
+          "orgId": "MDBMLS-R"
+        },
+        "originatingSystemName": "Bright MLS (MDBMLS-R)",
+        "originatingSystemKey": "PAAD2007286"
+      },
+      "type": "PropertyListing"
+    },
+    "type": "ShareAction"
+  },
+  "topic": "realestate/website#shareproperty",
+  "@id": "https://buyside.bhhs.hsfaffiliates.com/inbox/dc8912ca74934b51b5e0aaf454737ca8",
+  "id": "https://aem.bhhs.hsfaffiliates.com/publish/302870fe770547d98309c3c6b968a6af",
+  "time": "2022-11-17T23:19:42.296Z",
+  "timestamp": 1668727182296,
+  "originalRecipient": "https://bhhs.hsfaffiliates.com/profile/card#me",
+  "instrument": "https://aem.bhhs.hsfaffiliates.com/profile/card#me",
+  "agent": "https://bhhs.hsfaffiliates.com/profile/card#me"
+}

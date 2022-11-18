@@ -1,0 +1,26 @@
+{
+  "topic": "realestate/marketingpreferences#unsubscribe",
+  "datacontenttype": "application/json",
+  "data": {
+    "type": "UnsubscribeAction",
+    "instrument": "https://roqlogic.bhhs.hsfaffiliates.com/profile/card#me",
+    "endTime": "2022-11-18T00:25:07.797Z",
+    "participant": [
+      {
+        "id": "https://326348.bhhs.hsfaffiliates.com/profile/card#me",
+        "role": "SubscriptionProvider"
+      }
+    ],
+    "agent": {
+      "type": "Contact",
+      "email": "matt.rowleyRE@gmail.com"
+    }
+  },
+  "@id": "https://ace.bhhs.hsfaffiliates.com/inbox/f1858c6e4e254b8799f6170801a512af",
+  "id": "https://roqlogic.bhhs.hsfaffiliates.com/publish/69319e6011b74a9287cdcb0b0cb89339",
+  "time": "2022-11-18T00:25:08.257Z",
+  "timestamp": 1668731108257,
+  "originalRecipient": "https://bhhs.hsfaffiliates.com/profile/card#me",
+  "instrument": "https://roqlogic.bhhs.hsfaffiliates.com/profile/card#me",
+  "agent": "https://bhhs.hsfaffiliates.com/profile/card#me"
+}

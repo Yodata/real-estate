@@ -1,0 +1,125 @@
+{
+  "topic": "realestate/website#viewpropertyvaluereport",
+  "time": "2022-11-17T23:41:27.208Z",
+  "instrument": "https://aem.bhhs.hsfaffiliates.com/profile/card#me",
+  "source": "https://oh316.bhhs.hsfaffiliates.com/profile/card#me",
+  "originalRecipient": "https://oh316.bhhs.hsfaffiliates.com/profile/card#me",
+  "data": {
+    "type": "ViewAction",
+    "agent": {
+      "type": "Contact",
+      "name": "Anonymous Visitor",
+      "givenName": "Anonymous",
+      "familyName": "Visitor",
+      "email": "98F7DBCC-E26E-412F-9186-8EFE342A3168@unknownemailaddy.com",
+      "identifier": {
+        "hsfconsumerid": "98F7DBCC-E26E-412F-9186-8EFE342A3168"
+      },
+      "additionalProperty": {
+        "userPath": "https://www.google.com/%3BHome%20|%20Berkshire%20Hathaway%20HomeServices%20Metro%20&%20Fields%20Realty%20|%20Berkshire%20Hathaway%20HomeServices%3BHome%20Value%20Metro%20&%20Fields%20Realty%20|%20Berkshire%20Hathaway%20HomeServices%3B0",
+        "workingWithAgent": false
+      }
+    },
+    "participant": {
+      "type": "RealEstateAgent",
+      "id": "https://oh316.bhhs.hsfaffiliates.com/profile/card#me"
+    },
+    "instrument": {
+      "type": "RealEstateWebsite",
+      "url": "https://oh316.bhhs.hsfaffiliates.com/profile/card#me"
+    },
+    "object": {
+      "type": "PropertyValueReport",
+      "name": "DIST:C06 CITY/MUNI/TWP:GOSHEN RTS 00-00-00 S & G RICE SUBDIVISION VMS 4212 LOT 15 MAP REF:MAP: N02500",
+      "dateCreated": "2022-11-17T11:41:26",
+      "result": {
+        "type": "MonetaryAmount",
+        "minValue": 129800,
+        "maxValue": 310200,
+        "value": 220000,
+        "currency": "USD"
+      },
+      "about": {
+        "type": "RealEstateProperty",
+        "propertyType": "Mobile",
+        "addressCountry": "US",
+        "addressLocality": "MECHANICSBURG",
+        "addressRegion": "OH",
+        "image": [],
+        "latitude": 40.02528,
+        "livingArea": {
+          "type": "QuantitativeValue",
+          "unitCode": "SqFt",
+          "unitText": "Square Feet",
+          "value": 828
+        },
+        "longitude": -83.5771,
+        "lotSize": {
+          "type": "QuantitativeValue",
+          "unitCode": "SqFt",
+          "unitText": "Square Feet",
+          "value": 218715
+        },
+        "numberOfBedrooms": 0,
+        "postalCode": "43044",
+        "streetAddress": "7719 MECHANICSBURG CATAWBA RD",
+        "yearBuilt": 1966,
+        "additionalProperty": {
+          "score": 59,
+          "parcelId": "C06-03-00-48-07-015-00",
+          "averageSalePrice": {
+            "type": "PriceSpecification",
+            "price": 235000,
+            "priceCurrency": "USD"
+          },
+          "nonDisclosureProperty": false,
+          "taxAssessedValue": {
+            "type": "MonetaryAmount",
+            "amount": 13930,
+            "currency": "USD"
+          },
+          "taxAssessedYear": 2021,
+          "neighborhoodName": "FAN WEL FLATS",
+          "useNeighborhoodDataForCharts": true,
+          "ownerName": "JOHNSON,RANDY D",
+          "ownerOccupied": "Y",
+          "ownersEstimatedEquity": {
+            "@type": "MonetaryAmount",
+            "amount": 220000,
+            "currency": "USD"
+          },
+          "firstLoanPrice": {
+            "@type": "MonetaryAmount",
+            "amount": 0,
+            "currency": "USD"
+          },
+          "secondLoanPrice": {
+            "@type": "MonetaryAmount",
+            "amount": 0,
+            "currency": "USD"
+          },
+          "lastRefinanceLoanVal1": {
+            "@type": "MonetaryAmount",
+            "amount": 0,
+            "currency": "USD"
+          },
+          "lastRefinanceLoanVal2": {
+            "@type": "MonetaryAmount",
+            "amount": 0,
+            "currency": "USD"
+          }
+        }
+      }
+    },
+    "event": {
+      "type": "Event",
+      "name": "Property Showing  7719 Catawba-Mechanicsburg Road, Mechanicsburg, OH, USA",
+      "description": ""
+    },
+    "recipient": {}
+  },
+  "@id": "https://buyside.bhhs.hsfaffiliates.com/inbox/5e89f2c377a649e48cf99b6494e8d1b7",
+  "id": "https://aem.bhhs.hsfaffiliates.com/publish/8028b081c30a4bf4b64ac3c759604213",
+  "timestamp": 1668728487208,
+  "agent": "https://bhhs.hsfaffiliates.com/profile/card#me"
+}

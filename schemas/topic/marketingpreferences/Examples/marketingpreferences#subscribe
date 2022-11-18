@@ -1,0 +1,26 @@
+{
+  "topic": "realestate/marketingpreferences#subscribe",
+  "datacontenttype": "application/json",
+  "data": {
+    "type": "SubscribeAction",
+    "instrument": "https://roqlogic.bhhs.hsfaffiliates.com/profile/card#me",
+    "endTime": "2022-11-17T15:15:07.303Z",
+    "participant": [
+      {
+        "id": "https://1070188.bhhs.hsfaffiliates.com/profile/card#me",
+        "role": "SubscriptionProvider"
+      }
+    ],
+    "agent": {
+      "type": "Contact",
+      "email": "jpyszka@starckre.com"
+    }
+  },
+  "@id": "https://roqlogic.bhhs.hsfaffiliates.com/inbox/b819a387e35e47bb848bc86a6d7aa7c9",
+  "id": "https://roqlogic.bhhs.hsfaffiliates.com/publish/31ea3ec77e474b6681cff03f8ee924d1",
+  "time": "2022-11-17T15:15:07.811Z",
+  "timestamp": 1668698107811,
+  "originalRecipient": "https://bhhs.hsfaffiliates.com/profile/card#me",
+  "instrument": "https://roqlogic.bhhs.hsfaffiliates.com/profile/card#me",
+  "agent": "https://bhhs.hsfaffiliates.com/profile/card#me"
+}

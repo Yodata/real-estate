@@ -1,0 +1,521 @@
+{
+  "topic": "realestate/listing#update",
+  "data": {
+    "type": "UpdateAction",
+    "object": {
+      "type": "PropertyListing",
+      "originatingSystemName": "ohdabr",
+      "originatingSystemKey": "876978",
+      "streetAddress": "3847 Murphys Crossing",
+      "addressLocality": "Dayton",
+      "addressRegion": "OH",
+      "postalCode": "45440",
+      "propertyType": "RESI",
+      "propertySubType": "SingleFamilyPropertyType",
+      "listingContractDate": "2022-11-17T00:00:00",
+      "listingPrice": {
+        "type": "PriceSpecification",
+        "priceCurrency": "USD",
+        "price": 1375000
+      },
+      "listingStatus": "Active",
+      "buyerAgent": {
+        "type": "RealEstateAgent",
+        "name": "",
+        "identifier": {},
+        "additionalProperty": {}
+      },
+      "buyerOffice": {
+        "type": "RealEstateOffice",
+        "identifier": {},
+        "additionalProperty": {}
+      },
+      "latitude": 39.6503563,
+      "longitude": -84.08361,
+      "listingAgent": {
+        "type": "RealEstateAgent",
+        "name": "Julee Terilli",
+        "email": "jterilli@bhhspro.com",
+        "identifier": {
+          "mlsAgentId": "TERILJUL109"
+        },
+        "additionalProperty": {
+          "agentId": "456485"
+        }
+      },
+      "listingOffice": {
+        "type": "RealEstateOffice",
+        "name": "BHHS Professional Realty",
+        "email": "customerservice@bhhspro.com",
+        "identifier": {
+          "mlsOfficeId": "BHHS01"
+        },
+        "additionalProperty": {
+          "officeId": "OH301-009"
+        }
+      },
+      "coListingAgent": {
+        "type": "RealEstateAgent",
+        "name": "Maura Schmitt",
+        "email": "Mschmitt@bhhspro.com",
+        "identifier": {
+          "mlsAgentId": "SCHMIMAUR109"
+        },
+        "additionalProperty": {}
+      },
+      "listingId": 338881725,
+      "listingOriginatingSystem": {
+        "type": "MultipleListingService",
+        "name": "Dayton Area MLS",
+        "identifier": {
+          "orgId": "ohdabr"
+        }
+      },
+      "livingArea": {
+        "type": "QuantitativeValue",
+        "value": 8347,
+        "unitCode": "FTK",
+        "unitText": "SquareFeet"
+      },
+      "lotSize": {
+        "type": "QuantitativeValue",
+        "value": 0.75,
+        "unitCode": "ACR",
+        "unitText": "Acre"
+      },
+      "numberOfBedrooms": "5",
+      "numberOfBathrooms": "5",
+      "internetAddressDisplayYN": "Y",
+      "image": [
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_01.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_02.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_03.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_04.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_05.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_06.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_07.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_08.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_09.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_10.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_11.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_12.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_13.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_14.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_15.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_16.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_17.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_18.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_19.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_20.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_21.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_22.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_23.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_24.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_25.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_26.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_27.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_28.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_29.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_30.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_31.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_32.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_33.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_34.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_35.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_36.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_37.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_38.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_39.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_40.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_41.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_42.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_43.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_44.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_45.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_46.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_47.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_48.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_49.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_50.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_51.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_52.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_53.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_54.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_55.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_56.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_57.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_58.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_59.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_60.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_61.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_62.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_63.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_64.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_65.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_66.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_67.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_68.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_69.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_70.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_71.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_72.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_73.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_74.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_75.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_76.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_77.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_78.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_79.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_80.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_81.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        },
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://images.marketleader.com/HouseImages/DAYTON/978/f_876978_82.jpg?PhotoAccessKey=0d6cbd693a838f27a4e3110d2f674591"
+        }
+      ],
+      "description": "Gracious spaces are found throughout this timeless brick home, boasting over 8,300 sf of finished living space.The residence has many distinctive features including, but not limited to, a stunning 2 story open foyer with a sweeping staircase and retractable chandelier. Beautiful custom hardwoods, tall windows, travertine tile, new carpeting, wainscot molding, coffered ceiling and 4 gas fireplaces just to name a few. A cherished area in the home is the openness between the kitchen and the great room. Food enthusiasts will appreciate the eat-in kitchens expansive island, counter space & cabinetry. Featuring a Subzero Refrigerator, JennAir professional style 6 burner gas range, Fisher Paykel 2 drawer dishwasher and a Butler's Pantry. Formal Living & Dining rooms along with an elegant powder room are perfect for entertaining. A sizable private office with custom built-in cabinetry and a renovated 1st floor mudroom/laundry area are easily accessible. The secluded first floor owners&#x2019; suite has a spacious walk-in closet, custom cabinetry and a closet island for extra storage. Enhancing the mood in the private bathroom is an immense soaking tub & a large walk-in shower. 4 generous sized bedrooms are found on the second level with walk-in closets, each connecting to a bathroom. The huge walk-out lower level has 10 ft ceilings, bonus room, exercise room, a stunning radius bar, pool table, projector, screen and gorgeous daylight filtering in. Outside, the seller has upgraded the backyard by adding extensive landscaping and a glamorous outdoor 18 x 20 covered deck with dreamy vaulted ceilings, gas fireplace and dining area. The outdoor kitchen with built-in gas grill, Perle commercial vent & a Hestan Refrigerator add to this space. All overlooking the new gorgeous heated salt water pool, hot tub, patio. Walk out lower patio is complete with surround sound, a newer irrigation system, fully fenced yard and lush landscaping. This home just doesn&#x2019;t meet needs&#x2026;it matches dreams!",
+      "url": "https://www.bhhs.com/professional-realty-oh301/oh/3847-murphys-crossing-dayton-45440/pid-338881725"
+    },
+    "instrument": {
+      "type": "RealEstateWebsite",
+      "url": "https://bhhs.com/profile/card#me"
+    }
+  },
+  "time": "2022-11-18T00:11:20.655Z",
+  "agent": "https://websiteactivity.bhhs.hsfaffiliates.com/profile/card#me",
+  "instrument": "https://creg.bhhs.hsfaffiliates.com/profile/card#me",
+  "@id": "https://chalkdigital.bhhs.hsfaffiliates.com/inbox/bdb503dbc6594a879192383efa238374",
+  "id": "https://creg.bhhs.hsfaffiliates.com/publish/c3fecbb5a173409dac74e95b90f288a5",
+  "timestamp": 1668730280655,
+  "originalRecipient": "https://websiteactivity.bhhs.hsfaffiliates.com/profile/card#me"
+}

@@ -1,0 +1,54 @@
+{
+  "topic": "realestate/website#register",
+  "source": "https://bhhs.hsfaffiliates.com/profile/card#me",
+  "data": {
+    "type": "RegisterAction",
+    "agent": {
+      "type": "Contact",
+      "identifier": {
+        "hsfconsumerid": "EAA8C421-3E02-475C-8C62-C15ED7D579EB"
+      },
+      "sameAs": {
+        "cregcontactkey": "13352689",
+        "redContact_Guid": "8731173c-1dd6-47d8-bb9e-66c807a3d37b"
+      },
+      "name": "Cassie Davis",
+      "givenName": "Cassie",
+      "familyName": "Davis",
+      "email": "cassiedavisdfw@gmail.com",
+      "dateCreated": "2022-11-17T22:05:34.233Z",
+      "dateModified": "2022-11-17T22:05:34.233Z",
+      "contactPoint": [
+        {
+          "type": "ContactPoint",
+          "kind": "EmailAddress",
+          "name": "primary",
+          "email": "cassiedavisdfw@gmail.com"
+        }
+      ],
+      "additionalProperty": {
+        "redPreferredContactMethod": "No Preference",
+        "redPreferredTime": "",
+        "preferredLanguage": "en-US",
+        "preferredCurrency": "USD",
+        "preferredUnits": "Imperial",
+        "marketingViaEmailOptIn": true,
+        "marketingViaSmsOptIn": false,
+        "userPath": ";Find Your Next Home | Berkshire Hathaway HomeServices;404;0"
+      }
+    },
+    "description": "ClientRegistration: Cassie Davis\n\n",
+    "instrument": {
+      "type": "RealEstateWebsite",
+      "name": "Company Website"
+    },
+    "recipient": "https://bhhs.hsfaffiliates.com/profile/card#me"
+  },
+  "@id": "https://buyside.bhhs.hsfaffiliates.com/inbox/5168002e415f4ac59a82fe7349d85414",
+  "id": "https://creg.bhhs.hsfaffiliates.com/publish/818e1e197eeb4a4ab4d11929dcc0faaf",
+  "time": "2022-11-17T22:05:35.988Z",
+  "timestamp": 1668722735988,
+  "originalRecipient": "https://bhhs.hsfaffiliates.com/profile/card#me",
+  "instrument": "https://creg.bhhs.hsfaffiliates.com/profile/card#me",
+  "agent": "https://bhhs.hsfaffiliates.com/profile/card#me"
+}

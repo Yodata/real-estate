@@ -1,0 +1,83 @@
+{
+  "topic": "realestate/profile#update",
+  "data": {
+    "type": "UpdateAction",
+    "object": {
+      "type": "RealEstateAgent",
+      "id": "https://3047548.bhhs.hsfaffiliates.com/profile/card#me",
+      "description": "",
+      "name": "Alfred Zamudio",
+      "givenName": "Alfred",
+      "familyName": "Zamudio",
+      "additionalName": "",
+      "telephone": "(562) 244-7411",
+      "faxNumber": "(562) 419-7546",
+      "email": "alfredzrealtor@gmail.com",
+      "url": "",
+      "identifier": { "ContactID": "3047548" },
+      "availableLanguage": [{ "type": "Language", "name": "Spanish" }],
+      "jobTitle": ["Sales Associate"],
+      "image": [],
+      "parentOrganization": [
+        "https://ca305-028.bhhs.hsfaffiliates.com/profile/card#me"
+      ],
+      "additionalProperty": {
+        "UserType": "Full Time Sales Professional",
+        "AffiliateID": "CA305",
+        "BrokerID": "CA305",
+        "OfficeID": "CA305-028",
+        "TeamID": "",
+        "TeamName": "",
+        "OfficeDBA": "California Properties",
+        "OfficeStatus": "Active",
+        "EmployeeType": "Full Time Sales Professional",
+        "IsDisplayed": true,
+        "Status": "Active",
+        "IsCompanyQueue": false,
+        "IsTeamQueue": false,
+        "TeamQueueTeamId": "https://null.bhhs.hsfaffiliates.com/profile/card#me",
+        "agentWebsiteType": "Agent Profile",
+        "displayTestimonials": true,
+        "appointmentAppURL": "",
+        "vendorEmailOptout": false,
+        "bhhsLeadNotificationPreference": {
+          "timeZone": "America/Los_Angeles",
+          "emailNotification": true,
+          "textNotification": false,
+          "email": "alfredzrealtor@gmail.com",
+          "leadNotificationSchedule": [
+            {
+              "type": "Schedule",
+              "name": "Weekday",
+              "byDay": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+            },
+            { "type": "Schedule", "name": "Saturday", "byDay": ["Saturday"] },
+            { "type": "Schedule", "name": "Sunday", "byDay": ["Sunday"] }
+          ]
+        }
+      },
+      "address": {
+        "type": "PostalAddress",
+        "streetAddress": "8141 E. 2nd St Ste 110",
+        "addressLocality": "Downey",
+        "addressRegion": "CA",
+        "postalCode": "90241",
+        "addressCountry": "US"
+      },
+      "contactPoint": [
+        {
+          "type": "ContactPoint",
+          "name": "BHHSWebsiteURL",
+          "url": "https://www.bhhs.com/california-properties-ca305/downey/alfred-zamudio/cid-3047548"
+        }
+      ]
+    }
+  },
+  "@id": "https://profile-patcher.bhhs.hsfaffiliates.com/outbox/3ad0caaba0bb4a96afe115cab11da6a5",
+  "id": "https://profile-events-next.bhhs.hsfaffiliates.com/publish/1310c4e8574a4ac8ae8e96a9ca8113fb",
+  "time": "2022-11-17T23:35:42.135Z",
+  "timestamp": 1668728142135,
+  "originalRecipient": "https://profile-events-next-handler.bhhs.hsfaffiliates.com/profile/card#me",
+  "instrument": "https://profile-events-next-handler.bhhs.hsfaffiliates.com/profile/card#me",
+  "@to": "aws-sqs://sqs.us-west-2.amazonaws.com/540541948463/solid-server-profile-patcher-processor"
+}

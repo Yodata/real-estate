@@ -56,6 +56,7 @@ properties:
     type: string
   listingModifiedDate:
     description: "The  date when the listing was last modified."
+    example: "2019-08-24T14:15:22Z"
     format: date-time
     type: string
   listingOffice:

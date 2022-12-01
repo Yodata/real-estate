@@ -54,6 +54,10 @@ properties:
     description: the local identifier for the listing
     example: GOTHAM-MLS+12345
     type: string
+  listingModifiedDate:
+    description: "The  date when the listing was last modified."
+    format: date-time
+    type: string
   listingOffice:
     description: the listing office
     example:

@@ -17,6 +17,7 @@ title: listing#update
       "addressCountry": "CA",
       "addressLocality": "Gotham City",
       "addressRegion": "NJ",
+      "brokerAttribution": "homes@opendoor.com",
       "buyerAgent": {
         "email": "butch.byers@example.com",
         "identifier": {
@@ -86,6 +87,7 @@ title: listing#update
         "unitText": "Acres",
         "value": 0.5
       },
+      "modificationTimestamp": "2022-11-17T00:00:00",
       "numberOfBathrooms": "2",
       "numberOfBedrooms": "3",
       "numberOfRooms": "7",
@@ -120,6 +122,7 @@ title: listing#update
 | data.object.addressCountry | string | allowed (`"CA"`, `"DE"`, `"GR"`, `"IN"`, `"IT"`, `"MX"`, `"PE"`, `"PT"`, `"ES"`, `"AE"`, `"GB"`, `"US"`) two-letter ISO 3166-1 alpha-2 country code |
 | data.object.addressLocality | string | City, Township. <= 50 characters |
 | data.object.addressRegion | string | abbreviated state or province |
+| data.object.brokerAttribution | string | Broker Attribution can be an email or phone or any text. |
 | data.object.buyerAgent | object | the buyer's RealEstateAgent |
 | data.object.buyerOffice | object | the buyer's RealEstateOffice |
 | data.object.closeDate | string | With for-sale listings, the date the purchase agreement was fulfilled. With lease listings, the date the requirements were fulfilled, such as contract and/or deposit. format (`date-time`) |
@@ -154,6 +157,7 @@ title: listing#update
 | data.object.livingArea | object | property indoor space |
 | data.object.longitude | number | The longitude of a location. |
 | data.object.lotSize | object | outdoor space minValue, maxValue |
+| data.object.modificationTimestamp | string | The date when the listing was last modified. format (`date-time`) |
 | data.object.numberOfBathrooms | string | the number of bathrooms |
 | data.object.numberOfBedrooms | string | the number of bedrooms |
 | data.object.numberOfRooms | string | the total number of rooms in the building |

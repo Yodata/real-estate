@@ -192,10 +192,6 @@ properties:
     description: the local identifier for the listing
     example: GOTHAM-MLS+12345
     type: string
-  listingModifiedDate:
-    description: The date when the listing was last modified.
-    format: date-time
-    type: string
   listingOffice:
     description: the listing office
     example:
@@ -254,7 +250,11 @@ properties:
       value: 0.5
     type: object
     x-range: QuantitativeValue
-  numberOfBathrooms:
+  modificationTimestamp:
+    description: The date when the listing was last modified.
+    format: date-time
+    type: string
+    numberOfBathrooms:
     description: the number of bathrooms
     example: '2'
     type: string
@@ -383,4 +383,3 @@ properties:
     example: 1988
 x-parser-schema-id: PropertyListing
 $id: http://realestate.yodata.me/schema/PropertyListing.yaml
-

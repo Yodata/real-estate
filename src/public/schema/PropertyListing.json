@@ -48,12 +48,7 @@
       "type": "string",
       "description": "abbreviated state or province",
       "max-length": 2,
-      "examples": [
-        "NJ",
-        "CA",
-        "MI",
-        null
-      ],
+      "examples": ["NJ", "CA", "MI", null],
       "x-faker": "address.stateAbbr",
       "x-parser-schema-id": "addressRegion"
     },
@@ -94,9 +89,7 @@
       "title": "image",
       "description": "an ImageObject or URI reference to an image on the web.",
       "type": "array",
-      "x-range": [
-        "ImageObject"
-      ],
+      "x-range": ["ImageObject"],
       "items": [
         {
           "type": "object",
@@ -104,19 +97,14 @@
             {
               "title": "MediaObject",
               "description": "an image, video or document availble for download",
-              "x-subclass": [
-                "ImageObject",
-                "DigitalDocument"
-              ],
+              "x-subclass": ["ImageObject", "DigitalDocument"],
               "allOf": [
                 {
                   "$id": "http://realestate.yodata.me/schema/Thing",
                   "type": "object",
                   "title": "Thing",
                   "summary": "The root type of all Things.",
-                  "required": [
-                    "type"
-                  ],
+                  "required": ["type"],
                   "propertyNames": {
                     "pattern": "^[a-z@$][a-zA-Z0-9-_]+$",
                     "x-parser-schema-id": "<anonymous-schema-221>"
@@ -140,11 +128,7 @@
                   "properties": {
                     "type": {
                       "type": "string",
-                      "enum": [
-                        "MediaObject",
-                        "ImageObject",
-                        "DigitalDocument"
-                      ]
+                      "enum": ["MediaObject", "ImageObject", "DigitalDocument"]
                     },
                     "id": {
                       "description": "the URL to access the item.",
@@ -185,9 +169,7 @@
               "x-range": "ImageObject",
               "properties": {
                 "type": {
-                  "enum": [
-                    "ImageObject"
-                  ],
+                  "enum": ["ImageObject"],
                   "example": "ImageObject"
                 },
                 "id": {
@@ -208,10 +190,7 @@
       ]
     },
     "internetAddressDisplayYN": {
-      "enum": [
-        "Y",
-        "N"
-      ],
+      "enum": ["Y", "N"],
       "type": "string"
     },
     "latitude": {
@@ -223,10 +202,7 @@
     "listingAgent": {
       "type": "object",
       "description": "the agent/broker representing the seller in a real estate transaction",
-      "x-range": [
-        "RealEstateAgent",
-        "RealEstateOrganization"
-      ],
+      "x-range": ["RealEstateAgent", "RealEstateOrganization"],
       "example": {
         "type": "RealEstateAgent",
         "name": "Lori Listagent",
@@ -242,11 +218,6 @@
     "listingId": {
       "description": "the local identifier for the listing",
       "example": "GOTHAM-MLS+12345",
-      "type": "string"
-    },
-    "listingModifiedDate": {
-      "description": "The date when the listing was last modified.",
-      "format": "date-time",
       "type": "string"
     },
     "listingOffice": {
@@ -321,6 +292,11 @@
       "type": "object",
       "x-range": "QuantitativeValue"
     },
+    "modificationTimestamp": {
+      "description": "The date when the listing was last modified.",
+      "format": "date-time",
+      "type": "string"
+    },
     "numberOfBathrooms": {
       "description": "the number of bathrooms",
       "example": "2",
@@ -352,11 +328,7 @@
       "type": "string",
       "description": "Zip/Post Code",
       "maxLength": 12,
-      "examples": [
-        "10010",
-        "50239-7698",
-        null
-      ],
+      "examples": ["10010", "50239-7698", null],
       "x-parser-schema-id": "postalCode"
     },
     "propertySubType": {
@@ -434,9 +406,7 @@
       "x-parser-schema-id": "streetAddress"
     },
     "type": {
-      "enum": [
-        "PropertyListing"
-      ],
+      "enum": ["PropertyListing"],
       "type": "string"
     },
     "universalPropertyId": {

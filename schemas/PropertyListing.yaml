@@ -54,11 +54,6 @@ properties:
     description: the local identifier for the listing
     example: GOTHAM-MLS+12345
     type: string
-  listingModifiedDate:
-    description: "The date when the listing was last modified."
-    example: "2019-08-24T14:15:22Z"
-    format: date-time
-    type: string
   listingOffice:
     description: the listing office
     example:
@@ -109,6 +104,11 @@ properties:
       value: 0.5
     type: object
     x-range: QuantitativeValue
+  modificationTimestamp:
+    description: 'The date when the listing was last modified.'
+    example: '2019-08-24T14:15:22Z'
+    format: date-time
+    type: string
   numberOfBathrooms:
     description: the number of bathrooms
     example: '2'
@@ -140,7 +140,7 @@ properties:
     format: date-time
     type: string
   stories:
-      $ref: stories.yaml
+    $ref: stories.yaml
   streetAddress:
     $ref: streetAddress.yaml
   universalPropertyId:
@@ -149,4 +149,4 @@ properties:
     $ref: url.yaml
     example: 'https://www.example.com/homedetails/1007-Mountain-Gate-Rd-Gotham-City-Gotham/10007'
   yearBuilt:
-      $ref: yearBuilt.yaml
+    $ref: yearBuilt.yaml

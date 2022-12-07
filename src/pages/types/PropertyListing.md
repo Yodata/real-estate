@@ -11,6 +11,7 @@ title: PropertyListing
   "addressCountry": "CA",
   "addressLocality": "Gotham City",
   "addressRegion": "NJ",
+  "brokerAttribution": "homes@opendoor.com",
   "buyerAgent": {
     "email": "butch.byers@example.com",
     "identifier": {
@@ -107,6 +108,7 @@ title: PropertyListing
 | addressCountry | string | allowed (`"CA"`, `"DE"`, `"GR"`, `"IN"`, `"IT"`, `"MX"`, `"PE"`, `"PT"`, `"ES"`, `"AE"`, `"GB"`, `"US"`) two-letter ISO 3166-1 alpha-2 country code |
 | addressLocality | string | City, Township. <= 50 characters |
 | addressRegion | string | abbreviated state or province |
+| brokerAttribution | string | Broker Attribution can be an email or phone or any text. |
 | buyerAgent | object | the buyer's RealEstateAgent |
 | buyerOffice | object | the buyer's RealEstateOffice |
 | closeDate | string | With for-sale listings, the date the purchase agreement was fulfilled. With lease listings, the date the requirements were fulfilled, such as contract and/or deposit. format (`date-time`) |

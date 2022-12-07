@@ -1,0 +1,10 @@
+# @format
+$id: brokerAttribution
+title: brokerAttribution
+type: string
+description: Broker Attribution
+examples:
+  - homes@opendoor.com
+  - info@lucrumre.com
+  - 805-315-7160
+  - 7605522574

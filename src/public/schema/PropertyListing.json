@@ -52,6 +52,18 @@
       "x-faker": "address.stateAbbr",
       "x-parser-schema-id": "addressRegion"
     },
+    "brokerAttribution": {
+      "$id": "brokerAttribution",
+      "title": "brokerAttribution",
+      "type": "string",
+      "description": "Broker Attribution",
+      "examples": [
+        "homes@opendoor.com",
+        "info@lucrumre.com",
+        "805-315-7160",
+        "7605522574"
+      ]
+    },
     "buyerAgent": {
       "description": "the buyer's RealEstateAgent",
       "example": {

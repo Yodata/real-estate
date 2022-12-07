@@ -19,6 +19,7 @@
         "price": 1375000
       },
       "listingStatus": "Active",
+      "brokerAttribution": "homes@opendoor.com",
       "buyerAgent": {
         "type": "RealEstateAgent",
         "name": "",

@@ -13,6 +13,8 @@ properties:
     $ref: addressLocality.yaml
   addressRegion:
     $ref: addressRegion.yaml
+  brokerAttribution:
+    $ref: brokerAttribution.yaml
   buyerAgent:
     description: "the buyer's RealEstateAgent"
     example:

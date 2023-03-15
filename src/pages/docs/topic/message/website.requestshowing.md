@@ -82,7 +82,7 @@ title: website#requestshowing
     //     "id": "https://batman.example.com/profile/card#me"
     //   }
     // },
-"event": {
+  "event": {
     "type": "EventName",
     "name": "Any event name",
     "id": "1d2995307f2c48ae9543caf586f43f9b",

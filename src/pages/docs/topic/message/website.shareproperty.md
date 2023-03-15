@@ -155,7 +155,7 @@ with the recipient (a Person or Audience).
       "url": "https://www.example.com/homedetails/1007-Mountain-Gate-Rd-Gotham-City-Gotham/10007",
       "yearBuilt": 1988
     },
-"event": {
+  "event": {
     "type": "EventName",
     "name": "Any event name",
     "id": "1d2995307f2c48ae9543caf586f43f9b",

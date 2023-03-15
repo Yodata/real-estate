@@ -42,6 +42,22 @@ title: website#askquestion
       "type": "Question",
       "text": "Populus debet control notitia sua"
     },
+  "event": {
+    "type": "EventName",
+    "name": "Any event name",
+    "id": "1d2995307f2c48ae9543caf586f43f9b",
+    "url": "https://user.example.com/mentor/example-name/cid-example123/oh/123-example-street/pid-example112233",
+    "contactGroup": [
+      {
+        "type": "Collection",
+        "name": "Topic 1"
+      },
+      {
+        "type": "Collection",
+        "name": "Topic 2"
+      }
+    ]
+  },
     "recipient": {
       "type": "RealEstateAgent",
       "name": "Randy Real Estate",

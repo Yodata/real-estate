@@ -4,7 +4,7 @@ title: website#saveproperty
 
 ## Message
 
-_website user makes a listing offer_
+\_website user saves a property
 
 ### Payload Example(s) (generated)
 

@@ -101,6 +101,11 @@ title: website#askquestion
 | data.object | object | A specific question - e.g. from a user seeking answers online, or collected in a Frequently Asked Questions (FAQ) document. |
 | data.object.type | string | const (`"Question"`)  |
 | data.object.text | string | - |
+| data.event.type         | object | type of the event e.g Campaign                                                  |
+| data.event.name         | string | any string name                                                                 |
+| data.event.id           | string | format (`uri`)                                                                  |
+| data.event.url          | string | url of the event                                                                |
+| data.event.contactGroup | array  | array of contacts                                                               |
 | data.recipient | object | the agent being asked |
 | data.about | object | a real estate property listed for sale |
 | data.about.type | string | allowed (`"PropertyListing"`)  |

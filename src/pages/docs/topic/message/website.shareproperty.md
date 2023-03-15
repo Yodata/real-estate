@@ -92,7 +92,6 @@ with the recipient (a Person or Audience).
       "image": [
         {
           "type": "ImageObject",
-          "@id": "http://example.com",
           "id": "http://user.example.com/public/logo/image.jpg",
           "name": "image.jpg",
           "encodingFormat": "image/jpeg",
@@ -156,6 +155,22 @@ with the recipient (a Person or Audience).
       "url": "https://www.example.com/homedetails/1007-Mountain-Gate-Rd-Gotham-City-Gotham/10007",
       "yearBuilt": 1988
     },
+"event": {
+    "type": "EventName",
+    "name": "Any event name",
+    "id": "1d2995307f2c48ae9543caf586f43f9b",
+    "url": "https://user.example.com/mentor/example-name/cid-example123/oh/123-example-street/pid-example112233",
+    "contactGroup": [
+      {
+        "type": "Collection",
+        "name": "Topic 1"
+      },
+      {
+        "type": "Collection",
+        "name": "Topic 2"
+      }
+    ]
+  },
     "recipient": {
       "type": "Person",
       "name": "John Doe",
@@ -271,6 +286,11 @@ with the recipient (a Person or Audience).
 | data.object.universalPropertyId | string | The Universal Property Identifier is a unique identifier for all real property in the US and Canada.  It is based on country and local identification methods and is limited to real property.  For cases such as shares of real property, units, and other more granular cases, please utilize the UniversalPropertySubId. |
 | data.object.url | string | URL of the item. format (`uri`) |
 | data.object.yearBuilt | number | the year the structure was created |
+| data.event.type         | object | type of the event e.g Campaign                                                  |
+| data.event.name         | string | any string name                                                                 |
+| data.event.id           | string | format (`uri`)                                                                  |
+| data.event.url          | string | url of the event                                                                |
+| data.event.contactGroup | array  | array of contacts                                                               |
 | data.recipient | object | - |
 | data.recipient.type | string | allowed (`"Person"`, `"Audience"`)  |
 | data.recipient.name | string | The name of the person or audience to whom the property listing was shared. |

@@ -41,7 +41,23 @@ title: website#register
       "type": "Website",
       "name": "Agent Website",
       "url": "https://www.example.com"
-    }
+    },
+"event": {
+    "type": "EventName",
+    "name": "Any event name",
+    "id": "1d2995307f2c48ae9543caf586f43f9b",
+    "url": "https://user.example.com/mentor/example-name/cid-example123/oh/123-example-street/pid-example112233",
+    "contactGroup": [
+      {
+        "type": "Collection",
+        "name": "Topic 1"
+      },
+      {
+        "type": "Collection",
+        "name": "Topic 2"
+      }
+    ]
+  }
   }
 }
 ```
@@ -77,6 +93,11 @@ title: website#register
 | data.instrument.type | string | - |
 | data.instrument.name | string | - |
 | data.instrument.url | string |  format (`uri`) |
+| data.event.type         | object | type of the event e.g Campaign                                                  |
+| data.event.name         | string | any string name                                                                 |
+| data.event.id           | string | format (`uri`)                                                                  |
+| data.event.url          | string | url of the event                                                                |
+| data.event.contactGroup | array  | array of contacts                                                               |
 
 ### Headers
 

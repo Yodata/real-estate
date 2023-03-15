@@ -54,34 +54,50 @@ title: website#requestshowing
         "priceCurrency": "USD"
       }
     },
-    "event": {
-      "type": "Event",
-      "name": "Property Showing 1007 Mountain Gate Rd",
-      "description": "an example meeting request for 4:00PM to 4:30PM.",
-      "about": {
-        "type": "PropertyListing",
-        "originatingSystemName": "GOTHAM-MLS",
-        "originatingSystemKey": "12345",
-        "url": "https://{company-website-url}/{path-to-listing}",
-        "streetAddress": "1007 Mountain Gate Rd",
-        "addressRegion": "New Jersey",
-        "addressLocality": "Gotham City",
-        "postalCode": "10010",
-        "addressCountry": "USA",
-        "listingPrice": {
-          "type": "PriceSpecification",
-          "price": 7500000,
-          "priceCurrency": "USD"
-        }
+    // "event": {
+    //   "type": "Event",
+    //   "name": "Property Showing 1007 Mountain Gate Rd",
+    //   "description": "an example meeting request for 4:00PM to 4:30PM.",
+    //   "about": {
+    //     "type": "PropertyListing",
+    //     "originatingSystemName": "GOTHAM-MLS",
+    //     "originatingSystemKey": "12345",
+    //     "url": "https://{company-website-url}/{path-to-listing}",
+    //     "streetAddress": "1007 Mountain Gate Rd",
+    //     "addressRegion": "New Jersey",
+    //     "addressLocality": "Gotham City",
+    //     "postalCode": "10010",
+    //     "addressCountry": "USA",
+    //     "listingPrice": {
+    //       "type": "PriceSpecification",
+    //       "price": 7500000,
+    //       "priceCurrency": "USD"
+    //     }
+    //   },
+    //   "startDate": "2019-08-01T16:00Z",
+    //   "endDate": "2019-08-01T16:30Z",
+    //   "organizer": {
+    //     "type": "RealEstateAgent",
+    //     "name": "Bruce Wayne",
+    //     "id": "https://batman.example.com/profile/card#me"
+    //   }
+    // },
+"event": {
+    "type": "EventName",
+    "name": "Any event name",
+    "id": "1d2995307f2c48ae9543caf586f43f9b",
+    "url": "https://user.example.com/mentor/example-name/cid-example123/oh/123-example-street/pid-example112233",
+    "contactGroup": [
+      {
+        "type": "Collection",
+        "name": "Topic 1"
       },
-      "startDate": "2019-08-01T16:00Z",
-      "endDate": "2019-08-01T16:30Z",
-      "organizer": {
-        "type": "RealEstateAgent",
-        "name": "Bruce Wayne",
-        "id": "https://batman.example.com/profile/card#me"
+      {
+        "type": "Collection",
+        "name": "Topic 2"
       }
-    },
+    ]
+  },
     "object": {
       "type": "Question",
       "text": "Populus debet control notitia sua"
@@ -127,14 +143,11 @@ title: website#requestshowing
 | data.agent.additionalProperties | object | additional properties for the website user |
 | data.agent.additionalProperties.workingWithAgent | boolean | - |
 | data.about | object | the PropertyListing |
-| data.event | object | An event happening at a certain time and location |
-| data.event.type | string | The item type (Linked-Data @type) |
-| data.event.name | string | name of the event |
-| data.event.description | string | event message content |
-| data.event.about | object | a subject of the meeting or event |
-| data.event.startDate | string | the start date-time (ISO 8601 formated) format (`date-time`) |
-| data.event.endDate | string | the end date-time (ISO 8601 formated) format (`date-time`) |
-| data.event.organizer | object | the event organizer |
+| data.event.type         | object | type of the event e.g Campaign                                                  |
+| data.event.name         | string | any string name                                                                 |
+| data.event.id           | string | format (`uri`)                                                                  |
+| data.event.url          | string | url of the event                                                                |
+| data.event.contactGroup | array  | array of contacts                                                               |
 | data.object | object | A specific question - e.g. from a user seeking answers online, or collected in a Frequently Asked Questions (FAQ) document. |
 | data.object.type | string | const (`"Question"`)  |
 | data.object.text | string | - |

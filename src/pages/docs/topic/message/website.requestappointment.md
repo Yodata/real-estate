@@ -42,6 +42,22 @@ title: website#requestappointment
       "type": "Question",
       "text": "Populus debet control notitia sua"
     },
+"event": {
+    "type": "EventName",
+    "name": "Any event name",
+    "id": "1d2995307f2c48ae9543caf586f43f9b",
+    "url": "https://user.example.com/mentor/example-name/cid-example123/oh/123-example-street/pid-example112233",
+    "contactGroup": [
+      {
+        "type": "Collection",
+        "name": "Topic 1"
+      },
+      {
+        "type": "Collection",
+        "name": "Topic 2"
+      }
+    ]
+  },
     "recipient": {
       "type": "RealEstateAgent",
       "name": "Randy Real Estate",
@@ -82,6 +98,11 @@ title: website#requestappointment
 | data.object | object | A specific question - e.g. from a user seeking answers online, or collected in a Frequently Asked Questions (FAQ) document. |
 | data.object.type | string | const (`"Question"`)  |
 | data.object.text | string | - |
+| data.event.type         | object | type of the event e.g Campaign                                                  |
+| data.event.name         | string | any string name                                                                 |
+| data.event.id           | string | format (`uri`)                                                                  |
+| data.event.url          | string | url of the event                                                                |
+| data.event.contactGroup | array  | array of contacts                                                               |
 | data.recipient | object | the recipient of an object or action referred to in the message |
 
 ### Headers

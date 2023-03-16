@@ -149,26 +149,25 @@ a website user has performed a property search
 
 ### Payload
 
-| Name   | Type   | Description |
-| ------ | ------ | ----------- |
-| (root) | object | -           |
-
-|topic | string! | realestate/website#shareproperty |
-|time | string<date-time> ! | date & time the event was produced |
-|agent | string<uri> ! | event publisher |
-|instrument | string<uri> ! | the application that produced the event |
-|source | string<uri> | associated RealEstate{Agent,Office,Organization} |
-|data | object | the message payload. |
-|data.type | string! | The item type (Linked-Data @type) |
-|data.agent | object! | the website user RANGE: Contact, Person |
-|data.instrument | object | website or mobile application RANGE: RealEstateWebsite, MobileApplication, Thing |
-|data.object | object! | RANGE: PropertyListing |
-|data.recipient | object | the recipient of the share |
-| data.event.type | object | type of the event e.g Campaign |
-| data.event.name | string | any string name |
-| data.event.id | string | format (`uri`) |
-| data.event.url | string | url of the event |
-| data.event.subEvents | array | array of subEvents |
+| Name                 | Type                | Description                                                                      |
+| -------------------- | ------------------- | -------------------------------------------------------------------------------- |
+| (root)               | object              | -                                                                                |
+| topic                | string!             | realestate/website#shareproperty                                                 |
+| time                 | string<date-time> ! | date & time the event was produced                                               |
+| agent                | string<uri> !       | event publisher                                                                  |
+| instrument           | string<uri> !       | the application that produced the event                                          |
+| source               | string<uri>         | associated RealEstate{Agent,Office,Organization}                                 |
+| data                 | object              | the message payload.                                                             |
+| data.type            | string!             | The item type (Linked-Data @type)                                                |
+| data.agent           | object!             | the website user RANGE: Contact, Person                                          |
+| data.instrument      | object              | website or mobile application RANGE: RealEstateWebsite, MobileApplication, Thing |
+| data.object          | object!             | RANGE: PropertyListing                                                           |
+| data.recipient       | object              | the recipient of the share                                                       |
+| data.event.type      | object              | type of the event e.g Campaign                                                   |
+| data.event.name      | string              | any string name                                                                  |
+| data.event.id        | string              | format (`uri`)                                                                   |
+| data.event.url       | string              | url of the event                                                                 |
+| data.event.subEvents | array               | array of subEvents                                                               |
 
 ### Headers
 

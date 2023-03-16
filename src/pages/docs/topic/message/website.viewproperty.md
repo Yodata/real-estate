@@ -49,7 +49,30 @@ website user (data.agent) has viewed a listing (data.object) on a webiste or mob
         "price": 7500000,
         "priceCurrency": "USD"
       }
-    }
+    },
+ "event": {
+      "type": "Event",
+      "name": "Property Showing  64 Buttercup Lane, South Grafton, MA, USA",
+      "description": "",
+      "subEvents": [
+        {
+          "type": "Campaign",
+          "name": "A good campaign name",
+          "id": "ire:1d2995307f2c48ae9543caf586f43f9b",
+          "url": https://www.bhhspro.com/mentor/steve-baird/cid-356481/oh/889-hartford-drive-44035/pid-338005633,
+          "contactGroup": [
+            {
+              "type": "Collection",
+              "name": "Topic 1"
+            },
+            {
+              "type": "Collection",
+              "name": "Topic 2"
+            }
+          ]
+        }
+      ]
+    },
   }
 }
 ```

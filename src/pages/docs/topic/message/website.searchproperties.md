@@ -1,22 +1,24 @@
 ---
-title: website#propertysearchsave
+title: website#shareproperty
 ---
 
 ## Message
 
-website user (agent) saves a property search (object), on a website or mobile app (instrument)
+_a website user shares a property listing_
+
+a website user has performed a property search
 
 ### Payload Example(s) (generated)
 
 ```json
 {
-  "topic": "realestate/website#propertysearchsave",
+  "topic": "realestate/website#register",
   "time": "2020-06-18T18:30:49Z",
   "agent": "https://bhhs.example.com/profile/card#me",
   "instrument": "https://smarter-agent.example.com/profile/card#me",
   "source": "https://{agentid}.example.com/profile/card#me",
   "data": {
-    "type": "SaveAction",
+    "type": "SearchAction",
     "agent": {
       "type": "Contact",
       "name": "Bill Bailey",
@@ -104,7 +106,7 @@ website user (agent) saves a property search (object), on a website or mobile ap
         "unitText": "Acres"
       }
     },
-  "event": {
+ "event": {
       "type": "Event",
       "name": "Property Showing  64 Buttercup Lane, South Grafton, MA, USA",
       "description": "",
@@ -127,30 +129,46 @@ website user (agent) saves a property search (object), on a website or mobile ap
         }
       ]
     },
+
+    "result": {
+      "type": "FindAction",
+      "object": [
+        {
+          "type": "PropertyListing",
+          "url": "http://example.com/listing/123"
+        },
+        {
+          "type": "PropertyListing",
+          "url": "http://example.com/listing/234"
+        }
+      ]
+    }
   }
 }
 ```
 
 ### Payload
 
-| Name                 | Type                | Description                                                                      |
-| -------------------- | ------------------- | -------------------------------------------------------------------------------- |
-| (root)               | object              | -                                                                                |
-| topic                | string!             | realestate/website#propertysearchsave                                            |
-| time                 | string<date-time> ! | date & time the event was produced                                               |
-| agent                | string<uri> !       | event publisher                                                                  |
-| instrument           | string<uri> !       | the application that produced the event                                          |
-| source               | string<uri>         | associated RealEstate{Agent,Office,Organization}                                 |
-| data                 | object              | the message payload.                                                             |
-| data.type            | string!             | The item type (Linked-Data @type)                                                |
-| data.agent           | object!             | the website user RANGE: Contact, Person                                          |
-| data.instrument      | object              | website or mobile application RANGE: RealEstateWebsite, MobileApplication, Thing |
-| data.object          | object!             | property search parameters RANGE: PropertySearch                                 |
-| data.event.type      | object              | type of the event e.g Campaign                                                   |
-| data.event.name      | string              | any string name                                                                  |
-| data.event.id        | string              | format (`uri`)                                                                   |
-| data.event.url       | string              | url of the event                                                                 |
-| data.event.subEvents | array               | array of subEvents                                                               |
+| Name   | Type   | Description |
+| ------ | ------ | ----------- |
+| (root) | object | -           |
+
+|topic | string! | realestate/website#shareproperty |
+|time | string<date-time> ! | date & time the event was produced |
+|agent | string<uri> ! | event publisher |
+|instrument | string<uri> ! | the application that produced the event |
+|source | string<uri> | associated RealEstate{Agent,Office,Organization} |
+|data | object | the message payload. |
+|data.type | string! | The item type (Linked-Data @type) |
+|data.agent | object! | the website user RANGE: Contact, Person |
+|data.instrument | object | website or mobile application RANGE: RealEstateWebsite, MobileApplication, Thing |
+|data.object | object! | RANGE: PropertyListing |
+|data.recipient | object | the recipient of the share |
+| data.event.type | object | type of the event e.g Campaign |
+| data.event.name | string | any string name |
+| data.event.id | string | format (`uri`) |
+| data.event.url | string | url of the event |
+| data.event.subEvents | array | array of subEvents |
 
 ### Headers
 

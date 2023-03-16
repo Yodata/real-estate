@@ -52,19 +52,26 @@ _website user makes a listing offer_
       }
     },
 
-    "event": {
-      "type": "EventName",
-      "name": "Any event name",
-      "id": "1d2995307f2c48ae9543caf586f43f9b",
-      "url": "https://user.example.com/mentor/example-name/cid-example123/oh/123-example-street/pid-example112233",
-      "contactGroup": [
+   "event": {
+      "type": "Event",
+      "name": "Property Showing  64 Buttercup Lane, South Grafton, MA, USA",
+      "description": "",
+      "subEvents": [
         {
-          "type": "Collection",
-          "name": "Topic 1"
-        },
-        {
-          "type": "Collection",
-          "name": "Topic 2"
+          "type": "Campaign",
+          "name": "A good campaign name",
+          "id": "ire:1d2995307f2c48ae9543caf586f43f9b",
+          "url": https://www.bhhspro.com/mentor/steve-baird/cid-356481/oh/889-hartford-drive-44035/pid-338005633,
+          "contactGroup": [
+            {
+              "type": "Collection",
+              "name": "Topic 1"
+            },
+            {
+              "type": "Collection",
+              "name": "Topic 2"
+            }
+          ]
         }
       ]
     },
@@ -97,7 +104,7 @@ _website user makes a listing offer_
 | data.event.name                                   | string                                | any string name                                                                                                                                                                                                                                                                             |
 | data.event.id                                     | string                                | format (`uri`)                                                                                                                                                                                                                                                                              |
 | data.event.url                                    | string                                | url of the event                                                                                                                                                                                                                                                                            |
-| data.event.contactGroup                           | array                                 | array of contacts                                                                                                                                                                                                                                                                           |
+| data.event.subEvents                              | array                                 | array of subEvents                                                                                                                                                                                                                                                                          |
 | data.recipient                                    | oneOf                                 | listing agent or offer recipient                                                                                                                                                                                                                                                            |
 | data.recipient.0 (oneOf item)                     | object                                | A real estate agent who represents buyers and sellers                                                                                                                                                                                                                                       |
 | data.recipient.0.type                             | string                                | const (`"RealEstateAgent"`)                                                                                                                                                                                                                                                                 |

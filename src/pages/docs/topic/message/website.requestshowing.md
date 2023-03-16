@@ -83,19 +83,26 @@ _a website visitor has requested a property showing_
     //     "id": "https://batman.example.com/profile/card#me"
     //   }
     // },
-    "event": {
-      "type": "EventName",
-      "name": "Any event name",
-      "id": "1d2995307f2c48ae9543caf586f43f9b",
-      "url": "https://user.example.com/mentor/example-name/cid-example123/oh/123-example-street/pid-example112233",
-      "contactGroup": [
+ "event": {
+      "type": "Event",
+      "name": "Property Showing  64 Buttercup Lane, South Grafton, MA, USA",
+      "description": "",
+      "subEvents": [
         {
-          "type": "Collection",
-          "name": "Topic 1"
-        },
-        {
-          "type": "Collection",
-          "name": "Topic 2"
+          "type": "Campaign",
+          "name": "A good campaign name",
+          "id": "ire:1d2995307f2c48ae9543caf586f43f9b",
+          "url": https://www.bhhspro.com/mentor/steve-baird/cid-356481/oh/889-hartford-drive-44035/pid-338005633,
+          "contactGroup": [
+            {
+              "type": "Collection",
+              "name": "Topic 1"
+            },
+            {
+              "type": "Collection",
+              "name": "Topic 2"
+            }
+          ]
         }
       ]
     },
@@ -146,7 +153,7 @@ _a website visitor has requested a property showing_
 | data.event.name                                  | string  | any string name                                                                                                                                                                                                                                                                             |
 | data.event.id                                    | string  | format (`uri`)                                                                                                                                                                                                                                                                              |
 | data.event.url                                   | string  | url of the event                                                                                                                                                                                                                                                                            |
-| data.event.contactGroup                          | array   | array of contacts                                                                                                                                                                                                                                                                           |
+| data.event.subEvents                             | array   | array of subEvents                                                                                                                                                                                                                                                                          |
 | data.object                                      | object  | A specific question - e.g. from a user seeking answers online, or collected in a Frequently Asked Questions (FAQ) document.                                                                                                                                                                 |
 | data.object.type                                 | string  | const (`"Question"`)                                                                                                                                                                                                                                                                        |
 | data.object.text                                 | string  | -                                                                                                                                                                                                                                                                                           |

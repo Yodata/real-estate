@@ -150,19 +150,26 @@ with the recipient (a Person or Audience).
       "url": "https://www.example.com/homedetails/1007-Mountain-Gate-Rd-Gotham-City-Gotham/10007",
       "yearBuilt": 1988
     },
-    "event": {
-      "type": "EventName",
-      "name": "Any event name",
-      "id": "1d2995307f2c48ae9543caf586f43f9b",
-      "url": "https://user.example.com/mentor/example-name/cid-example123/oh/123-example-street/pid-example112233",
-      "contactGroup": [
+ "event": {
+      "type": "Event",
+      "name": "Property Showing  64 Buttercup Lane, South Grafton, MA, USA",
+      "description": "",
+      "subEvents": [
         {
-          "type": "Collection",
-          "name": "Topic 1"
-        },
-        {
-          "type": "Collection",
-          "name": "Topic 2"
+          "type": "Campaign",
+          "name": "A good campaign name",
+          "id": "ire:1d2995307f2c48ae9543caf586f43f9b",
+          "url": https://www.bhhspro.com/mentor/steve-baird/cid-356481/oh/889-hartford-drive-44035/pid-338005633,
+          "contactGroup": [
+            {
+              "type": "Collection",
+              "name": "Topic 1"
+            },
+            {
+              "type": "Collection",
+              "name": "Topic 2"
+            }
+          ]
         }
       ]
     },

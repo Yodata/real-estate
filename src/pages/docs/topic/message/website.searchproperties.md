@@ -152,17 +152,17 @@ a website user has performed a property search
 | Name                 | Type                | Description                                                                      |
 | -------------------- | ------------------- | -------------------------------------------------------------------------------- |
 | (root)               | object              | -                                                                                |
-| topic                | string!             | realestate/website#shareproperty                                                 |
+| topic                | string!             | realestate/website#searchproperties                                              |
 | time                 | string<date-time> ! | date & time the event was produced                                               |
 | agent                | string<uri> !       | event publisher                                                                  |
 | instrument           | string<uri> !       | the application that produced the event                                          |
 | source               | string<uri>         | associated RealEstate{Agent,Office,Organization}                                 |
-| data                 | object              | the message payload.                                                             |
-| data.type            | string!             | The item type (Linked-Data @type)                                                |
-| data.agent           | object!             | the website user RANGE: Contact, Person                                          |
+| data                 | object              | the message payload. RANGE: SearchAction                                         |
+| data.type            | string!             | SearchAction                                                                     |
+| data.agent           | object!             | the user who performed the search RANGE: Contact, Person                         |
 | data.instrument      | object              | website or mobile application RANGE: RealEstateWebsite, MobileApplication, Thing |
-| data.object          | object!             | RANGE: PropertyListing                                                           |
-| data.recipient       | object              | the recipient of the share                                                       |
+| data.object          | object!             | property search parameters RANGE: PropertySearch                                 |
+| data.result          | object              | the result of a search action RANGE: FindAction                                  |
 | data.event.type      | object              | type of the event e.g Campaign                                                   |
 | data.event.name      | string              | any string name                                                                  |
 | data.event.id        | string              | format (`uri`)                                                                   |

@@ -13,3 +13,6 @@ title: website
 - [website#requestshowing](message/website.requestshowing)
 - [website#shareproperty](message/website.shareproperty)
 - [website#saveproperty](message/website.saveproperty)
+- [website#properysearchsave](message/website.propertysearchsave)
+- [website#searchproperties](message/website.searchproperties)
+- [website#viewproperty](message/website.viewproperty)

@@ -55,35 +55,7 @@ _a website visitor has requested a property showing_
         "priceCurrency": "USD"
       }
     },
-    // "event": {
-    //   "type": "Event",
-    //   "name": "Property Showing 1007 Mountain Gate Rd",
-    //   "description": "an example meeting request for 4:00PM to 4:30PM.",
-    //   "about": {
-    //     "type": "PropertyListing",
-    //     "originatingSystemName": "GOTHAM-MLS",
-    //     "originatingSystemKey": "12345",
-    //     "url": "https://{company-website-url}/{path-to-listing}",
-    //     "streetAddress": "1007 Mountain Gate Rd",
-    //     "addressRegion": "New Jersey",
-    //     "addressLocality": "Gotham City",
-    //     "postalCode": "10010",
-    //     "addressCountry": "USA",
-    //     "listingPrice": {
-    //       "type": "PriceSpecification",
-    //       "price": 7500000,
-    //       "priceCurrency": "USD"
-    //     }
-    //   },
-    //   "startDate": "2019-08-01T16:00Z",
-    //   "endDate": "2019-08-01T16:30Z",
-    //   "organizer": {
-    //     "type": "RealEstateAgent",
-    //     "name": "Bruce Wayne",
-    //     "id": "https://batman.example.com/profile/card#me"
-    //   }
-    // },
- "event": {
+    "event": {
       "type": "Event",
       "name": "Property Showing  64 Buttercup Lane, South Grafton, MA, USA",
       "description": "",
@@ -92,7 +64,7 @@ _a website visitor has requested a property showing_
           "type": "Campaign",
           "name": "A good campaign name",
           "id": "ire:1d2995307f2c48ae9543caf586f43f9b",
-          "url": https://www.bhhspro.com/mentor/steve-baird/cid-356481/oh/889-hartford-drive-44035/pid-338005633,
+          "url": "https://www.bhhspro.com/mentor/steve-baird/cid-356481/oh/889-hartford-drive-44035/pid-338005633",
           "contactGroup": [
             {
               "type": "Collection",

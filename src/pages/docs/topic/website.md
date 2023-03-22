@@ -16,3 +16,6 @@ title: website
 - [website#properysearchsave](message/website.propertysearchsave)
 - [website#searchproperties](message/website.searchproperties)
 - [website#viewproperty](message/website.viewproperty)
+- [website#viewpropertyvaluereport](message/website.viewpropertyvaluereport)
+- [website#sharepropertyvaluereport](message/website.sharepropertyvaluereport)
+- [website#subscribemarketactivityreport](message/website.subscribemarketactivityreport)

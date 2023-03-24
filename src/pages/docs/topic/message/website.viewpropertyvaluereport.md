@@ -10,124 +10,124 @@ website user (data.agent) has viewed a listing (data.object) on a webiste or mob
 
 ```json
 {
-    "topic": "realestate/website#viewpropertyvaluereport",
-    "recipient": "https://bhhs.hsfaffiliates.com/profile/card#me",
-    "time": "2023-02-08T23:34:08.331Z",
-    "agent": "https://3023834.bhhs.hsfaffiliates.com/profile/card#me",
-    "instrument": "https://3023834.bhhs.hsfaffiliates.com/profile/card#me",
-    "source": "https://3023834.bhhs.hsfaffiliates.com/profile/card#me",
-    "originalRecipient": "https://3023834.bhhs.hsfaffiliates.com/profile/card#me",
-    "data": {
-        "type": "ViewAction",
-        "agent": {
-            "type": "Contact",
-            "name": "Anonymous Visitor",
-            "givenName": "Anonymous",
-            "familyName": "Visitor",
-            "email": "D9952B6A-FCC5-4F5F-BC46-277FD9A365D2@unknownemailaddy.com",
-            "identifier": {
-                "hsfconsumerid": "D9952B6A-FCC5-4F5F-BC46-277FD9A365D2"
-            },
-            "additionalProperty": {
-                "userPath": "%3B404%3BHome%20Value%20|%20Leo%20Shut%20|%20Berkshire%20Hathaway%20HomeServices%3B1",
-                "workingWithAgent": false
-            }
+  "topic": "realestate/website#viewpropertyvaluereport",
+  "recipient": "https://bhhs.hsfaffiliates.com/profile/card#me",
+  "time": "2023-02-08T23:34:08.331Z",
+  "agent": "https://3023834.bhhs.hsfaffiliates.com/profile/card#me",
+  "instrument": "https://3023834.bhhs.hsfaffiliates.com/profile/card#me",
+  "source": "https://3023834.bhhs.hsfaffiliates.com/profile/card#me",
+  "originalRecipient": "https://3023834.bhhs.hsfaffiliates.com/profile/card#me",
+  "data": {
+    "type": "ViewAction",
+    "agent": {
+      "type": "Contact",
+      "name": "Anonymous Visitor",
+      "givenName": "Anonymous",
+      "familyName": "Visitor",
+      "email": "D9952B6A-FCC5-4F5F-BC46-277FD9A365D2@unknownemailaddy.com",
+      "identifier": {
+        "hsfconsumerid": "D9952B6A-FCC5-4F5F-BC46-277FD9A365D2"
+      },
+      "additionalProperty": {
+        "userPath": "%3B404%3BHome%20Value%20|%20Leo%20Shut%20|%20Berkshire%20Hathaway%20HomeServices%3B1",
+        "workingWithAgent": false
+      }
+    },
+    "participant": {
+      "type": "RealEstateAgent",
+      "id": "https://3023834.bhhs.hsfaffiliates.com/profile/card#me"
+    },
+    "instrument": {
+      "type": "RealEstateWebsite",
+      "url": "https://3023834.bhhs.hsfaffiliates.com/profile/card#me"
+    },
+    "object": {
+      "type": "PropertyValueReport",
+      "name": "LOT:W BLK:79501 CITY/MUNI/TWP:WEST SPRINGFIELD ",
+      "dateCreated": "2023-02-08T11:34:07",
+      "result": {
+        "type": "MonetaryAmount",
+        "minValue": 282900,
+        "maxValue": 407100,
+        "value": 345000,
+        "currency": "USD"
+      },
+      "about": {
+        "type": "RealEstateProperty",
+        "propertyType": "Single Family",
+        "addressCountry": "US",
+        "addressLocality": "WEST SPRINGFIELD",
+        "addressRegion": "MA",
+        "image": [],
+        "latitude": 42.111904,
+        "livingArea": {
+          "type": "QuantitativeValue",
+          "unitCode": "SqFt",
+          "unitText": "Square Feet",
+          "value": 1104
         },
-        "participant": {
-            "type": "RealEstateAgent",
-            "id": "https://3023834.bhhs.hsfaffiliates.com/profile/card#me"
+        "longitude": -72.68681,
+        "lotSize": {
+          "type": "QuantitativeValue",
+          "unitCode": "SqFt",
+          "unitText": "Square Feet",
+          "value": 15264
         },
-        "instrument": {
-            "type": "RealEstateWebsite",
-            "url": "https://3023834.bhhs.hsfaffiliates.com/profile/card#me"
-        },
-        "object": {
-            "type": "PropertyValueReport",
-            "name": "LOT:W BLK:79501 CITY/MUNI/TWP:WEST SPRINGFIELD ",
-            "dateCreated": "2023-02-08T11:34:07",
-            "result": {
-                "type": "MonetaryAmount",
-                "minValue": 282900,
-                "maxValue": 407100,
-                "value": 345000,
-                "currency": "USD"
-            },
-            "about": {
-                "type": "RealEstateProperty",
-                "propertyType": "Single Family",
-                "addressCountry": "US",
-                "addressLocality": "WEST SPRINGFIELD",
-                "addressRegion": "MA",
-                "image": [],
-                "latitude": 42.111904,
-                "livingArea": {
-                    "type": "QuantitativeValue",
-                    "unitCode": "SqFt",
-                    "unitText": "Square Feet",
-                    "value": 1104
-                },
-                "longitude": -72.68681,
-                "lotSize": {
-                    "type": "QuantitativeValue",
-                    "unitCode": "SqFt",
-                    "unitText": "Square Feet",
-                    "value": 15264
-                },
-                "numberOfBathrooms": 2,
-                "numberOfBedrooms": 3,
-                "postalCode": "01089",
-                "streetAddress": "113 SIKES AVE",
-                "yearBuilt": 1988,
-                "additionalProperty": {
-                    "score": 82,
-                    "parcelId": "WSPR M:00235 B:79501 L:0000W",
-                    "averageSalePrice": {
-                        "type": "PriceSpecification",
-                        "price": 298400,
-                        "priceCurrency": "USD"
-                    },
-                    "nonDisclosureProperty": false,
-                    "taxAssessedValue": {
-                        "type": "MonetaryAmount",
-                        "amount": 233700,
-                        "currency": "USD"
-                    },
-                    "taxAssessedYear": 2022,
-                    "neighborhoodName": "AMOSTOWN",
-                    "useNeighborhoodDataForCharts": true,
-                    "ownerName": "KOLESNICHENKO,ANDREY",
-                    "ownerOccupied": "N",
-                    "ownersEstimatedEquity": {
-                        "@type": "MonetaryAmount",
-                        "amount": 1055000,
-                        "currency": "USD"
-                    },
-                    "firstLoanPrice": {
-                        "@type": "MonetaryAmount",
-                        "amount": 296000,
-                        "currency": "USD"
-                    },
-                    "firstLoanLenderName": "MORTGAGE NETWORKS INC",
-                    "secondLoanPrice": {
-                        "@type": "MonetaryAmount",
-                        "amount": 0,
-                        "currency": "USD"
-                    },
-                    "lastRefinanceLoanVal1": {
-                        "@type": "MonetaryAmount",
-                        "amount": 1400000,
-                        "currency": "USD"
-                    },
-                    "lastRefinanceLenderName1": "MONSON SAVINGS BANK",
-                    "lastRefinanceLoanVal2": {
-                        "@type": "MonetaryAmount",
-                        "amount": 0,
-                        "currency": "USD"
-                    }
-                }
-            }
-        },
-        "event": {
+        "numberOfBathrooms": 2,
+        "numberOfBedrooms": 3,
+        "postalCode": "01089",
+        "streetAddress": "113 SIKES AVE",
+        "yearBuilt": 1988,
+        "additionalProperty": {
+          "score": 82,
+          "parcelId": "WSPR M:00235 B:79501 L:0000W",
+          "averageSalePrice": {
+            "type": "PriceSpecification",
+            "price": 298400,
+            "priceCurrency": "USD"
+          },
+          "nonDisclosureProperty": false,
+          "taxAssessedValue": {
+            "type": "MonetaryAmount",
+            "amount": 233700,
+            "currency": "USD"
+          },
+          "taxAssessedYear": 2022,
+          "neighborhoodName": "AMOSTOWN",
+          "useNeighborhoodDataForCharts": true,
+          "ownerName": "KOLESNICHENKO,ANDREY",
+          "ownerOccupied": "N",
+          "ownersEstimatedEquity": {
+            "@type": "MonetaryAmount",
+            "amount": 1055000,
+            "currency": "USD"
+          },
+          "firstLoanPrice": {
+            "@type": "MonetaryAmount",
+            "amount": 296000,
+            "currency": "USD"
+          },
+          "firstLoanLenderName": "MORTGAGE NETWORKS INC",
+          "secondLoanPrice": {
+            "@type": "MonetaryAmount",
+            "amount": 0,
+            "currency": "USD"
+          },
+          "lastRefinanceLoanVal1": {
+            "@type": "MonetaryAmount",
+            "amount": 1400000,
+            "currency": "USD"
+          },
+          "lastRefinanceLenderName1": "MONSON SAVINGS BANK",
+          "lastRefinanceLoanVal2": {
+            "@type": "MonetaryAmount",
+            "amount": 0,
+            "currency": "USD"
+          }
+        }
+      }
+    },
+    "event": {
       "type": "Event",
       "name": "Property Showing  64 Buttercup Lane, South Grafton, MA, USA",
       "description": "",
@@ -136,7 +136,7 @@ website user (data.agent) has viewed a listing (data.object) on a webiste or mob
           "type": "Campaign",
           "name": "A good campaign name",
           "id": "ire:1d2995307f2c48ae9543caf586f43f9b",
-          "url": https://www.bhhspro.com/mentor/steve-baird/cid-356481/oh/889-hartford-drive-44035/pid-338005633,
+          "url": "https://www.bhhspro.com/mentor/steve-baird/cid-356481/oh/889-hartford-drive-44035/pid-338005633",
           "contactGroup": [
             {
               "type": "Collection",
@@ -150,13 +150,12 @@ website user (data.agent) has viewed a listing (data.object) on a webiste or mob
         }
       ]
     },
-        "recipient": {}
-    },
-    "@id": "https://aem.bhhs.hsfaffiliates.com/publish/1d2995307f2c48ae9543caf586f43f9b",
-    "id": "https://aem.bhhs.hsfaffiliates.com/publish/1d2995307f2c48ae9543caf586f43f9b",
-    "timestamp": 1675899248331
+    "recipient": {}
+  },
+  "@id": "https://aem.bhhs.hsfaffiliates.com/publish/1d2995307f2c48ae9543caf586f43f9b",
+  "id": "https://aem.bhhs.hsfaffiliates.com/publish/1d2995307f2c48ae9543caf586f43f9b",
+  "timestamp": 1675899248331
 }
-
 ```
 
 ### Payload

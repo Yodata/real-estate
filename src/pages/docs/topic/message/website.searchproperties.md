@@ -1,5 +1,5 @@
 ---
-title: website#shareproperty
+title: website#searchproperties
 ---
 
 ## Message
@@ -12,7 +12,7 @@ a website user has performed a property search
 
 ```json
 {
-  "topic": "realestate/website#register",
+  "topic": "realestate/website#searchproperties",
   "time": "2020-06-18T18:30:49Z",
   "agent": "https://bhhs.example.com/profile/card#me",
   "instrument": "https://smarter-agent.example.com/profile/card#me",

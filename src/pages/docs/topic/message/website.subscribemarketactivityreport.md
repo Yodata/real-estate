@@ -68,7 +68,7 @@ website user (data.agent) has viewed a listing (data.object) on a webiste or mob
       "streetAddress": "113 SIKES AVE",
       "yearBuilt": 1988
     },
-    "event":{
+    "event": {
       "type": "Event",
       "name": "Property Showing  64 Buttercup Lane, South Grafton, MA, USA",
       "description": "",
@@ -77,7 +77,7 @@ website user (data.agent) has viewed a listing (data.object) on a webiste or mob
           "type": "Campaign",
           "name": "A good campaign name",
           "id": "ire:1d2995307f2c48ae9543caf586f43f9b",
-          "url": https://www.bhhspro.com/mentor/steve-baird/cid-356481/oh/889-hartford-drive-44035/pid-338005633,
+          "url": "https://www.bhhspro.com/mentor/steve-baird/cid-356481/oh/889-hartford-drive-44035/pid-338005633",
           "contactGroup": [
             {
               "type": "Collection",

@@ -43,7 +43,7 @@ _website user has requested an appointment_
       "type": "Question",
       "text": "Populus debet control notitia sua"
     },
-   "event": {
+    "event": {
       "type": "Event",
       "name": "Property Showing  64 Buttercup Lane, South Grafton, MA, USA",
       "description": "",
@@ -52,7 +52,7 @@ _website user has requested an appointment_
           "type": "Campaign",
           "name": "A good campaign name",
           "id": "ire:1d2995307f2c48ae9543caf586f43f9b",
-          "url": https://www.bhhspro.com/mentor/steve-baird/cid-356481/oh/889-hartford-drive-44035/pid-338005633,
+          "url": "https://www.bhhspro.com/mentor/steve-baird/cid-356481/oh/889-hartford-drive-44035/pid-338005633",
           "contactGroup": [
             {
               "type": "Collection",

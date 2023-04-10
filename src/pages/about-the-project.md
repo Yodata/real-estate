@@ -1,6 +1,7 @@
 ---
 title: About the Project
 ---
+
 ## Let's Integrate!
 
 ### About the project
@@ -16,7 +17,7 @@ and common sense.
 - Software is integrated by default.
 - No vendor lock-in.
 - No customer lock-out!
-- Open source, plug-and-play APIs to build-on.  Fast.
+- Open source, plug-and-play APIs to build-on. Fast.
 
 ### Who's in?
 
@@ -55,7 +56,12 @@ We are a community of software developers working to make better real estate sof
 - Truelogic
 - Xpressdocs
 
-
 ### Are you in?
 
 Contact us dave@yodata.io
+
+## Important Note
+
+- Do not crawl profile tree daily. If you need Broker/Office/Agent profiles as one time initial load, please do the crawl once or request HSF Reflex team.
+- Do not post more than 2000 messages in 5 minutes. We have this rule in Firewall to prevent unnecessary crawls.
+- Please update HSF Customer Support before publishing mass updates. Mass updates may cause backlogs and consumers should be made aware.

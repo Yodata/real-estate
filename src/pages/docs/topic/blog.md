@@ -4,4 +4,4 @@ title: blog
 
 ## Blog Posting
 
-- [Post Blog](../../types/BlogPosting.md)
+- [Post Blog](../../types/BlogPosting)

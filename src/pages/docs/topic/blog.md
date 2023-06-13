@@ -2,4 +2,6 @@
 title: blog
 ---
 
-## blog operations
+## Blog Posting
+
+- [Post Blog](../../types/BlogPosting.md)

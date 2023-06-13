@@ -11,112 +11,117 @@ import { Search } from '@/components/Search'
 import { ThemeSelector } from '@/components/ThemeSelector'
 
 const types = [
-  "Certification"
-, "City"
-, "CloudEvent"
-, "Collection"
-, "Comment"
-, "Contact"
-, "ContactPoint"
-, "ContactSummary"
-, "DigitalDocument"
-, "EmailMessage"
-, "Event"
-, "GeoCircle"
-, "GeoCoordinates"
-, "GeoShape"
-, "ImageObject"
-, "Language"
-, "Lead"
-, "ListingOffer"
-, "ListingReport"
-, "MarketingProgram"
-, "MediaObject"
-, "MLSMembership"
-, "MonetaryAmount"
-, "MultipleListingService"
-, "Organization"
-, "OrganizationRole"
-, "Permit"
-, "Person"
-, "Place"
-, "Plan"
-, "PostalAddress"
-, "PotentialActionStatus"
-, "PriceSpecification"
-, "Profile"
-, "ProgramMembership"
-, "PropertyListing"
-, "PropertySearch"
-, "PropertyType"
-, "PropertySubType"
-, "PropertyValue"
-, "PropertyValueReport"
-, "QuantitativeValue"
-, "Question"
-, "RealEstateAgent"
-, "RealEstateLicense"
-, "RealEstateOffice"
-, "RealEstateOrganization"
-, "RealEstateProperty"
-, "RealEstateTeam"
-, "RealEstateTeamMembership"
-, "RealEstateTransaction"
-, "RealEstateWebsite"
-, "Referral"
-, "Schedule"
-, "Service"
-, "ServiceArea"
-, "State"
-, "SubscribeAction"
-, "Task"
-, "Thing"
-, "TransactionEntry"
-, "TransactionParticipant"
-, "TransactionStatus"
-, "UnsubscribeAction"
-, "BHHSTerms"
+  'Certification',
+  'City',
+  'CloudEvent',
+  'Collection',
+  'Comment',
+  'Contact',
+  'ContactPoint',
+  'ContactSummary',
+  'DigitalDocument',
+  'EmailMessage',
+  'Event',
+  'GeoCircle',
+  'GeoCoordinates',
+  'GeoShape',
+  'ImageObject',
+  'Language',
+  'Lead',
+  'ListingOffer',
+  'ListingReport',
+  'MarketingProgram',
+  'MediaObject',
+  'MLSMembership',
+  'MonetaryAmount',
+  'MultipleListingService',
+  'Organization',
+  'OrganizationRole',
+  'Permit',
+  'Person',
+  'Place',
+  'Plan',
+  'PostalAddress',
+  'PotentialActionStatus',
+  'PriceSpecification',
+  'Profile',
+  'ProgramMembership',
+  'PropertyListing',
+  'PropertySearch',
+  'PropertyType',
+  'PropertySubType',
+  'PropertyValue',
+  'PropertyValueReport',
+  'QuantitativeValue',
+  'Question',
+  'RealEstateAgent',
+  'RealEstateLicense',
+  'RealEstateOffice',
+  'RealEstateOrganization',
+  'RealEstateProperty',
+  'RealEstateTeam',
+  'RealEstateTeamMembership',
+  'RealEstateTransaction',
+  'RealEstateWebsite',
+  'Referral',
+  'Schedule',
+  'Service',
+  'ServiceArea',
+  'State',
+  'SubscribeAction',
+  'Task',
+  'Thing',
+  'TransactionEntry',
+  'TransactionParticipant',
+  'TransactionStatus',
+  'UnsubscribeAction',
+  'BHHSTerms',
 ]
 
 const navigation = [
   {
     title: 'Introduction',
-    links: [
-      { title: 'Getting started', href: '/' }
-    ]
+    links: [{ title: 'Getting started', href: '/' }],
   },
   {
     title: 'API reference',
     links: [
       { title: 'publish', href: '/docs/api/publish' },
       { title: 'subscribe', href: '/docs/api/subscribe' },
-      { title: 'events', href: '/docs/api/events/' }
-    ]
+      { title: 'events', href: '/docs/api/events/' },
+    ],
   },
   {
     title: 'Topics',
     links: [
       { title: 'award', href: '/docs/topic/award' },
+      { title: 'blog', href: '/docs/topic/blog' },
       { title: 'contact', href: '/docs/topic/contact' },
       { title: 'franchise', href: '/docs/topic/franchise' },
       { title: 'lead', href: '/docs/topic/lead' },
       { title: 'listing', href: '/docs/topic/listing' },
       { title: 'marketingprogram', href: '/docs/topic/marketingprogram' },
-      { title: 'marketingpreferences', href: '/docs/topic/marketingpreferences' },
+      {
+        title: 'marketingpreferences',
+        href: '/docs/topic/marketingpreferences',
+      },
       { title: 'profile', href: '/docs/topic/profile' },
       { title: 'servicearea', href: '/docs/topic/servicearea' },
       { title: 'transaction', href: '/docs/topic/transaction' },
-      { title: 'website', href: '/docs/topic/website' }
-    ]
+      { title: 'website', href: '/docs/topic/website' },
+    ],
   },
   {
     title: 'Types',
-    links: types.map(type => ({ title: type, href: `/types/${type}` }))
+    links: types.map((type) => ({ title: type, href: `/types/${type}` })),
   },
   {
     title: 'Developer Tools & Docs',
     links: [
-      { title: 'Mock Data Generator API', href: '/docs/api/mock-data-generator' },
+      {
+        title: 'Mock Data Generator API',
+        href: '/docs/api/mock-data-generator',
+      },
       { title: 'Mock Data Generator GUI', href: '/tools/mock-data-generator' },
       { title: 'Replay Events GUI', href: '/tools/replay' },
       { title: 'Replay Events API', href: '/docs/api/replay' },
@@ -124,19 +129,25 @@ const navigation = [
       { title: 'Schema Validation API', href: '/docs/api/validate' },
       { title: 'Yodata CLI', href: '/tools/yodata-cli' },
       { title: 'Design principles', href: '/about-the-project' },
-      { title: 'Architecture guide', href: '/docs/architecture-guide' }
-    ]
+      { title: 'Architecture guide', href: '/docs/architecture-guide' },
+    ],
   },
   {
     title: 'Contributing',
     links: [
-      { title: 'How to contribute', href: 'https://github.com/yodata/real-estate' },
-      { title: 'Developer Forum', href: 'https://github.com/Yodata/real-estate/discussions' },
-    ]
-  }
+      {
+        title: 'How to contribute',
+        href: 'https://github.com/yodata/real-estate',
+      },
+      {
+        title: 'Developer Forum',
+        href: 'https://github.com/Yodata/real-estate/discussions',
+      },
+    ],
+  },
 ]
 
-function GitHubIcon (props) {
+function GitHubIcon(props) {
   return (
     <svg aria-hidden="true" viewBox="0 0 16 16" {...props}>
       <path d="M8 0C3.58 0 0 3.58 0 8C0 11.54 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.08 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z" />
@@ -144,11 +155,11 @@ function GitHubIcon (props) {
   )
 }
 
-function Header ({ navigation }) {
+function Header({ navigation }) {
   const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
-    function onScroll () {
+    function onScroll() {
       setIsScrolled(window.scrollY > 0)
     }
     onScroll()
@@ -163,8 +174,8 @@ function Header ({ navigation }) {
       className={clsx(
         'sticky top-0 z-50 flex flex-wrap items-center justify-between bg-white px-4 py-5 shadow-md shadow-slate-900/5 transition duration-500 dark:shadow-none sm:px-6 lg:px-8',
         isScrolled
-          ? 'dark:bg-opacity-90 dark:bg-slate-900'
-          : 'dark:bg-opacity-0 dark:bg-slate-900'
+          ? 'dark:bg-slate-900 dark:bg-opacity-90'
+          : 'dark:bg-slate-900 dark:bg-opacity-0'
       )}
     >
       <div className="mr-6 flex lg:hidden">
@@ -181,7 +192,11 @@ function Header ({ navigation }) {
       </div>
       <div className="relative flex basis-0 justify-end gap-6 sm:gap-8 md:flex-grow">
         <ThemeSelector className="relative z-10" />
-        <Link href="https://github.com/Yodata/real-estate" className="group" aria-label="GitHub">
+        <Link
+          href="https://github.com/Yodata/real-estate"
+          className="group"
+          aria-label="GitHub"
+        >
           <GitHubIcon className="h-6 w-6 fill-slate-400 group-hover:fill-slate-500 dark:group-hover:fill-slate-300" />
         </Link>
       </div>
@@ -189,7 +204,7 @@ function Header ({ navigation }) {
   )
 }
 
-function useTableOfContents (tableOfContents) {
+function useTableOfContents(tableOfContents) {
   const [currentSection, setCurrentSection] = useState(tableOfContents[0]?.id)
 
   const getHeadings = useCallback((tableOfContents) => {
@@ -210,7 +225,7 @@ function useTableOfContents (tableOfContents) {
   useEffect(() => {
     if (tableOfContents.length === 0) return
     const headings = getHeadings(tableOfContents)
-    function onScroll () {
+    function onScroll() {
       const top = window.scrollY
       let current = headings[0].id
       for (const heading of headings) {
@@ -232,7 +247,7 @@ function useTableOfContents (tableOfContents) {
   return currentSection
 }
 
-export function Layout ({ children, title, tableOfContents }) {
+export function Layout({ children, title, tableOfContents }) {
   const router = useRouter()
   const isHomePage = router.pathname === '/'
   const allLinks = navigation.flatMap((section) => section.links)
@@ -244,7 +259,7 @@ export function Layout ({ children, title, tableOfContents }) {
   )
   const currentSection = useTableOfContents(tableOfContents)
 
-  function isActive (section) {
+  function isActive(section) {
     if (section.id === currentSection) {
       return true
     }
@@ -266,10 +281,7 @@ export function Layout ({ children, title, tableOfContents }) {
           <div className="absolute top-16 bottom-0 right-0 hidden h-12 w-px bg-gradient-to-t from-slate-800 dark:block" />
           <div className="absolute top-28 bottom-0 right-0 hidden w-px bg-slate-800 dark:block" />
           <div className="sticky top-[4.5rem] -ml-0.5 h-[calc(100vh-4.5rem)] overflow-y-auto overflow-x-hidden py-16 pl-0.5">
-            <Navigation
-              navigation={navigation}
-              className="w-48 pr-6"
-            />
+            <Navigation navigation={navigation} className="w-48 pr-6" />
           </div>
         </div>
         <div className="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16">

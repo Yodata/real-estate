@@ -85,4 +85,6 @@ _a blog post was created_
 
 ```
 
+Please note that the `image` and `url` properties are empty objects in the example provided. You can add specific details for those properties if needed.
+
 ```

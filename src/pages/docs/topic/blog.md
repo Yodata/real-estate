@@ -2,9 +2,8 @@
 title: blog
 ---
 
-## Blog Posting
+### Blog Posting
 
-- [Create Blog](message/blog.create)
-- [Update Blog](message/blog.update)
-- [Delete Blog](message/blog.delete)
-- [Post Blog ](../../types/BlogPosting)
+- [blog#create](message/blog.create)
+- [blog#update](message/blog.update)
+- [blog#delete](message/blog.delete)

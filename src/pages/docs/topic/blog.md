@@ -4,4 +4,7 @@ title: blog
 
 ## Blog Posting
 
-- [Post Blog](../../types/BlogPosting)
+- [Create Blog](message/blog.create)
+- [Update Blog](message/blog.update)
+- [Delete Blog](message/blog.delete)
+- [Post Blog ](../../types/BlogPosting)

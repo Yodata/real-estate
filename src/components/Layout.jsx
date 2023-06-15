@@ -11,7 +11,7 @@ import { Search } from '@/components/Search'
 import { ThemeSelector } from '@/components/ThemeSelector'
 
 const types = [
-  ' Action',
+  'Action',
   'additionalProperty',
   'addressCountry',
   'addressCounty',

@@ -11,6 +11,16 @@ import { Search } from '@/components/Search'
 import { ThemeSelector } from '@/components/ThemeSelector'
 
 const types = [
+  ' Action',
+  'additionalProperty',
+  'addressCountry',
+  'addressCounty',
+  'addressLocality',
+  'addressRegion',
+  'ApplicationProfile',
+  'Award',
+  'AwardSeries',
+  'AwardTeam',
   'BlogPosting',
   'Certification',
   'City',

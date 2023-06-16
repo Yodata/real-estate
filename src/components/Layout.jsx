@@ -12,12 +12,7 @@ import { ThemeSelector } from '@/components/ThemeSelector'
 
 const types = [
   'Action',
-  'additionalProperty',
   'addressCountry',
-  'addressCounty',
-  'addressLocality',
-  'addressRegion',
-  'ApplicationProfile',
   'Award',
   'AwardSeries',
   'AwardTeam',
@@ -124,7 +119,10 @@ const navigation = [
   },
   {
     title: 'Types',
-    links: types.map((type) => ({ title: type, href: `/types/${type}` })),
+    links: types.map((type) => ({
+      title: type.charAt(0).toUpperCase() + type.slice(1),
+      href: `/types/${type}`,
+    })),
   },
   {
     title: 'Developer Tools & Docs',

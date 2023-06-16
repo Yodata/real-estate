@@ -41,6 +41,7 @@ const types = [
   'MLSMembership',
   'MonetaryAmount',
   'MultipleListingService',
+  'OpenHouseEvent',
   'Organization',
   'OrganizationRole',
   'Permit',

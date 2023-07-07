@@ -53,7 +53,7 @@ filter: ## optional filter
 
 POST / HTTP
 Host: https://realestate.yodata.me/api/replay
-
+Payload
 {
         "type": "ReplayRequestAction",
         "target": "https://example.com/inbox/",
@@ -73,7 +73,6 @@ Host: https://realestate.yodata.me/api/replay
 Response
 
 HTTP 200 || 201 OK
-
 {
     "agent": "post-replay",
     "object": {
@@ -96,7 +95,6 @@ HTTP 200 || 201 OK
 }
 
 HTTP 40X (X=> (0 || 1 || 2 ||  3 || 4)) BAD REQUEST
-
 {
     "agent": "post-replay",
     "object": {

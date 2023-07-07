@@ -52,7 +52,7 @@ filter: ## optional filter
 ```http
 
 POST / HTTP
-Host: http://realestate.yodata.me/api/schema/validate
+Host: https://realestate.yodata.me/api/replay
 
 {
         "type": "ReplayRequestAction",

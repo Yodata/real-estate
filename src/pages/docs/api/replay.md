@@ -27,7 +27,9 @@ will replay a specific list of items. Max request payload for http requests will
 type: ReplayRequestAction
 target: 'https://example.com/inbox/'
 items:
-  -
+   - 5e76a09475324bb6af67f90e629fd011
+   - 5e76a09475324bb6af67f90e629fd012
+   - 5e76a09475324bb6af67f90e629fd013
 ```
 
 ### optional filter

@@ -65,8 +65,8 @@ Payload
         "filter":{
             "topic" : "realestate/contact#add",
             "type"  : [ "ReflexPublishAction","UpdateAction"],
-            "id"	: [ "https://creg.bhhs.dev.yodata.io/outbox/38fb64d8d2d14c09b25ae7a1d8bcf818",
-                        "https://creg.bhhs.dev.yodata.io/publish/d7d812cff51b433cacdfa8873fc52c04",
+            "id"	: [ "https://pod.yodata.io/inbox/123456",
+                        "https://pod.yodata.io/publish/123457",
                         ...more ]
             ...restFilters
         } // optional
@@ -91,8 +91,8 @@ HTTP 200 || 201 OK
         "filter": {
             "topic" : "realestate/contact#add",
             "type"  : [ "ReflexPublishAction","UpdateAction"],
-            "id"	: [ "https://creg.bhhs.dev.yodata.io/outbox/38fb64d8d2d14c09b25ae7a1d8bcf818",
-                        "https://creg.bhhs.dev.yodata.io/publish/d7d812cff51b433cacdfa8873fc52c04",
+            "id"	: [ "https://pod.yodata.io/inbox/123456",
+                        "https://pod.yodata.io/publish/123457",
                         ...more ]
             ...restFilters
         }

@@ -63,11 +63,14 @@ Payload
                   "5e76a09475324bb6af67f90e629fd012"
                   "5e76a09475324bb6af67f90e629fd013"], // specific items (optional)
         "filter":{
-          "topic":"realestate/contact#add",
-          ...restFilters
+            "topic" : "realestate/contact#add",
+            "type"  : [ "ReflexPublishAction","UpdateAction"],
+            "id"	: [ "https://creg.bhhs.dev.yodata.io/outbox/38fb64d8d2d14c09b25ae7a1d8bcf818",
+                        "https://creg.bhhs.dev.yodata.io/publish/d7d812cff51b433cacdfa8873fc52c04",
+                        ...more ]
+            ...restFilters
         } // optional
-        // restFilters can contains any property of s3 data object
-
+        // restFilters can contain any property of s3 data object ( string | number | array | undefined | null )
    }
 
 Response
@@ -86,7 +89,11 @@ HTTP 200 || 201 OK
                   "5e76a09475324bb6af67f90e629fd013"
         ],
         "filter": {
-            "topic": "realestate/contact#add",
+            "topic" : "realestate/contact#add",
+            "type"  : [ "ReflexPublishAction","UpdateAction"],
+            "id"	: [ "https://creg.bhhs.dev.yodata.io/outbox/38fb64d8d2d14c09b25ae7a1d8bcf818",
+                        "https://creg.bhhs.dev.yodata.io/publish/d7d812cff51b433cacdfa8873fc52c04",
+                        ...more ]
             ...restFilters
         }
     },
@@ -94,7 +101,7 @@ HTTP 200 || 201 OK
     "actionStatus": "CompletedActionStatus"
 }
 
-HTTP 40X (X=> (0 || 1 || 2 ||  3 || 4)) BAD REQUEST
+HTTP 40X X=> (0 | 1 | 2 |  3 | 4) BAD REQUEST
 {
     "agent": "post-replay",
     "object": {

@@ -84,7 +84,7 @@ a marketing program has been created
       "type": "MarketingProgram",
       "name": "Market Activity Report 508 Homewood Ave",
       "identifier": {
-        "salesforceContactID": "c28834ca-db69-4da8-90ad-75cdc9907298",
+        "namespeaceid": "c28834ca-db69-4da8-90ad-75cdc9907298",
         "namespaceid": "xxxx"
       },
       "member": [
@@ -144,23 +144,25 @@ a marketing program was deleted
 ### Example
 ```json
 {
-  "topic": "realestate/marketingprogram#delete",
-  "time": "2022-10-12T01:13:43Z",
-  "instrument": "https://vendorid.example.com/profile/card#me",
-  "source": "https://companyid.example.com/profile/card#me",
-  "originalRecipient": "https://agentid.example.com/profile/card#me",
-  "id": "https://instrumentid.example.com/publish/xxxxxxxxxxxxx",
-  "@id": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
-  "data": {
-    "type": "DeleteAction",
-    "agent": "https://agentid.example.com/profile/card#me",
-    "object": {
-      "type": "MarketingProgram",
-      "identifier": {
-        "namespaceid": "xxxx"
-      }
+    "topic": "realestate/marketingprogram#delete",
+    "recipient": "https://bhhs.hsfaffiliates.com/profile/card#me",
+    "data": {
+        "type": "DeleteAction",
+        "object": {
+            "type": "SellerActivityReport",
+            "name": "Listing Activity Report 1625 Birch Ln",
+            "identifier": {
+                "namespaceid": "7efb5faac5e7316674e2373359d557cf9a05b44d"
+            }
+        },
+        "agent": "https://363463.bhhs.hsfaffiliates.com/profile/card#me",
+        "instrument": "https://sage.getbuyside.com"
     },
-  }
+    "source": "https://bhhs.hsfaffiliates.com/profile/card#me",
+    "time": "2023-08-08T20:52:11.658Z",
+    "@id": "https://buyside.bhhs.hsfaffiliates.com/publish/2378b39773fb46878f1d27c8822e1fff",
+    "id": "https://buyside.bhhs.hsfaffiliates.com/publish/2378b39773fb46878f1d27c8822e1fff",
+    "timestamp": 1691527931658
 }
 ```
 

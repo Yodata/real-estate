@@ -264,7 +264,6 @@ a program member was removed by the agent
 | data.type | string! | the action type  |
 | data.agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
 | data.object | object | describes membership relation between a member (Person) and a MarketingProgram <br/>RANGE: [ProgramMembership](/types/ProgramMembership) |
-| data.agent | * |   |
 | data.targetCollection | * | the collection from which the item is being removed <br/>RANGE: [MarketingProgram](/types/MarketingProgram) |
 
 ### Example

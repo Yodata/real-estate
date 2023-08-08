@@ -57,13 +57,13 @@ a marketing program has been created
 |:-----| :--- | :---------- |
 | topic | string! | the event topic which determines the schema of event.data  |
 | time | string&lt;date-time&gt;  | date & time the event was produced  |
-| agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
 | instrument | string&lt;uri&gt;  | the service which created the event  |
 | source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
 | originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
 | id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
 | @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
 | data | object! | the object was created by the agent  |
+| data.agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
 | data.type | string! | CreateAction  |
 | data.object | object | A collection of pre-defined activities which take place over a period of time or in a regular, ongoing schedule. <br/>RANGE: [MarketingProgram](/types/MarketingProgram) |
 
@@ -131,13 +131,13 @@ a marketing program was deleted
 |:-----| :--- | :---------- |
 | topic | string! | the event topic which determines the schema of event.data  |
 | time | string&lt;date-time&gt;  | date & time the event was produced  |
-| agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
 | instrument | string&lt;uri&gt;  | the service which created the event  |
 | source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
 | originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
 | id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
 | @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
 | data | object! | object is removed by the agent from the targetCollection <br/>RANGE: [DeleteAction](/types/DeleteAction) |
+| data.agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
 | data.type | string! | the action type  |
 | data.object | object | A collection of pre-defined activities which take place over a period of time or in a regular, ongoing schedule.  |
 
@@ -160,7 +160,6 @@ a marketing program was deleted
         "namespaceid": "xxxx"
       }
     },
-    // "agent": "https://{user}.example.com/profile/card#me"
   }
 }
 ```
@@ -183,7 +182,6 @@ a program member was added by the agent
 |:-----| :--- | :---------- |
 | topic | string! | the event topic which determines the schema of event.data  |
 | time | string&lt;date-time&gt;  | date & time the event was produced  |
-| agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
 | instrument | string&lt;uri&gt;  | the service which created the event  |
 | source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
 | originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
@@ -191,6 +189,7 @@ a program member was added by the agent
 | @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
 | data | object! | data (object) is added by user (agent), optionally to the targetCollection <br/>RANGE: [AddAction](/types/AddAction) |
 | data.type | string! | AddAction  |
+| data. agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
 | data.object | object | describes membership relation between a member (Person) and a MarketingProgram <br/>RANGE: [ProgramMembership](/types/ProgramMembership) |
 | data.targetCollection | object | the collection or reference to the collection receiving the data <br/>RANGE: [MarketingProgram](/types/MarketingProgram) |
 
@@ -256,7 +255,6 @@ a program member was removed by the agent
 |:-----| :--- | :---------- |
 | topic | string! | the event topic which determines the schema of event.data  |
 | time | string&lt;date-time&gt;  | date & time the event was produced  |
-| agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
 | instrument | string&lt;uri&gt;  | the service which created the event  |
 | source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
 | originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
@@ -264,6 +262,7 @@ a program member was removed by the agent
 | @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
 | data | object! | an object (object) is removed by a user (agent), optionally from a collection (targetCollection)  |
 | data.type | string! | the action type  |
+| data.agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
 | data.object | object | describes membership relation between a member (Person) and a MarketingProgram <br/>RANGE: [ProgramMembership](/types/ProgramMembership) |
 | data.agent | * |   |
 | data.targetCollection | * | the collection from which the item is being removed <br/>RANGE: [MarketingProgram](/types/MarketingProgram) |
@@ -292,7 +291,6 @@ a program member was removed by the agent
         }
       }
     },
-    "agent": "https://{user-who-removed-the-item}.com/profile/card#me",
     "targetCollection": {
       "type": "MarketingProgram",
       "name": "Market Activity Report 508 Homewood Ave",

@@ -72,7 +72,6 @@ a marketing program has been created
 {
   "topic": "realestate/marketingprogram#create",
   "time": "2022-10-12T01:13:43Z",
-  "agent": "https://agentid.example.com/profile/card#me",
   "instrument": "https://vendorid.example.com/profile/card#me",
   "source": "https://companyid.example.com/profile/card#me",
   "originalRecipient": "https://agentid.example.com/profile/card#me",
@@ -80,6 +79,7 @@ a marketing program has been created
   "@id": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
   "data": {
     "type": "CreateAction",
+    "agent": "https://agentid.example.com/profile/card#me",
     "object": {
       "type": "MarketingProgram",
       "name": "Market Activity Report 508 Homewood Ave",
@@ -146,7 +146,6 @@ a marketing program was deleted
 {
   "topic": "realestate/marketingprogram#delete",
   "time": "2022-10-12T01:13:43Z",
-  "agent": "https://agentid.example.com/profile/card#me",
   "instrument": "https://vendorid.example.com/profile/card#me",
   "source": "https://companyid.example.com/profile/card#me",
   "originalRecipient": "https://agentid.example.com/profile/card#me",
@@ -154,13 +153,14 @@ a marketing program was deleted
   "@id": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
   "data": {
     "type": "DeleteAction",
+    "agent": "https://agentid.example.com/profile/card#me",
     "object": {
       "type": "MarketingProgram",
       "identifier": {
         "namespaceid": "xxxx"
       }
     },
-    "agent": "https://{user}.example.com/profile/card#me"
+    // "agent": "https://{user}.example.com/profile/card#me"
   }
 }
 ```
@@ -199,7 +199,6 @@ a program member was added by the agent
 {
   "topic": "realestate/marketingprogram#memberadd",
   "time": "2022-10-12T01:13:43Z",
-  "agent": "https://agentid.example.com/profile/card#me",
   "instrument": "https://vendorid.example.com/profile/card#me",
   "source": "https://companyid.example.com/profile/card#me",
   "originalRecipient": "https://agentid.example.com/profile/card#me",
@@ -207,6 +206,7 @@ a program member was added by the agent
   "@id": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
   "data": {
     "type": "AddAction",
+    "agent": "https://agentid.example.com/profile/card#me",
     "object": {
       "type": "ProgramMembership",
       "role": "Owner",
@@ -273,7 +273,6 @@ a program member was removed by the agent
 {
   "topic": "realestate/marketingprogram#memberremove",
   "time": "2022-10-12T01:13:43Z",
-  "agent": "https://agentid.example.com/profile/card#me",
   "instrument": "https://vendorid.example.com/profile/card#me",
   "source": "https://companyid.example.com/profile/card#me",
   "originalRecipient": "https://agentid.example.com/profile/card#me",
@@ -281,6 +280,7 @@ a program member was removed by the agent
   "@id": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
   "data": {
     "type": "RemoveAction",
+    "agent": "https://agentid.example.com/profile/card#me",
     "object": {
       "type": "ProgramMembership",
       "role": "Owner",

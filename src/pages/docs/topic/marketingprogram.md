@@ -37,6 +37,7 @@ Content-Type: application/json
 | Event | Description |
 | :---- | :---------- |
 | [realestate/marketingprogram#create](#create) | a marketing program has been created |
+| [realestate/marketingprogram#update](#update) | a marketing program has been updated |
 | [realestate/marketingprogram#delete](#delete) | a marketing program was deleted |
 | [realestate/marketingprogram#memberadd](#memberadd) | a program member was added by the agent |
 | [realestate/marketingprogram#memberremove](#memberremove) | a program member was removed by the agent |
@@ -79,6 +80,82 @@ a marketing program has been created
   "@id": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
   "data": {
     "type": "CreateAction",
+    "agent": "https://agentid.example.com/profile/card#me",
+    "object": {
+      "type": "MarketingProgram",
+      "name": "Market Activity Report 508 Homewood Ave",
+      "identifier": {
+        "namespeaceid": "c28834ca-db69-4da8-90ad-75cdc9907298",
+        "namespaceid": "xxxx"
+      },
+      "member": [
+        {
+          "type": "Person",
+          "name": "John Smith",
+          "identifier": {
+            "buysideid": "ab123"
+          }
+        }
+      ],
+      "creator": "http://{user}.example.com/profile/card#me",
+      "dateCreated": "2022-10-12T01:13:43Z",
+      "dateModified": "2022-10-12T01:13:43Z",
+      "about": {
+        "type": "Place",
+        "address": {
+          "streetAddress": "508 Homewood Ave",
+          "addressLocality": "Chula Vista",
+          "addressRegion": "California",
+          "postalCode": "55555"
+        }
+      }
+    }
+  }
+}
+```
+
+
+[back to top](#)
+
+
+
+---
+## update
+```
+realestate/marketingprogram#update
+```
+
+a marketing program has been updated
+
+
+
+### Schema
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | the event topic which determines the schema of event.data  |
+| time | string&lt;date-time&gt;  | date & time the event was produced  |
+| instrument | string&lt;uri&gt;  | the service which created the event  |
+| source | string&lt;uri&gt;  | an agent, team or organization who received a copy of the event  |
+| originalRecipient | string&lt;uri&gt;  | the original recipient of the event with this id  |
+| id | string&lt;uri&gt;  | the shared identifier of the event, akd the event id  |
+| @id | string&lt;uri&gt;  | the url of your instance of the event in your inbox  |
+| data | object! | the object was created by the agent  |
+| data.agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
+| data.type | string! | UpdateAction  |
+| data.object | object | A collection of pre-defined activities which take place over a period of time or in a regular, ongoing schedule. <br/>RANGE: [MarketingProgram](/types/MarketingProgram) |
+
+### Example
+```json
+{
+  "topic": "realestate/marketingprogram#update",
+  "time": "2022-10-12T01:13:43Z",
+  "instrument": "https://vendorid.example.com/profile/card#me",
+  "source": "https://companyid.example.com/profile/card#me",
+  "originalRecipient": "https://agentid.example.com/profile/card#me",
+  "id": "https://instrumentid.example.com/publish/xxxxxxxxxxxxx",
+  "@id": "https://yourpod.example.com/inbox/xxxxxxxxxxxxx",
+  "data": {
+    "type": "UpdateAction",
     "agent": "https://agentid.example.com/profile/card#me",
     "object": {
       "type": "MarketingProgram",

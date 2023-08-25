@@ -152,7 +152,7 @@ title: PropertyListing
 | lotSize | object | outdoor space minValue, maxValue |
 | modificationTimestamp | string | The date when the listing was last modified. format (`date-time`) |
 | numberOfBathrooms | string | the number of bathrooms |
-| numberOfFullBathrooms | string | the number of bathrooms |
+| numberOfFullBathrooms | string | the number of fullBathrooms |
 | numberOfBedrooms | string | the number of bedrooms |
 | numberOfRooms | string | the total number of rooms in the building |
 | originatingSystemKey | string | the listing identifier from the original MLS, aka MLSID. |

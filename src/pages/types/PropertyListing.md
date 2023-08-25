@@ -67,6 +67,11 @@ title: PropertyListing
     "price": 75000,
     "priceCurrency": "USD"
   },
+   "soldPrice": {
+    "type": "PriceSpecification",
+    "price": 75000,
+    "priceCurrency": "USD"
+  },
   "listingStatus": "Active",
   "livingArea": {
     "type": "QuantitativeValue",
@@ -83,6 +88,7 @@ title: PropertyListing
   },
   "modificationTimestamp": "2022-11-17T00:00:00",
   "numberOfBathrooms": "2",
+  "numberOfFullBathrooms":"2",
   "numberOfBedrooms": "3",
   "numberOfRooms": "7",
   "originatingSystemKey": 12345,
@@ -139,12 +145,14 @@ title: PropertyListing
 | listingOffice | object | the listing office |
 | listingOriginatingSystem | object | The place where the item is originally input by the user. |
 | listingPrice | object | - |
+| soldPrice | object | - |
 | listingStatus | string | allowed (`"Active"`, `"Pending"`, `"Sold"`, `"Canceled"`, `"Prelisted"`, `"OffMarket"`, `"Private"`)  |
 | livingArea | object | property indoor space |
 | longitude | number | The longitude of a location. |
 | lotSize | object | outdoor space minValue, maxValue |
 | modificationTimestamp | string | The date when the listing was last modified. format (`date-time`) |
 | numberOfBathrooms | string | the number of bathrooms |
+| numberOfFullBathrooms | string | the number of bathrooms |
 | numberOfBedrooms | string | the number of bedrooms |
 | numberOfRooms | string | the total number of rooms in the building |
 | originatingSystemKey | string | the listing identifier from the original MLS, aka MLSID. |

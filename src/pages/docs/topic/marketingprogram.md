@@ -86,8 +86,7 @@ a marketing program has been created
       "type": "MarketingProgram",
       "name": "Market Activity Report 508 Homewood Ave",
       "identifier": {
-        "namespeaceid": "c28834ca-db69-4da8-90ad-75cdc9907298",
-        "namespaceid": "xxxx"
+        "namespaceid": "c28834ca-db69-4da8-90ad-75cdc9907298",
       },
       "status": "Active",
       "member": [ # optional
@@ -165,8 +164,7 @@ a marketing program has been updated
       "type": "MarketingProgram",
       "name": "Market Activity Report 508 Homewood Ave",
       "identifier": {
-        "namespeaceid": "c28834ca-db69-4da8-90ad-75cdc9907298",
-        "namespaceid": "xxxx"
+        "namespaceid": "c28834ca-db69-4da8-90ad-75cdc9907298",
       },
       "status": "Active",
       "member": [ # optional

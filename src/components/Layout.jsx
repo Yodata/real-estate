@@ -37,6 +37,7 @@ const types = [
   'ListingOffer',
   'ListingReport',
   'MarketingProgram',
+  'MarketingProgramSummary',
   'MediaObject',
   'MLSMembership',
   'MonetaryAmount',

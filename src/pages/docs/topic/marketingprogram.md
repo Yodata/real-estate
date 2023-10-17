@@ -143,6 +143,7 @@ a marketing program has been updated
 | data.agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
 | data.type | string! | UpdateAction  |
 | data.object | object | A collection of pre-defined activities which take place over a period of time or in a regular, ongoing schedule. <br/>RANGE: [MarketingProgram](/types/MarketingProgram) |
+| data.marketingProgramSummary | object | marketing program summary
 
 ### Example
 ```json
@@ -185,7 +186,13 @@ a marketing program has been updated
           "postalCode": "55555"
         }
       }
-    }
+    },
+     "marketingProgramSummary": {  # optional
+              "type": "MarketingProgramSummary",
+              "unique_users": 10,
+              "impressions": 5,
+              "clicks": 7
+     } 
   }
 }
 ```

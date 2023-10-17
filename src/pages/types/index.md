@@ -19,6 +19,7 @@
 - [ListingOffer](/types/ListingOffer)
 - [ListingReport](/types/ListingReport)
 - [MarketingProgram](/types/MarketingProgram)
+- [MarketingProgramSummary](/types/MarketingProgramSummary)
 - [MediaObject](/types/MediaObject)
 - [MLSMembership](/types/MLSMembership)
 - [MonetaryAmount](/types/MonetaryAmount)

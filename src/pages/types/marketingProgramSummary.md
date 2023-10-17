@@ -3,8 +3,6 @@ title: MarketingProgramSummary
 ---
 ## Example
 
-
-
 ```json
 {
     "type": "MarketingProgramSummary",

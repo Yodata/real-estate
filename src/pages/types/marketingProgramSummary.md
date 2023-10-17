@@ -1,5 +1,6 @@
 ---
 title: MarketingProgramSummary
+route: /types/MarketingProgramSummary
 ---
 ## Example
 

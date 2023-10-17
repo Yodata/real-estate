@@ -28,6 +28,7 @@ LogAction: { $ref: LogAction.yaml }
 ListingOffer: { $ref: ListingOffer.yaml }
 ListingReport: { $ref: ListingReport.yaml }
 MarketingProgram: { $ref: MarketingProgram.yaml }
+MarketingProgramSummary: { $ref: MarketingProgramSummary.yaml }
 MediaObject: { $ref: MediaObject.yaml }
 MLSMembership: { $ref: MLSMembership.yaml }
 MonetaryAmount: { $ref: MonetaryAmount.yaml }

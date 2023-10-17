@@ -67,6 +67,7 @@ a marketing program has been created
 | data.agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
 | data.type | string! | CreateAction  |
 | data.object | object | A collection of pre-defined activities which take place over a period of time or in a regular, ongoing schedule. <br/>RANGE: [MarketingProgram](/types/MarketingProgram) |
+| data.object.status | string | status of object |
 
 ### Example
 ```json
@@ -88,7 +89,8 @@ a marketing program has been created
         "namespeaceid": "c28834ca-db69-4da8-90ad-75cdc9907298",
         "namespaceid": "xxxx"
       },
-      "member": [
+      "status": "Active",
+      "member": [ # optional
         {
           "type": "Person",
           "name": "John Smith",
@@ -143,6 +145,7 @@ a marketing program has been updated
 | data.agent | string&lt;uri&gt;  | the user,tema or organization who sent the event  |
 | data.type | string! | UpdateAction  |
 | data.object | object | A collection of pre-defined activities which take place over a period of time or in a regular, ongoing schedule. <br/>RANGE: [MarketingProgram](/types/MarketingProgram) |
+| data.object.status | string | status of object |
 | data.marketingProgramSummary | object | marketing program summary
 
 ### Example
@@ -165,7 +168,8 @@ a marketing program has been updated
         "namespeaceid": "c28834ca-db69-4da8-90ad-75cdc9907298",
         "namespaceid": "xxxx"
       },
-      "member": [
+      "status": "Active",
+      "member": [ # optional
         {
           "type": "Person",
           "name": "John Smith",

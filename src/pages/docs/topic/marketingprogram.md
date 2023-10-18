@@ -145,7 +145,8 @@ a marketing program has been updated
 | data.type | string! | UpdateAction  |
 | data.object | object | A collection of pre-defined activities which take place over a period of time or in a regular, ongoing schedule. <br/>RANGE: [MarketingProgram](/types/MarketingProgram) |
 | data.object.status | string | status of object |
-| data.marketingProgramSummary | object | marketing program summary
+| data.marketingProgramSummary | object | marketing program summary |
+| data.object.about | object | about object |
 
 ### Example
 ```json
@@ -197,8 +198,49 @@ a marketing program has been updated
      } 
   }
 }
-```
 
+### Example
+```json
+{
+    "topic": "realestate/marketingprogram#update",
+    "recipient" : "https://bhhs.hsfaffiliates.com/profile/card#me",
+    "instrument": "https://chalkdigital.bhhs.hsfaffiliates.com",         
+    "data": {
+        "type": "CreateAction",
+        "agent": "https://15787.bhhs.hsfaffiliates.com/profile/card#me",
+        "object": {
+            "type": "MarketingProgram",      
+            "name": "Automated Listing Program Report for ADDRESS",  
+            "url": "URL CAMPAIGN SENDS TRAFFIC TO",
+            "identifier": {
+                "chalkdigitalid": "UNIQUEIDFORCAMPAIGN",
+                "report_id": "XXXXX" 
+            },
+            "status": "Active",
+            "dateCreated": "2023-09-18T16:05:58+00:00",
+            "dateModified": "2023-09-18T16:05:58+00:00",
+            "about": {
+                "type": "PropertyListing",
+                "originatingSystemName": "ky-cayman-f",
+                "originatingSystemKey": "414892",
+                "streetAddress": "213 N 5th Street",
+                "addressLocality": "Youngwood",
+                "addressRegion": "PA",
+                "postalCode": "15697",
+                "addressCountry": "US",
+                "listingId": "355019410"                                                                          
+             }
+        },
+        "marketingProgramSummary": {
+              "type": "MarketingProgramSummary",
+              "unique_users": 10,
+              "impressions": 5,
+              "clicks": 7
+          } 
+
+    },
+}
+```
 
 [back to top](#)
 

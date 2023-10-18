@@ -114,6 +114,47 @@ a marketing program has been created
   }
 }
 ```
+### Example
+```json
+{
+    "topic": "realestate/marketingprogram#create",
+    "recipient" : "https://bhhs.hsfaffiliates.com/profile/card#me",
+    "instrument": "https://chalkdigital.bhhs.hsfaffiliates.com",         
+    "data": {
+        "type": "CreateAction",
+        "agent": "https://15787.bhhs.hsfaffiliates.com/profile/card#me",
+        "object": {
+            "type": "MarketingProgram",      
+            "name": "Automated Listing Program Report for ADDRESS",  
+            "url": "URL CAMPAIGN SENDS TRAFFIC TO",
+            "identifier": {
+                "chalkdigitalid": "UNIQUEIDFORCAMPAIGN",
+                "report_id": "XXXXX" 
+            },
+            "status": "Active",
+            "dateCreated": "2023-09-18T16:05:58+00:00",
+            "dateModified": "2023-09-18T16:05:58+00:00",
+            "about": {
+                "type": "PropertyListing",
+                "originatingSystemName": "ky-cayman-f",
+                "originatingSystemKey": "414892",
+                "streetAddress": "213 N 5th Street",
+                "addressLocality": "Youngwood",
+                "addressRegion": "PA",
+                "postalCode": "15697",
+                "addressCountry": "US",
+                "listingId": "355019410"                                                                          
+             }
+        },
+        "marketingProgramSummary": {
+              "type": "MarketingProgramSummary",
+              "unique_users": 10,
+              "impressions": 5,
+              "clicks": 7
+          } 
+    },
+}
+```
 
 
 [back to top](#)

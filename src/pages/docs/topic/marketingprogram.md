@@ -249,7 +249,7 @@ a marketing program has been updated
     "recipient" : "https://bhhs.hsfaffiliates.com/profile/card#me",
     "instrument": "https://chalkdigital.bhhs.hsfaffiliates.com",         
     "data": {
-        "type": "CreateAction",
+        "type": "UpdateAction",
         "agent": "https://15787.bhhs.hsfaffiliates.com/profile/card#me",
         "object": {
             "type": "MarketingProgram",      

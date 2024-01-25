@@ -72,46 +72,46 @@ _website user asks a question_
 
 ### Payload
 
-| Name                                             | Type                           Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| Name                                             | Type                           |Description  |                                                                                                                                                                                                                                                                                                                                                                                   
 | ------------------------------------------------ | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
-|topic                          | string                            | string const (`"realestate/website#askquestion"`)   
-|recipient                      | url                               | the agent being asked
-|instrument                     | url                               | the app or service that produced the event on behalf of the agent/user format (uri)
-|@id                            | url                               | format (uri)
-|id                             | url                               | format (uri)
-|time                           | timestamp                         | date & time the event was produced format
-|timestamp                      | timestamp                         | date & time the event was produced format
-|data.agent.name                |  string                           | agent name
-|data.agent.email               | email                             | agent email
-|data.agent.telephone           | telephone number                  | agent telephone number
-|data.agent.identifier.hsfconsumerid|  alpha numeric                | hsf consumer Id
-|data.agent.additionalProperty.userPath| url                        | uri
-|data.agent.additionalProperty.coListingAgentType | string          | colisting agent type
-|data.agent.mortgage            | bool                              | true/false
-|data.agent.type                | string                            | agent type
-|data.object.text               | string                            | question text
-|data.object.type               | ?                                 | question
-|data.recipient.id              | url                               | recipient uri 
-|data.recipient.name            | string                            | recipient name
-|data.recipient.type            | string                            | recipient type                    
-|data.about.url                 | url                               | about uri  
-|data.about.postalCode          | number                            | postal code       
-|data.about.addressRegion       | string                            | region address
-|data.about.streetAddress       | string                            | street address
-|data.about.addressLocality     | string                            | address
-|data.about.listingId           | int                               | listingId
-|data.about.listingPrice.price  | int                               | price of listing price
-|data.about.listingPrice.priceCurrency | string                     | Currency of price
-|data.about.listingPrice.type   | string                            | listing price type      
-|data.about.listingOriginatingSystem.type | string                  | type of listingOriginatingSystem 
-|data.about.listingOriginatingSystem.name | string                  | name of listingOriginatingSystem
-|data.about.listingOriginatingSystem.identifier.orgId | string      | orgId
-|data.about.listingOriginatingSystem.originatingSystemName | string | originating system name
-|data.about.listingOriginatingSystem.originatingSystemKey  | string | the listing identifier from the original MLS, aka MLSID.
-|data.about.type                | string                            | PropertyListing
-|data.instrument                | object                            | instrument object
-|data.type                      | string                            | const (`"AskAction"`) 
+|topic                          | string                            | string const (`"realestate/website#askquestion"`)  |  
+|recipient                      | url                               | the agent being asked |
+|instrument                     | url                               | the app or service that produced the event on behalf of the agent/user format (uri) |
+|@id                            | url                               | format (uri) |
+|id                             | url                               | format (uri) |
+|time                           | timestamp                         | date & time the event was produced format |
+|timestamp                      | timestamp                         | date & time the event was produced format |
+|data.agent.name                |  string                           | agent name |
+|data.agent.email               | email                             | agent email |
+|data.agent.telephone           | telephone number                  | agent telephone number |
+|data.agent.identifier.hsfconsumerid|  alpha numeric                | hsf consumer Id |
+|data.agent.additionalProperty.userPath| url                        | uri |
+|data.agent.additionalProperty.coListingAgentType | string          | colisting agent type |
+|data.agent.mortgage            | bool                              | true/false |
+|data.agent.type                | string                            | agent type |
+|data.object.text               | string                            | question text |
+|data.object.type               | ?                                 | question |
+|data.recipient.id              | url                               | recipient uri | 
+|data.recipient.name            | string                            | recipient name |
+|data.recipient.type            | string                            | recipient type  |                  
+|data.about.url                 | url                               | about uri  |
+|data.about.postalCode          | number                            | postal code |      
+|data.about.addressRegion       | string                            | region address |
+|data.about.streetAddress       | string                            | street address |
+|data.about.addressLocality     | string                            | address |
+|data.about.listingId           | int                               | listingId |
+|data.about.listingPrice.price  | int                               | price of listing price |
+|data.about.listingPrice.priceCurrency | string                     | Currency of price |
+|data.about.listingPrice.type   | string                            | listing price type |     
+|data.about.listingOriginatingSystem.type | string                  | type of listingOriginatingSystem | 
+|data.about.listingOriginatingSystem.name | string                  | name of listingOriginatingSystem |
+|data.about.listingOriginatingSystem.identifier.orgId | string      | orgId |
+|data.about.listingOriginatingSystem.originatingSystemName | string | originating system name |
+|data.about.listingOriginatingSystem.originatingSystemKey  | string | the listing identifier from the original MLS, aka MLSID. |
+|data.about.type                | string                            | PropertyListing |
+|data.instrument                | object                            | instrument object |
+|data.type                      | string                            | const (`"AskAction"`) | 
                                                 
 
 ### Headers

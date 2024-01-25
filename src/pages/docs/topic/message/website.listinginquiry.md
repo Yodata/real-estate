@@ -1,7 +1,7 @@
 ---
-title: website#askquestion
+title: website#listinginquiry
 ---
-
+listinginquiry
 ## Message
 
 _website user asks a question_
@@ -10,7 +10,7 @@ _website user asks a question_
 
 ```json
 {   
-    "topic": "realestate/website#askquestion",
+    "topic": "realestate/website#listinginquiry",
     "data": {
         "agent": {
             "name": "String",
@@ -75,7 +75,7 @@ _website user asks a question_
 | Name                                             | Type                           Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | ------------------------------------------------ | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
-|topic                          | string                            | string const (`"realestate/website#askquestion"`)   
+|topic                          |  string                           | string const (`"realestate/website#listinginquiry"`)   
 |recipient                      | url                               | the agent being asked
 |instrument                     | url                               | the app or service that produced the event on behalf of the agent/user format (uri)
 |@id                            | url                               | format (uri)

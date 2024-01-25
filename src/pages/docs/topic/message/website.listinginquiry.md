@@ -4,7 +4,7 @@ title: website#listinginquiry
 listinginquiry
 ## Message
 
-_website user asks a question_
+_website user listing Inquiry_
 
 ### Payload Example(s) (generated)
 
@@ -72,9 +72,8 @@ _website user asks a question_
 
 ### Payload
 
-| Name                                             | Type                           |Description  |                                                                                                                                                                                                                                                                                                                                                                                   
+| Name                                             | Type                           |Description  |                                                                                                               
 | ------------------------------------------------ | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-
 | topic                          | string                            | string const (`"realestate/website#listinginquiry"`)  |
 | recipient                      | url                               | the agent being asked |
 | instrument                     | url                               | the app or service that produced the event on behalf of the agent/user format (uri) |
@@ -92,7 +91,7 @@ _website user asks a question_
 | data.agent.type                | string                            | agent type |
 | data.object.text               | string                            | question text |
 | data.object.type               | ?                                 | question |
-| data.recipient.id              | url                               | recipient uri | 
+| data.recipient.id              | url                               | recipient uri |
 | data.recipient.name            | string                            | recipient name |
 | data.recipient.type            | string                            | recipient type  |
 | data.about.url                 | url                               | about uri  |
@@ -112,7 +111,7 @@ _website user asks a question_
 | data.about.type                | string                            | PropertyListing |
 | data.instrument                | object                            | instrument object |
 | data.type                      | string                            | const (`"listingInquiryAction"`) |
-                                                
+
 
 ### Headers
 

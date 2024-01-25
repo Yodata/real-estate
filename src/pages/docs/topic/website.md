@@ -19,4 +19,4 @@ title: website
 - [website#viewpropertyvaluereport](message/website.viewpropertyvaluereport)
 - [website#sharepropertyvaluereport](message/website.sharepropertyvaluereport)
 - [website#subscribemarketactivityreport](message/website.subscribemarketactivityreport)
-- [website#askquestion](message/website.listinginquiry)
+- [website#listinginquiry](message/website.listinginquiry)

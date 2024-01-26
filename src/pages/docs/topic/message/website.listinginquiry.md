@@ -59,7 +59,7 @@ _website user listing Inquiry_
             "type": "PropertyListing"
         },
         "instrument": {},
-        "type": "AskAction"
+        "type": "Listing Inquiry"
     },
     "recipient": "https://8675309.domain.com/profile/card#me",
     "instrument": "https://pod.domain/profile/card#me",

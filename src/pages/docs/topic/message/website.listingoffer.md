@@ -222,7 +222,7 @@ _website user makes a listing offer_
 | data.recipient.1.name                             | string                                | Full name of the person.                                                                                                                                                                                                                                                                    |
 | data.recipient.1.telephone                        | string                                | Primary phone number.                                                                                                                                                                                                                                                                       |
 | data.recipient.1.worksFor                         | string                                | Organizations the person works for.                                                                                                                                                                                                                                                         |
-| data.originatingSystem | object | originatinSystem object |
+| data.originatingSystem | object | the original system where this item was created.  Can be of type Thing or any sub-type. |
 
 ### Headers
 

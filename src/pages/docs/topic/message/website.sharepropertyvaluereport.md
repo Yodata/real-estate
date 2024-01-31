@@ -191,7 +191,7 @@ website user (data.agent) has viewed a listing (data.object) on a webiste or mob
 | data.event.id        | string       | format (`uri`)                                                                    |
 | data.event.url       | string       | url of the event                                                                  |
 | data.event.subEvents | array        | array of subEvents                                                                |
-| data.originatingSystem | object | originatinSystem object |
+| data.originatingSystem | object | the original system where this item was created.  Can be of type Thing or any sub-type. |
 
 ### Headers
 

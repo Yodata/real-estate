@@ -89,7 +89,7 @@ title: lead#retract
 | data.recipient | object | the lead-owner, to whom the lead is being returned |
 | data.recipient.type | string | allowed (`"RealEstateAgent"`, `"RealEstateOffice"`, `"RealEstateOrganization"`)  |
 | data.recipient.id | string |  format (`uri`) |
-| data.originatingSystem | object | originatinSystem object |
+| data.originatingSystem | object | the original system where this item was created.  Can be of type Thing or any sub-type. |
 
 ### Headers
 

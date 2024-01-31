@@ -77,7 +77,7 @@ title: lead#asssign
 | data.object.leadSource (single item) | object | - |
 | data.agent | string | the assignor, typically the lead owner format (`uri`) |
 | data.recipient | string | the assignee of the lead. format (`uri`) |
-| data.originatingSystem | object | originatinSystem object |
+| data.originatingSystem | object | the original system where this item was created.  Can be of type Thing or any sub-type. |
 
 ### Headers
 

@@ -139,7 +139,7 @@ _a website visitor has requested a property showing_
 | data.recipient.type                              | string  | allowed (`"RealEstateAgent"`, `"RealEstateTeam"`, `"RealEstateOrganization"`)                                                                                                                                                                                                               |
 | data.recipient.name                              | string  | -                                                                                                                                                                                                                                                                                           |
 | data.recipient.id                                | string  | format (`uri`)                                                                                                                                                                                                                                                                              |
-| data.originatingSystem | object | originatinSystem object |
+| data.originatingSystem | object | the original system where this item was created.  Can be of type Thing or any sub-type. |
 | data.recipient.identifier                        | any     | 
 -                                                                                                                                                                                                                                                                                           |
 

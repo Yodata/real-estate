@@ -79,7 +79,7 @@ title: lead#reject
 | data.agent | string | the agent who rejected the lead format (`uri`) |
 | data.reason | string | the reason the lead was rejected |
 | data.comment | string | a comment about the rejection |
-| data.originatingSystem | object | originatinSystem object |
+| data.originatingSystem | object | the original system where this item was created.  Can be of type Thing or any sub-type. |
 
 ### Headers
 

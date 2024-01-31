@@ -24,7 +24,13 @@ title: contact#collectionmemberadd
       "type": "Contact",
       "identifier": {
         "bhhsconsumerid": "12345"
-      }
+      },
+      "originatingSystem": {
+        "type": "SoftwareApplication",
+        "name": "RDesk",
+        "description": "User Created.",
+        "url": "http://www.rdeskwebsite.com/"
+      },
     },
     "targetCollection": {
       "type": "Collection",
@@ -59,6 +65,7 @@ title: contact#collectionmemberadd
 | data.targetCollection.type | string | const (`"Collection"`)  |
 | data.targetCollection.name | string | The name of the contact group. |
 | data.targetCollection.identifier | object |  1 properties |
+| data.object.1.originatingSystem | object | the original system where this item was created.  Can be of type Thing or any sub-type. |
 
 ### Headers
 

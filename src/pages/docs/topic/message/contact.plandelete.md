@@ -25,7 +25,13 @@ title: contact#plandelete
       "name": "my awesome plan",
       "identifier": {
         "bhhsconsumerid": "12345"
-      }
+      },
+      "originatingSystem": {
+        "type": "SoftwareApplication",
+        "name": "RDesk",
+        "description": "User Created.",
+        "url": "http://www.rdeskwebsite.com/"
+      },
     }
   }
 }
@@ -50,6 +56,7 @@ title: contact#plandelete
 | data.object.type | string | const (`"Plan"`)  |
 | data.object.name | string | name of the plan |
 | data.object.identifier | object |  1 properties |
+| data.object.1.originatingSystem | object | the original system where this item was created.  Can be of type Thing or any sub-type. |
 
 ### Headers
 

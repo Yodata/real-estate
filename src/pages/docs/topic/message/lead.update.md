@@ -75,7 +75,7 @@ title: lead#update
 | data.object.leadSource | array<object> | lead origin, may be a website event or a thing such as a website, zillow, mobile applicaton. |
 | data.object.leadSource (single item) | object | - |
 | data.agent | string | user who effected the change format (`uri`) |
-| data.originatingSystem | object | originatinSystem object |
+| data.originatingSystem | object | the original system where this item was created.  Can be of type Thing or any sub-type. |
 
 ### Headers
 

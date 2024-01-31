@@ -116,7 +116,7 @@ _website user asks a question_
 | data.about.type                | string                            | PropertyListing |
 | data.instrument                | object                            | instrument object |
 | data.type                      | string                            | const (`"AskAction"`) |
-| data.originatingSystem | object | originatinSystem object |
+| data.originatingSystem | object | the original system where this item was created.  Can be of type Thing or any sub-type. |
                                                 
 
 ### Headers

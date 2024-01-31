@@ -42,7 +42,13 @@ title: contact#comment
       },
       "identifier": {
         "redContact_Note_ID": "62c4a9ae-eba1-4c27-a2dd-afb4068695f8"
-      }
+      },
+      "originatingSystem": {
+        "type": "SoftwareApplication",
+        "name": "RDesk",
+        "description": "User Created.",
+        "url": "http://www.rdeskwebsite.com/"
+      },
     },
     "target": {
       "type": "Contact",
@@ -81,6 +87,7 @@ title: contact#comment
 | data.target | object | - |
 | data.target.type | string | const (`"Contact"`)  |
 | data.target.identifier | object |  1 properties |
+| data.object.1.originatingSystem | object | the original system where this item was created.  Can be of type Thing or any sub-type. |
 
 ### Headers
 

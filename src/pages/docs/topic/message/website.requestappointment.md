@@ -116,7 +116,7 @@ _website user has requested an appointment_
 | data.event.url                                   | string  | url of the event                                                                                                                                                                                                                                                                            |
 | data.event.subEvents                             | array   | array of subEvents                                                                                                                                                                                                                                                                          |
 | data.recipient                                   | object  | the recipient of an object or action referred to in the message                                                                                                                                                                                                                             |
-| data.originatingSystem | object | originatinSystem object |
+| data.originatingSystem | object | the original system where this item was created.  Can be of type Thing or any sub-type. |
 
 ### Headers
 

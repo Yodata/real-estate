@@ -74,6 +74,12 @@ title: contact#planupdate
           }
         }
       ],
+      "originatingSystem": {
+        "type": "SoftwareApplication",
+        "name": "RDesk",
+        "description": "User Created.",
+        "url": "http://www.rdeskwebsite.com/"
+      },
       "creator": "http://agent.example.com/profile/card#me",
       "dateCreated": "2019-08-24T14:15:22Z",
       "dateModified": "2019-08-24T14:15:22Z",
@@ -122,6 +128,7 @@ title: contact#planupdate
 | data.object.dateCreated | string | The date on which the item was created. format (`date-time`) |
 | data.object.dateModified | string | The date on which the item was most recently modified or when the item's entry was modified within a DataFeed. format (`date-time`) |
 | data.object.dateCompleted | string | The date on which the item was created. format (`date-time`) |
+| data.object.1.originatingSystem | object | the original system where this item was created.  Can be of type Thing or any sub-type. |
 
 ### Headers
 

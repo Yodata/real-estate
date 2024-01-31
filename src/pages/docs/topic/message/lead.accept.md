@@ -67,7 +67,7 @@ title: lead#accept
 | object.dateSent | string | the date the lead was sent format (`date-time`) |
 | object.dateReceived | string | The date/time the item was received by it's recipient |
 | object.leadSource | array<object> | lead origin, may be a website event or a thing such as a website, zillow, mobile applicaton. |
-| object.originatingSystem | object | originatinSystem object |
+| object.originatingSystem | object | the original system where this item was created.  Can be of type Thing or any sub-type. |
 | object.leadSource (single item) | object | - |
 
 ### Headers

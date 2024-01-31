@@ -40,6 +40,12 @@ title: lead#reject
         }
       ]
     },
+    "originatingSystem": {
+        "type": "SoftwareApplication",
+        "name": "RDesk",
+        "description": "User Created.",
+        "url": "http://www.rdeskwebsite.com/"
+    },
     "agent": "http://andyagent.example.com/profile/card#me",
     "reason": "duplicate lead",
     "comment": "this lead was already in the system"
@@ -73,6 +79,7 @@ title: lead#reject
 | data.agent | string | the agent who rejected the lead format (`uri`) |
 | data.reason | string | the reason the lead was rejected |
 | data.comment | string | a comment about the rejection |
+| data.originatingSystem | object | originatinSystem object |
 
 ### Headers
 

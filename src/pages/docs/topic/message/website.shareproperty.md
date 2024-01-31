@@ -150,6 +150,12 @@ with the recipient (a Person or Audience).
       "url": "https://www.example.com/homedetails/1007-Mountain-Gate-Rd-Gotham-City-Gotham/10007",
       "yearBuilt": 1988
     },
+    "originatingSystem": {
+        "type": "SoftwareApplication",
+        "name": "RDesk",
+        "description": "User Created.",
+        "url": "http://www.rdeskwebsite.com/"
+    },
     "event": {
       "type": "Event",
       "name": "Property Showing  64 Buttercup Lane, South Grafton, MA, USA",
@@ -299,6 +305,8 @@ with the recipient (a Person or Audience).
 | data.recipient.instrument                | object                                | The instrument used to share the property listing.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | data.recipient.instrument.type           | string                                | const (`"Organization"`)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | data.recipient.instrument.name           | string                                | The name of the instrument used to share the property listing.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+
+| data.originatingSystem | object | originatinSystem object |
 
 ### Headers
 

@@ -55,6 +55,12 @@ _a website visitor has requested a property showing_
         "priceCurrency": "USD"
       }
     },
+    "originatingSystem": {
+        "type": "SoftwareApplication",
+        "name": "RDesk",
+        "description": "User Created.",
+        "url": "http://www.rdeskwebsite.com/"
+    },
     "event": {
       "type": "Event",
       "name": "Property Showing  64 Buttercup Lane, South Grafton, MA, USA",
@@ -133,7 +139,9 @@ _a website visitor has requested a property showing_
 | data.recipient.type                              | string  | allowed (`"RealEstateAgent"`, `"RealEstateTeam"`, `"RealEstateOrganization"`)                                                                                                                                                                                                               |
 | data.recipient.name                              | string  | -                                                                                                                                                                                                                                                                                           |
 | data.recipient.id                                | string  | format (`uri`)                                                                                                                                                                                                                                                                              |
-| data.recipient.identifier                        | any     | -                                                                                                                                                                                                                                                                                           |
+| data.originatingSystem | object | originatinSystem object |
+| data.recipient.identifier                        | any     | 
+-                                                                                                                                                                                                                                                                                           |
 
 ### Headers
 

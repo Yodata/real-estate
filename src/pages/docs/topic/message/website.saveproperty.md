@@ -50,6 +50,12 @@ title: website#saveproperty
         "priceCurrency": "USD"
       }
     },
+    "originatingSystem": {
+        "type": "SoftwareApplication",
+        "name": "RDesk",
+        "description": "User Created.",
+        "url": "http://www.rdeskwebsite.com/"
+    },
     "event": {
       "type": "Event",
       "name": "Property Showing  64 Buttercup Lane, South Grafton, MA, USA",
@@ -97,6 +103,7 @@ title: website#saveproperty
 | data.event.id        | string              | format (`uri`)                                                                                                                                                                                                                                                                                                                     |
 | data.event.url       | string              | url of the event                                                                                                                                                                                                                                                                                                                   |
 | data.event.subEvents | array               | array of subEvents                                                                                                                                                                                                                                                                                                                 |
+| data.originatingSystem | object | originatinSystem object |
 
 ### Headers
 

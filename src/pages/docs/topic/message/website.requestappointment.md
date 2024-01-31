@@ -43,6 +43,12 @@ _website user has requested an appointment_
       "type": "Question",
       "text": "Populus debet control notitia sua"
     },
+    "originatingSystem": {
+        "type": "SoftwareApplication",
+        "name": "RDesk",
+        "description": "User Created.",
+        "url": "http://www.rdeskwebsite.com/"
+    },
     "event": {
       "type": "Event",
       "name": "Property Showing  64 Buttercup Lane, South Grafton, MA, USA",
@@ -110,6 +116,7 @@ _website user has requested an appointment_
 | data.event.url                                   | string  | url of the event                                                                                                                                                                                                                                                                            |
 | data.event.subEvents                             | array   | array of subEvents                                                                                                                                                                                                                                                                          |
 | data.recipient                                   | object  | the recipient of an object or action referred to in the message                                                                                                                                                                                                                             |
+| data.originatingSystem | object | originatinSystem object |
 
 ### Headers
 

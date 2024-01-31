@@ -59,7 +59,13 @@ _website user listing Inquiry_
             "type": "PropertyListing"
         },
         "instrument": {},
-        "type": "Listing Inquiry"
+        "type": "Listing Inquiry",
+        "originatingSystem": {
+        "type": "SoftwareApplication",
+        "name": "RDesk",
+        "description": "User Created.",
+        "url": "http://www.rdeskwebsite.com/"
+      },
     },
     "recipient": "https://8675309.domain.com/profile/card#me",
     "instrument": "https://pod.domain/profile/card#me",
@@ -111,7 +117,7 @@ _website user listing Inquiry_
 | data.about.type                | string                            | PropertyListing |
 | data.instrument                | object                            | instrument object |
 | data.type                      | string                            | const (`"listingInquiryAction"`) |
-
+| data.originatingSystem | object | originatinSystem object |
 
 ### Headers
 

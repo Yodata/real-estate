@@ -68,6 +68,12 @@ website user (data.agent) has viewed a listing (data.object) on a webiste or mob
       "streetAddress": "113 SIKES AVE",
       "yearBuilt": 1988
     },
+    "originatingSystem": {
+        "type": "SoftwareApplication",
+        "name": "RDesk",
+        "description": "User Created.",
+        "url": "http://www.rdeskwebsite.com/"
+    },
     "event": {
       "type": "Event",
       "name": "Property Showing  64 Buttercup Lane, South Grafton, MA, USA",
@@ -121,6 +127,7 @@ website user (data.agent) has viewed a listing (data.object) on a webiste or mob
 | data.event.id        | string            | format (`uri`)                                                                |
 | data.event.url       | string<uri>       | url of the event                                                              |
 | data.event.subEvents | array             | array of subEvents                                                            |
+| data.originatingSystem | object | originatinSystem object |
 
 ### Headers
 

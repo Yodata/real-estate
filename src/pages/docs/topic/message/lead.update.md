@@ -40,6 +40,12 @@ title: lead#update
         }
       ]
     },
+    "originatingSystem": {
+        "type": "SoftwareApplication",
+        "name": "RDesk",
+        "description": "User Created.",
+        "url": "http://www.rdeskwebsite.com/"
+    },
     "agent": "https://{lead-admin}.bhhs.hsaffailites.com/profile/card"
   }
 }
@@ -69,6 +75,7 @@ title: lead#update
 | data.object.leadSource | array<object> | lead origin, may be a website event or a thing such as a website, zillow, mobile applicaton. |
 | data.object.leadSource (single item) | object | - |
 | data.agent | string | user who effected the change format (`uri`) |
+| data.originatingSystem | object | originatinSystem object |
 
 ### Headers
 

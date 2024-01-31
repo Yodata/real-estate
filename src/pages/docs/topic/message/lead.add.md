@@ -39,7 +39,13 @@ title: lead#add
           }
         }
       ]
-    }
+    },
+    "originatingSystem": {
+        "type": "SoftwareApplication",
+        "name": "RDesk",
+        "description": "User Created.",
+        "url": "http://www.rdeskwebsite.com/"
+    },
   }
 }
 ```
@@ -66,6 +72,7 @@ title: lead#add
 | data.object.dateSent | string | the date the lead was sent format (`date-time`) |
 | data.object.dateReceived | string | The date/time the item was received by it's recipient |
 | data.object.leadSource | array<object> | lead origin, may be a website event or a thing such as a website, zillow, mobile applicaton. |
+| data.originatingSystem | object | originatinSystem object |
 | data.object.leadSource (single item) | object | - |
 
 ### Headers

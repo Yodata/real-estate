@@ -59,7 +59,13 @@ _website user asks a question_
             "type": "PropertyListing"
         },
         "instrument": {},
-        "type": "AskAction"
+        "type": "AskAction",
+        "originatingSystem": {
+        "type": "SoftwareApplication",
+        "name": "RDesk",
+        "description": "User Created.",
+        "url": "http://www.rdeskwebsite.com/"
+      },
     },
     "recipient": "https://8675309.domain.com/profile/card#me",
     "instrument": "https://pod.domain/profile/card#me",
@@ -110,6 +116,7 @@ _website user asks a question_
 | data.about.type                | string                            | PropertyListing |
 | data.instrument                | object                            | instrument object |
 | data.type                      | string                            | const (`"AskAction"`) |
+| data.originatingSystem | object | originatinSystem object |
                                                 
 
 ### Headers

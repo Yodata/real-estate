@@ -21,6 +21,12 @@ title: lead#accept
       "telephone": "731-620-9877 x6155",
       "email": "Giuseppe.Lang62@hotmail.com"
     },
+    "originatingSystem": {
+        "type": "SoftwareApplication",
+        "name": "RDesk",
+        "description": "User Created.",
+        "url": "http://www.rdeskwebsite.com/"
+    },
     "recipient": "http://{lead-recipient}.example.com/profile/card#me",
     "sender": "http://{lead-sender}.example.com/profile/card#me",
     "owner": "http://{lead-owner}.example.com/profile/card#me",
@@ -61,6 +67,7 @@ title: lead#accept
 | object.dateSent | string | the date the lead was sent format (`date-time`) |
 | object.dateReceived | string | The date/time the item was received by it's recipient |
 | object.leadSource | array<object> | lead origin, may be a website event or a thing such as a website, zillow, mobile applicaton. |
+| object.originatingSystem | object | originatinSystem object |
 | object.leadSource (single item) | object | - |
 
 ### Headers

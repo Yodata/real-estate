@@ -102,8 +102,14 @@ website user (agent) saves a property search (object), on a website or mobile ap
         "minValue": 0.5,
         "unitCode": "AC",
         "unitText": "Acres"
-      }
+      },
     },
+    "originatingSystem": {
+        "type": "SoftwareApplication",
+        "name": "RDesk",
+        "description": "User Created.",
+        "url": "http://www.rdeskwebsite.com/"
+      },
     "event": {
       "type": "Event",
       "name": "Property Showing  64 Buttercup Lane, South Grafton, MA, USA",
@@ -151,6 +157,7 @@ website user (agent) saves a property search (object), on a website or mobile ap
 | data.event.id        | string              | format (`uri`)                                                                   |
 | data.event.url       | string              | url of the event                                                                 |
 | data.event.subEvents | array               | array of subEvents                                                               |
+| data.originatingSystem | object | originatinSystem object |
 
 ### Headers
 

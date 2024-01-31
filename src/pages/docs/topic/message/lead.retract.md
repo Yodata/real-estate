@@ -40,6 +40,12 @@ title: lead#retract
         }
       ]
     },
+    "originatingSystem": {
+        "type": "SoftwareApplication",
+        "name": "RDesk",
+        "description": "User Created.",
+        "url": "http://www.rdeskwebsite.com/"
+    },
     "agent": "https://{lead-admin}.bhhs.hsaffailites.com/profile/card",
     "participant": {
       "type": "RealEstateAgent",
@@ -83,6 +89,7 @@ title: lead#retract
 | data.recipient | object | the lead-owner, to whom the lead is being returned |
 | data.recipient.type | string | allowed (`"RealEstateAgent"`, `"RealEstateOffice"`, `"RealEstateOrganization"`)  |
 | data.recipient.id | string |  format (`uri`) |
+| data.originatingSystem | object | originatinSystem object |
 
 ### Headers
 

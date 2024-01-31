@@ -75,6 +75,12 @@ _website user makes a listing offer_
         }
       ]
     },
+    "originatingSystem": {
+        "type": "SoftwareApplication",
+        "name": "RDesk",
+        "description": "User Created.",
+        "url": "http://www.rdeskwebsite.com/"
+      },
     "recipient": {
       "type": "RealEstateAgent",
       "name": "Randy RealEstateAgent",
@@ -216,6 +222,7 @@ _website user makes a listing offer_
 | data.recipient.1.name                             | string                                | Full name of the person.                                                                                                                                                                                                                                                                    |
 | data.recipient.1.telephone                        | string                                | Primary phone number.                                                                                                                                                                                                                                                                       |
 | data.recipient.1.worksFor                         | string                                | Organizations the person works for.                                                                                                                                                                                                                                                         |
+| data.originatingSystem | object | originatinSystem object |
 
 ### Headers
 

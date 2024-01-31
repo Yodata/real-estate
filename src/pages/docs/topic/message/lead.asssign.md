@@ -40,6 +40,12 @@ title: lead#asssign
         }
       ]
     },
+    "originatingSystem": {
+        "type": "SoftwareApplication",
+        "name": "RDesk",
+        "description": "User Created.",
+        "url": "http://www.rdeskwebsite.com/"
+    },
     "agent": "http://example.com",
     "recipient": "http://andyagent.example.com/profile/card#me"
   }
@@ -71,6 +77,7 @@ title: lead#asssign
 | data.object.leadSource (single item) | object | - |
 | data.agent | string | the assignor, typically the lead owner format (`uri`) |
 | data.recipient | string | the assignee of the lead. format (`uri`) |
+| data.originatingSystem | object | originatinSystem object |
 
 ### Headers
 

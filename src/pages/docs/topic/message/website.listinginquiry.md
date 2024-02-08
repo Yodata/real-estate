@@ -65,7 +65,7 @@ _website user listing Inquiry_
         "name": "RDesk",
         "description": "User Created.",
         "url": "http://www.rdeskwebsite.com/"
-      },
+      }
     },
     "recipient": "https://8675309.domain.com/profile/card#me",
     "instrument": "https://pod.domain/profile/card#me",

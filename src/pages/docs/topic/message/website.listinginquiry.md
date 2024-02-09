@@ -59,7 +59,7 @@ _website user listing Inquiry_
             "type": "PropertyListing"
         },
         "instrument": {},
-        "type": "Listing Inquiry",
+        "type": "ListingInquiry",
         "originatingSystem": {
         "type": "SoftwareApplication",
         "name": "RDesk",

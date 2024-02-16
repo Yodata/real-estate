@@ -6,7 +6,7 @@ title: OpenHouseEvent
 
 ```json
 {
-  "type": "OrganizationRole",
+  "type": "OpenHouseEvent",
   "roleName": "Owner",
   "memberOf": {
     "type": "RealEstateOrganization",

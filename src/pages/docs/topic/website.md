@@ -20,5 +20,5 @@ title: website
 - [website#sharepropertyvaluereport](message/website.sharepropertyvaluereport)
 - [website#subscribemarketactivityreport](message/website.subscribemarketactivityreport)
 - [website#listinginquiry](message/website.listinginquiry)
-- [website#planningguide](message/planningguide)
+- [website#planningguide](message/website.planningguide)
 

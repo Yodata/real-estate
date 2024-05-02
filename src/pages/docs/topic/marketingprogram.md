@@ -68,6 +68,8 @@ a marketing program has been created
 | data.type | string! | CreateAction  |
 | data.object | object | A collection of pre-defined activities which take place over a period of time or in a regular, ongoing schedule. <br/>RANGE: [MarketingProgram](/types/MarketingProgram) |
 | data.object.status | string | status of object |
+| data.object.additionalProperty.campaignType | string | type of Campaign (e.g DigitalAd, Ecard, Flyer ) |
+| data.object.additionalProperty.sharingType | string | sharing type of Campaign (e.g --- AutomatedListingProgram, AdBuilderService, Email ) |
 
 ### Example
 ```json
@@ -131,6 +133,10 @@ a marketing program has been created
                 "chalkdigitalid": "UNIQUEIDFORCAMPAIGN",
                 "report_id": "XXXXX" 
             },
+            "additionalProperty": {
+                    "campaignType": "Ecard",
+                    "sharingType": "Email"
+            },
             "status": "Active",
             "dateCreated": "2023-09-18T16:05:58+00:00",
             "dateModified": "2023-09-18T16:05:58+00:00",
@@ -188,6 +194,8 @@ a marketing program has been updated
 | data.object.status | string | status of object |
 | data.marketingProgramSummary | object | marketing program summary |
 | data.object.about | object | about object |
+| data.object.additionalProperty.campaignType | string | type of Campaign (e.g DigitalAd, Ecard, Flyer ) |
+| data.object.additionalProperty.sharingType | string | sharing type of Campaign (e.g  AutomatedListingProgram, AdBuilderService, Email ) |
 
 ### Example
 ```json
@@ -258,6 +266,10 @@ a marketing program has been updated
             "identifier": {
                 "chalkdigitalid": "UNIQUEIDFORCAMPAIGN",
                 "report_id": "XXXXX" 
+            },
+            "additionalProperty": {
+                    "campaignType": "Ecard",
+                    "sharingType": "Email"
             },
             "status": "Active",
             "dateCreated": "2023-09-18T16:05:58+00:00",

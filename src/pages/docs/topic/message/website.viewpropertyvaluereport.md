@@ -19,6 +19,7 @@ website user (data.agent) has viewed a listing (data.object) on a webiste or mob
   "originalRecipient": "https://3023834.bhhs.hsfaffiliates.com/profile/card#me",
   "data": {
     "type": "ViewAction",
+    "identifier":"nwurogb34tnoi3t",
     "agent": {
       "type": "Contact",
       "name": "Anonymous Visitor",
@@ -178,6 +179,7 @@ website user (data.agent) has viewed a listing (data.object) on a webiste or mob
 | recipient            | Object             |                                                                                   |
 | data                 | object             | the message payload. RANGE: AddAction                                             |
 | data.type            | string!            | The item type (Linked-Data @type)                                                 |
+| data.identifier                | string                           | unique identifier |
 | data.agent           | object!            | the website user. RANGE: Contact, Person                                          |
 | data.participant     | object!            | the website user. RANGE: type, id                                                 |
 | data.instrument      | object             | website or mobile application. RANGE: RealEstateWebsite, MobileApplication, Thing |

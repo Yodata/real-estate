@@ -11,6 +11,7 @@ _website user planning guide_
 ```json
 {
   "data": {
+    "identifier":"nwurogb34tnoi3t",
     "agent": {
             "name": "String",
             "email": "someone@yahoo.com",
@@ -55,6 +56,7 @@ _website user planning guide_
 | recipient                      | url                               | the agent being asked |
 | source                         | url                               | a copy of the event was sent to the source(s). format (`uri`) |
 | instrument                     | url                               | the app or service that produced the event on behalf of the agent/user format (uri) |
+| data.identifier                | string                           | unique identifier |
 | data.agent.name                | string                            | agent name |
 | data.agent.email               | email                             | agent email |
 | data.agent.telephone           | telephone number                  | agent telephone number |

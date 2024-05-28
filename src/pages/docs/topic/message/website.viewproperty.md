@@ -17,6 +17,7 @@ website user (data.agent) has viewed a listing (data.object) on a webiste or mob
   "source": "https://{agentid}.example.com/profile/card#me",
   "data": {
     "type": "ViewAction",
+    "identifier":"nwurogb34tnoi3t",
     "agent": {
       "type": "Contact",
       "name": "Bill Bailey",
@@ -94,6 +95,7 @@ website user (data.agent) has viewed a listing (data.object) on a webiste or mob
 | source                          | string<uri>        | associated RealEstate{Agent,Office,Organization}                                  |
 | data                            | object             | the message payload. RANGE: AddAction                                             |
 | data.type                       | string!            | The item type (Linked-Data @type)                                                 |
+| data.identifier                | string                           | unique identifier |
 | data.agent                      | object!            | the website user. RANGE: Contact, Person                                          |
 | data.instrument                 | object             | website or mobile application. RANGE: RealEstateWebsite, MobileApplication, Thing |
 | data.object                     | object!            | the viewed property. RANGE: PropertyListing                                       |

@@ -12,6 +12,7 @@ _website user listing Inquiry_
 {   
     "topic": "realestate/website#listinginquiry",
     "data": {
+        "identifier":"nwurogb34tnoi3t",
         "agent": {
             "name": "String",
             "email": "someone@yahoo.com",
@@ -87,6 +88,7 @@ _website user listing Inquiry_
 | id                             | url                               | format (uri) |
 | time                           | timestamp                         | date & time the event was produced format |
 | timestamp                      | timestamp                         | date & time the event was produced format |
+| data.identifier                | string                           | unique identifier |
 | data.agent.name                | string                           | agent name |
 | data.agent.email               | email                             | agent email |
 | data.agent.telephone           | telephone number                  | agent telephone number |

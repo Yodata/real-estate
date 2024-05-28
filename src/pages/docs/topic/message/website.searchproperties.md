@@ -19,6 +19,7 @@ a website user has performed a property search
   "source": "https://{agentid}.example.com/profile/card#me",
   "data": {
     "type": "SearchAction",
+    "identifier":"nwurogb34tnoi3t",
     "agent": {
       "type": "Contact",
       "name": "Bill Bailey",
@@ -165,6 +166,7 @@ a website user has performed a property search
 | source               | string<uri>         | associated RealEstate{Agent,Office,Organization}                                 |
 | data                 | object              | the message payload. RANGE: SearchAction                                         |
 | data.type            | string!             | SearchAction                                                                     |
+| data.identifier                | string                           | unique identifier |
 | data.agent           | object!             | the user who performed the search RANGE: Contact, Person                         |
 | data.instrument      | object              | website or mobile application RANGE: RealEstateWebsite, MobileApplication, Thing |
 | data.object          | object!             | property search parameters RANGE: PropertySearch                                 |

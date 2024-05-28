@@ -19,6 +19,7 @@ website user (data.agent) has viewed a listing (data.object) on a webiste or mob
   "originalRecipient": "https://3023834.bhhs.hsfaffiliates.com/profile/card#me",
   "data": {
     "type": "SubscribeAction",
+    "identifier":"nwurogb34tnoi3t",
     "agent": {
       "type": "Contact",
       "name": "Anonymous Visitor",
@@ -118,6 +119,7 @@ website user (data.agent) has viewed a listing (data.object) on a webiste or mob
 | orignalRecipient     | string<uri>       | The URL of orignal recipient's profile.                                       |
 | data                 | object            | the message payload. RANGE: AddAction                                         |
 | data.type            | string!           | The item type (Linked-Data @type)                                             |
+| data.identifier                | string                           | unique identifier |
 | data.agent           | object!           | the website user. RANGE: type, name, givenName, familyName, email, identifier |
 | data.participant     | object!           | the website user. RANGE: type, id                                             |
 | data.instrument      | object            | website or mobile application. RANGE:type, url                                |

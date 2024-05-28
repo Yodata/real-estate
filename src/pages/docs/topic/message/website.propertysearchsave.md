@@ -17,6 +17,7 @@ website user (agent) saves a property search (object), on a website or mobile ap
   "source": "https://{agentid}.example.com/profile/card#me",
   "data": {
     "type": "SaveAction",
+    "identifier":"nwurogb34tnoi3t",
     "agent": {
       "type": "Contact",
       "name": "Bill Bailey",
@@ -149,6 +150,7 @@ website user (agent) saves a property search (object), on a website or mobile ap
 | source               | string<uri>         | associated RealEstate{Agent,Office,Organization}                                 |
 | data                 | object              | the message payload.                                                             |
 | data.type            | string!             | The item type (Linked-Data @type)                                                |
+| data.identifier                | string                           | unique identifier |
 | data.agent           | object!             | the website user RANGE: Contact, Person                                          |
 | data.instrument      | object              | website or mobile application RANGE: RealEstateWebsite, MobileApplication, Thing |
 | data.object          | object!             | property search parameters RANGE: PropertySearch                                 |

@@ -13,6 +13,7 @@ _a website visitor has requested a property showing_
   "topic": "realestate/website#requestshowing",
   "data": {
     "type": "RequestShowingAction",
+    "identifier":"nwurogb34tnoi3t",
     "agent": {
       "type": "Person",
       "name": "string",
@@ -108,6 +109,7 @@ _a website visitor has requested a property showing_
 | topic                                            | string  | const (`"realestate/website#requestshowing"`)                                                                                                                                                                                                                                               |
 | data                                             | object  | -                                                                                                                                                                                                                                                                                           |
 | data.type                                        | string  | const (`"RequestShowingAction"`)                                                                                                                                                                                                                                                            |
+| data.identifier                | string                           | unique identifier |
 | data.agent                                       | object  | a website user/visitor                                                                                                                                                                                                                                                                      |
 | data.agent.type                                  | string  | allowed (`"Person"`, `"Contact"`)                                                                                                                                                                                                                                                           |
 | data.agent.name                                  | string  | -                                                                                                                                                                                                                                                                                           |

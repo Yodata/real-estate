@@ -17,6 +17,7 @@ title: website#saveproperty
   "source": "https://{agentid}.example.com/profile/card#me",
   "data": {
     "type": "SaveAction",
+     "identifier":"nwurogb34tnoi3t",
     "agent": {
       "type": "Contact",
       "name": "Bill Bailey",
@@ -95,6 +96,7 @@ title: website#saveproperty
 | source               | string<uri>         | associated RealEstate{Agent,Office,Organization}                                                                                                                                                                                                                                                                                   |
 | data                 | object              | An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role. RANGE: SaveAction |
 | data.type            | string!             | the action type                                                                                                                                                                                                                                                                                                                    |
+| data.identifier                | string                           | unique identifier |
 | data.agent           | object!             | the website user RANGE: Contact, Person                                                                                                                                                                                                                                                                                            |
 | data.instrument      | object              | website or mobile application RANGE: RealEstateWebsite, MobileApplication, Thing                                                                                                                                                                                                                                                   |
 | data.object          | object!             | the properting that was saved RANGE: PropertyListing                                                                                                                                                                                                                                                                               |

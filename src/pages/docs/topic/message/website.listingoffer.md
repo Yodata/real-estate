@@ -13,6 +13,7 @@ _website user makes a listing offer_
   "topic": "realestate/website#listingoffer",
   "data": {
     "type": "ListingOffer",
+    "identifier":"nwurogb34tnoi3t",
     "agent": {
       "type": "Contact",
       "name": "Bruce Wayne",
@@ -98,6 +99,7 @@ _website user makes a listing offer_
 | topic                                             | string                                | const (`"realestate/website#listingoffer"`)                                                                                                                                                                                                                                                 |
 | data                                              | object                                | an offer is made to buy a PropertyListing                                                                                                                                                                                                                                                   |
 | data.type                                         | string                                | const (`"ListingOffer"`)                                                                                                                                                                                                                                                                    |
+| data.identifier                | string                           | unique identifier |
 | data.agent                                        | object                                | a website user/visitor                                                                                                                                                                                                                                                                      |
 | data.offerPrice                                   | object                                | the offer price or range                                                                                                                                                                                                                                                                    |
 | data.offerPrice.type                              | string                                | allowed (`"PriceSpecification"`) PriceSpecification                                                                                                                                                                                                                                         |

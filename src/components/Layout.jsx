@@ -9,6 +9,7 @@ import { Navigation } from '@/components/Navigation'
 import { Prose } from '@/components/Prose'
 import { Search } from '@/components/Search'
 import { ThemeSelector } from '@/components/ThemeSelector'
+import { title } from 'process'
 
 const types = [
   'Action',
@@ -114,6 +115,7 @@ const navigation = [
         href: '/docs/topic/marketingpreferences',
       },
       { title: 'profile', href: '/docs/topic/profile' },
+      {title:'product', href:'/docs/topic/product'},
       { title: 'servicearea', href: '/docs/topic/servicearea' },
       { title: 'transaction', href: '/docs/topic/transaction' },
       { title: 'website', href: '/docs/topic/website' },

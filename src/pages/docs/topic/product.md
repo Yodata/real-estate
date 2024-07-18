@@ -8,3 +8,4 @@ title: product
 product events
 
 * [product#subscribe](message/product.subscribe)
+* [product#unsubscribe](message/product.unsubscribe)

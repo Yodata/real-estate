@@ -28,14 +28,14 @@ title: product#subscribe
 
 | Name | Type | Description |
 |---|---|---|
-| topic | string | const (`"realestate/product#subscribe"`)  |
-| recipient |  string&lt;uri&gt;  |  the recipient of the event with this id|
-| data.type | string | data type  |
-| data.agnet| url    | the event publisher |
+|  topic | string | const (`"realestate/product#subscribe"`)  |
+|  recipient |  string&lt;uri&gt;  |  the recipient of the event with this id |
+|  data.type | string | SubscribeAction |
+|  data.agnet| url    | the event publisher |
 |  data.subcription.product  | string | product |
-|  data.subcription.startDate | date | product start date |
-|  data.subcription.expiryDate | date | product expiry date  |
-|  data.subcription.changeReason | string | subscription change reason |
+|  data.subcription.startDate | date | product subscription start date |
+|  data.subcription.expiryDate | date | product subscription expiry date  |
+|  data.subcription.changeReason | string | subscription Initialization |
 
 ### Tools
 

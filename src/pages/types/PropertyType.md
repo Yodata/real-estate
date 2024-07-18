@@ -24,4 +24,5 @@ title: PropertyType
 | FARM | string | Farm Residential |
 | COMS | string | commercial standard applies |
 | BUSO | string | Business Opportunity |
+| COML | string | Commercial Lease |
 

@@ -37,7 +37,7 @@ _update buyer compensation of property listing_
 |  data.object.type | string   | const (`"PropertyListing"`) |
 |  data.object.listingId  | string | the local identifier for the listing |
 |  data.object.buyerCompensation.buyerCompensationOfferedYN | bool | buyer compensation status(Y/N)  |
-|  data.object.buyerCompensation.compensationType | (percentage | flat | text )  | type of compensation |
+|  data.object.buyerCompensation.compensationType | string  | allowed(`"percentage", "flat", "text"`) |
 |  data.object.buyerCompensation.compensationValue | string | value of compensation |
 
 ### Tools

@@ -34,7 +34,7 @@ _update buyer compensation of property listing_
 |  topic | string | const (`"realestate/listing#updatebuyercompensation"`)  |
 |  recipient |  string&lt;uri&gt;  |  the recipient of the event with this id|
 |  data.type | string | const (`"UpdateAction"`)   |
-|  data.object.type | url    | const (`"PropertyListing"`) |
+|  data.object.type | string   | const (`"PropertyListing"`) |
 |  data.object.listingId  | string | the local identifier for the listing |
 |  data.object.buyerCompensation.buyerCompensationOfferedYN | bool | buyer compensation status(Y/N)  |
 |  data.object.buyerCompensation.compensationType | string | type of compensation |

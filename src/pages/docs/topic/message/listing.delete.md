@@ -5,6 +5,18 @@ title: listing#delete
 
 *a PropertyListing is deleted*
 
+*DELETED - A listing that is deleted is no longer available in the MLS system*
+
+*ON HOLD Status- A listing that is “on hold” status is not longer available in the MLS to show*
+
+*ZAPPED- A listing that is modified in admin to a status of Zapped is no longer available to display on the web site*
+
+*NO LONGER A COMPANY LISTING - A listing that is no longer a company listing is not deleted, it is simply not valid for Reflex export any longer*
+
+*MLS IS NO LONGER VALID - When an MLS is no longer connected to the website, the listings will disappear from the Reflex export process*
+
+*NON-DISCLOSURE- A listing from a non disclosure state is sold and is no longer available to display on the website*
+
 ### Payload Example(s) (generated)
 
 ```json

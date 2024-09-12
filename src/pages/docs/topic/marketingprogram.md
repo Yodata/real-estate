@@ -41,6 +41,7 @@ Content-Type: application/json
 | [realestate/marketingprogram#delete](#delete) | a marketing program was deleted |
 | [realestate/marketingprogram#memberadd](#memberadd) | a program member was added by the agent |
 | [realestate/marketingprogram#memberremove](#memberremove) | a program member was removed by the agent |
+| [realestate/marketingprogram#openhouseeventsummary](#openhouseeventsummary) |marketing program for openhouseeventsummary |
 
 
 ---
@@ -487,5 +488,77 @@ a program member was removed by the agent
 }
 ```
 
+
+---
+## openhouseeventsummary
+```
+realestate/marketingprogram#openhouseeventsummary
+```
+
+a marketing program for openhouseeventsummary
+
+### Schema
+| Name | Type | Description |
+|:-----| :--- | :---------- |
+| topic | string! | the event topic which determines the schema of event.data  |
+| recipient | string&lt;uri&gt;  | the  recipient of the event with this id  |
+|  data.event.type               | string   | cosnt (`"OpenHouseEvent"`)
+|  data.event.name               | string   | event name  |
+|  data.event.description        | string   | event descritpion  |
+|  data.event.startDate       |   string<date-time>   |  the start date-time (ISO 8601 formated) format (`date-time`)  |
+|  data.event.endDate         |   string<date-time>   |  the end date-time (ISO 8601 formated) format (`date-time`) |
+|  data.event.organizer.type  | string   | const(`"RealEstateAgent "`) |
+|  data.event.organizer.name  | string    | event organizer name |
+|  data.event.organizer.id    |  string<uri>  | event organizer id  |
+|  data.event.about.type      |  string  | const(`"PropertyListing"`) |
+|  data.event.about.originatingSystemName  |  string  | originating system name  |
+|  data.event.about.originatingSystemKey  | string   |  the  identifier from the original MLS, aka MLSID.  |
+|  data.event.about.listingId  | string   |the unique listing id |
+|  data.event.about.streetAddress  |  string  | the street address <= 75 characters  |
+|  data.event.about.addressLocality  |  string  |  City, Township. <= 50 characters |
+|  data.event.about.postalCode  |  string  | Zip/Post Code <= 12 characters |
+|  data.event.about.addressCountry  |  string  |  allowed (`"CA"`, `"DE"`, `"GR"`, `"IN"`, `"IT"`, `"MX"`, `"PE"`, `"PT"`, `"ES"`, `"AE"`, `"GB"`, `"US"`) two-letter ISO 3166-1 alpha-2 country code |
+|  data.event.about.eventSummary.type  | string    | Event Summary type |
+|  data.event.about.eventSummary.signins  | number   |total number of sign ins |
+
+
+
+
+### Example
+```json
+{
+  "topic": "realestate/marketingprogram#openhouseeventsummary",
+  "recipient": "https://bhhs.hsfaffiliates.com/profile/card#me",
+  "data": {
+    "event": {
+      "type": "OpenHouseEvent",
+      "name": "Property Showing 94 Bainbridge Road",
+      "description": "",
+      "startDate": "2024-08-11T12:00:00",
+      "endDate": "2024-08-11T14:00:00",
+      "organizer": {
+        "type": "RealEstateAgent",
+        "name": "Marla Byrnes",
+        "id": "https://335178.bhhs.hsfaffilaites.com/profile/card#me"
+      },
+      "about": {
+        "type": "PropertyListing",
+        "originatingSystemName": "GOTHAM-MLS",
+        "originatingSystemKey": "12345",
+        "url": "https://{company-website-url}/{path-to-listing}",
+        "streetAddress": "1007 Mountain Gate Rd",
+        "addressRegion": "New Jersey",
+        "addressLocality": "Gotham City",
+        "postalCode": "10010",
+        "addressCountry": "USA"
+      }
+    },
+    "eventSummary": {
+      "type": "eventSummary",
+      "signins": 10
+    }
+  }
+}
+```
 
 [back to top](#)

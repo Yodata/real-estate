@@ -7,7 +7,7 @@ title: listing#delete
 
 *DELETED - A listing that is deleted is no longer available in the MLS system*
 
-*ON HOLD Status- A listing that is “on hold” status is not longer available in the MLS to show*
+*ON HOLD Status- A listing that is “on hold” status is no longer available in the MLS to show*
 
 *ZAPPED- A listing that is modified in admin to a status of Zapped is no longer available to display on the web site*
 

@@ -5,6 +5,9 @@ title: listing#delete
 
 *a PropertyListing is deleted*
 
+Delete events may happen when a listing has been removed and should not exist in a 3rd party system. In these instances, the listing should be deleted and no longer display. The listing is “deleted”. Here are some examples where a delete event would be used.
+
+
 *DELETED - A listing that is deleted is no longer available in the MLS system*
 
 *ON HOLD Status- A listing that is “on hold” status is no longer available in the MLS to show*

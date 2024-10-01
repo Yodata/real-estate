@@ -108,8 +108,7 @@ title: franchise#transactionreport
         "type": "Referral",
         "additionalProperty": {
           "isReferralYN": "Y",
-          "referralChannel": "
-                               Out-of-Network Brokerage |
+          "referralChannel": " Out-of-Network Brokerage |
                                Listing Aggregator |
                                Corporate Relocation |
                                Affinity Relationship "
@@ -140,7 +139,7 @@ title: franchise#transactionreport
         },
         "referredBy": { # optional
           "type": "RealEstateOrganization",
-          "id": "http://example.com" # required and should be valid companyId
+          "id": "http://example.com" 
         }
       },
       "participant": [

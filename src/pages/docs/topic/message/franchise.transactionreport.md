@@ -136,6 +136,7 @@ title: franchise#transactionreport
         "additionalProperty": {
           "isReferralYN": "N",
           "referralChannel": "In-Network Brokerage" # optional
+                             "bhhsinNetworkReferralYN": "Y" # optional
         },
         "referredBy": { # optional
           "type": "RealEstateOrganization",

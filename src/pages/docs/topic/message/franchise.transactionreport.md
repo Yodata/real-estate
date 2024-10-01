@@ -91,15 +91,56 @@ title: franchise#transactionreport
         "streetAddress": "1007 Mountain Gate Rd",
         "yearBuilt": 1988
       },
+      # case 1
       "referral": {
         "type": "Referral",
         "additionalProperty": {
           "isReferralYN": "Y",
-          "inNetworkReferralYN": "Y"
+          "bhhsinNetworkReferralYN": "Y"
         },
         "referredBy": {
           "type": "RealEstateOrganization",
-          "id": "http://example.com"
+          "id": "http://example.com" # optional
+        }
+      },
+      # case 2
+      "referral": {
+        "type": "Referral",
+        "additionalProperty": {
+          "isReferralYN": "Y",
+          "referralChannel": "
+                               Out-of-Network Brokerage |
+                               Listing Aggregator |
+                               Corporate Relocation |
+                               Affinity Relationship "
+        },
+        "referredBy": {
+          "type": "RealEstateOrganization",
+          "id": "http://example.com" # optional
+        }
+      },
+       # case 3
+      "referral": {
+        "type": "Referral",
+        "additionalProperty": {
+          "isReferralYN": "Y",
+          "referralChannel": "In-Network Brokerage"
+        },
+        "referredBy": {
+          "type": "RealEstateOrganization",
+          "id": "http://example.com" # required and should be valid companyId
+        }
+      },
+       # case 4
+      "referral": {
+        "type": "Referral",
+        "additionalProperty": {
+          "isReferralYN": "N",
+          "referralChannel": "In-Network Brokerage" # optional
+        },
+        "referredBy": { # optional
+          "type": "RealEstateOrganization",
+          "id": "http://example.com" # required and should be valid companyId
         }
       },
       "participant": [

@@ -112,10 +112,6 @@ title: franchise#transactionreport
                                Listing Aggregator |
                                Corporate Relocation |
                                Affinity Relationship "
-        },
-        "referredBy": {
-          "type": "RealEstateOrganization",
-          "id": "http://example.com" # optional
         }
       },
        # case 3

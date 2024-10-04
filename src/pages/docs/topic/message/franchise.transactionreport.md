@@ -100,7 +100,7 @@ title: franchise#transactionreport
         },
         "referredBy": {
           "type": "RealEstateOrganization",
-          "id": "http://example.com" # optional
+          "id": "http://example.com"  # required and should be valid companyId
         }
       },
       # case 2
@@ -135,11 +135,6 @@ title: franchise#transactionreport
         "type": "Referral",
         "additionalProperty": {
           "isReferralYN": "N",
-          "referralChannel": "In-Network Brokerage", # optional
-        },
-        "referredBy": { # optional
-          "type": "RealEstateOrganization",
-          "id": "http://example.com" 
         }
       },
       "participant": [

@@ -96,7 +96,7 @@ title: franchise#transactionreport
         "type": "Referral",
         "additionalProperty": {
           "isReferralYN": "Y",
-          "bhhsInNetworkReferralYN": "Y"
+          "bhssInNetworkReferralYN": "Y"
         },
         "referredBy": {
           "type": "RealEstateOrganization",
@@ -285,7 +285,7 @@ title: franchise#transactionreport
 | data.object.referral.type | string | allowed (`"Referral"`) The item type (Linked-Data @type) |
 | data.object.referral.additionalProperty | object | context specific custom properties |
 | data.object.referral.additionalProperty.isReferralYN | string | allowed (`"Y"`, `"N"`) Y if transaction was a referral |
-| data.object.referral.additionalProperty.bhhsInNetworkReferralYN | string | allowed (`"Y"`, `"N"`) Y if transaction was referred by an in network agent |
+| data.object.referral.additionalProperty.bhssInNetworkReferralYN | string | allowed (`"Y"`, `"N"`) Y if transaction was referred by an in network agent |
 | data.object.referral.additionalProperty.referralChannel| string | allowed referral channels |
 | data.object.referral.referredBy | object | the referring entity |
 | data.object.referral.referredBy.type | string | allowed (`"RealEstateOrganization"`, `"RealEstateAgent"`, `"RealEstateOffice"`, `"Organization"`, `"Person"`) the referring entity type i.e RealEstateOrganization, RealEstateAgent |

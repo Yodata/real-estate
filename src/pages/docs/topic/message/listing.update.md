@@ -94,7 +94,7 @@ _a PropertyListing is created or updated_
         "value": 0.5
       },
       "modificationTimestamp": "2022-11-17T00:00:00",
-      "numberOfBathrooms": "2",
+      "numberOfBathrooms": "8",
       "numberOfFullBathrooms":"2",
       "numberOf1/2Bathrooms":"2",
       "numberOf1/4Bathrooms":"2",

@@ -24,14 +24,23 @@ Delete events may happen when a listing has been removed and should not exist in
 
 ```json
 {
-  "topic": "realestate/listing#delete",
-  "data": {
-    "type": "DeleteAction",
-    "object": {
-      "type": "PropertyListing",
-      "url": "https://{lead-admin}.bhhs.hsaffailites.com/listing/12345"
-    }
-  }
+  "topic":"realestate/listing#delete",
+  "recipient":"https://pod.bhhs.hsfaffiliates.com/profile/card#me",
+  "data":{
+          "type":"DeleteAction",
+          "object":{
+          "type":"PropertyListing",
+          "listingId":302302302,
+          "deleted":true
+          },
+          "instrument":{
+          "type":"RealEstateWebsite",
+          "url":"https://bhhs.com/profile/card#me"
+          }
+  },
+  "time":"2024-12-18T12:26:54.0782681-08:00",
+  "agent":"Constellation 1",
+  "instrument":"Trio"
 }
 ```
 
@@ -77,6 +86,8 @@ Delete events may happen when a listing has been removed and should not exist in
 | data.object.listingAgent | object | the agent/broker representing the seller in a real estate transaction |
 | data.object.listingContractDate | string | The effective date of the agreement between the seller and the seller's broker. format (`date-time`) |
 | data.object.listingId | string | the local identifier for the listing |
+| data.object.deleted | bool | listing status |
+| data.instrument |  string&lt;uri&gt;  | data instrument |
 | data.object.listingOffice | object | the listing office |
 | data.object.listingOriginatingSystem | object | The place where the item is originally input by the user. |
 | data.object.listingPrice | object | - |

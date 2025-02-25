@@ -8,32 +8,79 @@ title: contact#delete
 ### Payload Example(s) (generated)
 
 ```json
+
+
 {
-  "topic": "realestate/contact#delete",
-  "data": {
-    "type": "DeleteAction",
-    "agent": {
-      "type": "Person",
-      "name": "string",
-      "email": "user@example.com",
-      "identifier": {
-        "bhhsconsumerid": "12345"
-      }
+    "topic": "realestate/contact#delete",
+    "data": {
+        "type": "DeleteAction",
+        "actionStatus": "CompletedActionStatus",
+        "agent": "https://0000000.bhhs.hsfaffiliates.com/profile/card#me",
+        "instrument": "https://ace.bhhs.hsfaffiliates.com/profile/card#me",
+        "object": {
+            "type": "Contact",
+            "identifier": {
+                "salesforceId": "***************"
+            },
+            "sameAs": {
+                "salesforceId": "***************"
+            },
+            "givenName": "Test",
+            "familyName": "Test",
+            "address": [
+                {
+                    "streetAddress": "Test",
+                    "addressLocality": "Suamico",
+                    "addressCountry": "United States"
+                }
+            ],
+            "leadOwner": {
+                "type": "RealEstateAgent",
+                "id": "https://0000000.bhhs.hsfaffiliates.com/profile/card#me"
+            },
+            "additionalProperty": {
+                "salesforceId": "Test",
+                "doNotSellPersonalInformation": false,
+                "transactionType": "Other"
+            },
+            "contactPoint": []
+        }
     },
-    "object": {
-      "type": "Contact",
-      "identifier": {
-        "bhhsconsumerid": "12345"
-      },
-    "originatingSystem": {
-        "type": "SoftwareApplication",
-        "name": "RDesk",
-        "description": "User Created.",
-        "url": "http://www.rdeskwebsite.com/"
-    }, 
-    }
-  }
+    "source": "https://0000000.bhhs.hsfaffiliates.com/profile/card#me",
+    "instrument": "https://ace.bhhs.hsfaffiliates.com/profile/card#me",
+    "recipient": "https://0000000.bhhs.hsfaffiliates.com/profile/card#me",
+    "@id": "https://ace.bhhs.hsfaffiliates.com/publish/Test",
+    "id": "https://ace.bhhs.hsfaffiliates.com/publish/Test",
+    "time": "2025-02-25T03:20:46.478Z",
+    "timestamp": 1740453646478
 }
+
+// {
+//   "topic": "realestate/contact#delete",
+//   "data": {
+//     "type": "DeleteAction",
+//     "agent": {
+//       "type": "Person",
+//       "name": "string",
+//       "email": "user@example.com",
+//       "identifier": {
+//         "bhhsconsumerid": "12345"
+//       }
+//     },
+//     "object": {
+//       "type": "Contact",
+//       "identifier": {
+//         "bhhsconsumerid": "12345"
+//       },
+//     "originatingSystem": {
+//         "type": "SoftwareApplication",
+//         "name": "RDesk",
+//         "description": "User Created.",
+//         "url": "http://www.rdeskwebsite.com/"
+//     }, 
+//     }
+//   }
+// }
 ```
 
 
@@ -46,15 +93,28 @@ title: contact#delete
 | topic | string | const (`"realestate/contact#delete"`)  |
 | data | object | - |
 | data.type | string | const (`"DeleteAction"`)  |
-| data.agent | object |  >= 2 properties |
-| data.agent.type | string | const (`"Person"`)  |
-| data.agent.name | string | - |
-| data.agent.email | string | a valid email address format (`email`) |
-| data.agent.identifier | object |  1 properties |
-| data.object | object | - |
+| data.actionStatus | string | const (`"CompletedActionStatus"`) |
+| data.agent |  string&lt;uri&gt;  | the user,tema or organization who sent the event  |
+| data.instrument | string&lt;uri&gt;  | data instrument |
 | data.object.type | string | const (`"Contact"`)  |
-| data.object.identifier | object |  1 properties |
-| data.object.1.originatingSystem | object | the original system where this item was created.  Can be of type Thing or any sub-type. |
+| data.object.identifier.salesforceId | string |  identifier Salesforce Id |
+| data.object.sameAs.salesforceId | string |  sameAs Salesforce Id |
+| data.object.givenName  | string |  given name |
+| data.object.familyName | string | family name |
+| data.object.address | array of object |  object has { streetAddress addressLocality , addressCountry } |
+| data.object.leadOwner.type | string |  type of lead owner |
+| data.object.leadOwner.id   |  string&lt;uri&gt; |  id(url) of lead owner |
+| data.object.additionalProperty.salesforceId | string | salesforce Id |
+| data.object.additionalProperty.doNotSellPersonalInformation | bool | false |
+| data.object.additionalProperty.transactionType |string | transaction type  |
+| data.object.contactPoint | array | contact point array |
+| data.source | string |  format (`uri`) |
+| data.instrument | string |  format (`uri`) |
+| data.recipient | string |  format (`uri`) | 
+| data.@id | string |  format (`uri`) |
+| data.id  | string |  format (`uri`) | 
+| data.time | string | date & time the event was produced format (`date-time`) |
+| data.timestamp | string | time in numbers |  
 
 ### Headers
 

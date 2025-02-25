@@ -24,25 +24,25 @@ title: contact#delete
             "sameAs": {
                 "salesforceId": "***************"
             },
-            "givenName": "Test",
-            "familyName": "Test",
-            "address": [
-                {
+            "givenName": "Test", //optional
+            "familyName": "Test",  //optional
+            "address": [   //optional
+                { 
                     "streetAddress": "Test",
                     "addressLocality": "Suamico",
                     "addressCountry": "United States"
                 }
             ],
-            "leadOwner": {
+            "leadOwner": {  //optional
                 "type": "RealEstateAgent",
                 "id": "https://0000000.bhhs.hsfaffiliates.com/profile/card#me"
             },
-            "additionalProperty": {
+            "additionalProperty": {  //optional
                 "salesforceId": "Test",
                 "doNotSellPersonalInformation": false,
                 "transactionType": "Other"
             },
-            "contactPoint": []
+            "contactPoint": []  //optional
         }
     },
     "source": "https://0000000.bhhs.hsfaffiliates.com/profile/card#me",

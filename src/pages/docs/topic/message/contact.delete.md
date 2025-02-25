@@ -55,32 +55,6 @@ title: contact#delete
     "timestamp": 1740453646478
 }
 
-// {
-//   "topic": "realestate/contact#delete",
-//   "data": {
-//     "type": "DeleteAction",
-//     "agent": {
-//       "type": "Person",
-//       "name": "string",
-//       "email": "user@example.com",
-//       "identifier": {
-//         "bhhsconsumerid": "12345"
-//       }
-//     },
-//     "object": {
-//       "type": "Contact",
-//       "identifier": {
-//         "bhhsconsumerid": "12345"
-//       },
-//     "originatingSystem": {
-//         "type": "SoftwareApplication",
-//         "name": "RDesk",
-//         "description": "User Created.",
-//         "url": "http://www.rdeskwebsite.com/"
-//     }, 
-//     }
-//   }
-// }
 ```
 
 

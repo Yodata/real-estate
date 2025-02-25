@@ -14,7 +14,6 @@ title: contact#delete
     "topic": "realestate/contact#delete",
     "data": {
         "type": "DeleteAction",
-        "actionStatus": "CompletedActionStatus",
         "agent": "https://0000000.bhhs.hsfaffiliates.com/profile/card#me",
         "instrument": "https://ace.bhhs.hsfaffiliates.com/profile/card#me",
         "object": {
@@ -47,12 +46,7 @@ title: contact#delete
         }
     },
     "source": "https://0000000.bhhs.hsfaffiliates.com/profile/card#me",
-    "instrument": "https://ace.bhhs.hsfaffiliates.com/profile/card#me",
     "recipient": "https://0000000.bhhs.hsfaffiliates.com/profile/card#me",
-    "@id": "https://ace.bhhs.hsfaffiliates.com/publish/Test",
-    "id": "https://ace.bhhs.hsfaffiliates.com/publish/Test",
-    "time": "2025-02-25T03:20:46.478Z",
-    "timestamp": 1740453646478
 }
 
 ```
@@ -67,7 +61,6 @@ title: contact#delete
 | topic | string | const (`"realestate/contact#delete"`)  |
 | data | object | - |
 | data.type | string | const (`"DeleteAction"`)  |
-| data.actionStatus | string | const (`"CompletedActionStatus"`) |
 | data.agent |  string&lt;uri&gt;  | the user,tema or organization who sent the event  |
 | data.instrument | string&lt;uri&gt;  | data instrument |
 | data.object.type | string | const (`"Contact"`)  |
@@ -83,12 +76,8 @@ title: contact#delete
 | data.object.additionalProperty.transactionType |string | transaction type  |
 | data.object.contactPoint | array | contact point array |
 | data.source | string |  format (`uri`) |
-| data.instrument | string |  format (`uri`) |
 | data.recipient | string |  format (`uri`) | 
-| data.@id | string |  format (`uri`) |
-| data.id  | string |  format (`uri`) | 
-| data.time | string | date & time the event was produced format (`date-time`) |
-| data.timestamp | string | time in numbers |  
+ 
 
 ### Headers
 

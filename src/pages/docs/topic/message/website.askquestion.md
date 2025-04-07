@@ -13,6 +13,11 @@ _website user asks a question_
     "topic": "realestate/website#askquestion",
     "data": {
         "identifier":"nwurogb34tnoi3t",
+        "leadOwner": {
+            "type": "RealEstateOrganization",
+            "name": "Gotham City Real Estate", //** optional
+            "id":"https://example.com/profile.card#me"
+        },
         "agent": {
             "name": "String",
             "email": "someone@yahoo.com",
@@ -88,6 +93,9 @@ _website user asks a question_
 | time                           | timestamp                         | date & time the event was produced format |
 | timestamp                      | timestamp                         | date & time the event was produced format |
 | data.identifier                | string                           | unique identifier |
+| data.leadOwner.type                 | string                           |   “RealEstateOffice”,“RealEstateAgent”, “RealEstateTeam” | 
+| data.leadOwner.name            | string                           | lead Owner name |
+| data.leadOwner.id              |  url                             | format (uri)  |
 | data.agent.name                | string                           | agent name |
 | data.agent.email               | email                             | agent email |
 | data.agent.telephone           | telephone number                  | agent telephone number |

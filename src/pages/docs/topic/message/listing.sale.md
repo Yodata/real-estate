@@ -101,84 +101,84 @@ _sales listing schema_
 ```
 ### Payload
 
-| Name                                     | Type                                          | Description                 |
-| -----------------------------------------| --------------------------------------------- | -------------------------   |
-| topic                                    | string                     | const (`"realestate/commerciallisting#update"`)|
-| data                                     | object                                | -                                   |
-| data.type                                | string                                | const (`"UpdateAction"`)            |
-| data.object                              | object                             | a real estate property listed for sale |
-| data.object.type                         | string                                | allowed (`"SaleListing"`)           |
-| data.object.addressCountry               | string                                | allowed (`"Other"`,`"United States"`,`"Bahamas"`,`"Canada"`,`"Mexico"`,`"Turkey"`,`"Australia"`,`"Switzerland"`,`"France"`,`"Monaco"`,`"Spain"`,`"United Kingdom"`,`"Germany"`,`"Italy"`,`"Poland"`,`"Romania"`,`"Netherlands"`,`"Hungary"`)                                      |
-| data.object.addressLocality              | string                                | City, Township.                     |
-| data.object.addressRegion                | string                                | abbreviated state or province       |
-| data.object.hasElevators                 | string                                |   ------                            |
-| data.object.buyerAgent                   | object                                | the buyer's RealEstateAgent         |
-| data.object.buyerOffice                  | object                                | the buyer's RealEstateOffice        |
-| data.object.closeDate                    | string                          | listing close date format (`date-time`)   |
-| data.object.image                        | obj  | an ImageObject or URI reference to an image on the web.              |
-| data.object.image[0].type               | string                                 | const (`"Property Photo"`)         |
-| data.object.image[0].encodingFormat     | string                                 | image type (`"Image/jpg"`)         |
-| data.object.image[0].id                 | format (`uri`)                         | image url                          |
-| data.object.internetAddressDisplayYN     | string                                 | allowed (`"Y"`, `"N"`)             |
-| data.object.latitude                     | number                                 | The latitude of a location.        |
-| data.object.longitude                    | number                                 | The longitude of a location.       |
-| data.object.listingAgent.type            | string                                 | const (`"RealEstateAgent"`)        |
-| data.object.listingAgent.name            | string                                 | listings agent name                |
-| data.object.listingAgent.email           | string                                 | listings agent email               |
-| data.object.listingAgent.telephone       | string                                 | listings agent telephone           |
-| data.object.listingAgent.identifier      | obj                                    | listings agent identifier          |
-| data.object.listingAgent.additionalProperty.agentId       | string                | listings agent  id                 |
-| data.object.listingContractDate          | string                                 | The effective date of the agreement between the seller and the seller's broker. format (`date-time`)                                                         |
-| data.object.listingId                     | string                              | the local identifier for the listing |
-| data.object.listingOffice.type            | string                                 | const (`"RealEstateAgent"`)       |
-| data.object.listingOffice.name            | string                                 | listings office name              |
-| data.object.listingOffice.email           | string                                 | listings office email             |
-| data.object.listingOffice.telephone       | string                                 | listings office telephone         |
-| data.object.listingOffice.identifier      | obj                                    | listings office identifier        |
-| data.object.listingOffice.additionalProperty.officeId          | string            | listings office Id                |
-| data.object.listingOriginatingSystem.type  | string                                | OriginatingSystem type            |
-| data.object.listingOriginatingSystem.name  | string                                | OriginatingSystem name            |
-| data.object.listingOriginatingSystem.identifier.orgId    | string       | OriginatingSystem identifier orgId           |
-| data.object.listingPrice.type              | string                     | const (`"PriceSpecification"`)               |
-| data.object.listingPrice.priceCurrency     | string                     | const (`"USD"`)                              |
-| data.object.listingPrice.value             | number                     | listing price  value                         |
-| data.object.soldPrice.type                 | string                     | const (`"PriceSpecification"`)               |
-| data.object.soldPrice.priceCurrency        | string                     | const (`"USD"`)                              |
-| data.object.soldPrice.value                | number                     | sold price  value                            |
-| data.object.listingStatus                  | string                     | allowed (`"Active"`, `"Closed"`)             |
-| data.object.livingArea.type                | string                     | const (`""QuantitativeValue""`)              |
-| data.object.livingArea.value               | number                     | livingArea  value                            |
-| data.object.livingArea.unitCode            | string                     | const(`"FTK"`)                               |
-| data.object.livingArea.unitText            | string                     | const(`"SquareFeet"`)                        |
-| data.object.lotSize.type                   | string                     | const (`"QuantitativeValue"`)                |
-| data.object.lotSize.value                  | number                     | lostSize value                               |
-| data.object.lotSize.unitCode               | string                     | const(`"ACR"`)                               |
-| data.object.lotSize.unitText               | string                     | const(`"Acre"`)                              |
-| data.object.modificationTimestamp          | string               | last modified date of listing format(`date-time`)  |
-| data.object.name                           | string                     | name                                         |
-| data.object.numberOfBathrooms              | string               | total number of bathrooms                          | 
-| data.object.originatingSystemKey           | string                                | the listing identifier fro        |
-| data.object.originatingSystemName          | string                                | const (`"buildout"`)              |
-| data.object.postalCode                     | string                                | Zip/Post Code <= 12 characters    | 
-| data.object.propertyType                | string                                   | allowed ( `"Office"`, `"Retail"`,`"Industrial"`,`"Land"`,`"Multifamily"`,`"Special Purpose"`,`"Hospitality"`) |
-| data.object.propertySubType                | string                                | allowed ( `"Office Building"`,`"Creative/Loft"`,`"Executive Suites"`,`"Medical"`, `"Institutional/Governmental"`,`"Office Warehouse"`,`"Office Condo"`, `"Coworking"`,`"Lab"`,`"Street Retail"`, `"Strip Center"`,    `"Free Standing Building"`,`"Regional Mall"`, `"Retail Pad"`,`"Vehicle Related"`,`"Outlet Center"`,`"Power Center"`,`"Neighborhood Center"`,`"Community Center"`,`"Specialty Center"`,`"Theme/Festival Center"`,`"Restaurant"`, `"Post Office"`,    `"Retail Condo"`,`"Lifestyle Center"`,`"Manufacturing"`,`"Warehouse"`,`"Distribution"`, `"Flex Space"`,`"Research & Development"`,`"Refrigerated/Cold Storage"`,`"Office Showroom"`,`"Truck Terminal/Hub/Transit"`, `"Self Storage"`,    `"Industrial Condo"`,`"Data Center"`, `"Office"`,`"Retail"`,`"Retail-Pad"`,`"Industrial"`,`"Residential"`,`"Multifamily"`,`"Other"`,`"High-Rise"`,`"Mid-Rise"`,`"Low-Rise/Garden"`,`"Government Subsidized"`,`"Mobile Home Park"`,`"Senior Living"`, `"Skilled Nursing"`,`"Single Family Rental Portfolio"`,`"School"`, `"Marina"`,`"Other"`,`"Golf Course"`, `"Church"`, `"Full Service"`, `"Limited Service"`,`"Select Service"`, `"Resort"`,`"Economy"`, `"Extended Stay"`,`"Casino"`) |
-| data.object.stories                         | number                             | the number of floors in the property |
-| data.object.streetAddress                   | string                             | the street address                   |
-| data.object.url                             | string                             | URL of the item. format (`uri`)      |
-| data.object.yearBuilt                       | number                             | the year the structure was           |
-| data.object.class                           | string                             | property class                       |
-| data.object.highlights                      | array                              | highlights                           |
-| data.object.documents[0].id                 | number                             | document id                          |
-| data.object.documents[0].url                | string                             | document url format(`uri`)           |
-| data.object.documents[0].name               | string                             | document name                        |
-| data.object.documents[0].original_file_name | string                             | document file name                   |
-| id                                          | format (`uri`)  | the Event ID (aka "Publish ID") is the immutable canonical identifier for the event. it is a URI that is unique to the event and will not change. all subscribers will receive the same id for the same event. format (`uri`)                                                                                |
-| @id                                        | format (`uri`)                               | format(`uri`)                        |
-| agent             | string | if you are a multi-tenant app, then the agent is the user associated with the event data. any future events related to this message will be sent to the same agent/recipient format (`uri`)                                                                                                                                                                        |
+| Name| Type | Description |
+| ---|--- |---|
+| topic | string | const (`"realestate/commerciallisting#update"`) |
+| data| object | - |
+| data.type | string | const (`"UpdateAction"`) |
+| data.object| object | a real estate property listed for sale |
+| data.object.type | string | allowed (`"SaleListing"`) |
+| data.object.addressCountry | string | allowed (`"Other"` , `"United States"` , `"Bahamas"`, `"Canada"` , `"Mexico"` , `"Turkey"` , `"Australia"` , `"Switzerland"` , `"France"`,`"Monaco"` , `"Spain"` , `"Germany"` , `"Italy"`, `"UnitedKingdom"`, `"Poland"` , `"Romania"` , `"Netherlands"` , `"Hungary"`) |
+| data.object.addressLocality | string| City, Township. |
+| data.object.addressRegion | string | abbreviated state or province |
+| data.object.hasElevators | string |- |
+| data.object.buyerAgent | object | the buyer's RealEstateAgent |
+| data.object.buyerOffice | object | the buyer's RealEstateOffice|
+| data.object.closeDate | string| listing close date format (`date-time`) |
+| data.object.image| obj| an ImageObject or URI reference to an image on the web.|
+| data.object.image[0].type| string| const (`"Property Photo"`)|
+| data.object.image[0].encodingFormat| string| image type (`"Image/jpg"`)|
+| data.object.image[0]..id| format (`uri`) | image url|
+| data.object.internetAddressDisplayYN| string| allowed (`"Y"`, `"N"`) |
+| data.object.latitude| number| The latitude of a location. |
+| data.object.longitude | number| The longitude of a location.|
+| data.object.listingAgent.type| string| const (`"RealEstateAgent"`) |
+| data.object.listingAgent.name| string| listings agent name |
+| data.object.listingAgent.email | string| listings agent email|
+| data.object.listingAgent.telephone| string| listings agent telephone |
+| data.object.listingAgent.identifier | obj| listings agent identifier|
+| data.object.listingAgent.additionalProperty.agentId| string | listings agentid|
+| data.object.listingContractDate| string| The effective date of the agreement between the seller and the seller's broker. format (`date-time`)|
+| data.object.listingId| string | the local identifier for the listing |
+| data.object.listingOffice.type| string| const (`"RealEstateAgent"`)|
+| data.object.listingOffice.name| string| listings office name|
+| data.object.listingOffice.email | string| listings office email |
+| data.object.listingOffice.telephone| string| listings office telephone|
+| data.object.listingOffice.identifier | obj| listings office identifier |
+| data.object.listingOffice.additionalProperty.officeId| string| listings office Id|
+| data.object.listingOriginatingSystem.type| string | OriginatingSystem type|
+| data.object.listingOriginatingSystem.name| string | OriginatingSystem name|
+| data.object.listingOriginatingSystem.identifier.orgId| string| OriginatingSystem identifier orgId |
+| data.object.listingPrice.type| string| const (`"PriceSpecification"`)|
+| data.object.listingPrice.priceCurrency| string| const (`"USD"`) |
+| data.object.listingPrice.value | number| listing pricevalue |
+| data.object.soldPrice.type| string| const (`"PriceSpecification"`)|
+| data.object.soldPrice.priceCurrency | string| const (`"USD"`) |
+| data.object.soldPrice.value | number| sold pricevalue|
+| data.object.listingStatus | string| allowed (`"Active"`, `"Closed"`) |
+| data.object.livingArea.type | string| const (`""QuantitativeValue""`)|
+| data.object.livingArea.value| number| livingAreavalue|
+| data.object.livingArea.unitCode| string| const(`"FTK"`)|
+| data.object.livingArea.unitText| string| const(`"SquareFeet"`)|
+| data.object.lotSize.type| string| const (`"QuantitativeValue"`) |
+| data.object.lotSize.value | number| lostSize value|
+| data.object.lotSize.unitCode| string| const(`"ACR"`)|
+| data.object.lotSize.unitText| string| const(`"Acre"`) |
+| data.object.modificationTimestamp| string| last modified date of listing format(`date-time`)|
+| data.object.name | string| name |
+| data.object.numberOfBathrooms| string| total number of bathrooms| 
+| data.object.originatingSystemKey | string | the listing identifier fro |
+| data.object.originatingSystemName| string | const (`"buildout"`)|
+| data.object.postalCode| string | Zip/Post Code <= 12 characters| 
+|data.object.propertyType | string | allowed ( `"Office"`, `"Retail"`,`"Industrial"`,`"Land"`,`"Multifamily"`,`"Special Purpose"`,`"Hospitality"`) |
+| data.object.propertySubType | string | allowed ( `"Office Building"` ,  `"Creative/Loft"` , `"Executive Suites"` , `"Medical"` , `"Institutional/Governmental"` , `"Office Warehouse"` ,`"Office Condo"` , `"Coworking"` , `"Lab"` , `"Street Retail"` , `"Strip Center"` , `"Free Standing Building"` , `"Regional Mall"` , `"Retail Pad"` , `"Vehicle Related"` , `"Outlet Center"` , `"Power Center"` , `"Neighborhood Center"` , `"Community Center"` , `"Specialty Center"` , `"Theme/Festival Center"` , `"Restaurant"` , `"Post Office"` , `"Retail Condo"` ,  `"Lifestyle Center"` , `"Manufacturing"` , `"Warehouse"` , `"Distribution"` , `"Flex Space"` , `"Research & Development"` , `"Refrigerated/Cold Storage"` , `"Office Showroom"` , `"Truck Terminal/Hub/Transit"` , `"Self Storage"` , `"Industrial Condo"` , `"Data Center"` , `"Office"` ,  `"Retail"` , `"Retail-Pad"` , `"Industrial"` , `"Residential"` , `"Multifamily"` , `"Other"` , `"High-Rise"` , `"Mid-Rise"` , `"Low-Rise/Garden"` , `"Government Subsidized"` , `"Mobile Home Park"` , `"Senior Living"` , `"Skilled Nursing"` , `"Single Family Rental Portfolio"` , `"School"` , `"Marina"` , `"Other"` , `"Golf Course"` , `"Church"` , `"Full Service"` , `"Limited Service"` , `"Select Service"` , `"Resort"` , `"Economy"` , `"Extended Stay"` , `"Casino"`) |
+| data.object.stories | number| the number of floors in the property |
+| data.object.streetAddress| string| the street address|
+| data.object.url| string| URL of the item. format (`uri`) |
+| data.object.yearBuilt| number| the year the structure was |
+| data.object.class | string| property class|
+| data.object.highlights | array | highlights |
+| data.object.documents[0].id| number| document id|
+| data.object.documents[0].url | string| document url format(`uri`) |
+| data.object.documents[0].name| string| document name|
+| data.object.documents[0].original_file_name | string| document file name|
+| id| format (`uri`)| the Event ID (aka "Publish ID") is the immutable canonical identifier for the event. it is a URI that is unique to the event and will not change. all subscribers will receive the same id for the same event. format (`uri`)|
+| @id| format (`uri`)| format(`uri`) |
+| agent | string | if you are a multi-tenant app, then the agent is the user associated with the event data. any future events related to this message will be sent to the same agent/recipient format (`uri`)                |
 
 ### Headers
 
-| Name              | Type   | Description                                                                                                                                                                                                                                                                                               |
+| Name              | Type   | Description                                                                                                                                                                                                                                                                            |
 | ----------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | (root)            | object | -                                                                                                                                                                                                                                                                                                         |
 | time              | string | date & time the event was produced format (`date-time`)                                                                                                                                                                                                                                                   |

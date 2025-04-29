@@ -14,4 +14,6 @@ The message payload is a JSON-LD object with the following properties:
 * [listing#update](message/listing.update)
 * [listing#delete](message/listing.delete)
 * [listing#updatebuyercompensation](message/listing.updatebuyercompensation)
+* [listing#sale](message/listing.sale)
+* [listing#lease](message/listing.lease)
 

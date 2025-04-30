@@ -86,6 +86,7 @@ _lease listing schema_
       "streetAddress": "48 Powers St",
       "suites": [
         {
+          "name":"Suite 01",
           "leaseId": 1978971,
           "availableOn": "2025-08-01",
           "tenantName": "",
@@ -144,7 +145,7 @@ _lease listing schema_
 | data.object.addressCountry               | string                                | allowed (`"Other"` , `"United States"` , `"Bahamas"` , `"Canada"` , `"Mexico"` , `"Turkey"` , `"Australia"` , `"Switzerland"` ,`"France"` , `"Monaco"` , `"Spain"` , `"United Kingdom"` , `"Germany"` , `"Italy"` , `"Poland"` ,`"Romania"` , `"Netherlands"` , `"Hungary"`)                                      |
 | data.object.addressLocality              | string                                | City, Township.                     |
 | data.object.addressRegion                | string                                | abbreviated state or province       |
-| data.object.hasElevators                 | string                                |   ------                            |
+| data.object.hasElevators                 | string                                |   elevators exist or not              |
 | data.object.buyerAgent                   | object                                | the buyer's RealEstateAgent         |
 | data.object.buyerOffice                  | object                                | the buyer's RealEstateOffice        |
 | data.object.closeDate                    | string                          | listing close date format (`date-time`)   |
@@ -197,26 +198,27 @@ _lease listing schema_
 | data.object.propertySubType                | string                                | allowed ( `"Office Building"` , `"Creative/Loft"` , `"Executive Suites"` , `"Medical"` , `"Institutional/Governmental"` ,`"Office Warehouse"` , `"Office Condo"` , `"Coworking"` , `"Lab"` , `"Street Retail"` , `"Strip Center"` , `"Free Standing Building"` , `"Regional Mall"` , `"Retail Pad"` , `"Vehicle Related"` , `"Outlet Center"` ,`"Power Center"` , `"Neighborhood Center"` , `"Community Center"` , `"Specialty Center"` , `"Theme/Festival Center"` , `"Restaurant"` , `"Post Office"` ,    `"Retail Condo"` , `"Lifestyle Center"` ,`"Manufacturing"` , `"Warehouse"` , `"Distribution"` , `"Flex Space"` , `"Research & Development"` ,`"Refrigerated/Cold Storage"` , `"Office Showroom"` , `"Truck Terminal/Hub/Transit"` , `"Self Storage"` ,   `"Industrial Condo"` , `"Data Center"` , `"Office"` , `"Retail"` , `"Retail-Pad"` ,`"Industrial"` , `"Residential"` , `"Multifamily"` , `"Other"` , `"High-Rise"` , `"Mid-Rise"` , `"Low-Rise/Garden"` , `"Government Subsidized"` , `"Mobile Home Park"` , `"Senior Living"` , `"Skilled Nursing"` ,`"Single Family Rental Portfolio"` , `"School"` , `"Marina"` , `"Other"` , `"Golf Course"` , `"Church"` , `"Full Service"` , `"Limited Service"` , `"Select Service"` , `"Resort"` , `"Economy"` , `"Extended Stay"` , `"Casino"` ) |
 | data.object.stories                         | number                             | the number of floors in the property |
 | data.object.streetAddress                   | string                             | the street address                   |
-| data.object.suits[0].leaseId                | number                             |lease id
-| data.object.suits[0].suiteNumber            | string                             | suite number |
-| data.object.suits[0].availableOn            | string                             | available date format(`"YYYY-MM-DD"`)|
-| data.object.suits[0].tenantName             | string                             | tenant name                          |
-| data.object.suits[0].contiguousSqFtMax      | string                             | Max continguous Square Foot          |
-| data.object.suits[0].floorPlans[0].floorPlanUrl  | format (`uri`)                | floor Plan  Url                      |
-| data.object.suits[0].image[0].type               | string                        | const (`"Property Photo"`)           |
-| data.object.suits[0].image[0].encodingFormat     | string                        | image type (`"Image/jpg"`)           |
-| data.object.suits[0].image[0].id                 | format (`uri`)                | image url                            |
-| data.object.suits[0].leaseTerm              | string                             | lease term                           |
-| data.object.suits[0].leaseType              | string                             | allowed (`Gross` , `Modified Gross` , `NNN` , `Modified Net` , `Full Service` , `Ground Lease` )                                                                       |
-| data.object.suits[0].leaseDescription       | string                             | lease description                    |
-| data.object.suits[0].RentableSqFt           | string                             | RentableSqFt                         |
-| data.object.suits[0].RentableSqFtMax        | number/string                      | Max RentableSqFt                     |
-| data.object.suits[0].RentableSqFtMin        | number/string                      | Min RentableSqFt                     |
-| data.object.suits[0].status                 | string                             | allowed(`Inactive`,`Active` ,`Under Contract `,  `Closed`) |
-| data.object.suits[0].subtypes               | string                             | allowed (  `"Office Building"` ,  `"Creative/Loft"` , `"Executive Suites"` , `"Medical"` , `"Institutional/Governmental"` , `"Office Warehouse"` ,`"Office Condo"` , `"Coworking"` , `"Lab"` , `"Street Retail"` , `"Strip Center"` , `"Free Standing Building"` , `"Regional Mall"` , `"Retail Pad"` , `"Vehicle Related"` , `"Outlet Center"` , `"Power Center"` , `"Neighborhood Center"` , `"Community Center"` , `"Specialty Center"` , `"Theme/Festival Center"` , `"Restaurant"` , `"Post Office"` , `"Retail Condo"` ,  `"Lifestyle Center"` , `"Manufacturing"` , `"Warehouse"` , `"Distribution"` , `"Flex Space"` , `"Research & Development"` , `"Refrigerated/Cold Storage"` , `"Office Showroom"` , `"Truck Terminal/Hub/Transit"` , `"Self Storage"` , `"Industrial Condo"` , `"Data Center"` , `"Office"` ,  `"Retail"` , `"Retail-Pad"` , `"Industrial"` , `"Residential"` , `"Multifamily"` , `"Other"` , `"High-Rise"` , `"Mid-Rise"` , `"Low-Rise/Garden"` , `"Government Subsidized"` , `"Mobile Home Park"` , `"Senior Living"` , `"Skilled Nursing"` , `"Single Family Rental Portfolio"` , `"School"` , `"Marina"` , `"Other"` , `"Golf Course"` , `"Church"` , `"Full Service"` , `"Limited Service"` , `"Select Service"` , `"Resort"` , `"Economy"` , `"Extended Stay"` , `"Casino"` )                                                          |
-| data.object.suits[0].leaseRate              | number                             | lease rate                           |
-| data.object.suits[0].leaseRateMax           | number                             | max lease rate                       |
-| data.object.suits[0].leaseRateUnit          | string                             | allowed ( `dollars_per_sf_per_year` , `dollars_per_sm_per_year` , `dollars_per_acre_per_year` ,`dollars_per_hectare_per_year` , `dollars_per_year` , `dollars_per_sf_per_month` ,`dollars_per_sm_per_month` , `dollars_per_acre_per_month` , `dollars_per_hectare_per_month` ,`dollars_per_month` )                                                                                                      |
+| data.object.suites[0].name                | string                             |suite name |
+| data.object.suites[0].leaseId                | number                             |lease id |
+| data.object.suites[0].suiteNumber            | string                             | suite number |
+| data.object.suites[0].availableOn            | string                             | available date format(`"YYYY-MM-DD"`)|
+| data.object.suites[0].tenantName             | string                             | tenant name                          |
+| data.object.suites[0].contiguousSqFtMax      | string                             | Max continguous Square Foot          |
+| data.object.suites[0].floorPlans[0].floorPlanUrl  | format (`uri`)                | floor Plan  Url                      |
+| data.object.suites[0].image[0].type               | string                        | const (`"Property Photo"`)           |
+| data.object.suites[0].image[0].encodingFormat     | string                        | image type (`"Image/jpg"`)           |
+| data.object.suites[0].image[0].id                 | format (`uri`)                | image url                            |
+| data.object.suites[0].leaseTerm              | string                             | lease term                           |
+| data.object.suites[0].leaseType              | string                             | allowed (`Gross` , `Modified Gross` , `NNN` , `Modified Net` , `Full Service` , `Ground Lease` )                                                                       |
+| data.object.suites[0].leaseDescription       | string                             | lease description                    |
+| data.object.suites[0].RentableSqFt           | string                             | RentableSqFt                         |
+| data.object.suites[0].RentableSqFtMax        | number/string                      | Max RentableSqFt                     |
+| data.object.suites[0].RentableSqFtMin        | number/string                      | Min RentableSqFt                     |
+| data.object.suites[0].status                 | string                             | allowed(`Inactive`,`Active` ,`Under Contract `,  `Closed`) |
+| data.object.suites[0].subtypes               | string                             | allowed (  `"Office Building"` ,  `"Creative/Loft"` , `"Executive Suites"` , `"Medical"` , `"Institutional/Governmental"` , `"Office Warehouse"` ,`"Office Condo"` , `"Coworking"` , `"Lab"` , `"Street Retail"` , `"Strip Center"` , `"Free Standing Building"` , `"Regional Mall"` , `"Retail Pad"` , `"Vehicle Related"` , `"Outlet Center"` , `"Power Center"` , `"Neighborhood Center"` , `"Community Center"` , `"Specialty Center"` , `"Theme/Festival Center"` , `"Restaurant"` , `"Post Office"` , `"Retail Condo"` ,  `"Lifestyle Center"` , `"Manufacturing"` , `"Warehouse"` , `"Distribution"` , `"Flex Space"` , `"Research & Development"` , `"Refrigerated/Cold Storage"` , `"Office Showroom"` , `"Truck Terminal/Hub/Transit"` , `"Self Storage"` , `"Industrial Condo"` , `"Data Center"` , `"Office"` ,  `"Retail"` , `"Retail-Pad"` , `"Industrial"` , `"Residential"` , `"Multifamily"` , `"Other"` , `"High-Rise"` , `"Mid-Rise"` , `"Low-Rise/Garden"` , `"Government Subsidized"` , `"Mobile Home Park"` , `"Senior Living"` , `"Skilled Nursing"` , `"Single Family Rental Portfolio"` , `"School"` , `"Marina"` , `"Other"` , `"Golf Course"` , `"Church"` , `"Full Service"` , `"Limited Service"` , `"Select Service"` , `"Resort"` , `"Economy"` , `"Extended Stay"` , `"Casino"` )                                                          |
+| data.object.suites[0].leaseRate              | number                             | lease rate                           |
+| data.object.suites[0].leaseRateMax           | number                             | max lease rate                       |
+| data.object.suites[0].leaseRateUnit          | string                             | allowed ( `dollars_per_sf_per_year` , `dollars_per_sm_per_year` , `dollars_per_acre_per_year` ,`dollars_per_hectare_per_year` , `dollars_per_year` , `dollars_per_sf_per_month` ,`dollars_per_sm_per_month` , `dollars_per_acre_per_month` , `dollars_per_hectare_per_month` ,`dollars_per_month` )                                                                                                      |
 | data.object.url                             | string                             | URL of the item. format (`uri`)      |
 | data.object.yearBuilt                       | number                             | the year the structure was           |
 | data.object.class                           | string                             | property class                       |

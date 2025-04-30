@@ -4,7 +4,7 @@ title: listing#sale
 
 ## Message
 
-_sales listing schema_
+_sale listing schema_
 
 ### Payload Example(s) (generated)
 

@@ -50,17 +50,27 @@ _a PropertyListing is created or updated_
       "internetAddressDisplayYN": "Y",
       "latitude": 40.75,
       "listingAgent": {
-        "type": "RealEstateAgent",
-        "name": "Lori Listagent",
-        "telephone": "1-252-574-0160",
-        "email": "lorilistagent@example.com"
+                "type": "RealEstateAgent",
+                "name": "Carol Sawdey",
+                "email": "carolsawdey@gmail.com",
+                "identifier": {
+                    "mlsAgentId": "CCB-253454"
+                },
+                "additionalProperty": {
+                    "agentId": "123456"
+                }
+      },
+      "listingOffice": {
+                "type": "RealEstateOffice",
+                "name": "BHHS Drysdale Properties",
+                "email": "accounting@bhhsdrysdale.com",
+                "identifier": {
+                    "mlsOfficeId": "CCB-54t254"
+                },
+                "additionalProperty": {}
       },
       "listingContractDate": "2019-08-24T14:15:22Z",
       "listingId": "GOTHAM-MLS+12345",
-      "listingOffice": {
-        "name": "Gotham City Real Estate",
-        "type": "RealEstateOffice"
-      },
       "coListingAgent": {
                 "type": "RealEstateAgent",
                 "name": "",

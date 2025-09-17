@@ -109,6 +109,7 @@ const navigation = [
       { title: 'franchise', href: '/docs/topic/franchise' },
       { title: 'lead', href: '/docs/topic/lead' },
       { title: 'listing', href: '/docs/topic/listing' },
+      { title: 'commerciallisting', href: '/docs/topic/commerciallisting' },
       { title: 'marketingprogram', href: '/docs/topic/marketingprogram' },
       {
         title: 'marketingpreferences',

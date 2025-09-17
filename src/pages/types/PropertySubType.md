@@ -44,4 +44,5 @@ title: PropertySubType
 | RetailPropertyType | string | Retail property |
 | UnimprovedLandPropertyType | string | Land for sale |
 | WarehousePropertyType | string | A Warehouse property type. |
+| OtherPropertyType | string | Other property. |
 

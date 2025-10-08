@@ -36,6 +36,17 @@ _sale listing schema_
         "identifier": {},
         "additionalProperty": { "agentId": "369824" }
       },
+      "coListingAgent": [
+                {
+                    "type": "RealEstateAgent",
+                    "name": "Joanne VanStry",
+                    "email": "joanne.vanstry@verani.com",
+                    "identifier": {},
+                    "additionalProperty": {
+                        "agentId": "1060172"
+                    }
+                }
+       ],
       "listingContractDate": "2025-03-18T10:28:57.000-05:00",
       "listingId": "bo-1499456",
       "listingOffice": {
@@ -128,6 +139,7 @@ _sale listing schema_
 | data.object.listingAgent.telephone| string| listings agent telephone |
 | data.object.listingAgent.identifier | obj| listings agent identifier|
 | data.object.listingAgent.additionalProperty.agentId| string | listings agentid|
+| data.object.colistingAgent          | array      | list of coListing Agents   |
 | data.object.listingContractDate| string| The effective date of the agreement between the seller and the seller's broker. format (`date-time`)|
 | data.object.listingId| string | the local identifier for the listing |
 | data.object.listingOffice.type| string| const (`"RealEstateAgent"`)|

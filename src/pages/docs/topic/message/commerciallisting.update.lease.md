@@ -41,6 +41,17 @@ _lease listing schema_
         "identifier": {},
         "additionalProperty": { "agentId": "234567" }
       },
+      "coListingAgent": [
+                {
+                    "type": "RealEstateAgent",
+                    "name": "Joanne VanStry",
+                    "email": "joanne.vanstry@verani.com",
+                    "identifier": {},
+                    "additionalProperty": {
+                        "agentId": "1060172"
+                    }
+                }
+       ],
       "listingContractDate": "2024-12-02T11:38:31.000-06:00",
       "listingId": "bo-148767",
       "listingOffice": {
@@ -147,6 +158,7 @@ _lease listing schema_
 | data.object.addressRegion                | string                                | abbreviated state or province       |
 | data.object.hasElevators                 | string                                |   elevators exist or not              |
 | data.object.buyerAgent                   | object                                | the buyer's RealEstateAgent         |
+
 | data.object.buyerOffice                  | object                                | the buyer's RealEstateOffice        |
 | data.object.closeDate                    | string                          | listing close date format (`date-time`)   |
 | data.object.image                        | obj  | an ImageObject or URI reference to an image on the web.              |
@@ -162,6 +174,7 @@ _lease listing schema_
 | data.object.listingAgent.telephone       | string                                 | listings agent telephone           |
 | data.object.listingAgent.identifier      | obj                                    | listings agent identifier          |
 | data.object.listingAgent.additionalProperty.agentId       | string                | listings agent  id                 |
+| data.object.colistingAgent               | array                                  | list of coListing Agents   |
 | data.object.listingContractDate          | string                                 | The effective date of the agreement between the seller and the seller's broker. format (`date-time`)                                                         |
 | data.object.listingId                     | string                              | the local identifier for the listing |
 | data.object.listingOffice.type            | string                                 | const (`"RealEstateAgent"`)       |

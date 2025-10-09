@@ -206,6 +206,15 @@ title: profile#add
 | data.object.additionalProperty.Status | string | allowed Status  |
 | data.object.additionalProperty.wpFooter | array | list of wpFooter  |
 | data.object.additionalProperty.BrokerID | string | broker id  |
+| data.object.additionalProperty.excludeFromBHHSConnect | boolean | excludeFromBHHSConnect (`"true"`, `"false"`) |
+| data.object.additionalProperty.displayTestimonials | boolean | displayTestimonials (`"true"`, `"false"`)  |
+| data.object.additionalProperty.OfficeID | string | office Id  |
+| data.object.additionalProperty.corporateEmail | email | corporateEmail  |
+| data.object.additionalProperty.IsDisplayed | boolean | IsDisplayed (`"true"`, `"false"`)  |
+| data.object.additionalProperty.TeamID | string | team Id  |
+| data.object.additionalProperty.IsCompanyQueue | boolean | IsCompanyQueue (`"true"`, `"false"`)  |
+| data.object.additionalProperty.preferredLanguage.type | string | type of preferredLanguage  |
+| data.object.additionalProperty.preferredLanguage.name | string | name of preferredLanguage  |
 | data.object.0.certification | object | A certification issued by an organization to an individual or business. |
 | data.object.0.certification.type | string | allowed (`"Certification"`) Certification |
 | data.object.0.certification.name | string | the name of the Certification |

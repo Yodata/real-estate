@@ -27,6 +27,9 @@ title: profile#add
         "postOfficeBoxNumber": "Box 1234",
         "streetAddress": "1007 Mountain Gate Rd"
       },
+      "additionalProperty":{
+          "primaryBusinessType":"Residential"
+      },
       "certification": {
         "type": "Certification",
         "name": "e-Agent Certified",
@@ -126,6 +129,7 @@ title: profile#add
 | data.object.0.type | string | const (`"RealEstateAgent"`)  |
 | data.object.0.additionalName | string | any other name(s) associated with the entity, i.e. nickname, middle name, maiden name, etc. For multiple names, use a comma without space as a separator. |
 | data.object.0.address | object | A physical address. |
+| data.object.additionalProperty.primaryBusinessType | string |  allowed (`"Commerical"`, `"Residential"`) |
 | data.object.0.certification | object | A certification issued by an organization to an individual or business. |
 | data.object.0.certification.type | string | allowed (`"Certification"`) Certification |
 | data.object.0.certification.name | string | the name of the Certification |

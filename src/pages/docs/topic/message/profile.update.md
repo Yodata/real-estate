@@ -27,8 +27,68 @@ title: profile#update
         "postOfficeBoxNumber": "Box 1234",
         "streetAddress": "1007 Mountain Gate Rd"
       },
-       "additionalProperty":{
-          "primaryBusinessType":"Residential"
+      "additionalProperty":{
+        "primaryBusinessType":"Residential",
+        "displayZillowReviews": false,
+        "displayRateMyAgentReviews": false,
+        "UserType": "Full Time Sales Professional",
+        "OfficeDBA": "Fox & Roach, REALTORS",
+        "TeamName": "",
+        "AffiliateID": "PA301",
+        "EmployeeType": "Full Time Sales Professional",
+        "IsTeamQueue": false,
+        "TeamQueueTeamId": "https://null.bhhs.hsfaffiliates.com/profile/card#me",
+        "appointmentAppURL": "",
+        "OfficeStatus": "Active",
+        "vendorEmailOptout": false,
+        "agentWebsiteType": "Agent Showcase",
+        "Status": "Active",
+        "bhhsLeadNotificationPreference": {
+            "timeZone": "America/New_York",
+            "emailNotification": true,
+            "textNotification": false,
+            "email": "edward.szumski@foxroach.com",
+            "leadNotificationSchedule": [
+                {
+                    "type": "Schedule",
+                    "name": "Weekday",
+                    "byDay": [
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday"
+                    ]
+                },
+                {
+                    "type": "Schedule",
+                    "name": "Saturday",
+                    "byDay": [
+                        "Saturday"
+                    ]
+                },
+                {
+                    "type": "Schedule",
+                    "name": "Sunday",
+                    "byDay": [
+                        "Sunday"
+                    ]
+                }
+            ]
+        },
+        "wpFooter": [],
+        "BrokerID": "PA301",
+        "excludeFromBHHSConnect": false,
+        "displayTestimonials": true,
+        "OfficeID": "PA301-151",
+        "corporateEmail": "edward.szumski@foxroach.com",
+        "IsDisplayed": true,
+        "TeamID": "",
+        "preferredLanguage": {
+            "type": "Language",
+            "name": "en_US"
+        },
+        "IsCompanyQueue": false
       },
       "certification": {
         "type": "Certification",
@@ -130,6 +190,38 @@ title: profile#update
 | data.object.0.additionalName | string | any other name(s) associated with the entity, i.e. nickname, middle name, maiden name, etc. For multiple names, use a comma without space as a separator. |
 | data.object.0.address | object | A physical address. |
 | data.object.additionalProperty.primaryBusinessType | string |  allowed (`"Commerical"`, `"Residential"`) |
+| data.object.additionalProperty.displayZillowReviews | boolean | displayZillowReviews status  |
+| data.object.additionalProperty.displayRateMyAgentReviews | boolean | displayRateMyAgentReviews status  |
+| data.object.additionalProperty.UserType | string | User Type  |
+| data.object.additionalProperty.OfficeDBA | string | Office DBA  |
+| data.object.additionalProperty.TeamName | string | Team Name  |
+| data.object.additionalProperty.AffiliateID | string | AffiliateID |
+| data.object.additionalProperty.EmployeeType | string | Employee Type  |
+| data.object.additionalProperty.IsTeamQueue | boolean | Team Queue status  |
+| data.object.additionalProperty.TeamQueueTeamId | string | URL of the team queue teamid (`uri`)  |
+| data.object.additionalProperty.appointmentAppURL | string |  URL of the appointmentAppURL (`uri`)  |
+| data.object.additionalProperty.OfficeStatus | string |  status of office. For backward compatibility  |
+| data.object.additionalProperty.vendorEmailOptout | boolean | vendorEmailOptout status  |
+| data.object.additionalProperty.agentWebsiteType | string | agent WebsiteType  |
+| data.object.additionalProperty.Status | string | allowed Status  |
+| data.object.additionalProperty.wpFooter | array |list of wpFooter  |
+| data.object.additionalProperty.BrokerID | string | broker id  |
+| data.object.additionalProperty.excludeFromBHHSConnect | boolean | excludeFromBHHSConnect (`"true"`, `"false"`) |
+| data.object.additionalProperty.displayTestimonials | boolean | displayTestimonials (`"true"`, `"false"`)  |
+| data.object.additionalProperty.OfficeID | string | office Id  |
+| data.object.additionalProperty.corporateEmail | email | corporateEmail  |
+| data.object.additionalProperty.IsDisplayed | boolean | IsDisplayed (`"true"`, `"false"`)  |
+| data.object.additionalProperty.TeamID | string | team Id  |
+| data.object.additionalProperty.IsCompanyQueue | boolean | IsCompanyQueue (`"true"`, `"false"`)  |
+| data.object.additionalProperty.preferredLanguage.type | string | type of preferredLanguage  |
+| data.object.additionalProperty.preferredLanguage.name | string | name of preferredLanguage  |
+| data.object.additionalProperty.bhhsLeadNotificationPreference.timeZone | timezone |   |
+| data.object.additionalProperty.bhhsLeadNotificationPreference.emailNotification | boolean | emailNotification (`"true"`, `"false"`)  |
+| data.object.additionalProperty.bhhsLeadNotificationPreference.textNotification | boolean |  textNotification  (`"true"`, `"false"`) |
+| data.object.additionalProperty.bhhsLeadNotificationPreference.email | email | email of bhhsLeadNotificationPreference  |
+| data.object.additionalProperty.bhhsLeadNotificationPreference.leadNotificationSchedule.0.type | string | leadNotificationSchedule type  |
+| data.object.additionalProperty.bhhsLeadNotificationPreference.leadNotificationSchedule.0.name | string | leadNotificationSchedule name  |
+| data.object.additionalProperty.bhhsLeadNotificationPreference.leadNotificationSchedule.0.byDay | string | list of Days allowed (`"Monday"`, `"Tuesday"`,`"Wednesday"`, `"Thursday"`,`"Friday"`, `"Saturday"`, `"Sunday"` )   |
 | data.object.0.certification | object | A certification issued by an organization to an individual or business. |
 | data.object.0.certification.type | string | allowed (`"Certification"`) Certification |
 | data.object.0.certification.name | string | the name of the Certification |

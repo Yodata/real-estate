@@ -189,7 +189,23 @@ title: profile#add
 | data.object.0.type | string | const (`"RealEstateAgent"`)  |
 | data.object.0.additionalName | string | any other name(s) associated with the entity, i.e. nickname, middle name, maiden name, etc. For multiple names, use a comma without space as a separator. |
 | data.object.0.address | object | A physical address. |
-
+| data.object.additionalProperty.primaryBusinessType | string |  allowed (`"Commerical"`, `"Residential"`) |
+| data.object.additionalProperty.displayZillowReviews | boolean | displayZillowReviews status  |
+| data.object.additionalProperty.displayRateMyAgentReviews | boolean | displayRateMyAgentReviews status  |
+| data.object.additionalProperty.UserType | string | User Type  |
+| data.object.additionalProperty.OfficeDBA | string | Office DBA  |
+| data.object.additionalProperty.TeamName | string | Team Name  |
+| data.object.additionalProperty.AffiliateID | string | AffiliateID |
+| data.object.additionalProperty.EmployeeType | string | Employee Type  |
+| data.object.additionalProperty.IsTeamQueue | boolean | Team Queue status  |
+| data.object.additionalProperty.TeamQueueTeamId | string | URL of the team queue teamid (`uri`)  |
+| data.object.additionalProperty.appointmentAppURL | string |  URL of the appointmentAppURL (`uri`)  |
+| data.object.additionalProperty.OfficeStatus | string |  status of office. For backward compatibility  |
+| data.object.additionalProperty.vendorEmailOptout | boolean | vendorEmailOptout status  |
+| data.object.additionalProperty.agentWebsiteType | string | agent WebsiteType  |
+| data.object.additionalProperty.Status | string | allowed Status  |
+| data.object.additionalProperty.wpFooter | array | list of wpFooter  |
+| data.object.additionalProperty.BrokerID | string | broker id  |
 | data.object.0.certification | object | A certification issued by an organization to an individual or business. |
 | data.object.0.certification.type | string | allowed (`"Certification"`) Certification |
 | data.object.0.certification.name | string | the name of the Certification |

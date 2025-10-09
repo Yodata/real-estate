@@ -215,7 +215,7 @@ title: profile#update
 | data.object.additionalProperty.IsCompanyQueue | boolean | IsCompanyQueue (`"true"`, `"false"`)  |
 | data.object.additionalProperty.preferredLanguage.type | string | type of preferredLanguage  |
 | data.object.additionalProperty.preferredLanguage.name | string | name of preferredLanguage  |
-| data.object.additionalProperty.bhhsLeadNotificationPreference.timeZone | timezone |   |
+| data.object.additionalProperty.bhhsLeadNotificationPreference.timeZone | timezone |  timezone |
 | data.object.additionalProperty.bhhsLeadNotificationPreference.emailNotification | boolean | emailNotification (`"true"`, `"false"`)  |
 | data.object.additionalProperty.bhhsLeadNotificationPreference.textNotification | boolean |  textNotification  (`"true"`, `"false"`) |
 | data.object.additionalProperty.bhhsLeadNotificationPreference.email | email | email of bhhsLeadNotificationPreference  |

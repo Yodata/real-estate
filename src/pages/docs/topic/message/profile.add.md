@@ -215,6 +215,10 @@ title: profile#add
 | data.object.additionalProperty.IsCompanyQueue | boolean | IsCompanyQueue (`"true"`, `"false"`)  |
 | data.object.additionalProperty.preferredLanguage.type | string | type of preferredLanguage  |
 | data.object.additionalProperty.preferredLanguage.name | string | name of preferredLanguage  |
+| data.object.additionalProperty.bhhsLeadNotificationPreference.timeZone | timezone | timeZone  |
+| data.object.additionalProperty.bhhsLeadNotificationPreference.emailNotification | boolean | emailNotification (`"true"`, `"false"`)  |
+| data.object.additionalProperty.bhhsLeadNotificationPreference.textNotification | boolean |  textNotification  (`"true"`, `"false"`) |
+| data.object.additionalProperty.bhhsLeadNotificationPreference.email | email | email of bhhsLeadNotificationPreference  |
 | data.object.0.certification | object | A certification issued by an organization to an individual or business. |
 | data.object.0.certification.type | string | allowed (`"Certification"`) Certification |
 | data.object.0.certification.name | string | the name of the Certification |

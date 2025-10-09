@@ -219,9 +219,9 @@ title: profile#add
 | data.object.additionalProperty.bhhsLeadNotificationPreference.emailNotification | boolean | emailNotification (`"true"`, `"false"`)  |
 | data.object.additionalProperty.bhhsLeadNotificationPreference.textNotification | boolean |  textNotification  (`"true"`, `"false"`) |
 | data.object.additionalProperty.bhhsLeadNotificationPreference.email | email | email of bhhsLeadNotificationPreference  |
-| data.object.additionalProperty.bhhsLeadNotificationPreference.leadNotificationSchedule.0.type | string | leadNotificationSchedule type  |
-| data.object.additionalProperty.bhhsLeadNotificationPreference.leadNotificationSchedule.0.name | string | leadNotificationSchedule name  |
-| data.object.additionalProperty.bhhsLeadNotificationPreference.leadNotificationSchedule.0.byDay | string | list of Days allowed (`"Monday"`, `"Tuesday"`,`"Wednesday"`, `"Thursday"`,`"Friday"`, `"Saturday"`, `"Sunday"`)   |
+| `data.object.additionalProperty.bhhsLeadNotificationPreference.leadNotificationSchedule.0.type` | string | leadNotificationSchedule type  |
+| `data.object.additionalProperty.bhhsLeadNotificationPreference.leadNotificationSchedule.0.name` | string | leadNotificationSchedule name  |
+| `data.object.additionalProperty.bhhsLeadNotificationPreference.leadNotificationSchedule.0.byDay` | string | list of Days allowed (`"Monday"`, `"Tuesday"`,`"Wednesday"`, `"Thursday"`,`"Friday"`, `"Saturday"`, `"Sunday"`)   |
 | data.object.0.certification | object | A certification issued by an organization to an individual or business. |
 | data.object.0.certification.type | string | allowed (`"Certification"`) Certification |
 | data.object.0.certification.name | string | the name of the Certification |

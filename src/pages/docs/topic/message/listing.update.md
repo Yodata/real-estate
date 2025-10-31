@@ -80,8 +80,12 @@ _a PropertyListing is created or updated_
       "coListingOffice": {
                 "type": "RealEstateOffice",
                 "name": "",
-                "identifier": {},
-                "additionalProperty": {}
+                "identifier": {
+                  "mlsAgentId": null,
+               },
+                "additionalProperty": {
+                  "agentId":""
+                }
       },
       "listingOriginatingSystem": {
         "identifier": {

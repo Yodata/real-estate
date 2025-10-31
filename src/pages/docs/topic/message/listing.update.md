@@ -74,17 +74,21 @@ _a PropertyListing is created or updated_
       "coListingAgent": {
                 "type": "RealEstateAgent",
                 "name": "",
-                "identifier": {},
-                "additionalProperty": {}
+                "identifier": {
+                  "mlsAgentId":""
+                },
+                "additionalProperty": {
+                  "agentId":""
+                }
       },
       "coListingOffice": {
                 "type": "RealEstateOffice",
                 "name": "",
                 "identifier": {
-                  "mlsAgentId": null,
-               },
+                  "mlsOfficeId": "",
+                },
                 "additionalProperty": {
-                  "agentId":""
+                  "officeId":""
                 }
       },
       "listingOriginatingSystem": {

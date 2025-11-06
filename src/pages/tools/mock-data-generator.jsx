@@ -106,6 +106,8 @@ export default function MockDataGUI(props) {
   const [topic, setTopic] = useState('select a topic')
   const [numberOfMessages, setNumberOfMessages] = useState('1')
   const formStyle = clsx('form-input', className)
+  const [isValidated, setIsValidated] = useState(false);
+  const [validationError, setValidationError] = useState('');
   const {
     control,
     handleSubmit,
@@ -127,7 +129,32 @@ export default function MockDataGUI(props) {
 
   const frm = useRef(null, handleFrmChange)
   const editorRef = useRef(null)
+  async function validateCredentials(pod, apikey) {
+  // 1) Pod format validation
+  const isValidPod = pod.startsWith('https://') && pod.includes('.bhhs.hsfaffiliates.com');
 
+  if (!isValidPod) {
+    setIsValidated(false);
+    setValidationError('Pod must start with https:// and contain .bhhs.hsfaffiliates.com');
+    return;
+  }
+
+  try {
+    // 2) Validate API Key by hitting Subscriptions endpoint
+    const data = await axios.get('https://dev.bhhs.hsfaffiliates.com/settings/subscriptions', {
+      headers: {
+        'x-api-key': "R1BywylDleLpjXFDODgDFJ1Ni3UFbfb2UMfcMSRtuM",
+      }
+    });
+   console.log('Validation response data:', data);
+
+    setIsValidated(true);
+    setValidationError('');
+  } catch (err) {
+    setIsValidated(false);
+    setValidationError('Invalid API key or unauthorized access.');
+  }
+}
   const content = {
   target: {
     name: 'pod',
@@ -189,8 +216,25 @@ export default function MockDataGUI(props) {
         <p>{topic}</p>
       </div> */}
       <form name="MockInputForm" onSubmit={handleSubmit(onSubmit, onError)}>
-        <Input {...content.target} control={control} />
-        <Input {...content.apikey} control={control} />
+       <Input
+  {...content.target}
+  control={control}
+  onBlur={(e) => {
+    const pod = e.target.value;
+    const apikey = control._formValues.apikey;
+    if (pod && apikey) validateCredentials(pod, apikey);
+  }}
+/>
+
+<Input
+  {...content.apikey}
+  control={control}
+  onBlur={(e) => {
+    const apikey = e.target.value;
+    const pod = control._formValues.pod;
+    if (pod && apikey) validateCredentials(pod, apikey);
+  }}
+/>
          <Select
           {...formData.topic}
           control={control}

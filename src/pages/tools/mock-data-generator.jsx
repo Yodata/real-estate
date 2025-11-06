@@ -86,7 +86,7 @@ const formData = {
     name: 'topic',
     type: 'select',
     options: messages,
-    placeholder: 'select a topic',
+    // placeholder: 'select a topic',
     caption: undefined,
     required: true,
   },

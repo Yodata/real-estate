@@ -222,8 +222,8 @@ function getSubscriptionsForPod(subscriptions, podName) {
 }
 
   const onSubmit = (json) => {
-    // setTopic(json.topic)
-    const _topic = topic.replace('#', '/')
+   setTopic(json.topic);
+  const _topic = json.topic.replace('#', '/');
     const target = `/api/schema/mock/${_topic}`
     axios
       .get(target)
@@ -281,7 +281,7 @@ function getSubscriptionsForPod(subscriptions, podName) {
   type="select"
   options={dynamicTopicOptions}
   control={control}
-  onSelect={topicSelected}
+  onChange={topicSelected}
 />
         <Select
           {...formData.numberOfMessages}

@@ -85,7 +85,7 @@ const formData = {
   topic: {
     name: 'topic',
     type: 'select',
-    options: messages,
+    options: [],
     // placeholder: 'select a topic',
     caption: undefined,
     required: true,
@@ -131,30 +131,53 @@ export default function MockDataGUI(props) {
 const apikey = useWatch({ control, name: 'apikey' })
   const frm = useRef(null, handleFrmChange)
   const editorRef = useRef(null)
-  React.useEffect(() => {
-  if (!pod || !apikey) return
+ const [dynamicTopicOptions, setDynamicTopicOptions] = useState([]);
+React.useEffect(() => {
+  if (!pod || !apikey) return;
 
-  // 1) check pod format
-  const isValidPod = pod.startsWith('https://') && pod.includes('.bhhs.hsfaffiliates.com')
+  const isValidPod = pod.startsWith('https://') && pod.includes('.bhhs.hsfaffiliates.com');
   if (!isValidPod) {
-    setIsValidated(false)
-    setValidationError('Pod must start with https:// and contain .bhhs.hsfaffiliates.com')
-    return
+    setIsValidated(false);
+    setValidationError('Pod must start with https:// and contain .bhhs.hsfaffiliates.com');
+    return;
   }
 
-  // 2) call API now that both fields are filled
-  axios.get('https://dev.bhhs.hsfaffiliates.com/settings/subscriptions', {
-    headers: { 'x-api-key': apikey }
-  })
-  .then(() => {
-    setIsValidated(true)
-    setValidationError('')
-  })
-  .catch(() => {
-    setIsValidated(false)
-    setValidationError('Invalid API Key or Unauthorized.')
-  })
-}, [pod, apikey])
+  async function validateAndFetch() {
+    try {
+      const res = await axios.get('https://dev.bhhs.hsfaffiliates.com/settings/subscriptions', {
+        headers: { 'x-api-key': apikey }
+      });
+
+      const podName = extractPodName(pod);
+      const topics = getSubscriptionsForPod(res.data, podName);
+
+      setDynamicTopicOptions(topics); // NEW: store topics
+      setIsValidated(true);
+      setValidationError('');
+
+    } catch (err) {
+      setIsValidated(false);
+      setValidationError('Invalid API Key or Unauthorized.');
+    }
+  }
+
+  validateAndFetch();
+}, [pod, apikey]);
+
+function extractPodName(pod) {
+  return pod
+    .replace('https://', '')
+    .split('.')[0]; // take the first section
+}
+function getSubscriptionsForPod(subscriptions, podName) {
+  const match = subscriptions.items.find(item =>
+    item.agent.includes(`${podName}.dev.bhhs.hsfaffiliates.com`)
+  );
+
+  if (!match) return [];
+
+  return match.subscribes.map(sub => sub.replace('realestate/', ''));
+}
 //   async function validateCredentials(pod, apikey) {
 //   // 1) Pod format validation
 //   const isValidPod = pod.startsWith('https://') && pod.includes('.bhhs.hsfaffiliates.com');
@@ -254,10 +277,12 @@ const apikey = useWatch({ control, name: 'apikey' })
   
 />
          <Select
-          {...formData.topic}
-          control={control}
-          onSelect={topicSelected}
-        />
+  name="topic"
+  type="select"
+  options={dynamicTopicOptions}
+  control={control}
+  onSelect={topicSelected}
+/>
         <Select
           {...formData.numberOfMessages}
           control={control}

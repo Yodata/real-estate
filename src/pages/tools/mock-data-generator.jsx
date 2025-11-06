@@ -70,6 +70,9 @@ const messages = [
   'website#viewpropertyvaluereort',
 ]
 
+const noOfMessagesOptions = [
+  1,2,3,4,5,6,7,8,9,10
+]
 /*
   topic: '',
   targeturl: '',
@@ -86,6 +89,14 @@ const formData = {
     placeholder: 'select a topic',
     caption: undefined,
     required: true,
+  },
+  numberOfMessages:{
+    name: 'numberOfMessages',
+    type: 'select',
+    options: noOfMessagesOptions,
+    placeholder: 'select number of messages to generate',
+    caption: undefined,
+    required: true,
   }
 }
 
@@ -93,6 +104,7 @@ export default function MockDataGUI(props) {
   const { className } = props
   const [apiResponse, setApiResponse] = useState('')
   const [topic, setTopic] = useState('select a topic')
+  const [numberOfMessages, setNumberOfMessages] = useState('1')
   const formStyle = clsx('form-input', className)
   const {
     control,
@@ -111,8 +123,26 @@ export default function MockDataGUI(props) {
       // maxDepth: 3,
     },
   })
+
   const frm = useRef(null, handleFrmChange)
   const editorRef = useRef(null)
+
+  const content = {
+  target: {
+    name: 'pod',
+    type: 'text',
+    placeholder: 'https://<pod>.dev.bhhs.hsfaffiliates.com/',
+    caption: 'vendor pod name',
+    required: true,
+  },
+  apikey: {
+    name: 'apikey',
+    type: 'password',
+    placeholder: 'Un4omdlDleLpjXFDODgnif4b5nw3lfb2UunilnRtuM',
+    required: true,
+    caption: 'dev x-api-key of the vendor',
+  },
+}
 
   const onSubmit = (json) => {
     setTopic(json.topic)
@@ -146,6 +176,10 @@ export default function MockDataGUI(props) {
     console.log('TOPIC_SELECTED', e.target.value)
     setTopic(e.target.value)
   }
+  function numberOfMessagesSelected(e) {
+    console.log('No of Messages to Generate', e.target.value)
+    setNumberOfMessages(e.target.value)
+  }
 
   return (
     <>
@@ -154,10 +188,17 @@ export default function MockDataGUI(props) {
         <p>{topic}</p>
       </div>
       <form name="MockInputForm" onSubmit={handleSubmit(onSubmit, onError)}>
-        <Select
+        <Input {...content.target} control={control} />
+        <Input {...content.apikey} control={control} />
+         <Select
           {...formData.topic}
           control={control}
           onSelect={topicSelected}
+        />
+        <Select
+          {...formData.numberOfMessages}
+          control={control}
+          onSelect={numberOfMessagesSelected}
         />
         <Button type="submit">Submit</Button>
       </form>

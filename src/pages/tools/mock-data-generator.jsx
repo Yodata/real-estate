@@ -106,6 +106,8 @@ export default function MockDataGUI(props) {
   const [topic, setTopic] = useState('select a topic')
   const [numberOfMessages, setNumberOfMessages] = useState('1')
   const formStyle = clsx('form-input', className)
+  const pod = useWatch({ control, name: 'pod' })
+const apikey = useWatch({ control, name: 'apikey' })
   const [isValidated, setIsValidated] = useState(false);
   const [validationError, setValidationError] = useState('');
   const {

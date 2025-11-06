@@ -185,9 +185,9 @@ export default function MockDataGUI(props) {
   return (
     <>
       <h2>Create Fake Data</h2>
-      <div className="prose">
+      {/* <div className="prose">
         <p>{topic}</p>
-      </div>
+      </div> */}
       <form name="MockInputForm" onSubmit={handleSubmit(onSubmit, onError)}>
         <Input {...content.target} control={control} />
         <Input {...content.apikey} control={control} />

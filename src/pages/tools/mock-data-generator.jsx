@@ -115,6 +115,7 @@ export default function MockDataGUI(props) {
     useNativeValidation: true,
     defaultValues: {
       topic: '',
+      numberOfMessages: 1,
       // targeturl: '',
       // optionalsProbability: 1.0,
       // fixedProbability: false,

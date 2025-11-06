@@ -222,7 +222,7 @@ function getSubscriptionsForPod(subscriptions, podName) {
 }
 
   const onSubmit = (json) => {
-    setTopic(json.topic)
+    // setTopic(json.topic)
     const _topic = topic.replace('#', '/')
     const target = `/api/schema/mock/${_topic}`
     axios

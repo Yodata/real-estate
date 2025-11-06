@@ -1,5 +1,5 @@
 import React, { useState, useRef, Fragment } from 'react'
-import { useForm, Controller } from 'react-hook-form'
+import { useForm, Controller, useWatch } from 'react-hook-form'
 import { Select, Input } from '@/components/Forms'
 import { Button } from '@/components/Button'
 import Highlight, { defaultProps } from 'prism-react-renderer'
@@ -129,32 +129,56 @@ export default function MockDataGUI(props) {
 
   const frm = useRef(null, handleFrmChange)
   const editorRef = useRef(null)
-  async function validateCredentials(pod, apikey) {
-  // 1) Pod format validation
-  const isValidPod = pod.startsWith('https://') && pod.includes('.bhhs.hsfaffiliates.com');
+  React.useEffect(() => {
+  if (!pod || !apikey) return
 
+  // 1) check pod format
+  const isValidPod = pod.startsWith('https://') && pod.includes('.bhhs.hsfaffiliates.com')
   if (!isValidPod) {
-    setIsValidated(false);
-    setValidationError('Pod must start with https:// and contain .bhhs.hsfaffiliates.com');
-    return;
+    setIsValidated(false)
+    setValidationError('Pod must start with https:// and contain .bhhs.hsfaffiliates.com')
+    return
   }
 
-  try {
-    // 2) Validate API Key by hitting Subscriptions endpoint
-    const data = await axios.get('https://dev.bhhs.hsfaffiliates.com/settings/subscriptions', {
-      headers: {
-        'x-api-key': "R1BywylDleLpjXFDODgDFJ1Ni3UFbfb2UMfcMSRtuM",
-      }
-    });
-   console.log('Validation response data:', data);
+  // 2) call API now that both fields are filled
+  axios.get('https://dev.bhhs.hsfaffiliates.com/settings/subscriptions', {
+    headers: { 'x-api-key': apikey }
+  })
+  .then(() => {
+    setIsValidated(true)
+    setValidationError('')
+  })
+  .catch(() => {
+    setIsValidated(false)
+    setValidationError('Invalid API Key or Unauthorized.')
+  })
+}, [pod, apikey])
+//   async function validateCredentials(pod, apikey) {
+//   // 1) Pod format validation
+//   const isValidPod = pod.startsWith('https://') && pod.includes('.bhhs.hsfaffiliates.com');
 
-    setIsValidated(true);
-    setValidationError('');
-  } catch (err) {
-    setIsValidated(false);
-    setValidationError('Invalid API key or unauthorized access.');
-  }
-}
+//   if (!isValidPod) {
+//     setIsValidated(false);
+//     setValidationError('Pod must start with https:// and contain .bhhs.hsfaffiliates.com');
+//     return;
+//   }
+
+//   try {
+//     // 2) Validate API Key by hitting Subscriptions endpoint
+//     const data = await axios.get('https://dev.bhhs.hsfaffiliates.com/settings/subscriptions', {
+//       headers: {
+//         'x-api-key': "R1BywylDleLpjXFDODgDFJ1Ni3UFbfb2UMfcMSRtuM",
+//       }
+//     });
+//    console.log('Validation response data:', data);
+
+//     setIsValidated(true);
+//     setValidationError('');
+//   } catch (err) {
+//     setIsValidated(false);
+//     setValidationError('Invalid API key or unauthorized access.');
+//   }
+// }
   const content = {
   target: {
     name: 'pod',
@@ -219,21 +243,13 @@ export default function MockDataGUI(props) {
        <Input
   {...content.target}
   control={control}
-  onBlur={(e) => {
-    const pod = e.target.value;
-    const apikey = control._formValues.apikey;
-    if (pod && apikey) validateCredentials(pod, apikey);
-  }}
+ 
 />
 
 <Input
   {...content.apikey}
   control={control}
-  onBlur={(e) => {
-    const apikey = e.target.value;
-    const pod = control._formValues.pod;
-    if (pod && apikey) validateCredentials(pod, apikey);
-  }}
+  
 />
          <Select
           {...formData.topic}

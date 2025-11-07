@@ -176,7 +176,7 @@ function getSubscriptionsForPod(subscriptions, podName) {
 
   if (!match) return [];
 
-  return match.subscribes.map(sub => sub.replace('realestate/', ''));
+  return match.subscribes.map(sub => sub.replace('', ''));
 }
 //   async function validateCredentials(pod, apikey) {
 //   // 1) Pod format validation

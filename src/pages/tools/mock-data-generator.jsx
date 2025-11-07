@@ -108,6 +108,7 @@ export default function MockDataGUI(props) {
   const formStyle = clsx("form-input", className);
   const [isValidated, setIsValidated] = useState("");
   const [validationError, setValidationError] = useState("");
+  const [subscriptionsAvailable, setSubscriptionsAvailable] = useState(true);
   const {
     control,
     handleSubmit,
@@ -154,6 +155,22 @@ export default function MockDataGUI(props) {
       return false;
     }
   }
+  async function getSubscriptions(pod){
+    try {
+      
+      const res = await axios.get(
+        "https://dev.bhhs.hsfaffiliates.com/settings/subscriptions",
+          {
+            headers: { "x-api-key": "R1BywylDleLpjXFDODgDFJ1Ni3UFbfb2UMfcMSRtuM" },
+          }
+        );
+
+        const topics = getSubscriptionsForPod(res.data, pod);
+        return topics;
+      } catch (error) {
+        console.error("API Error:", error.response?.data || error.message);
+      }
+  } 
 
   React.useEffect(() => {
     if (!pod || !apikey) return;
@@ -176,19 +193,18 @@ export default function MockDataGUI(props) {
           setValidationError("Invalid API Key.");
           return;
         }
-        const res = await axios.get(
-          pod,
-          {
-            headers: { "x-api-key": apikey },
-          }
-        );
-
         const podName = extractPodName(pod);
-        const topics = getSubscriptionsForPod(res.data, podName);
+        const topics = await getSubscriptions(podName)
+        if(isValid && (!topics || topics.length ==0)){
+        setSubscriptionsAvailable(false)
+        }
+        else {
+          setSubscriptionsAvailable(true)
+          setDynamicTopicOptions(topics); // NEW: store topics
+          setIsValidated(true);
+          setValidationError("");
+        }
 
-        setDynamicTopicOptions(topics); // NEW: store topics
-        setIsValidated(true);
-        setValidationError("");
       } catch (err) {
         setIsValidated(false);
         setValidationError("Invalid API Key or Unauthorized.");
@@ -208,7 +224,7 @@ export default function MockDataGUI(props) {
 
     if (!match) return [];
 
-    return ["", match.subscribes.map((sub) => sub + "#add")];
+    return ["", ...match.subscribes.map((sub) => sub + "#add")];
   }
 
   const content = {
@@ -273,6 +289,9 @@ export default function MockDataGUI(props) {
         <Input {...content.apikey} control={control} />
        {isValidated == false? ( <p style={{ marginTop: '8px' }}>
                Invalid API Key
+        </p>):""}
+         {subscriptionsAvailable == false? ( <p style={{ marginTop: '8px' }}>
+              No subscriptions found for the provided pod.
         </p>):""}
         {isValidated == true
           ? [

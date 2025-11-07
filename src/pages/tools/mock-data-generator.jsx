@@ -276,18 +276,20 @@ function getSubscriptionsForPod(subscriptions, podName) {
   control={control}
   
 />
+{isValidated ? ( [
          <Select
   name="topic"
   type="select"
   options={dynamicTopicOptions}
   control={control}
   onChange={topicSelected}
-/>
+/>,
         <Select
           {...formData.numberOfMessages}
           control={control}
           onSelect={numberOfMessagesSelected}
-        />
+        />]
+        ):null}
         <Button type="submit">Submit</Button>
       </form>
       <Highlight

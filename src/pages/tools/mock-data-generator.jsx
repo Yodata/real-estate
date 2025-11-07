@@ -136,7 +136,7 @@ export default function MockDataGUI(props) {
   async function checkStagingApiKey(key) {
     try {
       const response = await axios.post(
-        `${API_BASE_URL}/checkSatgingApiKey`,
+        API_BASE_URL,
         { key },
         {
           headers: {

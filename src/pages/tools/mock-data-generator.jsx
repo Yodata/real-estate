@@ -176,7 +176,7 @@ function getSubscriptionsForPod(subscriptions, podName) {
 
   if (!match) return [];
 
-  return match.subscribes.map(sub => sub.replace('', ''));
+  return match.subscribes.map(sub => sub+"#add");
 }
 //   async function validateCredentials(pod, apikey) {
 //   // 1) Pod format validation

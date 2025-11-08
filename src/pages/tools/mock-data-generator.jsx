@@ -8,69 +8,69 @@ import axios from "axios";
 
 const API_BASE_URL =
   "https://vxkxcz70mg.execute-api.us-west-2.amazonaws.com/dev/checkSatgingApiKey";
-const messages = [
-  "award#create",
-  "award#delete",
-  "award#seriescreate",
-  "award#seriesdelete",
-  "award#seriesupdate",
-  "award#teamcreate",
-  "award#teamdelete",
-  "award#teammemberadd",
-  "award#teammemberremove",
-  "award#teamupdate",
-  "award#update",
-  "contact#activity",
-  "contact#add",
-  "contact#collectioncreate",
-  "contact#collectiondelete",
-  "contact#collectionmemberadd",
-  "contact#collectionmemberremove",
-  "contact#comment",
-  "contact#delete",
-  "contact#plancreate",
-  "contact#plandelete",
-  "contact#update",
-  "franchise#transactionreport",
-  "lead#accept",
-  "lead#add",
-  "lead#asssign",
-  "lead#reject",
-  "lead#retract",
-  "lead#update",
-  "listing#delete",
-  "listing#update",
-  "marketing#create",
-  "marketing#delete",
-  "marketing#memberadd",
-  "marketing#memberremove",
-  "marketingpreferences#subscribe",
-  "marketingpreferences#unsubscribe",
-  "profile#add",
-  "profile#serviceareaadd",
-  "profile#teamcreate",
-  "profile#teamdelete",
-  "profile#teammemberadd",
-  "profile#teammemberremove",
-  "profile#update",
-  "servicearea#create",
-  "servicearea#delete",
-  "servicearea#update",
-  "team#create",
-  "team#delete",
-  "website#askquestion",
-  "website#listingoffer",
-  "website#propertysearchsave",
-  "website#register",
-  "website#requestappointment",
-  "website#requestshowing",
-  "website#saveproperty",
-  "website#searchproperties",
-  "website#shareproperty",
-  "website#sharepropertyvaluereport",
-  "website#viewproperty",
-  "website#viewpropertyvaluereort",
-];
+// const messages = [
+//   "award#create",
+//   "award#delete",
+//   "award#seriescreate",
+//   "award#seriesdelete",
+//   "award#seriesupdate",
+//   "award#teamcreate",
+//   "award#teamdelete",
+//   "award#teammemberadd",
+//   "award#teammemberremove",
+//   "award#teamupdate",
+//   "award#update",
+//   "contact#activity",
+//   "contact#add",
+//   "contact#collectioncreate",
+//   "contact#collectiondelete",
+//   "contact#collectionmemberadd",
+//   "contact#collectionmemberremove",
+//   "contact#comment",
+//   "contact#delete",
+//   "contact#plancreate",
+//   "contact#plandelete",
+//   "contact#update",
+//   "franchise#transactionreport",
+//   "lead#accept",
+//   "lead#add",
+//   "lead#asssign",
+//   "lead#reject",
+//   "lead#retract",
+//   "lead#update",
+//   "listing#delete",
+//   "listing#update",
+//   "marketing#create",
+//   "marketing#delete",
+//   "marketing#memberadd",
+//   "marketing#memberremove",
+//   "marketingpreferences#subscribe",
+//   "marketingpreferences#unsubscribe",
+//   "profile#add",
+//   "profile#serviceareaadd",
+//   "profile#teamcreate",
+//   "profile#teamdelete",
+//   "profile#teammemberadd",
+//   "profile#teammemberremove",
+//   "profile#update",
+//   "servicearea#create",
+//   "servicearea#delete",
+//   "servicearea#update",
+//   "team#create",
+//   "team#delete",
+//   "website#askquestion",
+//   "website#listingoffer",
+//   "website#propertysearchsave",
+//   "website#register",
+//   "website#requestappointment",
+//   "website#requestshowing",
+//   "website#saveproperty",
+//   "website#searchproperties",
+//   "website#shareproperty",
+//   "website#sharepropertyvaluereport",
+//   "website#viewproperty",
+//   "website#viewpropertyvaluereort",
+// ];
 
 const noOfMessagesOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 /*
@@ -106,7 +106,7 @@ export default function MockDataGUI(props) {
   const [topic, setTopic] = useState("select a topic");
   const [numberOfMessages, setNumberOfMessages] = useState("1");
   const formStyle = clsx("form-input", className);
-  const [isValidated, setIsValidated] = useState("");
+  const [isValidated, setIsValidated] = useState(null);
   const [validationError, setValidationError] = useState("");
   const [subscriptionsAvailable, setSubscriptionsAvailable] = useState(true);
   const {
@@ -155,22 +155,23 @@ export default function MockDataGUI(props) {
       return false;
     }
   }
-  async function getSubscriptions(pod){
+  async function getSubscriptions(pod) {
     try {
-      
       const res = await axios.get(
         "https://dev.bhhs.hsfaffiliates.com/settings/subscriptions",
-          {
-            headers: { "x-api-key": "R1BywylDleLpjXFDODgDFJ1Ni3UFbfb2UMfcMSRtuM" },
-          }
-        );
+        {
+          headers: {
+            "x-api-key": "R1BywylDleLpjXFDODgDFJ1Ni3UFbfb2UMfcMSRtuM",
+          },
+        }
+      );
 
-        const topics = getSubscriptionsForPod(res.data, pod);
-        return topics;
-      } catch (error) {
-        console.error("API Error:", error.response?.data || error.message);
-      }
-  } 
+      const topics = getSubscriptionsForPod(res.data, pod);
+      return topics;
+    } catch (error) {
+      console.error("API Error:", error.response?.data || error.message);
+    }
+  }
 
   React.useEffect(() => {
     if (!pod || !apikey) return;
@@ -191,20 +192,19 @@ export default function MockDataGUI(props) {
         if (!isValid) {
           setIsValidated(false);
           setValidationError("Invalid API Key.");
+          setSubscriptionsAvailable(true);
           return;
         }
         const podName = extractPodName(pod);
-        const topics = await getSubscriptions(podName)
-        if(isValid && (!topics || topics.length ==0)){
-        setSubscriptionsAvailable(false)
-        }
-        else {
-          setSubscriptionsAvailable(true)
+        const topics = await getSubscriptions(podName);
+        if (!topics || topics.length == 0) {
+          setSubscriptionsAvailable(false);
+        } else if (isValid) {
+          setSubscriptionsAvailable(true);
           setDynamicTopicOptions(topics); // NEW: store topics
           setIsValidated(true);
           setValidationError("");
         }
-
       } catch (err) {
         setIsValidated(false);
         setValidationError("Invalid API Key or Unauthorized.");
@@ -287,12 +287,15 @@ export default function MockDataGUI(props) {
       <form name="MockInputForm" onSubmit={handleSubmit(onSubmit, onError)}>
         <Input {...content.target} control={control} />
         <Input {...content.apikey} control={control} />
-       {isValidated == false? ( <p style={{ marginTop: '8px' }}>
-               Invalid API Key
-        </p>):""}
-         {subscriptionsAvailable == false? ( <p style={{ marginTop: '8px' }}>
-              No subscriptions found for the provided pod.
-        </p>):""}
+        {isValidated === false && (
+          <p style={{ marginTop: "8px" }}>Invalid API Key</p>
+        )}
+
+        {isValidated === true && subscriptionsAvailable === false && (
+          <p style={{ marginTop: "8px" }}>
+            No subscriptions found for the provided pod.
+          </p>
+        )}
         {isValidated == true
           ? [
               <Select

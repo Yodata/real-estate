@@ -210,7 +210,9 @@ export default function MockDataGUI(props) {
         
       } catch (err) {
         setIsValidated(false);
-        setValidationError("Invalid API Key or Unauthorized.");
+  setSubscriptionsAvailable(false);
+  setDynamicTopicOptions([]);   // <-- critical
+  setValidationError("Invalid API Key or Unauthorized.");
       }
     }
 
@@ -299,7 +301,7 @@ export default function MockDataGUI(props) {
             No subscriptions found for the provided pod.
           </p>
         )}
-        {isValidated && subscriptionsAvailable && (
+        {isValidated === true && subscriptionsAvailable === true  && (
   <>
     <Select
       name="topic"

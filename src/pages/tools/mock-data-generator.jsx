@@ -193,18 +193,21 @@ export default function MockDataGUI(props) {
           setIsValidated(false);
           setValidationError("Invalid API Key.");
           setSubscriptionsAvailable(true);
+          setDynamicTopicOptions([]);
           return;
         }
         const podName = extractPodName(pod);
         const topics = await getSubscriptions(podName);
         if (!topics || topics.length == 0) {
           setSubscriptionsAvailable(false);
-        } else if (isValid) {
+           setDynamicTopicOptions([]);
+           return
+        } 
           setSubscriptionsAvailable(true);
           setDynamicTopicOptions(topics); // NEW: store topics
           setIsValidated(true);
           setValidationError("");
-        }
+        
       } catch (err) {
         setIsValidated(false);
         setValidationError("Invalid API Key or Unauthorized.");
@@ -296,22 +299,22 @@ export default function MockDataGUI(props) {
             No subscriptions found for the provided pod.
           </p>
         )}
-        {isValidated == true
-          ? [
-              <Select
-                name="topic"
-                type="select"
-                options={dynamicTopicOptions}
-                control={control}
-                onChange={topicSelected}
-              />,
-              <Select
-                {...formData.numberOfMessages}
-                control={control}
-                onSelect={numberOfMessagesSelected}
-              />,
-            ]
-          : null}
+        {isValidated && subscriptionsAvailable && (
+  <>
+    <Select
+      name="topic"
+      type="select"
+      options={dynamicTopicOptions}
+      control={control}
+      onChange={topicSelected}
+    />
+    <Select
+      {...formData.numberOfMessages}
+      control={control}
+      onSelect={numberOfMessagesSelected}
+    />
+  </>
+)}
         <Button type="submit">Submit</Button>
       </form>
       <Highlight

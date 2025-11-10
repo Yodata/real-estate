@@ -5,7 +5,7 @@ import { Button } from "@/components/Button";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import clsx from "clsx";
 import axios from "axios";
-import { profile } from "console";
+
 
 const API_BASE_URL =
   "https://vxkxcz70mg.execute-api.us-west-2.amazonaws.com/dev/checkSatgingApiKey";

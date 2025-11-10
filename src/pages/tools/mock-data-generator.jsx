@@ -192,6 +192,8 @@ export default function MockDataGUI(props) {
           setValidationError("Invalid API Key.");
           setSubscriptionsAvailable(true);
           setDynamicTopicOptions([]);
+          setNumberOfMessages("1");
+          setTopic("select a topic");
           return;
         }
         const podName = extractPodName(pod);

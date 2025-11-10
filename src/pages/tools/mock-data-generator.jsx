@@ -317,7 +317,7 @@ export default function MockDataGUI(props) {
 );
 
 const userActions = getActionsFromSubscriptions(cleanedSubs);
-    return userActions;
+    return ["",...userActions];
   
   }
 

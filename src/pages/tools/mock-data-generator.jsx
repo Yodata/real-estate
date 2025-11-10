@@ -5,72 +5,85 @@ import { Button } from "@/components/Button";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import clsx from "clsx";
 import axios from "axios";
+import { profile } from "console";
 
 const API_BASE_URL =
   "https://vxkxcz70mg.execute-api.us-west-2.amazonaws.com/dev/checkSatgingApiKey";
-// const messages = [
-//   "award#create",
-//   "award#delete",
-//   "award#seriescreate",
-//   "award#seriesdelete",
-//   "award#seriesupdate",
-//   "award#teamcreate",
-//   "award#teamdelete",
-//   "award#teammemberadd",
-//   "award#teammemberremove",
-//   "award#teamupdate",
-//   "award#update",
-//   "contact#activity",
-//   "contact#add",
-//   "contact#collectioncreate",
-//   "contact#collectiondelete",
-//   "contact#collectionmemberadd",
-//   "contact#collectionmemberremove",
-//   "contact#comment",
-//   "contact#delete",
-//   "contact#plancreate",
-//   "contact#plandelete",
-//   "contact#update",
-//   "franchise#transactionreport",
-//   "lead#accept",
-//   "lead#add",
-//   "lead#asssign",
-//   "lead#reject",
-//   "lead#retract",
-//   "lead#update",
-//   "listing#delete",
-//   "listing#update",
-//   "marketing#create",
-//   "marketing#delete",
-//   "marketing#memberadd",
-//   "marketing#memberremove",
-//   "marketingpreferences#subscribe",
-//   "marketingpreferences#unsubscribe",
-//   "profile#add",
-//   "profile#serviceareaadd",
-//   "profile#teamcreate",
-//   "profile#teamdelete",
-//   "profile#teammemberadd",
-//   "profile#teammemberremove",
-//   "profile#update",
-//   "servicearea#create",
-//   "servicearea#delete",
-//   "servicearea#update",
-//   "team#create",
-//   "team#delete",
-//   "website#askquestion",
-//   "website#listingoffer",
-//   "website#propertysearchsave",
-//   "website#register",
-//   "website#requestappointment",
-//   "website#requestshowing",
-//   "website#saveproperty",
-//   "website#searchproperties",
-//   "website#shareproperty",
-//   "website#sharepropertyvaluereport",
-//   "website#viewproperty",
-//   "website#viewpropertyvaluereort",
-// ];
+const actions = {
+ award:[
+  "realestate/award#delete",
+  "realestate/award#seriescreate",
+  "realestate/award#seriesdelete",
+  "realestate/award#seriesupdate",
+  "realestate/award#teamcreate",
+  "realestate/award#teammemberadd",
+  "realestate/award#teammemberremove",
+  "realestate/award#teamupdate",
+  "realestate/award#update",
+  "realestate/award#create" ],
+  contact:[
+  "realestate/contact#activity",
+  "realestate/contact#add",
+  "realestate/contact#collectioncreate",
+  "realestate/contact#collectiondelete",
+  "realestate/contact#collectionmemberadd",
+  "realestate/contact#collectionmemberremove",
+  "realestate/contact#comment",
+  "realestate/contact#delete",
+  "realestate/contact#planupdate",
+  "realestate/contact#plandelete",
+  "realestate/contact#update"] ,
+
+ franchise:[ "realestate/franchise#transactionreport",
+  "realestate/franchise#listingreport"] , 
+lead: [ "realestate/lead#accept",
+  "realestate/lead#add",
+  "realestate/lead#asssign",
+  "realestate/lead#reject",
+  "realestate/lead#retract",
+  "realestate/lead#update"] ,
+  listing: [
+  "realestate/listing#delete",
+  "realestate/listing#update",
+  "realestate/listing#updatebuyercompensation"] ,
+ marketigprogram: ["realestate/marketingprogram#create",
+  "realestate/marketingprogram#update",
+  "realestate/marketingprogram#delete",
+  "realestate/marketingprogram#memberadd",
+  "realestate/marketingprogram#memberremove",
+  "realestate/marketingprogram#openhouseeventsummary"] ,
+  marketingpreferences: [
+  "realestate/marketingpreferences#subscribe",
+  "realestate/marketingpreferences#unsubscribe"] ,
+  profile:[
+  "realestate/profile#add",
+  "realestate/profile#serviceareaadd",
+  "realestate/profile#teamcreate",
+  "realestate/profile#teamdelete",
+  "realestate/profile#teammemberadd",
+  "realestate/profile#teammemberremove",
+  "realestate/profile#update"] ,
+  servicearea:[
+  "realestate/servicearea#create",
+  "realestate/servicearea#delete",
+  "realestate/servicearea#update"],
+  website:[
+  "realestate/website#askquestion",
+  "realestate/website#listingoffer",
+  "realestate/website#register",
+  "realestate/website#requestappointment",
+  "realestate/website#requestshowing",
+  "realestate/website#shareproperty",
+  "realestate/website#saveproperty",
+  "realestate/website#propertysearchsave",
+  "realestate/website#searchproperties",
+  "realestate/website#viewproperty",
+  "realestate/website#viewpropertyvaluereport",
+  "realestate/website#sharepropertyvaluereport",
+  "realestate/website#subscribemarketactivityreport",
+  "realestate/website#listinginquiry",
+  "realestate/website#planningguide"]
+};
 
 const noOfMessagesOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 /*
@@ -278,6 +291,20 @@ export default function MockDataGUI(props) {
   function extractPodName(pod) {
     return pod.replace("https://", "").split(".")[0]; // take the first section
   }
+
+  function getActionsFromSubscriptions(subscriptions) {
+  const result = [];
+
+  subscriptions.forEach((sub) => {
+    const key = sub.toLowerCase(); // ensure consistent match
+    if (actions[key]) {
+      result.push(...actions[key]);
+    }
+  });
+
+  return result;
+}
+
   function getSubscriptionsForPod(subscriptions, podName) {
     const match = subscriptions.items.find((item) =>
       item.agent.includes(`${podName}.dev.bhhs.hsfaffiliates.com`)
@@ -285,7 +312,13 @@ export default function MockDataGUI(props) {
 
     if (!match) return [];
 
-    return ["", ...match.subscribes.map((sub) => sub + "#add")];
+    const cleanedSubs = match.subscribes.map((sub) =>
+  sub.replace("realestate/", "")
+);
+
+const userActions = getActionsFromSubscriptions(cleanedSubs);
+    return userActions;
+  
   }
 
   const content = {

@@ -172,52 +172,108 @@ export default function MockDataGUI(props) {
   }
 
   React.useEffect(() => {
-    if (!pod || !apikey) return;
+  if (!pod || !apikey) return;
 
-    const isValidPod =
-      pod.startsWith("https://") && pod.includes(".bhhs.hsfaffiliates.com");
-    if (!isValidPod) {
-      setIsValidated(false);
-      setValidationError(
-        "Pod must start with https:// and contain .bhhs.hsfaffiliates.com"
-      );
-      return;
-    }
+  const controller = new AbortController(); // <-- create controller
+  const { signal } = controller;
 
-    async function validateAndFetch() {
-      try {
-        const isValid = await checkStagingApiKey(apikey);
-        if (!isValid) {
-          setIsValidated(false);
-          setValidationError("Invalid API Key.");
-          setSubscriptionsAvailable(true);
-          setDynamicTopicOptions([]);
-          setNumberOfMessages("1");
-          setTopic("select a topic");
-          return;
-        }
-        const podName = extractPodName(pod);
-        const topics = await getSubscriptions(podName);
-        if (!topics || topics.length == 0) {
-          setSubscriptionsAvailable(false);
-           setDynamicTopicOptions([]);
-           return
-        } 
-          setSubscriptionsAvailable(true);
-          setDynamicTopicOptions(topics); // NEW: store topics
-          setIsValidated(true);
-          setValidationError("");
-        
-      } catch (err) {
+  const isValidPod =
+    pod.startsWith("https://") && pod.includes(".bhhs.hsfaffiliates.com");
+
+  if (!isValidPod) {
+    setIsValidated(false);
+    setValidationError("Pod must start with https:// and contain .bhhs.hsfaffiliates.com");
+    return;
+  }
+
+  async function validateAndFetch() {
+    try {
+      const isValid = await checkStagingApiKey(apikey, signal);
+      if (signal.aborted) return; // <-- do nothing if cancelled
+
+      if (!isValid) {
         setIsValidated(false);
-  setSubscriptionsAvailable(false);
-  setDynamicTopicOptions([]);   // <-- critical
-  setValidationError("Invalid API Key or Unauthorized.");
+        setValidationError("Invalid API Key.");
+        setSubscriptionsAvailable(true);
+        setDynamicTopicOptions([]);
+        return;
       }
-    }
 
-    validateAndFetch();
-  }, [pod, apikey]);
+      const podName = extractPodName(pod);
+      const topics = await getSubscriptions(podName);
+      if (signal.aborted) return;
+
+      if (!topics || topics.length === 0) {
+        setSubscriptionsAvailable(false);
+        setDynamicTopicOptions([]);
+        return;
+      }
+
+      setIsValidated(true);
+      setValidationError("");
+      setSubscriptionsAvailable(true);
+      setDynamicTopicOptions(topics);
+    } catch (err) {
+      if (signal.aborted) return;
+      setIsValidated(false);
+      setSubscriptionsAvailable(false);
+      setDynamicTopicOptions([]);
+      setValidationError("Invalid API Key or Unauthorized.");
+    }
+  }
+
+  validateAndFetch();
+
+  return () => controller.abort(); // <-- CANCEL PREVIOUS REQUEST ON CHANGE
+}, [pod, apikey]);
+
+  // React.useEffect(() => {
+  //   if (!pod || !apikey) return;
+
+  //   const isValidPod =
+  //     pod.startsWith("https://") && pod.includes(".bhhs.hsfaffiliates.com");
+  //   if (!isValidPod) {
+  //     setIsValidated(false);
+  //     setValidationError(
+  //       "Pod must start with https:// and contain .bhhs.hsfaffiliates.com"
+  //     );
+  //     return;
+  //   }
+
+  //   async function validateAndFetch() {
+  //     try {
+  //       const isValid = await checkStagingApiKey(apikey);
+  //       if (!isValid) {
+  //         setIsValidated(false);
+  //         setValidationError("Invalid API Key.");
+  //         setSubscriptionsAvailable(true);
+  //         setDynamicTopicOptions([]);
+  //         setNumberOfMessages("1");
+  //         setTopic("select a topic");
+  //         return;
+  //       }
+  //       const podName = extractPodName(pod);
+  //       const topics = await getSubscriptions(podName);
+  //       if (!topics || topics.length == 0) {
+  //         setSubscriptionsAvailable(false);
+  //          setDynamicTopicOptions([]);
+  //          return
+  //       } 
+  //         setSubscriptionsAvailable(true);
+  //         setDynamicTopicOptions(topics); // NEW: store topics
+  //         setIsValidated(true);
+  //         setValidationError("");
+        
+  //     } catch (err) {
+  //       setIsValidated(false);
+  // setSubscriptionsAvailable(false);
+  // setDynamicTopicOptions([]);   // <-- critical
+  // setValidationError("Invalid API Key or Unauthorized.");
+  //     }
+  //   }
+
+  //   validateAndFetch();
+  // }, [pod, apikey]);
 
   function extractPodName(pod) {
     return pod.replace("https://", "").split(".")[0]; // take the first section

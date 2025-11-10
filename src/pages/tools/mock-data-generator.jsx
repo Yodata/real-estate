@@ -135,26 +135,24 @@ export default function MockDataGUI(props) {
   const [dynamicTopicOptions, setDynamicTopicOptions] = useState([]);
 
   async function checkStagingApiKey(key) {
-    try {
-      const response = await axios.post(
-        API_BASE_URL,
-        { key },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+  try {
+    const response = await axios.post(
+      API_BASE_URL,
+      { key },
+      {
+        headers: { "Content-Type": "application/json" }
+      }
+    );
 
-      // If the API returned a valid response, treat as success
-      return !!response.data; // converts truthy to true and falsy to false
-    } catch (error) {
-      console.error("API Error:", error.response?.data || error.message);
+    if (response.status !== 200) return false;
 
-      // Any failure => return false
-      return false;
-    }
+    return Boolean(response.data);
+  } catch (error) {
+    console.error("API Error:", error.response?.data || error.message);
+    return false;
   }
+}
+
   async function getSubscriptions(pod) {
     try {
       const res = await axios.get(

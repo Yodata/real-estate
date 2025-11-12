@@ -11,42 +11,47 @@ const API_BASE_URL =
   "https://vxkxcz70mg.execute-api.us-west-2.amazonaws.com/dev/checkSatgingApiKey";
 const actions = {
  award:[
-  "realestate/award#delete",
-  "realestate/award#seriescreate",
-  "realestate/award#seriesdelete",
-  "realestate/award#seriesupdate",
+  // "realestate/award#delete",//
+  // "realestate/award#seriescreate",//
+  // "realestate/award#seriesdelete",//
+  // "realestate/award#seriesupdate",//
   "realestate/award#teamcreate",
   "realestate/award#teammemberadd",
   "realestate/award#teammemberremove",
   "realestate/award#teamupdate",
-  "realestate/award#update",
-  "realestate/award#create" ],
+  // "realestate/award#update",//
+  // "realestate/award#create"//
+ ],
   contact:[
-  "realestate/contact#activity",
+  // "realestate/contact#activity",//
   "realestate/contact#add",
-  "realestate/contact#collectioncreate",
-  "realestate/contact#collectiondelete",
-  "realestate/contact#collectionmemberadd",
-  "realestate/contact#collectionmemberremove",
-  "realestate/contact#comment",
+  // "realestate/contact#collectioncreate",//
+  // "realestate/contact#collectiondelete",//
+  // "realestate/contact#collectionmemberadd",//
+  // "realestate/contact#collectionmemberremove",//
+  // "realestate/contact#comment",//
   "realestate/contact#delete",
-  "realestate/contact#planupdate",
-  "realestate/contact#plandelete",
+  // "realestate/contact#planupdate",//
+  // "realestate/contact#plandelete",//
   "realestate/contact#update"] ,
 
- franchise:[ "realestate/franchise#transactionreport",
-  "realestate/franchise#listingreport"] , 
-lead: [ "realestate/lead#accept",
-  "realestate/lead#add",
-  "realestate/lead#asssign",
-  "realestate/lead#reject",
-  "realestate/lead#retract",
+ franchise:[ 
+  // "realestate/franchise#transactionreport",//
+  // "realestate/franchise#listingreport"
+   ], //
+lead: [ 
+  "realestate/lead#accept",
+  // "realestate/lead#add",//
+  // "realestate/lead#asssign",//
+  // "realestate/lead#reject",//
+  // "realestate/lead#retract",//
   "realestate/lead#update"] ,
   listing: [
   "realestate/listing#delete",
   "realestate/listing#update",
   "realestate/listing#updatebuyercompensation"] ,
- marketigprogram: ["realestate/marketingprogram#create",
+ marketigprogram: [
+  "realestate/marketingprogram#create",
   "realestate/marketingprogram#update",
   "realestate/marketingprogram#delete",
   "realestate/marketingprogram#memberadd",
@@ -57,9 +62,9 @@ lead: [ "realestate/lead#accept",
   "realestate/marketingpreferences#unsubscribe"] ,
   profile:[
   "realestate/profile#add",
-  "realestate/profile#serviceareaadd",
+  // "realestate/profile#serviceareaadd",//
   "realestate/profile#teamcreate",
-  "realestate/profile#teamdelete",
+  // "realestate/profile#teamdelete",//
   "realestate/profile#teammemberadd",
   "realestate/profile#teammemberremove",
   "realestate/profile#update"] ,
@@ -71,17 +76,17 @@ lead: [ "realestate/lead#accept",
   "realestate/website#askquestion",
   "realestate/website#listingoffer",
   "realestate/website#register",
-  "realestate/website#requestappointment",
+  // "realestate/website#requestappointment",//
   "realestate/website#requestshowing",
   "realestate/website#shareproperty",
   "realestate/website#saveproperty",
   "realestate/website#propertysearchsave",
-  "realestate/website#searchproperties",
-  "realestate/website#viewproperty",
+  // "realestate/website#searchproperties",//
+  // "realestate/website#viewproperty", //
   "realestate/website#viewpropertyvaluereport",
   "realestate/website#sharepropertyvaluereport",
   "realestate/website#subscribemarketactivityreport",
-  "realestate/website#listinginquiry",
+  // "realestate/website#listinginquiry",//
   "realestate/website#planningguide"]
 };
 
@@ -289,8 +294,11 @@ export default function MockDataGUI(props) {
   // }, [pod, apikey]);
 
   function extractPodName(pod) {
-    return pod.replace("https://", "").split(".")[0]; // take the first section
-  }
+  return pod
+    .replace(/^https?:\/\//, "") // removes http:// or https://
+    .replace(/\/$/, "") // removes trailing slash if any
+    .split(".")[0]; // take first section (e.g., "aem-web-dev")
+}
 
   function getActionsFromSubscriptions(subscriptions) {
   const result = [];
@@ -338,21 +346,127 @@ const userActions = getActionsFromSubscriptions(cleanedSubs);
     },
   };
 
-  const onSubmit = (json) => {
-    setTopic(json.topic);
-    const _topic = json.topic.replace("#", "/");
-    const target = `/api/schema/mock/${_topic}`;
-    axios
-      .get(target)
-      .then((res) => {
-        let code = JSON.stringify(res.data, null, 2);
-        setApiResponse(code);
-      })
-      .catch((error) => {
-        console.error(error);
-        setApiResponse(error.message);
-      });
-  };
+const callPublishApi = async (body, setApiResponse) => {
+  const apiUrl = "https://gq2x4idumg.execute-api.us-west-2.amazonaws.com/mockData"; // replace with real endpoint
+
+  try {
+    const response = await axios.post(apiUrl, body, {
+      headers: { "Content-Type": "application/json" },
+      timeout: 15000,
+    });
+
+    console.log("✅ API Response Status:", response.status);
+    console.log("✅ API Response Data:", response.data);
+
+    // ✅ Format and set response JSON
+    const formatted = JSON.stringify(response.data, null, 2);
+    setApiResponse(formatted);
+  } catch (error) {
+    let errorMessage;
+
+    if (error.response) {
+      console.error("❌ API Error:", error.response.status, error.response.data);
+      errorMessage = JSON.stringify(error.response.data, null, 2);
+    } else if (error.request) {
+      console.error("❌ No response received from server:", error.request);
+      errorMessage = "No response received from server.";
+    } else {
+      console.error("❌ Request setup error:", error.message);
+      errorMessage = error.message;
+    }
+
+    // ✅ Set readable error message in UI
+    setApiResponse(errorMessage);
+  }
+};
+
+function extractPod(pod) {
+  return pod
+    .replace(/^https?:\/\//, "") // remove http:// or https://
+    .replace(/\/$/, ""); // remove trailing slash
+}
+ const onSubmit = async (json) => {
+  const pod = json.pod?.trim();
+  const topic = json.topic?.trim();
+  const messages = Number(numberOfMessages);
+  const bucket = "reflexmockdata";
+
+  // --- 1️⃣ Basic presence validation ---
+  if (!pod || !topic || !messages || !bucket) {
+    setApiResponse(
+      JSON.stringify(
+        {
+          status: "error",
+          message: "Missing required fields.",
+          missing: {
+            pod: !pod ? "required" : undefined,
+            topic: !topic ? "required" : undefined,
+            messages: !messages ? "required" : undefined,
+            bucket: !bucket ? "required" : undefined,
+          },
+        },
+        null,
+        2
+      )
+    );
+    return;
+  }
+
+  // --- 2️⃣ Validate pod format ---
+  const validPodSuffix = "dev.bhhs.hsfaffiliates.com";
+  if (
+    !pod.endsWith(validPodSuffix) &&
+    !pod.endsWith(`${validPodSuffix}/`)
+  ) {
+    setApiResponse(
+      JSON.stringify(
+        { status: "error", message: `Pod must end with "${validPodSuffix}"` },
+        null,
+        2
+      )
+    );
+    return;
+  }
+
+  // --- 3️⃣ Validate messages count ---
+  if (isNaN(messages) || messages <= 0) {
+    setApiResponse(
+      JSON.stringify(
+        { status: "error", message: "Messages must be a valid number greater than 0." },
+        null,
+        2
+      )
+    );
+    return;
+  }
+
+  if (messages > 10) {
+    setApiResponse(
+      JSON.stringify(
+        { status: "error", message: "Messages cannot exceed 10." },
+        null,
+        2
+      )
+    );
+    return;
+  }
+
+  // --- 4️⃣ Sanitize inputs ---
+  const topicSlug = topic.replace("#", "").replace("/", "");
+  const _pod = extractPod(pod);
+
+  // --- 5️⃣ Proceed to API call ---
+  await callPublishApi(
+    {
+      pod: _pod,
+      bucket,
+      path: `${topicSlug}.json`,
+      messages,
+    },
+    setApiResponse
+  );
+};
+
 
   const onError = (input) => {
     console.error("ERROR", errors);

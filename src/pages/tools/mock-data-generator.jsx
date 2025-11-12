@@ -452,7 +452,7 @@ function extractPod(pod) {
   }
 
   // --- 4️⃣ Sanitize inputs ---
-  const topicSlug = topic.replace("#", "").replace("/", "");
+  const topicSlug = topic.replace("#", "/");
   const _pod = extractPod(pod);
 
   // --- 5️⃣ Proceed to API call ---

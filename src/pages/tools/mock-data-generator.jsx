@@ -189,10 +189,11 @@ export default function MockDataGUI(props) {
     }
   }
 
-  React.useEffect(() => {
+ React.useEffect(() => {
+  // Skip until both fields have values
   if (!pod || !apikey) return;
 
-  const controller = new AbortController(); // <-- create controller
+  const controller = new AbortController();
   const { signal } = controller;
 
   const isValidPod =
@@ -200,14 +201,22 @@ export default function MockDataGUI(props) {
 
   if (!isValidPod) {
     setIsValidated(false);
-    setValidationError("Pod must start with https:// and contain .bhhs.hsfaffiliates.com");
+    setValidationError(
+      "Pod must start with https:// and contain .bhhs.hsfaffiliates.com"
+    );
+    setDynamicTopicOptions([]);
     return;
   }
+
+  // Reset validation state each time either value changes
+  setIsValidated(null);
+  setValidationError("");
+  setDynamicTopicOptions([]);
 
   async function validateAndFetch() {
     try {
       const isValid = await checkStagingApiKey(apikey, signal);
-      if (signal.aborted) return; // <-- do nothing if cancelled
+      if (signal.aborted) return;
 
       if (!isValid) {
         setIsValidated(false);
@@ -242,56 +251,9 @@ export default function MockDataGUI(props) {
 
   validateAndFetch();
 
-  return () => controller.abort(); // <-- CANCEL PREVIOUS REQUEST ON CHANGE
+  return () => controller.abort();
 }, [pod, apikey]);
 
-  // React.useEffect(() => {
-  //   if (!pod || !apikey) return;
-
-  //   const isValidPod =
-  //     pod.startsWith("https://") && pod.includes(".bhhs.hsfaffiliates.com");
-  //   if (!isValidPod) {
-  //     setIsValidated(false);
-  //     setValidationError(
-  //       "Pod must start with https:// and contain .bhhs.hsfaffiliates.com"
-  //     );
-  //     return;
-  //   }
-
-  //   async function validateAndFetch() {
-  //     try {
-  //       const isValid = await checkStagingApiKey(apikey);
-  //       if (!isValid) {
-  //         setIsValidated(false);
-  //         setValidationError("Invalid API Key.");
-  //         setSubscriptionsAvailable(true);
-  //         setDynamicTopicOptions([]);
-  //         setNumberOfMessages("1");
-  //         setTopic("select a topic");
-  //         return;
-  //       }
-  //       const podName = extractPodName(pod);
-  //       const topics = await getSubscriptions(podName);
-  //       if (!topics || topics.length == 0) {
-  //         setSubscriptionsAvailable(false);
-  //          setDynamicTopicOptions([]);
-  //          return
-  //       } 
-  //         setSubscriptionsAvailable(true);
-  //         setDynamicTopicOptions(topics); // NEW: store topics
-  //         setIsValidated(true);
-  //         setValidationError("");
-        
-  //     } catch (err) {
-  //       setIsValidated(false);
-  // setSubscriptionsAvailable(false);
-  // setDynamicTopicOptions([]);   // <-- critical
-  // setValidationError("Invalid API Key or Unauthorized.");
-  //     }
-  //   }
-
-  //   validateAndFetch();
-  // }, [pod, apikey]);
 
   function extractPodName(pod) {
   return pod

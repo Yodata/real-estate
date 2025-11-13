@@ -499,12 +499,14 @@ export default function MockDataGUI(props) {
             />
           </>
         )}
-        <Button
+        {isValidated === true && subscriptionsAvailable === true &&
+          <Button
           type="submit"
           disabled={!isValidated || !subscriptionsAvailable}
-        >
+          >
           Submit
         </Button>
+        }
       </form>
       <Highlight
         {...defaultProps}

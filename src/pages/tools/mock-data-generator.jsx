@@ -366,7 +366,7 @@ export default function MockDataGUI(props) {
   const onSubmit = async (json) => {
     const pod = json.pod?.trim();
     const topic = json.topic?.trim();
-    const messages = Number(numberOfMessages);
+    const messages = Number(json.numberOfMessages);
     const bucket = "reflexmockdata";
 
     // --- 1️⃣ Basic presence validation ---
@@ -493,9 +493,9 @@ export default function MockDataGUI(props) {
             <Select
               {...formData.numberOfMessages}
               control={control}
-              onChange={(e) =>
-                setNumberOfMessages(parseInt(e.target.value, 10))
-              }
+              // onChange={(e) =>
+              //   setNumberOfMessages(parseInt(e.target.value, 10))
+              // }
             />
           </>
         )}

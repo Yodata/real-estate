@@ -6,13 +6,18 @@ title: contact
 ### subscribe contact events
 
 * [contact#add](message/contact.add)
-* [contact#comment](message/contact.comment)
 * [contact#delete](message/contact.delete)
 * [contact#update](message/contact.update)
-* [contact#plandelete](message/contact.plandelete)
-* [contact#planupdate](message/contact.planupdate)
-* [contact#collectioncreate](message/contact.collectioncreate)
-* [contact#collectiondelete](message/contact.collectiondelete)
-* [contact#collectionmemberadd](message/contact.collectionmemberadd)
-* [contact#collectionmemberremove](message/contact.collectionmemberremove)
+
+
+### These are not in use as of now
+
+- **realestate/contact#activity**
+- **realestate/contact#collectioncreate**
+- **realestate/contact#collectiondelete**
+- **realestate/contact#collectionmemberadd**
+- **realestate/contact#collectionmemberremove**
+- **realestate/contact#comment**
+- **realestate/contact#plandelete**
+- **realestate/contact#planupdate**
 

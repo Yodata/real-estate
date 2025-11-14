@@ -22,29 +22,16 @@ const actions = {
     // "realestate/award#create"//
   ],
   contact: [
-    // "realestate/contact#activity",//
     "realestate/contact#add",
-    // "realestate/contact#collectioncreate",//
-    // "realestate/contact#collectiondelete",//
-    // "realestate/contact#collectionmemberadd",//
-    // "realestate/contact#collectionmemberremove",//
-    // "realestate/contact#comment",//
     "realestate/contact#delete",
-    // "realestate/contact#planupdate",//
-    // "realestate/contact#plandelete",//
     "realestate/contact#update",
   ],
 
   franchise: [
     // "realestate/franchise#transactionreport",//
-    // "realestate/franchise#listingreport"
-  ], //
+  ], 
   lead: [
     "realestate/lead#accept",
-    // "realestate/lead#add",//
-    // "realestate/lead#asssign",//
-    // "realestate/lead#reject",//
-    // "realestate/lead#retract",//
     "realestate/lead#update",
   ],
   listing: [
@@ -66,9 +53,8 @@ const actions = {
   ],
   profile: [
     "realestate/profile#add",
-    // "realestate/profile#serviceareaadd",//
     "realestate/profile#teamcreate",
-    // "realestate/profile#teamdelete",//
+    "realestate/profile#teamdelete",
     "realestate/profile#teammemberadd",
     "realestate/profile#teammemberremove",
     "realestate/profile#update",
@@ -82,17 +68,15 @@ const actions = {
     "realestate/website#askquestion",
     "realestate/website#listingoffer",
     "realestate/website#register",
-    // "realestate/website#requestappointment",//
     "realestate/website#requestshowing",
     "realestate/website#shareproperty",
     "realestate/website#saveproperty",
     "realestate/website#propertysearchsave",
-    // "realestate/website#searchproperties",//
-    // "realestate/website#viewproperty", //
+    "realestate/website#searchproperties",
+    "realestate/website#viewproperty", 
     "realestate/website#viewpropertyvaluereport",
     "realestate/website#sharepropertyvaluereport",
     "realestate/website#subscribemarketactivityreport",
-    // "realestate/website#listinginquiry",//
     "realestate/website#planningguide",
   ],
 };

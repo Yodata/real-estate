@@ -320,7 +320,13 @@ export default function MockDataGUI(props) {
       console.log("✅ API Response Data:", response.data);
 
       // ✅ Format and set response JSON
-      const formatted = JSON.stringify(response.data, null, 2);
+      const formatted = JSON.stringify({
+  ...response.data,
+  result: {
+    ...response.data.result,
+    topic: body.topic
+  }
+}, null, 2);
       setApiResponse(formatted);
     } catch (error) {
       let errorMessage;
@@ -427,6 +433,7 @@ export default function MockDataGUI(props) {
         bucket,
         path: `${topicSlug}.json`,
         messages,
+        topic
       },
       setApiResponse
     );

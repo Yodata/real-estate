@@ -58,6 +58,9 @@ const actions = {
     "realestate/profile#teammemberadd",
     "realestate/profile#teammemberremove",
     "realestate/profile#update",
+    "realestate/profile#broker",
+    "realestate/profile#agent",
+    "realestate/profile#office",
   ],
   servicearea: [
     "realestate/servicearea#create",

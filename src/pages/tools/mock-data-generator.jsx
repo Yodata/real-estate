@@ -5,21 +5,16 @@ import { Button } from "@/components/Button";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import clsx from "clsx";
 import axios from "axios";
+import { off } from "process";
 
 const API_BASE_URL =
   "https://vxkxcz70mg.execute-api.us-west-2.amazonaws.com/dev/checkSatgingApiKey";
 const actions = {
   award: [
-    // "realestate/award#delete",//
-    // "realestate/award#seriescreate",//
-    // "realestate/award#seriesdelete",//
-    // "realestate/award#seriesupdate",//
     "realestate/award#teamcreate",
     "realestate/award#teammemberadd",
     "realestate/award#teammemberremove",
-    "realestate/award#teamupdate",
-    // "realestate/award#update",//
-    // "realestate/award#create"//
+    "realestate/award#teamupdate"
   ],
   contact: [
     "realestate/contact#add",
@@ -57,9 +52,9 @@ const actions = {
     "realestate/profile#teamdelete",
     "realestate/profile#teammemberadd",
     "realestate/profile#teammemberremove",
-    "realestate/profile#update",
-    "realestate/profile#broker",
-    "realestate/profile#agent",
+    "realestate/profile#update(broker)",
+    "realestate/profile#update(agent)",
+    "realestate/profile#update(office)",
     "realestate/profile#office",
   ],
   servicearea: [
@@ -82,8 +77,61 @@ const actions = {
     "realestate/website#subscribemarketactivityreport",
     "realestate/website#planningguide",
   ],
+  // broker:[
+  //   "broker/offices"
+  // ],
+  // office:[
+  //   "office/agents"
+  // ]
 };
 
+const actionObj = {
+   "realestate/award#teamcreate":"realestate/award/teamcreate",
+    "realestate/award#teammemberadd":"realestate/award/teammemberadd",
+    "realestate/award#teammemberremove":"realestate/award/teammemberremove",
+    "realestate/award#teamupdate":"realestate/award/teamupdate",
+    "realestate/contact#add": "realestate/contact/add",
+    "realestate/contact#delete":  "realestate/contact/delete",
+    "realestate/contact#update": "realestate/contact/update",
+    "realestate/lead#accept": "realestate/lead/accept",
+    "realestate/lead#update": "realestate/lead/update",
+    "realestate/listing#delete": "realestate/listing/delete",
+    "realestate/listing#update": "realestate/listing/update",
+    "realestate/listing#updatebuyercompensation": "realestate/listing/updatebuyercompensation",
+    "realestate/marketingprogram#create": "realestate/marketingprogram/create",
+    "realestate/marketingprogram#update": "realestate/marketingprogram/update",
+    "realestate/marketingprogram#delete": "realestate/marketingprogram/delete",
+    "realestate/marketingprogram#memberadd": "realestate/marketingprogram/memberadd",
+    "realestate/marketingprogram#memberremove": "realestate/marketingprogram/memberremove",
+    "realestate/marketingprogram#openhouseeventsummary": "realestate/marketingprogram/openhouseeventsummary",
+    "realestate/marketingpreferences#subscribe": "realestate/marketingpreferences/subscribe",
+    "realestate/marketingpreferences#unsubscribe":  "realestate/marketingpreferences/unsubscribe",
+    "realestate/profile#add": "realestate/profile/add",
+    "realestate/profile#teamcreate": "realestate/profile/teamcreate",
+    "realestate/profile#teamdelete": "realestate/profile/teamdelete",
+    "realestate/profile#teammemberadd": "realestate/profile/teammemberadd",
+    "realestate/profile#teammemberremove": "realestate/profile/teammemberremove",
+    "realestate/profile#update": "realestate/profile/update",
+    "realestate/profile#update(broker)": "realestate/profile/broker",
+    "realestate/profile#update(agent)": "realestate/office/agents",
+    "realestate/profile#update(office)" : "realestate/broker/offices",
+    "realestate/servicearea#create":  "realestate/servicearea/create",
+    "realestate/servicearea#delete": "realestate/servicearea/delete",
+    "realestate/servicearea#update": "realestate/servicearea/update",
+    "realestate/website#askquestion": "realestate/website/askquestion",
+    "realestate/website#listingoffer": "realestate/website/listingoffer",
+    "realestate/website#register": "realestate/website/register",
+    "realestate/website#requestshowing": "realestate/website/requestshowing",
+    "realestate/website#shareproperty": "realestate/website/shareproperty",
+    "realestate/website#saveproperty": "realestate/website/saveproperty",
+    "realestate/website#propertysearchsave": "realestate/website/propertysearchsave",
+    "realestate/website#searchproperties": "realestate/website/searchproperties",
+    "realestate/website#viewproperty": "realestate/website/viewproperty", 
+    "realestate/website#viewpropertyvaluereport": "realestate/website/viewpropertyvaluereport",
+    "realestate/website#sharepropertyvaluereport": "realestate/website/sharepropertyvaluereport",
+    "realestate/website#subscribemarketactivityreport": "realestate/website/subscribemarketactivityreport",
+    "realestate/website#planningguide": "realestate/website/planningguide",
+}
 const noOfMessagesOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 /*
   topic: '',
@@ -423,7 +471,7 @@ export default function MockDataGUI(props) {
     }
 
     // --- 4️⃣ Sanitize inputs ---
-    const topicSlug = topic.replace("#", "/");
+    const topicSlug =actionObj[topic];
     const _pod = extractPod(pod);
 
     // --- 5️⃣ Proceed to API call ---

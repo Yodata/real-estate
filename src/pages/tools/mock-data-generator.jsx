@@ -132,27 +132,14 @@ const actionObj = {
     "realestate/website#subscribemarketactivityreport": "realestate/website/subscribemarketactivityreport",
     "realestate/website#planningguide": "realestate/website/planningguide",
 }
-const noOfMessagesOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-
-const formData = {
-  topic: {
-    name: "topic",
-    type: "select",
-    options: [],
-    // placeholder: 'select a topic',
-    caption: undefined,
-    required: true,
-  },
-  numberOfMessages: {
-    name: "numberOfMessages",
-    type: "select",
-    options: noOfMessagesOptions,
-    placeholder: "select number of messages to generate",
-    caption: undefined,
-    required: true,
-  },
-};
+const ThreeDotsLoader = () => (
+  <div className="flex items-center gap-1 mt-2">
+    <span className="w-2 h-2 bg-gray-600 rounded-full animate-bounce"></span>
+    <span className="w-2 h-2 bg-gray-600 rounded-full animate-bounce delay-150"></span>
+    <span className="w-2 h-2 bg-gray-600 rounded-full animate-bounce delay-300"></span>
+  </div>
+);
 
 export default function MockDataGUI(props) {
   const { className } = props;
@@ -160,6 +147,8 @@ export default function MockDataGUI(props) {
   const [isValidated, setIsValidated] = useState(null);
   const [validationError, setValidationError] = useState("");
   const [subscriptionsAvailable, setSubscriptionsAvailable] = useState(true);
+  const [isValidatingKey, setIsValidatingKey] = useState(false);
+const [isSubmitting, setIsSubmitting] = useState(false);
   const {
     control,
     handleSubmit,
@@ -260,41 +249,48 @@ export default function MockDataGUI(props) {
     setDynamicTopicOptions([]);
 
     async function validateAndFetch() {
-      try {
-        const isValid = await checkStagingApiKey(apikey, signal);
-        if (signal.aborted) return;
+  try {
+    setIsValidatingKey(true);   // 🔥 START loader A
 
-        if (!isValid) {
-          setIsValidated(false);
-          setValidationError("Invalid API Key.");
-          setSubscriptionsAvailable(true);
-          setDynamicTopicOptions([]);
-          setApiResponse(""); // 🔥 clear old output
-          return;
-        }
+    const isValid = await checkStagingApiKey(apikey, signal);
+    if (signal.aborted) return;
 
-        const podName = extractPodName(pod);
-        const topics = await getSubscriptions(podName);
-        if (signal.aborted) return;
-
-        if (!topics || topics.length === 0) {
-          setSubscriptionsAvailable(false);
-          setDynamicTopicOptions([]);
-          return;
-        }
-
-        setIsValidated(true);
-        setValidationError("");
-        setSubscriptionsAvailable(true);
-        setDynamicTopicOptions(topics);
-      } catch (err) {
-        if (signal.aborted) return;
-        setIsValidated(false);
-        setSubscriptionsAvailable(false);
-        setDynamicTopicOptions([]);
-        setValidationError("Invalid API Key or Unauthorized.");
-      }
+    if (!isValid) {
+      setIsValidatingKey(false);    // 🔥 STOP loader
+      setIsValidated(false);
+      setValidationError("Invalid API Key.");
+      setSubscriptionsAvailable(true);
+      setDynamicTopicOptions([]);
+      setApiResponse("");
+      return;
     }
+
+    const podName = extractPodName(pod);
+    const topics = await getSubscriptions(podName);
+
+    setIsValidatingKey(false);   // 🔥 STOP loader
+
+    if (!topics || topics.length === 0) {
+      setSubscriptionsAvailable(false);
+      setDynamicTopicOptions([]);
+      return;
+    }
+
+    setIsValidated(true);
+    setSubscriptionsAvailable(true);
+    setDynamicTopicOptions(topics);
+
+  } catch (err) {
+    if (!signal.aborted) {
+      setIsValidatingKey(false);
+      setIsValidated(false);
+      setSubscriptionsAvailable(false);
+      setDynamicTopicOptions([]);
+      setValidationError("Invalid API Key or Unauthorized.");
+    }
+  }
+}
+
 
     validateAndFetch();
 
@@ -403,107 +399,104 @@ export default function MockDataGUI(props) {
       .replace(/^https?:\/\//, "") // remove http:// or https://
       .replace(/\/$/, ""); // remove trailing slash
   }
-  const onSubmit = async (json) => {
-    const pod = json.pod?.trim();
-    const topic = json.topic?.trim();
-    const messages = Number(json.numberOfMessages);
-    const bucket = "reflexmockdata";
+const onSubmit = async (json) => {
+  setIsSubmitting(true);     // 🔥 START loader B
+  setApiResponse("");
 
-    // --- 1️⃣ Basic presence validation ---
-    if (!pod || !topic || !messages || !bucket) {
-      setApiResponse(
-        JSON.stringify(
-          {
-            status: "error",
-            message: "Missing required fields.",
-            missing: {
-              pod: !pod ? "required" : undefined,
-              topic: !topic ? "required" : undefined,
-              messages: !messages ? "required" : undefined,
-              bucket: !bucket ? "required" : undefined,
-            },
+  const pod = json.pod?.trim();
+  const topic = json.topic?.trim();
+  const messages = Number(json.numberOfMessages);
+  const bucket = "reflexmockdata";
+
+  // --- 1️⃣ Basic presence validation ---
+  if (!pod || !topic || !messages || !bucket) {
+    setApiResponse(
+      JSON.stringify(
+        {
+          status: "error",
+          message: "Missing required fields.",
+          missing: {
+            pod: !pod ? "required" : undefined,
+            topic: !topic ? "required" : undefined,
+            messages: !messages ? "required" : undefined,
+            bucket: !bucket ? "required" : undefined,
           },
-          null,
-          2
-        )
-      );
-      return;
-    }
-
-    // --- 2️⃣ Validate pod format ---
-    const validPodSuffix = "dev.bhhs.hsfaffiliates.com";
-    if (!pod.endsWith(validPodSuffix) && !pod.endsWith(`${validPodSuffix}/`)) {
-      setApiResponse(
-        JSON.stringify(
-          { status: "error", message: `Pod must end with "${validPodSuffix}"` },
-          null,
-          2
-        )
-      );
-      return;
-    }
-
-    // --- 3️⃣ Validate messages count ---
-    if (isNaN(messages) || messages <= 0) {
-      setApiResponse(
-        JSON.stringify(
-          {
-            status: "error",
-            message: "Messages must be a valid number greater than 0.",
-          },
-          null,
-          2
-        )
-      );
-      return;
-    }
-
-   // --- 3️⃣ Validate messages count ---
-const extendedTopics = [
-  "realestate/profile#update(agent)",
-  "realestate/profile#update(office)"
-];
-
-const maxMessages = extendedTopics.includes(topic) ? 100 : 10;
-
-if (isNaN(messages) || messages <= 0) {
-  setApiResponse(
-    JSON.stringify(
-      { status: "error", message: "Messages must be a valid number greater than 0." },
-      null,
-      2
-    )
-  );
-  return;
-}
-
-if (messages > maxMessages) {
-  setApiResponse(
-    JSON.stringify(
-      { status: "error", message: `Messages cannot exceed ${maxMessages}.` },
-      null,
-      2
-    )
-  );
-  return;
-}
-
-    // --- 4️⃣ Sanitize inputs ---
-    const topicSlug =actionObj[topic];
-    const _pod = extractPod(pod);
-
-    // --- 5️⃣ Proceed to API call ---
-    await callPublishApi(
-      {
-        pod: _pod,
-        bucket,
-        path: `${topicSlug}.json`,
-        messages,
-        topic
-      },
-      setApiResponse
+        },
+        null,
+        2
+      )
     );
-  };
+    setIsSubmitting(false);  // 🔥 STOP loader
+    return;
+  }
+
+  // --- 2️⃣ Validate pod format ---
+  const validPodSuffix = "dev.bhhs.hsfaffiliates.com";
+  if (!pod.endsWith(validPodSuffix) && !pod.endsWith(`${validPodSuffix}/`)) {
+    setApiResponse(
+      JSON.stringify(
+        { status: "error", message: `Pod must end with "${validPodSuffix}"` },
+        null,
+        2
+      )
+    );
+    setIsSubmitting(false);  // 🔥 STOP loader
+    return;
+  }
+
+  // --- 3️⃣ Validate messages count ---
+  if (isNaN(messages) || messages <= 0) {
+    setApiResponse(
+      JSON.stringify(
+        { status: "error", message: "Messages must be a valid number greater than 0." },
+        null,
+        2
+      )
+    );
+    setIsSubmitting(false);  // 🔥 STOP loader
+    return;
+  }
+
+  // 🔥 dynamic check — 10 OR 100
+  const maxMessagesAllowed = ["realestate/profile#update(agent)", "realestate/profile#update(office)"].includes(topic)
+    ? 100
+    : 10;
+
+  if (messages > maxMessagesAllowed) {
+    setApiResponse(
+      JSON.stringify(
+        {
+          status: "error",
+          message: `Messages cannot exceed ${maxMessagesAllowed}.`,
+        },
+        null,
+        2
+      )
+    );
+    setIsSubmitting(false);  // 🔥 STOP loader
+    return;
+  }
+
+  // --- 4️⃣ Sanitize inputs ---
+  const topicSlug = actionObj[topic];
+  const _pod = extractPod(pod);
+
+  // --- 5️⃣ Proceed to API call ---
+  await callPublishApi(
+    {
+      pod: _pod,
+      bucket,
+      path: `${topicSlug}.json`,
+      messages,
+      topic,
+    },
+    setApiResponse
+  );
+
+  setIsSubmitting(false);    // 🔥 STOP loader B
+};
+
+
 
   const onError = (input) => {
     console.error("ERROR", errors);
@@ -521,6 +514,7 @@ if (messages > maxMessages) {
       <form name="MockInputForm" onSubmit={handleSubmit(onSubmit, onError)}>
         <Input {...content.target} control={control} />
         <Input {...content.apikey} control={control} />
+        {isValidatingKey && <ThreeDotsLoader />}
         {isValidated === false && (
           <p style={{ marginTop: "8px" }}>Invalid API Key</p>
         )}
@@ -547,14 +541,20 @@ if (messages > maxMessages) {
 />
   </>
 )}
-        {isValidated === true && subscriptionsAvailable === true &&
-          <Button
-          type="submit"
-          disabled={!isValidated || !subscriptionsAvailable}
-          >
-          Submit
-        </Button>
-        }
+      {isValidated === true && subscriptionsAvailable === true && (
+  <>
+    {isSubmitting ? (
+      <ThreeDotsLoader />
+    ) : (
+      <Button
+        type="submit"
+        disabled={!isValidated || !subscriptionsAvailable || isSubmitting}
+      >
+        Submit
+      </Button>
+    )}
+  </>
+)}
       </form>
       <Highlight
         {...defaultProps}

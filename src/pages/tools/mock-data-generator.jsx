@@ -133,13 +133,7 @@ const actionObj = {
     "realestate/website#planningguide": "realestate/website/planningguide",
 }
 const noOfMessagesOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-/*
-  topic: '',
-  targeturl: '',
-  optionalsProbability: 1.0,
-  fixedProbability: false,
-  additionalProperties: false,
-*/
+
 
 const formData = {
   topic: {
@@ -193,6 +187,19 @@ export default function MockDataGUI(props) {
   const frm = useRef(null, handleFrmChange);
   const editorRef = useRef(null);
   const [dynamicTopicOptions, setDynamicTopicOptions] = useState([]);
+
+  function getMessageOptionsForTopic(topic) {
+    const extendedTopics = [
+      "realestate/profile#update(agent)",
+      "realestate/profile#update(office)"
+    ];
+
+    if (extendedTopics.includes(topic)) {
+      return Array.from({ length: 100 }, (_, i) => i + 1); // 1–100
+    }
+
+   return Array.from({ length: 10 }, (_, i) => i + 1); // 1–10
+}
 
   async function checkStagingApiKey(key) {
     try {
@@ -524,23 +531,23 @@ export default function MockDataGUI(props) {
           </p>
         )}
         {isValidated === true && subscriptionsAvailable === true && (
-          <>
-            <Select
-              name="topic"
-              type="select"
-              options={dynamicTopicOptions}
-              control={control}
-              onChange={topicSelected}
-            />
-            <Select
-              {...formData.numberOfMessages}
-              control={control}
-              // onChange={(e) =>
-              //   setNumberOfMessages(parseInt(e.target.value, 10))
-              // }
-            />
-          </>
-        )}
+  <>
+    <Select
+      name="topic"
+      type="select"
+      options={dynamicTopicOptions}
+      control={control}
+      onChange={topicSelected}
+    />
+
+    <Select
+      name="numberOfMessages"
+      type="select"
+      options={getMessageOptionsForTopic(topic)}
+      control={control}
+    />
+  </>
+)}
         {isValidated === true && subscriptionsAvailable === true &&
           <Button
           type="submit"

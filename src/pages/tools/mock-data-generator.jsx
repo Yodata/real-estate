@@ -5,7 +5,7 @@ import { Button } from "@/components/Button";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import clsx from "clsx";
 import axios from "axios";
-import { off } from "process";
+
 
 const API_BASE_URL =
   "https://vxkxcz70mg.execute-api.us-west-2.amazonaws.com/dev/checkSatgingApiKey";
@@ -157,9 +157,6 @@ const formData = {
 export default function MockDataGUI(props) {
   const { className } = props;
   const [apiResponse, setApiResponse] = useState("");
-  const [topic, setTopic] = useState("select a topic");
-  const [numberOfMessages, setNumberOfMessages] = useState("1");
-  const formStyle = clsx("form-input", className);
   const [isValidated, setIsValidated] = useState(null);
   const [validationError, setValidationError] = useState("");
   const [subscriptionsAvailable, setSubscriptionsAvailable] = useState(true);
@@ -182,10 +179,9 @@ export default function MockDataGUI(props) {
     },
   });
 
+  const selectedTopic = useWatch({ control, name: "topic" });
   const pod = useWatch({ control, name: "pod" });
   const apikey = useWatch({ control, name: "apikey" });
-  const frm = useRef(null, handleFrmChange);
-  const editorRef = useRef(null);
   const [dynamicTopicOptions, setDynamicTopicOptions] = useState([]);
 
   function getMessageOptionsForTopic(topic) {
@@ -254,8 +250,6 @@ export default function MockDataGUI(props) {
         "Pod must start with https:// and contain .bhhs.hsfaffiliates.com"
       );
       setDynamicTopicOptions([]);
-      setTopic("");
-      setNumberOfMessages("1");
       setApiResponse("");
       return;
     }
@@ -275,8 +269,6 @@ export default function MockDataGUI(props) {
           setValidationError("Invalid API Key.");
           setSubscriptionsAvailable(true);
           setDynamicTopicOptions([]);
-          setTopic(""); // 🔥 clear topic
-          setNumberOfMessages("1"); // 🔥 reset number
           setApiResponse(""); // 🔥 clear old output
           return;
         }
@@ -466,16 +458,35 @@ export default function MockDataGUI(props) {
       return;
     }
 
-    if (messages > 10) {
-      setApiResponse(
-        JSON.stringify(
-          { status: "error", message: "Messages cannot exceed 10." },
-          null,
-          2
-        )
-      );
-      return;
-    }
+   // --- 3️⃣ Validate messages count ---
+const extendedTopics = [
+  "realestate/profile#update(agent)",
+  "realestate/profile#update(office)"
+];
+
+const maxMessages = extendedTopics.includes(topic) ? 100 : 10;
+
+if (isNaN(messages) || messages <= 0) {
+  setApiResponse(
+    JSON.stringify(
+      { status: "error", message: "Messages must be a valid number greater than 0." },
+      null,
+      2
+    )
+  );
+  return;
+}
+
+if (messages > maxMessages) {
+  setApiResponse(
+    JSON.stringify(
+      { status: "error", message: `Messages cannot exceed ${maxMessages}.` },
+      null,
+      2
+    )
+  );
+  return;
+}
 
     // --- 4️⃣ Sanitize inputs ---
     const topicSlug =actionObj[topic];
@@ -499,18 +510,7 @@ export default function MockDataGUI(props) {
     setApiResponse(JSON.stringify(errors));
   };
 
-  function handleFrmChange(input) {
-    console.log("FORM_CHANGE", input);
-  }
 
-  function topicSelected(e) {
-    console.log("TOPIC_SELECTED", e.target.value);
-    setTopic(e.target.value);
-  }
-  function numberOfMessagesSelected(e) {
-    console.log("No of Messages to Generate", e.target.value);
-    setNumberOfMessages(e.target.value);
-  }
 
   return (
     <>
@@ -532,20 +532,19 @@ export default function MockDataGUI(props) {
         )}
         {isValidated === true && subscriptionsAvailable === true && (
   <>
-    <Select
-      name="topic"
-      type="select"
-      options={dynamicTopicOptions}
-      control={control}
-      onChange={topicSelected}
-    />
+   <Select
+  name="topic"
+  type="select"
+  options={dynamicTopicOptions}
+  control={control}
+/>
 
-    <Select
-      name="numberOfMessages"
-      type="select"
-      options={getMessageOptionsForTopic(topic)}
-      control={control}
-    />
+<Select
+  name="numberOfMessages"
+  type="select"
+  options={getMessageOptionsForTopic(selectedTopic)}
+  control={control}
+/>
   </>
 )}
         {isValidated === true && subscriptionsAvailable === true &&

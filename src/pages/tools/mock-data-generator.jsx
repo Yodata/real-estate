@@ -516,7 +516,7 @@ const onSubmit = async (json) => {
 
 
   <p className="mb-2">
-    Generate schema for the selected topic and send fake data to your service (pod).
+    Generate mock data for the selected topic and send to your service (pod).
   </p>
 
   <h4 className="font-medium mt-3">Required Parameters:</h4>

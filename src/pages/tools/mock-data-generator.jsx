@@ -511,6 +511,44 @@ const onSubmit = async (json) => {
       {/* <div className="prose">
         <p>{topic}</p>
       </div> */}
+<div className="mb-6 p-4 border rounded-md bg-gray-50">
+  <h3 className="text-lg font-semibold mb-2">Real Estate Data Mocker Usage Guide</h3>
+
+  <p className="mb-2">
+    Generate schema for the selected topic and send fake data to your service (pod).
+  </p>
+
+  <h4 className="font-medium mt-3">Required Parameters:</h4>
+  <ul className="list-disc list-inside">
+    <li>pod</li>
+    <li>valid API key</li>
+    <li>topic</li>
+    <li>number of messages</li>
+  </ul>
+
+  <h4 className="font-medium mt-3">Data Connection:</h4>
+  <p className="mb-2">
+    The data model follows a hierarchical structure. Brokers connect to multiple offices, 
+    offices link to agents, and listings relate to both an agent and their office. 
+    Website events attach to individual listings, while contacts are associated with agents.
+  </p>
+
+  <h4 className="font-medium mt-3">Sample Response:</h4>
+  <pre className="text-sm bg-black text-white p-3 rounded mt-2 whitespace-pre-wrap">
+{`{
+  "status": "success",
+  "result": {
+    "pod": "ire.dev.bhhs.hsfaffiliates.com",
+    "total": 1,
+    "successCount": 1,
+    "failCount": 0,
+    "message": "1 of 1 messages successfully published to ire.dev.bhhs.hsfaffiliates.com",
+    "topic": "realestate/profile#add"
+  }
+}`}
+  </pre>
+</div>
+
       <form name="MockInputForm" onSubmit={handleSubmit(onSubmit, onError)}>
         <Input {...content.target} control={control} />
         <Input {...content.apikey} control={control} />

@@ -511,8 +511,9 @@ const onSubmit = async (json) => {
       {/* <div className="prose">
         <p>{topic}</p>
       </div> */}
+      <h2>Real Estate Data Mocker Usage Guide</h2>
 <div className="mb-6 p-4 border rounded-md bg-gray-50">
-  <h3 className="text-lg font-semibold mb-2">Real Estate Data Mocker Usage Guide</h3>
+
 
   <p className="mb-2">
     Generate schema for the selected topic and send fake data to your service (pod).

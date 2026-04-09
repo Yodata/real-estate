@@ -12,15 +12,8 @@ title: contact#update
   "topic": "realestate/contact#update",
   "data": {
     "type": "UpdateAction",
-    "agent": {
-      "type": "Person",
-      "name": "string",
-      "email": "user@example.com",
-      "identifier": {
-        "bhhsconsumerid": "12345"
-      }
-    },
-    "object": {
+      "agent": "https://999999.bhhs.hsfaffiliates.com/profile/card#me",
+      "object": {
       "type": "Contact",
       "affiliation": [
         "https://example.com/profile/card#me"

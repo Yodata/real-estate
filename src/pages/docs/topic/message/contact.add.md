@@ -12,14 +12,7 @@ title: contact#add
   "topic": "realestate/contact#add",
   "data": {
     "type": "AddAction",
-    "agent": {
-      "type": "Person",
-      "name": "string",
-      "email": "user@example.com",
-      "identifier": {
-        "bhhsconsumerid": "12345"
-      }
-    },
+    "agent": "https://999999.bhhs.hsfaffiliates.com/profile/card#me",
     "object": {
       "type": "Contact",
       "affiliation": [

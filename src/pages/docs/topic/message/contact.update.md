@@ -136,11 +136,7 @@ title: contact#update
 | topic | string | const (`"realestate/contact#update"`)  |
 | data | object | - |
 | data.type | string | const (`"UpdateAction"`)  |
-| data.agent | object |  >= 2 properties |
-| data.agent.type | string | const (`"Person"`)  |
-| data.agent.name | string | - |
-| data.agent.email | string | a valid email address format (`email`) |
-| data.agent.identifier | object |  1 properties |
+| data.agent |  string |  format (`uri`) |
 | data.object | allOf | - |
 | data.object.0 (allOf item) | object | - |
 | data.object.0.type | string | - |

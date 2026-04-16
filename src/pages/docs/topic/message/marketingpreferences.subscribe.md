@@ -46,10 +46,10 @@ title: marketingpreferences#subscribe
 | data.agent.type | string | the subscriber type |
 | data.agent.email | string | the subscriber email |
 | data.participant | array<object> | the subscription provider, an Agent, Team, Office or Organization |
-| data.participant.roleName | string | allowed (`"SubscriptionProvider"`)  |
-| data.participant.id | string |  format (`uri`) |
-| data.1.participant.additionalProperty | object | - |
-| data.1.participant.additionalProperty.isCompanyQueue | boolean | - |
+| data.participant.0.roleName | string | allowed (`"SubscriptionProvider"`)  |
+| data.participant.0.id | string |  format (`uri`) |
+| data.participant.0.additionalProperty | object | - |
+| data.participant.0.additionalProperty.isCompanyQueue | boolean | - |
 
 ### Headers
 

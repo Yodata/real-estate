@@ -52,6 +52,8 @@ title: marketingpreferences#unsubscribe
 | data.participant | array<object> | the subscription provider, an Agent, Team, Office or Organization |
 | data.participant.0.roleName | string | allowed (`"SubscriptionProvider"`)  |
 | data.participant.0.id | string |  format (`uri`) |
+| data.participant.0.additionalProperty | object | - |
+| data.participant.0.additionalProperty.isCompanyQueue | boolean | - |
 
 ### Headers
 

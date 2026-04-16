@@ -154,7 +154,7 @@ title: contact#update
 | data.object.0.contactPoint.email | string | an email address for the item. format (`email`) (currently unsed) |
 | data.object.0.contactPoint.url | string | primary URL for the item. format (`uri`) (currently unsed) |
 | data.object.0.email | string | a valid email address format (`email`) |
-| data.object.0.additionalName | string | any other name(s) associated with the entity, i.e. nickname, middle name, maiden name, etc. For multiple names, use a comma without space as a separator. |
+| data.object.0.additionalName | string | any other name(s) associated with the entity, i.e. nickname, middle name, maiden name, etc. For multiple names, use a comma without space as a separator. (currently unsed) |
 | data.object.0.familyName | string | Last Name of a person. [Family Name](https://schema.org/familyName) <= 50 characters |
 | data.object.0.faxNumber | string | Do people still use fax machines? |
 | data.object.0.givenName | string | First Name of a person |
@@ -185,6 +185,9 @@ title: contact#update
 | data.object.1.keywords | array<string> | - |
 | data.object.1.keywords (single item) | string | - |
 | data.object.1.leadOwner | object | lead owner |
+| data.object.1.leadOwner.type | string | - |
+| data.object.1.leadOwner.id | string | format (`uri`) |
+| data.object.1.leadOwner.name | string | (currently unused) |
 | data.object.1.leadSource | string |  lead Source(it must be string) |
 | data.object.1.originatingSystem | object | the original system where this item was created.  Can be of type Thing or any sub-type. |
 | data.object.1.dateCreated | string | The date on which the item was created. format (`date-time`) (currently unsed)  |

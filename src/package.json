@@ -7,8 +7,8 @@
     "start": "npx next start",
     "lint": "npx next lint",
     "test": "npx jest",
-    "generate:production-public-schemas": "npx @asyncapi/cli generate fromTemplate ../schemas/asyncapi.yaml ../generator/data -o ./public --force-write",
-    "generate:production-markdown": "npx @asyncapi/cli generate fromTemplate ../schemas/asyncapi.yaml ../generator/markdown -o ./pages --force-write"
+    "generate:production-public-schemas": "cd ../schemas && npx -p @asyncapi/generator@1.9.13 ag asyncapi.yaml ../generator/data -o ../src/public --force-write",
+    "generate:production-markdown": "cd ../schemas && npx -p @asyncapi/generator@1.9.13 ag asyncapi.yaml ../generator/markdown -o ../src/pages --force-write"
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {

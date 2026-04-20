@@ -9,5 +9,4 @@ examples:
   - NJ
   - CA
   - MI
-  - null
 x-faker: address.stateAbbr

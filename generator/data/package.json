@@ -33,7 +33,8 @@
     "@asyncapi/parser": "^1.17.1",
     "flatten-anything": "^3.0.2",
     "js-yaml": "^4.1.0",
-    "merge-anything": "^5.0.4"
+    "merge-anything": "^5.0.4",
+    "react": "^17.0.2"
   },
   "scripts": {
     "cleanup": "rimraf ./__generated__",
@@ -43,7 +44,8 @@
   "devDependencies": {
     "eslint": "^8.26.0",
     "eslint-plugin-jest": "^27.1.3",
-    "eslint-plugin-react": "^7.31.10"
+    "eslint-plugin-react": "^7.31.10",
+    "source-map-support": "^0.5.21"
   },
   "pnpm": {
     "overrides": {

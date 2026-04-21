@@ -1,0 +1,7 @@
+# @format
+
+subscribe:
+  message:
+    oneOf:
+      - $ref: update.sale.yaml
+      - $ref: update.lease.yaml

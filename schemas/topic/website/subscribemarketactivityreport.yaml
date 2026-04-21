@@ -1,0 +1,14 @@
+# @format
+
+messageId: website#subscribemarketactivityreport
+name: realestate/website#subscribemarketactivityreport
+title: website#subscribemarketactivityreport
+summary: a website user (agent) subscribes to a market activity report (object)
+contentType: application/json
+headers:
+  $ref: ../../subscription_headers.yaml
+payload:
+  type: object
+  properties:
+    topic: { const: realestate/website#subscribemarketactivityreport }
+    data: { $ref: ../../SubscribeAction.yaml }

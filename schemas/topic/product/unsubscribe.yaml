@@ -1,0 +1,14 @@
+# @format
+
+messageId: product#unsubscribe
+name: realestate/product#unsubscribe
+title: product#unsubscribe
+summary: a consumer (agent) unsubscribes from a product (object)
+contentType: application/json
+headers:
+  $ref: ../../subscription_headers.yaml
+payload:
+  type: object
+  properties:
+    topic: { const: realestate/product#unsubscribe }
+    data: { $ref: ../../UnsubscribeAction.yaml }

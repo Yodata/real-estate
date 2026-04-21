@@ -1,0 +1,7 @@
+# @format
+
+subscribe:
+  message:
+    oneOf:
+      - $ref: subscribe.yaml
+      - $ref: unsubscribe.yaml

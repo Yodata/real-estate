@@ -1,0 +1,19 @@
+# @format
+
+messageId: listing#sale
+name: realestate/listing#sale
+title: listing#sale
+summary: a sale PropertyListing is created or updated
+contentType: application/json
+headers:
+  $ref: ../../subscription_headers.yaml
+payload:
+  type: object
+  properties:
+    topic: { const: realestate/listing#sale }
+    data:
+      type: object
+      properties:
+        type: { const: UpdateAction }
+        object:
+          $ref: ../../PropertyListing.yaml

@@ -1,0 +1,19 @@
+# @format
+
+messageId: website#listinginquiry
+name: realestate/website#listinginquiry
+title: website#listinginquiry
+summary: a website user (agent) submits an inquiry about a listing (object)
+contentType: application/json
+headers:
+  $ref: ../../subscription_headers.yaml
+payload:
+  type: object
+  properties:
+    topic: { const: realestate/website#listinginquiry }
+    data:
+      type: object
+      properties:
+        type: { const: AskAction }
+        object:
+          $ref: ../../PropertyListing.yaml

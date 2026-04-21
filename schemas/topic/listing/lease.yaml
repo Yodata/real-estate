@@ -1,0 +1,19 @@
+# @format
+
+messageId: listing#lease
+name: realestate/listing#lease
+title: listing#lease
+summary: a lease PropertyListing is created or updated
+contentType: application/json
+headers:
+  $ref: ../../subscription_headers.yaml
+payload:
+  type: object
+  properties:
+    topic: { const: realestate/listing#lease }
+    data:
+      type: object
+      properties:
+        type: { const: UpdateAction }
+        object:
+          $ref: ../../PropertyListing.yaml

@@ -1,0 +1,19 @@
+# @format
+
+messageId: listing#updatebuyercompensation
+name: realestate/listing#updatebuyercompensation
+title: listing#updatebuyercompensation
+summary: buyer compensation on a PropertyListing is updated
+contentType: application/json
+headers:
+  $ref: ../../subscription_headers.yaml
+payload:
+  type: object
+  properties:
+    topic: { const: realestate/listing#updatebuyercompensation }
+    data:
+      type: object
+      properties:
+        type: { const: UpdateAction }
+        object:
+          $ref: ../../PropertyListing.yaml

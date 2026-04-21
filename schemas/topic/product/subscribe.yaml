@@ -1,0 +1,14 @@
+# @format
+
+messageId: product#subscribe
+name: realestate/product#subscribe
+title: product#subscribe
+summary: a consumer (agent) subscribes to a product (object)
+contentType: application/json
+headers:
+  $ref: ../../subscription_headers.yaml
+payload:
+  type: object
+  properties:
+    topic: { const: realestate/product#subscribe }
+    data: { $ref: ../../SubscribeAction.yaml }

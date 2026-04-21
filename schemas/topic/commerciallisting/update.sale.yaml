@@ -1,0 +1,19 @@
+# @format
+
+messageId: commerciallisting#update.sale
+name: realestate/commerciallisting#update.sale
+title: commerciallisting#update.sale
+summary: a commercial sale PropertyListing is created or updated
+contentType: application/json
+headers:
+  $ref: ../../subscription_headers.yaml
+payload:
+  type: object
+  properties:
+    topic: { const: realestate/commerciallisting#update.sale }
+    data:
+      type: object
+      properties:
+        type: { const: UpdateAction }
+        object:
+          $ref: ../../PropertyListing.yaml

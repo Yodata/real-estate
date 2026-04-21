@@ -12,6 +12,9 @@ subscribe:
       # - $ref: savepropertysearch.yaml
       # - $ref: searchproperties.yaml
       - $ref: shareproperty.yaml
+      - $ref: listinginquiry.yaml
+      - $ref: planningguide.yaml
+      - $ref: subscribemarketactivityreport.yaml
       # - $ref: sharepropertyvaluereport.yaml
       # - $ref: viewproperty.yaml
       # - $ref: viewpropertyvaluereport.yaml

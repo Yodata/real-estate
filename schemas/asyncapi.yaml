@@ -143,10 +143,13 @@ components:
     # award events
     award/create: { $ref: topic/award/award.create.yaml }
     award/delete: { $ref: topic/award/award.delete.yaml }
+    award/publish: { $ref: topic/award/award.publish.yaml }
+    award/update: { $ref: topic/award/award.update.yaml }
     award/seriescreate: { $ref: topic/award/award.seriescreate.yaml }
     award/seriesdelete: { $ref: topic/award/award.seriesdelete.yaml }
     award/seriesupdate: { $ref: topic/award/award.seriesupdate.yaml }
     award/teamcreate: { $ref: topic/award/award.teamcreate.yaml }
+    award/teamdelete: { $ref: topic/award/award.teamdelete.yaml }
     award/teammemberadd: { $ref: topic/award/award.teammemberadd.yaml }
     award/teammemberremove: { $ref: topic/award/award.teammemberremove.yaml }
     award/teamupdate: { $ref: topic/award/award.teamupdate.yaml }
@@ -193,14 +196,73 @@ components:
     marketingpreferences/unsubscribe:
       { $ref: topic/marketingpreferences/unsubscribe.yaml }
 
+    # blog events
+    blog/create: { $ref: topic/blog/create.yaml }
+    blog/delete: { $ref: topic/blog/delete.yaml }
+    blog/update: { $ref: topic/blog/update.yaml }
+
+    # commerciallisting events
+    commerciallisting/update.sale:
+      { $ref: topic/commerciallisting/update.sale.yaml }
+    commerciallisting/update.lease:
+      { $ref: topic/commerciallisting/update.lease.yaml }
+
+    # listing (extended) events
+    listing/sale: { $ref: topic/listing/sale.yaml }
+    listing/lease: { $ref: topic/listing/lease.yaml }
+    listing/updatebuyercompensation:
+      { $ref: topic/listing/updatebuyercompensation.yaml }
+
+    # product events
+    product/subscribe: { $ref: topic/product/subscribe.yaml }
+    product/unsubscribe: { $ref: topic/product/unsubscribe.yaml }
+
+    # profile events
+    profile/add: { $ref: topic/profile/add.yaml }
+    profile/update: { $ref: topic/profile/update.yaml }
+    profile/teamcreate: { $ref: topic/profile/teamcreate.yaml }
+    profile/teamdelete: { $ref: topic/profile/teamdelete.yaml }
+    profile/teammemberadd: { $ref: topic/profile/teammemberadd.yaml }
+    profile/teammemberremove: { $ref: topic/profile/teammemberremove.yaml }
+    profile/serviceareaadd: { $ref: topic/profile/serviceareaadd.yaml }
+    profile/servicearearemove: { $ref: topic/profile/servicearearemove.yaml }
+
+    # servicearea events
+    servicearea/create: { $ref: topic/servicearea/create.yaml }
+    servicearea/delete: { $ref: topic/servicearea/delete.yaml }
+    servicearea/update: { $ref: topic/servicearea/update.yaml }
+
+    # website events
+    website/askquestion: { $ref: topic/website/askquestion.yaml }
+    website/listingoffer: { $ref: topic/website/listingoffer.yaml }
+    website/register: { $ref: topic/website/register.yaml }
+    website/requestappointment: { $ref: topic/website/requestappointment.yaml }
+    website/requestshowing: { $ref: topic/website/requestshowing.yaml }
+    website/shareproperty: { $ref: topic/website/shareproperty.yaml }
+    website/saveproperty: { $ref: topic/website/saveproperty.yaml }
+    website/savepropertysearch: { $ref: topic/website/savepropertysearch.yaml }
+    website/searchproperties: { $ref: topic/website/searchproperties.yaml }
+    website/sharepropertyvaluereport:
+      { $ref: topic/website/sharepropertyvaluereport.yaml }
+    website/viewproperty: { $ref: topic/website/viewproperty.yaml }
+    website/viewpropertyvaluereport:
+      { $ref: topic/website/viewpropertyvaluereport.yaml }
+    website/listinginquiry: { $ref: topic/website/listinginquiry.yaml }
+    website/planningguide: { $ref: topic/website/planningguide.yaml }
+    website/subscribemarketactivityreport:
+      { $ref: topic/website/subscribemarketactivityreport.yaml }
+
 channels:
   award: { $ref: topic/award/channel.yaml }
+  blog: { $ref: topic/blog/channel.yaml }
+  commerciallisting: { $ref: topic/commerciallisting/channel.yaml }
   contact: { $ref: topic/contact/channel.yaml }
   franchise: { $ref: topic/franchise/channel.yaml }
   lead: { $ref: topic/lead/channel.yaml }
   listing: { $ref: topic/listing/channel.yaml }
   marketing: { $ref: topic/marketing/channel.yaml }
   marketingpreferences: { $ref: topic/marketingpreferences/channel.yaml }
+  product: { $ref: topic/product/channel.yaml }
   profile: { $ref: topic/profile/channel.yaml }
   servicearea: { $ref: topic/servicearea/channel.yaml }
   website: { $ref: topic/website/channel.yaml }

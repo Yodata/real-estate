@@ -1,0 +1,19 @@
+# @format
+
+messageId: blog#create
+name: realestate/blog#create
+title: blog#create
+summary: a blog post is created
+contentType: application/json
+headers:
+  $ref: ../../subscription_headers.yaml
+payload:
+  type: object
+  properties:
+    topic: { const: realestate/blog#create }
+    data:
+      type: object
+      properties:
+        type: { const: CreateAction }
+        object:
+          $ref: ../../BlogPosting.yaml

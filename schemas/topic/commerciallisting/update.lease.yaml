@@ -1,0 +1,19 @@
+# @format
+
+messageId: commerciallisting#update.lease
+name: realestate/commerciallisting#update.lease
+title: commerciallisting#update.lease
+summary: a commercial lease PropertyListing is created or updated
+contentType: application/json
+headers:
+  $ref: ../../subscription_headers.yaml
+payload:
+  type: object
+  properties:
+    topic: { const: realestate/commerciallisting#update.lease }
+    data:
+      type: object
+      properties:
+        type: { const: UpdateAction }
+        object:
+          $ref: ../../PropertyListing.yaml

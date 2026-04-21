@@ -1,0 +1,8 @@
+# @format
+
+subscribe:
+  message:
+    oneOf:
+      - $ref: create.yaml
+      - $ref: update.yaml
+      - $ref: delete.yaml

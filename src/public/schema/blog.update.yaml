@@ -1,0 +1,309 @@
+$id: http://realestate.yodata.me/schema/blog.update.yaml
+messageId: blog#update
+title: blog#update
+summary: a blog post is updated
+contentType: application/json
+externalDocs: null
+headers:
+  type: object
+  properties:
+    time:
+      type: string
+      format: date-time
+      description: date & time the event was produced
+      x-faker: date.past
+      x-parser-schema-id: <anonymous-schema-7>
+    agent:
+      type: string
+      format: uri
+      summary: >-
+        the event provider who sent the event via a subscription authorized to
+        your service.
+      description: >
+        if you are a multi-tenant app, then the agent is the user associated
+        with the event data.
+
+        any future events related to this message will be sent to the same
+        agent/recipient
+      examples:
+        - https://teamsupermario.example.com/profile/card#me
+        - https://bigbrandrealestate.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-8>
+    instrument:
+      type: string
+      format: uri
+      description: the app or service that produced the event on behalf of the agent/user
+      examples:
+        - http://supercrm.example.com/profile/card#me
+        - http://reliance.example.com/profile/card#me
+        - http://moxiworks.example.com/profile/card#me
+        - http://listing-manager.example.com/profile/card#me
+        - http://ace.example.com/profile/card#me
+        - http://roqlogic.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-9>
+    source:
+      type: string
+      format: uri
+      description: a copy of the event was sent to the source(s).
+      examples:
+        - https://bigbrandrealestate.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-10>
+    originalRecipient:
+      type: string
+      format: uri
+      summary: the original recipient of the event
+      description: >
+        the originalRecipient helps you determine the subscription that
+        delivered the event to you.
+
+        if the originalRecipient is the same as the agent, then the you are
+        subscribed to the agent.
+
+        if the originalRecipient is different from the agent, then you are
+        subscribed to the event source
+      examples:
+        - http://bigbrandrealestate.example.com/profile/card#me
+        - http://teamsupermario.example.com/profile/card#me
+        - http://bob.example.com/profile/card#me
+        - http://jane.example.com/profile/card#me
+        - http://joe.example.com/profile/card#me
+        - http://jill.example.com/profile/card#me
+        - http://jim.example.com/profile/card#me
+        - http://jennifer.example.com/profile/card#me
+      x-parser-schema-id: <anonymous-schema-11>
+    id:
+      type: string
+      format: uri
+      summary: the event id - the cannonical identifier for the event
+      description: >
+        the Event ID (aka "Publish ID") is the immutable canonical identifier
+        for the event.
+
+        it is a URI that is unique to the event and will not change.
+
+        all subscribers will receive the same id for the same event.
+      examples:
+        - http://supercrm.example.com/publish/12345
+        - http://reliance.example.com/publish/23456
+        - http://moxiworks.example.com/publish/34567
+        - http://listing-manager.example.com/publish/45678
+        - http://ace.example.com/publish/56789
+        - http://roqlogic.example.com/publish/67890
+      x-parser-schema-id: <anonymous-schema-12>
+    '@id':
+      type: string
+      format: uri
+      summary: the @id is the url in your inbox where you can retrieve the event
+      examples:
+        - http://reliance.example.com/inbox/23456
+        - http://moxiworks.example.com/inbox/34567
+        - http://listing-manager.example.com/inbox/45678
+        - http://ace.example.com/inbox/56789
+        - http://roqlogic.example.com/inbox/67890
+      x-parser-schema-id: <anonymous-schema-13>
+  x-parser-schema-id: <anonymous-schema-6>
+payload:
+  type: object
+  properties:
+    data:
+      type: object
+      properties:
+        type:
+          const: UpdateAction
+          x-parser-schema-id: <anonymous-schema-677>
+        object:
+          title: BlogPosting
+          type: object
+          x-range: BlogPosting
+          description: A blog post.
+          properties:
+            type:
+              enum:
+                - BlogPosting
+              x-parser-schema-id: <anonymous-schema-656>
+            identifier:
+              example:
+                aempostid: xxxx
+              title: identifier
+              type: object
+              summary: >-
+                identifier assigned to a contact by the vendor who originally
+                created the contact
+              maxProperties: 1
+              minProperties: 1
+              examples:
+                - bhhsconsumerid: '12345'
+                - salesforceid: '56789'
+              x-parser-schema-id: <anonymous-schema-657>
+            headline:
+              type: string
+              description: headline of the post.
+              example: Top 10 Spring Cleeaning Tips
+              x-parser-schema-id: <anonymous-schema-658>
+            articleBody:
+              type: string
+              description: the actual body of the post in HTML format.
+              example: >-
+                <HTML><body>lorem ipsum dolor sit amet, consectetur
+                adipiscing</body></HTML>
+              x-parser-schema-id: <anonymous-schema-659>
+            image:
+              description: >-
+                by convention the first image item is the article hero image. 
+                note: image tags can also be embeded in the articleBody.
+              title: image
+              type: array
+              x-range:
+                - ImageObject
+              items:
+                - type: object
+                  allOf:
+                    - title: MediaObject
+                      description: an image, video or document availble for download
+                      x-subclass:
+                        - ImageObject
+                        - DigitalDocument
+                      allOf:
+                        - $id: http://realestate.yodata.me/schema/Thing
+                          type: object
+                          title: Thing
+                          summary: The root type of all Things.
+                          required:
+                            - type
+                          propertyNames:
+                            pattern: ^[a-z@$][a-zA-Z0-9-_]+$
+                            x-parser-schema-id: <anonymous-schema-164>
+                          properties:
+                            type:
+                              type: string
+                              pattern: ^[A-Z][a-zA-Z0-9]+$
+                              description: The item type (Linked-Data @type)
+                              x-parser-schema-id: <anonymous-schema-162>
+                            '@id':
+                              type: string
+                              format: uri
+                              description: the liked data uri for the Thing
+                              x-parser-schema-id: <anonymous-schema-163>
+                          x-parser-schema-id: Thing
+                        - properties:
+                            type:
+                              type: string
+                              enum:
+                                - MediaObject
+                                - ImageObject
+                                - DigitalDocument
+                            id:
+                              description: the URL to access the item.
+                              example: http://user.example.com/public/logo/fileName.zip
+                              type: string
+                              format: uri
+                            name:
+                              type: string
+                              description: the file name of the object.
+                              example: fileName.zip
+                            encodingFormat:
+                              type: string
+                              description: MIME type
+                              example: application/zip
+                            about:
+                              type: string
+                              format: uri
+                              description: URI to the subject of the image or logo
+                              example: http://user.example.com/profile/card#me
+                            url:
+                              type: string
+                              format: uri
+                              description: URL of the image content
+                              example: http://user.example.com/public/profile/image.jpg
+                          x-parser-schema-id: <anonymous-schema-165>
+                      x-parser-schema-id: MediaObject
+                    - title: ImageObject
+                      x-range: ImageObject
+                      properties:
+                        type:
+                          enum:
+                            - ImageObject
+                          example: ImageObject
+                        id:
+                          example: http://user.example.com/public/logo/image.jpg
+                        name:
+                          example: image.jpg
+                        encodingFormat:
+                          example: image/jpeg
+                      x-parser-schema-id: <anonymous-schema-166>
+                  x-parser-schema-id: <anonymous-schema-161>
+              x-parser-schema-id: <anonymous-schema-660>
+            author:
+              description: author of the work
+              type: object
+              properties:
+                type:
+                  type: string
+                  enum:
+                    - RealEstateAgent
+                    - RealEstateOffice
+                    - RealEstateTeam
+                    - RealEstateOrganization
+                  x-parser-schema-id: <anonymous-schema-662>
+                id:
+                  type: string
+                  format: uri
+                  description: the profile URI of the author
+                  example: https://agent123.example.com/profile/card#me
+                  x-parser-schema-id: <anonymous-schema-663>
+              x-parser-schema-id: <anonymous-schema-661>
+            provider:
+              description: >-
+                if the article is provided as a template or stock content to be
+                shared by mutliple authors, the provider should be included.
+              type: object
+              properties:
+                type:
+                  type: string
+                  enum:
+                    - RealEstateOrganization
+                    - RealEstateTeam
+                    - RealEstateOffice
+                    - RealEstateAgent
+                  x-parser-schema-id: <anonymous-schema-665>
+                id:
+                  type: string
+                  format: uri
+                  description: the profile URI of the provider
+                  example: https://example.com/profile/card#me
+                  x-parser-schema-id: <anonymous-schema-666>
+              x-parser-schema-id: <anonymous-schema-664>
+            dateCreated:
+              description: >-
+                The date on which the BlogPosting was created or the item was
+                added to a DataFeed.
+              type: string
+              format: date-time
+              x-parser-schema-id: <anonymous-schema-667>
+            dateModified:
+              description: >-
+                The date on which the BlogPosting was most recently modified or
+                when the item's entry was modified within a DataFeed.
+              type: string
+              format: date-time
+              x-parser-schema-id: <anonymous-schema-668>
+            url:
+              title: url
+              type: string
+              format: uri
+              description: URL of the item.
+              x-parser-schema-id: <anonymous-schema-389>
+            urlTemplate:
+              type: string
+              description: >-
+                urlTemplate in [IETF rfc6570
+                format](https://datatracker.ietf.org/doc/html/rfc6570)
+              example: https://example.com/{author/name}/blog/post?{slug}
+              x-parser-schema-id: <anonymous-schema-669>
+          x-parser-schema-id: BlogPosting
+      x-parser-schema-id: <anonymous-schema-676>
+    topic:
+      const: realestate/blog#update
+      x-parser-schema-id: <anonymous-schema-675>
+  x-parser-schema-id: <anonymous-schema-674>
+

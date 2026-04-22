@@ -8,13 +8,13 @@
       "type": "string",
       "description": "The date/time the item was accepted by the recipient",
       "x-range": "DateTime",
-      "example": "2019-11-25T04:23:32.000Z"
+      "example": "2019-11-25T04:23:32Z"
     },
     "dateReceived": {
       "type": "string",
       "description": "The date/time the item was received by it's recipient",
       "x-range": "DateTime",
-      "example": "2019-11-25T04:23:32.000Z"
+      "example": "2019-11-25T04:23:32Z"
     },
     "dateRejected": {
       "type": "string",
@@ -59,7 +59,7 @@
             "text": "Help me I'm trapped inside documentation."
           }
         },
-        "x-parser-schema-id": "<anonymous-schema-284>"
+        "x-parser-schema-id": "<anonymous-schema-227>"
       }
     },
     "object": {

@@ -15,7 +15,7 @@ properties:
       type: string
       format: uri
       example: https://{agentid}.example.com/profile/card#me
-      x-parser-schema-id: <anonymous-schema-249>
+      x-parser-schema-id: <anonymous-schema-192>
   email:
     title: email
     description: a valid email address

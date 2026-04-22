@@ -1,4 +1,5 @@
 {
+  "$id": "http://realestate.yodata.me/schema/CloudEvent.json",
   "title": "CloudEvent",
   "type": "object",
   "required": [
@@ -58,6 +59,5 @@
       "description": "the event topic which determines the event.data schema"
     }
   },
-  "x-parser-schema-id": "CloudEvent",
-  "$id": "http://realestate.yodata.me/schema/CloudEvent.json"
+  "x-parser-schema-id": "CloudEvent"
 }

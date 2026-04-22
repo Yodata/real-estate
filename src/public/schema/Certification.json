@@ -15,20 +15,20 @@
           ],
           "type": "string",
           "description": "The item type (Linked-Data @type)",
-          "x-parser-schema-id": "<anonymous-schema-409>"
+          "x-parser-schema-id": "<anonymous-schema-357>"
         },
         "id": {
           "example": "https://example.com/profile/card#me",
           "type": "string",
           "format": "uri",
           "description": "Linked-Data URI (@id)",
-          "x-parser-schema-id": "<anonymous-schema-410>"
+          "x-parser-schema-id": "<anonymous-schema-358>"
         },
         "name": {
           "type": "string",
           "description": "name of the issuing organization",
           "example": "Gotham City Real Estate",
-          "x-parser-schema-id": "<anonymous-schema-411>"
+          "x-parser-schema-id": "<anonymous-schema-359>"
         }
       }
     },
@@ -43,13 +43,13 @@
           ],
           "type": "string",
           "description": "The item type (Linked-Data @type)",
-          "x-parser-schema-id": "<anonymous-schema-413>"
+          "x-parser-schema-id": "<anonymous-schema-361>"
         },
         "id": {
           "type": "string",
           "format": "uri",
           "description": "Linked-Data URI (@id)",
-          "x-parser-schema-id": "<anonymous-schema-242>"
+          "x-parser-schema-id": "<anonymous-schema-185>"
         },
         "name": {
           "$id": "http://realestate.yodata.me/schema/name.yaml",

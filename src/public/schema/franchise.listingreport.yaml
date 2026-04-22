@@ -110,7 +110,7 @@ payload:
       properties:
         type:
           const: UpdateAction
-          x-parser-schema-id: <anonymous-schema-265>
+          x-parser-schema-id: <anonymous-schema-208>
         object:
           $id: http://realestate.yodata.me/schemas/ListingReport.yaml
           title: ListingReport
@@ -122,34 +122,34 @@ payload:
               type: string
               description: RECORD-TYPE
               example: ListingReport
-              x-parser-schema-id: <anonymous-schema-266>
+              x-parser-schema-id: <anonymous-schema-209>
             batchId:
               type: string
               description: BATCH-ID
-              x-parser-schema-id: <anonymous-schema-267>
+              x-parser-schema-id: <anonymous-schema-210>
             reportingOfficeId:
               type: string
               format: uri
               description: OFFICE-ID
               example: https://{officeid}.example.com/profile/card#me
-              x-parser-schema-id: <anonymous-schema-268>
+              x-parser-schema-id: <anonymous-schema-211>
             dateCreated:
               type: string
               format: date-time
               description: YEAR-MONTH
-              x-parser-schema-id: <anonymous-schema-269>
+              x-parser-schema-id: <anonymous-schema-212>
             listingsAddedCount:
               type: number
               description: LISTINGS-TAKEN
-              x-parser-schema-id: <anonymous-schema-270>
+              x-parser-schema-id: <anonymous-schema-213>
             totalListingsCount:
               type: number
               description: LISTINGS-INVENTORY
-              x-parser-schema-id: <anonymous-schema-271>
+              x-parser-schema-id: <anonymous-schema-214>
           x-parser-schema-id: ListingReport
-      x-parser-schema-id: <anonymous-schema-264>
+      x-parser-schema-id: <anonymous-schema-207>
     topic:
       const: realestate/franchise#listingreport
-      x-parser-schema-id: <anonymous-schema-263>
-  x-parser-schema-id: <anonymous-schema-262>
+      x-parser-schema-id: <anonymous-schema-206>
+  x-parser-schema-id: <anonymous-schema-205>
 

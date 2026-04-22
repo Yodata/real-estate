@@ -6,8 +6,7 @@
   "maxLength": 12,
   "examples": [
     "10010",
-    "50239-7698",
-    null
+    "50239-7698"
   ],
   "x-parser-schema-id": "postalCode",
   "properties": {}

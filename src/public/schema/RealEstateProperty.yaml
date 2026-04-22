@@ -38,7 +38,6 @@ properties:
       - Altamonte Springs
       - West Ahmed
       - Blaiseview
-      - null
     x-parser-schema-id: addressLocality
   addressRegion:
     $id: addressRegion
@@ -50,7 +49,6 @@ properties:
       - NJ
       - CA
       - MI
-      - null
     x-faker: address.stateAbbr
     x-parser-schema-id: addressRegion
   apn:
@@ -80,13 +78,13 @@ properties:
                   - type
                 propertyNames:
                   pattern: ^[a-z@$][a-zA-Z0-9-_]+$
-                  x-parser-schema-id: <anonymous-schema-221>
+                  x-parser-schema-id: <anonymous-schema-164>
                 properties:
                   type:
                     type: string
                     pattern: ^[A-Z][a-zA-Z0-9]+$
                     description: The item type (Linked-Data @type)
-                    x-parser-schema-id: <anonymous-schema-219>
+                    x-parser-schema-id: <anonymous-schema-162>
                   '@id':
                     type: string
                     format: uri
@@ -122,7 +120,7 @@ properties:
                     format: uri
                     description: URL of the image content
                     example: http://user.example.com/public/profile/image.jpg
-                x-parser-schema-id: <anonymous-schema-222>
+                x-parser-schema-id: <anonymous-schema-165>
             x-parser-schema-id: MediaObject
           - title: ImageObject
             x-range: ImageObject
@@ -137,8 +135,8 @@ properties:
                 example: image.jpg
               encodingFormat:
                 example: image/jpeg
-            x-parser-schema-id: <anonymous-schema-223>
-        x-parser-schema-id: <anonymous-schema-218>
+            x-parser-schema-id: <anonymous-schema-166>
+        x-parser-schema-id: <anonymous-schema-161>
   latitude:
     type: number
     description: The latitude of a location.
@@ -191,7 +189,6 @@ properties:
     examples:
       - '10010'
       - 50239-7698
-      - null
     x-parser-schema-id: postalCode
   propertySubType:
     title: propertySubType

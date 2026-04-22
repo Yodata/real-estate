@@ -125,36 +125,10 @@ payload:
             - salesforceid: '56789'
           example:
             bhhsAwardId: xxxx
-        agent:
-          type: object
-          description: the award presenter
-          properties:
-            type:
-              type: string
-              enum:
-                - RealEstateAgent
-                - RealEstateOffice
-                - RealEstateOrganization
-              x-parser-schema-id: <anonymous-schema-19>
-            id:
-              type: string
-              format: uri
-              example: https://user.example.com/profile/card#me
-              x-parser-schema-id: <anonymous-schema-20>
-            name:
-              type: string
-              description: the name of the award presenter
-              x-faker: name.findName
-              x-parser-schema-id: <anonymous-schema-21>
-          required:
-            - type
-            - id
-            - name
-          x-parser-schema-id: <anonymous-schema-18>
         object:
           title: Award
           type: object
-          description: An honor bestowed on one or mote _recipients_ by the message _agent_
+          description: An honor bestowed on one or more _recipients_ by the message _agent_
           properties:
             type:
               type: string
@@ -173,7 +147,7 @@ payload:
               format: date-time
               description: date the award was presented or announced.
               x-range: DateTime
-              example: 2019-11-25T04:23:32.000Z
+              example: '2019-11-25T04:23:32Z'
               x-parser-schema-id: <anonymous-schema-75>
             agent:
               type: string
@@ -203,6 +177,7 @@ payload:
                     type: string
                     description: the name of the award recipient
                     x-faker: name.findName
+                    example: John Smith
                     x-parser-schema-id: <anonymous-schema-81>
                 required:
                   - type
@@ -225,36 +200,10 @@ payload:
                 - salesforceid: '56789'
               x-parser-schema-id: <anonymous-schema-82>
           x-parser-schema-id: Award
-        recipient:
-          type: object
-          description: the award recipient
-          properties:
-            type:
-              type: string
-              enum:
-                - RealEstateAgent
-                - RealEstateOffice
-                - RealEstateOrganization
-              x-parser-schema-id: <anonymous-schema-79>
-            id:
-              type: string
-              format: uri
-              example: https://user.example.com/profile/card#me
-              x-parser-schema-id: <anonymous-schema-80>
-            name:
-              type: string
-              description: the name of the award recipient
-              x-faker: name.findName
-              x-parser-schema-id: <anonymous-schema-81>
-          required:
-            - type
-            - id
-            - name
-          x-parser-schema-id: <anonymous-schema-78>
-      x-parser-schema-id: <anonymous-schema-590>
+      x-parser-schema-id: <anonymous-schema-583>
     topic:
       enum:
         - realestate/award#create
-      x-parser-schema-id: <anonymous-schema-589>
-  x-parser-schema-id: <anonymous-schema-588>
+      x-parser-schema-id: <anonymous-schema-582>
+  x-parser-schema-id: <anonymous-schema-581>
 

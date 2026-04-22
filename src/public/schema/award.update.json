@@ -110,7 +110,7 @@
           "object": {
             "title": "Award",
             "type": "object",
-            "description": "An honor bestowed on one or mote _recipients_ by the message _agent_",
+            "description": "An honor bestowed on one or more _recipients_ by the message _agent_",
             "properties": {
               "type": {
                 "type": "string",
@@ -132,7 +132,7 @@
                 "format": "date-time",
                 "description": "date the award was presented or announced.",
                 "x-range": "DateTime",
-                "example": "2019-11-25T04:23:32.000Z",
+                "example": "2019-11-25T04:23:32Z",
                 "x-parser-schema-id": "<anonymous-schema-75>"
               },
               "agent": {
@@ -167,6 +167,7 @@
                       "type": "string",
                       "description": "the name of the award recipient",
                       "x-faker": "name.findName",
+                      "example": "John Smith",
                       "x-parser-schema-id": "<anonymous-schema-81>"
                     }
                   },

@@ -45,8 +45,7 @@
         "Heidistad",
         "Altamonte Springs",
         "West Ahmed",
-        "Blaiseview",
-        null
+        "Blaiseview"
       ],
       "x-parser-schema-id": "addressLocality"
     },
@@ -59,8 +58,7 @@
       "examples": [
         "NJ",
         "CA",
-        "MI",
-        null
+        "MI"
       ],
       "x-faker": "address.stateAbbr",
       "x-parser-schema-id": "addressRegion"
@@ -94,8 +92,7 @@
       "maxLength": 12,
       "examples": [
         "10010",
-        "50239-7698",
-        null
+        "50239-7698"
       ],
       "x-parser-schema-id": "postalCode"
     },

@@ -210,7 +210,6 @@ payload:
                           - NJ
                           - CA
                           - MI
-                          - null
                         x-faker: address.stateAbbr
                         x-parser-schema-id: addressRegion
                       addressLocality:
@@ -226,7 +225,6 @@ payload:
                           - Altamonte Springs
                           - West Ahmed
                           - Blaiseview
-                          - null
                         x-parser-schema-id: addressLocality
                       postalCode:
                         $id: http://realestate.yodata.me/schema/postalCode
@@ -237,7 +235,6 @@ payload:
                         examples:
                           - '10010'
                           - 50239-7698
-                          - null
                         x-parser-schema-id: postalCode
                       addressCountry:
                         $id: http://realestate.yodata.me/schema/addressCountry
@@ -626,7 +623,7 @@ payload:
                     - null
                     - null
                     - null
-                  x-parser-schema-id: <anonymous-schema-421>
+                  x-parser-schema-id: <anonymous-schema-369>
                 contactGroup:
                   type: array
                   items:
@@ -720,7 +717,7 @@ payload:
                     when the item's entry was modified within a DataFeed.
                   type: string
                   format: date-time
-                  x-parser-schema-id: <anonymous-schema-122>
+                  x-parser-schema-id: <anonymous-schema-600>
               x-parser-schema-id: <anonymous-schema-116>
           x-parser-schema-id: Contact
       x-parser-schema-id: <anonymous-schema-85>

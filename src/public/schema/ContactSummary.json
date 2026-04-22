@@ -75,7 +75,7 @@
           "type": "string",
           "description": "CUSTOMER-MIDDLE-INITIAL",
           "example": "M",
-          "x-parser-schema-id": "<anonymous-schema-663>"
+          "x-parser-schema-id": "<anonymous-schema-769>"
         },
         "familyName": {
           "$id": "http://realestate.yodata.me/schema/familyName.yaml",
@@ -106,7 +106,7 @@
           "type": "string",
           "description": "gender of the Customer (why?)",
           "example": "M",
-          "x-parser-schema-id": "<anonymous-schema-664>"
+          "x-parser-schema-id": "<anonymous-schema-770>"
         }
       }
     },

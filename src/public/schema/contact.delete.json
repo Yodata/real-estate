@@ -113,7 +113,7 @@
         "properties": {
           "type": {
             "const": "DeleteAction",
-            "x-parser-schema-id": "<anonymous-schema-130>"
+            "x-parser-schema-id": "<anonymous-schema-120>"
           },
           "agent": {
             "type": "object",
@@ -164,7 +164,7 @@
             "properties": {
               "type": {
                 "const": "Contact",
-                "x-parser-schema-id": "<anonymous-schema-126>"
+                "x-parser-schema-id": "<anonymous-schema-122>"
               },
               "identifier": {
                 "title": "identifier",
@@ -187,16 +187,16 @@
               "type",
               "identifier"
             ],
-            "x-parser-schema-id": "<anonymous-schema-125>"
+            "x-parser-schema-id": "<anonymous-schema-121>"
           }
         },
-        "x-parser-schema-id": "<anonymous-schema-129>"
+        "x-parser-schema-id": "<anonymous-schema-119>"
       },
       "topic": {
         "const": "realestate/contact#delete",
-        "x-parser-schema-id": "<anonymous-schema-128>"
+        "x-parser-schema-id": "<anonymous-schema-118>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-127>"
+    "x-parser-schema-id": "<anonymous-schema-117>"
   }
 }

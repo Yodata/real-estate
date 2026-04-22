@@ -7,8 +7,7 @@
   "examples": [
     "NJ",
     "CA",
-    "MI",
-    null
+    "MI"
   ],
   "x-faker": "address.stateAbbr",
   "x-parser-schema-id": "addressRegion",

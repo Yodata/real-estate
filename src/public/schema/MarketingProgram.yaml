@@ -21,7 +21,7 @@ properties:
         description: The item type (Linked-Data @type)
         enum:
           - Place
-        x-parser-schema-id: <anonymous-schema-691>
+        x-parser-schema-id: <anonymous-schema-797>
       address:
         type: object
         x-range: PostalAddress
@@ -37,7 +37,7 @@ properties:
           postalCode: '10010'
           postOfficeBoxNumber: Box 1234
           streetAddress: 1007 Mountain Gate Rd
-        x-parser-schema-id: <anonymous-schema-692>
+        x-parser-schema-id: <anonymous-schema-798>
       geo:
         type: object
         description: a geo shape (circle or box)
@@ -56,7 +56,7 @@ properties:
             unitCode: mi,
             unitText: miles
           box: (33.5697,-117.775),(33.6018,-117.707)
-        x-parser-schema-id: <anonymous-schema-693>
+        x-parser-schema-id: <anonymous-schema-799>
     x-parser-schema-id: Place
   creator:
     description: creator / author of the item
@@ -99,22 +99,22 @@ properties:
       properties:
         type:
           const: ProgramMembership
-          x-parser-schema-id: <anonymous-schema-682>
+          x-parser-schema-id: <anonymous-schema-788>
         role:
           type: string
           enum:
             - member
             - owner
-          x-parser-schema-id: <anonymous-schema-683>
+          x-parser-schema-id: <anonymous-schema-789>
         member:
           type: object
           properties:
             type:
               const: Contact
-              x-parser-schema-id: <anonymous-schema-685>
+              x-parser-schema-id: <anonymous-schema-791>
             name:
               type: string
-              x-parser-schema-id: <anonymous-schema-686>
+              x-parser-schema-id: <anonymous-schema-792>
             identifier:
               title: identifier
               type: object
@@ -127,17 +127,17 @@ properties:
                 - bhhsconsumerid: '12345'
                 - salesforceid: '56789'
               x-parser-schema-id: identifier
-          x-parser-schema-id: <anonymous-schema-684>
+          x-parser-schema-id: <anonymous-schema-790>
         memberOf:
           type: object
           properties:
             type:
               const: MarketingProgram
-              x-parser-schema-id: <anonymous-schema-688>
+              x-parser-schema-id: <anonymous-schema-794>
             name:
               type: string
               example: Market Activity Report 508 Homewood Ave
-              x-parser-schema-id: <anonymous-schema-689>
+              x-parser-schema-id: <anonymous-schema-795>
             identifier:
               title: identifier
               type: object
@@ -150,7 +150,7 @@ properties:
                 - bhhsconsumerid: '12345'
                 - salesforceid: '56789'
               x-parser-schema-id: identifier
-          x-parser-schema-id: <anonymous-schema-687>
+          x-parser-schema-id: <anonymous-schema-793>
       x-parser-schema-id: ProgramMembership
   name:
     $id: http://realestate.yodata.me/schema/name.yaml

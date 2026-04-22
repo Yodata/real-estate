@@ -105,7 +105,7 @@
         "properties": {
           "type": {
             "const": "DeleteAction",
-            "x-parser-schema-id": "<anonymous-schema-357>"
+            "x-parser-schema-id": "<anonymous-schema-305>"
           },
           "agent": {
             "$id": "http://schema.org/agent",
@@ -121,11 +121,11 @@
                 "type": "string",
                 "format": "uri",
                 "example": "http://{user}.example.com/profile/card#me",
-                "x-parser-schema-id": "<anonymous-schema-358>"
+                "x-parser-schema-id": "<anonymous-schema-306>"
               },
               {
                 "type": "object",
-                "x-parser-schema-id": "<anonymous-schema-359>"
+                "x-parser-schema-id": "<anonymous-schema-307>"
               }
             ]
           },
@@ -136,7 +136,7 @@
             "properties": {
               "type": {
                 "const": "ProgramMembership",
-                "x-parser-schema-id": "<anonymous-schema-361>"
+                "x-parser-schema-id": "<anonymous-schema-309>"
               },
               "role": {
                 "type": "string",
@@ -144,18 +144,18 @@
                   "member",
                   "owner"
                 ],
-                "x-parser-schema-id": "<anonymous-schema-362>"
+                "x-parser-schema-id": "<anonymous-schema-310>"
               },
               "member": {
                 "type": "object",
                 "properties": {
                   "type": {
                     "const": "Contact",
-                    "x-parser-schema-id": "<anonymous-schema-364>"
+                    "x-parser-schema-id": "<anonymous-schema-312>"
                   },
                   "name": {
                     "type": "string",
-                    "x-parser-schema-id": "<anonymous-schema-365>"
+                    "x-parser-schema-id": "<anonymous-schema-313>"
                   },
                   "identifier": {
                     "title": "identifier",
@@ -174,19 +174,19 @@
                     "x-parser-schema-id": "identifier"
                   }
                 },
-                "x-parser-schema-id": "<anonymous-schema-363>"
+                "x-parser-schema-id": "<anonymous-schema-311>"
               },
               "memberOf": {
                 "type": "object",
                 "properties": {
                   "type": {
                     "const": "MarketingProgram",
-                    "x-parser-schema-id": "<anonymous-schema-367>"
+                    "x-parser-schema-id": "<anonymous-schema-315>"
                   },
                   "name": {
                     "type": "string",
                     "example": "Market Activity Report 508 Homewood Ave",
-                    "x-parser-schema-id": "<anonymous-schema-368>"
+                    "x-parser-schema-id": "<anonymous-schema-316>"
                   },
                   "identifier": {
                     "title": "identifier",
@@ -205,19 +205,19 @@
                     "x-parser-schema-id": "identifier"
                   }
                 },
-                "x-parser-schema-id": "<anonymous-schema-366>"
+                "x-parser-schema-id": "<anonymous-schema-314>"
               }
             },
-            "x-parser-schema-id": "<anonymous-schema-360>"
+            "x-parser-schema-id": "<anonymous-schema-308>"
           }
         },
-        "x-parser-schema-id": "<anonymous-schema-356>"
+        "x-parser-schema-id": "<anonymous-schema-304>"
       },
       "topic": {
         "const": "realestate/marketing#programdelete",
-        "x-parser-schema-id": "<anonymous-schema-355>"
+        "x-parser-schema-id": "<anonymous-schema-303>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-354>"
+    "x-parser-schema-id": "<anonymous-schema-302>"
   }
 }

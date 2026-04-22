@@ -37,8 +37,7 @@
         "Heidistad",
         "Altamonte Springs",
         "West Ahmed",
-        "Blaiseview",
-        null
+        "Blaiseview"
       ],
       "x-parser-schema-id": "addressLocality"
     },
@@ -48,7 +47,11 @@
       "type": "string",
       "description": "abbreviated state or province",
       "max-length": 2,
-      "examples": ["NJ", "CA", "MI", null],
+      "examples": [
+        "NJ",
+        "CA",
+        "MI"
+      ],
       "x-faker": "address.stateAbbr",
       "x-parser-schema-id": "addressRegion"
     },
@@ -61,7 +64,7 @@
         "homes@opendoor.com",
         "info@lucrumre.com",
         "805-315-7160",
-        "7605522574"
+        7605522574
       ]
     },
     "buyerAgent": {
@@ -101,7 +104,9 @@
       "title": "image",
       "description": "an ImageObject or URI reference to an image on the web.",
       "type": "array",
-      "x-range": ["ImageObject"],
+      "x-range": [
+        "ImageObject"
+      ],
       "items": [
         {
           "type": "object",
@@ -109,24 +114,29 @@
             {
               "title": "MediaObject",
               "description": "an image, video or document availble for download",
-              "x-subclass": ["ImageObject", "DigitalDocument"],
+              "x-subclass": [
+                "ImageObject",
+                "DigitalDocument"
+              ],
               "allOf": [
                 {
                   "$id": "http://realestate.yodata.me/schema/Thing",
                   "type": "object",
                   "title": "Thing",
                   "summary": "The root type of all Things.",
-                  "required": ["type"],
+                  "required": [
+                    "type"
+                  ],
                   "propertyNames": {
                     "pattern": "^[a-z@$][a-zA-Z0-9-_]+$",
-                    "x-parser-schema-id": "<anonymous-schema-221>"
+                    "x-parser-schema-id": "<anonymous-schema-164>"
                   },
                   "properties": {
                     "type": {
                       "type": "string",
                       "pattern": "^[A-Z][a-zA-Z0-9]+$",
                       "description": "The item type (Linked-Data @type)",
-                      "x-parser-schema-id": "<anonymous-schema-219>"
+                      "x-parser-schema-id": "<anonymous-schema-162>"
                     },
                     "@id": {
                       "type": "string",
@@ -140,7 +150,11 @@
                   "properties": {
                     "type": {
                       "type": "string",
-                      "enum": ["MediaObject", "ImageObject", "DigitalDocument"]
+                      "enum": [
+                        "MediaObject",
+                        "ImageObject",
+                        "DigitalDocument"
+                      ]
                     },
                     "id": {
                       "description": "the URL to access the item.",
@@ -171,7 +185,7 @@
                       "example": "http://user.example.com/public/profile/image.jpg"
                     }
                   },
-                  "x-parser-schema-id": "<anonymous-schema-222>"
+                  "x-parser-schema-id": "<anonymous-schema-165>"
                 }
               ],
               "x-parser-schema-id": "MediaObject"
@@ -181,7 +195,9 @@
               "x-range": "ImageObject",
               "properties": {
                 "type": {
-                  "enum": ["ImageObject"],
+                  "enum": [
+                    "ImageObject"
+                  ],
                   "example": "ImageObject"
                 },
                 "id": {
@@ -194,15 +210,18 @@
                   "example": "image/jpeg"
                 }
               },
-              "x-parser-schema-id": "<anonymous-schema-223>"
+              "x-parser-schema-id": "<anonymous-schema-166>"
             }
           ],
-          "x-parser-schema-id": "<anonymous-schema-218>"
+          "x-parser-schema-id": "<anonymous-schema-161>"
         }
       ]
     },
     "internetAddressDisplayYN": {
-      "enum": ["Y", "N"],
+      "enum": [
+        "Y",
+        "N"
+      ],
       "type": "string"
     },
     "latitude": {
@@ -214,7 +233,10 @@
     "listingAgent": {
       "type": "object",
       "description": "the agent/broker representing the seller in a real estate transaction",
-      "x-range": ["RealEstateAgent", "RealEstateOrganization"],
+      "x-range": [
+        "RealEstateAgent",
+        "RealEstateOrganization"
+      ],
       "example": {
         "type": "RealEstateAgent",
         "name": "Lori Listagent",
@@ -306,6 +328,7 @@
     },
     "modificationTimestamp": {
       "description": "The date when the listing was last modified.",
+      "example": "2019-08-24T14:15:22Z",
       "format": "date-time",
       "type": "string"
     },
@@ -340,7 +363,10 @@
       "type": "string",
       "description": "Zip/Post Code",
       "maxLength": 12,
-      "examples": ["10010", "50239-7698", null],
+      "examples": [
+        "10010",
+        "50239-7698"
+      ],
       "x-parser-schema-id": "postalCode"
     },
     "propertySubType": {
@@ -418,7 +444,9 @@
       "x-parser-schema-id": "streetAddress"
     },
     "type": {
-      "enum": ["PropertyListing"],
+      "enum": [
+        "PropertyListing"
+      ],
       "type": "string"
     },
     "universalPropertyId": {

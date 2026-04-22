@@ -55,7 +55,6 @@ properties:
             - NJ
             - CA
             - MI
-            - null
           x-faker: address.stateAbbr
           x-parser-schema-id: addressRegion
         addressLocality:
@@ -71,7 +70,6 @@ properties:
             - Altamonte Springs
             - West Ahmed
             - Blaiseview
-            - null
           x-parser-schema-id: addressLocality
         postalCode:
           $id: http://realestate.yodata.me/schema/postalCode
@@ -82,7 +80,6 @@ properties:
           examples:
             - '10010'
             - 50239-7698
-            - null
           x-parser-schema-id: postalCode
         addressCountry:
           $id: http://realestate.yodata.me/schema/addressCountry

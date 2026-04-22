@@ -8,11 +8,11 @@
       "properties": {
         "type": {
           "const": "Contact",
-          "x-parser-schema-id": "<anonymous-schema-685>"
+          "x-parser-schema-id": "<anonymous-schema-791>"
         },
         "name": {
           "type": "string",
-          "x-parser-schema-id": "<anonymous-schema-686>"
+          "x-parser-schema-id": "<anonymous-schema-792>"
         },
         "identifier": {
           "title": "identifier",
@@ -37,12 +37,12 @@
       "properties": {
         "type": {
           "const": "MarketingProgram",
-          "x-parser-schema-id": "<anonymous-schema-688>"
+          "x-parser-schema-id": "<anonymous-schema-794>"
         },
         "name": {
           "type": "string",
           "example": "Market Activity Report 508 Homewood Ave",
-          "x-parser-schema-id": "<anonymous-schema-689>"
+          "x-parser-schema-id": "<anonymous-schema-795>"
         },
         "identifier": {
           "title": "identifier",

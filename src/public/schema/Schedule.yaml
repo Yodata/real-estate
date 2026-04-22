@@ -22,7 +22,7 @@ properties:
         - Wednesday
         - Thursday
         - Friday
-      x-parser-schema-id: <anonymous-schema-795>
+      x-parser-schema-id: <anonymous-schema-895>
     example:
       - Monday
       - Wednesday
@@ -47,7 +47,7 @@ properties:
         - 10
         - 11
         - 12
-      x-parser-schema-id: <anonymous-schema-797>
+      x-parser-schema-id: <anonymous-schema-897>
     example:
       - 1
   byMonthDay:
@@ -57,7 +57,7 @@ properties:
       Specified as an Integer between 1-31.
     items:
       type: number
-      x-parser-schema-id: <anonymous-schema-799>
+      x-parser-schema-id: <anonymous-schema-899>
   type:
     type: string
     description: The item type (Linked-Data @type)

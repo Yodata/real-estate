@@ -59,7 +59,7 @@ properties:
     type: array
     items:
       type: string
-      x-parser-schema-id: <anonymous-schema-159>
+      x-parser-schema-id: <anonymous-schema-627>
   location:
     type: object
     description: the physical location where an event takes place
@@ -97,7 +97,7 @@ properties:
     type: array
     items:
       type: object
-      x-parser-schema-id: <anonymous-schema-155>
+      x-parser-schema-id: <anonymous-schema-623>
     example:
       - type: Contact
         name: Bruce Wayne

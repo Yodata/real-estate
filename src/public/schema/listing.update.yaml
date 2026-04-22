@@ -110,7 +110,7 @@ payload:
       properties:
         type:
           const: UpdateAction
-          x-parser-schema-id: <anonymous-schema-321>
+          x-parser-schema-id: <anonymous-schema-264>
         object:
           title: PropertyListing
           type: object
@@ -121,7 +121,7 @@ payload:
               enum:
                 - PropertyListing
               type: string
-              x-parser-schema-id: <anonymous-schema-322>
+              x-parser-schema-id: <anonymous-schema-265>
             addressCountry:
               $id: http://realestate.yodata.me/schema/addressCountry
               title: addressCountry
@@ -154,7 +154,6 @@ payload:
                 - Altamonte Springs
                 - West Ahmed
                 - Blaiseview
-                - null
               x-parser-schema-id: addressLocality
             addressRegion:
               $id: addressRegion
@@ -166,9 +165,18 @@ payload:
                 - NJ
                 - CA
                 - MI
-                - null
               x-faker: address.stateAbbr
               x-parser-schema-id: addressRegion
+            brokerAttribution:
+              $id: brokerAttribution
+              title: brokerAttribution
+              type: string
+              description: Broker Attribution
+              examples:
+                - homes@opendoor.com
+                - info@lucrumre.com
+                - 805-315-7160
+                - 7605522574
             buyerAgent:
               description: the buyer's RealEstateAgent
               example:
@@ -179,7 +187,7 @@ payload:
                 type: RealEstateAgent
               type: object
               x-range: RealEstateAgent
-              x-parser-schema-id: <anonymous-schema-323>
+              x-parser-schema-id: <anonymous-schema-266>
             buyerOffice:
               description: the buyer's RealEstateOffice
               example:
@@ -190,7 +198,7 @@ payload:
                 type: RealEstateOffice
               type: object
               x-range: RealEstateOffice
-              x-parser-schema-id: <anonymous-schema-324>
+              x-parser-schema-id: <anonymous-schema-267>
             closeDate:
               title: closeDate
               type: string
@@ -200,7 +208,7 @@ payload:
                 fulfilled. With lease listings, the date the requirements were
                 fulfilled, such as contract and/or deposit.
               x-range: DateTime
-              x-parser-schema-id: <anonymous-schema-325>
+              x-parser-schema-id: <anonymous-schema-268>
             image:
               title: image
               description: an ImageObject or URI reference to an image on the web.
@@ -224,18 +232,18 @@ payload:
                             - type
                           propertyNames:
                             pattern: ^[a-z@$][a-zA-Z0-9-_]+$
-                            x-parser-schema-id: <anonymous-schema-221>
+                            x-parser-schema-id: <anonymous-schema-164>
                           properties:
                             type:
                               type: string
                               pattern: ^[A-Z][a-zA-Z0-9]+$
                               description: The item type (Linked-Data @type)
-                              x-parser-schema-id: <anonymous-schema-219>
+                              x-parser-schema-id: <anonymous-schema-162>
                             '@id':
                               type: string
                               format: uri
                               description: the liked data uri for the Thing
-                              x-parser-schema-id: <anonymous-schema-220>
+                              x-parser-schema-id: <anonymous-schema-163>
                           x-parser-schema-id: Thing
                         - properties:
                             type:
@@ -267,7 +275,7 @@ payload:
                               format: uri
                               description: URL of the image content
                               example: http://user.example.com/public/profile/image.jpg
-                          x-parser-schema-id: <anonymous-schema-222>
+                          x-parser-schema-id: <anonymous-schema-165>
                       x-parser-schema-id: MediaObject
                     - title: ImageObject
                       x-range: ImageObject
@@ -282,21 +290,21 @@ payload:
                           example: image.jpg
                         encodingFormat:
                           example: image/jpeg
-                      x-parser-schema-id: <anonymous-schema-223>
-                  x-parser-schema-id: <anonymous-schema-218>
-              x-parser-schema-id: <anonymous-schema-217>
+                      x-parser-schema-id: <anonymous-schema-166>
+                  x-parser-schema-id: <anonymous-schema-161>
+              x-parser-schema-id: <anonymous-schema-160>
             internetAddressDisplayYN:
               enum:
                 - 'Y'
                 - 'N'
               type: string
-              x-parser-schema-id: <anonymous-schema-326>
+              x-parser-schema-id: <anonymous-schema-269>
             latitude:
               type: number
               description: The latitude of a location.
               x-title: latitude
               example: 40.75
-              x-parser-schema-id: <anonymous-schema-224>
+              x-parser-schema-id: <anonymous-schema-167>
             listingAgent:
               type: object
               description: >-
@@ -310,19 +318,19 @@ payload:
                 name: Lori Listagent
                 telephone: 1-252-574-0160
                 email: lorilistagent@example.com
-              x-parser-schema-id: <anonymous-schema-327>
+              x-parser-schema-id: <anonymous-schema-270>
             listingContractDate:
               description: >-
                 The effective date of the agreement between the seller and the
                 seller's broker.
               format: date-time
               type: string
-              x-parser-schema-id: <anonymous-schema-328>
+              x-parser-schema-id: <anonymous-schema-271>
             listingId:
               description: the local identifier for the listing
               example: GOTHAM-MLS+12345
               type: string
-              x-parser-schema-id: <anonymous-schema-329>
+              x-parser-schema-id: <anonymous-schema-272>
             listingOffice:
               description: the listing office
               example:
@@ -330,7 +338,7 @@ payload:
                 type: RealEstateOffice
               type: object
               x-range: RealEstateOrganization
-              x-parser-schema-id: <anonymous-schema-330>
+              x-parser-schema-id: <anonymous-schema-273>
             listingOriginatingSystem:
               description: The place where the item is originally input by the user.
               example:
@@ -342,7 +350,7 @@ payload:
               type: object
               x-range: MultipleListingService
               x-subPropertyOf: instrument
-              x-parser-schema-id: <anonymous-schema-331>
+              x-parser-schema-id: <anonymous-schema-274>
             listingPrice:
               type: object
               x-range: PriceSpecification
@@ -350,7 +358,7 @@ payload:
                 type: PriceSpecification
                 price: 75000
                 priceCurrency: USD
-              x-parser-schema-id: <anonymous-schema-332>
+              x-parser-schema-id: <anonymous-schema-275>
             listingStatus:
               enum:
                 - Active
@@ -361,7 +369,7 @@ payload:
                 - OffMarket
                 - Private
               type: string
-              x-parser-schema-id: <anonymous-schema-333>
+              x-parser-schema-id: <anonymous-schema-276>
             livingArea:
               description: property indoor space
               example:
@@ -371,13 +379,13 @@ payload:
                 value: 1500
               type: object
               x-range: QuantitativeValue
-              x-parser-schema-id: <anonymous-schema-334>
+              x-parser-schema-id: <anonymous-schema-277>
             longitude:
               type: number
               description: The longitude of a location.
               x-title: longitude
               example: 73.98
-              x-parser-schema-id: <anonymous-schema-227>
+              x-parser-schema-id: <anonymous-schema-170>
             lotSize:
               description: outdoor space minValue, maxValue
               example:
@@ -387,32 +395,38 @@ payload:
                 value: 0.5
               type: object
               x-range: QuantitativeValue
-              x-parser-schema-id: <anonymous-schema-335>
+              x-parser-schema-id: <anonymous-schema-278>
+            modificationTimestamp:
+              description: The date when the listing was last modified.
+              example: '2019-08-24T14:15:22Z'
+              format: date-time
+              type: string
+              x-parser-schema-id: <anonymous-schema-279>
             numberOfBathrooms:
               description: the number of bathrooms
               example: '2'
               type: string
-              x-parser-schema-id: <anonymous-schema-336>
+              x-parser-schema-id: <anonymous-schema-280>
             numberOfBedrooms:
               description: the number of bedrooms
               example: '3'
               type: string
-              x-parser-schema-id: <anonymous-schema-337>
+              x-parser-schema-id: <anonymous-schema-281>
             numberOfRooms:
               description: the total number of rooms in the building
               example: '7'
               type: string
-              x-parser-schema-id: <anonymous-schema-338>
+              x-parser-schema-id: <anonymous-schema-282>
             originatingSystemKey:
               description: the listing identifier from the original MLS, aka MLSID.
               example: 12345
               type: string
-              x-parser-schema-id: <anonymous-schema-339>
+              x-parser-schema-id: <anonymous-schema-283>
             originatingSystemName:
               description: the name of the MLS where the listing was originally input
               example: GOTHAM-MLS
               type: string
-              x-parser-schema-id: <anonymous-schema-340>
+              x-parser-schema-id: <anonymous-schema-284>
             postalCode:
               $id: http://realestate.yodata.me/schema/postalCode
               title: postalCode
@@ -422,7 +436,6 @@ payload:
               examples:
                 - '10010'
                 - 50239-7698
-                - null
               x-parser-schema-id: postalCode
             propertySubType:
               title: propertySubType
@@ -458,7 +471,7 @@ payload:
                 - RetailPropertyType
                 - UnimprovedLandPropertyType
                 - WarehousePropertyType
-              x-parser-schema-id: <anonymous-schema-232>
+              x-parser-schema-id: <anonymous-schema-175>
             propertyType:
               type: string
               description: RESO property type (see range for allowed values)
@@ -475,7 +488,7 @@ payload:
                 - COMS
                 - COML
                 - BUSO
-              x-parser-schema-id: <anonymous-schema-215>
+              x-parser-schema-id: <anonymous-schema-158>
             purchaseContractDate:
               description: >-
                 With for-sale listings, the date an offer was accepted and the
@@ -485,12 +498,12 @@ payload:
                 or receipt of the deposit.
               format: date-time
               type: string
-              x-parser-schema-id: <anonymous-schema-341>
+              x-parser-schema-id: <anonymous-schema-285>
             stories:
               type: number
               description: he number of floors in the property
               example: 2
-              x-parser-schema-id: <anonymous-schema-233>
+              x-parser-schema-id: <anonymous-schema-176>
             streetAddress:
               $id: streetAddress.yaml
               title: streetAddress
@@ -510,7 +523,7 @@ payload:
                 For cases such as shares of real property, units, and other more
                 granular cases, please utilize the UniversalPropertySubId.
               example: US-04015-N-R-11022331-N
-              x-parser-schema-id: <anonymous-schema-342>
+              x-parser-schema-id: <anonymous-schema-286>
             url:
               title: url
               type: string
@@ -518,16 +531,16 @@ payload:
               description: URL of the item.
               example: >-
                 https://www.example.com/homedetails/1007-Mountain-Gate-Rd-Gotham-City-Gotham/10007
-              x-parser-schema-id: <anonymous-schema-343>
+              x-parser-schema-id: <anonymous-schema-287>
             yearBuilt:
               type: number
               description: the year the structure was created
               example: 1988
-              x-parser-schema-id: <anonymous-schema-234>
+              x-parser-schema-id: <anonymous-schema-177>
           x-parser-schema-id: PropertyListing
-      x-parser-schema-id: <anonymous-schema-320>
+      x-parser-schema-id: <anonymous-schema-263>
     topic:
       const: realestate/listing#update
-      x-parser-schema-id: <anonymous-schema-319>
-  x-parser-schema-id: <anonymous-schema-318>
+      x-parser-schema-id: <anonymous-schema-262>
+  x-parser-schema-id: <anonymous-schema-261>
 

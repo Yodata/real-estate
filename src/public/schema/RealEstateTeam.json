@@ -40,8 +40,7 @@
           "examples": [
             "NJ",
             "CA",
-            "MI",
-            null
+            "MI"
           ],
           "x-faker": "address.stateAbbr",
           "x-parser-schema-id": "addressRegion"
@@ -58,8 +57,7 @@
             "Heidistad",
             "Altamonte Springs",
             "West Ahmed",
-            "Blaiseview",
-            null
+            "Blaiseview"
           ],
           "x-parser-schema-id": "addressLocality"
         },
@@ -71,8 +69,7 @@
           "maxLength": 12,
           "examples": [
             "10010",
-            "50239-7698",
-            null
+            "50239-7698"
           ],
           "x-parser-schema-id": "postalCode"
         },
@@ -281,20 +278,20 @@
                   ],
                   "type": "string",
                   "description": "The item type (Linked-Data @type)",
-                  "x-parser-schema-id": "<anonymous-schema-409>"
+                  "x-parser-schema-id": "<anonymous-schema-357>"
                 },
                 "id": {
                   "example": "https://example.com/profile/card#me",
                   "type": "string",
                   "format": "uri",
                   "description": "Linked-Data URI (@id)",
-                  "x-parser-schema-id": "<anonymous-schema-410>"
+                  "x-parser-schema-id": "<anonymous-schema-358>"
                 },
                 "name": {
                   "type": "string",
                   "description": "name of the issuing organization",
                   "example": "Gotham City Real Estate",
-                  "x-parser-schema-id": "<anonymous-schema-411>"
+                  "x-parser-schema-id": "<anonymous-schema-359>"
                 }
               }
             },
@@ -309,7 +306,7 @@
                   ],
                   "type": "string",
                   "description": "The item type (Linked-Data @type)",
-                  "x-parser-schema-id": "<anonymous-schema-413>"
+                  "x-parser-schema-id": "<anonymous-schema-361>"
                 },
                 "id": {
                   "type": "string",
@@ -449,14 +446,14 @@
                   ],
                   "propertyNames": {
                     "pattern": "^[a-z@$][a-zA-Z0-9-_]+$",
-                    "x-parser-schema-id": "<anonymous-schema-221>"
+                    "x-parser-schema-id": "<anonymous-schema-164>"
                   },
                   "properties": {
                     "type": {
                       "type": "string",
                       "pattern": "^[A-Z][a-zA-Z0-9]+$",
                       "description": "The item type (Linked-Data @type)",
-                      "x-parser-schema-id": "<anonymous-schema-219>"
+                      "x-parser-schema-id": "<anonymous-schema-162>"
                     },
                     "@id": {
                       "type": "string",
@@ -505,7 +502,7 @@
                       "example": "http://user.example.com/public/profile/image.jpg"
                     }
                   },
-                  "x-parser-schema-id": "<anonymous-schema-222>"
+                  "x-parser-schema-id": "<anonymous-schema-165>"
                 }
               ],
               "x-parser-schema-id": "MediaObject"
@@ -530,10 +527,10 @@
                   "example": "image/jpeg"
                 }
               },
-              "x-parser-schema-id": "<anonymous-schema-223>"
+              "x-parser-schema-id": "<anonymous-schema-166>"
             }
           ],
-          "x-parser-schema-id": "<anonymous-schema-218>"
+          "x-parser-schema-id": "<anonymous-schema-161>"
         }
       ]
     },
@@ -648,7 +645,7 @@
                   "RealEstateTeamMembership"
                 ],
                 "example": "RealEstateTeamMembership",
-                "x-parser-schema-id": "<anonymous-schema-470>"
+                "x-parser-schema-id": "<anonymous-schema-418>"
               },
               "roleName": {
                 "type": "string",
@@ -657,22 +654,22 @@
                   "TeamAdmin",
                   "TeamOwner"
                 ],
-                "x-parser-schema-id": "<anonymous-schema-471>"
+                "x-parser-schema-id": "<anonymous-schema-419>"
               },
               "memberOf": {
                 "type": "string",
                 "format": "uri",
                 "example": "https://{team-id}.example.com/profile/card#me",
-                "x-parser-schema-id": "<anonymous-schema-472>"
+                "x-parser-schema-id": "<anonymous-schema-420>"
               },
               "member": {
                 "type": "string",
                 "format": "uri",
                 "example": "https://{agent}.example.com/profile/card#me",
-                "x-parser-schema-id": "<anonymous-schema-473>"
+                "x-parser-schema-id": "<anonymous-schema-421>"
               }
             },
-            "x-parser-schema-id": "<anonymous-schema-469>"
+            "x-parser-schema-id": "<anonymous-schema-417>"
           }
         ],
         "x-parser-schema-id": "RealEstateTeamMembership"
@@ -691,7 +688,7 @@
       "description": "A franchisor or affiliate network of which this organization plays a membership role.",
       "type": "array",
       "items": {
-        "x-parser-schema-id": "<anonymous-schema-431>",
+        "x-parser-schema-id": "<anonymous-schema-379>",
         "type": "string",
         "format": "uri"
       }
@@ -704,7 +701,7 @@
       "items": {
         "type": "string",
         "format": "uri",
-        "x-parser-schema-id": "<anonymous-schema-440>"
+        "x-parser-schema-id": "<anonymous-schema-388>"
       }
     },
     "telephone": {
@@ -728,6 +725,6 @@
       "description": "URL of the item."
     }
   },
-  "x-parser-schema-id": "<anonymous-schema-455>",
+  "x-parser-schema-id": "<anonymous-schema-403>",
   "$id": "http://realestate.yodata.me/schema/RealEstateTeam.json"
 }

@@ -10,7 +10,6 @@ examples:
   - Altamonte Springs
   - West Ahmed
   - Blaiseview
-  - null
 x-parser-schema-id: addressLocality
 properties: {}
 

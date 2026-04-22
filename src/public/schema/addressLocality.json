@@ -10,8 +10,7 @@
     "Heidistad",
     "Altamonte Springs",
     "West Ahmed",
-    "Blaiseview",
-    null
+    "Blaiseview"
   ],
   "x-parser-schema-id": "addressLocality",
   "properties": {}

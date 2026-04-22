@@ -223,8 +223,7 @@
                           "examples": [
                             "NJ",
                             "CA",
-                            "MI",
-                            null
+                            "MI"
                           ],
                           "x-faker": "address.stateAbbr",
                           "x-parser-schema-id": "addressRegion"
@@ -241,8 +240,7 @@
                             "Heidistad",
                             "Altamonte Springs",
                             "West Ahmed",
-                            "Blaiseview",
-                            null
+                            "Blaiseview"
                           ],
                           "x-parser-schema-id": "addressLocality"
                         },
@@ -254,8 +252,7 @@
                           "maxLength": 12,
                           "examples": [
                             "10010",
-                            "50239-7698",
-                            null
+                            "50239-7698"
                           ],
                           "x-parser-schema-id": "postalCode"
                         },
@@ -723,7 +720,7 @@
                       null,
                       null
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-421>"
+                    "x-parser-schema-id": "<anonymous-schema-369>"
                   },
                   "contactGroup": {
                     "type": "array",
@@ -839,7 +836,7 @@
                     "description": "The date on which the item was most recently modified or when the item's entry was modified within a DataFeed.",
                     "type": "string",
                     "format": "date-time",
-                    "x-parser-schema-id": "<anonymous-schema-122>"
+                    "x-parser-schema-id": "<anonymous-schema-600>"
                   }
                 },
                 "x-parser-schema-id": "<anonymous-schema-116>"

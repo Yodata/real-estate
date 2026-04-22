@@ -110,7 +110,7 @@ payload:
       properties:
         type:
           const: UpdateAction
-          x-parser-schema-id: <anonymous-schema-509>
+          x-parser-schema-id: <anonymous-schema-457>
         object:
           title: ServiceArea
           type: object
@@ -124,7 +124,7 @@ payload:
               description: '"ServiceArea"'
               enum:
                 - ServiceArea
-              x-parser-schema-id: <anonymous-schema-483>
+              x-parser-schema-id: <anonymous-schema-431>
             kind:
               type: string
               description: ServiceArea sub-type.  City or PostalCode
@@ -132,7 +132,7 @@ payload:
                 - City
                 - PostalCode
               example: PostalCode
-              x-parser-schema-id: <anonymous-schema-484>
+              x-parser-schema-id: <anonymous-schema-432>
             identifier:
               type: object
               description: >-
@@ -142,35 +142,35 @@ payload:
                 bhhsESAId:
                   type: string
                   description: BHHS internal ESA ID
-                  x-parser-schema-id: <anonymous-schema-486>
-              x-parser-schema-id: <anonymous-schema-485>
+                  x-parser-schema-id: <anonymous-schema-434>
+              x-parser-schema-id: <anonymous-schema-433>
             addressLocality:
               type: string
               description: City, Township.
               example: Woodland Hills
-              x-parser-schema-id: <anonymous-schema-487>
+              x-parser-schema-id: <anonymous-schema-435>
             postalCode:
               type: string
               description: Zip/Post Code
               example: '91371'
-              x-parser-schema-id: <anonymous-schema-488>
+              x-parser-schema-id: <anonymous-schema-436>
             addressRegion:
               type: string
               description: State or Province.
               example: CA
-              x-parser-schema-id: <anonymous-schema-489>
+              x-parser-schema-id: <anonymous-schema-437>
             addressCountry:
               type: string
               description: >-
                 The country. For example, USA. You can also provide the
                 two-letter ISO 3166-1 alpha-2 country code.
               example: US
-              x-parser-schema-id: <anonymous-schema-490>
+              x-parser-schema-id: <anonymous-schema-438>
             addressCounty:
               type: string
               description: the county (us real estate extension)
               example: Los Angeles
-              x-parser-schema-id: <anonymous-schema-491>
+              x-parser-schema-id: <anonymous-schema-439>
             provider:
               type: object
               description: a broker or company who provides service in the ServiceArea
@@ -182,13 +182,13 @@ payload:
                   description: '"RealEstateOrganization"'
                   enum:
                     - RealEstateOrganization
-                  x-parser-schema-id: <anonymous-schema-493>
+                  x-parser-schema-id: <anonymous-schema-441>
                 id:
                   type: string
                   description: profile URI
                   example: https://org.example.com/profile/card#me
-                  x-parser-schema-id: <anonymous-schema-494>
-              x-parser-schema-id: <anonymous-schema-492>
+                  x-parser-schema-id: <anonymous-schema-442>
+              x-parser-schema-id: <anonymous-schema-440>
             additionalProperty:
               type: object
               description: BHHS specific ServiceArea properties
@@ -202,39 +202,39 @@ payload:
                       description: The item type (Linked-Data @type)
                       enum:
                         - RealEstateOffice
-                      x-parser-schema-id: <anonymous-schema-497>
+                      x-parser-schema-id: <anonymous-schema-445>
                     id:
                       type: string
                       x-subPropertyOf: identifier
                       example: https://org.example.com/profile/card#me
-                      x-parser-schema-id: <anonymous-schema-498>
-                  x-parser-schema-id: <anonymous-schema-496>
+                      x-parser-schema-id: <anonymous-schema-446>
+                  x-parser-schema-id: <anonymous-schema-444>
                 weight:
                   type: integer
                   description: weight
-                  x-parser-schema-id: <anonymous-schema-499>
+                  x-parser-schema-id: <anonymous-schema-447>
                 officeInPostalCode:
                   type: boolean
                   description: >-
                     true if the service area provider is physically located in
                     the ServiceArea.
-                  x-parser-schema-id: <anonymous-schema-500>
+                  x-parser-schema-id: <anonymous-schema-448>
                 sortOrder:
                   type: integer
                   description: sort order
-                  x-parser-schema-id: <anonymous-schema-501>
+                  x-parser-schema-id: <anonymous-schema-449>
                 sentToConsumerSite:
                   type: boolean
                   description: sent to consumer site
-                  x-parser-schema-id: <anonymous-schema-502>
+                  x-parser-schema-id: <anonymous-schema-450>
                 sentToCompanyLocator:
                   type: boolean
                   description: sent to company locator
-                  x-parser-schema-id: <anonymous-schema-503>
+                  x-parser-schema-id: <anonymous-schema-451>
                 sentToReferralSolutions:
                   type: boolean
                   description: sent to referral solutions
-                  x-parser-schema-id: <anonymous-schema-504>
+                  x-parser-schema-id: <anonymous-schema-452>
                 luxuryPriceMinimum:
                   description: >-
                     minimum price for a property listing in the area to be
@@ -245,12 +245,12 @@ payload:
                     type: PriceSpecification
                     price: 1000000
                     priceCurrency: USD
-                  x-parser-schema-id: <anonymous-schema-505>
-              x-parser-schema-id: <anonymous-schema-495>
+                  x-parser-schema-id: <anonymous-schema-453>
+              x-parser-schema-id: <anonymous-schema-443>
           x-parser-schema-id: ServiceArea
-      x-parser-schema-id: <anonymous-schema-508>
+      x-parser-schema-id: <anonymous-schema-456>
     topic:
       const: realestate/servicearea#update
-      x-parser-schema-id: <anonymous-schema-507>
-  x-parser-schema-id: <anonymous-schema-506>
+      x-parser-schema-id: <anonymous-schema-455>
+  x-parser-schema-id: <anonymous-schema-454>
 

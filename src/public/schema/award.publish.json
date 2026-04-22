@@ -13,7 +13,7 @@
         "format": "date-time",
         "description": "date & time the event was produced",
         "x-faker": "date.past",
-        "x-parser-schema-id": "<anonymous-schema-2>"
+        "x-parser-schema-id": "<anonymous-schema-7>"
       },
       "agent": {
         "type": "string",
@@ -24,7 +24,7 @@
           "https://teamsupermario.example.com/profile/card#me",
           "https://bigbrandrealestate.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-3>"
+        "x-parser-schema-id": "<anonymous-schema-8>"
       },
       "instrument": {
         "type": "string",
@@ -38,7 +38,7 @@
           "http://ace.example.com/profile/card#me",
           "http://roqlogic.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-4>"
+        "x-parser-schema-id": "<anonymous-schema-9>"
       },
       "source": {
         "type": "string",
@@ -47,7 +47,7 @@
         "examples": [
           "https://bigbrandrealestate.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-5>"
+        "x-parser-schema-id": "<anonymous-schema-10>"
       },
       "originalRecipient": {
         "type": "string",
@@ -64,7 +64,7 @@
           "http://jim.example.com/profile/card#me",
           "http://jennifer.example.com/profile/card#me"
         ],
-        "x-parser-schema-id": "<anonymous-schema-6>"
+        "x-parser-schema-id": "<anonymous-schema-11>"
       },
       "id": {
         "type": "string",
@@ -79,7 +79,7 @@
           "http://ace.example.com/publish/56789",
           "http://roqlogic.example.com/publish/67890"
         ],
-        "x-parser-schema-id": "<anonymous-schema-7>"
+        "x-parser-schema-id": "<anonymous-schema-12>"
       },
       "@id": {
         "type": "string",
@@ -92,10 +92,10 @@
           "http://ace.example.com/inbox/56789",
           "http://roqlogic.example.com/inbox/67890"
         ],
-        "x-parser-schema-id": "<anonymous-schema-8>"
+        "x-parser-schema-id": "<anonymous-schema-13>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-1>"
+    "x-parser-schema-id": "<anonymous-schema-6>"
   },
   "payload": {
     "type": "object",
@@ -116,7 +116,7 @@
               "AddAction",
               "RemoveAction"
             ],
-            "x-parser-schema-id": "<anonymous-schema-12>"
+            "x-parser-schema-id": "<anonymous-schema-587>"
           },
           "object": {
             "oneOf": [
@@ -130,19 +130,20 @@
                 "properties": {
                   "type": {
                     "const": "AwardSeries",
-                    "x-parser-schema-id": "<anonymous-schema-14>"
+                    "x-parser-schema-id": "<anonymous-schema-27>"
                   },
                   "name": {
                     "example": "Top 1% Club",
                     "description": "name of the series",
-                    "type": "string",
-                    "x-parser-schema-id": "<anonymous-schema-15>"
+                    "$id": "http://realestate.yodata.me/schema/name.yaml",
+                    "title": "name",
+                    "type": "string"
                   },
                   "description": {
                     "example": "Annual",
                     "type": "string",
                     "description": "description of the item.",
-                    "x-parser-schema-id": "<anonymous-schema-16>"
+                    "x-parser-schema-id": "<anonymous-schema-28>"
                   },
                   "duration": {
                     "title": "duration",
@@ -150,24 +151,24 @@
                     "format": "duration",
                     "description": "The duration of the item in ISO 8601 date format.",
                     "example": "R/P1Y",
-                    "x-parser-schema-id": "<anonymous-schema-17>"
+                    "x-parser-schema-id": "<anonymous-schema-29>"
                   },
                   "startDate": {
                     "description": "the start date-time (ISO 8601 formated)",
                     "type": "string",
                     "format": "date-time",
-                    "x-parser-schema-id": "<anonymous-schema-18>"
+                    "x-parser-schema-id": "<anonymous-schema-30>"
                   },
                   "endDate": {
                     "type": "string",
                     "description": "the end date-time (ISO 8601 formated)",
                     "format": "date-time",
-                    "x-parser-schema-id": "<anonymous-schema-19>"
+                    "x-parser-schema-id": "<anonymous-schema-31>"
                   },
                   "id": {
                     "type": "string",
                     "format": "uri",
-                    "x-parser-schema-id": "<anonymous-schema-20>"
+                    "x-parser-schema-id": "<anonymous-schema-32>"
                   },
                   "identifier": {
                     "example": {
@@ -175,19 +176,18 @@
                     },
                     "title": "identifier",
                     "type": "object",
-                    "description": "identifier assigned to a contact by the vendor who originally created the contact",
+                    "summary": "identifier assigned to a contact by the vendor who originally created the contact",
+                    "maxProperties": 1,
+                    "minProperties": 1,
                     "examples": [
                       {
-                        "salesforceid": "0031U00002XW1QWQA1"
+                        "bhhsconsumerid": "12345"
                       },
                       {
-                        "vendoraid": "123456"
-                      },
-                      {
-                        "originating_system_id": "123456"
+                        "salesforceid": "56789"
                       }
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-21>"
+                    "x-parser-schema-id": "<anonymous-schema-33>"
                   }
                 },
                 "x-parser-schema-id": "AwardSeries"
@@ -195,7 +195,7 @@
               {
                 "title": "Award",
                 "type": "object",
-                "description": "An honor bestowed on one or mote _recipients_ by the message _agent_",
+                "description": "An honor bestowed on one or more _recipients_ by the message _agent_",
                 "properties": {
                   "type": {
                     "type": "string",
@@ -203,27 +203,28 @@
                       "Award"
                     ],
                     "description": "\"AwardAction\"",
-                    "x-parser-schema-id": "<anonymous-schema-22>"
+                    "x-parser-schema-id": "<anonymous-schema-74>"
                   },
                   "name": {
                     "example": "Top 1%",
                     "description": "name of the award",
-                    "type": "string",
-                    "x-parser-schema-id": "<anonymous-schema-23>"
+                    "$id": "http://realestate.yodata.me/schema/name.yaml",
+                    "title": "name",
+                    "type": "string"
                   },
                   "dateAwarded": {
                     "type": "string",
                     "format": "date-time",
                     "description": "date the award was presented or announced.",
                     "x-range": "DateTime",
-                    "example": "2019-11-25T04:23:32.000Z",
-                    "x-parser-schema-id": "<anonymous-schema-24>"
+                    "example": "2019-11-25T04:23:32Z",
+                    "x-parser-schema-id": "<anonymous-schema-75>"
                   },
                   "agent": {
                     "type": "string",
                     "format": "uri",
                     "description": "the agent that presented the award",
-                    "x-parser-schema-id": "<anonymous-schema-25>"
+                    "x-parser-schema-id": "<anonymous-schema-76>"
                   },
                   "recipient": {
                     "type": "array",
@@ -239,19 +240,20 @@
                             "RealEstateOffice",
                             "RealEstateOrganization"
                           ],
-                          "x-parser-schema-id": "<anonymous-schema-28>"
+                          "x-parser-schema-id": "<anonymous-schema-79>"
                         },
                         "id": {
                           "type": "string",
                           "format": "uri",
                           "example": "https://user.example.com/profile/card#me",
-                          "x-parser-schema-id": "<anonymous-schema-29>"
+                          "x-parser-schema-id": "<anonymous-schema-80>"
                         },
                         "name": {
                           "type": "string",
                           "description": "the name of the award recipient",
                           "x-faker": "name.findName",
-                          "x-parser-schema-id": "<anonymous-schema-30>"
+                          "example": "John Smith",
+                          "x-parser-schema-id": "<anonymous-schema-81>"
                         }
                       },
                       "required": [
@@ -259,9 +261,9 @@
                         "id",
                         "name"
                       ],
-                      "x-parser-schema-id": "<anonymous-schema-27>"
+                      "x-parser-schema-id": "<anonymous-schema-78>"
                     },
-                    "x-parser-schema-id": "<anonymous-schema-26>"
+                    "x-parser-schema-id": "<anonymous-schema-77>"
                   },
                   "identifier": {
                     "example": {
@@ -269,19 +271,18 @@
                     },
                     "title": "identifier",
                     "type": "object",
-                    "description": "identifier assigned to a contact by the vendor who originally created the contact",
+                    "summary": "identifier assigned to a contact by the vendor who originally created the contact",
+                    "maxProperties": 1,
+                    "minProperties": 1,
                     "examples": [
                       {
-                        "salesforceid": "0031U00002XW1QWQA1"
+                        "bhhsconsumerid": "12345"
                       },
                       {
-                        "vendoraid": "123456"
-                      },
-                      {
-                        "originating_system_id": "123456"
+                        "salesforceid": "56789"
                       }
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-31>"
+                    "x-parser-schema-id": "<anonymous-schema-82>"
                   }
                 },
                 "x-parser-schema-id": "Award"
@@ -298,13 +299,13 @@
                 "properties": {
                   "type": {
                     "const": "AwardTeam",
-                    "x-parser-schema-id": "<anonymous-schema-32>"
+                    "x-parser-schema-id": "<anonymous-schema-48>"
                   },
                   "name": {
                     "example": "Top Producer by Volume",
-                    "type": "string",
-                    "description": "the name of the item",
-                    "x-parser-schema-id": "<anonymous-schema-33>"
+                    "$id": "http://realestate.yodata.me/schema/name.yaml",
+                    "title": "name",
+                    "type": "string"
                   },
                   "identifier": {
                     "example": {
@@ -312,19 +313,18 @@
                     },
                     "title": "identifier",
                     "type": "object",
-                    "description": "identifier assigned to a contact by the vendor who originally created the contact",
+                    "summary": "identifier assigned to a contact by the vendor who originally created the contact",
+                    "maxProperties": 1,
+                    "minProperties": 1,
                     "examples": [
                       {
-                        "salesforceid": "0031U00002XW1QWQA1"
+                        "bhhsconsumerid": "12345"
                       },
                       {
-                        "vendoraid": "123456"
-                      },
-                      {
-                        "originating_system_id": "123456"
+                        "salesforceid": "56789"
                       }
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-34>"
+                    "x-parser-schema-id": "<anonymous-schema-49>"
                   },
                   "member": {
                     "description": "members of the AwardTeam",
@@ -337,9 +337,9 @@
                         "http://ma302-001.example.com/profile/card#me",
                         "http://ma302.example.com/profile/card#me"
                       ],
-                      "x-parser-schema-id": "<anonymous-schema-36>"
+                      "x-parser-schema-id": "<anonymous-schema-51>"
                     },
-                    "x-parser-schema-id": "<anonymous-schema-35>"
+                    "x-parser-schema-id": "<anonymous-schema-50>"
                   }
                 },
                 "x-parser-schema-id": "AwardTeam"
@@ -348,13 +348,13 @@
                 "type": "string",
                 "format": "uri",
                 "example": "https://user.example.com/profile/card#me",
-                "x-parser-schema-id": "<anonymous-schema-37>"
+                "x-parser-schema-id": "<anonymous-schema-589>"
               }
             ],
-            "x-parser-schema-id": "<anonymous-schema-13>"
+            "x-parser-schema-id": "<anonymous-schema-588>"
           }
         },
-        "x-parser-schema-id": "<anonymous-schema-11>"
+        "x-parser-schema-id": "<anonymous-schema-586>"
       },
       "topic": {
         "type": "string",
@@ -370,9 +370,9 @@
           "realestate/award#teammemberadd",
           "realestate/award#teammemberremove"
         ],
-        "x-parser-schema-id": "<anonymous-schema-10>"
+        "x-parser-schema-id": "<anonymous-schema-585>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-9>"
+    "x-parser-schema-id": "<anonymous-schema-584>"
   }
 }

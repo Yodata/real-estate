@@ -22,7 +22,7 @@
                 "RealEstateProperty"
               ],
               "type": "string",
-              "x-parser-schema-id": "<anonymous-schema-214>"
+              "x-parser-schema-id": "<anonymous-schema-157>"
             },
             "propertyType": {
               "type": "string",
@@ -75,8 +75,7 @@
                 "Heidistad",
                 "Altamonte Springs",
                 "West Ahmed",
-                "Blaiseview",
-                null
+                "Blaiseview"
               ],
               "x-parser-schema-id": "addressLocality"
             },
@@ -89,8 +88,7 @@
               "examples": [
                 "NJ",
                 "CA",
-                "MI",
-                null
+                "MI"
               ],
               "x-faker": "address.stateAbbr",
               "x-parser-schema-id": "addressRegion"
@@ -99,7 +97,7 @@
               "type": "string",
               "description": "Assessors Parcel Number",
               "example": "ABC-12345-XX-XXXX",
-              "x-parser-schema-id": "<anonymous-schema-216>"
+              "x-parser-schema-id": "<anonymous-schema-159>"
             },
             "image": {
               "title": "image",
@@ -130,14 +128,14 @@
                           ],
                           "propertyNames": {
                             "pattern": "^[a-z@$][a-zA-Z0-9-_]+$",
-                            "x-parser-schema-id": "<anonymous-schema-221>"
+                            "x-parser-schema-id": "<anonymous-schema-164>"
                           },
                           "properties": {
                             "type": {
                               "type": "string",
                               "pattern": "^[A-Z][a-zA-Z0-9]+$",
                               "description": "The item type (Linked-Data @type)",
-                              "x-parser-schema-id": "<anonymous-schema-219>"
+                              "x-parser-schema-id": "<anonymous-schema-162>"
                             },
                             "@id": {
                               "type": "string",
@@ -186,7 +184,7 @@
                               "example": "http://user.example.com/public/profile/image.jpg"
                             }
                           },
-                          "x-parser-schema-id": "<anonymous-schema-222>"
+                          "x-parser-schema-id": "<anonymous-schema-165>"
                         }
                       ],
                       "x-parser-schema-id": "MediaObject"
@@ -211,10 +209,10 @@
                           "example": "image/jpeg"
                         }
                       },
-                      "x-parser-schema-id": "<anonymous-schema-223>"
+                      "x-parser-schema-id": "<anonymous-schema-166>"
                     }
                   ],
-                  "x-parser-schema-id": "<anonymous-schema-218>"
+                  "x-parser-schema-id": "<anonymous-schema-161>"
                 }
               ]
             },
@@ -227,7 +225,7 @@
             "listingId": {
               "description": "the local identifier for the listing (MLS #)",
               "type": "string",
-              "x-parser-schema-id": "<anonymous-schema-225>"
+              "x-parser-schema-id": "<anonymous-schema-168>"
             },
             "livingArea": {
               "description": "property indoor space",
@@ -239,7 +237,7 @@
               },
               "type": "object",
               "x-range": "QuantitativeValue",
-              "x-parser-schema-id": "<anonymous-schema-226>"
+              "x-parser-schema-id": "<anonymous-schema-169>"
             },
             "longitude": {
               "type": "number",
@@ -257,25 +255,25 @@
               },
               "type": "object",
               "x-range": "QuantitativeValue",
-              "x-parser-schema-id": "<anonymous-schema-228>"
+              "x-parser-schema-id": "<anonymous-schema-171>"
             },
             "numberOfBathrooms": {
               "description": "the number of bathrooms",
               "example": "2",
               "type": "string",
-              "x-parser-schema-id": "<anonymous-schema-229>"
+              "x-parser-schema-id": "<anonymous-schema-172>"
             },
             "numberOfBedrooms": {
               "description": "the number of bedrooms",
               "example": "3",
               "type": "string",
-              "x-parser-schema-id": "<anonymous-schema-230>"
+              "x-parser-schema-id": "<anonymous-schema-173>"
             },
             "numberOfRooms": {
               "description": "the total number of rooms in the building",
               "type": "string",
               "example": 7,
-              "x-parser-schema-id": "<anonymous-schema-231>"
+              "x-parser-schema-id": "<anonymous-schema-174>"
             },
             "postalCode": {
               "$id": "http://realestate.yodata.me/schema/postalCode",
@@ -285,8 +283,7 @@
               "maxLength": 12,
               "examples": [
                 "10010",
-                "50239-7698",
-                null
+                "50239-7698"
               ],
               "x-parser-schema-id": "postalCode"
             },
@@ -351,7 +348,7 @@
         },
         {
           "description": "the subject property",
-          "x-parser-schema-id": "<anonymous-schema-773>"
+          "x-parser-schema-id": "<anonymous-schema-565>"
         },
         {
           "properties": {
@@ -416,7 +413,7 @@
               }
             }
           },
-          "x-parser-schema-id": "<anonymous-schema-774>"
+          "x-parser-schema-id": "<anonymous-schema-566>"
         }
       ]
     },

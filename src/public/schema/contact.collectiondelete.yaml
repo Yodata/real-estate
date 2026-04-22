@@ -116,7 +116,7 @@ payload:
       properties:
         type:
           const: DeleteAction
-          x-parser-schema-id: <anonymous-schema-175>
+          x-parser-schema-id: <anonymous-schema-643>
         agent:
           type: object
           properties:
@@ -158,7 +158,7 @@ payload:
           properties:
             type:
               const: Collection
-              x-parser-schema-id: <anonymous-schema-170>
+              x-parser-schema-id: <anonymous-schema-638>
             name:
               type: string
               description: The name of the contact group.
@@ -170,7 +170,7 @@ payload:
                 - Acquaintances
                 - Business Contacts
                 - Other
-              x-parser-schema-id: <anonymous-schema-171>
+              x-parser-schema-id: <anonymous-schema-639>
             identifier:
               title: identifier
               type: object
@@ -186,11 +186,11 @@ payload:
           required:
             - type
             - name
-          x-parser-schema-id: <anonymous-schema-169>
-      x-parser-schema-id: <anonymous-schema-174>
+          x-parser-schema-id: <anonymous-schema-637>
+      x-parser-schema-id: <anonymous-schema-642>
     topic:
       type: string
       const: realestate/contact#collectiondelete
-      x-parser-schema-id: <anonymous-schema-173>
-  x-parser-schema-id: <anonymous-schema-172>
+      x-parser-schema-id: <anonymous-schema-641>
+  x-parser-schema-id: <anonymous-schema-640>
 

@@ -105,7 +105,7 @@
         "properties": {
           "type": {
             "const": "lead#assign",
-            "x-parser-schema-id": "<anonymous-schema-292>"
+            "x-parser-schema-id": "<anonymous-schema-235>"
           },
           "object": {
             "title": "Lead",
@@ -119,7 +119,7 @@
                   "Lead"
                 ],
                 "description": "Lead",
-                "x-parser-schema-id": "<anonymous-schema-274>"
+                "x-parser-schema-id": "<anonymous-schema-217>"
               },
               "identifier": {
                 "title": "identifier",
@@ -149,21 +149,21 @@
                   "telephone": "731-620-9877 x6155",
                   "email": "Giuseppe.Lang62@hotmail.com"
                 },
-                "x-parser-schema-id": "<anonymous-schema-275>"
+                "x-parser-schema-id": "<anonymous-schema-218>"
               },
               "recipient": {
                 "description": "the lead recipient",
                 "type": "string",
                 "format": "uri",
                 "example": "http://{lead-recipient}.example.com/profile/card#me",
-                "x-parser-schema-id": "<anonymous-schema-276>"
+                "x-parser-schema-id": "<anonymous-schema-219>"
               },
               "sender": {
                 "description": "the lead provider",
                 "type": "string",
                 "format": "uri",
                 "example": "http://{lead-sender}.example.com/profile/card#me",
-                "x-parser-schema-id": "<anonymous-schema-277>"
+                "x-parser-schema-id": "<anonymous-schema-220>"
               },
               "owner": {
                 "description": "the original owner of the lead",
@@ -175,33 +175,33 @@
                 "type": "string",
                 "format": "uri",
                 "example": "http://{lead-owner}.example.com/profile/card#me",
-                "x-parser-schema-id": "<anonymous-schema-278>"
+                "x-parser-schema-id": "<anonymous-schema-221>"
               },
               "dateAccepted": {
                 "type": "string",
                 "description": "The date/time the item was accepted by the recipient",
                 "x-range": "DateTime",
-                "example": "2019-11-25T04:23:32.000Z",
-                "x-parser-schema-id": "<anonymous-schema-279>"
+                "example": "2019-11-25T04:23:32Z",
+                "x-parser-schema-id": "<anonymous-schema-222>"
               },
               "dateRejected": {
                 "type": "string",
                 "format": "date-time",
                 "description": "The date/time the item was rejected by the recipient",
-                "x-parser-schema-id": "<anonymous-schema-280>"
+                "x-parser-schema-id": "<anonymous-schema-223>"
               },
               "dateSent": {
                 "description": "the date the lead was sent",
                 "type": "string",
                 "format": "date-time",
-                "x-parser-schema-id": "<anonymous-schema-281>"
+                "x-parser-schema-id": "<anonymous-schema-224>"
               },
               "dateReceived": {
                 "type": "string",
                 "description": "The date/time the item was received by it's recipient",
                 "x-range": "DateTime",
-                "example": "2019-11-25T04:23:32.000Z",
-                "x-parser-schema-id": "<anonymous-schema-282>"
+                "example": "2019-11-25T04:23:32Z",
+                "x-parser-schema-id": "<anonymous-schema-225>"
               },
               "leadSource": {
                 "description": "lead origin, may be a website event or a thing such as a website, zillow, mobile applicaton.",
@@ -220,9 +220,9 @@
                       "text": "Help me I'm trapped inside documentation."
                     }
                   },
-                  "x-parser-schema-id": "<anonymous-schema-284>"
+                  "x-parser-schema-id": "<anonymous-schema-227>"
                 },
-                "x-parser-schema-id": "<anonymous-schema-283>"
+                "x-parser-schema-id": "<anonymous-schema-226>"
               }
             },
             "x-parser-schema-id": "Lead"
@@ -231,23 +231,23 @@
             "description": "the assignor, typically the lead owner",
             "type": "string",
             "format": "uri",
-            "x-parser-schema-id": "<anonymous-schema-293>"
+            "x-parser-schema-id": "<anonymous-schema-236>"
           },
           "recipient": {
             "description": "the assignee of the lead.",
             "type": "string",
             "format": "uri",
             "example": "http://andyagent.example.com/profile/card#me",
-            "x-parser-schema-id": "<anonymous-schema-294>"
+            "x-parser-schema-id": "<anonymous-schema-237>"
           }
         },
-        "x-parser-schema-id": "<anonymous-schema-291>"
+        "x-parser-schema-id": "<anonymous-schema-234>"
       },
       "topic": {
         "const": "realestate/lead#assign",
-        "x-parser-schema-id": "<anonymous-schema-290>"
+        "x-parser-schema-id": "<anonymous-schema-233>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-289>"
+    "x-parser-schema-id": "<anonymous-schema-232>"
   }
 }

@@ -1,0 +1,288 @@
+{
+  "$id": "http://realestate.yodata.me/schema/profile.servicearearemove.json",
+  "messageId": "profile#servicearearemove",
+  "title": "profile#servicearearemove",
+  "summary": "an agent, office or organization profile was updated",
+  "contentType": "application/json",
+  "externalDocs": null,
+  "headers": {
+    "type": "object",
+    "properties": {
+      "time": {
+        "type": "string",
+        "format": "date-time",
+        "description": "date & time the event was produced",
+        "x-faker": "date.past",
+        "x-parser-schema-id": "<anonymous-schema-7>"
+      },
+      "agent": {
+        "type": "string",
+        "format": "uri",
+        "summary": "the event provider who sent the event via a subscription authorized to your service.",
+        "description": "if you are a multi-tenant app, then the agent is the user associated with the event data.\nany future events related to this message will be sent to the same agent/recipient\n",
+        "examples": [
+          "https://teamsupermario.example.com/profile/card#me",
+          "https://bigbrandrealestate.example.com/profile/card#me"
+        ],
+        "x-parser-schema-id": "<anonymous-schema-8>"
+      },
+      "instrument": {
+        "type": "string",
+        "format": "uri",
+        "description": "the app or service that produced the event on behalf of the agent/user",
+        "examples": [
+          "http://supercrm.example.com/profile/card#me",
+          "http://reliance.example.com/profile/card#me",
+          "http://moxiworks.example.com/profile/card#me",
+          "http://listing-manager.example.com/profile/card#me",
+          "http://ace.example.com/profile/card#me",
+          "http://roqlogic.example.com/profile/card#me"
+        ],
+        "x-parser-schema-id": "<anonymous-schema-9>"
+      },
+      "source": {
+        "type": "string",
+        "format": "uri",
+        "description": "a copy of the event was sent to the source(s).",
+        "examples": [
+          "https://bigbrandrealestate.example.com/profile/card#me"
+        ],
+        "x-parser-schema-id": "<anonymous-schema-10>"
+      },
+      "originalRecipient": {
+        "type": "string",
+        "format": "uri",
+        "summary": "the original recipient of the event",
+        "description": "the originalRecipient helps you determine the subscription that delivered the event to you.\nif the originalRecipient is the same as the agent, then the you are subscribed to the agent.\nif the originalRecipient is different from the agent, then you are subscribed to the event source\n",
+        "examples": [
+          "http://bigbrandrealestate.example.com/profile/card#me",
+          "http://teamsupermario.example.com/profile/card#me",
+          "http://bob.example.com/profile/card#me",
+          "http://jane.example.com/profile/card#me",
+          "http://joe.example.com/profile/card#me",
+          "http://jill.example.com/profile/card#me",
+          "http://jim.example.com/profile/card#me",
+          "http://jennifer.example.com/profile/card#me"
+        ],
+        "x-parser-schema-id": "<anonymous-schema-11>"
+      },
+      "id": {
+        "type": "string",
+        "format": "uri",
+        "summary": "the event id - the cannonical identifier for the event",
+        "description": "the Event ID (aka \"Publish ID\") is the immutable canonical identifier for the event.\nit is a URI that is unique to the event and will not change.\nall subscribers will receive the same id for the same event.\n",
+        "examples": [
+          "http://supercrm.example.com/publish/12345",
+          "http://reliance.example.com/publish/23456",
+          "http://moxiworks.example.com/publish/34567",
+          "http://listing-manager.example.com/publish/45678",
+          "http://ace.example.com/publish/56789",
+          "http://roqlogic.example.com/publish/67890"
+        ],
+        "x-parser-schema-id": "<anonymous-schema-12>"
+      },
+      "@id": {
+        "type": "string",
+        "format": "uri",
+        "summary": "the @id is the url in your inbox where you can retrieve the event",
+        "examples": [
+          "http://reliance.example.com/inbox/23456",
+          "http://moxiworks.example.com/inbox/34567",
+          "http://listing-manager.example.com/inbox/45678",
+          "http://ace.example.com/inbox/56789",
+          "http://roqlogic.example.com/inbox/67890"
+        ],
+        "x-parser-schema-id": "<anonymous-schema-13>"
+      }
+    },
+    "x-parser-schema-id": "<anonymous-schema-6>"
+  },
+  "payload": {
+    "type": "object",
+    "properties": {
+      "data": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "const": "RemoveAction",
+            "x-parser-schema-id": "<anonymous-schema-707>"
+          },
+          "object": {
+            "title": "ServiceArea",
+            "type": "object",
+            "description": "an area when a provider provides a service. additional information available; see [Using Service Areas](/reference-using-service-area)",
+            "x-kind": "ServiceArea",
+            "properties": {
+              "type": {
+                "type": "string",
+                "description": "\"ServiceArea\"",
+                "enum": [
+                  "ServiceArea"
+                ],
+                "x-parser-schema-id": "<anonymous-schema-431>"
+              },
+              "kind": {
+                "type": "string",
+                "description": "ServiceArea sub-type.  City or PostalCode",
+                "enum": [
+                  "City",
+                  "PostalCode"
+                ],
+                "example": "PostalCode",
+                "x-parser-schema-id": "<anonymous-schema-432>"
+              },
+              "identifier": {
+                "type": "object",
+                "description": "vendor namespaced item identifiers, value should be stored and included in any future events that reference the same item.",
+                "properties": {
+                  "bhhsESAId": {
+                    "type": "string",
+                    "description": "BHHS internal ESA ID",
+                    "x-parser-schema-id": "<anonymous-schema-434>"
+                  }
+                },
+                "x-parser-schema-id": "<anonymous-schema-433>"
+              },
+              "addressLocality": {
+                "type": "string",
+                "description": "City, Township.",
+                "example": "Woodland Hills",
+                "x-parser-schema-id": "<anonymous-schema-435>"
+              },
+              "postalCode": {
+                "type": "string",
+                "description": "Zip/Post Code",
+                "example": "91371",
+                "x-parser-schema-id": "<anonymous-schema-436>"
+              },
+              "addressRegion": {
+                "type": "string",
+                "description": "State or Province.",
+                "example": "CA",
+                "x-parser-schema-id": "<anonymous-schema-437>"
+              },
+              "addressCountry": {
+                "type": "string",
+                "description": "The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.",
+                "example": "US",
+                "x-parser-schema-id": "<anonymous-schema-438>"
+              },
+              "addressCounty": {
+                "type": "string",
+                "description": "the county (us real estate extension)",
+                "example": "Los Angeles",
+                "x-parser-schema-id": "<anonymous-schema-439>"
+              },
+              "provider": {
+                "type": "object",
+                "description": "a broker or company who provides service in the ServiceArea",
+                "x-range": [
+                  "RealEstateOrganization"
+                ],
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "\"RealEstateOrganization\"",
+                    "enum": [
+                      "RealEstateOrganization"
+                    ],
+                    "x-parser-schema-id": "<anonymous-schema-441>"
+                  },
+                  "id": {
+                    "type": "string",
+                    "description": "profile URI",
+                    "example": "https://org.example.com/profile/card#me",
+                    "x-parser-schema-id": "<anonymous-schema-442>"
+                  }
+                },
+                "x-parser-schema-id": "<anonymous-schema-440>"
+              },
+              "additionalProperty": {
+                "type": "object",
+                "description": "BHHS specific ServiceArea properties",
+                "properties": {
+                  "relocationOffice": {
+                    "type": "object",
+                    "description": "relocation office",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "description": "The item type (Linked-Data @type)",
+                        "enum": [
+                          "RealEstateOffice"
+                        ],
+                        "x-parser-schema-id": "<anonymous-schema-445>"
+                      },
+                      "id": {
+                        "type": "string",
+                        "x-subPropertyOf": "identifier",
+                        "example": "https://org.example.com/profile/card#me",
+                        "x-parser-schema-id": "<anonymous-schema-446>"
+                      }
+                    },
+                    "x-parser-schema-id": "<anonymous-schema-444>"
+                  },
+                  "weight": {
+                    "type": "integer",
+                    "description": "weight",
+                    "x-parser-schema-id": "<anonymous-schema-447>"
+                  },
+                  "officeInPostalCode": {
+                    "type": "boolean",
+                    "description": "true if the service area provider is physically located in the ServiceArea.",
+                    "x-parser-schema-id": "<anonymous-schema-448>"
+                  },
+                  "sortOrder": {
+                    "type": "integer",
+                    "description": "sort order",
+                    "x-parser-schema-id": "<anonymous-schema-449>"
+                  },
+                  "sentToConsumerSite": {
+                    "type": "boolean",
+                    "description": "sent to consumer site",
+                    "x-parser-schema-id": "<anonymous-schema-450>"
+                  },
+                  "sentToCompanyLocator": {
+                    "type": "boolean",
+                    "description": "sent to company locator",
+                    "x-parser-schema-id": "<anonymous-schema-451>"
+                  },
+                  "sentToReferralSolutions": {
+                    "type": "boolean",
+                    "description": "sent to referral solutions",
+                    "x-parser-schema-id": "<anonymous-schema-452>"
+                  },
+                  "luxuryPriceMinimum": {
+                    "description": "minimum price for a property listing in the area to be considered a luxury property",
+                    "type": "object",
+                    "x-range": "PriceSpecification",
+                    "example": {
+                      "type": "PriceSpecification",
+                      "price": 1000000,
+                      "priceCurrency": "USD"
+                    },
+                    "x-parser-schema-id": "<anonymous-schema-453>"
+                  }
+                },
+                "x-parser-schema-id": "<anonymous-schema-443>"
+              }
+            },
+            "x-parser-schema-id": "ServiceArea"
+          },
+          "targetCollection": {
+            "type": "string",
+            "format": "uri",
+            "example": "https://user.example.com/profile/card#areaServed",
+            "x-parser-schema-id": "<anonymous-schema-708>"
+          }
+        },
+        "x-parser-schema-id": "<anonymous-schema-706>"
+      },
+      "topic": {
+        "const": "realestate/profile#servicearearemove",
+        "x-parser-schema-id": "<anonymous-schema-705>"
+      }
+    },
+    "x-parser-schema-id": "<anonymous-schema-704>"
+  }
+}

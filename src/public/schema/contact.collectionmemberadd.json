@@ -114,7 +114,7 @@
         "properties": {
           "type": {
             "const": "AddAction",
-            "x-parser-schema-id": "<anonymous-schema-179>"
+            "x-parser-schema-id": "<anonymous-schema-647>"
           },
           "agent": {
             "type": "object",
@@ -165,7 +165,7 @@
             "properties": {
               "type": {
                 "const": "Contact",
-                "x-parser-schema-id": "<anonymous-schema-126>"
+                "x-parser-schema-id": "<anonymous-schema-122>"
               },
               "identifier": {
                 "title": "identifier",
@@ -188,7 +188,7 @@
               "type",
               "identifier"
             ],
-            "x-parser-schema-id": "<anonymous-schema-125>"
+            "x-parser-schema-id": "<anonymous-schema-121>"
           },
           "targetCollection": {
             "title": "Contact Group Reference",
@@ -197,7 +197,7 @@
             "properties": {
               "type": {
                 "const": "Collection",
-                "x-parser-schema-id": "<anonymous-schema-170>"
+                "x-parser-schema-id": "<anonymous-schema-638>"
               },
               "name": {
                 "type": "string",
@@ -211,7 +211,7 @@
                   "Business Contacts",
                   "Other"
                 ],
-                "x-parser-schema-id": "<anonymous-schema-171>"
+                "x-parser-schema-id": "<anonymous-schema-639>"
               },
               "identifier": {
                 "title": "identifier",
@@ -234,17 +234,17 @@
               "type",
               "name"
             ],
-            "x-parser-schema-id": "<anonymous-schema-169>"
+            "x-parser-schema-id": "<anonymous-schema-637>"
           }
         },
-        "x-parser-schema-id": "<anonymous-schema-178>"
+        "x-parser-schema-id": "<anonymous-schema-646>"
       },
       "topic": {
         "type": "string",
         "const": "realestate/contact#collectionmemberadd",
-        "x-parser-schema-id": "<anonymous-schema-177>"
+        "x-parser-schema-id": "<anonymous-schema-645>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-176>"
+    "x-parser-schema-id": "<anonymous-schema-644>"
   }
 }

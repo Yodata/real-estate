@@ -20,13 +20,13 @@ properties:
           - RealEstateOffice
           - RealEstateTeam
           - RealEstateOrganization
-        x-parser-schema-id: <anonymous-schema-634>
+        x-parser-schema-id: <anonymous-schema-662>
       id:
         type: string
         format: uri
         description: the profile URI of the author
         example: https://agent123.example.com/profile/card#me
-        x-parser-schema-id: <anonymous-schema-635>
+        x-parser-schema-id: <anonymous-schema-663>
   dateCreated:
     description: >-
       The date on which the BlogPosting was created or the item was added to a
@@ -81,13 +81,13 @@ properties:
                   - type
                 propertyNames:
                   pattern: ^[a-z@$][a-zA-Z0-9-_]+$
-                  x-parser-schema-id: <anonymous-schema-221>
+                  x-parser-schema-id: <anonymous-schema-164>
                 properties:
                   type:
                     type: string
                     pattern: ^[A-Z][a-zA-Z0-9]+$
                     description: The item type (Linked-Data @type)
-                    x-parser-schema-id: <anonymous-schema-219>
+                    x-parser-schema-id: <anonymous-schema-162>
                   '@id':
                     type: string
                     format: uri
@@ -123,7 +123,7 @@ properties:
                     format: uri
                     description: URL of the image content
                     example: http://user.example.com/public/profile/image.jpg
-                x-parser-schema-id: <anonymous-schema-222>
+                x-parser-schema-id: <anonymous-schema-165>
             x-parser-schema-id: MediaObject
           - title: ImageObject
             x-range: ImageObject
@@ -138,8 +138,8 @@ properties:
                 example: image.jpg
               encodingFormat:
                 example: image/jpeg
-            x-parser-schema-id: <anonymous-schema-223>
-        x-parser-schema-id: <anonymous-schema-218>
+            x-parser-schema-id: <anonymous-schema-166>
+        x-parser-schema-id: <anonymous-schema-161>
   provider:
     description: >-
       if the article is provided as a template or stock content to be shared by
@@ -153,13 +153,13 @@ properties:
           - RealEstateTeam
           - RealEstateOffice
           - RealEstateAgent
-        x-parser-schema-id: <anonymous-schema-637>
+        x-parser-schema-id: <anonymous-schema-665>
       id:
         type: string
         format: uri
         description: the profile URI of the provider
         example: https://example.com/profile/card#me
-        x-parser-schema-id: <anonymous-schema-638>
+        x-parser-schema-id: <anonymous-schema-666>
   type:
     enum:
       - BlogPosting

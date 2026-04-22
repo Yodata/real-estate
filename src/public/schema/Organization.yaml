@@ -36,7 +36,6 @@ properties:
           - NJ
           - CA
           - MI
-          - null
         x-faker: address.stateAbbr
         x-parser-schema-id: addressRegion
       addressLocality:
@@ -52,7 +51,6 @@ properties:
           - Altamonte Springs
           - West Ahmed
           - Blaiseview
-          - null
         x-parser-schema-id: addressLocality
       postalCode:
         $id: http://realestate.yodata.me/schema/postalCode
@@ -63,7 +61,6 @@ properties:
         examples:
           - '10010'
           - 50239-7698
-          - null
         x-parser-schema-id: postalCode
       addressCountry:
         $id: http://realestate.yodata.me/schema/addressCountry
@@ -207,18 +204,18 @@ properties:
                   - RealEstateOrganization
                 type: string
                 description: The item type (Linked-Data @type)
-                x-parser-schema-id: <anonymous-schema-409>
+                x-parser-schema-id: <anonymous-schema-357>
               id:
                 example: https://example.com/profile/card#me
                 type: string
                 format: uri
                 description: Linked-Data URI (@id)
-                x-parser-schema-id: <anonymous-schema-410>
+                x-parser-schema-id: <anonymous-schema-358>
               name:
                 type: string
                 description: name of the issuing organization
                 example: Gotham City Real Estate
-                x-parser-schema-id: <anonymous-schema-411>
+                x-parser-schema-id: <anonymous-schema-359>
           issuedTo:
             x-range: RealEstateAgent
             type: object
@@ -229,12 +226,12 @@ properties:
                   - RealEstateAgent
                 type: string
                 description: The item type (Linked-Data @type)
-                x-parser-schema-id: <anonymous-schema-413>
+                x-parser-schema-id: <anonymous-schema-361>
               id:
                 type: string
                 format: uri
                 description: Linked-Data URI (@id)
-                x-parser-schema-id: <anonymous-schema-242>
+                x-parser-schema-id: <anonymous-schema-185>
               name:
                 $id: http://realestate.yodata.me/schema/name.yaml
                 title: name
@@ -339,13 +336,13 @@ properties:
                   - type
                 propertyNames:
                   pattern: ^[a-z@$][a-zA-Z0-9-_]+$
-                  x-parser-schema-id: <anonymous-schema-221>
+                  x-parser-schema-id: <anonymous-schema-164>
                 properties:
                   type:
                     type: string
                     pattern: ^[A-Z][a-zA-Z0-9]+$
                     description: The item type (Linked-Data @type)
-                    x-parser-schema-id: <anonymous-schema-219>
+                    x-parser-schema-id: <anonymous-schema-162>
                   '@id':
                     type: string
                     format: uri
@@ -381,7 +378,7 @@ properties:
                     format: uri
                     description: URL of the image content
                     example: http://user.example.com/public/profile/image.jpg
-                x-parser-schema-id: <anonymous-schema-222>
+                x-parser-schema-id: <anonymous-schema-165>
             x-parser-schema-id: MediaObject
           - title: ImageObject
             x-range: ImageObject
@@ -396,8 +393,8 @@ properties:
                 example: image.jpg
               encodingFormat:
                 example: image/jpeg
-            x-parser-schema-id: <anonymous-schema-223>
-        x-parser-schema-id: <anonymous-schema-218>
+            x-parser-schema-id: <anonymous-schema-166>
+        x-parser-schema-id: <anonymous-schema-161>
   logo:
     $id: http://realestate.yodata.me/schema/logo.yaml
     title: logo
@@ -451,7 +448,7 @@ properties:
     items:
       type: string
       format: uri
-      x-parser-schema-id: <anonymous-schema-431>
+      x-parser-schema-id: <anonymous-schema-379>
   subOrganization:
     $id: http://realestate.yodata.me/schema/subOrganization
     title: subOrganization
@@ -460,7 +457,7 @@ properties:
     items:
       type: string
       format: uri
-      x-parser-schema-id: <anonymous-schema-440>
+      x-parser-schema-id: <anonymous-schema-388>
   telephone:
     $id: telephone
     title: telephone

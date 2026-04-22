@@ -42,7 +42,6 @@ properties:
       - Altamonte Springs
       - West Ahmed
       - Blaiseview
-      - null
     x-parser-schema-id: addressLocality
   addressRegion:
     $id: addressRegion
@@ -54,7 +53,6 @@ properties:
       - NJ
       - CA
       - MI
-      - null
     x-faker: address.stateAbbr
     x-parser-schema-id: addressRegion
   addressSubdivision:
@@ -84,7 +82,6 @@ properties:
     examples:
       - '10010'
       - 50239-7698
-      - null
     x-parser-schema-id: postalCode
   streetAddress:
     $id: streetAddress.yaml

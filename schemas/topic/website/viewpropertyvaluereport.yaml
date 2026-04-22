@@ -1,7 +1,7 @@
 # @format
 # yaml-language-server: $schema=https://asyncapi.com/definitions/2.5.0/message.json
 
-messageId: website#viewpropertyvaluereort
+messageId: website#viewpropertyvaluereport
 name: realestate/website#viewpropertyvaluereport
 title: website#viewpropertyvaluereport
 summary: website user (data.agent) has viewed a property value report (data.object) on a webiste or mobile app (data.instrument)

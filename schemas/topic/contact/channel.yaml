@@ -4,13 +4,17 @@ subscribe:
   message:
     oneOf:
       - $ref: add.yaml
-      - $ref: comment.yaml
       - $ref: delete.yaml
       - $ref: update.yaml
-      - $ref: plandelete.yaml
-      - $ref: planupdate.yaml
-      - $ref: collectioncreate.yaml
-      - $ref: collectiondelete.yaml
-      - $ref: collectionmemberadd.yaml
-      - $ref: collectionmemberremove.yaml
-        # - $ref: activity.yaml
+
+x-deprecated-messages:
+  heading: These are not in use as of now
+  items:
+    - realestate/contact#activity
+    - realestate/contact#collectioncreate
+    - realestate/contact#collectiondelete
+    - realestate/contact#collectionmemberadd
+    - realestate/contact#collectionmemberremove
+    - realestate/contact#comment
+    - realestate/contact#plandelete
+    - realestate/contact#planupdate

@@ -9,6 +9,4 @@ subscribe:
     oneOf:
       - $ref: update.yaml
       - $ref: delete.yaml
-      - $ref: sale.yaml
-      - $ref: lease.yaml
       - $ref: updatebuyercompensation.yaml

@@ -1,5 +1,6 @@
 # @format
 
+description: product events
 subscribe:
   message:
     oneOf:

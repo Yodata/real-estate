@@ -110,7 +110,7 @@ payload:
       properties:
         type:name:
           const: AddAction
-          x-parser-schema-id: <anonymous-schema-701>
+          x-parser-schema-id: <anonymous-schema-923>
         object:
           type: object
           description: describes the service area geo boundaries
@@ -126,16 +126,16 @@ payload:
             address:
               addressLocality: Gotham City
               postalCode: '10007'
-          x-parser-schema-id: <anonymous-schema-702>
+          x-parser-schema-id: <anonymous-schema-924>
         targetCollection:
           type: string
           format: uri
           example:
             id: https://user.example.com/profile/card#areaServed
-          x-parser-schema-id: <anonymous-schema-703>
-      x-parser-schema-id: <anonymous-schema-700>
+          x-parser-schema-id: <anonymous-schema-925>
+      x-parser-schema-id: <anonymous-schema-922>
     topic:
       const: realestate/profile#serviceareaadd
-      x-parser-schema-id: <anonymous-schema-699>
-  x-parser-schema-id: <anonymous-schema-698>
+      x-parser-schema-id: <anonymous-schema-921>
+  x-parser-schema-id: <anonymous-schema-920>
 

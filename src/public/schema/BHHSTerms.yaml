@@ -16,14 +16,14 @@ properties:
           - Active
           - Inactive
           - Pre-Active
-        x-parser-schema-id: <anonymous-schema-908>
+        x-parser-schema-id: <anonymous-schema-1131>
       UserType:
         type: string
         description: employee type. For backward compatibility
         x-subPropertyOf: additionalProperty
         x-domain:
           - RealEstateAgent
-        x-parser-schema-id: <anonymous-schema-909>
+        x-parser-schema-id: <anonymous-schema-1132>
       AffiliateID:
         type: string
         description: BHHS affiliate identifier
@@ -31,7 +31,7 @@ properties:
         x-domain:
           - RealEstateAgent
           - RealEstateOffice
-        x-parser-schema-id: <anonymous-schema-910>
+        x-parser-schema-id: <anonymous-schema-1133>
       BrokerID:
         type: string
         description: BHHS affiliate identifier. For backward compatibility
@@ -39,28 +39,28 @@ properties:
         x-domain:
           - RealEstateAgent
           - RealEstateOffice
-        x-parser-schema-id: <anonymous-schema-911>
+        x-parser-schema-id: <anonymous-schema-1134>
       OfficeID:
         type: string
         description: BHHS office identifier. For backward compatibility
         x-subPropertyOf: additionalProperty
         x-domain:
           - RealEstateAgent
-        x-parser-schema-id: <anonymous-schema-912>
+        x-parser-schema-id: <anonymous-schema-1135>
       OfficeDBA:
         type: string
         description: name of office. For backward compatibility
         x-subPropertyOf: additionalProperty
         x-domain:
           - RealEstateAgent
-        x-parser-schema-id: <anonymous-schema-913>
+        x-parser-schema-id: <anonymous-schema-1136>
       AffiliateStatus:
         type: string
         description: status of affiliate. For backward compatibility
         x-subPropertyOf: additionalProperty
         x-domain:
           - RealEstateOrganization
-        x-parser-schema-id: <anonymous-schema-914>
+        x-parser-schema-id: <anonymous-schema-1137>
       OfficeStatus:
         type: string
         description: status of office. For backward compatibility
@@ -68,7 +68,7 @@ properties:
         x-domain:
           - RealEstateAgent
           - RealEstateOffice
-        x-parser-schema-id: <anonymous-schema-915>
+        x-parser-schema-id: <anonymous-schema-1138>
       EmployeeType:
         type: string
         description: type of employee
@@ -81,14 +81,14 @@ properties:
           - Non-Agent
           - Marketing Team
           - In-House Admin. Profile
-        x-parser-schema-id: <anonymous-schema-916>
+        x-parser-schema-id: <anonymous-schema-1139>
       IsCompanyQueue:
         type: boolean
         description: if the real estate agent accepts company's lead
         x-subPropertyOf: additionalProperty
         x-domain:
           - RealEstateAgent
-        x-parser-schema-id: <anonymous-schema-917>
+        x-parser-schema-id: <anonymous-schema-1140>
       agentWebsiteType:
         type: string
         description: agent's website type
@@ -98,7 +98,7 @@ properties:
         enum:
           - Agent Profile
           - Agent Page with IDX Search
-        x-parser-schema-id: <anonymous-schema-918>
+        x-parser-schema-id: <anonymous-schema-1141>
       RoqLogicTCVersion:
         type: string
         description: version of RoqLogic terms and conditions agent accepted.
@@ -106,7 +106,7 @@ properties:
         x-domain:
           - RealEstateAgent
         example: TC-00035
-        x-parser-schema-id: <anonymous-schema-919>
+        x-parser-schema-id: <anonymous-schema-1142>
       bhhsLeadNotificationPreference:
         type: object
         description: lead notification preference
@@ -118,23 +118,23 @@ properties:
             type: string
             example:
               - GMT+12:00 Fiji Time (Pacific/Fiji)
-            x-parser-schema-id: <anonymous-schema-921>
+            x-parser-schema-id: <anonymous-schema-1144>
           emailNotification:
             type: boolean
             description: if notification will be sent to sepcified email address
-            x-parser-schema-id: <anonymous-schema-922>
+            x-parser-schema-id: <anonymous-schema-1145>
           textNotification:
             type: boolean
             description: if notification will be sent to sepcified phone number
-            x-parser-schema-id: <anonymous-schema-923>
+            x-parser-schema-id: <anonymous-schema-1146>
           email:
             type: string
             description: email address that notification will be sent to
-            x-parser-schema-id: <anonymous-schema-924>
+            x-parser-schema-id: <anonymous-schema-1147>
           telephone:
             type: string
             description: phone number that notification will be sent to
-            x-parser-schema-id: <anonymous-schema-925>
+            x-parser-schema-id: <anonymous-schema-1148>
           leadNotificationSchedule:
             type: array
             items:
@@ -169,7 +169,7 @@ properties:
                       - Wednesday
                       - Thursday
                       - Friday
-                    x-parser-schema-id: <anonymous-schema-895>
+                    x-parser-schema-id: <anonymous-schema-1118>
                   example:
                     - Monday
                     - Wednesday
@@ -195,7 +195,7 @@ properties:
                       - 10
                       - 11
                       - 12
-                    x-parser-schema-id: <anonymous-schema-897>
+                    x-parser-schema-id: <anonymous-schema-1120>
                   example:
                     - 1
                 byMonthDay:
@@ -205,10 +205,10 @@ properties:
                     takes place. Specified as an Integer between 1-31.
                   items:
                     type: number
-                    x-parser-schema-id: <anonymous-schema-899>
-              x-parser-schema-id: <anonymous-schema-927>
-            x-parser-schema-id: <anonymous-schema-926>
-        x-parser-schema-id: <anonymous-schema-920>
+                    x-parser-schema-id: <anonymous-schema-1122>
+              x-parser-schema-id: <anonymous-schema-1150>
+            x-parser-schema-id: <anonymous-schema-1149>
+        x-parser-schema-id: <anonymous-schema-1143>
       IsDisplayed:
         type: boolean
         description: if an affiliate/office/agent is listed in company/office/agent finder.
@@ -217,7 +217,7 @@ properties:
           - RealEstateOrganization
           - RealEstateOffice
           - RealEstateAgent
-        x-parser-schema-id: <anonymous-schema-928>
+        x-parser-schema-id: <anonymous-schema-1151>
       OfficeType:
         type: string
         description: type of office
@@ -231,7 +231,7 @@ properties:
           - Primary Office
           - Srvice Center
           - Subdivision Sales Office
-        x-parser-schema-id: <anonymous-schema-929>
+        x-parser-schema-id: <anonymous-schema-1152>
       FullTimeCount:
         type: integer
         description: the number of full time sales professional
@@ -239,7 +239,7 @@ properties:
         x-domain:
           - RealEstateOffice
           - RealEstateCompany
-        x-parser-schema-id: <anonymous-schema-930>
+        x-parser-schema-id: <anonymous-schema-1153>
       PartTimeCount:
         type: integer
         description: the number of part time sales professional
@@ -247,62 +247,62 @@ properties:
         x-domain:
           - RealEstateOffice
           - RealEstateCompany
-        x-parser-schema-id: <anonymous-schema-931>
+        x-parser-schema-id: <anonymous-schema-1154>
       franchiseCommitmentNotes:
         type: string
         x-subPropertyOf: additionalProperty
         x-domain:
           - RealEstateOrganization
-        x-parser-schema-id: <anonymous-schema-932>
+        x-parser-schema-id: <anonymous-schema-1155>
       franchiseCommitment:
         type: string
         x-subPropertyOf: additionalProperty
         x-domain:
           - RealEstateOrganization
-        x-parser-schema-id: <anonymous-schema-933>
+        x-parser-schema-id: <anonymous-schema-1156>
       listingLeadsToListingAgent:
         type: boolean
         x-subPropertyOf: additionalProperty
         x-domain:
           - RealEstateOrganization
-        x-parser-schema-id: <anonymous-schema-934>
+        x-parser-schema-id: <anonymous-schema-1157>
       HSoACompany:
         type: boolean
         description: if company is owned by HSoA
         x-subPropertyOf: additionalProperty
         x-domain:
           - RealEstateOrganization
-        x-parser-schema-id: <anonymous-schema-935>
+        x-parser-schema-id: <anonymous-schema-1158>
       unassignedLeadOwner:
         description: agent whom affiliate leads are assigned to
         x-subPropertyOf: identifier
         x-domain:
           - RealEstateOrganization
-        x-parser-schema-id: <anonymous-schema-936>
+        x-parser-schema-id: <anonymous-schema-1159>
       companyContactLastName:
         type: string
         description: last name of company contact
         x-domain:
           - RealEstateOrganization
-        x-parser-schema-id: <anonymous-schema-937>
+        x-parser-schema-id: <anonymous-schema-1160>
       companyContactFirstName:
         type: string
         description: first name of company contact
         x-domain:
           - RealEstateOrganization
-        x-parser-schema-id: <anonymous-schema-938>
+        x-parser-schema-id: <anonymous-schema-1161>
       companyCFO:
         type: string
         description: full name of company CFO
         x-domain:
           - RealEstateOrganization
-        x-parser-schema-id: <anonymous-schema-939>
+        x-parser-schema-id: <anonymous-schema-1162>
       primaryOffice:
         description: primay office of company
         x-subPropertyOf: identifier
         x-domain:
           - RealEstateOrganization
-        x-parser-schema-id: <anonymous-schema-940>
+        x-parser-schema-id: <anonymous-schema-1163>
       transactionReportingMethod:
         description: method of reporting transaction
         type: string
@@ -312,7 +312,7 @@ properties:
           - Batch File Upload
           - Direct Data Entry
           - Summary Reporting
-        x-parser-schema-id: <anonymous-schema-941>
+        x-parser-schema-id: <anonymous-schema-1164>
       databridgeVersion:
         description: version of data bridge
         type: string
@@ -321,105 +321,105 @@ properties:
         enum:
           - DB4.0
           - DB3.0
-        x-parser-schema-id: <anonymous-schema-942>
+        x-parser-schema-id: <anonymous-schema-1165>
       systemDeactivationDate:
         type: string
         format: date-time
         x-domain:
           - RealEstateOrganization
           - RealEstateOffice
-        x-parser-schema-id: <anonymous-schema-943>
+        x-parser-schema-id: <anonymous-schema-1166>
       inactiveDate:
         type: string
         format: date-time
         x-domain:
           - RealEstateOrganization
           - RealEstateOffice
-        x-parser-schema-id: <anonymous-schema-944>
+        x-parser-schema-id: <anonymous-schema-1167>
       goLiveDate:
         type: string
         format: date-time
         x-domain:
           - RealEstateOrganization
           - RealEstateOffice
-        x-parser-schema-id: <anonymous-schema-945>
+        x-parser-schema-id: <anonymous-schema-1168>
       originalAffiliationDate:
         type: string
         format: date-time
         x-domain:
           - RealEstateOrganization
-        x-parser-schema-id: <anonymous-schema-946>
+        x-parser-schema-id: <anonymous-schema-1169>
       numberOfSubOrganizations:
         type: integer
         x-domain:
           - RealEstateOrganization
-        x-parser-schema-id: <anonymous-schema-947>
+        x-parser-schema-id: <anonymous-schema-1170>
       PublicOffice:
         type: string
         description: office's public name
         x-domain:
           - RealEstateOffice
-        x-parser-schema-id: <anonymous-schema-948>
+        x-parser-schema-id: <anonymous-schema-1171>
       OfficeContact:
         description: office contact
         x-subPropertyOf: identifier
         x-domain:
           - RealEstateOffice
-        x-parser-schema-id: <anonymous-schema-949>
+        x-parser-schema-id: <anonymous-schema-1172>
       IsRelocationOffice:
         description: if office is relocation office
         type: boolean
         x-domain:
           - RealEstateOffice
-        x-parser-schema-id: <anonymous-schema-950>
+        x-parser-schema-id: <anonymous-schema-1173>
       PrimaryHomeStoryContact:
         description: office primary Home Story contact
         x-subPropertyOf: identifier
         x-domain:
           - RealEstateOffice
-        x-parser-schema-id: <anonymous-schema-951>
+        x-parser-schema-id: <anonymous-schema-1174>
       PrimaryHomeStoryContactEmail:
         description: primary Home Story contact email
         type: string
         x-domain:
           - RealEstateOffice
-        x-parser-schema-id: <anonymous-schema-952>
+        x-parser-schema-id: <anonymous-schema-1175>
       PrimaryRelocationContact:
         description: office primary relocation contact
         x-subPropertyOf: identifier
         x-domain:
           - RealEstateOffice
-        x-parser-schema-id: <anonymous-schema-953>
+        x-parser-schema-id: <anonymous-schema-1176>
       PrimaryRelocationContactEmail:
         description: primary relocation contact email
         type: string
         x-domain:
           - RealEstateOffice
-        x-parser-schema-id: <anonymous-schema-954>
+        x-parser-schema-id: <anonymous-schema-1177>
       PrimaryReferralContact:
         description: office primary referral contact
         x-subPropertyOf: identifier
         x-domain:
           - RealEstateOffice
-        x-parser-schema-id: <anonymous-schema-955>
+        x-parser-schema-id: <anonymous-schema-1178>
       PrimaryReferralContactEmail:
         description: primary referral contact email
         type: string
         x-domain:
           - RealEstateOffice
-        x-parser-schema-id: <anonymous-schema-956>
+        x-parser-schema-id: <anonymous-schema-1179>
       PrimaryREOContact:
         description: office primary REO contact
         x-subPropertyOf: identifier
         x-domain:
           - RealEstateOffice
-        x-parser-schema-id: <anonymous-schema-957>
+        x-parser-schema-id: <anonymous-schema-1180>
       PrimaryREOContactEmail:
         description: primary REO contact email
         type: string
         x-domain:
           - RealEstateOffice
-        x-parser-schema-id: <anonymous-schema-958>
+        x-parser-schema-id: <anonymous-schema-1181>
       transactionSequence:
         description: >-
           The adjustment sequence number. Must be zeros if STR is closed but not
@@ -429,18 +429,18 @@ properties:
           number cannot be equal or less than the last adjustment sequence
           number reported for the transaction if the Status has not changed.
         type: string
-        x-parser-schema-id: <anonymous-schema-959>
+        x-parser-schema-id: <anonymous-schema-1182>
       unimprovedLandFlag:
         description: >-
           A Yes/No flag identifying where or not the property involved in the
           transaction is considered unimproved land. Valid codes are Y =
           unimproved land  N= not an unimproved land
         type: string
-        x-parser-schema-id: <anonymous-schema-960>
+        x-parser-schema-id: <anonymous-schema-1183>
       workingWithAgent:
         description: is consumer already working with an Agent?
         type: boolean
-        x-parser-schema-id: <anonymous-schema-961>
+        x-parser-schema-id: <anonymous-schema-1184>
   contactPoint.name:
     type: string
     enum:

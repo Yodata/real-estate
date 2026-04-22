@@ -3,17 +3,455 @@
 messageId: commerciallisting#update.sale
 name: realestate/commerciallisting#update.sale
 title: commerciallisting#update.sale
-summary: a commercial sale PropertyListing is created or updated
+summary: sale listing schema
+description: |
+  a commercial sale listing was created or updated
 contentType: application/json
 headers:
   $ref: ../../subscription_headers.yaml
+
+examples:
+  - name: sale listing schema
+    payload:
+      topic: realestate/commerciallisting#update.sale
+      data:
+        type: UpdateAction
+        object:
+          type: SaleListing
+          addressCountry: United States
+          addressLocality: Cleveland
+          addressRegion: OH
+          description: |-
+            Ever dreamed of owning your own business? Opportunity awaits in this combination live and workplace in the Heart of
+            Cleveland's Brooklyn Centre neighborhood!
+          hasElevators: ''
+          image:
+            - type: Property Photo
+              encodingFormat: Image/jpg
+              id: https://s3.amazonaws.com/buildout-production/datas/32077476/5c019225803b6cbc2e23abffdd35979b6eb15fa0/full.jpg?1742312266
+          latitude: 41.4514253
+          listingAgent:
+            type: RealEstateAgent
+            name: David
+            email: david@gmail.com
+            telephone: '5543534400'
+            identifier: {}
+            additionalProperty:
+              agentId: '369824'
+          coListingAgent:
+            - type: RealEstateAgent
+              name: Joanne VanStry
+              email: joanne.vanstry@verani.com
+              identifier: {}
+              additionalProperty:
+                agentId: '1060172'
+          listingContractDate: '2025-03-18T10:28:57.000-05:00'
+          listingId: bo-1499456
+          listingOffice:
+            type: RealEstateCompany
+            name: Professional Realty
+            email: kow@bhhspro.com
+            identifier: {}
+            additionalProperty:
+              officeId: OH301-333
+          listingOriginatingSystem:
+            type: MultipleListingService
+            name: Buildout-BHHS
+            identifier:
+              orgId: bo-bhhs
+          listingPrice:
+            type: PriceSpecification
+            priceCurrency: USD
+            price: 2000
+          listingStatus: Active
+          livingArea:
+            type: QuantitativeValue
+            value: 26
+            unitCode: FTK
+            unitText: SquareFeet
+          longitude: -81.71131439999999
+          lotSize:
+            type: QuantitativeValue
+            value: 0.14
+            unitCode: ACR
+            unitText: Acre
+          modificationTimestamp: '2025-04-17T20:45:07.000-05:00'
+          name: The Ugly Broad Tavern
+          numberOfBathrooms: '2.0'
+          originatingSystemKey: bo-1488456
+          originatingSystemName: buildout
+          postalCode: '9109'
+          propertySubType:
+            - Free Standing Building
+          propertyType: Retail
+          stories: 2
+          streetAddress: 3902 Denison Ave
+          url: https://www.bhhs.com/professional-realty-oh301/commercial/commercial-search?propertyId=3902-denison-ave-cleveland-sale
+          yearBuilt: 2163
+          class: ''
+          highlights: []
+          documents:
+            - id: 3665667
+              url: https://buildout.com/docs/documents/3665667?mtime=1742324354&token=d3b4f49cdeba5e086c843e6de9912e06d54afc3d
+              name: Brochure (P)
+              original_file_name: ''
+      '@id': https://crexi.bhhs.hsfaffiliates.com/inbox/8a3997be306a4b3c843gf35g5q5b
+      id: https://crexi.bhhs.hsfaffiliates.com/inbox/8a3997be306a4b3c843gf35g5q5b
+      agent: https://agent.bhhs.hsfaffiliates.com/profile/card#me
+
 payload:
   type: object
   properties:
-    topic: { const: realestate/commerciallisting#update.sale }
+    topic:
+      type: string
+      const: realestate/commerciallisting#update.sale
     data:
       type: object
       properties:
-        type: { const: UpdateAction }
+        type:
+          type: string
+          const: UpdateAction
         object:
-          $ref: ../../PropertyListing.yaml
+          type: object
+          description: a real estate property listed for sale
+          properties:
+            type:
+              type: string
+              enum: [SaleListing]
+            addressCountry:
+              type: string
+              enum:
+                - Other
+                - United States
+                - Bahamas
+                - Canada
+                - Mexico
+                - Turkey
+                - Australia
+                - Switzerland
+                - France
+                - Monaco
+                - Spain
+                - Germany
+                - Italy
+                - UnitedKingdom
+                - Poland
+                - Romania
+                - Netherlands
+                - Hungary
+            addressLocality:
+              type: string
+              description: City, Township.
+            addressRegion:
+              type: string
+              description: abbreviated state or province
+            hasElevators:
+              type: string
+            buyerAgent:
+              type: object
+              description: the buyer's RealEstateAgent
+            buyerOffice:
+              type: object
+              description: the buyer's RealEstateOffice
+            closeDate:
+              type: string
+              format: date-time
+              description: listing close date
+            image:
+              type: array
+              description: an ImageObject or URI reference to an image on the web.
+              items:
+                type: object
+                properties:
+                  type:
+                    type: string
+                    const: Property Photo
+                  encodingFormat:
+                    type: string
+                    const: Image/jpg
+                  id:
+                    type: string
+                    format: uri
+                    description: image url
+            internetAddressDisplayYN:
+              type: string
+              enum: ['Y', 'N']
+            latitude:
+              type: number
+              description: The latitude of a location.
+            longitude:
+              type: number
+              description: The longitude of a location.
+            listingAgent:
+              type: object
+              properties:
+                type:
+                  type: string
+                  const: RealEstateAgent
+                name:
+                  type: string
+                  description: listings agent name
+                email:
+                  type: string
+                  description: listings agent email
+                telephone:
+                  type: string
+                  description: listings agent telephone
+                identifier:
+                  type: object
+                  description: listings agent identifier
+                additionalProperty:
+                  type: object
+                  properties:
+                    agentId:
+                      type: string
+                      description: listings agent id
+            coListingAgent:
+              type: array
+              description: list of coListing Agents
+            listingContractDate:
+              type: string
+              format: date-time
+              description: The effective date of the agreement between the seller and the seller's broker.
+            listingId:
+              type: string
+              description: the local identifier for the listing
+            listingOffice:
+              type: object
+              properties:
+                type:
+                  type: string
+                  const: RealEstateAgent
+                name:
+                  type: string
+                  description: listings office name
+                email:
+                  type: string
+                  description: listings office email
+                telephone:
+                  type: string
+                  description: listings office telephone
+                identifier:
+                  type: object
+                  description: listings office identifier
+                additionalProperty:
+                  type: object
+                  properties:
+                    officeId:
+                      type: string
+                      description: listings office Id
+            listingOriginatingSystem:
+              type: object
+              properties:
+                type:
+                  type: string
+                  description: OriginatingSystem type
+                name:
+                  type: string
+                  description: OriginatingSystem name
+                identifier:
+                  type: object
+                  properties:
+                    orgId:
+                      type: string
+                      description: OriginatingSystem identifier orgId
+            listingPrice:
+              type: object
+              properties:
+                type:
+                  type: string
+                  const: PriceSpecification
+                priceCurrency:
+                  type: string
+                  const: USD
+                value:
+                  type: number
+                  description: listing price value
+            soldPrice:
+              type: object
+              properties:
+                type:
+                  type: string
+                  const: PriceSpecification
+                priceCurrency:
+                  type: string
+                  const: USD
+                value:
+                  type: number
+                  description: sold price value
+            listingStatus:
+              type: string
+              enum: [Active, Closed]
+            livingArea:
+              type: object
+              properties:
+                type:
+                  type: string
+                  const: QuantitativeValue
+                value:
+                  type: number
+                  description: livingArea value
+                unitCode:
+                  type: string
+                  const: FTK
+                unitText:
+                  type: string
+                  const: SquareFeet
+            lotSize:
+              type: object
+              properties:
+                type:
+                  type: string
+                  const: QuantitativeValue
+                value:
+                  type: number
+                  description: lotSize value
+                unitCode:
+                  type: string
+                  const: ACR
+                unitText:
+                  type: string
+                  const: Acre
+            modificationTimestamp:
+              type: string
+              format: date-time
+              description: last modified date of listing
+            name:
+              type: string
+              description: name
+            numberOfBathrooms:
+              type: string
+              description: total number of bathrooms
+            originatingSystemKey:
+              type: string
+              description: the listing identifier from the original MLS
+            originatingSystemName:
+              type: string
+              const: buildout
+            postalCode:
+              type: string
+              maxLength: 12
+              description: Zip/Post Code
+            propertyType:
+              type: string
+              enum:
+                - Office
+                - Retail
+                - Industrial
+                - Land
+                - Multifamily
+                - Special Purpose
+                - Hospitality
+            propertySubType:
+              type: array
+              items:
+                type: string
+                enum:
+                  - Office Building
+                  - Creative/Loft
+                  - Executive Suites
+                  - Medical
+                  - Institutional/Governmental
+                  - Office Warehouse
+                  - Office Condo
+                  - Coworking
+                  - Lab
+                  - Street Retail
+                  - Strip Center
+                  - Free Standing Building
+                  - Regional Mall
+                  - Retail Pad
+                  - Vehicle Related
+                  - Outlet Center
+                  - Power Center
+                  - Neighborhood Center
+                  - Community Center
+                  - Specialty Center
+                  - Theme/Festival Center
+                  - Restaurant
+                  - Post Office
+                  - Retail Condo
+                  - Lifestyle Center
+                  - Manufacturing
+                  - Warehouse
+                  - Distribution
+                  - Flex Space
+                  - Research & Development
+                  - Refrigerated/Cold Storage
+                  - Office Showroom
+                  - Truck Terminal/Hub/Transit
+                  - Self Storage
+                  - Industrial Condo
+                  - Data Center
+                  - Retail-Pad
+                  - Residential
+                  - Other
+                  - High-Rise
+                  - Mid-Rise
+                  - Low-Rise/Garden
+                  - Government Subsidized
+                  - Mobile Home Park
+                  - Senior Living
+                  - Skilled Nursing
+                  - Single Family Rental Portfolio
+                  - School
+                  - Marina
+                  - Golf Course
+                  - Church
+                  - Full Service
+                  - Limited Service
+                  - Select Service
+                  - Resort
+                  - Economy
+                  - Extended Stay
+                  - Casino
+            stories:
+              type: number
+              description: the number of floors in the property
+            streetAddress:
+              type: string
+              description: the street address
+            url:
+              type: string
+              format: uri
+              description: URL of the item.
+            yearBuilt:
+              type: number
+              description: the year the structure was built
+            class:
+              type: string
+              description: property class
+            highlights:
+              type: array
+              description: highlights
+              items:
+                type: string
+            documents:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: number
+                    description: document id
+                  url:
+                    type: string
+                    format: uri
+                    description: document url
+                  name:
+                    type: string
+                    description: document name
+                  original_file_name:
+                    type: string
+                    description: document file name
+    id:
+      type: string
+      format: uri
+      description: the Event ID (aka "Publish ID") is the immutable canonical identifier for the event.
+    '@id':
+      type: string
+      format: uri
+    agent:
+      type: string
+      format: uri
+      description: if you are a multi-tenant app, then the agent is the user associated with the event data.

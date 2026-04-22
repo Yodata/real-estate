@@ -105,7 +105,7 @@
         "properties": {
           "type": {
             "const": "UpdateAction",
-            "x-parser-schema-id": "<anonymous-schema-677>"
+            "x-parser-schema-id": "<anonymous-schema-702>"
           },
           "object": {
             "title": "BlogPosting",
@@ -117,7 +117,7 @@
                 "enum": [
                   "BlogPosting"
                 ],
-                "x-parser-schema-id": "<anonymous-schema-656>"
+                "x-parser-schema-id": "<anonymous-schema-681>"
               },
               "identifier": {
                 "example": {
@@ -136,19 +136,19 @@
                     "salesforceid": "56789"
                   }
                 ],
-                "x-parser-schema-id": "<anonymous-schema-657>"
+                "x-parser-schema-id": "<anonymous-schema-682>"
               },
               "headline": {
                 "type": "string",
                 "description": "headline of the post.",
                 "example": "Top 10 Spring Cleeaning Tips",
-                "x-parser-schema-id": "<anonymous-schema-658>"
+                "x-parser-schema-id": "<anonymous-schema-683>"
               },
               "articleBody": {
                 "type": "string",
                 "description": "the actual body of the post in HTML format.",
                 "example": "<HTML><body>lorem ipsum dolor sit amet, consectetur adipiscing</body></HTML>",
-                "x-parser-schema-id": "<anonymous-schema-659>"
+                "x-parser-schema-id": "<anonymous-schema-684>"
               },
               "image": {
                 "description": "by convention the first image item is the article hero image.  note: image tags can also be embeded in the articleBody.",
@@ -179,20 +179,20 @@
                             ],
                             "propertyNames": {
                               "pattern": "^[a-z@$][a-zA-Z0-9-_]+$",
-                              "x-parser-schema-id": "<anonymous-schema-164>"
+                              "x-parser-schema-id": "<anonymous-schema-187>"
                             },
                             "properties": {
                               "type": {
                                 "type": "string",
                                 "pattern": "^[A-Z][a-zA-Z0-9]+$",
                                 "description": "The item type (Linked-Data @type)",
-                                "x-parser-schema-id": "<anonymous-schema-162>"
+                                "x-parser-schema-id": "<anonymous-schema-185>"
                               },
                               "@id": {
                                 "type": "string",
                                 "format": "uri",
                                 "description": "the liked data uri for the Thing",
-                                "x-parser-schema-id": "<anonymous-schema-163>"
+                                "x-parser-schema-id": "<anonymous-schema-186>"
                               }
                             },
                             "x-parser-schema-id": "Thing"
@@ -236,7 +236,7 @@
                                 "example": "http://user.example.com/public/profile/image.jpg"
                               }
                             },
-                            "x-parser-schema-id": "<anonymous-schema-165>"
+                            "x-parser-schema-id": "<anonymous-schema-188>"
                           }
                         ],
                         "x-parser-schema-id": "MediaObject"
@@ -261,13 +261,13 @@
                             "example": "image/jpeg"
                           }
                         },
-                        "x-parser-schema-id": "<anonymous-schema-166>"
+                        "x-parser-schema-id": "<anonymous-schema-189>"
                       }
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-161>"
+                    "x-parser-schema-id": "<anonymous-schema-184>"
                   }
                 ],
-                "x-parser-schema-id": "<anonymous-schema-660>"
+                "x-parser-schema-id": "<anonymous-schema-685>"
               },
               "author": {
                 "description": "author of the work",
@@ -281,17 +281,17 @@
                       "RealEstateTeam",
                       "RealEstateOrganization"
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-662>"
+                    "x-parser-schema-id": "<anonymous-schema-687>"
                   },
                   "id": {
                     "type": "string",
                     "format": "uri",
                     "description": "the profile URI of the author",
                     "example": "https://agent123.example.com/profile/card#me",
-                    "x-parser-schema-id": "<anonymous-schema-663>"
+                    "x-parser-schema-id": "<anonymous-schema-688>"
                   }
                 },
-                "x-parser-schema-id": "<anonymous-schema-661>"
+                "x-parser-schema-id": "<anonymous-schema-686>"
               },
               "provider": {
                 "description": "if the article is provided as a template or stock content to be shared by mutliple authors, the provider should be included.",
@@ -305,54 +305,54 @@
                       "RealEstateOffice",
                       "RealEstateAgent"
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-665>"
+                    "x-parser-schema-id": "<anonymous-schema-690>"
                   },
                   "id": {
                     "type": "string",
                     "format": "uri",
                     "description": "the profile URI of the provider",
                     "example": "https://example.com/profile/card#me",
-                    "x-parser-schema-id": "<anonymous-schema-666>"
+                    "x-parser-schema-id": "<anonymous-schema-691>"
                   }
                 },
-                "x-parser-schema-id": "<anonymous-schema-664>"
+                "x-parser-schema-id": "<anonymous-schema-689>"
               },
               "dateCreated": {
                 "description": "The date on which the BlogPosting was created or the item was added to a DataFeed.",
                 "type": "string",
                 "format": "date-time",
-                "x-parser-schema-id": "<anonymous-schema-667>"
+                "x-parser-schema-id": "<anonymous-schema-692>"
               },
               "dateModified": {
                 "description": "The date on which the BlogPosting was most recently modified or when the item's entry was modified within a DataFeed.",
                 "type": "string",
                 "format": "date-time",
-                "x-parser-schema-id": "<anonymous-schema-668>"
+                "x-parser-schema-id": "<anonymous-schema-693>"
               },
               "url": {
                 "title": "url",
                 "type": "string",
                 "format": "uri",
                 "description": "URL of the item.",
-                "x-parser-schema-id": "<anonymous-schema-389>"
+                "x-parser-schema-id": "<anonymous-schema-412>"
               },
               "urlTemplate": {
                 "type": "string",
                 "description": "urlTemplate in [IETF rfc6570 format](https://datatracker.ietf.org/doc/html/rfc6570)",
                 "example": "https://example.com/{author/name}/blog/post?{slug}",
-                "x-parser-schema-id": "<anonymous-schema-669>"
+                "x-parser-schema-id": "<anonymous-schema-694>"
               }
             },
             "x-parser-schema-id": "BlogPosting"
           }
         },
-        "x-parser-schema-id": "<anonymous-schema-676>"
+        "x-parser-schema-id": "<anonymous-schema-701>"
       },
       "topic": {
         "const": "realestate/blog#update",
-        "x-parser-schema-id": "<anonymous-schema-675>"
+        "x-parser-schema-id": "<anonymous-schema-700>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-674>"
+    "x-parser-schema-id": "<anonymous-schema-699>"
   }
 }

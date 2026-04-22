@@ -2,6 +2,17 @@ type: object
 title: Certification
 description: A certification issued by an organization to an individual or business.
 x-range: Certification
+example:
+  type: Certification
+  name: e-Agent Certified
+  issuedBy:
+    type: RealEstateOrganization
+    id: https://example.com/profile/card#me
+    name: Gotham City Real Estate
+  issuedTo:
+    type: RealEstateAgent
+    id: http://example.com
+    name: string
 properties:
   type:
     description: Certification

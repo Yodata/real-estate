@@ -4,6 +4,20 @@ description: a LogAction should be produced at the end of service execution
 required:
   - type
   - actionStatus
+example:
+  type: string
+  actionStatus: CompletedActionStatus
+  object:
+    topic: realestate/contact#add
+    data:
+      type: AddAction
+      object:
+        name: Bob Smith
+        email: bob@example.com
+  result: {}
+  error:
+    message: sorry dave
+    stack: string
 properties:
   type:
     type: string

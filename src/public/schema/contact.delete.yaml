@@ -115,66 +115,116 @@ payload:
         - object
       properties:
         type:
+          type: string
           const: DeleteAction
           x-parser-schema-id: <anonymous-schema-120>
         agent:
-          type: object
-          properties:
-            type:
-              const: Person
-              x-parser-schema-id: <anonymous-schema-88>
-            name:
-              $id: http://realestate.yodata.me/schema/name.yaml
-              title: name
-              type: string
-              x-parser-schema-id: name
-            email:
-              title: email
-              description: a valid email address
-              type: string
-              format: email
-              x-faker: internet.email
-              x-parser-schema-id: <anonymous-schema-89>
-            identifier:
-              title: identifier
-              type: object
-              summary: >-
-                identifier assigned to a contact by the vendor who originally
-                created the contact
-              maxProperties: 1
-              minProperties: 1
-              examples:
-                - bhhsconsumerid: '12345'
-                - salesforceid: '56789'
-              x-parser-schema-id: identifier
-          required:
-            - type
-          minProperties: 2
-          x-parser-schema-id: <anonymous-schema-87>
+          type: string
+          format: uri
+          description: the user, team or organization who sent the event
+          x-parser-schema-id: <anonymous-schema-121>
+        instrument:
+          type: string
+          format: uri
+          description: data instrument
+          x-parser-schema-id: <anonymous-schema-122>
         object:
           type: object
           properties:
             type:
+              type: string
               const: Contact
-              x-parser-schema-id: <anonymous-schema-122>
+              x-parser-schema-id: <anonymous-schema-124>
             identifier:
-              title: identifier
               type: object
-              summary: >-
-                identifier assigned to a contact by the vendor who originally
-                created the contact
-              maxProperties: 1
-              minProperties: 1
-              examples:
-                - bhhsconsumerid: '12345'
-                - salesforceid: '56789'
-              x-parser-schema-id: identifier
-          required:
-            - type
-            - identifier
-          x-parser-schema-id: <anonymous-schema-121>
+              properties:
+                salesforceId:
+                  type: string
+                  description: identifier Salesforce Id
+                  x-parser-schema-id: <anonymous-schema-126>
+              x-parser-schema-id: <anonymous-schema-125>
+            sameAs:
+              type: object
+              properties:
+                salesforceId:
+                  type: string
+                  description: sameAs Salesforce Id
+                  x-parser-schema-id: <anonymous-schema-128>
+              x-parser-schema-id: <anonymous-schema-127>
+            givenName:
+              type: string
+              description: given name (optional)
+              x-parser-schema-id: <anonymous-schema-129>
+            familyName:
+              type: string
+              description: family name (optional)
+              x-parser-schema-id: <anonymous-schema-130>
+            address:
+              type: array
+              description: >-
+                (optional) object has { streetAddress, addressLocality,
+                addressCountry }
+              items:
+                type: object
+                properties:
+                  streetAddress:
+                    type: string
+                    x-parser-schema-id: <anonymous-schema-133>
+                  addressLocality:
+                    type: string
+                    x-parser-schema-id: <anonymous-schema-134>
+                  addressCountry:
+                    type: string
+                    x-parser-schema-id: <anonymous-schema-135>
+                x-parser-schema-id: <anonymous-schema-132>
+              x-parser-schema-id: <anonymous-schema-131>
+            leadOwner:
+              type: object
+              description: (optional)
+              properties:
+                type:
+                  type: string
+                  description: type of lead owner
+                  x-parser-schema-id: <anonymous-schema-137>
+                id:
+                  type: string
+                  format: uri
+                  description: id (url) of lead owner
+                  x-parser-schema-id: <anonymous-schema-138>
+              x-parser-schema-id: <anonymous-schema-136>
+            additionalProperty:
+              type: object
+              description: (optional)
+              properties:
+                salesforceId:
+                  type: string
+                  description: salesforce Id
+                  x-parser-schema-id: <anonymous-schema-140>
+                doNotSellPersonalInformation:
+                  type: boolean
+                  description: 'false'
+                  x-parser-schema-id: <anonymous-schema-141>
+                transactionType:
+                  type: string
+                  description: transaction type
+                  x-parser-schema-id: <anonymous-schema-142>
+              x-parser-schema-id: <anonymous-schema-139>
+            contactPoint:
+              type: array
+              description: contact point array (optional)
+              x-parser-schema-id: <anonymous-schema-143>
+          x-parser-schema-id: <anonymous-schema-123>
       x-parser-schema-id: <anonymous-schema-119>
+    recipient:
+      type: string
+      format: uri
+      x-parser-schema-id: <anonymous-schema-145>
+    source:
+      type: string
+      format: uri
+      x-parser-schema-id: <anonymous-schema-144>
     topic:
+      type: string
       const: realestate/contact#delete
       x-parser-schema-id: <anonymous-schema-118>
   x-parser-schema-id: <anonymous-schema-117>

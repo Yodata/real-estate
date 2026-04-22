@@ -119,7 +119,7 @@ payload:
             - DeleteAction
             - AddAction
             - RemoveAction
-          x-parser-schema-id: <anonymous-schema-587>
+          x-parser-schema-id: <anonymous-schema-610>
         object:
           oneOf:
             - title: AwardSeries
@@ -300,9 +300,9 @@ payload:
             - type: string
               format: uri
               example: https://user.example.com/profile/card#me
-              x-parser-schema-id: <anonymous-schema-589>
-          x-parser-schema-id: <anonymous-schema-588>
-      x-parser-schema-id: <anonymous-schema-586>
+              x-parser-schema-id: <anonymous-schema-612>
+          x-parser-schema-id: <anonymous-schema-611>
+      x-parser-schema-id: <anonymous-schema-609>
     topic:
       type: string
       enum:
@@ -316,6 +316,6 @@ payload:
         - realestate/award#teamdelete
         - realestate/award#teammemberadd
         - realestate/award#teammemberremove
-      x-parser-schema-id: <anonymous-schema-585>
-  x-parser-schema-id: <anonymous-schema-584>
+      x-parser-schema-id: <anonymous-schema-608>
+  x-parser-schema-id: <anonymous-schema-607>
 

@@ -1,6 +1,14 @@
 title: City
 type: object
 description: A city or town.
+example:
+  type: City
+  name: string
+  addressRegion: New Jersey
+  addressLocality: Gotham City
+  postalCode: '10010'
+  addressCountry: USA
+  addressCounty: Gotham County
 properties:
   addressCountry:
     type: string

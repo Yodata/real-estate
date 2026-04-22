@@ -4,6 +4,19 @@
   "description": "a participant in a transaction, i.e. Buyer, Seller, etc...",
   "x-range": "TransactionParticipant",
   "type": "object",
+  "example": {
+    "type": "TransactionParticipant",
+    "roleName": "Buyer",
+    "position": 1,
+    "givenName": "John",
+    "familyName": "Smith",
+    "additionalName": "Big",
+    "email": "user@example.com",
+    "telephone": "+15558675309",
+    "affiliation": [
+      "https://{agentid}.example.com/profile/card#me"
+    ]
+  },
   "properties": {
     "additionalName": {
       "type": "string",
@@ -17,7 +30,7 @@
         "type": "string",
         "format": "uri",
         "example": "https://{agentid}.example.com/profile/card#me",
-        "x-parser-schema-id": "<anonymous-schema-192>"
+        "x-parser-schema-id": "<anonymous-schema-215>"
       }
     },
     "email": {

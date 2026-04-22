@@ -113,7 +113,7 @@
         "properties": {
           "type": {
             "const": "DeleteAction",
-            "x-parser-schema-id": "<anonymous-schema-643>"
+            "x-parser-schema-id": "<anonymous-schema-668>"
           },
           "agent": {
             "type": "object",
@@ -166,7 +166,7 @@
             "properties": {
               "type": {
                 "const": "Collection",
-                "x-parser-schema-id": "<anonymous-schema-638>"
+                "x-parser-schema-id": "<anonymous-schema-663>"
               },
               "name": {
                 "type": "string",
@@ -180,7 +180,7 @@
                   "Business Contacts",
                   "Other"
                 ],
-                "x-parser-schema-id": "<anonymous-schema-639>"
+                "x-parser-schema-id": "<anonymous-schema-664>"
               },
               "identifier": {
                 "title": "identifier",
@@ -203,17 +203,17 @@
               "type",
               "name"
             ],
-            "x-parser-schema-id": "<anonymous-schema-637>"
+            "x-parser-schema-id": "<anonymous-schema-662>"
           }
         },
-        "x-parser-schema-id": "<anonymous-schema-642>"
+        "x-parser-schema-id": "<anonymous-schema-667>"
       },
       "topic": {
         "type": "string",
         "const": "realestate/contact#collectiondelete",
-        "x-parser-schema-id": "<anonymous-schema-641>"
+        "x-parser-schema-id": "<anonymous-schema-666>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-640>"
+    "x-parser-schema-id": "<anonymous-schema-665>"
   }
 }

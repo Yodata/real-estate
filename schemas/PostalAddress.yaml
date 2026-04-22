@@ -5,6 +5,16 @@ $id: http://realestate.yodata.me/schemas/PostalAddress.yaml
 title: PostalAddress
 type: object
 description: A physical address.
+example:
+  type: PostalAddress
+  streetAddress: 1007 Mountain Gate Rd
+  postOfficeBoxNumber: Box 1234
+  addressRegion: NJ
+  addressLocality: Gotham City
+  postalCode: '10010'
+  addressCountry: CA
+  addressCounty: string
+  addressSubdivision: Gotham Heights
 properties:
   type: { type: string, const: PostalAddress }
   streetAddress:

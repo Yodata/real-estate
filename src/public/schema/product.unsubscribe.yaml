@@ -122,10 +122,10 @@ payload:
             type:
               description: the action type
               type: string
-              x-parser-schema-id: <anonymous-schema-337>
+              x-parser-schema-id: <anonymous-schema-360>
             object:
               description: item on which the action is carried out
-              x-parser-schema-id: <anonymous-schema-338>
+              x-parser-schema-id: <anonymous-schema-361>
           externalDocs:
             description: schema.org/Action
             url: https://schema.org/Action
@@ -173,10 +173,10 @@ payload:
                     properties:
                       isCompanyQueue:
                         type: boolean
-          x-parser-schema-id: <anonymous-schema-342>
+          x-parser-schema-id: <anonymous-schema-365>
       x-parser-schema-id: UnsubscribeAction
     topic:
       const: realestate/product#unsubscribe
-      x-parser-schema-id: <anonymous-schema-697>
-  x-parser-schema-id: <anonymous-schema-696>
+      x-parser-schema-id: <anonymous-schema-919>
+  x-parser-schema-id: <anonymous-schema-918>
 

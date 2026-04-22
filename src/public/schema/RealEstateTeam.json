@@ -1,5 +1,90 @@
 {
   "type": "object",
+  "example": {
+    "type": "string",
+    "address": {
+      "type": "PostalAddress",
+      "streetAddress": "1007 Mountain Gate Rd",
+      "postOfficeBoxNumber": "Box 1234",
+      "addressRegion": "NJ",
+      "addressLocality": "Gotham City",
+      "postalCode": "10010",
+      "addressCountry": "CA",
+      "addressCounty": "string",
+      "addressSubdivision": "Gotham Heights"
+    },
+    "availableLanguage": [
+      {
+        "type": "Language",
+        "name": "English",
+        "additionalName": "en-us"
+      }
+    ],
+    "branchCode": "for BHHS profile events, see additionalProperty.OfficeId",
+    "certification": [
+      {
+        "type": "Certification",
+        "name": "e-Agent Certified",
+        "issuedBy": {
+          "type": "RealEstateOrganization",
+          "id": "https://example.com/profile/card#me",
+          "name": "Gotham City Real Estate"
+        },
+        "issuedTo": {
+          "type": "RealEstateAgent",
+          "id": "http://example.com",
+          "name": "string"
+        }
+      }
+    ],
+    "contactPoint": [
+      {
+        "type": "ContactPoint",
+        "name": "Work",
+        "telephone": "555-555-5555",
+        "faxNumber": "555-555-5555",
+        "email": "bob@example.com",
+        "url": "https://www.facebook.com/hallandoates"
+      }
+    ],
+    "email": "user@example.com",
+    "faxNumber": "string",
+    "image": [
+      {
+        "type": "ImageObject",
+        "@id": "http://example.com",
+        "id": "http://user.example.com/public/logo/image.jpg",
+        "name": "image.jpg",
+        "encodingFormat": "image/jpeg",
+        "about": "http://user.example.com/profile/card#me",
+        "url": "http://user.example.com/public/profile/image.jpg"
+      }
+    ],
+    "logo": [
+      {
+        "type": "DigitalDocument",
+        "id": "http://user.example.com/public/logo/archive.zip",
+        "name": "archive.zip",
+        "encodingFormat": "application/zip",
+        "about": {
+          "type": "RealEstateTransaction",
+          "identifier": {
+            "bmsTransactionId": "xxxx"
+          }
+        },
+        "url": "https://example.com"
+      }
+    ],
+    "name": "string",
+    "parentOrganization": [
+      "http://example.com"
+    ],
+    "subOrganization": [
+      "http://example.com"
+    ],
+    "telephone": "+15558675309",
+    "url": "http://example.com"
+  },
   "title": "RealEstateTeam",
   "description": "A real estate team.",
   "properties": {
@@ -8,6 +93,17 @@
       "title": "PostalAddress",
       "type": "object",
       "description": "A physical address.",
+      "example": {
+        "type": "PostalAddress",
+        "streetAddress": "1007 Mountain Gate Rd",
+        "postOfficeBoxNumber": "Box 1234",
+        "addressRegion": "NJ",
+        "addressLocality": "Gotham City",
+        "postalCode": "10010",
+        "addressCountry": "CA",
+        "addressCounty": "string",
+        "addressSubdivision": "Gotham Heights"
+      },
       "properties": {
         "type": {
           "type": "string",
@@ -254,6 +350,20 @@
           "title": "Certification",
           "description": "A certification issued by an organization to an individual or business.",
           "x-range": "Certification",
+          "example": {
+            "type": "Certification",
+            "name": "e-Agent Certified",
+            "issuedBy": {
+              "type": "RealEstateOrganization",
+              "id": "https://example.com/profile/card#me",
+              "name": "Gotham City Real Estate"
+            },
+            "issuedTo": {
+              "type": "RealEstateAgent",
+              "id": "http://example.com",
+              "name": "string"
+            }
+          },
           "properties": {
             "type": {
               "description": "Certification",
@@ -278,20 +388,20 @@
                   ],
                   "type": "string",
                   "description": "The item type (Linked-Data @type)",
-                  "x-parser-schema-id": "<anonymous-schema-357>"
+                  "x-parser-schema-id": "<anonymous-schema-380>"
                 },
                 "id": {
                   "example": "https://example.com/profile/card#me",
                   "type": "string",
                   "format": "uri",
                   "description": "Linked-Data URI (@id)",
-                  "x-parser-schema-id": "<anonymous-schema-358>"
+                  "x-parser-schema-id": "<anonymous-schema-381>"
                 },
                 "name": {
                   "type": "string",
                   "description": "name of the issuing organization",
                   "example": "Gotham City Real Estate",
-                  "x-parser-schema-id": "<anonymous-schema-359>"
+                  "x-parser-schema-id": "<anonymous-schema-382>"
                 }
               }
             },
@@ -306,7 +416,7 @@
                   ],
                   "type": "string",
                   "description": "The item type (Linked-Data @type)",
-                  "x-parser-schema-id": "<anonymous-schema-361>"
+                  "x-parser-schema-id": "<anonymous-schema-384>"
                 },
                 "id": {
                   "type": "string",
@@ -340,6 +450,14 @@
           "name"
         ],
         "minProperties": 3,
+        "example": {
+          "type": "ContactPoint",
+          "name": "Work",
+          "telephone": "555-555-5555",
+          "faxNumber": "555-555-5555",
+          "email": "bob@example.com",
+          "url": "https://www.facebook.com/hallandoates"
+        },
         "properties": {
           "type": {
             "type": "string",
@@ -446,14 +564,14 @@
                   ],
                   "propertyNames": {
                     "pattern": "^[a-z@$][a-zA-Z0-9-_]+$",
-                    "x-parser-schema-id": "<anonymous-schema-164>"
+                    "x-parser-schema-id": "<anonymous-schema-187>"
                   },
                   "properties": {
                     "type": {
                       "type": "string",
                       "pattern": "^[A-Z][a-zA-Z0-9]+$",
                       "description": "The item type (Linked-Data @type)",
-                      "x-parser-schema-id": "<anonymous-schema-162>"
+                      "x-parser-schema-id": "<anonymous-schema-185>"
                     },
                     "@id": {
                       "type": "string",
@@ -502,7 +620,7 @@
                       "example": "http://user.example.com/public/profile/image.jpg"
                     }
                   },
-                  "x-parser-schema-id": "<anonymous-schema-165>"
+                  "x-parser-schema-id": "<anonymous-schema-188>"
                 }
               ],
               "x-parser-schema-id": "MediaObject"
@@ -527,10 +645,10 @@
                   "example": "image/jpeg"
                 }
               },
-              "x-parser-schema-id": "<anonymous-schema-166>"
+              "x-parser-schema-id": "<anonymous-schema-189>"
             }
           ],
-          "x-parser-schema-id": "<anonymous-schema-161>"
+          "x-parser-schema-id": "<anonymous-schema-184>"
         }
       ]
     },
@@ -645,7 +763,7 @@
                   "RealEstateTeamMembership"
                 ],
                 "example": "RealEstateTeamMembership",
-                "x-parser-schema-id": "<anonymous-schema-418>"
+                "x-parser-schema-id": "<anonymous-schema-441>"
               },
               "roleName": {
                 "type": "string",
@@ -654,22 +772,22 @@
                   "TeamAdmin",
                   "TeamOwner"
                 ],
-                "x-parser-schema-id": "<anonymous-schema-419>"
+                "x-parser-schema-id": "<anonymous-schema-442>"
               },
               "memberOf": {
                 "type": "string",
                 "format": "uri",
                 "example": "https://{team-id}.example.com/profile/card#me",
-                "x-parser-schema-id": "<anonymous-schema-420>"
+                "x-parser-schema-id": "<anonymous-schema-443>"
               },
               "member": {
                 "type": "string",
                 "format": "uri",
                 "example": "https://{agent}.example.com/profile/card#me",
-                "x-parser-schema-id": "<anonymous-schema-421>"
+                "x-parser-schema-id": "<anonymous-schema-444>"
               }
             },
-            "x-parser-schema-id": "<anonymous-schema-417>"
+            "x-parser-schema-id": "<anonymous-schema-440>"
           }
         ],
         "x-parser-schema-id": "RealEstateTeamMembership"
@@ -688,7 +806,7 @@
       "description": "A franchisor or affiliate network of which this organization plays a membership role.",
       "type": "array",
       "items": {
-        "x-parser-schema-id": "<anonymous-schema-379>",
+        "x-parser-schema-id": "<anonymous-schema-402>",
         "type": "string",
         "format": "uri"
       }
@@ -701,7 +819,7 @@
       "items": {
         "type": "string",
         "format": "uri",
-        "x-parser-schema-id": "<anonymous-schema-388>"
+        "x-parser-schema-id": "<anonymous-schema-411>"
       }
     },
     "telephone": {
@@ -725,6 +843,6 @@
       "description": "URL of the item."
     }
   },
-  "x-parser-schema-id": "<anonymous-schema-403>",
+  "x-parser-schema-id": "<anonymous-schema-426>",
   "$id": "http://realestate.yodata.me/schema/RealEstateTeam.json"
 }

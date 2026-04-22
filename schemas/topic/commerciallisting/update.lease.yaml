@@ -3,17 +3,585 @@
 messageId: commerciallisting#update.lease
 name: realestate/commerciallisting#update.lease
 title: commerciallisting#update.lease
-summary: a commercial lease PropertyListing is created or updated
+summary: lease listing schema
+description: |
+  a commercial lease listing was created or updated
 contentType: application/json
 headers:
   $ref: ../../subscription_headers.yaml
+
+examples:
+  - name: lease listing schema
+    payload:
+      topic: realestate/commerciallisting#update.lease
+      data:
+        type: UpdateAction
+        object:
+          type: LeaseListing
+          addressCountry: United States
+          addressLocality: Milford
+          addressRegion: NH
+          description: |-
+            Fully air-conditioned Warehouse and Office for Lease, available August 1, 2025.
+
+            Freestanding +/-31,625 SF warehouse/industrial and office building available for lease.
+          hasElevators: ''
+          image:
+            - type: Property Photo
+              encodingFormat: Image/jpg
+              id: https://s3.amazonaws.com/buildout-production/datas/31420540/6d0656c46e6588a78875b8a79b6d54c26dcf73a0/full.jpg?1733167134
+            - type: Floor Plan
+              encodingFormat: Image/jpg
+              id: https://s3.amazonaws.com/buildout-production/datas/31420901/6a5647354a086a18a6515d734508d22b4ec40992/full.jpg?1733168233
+          latitude: 42.8275626
+          listingAgent:
+            type: RealEstateAgent
+            name: Lee
+            email: jay@verani.com
+            telephone: '608098900'
+            identifier: {}
+            additionalProperty:
+              agentId: '234567'
+          coListingAgent:
+            - type: RealEstateAgent
+              name: Joanne VanStry
+              email: joanne.vanstry@verani.com
+              identifier: {}
+              additionalProperty:
+                agentId: '1060172'
+          listingContractDate: '2024-12-02T11:38:31.000-06:00'
+          listingId: bo-148767
+          listingOffice:
+            type: RealEstateCompany
+            name: Verani Realty
+            email: margherita@verani.com
+            identifier: {}
+            additionalProperty:
+              officeId: NH887-001
+          listingOriginatingSystem:
+            type: MultipleListingService
+            name: Buildout-BHHS
+            identifier:
+              orgId: bo-bhhs
+          listingPrice:
+            type: PriceSpecification
+            priceCurrency: USD
+            price: 316250
+          listingStatus: Active
+          livingArea:
+            type: QuantitativeValue
+            value: 31625
+            unitCode: FTK
+            unitText: SquareFeet
+          longitude: -71.6369663
+          lotSize:
+            type: QuantitativeValue
+            value: 3
+            unitCode: ACR
+            unitText: Acre
+          modificationTimestamp: '2025-04-17T09:41:44.000-05:00'
+          name: Fully air-conditioned Warehouse and Office for Lease, Available August 1, 2025
+          numberOfBathrooms: ''
+          originatingSystemKey: bo-145229
+          originatingSystemName: buildout
+          postalCode: '08755'
+          propertySubType:
+            - Warehouse/Distribution
+          propertyType: Industrial
+          stories: 2
+          streetAddress: 48 Powers St
+          suites:
+            - name: Suite 01
+              leaseId: 1978971
+              availableOn: '2025-08-01'
+              tenantName: ''
+              floorPlans:
+                - floorPlanUrl: ''
+              image: []
+              leaseTerm: ''
+              leaseType: NNN
+              leaseDescription: |-
+                Fully air-conditioned Warehouse and Office for Lease, available August 1, 2025.
+
+                Freestanding +/-31,625 SF warehouse/industrial and office building available for lease.
+              RentableSqFt: 31625
+              status: Active
+              leaseRate: 10
+              leaseRateUnit: dollars_per_sf_per_year
+          tenancy: Single
+          url: https://www.bhhsverani.com/commercial/commercial-search?propertyId=48-powers-st-milford-lease
+          yearBuilt: 1970
+          class: ''
+          highlights:
+            - '- 31,625 SF industrial building'
+            - '- Zoned I (Industrial)'
+            - '- Suitable for warehouse/distribution use with Office'
+            - '- Ample parking space'
+            - '- Spacious loading docks'
+            - '- High ceilings for storage'
+            - '- Convenient location in Milford, NH'
+            - '- Versatile layout for customization'
+            - '- Excellent visibility'
+          documents:
+            - id: 3528207
+              url: https://buildout.com/docs/documents/3528207?mtime=1744901205&token=7b655f3f32f2ec1fa4cce7d3e2ea46264a4f9f09
+              name: Offering Memorandum (L)
+              original_file_name: ''
+      '@id': https://crexi.bhhs.hsfaffiliates.com/inbox/2435b39e8dbfuoyn98y89hnu
+      id: https://crexi.bhhs.hsfaffiliates.com/inbox/2435b39e8dbfuoyn98y89hnu
+      agent: https://agent.bhhs.hsfaffiliates.com/profile/card#me
+
 payload:
   type: object
   properties:
-    topic: { const: realestate/commerciallisting#update.lease }
+    topic:
+      type: string
+      const: realestate/commerciallisting#update.lease
     data:
       type: object
       properties:
-        type: { const: UpdateAction }
+        type:
+          type: string
+          const: UpdateAction
         object:
-          $ref: ../../PropertyListing.yaml
+          type: object
+          description: a real estate property listed for sale
+          properties:
+            type:
+              type: string
+              enum: [LeaseListing]
+            addressCountry:
+              type: string
+              enum:
+                - Other
+                - United States
+                - Bahamas
+                - Canada
+                - Mexico
+                - Turkey
+                - Australia
+                - Switzerland
+                - France
+                - Monaco
+                - Spain
+                - United Kingdom
+                - Germany
+                - Italy
+                - Poland
+                - Romania
+                - Netherlands
+                - Hungary
+            addressLocality:
+              type: string
+              description: City, Township.
+            addressRegion:
+              type: string
+              description: abbreviated state or province
+            hasElevators:
+              type: string
+              description: elevators exist or not
+            buyerAgent:
+              type: object
+              description: the buyer's RealEstateAgent
+            buyerOffice:
+              type: object
+              description: the buyer's RealEstateOffice
+            closeDate:
+              type: string
+              format: date-time
+              description: listing close date
+            image:
+              type: array
+              description: an ImageObject or URI reference to an image on the web.
+              items:
+                type: object
+                properties:
+                  type:
+                    type: string
+                    const: Property Photo
+                  encodingFormat:
+                    type: string
+                    const: Image/jpg
+                  id:
+                    type: string
+                    format: uri
+                    description: image url
+            internetAddressDisplayYN:
+              type: string
+              enum: ['Y', 'N']
+            latitude:
+              type: number
+              description: The latitude of a location.
+            longitude:
+              type: number
+              description: The longitude of a location.
+            listingAgent:
+              type: object
+              properties:
+                type:
+                  type: string
+                  const: RealEstateAgent
+                name:
+                  type: string
+                  description: listings agent name
+                email:
+                  type: string
+                  description: listings agent email
+                telephone:
+                  type: string
+                  description: listings agent telephone
+                identifier:
+                  type: object
+                  description: listings agent identifier
+                additionalProperty:
+                  type: object
+                  properties:
+                    agentId:
+                      type: string
+                      description: listings agent id
+            coListingAgent:
+              type: array
+              description: list of coListing Agents
+            listingContractDate:
+              type: string
+              format: date-time
+              description: The effective date of the agreement between the seller and the seller's broker.
+            listingId:
+              type: string
+              description: the local identifier for the listing
+            listingOffice:
+              type: object
+              properties:
+                type:
+                  type: string
+                  const: RealEstateAgent
+                name:
+                  type: string
+                  description: listings office name
+                email:
+                  type: string
+                  description: listings office email
+                telephone:
+                  type: string
+                  description: listings office telephone
+                identifier:
+                  type: object
+                  description: listings office identifier
+                additionalProperty:
+                  type: object
+                  properties:
+                    officeId:
+                      type: string
+                      description: listings office Id
+            listingOriginatingSystem:
+              type: object
+              properties:
+                type:
+                  type: string
+                  description: OriginatingSystem type
+                name:
+                  type: string
+                  description: OriginatingSystem name
+                identifier:
+                  type: object
+                  properties:
+                    orgId:
+                      type: string
+                      description: OriginatingSystem identifier orgId
+            listingPrice:
+              type: object
+              properties:
+                type:
+                  type: string
+                  const: PriceSpecification
+                priceCurrency:
+                  type: string
+                  const: USD
+                value:
+                  type: number
+                  description: listing price value
+            soldPrice:
+              type: object
+              properties:
+                type:
+                  type: string
+                  const: PriceSpecification
+                priceCurrency:
+                  type: string
+                  const: USD
+                value:
+                  type: number
+                  description: sold price value
+            listingStatus:
+              type: string
+              enum: [Active, Closed]
+            livingArea:
+              type: object
+              properties:
+                type:
+                  type: string
+                  const: QuantitativeValue
+                value:
+                  type: number
+                  description: livingArea value
+                unitCode:
+                  type: string
+                  const: FTK
+                unitText:
+                  type: string
+                  const: SquareFeet
+            lotSize:
+              type: object
+              properties:
+                type:
+                  type: string
+                  const: QuantitativeValue
+                value:
+                  type: number
+                  description: lotSize value
+                unitCode:
+                  type: string
+                  const: ACR
+                unitText:
+                  type: string
+                  const: Acre
+            modificationTimestamp:
+              type: string
+              format: date-time
+              description: last modified date of listing
+            name:
+              type: string
+              description: name
+            numberOfBathrooms:
+              type: string
+              description: total number of bathrooms
+            originatingSystemKey:
+              type: string
+              description: the listing identifier from the original MLS
+            originatingSystemName:
+              type: string
+              const: buildout
+            postalCode:
+              type: string
+              maxLength: 12
+              description: Zip/Post Code
+            propertyType:
+              type: string
+              enum:
+                - Office
+                - Retail
+                - Industrial
+                - Land
+                - Multifamily
+                - Special Purpose
+                - Hospitality
+            propertySubType:
+              type: array
+              items:
+                type: string
+                enum:
+                  - Office Building
+                  - Creative/Loft
+                  - Executive Suites
+                  - Medical
+                  - Institutional/Governmental
+                  - Office Warehouse
+                  - Office Condo
+                  - Coworking
+                  - Lab
+                  - Street Retail
+                  - Strip Center
+                  - Free Standing Building
+                  - Regional Mall
+                  - Retail Pad
+                  - Vehicle Related
+                  - Outlet Center
+                  - Power Center
+                  - Neighborhood Center
+                  - Community Center
+                  - Specialty Center
+                  - Theme/Festival Center
+                  - Restaurant
+                  - Post Office
+                  - Retail Condo
+                  - Lifestyle Center
+                  - Manufacturing
+                  - Warehouse
+                  - Distribution
+                  - Flex Space
+                  - Research & Development
+                  - Refrigerated/Cold Storage
+                  - Office Showroom
+                  - Truck Terminal/Hub/Transit
+                  - Self Storage
+                  - Industrial Condo
+                  - Data Center
+                  - Retail-Pad
+                  - Residential
+                  - Other
+                  - High-Rise
+                  - Mid-Rise
+                  - Low-Rise/Garden
+                  - Government Subsidized
+                  - Mobile Home Park
+                  - Senior Living
+                  - Skilled Nursing
+                  - Single Family Rental Portfolio
+                  - School
+                  - Marina
+                  - Golf Course
+                  - Church
+                  - Full Service
+                  - Limited Service
+                  - Select Service
+                  - Resort
+                  - Economy
+                  - Extended Stay
+                  - Casino
+                  - Warehouse/Distribution
+            stories:
+              type: number
+              description: the number of floors in the property
+            streetAddress:
+              type: string
+              description: the street address
+            suites:
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    description: suite name
+                  leaseId:
+                    type: number
+                    description: lease id
+                  suiteNumber:
+                    type: string
+                    description: suite number
+                  availableOn:
+                    type: string
+                    description: available date
+                  tenantName:
+                    type: string
+                    description: tenant name
+                  contiguousSqFtMax:
+                    type: string
+                    description: Max contiguous Square Foot
+                  floorPlans:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        floorPlanUrl:
+                          type: string
+                          format: uri
+                          description: floor Plan Url
+                  image:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        type:
+                          type: string
+                          const: Property Photo
+                        encodingFormat:
+                          type: string
+                          const: Image/jpg
+                        id:
+                          type: string
+                          format: uri
+                          description: image url
+                  leaseTerm:
+                    type: string
+                    description: lease term
+                  leaseType:
+                    type: string
+                    enum:
+                      - Gross
+                      - Modified Gross
+                      - NNN
+                      - Modified Net
+                      - Full Service
+                      - Ground Lease
+                  leaseDescription:
+                    type: string
+                    description: lease description
+                  RentableSqFt:
+                    type: string
+                    description: RentableSqFt
+                  RentableSqFtMax:
+                    type: number
+                    description: Max RentableSqFt
+                  RentableSqFtMin:
+                    type: number
+                    description: Min RentableSqFt
+                  status:
+                    type: string
+                    enum: [Inactive, Active, 'Under Contract', Closed]
+                  leaseRate:
+                    type: number
+                    description: lease rate
+                  leaseRateMax:
+                    type: number
+                    description: max lease rate
+                  leaseRateUnit:
+                    type: string
+                    enum:
+                      - dollars_per_sf_per_year
+                      - dollars_per_sm_per_year
+                      - dollars_per_acre_per_year
+                      - dollars_per_hectare_per_year
+                      - dollars_per_year
+                      - dollars_per_sf_per_month
+                      - dollars_per_sm_per_month
+                      - dollars_per_acre_per_month
+                      - dollars_per_hectare_per_month
+                      - dollars_per_month
+            tenancy:
+              type: string
+              description: single or multiple tenants
+            url:
+              type: string
+              format: uri
+              description: URL of the item.
+            yearBuilt:
+              type: number
+              description: the year the structure was built
+            class:
+              type: string
+              description: property class
+            highlights:
+              type: array
+              description: highlights
+              items:
+                type: string
+            documents:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: number
+                    description: document id
+                  url:
+                    type: string
+                    format: uri
+                    description: document url
+                  name:
+                    type: string
+                    description: document name
+                  original_file_name:
+                    type: string
+                    description: document file name
+    id:
+      type: string
+      format: uri
+      description: the Event ID (aka "Publish ID") is the immutable canonical identifier for the event.
+    '@id':
+      type: string
+      format: uri
+    agent:
+      type: string
+      format: uri
+      description: if you are a multi-tenant app, then the agent is the user associated with the event data.

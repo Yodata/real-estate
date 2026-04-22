@@ -3,6 +3,34 @@
   "type": "object",
   "x-range": "Lead",
   "description": "a sales opportunity (object) offered by a sender to a recipient.",
+  "example": {
+    "type": "Lead",
+    "identifier": {
+      "bhhsconsumerid": "12345"
+    },
+    "object": {
+      "type": "Contact",
+      "name": "Joe Smith",
+      "telephone": "731-620-9877 x6155",
+      "email": "Giuseppe.Lang62@hotmail.com"
+    },
+    "recipient": "http://{lead-recipient}.example.com/profile/card#me",
+    "sender": "http://{lead-sender}.example.com/profile/card#me",
+    "owner": "http://{lead-owner}.example.com/profile/card#me",
+    "dateAccepted": "2019-11-25T04:23:32.000Z",
+    "dateRejected": "2019-08-24T14:15:22Z",
+    "dateSent": "2019-08-24T14:15:22Z",
+    "dateReceived": "2019-11-25T04:23:32.000Z",
+    "leadSource": [
+      {
+        "type": "AskAction",
+        "object": {
+          "type": "Question",
+          "text": "Help me I'm trapped inside documentation."
+        }
+      }
+    ]
+  },
   "properties": {
     "dateAccepted": {
       "type": "string",
@@ -59,7 +87,7 @@
             "text": "Help me I'm trapped inside documentation."
           }
         },
-        "x-parser-schema-id": "<anonymous-schema-227>"
+        "x-parser-schema-id": "<anonymous-schema-250>"
       }
     },
     "object": {

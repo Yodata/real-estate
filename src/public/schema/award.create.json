@@ -224,15 +224,15 @@
             "x-parser-schema-id": "Award"
           }
         },
-        "x-parser-schema-id": "<anonymous-schema-583>"
+        "x-parser-schema-id": "<anonymous-schema-606>"
       },
       "topic": {
         "enum": [
           "realestate/award#create"
         ],
-        "x-parser-schema-id": "<anonymous-schema-582>"
+        "x-parser-schema-id": "<anonymous-schema-605>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-581>"
+    "x-parser-schema-id": "<anonymous-schema-604>"
   }
 }

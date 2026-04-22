@@ -55,6 +55,9 @@ properties:
   OfficePropertyType:
     type: string
     description: An office.
+  OtherPropertyType:
+    type: string
+    description: Other property.
   OwnYourOwnPropertyType:
     type: string
     description: RESO Own Your Own Property

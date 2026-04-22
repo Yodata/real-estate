@@ -3,6 +3,23 @@
   "x-range": "ContactSummary",
   "description": "minimal schema of a customer for report messages",
   "type": "object",
+  "example": {
+    "type": "ContactSummaryReport",
+    "batchId": "0001",
+    "author": "https://{officeid}.example.com/profile/card#me",
+    "transactionType": "SalesTransactionType",
+    "transactionId": "0000097123",
+    "transactionRole": "Buyer",
+    "position": 1,
+    "assoicatedAgent": "https://{userid}.example.com/profile/card#me",
+    "object": {
+      "type": "string",
+      "givenName": "John",
+      "additionalName": "M",
+      "familyName": "Smith",
+      "gender": "M"
+    }
+  },
   "properties": {
     "assoicatedAgent": {
       "type": "string",
@@ -75,7 +92,7 @@
           "type": "string",
           "description": "CUSTOMER-MIDDLE-INITIAL",
           "example": "M",
-          "x-parser-schema-id": "<anonymous-schema-769>"
+          "x-parser-schema-id": "<anonymous-schema-991>"
         },
         "familyName": {
           "$id": "http://realestate.yodata.me/schema/familyName.yaml",
@@ -106,7 +123,7 @@
           "type": "string",
           "description": "gender of the Customer (why?)",
           "example": "M",
-          "x-parser-schema-id": "<anonymous-schema-770>"
+          "x-parser-schema-id": "<anonymous-schema-992>"
         }
       }
     },

@@ -2,6 +2,66 @@ title: PropertySearch
 x-range: PropertySearch
 type: object
 description: property search parameters
+example:
+  type: PropertySearch
+  name: 3+ beds in Gotham City
+  description: ((city=Gotham),(Bedrooms=3+))
+  propertyType: RESI
+  propertySubType:
+    propertySubType: ApartmentPropertyType
+  listingStatus: ActiveListingStatus,ContingentListingStatus
+  location:
+    type: Place
+    address:
+      type: PostalAddress
+      name: Home
+      addressCountry: USA
+      addressCounty: Gotham County
+      addressLocality: Gotham City
+      addressRegion: New Jersey
+      addressSubdivision: Gotham Heights
+      postalCode: '10010'
+      postOfficeBoxNumber: Box 1234
+      streetAddress: 1007 Mountain Gate Rd
+    geo:
+      type: GeoShape
+      geoMidpoint:
+        type: GeoCoordinates,
+        longitude: '73.98'
+        latitude: '40.75'
+      geoRadius:
+        type: QuantitativeValue,
+        value: '10,'
+        unitCode: mi,
+        unitText: miles
+      box: '(33.5697,-117.775),(33.6018,-117.707)'
+  price:
+    type: PriceSpecification
+    minPrice: 75000
+    maxPrice: 100000
+    price: 75000
+    priceCurrency: USD
+  bedrooms:
+    type: QuantitativeValue
+    minValue: 0
+    maxValue: 4
+    unitCode: BD
+    unitText: Bedrooms
+  bathrooms:
+    type: QuantitativeValue
+    minValue: 2
+    unitCode: BA
+    unitText: Bathrooms
+  livingArea:
+    type: QuantitativeValue
+    minValue: 1500
+    unitCode: SqFt
+    unitText: Square Feet
+  lotSize:
+    type: QuantitativeValue
+    minValue: 0.5
+    unitCode: AC
+    unitText: Acres
 properties:
   type:
     type: string

@@ -7,6 +7,48 @@
     "type",
     "propertyType"
   ],
+  "example": {
+    "type": "RealEstateProperty",
+    "propertyType": "RESI",
+    "addressCountry": "CA",
+    "addressLocality": "Gotham City",
+    "addressRegion": "NJ",
+    "apn": "ABC-12345-XX-XXXX",
+    "image": [
+      {
+        "type": "ImageObject",
+        "@id": "http://example.com",
+        "id": "http://user.example.com/public/logo/image.jpg",
+        "name": "image.jpg",
+        "encodingFormat": "image/jpeg",
+        "about": "http://user.example.com/profile/card#me",
+        "url": "http://user.example.com/public/profile/image.jpg"
+      }
+    ],
+    "latitude": 40.75,
+    "listingId": "string",
+    "livingArea": {
+      "type": "QuantitativeValue",
+      "unitCode": "SqFt",
+      "unitText": "Square Feet",
+      "value": 1500
+    },
+    "longitude": 73.98,
+    "lotSize": {
+      "type": "QuantitativeValue",
+      "unitCode": "AC",
+      "unitText": "Acres",
+      "value": 0.5
+    },
+    "numberOfBathrooms": "2",
+    "numberOfBedrooms": "3",
+    "numberOfRooms": 7,
+    "postalCode": "10010",
+    "propertySubType": "ApartmentPropertyType",
+    "stories": 2,
+    "streetAddress": "1007 Mountain Gate Rd",
+    "yearBuilt": 1988
+  },
   "properties": {
     "addressCountry": {
       "$id": "http://realestate.yodata.me/schema/addressCountry",
@@ -93,14 +135,14 @@
                   ],
                   "propertyNames": {
                     "pattern": "^[a-z@$][a-zA-Z0-9-_]+$",
-                    "x-parser-schema-id": "<anonymous-schema-164>"
+                    "x-parser-schema-id": "<anonymous-schema-187>"
                   },
                   "properties": {
                     "type": {
                       "type": "string",
                       "pattern": "^[A-Z][a-zA-Z0-9]+$",
                       "description": "The item type (Linked-Data @type)",
-                      "x-parser-schema-id": "<anonymous-schema-162>"
+                      "x-parser-schema-id": "<anonymous-schema-185>"
                     },
                     "@id": {
                       "type": "string",
@@ -149,7 +191,7 @@
                       "example": "http://user.example.com/public/profile/image.jpg"
                     }
                   },
-                  "x-parser-schema-id": "<anonymous-schema-165>"
+                  "x-parser-schema-id": "<anonymous-schema-188>"
                 }
               ],
               "x-parser-schema-id": "MediaObject"
@@ -174,10 +216,10 @@
                   "example": "image/jpeg"
                 }
               },
-              "x-parser-schema-id": "<anonymous-schema-166>"
+              "x-parser-schema-id": "<anonymous-schema-189>"
             }
           ],
-          "x-parser-schema-id": "<anonymous-schema-161>"
+          "x-parser-schema-id": "<anonymous-schema-184>"
         }
       ]
     },

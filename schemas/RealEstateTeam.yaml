@@ -1,4 +1,82 @@
 
+example:
+  type: RealEstateTeam
+  address:
+    type: PostalAddress
+    streetAddress: 1007 Mountain Gate Rd
+    postOfficeBoxNumber: Box 1234
+    addressRegion: NJ
+    addressLocality: Gotham City
+    postalCode: '10010'
+    addressCountry: CA
+    addressCounty: string
+    addressSubdivision: Gotham Heights
+  availableLanguage:
+    - type: Language
+      name: English
+      additionalName: en-us
+  branchCode: for BHHS profile events, see additionalProperty.OfficeId
+  certification:
+    - type: Certification
+      name: e-Agent Certified
+      issuedBy:
+        type: RealEstateOrganization
+        id: https://example.com/profile/card#me
+        name: Gotham City Real Estate
+      issuedTo:
+        type: RealEstateAgent
+        id: http://example.com
+        name: string
+  contactPoint:
+    - type: ContactPoint
+      name: Work
+      telephone: '555-555-5555'
+      faxNumber: '555-555-5555'
+      email: bob@example.com
+      url: https://www.facebook.com/hallandoates
+  email: user@example.com
+  faxNumber: string
+  image:
+    - type: ImageObject
+      '@id': http://example.com
+      id: http://user.example.com/public/logo/image.jpg
+      name: image.jpg
+      encodingFormat: image/jpeg
+      about: http://user.example.com/profile/card#me
+      url: http://user.example.com/public/profile/image.jpg
+  logo:
+    - type: DigitalDocument
+      id: http://user.example.com/public/logo/archive.zip
+      name: archive.zip
+      encodingFormat: application/zip
+      about:
+        type: RealEstateTransaction
+        identifier:
+          bmsTransactionId: xxxx
+      url: https://example.com
+  name: string
+  parentOrganization:
+    - http://example.com
+  subOrganization:
+    - http://example.com
+  telephone: '+15558675309'
+  url: http://example.com
+  areaServed:
+    type: PostalCode
+    postalCode: '91371'
+    addressLocality: Woodland Hills
+    addressCounty: Los Angeles
+    addressRegion: CA
+    addressCountry: US
+  description: The number on Gotham City Real Estate Company since 1940
+  member:
+    - type: RealEstateTeamMembership
+      roleName: TeamMember
+      memberOf: https://{team-id}.example.com/profile/card#me
+      member: https://{agent}.example.com/profile/card#me
+      startDate: '2019-08-24T14:15:22Z'
+      endDate: '2019-08-24T14:15:22Z'
+
 allOf:
   - properties:
       id:

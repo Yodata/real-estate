@@ -110,11 +110,11 @@ payload:
       properties:
         type:
           const: AddAction
-          x-parser-schema-id: <anonymous-schema-320>
+          x-parser-schema-id: <anonymous-schema-343>
         agent:
           type: string
           format: uri
-          x-parser-schema-id: <anonymous-schema-321>
+          x-parser-schema-id: <anonymous-schema-344>
         object:
           $id: http://realestate.yodata.me/schema/ProgramMembership.json
           title: MarketingProgramMembership
@@ -125,13 +125,13 @@ payload:
           properties:
             type:
               const: ProgramMembership
-              x-parser-schema-id: <anonymous-schema-322>
+              x-parser-schema-id: <anonymous-schema-345>
             role:
               type: string
               enum:
                 - member
                 - owner
-              x-parser-schema-id: <anonymous-schema-323>
+              x-parser-schema-id: <anonymous-schema-346>
             member:
               type: object
               properties:
@@ -140,10 +140,10 @@ payload:
                   enum:
                     - Person
                     - Contact
-                  x-parser-schema-id: <anonymous-schema-325>
+                  x-parser-schema-id: <anonymous-schema-348>
                 name:
                   type: string
-                  x-parser-schema-id: <anonymous-schema-326>
+                  x-parser-schema-id: <anonymous-schema-349>
                 identifier:
                   title: identifier
                   type: object
@@ -156,17 +156,17 @@ payload:
                     - bhhsconsumerid: '12345'
                     - salesforceid: '56789'
                   x-parser-schema-id: identifier
-              x-parser-schema-id: <anonymous-schema-324>
+              x-parser-schema-id: <anonymous-schema-347>
             memberOf:
               type: object
               properties:
                 type:
                   const: MarketingProgram
-                  x-parser-schema-id: <anonymous-schema-328>
+                  x-parser-schema-id: <anonymous-schema-351>
                 name:
                   type: string
                   example: Market Activity Report 508 Homewood Ave
-                  x-parser-schema-id: <anonymous-schema-329>
+                  x-parser-schema-id: <anonymous-schema-352>
                 identifier:
                   title: identifier
                   type: object
@@ -179,7 +179,7 @@ payload:
                     - bhhsconsumerid: '12345'
                     - salesforceid: '56789'
                   x-parser-schema-id: identifier
-              x-parser-schema-id: <anonymous-schema-327>
+              x-parser-schema-id: <anonymous-schema-350>
         targetCollection:
           MarketingProgram:
             title: MarketingProgram
@@ -203,10 +203,10 @@ payload:
                   - bhhsconsumerid: '12345'
                   - salesforceid: '56789'
                 x-parser-schema-id: identifier
-          x-parser-schema-id: <anonymous-schema-301>
-      x-parser-schema-id: <anonymous-schema-319>
+          x-parser-schema-id: <anonymous-schema-324>
+      x-parser-schema-id: <anonymous-schema-342>
     topic:
       const: realestate/marketing#programmemberadd
-      x-parser-schema-id: <anonymous-schema-318>
-  x-parser-schema-id: <anonymous-schema-317>
+      x-parser-schema-id: <anonymous-schema-341>
+  x-parser-schema-id: <anonymous-schema-340>
 

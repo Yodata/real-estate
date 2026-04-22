@@ -7,10 +7,10 @@ properties:
     properties:
       type:
         const: Contact
-        x-parser-schema-id: <anonymous-schema-791>
+        x-parser-schema-id: <anonymous-schema-1013>
       name:
         type: string
-        x-parser-schema-id: <anonymous-schema-792>
+        x-parser-schema-id: <anonymous-schema-1014>
       identifier:
         title: identifier
         type: object
@@ -28,11 +28,11 @@ properties:
     properties:
       type:
         const: MarketingProgram
-        x-parser-schema-id: <anonymous-schema-794>
+        x-parser-schema-id: <anonymous-schema-1016>
       name:
         type: string
         example: Market Activity Report 508 Homewood Ave
-        x-parser-schema-id: <anonymous-schema-795>
+        x-parser-schema-id: <anonymous-schema-1017>
       identifier:
         title: identifier
         type: object

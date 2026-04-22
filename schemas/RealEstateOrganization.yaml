@@ -1,5 +1,113 @@
 # @format
 
+example:
+  type: RealEstateOrganization
+  address:
+    type: PostalAddress
+    streetAddress: 1007 Mountain Gate Rd
+    postOfficeBoxNumber: Box 1234
+    addressRegion: NJ
+    addressLocality: Gotham City
+    postalCode: '10010'
+    addressCountry: CA
+    addressCounty: string
+    addressSubdivision: Gotham Heights
+  availableLanguage:
+    - type: Language
+      name: English
+      additionalName: en-us
+  branchCode: for BHHS profile events, see additionalProperty.OfficeId
+  certification:
+    - type: Certification
+      name: e-Agent Certified
+      issuedBy:
+        type: RealEstateOrganization
+        id: https://example.com/profile/card#me
+        name: Gotham City Real Estate
+      issuedTo:
+        type: RealEstateAgent
+        id: http://example.com
+        name: string
+  contactPoint:
+    - type: ContactPoint
+      name: Work
+      telephone: '555-555-5555'
+      faxNumber: '555-555-5555'
+      email: bob@example.com
+      url: https://www.facebook.com/hallandoates
+  email: user@example.com
+  faxNumber: string
+  image:
+    - type: ImageObject
+      '@id': http://example.com
+      id: http://user.example.com/public/logo/image.jpg
+      name: image.jpg
+      encodingFormat: image/jpeg
+      about: http://user.example.com/profile/card#me
+      url: http://user.example.com/public/profile/image.jpg
+  logo:
+    - type: DigitalDocument
+      id: http://user.example.com/public/logo/archive.zip
+      name: archive.zip
+      encodingFormat: application/zip
+      about:
+        type: RealEstateTransaction
+        identifier:
+          bmsTransactionId: xxxx
+      url: https://example.com
+  name: string
+  parentOrganization:
+    - http://example.com
+  subOrganization:
+    - http://example.com
+  telephone: '+15558675309'
+  url: http://example.com
+  areaServed:
+    type: PostalCode
+    postalCode: '91371'
+    addressLocality: Woodland Hills
+    addressCounty: Los Angeles
+    addressRegion: CA
+    addressCountry: US
+  description: The number on Gotham City Real Estate Company since 1940
+  numberOfSubOrganizations: 0
+  member:
+    - type: OrganizationRole
+      roleName: Owner
+      memberOf:
+        type: RealEstateOrganization
+        id: http://orgid.example.com/profile/card#me
+      member: https://memberid.example.com/profile/card#me
+      startDate: '2019-08-24T14:15:22Z'
+      endDate: '2019-08-24T14:15:22Z'
+  memberOf:
+    - type: OrganizationRole
+      roleName: Owner
+      memberOf:
+        type: RealEstateOrganization
+        id: http://orgid.example.com/profile/card#me
+      member: https://memberid.example.com/profile/card#me
+      startDate: '2019-08-24T14:15:22Z'
+      endDate: '2019-08-24T14:15:22Z'
+  permit:
+    - type: RealEstateLicense
+      name: CA-DRE# 02068375
+      identifier:
+        type: PropertyValue
+        name: CA-DRE
+        value: '02068375'
+      issuedBy:
+        type: State
+        name: California
+      issuedThrough:
+        type: Service
+        name: California Department of Real Estate
+      validIn:
+        type: State
+        name: California
+      validFrom: '2019-07-07T10:55:02Z'
+      validUntil: '2019-07-07T10:55:02Z'
+
 allOf:
   - $ref: Organization.yaml
   - title: RealEstateOrganization

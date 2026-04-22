@@ -9,13 +9,13 @@ title: Award
 {
   "type": "Award",
   "name": "Top 1%",
-  "dateAwarded": "2019-11-25T04:23:32.000Z",
+  "dateAwarded": "2019-11-25T04:23:32Z",
   "agent": "http://example.com",
   "recipient": [
     {
       "type": "RealEstateAgent",
       "id": "https://user.example.com/profile/card#me",
-      "name": "string"
+      "name": "John Smith"
     }
   ],
   "identifier": {
@@ -28,7 +28,7 @@ title: Award
 
 | Name | Type | Description |
 |---|---|---|
-| (root) | object | An honor bestowed on one or mote _recipients_ by the message _agent_ |
+| (root) | object | An honor bestowed on one or more _recipients_ by the message _agent_ |
 | type | string | allowed (`"Award"`) "AwardAction" |
 | name | string | name of the award |
 | dateAwarded | string | date the award was presented or announced. format (`date-time`) |

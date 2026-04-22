@@ -7,46 +7,46 @@ properties:
         type: string
         format: uri
         example: https://user.example.com/profile/card#me
-        x-parser-schema-id: <anonymous-schema-818>
+        x-parser-schema-id: <anonymous-schema-1040>
       type:
         type: string
         example: SoftwareApplication
-        x-parser-schema-id: <anonymous-schema-819>
+        x-parser-schema-id: <anonymous-schema-1041>
       inbox:
         description: discoverable uri to your LDN inbox
         type: string
         example: /inbox/
-        x-parser-schema-id: <anonymous-schema-820>
+        x-parser-schema-id: <anonymous-schema-1042>
       outbox:
         description: discoverable uri to your LDN outbox
         type: string
         example: /outbox/
-        x-parser-schema-id: <anonymous-schema-821>
+        x-parser-schema-id: <anonymous-schema-1043>
       storage:
         description: uri to your linked-data storage root
         type: string
         example: /
-        x-parser-schema-id: <anonymous-schema-822>
+        x-parser-schema-id: <anonymous-schema-1044>
       preferencesFile:
         description: discoverable uri for shared application preferences
         type: string
         example: /settings/prefs
-        x-parser-schema-id: <anonymous-schema-823>
+        x-parser-schema-id: <anonymous-schema-1045>
       account:
         description: discoverable solid:account root
         type: string
         example: /
-        x-parser-schema-id: <anonymous-schema-824>
+        x-parser-schema-id: <anonymous-schema-1046>
       privateTypeIndex:
         description: type index for your private use
         type: string
         example: /settings/privateTypeIndex
-        x-parser-schema-id: <anonymous-schema-825>
+        x-parser-schema-id: <anonymous-schema-1047>
       publicTypeIndex:
         description: shared, discoverable type index
         type: string
         example: /settings/publicTypeIndex
-        x-parser-schema-id: <anonymous-schema-826>
+        x-parser-schema-id: <anonymous-schema-1048>
   id:
     type: string
     format: uri

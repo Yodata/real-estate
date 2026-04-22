@@ -71,7 +71,7 @@ function Example ({ type = 'headers', message }) {
       return (
         <>
           <Header type={3}>Header Example(s)</Header>
-          <Example examples={ex} />
+          <Examples examples={ex} />
         </>
       )
     }
@@ -89,7 +89,7 @@ function Example ({ type = 'headers', message }) {
     return (
       <>
         <Header type={3}>Payload Example(s)</Header>
-        <Example examples={examples} />
+        <Examples examples={examples} />
       </>
     )
   }

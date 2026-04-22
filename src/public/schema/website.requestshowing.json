@@ -105,7 +105,7 @@
         "properties": {
           "type": {
             "const": "RequestShowingAction",
-            "x-parser-schema-id": "<anonymous-schema-509>"
+            "x-parser-schema-id": "<anonymous-schema-532>"
           },
           "agent": {
             "type": "object",
@@ -117,28 +117,28 @@
                   "Person",
                   "Contact"
                 ],
-                "x-parser-schema-id": "<anonymous-schema-469>"
+                "x-parser-schema-id": "<anonymous-schema-492>"
               },
               "name": {
                 "type": "string",
-                "x-parser-schema-id": "<anonymous-schema-470>"
+                "x-parser-schema-id": "<anonymous-schema-493>"
               },
               "givenName": {
                 "type": "string",
-                "x-parser-schema-id": "<anonymous-schema-471>"
+                "x-parser-schema-id": "<anonymous-schema-494>"
               },
               "familyName": {
                 "type": "string",
-                "x-parser-schema-id": "<anonymous-schema-472>"
+                "x-parser-schema-id": "<anonymous-schema-495>"
               },
               "email": {
                 "type": "string",
                 "format": "email",
-                "x-parser-schema-id": "<anonymous-schema-473>"
+                "x-parser-schema-id": "<anonymous-schema-496>"
               },
               "telephone": {
                 "type": "string",
-                "x-parser-schema-id": "<anonymous-schema-474>"
+                "x-parser-schema-id": "<anonymous-schema-497>"
               },
               "identifier": {
                 "title": "identifier",
@@ -177,11 +177,19 @@
                   "name"
                 ],
                 "minProperties": 3,
+                "example": {
+                  "type": "ContactPoint",
+                  "name": "Work",
+                  "telephone": "555-555-5555",
+                  "faxNumber": "555-555-5555",
+                  "email": "bob@example.com",
+                  "url": "https://www.facebook.com/hallandoates"
+                },
                 "properties": {
                   "type": {
                     "type": "string",
                     "const": "ContactPoint",
-                    "x-parser-schema-id": "<anonymous-schema-362>"
+                    "x-parser-schema-id": "<anonymous-schema-385>"
                   },
                   "name": {
                     "type": "string",
@@ -193,7 +201,7 @@
                       "Bob's Cell",
                       "Alice's Work"
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-363>"
+                    "x-parser-schema-id": "<anonymous-schema-386>"
                   },
                   "telephone": {
                     "type": "string",
@@ -204,7 +212,7 @@
                       "555-555-5555 ext. 123",
                       "+1-555-555-5555"
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-364>"
+                    "x-parser-schema-id": "<anonymous-schema-387>"
                   },
                   "faxNumber": {
                     "type": "string",
@@ -215,7 +223,7 @@
                       "555-555-5555 ext. 123",
                       "+1-555-555-5555"
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-365>"
+                    "x-parser-schema-id": "<anonymous-schema-388>"
                   },
                   "email": {
                     "description": "an email address for the item.",
@@ -226,14 +234,14 @@
                       "bob@example.com",
                       "alice@example.com"
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-366>"
+                    "x-parser-schema-id": "<anonymous-schema-389>"
                   },
                   "url": {
                     "description": "primary URL for the item.",
                     "type": "string",
                     "format": "uri",
                     "example": "https://www.facebook.com/hallandoates",
-                    "x-parser-schema-id": "<anonymous-schema-367>"
+                    "x-parser-schema-id": "<anonymous-schema-390>"
                   }
                 }
               },
@@ -243,13 +251,13 @@
                 "properties": {
                   "workingWithAgent": {
                     "type": "boolean",
-                    "x-parser-schema-id": "<anonymous-schema-476>"
+                    "x-parser-schema-id": "<anonymous-schema-499>"
                   }
                 },
-                "x-parser-schema-id": "<anonymous-schema-475>"
+                "x-parser-schema-id": "<anonymous-schema-498>"
               }
             },
-            "x-parser-schema-id": "<anonymous-schema-468>"
+            "x-parser-schema-id": "<anonymous-schema-491>"
           },
           "about": {
             "type": "object",
@@ -271,31 +279,59 @@
                 "priceCurrency": "USD"
               }
             },
-            "x-parser-schema-id": "<anonymous-schema-510>"
+            "x-parser-schema-id": "<anonymous-schema-533>"
           },
           "event": {
             "type": "object",
             "title": "Event",
             "description": "An event happening at a certain time and location",
             "x-range": "Event",
+            "example": {
+              "type": "Event",
+              "name": "Property Showing 1007 Mountain Gate Rd",
+              "description": "an example meeting request for 4:00PM to 4:30PM.",
+              "about": {
+                "type": "PropertyListing",
+                "originatingSystemName": "GOTHAM-MLS",
+                "originatingSystemKey": "12345",
+                "url": "https://{company-website-url}/{path-to-listing}",
+                "streetAddress": "1007 Mountain Gate Rd",
+                "addressRegion": "New Jersey",
+                "addressLocality": "Gotham City",
+                "postalCode": "10010",
+                "addressCountry": "USA",
+                "listingPrice": {
+                  "type": "PriceSpecification",
+                  "price": 7500000,
+                  "priceCurrency": "USD"
+                }
+              },
+              "startDate": "2019-08-01T16:00Z",
+              "endDate": "2019-08-01T16:30Z",
+              "organizer": {
+                "type": "RealEstateAgent",
+                "name": "Bruce Wayne",
+                "id": "https://batman.example.com/profile/card#me"
+              }
+            },
             "properties": {
               "type": {
                 "type": "string",
                 "description": "The item type (Linked-Data @type)",
                 "example": "Event",
-                "x-parser-schema-id": "<anonymous-schema-511>"
+                "x-parser-schema-id": "<anonymous-schema-534>"
               },
               "name": {
                 "type": "string",
                 "description": "name of the event",
                 "example": "Property Showing 1007 Mountain Gate Rd",
-                "x-parser-schema-id": "<anonymous-schema-512>"
+                "x-parser-schema-id": "<anonymous-schema-535>"
               },
               "description": {
                 "type": "string",
                 "description": "event message content",
                 "example": "an example meeting request for 4:00PM to 4:30PM.",
-                "x-parser-schema-id": "<anonymous-schema-513>"
+                "x-parser-schema-id": "<anonymous-schema-536>"
               },
               "about": {
                 "type": "object",
@@ -316,21 +352,21 @@
                     "priceCurrency": "USD"
                   }
                 },
-                "x-parser-schema-id": "<anonymous-schema-514>"
+                "x-parser-schema-id": "<anonymous-schema-537>"
               },
               "startDate": {
                 "description": "the start date-time (ISO 8601 formated)",
                 "type": "string",
                 "format": "date-time",
                 "example": "2019-08-01T16:00Z",
-                "x-parser-schema-id": "<anonymous-schema-515>"
+                "x-parser-schema-id": "<anonymous-schema-538>"
               },
               "endDate": {
                 "type": "string",
                 "description": "the end date-time (ISO 8601 formated)",
                 "format": "date-time",
                 "example": "2019-08-01T16:30Z",
-                "x-parser-schema-id": "<anonymous-schema-516>"
+                "x-parser-schema-id": "<anonymous-schema-539>"
               },
               "organizer": {
                 "title": "organizer",
@@ -341,7 +377,7 @@
                   "name": "Bruce Wayne",
                   "id": "https://batman.example.com/profile/card#me"
                 },
-                "x-parser-schema-id": "<anonymous-schema-517>"
+                "x-parser-schema-id": "<anonymous-schema-540>"
               }
             },
             "x-parser-schema-id": "Event"
@@ -353,7 +389,7 @@
             "properties": {
               "type": {
                 "const": "Question",
-                "x-parser-schema-id": "<anonymous-schema-477>"
+                "x-parser-schema-id": "<anonymous-schema-500>"
               },
               "text": {
                 "$id": "http://realestate.yodata.me/schema/text.yaml",
@@ -380,17 +416,17 @@
                   "RealEstateTeam",
                   "RealEstateOrganization"
                 ],
-                "x-parser-schema-id": "<anonymous-schema-519>"
+                "x-parser-schema-id": "<anonymous-schema-542>"
               },
               "name": {
                 "type": "string",
-                "x-parser-schema-id": "<anonymous-schema-520>"
+                "x-parser-schema-id": "<anonymous-schema-543>"
               },
               "id": {
                 "type": "string",
                 "format": "uri",
                 "example": "https://agent.example.com/profile/card#me",
-                "x-parser-schema-id": "<anonymous-schema-521>"
+                "x-parser-schema-id": "<anonymous-schema-544>"
               },
               "identifier": true
             },
@@ -424,16 +460,16 @@
                 "id": "https://smithandsmithrealestate.example.com/profile/card#me"
               }
             ],
-            "x-parser-schema-id": "<anonymous-schema-518>"
+            "x-parser-schema-id": "<anonymous-schema-541>"
           }
         },
-        "x-parser-schema-id": "<anonymous-schema-508>"
+        "x-parser-schema-id": "<anonymous-schema-531>"
       },
       "topic": {
         "const": "realestate/website#requestshowing",
-        "x-parser-schema-id": "<anonymous-schema-507>"
+        "x-parser-schema-id": "<anonymous-schema-530>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-506>"
+    "x-parser-schema-id": "<anonymous-schema-529>"
   }
 }

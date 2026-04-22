@@ -67,7 +67,7 @@ title: PropertyListing
     "price": 75000,
     "priceCurrency": "USD"
   },
-   "soldPrice": {
+  "soldPrice": {
     "type": "PriceSpecification",
     "price": 75000,
     "priceCurrency": "USD"
@@ -88,7 +88,7 @@ title: PropertyListing
   },
   "modificationTimestamp": "2022-11-17T00:00:00",
   "numberOfBathrooms": "2",
-  "numberOfFullBathrooms":"2",
+  "numberOfFullBathrooms": "2",
   "numberOfBedrooms": "3",
   "numberOfRooms": "7",
   "originatingSystemKey": 12345,
@@ -114,7 +114,7 @@ title: PropertyListing
 | addressCountry | string | allowed (`"CA"`, `"DE"`, `"GR"`, `"IN"`, `"IT"`, `"MX"`, `"PE"`, `"PT"`, `"ES"`, `"AE"`, `"GB"`, `"US"`) two-letter ISO 3166-1 alpha-2 country code |
 | addressLocality | string | City, Township. <= 50 characters |
 | addressRegion | string | abbreviated state or province |
-| brokerAttribution | string | Broker Attribution can be an email or phone or any text. |
+| brokerAttribution | string | Broker Attribution |
 | buyerAgent | object | the buyer's RealEstateAgent |
 | buyerOffice | object | the buyer's RealEstateOffice |
 | closeDate | string | With for-sale listings, the date the purchase agreement was fulfilled. With lease listings, the date the requirements were fulfilled, such as contract and/or deposit. format (`date-time`) |
@@ -145,14 +145,12 @@ title: PropertyListing
 | listingOffice | object | the listing office |
 | listingOriginatingSystem | object | The place where the item is originally input by the user. |
 | listingPrice | object | - |
-| soldPrice | object | - |
 | listingStatus | string | allowed (`"Active"`, `"Pending"`, `"Sold"`, `"Canceled"`, `"Prelisted"`, `"OffMarket"`, `"Private"`)  |
 | livingArea | object | property indoor space |
 | longitude | number | The longitude of a location. |
 | lotSize | object | outdoor space minValue, maxValue |
 | modificationTimestamp | string | The date when the listing was last modified. format (`date-time`) |
 | numberOfBathrooms | string | the number of bathrooms |
-| numberOfFullBathrooms | string | the number of fullBathrooms |
 | numberOfBedrooms | string | the number of bedrooms |
 | numberOfRooms | string | the total number of rooms in the building |
 | originatingSystemKey | string | the listing identifier from the original MLS, aka MLSID. |
@@ -166,3 +164,4 @@ title: PropertyListing
 | universalPropertyId | string | The Universal Property Identifier is a unique identifier for all real property in the US and Canada.  It is based on country and local identification methods and is limited to real property.  For cases such as shares of real property, units, and other more granular cases, please utilize the UniversalPropertySubId. |
 | url | string | URL of the item. format (`uri`) |
 | yearBuilt | number | the year the structure was created |
+

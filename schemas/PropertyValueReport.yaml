@@ -2,6 +2,102 @@ type: object
 title: PropertyValueReport
 x-range: PropertyValueReport
 description: an automated property value esmation
+example:
+  type: PropertyValueReport
+  name: 'LOT:45 DIST:33 CITY/MUNI/TWP:LADUE LINDWORTH...'
+  dateCreated: '2019-08-24T14:15:22Z'
+  result:
+    type: MonetaryAmount
+    minValue: 2400000
+    maxValue: 3200000
+    value: 2700000
+    currency: USD
+  about:
+    type: RealEstateProperty
+    propertyType: RESI
+    addressCountry: CA
+    addressLocality: Gotham City
+    addressRegion: NJ
+    apn: ABC-12345-XX-XXXX
+    image:
+      - type: ImageObject
+        '@id': http://example.com
+        id: http://user.example.com/public/logo/image.jpg
+        name: image.jpg
+        encodingFormat: image/jpeg
+        about: http://user.example.com/profile/card#me
+        url: http://user.example.com/public/profile/image.jpg
+    latitude: 40.75
+    listingId: string
+    livingArea:
+      type: QuantitativeValue
+      unitCode: SqFt
+      unitText: Square Feet
+      value: 1500
+    longitude: 73.98
+    lotSize:
+      type: QuantitativeValue
+      unitCode: AC
+      unitText: Acres
+      value: 0.5
+    numberOfBathrooms: '2'
+    numberOfBedrooms: '3'
+    numberOfRooms: 7
+    postalCode: '10010'
+    propertySubType: ApartmentPropertyType
+    stories: 2
+    streetAddress: 1007 Mountain Gate Rd
+    yearBuilt: 1988
+    additionalProperty:
+      heating: null
+      cooling: null
+      isForeclosure: null
+      isShortsale: null
+      score: 7
+      parcelId: null
+      averageSalePrice:
+        type: PriceSpecification
+        price: 7500000
+        priceCurrency: USD
+      nonDisclosureProperty: false
+      taxAssessedValue:
+        '@type': MonetaryAmount
+        amount: '100000'
+        currency: USD
+      taxAssessedYear: 2021
+      inHouseCompanyListingUrl: null
+      inHouseCompanyListingEvent: null
+      neighborhoodMetrics: null
+      neighborhoodName: DEER CREEK WOODS
+      neighborhoodKey: null
+      useNeighborhoodDataForCharts: false
+      ownerName: Bob Jones
+      ownerOccupied: 'Y'
+      ownersEstimatedEquity:
+        '@type': MonetaryAmount
+        amount: '100000'
+        currency: USD
+      firstLoanPrice:
+        '@type': MonetaryAmount
+        amount: '100000'
+        currency: USD
+      firstLoanLenderName: ''
+      secondLoanPrice:
+        '@type': MonetaryAmount
+        amount: null
+        currency: null
+      secondLoanLenderName: N/A
+      lastRefinanceLoanVal1:
+        '@type': MonetaryAmount
+        amount: '100000'
+        currency: USD
+      lastRefinanceLenderName1: N/A
+      lastRefinanceLoanVal2:
+        '@type': MonetaryAmount
+        amount: null
+        currency: null
+      lastRefinanceLenderName2: N/A
+      Title_Company: ''
 properties:
   type:
     type: string

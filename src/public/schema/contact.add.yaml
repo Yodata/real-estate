@@ -153,12 +153,128 @@ payload:
           minProperties: 2
           x-parser-schema-id: <anonymous-schema-87>
         object:
+          example:
+            type: Contact
+            affiliation:
+              - https://example.com/profile/card#me
+            address:
+              - type: PostalAddress
+                streetAddress: 1007 Mountain Gate Rd
+                postOfficeBoxNumber: Box 1234
+                addressRegion: NJ
+                addressLocality: Gotham City
+                postalCode: '10010'
+                addressCountry: CA
+                addressCounty: string
+                addressSubdivision: Gotham Heights
+            birthDate: '2019-08-24'
+            contactPoint:
+              - type: ContactPoint
+                name: Work
+                telephone: 555-555-5555
+                faxNumber: 555-555-5555
+                email: bob@example.com
+                url: https://www.facebook.com/hallandoates
+            email: user@example.com
+            additionalName: Johnny,John
+            familyName: Smith
+            faxNumber: string
+            givenName: John
+            honorificPrefix: Dr
+            honorificSuffix: Esq
+            jobTitle: CEO
+            knowsLanguage:
+              - type: Language
+                name: English
+                additionalName: en-us
+            name: string
+            telephone: '+15558675309'
+            worksFor: string
+            identifier:
+              bhhsconsumerid: '12345'
+            additionalProperty:
+              supercrmuserid: 1234
+              doNotSell: true
+            comment:
+              - type: Comment
+                text: this is my comment.
+                author:
+                  type: Contact
+                  name: Bruce Wayne
+                about:
+                  type: PropertyListing
+                  id: https://example.com/listingid
+                dateCreated: '2019-07-15T05:24:05Z'
+                dateModified: '2019-07-15T05:24:05Z'
+            contactGroup:
+              - type: ContactGroup
+                identifier:
+                  bhhsconsumerid: '12345'
+                name: Past Clients
+            keywords:
+              - string
+            leadOwner:
+              type: RealEstateOrganization
+              name: Gotham City Real Estate
+              id: https://example.com/profile.card#me
+            leadSource:
+              id: >-
+                https://www.zillow.com/homedetails/1044-Siler-Pl-Berkeley-CA-94705/24820985_zpid/
+              type: RealEstateWebsite
+              name: Zillow
+              url: https://zillow.com
+            originatingSystem:
+              type: SoftwareApplication
+              name: RDesk
+              description: User Created.
+              url: http://www.rdeskwebsite.com/
+            dateCreated: '2019-08-24T14:15:22Z'
+            dateModified: '2019-08-24T14:15:22Z'
           allOf:
             - title: Person
               type: object
               required:
                 - type
                 - name
+              example:
+                type: string
+                affiliation:
+                  - https://example.com/profile/card#me
+                address:
+                  - type: PostalAddress
+                    streetAddress: 1007 Mountain Gate Rd
+                    postOfficeBoxNumber: Box 1234
+                    addressRegion: NJ
+                    addressLocality: Gotham City
+                    postalCode: '10010'
+                    addressCountry: CA
+                    addressCounty: string
+                    addressSubdivision: Gotham Heights
+                birthDate: '2019-08-24'
+                contactPoint:
+                  - type: ContactPoint
+                    name: Work
+                    telephone: 555-555-5555
+                    faxNumber: 555-555-5555
+                    email: bob@example.com
+                    url: https://www.facebook.com/hallandoates
+                email: user@example.com
+                additionalName: Johnny,John
+                familyName: Smith
+                faxNumber: string
+                givenName: John
+                honorificPrefix: Dr
+                honorificSuffix: Esq
+                jobTitle:
+                  - Chief Data Officer
+                  - Sanitation Engineer
+                knowsLanguage:
+                  - type: Language
+                    name: English
+                    additionalName: en-us
+                name: string
+                telephone: '+15558675309'
+                worksFor: string
               properties:
                 type:
                   type: string
@@ -179,6 +295,16 @@ payload:
                     title: PostalAddress
                     type: object
                     description: A physical address.
+                    example:
+                      type: PostalAddress
+                      streetAddress: 1007 Mountain Gate Rd
+                      postOfficeBoxNumber: Box 1234
+                      addressRegion: NJ
+                      addressLocality: Gotham City
+                      postalCode: '10010'
+                      addressCountry: CA
+                      addressCounty: string
+                      addressSubdivision: Gotham Heights
                     properties:
                       type:
                         type: string
@@ -302,6 +428,13 @@ payload:
                       - type
                       - name
                     minProperties: 3
+                    example:
+                      type: ContactPoint
+                      name: Work
+                      telephone: 555-555-5555
+                      faxNumber: 555-555-5555
+                      email: bob@example.com
+                      url: https://www.facebook.com/hallandoates
                     properties:
                       type:
                         type: string
@@ -623,7 +756,7 @@ payload:
                     - null
                     - null
                     - null
-                  x-parser-schema-id: <anonymous-schema-369>
+                  x-parser-schema-id: <anonymous-schema-392>
                 contactGroup:
                   type: array
                   items:
@@ -717,7 +850,7 @@ payload:
                     when the item's entry was modified within a DataFeed.
                   type: string
                   format: date-time
-                  x-parser-schema-id: <anonymous-schema-600>
+                  x-parser-schema-id: <anonymous-schema-623>
               x-parser-schema-id: <anonymous-schema-116>
           x-parser-schema-id: Contact
       x-parser-schema-id: <anonymous-schema-85>

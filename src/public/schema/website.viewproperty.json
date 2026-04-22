@@ -127,13 +127,13 @@
             }
           }
         },
-        "x-parser-schema-id": "<anonymous-schema-553>"
+        "x-parser-schema-id": "<anonymous-schema-576>"
       },
       "topic": {
         "const": "realestate/website#viewproperty",
-        "x-parser-schema-id": "<anonymous-schema-552>"
+        "x-parser-schema-id": "<anonymous-schema-575>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-551>"
+    "x-parser-schema-id": "<anonymous-schema-574>"
   }
 }

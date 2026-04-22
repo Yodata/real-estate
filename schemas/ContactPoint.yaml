@@ -11,6 +11,13 @@ required:
   - type
   - name
 minProperties: 3
+example:
+  type: ContactPoint
+  name: Work
+  telephone: '555-555-5555'
+  faxNumber: '555-555-5555'
+  email: bob@example.com
+  url: https://www.facebook.com/hallandoates
 properties:
   type: { type: string, const: ContactPoint }
   name:

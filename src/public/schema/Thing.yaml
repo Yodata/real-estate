@@ -6,7 +6,7 @@ required:
   - type
 propertyNames:
   pattern: ^[a-z@$][a-zA-Z0-9-_]+$
-  x-parser-schema-id: <anonymous-schema-164>
+  x-parser-schema-id: <anonymous-schema-187>
 properties:
   '@id':
     type: string

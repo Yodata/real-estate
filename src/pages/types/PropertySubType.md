@@ -77,5 +77,5 @@ title: PropertySubType
 | MultiFamilyPropertyType | string | allowed (`"MultiFamily"`) |
 | OfficePropertyType | string | allowed (`"Office"`, `"Medical"`, `"OfficeMedicalProfBldg"`) |
 | RetailPropertyType | string | allowed (`"Retail"`, `"GeneralCommercial"`, `"Restaurant"`,`"ShoppingCenter"`) |
-| UnimprovedLandPropertyType | string | allowed (`"Land"`, `"ResidentialLot"`, `"CommercialLand"`) |   
+| UnimprovedLandPropertyType | string | allowed (`"Land"`, `"ResidentialLot"`, `"CommercialLand"`) |
 | WarehousePropertyType | string | allowed (`"SiteBuilt"`, `"LowRise"`, `"PatioVilla"`, `"Modular"`,`"Warehouse"`, `"OfcWrhsIndPrkManfcDist"`) |

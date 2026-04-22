@@ -16,21 +16,21 @@
           "enum": [
             "GeoCoordinates"
           ],
-          "x-parser-schema-id": "<anonymous-schema-775>"
+          "x-parser-schema-id": "<anonymous-schema-997>"
         },
         "longitude": {
           "type": "number",
           "description": "The longitude of a location.",
           "x-title": "longitude",
           "example": 73.98,
-          "x-parser-schema-id": "<anonymous-schema-170>"
+          "x-parser-schema-id": "<anonymous-schema-193>"
         },
         "latitude": {
           "type": "number",
           "description": "The latitude of a location.",
           "x-title": "latitude",
           "example": 40.75,
-          "x-parser-schema-id": "<anonymous-schema-167>"
+          "x-parser-schema-id": "<anonymous-schema-190>"
         }
       },
       "x-parser-schema-id": "GeoCoordinates"

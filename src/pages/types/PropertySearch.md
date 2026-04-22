@@ -118,6 +118,7 @@ title: PropertySearch
 | propertySubType.RetailPropertyType | string | Retail property |
 | propertySubType.UnimprovedLandPropertyType | string | Land for sale |
 | propertySubType.WarehousePropertyType | string | A Warehouse property type. |
+| propertySubType.OtherPropertyType | string | Other property. |
 | listingStatus | string | RESO Listing Status Code |
 | location | object | a physical location |
 | location.type | string | allowed (`"Place"`) The item type (Linked-Data @type) |

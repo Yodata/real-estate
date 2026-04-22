@@ -113,7 +113,7 @@
         "properties": {
           "type": {
             "const": "UpdateAction",
-            "x-parser-schema-id": "<anonymous-schema-349>"
+            "x-parser-schema-id": "<anonymous-schema-372>"
           },
           "object": {
             "oneOf": [
@@ -123,11 +123,106 @@
                 "description": "A real estate agent who represents buyers and sellers",
                 "type": "object",
                 "additionalProperties": true,
+                "example": {
+                  "type": "RealEstateAgent",
+                  "additionalName": "Johnny,John",
+                  "address": {
+                    "type": "PostalAddress",
+                    "name": "Home",
+                    "addressCountry": "USA",
+                    "addressCounty": "Gotham County",
+                    "addressLocality": "Gotham City",
+                    "addressRegion": "New Jersey",
+                    "addressSubdivision": "Gotham Heights",
+                    "postalCode": "10010",
+                    "postOfficeBoxNumber": "Box 1234",
+                    "streetAddress": "1007 Mountain Gate Rd"
+                  },
+                  "certification": {
+                    "type": "Certification",
+                    "name": "e-Agent Certified",
+                    "issuedBy": {
+                      "type": "RealEstateOrganization",
+                      "id": "https://example.com/profile/card#me",
+                      "name": "Gotham City Real Estate"
+                    },
+                    "issuedTo": {
+                      "type": "RealEstateAgent",
+                      "id": "http://example.com",
+                      "name": "string"
+                    }
+                  },
+                  "contactPoint": {
+                    "type": "ContactPoint",
+                    "name": "Work",
+                    "telephone": "555-555-5555",
+                    "faxNumber": "555-555-5555",
+                    "email": "bob@example.com",
+                    "url": "https://www.facebook.com/hallandoates"
+                  },
+                  "email": "user@example.com",
+                  "familyName": "Smith",
+                  "givenName": "John",
+                  "id": "http://example.com",
+                  "identifier": {
+                    "bhhsconsumerid": "12345"
+                  },
+                  "image": [
+                    {
+                      "type": "ImageObject",
+                      "@id": "http://example.com",
+                      "id": "http://user.example.com/public/logo/image.jpg",
+                      "name": "image.jpg",
+                      "encodingFormat": "image/jpeg",
+                      "about": "http://user.example.com/profile/card#me",
+                      "url": "http://user.example.com/public/profile/image.jpg"
+                    }
+                  ],
+                  "jobTitle": [
+                    "CEO"
+                  ],
+                  "memberOf": [
+                    {
+                      "type": "OrganizationRole",
+                      "roleName": "Owner",
+                      "memberOf": {
+                        "type": "RealEstateOrganization",
+                        "id": "http://orgid.example.com/profile/card#me"
+                      },
+                      "member": "https://memberid.example.com/profile/card#me",
+                      "startDate": "2019-08-24T14:15:22Z",
+                      "endDate": "2019-08-24T14:15:22Z"
+                    }
+                  ],
+                  "name": "string",
+                  "parentOrganization": [
+                    "http://example.com"
+                  ],
+                  "permit": {
+                    "type": "Permit",
+                    "name": "DRE Number",
+                    "issuedBy": {
+                      "type": "State",
+                      "name": "California"
+                    },
+                    "issuedThrough": {
+                      "type": "Service",
+                      "name": "Department of Real Estate"
+                    },
+                    "validIn": {},
+                    "validFrom": "2019-08-24T14:15:22Z",
+                    "validUntil": "2019-08-24T14:15:22Z"
+                  },
+                  "subOrganization": [
+                    "http://example.com"
+                  ],
+                  "url": "http://example.com"
+                },
                 "properties": {
                   "type": {
                     "type": "string",
                     "const": "RealEstateAgent",
-                    "x-parser-schema-id": "<anonymous-schema-351>"
+                    "x-parser-schema-id": "<anonymous-schema-374>"
                   },
                   "additionalName": {
                     "title": "additionalName",
@@ -158,13 +253,27 @@
                       "postOfficeBoxNumber": "Box 1234",
                       "streetAddress": "1007 Mountain Gate Rd"
                     },
-                    "x-parser-schema-id": "<anonymous-schema-352>"
+                    "x-parser-schema-id": "<anonymous-schema-375>"
                   },
                   "certification": {
                     "type": "object",
                     "title": "Certification",
                     "description": "A certification issued by an organization to an individual or business.",
                     "x-range": "Certification",
+                    "example": {
+                      "type": "Certification",
+                      "name": "e-Agent Certified",
+                      "issuedBy": {
+                        "type": "RealEstateOrganization",
+                        "id": "https://example.com/profile/card#me",
+                        "name": "Gotham City Real Estate"
+                      },
+                      "issuedTo": {
+                        "type": "RealEstateAgent",
+                        "id": "http://example.com",
+                        "name": "string"
+                      }
+                    },
                     "properties": {
                       "type": {
                         "description": "Certification",
@@ -172,13 +281,13 @@
                         "enum": [
                           "Certification"
                         ],
-                        "x-parser-schema-id": "<anonymous-schema-354>"
+                        "x-parser-schema-id": "<anonymous-schema-377>"
                       },
                       "name": {
                         "type": "string",
                         "description": "the name of the Certification",
                         "example": "e-Agent Certified",
-                        "x-parser-schema-id": "<anonymous-schema-355>"
+                        "x-parser-schema-id": "<anonymous-schema-378>"
                       },
                       "issuedBy": {
                         "type": "object",
@@ -191,23 +300,23 @@
                             ],
                             "type": "string",
                             "description": "The item type (Linked-Data @type)",
-                            "x-parser-schema-id": "<anonymous-schema-357>"
+                            "x-parser-schema-id": "<anonymous-schema-380>"
                           },
                           "id": {
                             "example": "https://example.com/profile/card#me",
                             "type": "string",
                             "format": "uri",
                             "description": "Linked-Data URI (@id)",
-                            "x-parser-schema-id": "<anonymous-schema-358>"
+                            "x-parser-schema-id": "<anonymous-schema-381>"
                           },
                           "name": {
                             "type": "string",
                             "description": "name of the issuing organization",
                             "example": "Gotham City Real Estate",
-                            "x-parser-schema-id": "<anonymous-schema-359>"
+                            "x-parser-schema-id": "<anonymous-schema-382>"
                           }
                         },
-                        "x-parser-schema-id": "<anonymous-schema-356>"
+                        "x-parser-schema-id": "<anonymous-schema-379>"
                       },
                       "issuedTo": {
                         "x-range": "RealEstateAgent",
@@ -220,13 +329,13 @@
                             ],
                             "type": "string",
                             "description": "The item type (Linked-Data @type)",
-                            "x-parser-schema-id": "<anonymous-schema-361>"
+                            "x-parser-schema-id": "<anonymous-schema-384>"
                           },
                           "id": {
                             "type": "string",
                             "format": "uri",
                             "description": "Linked-Data URI (@id)",
-                            "x-parser-schema-id": "<anonymous-schema-185>"
+                            "x-parser-schema-id": "<anonymous-schema-208>"
                           },
                           "name": {
                             "$id": "http://realestate.yodata.me/schema/name.yaml",
@@ -235,10 +344,10 @@
                             "x-parser-schema-id": "name"
                           }
                         },
-                        "x-parser-schema-id": "<anonymous-schema-360>"
+                        "x-parser-schema-id": "<anonymous-schema-383>"
                       }
                     },
-                    "x-parser-schema-id": "<anonymous-schema-353>"
+                    "x-parser-schema-id": "<anonymous-schema-376>"
                   },
                   "contactPoint": {
                     "$id": "http://realestate.yodata.me/schema/ContactPoint.json",
@@ -250,11 +359,19 @@
                       "name"
                     ],
                     "minProperties": 3,
+                    "example": {
+                      "type": "ContactPoint",
+                      "name": "Work",
+                      "telephone": "555-555-5555",
+                      "faxNumber": "555-555-5555",
+                      "email": "bob@example.com",
+                      "url": "https://www.facebook.com/hallandoates"
+                    },
                     "properties": {
                       "type": {
                         "type": "string",
                         "const": "ContactPoint",
-                        "x-parser-schema-id": "<anonymous-schema-362>"
+                        "x-parser-schema-id": "<anonymous-schema-385>"
                       },
                       "name": {
                         "type": "string",
@@ -266,7 +383,7 @@
                           "Bob's Cell",
                           "Alice's Work"
                         ],
-                        "x-parser-schema-id": "<anonymous-schema-363>"
+                        "x-parser-schema-id": "<anonymous-schema-386>"
                       },
                       "telephone": {
                         "type": "string",
@@ -277,7 +394,7 @@
                           "555-555-5555 ext. 123",
                           "+1-555-555-5555"
                         ],
-                        "x-parser-schema-id": "<anonymous-schema-364>"
+                        "x-parser-schema-id": "<anonymous-schema-387>"
                       },
                       "faxNumber": {
                         "type": "string",
@@ -288,7 +405,7 @@
                           "555-555-5555 ext. 123",
                           "+1-555-555-5555"
                         ],
-                        "x-parser-schema-id": "<anonymous-schema-365>"
+                        "x-parser-schema-id": "<anonymous-schema-388>"
                       },
                       "email": {
                         "description": "an email address for the item.",
@@ -299,14 +416,14 @@
                           "bob@example.com",
                           "alice@example.com"
                         ],
-                        "x-parser-schema-id": "<anonymous-schema-366>"
+                        "x-parser-schema-id": "<anonymous-schema-389>"
                       },
                       "url": {
                         "description": "primary URL for the item.",
                         "type": "string",
                         "format": "uri",
                         "example": "https://www.facebook.com/hallandoates",
-                        "x-parser-schema-id": "<anonymous-schema-367>"
+                        "x-parser-schema-id": "<anonymous-schema-390>"
                       }
                     }
                   },
@@ -385,7 +502,7 @@
                     "type": "string",
                     "format": "uri",
                     "description": "Linked-Data URI (@id)",
-                    "x-parser-schema-id": "<anonymous-schema-185>"
+                    "x-parser-schema-id": "<anonymous-schema-208>"
                   },
                   "identifier": {
                     "title": "identifier",
@@ -432,20 +549,20 @@
                                 ],
                                 "propertyNames": {
                                   "pattern": "^[a-z@$][a-zA-Z0-9-_]+$",
-                                  "x-parser-schema-id": "<anonymous-schema-164>"
+                                  "x-parser-schema-id": "<anonymous-schema-187>"
                                 },
                                 "properties": {
                                   "type": {
                                     "type": "string",
                                     "pattern": "^[A-Z][a-zA-Z0-9]+$",
                                     "description": "The item type (Linked-Data @type)",
-                                    "x-parser-schema-id": "<anonymous-schema-162>"
+                                    "x-parser-schema-id": "<anonymous-schema-185>"
                                   },
                                   "@id": {
                                     "type": "string",
                                     "format": "uri",
                                     "description": "the liked data uri for the Thing",
-                                    "x-parser-schema-id": "<anonymous-schema-163>"
+                                    "x-parser-schema-id": "<anonymous-schema-186>"
                                   }
                                 },
                                 "x-parser-schema-id": "Thing"
@@ -489,7 +606,7 @@
                                     "example": "http://user.example.com/public/profile/image.jpg"
                                   }
                                 },
-                                "x-parser-schema-id": "<anonymous-schema-165>"
+                                "x-parser-schema-id": "<anonymous-schema-188>"
                               }
                             ],
                             "x-parser-schema-id": "MediaObject"
@@ -514,13 +631,13 @@
                                 "example": "image/jpeg"
                               }
                             },
-                            "x-parser-schema-id": "<anonymous-schema-166>"
+                            "x-parser-schema-id": "<anonymous-schema-189>"
                           }
                         ],
-                        "x-parser-schema-id": "<anonymous-schema-161>"
+                        "x-parser-schema-id": "<anonymous-schema-184>"
                       }
                     ],
-                    "x-parser-schema-id": "<anonymous-schema-160>"
+                    "x-parser-schema-id": "<anonymous-schema-183>"
                   },
                   "jobTitle": {
                     "type": "array",
@@ -554,9 +671,9 @@
                         null,
                         null
                       ],
-                      "x-parser-schema-id": "<anonymous-schema-369>"
+                      "x-parser-schema-id": "<anonymous-schema-392>"
                     },
-                    "x-parser-schema-id": "<anonymous-schema-368>"
+                    "x-parser-schema-id": "<anonymous-schema-391>"
                   },
                   "memberOf": {
                     "title": "memberOf",
@@ -580,13 +697,13 @@
                               "enum": [
                                 "OrganizationRole"
                               ],
-                              "x-parser-schema-id": "<anonymous-schema-372>"
+                              "x-parser-schema-id": "<anonymous-schema-395>"
                             },
                             "roleName": {
                               "type": "string",
                               "description": "the role name",
                               "example": "Owner",
-                              "x-parser-schema-id": "<anonymous-schema-373>"
+                              "x-parser-schema-id": "<anonymous-schema-396>"
                             },
                             "memberOf": {
                               "description": "the org or group where the role is performed",
@@ -595,26 +712,26 @@
                                 "type": "RealEstateOrganization",
                                 "id": "http://orgid.example.com/profile/card#me"
                               },
-                              "x-parser-schema-id": "<anonymous-schema-374>"
+                              "x-parser-schema-id": "<anonymous-schema-397>"
                             },
                             "member": {
                               "description": "member object or id",
                               "type": "string",
                               "format": "uri",
                               "example": "https://memberid.example.com/profile/card#me",
-                              "x-parser-schema-id": "<anonymous-schema-375>"
+                              "x-parser-schema-id": "<anonymous-schema-398>"
                             },
                             "startDate": {
                               "type": "string",
                               "format": "date-time",
                               "description": "date the member began performing this role",
-                              "x-parser-schema-id": "<anonymous-schema-376>"
+                              "x-parser-schema-id": "<anonymous-schema-399>"
                             },
                             "endDate": {
                               "type": "string",
                               "format": "date-time",
                               "description": "date the member stopped performing the role",
-                              "x-parser-schema-id": "<anonymous-schema-377>"
+                              "x-parser-schema-id": "<anonymous-schema-400>"
                             }
                           },
                           "x-parser-schema-id": "OrganizationRole"
@@ -622,12 +739,12 @@
                         {
                           "type": "string",
                           "format": "uri",
-                          "x-parser-schema-id": "<anonymous-schema-378>"
+                          "x-parser-schema-id": "<anonymous-schema-401>"
                         }
                       ],
-                      "x-parser-schema-id": "<anonymous-schema-371>"
+                      "x-parser-schema-id": "<anonymous-schema-394>"
                     },
-                    "x-parser-schema-id": "<anonymous-schema-370>"
+                    "x-parser-schema-id": "<anonymous-schema-393>"
                   },
                   "name": {
                     "$id": "http://realestate.yodata.me/schema/name.yaml",
@@ -643,7 +760,7 @@
                     "items": {
                       "type": "string",
                       "format": "uri",
-                      "x-parser-schema-id": "<anonymous-schema-379>"
+                      "x-parser-schema-id": "<anonymous-schema-402>"
                     }
                   },
                   "permit": {
@@ -660,13 +777,13 @@
                         "enum": [
                           "Permit"
                         ],
-                        "x-parser-schema-id": "<anonymous-schema-381>"
+                        "x-parser-schema-id": "<anonymous-schema-404>"
                       },
                       "name": {
                         "type": "string",
                         "description": "Common or display value of the Permit.",
                         "example": "DRE Number",
-                        "x-parser-schema-id": "<anonymous-schema-382>"
+                        "x-parser-schema-id": "<anonymous-schema-405>"
                       },
                       "issuedBy": {
                         "type": "object",
@@ -676,7 +793,7 @@
                           "type": "State",
                           "name": "California"
                         },
-                        "x-parser-schema-id": "<anonymous-schema-383>"
+                        "x-parser-schema-id": "<anonymous-schema-406>"
                       },
                       "issuedThrough": {
                         "type": "object",
@@ -685,27 +802,27 @@
                           "type": "Service",
                           "name": "Department of Real Estate"
                         },
-                        "x-parser-schema-id": "<anonymous-schema-384>"
+                        "x-parser-schema-id": "<anonymous-schema-407>"
                       },
                       "validIn": {
                         "type": "object",
                         "x-range": "Place",
-                        "x-parser-schema-id": "<anonymous-schema-385>"
+                        "x-parser-schema-id": "<anonymous-schema-408>"
                       },
                       "validFrom": {
                         "type": "string",
                         "format": "date-time",
                         "description": "start date",
-                        "x-parser-schema-id": "<anonymous-schema-386>"
+                        "x-parser-schema-id": "<anonymous-schema-409>"
                       },
                       "validUntil": {
                         "type": "string",
                         "format": "date-time",
                         "description": "end date",
-                        "x-parser-schema-id": "<anonymous-schema-387>"
+                        "x-parser-schema-id": "<anonymous-schema-410>"
                       }
                     },
-                    "x-parser-schema-id": "<anonymous-schema-380>"
+                    "x-parser-schema-id": "<anonymous-schema-403>"
                   },
                   "subOrganization": {
                     "$id": "http://realestate.yodata.me/schema/subOrganization",
@@ -715,7 +832,7 @@
                     "items": {
                       "type": "string",
                       "format": "uri",
-                      "x-parser-schema-id": "<anonymous-schema-388>"
+                      "x-parser-schema-id": "<anonymous-schema-411>"
                     }
                   },
                   "url": {
@@ -723,12 +840,116 @@
                     "type": "string",
                     "format": "uri",
                     "description": "URL of the item.",
-                    "x-parser-schema-id": "<anonymous-schema-389>"
+                    "x-parser-schema-id": "<anonymous-schema-412>"
                   }
                 },
                 "x-parser-schema-id": "RealEstateAgent"
               },
               {
+                "example": {
+                  "type": "RealEstateTeam",
+                  "address": {
+                    "type": "PostalAddress",
+                    "streetAddress": "1007 Mountain Gate Rd",
+                    "postOfficeBoxNumber": "Box 1234",
+                    "addressRegion": "NJ",
+                    "addressLocality": "Gotham City",
+                    "postalCode": "10010",
+                    "addressCountry": "CA",
+                    "addressCounty": "string",
+                    "addressSubdivision": "Gotham Heights"
+                  },
+                  "availableLanguage": [
+                    {
+                      "type": "Language",
+                      "name": "English",
+                      "additionalName": "en-us"
+                    }
+                  ],
+                  "branchCode": "for BHHS profile events, see additionalProperty.OfficeId",
+                  "certification": [
+                    {
+                      "type": "Certification",
+                      "name": "e-Agent Certified",
+                      "issuedBy": {
+                        "type": "RealEstateOrganization",
+                        "id": "https://example.com/profile/card#me",
+                        "name": "Gotham City Real Estate"
+                      },
+                      "issuedTo": {
+                        "type": "RealEstateAgent",
+                        "id": "http://example.com",
+                        "name": "string"
+                      }
+                    }
+                  ],
+                  "contactPoint": [
+                    {
+                      "type": "ContactPoint",
+                      "name": "Work",
+                      "telephone": "555-555-5555",
+                      "faxNumber": "555-555-5555",
+                      "email": "bob@example.com",
+                      "url": "https://www.facebook.com/hallandoates"
+                    }
+                  ],
+                  "email": "user@example.com",
+                  "faxNumber": "string",
+                  "image": [
+                    {
+                      "type": "ImageObject",
+                      "@id": "http://example.com",
+                      "id": "http://user.example.com/public/logo/image.jpg",
+                      "name": "image.jpg",
+                      "encodingFormat": "image/jpeg",
+                      "about": "http://user.example.com/profile/card#me",
+                      "url": "http://user.example.com/public/profile/image.jpg"
+                    }
+                  ],
+                  "logo": [
+                    {
+                      "type": "DigitalDocument",
+                      "id": "http://user.example.com/public/logo/archive.zip",
+                      "name": "archive.zip",
+                      "encodingFormat": "application/zip",
+                      "about": {
+                        "type": "RealEstateTransaction",
+                        "identifier": {
+                          "bmsTransactionId": "xxxx"
+                        }
+                      },
+                      "url": "https://example.com"
+                    }
+                  ],
+                  "name": "string",
+                  "parentOrganization": [
+                    "http://example.com"
+                  ],
+                  "subOrganization": [
+                    "http://example.com"
+                  ],
+                  "telephone": "+15558675309",
+                  "url": "http://example.com",
+                  "areaServed": {
+                    "type": "PostalCode",
+                    "postalCode": "91371",
+                    "addressLocality": "Woodland Hills",
+                    "addressCounty": "Los Angeles",
+                    "addressRegion": "CA",
+                    "addressCountry": "US"
+                  },
+                  "description": "The number on Gotham City Real Estate Company since 1940",
+                  "member": [
+                    {
+                      "type": "RealEstateTeamMembership",
+                      "roleName": "TeamMember",
+                      "memberOf": "https://{team-id}.example.com/profile/card#me",
+                      "member": "https://{agent}.example.com/profile/card#me",
+                      "startDate": "2019-08-24T14:15:22Z",
+                      "endDate": "2019-08-24T14:15:22Z"
+                    }
+                  ]
+                },
                 "allOf": [
                   {
                     "properties": {
@@ -737,20 +958,116 @@
                         "example": "https://org.example.com/profile/card#me"
                       }
                     },
-                    "x-parser-schema-id": "<anonymous-schema-390>"
+                    "x-parser-schema-id": "<anonymous-schema-413>"
                   },
                   {
                     "type": "object",
+                    "example": {
+                      "type": "string",
+                      "address": {
+                        "type": "PostalAddress",
+                        "streetAddress": "1007 Mountain Gate Rd",
+                        "postOfficeBoxNumber": "Box 1234",
+                        "addressRegion": "NJ",
+                        "addressLocality": "Gotham City",
+                        "postalCode": "10010",
+                        "addressCountry": "CA",
+                        "addressCounty": "string",
+                        "addressSubdivision": "Gotham Heights"
+                      },
+                      "availableLanguage": [
+                        {
+                          "type": "Language",
+                          "name": "English",
+                          "additionalName": "en-us"
+                        }
+                      ],
+                      "branchCode": "for BHHS profile events, see additionalProperty.OfficeId",
+                      "certification": [
+                        {
+                          "type": "Certification",
+                          "name": "e-Agent Certified",
+                          "issuedBy": {
+                            "type": "RealEstateOrganization",
+                            "id": "https://example.com/profile/card#me",
+                            "name": "Gotham City Real Estate"
+                          },
+                          "issuedTo": {
+                            "type": "RealEstateAgent",
+                            "id": "http://example.com",
+                            "name": "string"
+                          }
+                        }
+                      ],
+                      "contactPoint": [
+                        {
+                          "type": "ContactPoint",
+                          "name": "Work",
+                          "telephone": "555-555-5555",
+                          "faxNumber": "555-555-5555",
+                          "email": "bob@example.com",
+                          "url": "https://www.facebook.com/hallandoates"
+                        }
+                      ],
+                      "email": "user@example.com",
+                      "faxNumber": "string",
+                      "image": [
+                        {
+                          "type": "ImageObject",
+                          "@id": "http://example.com",
+                          "id": "http://user.example.com/public/logo/image.jpg",
+                          "name": "image.jpg",
+                          "encodingFormat": "image/jpeg",
+                          "about": "http://user.example.com/profile/card#me",
+                          "url": "http://user.example.com/public/profile/image.jpg"
+                        }
+                      ],
+                      "logo": [
+                        {
+                          "type": "DigitalDocument",
+                          "id": "http://user.example.com/public/logo/archive.zip",
+                          "name": "archive.zip",
+                          "encodingFormat": "application/zip",
+                          "about": {
+                            "type": "RealEstateTransaction",
+                            "identifier": {
+                              "bmsTransactionId": "xxxx"
+                            }
+                          },
+                          "url": "https://example.com"
+                        }
+                      ],
+                      "name": "string",
+                      "parentOrganization": [
+                        "http://example.com"
+                      ],
+                      "subOrganization": [
+                        "http://example.com"
+                      ],
+                      "telephone": "+15558675309",
+                      "url": "http://example.com"
+                    },
                     "properties": {
                       "type": {
                         "type": "string",
-                        "x-parser-schema-id": "<anonymous-schema-391>"
+                        "x-parser-schema-id": "<anonymous-schema-414>"
                       },
                       "address": {
                         "$id": "http://realestate.yodata.me/schemas/PostalAddress.yaml",
                         "title": "PostalAddress",
                         "type": "object",
                         "description": "A physical address.",
+                        "example": {
+                          "type": "PostalAddress",
+                          "streetAddress": "1007 Mountain Gate Rd",
+                          "postOfficeBoxNumber": "Box 1234",
+                          "addressRegion": "NJ",
+                          "addressLocality": "Gotham City",
+                          "postalCode": "10010",
+                          "addressCountry": "CA",
+                          "addressCounty": "string",
+                          "addressSubdivision": "Gotham Heights"
+                        },
                         "properties": {
                           "type": {
                             "type": "string",
@@ -968,13 +1285,13 @@
                           ],
                           "x-parser-schema-id": "Language"
                         },
-                        "x-parser-schema-id": "<anonymous-schema-392>"
+                        "x-parser-schema-id": "<anonymous-schema-415>"
                       },
                       "branchCode": {
                         "description": "A short textual code that uniquely identifies a place of business.",
                         "example": "for BHHS profile events, see additionalProperty.OfficeId",
                         "type": "string",
-                        "x-parser-schema-id": "<anonymous-schema-393>"
+                        "x-parser-schema-id": "<anonymous-schema-416>"
                       },
                       "certification": {
                         "$id": "http://realestate.yodata.me/schema/certification",
@@ -987,6 +1304,20 @@
                             "title": "Certification",
                             "description": "A certification issued by an organization to an individual or business.",
                             "x-range": "Certification",
+                            "example": {
+                              "type": "Certification",
+                              "name": "e-Agent Certified",
+                              "issuedBy": {
+                                "type": "RealEstateOrganization",
+                                "id": "https://example.com/profile/card#me",
+                                "name": "Gotham City Real Estate"
+                              },
+                              "issuedTo": {
+                                "type": "RealEstateAgent",
+                                "id": "http://example.com",
+                                "name": "string"
+                              }
+                            },
                             "properties": {
                               "type": {
                                 "description": "Certification",
@@ -994,13 +1325,13 @@
                                 "enum": [
                                   "Certification"
                                 ],
-                                "x-parser-schema-id": "<anonymous-schema-394>"
+                                "x-parser-schema-id": "<anonymous-schema-417>"
                               },
                               "name": {
                                 "type": "string",
                                 "description": "the name of the Certification",
                                 "example": "e-Agent Certified",
-                                "x-parser-schema-id": "<anonymous-schema-395>"
+                                "x-parser-schema-id": "<anonymous-schema-418>"
                               },
                               "issuedBy": {
                                 "type": "object",
@@ -1013,23 +1344,23 @@
                                     ],
                                     "type": "string",
                                     "description": "The item type (Linked-Data @type)",
-                                    "x-parser-schema-id": "<anonymous-schema-357>"
+                                    "x-parser-schema-id": "<anonymous-schema-380>"
                                   },
                                   "id": {
                                     "example": "https://example.com/profile/card#me",
                                     "type": "string",
                                     "format": "uri",
                                     "description": "Linked-Data URI (@id)",
-                                    "x-parser-schema-id": "<anonymous-schema-358>"
+                                    "x-parser-schema-id": "<anonymous-schema-381>"
                                   },
                                   "name": {
                                     "type": "string",
                                     "description": "name of the issuing organization",
                                     "example": "Gotham City Real Estate",
-                                    "x-parser-schema-id": "<anonymous-schema-359>"
+                                    "x-parser-schema-id": "<anonymous-schema-382>"
                                   }
                                 },
-                                "x-parser-schema-id": "<anonymous-schema-356>"
+                                "x-parser-schema-id": "<anonymous-schema-379>"
                               },
                               "issuedTo": {
                                 "x-range": "RealEstateAgent",
@@ -1042,13 +1373,13 @@
                                     ],
                                     "type": "string",
                                     "description": "The item type (Linked-Data @type)",
-                                    "x-parser-schema-id": "<anonymous-schema-361>"
+                                    "x-parser-schema-id": "<anonymous-schema-384>"
                                   },
                                   "id": {
                                     "type": "string",
                                     "format": "uri",
                                     "description": "Linked-Data URI (@id)",
-                                    "x-parser-schema-id": "<anonymous-schema-185>"
+                                    "x-parser-schema-id": "<anonymous-schema-208>"
                                   },
                                   "name": {
                                     "$id": "http://realestate.yodata.me/schema/name.yaml",
@@ -1057,7 +1388,7 @@
                                     "x-parser-schema-id": "name"
                                   }
                                 },
-                                "x-parser-schema-id": "<anonymous-schema-396>"
+                                "x-parser-schema-id": "<anonymous-schema-419>"
                               }
                             },
                             "x-parser-schema-id": "Certification"
@@ -1078,6 +1409,14 @@
                             "name"
                           ],
                           "minProperties": 3,
+                          "example": {
+                            "type": "ContactPoint",
+                            "name": "Work",
+                            "telephone": "555-555-5555",
+                            "faxNumber": "555-555-5555",
+                            "email": "bob@example.com",
+                            "url": "https://www.facebook.com/hallandoates"
+                          },
                           "properties": {
                             "type": {
                               "type": "string",
@@ -1183,20 +1522,20 @@
                                     ],
                                     "propertyNames": {
                                       "pattern": "^[a-z@$][a-zA-Z0-9-_]+$",
-                                      "x-parser-schema-id": "<anonymous-schema-164>"
+                                      "x-parser-schema-id": "<anonymous-schema-187>"
                                     },
                                     "properties": {
                                       "type": {
                                         "type": "string",
                                         "pattern": "^[A-Z][a-zA-Z0-9]+$",
                                         "description": "The item type (Linked-Data @type)",
-                                        "x-parser-schema-id": "<anonymous-schema-162>"
+                                        "x-parser-schema-id": "<anonymous-schema-185>"
                                       },
                                       "@id": {
                                         "type": "string",
                                         "format": "uri",
                                         "description": "the liked data uri for the Thing",
-                                        "x-parser-schema-id": "<anonymous-schema-163>"
+                                        "x-parser-schema-id": "<anonymous-schema-186>"
                                       }
                                     },
                                     "x-parser-schema-id": "Thing"
@@ -1240,7 +1579,7 @@
                                         "example": "http://user.example.com/public/profile/image.jpg"
                                       }
                                     },
-                                    "x-parser-schema-id": "<anonymous-schema-165>"
+                                    "x-parser-schema-id": "<anonymous-schema-188>"
                                   }
                                 ],
                                 "x-parser-schema-id": "MediaObject"
@@ -1265,13 +1604,13 @@
                                     "example": "image/jpeg"
                                   }
                                 },
-                                "x-parser-schema-id": "<anonymous-schema-166>"
+                                "x-parser-schema-id": "<anonymous-schema-189>"
                               }
                             ],
-                            "x-parser-schema-id": "<anonymous-schema-161>"
+                            "x-parser-schema-id": "<anonymous-schema-184>"
                           }
                         ],
-                        "x-parser-schema-id": "<anonymous-schema-160>"
+                        "x-parser-schema-id": "<anonymous-schema-183>"
                       },
                       "logo": {
                         "$id": "http://realestate.yodata.me/schema/logo.yaml",
@@ -1288,24 +1627,24 @@
                               "enum": [
                                 "DigitalDocument"
                               ],
-                              "x-parser-schema-id": "<anonymous-schema-397>"
+                              "x-parser-schema-id": "<anonymous-schema-420>"
                             },
                             "id": {
                               "type": "string",
                               "example": "http://user.example.com/public/logo/archive.zip",
-                              "x-parser-schema-id": "<anonymous-schema-398>"
+                              "x-parser-schema-id": "<anonymous-schema-421>"
                             },
                             "name": {
                               "type": "string",
                               "description": "document name or title",
                               "example": "archive.zip",
-                              "x-parser-schema-id": "<anonymous-schema-399>"
+                              "x-parser-schema-id": "<anonymous-schema-422>"
                             },
                             "encodingFormat": {
                               "type": "string",
                               "description": "[ISO Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml)",
                               "example": "application/zip",
-                              "x-parser-schema-id": "<anonymous-schema-400>"
+                              "x-parser-schema-id": "<anonymous-schema-423>"
                             },
                             "about": {
                               "type": "object",
@@ -1317,13 +1656,13 @@
                                   "bmsTransactionId": "xxxx"
                                 }
                               },
-                              "x-parser-schema-id": "<anonymous-schema-401>"
+                              "x-parser-schema-id": "<anonymous-schema-424>"
                             },
                             "url": {
                               "type": "string",
                               "description": "public URL of the object",
                               "example": "https://example.com",
-                              "x-parser-schema-id": "<anonymous-schema-402>"
+                              "x-parser-schema-id": "<anonymous-schema-425>"
                             }
                           },
                           "x-parser-schema-id": "DigitalDocument"
@@ -1343,7 +1682,7 @@
                         "items": {
                           "type": "string",
                           "format": "uri",
-                          "x-parser-schema-id": "<anonymous-schema-379>"
+                          "x-parser-schema-id": "<anonymous-schema-402>"
                         }
                       },
                       "subOrganization": {
@@ -1354,7 +1693,7 @@
                         "items": {
                           "type": "string",
                           "format": "uri",
-                          "x-parser-schema-id": "<anonymous-schema-388>"
+                          "x-parser-schema-id": "<anonymous-schema-411>"
                         }
                       },
                       "telephone": {
@@ -1369,7 +1708,7 @@
                         "type": "string",
                         "format": "uri",
                         "description": "URL of the item.",
-                        "x-parser-schema-id": "<anonymous-schema-389>"
+                        "x-parser-schema-id": "<anonymous-schema-412>"
                       }
                     },
                     "x-parser-schema-id": "Organization"
@@ -1431,13 +1770,13 @@
                                   "enum": [
                                     "OrganizationRole"
                                   ],
-                                  "x-parser-schema-id": "<anonymous-schema-372>"
+                                  "x-parser-schema-id": "<anonymous-schema-395>"
                                 },
                                 "roleName": {
                                   "type": "string",
                                   "description": "the role name",
                                   "example": "Owner",
-                                  "x-parser-schema-id": "<anonymous-schema-373>"
+                                  "x-parser-schema-id": "<anonymous-schema-396>"
                                 },
                                 "memberOf": {
                                   "description": "the org or group where the role is performed",
@@ -1446,26 +1785,26 @@
                                     "type": "RealEstateOrganization",
                                     "id": "http://orgid.example.com/profile/card#me"
                                   },
-                                  "x-parser-schema-id": "<anonymous-schema-374>"
+                                  "x-parser-schema-id": "<anonymous-schema-397>"
                                 },
                                 "member": {
                                   "description": "member object or id",
                                   "type": "string",
                                   "format": "uri",
                                   "example": "https://memberid.example.com/profile/card#me",
-                                  "x-parser-schema-id": "<anonymous-schema-375>"
+                                  "x-parser-schema-id": "<anonymous-schema-398>"
                                 },
                                 "startDate": {
                                   "type": "string",
                                   "format": "date-time",
                                   "description": "date the member began performing this role",
-                                  "x-parser-schema-id": "<anonymous-schema-376>"
+                                  "x-parser-schema-id": "<anonymous-schema-399>"
                                 },
                                 "endDate": {
                                   "type": "string",
                                   "format": "date-time",
                                   "description": "date the member stopped performing the role",
-                                  "x-parser-schema-id": "<anonymous-schema-377>"
+                                  "x-parser-schema-id": "<anonymous-schema-400>"
                                 }
                               },
                               "x-parser-schema-id": "OrganizationRole"
@@ -1482,7 +1821,7 @@
                                     "RealEstateTeamMembership"
                                   ],
                                   "example": "RealEstateTeamMembership",
-                                  "x-parser-schema-id": "<anonymous-schema-418>"
+                                  "x-parser-schema-id": "<anonymous-schema-441>"
                                 },
                                 "roleName": {
                                   "type": "string",
@@ -1491,47 +1830,289 @@
                                     "TeamAdmin",
                                     "TeamOwner"
                                   ],
-                                  "x-parser-schema-id": "<anonymous-schema-419>"
+                                  "x-parser-schema-id": "<anonymous-schema-442>"
                                 },
                                 "memberOf": {
                                   "type": "string",
                                   "format": "uri",
                                   "example": "https://{team-id}.example.com/profile/card#me",
-                                  "x-parser-schema-id": "<anonymous-schema-420>"
+                                  "x-parser-schema-id": "<anonymous-schema-443>"
                                 },
                                 "member": {
                                   "type": "string",
                                   "format": "uri",
                                   "example": "https://{agent}.example.com/profile/card#me",
-                                  "x-parser-schema-id": "<anonymous-schema-421>"
+                                  "x-parser-schema-id": "<anonymous-schema-444>"
                                 }
                               },
-                              "x-parser-schema-id": "<anonymous-schema-417>"
+                              "x-parser-schema-id": "<anonymous-schema-440>"
                             }
                           ],
                           "x-parser-schema-id": "RealEstateTeamMembership"
                         }
                       }
                     },
-                    "x-parser-schema-id": "<anonymous-schema-403>"
+                    "x-parser-schema-id": "<anonymous-schema-426>"
                   }
                 ],
                 "x-parser-schema-id": "RealEstateTeam"
               },
               {
+                "example": {
+                  "type": "RealEstateOrganization",
+                  "address": {
+                    "type": "PostalAddress",
+                    "streetAddress": "1007 Mountain Gate Rd",
+                    "postOfficeBoxNumber": "Box 1234",
+                    "addressRegion": "NJ",
+                    "addressLocality": "Gotham City",
+                    "postalCode": "10010",
+                    "addressCountry": "CA",
+                    "addressCounty": "string",
+                    "addressSubdivision": "Gotham Heights"
+                  },
+                  "availableLanguage": [
+                    {
+                      "type": "Language",
+                      "name": "English",
+                      "additionalName": "en-us"
+                    }
+                  ],
+                  "branchCode": "for BHHS profile events, see additionalProperty.OfficeId",
+                  "certification": [
+                    {
+                      "type": "Certification",
+                      "name": "e-Agent Certified",
+                      "issuedBy": {
+                        "type": "RealEstateOrganization",
+                        "id": "https://example.com/profile/card#me",
+                        "name": "Gotham City Real Estate"
+                      },
+                      "issuedTo": {
+                        "type": "RealEstateAgent",
+                        "id": "http://example.com",
+                        "name": "string"
+                      }
+                    }
+                  ],
+                  "contactPoint": [
+                    {
+                      "type": "ContactPoint",
+                      "name": "Work",
+                      "telephone": "555-555-5555",
+                      "faxNumber": "555-555-5555",
+                      "email": "bob@example.com",
+                      "url": "https://www.facebook.com/hallandoates"
+                    }
+                  ],
+                  "email": "user@example.com",
+                  "faxNumber": "string",
+                  "image": [
+                    {
+                      "type": "ImageObject",
+                      "@id": "http://example.com",
+                      "id": "http://user.example.com/public/logo/image.jpg",
+                      "name": "image.jpg",
+                      "encodingFormat": "image/jpeg",
+                      "about": "http://user.example.com/profile/card#me",
+                      "url": "http://user.example.com/public/profile/image.jpg"
+                    }
+                  ],
+                  "logo": [
+                    {
+                      "type": "DigitalDocument",
+                      "id": "http://user.example.com/public/logo/archive.zip",
+                      "name": "archive.zip",
+                      "encodingFormat": "application/zip",
+                      "about": {
+                        "type": "RealEstateTransaction",
+                        "identifier": {
+                          "bmsTransactionId": "xxxx"
+                        }
+                      },
+                      "url": "https://example.com"
+                    }
+                  ],
+                  "name": "string",
+                  "parentOrganization": [
+                    "http://example.com"
+                  ],
+                  "subOrganization": [
+                    "http://example.com"
+                  ],
+                  "telephone": "+15558675309",
+                  "url": "http://example.com",
+                  "areaServed": {
+                    "type": "PostalCode",
+                    "postalCode": "91371",
+                    "addressLocality": "Woodland Hills",
+                    "addressCounty": "Los Angeles",
+                    "addressRegion": "CA",
+                    "addressCountry": "US"
+                  },
+                  "description": "The number on Gotham City Real Estate Company since 1940",
+                  "numberOfSubOrganizations": 0,
+                  "member": [
+                    {
+                      "type": "OrganizationRole",
+                      "roleName": "Owner",
+                      "memberOf": {
+                        "type": "RealEstateOrganization",
+                        "id": "http://orgid.example.com/profile/card#me"
+                      },
+                      "member": "https://memberid.example.com/profile/card#me",
+                      "startDate": "2019-08-24T14:15:22Z",
+                      "endDate": "2019-08-24T14:15:22Z"
+                    }
+                  ],
+                  "memberOf": [
+                    {
+                      "type": "OrganizationRole",
+                      "roleName": "Owner",
+                      "memberOf": {
+                        "type": "RealEstateOrganization",
+                        "id": "http://orgid.example.com/profile/card#me"
+                      },
+                      "member": "https://memberid.example.com/profile/card#me",
+                      "startDate": "2019-08-24T14:15:22Z",
+                      "endDate": "2019-08-24T14:15:22Z"
+                    }
+                  ],
+                  "permit": [
+                    {
+                      "type": "RealEstateLicense",
+                      "name": "CA-DRE# 02068375",
+                      "identifier": {
+                        "type": "PropertyValue",
+                        "name": "CA-DRE",
+                        "value": "02068375"
+                      },
+                      "issuedBy": {
+                        "type": "State",
+                        "name": "California"
+                      },
+                      "issuedThrough": {
+                        "type": "Service",
+                        "name": "California Department of Real Estate"
+                      },
+                      "validIn": {
+                        "type": "State",
+                        "name": "California"
+                      },
+                      "validFrom": "2019-07-07T10:55:02Z",
+                      "validUntil": "2019-07-07T10:55:02Z"
+                    }
+                  ]
+                },
                 "allOf": [
                   {
                     "type": "object",
+                    "example": {
+                      "type": "string",
+                      "address": {
+                        "type": "PostalAddress",
+                        "streetAddress": "1007 Mountain Gate Rd",
+                        "postOfficeBoxNumber": "Box 1234",
+                        "addressRegion": "NJ",
+                        "addressLocality": "Gotham City",
+                        "postalCode": "10010",
+                        "addressCountry": "CA",
+                        "addressCounty": "string",
+                        "addressSubdivision": "Gotham Heights"
+                      },
+                      "availableLanguage": [
+                        {
+                          "type": "Language",
+                          "name": "English",
+                          "additionalName": "en-us"
+                        }
+                      ],
+                      "branchCode": "for BHHS profile events, see additionalProperty.OfficeId",
+                      "certification": [
+                        {
+                          "type": "Certification",
+                          "name": "e-Agent Certified",
+                          "issuedBy": {
+                            "type": "RealEstateOrganization",
+                            "id": "https://example.com/profile/card#me",
+                            "name": "Gotham City Real Estate"
+                          },
+                          "issuedTo": {
+                            "type": "RealEstateAgent",
+                            "id": "http://example.com",
+                            "name": "string"
+                          }
+                        }
+                      ],
+                      "contactPoint": [
+                        {
+                          "type": "ContactPoint",
+                          "name": "Work",
+                          "telephone": "555-555-5555",
+                          "faxNumber": "555-555-5555",
+                          "email": "bob@example.com",
+                          "url": "https://www.facebook.com/hallandoates"
+                        }
+                      ],
+                      "email": "user@example.com",
+                      "faxNumber": "string",
+                      "image": [
+                        {
+                          "type": "ImageObject",
+                          "@id": "http://example.com",
+                          "id": "http://user.example.com/public/logo/image.jpg",
+                          "name": "image.jpg",
+                          "encodingFormat": "image/jpeg",
+                          "about": "http://user.example.com/profile/card#me",
+                          "url": "http://user.example.com/public/profile/image.jpg"
+                        }
+                      ],
+                      "logo": [
+                        {
+                          "type": "DigitalDocument",
+                          "id": "http://user.example.com/public/logo/archive.zip",
+                          "name": "archive.zip",
+                          "encodingFormat": "application/zip",
+                          "about": {
+                            "type": "RealEstateTransaction",
+                            "identifier": {
+                              "bmsTransactionId": "xxxx"
+                            }
+                          },
+                          "url": "https://example.com"
+                        }
+                      ],
+                      "name": "string",
+                      "parentOrganization": [
+                        "http://example.com"
+                      ],
+                      "subOrganization": [
+                        "http://example.com"
+                      ],
+                      "telephone": "+15558675309",
+                      "url": "http://example.com"
+                    },
                     "properties": {
                       "type": {
                         "type": "string",
-                        "x-parser-schema-id": "<anonymous-schema-391>"
+                        "x-parser-schema-id": "<anonymous-schema-414>"
                       },
                       "address": {
                         "$id": "http://realestate.yodata.me/schemas/PostalAddress.yaml",
                         "title": "PostalAddress",
                         "type": "object",
                         "description": "A physical address.",
+                        "example": {
+                          "type": "PostalAddress",
+                          "streetAddress": "1007 Mountain Gate Rd",
+                          "postOfficeBoxNumber": "Box 1234",
+                          "addressRegion": "NJ",
+                          "addressLocality": "Gotham City",
+                          "postalCode": "10010",
+                          "addressCountry": "CA",
+                          "addressCounty": "string",
+                          "addressSubdivision": "Gotham Heights"
+                        },
                         "properties": {
                           "type": {
                             "type": "string",
@@ -1749,13 +2330,13 @@
                           ],
                           "x-parser-schema-id": "Language"
                         },
-                        "x-parser-schema-id": "<anonymous-schema-392>"
+                        "x-parser-schema-id": "<anonymous-schema-415>"
                       },
                       "branchCode": {
                         "description": "A short textual code that uniquely identifies a place of business.",
                         "example": "for BHHS profile events, see additionalProperty.OfficeId",
                         "type": "string",
-                        "x-parser-schema-id": "<anonymous-schema-393>"
+                        "x-parser-schema-id": "<anonymous-schema-416>"
                       },
                       "certification": {
                         "$id": "http://realestate.yodata.me/schema/certification",
@@ -1768,6 +2349,20 @@
                             "title": "Certification",
                             "description": "A certification issued by an organization to an individual or business.",
                             "x-range": "Certification",
+                            "example": {
+                              "type": "Certification",
+                              "name": "e-Agent Certified",
+                              "issuedBy": {
+                                "type": "RealEstateOrganization",
+                                "id": "https://example.com/profile/card#me",
+                                "name": "Gotham City Real Estate"
+                              },
+                              "issuedTo": {
+                                "type": "RealEstateAgent",
+                                "id": "http://example.com",
+                                "name": "string"
+                              }
+                            },
                             "properties": {
                               "type": {
                                 "description": "Certification",
@@ -1775,13 +2370,13 @@
                                 "enum": [
                                   "Certification"
                                 ],
-                                "x-parser-schema-id": "<anonymous-schema-394>"
+                                "x-parser-schema-id": "<anonymous-schema-417>"
                               },
                               "name": {
                                 "type": "string",
                                 "description": "the name of the Certification",
                                 "example": "e-Agent Certified",
-                                "x-parser-schema-id": "<anonymous-schema-395>"
+                                "x-parser-schema-id": "<anonymous-schema-418>"
                               },
                               "issuedBy": {
                                 "type": "object",
@@ -1794,23 +2389,23 @@
                                     ],
                                     "type": "string",
                                     "description": "The item type (Linked-Data @type)",
-                                    "x-parser-schema-id": "<anonymous-schema-357>"
+                                    "x-parser-schema-id": "<anonymous-schema-380>"
                                   },
                                   "id": {
                                     "example": "https://example.com/profile/card#me",
                                     "type": "string",
                                     "format": "uri",
                                     "description": "Linked-Data URI (@id)",
-                                    "x-parser-schema-id": "<anonymous-schema-358>"
+                                    "x-parser-schema-id": "<anonymous-schema-381>"
                                   },
                                   "name": {
                                     "type": "string",
                                     "description": "name of the issuing organization",
                                     "example": "Gotham City Real Estate",
-                                    "x-parser-schema-id": "<anonymous-schema-359>"
+                                    "x-parser-schema-id": "<anonymous-schema-382>"
                                   }
                                 },
-                                "x-parser-schema-id": "<anonymous-schema-356>"
+                                "x-parser-schema-id": "<anonymous-schema-379>"
                               },
                               "issuedTo": {
                                 "x-range": "RealEstateAgent",
@@ -1823,13 +2418,13 @@
                                     ],
                                     "type": "string",
                                     "description": "The item type (Linked-Data @type)",
-                                    "x-parser-schema-id": "<anonymous-schema-361>"
+                                    "x-parser-schema-id": "<anonymous-schema-384>"
                                   },
                                   "id": {
                                     "type": "string",
                                     "format": "uri",
                                     "description": "Linked-Data URI (@id)",
-                                    "x-parser-schema-id": "<anonymous-schema-185>"
+                                    "x-parser-schema-id": "<anonymous-schema-208>"
                                   },
                                   "name": {
                                     "$id": "http://realestate.yodata.me/schema/name.yaml",
@@ -1838,7 +2433,7 @@
                                     "x-parser-schema-id": "name"
                                   }
                                 },
-                                "x-parser-schema-id": "<anonymous-schema-396>"
+                                "x-parser-schema-id": "<anonymous-schema-419>"
                               }
                             },
                             "x-parser-schema-id": "Certification"
@@ -1859,6 +2454,14 @@
                             "name"
                           ],
                           "minProperties": 3,
+                          "example": {
+                            "type": "ContactPoint",
+                            "name": "Work",
+                            "telephone": "555-555-5555",
+                            "faxNumber": "555-555-5555",
+                            "email": "bob@example.com",
+                            "url": "https://www.facebook.com/hallandoates"
+                          },
                           "properties": {
                             "type": {
                               "type": "string",
@@ -1964,20 +2567,20 @@
                                     ],
                                     "propertyNames": {
                                       "pattern": "^[a-z@$][a-zA-Z0-9-_]+$",
-                                      "x-parser-schema-id": "<anonymous-schema-164>"
+                                      "x-parser-schema-id": "<anonymous-schema-187>"
                                     },
                                     "properties": {
                                       "type": {
                                         "type": "string",
                                         "pattern": "^[A-Z][a-zA-Z0-9]+$",
                                         "description": "The item type (Linked-Data @type)",
-                                        "x-parser-schema-id": "<anonymous-schema-162>"
+                                        "x-parser-schema-id": "<anonymous-schema-185>"
                                       },
                                       "@id": {
                                         "type": "string",
                                         "format": "uri",
                                         "description": "the liked data uri for the Thing",
-                                        "x-parser-schema-id": "<anonymous-schema-163>"
+                                        "x-parser-schema-id": "<anonymous-schema-186>"
                                       }
                                     },
                                     "x-parser-schema-id": "Thing"
@@ -2021,7 +2624,7 @@
                                         "example": "http://user.example.com/public/profile/image.jpg"
                                       }
                                     },
-                                    "x-parser-schema-id": "<anonymous-schema-165>"
+                                    "x-parser-schema-id": "<anonymous-schema-188>"
                                   }
                                 ],
                                 "x-parser-schema-id": "MediaObject"
@@ -2046,13 +2649,13 @@
                                     "example": "image/jpeg"
                                   }
                                 },
-                                "x-parser-schema-id": "<anonymous-schema-166>"
+                                "x-parser-schema-id": "<anonymous-schema-189>"
                               }
                             ],
-                            "x-parser-schema-id": "<anonymous-schema-161>"
+                            "x-parser-schema-id": "<anonymous-schema-184>"
                           }
                         ],
-                        "x-parser-schema-id": "<anonymous-schema-160>"
+                        "x-parser-schema-id": "<anonymous-schema-183>"
                       },
                       "logo": {
                         "$id": "http://realestate.yodata.me/schema/logo.yaml",
@@ -2069,24 +2672,24 @@
                               "enum": [
                                 "DigitalDocument"
                               ],
-                              "x-parser-schema-id": "<anonymous-schema-397>"
+                              "x-parser-schema-id": "<anonymous-schema-420>"
                             },
                             "id": {
                               "type": "string",
                               "example": "http://user.example.com/public/logo/archive.zip",
-                              "x-parser-schema-id": "<anonymous-schema-398>"
+                              "x-parser-schema-id": "<anonymous-schema-421>"
                             },
                             "name": {
                               "type": "string",
                               "description": "document name or title",
                               "example": "archive.zip",
-                              "x-parser-schema-id": "<anonymous-schema-399>"
+                              "x-parser-schema-id": "<anonymous-schema-422>"
                             },
                             "encodingFormat": {
                               "type": "string",
                               "description": "[ISO Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml)",
                               "example": "application/zip",
-                              "x-parser-schema-id": "<anonymous-schema-400>"
+                              "x-parser-schema-id": "<anonymous-schema-423>"
                             },
                             "about": {
                               "type": "object",
@@ -2098,13 +2701,13 @@
                                   "bmsTransactionId": "xxxx"
                                 }
                               },
-                              "x-parser-schema-id": "<anonymous-schema-401>"
+                              "x-parser-schema-id": "<anonymous-schema-424>"
                             },
                             "url": {
                               "type": "string",
                               "description": "public URL of the object",
                               "example": "https://example.com",
-                              "x-parser-schema-id": "<anonymous-schema-402>"
+                              "x-parser-schema-id": "<anonymous-schema-425>"
                             }
                           },
                           "x-parser-schema-id": "DigitalDocument"
@@ -2124,7 +2727,7 @@
                         "items": {
                           "type": "string",
                           "format": "uri",
-                          "x-parser-schema-id": "<anonymous-schema-379>"
+                          "x-parser-schema-id": "<anonymous-schema-402>"
                         }
                       },
                       "subOrganization": {
@@ -2135,7 +2738,7 @@
                         "items": {
                           "type": "string",
                           "format": "uri",
-                          "x-parser-schema-id": "<anonymous-schema-388>"
+                          "x-parser-schema-id": "<anonymous-schema-411>"
                         }
                       },
                       "telephone": {
@@ -2150,7 +2753,7 @@
                         "type": "string",
                         "format": "uri",
                         "description": "URL of the item.",
-                        "x-parser-schema-id": "<anonymous-schema-389>"
+                        "x-parser-schema-id": "<anonymous-schema-412>"
                       }
                     },
                     "x-parser-schema-id": "Organization"
@@ -2196,7 +2799,7 @@
                         "items": {
                           "type": "string",
                           "format": "uri",
-                          "x-parser-schema-id": "<anonymous-schema-379>"
+                          "x-parser-schema-id": "<anonymous-schema-402>"
                         }
                       },
                       "numberOfSubOrganizations": {
@@ -2226,13 +2829,13 @@
                                   "enum": [
                                     "OrganizationRole"
                                   ],
-                                  "x-parser-schema-id": "<anonymous-schema-372>"
+                                  "x-parser-schema-id": "<anonymous-schema-395>"
                                 },
                                 "roleName": {
                                   "type": "string",
                                   "description": "the role name",
                                   "example": "Owner",
-                                  "x-parser-schema-id": "<anonymous-schema-373>"
+                                  "x-parser-schema-id": "<anonymous-schema-396>"
                                 },
                                 "memberOf": {
                                   "description": "the org or group where the role is performed",
@@ -2241,26 +2844,26 @@
                                     "type": "RealEstateOrganization",
                                     "id": "http://orgid.example.com/profile/card#me"
                                   },
-                                  "x-parser-schema-id": "<anonymous-schema-374>"
+                                  "x-parser-schema-id": "<anonymous-schema-397>"
                                 },
                                 "member": {
                                   "description": "member object or id",
                                   "type": "string",
                                   "format": "uri",
                                   "example": "https://memberid.example.com/profile/card#me",
-                                  "x-parser-schema-id": "<anonymous-schema-375>"
+                                  "x-parser-schema-id": "<anonymous-schema-398>"
                                 },
                                 "startDate": {
                                   "type": "string",
                                   "format": "date-time",
                                   "description": "date the member began performing this role",
-                                  "x-parser-schema-id": "<anonymous-schema-376>"
+                                  "x-parser-schema-id": "<anonymous-schema-399>"
                                 },
                                 "endDate": {
                                   "type": "string",
                                   "format": "date-time",
                                   "description": "date the member stopped performing the role",
-                                  "x-parser-schema-id": "<anonymous-schema-377>"
+                                  "x-parser-schema-id": "<anonymous-schema-400>"
                                 }
                               },
                               "x-parser-schema-id": "OrganizationRole"
@@ -2288,13 +2891,13 @@
                                   "enum": [
                                     "OrganizationRole"
                                   ],
-                                  "x-parser-schema-id": "<anonymous-schema-372>"
+                                  "x-parser-schema-id": "<anonymous-schema-395>"
                                 },
                                 "roleName": {
                                   "type": "string",
                                   "description": "the role name",
                                   "example": "Owner",
-                                  "x-parser-schema-id": "<anonymous-schema-373>"
+                                  "x-parser-schema-id": "<anonymous-schema-396>"
                                 },
                                 "memberOf": {
                                   "description": "the org or group where the role is performed",
@@ -2303,26 +2906,26 @@
                                     "type": "RealEstateOrganization",
                                     "id": "http://orgid.example.com/profile/card#me"
                                   },
-                                  "x-parser-schema-id": "<anonymous-schema-374>"
+                                  "x-parser-schema-id": "<anonymous-schema-397>"
                                 },
                                 "member": {
                                   "description": "member object or id",
                                   "type": "string",
                                   "format": "uri",
                                   "example": "https://memberid.example.com/profile/card#me",
-                                  "x-parser-schema-id": "<anonymous-schema-375>"
+                                  "x-parser-schema-id": "<anonymous-schema-398>"
                                 },
                                 "startDate": {
                                   "type": "string",
                                   "format": "date-time",
                                   "description": "date the member began performing this role",
-                                  "x-parser-schema-id": "<anonymous-schema-376>"
+                                  "x-parser-schema-id": "<anonymous-schema-399>"
                                 },
                                 "endDate": {
                                   "type": "string",
                                   "format": "date-time",
                                   "description": "date the member stopped performing the role",
-                                  "x-parser-schema-id": "<anonymous-schema-377>"
+                                  "x-parser-schema-id": "<anonymous-schema-400>"
                                 }
                               },
                               "x-parser-schema-id": "OrganizationRole"
@@ -2341,13 +2944,13 @@
                                       "enum": [
                                         "OrganizationRole"
                                       ],
-                                      "x-parser-schema-id": "<anonymous-schema-372>"
+                                      "x-parser-schema-id": "<anonymous-schema-395>"
                                     },
                                     "roleName": {
                                       "type": "string",
                                       "description": "the role name",
                                       "example": "Owner",
-                                      "x-parser-schema-id": "<anonymous-schema-373>"
+                                      "x-parser-schema-id": "<anonymous-schema-396>"
                                     },
                                     "memberOf": {
                                       "description": "the org or group where the role is performed",
@@ -2356,26 +2959,26 @@
                                         "type": "RealEstateOrganization",
                                         "id": "http://orgid.example.com/profile/card#me"
                                       },
-                                      "x-parser-schema-id": "<anonymous-schema-374>"
+                                      "x-parser-schema-id": "<anonymous-schema-397>"
                                     },
                                     "member": {
                                       "description": "member object or id",
                                       "type": "string",
                                       "format": "uri",
                                       "example": "https://memberid.example.com/profile/card#me",
-                                      "x-parser-schema-id": "<anonymous-schema-375>"
+                                      "x-parser-schema-id": "<anonymous-schema-398>"
                                     },
                                     "startDate": {
                                       "type": "string",
                                       "format": "date-time",
                                       "description": "date the member began performing this role",
-                                      "x-parser-schema-id": "<anonymous-schema-376>"
+                                      "x-parser-schema-id": "<anonymous-schema-399>"
                                     },
                                     "endDate": {
                                       "type": "string",
                                       "format": "date-time",
                                       "description": "date the member stopped performing the role",
-                                      "x-parser-schema-id": "<anonymous-schema-377>"
+                                      "x-parser-schema-id": "<anonymous-schema-400>"
                                     }
                                   },
                                   "x-parser-schema-id": "OrganizationRole"
@@ -2392,12 +2995,12 @@
                                         "MLSMembership"
                                       ],
                                       "example": "MLSMembership",
-                                      "x-parser-schema-id": "<anonymous-schema-801>"
+                                      "x-parser-schema-id": "<anonymous-schema-1023>"
                                     },
                                     "roleName": {
                                       "type": "string",
                                       "example": "MLSMember",
-                                      "x-parser-schema-id": "<anonymous-schema-802>"
+                                      "x-parser-schema-id": "<anonymous-schema-1024>"
                                     },
                                     "memberOf": {
                                       "type": "object",
@@ -2406,22 +3009,22 @@
                                         "type": "MultipleListingService",
                                         "name": "GreatScottMLS"
                                       },
-                                      "x-parser-schema-id": "<anonymous-schema-803>"
+                                      "x-parser-schema-id": "<anonymous-schema-1025>"
                                     },
                                     "member": {
                                       "type": "string",
                                       "format": "uri",
                                       "example": "https://{agent}.example.com/profile/card#me",
-                                      "x-parser-schema-id": "<anonymous-schema-804>"
+                                      "x-parser-schema-id": "<anonymous-schema-1026>"
                                     },
                                     "memberId": {
                                       "type": "string",
                                       "description": "the user's MLSID",
                                       "example": "memberid123",
-                                      "x-parser-schema-id": "<anonymous-schema-805>"
+                                      "x-parser-schema-id": "<anonymous-schema-1027>"
                                     }
                                   },
-                                  "x-parser-schema-id": "<anonymous-schema-800>"
+                                  "x-parser-schema-id": "<anonymous-schema-1022>"
                                 }
                               ],
                               "x-parser-schema-id": "MLSMembership"
@@ -2460,23 +3063,23 @@
                         }
                       }
                     },
-                    "x-parser-schema-id": "<anonymous-schema-404>"
+                    "x-parser-schema-id": "<anonymous-schema-427>"
                   }
                 ],
                 "x-parser-schema-id": "RealEstateOrganization"
               }
             ],
-            "x-parser-schema-id": "<anonymous-schema-350>"
+            "x-parser-schema-id": "<anonymous-schema-373>"
           }
         },
-        "x-parser-schema-id": "<anonymous-schema-348>"
+        "x-parser-schema-id": "<anonymous-schema-371>"
       },
       "topic": {
         "type": "string",
         "const": "realestate/profile#update",
-        "x-parser-schema-id": "<anonymous-schema-347>"
+        "x-parser-schema-id": "<anonymous-schema-370>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-346>"
+    "x-parser-schema-id": "<anonymous-schema-369>"
   }
 }

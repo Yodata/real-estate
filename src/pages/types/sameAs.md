@@ -6,10 +6,7 @@ title: sameAs
 
 
 ```json
-{
-  "amcecrmid": 1234567,
-  "salesForceId": "parsing"
-}
+"amcecrmid:1234567"
 ```
 
 ## Schema

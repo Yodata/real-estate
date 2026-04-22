@@ -14,6 +14,141 @@
     "totalSalesProductionGCIDeduction",
     "object"
   ],
+  "example": {
+    "type": "RealEstateTransaction",
+    "identifier": {
+      "bmsTransactionId": "0000074792"
+    },
+    "additionalProperty": {
+      "batchId": 4136,
+      "transactionSequence": 1,
+      "unimprovedLandFlag": true
+    },
+    "transactionStatus": "ClosedTransactionStatus",
+    "transactionType": "ST",
+    "reportingOffice": "https://{officeid}.example.com/profile/card#me",
+    "listingOffice": "https://{officeid}.example.com/profile/card#me",
+    "buyerOffice": "https://{officeid}.example.com/profile/card#me",
+    "commissionDate": "2019-08-24T14:15:22Z",
+    "closeDate": "2019-08-24T14:15:22Z",
+    "purchaseContractDate": "2019-08-24T14:15:22Z",
+    "closePrice": {
+      "type": "MonetaryAmount",
+      "value": 123456.78,
+      "currency": "USD"
+    },
+    "totalSalesProductionGCI": {
+      "type": "MonetaryAmount",
+      "value": 123456.78,
+      "currency": "USD"
+    },
+    "totalSalesProductionGCIDeduction": {
+      "type": "MonetaryAmount",
+      "value": 1234.56,
+      "currency": "USD"
+    },
+    "object": {
+      "type": "RealEstateProperty",
+      "propertyType": "RESI",
+      "addressCountry": "CA",
+      "addressLocality": "Gotham City",
+      "addressRegion": "NJ",
+      "apn": "ABC-12345-XX-XXXX",
+      "image": [
+        {
+          "type": "ImageObject",
+          "@id": "http://example.com",
+          "id": "http://user.example.com/public/logo/image.jpg",
+          "name": "image.jpg",
+          "encodingFormat": "image/jpeg",
+          "about": "http://user.example.com/profile/card#me",
+          "url": "http://user.example.com/public/profile/image.jpg"
+        }
+      ],
+      "latitude": 40.75,
+      "listingId": "string",
+      "livingArea": {
+        "type": "QuantitativeValue",
+        "unitCode": "SqFt",
+        "unitText": "Square Feet",
+        "value": 1500
+      },
+      "longitude": 73.98,
+      "lotSize": {
+        "type": "QuantitativeValue",
+        "unitCode": "AC",
+        "unitText": "Acres",
+        "value": 0.5
+      },
+      "numberOfBathrooms": "2",
+      "numberOfBedrooms": "3",
+      "numberOfRooms": 7,
+      "postalCode": "10010",
+      "propertySubType": "ApartmentPropertyType",
+      "stories": 2,
+      "streetAddress": "1007 Mountain Gate Rd",
+      "yearBuilt": 1988
+    },
+    "referral": {
+      "type": "Referral",
+      "additionalProperty": {
+        "isReferralYN": "Y",
+        "inNetworkReferralYN": "Y"
+      },
+      "referredBy": {
+        "type": "RealEstateOrganization",
+        "id": "http://example.com"
+      }
+    },
+    "participant": [
+      {
+        "type": "TransactionParticipant",
+        "roleName": "Buyer",
+        "position": 1,
+        "givenName": "John",
+        "familyName": "Smith",
+        "additionalName": "Big",
+        "email": "user@example.com",
+        "telephone": "+15558675309",
+        "affiliation": [
+          "https://{agentid}.example.com/profile/card#me"
+        ]
+      }
+    ],
+    "transactionEntry": [
+      {
+        "type": "TransactionEntry",
+        "salesProductionUnit": 0.5,
+        "salesProductionGCI": {
+          "type": "MonetaryAmount",
+          "value": 1234.56,
+          "currency": "USD"
+        },
+        "recipient": {
+          "type": "RealEstateAgent",
+          "roleName": "ListingAgent",
+          "id": "https://{entityid}.example.com/profile/card#me",
+          "identifier": {
+            "bmsAgentId": "1657897"
+          }
+        }
+      }
+    ],
+    "document": [
+      {
+        "type": "DigitalDocument",
+        "name": "Sales Contract",
+        "encodingFormat": "application/zip",
+        "about": {
+          "type": "Transaction",
+          "identifier": {
+            "guruTransactionId": "0000074792"
+          }
+        },
+        "url": "https://example.com/path/to/document.pdf"
+      }
+    ]
+  },
   "properties": {
     "additionalProperty": {
       "type": "object",
@@ -28,19 +163,19 @@
           "type": "integer",
           "description": "identifies the batch for the current transaction",
           "example": 4136,
-          "x-parser-schema-id": "<anonymous-schema-138>"
+          "x-parser-schema-id": "<anonymous-schema-161>"
         },
         "transactionSequence": {
           "type": "integer",
           "description": "the sequentail order of this transaction report relative to previous reports of the the same RealEstateTransaction",
           "minimum": 0,
           "example": 1,
-          "x-parser-schema-id": "<anonymous-schema-139>"
+          "x-parser-schema-id": "<anonymous-schema-162>"
         },
         "unimprovedLandFlag": {
           "type": "boolean",
           "description": "true if the transaction subject property is an unimproved lot.",
-          "x-parser-schema-id": "<anonymous-schema-140>"
+          "x-parser-schema-id": "<anonymous-schema-163>"
         }
       }
     },
@@ -126,7 +261,7 @@
           },
           "url": "https://example.com/path/to/document.pdf"
         },
-        "x-parser-schema-id": "<anonymous-schema-204>"
+        "x-parser-schema-id": "<anonymous-schema-227>"
       }
     },
     "identifier": {
@@ -140,7 +275,7 @@
           "type": "string",
           "maxLength": 12,
           "example": "0000074792",
-          "x-parser-schema-id": "<anonymous-schema-136>"
+          "x-parser-schema-id": "<anonymous-schema-159>"
         }
       }
     },
@@ -159,6 +294,48 @@
         "type",
         "propertyType"
       ],
+      "example": {
+        "type": "RealEstateProperty",
+        "propertyType": "RESI",
+        "addressCountry": "CA",
+        "addressLocality": "Gotham City",
+        "addressRegion": "NJ",
+        "apn": "ABC-12345-XX-XXXX",
+        "image": [
+          {
+            "type": "ImageObject",
+            "@id": "http://example.com",
+            "id": "http://user.example.com/public/logo/image.jpg",
+            "name": "image.jpg",
+            "encodingFormat": "image/jpeg",
+            "about": "http://user.example.com/profile/card#me",
+            "url": "http://user.example.com/public/profile/image.jpg"
+          }
+        ],
+        "latitude": 40.75,
+        "listingId": "string",
+        "livingArea": {
+          "type": "QuantitativeValue",
+          "unitCode": "SqFt",
+          "unitText": "Square Feet",
+          "value": 1500
+        },
+        "longitude": 73.98,
+        "lotSize": {
+          "type": "QuantitativeValue",
+          "unitCode": "AC",
+          "unitText": "Acres",
+          "value": 0.5
+        },
+        "numberOfBathrooms": "2",
+        "numberOfBedrooms": "3",
+        "numberOfRooms": 7,
+        "postalCode": "10010",
+        "propertySubType": "ApartmentPropertyType",
+        "stories": 2,
+        "streetAddress": "1007 Mountain Gate Rd",
+        "yearBuilt": 1988
+      },
       "properties": {
         "type": {
           "description": "\"RealEstateProperty\"",
@@ -270,14 +447,14 @@
                       ],
                       "propertyNames": {
                         "pattern": "^[a-z@$][a-zA-Z0-9-_]+$",
-                        "x-parser-schema-id": "<anonymous-schema-164>"
+                        "x-parser-schema-id": "<anonymous-schema-187>"
                       },
                       "properties": {
                         "type": {
                           "type": "string",
                           "pattern": "^[A-Z][a-zA-Z0-9]+$",
                           "description": "The item type (Linked-Data @type)",
-                          "x-parser-schema-id": "<anonymous-schema-162>"
+                          "x-parser-schema-id": "<anonymous-schema-185>"
                         },
                         "@id": {
                           "type": "string",
@@ -326,7 +503,7 @@
                           "example": "http://user.example.com/public/profile/image.jpg"
                         }
                       },
-                      "x-parser-schema-id": "<anonymous-schema-165>"
+                      "x-parser-schema-id": "<anonymous-schema-188>"
                     }
                   ],
                   "x-parser-schema-id": "MediaObject"
@@ -351,10 +528,10 @@
                       "example": "image/jpeg"
                     }
                   },
-                  "x-parser-schema-id": "<anonymous-schema-166>"
+                  "x-parser-schema-id": "<anonymous-schema-189>"
                 }
               ],
-              "x-parser-schema-id": "<anonymous-schema-161>"
+              "x-parser-schema-id": "<anonymous-schema-184>"
             }
           ]
         },
@@ -492,11 +669,24 @@
         "description": "a participant in a transaction, i.e. Buyer, Seller, etc...",
         "x-range": "TransactionParticipant",
         "type": "object",
+        "example": {
+          "type": "TransactionParticipant",
+          "roleName": "Buyer",
+          "position": 1,
+          "givenName": "John",
+          "familyName": "Smith",
+          "additionalName": "Big",
+          "email": "user@example.com",
+          "telephone": "+15558675309",
+          "affiliation": [
+            "https://{agentid}.example.com/profile/card#me"
+          ]
+        },
         "properties": {
           "type": {
             "type": "string",
             "const": "TransactionParticipant",
-            "x-parser-schema-id": "<anonymous-schema-187>"
+            "x-parser-schema-id": "<anonymous-schema-210>"
           },
           "roleName": {
             "type": "string",
@@ -505,13 +695,13 @@
               "Buyer",
               "Seller"
             ],
-            "x-parser-schema-id": "<anonymous-schema-188>"
+            "x-parser-schema-id": "<anonymous-schema-211>"
           },
           "position": {
             "type": "number",
             "description": "numeric position for the participant/roleName.",
             "example": 1,
-            "x-parser-schema-id": "<anonymous-schema-189>"
+            "x-parser-schema-id": "<anonymous-schema-212>"
           },
           "givenName": {
             "type": "string",
@@ -579,7 +769,7 @@
             "type": "string",
             "description": "middleName or alternate name of the Person",
             "example": "Big",
-            "x-parser-schema-id": "<anonymous-schema-190>"
+            "x-parser-schema-id": "<anonymous-schema-213>"
           },
           "email": {
             "title": "email",
@@ -602,9 +792,9 @@
               "type": "string",
               "format": "uri",
               "example": "https://{agentid}.example.com/profile/card#me",
-              "x-parser-schema-id": "<anonymous-schema-192>"
+              "x-parser-schema-id": "<anonymous-schema-215>"
             },
-            "x-parser-schema-id": "<anonymous-schema-191>"
+            "x-parser-schema-id": "<anonymous-schema-214>"
           }
         },
         "x-parser-schema-id": "TransactionParticipant"
@@ -628,7 +818,7 @@
           "enum": [
             "Referral"
           ],
-          "x-parser-schema-id": "<anonymous-schema-179>"
+          "x-parser-schema-id": "<anonymous-schema-202>"
         },
         "additionalProperty": {
           "type": "object",
@@ -641,7 +831,7 @@
                 "Y",
                 "N"
               ],
-              "x-parser-schema-id": "<anonymous-schema-181>"
+              "x-parser-schema-id": "<anonymous-schema-204>"
             },
             "inNetworkReferralYN": {
               "type": "string",
@@ -650,10 +840,10 @@
                 "Y",
                 "N"
               ],
-              "x-parser-schema-id": "<anonymous-schema-182>"
+              "x-parser-schema-id": "<anonymous-schema-205>"
             }
           },
-          "x-parser-schema-id": "<anonymous-schema-180>"
+          "x-parser-schema-id": "<anonymous-schema-203>"
         },
         "referredBy": {
           "type": "object",
@@ -669,7 +859,7 @@
                 "Organization",
                 "Person"
               ],
-              "x-parser-schema-id": "<anonymous-schema-184>"
+              "x-parser-schema-id": "<anonymous-schema-207>"
             },
             "id": {
               "type": "string",
@@ -677,7 +867,7 @@
               "description": "Linked-Data URI (@id)"
             }
           },
-          "x-parser-schema-id": "<anonymous-schema-183>"
+          "x-parser-schema-id": "<anonymous-schema-206>"
         }
       }
     },
@@ -795,7 +985,7 @@
             "enum": [
               "TransactionEntry"
             ],
-            "x-parser-schema-id": "<anonymous-schema-194>"
+            "x-parser-schema-id": "<anonymous-schema-217>"
           },
           "salesProductionUnit": {
             "type": "number",
@@ -803,7 +993,7 @@
             "maximum": 1,
             "description": "the sales production units credited to the recipient",
             "example": 0.5,
-            "x-parser-schema-id": "<anonymous-schema-195>"
+            "x-parser-schema-id": "<anonymous-schema-218>"
           },
           "salesProductionGCI": {
             "type": "object",
@@ -850,7 +1040,7 @@
               "value": 1234.56,
               "currency": "USD"
             },
-            "x-parser-schema-id": "<anonymous-schema-196>"
+            "x-parser-schema-id": "<anonymous-schema-219>"
           },
           "recipient": {
             "description": "the agent credited with the sales production and who receives the value",
@@ -860,7 +1050,7 @@
                 "type": "string",
                 "description": "typically a RealEstateAgent",
                 "example": "RealEstateAgent",
-                "x-parser-schema-id": "<anonymous-schema-198>"
+                "x-parser-schema-id": "<anonymous-schema-221>"
               },
               "roleName": {
                 "type": "string",
@@ -869,14 +1059,14 @@
                   "ListingAgent",
                   "BuyerAgent"
                 ],
-                "x-parser-schema-id": "<anonymous-schema-199>"
+                "x-parser-schema-id": "<anonymous-schema-222>"
               },
               "id": {
                 "type": "string",
                 "format": "uri",
                 "description": "Linked-Data URI (@id)",
                 "example": "https://{entityid}.example.com/profile/card#me",
-                "x-parser-schema-id": "<anonymous-schema-200>"
+                "x-parser-schema-id": "<anonymous-schema-223>"
               },
               "identifier": {
                 "type": "object",
@@ -886,13 +1076,13 @@
                     "type": "string",
                     "maxLength": 12,
                     "example": "1657897",
-                    "x-parser-schema-id": "<anonymous-schema-202>"
+                    "x-parser-schema-id": "<anonymous-schema-225>"
                   }
                 },
-                "x-parser-schema-id": "<anonymous-schema-201>"
+                "x-parser-schema-id": "<anonymous-schema-224>"
               }
             },
-            "x-parser-schema-id": "<anonymous-schema-197>"
+            "x-parser-schema-id": "<anonymous-schema-220>"
           }
         },
         "x-parser-schema-id": "TransactionEntry"

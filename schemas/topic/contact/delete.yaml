@@ -1,5 +1,6 @@
 # @format
 # yaml-language-server: schema=https://www.asyncapi.com/definitions/2.5.0/message.json
+
 messageId: contact#delete
 name: realestate/contact#delete
 title: contact#delete
@@ -7,19 +8,127 @@ summary: a contact (data.object) is deleted by a user (data.agent)
 contentType: application/json
 headers:
   $ref: ../../subscription_headers.yaml
+
+examples:
+  - name: contact delete
+    payload:
+      topic: realestate/contact#delete
+      data:
+        type: DeleteAction
+        agent: https://0000000.bhhs.hsfaffiliates.com/profile/card#me
+        instrument: https://ace.bhhs.hsfaffiliates.com/profile/card#me
+        object:
+          type: Contact
+          identifier:
+            salesforceId: '***************'
+          sameAs:
+            salesforceId: '***************'
+          givenName: Test
+          familyName: Test
+          address:
+            - streetAddress: Test
+              addressLocality: Suamico
+              addressCountry: United States
+          leadOwner:
+            type: RealEstateAgent
+            id: https://0000000.bhhs.hsfaffiliates.com/profile/card#me
+          additionalProperty:
+            salesforceId: Test
+            doNotSellPersonalInformation: false
+            transactionType: Other
+          contactPoint: []
+      source: https://0000000.bhhs.hsfaffiliates.com/profile/card#me
+      recipient: https://0000000.bhhs.hsfaffiliates.com/profile/card#me
+
 payload:
   type: object
   required:
     - topic
     - data
   properties:
-    topic: { const: realestate/contact#delete }
+    topic:
+      type: string
+      const: realestate/contact#delete
     data:
       type: object
       required:
         - type
         - object
       properties:
-        type: { const: DeleteAction }
-        agent: { $ref: $defs.person.ref.yaml }
-        object: { $ref: $defs.contact.ref.yaml }
+        type:
+          type: string
+          const: DeleteAction
+        agent:
+          type: string
+          format: uri
+          description: the user, team or organization who sent the event
+        instrument:
+          type: string
+          format: uri
+          description: data instrument
+        object:
+          type: object
+          properties:
+            type:
+              type: string
+              const: Contact
+            identifier:
+              type: object
+              properties:
+                salesforceId:
+                  type: string
+                  description: identifier Salesforce Id
+            sameAs:
+              type: object
+              properties:
+                salesforceId:
+                  type: string
+                  description: sameAs Salesforce Id
+            givenName:
+              type: string
+              description: given name (optional)
+            familyName:
+              type: string
+              description: family name (optional)
+            address:
+              type: array
+              description: (optional) object has { streetAddress, addressLocality, addressCountry }
+              items:
+                type: object
+                properties:
+                  streetAddress: { type: string }
+                  addressLocality: { type: string }
+                  addressCountry: { type: string }
+            leadOwner:
+              type: object
+              description: (optional)
+              properties:
+                type:
+                  type: string
+                  description: type of lead owner
+                id:
+                  type: string
+                  format: uri
+                  description: id (url) of lead owner
+            additionalProperty:
+              type: object
+              description: (optional)
+              properties:
+                salesforceId:
+                  type: string
+                  description: salesforce Id
+                doNotSellPersonalInformation:
+                  type: boolean
+                  description: 'false'
+                transactionType:
+                  type: string
+                  description: transaction type
+            contactPoint:
+              type: array
+              description: contact point array (optional)
+    source:
+      type: string
+      format: uri
+    recipient:
+      type: string
+      format: uri

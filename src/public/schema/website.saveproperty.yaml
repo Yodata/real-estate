@@ -132,9 +132,9 @@ payload:
               type: PriceSpecification
               price: 7500000
               priceCurrency: USD
-      x-parser-schema-id: <anonymous-schema-538>
+      x-parser-schema-id: <anonymous-schema-561>
     topic:
       const: realestate/website#saveproperty
-      x-parser-schema-id: <anonymous-schema-537>
-  x-parser-schema-id: <anonymous-schema-536>
+      x-parser-schema-id: <anonymous-schema-560>
+  x-parser-schema-id: <anonymous-schema-559>
 

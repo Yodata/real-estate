@@ -105,7 +105,7 @@
         "properties": {
           "type": {
             "const": "DeleteAction",
-            "x-parser-schema-id": "<anonymous-schema-593>"
+            "x-parser-schema-id": "<anonymous-schema-616>"
           },
           "object": {
             "title": "AwardTeam",
@@ -162,17 +162,17 @@
                 "x-parser-schema-id": "<anonymous-schema-50>"
               }
             },
-            "x-parser-schema-id": "<anonymous-schema-594>"
+            "x-parser-schema-id": "<anonymous-schema-617>"
           }
         },
-        "x-parser-schema-id": "<anonymous-schema-592>"
+        "x-parser-schema-id": "<anonymous-schema-615>"
       },
       "topic": {
         "type": "string",
         "const": "realestate/award#teamdelete",
-        "x-parser-schema-id": "<anonymous-schema-591>"
+        "x-parser-schema-id": "<anonymous-schema-614>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-590>"
+    "x-parser-schema-id": "<anonymous-schema-613>"
   }
 }

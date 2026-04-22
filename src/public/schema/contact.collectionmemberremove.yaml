@@ -114,7 +114,7 @@ payload:
       properties:
         type:
           const: RemoveAction
-          x-parser-schema-id: <anonymous-schema-651>
+          x-parser-schema-id: <anonymous-schema-676>
         agent:
           type: object
           properties:
@@ -154,7 +154,7 @@ payload:
           properties:
             type:
               const: Contact
-              x-parser-schema-id: <anonymous-schema-122>
+              x-parser-schema-id: <anonymous-schema-627>
             identifier:
               title: identifier
               type: object
@@ -170,7 +170,7 @@ payload:
           required:
             - type
             - identifier
-          x-parser-schema-id: <anonymous-schema-121>
+          x-parser-schema-id: <anonymous-schema-626>
         targetCollection:
           title: Contact Group Reference
           description: A reference to a contact group "collection" with minimal properties.
@@ -178,7 +178,7 @@ payload:
           properties:
             type:
               const: Collection
-              x-parser-schema-id: <anonymous-schema-638>
+              x-parser-schema-id: <anonymous-schema-663>
             name:
               type: string
               description: The name of the contact group.
@@ -190,7 +190,7 @@ payload:
                 - Acquaintances
                 - Business Contacts
                 - Other
-              x-parser-schema-id: <anonymous-schema-639>
+              x-parser-schema-id: <anonymous-schema-664>
             identifier:
               title: identifier
               type: object
@@ -206,10 +206,10 @@ payload:
           required:
             - type
             - name
-          x-parser-schema-id: <anonymous-schema-637>
-      x-parser-schema-id: <anonymous-schema-650>
+          x-parser-schema-id: <anonymous-schema-662>
+      x-parser-schema-id: <anonymous-schema-675>
     topic:
       const: realestate/contact#collectionmemberremove
-      x-parser-schema-id: <anonymous-schema-649>
-  x-parser-schema-id: <anonymous-schema-648>
+      x-parser-schema-id: <anonymous-schema-674>
+  x-parser-schema-id: <anonymous-schema-673>
 

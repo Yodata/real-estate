@@ -19,7 +19,7 @@
             "Inactive",
             "Pre-Active"
           ],
-          "x-parser-schema-id": "<anonymous-schema-908>"
+          "x-parser-schema-id": "<anonymous-schema-1131>"
         },
         "UserType": {
           "type": "string",
@@ -28,7 +28,7 @@
           "x-domain": [
             "RealEstateAgent"
           ],
-          "x-parser-schema-id": "<anonymous-schema-909>"
+          "x-parser-schema-id": "<anonymous-schema-1132>"
         },
         "AffiliateID": {
           "type": "string",
@@ -38,7 +38,7 @@
             "RealEstateAgent",
             "RealEstateOffice"
           ],
-          "x-parser-schema-id": "<anonymous-schema-910>"
+          "x-parser-schema-id": "<anonymous-schema-1133>"
         },
         "BrokerID": {
           "type": "string",
@@ -48,7 +48,7 @@
             "RealEstateAgent",
             "RealEstateOffice"
           ],
-          "x-parser-schema-id": "<anonymous-schema-911>"
+          "x-parser-schema-id": "<anonymous-schema-1134>"
         },
         "OfficeID": {
           "type": "string",
@@ -57,7 +57,7 @@
           "x-domain": [
             "RealEstateAgent"
           ],
-          "x-parser-schema-id": "<anonymous-schema-912>"
+          "x-parser-schema-id": "<anonymous-schema-1135>"
         },
         "OfficeDBA": {
           "type": "string",
@@ -66,7 +66,7 @@
           "x-domain": [
             "RealEstateAgent"
           ],
-          "x-parser-schema-id": "<anonymous-schema-913>"
+          "x-parser-schema-id": "<anonymous-schema-1136>"
         },
         "AffiliateStatus": {
           "type": "string",
@@ -75,7 +75,7 @@
           "x-domain": [
             "RealEstateOrganization"
           ],
-          "x-parser-schema-id": "<anonymous-schema-914>"
+          "x-parser-schema-id": "<anonymous-schema-1137>"
         },
         "OfficeStatus": {
           "type": "string",
@@ -85,7 +85,7 @@
             "RealEstateAgent",
             "RealEstateOffice"
           ],
-          "x-parser-schema-id": "<anonymous-schema-915>"
+          "x-parser-schema-id": "<anonymous-schema-1138>"
         },
         "EmployeeType": {
           "type": "string",
@@ -101,7 +101,7 @@
             "Marketing Team",
             "In-House Admin. Profile"
           ],
-          "x-parser-schema-id": "<anonymous-schema-916>"
+          "x-parser-schema-id": "<anonymous-schema-1139>"
         },
         "IsCompanyQueue": {
           "type": "boolean",
@@ -110,7 +110,7 @@
           "x-domain": [
             "RealEstateAgent"
           ],
-          "x-parser-schema-id": "<anonymous-schema-917>"
+          "x-parser-schema-id": "<anonymous-schema-1140>"
         },
         "agentWebsiteType": {
           "type": "string",
@@ -123,7 +123,7 @@
             "Agent Profile",
             "Agent Page with IDX Search"
           ],
-          "x-parser-schema-id": "<anonymous-schema-918>"
+          "x-parser-schema-id": "<anonymous-schema-1141>"
         },
         "RoqLogicTCVersion": {
           "type": "string",
@@ -133,7 +133,7 @@
             "RealEstateAgent"
           ],
           "example": "TC-00035",
-          "x-parser-schema-id": "<anonymous-schema-919>"
+          "x-parser-schema-id": "<anonymous-schema-1142>"
         },
         "bhhsLeadNotificationPreference": {
           "type": "object",
@@ -148,27 +148,27 @@
               "example": [
                 "GMT+12:00 Fiji Time (Pacific/Fiji)"
               ],
-              "x-parser-schema-id": "<anonymous-schema-921>"
+              "x-parser-schema-id": "<anonymous-schema-1144>"
             },
             "emailNotification": {
               "type": "boolean",
               "description": "if notification will be sent to sepcified email address",
-              "x-parser-schema-id": "<anonymous-schema-922>"
+              "x-parser-schema-id": "<anonymous-schema-1145>"
             },
             "textNotification": {
               "type": "boolean",
               "description": "if notification will be sent to sepcified phone number",
-              "x-parser-schema-id": "<anonymous-schema-923>"
+              "x-parser-schema-id": "<anonymous-schema-1146>"
             },
             "email": {
               "type": "string",
               "description": "email address that notification will be sent to",
-              "x-parser-schema-id": "<anonymous-schema-924>"
+              "x-parser-schema-id": "<anonymous-schema-1147>"
             },
             "telephone": {
               "type": "string",
               "description": "phone number that notification will be sent to",
-              "x-parser-schema-id": "<anonymous-schema-925>"
+              "x-parser-schema-id": "<anonymous-schema-1148>"
             },
             "leadNotificationSchedule": {
               "type": "array",
@@ -195,7 +195,7 @@
                         "Thursday",
                         "Friday"
                       ],
-                      "x-parser-schema-id": "<anonymous-schema-895>"
+                      "x-parser-schema-id": "<anonymous-schema-1118>"
                     },
                     "example": [
                       "Monday",
@@ -222,7 +222,7 @@
                         11,
                         12
                       ],
-                      "x-parser-schema-id": "<anonymous-schema-897>"
+                      "x-parser-schema-id": "<anonymous-schema-1120>"
                     },
                     "example": [
                       1
@@ -233,16 +233,16 @@
                     "description": "Defines the day(s) of the month on which a recurring Event takes place. Specified as an Integer between 1-31.",
                     "items": {
                       "type": "number",
-                      "x-parser-schema-id": "<anonymous-schema-899>"
+                      "x-parser-schema-id": "<anonymous-schema-1122>"
                     }
                   }
                 },
-                "x-parser-schema-id": "<anonymous-schema-927>"
+                "x-parser-schema-id": "<anonymous-schema-1150>"
               },
-              "x-parser-schema-id": "<anonymous-schema-926>"
+              "x-parser-schema-id": "<anonymous-schema-1149>"
             }
           },
-          "x-parser-schema-id": "<anonymous-schema-920>"
+          "x-parser-schema-id": "<anonymous-schema-1143>"
         },
         "IsDisplayed": {
           "type": "boolean",
@@ -253,7 +253,7 @@
             "RealEstateOffice",
             "RealEstateAgent"
           ],
-          "x-parser-schema-id": "<anonymous-schema-928>"
+          "x-parser-schema-id": "<anonymous-schema-1151>"
         },
         "OfficeType": {
           "type": "string",
@@ -270,7 +270,7 @@
             "Srvice Center",
             "Subdivision Sales Office"
           ],
-          "x-parser-schema-id": "<anonymous-schema-929>"
+          "x-parser-schema-id": "<anonymous-schema-1152>"
         },
         "FullTimeCount": {
           "type": "integer",
@@ -280,7 +280,7 @@
             "RealEstateOffice",
             "RealEstateCompany"
           ],
-          "x-parser-schema-id": "<anonymous-schema-930>"
+          "x-parser-schema-id": "<anonymous-schema-1153>"
         },
         "PartTimeCount": {
           "type": "integer",
@@ -290,7 +290,7 @@
             "RealEstateOffice",
             "RealEstateCompany"
           ],
-          "x-parser-schema-id": "<anonymous-schema-931>"
+          "x-parser-schema-id": "<anonymous-schema-1154>"
         },
         "franchiseCommitmentNotes": {
           "type": "string",
@@ -298,7 +298,7 @@
           "x-domain": [
             "RealEstateOrganization"
           ],
-          "x-parser-schema-id": "<anonymous-schema-932>"
+          "x-parser-schema-id": "<anonymous-schema-1155>"
         },
         "franchiseCommitment": {
           "type": "string",
@@ -306,7 +306,7 @@
           "x-domain": [
             "RealEstateOrganization"
           ],
-          "x-parser-schema-id": "<anonymous-schema-933>"
+          "x-parser-schema-id": "<anonymous-schema-1156>"
         },
         "listingLeadsToListingAgent": {
           "type": "boolean",
@@ -314,7 +314,7 @@
           "x-domain": [
             "RealEstateOrganization"
           ],
-          "x-parser-schema-id": "<anonymous-schema-934>"
+          "x-parser-schema-id": "<anonymous-schema-1157>"
         },
         "HSoACompany": {
           "type": "boolean",
@@ -323,7 +323,7 @@
           "x-domain": [
             "RealEstateOrganization"
           ],
-          "x-parser-schema-id": "<anonymous-schema-935>"
+          "x-parser-schema-id": "<anonymous-schema-1158>"
         },
         "unassignedLeadOwner": {
           "description": "agent whom affiliate leads are assigned to",
@@ -331,7 +331,7 @@
           "x-domain": [
             "RealEstateOrganization"
           ],
-          "x-parser-schema-id": "<anonymous-schema-936>"
+          "x-parser-schema-id": "<anonymous-schema-1159>"
         },
         "companyContactLastName": {
           "type": "string",
@@ -339,7 +339,7 @@
           "x-domain": [
             "RealEstateOrganization"
           ],
-          "x-parser-schema-id": "<anonymous-schema-937>"
+          "x-parser-schema-id": "<anonymous-schema-1160>"
         },
         "companyContactFirstName": {
           "type": "string",
@@ -347,7 +347,7 @@
           "x-domain": [
             "RealEstateOrganization"
           ],
-          "x-parser-schema-id": "<anonymous-schema-938>"
+          "x-parser-schema-id": "<anonymous-schema-1161>"
         },
         "companyCFO": {
           "type": "string",
@@ -355,7 +355,7 @@
           "x-domain": [
             "RealEstateOrganization"
           ],
-          "x-parser-schema-id": "<anonymous-schema-939>"
+          "x-parser-schema-id": "<anonymous-schema-1162>"
         },
         "primaryOffice": {
           "description": "primay office of company",
@@ -363,7 +363,7 @@
           "x-domain": [
             "RealEstateOrganization"
           ],
-          "x-parser-schema-id": "<anonymous-schema-940>"
+          "x-parser-schema-id": "<anonymous-schema-1163>"
         },
         "transactionReportingMethod": {
           "description": "method of reporting transaction",
@@ -376,7 +376,7 @@
             "Direct Data Entry",
             "Summary Reporting"
           ],
-          "x-parser-schema-id": "<anonymous-schema-941>"
+          "x-parser-schema-id": "<anonymous-schema-1164>"
         },
         "databridgeVersion": {
           "description": "version of data bridge",
@@ -388,7 +388,7 @@
             "DB4.0",
             "DB3.0"
           ],
-          "x-parser-schema-id": "<anonymous-schema-942>"
+          "x-parser-schema-id": "<anonymous-schema-1165>"
         },
         "systemDeactivationDate": {
           "type": "string",
@@ -397,7 +397,7 @@
             "RealEstateOrganization",
             "RealEstateOffice"
           ],
-          "x-parser-schema-id": "<anonymous-schema-943>"
+          "x-parser-schema-id": "<anonymous-schema-1166>"
         },
         "inactiveDate": {
           "type": "string",
@@ -406,7 +406,7 @@
             "RealEstateOrganization",
             "RealEstateOffice"
           ],
-          "x-parser-schema-id": "<anonymous-schema-944>"
+          "x-parser-schema-id": "<anonymous-schema-1167>"
         },
         "goLiveDate": {
           "type": "string",
@@ -415,7 +415,7 @@
             "RealEstateOrganization",
             "RealEstateOffice"
           ],
-          "x-parser-schema-id": "<anonymous-schema-945>"
+          "x-parser-schema-id": "<anonymous-schema-1168>"
         },
         "originalAffiliationDate": {
           "type": "string",
@@ -423,14 +423,14 @@
           "x-domain": [
             "RealEstateOrganization"
           ],
-          "x-parser-schema-id": "<anonymous-schema-946>"
+          "x-parser-schema-id": "<anonymous-schema-1169>"
         },
         "numberOfSubOrganizations": {
           "type": "integer",
           "x-domain": [
             "RealEstateOrganization"
           ],
-          "x-parser-schema-id": "<anonymous-schema-947>"
+          "x-parser-schema-id": "<anonymous-schema-1170>"
         },
         "PublicOffice": {
           "type": "string",
@@ -438,7 +438,7 @@
           "x-domain": [
             "RealEstateOffice"
           ],
-          "x-parser-schema-id": "<anonymous-schema-948>"
+          "x-parser-schema-id": "<anonymous-schema-1171>"
         },
         "OfficeContact": {
           "description": "office contact",
@@ -446,7 +446,7 @@
           "x-domain": [
             "RealEstateOffice"
           ],
-          "x-parser-schema-id": "<anonymous-schema-949>"
+          "x-parser-schema-id": "<anonymous-schema-1172>"
         },
         "IsRelocationOffice": {
           "description": "if office is relocation office",
@@ -454,7 +454,7 @@
           "x-domain": [
             "RealEstateOffice"
           ],
-          "x-parser-schema-id": "<anonymous-schema-950>"
+          "x-parser-schema-id": "<anonymous-schema-1173>"
         },
         "PrimaryHomeStoryContact": {
           "description": "office primary Home Story contact",
@@ -462,7 +462,7 @@
           "x-domain": [
             "RealEstateOffice"
           ],
-          "x-parser-schema-id": "<anonymous-schema-951>"
+          "x-parser-schema-id": "<anonymous-schema-1174>"
         },
         "PrimaryHomeStoryContactEmail": {
           "description": "primary Home Story contact email",
@@ -470,7 +470,7 @@
           "x-domain": [
             "RealEstateOffice"
           ],
-          "x-parser-schema-id": "<anonymous-schema-952>"
+          "x-parser-schema-id": "<anonymous-schema-1175>"
         },
         "PrimaryRelocationContact": {
           "description": "office primary relocation contact",
@@ -478,7 +478,7 @@
           "x-domain": [
             "RealEstateOffice"
           ],
-          "x-parser-schema-id": "<anonymous-schema-953>"
+          "x-parser-schema-id": "<anonymous-schema-1176>"
         },
         "PrimaryRelocationContactEmail": {
           "description": "primary relocation contact email",
@@ -486,7 +486,7 @@
           "x-domain": [
             "RealEstateOffice"
           ],
-          "x-parser-schema-id": "<anonymous-schema-954>"
+          "x-parser-schema-id": "<anonymous-schema-1177>"
         },
         "PrimaryReferralContact": {
           "description": "office primary referral contact",
@@ -494,7 +494,7 @@
           "x-domain": [
             "RealEstateOffice"
           ],
-          "x-parser-schema-id": "<anonymous-schema-955>"
+          "x-parser-schema-id": "<anonymous-schema-1178>"
         },
         "PrimaryReferralContactEmail": {
           "description": "primary referral contact email",
@@ -502,7 +502,7 @@
           "x-domain": [
             "RealEstateOffice"
           ],
-          "x-parser-schema-id": "<anonymous-schema-956>"
+          "x-parser-schema-id": "<anonymous-schema-1179>"
         },
         "PrimaryREOContact": {
           "description": "office primary REO contact",
@@ -510,7 +510,7 @@
           "x-domain": [
             "RealEstateOffice"
           ],
-          "x-parser-schema-id": "<anonymous-schema-957>"
+          "x-parser-schema-id": "<anonymous-schema-1180>"
         },
         "PrimaryREOContactEmail": {
           "description": "primary REO contact email",
@@ -518,22 +518,22 @@
           "x-domain": [
             "RealEstateOffice"
           ],
-          "x-parser-schema-id": "<anonymous-schema-958>"
+          "x-parser-schema-id": "<anonymous-schema-1181>"
         },
         "transactionSequence": {
           "description": "The adjustment sequence number. Must be zeros if STR is closed but not an adjustment or if STR is open or canceled. If adjusting a closed transaction, the first adjustment must have 001 in the adjustment sequence, the second must have 002, the third, 003, etc. Sequence number cannot be equal or less than the last adjustment sequence number reported for the transaction if the Status has not changed.",
           "type": "string",
-          "x-parser-schema-id": "<anonymous-schema-959>"
+          "x-parser-schema-id": "<anonymous-schema-1182>"
         },
         "unimprovedLandFlag": {
           "description": "A Yes/No flag identifying where or not the property involved in the transaction is considered unimproved land. Valid codes are Y = unimproved land  N= not an unimproved land",
           "type": "string",
-          "x-parser-schema-id": "<anonymous-schema-960>"
+          "x-parser-schema-id": "<anonymous-schema-1183>"
         },
         "workingWithAgent": {
           "description": "is consumer already working with an Agent?",
           "type": "boolean",
-          "x-parser-schema-id": "<anonymous-schema-961>"
+          "x-parser-schema-id": "<anonymous-schema-1184>"
         }
       }
     },

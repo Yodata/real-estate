@@ -6,6 +6,25 @@
     "type",
     "actionStatus"
   ],
+  "example": {
+    "type": "string",
+    "actionStatus": "CompletedActionStatus",
+    "object": {
+      "topic": "realestate/contact#add",
+      "data": {
+        "type": "AddAction",
+        "object": {
+          "name": "Bob Smith",
+          "email": "bob@example.com"
+        }
+      }
+    },
+    "result": {},
+    "error": {
+      "message": "sorry dave",
+      "stack": "string"
+    }
+  },
   "properties": {
     "actionStatus": {
       "type": "string",
@@ -23,12 +42,12 @@
           "description": "the error message",
           "type": "string",
           "example": "sorry dave",
-          "x-parser-schema-id": "<anonymous-schema-784>"
+          "x-parser-schema-id": "<anonymous-schema-1006>"
         },
         "stack": {
           "description": "the error stack",
           "type": "string",
-          "x-parser-schema-id": "<anonymous-schema-785>"
+          "x-parser-schema-id": "<anonymous-schema-1007>"
         }
       }
     },

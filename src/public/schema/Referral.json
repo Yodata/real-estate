@@ -15,7 +15,7 @@
             "Y",
             "N"
           ],
-          "x-parser-schema-id": "<anonymous-schema-181>"
+          "x-parser-schema-id": "<anonymous-schema-204>"
         },
         "inNetworkReferralYN": {
           "type": "string",
@@ -24,7 +24,7 @@
             "Y",
             "N"
           ],
-          "x-parser-schema-id": "<anonymous-schema-182>"
+          "x-parser-schema-id": "<anonymous-schema-205>"
         }
       }
     },
@@ -42,7 +42,7 @@
             "Organization",
             "Person"
           ],
-          "x-parser-schema-id": "<anonymous-schema-184>"
+          "x-parser-schema-id": "<anonymous-schema-207>"
         },
         "id": {
           "type": "string",

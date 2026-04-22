@@ -24,6 +24,9 @@ properties:
   COMS:
     type: string
     description: commercial standard applies
+  COML:
+    type: string
+    description: Commercial Lease
   BUSO:
     type: string
     description: Business Opportunity

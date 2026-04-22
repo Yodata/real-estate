@@ -115,11 +115,11 @@
               "type": {
                 "description": "the action type",
                 "type": "string",
-                "x-parser-schema-id": "<anonymous-schema-337>"
+                "x-parser-schema-id": "<anonymous-schema-360>"
               },
               "object": {
                 "description": "item on which the action is carried out",
-                "x-parser-schema-id": "<anonymous-schema-338>"
+                "x-parser-schema-id": "<anonymous-schema-361>"
               }
             },
             "externalDocs": {
@@ -184,16 +184,16 @@
                 }
               }
             },
-            "x-parser-schema-id": "<anonymous-schema-339>"
+            "x-parser-schema-id": "<anonymous-schema-362>"
           }
         ],
         "x-parser-schema-id": "SubscribeAction"
       },
       "topic": {
         "const": "realestate/website#subscribemarketactivityreport",
-        "x-parser-schema-id": "<anonymous-schema-572>"
+        "x-parser-schema-id": "<anonymous-schema-595>"
       }
     },
-    "x-parser-schema-id": "<anonymous-schema-571>"
+    "x-parser-schema-id": "<anonymous-schema-594>"
   }
 }

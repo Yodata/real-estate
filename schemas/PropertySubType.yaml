@@ -89,3 +89,6 @@ properties:
   WarehousePropertyType:
     type: string
     description: A Warehouse property type.
+  OtherPropertyType:
+    type: string
+    description: Other property.

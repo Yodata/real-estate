@@ -110,7 +110,7 @@ payload:
       properties:
         type:
           const: CreateAction
-          x-parser-schema-id: <anonymous-schema-636>
+          x-parser-schema-id: <anonymous-schema-661>
         agent:
           type: object
           properties:
@@ -152,7 +152,7 @@ payload:
           properties:
             type:
               const: Collection
-              x-parser-schema-id: <anonymous-schema-638>
+              x-parser-schema-id: <anonymous-schema-663>
             name:
               type: string
               description: The name of the contact group.
@@ -164,7 +164,7 @@ payload:
                 - Acquaintances
                 - Business Contacts
                 - Other
-              x-parser-schema-id: <anonymous-schema-639>
+              x-parser-schema-id: <anonymous-schema-664>
             identifier:
               title: identifier
               type: object
@@ -180,11 +180,11 @@ payload:
           required:
             - type
             - name
-          x-parser-schema-id: <anonymous-schema-637>
-      x-parser-schema-id: <anonymous-schema-635>
+          x-parser-schema-id: <anonymous-schema-662>
+      x-parser-schema-id: <anonymous-schema-660>
     topic:
       type: string
       const: realestate/contact#collectioncreate
-      x-parser-schema-id: <anonymous-schema-634>
-  x-parser-schema-id: <anonymous-schema-633>
+      x-parser-schema-id: <anonymous-schema-659>
+  x-parser-schema-id: <anonymous-schema-658>
 

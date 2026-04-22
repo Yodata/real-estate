@@ -66,12 +66,10 @@ export function Operation ({ type, asyncapi, operation, channelName, channel }) 
   const security = typeof operation.security === 'function' && operation.security()
   const renderedType = type === 'publish' ? 'publish' : 'subscribe'
   const showInfoList = operationId || (servers && servers.length)
-  // Human-readable override for header text only; filename still uses channelName.
-  const displayName = (typeof channel.ext === 'function' && channel.ext('x-display-name')) || channelName
 
   return (
     <Text>
-      <Header type={3}>{renderedType} {displayName} events</Header>
+      <Header type={3}>{renderedType} {channelName} events</Header>
       {operation.summary() && (
         <Text newLines={2}>
           *{operation.summary()}*

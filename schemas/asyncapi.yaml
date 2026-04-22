@@ -254,15 +254,12 @@ components:
 
 channels:
   award: { $ref: topic/award/channel.yaml }
-  blog: { $ref: topic/blog/channel.yaml }
-  commerciallisting: { $ref: topic/commerciallisting/channel.yaml }
   contact: { $ref: topic/contact/channel.yaml }
   franchise: { $ref: topic/franchise/channel.yaml }
   lead: { $ref: topic/lead/channel.yaml }
   listing: { $ref: topic/listing/channel.yaml }
   marketing: { $ref: topic/marketing/channel.yaml }
   marketingpreferences: { $ref: topic/marketingpreferences/channel.yaml }
-  product: { $ref: topic/product/channel.yaml }
   profile: { $ref: topic/profile/channel.yaml }
   servicearea: { $ref: topic/servicearea/channel.yaml }
   website: { $ref: topic/website/channel.yaml }

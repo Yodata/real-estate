@@ -1,8 +1,22 @@
 # @format
 
+
+
 subscribe:
   message:
     oneOf:
       - $ref: add.yaml
       - $ref: delete.yaml
       - $ref: update.yaml
+
+description: |
+  **These are not in use as of now**
+
+  - realestate/contact#activity
+  - realestate/contact#collectioncreate
+  - realestate/contact#collectiondelete
+  - realestate/contact#collectionmemberadd
+  - realestate/contact#collectionmemberremove
+  - realestate/contact#comment
+  - realestate/contact#plandelete
+  - realestate/contact#planupdate

@@ -15,6 +15,6 @@ subscribe:
       - $ref: viewproperty.yaml
       - $ref: viewpropertyvaluereport.yaml
       - $ref: sharepropertyvaluereport.yaml
-      - $ref: subscribemarketactivityreport
-      - $ref: listinginquiry
-      - $ref: planningguide
+      - $ref: subscribemarketactivityreport.yaml
+      - $ref: listinginquiry.yaml
+      - $ref: planningguide.yaml

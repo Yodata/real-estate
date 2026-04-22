@@ -240,7 +240,7 @@ components:
     website/requestshowing: { $ref: topic/website/requestshowing.yaml }
     website/shareproperty: { $ref: topic/website/shareproperty.yaml }
     website/saveproperty: { $ref: topic/website/saveproperty.yaml }
-    website/savepropertysearch: { $ref: topic/website/savepropertysearch.yaml }
+    website/propertysearchsave: { $ref: topic/website/propertysearchsave.yaml }
     website/searchproperties: { $ref: topic/website/searchproperties.yaml }
     website/sharepropertyvaluereport:
       { $ref: topic/website/sharepropertyvaluereport.yaml }

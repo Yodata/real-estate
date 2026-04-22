@@ -158,7 +158,6 @@ _lease listing schema_
 | data.object.addressRegion                | string                                | abbreviated state or province       |
 | data.object.hasElevators                 | string                                |   elevators exist or not              |
 | data.object.buyerAgent                   | object                                | the buyer's RealEstateAgent         |
-
 | data.object.buyerOffice                  | object                                | the buyer's RealEstateOffice        |
 | data.object.closeDate                    | string                          | listing close date format (`date-time`)   |
 | data.object.image                        | obj  | an ImageObject or URI reference to an image on the web.              |

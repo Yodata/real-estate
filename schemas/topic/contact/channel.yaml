@@ -1,14 +1,5 @@
 # @format
 
-
-
-subscribe:
-  message:
-    oneOf:
-      - $ref: add.yaml
-      - $ref: delete.yaml
-      - $ref: update.yaml
-
 description: |
   **These are not in use as of now**
 
@@ -20,3 +11,12 @@ description: |
   - realestate/contact#comment
   - realestate/contact#plandelete
   - realestate/contact#planupdate
+
+subscribe:
+  message:
+    oneOf:
+      - $ref: add.yaml 
+      - $ref: delete.yaml
+      - $ref: update.yaml
+
+

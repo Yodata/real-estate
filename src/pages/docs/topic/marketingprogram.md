@@ -69,7 +69,7 @@ a marketing program has been created
 | data.type | string! | CreateAction  |
 | data.object | object | A collection of pre-defined activities which take place over a period of time or in a regular, ongoing schedule. <br/>RANGE: [MarketingProgram](/types/MarketingProgram) |
 | data.object.status | string | status of object |
-| data.object.frequency | string | frequency (e.g once, monthly) |
+| data.object.frequency | string | frequency (e.g Once,Daily, monthly,Bimonthly, Monthly, Quarterly ) |
 | data.object.additionalProperty.campaignType | string | type of Campaign (e.g DigitalAd, Ecard, Flyer ) |
 | data.object.additionalProperty.sharingType | string | sharing type of Campaign (e.g --- AutomatedListingProgram, AdBuilderService, Email ) |
 
@@ -93,7 +93,7 @@ a marketing program has been created
         "namespaceid": "c28834ca-db69-4da8-90ad-75cdc9907298",
       },
       "status": "Active",
-      "frequency": "monthly",
+      "frequency": "Monthly",
       "member": [ # optional
         {
           "type": "Person",
@@ -133,7 +133,7 @@ a marketing program has been created
             "type": "MarketingProgram",      
             "name": "Automated Listing Program Report for ADDRESS",  
             "url": "URL CAMPAIGN SENDS TRAFFIC TO",
-            "frequency": "once",
+            "frequency": "Once",
             "identifier": {
                 "chalkdigitalid": "UNIQUEIDFORCAMPAIGN",
                 "report_id": "XXXXX" 

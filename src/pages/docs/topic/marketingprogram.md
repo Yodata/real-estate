@@ -104,7 +104,7 @@ a marketing program has been created
           "name": "John Smith",
           "identifier": {
             "buysideid": "ab123",
-            "frequency": "monthly"
+            "frequency": "Monthly"
           }
         }
       ],

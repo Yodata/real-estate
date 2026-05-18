@@ -69,9 +69,13 @@ a marketing program has been created
 | data.type | string! | CreateAction  |
 | data.object | object | A collection of pre-defined activities which take place over a period of time or in a regular, ongoing schedule. <br/>RANGE: [MarketingProgram](/types/MarketingProgram) |
 | data.object.status | string | status of object |
-| data.object.frequency | string | frequency (e.g Once,Daily, monthly,Bimonthly, Monthly, Quarterly ) |
+| data.object.frequency | string | frequency (e.g Once,Daily,Weekly,Monthly,Bimonthly, Quarterly ) |
 | data.object.additionalProperty.campaignType | string | type of Campaign (e.g DigitalAd, Ecard, Flyer ) |
 | data.object.additionalProperty.sharingType | string | sharing type of Campaign (e.g --- AutomatedListingProgram, AdBuilderService, Email ) |
+| data.object.member.0.type | string | member type (e.g Person) |
+| data.object.member.0.name | string | member name (John Smith) |
+| data.object.member.0.identifier.buysideid | string | buyside Id ( e.g ab123) |
+| data.object.member.0.identifier.frequency | string | frequency ( e.g Once,Daily,Weekly,Monthly,Bimonthly, Quarterly ) |
 
 ### Example
 ```json

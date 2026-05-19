@@ -10,6 +10,8 @@ title: marketingpreferences#unsubscribe
 ```json
 {
   "topic": "realestate/marketingpreferences#unsubscribe",
+  "telephone" : "555-555-5555",
+  "subscriptionChangeDateTime": "2024-01-25T18:46:42.056Z" ,
   "data": {
     "type": "UnsubscribeAction",
      "instrument": "https://roqlog.dev.bhhs.hsfaffiliates.com/profile/card#me",
@@ -39,6 +41,8 @@ title: marketingpreferences#unsubscribe
 |---|---|---|
 | (root) | object | - |
 | topic | string | const (`"realestate/marketingpreferences#unsubscribe"`)  |
+| telephone | string | phone number. |
+| subscriptionChangeDateTime | string&lt;date-time&gt;   | date and time for subscriptionChange format (`date-time`) |
 | data | allOf | - |
 | data.0 (allOf item) | object | An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role. [schema.org/Action](https://schema.org/Action) |
 | data.type | string | allowed (`"UnsubscribeAction"`)  |

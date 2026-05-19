@@ -10,13 +10,13 @@ title: marketingpreferences#subscribe
 ```json
 {
   "topic": "realestate/marketingpreferences#subscribe",
-  "telephone" : "555-555-5555",
-  "subscriptionChangeDateTime": "2024-01-25T18:46:42.056Z" ,
   "data": {
     "type": "SubscribeAction",
     "agent": {
       "type": "Contact",
       "email": "bob@example.com",
+      "telephone" : "555-555-5555",
+      "subscriptionChangeDateTime": "2024-01-25T18:46:42.056Z" ,
     },
     "participant": [
       {
@@ -39,8 +39,6 @@ title: marketingpreferences#subscribe
 |---|---|---|
 | (root) | object | - |
 | topic | string | const (`"realestate/marketingpreferences#subscribe"`)  |
-| telephone | string | phone number. |
-| subscriptionChangeDateTime | string&lt;date-time&gt;   | date and time for subscriptionChange format (`date-time`) |
 | data | allOf | - |
 | data.0 (allOf item) | object | An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role. [schema.org/Action](https://schema.org/Action) |
 | data.type | string | the action type |
@@ -49,6 +47,8 @@ title: marketingpreferences#subscribe
 | data.agent | object | the subscriber |
 | data.agent.type | string | the subscriber type |
 | data.agent.email | string | the subscriber email |
+| data.agent.telephone | string | phone number. |
+| data.agent.subscriptionChangeDateTime | string&lt;date-time&gt;   | date and time for subscriptionChange format (`date-time`) |
 | data.participant | array<object> | the subscription provider, an Agent, Team, Office or Organization |
 | data.participant.0.roleName | string | allowed (`"SubscriptionProvider"`)  |
 | data.participant.0.id | string |  format (`uri`) |

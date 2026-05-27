@@ -15,7 +15,7 @@ title: website
 * [website#propertysearchsave](message/website.propertysearchsave)
 * [website#searchproperties](message/website.searchproperties)
 * [website#viewproperty](message/website.viewproperty)
-* [website#viewpropertyvaluereort](message/website.viewpropertyvaluereort)
+* [website#viewpropertyvaluereort](message/website.viewpropertyvaluereport)
 * [website#sharepropertyvaluereport](message/website.sharepropertyvaluereport)
 * [website#subscribemarketactivityreport](message/website.subscribemarketactivityreport)
 * [website#listinginquiry](message/website.listinginquiry)

@@ -60,4 +60,4 @@
  website#shareproperty
  website#sharepropertyvaluereport
  website#viewproperty
- website#viewpropertyvaluereort
+ website#viewpropertyvaluereport

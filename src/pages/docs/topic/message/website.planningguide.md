@@ -11,68 +11,98 @@ _website user planning guide_
 ```json
 {
   "data": {
-    "identifier":"nwurogb34tnoi3t",
     "agent": {
-            "name": "String",
-            "email": "someone@yahoo.com",
-            "telephone": "0011223344",
-            "identifier": {
-                "hsfconsumerid": "jkevqh598p3h-gkjent-j5n3i"
-            },
+      "name": "Lauren Connaughton",
+      "email": "lauren@homesineasternidaho.com",
+      "telephone": "208-589-0634",
+      "identifier": {
+        "hsfconsumerid": "918f02f1-30ec-4b2b-8af4-ce24ae42d360"
+      },
       "additionalProperty": {
-        "userPath": "||https%xyx%123%0",
+        "userPath": "https%3A%2F%2Fwww.bhhssilverhawkrealtyeastidaho.com%2Fsell-your-home%2Finspections-disclosures|Home+Inspections+%7C+Berkshire+Hathaway+HomeServices+Silverhawk+Realty+East+Idaho+%7C+Berkshire+Hathaway+HomeServices|0",
         "workingWithAgent": true
       },
       "mortgage": false,
       "type": "Contact"
     },
     "object": {
-      "text": "How soon are you planning on buying your next home?: In the next month\nDo you currently have a Berkshire Hathaway HomeServices real estate agent?: Yes\n Who Is Your Real Estate Agent?: Sans\n",
+      "text": "How soon are you planning on buying your next home?: Next year\nDo you currently have a Berkshire Hathaway HomeServices real estate agent?: Yes\n Who Is Your Real Estate Agent?: Julie Anglesey\n",
+      "requestUrl": "https://www.bhhssilverhawkrealtyeastidaho.com/real-estate-lifestyle-planning",
       "type": "PlanningGuide"
     },
     "recipient": {
-      "id": "https://<pod>.bhhs.dev.yodata.io/profile/card#me",
-      "name": "NorCal Real Estate",
+      "id": "https://id305.dev.bhhs.hsfaffiliates.com/profile/card#me",
+      "name": "Silverhawk Realty East Idaho",
       "type": "RealEstateOrganization"
     },
     "instrument": {
       "type": "RealEstateWebsite",
-      "url":"https://<pod>.bhhs.dev.yodata.io/profile/card#me"
+      "url": "https://id305.dev.bhhs.hsfaffiliates.com/profile/card#me"
+    },
+    "identifier": "bZK0dDXmCsKm5JM/QO4LSo2igXzhsMI5azEhth1kveZCpAmsaYBa4uYLkXp0jxn5HtXF2JNWzh/CjN4PP7m8CkbI",
+    "leadOwner": {
+      "type": "organization",
+      "name": "Silverhawk Realty East Idaho",
+      "id": "https://id305.dev.bhhs.hsfaffiliates.com/profile/card#me"
     },
     "type": "PlanningGuide"
   },
   "topic": "realestate/website#planningguide",
-  "source": "https://<pod>.bhhs.dev.yodata.io/profile/card#me",
+  "source": "https://id305.dev.bhhs.hsfaffiliates.com/profile/card#me",
   "recipient": "https://dev.bhhs.hsfaffiliates.com/profile/card#me",
-  "instrument": "https://aem.dev.bhhs.hsfaffiliates.com/profile/card#me"
+  "instrument": "https://aem.dev.bhhs.hsfaffiliates.com/profile/card#me",
+  "@id": "https://dev.bhhs.hsfaffiliates.com/outbox/c1eb5be8cfb1412aa8ddfec27e611f79",
+  "id": "https://aem.dev.bhhs.hsfaffiliates.com/publish/dd9d53ad13e0472fa8033333df9dbcd7",
+  "time": "2025-09-10T22:37:50.656Z",
+  "timestamp": 1757543870656,
+  "originalRecipient": "https://dev.bhhs.hsfaffiliates.com/profile/card#me",
+  "@to": "https://chalkdigital.dev.bhhs.hsfaffiliates.com/profile/card#me"
 }
 ```
 
 ### Payload
-
-| Name                                             | Type                           |Description  |                                                                                                               
-| ------------------------------------------------ | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| topic                          | string                            | string const (`"realestate/website#planningguide"`)  |
-| recipient                      | url                               | the agent being asked |
-| source                         | url                               | a copy of the event was sent to the source(s). format (`uri`) |
-| instrument                     | url                               | the app or service that produced the event on behalf of the agent/user format (uri) |
-| data.identifier                | string                           | unique identifier |
-| data.agent.name                | string                            | agent name |
-| data.agent.email               | email                             | agent email |
-| data.agent.telephone           | telephone number                  | agent telephone number |
-| data.agent.identifier.hsfconsumerid | alpha numeric                | hsf consumer Id |
-| data.agent.additionalProperty.userPath | url                       | uri |
-| data.agent.additionalProperty.workingWithAgent | bool              | working with agent or not |
-| data.agent.mortgage            | bool                              | true/false |
-| data.agent.type                | string                            | agent type |
-| data.object.text               | string                            | planningGuide text |
-| data.object.type               | string                            | planningGuide |
-| data.recipient.id              | url                               | recipient uri |
-| data.recipient.name            | string                            | recipient name |
-| data.recipient.type            | string                            | recipient type  |
-| data.instrument                | object                            | instrument object |
-| data.type                      | string                            | const (`"planningguide Action"`) |
-| data.originatingSystem | object | the original system where this item was created.  Can be of type Thing or any sub-type. |
+| Name                                             | Type    | Description |
+| ------------------------------------------------ | ------- | ----------- |
+| topic                                            | string  | const (`"realestate/website#planningguide"`) |
+| source                                           | string  | format (`uri`) |
+| recipient                                        | string  | format (`uri`) |
+| instrument                                       | string  | format (`uri`) |
+| @id                                              | string  | format (`uri`) |
+| id                                               | string  | format (`uri`) |
+| time                                             | string  | date and time the event was produced |
+| timestamp                                        | number  | event timestamp |
+| originalRecipient                                | string  | format (`uri`) |
+| @to                                              | string  | format (`uri`) |
+| data                                             | object  | message payload |
+| data.identifier                                  | string  | unique identifier |
+| data.type                                        | string  | const (`"PlanningGuide"`) |
+| data.agent                                       | object  | website user |
+| data.agent.name                                  | string  | agent name |
+| data.agent.email                                 | string  | format (`email`) |
+| data.agent.telephone                             | string  | agent telephone number |
+| data.agent.identifier                            | object  | agent identifier |
+| data.agent.identifier.hsfconsumerid              | string  | HSF consumer ID |
+| data.agent.additionalProperty                    | object  | additional property details |
+| data.agent.additionalProperty.userPath           | string  | user path |
+| data.agent.additionalProperty.workingWithAgent   | boolean | working with agent or not |
+| data.agent.mortgage                              | boolean | true or false |
+| data.agent.type                                  | string  | allowed (`"Person"`, `"Contact"`) |
+| data.object                                      | object  | planning guide details |
+| data.object.text                                 | string  | planning guide text |
+| data.object.requestUrl                           | string  | request URL |
+| data.object.type                                 | string  | const (`"PlanningGuide"`) |
+| data.recipient                                   | object  | recipient details |
+| data.recipient.id                                | string  | format (`uri`) |
+| data.recipient.name                              | string  | recipient name |
+| data.recipient.type                              | string  | recipient type |
+| data.instrument                                  | object  | instrument object |
+| data.instrument.type                             | string  | const (`"RealEstateWebsite"`) |
+| data.instrument.url                              | string  | format (`uri`) |
+| data.leadOwner                                   | object  | lead owner details |
+| data.leadOwner.type                              | string  | lead owner type |
+| data.leadOwner.name                              | string  | lead owner name |
+| data.leadOwner.id                                | string  | format (`uri`) |
+| data.originatingSystem                           | object  | the original system where this item was created. Can be of type Thing or any sub-type. |
 
 ### Headers
 

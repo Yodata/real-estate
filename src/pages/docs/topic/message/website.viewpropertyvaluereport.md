@@ -53,80 +53,67 @@ website user (data.agent) has viewed a listing (data.object) on a webiste or mob
         "value": 345000,
         "currency": "USD"
       },
-      "about": {
-        "type": "RealEstateProperty",
-        "propertyType": "Single Family",
-        "addressCountry": "US",
-        "addressLocality": "WEST SPRINGFIELD",
-        "addressRegion": "MA",
-        "image": [],
-        "latitude": 42.111904,
-        "livingArea": {
-          "type": "QuantitativeValue",
-          "unitCode": "SqFt",
-          "unitText": "Square Feet",
-          "value": 1104
-        },
-        "longitude": -72.68681,
-        "lotSize": {
-          "type": "QuantitativeValue",
-          "unitCode": "SqFt",
-          "unitText": "Square Feet",
-          "value": 15264
-        },
-        "numberOfBathrooms": 2,
-        "numberOfBedrooms": 3,
-        "postalCode": "01089",
-        "streetAddress": "113 SIKES AVE",
-        "yearBuilt": 1988,
-        "additionalProperty": {
-          "score": 82,
-          "parcelId": "WSPR M:00235 B:79501 L:0000W",
-          "averageSalePrice": {
-            "type": "PriceSpecification",
-            "price": 298400,
-            "priceCurrency": "USD"
-          },
-          "nonDisclosureProperty": false,
-          "taxAssessedValue": {
-            "type": "MonetaryAmount",
-            "amount": 233700,
-            "currency": "USD"
-          },
-          "taxAssessedYear": 2022,
-          "neighborhoodName": "AMOSTOWN",
-          "useNeighborhoodDataForCharts": true,
-          "ownerName": "KOLESNICHENKO,ANDREY",
-          "ownerOccupied": "N",
-          "ownersEstimatedEquity": {
-            "@type": "MonetaryAmount",
-            "amount": 1055000,
-            "currency": "USD"
-          },
-          "firstLoanPrice": {
-            "@type": "MonetaryAmount",
-            "amount": 296000,
-            "currency": "USD"
-          },
-          "firstLoanLenderName": "MORTGAGE NETWORKS INC",
-          "secondLoanPrice": {
-            "@type": "MonetaryAmount",
-            "amount": 0,
-            "currency": "USD"
-          },
-          "lastRefinanceLoanVal1": {
-            "@type": "MonetaryAmount",
-            "amount": 1400000,
-            "currency": "USD"
-          },
-          "lastRefinanceLenderName1": "MONSON SAVINGS BANK",
-          "lastRefinanceLoanVal2": {
-            "@type": "MonetaryAmount",
-            "amount": 0,
-            "currency": "USD"
-          }
+      "about":  {
+                "type": "RealEstateProperty",
+                "propertyType": "Single Family Residential",
+                "addressCounty": "ONEIDA",
+                "addressCountry": "USA",
+                "addressLocality": "NEW YORK MILLS",
+                "addressRegion": "NY",
+                "apn": "307007 317.010-1-40",
+                "image": [],
+                "latitude": 43.10099,
+                "livingArea": {
+                    "type": "QuantitativeValue",
+                    "unitCode": "SqFt",
+                    "unitText": "Square Feet",
+                    "value": 2245
+                },
+                "longitude": -75.29613,
+                "lotSize": {
+                    "type": "QuantitativeValue",
+                    "unitCode": "SqFt",
+                    "unitText": "Square Feet",
+                    "value": 15196.5
+                },
+                "numberOfBathrooms": 1,
+                "numberOfBedrooms": 2,
+                "postalCode": "13417",
+                "propertySubType": "Residential",
+                "streetAddress": "484 MAIN ST",
+                "yearBuilt": 1885,
+                "additionalProperty": {
+                    "score": 68,
+                    "parcelId": "307007 317.010-1-40",
+                    "averageSalePrice": {
+                        "type": "PriceSpecification",
+                        "price": 273140,
+                        "priceCurrency": "USD"
+                    },
+                    "nonDisclosureProperty": false,
+                    "taxAssessedValue": {
+                        "type": "MonetaryAmount",
+                        "amount": 70100,
+                        "currency": "USD"
+                    },
+                    "taxAssessedYear": 2025,
+                    "useNeighborhoodDataForCharts": false,
+                    "ownerName": "GEORGE & DOLORES NOMA (LIFE USE); LAWRENCE NOMA;DON NOMA;GEORGE & DOLORES NOMA",
+                    "ownerOccupied": "N",
+                    "ownersEstimatedEquity": {
+                        "@type": "MonetaryAmount",
+                        "amount": 241000,
+                        "currency": "USD"
+                    }
+                },
+                "heating": "Hot Water",
+                "soldPrice": {
+                    "type": "PriceSpecification",
+                    "price": 0,
+                    "priceCurrency": "USD"
+                }
+            }
         }
-      }
     },
     "originatingSystem": {
         "type": "SoftwareApplication",
@@ -166,30 +153,129 @@ website user (data.agent) has viewed a listing (data.object) on a webiste or mob
 ```
 
 ### Payload
-
-| Name                 | Type               | Description                                                                       |
-| -------------------- | ------------------ | --------------------------------------------------------------------------------- |
-| (root)               | object             | -                                                                                 |
-| topic                | string             | const (`"realestate/website#viewpropertyvaluereport"`)                            |
-| time                 | string<date-time>! | date & time the event was produced                                                |
-| agent                | string<uri>!       | event publisher                                                                   |
-| instrument           | string<uri>!       | the application that produced the event                                           |
-| source               | string<uri>        | associated RealEstate{Agent,Office,Organization}                                  |
-| originalRecipient    | string<uri>        | it helps you determine the subscription that delivered the event to you           |
-| recipient            | Object             |                                                                                   |
-| data                 | object             | the message payload. RANGE: AddAction                                             |
-| data.type            | string!            | The item type (Linked-Data @type)                                                 |
-| data.identifier                | string                           | unique identifier |
-| data.agent           | object!            | the website user. RANGE: Contact, Person                                          |
-| data.participant     | object!            | the website user. RANGE: type, id                                                 |
-| data.instrument      | object             | website or mobile application. RANGE: RealEstateWebsite, MobileApplication, Thing |
-| data.object          | object!            | the viewed property. RANGE: PropertyListing                                       |
-| data.event.type      | object             | type of the event e.g Campaign                                                    |
-| data.event.name      | string             | any string name                                                                   |
-| data.event.id        | string             | format (`uri`)                                                                    |
-| data.event.url       | string             | url of the event                                                                  |
-| data.event.subEvents | array              | array of subEvents                                                                |
-| data.originatingSystem | object | the original system where this item was created.  Can be of type Thing or any sub-type. |
+| Name                                                                  | Type         | Description                                                                       |
+| --------------------------------------------------------------------- | ------------ | --------------------------------------------------------------------------------- |
+| (root)                                                                | object       | -                                                                                 |
+| topic                                                                 | string       | const (`"realestate/website#viewpropertyvaluereport"`)                          |
+| recipient                                                             | string       | format (`uri`)                                                                    |
+| time                                                                  | string       | date & time the event was produced format (`date-time`)                           |
+| agent                                                                 | string       | format (`uri`)                                                                    |
+| instrument                                                            | string       | format (`uri`)                                                                    |
+| source                                                                | string       | associated RealEstate{Agent,Office,Organization}                                  |
+| originalRecipient                                                     | string       | format (`uri`)                                                                    |
+| @id                                                                   | string       | format (`uri`)                                                                    |
+| id                                                                    | string       | format (`uri`)                                                                    |
+| timestamp                                                             | number       | event timestamp                                                                   |
+| data                                                                  | object       | the message payload. RANGE: ViewAction                                            |
+| data.type                                                             | string!      | const (`"ViewAction"`)                                                           |
+| data.identifier                                                       | string       | unique identifier                                                                 |
+| data.agent                                                            | object!      | the website user. RANGE: Contact, Person                                          |
+| data.agent.type                                                       | string       | allowed (`"Person"`, `"Contact"`)                                               |
+| data.agent.name                                                       | string       | full name                                                                         |
+| data.agent.givenName                                                  | string       | first name                                                                        |
+| data.agent.familyName                                                 | string       | last name                                                                         |
+| data.agent.email                                                      | string       | format (`email`)                                                                  |
+| data.agent.identifier                                                 | object       | agent identifier                                                                  |
+| data.agent.identifier.hsfconsumerid                                   | string       | HSF consumer identifier                                                           |
+| data.agent.additionalProperty                                         | object       | additional property for the website user                                          |
+| data.agent.additionalProperty.userPath                                | string       | user path                                                                         |
+| data.agent.additionalProperty.workingWithAgent                        | boolean      | true or false                                                                     |
+| data.participant                                                      | object       | participant details                                                               |
+| data.participant.type                                                 | string       | const (`"RealEstateAgent"`)                                                      |
+| data.participant.id                                                   | string       | format (`uri`)                                                                    |
+| data.instrument                                                       | object       | website or mobile application. RANGE: RealEstateWebsite, MobileApplication, Thing |
+| data.instrument.type                                                  | string       | const (`"RealEstateWebsite"`)                                                    |
+| data.instrument.url                                                   | string       | format (`uri`)                                                                    |
+| data.object                                                           | object!      | property value report details. RANGE: PropertyValueReport                         |
+| data.object.type                                                      | string       | const (`"PropertyValueReport"`)                                                  |
+| data.object.name                                                      | string       | property value report name                                                        |
+| data.object.dateCreated                                               | string       | date and time the report was created                                              |
+| data.object.result                                                    | object       | property value result                                                             |
+| data.object.result.type                                               | string       | const (`"MonetaryAmount"`)                                                       |
+| data.object.result.minValue                                           | number       | minimum estimated value                                                           |
+| data.object.result.maxValue                                           | number       | maximum estimated value                                                           |
+| data.object.result.value                                              | number       | estimated value                                                                   |
+| data.object.result.currency                                           | string       | currency                                                                          |
+| data.object.about                                                     | object       | property details                                                                  |
+| data.object.about.type                                                | string       | const (`"RealEstateProperty"`)                                                   |
+| data.object.about.propertyType                                        | string       | property type                                                                     |
+| data.object.about.propertySubType                                     | string       | property subtype                                                                  |
+| data.object.about.addressCounty                                       | string       | county                                                                            |
+| data.object.about.addressCountry                                      | string       | country                                                                           |
+| data.object.about.addressLocality                                     | string       | city or locality                                                                  |
+| data.object.about.addressRegion                                       | string       | state or region                                                                   |
+| data.object.about.apn                                                 | string       | assessor parcel number                                                            |
+| data.object.about.image                                               | array        | property images                                                                   |
+| data.object.about.latitude                                            | number       | latitude                                                                          |
+| data.object.about.longitude                                           | number       | longitude                                                                         |
+| data.object.about.livingArea                                          | object       | living area details                                                               |
+| data.object.about.livingArea.type                                     | string       | const (`"QuantitativeValue"`)                                                    |
+| data.object.about.livingArea.unitCode                                 | string       | unit code                                                                         |
+| data.object.about.livingArea.unitText                                 | string       | unit text                                                                         |
+| data.object.about.livingArea.value                                    | number       | living area value                                                                 |
+| data.object.about.lotSize                                             | object       | lot size details                                                                  |
+| data.object.about.lotSize.type                                        | string       | const (`"QuantitativeValue"`)                                                    |
+| data.object.about.lotSize.unitCode                                    | string       | unit code                                                                         |
+| data.object.about.lotSize.unitText                                    | string       | unit text                                                                         |
+| data.object.about.lotSize.value                                       | number       | lot size value                                                                    |
+| data.object.about.numberOfBathrooms                                   | number       | number of bathrooms                                                               |
+| data.object.about.numberOfBedrooms                                    | number       | number of bedrooms                                                                |
+| data.object.about.postalCode                                          | string       | postal code                                                                       |
+| data.object.about.streetAddress                                       | string       | street address                                                                    |
+| data.object.about.yearBuilt                                           | number       | year built                                                                        |
+| data.object.about.heating                                             | string       | heating details                                                                   |
+| data.object.about.soldPrice                                           | object       | sold price details                                                                |
+| data.object.about.soldPrice.type                                      | string       | const (`"PriceSpecification"`)                                                   |
+| data.object.about.soldPrice.price                                     | number       | sold price                                                                        |
+| data.object.about.soldPrice.priceCurrency                             | string       | use ISO4217                                                                       |
+| data.object.about.additionalProperty                                  | object       | additional property details                                                       |
+| data.object.about.additionalProperty.score                            | number       | score                                                                             |
+| data.object.about.additionalProperty.parcelId                         | string       | parcel identifier                                                                 |
+| data.object.about.additionalProperty.averageSalePrice                 | object       | average sale price details                                                        |
+| data.object.about.additionalProperty.averageSalePrice.type            | string       | const (`"PriceSpecification"`)                                                   |
+| data.object.about.additionalProperty.averageSalePrice.price           | number       | average sale price                                                                |
+| data.object.about.additionalProperty.averageSalePrice.priceCurrency   | string       | use ISO4217                                                                       |
+| data.object.about.additionalProperty.nonDisclosureProperty            | boolean      | true or false                                                                     |
+| data.object.about.additionalProperty.taxAssessedValue                 | object       | tax assessed value details                                                        |
+| data.object.about.additionalProperty.taxAssessedValue.type            | string       | const (`"MonetaryAmount"`)                                                       |
+| data.object.about.additionalProperty.taxAssessedValue.amount          | number       | tax assessed amount                                                               |
+| data.object.about.additionalProperty.taxAssessedValue.currency        | string       | currency                                                                          |
+| data.object.about.additionalProperty.taxAssessedYear                  | number       | tax assessed year                                                                 |
+| data.object.about.additionalProperty.neighborhoodName                 | string       | neighborhood name                                                                 |
+| data.object.about.additionalProperty.useNeighborhoodDataForCharts     | boolean      | true or false                                                                     |
+| data.object.about.additionalProperty.ownerName                        | string       | owner name                                                                        |
+| data.object.about.additionalProperty.ownerOccupied                    | string       | owner occupied flag                                                               |
+| data.object.about.additionalProperty.ownersEstimatedEquity            | object       | owner estimated equity details                                                   |
+| data.object.about.additionalProperty.ownersEstimatedEquity.@type      | string       | const (`"MonetaryAmount"`)                                                       |
+| data.object.about.additionalProperty.ownersEstimatedEquity.amount     | number       | estimated equity amount                                                          |
+| data.object.about.additionalProperty.ownersEstimatedEquity.currency   | string       | currency                                                                          |
+| data.object.about.additionalProperty.firstLoanPrice                   | object       | first loan price details                                                          |
+| data.object.about.additionalProperty.firstLoanPrice.@type             | string       | const (`"MonetaryAmount"`)                                                       |
+| data.object.about.additionalProperty.firstLoanPrice.amount            | number       | first loan amount                                                                 |
+| data.object.about.additionalProperty.firstLoanPrice.currency          | string       | currency                                                                          |
+| data.object.about.additionalProperty.firstLoanLenderName              | string       | first loan lender name                                                            |
+| data.object.about.additionalProperty.secondLoanPrice                  | object       | second loan price details                                                         |
+| data.object.about.additionalProperty.secondLoanPrice.@type            | string       | const (`"MonetaryAmount"`)                                                       |
+| data.object.about.additionalProperty.secondLoanPrice.amount           | number       | second loan amount                                                                |
+| data.object.about.additionalProperty.secondLoanPrice.currency         | string       | currency                                                                          |
+| data.object.about.additionalProperty.lastRefinanceLoanVal1            | object       | last refinance loan value details                                                |
+| data.object.about.additionalProperty.lastRefinanceLoanVal1.@type      | string       | const (`"MonetaryAmount"`)                                                       |
+| data.object.about.additionalProperty.lastRefinanceLoanVal1.amount     | number       | last refinance loan amount                                                        |
+| data.object.about.additionalProperty.lastRefinanceLoanVal1.currency   | string       | currency                                                                          |
+| data.object.about.additionalProperty.lastRefinanceLenderName1         | string       | last refinance lender name                                                        |
+| data.object.about.additionalProperty.lastRefinanceLoanVal2            | object       | last refinance loan value details                                                |
+| data.object.about.additionalProperty.lastRefinanceLoanVal2.@type      | string       | const (`"MonetaryAmount"`)                                                       |
+| data.object.about.additionalProperty.lastRefinanceLoanVal2.amount     | number       | last refinance loan amount                                                        |
+| data.object.about.additionalProperty.lastRefinanceLoanVal2.currency   | string       | currency                                                                          |
+| data.event                                                            | object       | event details                                                                     |
+| data.event.type                                                       | object       | type of the event e.g Campaign                                                    |
+| data.event.name                                                       | string       | any string name                                                                   |
+| data.event.description                                                | string       | event description                                                                 |
+| data.event.id                                                         | string       | format (`uri`)                                                                    |
+| data.event.url                                                        | string       | url of the event                                                                  |
+| data.event.subEvents                                                  | array        | array of subEvents                                                                |
+| data.recipient                                                        | object       | recipient details                                                                 |
+| data.originatingSystem                                                | object       | the original system where this item was created. Can be of type Thing or any sub-type. |
 
 ### Headers
 

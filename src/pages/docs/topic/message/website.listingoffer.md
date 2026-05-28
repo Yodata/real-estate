@@ -24,11 +24,20 @@ _website user makes a listing offer_
       "identifier": {
         "hsfconsumerid": "xxxxxxxxxxxxx"
       },
+      "additionalProperty": {
+                "userPath": "https://www.bhhs.com/homes-for-sale/nc/8205-lulworth-drive-stokesdale-27357/pid-427799429|8205 Lulworth Drive, Stokesdale, NC 27357 - MLS 1208275 - Berkshire Hathaway HomeServices|0"
+            },
+       "mortgage": true,
+       "type": "Contact",
       "sameAs": {
         "amcecrmid": "1234567",
         "salesForceId": "xxxxxxxxxxxxx"
       }
     },
+     "object": {
+            "text": "Name: Mick Mack\nEmail: mc3005@gmail.com\nPhone: 3363376630\nHomeowner did not provide a custom message. - Property Address: 8205 Lulworth Drive\nYes, I am pre-approved for a home mortgage",
+            "type": "Comment"
+        },
     "offerPrice": {
       "type": "PriceSpecification",
       "minPrice": 75000,
@@ -38,13 +47,22 @@ _website user makes a listing offer_
     },
     "propertyListing": {
       "type": "PropertyListing",
-      "originatingSystemName": "GOTHAM-MLS",
-      "originatingSystemKey": "12345",
       "url": "https://{company-website-url}/{path-to-listing}",
-      "streetAddress": "1007 Mountain Gate Rd",
-      "addressRegion": "New Jersey",
-      "addressLocality": "Gotham City",
       "postalCode": "10010",
+      "addressRegion": "New Jersey",
+      "streetAddress": "1007 Mountain Gate Rd",
+      "addressLocality": "Gotham City",
+      "listingId": "427799429",
+       "listingOriginatingSystem": {
+                "type": "MultipleListingService",
+                "name": "Triad MLS (NCTRIAD)",
+                "identifier": {
+                    "orgId": "nctriad-r"
+                },
+                "originatingSystemName": "Triad MLS (NCTRIAD)",
+                "originatingSystemKey": "1208275"
+        },
+    
       "addressCountry": "USA",
       "listingPrice": {
         "type": "PriceSpecification",
@@ -52,7 +70,13 @@ _website user makes a listing offer_
         "priceCurrency": "USD"
       }
     },
-
+     "instrument": {},
+        "identifier": "xnVDTwM1ZPwzU1wJ0hWK9ut1KvHoPYbybjvn6Ijx6T6YM2uBv4LHjfCvIpkc6gRrw6yBxq0/Cq0BBcryzY1UeEdX",
+        "leadOwner": {
+            "type": "organization",
+            "name": "Carolinas Realty",
+            "id": "https://nc301.bhhs.hsfaffiliates.com/profile/card#me"
+        },
     "event": {
       "type": "Event",
       "name": "Property Showing  64 Buttercup Lane, South Grafton, MA, USA",
@@ -101,6 +125,20 @@ _website user makes a listing offer_
 | data.type                                         | string                                | const (`"ListingOffer"`)                                                                                                                                                                                                                                                                    |
 | data.identifier                | string                           | unique identifier |
 | data.agent                                        | object                                | a website user/visitor                                                                                                                                                                                                                                                                      |
+| data.agent.type                                  | string  | allowed (`"Person"`, `"Contact"`)                                                                                                                                                                                                                                                           |
+| data.agent.name                                  | string  | -                                                                                                                                                                                                                                                                                           |
+| data.agent.email                                 | string  | format (`email`)                                                                                                                                                                                                                                                                            |
+| data.agent.telephone                             | string  | -                                                                                                                                                                                                                                                                                           |
+| data.agent.identifier                            | object  | 1 properties                                                                                                                                                                                                                                                                                |
+| data.agent.identifier.hsfconsumerid | string | HSF consumer identifier |
+| data.agent.mortgage | boolean | true or false |
+| data.agent.type                            | object  | agent type                                                                                                                                                                                                                                                                             |
+| data.agent.additionalProperties.userPath | string | userPath                                                                                                                                                                                                                                                                                         |
+| data.object.text                            | string  | agent info                                                                                                                                                                                                                                                                             |
+| data.object.type                           | string  | object type                                                                                                                                                                                                                                                                            |
+| data.recipient.id                              | string  |  format (`uri`)  |  
+| data.recipient.name                              | string  | recipient name  |
+| data.recipient.type                              | string  | recipient type  |
 | data.offerPrice                                   | object                                | the offer price or range                                                                                                                                                                                                                                                                    |
 | data.offerPrice.type                              | string                                | allowed (`"PriceSpecification"`) PriceSpecification                                                                                                                                                                                                                                         |
 | data.offerPrice.minPrice                          | number                                | the low price offered if price is a range.                                                                                                                                                                                                                                                  |
@@ -108,6 +146,26 @@ _website user makes a listing offer_
 | data.offerPrice.price                             | number                                | the offer price.                                                                                                                                                                                                                                                                            |
 | data.offerPrice.priceCurrency                     | string                                | use ISO4217                                                                                                                                                                                                                                                                                 |
 | data.propertyListing                              | object                                | the listing on which the offer is made.                                                                                                                                                                                                                                                     |
+| data.propertyListing.type           | string | const (`"PropertyListing"`) |
+| data.propertyListing.url                                              | string | property listing URL |
+| data.propertyListing.postalCode                                       | string | postal code |
+| data.propertyListing.addressRegion                                    | string | state or region |
+| data.propertyListing.streetAddress                                    | string | street address |
+| data.propertyListing.addressLocality                                  | string | city or locality |
+| data.propertyListing.listingId                                        | string | unique listing identifier |
+| data.propertyListing.listingOriginatingSystem                         | object | original listing system details |
+| data.propertyListing.listingOriginatingSystem.type                    | string | const (`"MultipleListingService"`) |
+| data.propertyListing.listingOriginatingSystem.name                    | string | listing system name |
+| data.propertyListing.listingOriginatingSystem.identifier              | object | listing system identifier |
+| data.propertyListing.listingOriginatingSystem.identifier.orgId        | string | MLS organization identifier |
+| data.propertyListing.listingOriginatingSystem.originatingSystemName   | string | originating system name |
+| data.propertyListing.listingOriginatingSystem.originatingSystemKey    | string | originating system listing key |
+| data.instrument      | object | the site, app, or service on which the user action was observed |
+| data.identifier      | string | unique identifier |
+| data.leadOwner       | object | lead owner details |
+| data.leadOwner.type  | string | lead owner type |
+| data.leadOwner.name  | string | lead owner name |
+| data.leadOwner.id    | string | format (`uri`) |
 | data.event.type                                   | object                                | type of the event e.g Campaign                                                                                                                                                                                                                                                              |
 | data.event.name                                   | string                                | any string name                                                                                                                                                                                                                                                                             |
 | data.event.id                                     | string                                | format (`uri`)                                                                                                                                                                                                                                                                              |

@@ -14,34 +14,44 @@ with the recipient (a Person or Audience).
 ```json
 {
   "topic": "realestate/website#shareproperty",
+  "source": "https://3016838.bhhs.hsfaffiliates.com/profile/card#me",
+  "instrument": "https://aem.bhhs.hsfaffiliates.com/profile/card#me",
+  "time": "2026-05-28T21:24:16.214Z",
+  "timestamp": 1780003456214,
+  "originalRecipient": "https://bhhs.hsfaffiliates.com/profile/card#me",
+  "@id": "https://bhhs.hsfaffiliates.com/outbox/9b364c168be348419ae35a30b5cf066d",
+  "id": "https://aem.bhhs.hsfaffiliates.com/publish/ea24bbfdea1c4b7eb4cead39b5b918ac",
+  "@to": "https://buyside.bhhs.hsfaffiliates.com/profile/card#me",
   "data": {
     "type": "ShareAction",
-    "identifier":"nwurogb34tnoi3t",
+    "identifier": "vHEwVmeIGDd/rVYlt1n9mxdyjFRSlqLx7jI5r2S2kv8wzODE4/H3rCaXAJuIJrQg5bdRtDyj6ZiGEINvpdM7cMZm",
     "agent": {
-      "type": "string",
-      "affiliation": ["https://example.com/profile/card#me"],
+      "type": "",
+      "affiliation": [
+        "https://3016838.bhhs.hsfaffiliates.com/profile/card#me"
+      ],
       "address": [
         {
           "type": "PostalAddress",
-          "streetAddress": "1007 Mountain Gate Rd",
-          "postOfficeBoxNumber": "Box 1234",
-          "addressRegion": "NJ",
-          "addressLocality": "Gotham City",
-          "postalCode": "10010",
-          "addressCountry": "CA",
-          "addressCounty": "string",
-          "addressSubdivision": "Gotham Heights"
+          "streetAddress": "355 Oakley Green",
+          "postOfficeBoxNumber": "355",
+          "addressRegion": "NC",
+          "addressLocality": "Oakley",
+          "postalCode": "28607",
+          "addressCountry": "US",
+          "addressCounty": "Boone",
+          "addressSubdivision": "Yonahlossee"
         }
       ],
-      "birthDate": "2019-08-24",
+      "birthDate": "2026-05-22T00:00:00",
       "contactPoint": [
         {
           "type": "ContactPoint",
-          "name": "Work",
-          "telephone": "555-555-5555",
-          "faxNumber": "555-555-5555",
-          "email": "bob@example.com",
-          "url": "https://www.facebook.com/hallandoates"
+          "name": "work",
+          "telephone": "(828) 295-0700",
+          "faxNumber": "(828) 295-0700",
+          "email": "info@bhhsvp.com",
+          "url": "https://www.bhhs.com/vincent-properties-nc311/nc/355-oakley-green-boone-28607/pid-433075440"
         }
       ],
       "email": "user@example.com",
@@ -51,7 +61,10 @@ with the recipient (a Person or Audience).
       "givenName": "John",
       "honorificPrefix": "Dr",
       "honorificSuffix": "Esq",
-      "jobTitle": ["Chief Data Officer", "Sanitation Engineer"],
+      "jobTitle": [
+        "Chief Data Officer",
+        "Sanitation Engineer"
+      ],
       "knowsLanguage": [
         {
           "type": "Language",
@@ -66,8 +79,8 @@ with the recipient (a Person or Audience).
     "object": {
       "type": "PropertyListing",
       "addressCountry": "CA",
-      "addressLocality": "Gotham City",
-      "addressRegion": "NJ",
+      "addressLocality": "Oakley",
+      "addressRegion": "NC",
       "buyerAgent": {
         "email": "butch.byers@example.com",
         "identifier": {
@@ -84,29 +97,20 @@ with the recipient (a Person or Audience).
         "name": "Gotham City Real Estate",
         "type": "RealEstateOffice"
       },
-      "closeDate": "2019-08-24T14:15:22Z",
-      "image": [
-        {
-          "type": "ImageObject",
-          "id": "http://user.example.com/public/logo/image.jpg",
-          "name": "image.jpg",
-          "encodingFormat": "image/jpeg",
-          "about": "http://user.example.com/profile/card#me",
-          "url": "http://user.example.com/public/profile/image.jpg"
-        }
-      ],
+      "closeDate": "0001-01-01T00:00:00",
+      "image": [],
       "internetAddressDisplayYN": "Y",
-      "latitude": 40.75,
+      "latitude": 36.17003631591797,
       "listingAgent": {
         "type": "RealEstateAgent",
-        "name": "Lori Listagent",
-        "telephone": "1-252-574-0160",
-        "email": "lorilistagent@example.com"
+        "name": "Chad Vincent",
+        "telephone": "8282681986",
+        "email": "realtorvincent@yahoo.com"
       },
-      "listingContractDate": "2019-08-24T14:15:22Z",
-      "listingId": "GOTHAM-MLS+12345",
+      "listingContractDate": "2026-05-22T00:00:00",
+      "listingId": "261959",
       "listingOffice": {
-        "name": "Gotham City Real Estate",
+        "name": "BHHS Vincent Properties",
         "type": "RealEstateOffice"
       },
       "listingOriginatingSystem": {
@@ -119,7 +123,7 @@ with the recipient (a Person or Audience).
       },
       "listingPrice": {
         "type": "PriceSpecification",
-        "price": 75000,
+        "price": 2100000,
         "priceCurrency": "USD"
       },
       "listingStatus": "Active",
@@ -127,35 +131,35 @@ with the recipient (a Person or Audience).
         "type": "QuantitativeValue",
         "unitCode": "SqFt",
         "unitText": "Square Feet",
-        "value": 1500
+        "value": 4789
       },
-      "longitude": 73.98,
+      "longitude": -81.71854400634766,
       "lotSize": {
         "type": "QuantitativeValue",
         "unitCode": "AC",
         "unitText": "Acres",
-        "value": 0.5
+        "value": 1.5740000009536743
       },
-      "numberOfBathrooms": "2",
+      "numberOfBathrooms": "3",
       "numberOfBedrooms": "3",
       "numberOfRooms": "7",
       "originatingSystemKey": 12345,
-      "originatingSystemName": "GOTHAM-MLS",
-      "postalCode": "10010",
+      "originatingSystemName": "High Country Association of Realtors",
+      "postalCode": "28607",
       "propertySubType": "ApartmentPropertyType",
       "propertyType": "RESI",
       "purchaseContractDate": "2019-08-24T14:15:22Z",
-      "stories": 2,
-      "streetAddress": "1007 Mountain Gate Rd",
-      "universalPropertyId": "US-04015-N-R-11022331-N",
-      "url": "https://www.example.com/homedetails/1007-Mountain-Gate-Rd-Gotham-City-Gotham/10007",
-      "yearBuilt": 1988
+      "stories": 3,
+      "streetAddress": "355 Oakley Green, Boone, NC 28607",
+      "universalPropertyId": "261959",
+      "url": "https://www.bhhsvincentproperties.com/blowing-rock/chad-vincent/cid-3016838/nc/355-oakley-green-28607/pid-433075440?LuxuryTheme=true | https://www.bhhsvincentproperties.com/blowing-rock/chad-vincent/cid-3016838/nc/355-oakley-green-28607/pid-433075440?LuxuryTheme=true%3B355%20Oakley%20Green%2C%20Boone%2C%20NC%2028607%20-%20MLS%20261959%20-%20Berkshire%20Hathaway%20HomeServices%3B1",
+      "yearBuilt": 2008
     },
     "originatingSystem": {
-        "type": "SoftwareApplication",
-        "name": "RDesk",
-        "description": "User Created.",
-        "url": "http://www.rdeskwebsite.com/"
+      "type": "SoftwareApplication",
+      "name": "RDesk",
+      "description": "User Created.",
+      "url": "http://www.rdeskwebsite.com/"
     },
     "event": {
       "type": "Event",
@@ -166,7 +170,7 @@ with the recipient (a Person or Audience).
           "type": "Campaign",
           "name": "A good campaign name",
           "id": "ire:1d2995307f2c48ae9543caf586f43f9b",
-          "url": " https://www.bhhspro.com/mentor/steve-baird/cid-356481/oh/889-hartford-drive-44035/pid-338005633",
+          "url": "https://www.bhhspro.com/mentor/steve-baird/cid-356481/oh/889-hartford-drive-44035/pid-338005633",
           "contactGroup": [
             {
               "type": "Collection",
@@ -182,13 +186,18 @@ with the recipient (a Person or Audience).
     },
     "recipient": {
       "type": "Person",
-      "name": "John Doe",
+      "name": "Chad Vincent",
       "email": "user@example.com",
-      "url": "http://facebook.com/1234567890",
+      "url": "https://www.facebook.com/sharer/sharer.php?u=https://www.bhhsvincentproperties.com/blowing-rock/chad-vincent/cid-3016838/nc/355-oakley-green-boone-28607/pid-433075440?LuxuryTheme=true",
       "instrument": {
         "type": "Organization",
         "name": "Facebook"
       }
+    },
+    "leadOwner": {
+      "type": "agent",
+      "name": "Chad Vincent",
+      "id": "https://3016838.bhhs.hsfaffiliates.com/profile/card#me"
     }
   }
 }
@@ -308,6 +317,19 @@ with the recipient (a Person or Audience).
 | data.recipient.instrument.type           | string                                | const (`"Organization"`)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | data.recipient.instrument.name           | string                                | The name of the instrument used to share the property listing.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | data.originatingSystem | object | the original system where this item was created.  Can be of type Thing or any sub-type. |
+| source                           | string | data source |
+| instrument                       | string | format (`uri`) |
+| time                             | string | date and time the event was produced |
+| timestamp                        | number | event timestamp |
+| originalRecipient                | string | format (`uri`) |
+| @id                              | string | format (`uri`) |
+| id                               | string | format (`uri`) |
+| @to                              | string | format (`uri`) |
+| data.leadOwner                   | object | lead owner details |
+| data.leadOwner.type              | string | lead owner type |
+| data.leadOwner.name              | string | lead owner name |
+| data.leadOwner.id                | string | format (`uri`) |
+| data.event.subEvents             | array  | array of subEvents |
 
 ### Headers
 

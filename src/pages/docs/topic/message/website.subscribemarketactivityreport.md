@@ -12,42 +12,47 @@ website user (data.agent) has viewed a listing (data.object) on a webiste or mob
 {
   "topic": "realestate/website#subscribemarketactivityreport",
   "recipient": "https://bhhs.hsfaffiliates.com/profile/card#me",
-  "time": "2023-02-08T23:34:08.331Z",
-  "agent": "https://3023834.bhhs.hsfaffiliates.com/profile/card#me",
-  "instrument": "https://3023834.bhhs.hsfaffiliates.com/profile/card#me",
-  "source": "https://3023834.bhhs.hsfaffiliates.com/profile/card#me",
-  "originalRecipient": "https://3023834.bhhs.hsfaffiliates.com/profile/card#me",
+  "time": "2025-10-22T19:32:25.070Z",
+  "agent": "https://dev.bhhs.hsfaffiliates.com/profile/card#me",
+  "instrument": "https://aem.dev.bhhs.hsfaffiliates.com/profile/card#me",
+  "source": "https://3025032.dev.bhhs.hsfaffiliates.com/profile/card#me",
+  "originalRecipient": "https://3025032.dev.bhhs.hsfaffiliates.com/profile/card#me",
+  "@id": "https://buyside.dev.bhhs.hsfaffiliates.com/inbox/3434bd642e9a4b2895bbbf249237dee0",
+  "id": "https://aem.dev.bhhs.hsfaffiliates.com/publish/9fa612070b404906a8199815bdc7e52c",
+  "timestamp": 1761161545070,
   "data": {
     "type": "SubscribeAction",
-    "identifier":"nwurogb34tnoi3t",
+    "identifier": "fh4ZKKBoPq30xe+PHrAThkoCvk1Gk+2dJMMqaVeVWmf60S/DiM0lqfTQwQdWYQt7NHZdE4dmLE9QHMO+STOKqxAw",
     "agent": {
       "type": "Contact",
-      "name": "Anonymous Visitor",
-      "givenName": "Anonymous",
-      "familyName": "Visitor",
-      "email": "D9952B6A-FCC5-4F5F-BC46-277FD9A365D2@unknownemailaddy.com",
+      "name": "siva puli",
+      "givenName": "siva",
+      "familyName": "puli",
+      "email": "sivapuli@hsfranchise.com",
       "identifier": {
-        "hsfconsumerid": "D9952B6A-FCC5-4F5F-BC46-277FD9A365D2"
+        "hsfconsumerid": "9d3e622e-93db-4ca3-81ce-e65ded030e26"
       },
       "additionalProperty": {
-        "userPath": "%3B404%3BHome%20Value%20|%20Leo%20Shut%20|%20Berkshire%20Hathaway%20HomeServices%3B1",
+        "userPath": "https://www.dev.bhhs.com/grayling-properties-ak702/grayling/molly-grayling/cid-3025032/market-activity/campaignId-701Wj00000iWTS9IAO%3BConsumer%20Market%20Activity%20|%20Molly%20Grayling%20|%20Berkshire%20Hathaway%20HomeServices%3B1",
         "workingWithAgent": false
       }
     },
     "participant": {
       "type": "RealEstateAgent",
-      "id": "https://3023834.bhhs.hsfaffiliates.com/profile/card#me"
+      "id": "https://3025032.dev.bhhs.hsfaffiliates.com/profile/card#me"
     },
     "instrument": {
       "type": "RealEstateWebsite",
-      "url": "https://3023834.bhhs.hsfaffiliates.com/profile/card#me"
+      "url": "https://3025032.dev.bhhs.hsfaffiliates.com/profile/card#me"
     },
     "object": {
-      "type": "RealEstateProperty",
+      "type": "PropertyValueReport",
       "propertyType": "Single Family",
       "addressCountry": "US",
-      "addressLocality": "WEST SPRINGFIELD",
-      "addressRegion": "MA",
+      "addressLocality": " Santa Ana",
+      "addressRegion": "CA",
+      "postalCode": "92707",
+      "streetAddress": "1234 E Borchard Ave",
       "image": [],
       "latitude": 42.111904,
       "livingArea": {
@@ -65,19 +70,22 @@ website user (data.agent) has viewed a listing (data.object) on a webiste or mob
       },
       "numberOfBathrooms": 2,
       "numberOfBedrooms": 3,
-      "postalCode": "01089",
-      "streetAddress": "113 SIKES AVE",
       "yearBuilt": 1988
     },
+    "leadOwner": {
+      "type": "RealEstateAgent",
+      "name": "Molly Grayling",
+      "id": "https://3025032.dev.bhhs.hsfaffiliates.com/profile/card#me"
+    },
     "originatingSystem": {
-        "type": "SoftwareApplication",
-        "name": "RDesk",
-        "description": "User Created.",
-        "url": "http://www.rdeskwebsite.com/"
+      "type": "SoftwareApplication",
+      "name": "RDesk",
+      "description": "User Created.",
+      "url": "http://www.rdeskwebsite.com/"
     },
     "event": {
       "type": "Event",
-      "name": "Property Showing  64 Buttercup Lane, South Grafton, MA, USA",
+      "name": "Property Showing 64 Buttercup Lane, South Grafton, MA, USA",
       "description": "",
       "subEvents": [
         {
@@ -98,38 +106,80 @@ website user (data.agent) has viewed a listing (data.object) on a webiste or mob
         }
       ]
     }
-  },
-  "@id": "https://aem.bhhs.hsfaffiliates.com/publish/1d2995307f2c48ae9543caf586f43f9b",
-  "id": "https://aem.bhhs.hsfaffiliates.com/publish/1d2995307f2c48ae9543caf586f43f9b",
-  "timestamp": 1675899248331
+  }
 }
 ```
 
 ### Payload
-
-| Name                 | Type              | Description                                                                   |
-| -------------------- | ----------------- | ----------------------------------------------------------------------------- |
-| (root)               | object            | -                                                                             |
-| topic                | string            | const (`"realestate/website#subscribemarketactivityreport"`)                  |
-| recipient            | string<uri>!      | The URL of the recipient's profile.                                           |
-| time                 | string<date-time> | date & time the event was produced                                            |
-| agent                | string<uri>!      | event publisher                                                               |
-| instrument           | string<uri>!      | the application that produced the event                                       |
-| source               | string<uri>       | associated RealEstate{Agent,Office,Organization}                              |
-| orignalRecipient     | string<uri>       | The URL of orignal recipient's profile.                                       |
-| data                 | object            | the message payload. RANGE: AddAction                                         |
-| data.type            | string!           | The item type (Linked-Data @type)                                             |
-| data.identifier                | string                           | unique identifier |
-| data.agent           | object!           | the website user. RANGE: type, name, givenName, familyName, email, identifier |
-| data.participant     | object!           | the website user. RANGE: type, id                                             |
-| data.instrument      | object            | website or mobile application. RANGE:type, url                                |
-| data.object          | object!           | the viewed property. RANGE: PropertyListing                                   |
-| data.event.type      | object            | type of the event e.g Campaign                                                |
-| data.event.name      | string            | any string name                                                               |
-| data.event.id        | string            | format (`uri`)                                                                |
-| data.event.url       | string<uri>       | url of the event                                                              |
-| data.event.subEvents | array             | array of subEvents                                                            |
-| data.originatingSystem | object | the original system where this item was created.  Can be of type Thing or any sub-type. |
+| Name                                             | Type              | Description |
+| ------------------------------------------------ | ----------------- | ----------- |
+| (root)                                           | object            | - |
+| topic                                            | string            | const (`"realestate/website#subscribemarketactivityreport"`) |
+| recipient                                        | string            | format (`uri`) |
+| time                                             | string            | date and time the event was produced |
+| agent                                            | string            | format (`uri`) |
+| instrument                                       | string            | format (`uri`) |
+| source                                           | string            | format (`uri`) |
+| originalRecipient                                | string            | format (`uri`) |
+| @id                                              | string            | format (`uri`) |
+| id                                               | string            | format (`uri`) |
+| timestamp                                        | number            | event timestamp |
+| data                                             | object            | the message payload. RANGE: SubscribeAction |
+| data.type                                        | string            | const (`"SubscribeAction"`) |
+| data.identifier                                  | string            | unique identifier |
+| data.agent                                       | object            | website user details |
+| data.agent.type                                  | string            | allowed (`"Person"`, `"Contact"`) |
+| data.agent.name                                  | string            | full name |
+| data.agent.givenName                             | string            | first name |
+| data.agent.familyName                            | string            | last name |
+| data.agent.email                                 | string            | format (`email`) |
+| data.agent.identifier                            | object            | agent identifier |
+| data.agent.identifier.hsfconsumerid              | string            | HSF consumer identifier |
+| data.agent.additionalProperty                    | object            | additional property details |
+| data.agent.additionalProperty.userPath           | string            | user path |
+| data.agent.additionalProperty.workingWithAgent   | boolean           | true or false |
+| data.participant                                 | object            | participant details |
+| data.participant.type                            | string            | const (`"RealEstateAgent"`) |
+| data.participant.id                              | string            | format (`uri`) |
+| data.instrument                                  | object            | website or mobile application details |
+| data.instrument.type                             | string            | const (`"RealEstateWebsite"`) |
+| data.instrument.url                              | string            | format (`uri`) |
+| data.object                                      | object            | subscribed market activity report property details |
+| data.object.type                                 | string            | const (`"PropertyValueReport"`) |
+| data.object.propertyType                         | string            | property type |
+| data.object.addressCountry                       | string            | country |
+| data.object.addressLocality                      | string            | city or locality |
+| data.object.addressRegion                        | string            | state or region |
+| data.object.postalCode                           | string            | postal code |
+| data.object.streetAddress                        | string            | street address |
+| data.object.image                                | array             | property images |
+| data.object.latitude                             | number            | latitude |
+| data.object.longitude                            | number            | longitude |
+| data.object.livingArea                           | object            | living area details |
+| data.object.livingArea.type                      | string            | const (`"QuantitativeValue"`) |
+| data.object.livingArea.unitCode                  | string            | unit code |
+| data.object.livingArea.unitText                  | string            | unit text |
+| data.object.livingArea.value                     | number            | living area value |
+| data.object.lotSize                              | object            | lot size details |
+| data.object.lotSize.type                         | string            | const (`"QuantitativeValue"`) |
+| data.object.lotSize.unitCode                     | string            | unit code |
+| data.object.lotSize.unitText                     | string            | unit text |
+| data.object.lotSize.value                        | number            | lot size value |
+| data.object.numberOfBathrooms                    | number            | number of bathrooms |
+| data.object.numberOfBedrooms                     | number            | number of bedrooms |
+| data.object.yearBuilt                            | number            | year built |
+| data.leadOwner                                   | object            | lead owner details |
+| data.leadOwner.type                              | string            | lead owner type |
+| data.leadOwner.name                              | string            | lead owner name |
+| data.leadOwner.id                                | string            | format (`uri`) |
+| data.event                                       | object            | event details |
+| data.event.type                                  | object            | type of the event e.g Campaign |
+| data.event.name                                  | string            | any string name |
+| data.event.description                           | string            | event description |
+| data.event.id                                    | string            | format (`uri`) |
+| data.event.url                                   | string            | url of the event |
+| data.event.subEvents                             | array             | array of subEvents |
+| data.originatingSystem                           | object            | the original system where this item was created. Can be of type Thing or any sub-type. |
 
 ### Headers
 

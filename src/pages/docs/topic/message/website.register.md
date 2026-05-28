@@ -11,14 +11,18 @@ _website user has registered on the website_
 ```json
 {
   "topic": "realestate/website#register",
+  "source": "https://PA305.bhhs.hsfaffiliates.com/profile/card#me", 
+  "identifier": "7d9a7796-3671-4ac4-8e11-321172ae30a3", 
   "data": {
-    "identifier":"nwurogb34tnoi3t",
+    "type": "RegisterAction", 
     "agent": {
       "type": "Person",
       "name": "string",
       "givenName": "string",
       "familyName": "string",
       "email": "user@example.com",
+      "dateCreated": "2026-05-28T19:32:45.593Z", 
+      "dateModified": "2026-05-28T19:32:45.593Z", 
       "telephone": "string",
       "identifier": {
         "bhhsconsumerid": "12345"
@@ -36,19 +40,35 @@ _website user has registered on the website_
         "url": "https://www.facebook.com/hallandoates"
       },
       "additionalProperties": {
-        "workingWithAgent": true
+        "workingWithAgent": true,
+        "redPreferredContactMethod": "No Preference", 
+        "redPreferredTime": "", 
+        "preferredLanguage": "en-US", 
+        "preferredCurrency": "USD", 
+        "preferredUnits": "Imperial", 
+        "marketingViaEmailOptIn": true, 
+        "marketingViaSmsOptIn": false, 
+        "userPath": "https://www.bhhshomesale.com/search?SearchInput=Oley%2BTwp%2BPA&SearchType=City&PropertyType=1%2C2&ApplicationType=FOR_SALE&ListingStatus=1&NewListing=false&Sort=DATE_DESCENDING&PageSize=32&Page=1&SearchParameter=Oley%2BTwp%2C%2BPA&Country=US&isAgentPage=false&isFranchisePage=true&franchiseeCode=PA305;Property Search Results Homesale Realty | Berkshire Hathaway HomeServices;0" 
       }
     },
+    "description": "ClientRegistration: Darlene Moyer\n\n", 
     "instrument": {
       "type": "Website",
       "name": "Agent Website",
       "url": "https://www.example.com"
     },
+    "recipient": "https://PA305.bhhs.hsfaffiliates.com/profile/card#me", 
+    "identifier": "3SMTCvj2VVfNyXzFlGeDO0w8AV3rVjWhrbrZN6Jdu5gjQKxaYKf3SDR/sWpHH8Gtgbyy9Fb0zRDU6hRUn5Sf0w==", 
+    "leadOwner": { 
+            "type": "RealEstateWebsite",
+            "name": "Office Website",
+            "id": "https://PA305.bhhs.hsfaffiliates.com/profile/card#me"
+    },
     "originatingSystem": {
-        "type": "SoftwareApplication",
-        "name": "RDesk",
-        "description": "User Created.",
-        "url": "http://www.rdeskwebsite.com/"
+      "type": "SoftwareApplication",
+      "name": "RDesk",
+      "description": "User Created.",
+      "url": "http://www.rdeskwebsite.com/"
     },
     "event": {
       "type": "Event",
@@ -83,36 +103,56 @@ _website user has registered on the website_
 | ------------------------------------------------ | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | (root)                                           | object  | -                                                                                                                                                                                                                                                                                           |
 | topic                                            | string  | const (`"realestate/website#register"`)                                                                                                                                                                                                                                                     |
+| source                                            | string  | data source                                                                                                                                                                                                                                                   |
+| identifier                                           | string  | unique identifier                                                                                                                                                                                                                                                     |
 | data                                             | object  | -                                                                                                                                                                                                                                                                                           |
-| data.identifier                | string                           | unique identifier |
+| data.type                                  | string  | const (`"RegisterAction"`)                                                                                                                                                                                                                                                                          |
+| data.identifier                                  | string  | unique identifier                                                                                                                                                                                                                                                                           |
 | data.agent                                       | object  | a website user/visitor                                                                                                                                                                                                                                                                      |
 | data.agent.type                                  | string  | allowed (`"Person"`, `"Contact"`)                                                                                                                                                                                                                                                           |
 | data.agent.name                                  | string  | -                                                                                                                                                                                                                                                                                           |
 | data.agent.givenName                             | string  | -                                                                                                                                                                                                                                                                                           |
 | data.agent.familyName                            | string  | -                                                                                                                                                                                                                                                                                           |
 | data.agent.email                                 | string  | format (`email`)                                                                                                                                                                                                                                                                            |
+| data.agent.dateCreated                             | date-time  | date & time the event was created                                                                                                                                                                                                                                                                                     |
+| data.agent.dateModified                             | string  | date & time the event was modified                                                                                                                                                                                                                                                                                          |
 | data.agent.telephone                             | string  | -                                                                                                                                                                                                                                                                                           |
 | data.agent.identifier                            | object  | 1 properties                                                                                                                                                                                                                                                                                |
 | data.agent.sameAs                                | string  | vendor specific identifier for the user can be shared with other vendors to identify the user format (`uri`)                                                                                                                                                                                |
-| data.agent.contactPoint                          | object  | A point of contact for the entity. By convention in the real estate domain, ContactPoints are preferred over telephone, email, and faxNumber so the ContactPoint.name property can be used to label values for example, Work Telephone, Home, as named contactPoint values. >= 3 properties |
-| data.agent.contactPoint.type                     | string  | const (`"ContactPoint"`)                                                                                                                                                                                                                                                                    |
-| data.agent.contactPoint.name                     | string  | a label for the contactPoint, i.e. 'Work', or 'Home'                                                                                                                                                                                                                                        |
-| data.agent.contactPoint.telephone                | string  | -                                                                                                                                                                                                                                                                                           |
-| data.agent.contactPoint.faxNumber                | string  | -                                                                                                                                                                                                                                                                                           |
-| data.agent.contactPoint.email                    | string  | an email address for the item. format (`email`)                                                                                                                                                                                                                                             |
-| data.agent.contactPoint.url                      | string  | primary URL for the item. format (`uri`)                                                                                                                                                                                                                                                    |
+| data.agent.contactPoint                          | array  | A point of contact for the entity. By convention in the real estate domain, ContactPoints are preferred over telephone, email, and faxNumber so the ContactPoint.name property can be used to label values for example, Work Telephone, Home, as named contactPoint values. >= 3 properties |
+| data.agent.contactPoint.0.type                     | string  | const (`"ContactPoint"`)                                                                                                                                                                                                                                                                    |
+| data.agent.contactPoint.0.name                     | string  | a label for the contactPoint, i.e. 'Work', or 'Home'                                                                                                                                                                                                                                        |
+| data.agent.contactPoint.0.telephone                | string  | -                                                                                                                                                                                                                                                                                           |
+| data.agent.contactPoint.0.faxNumber                | string  | -                                                                                                                                                                                                                                                                                           |
+| data.agent.contactPoint.0.email                    | string  | an email address for the item. format (`email`)                                                                                                                                                                                                                                             |
+| data.agent.contactPoint.0.url                      | string  | primary URL for the item. format (`uri`)                                                                                                                                                                                                                                                    |
+| data.agent.contactPoint.0.king                      | string  | const("`EmailAdress`")                                                                                                                                                                                                                                                    |
 | data.agent.additionalProperties                  | object  | additional properties for the website user                                                                                                                                                                                                                                                  |
 | data.agent.additionalProperties.workingWithAgent | boolean | -                                                                                                                                                                                                                                                                                           |
+| data.agent.additionalProperties.redPreferredContactMethod | string | redPreferredContactMethod                                                                                                                                                                                                                                                                                          |
+| data.agent.additionalProperties.redPreferredTime | string | redPreferredTime                                                                                                                                                                                                                                                                                           |
+| data.agent.additionalProperties.preferredLanguage | string | preferredLanguage                                                                                                                                                                                                                                                                                           |
+| data.agent.additionalProperties.preferredCurrency | string | preferredCurrency                                                                                                                                                                                                                                                                                           |
+| data.agent.additionalProperties.preferredUnits | string | preferredUnits                                                                                                                                                                                                                                                                                           |
+| data.agent.additionalProperties.marketingViaEmailOptIn | boolean | true or false                                                                                                                                                                                                                                                                                           |
+| data.agent.additionalProperties.marketingViaSmsOptI | boolean | true or false                                                                                                                                                                                                                                                                                           |
+| data.agent.additionalProperties.userPath | string | userPath                                                                                                                                                                                                                                                                                           |
+| data.description | string | data description                                                                                                                                                                                                                                                                                           |
 | data.instrument                                  | object  | the site, app or service being on which the user action was observed.                                                                                                                                                                                                                       |
-| data.instrument.type                             | string  | -                                                                                                                                                                                                                                                                                           |
-| data.instrument.name                             | string  | -                                                                                                                                                                                                                                                                                           |
+| data.instrument.type                             | string  | const("`RealEstateWebsite`")                                                                                                                                                                                                                                                                                           |
+| data.instrument.name                             | string  | instrument name                                                                                                                                                                                                                                                                                           |
 | data.instrument.url                              | string  | format (`uri`)                                                                                                                                                                                                                                                                              |
+| data.recipient                              | string  | format (`uri`)  |
+| data.identifier                              | string  | unique identifier |
+| data.leadowner.type                              | string  | const("`RealEstateWebsite`") |
+| data.leadowner.name                              | string  | lead owner name |
+| data.leadowner.id                              | string  | format (`uri`)  |
 | data.event.type                                  | object  | type of the event e.g Campaign                                                                                                                                                                                                                                                              |
 | data.event.name                                  | string  | any string name                                                                                                                                                                                                                                                                             |
 | data.event.id                                    | string  | format (`uri`)                                                                                                                                                                                                                                                                              |
 | data.event.url                                   | string  | url of the event                                                                                                                                                                                                                                                                            |
 | data.event.subEvents                             | array   | array of subEvents                                                                                                                                                                                                                                                                          |
-| data.originatingSystem | object | the original system where this item was created.  Can be of type Thing or any sub-type. |
+| data.originatingSystem                           | object  | the original system where this item was created. Can be of type Thing or any sub-type.                                                                                                                                                                                                      |
 
 ### Headers
 

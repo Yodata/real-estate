@@ -64,7 +64,10 @@ _website user asks a question_
             },
             "type": "PropertyListing"
         },
-        "instrument": {},
+        "instrument": {
+               "type": "RealEstateWebsite",
+               "url": "https://pa315.bhhs.hsfaffiliates.com/profile/card#me"
+        },
         "type": "AskAction",
         "originatingSystem": {
         "type": "SoftwareApplication",
@@ -125,6 +128,8 @@ _website user asks a question_
 | data.about.listingOriginatingSystem.originatingSystemKey  | string | the listing identifier from the original MLS, aka MLSID. |
 | data.about.type                | string                            | PropertyListing |
 | data.instrument                | object                            | instrument object |
+| data.instrument.type                             | string  | const("`RealEstateWebsite`")                                                                                                                                                                                                                                                                                           |
+| data.instrument.name                             | string  | instrument name                                                                                                                                                                                                                                                                                           |
 | data.type                      | string                            | const (`"AskAction"`) |
 | data.originatingSystem | object | the original system where this item was created.  Can be of type Thing or any sub-type. |
                                                 

@@ -20,6 +20,17 @@ _website user asks a question_
   "timestamp": 1739840980529,
   "data": {
     "type": "AskAction",
+    "leadOwner": {
+            "type": "agent",
+            "name": "Megha Vyas",
+            "id": "https://1109887.bhhs.hsfaffiliates.com/profile/card#me"
+     },
+      "originatingSystem": {
+        "type": "SoftwareApplication",
+        "name": "RDesk",
+        "description": "User Created.",
+        "url": "http://www.rdeskwebsite.com/"
+      },
     "agent": {
       "name": "Dan Collin",
       "email": "collin.dan@gmail.com",

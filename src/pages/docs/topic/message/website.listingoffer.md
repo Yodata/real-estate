@@ -63,6 +63,8 @@ _website user makes a listing offer_
       "streetAddress": "St George'S Court",
       "addressLocality": "Kissimmee",
       "listingId": "389508403",
+      "originatingSystemName": "GOTHAM-MLS",
+      "originatingSystemKey": "12345",
       "listingOriginatingSystem": {
         "type": "MultipleListingService",
         "name": "Stellar MLS (My Florida)",

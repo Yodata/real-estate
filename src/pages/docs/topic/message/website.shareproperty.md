@@ -98,7 +98,16 @@ with the recipient (a Person or Audience).
         "type": "RealEstateOffice"
       },
       "closeDate": "0001-01-01T00:00:00",
-      "image": [],
+       "image": [
+        {
+          "type": "ImageObject",
+          "id": "http://user.example.com/public/logo/image.jpg",
+          "name": "image.jpg",
+          "encodingFormat": "image/jpeg",
+          "about": "http://user.example.com/profile/card#me",
+          "url": "http://user.example.com/public/profile/image.jpg"
+        }
+      ],
       "internetAddressDisplayYN": "Y",
       "latitude": 36.17003631591797,
       "listingAgent": {

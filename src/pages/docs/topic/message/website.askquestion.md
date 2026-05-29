@@ -9,79 +9,66 @@ _website user asks a question_
 ### Payload Example(s) (generated)
 
 ```json
-{   
-    "topic": "realestate/website#askquestion",
-    "data": {
-        "identifier":"nwurogb34tnoi3t",
-        "leadOwner": {
-            "type": "RealEstateOrganization",
-            "name": "Gotham City Real Estate", //** optional
-            "id":"https://example.com/profile.card#me"
-        },
-        "agent": {
-            "name": "String",
-            "email": "someone@yahoo.com",
-            "telephone": "0011223344",
-            "identifier": {
-                "hsfconsumerid": "jkevqh598p3h-gkjent-j5n3i"
-            },
-            "additionalProperty": {
-                "userPath": "||https%xyx%123%",
-                "coListingAgentType": "Primary"
-            },
-            "mortgage": false,
-            "type": "Person"
-        },
-        "object": {
-            "text": "Hello, is this listing still available? I would like more information about 7158 Golden. Thank you! ",
-            "type": "Question"
-        },
-        "recipient": {
-            "id": "https://8675309.domain.com/profile/card#me",
-            "name": "String",
-            "type": "Organization"
-        },
-        "about": {
-            "url": "https://www.bhhspro.com/mentor/steve-baird/cid-356481/oh/889-hartford-drive-44035/pid-338005633",
-            "postalCode": "00000",
-            "addressRegion": "MNO",
-            "streetAddress": "1234 Lake Valley, DF 12345",
-            "addressLocality": "USA",
-            "listingId": "9876543",
-            "listingPrice": {
-                "price": 1234567,
-                "priceCurrency": "USD",
-                "type": "PriceSpecs"
-            },
-            "listingOriginatingSystem": {
-                "type": "MultipleListingService",
-                "name": "XYZ Region MLS (CR)",
-                "identifier": {
-                    "orgId": "abcde-f"
-                },
-                "originatingSystemName": "XYZ Region MLS (CR)",
-                "originatingSystemKey": "VIM12345"
-            },
-            "type": "PropertyListing"
-        },
-        "instrument": {
-               "type": "RealEstateWebsite",
-               "url": "https://pa315.bhhs.hsfaffiliates.com/profile/card#me"
-        },
-        "type": "AskAction",
-        "originatingSystem": {
-        "type": "SoftwareApplication",
-        "name": "RDesk",
-        "description": "User Created.",
-        "url": "http://www.rdeskwebsite.com/"
+{
+  "topic": "realestate/website#askquestion",
+  "agent": "https://dev.bhhs.hsfaffiliates.com/profile/card#me",
+  "originalRecipient": "https://dev.bhhs.hsfaffiliates.com/profile/card#me",
+  "instrument": "https://aem.dev.bhhs.hsfaffiliates.com/profile/card#me",
+  "@id": "https://ace.dev.bhhs.hsfaffiliates.com/inbox/f9902321794741b9bda1f09b12a0759f",
+  "id": "https://aem.dev.bhhs.hsfaffiliates.com/publish/4fe7fad1c2a841159bede3dd9d5df7f9",
+  "time": "2025-02-18T01:09:40.529Z",
+  "timestamp": 1739840980529,
+  "data": {
+    "type": "AskAction",
+    "agent": {
+      "name": "Dan Collin",
+      "email": "collin.dan@gmail.com",
+      "telephone": "9175685905",
+      "identifier": {
+        "hsfconsumerid": "694482a9-5ede-430f-a94e-a7944a79cd0c"
       },
+      "additionalProperty": {
+        "userPath": "https%3A%2F%2Fwww.dev.bhhs.com%2Futah-properties-ut301%2Fsearch%3FSearchInput%3DPark%2520City%2520UT%26SearchType%3DCity%26PropertyType%3D1%252C2%26ApplicationType%3DFOR_SALE%26ListingStatus%3D1%26NewListing%3Dfalse%26Sort%3DPRICE_DESCENDING%26PageSize%3D32%26Page%3D1%26SearchParameter%3DPark%2520City%252C%2520UT%26Country%3DUS|Property+Search+Results+Utah+Properties+%7C+Berkshire+Hathaway+HomeServices|https%3A%2F%2Fwww.dev.bhhs.com%2Futah-properties-ut301%2Fsearch%3FSearchInput%3DPark%2520City%2520UT%26SearchType%3DCity%26PropertyType%3D1%252C2%26ApplicationType%3DFOR_SALE%26ListingStatus%3D1%26NewListing%3Dfalse%26Sort%3DPRICE_DESCENDING%26PageSize%3D32%26Page%3D1%26SearchParameter%3DPark%2520City%252C%2520UT%26Country%3DUS|Property+Search+Results+Utah+Properties+%7C+Berkshire+Hathaway+HomeServices|0",
+        "coListingAgentType": "Primary"
+      },
+      "mortgage": false,
+      "type": "Contact"
     },
-    "recipient": "https://8675309.domain.com/profile/card#me",
-    "instrument": "https://pod.domain/profile/card#me",
-    "@id":"https:/pod.doamin.com/publish/id",
-    "id": "https:/pod.doamin.com/publish/id",
-    "time": "2024-01-25T18:46:42.056Z",
-    "timestamp": 1706208402056
+    "object": {
+      "text": "Hi, I would like more information about 1851 W Galena Ridge Way, Park City, UT 84060.",
+      "type": "Question"
+    },
+    "recipient": {
+      "id": "https://65327.dev.bhhs.hsfaffiliates.com/profile/card#me",
+      "name": "Nancy Erni",
+      "type": "RealEstateAgent"
+    },
+    "about": {
+      "url": "https://www.dev.bhhs.com/utah-properties-ut301/search?SearchInput=Park%20City%20UT&SearchType=City&PropertyType=1%2C2&ApplicationType=FOR_SALE&ListingStatus=1&NewListing=false&Sort=PRICE_DESCENDING&PageSize=32&Page=1&SearchParameter=Park%20City%2C%20UT&Country=US|%20Berkshire%20Hathaway%20HomeServices%3Bhttps://www.dev.bhhs.com/utah-properties-ut301/search?SearchInput=Park%2520City%2520UT&SearchType=City&PropertyType=1%252C2&ApplicationType=FOR_SALE&ListingStatus=1&NewListing=false&Sort=PRICE_DESCENDING&PageSize=32&Page=1&SearchParameter=Park%2520City%252C%2520UT&Country=US%3BProperty%20Search%20Results%20Utah%20Properties%20|%20Berkshire%20Hathaway%20HomeServices%3B0",
+      "postalCode": "84060",
+      "addressRegion": "UT",
+      "streetAddress": "1851 W Galena Ridge Way, Park City, UT 84060",
+      "addressLocality": "Park City",
+      "listingId": "389508403",
+      "listingPrice": {
+        "price": 21000000,
+        "priceCurrency": "USD",
+        "type": "PriceSpecification"
+      },
+      "listingOriginatingSystem": {
+        "type": "MultipleListingService",
+        "name": "",
+        "identifier": {
+          "orgId": ""
+        },
+        "originatingSystemName": "",
+        "originatingSystemKey": ""
+      },
+      "type": "PropertyListing"
+    },
+    "instrument": {},
+    "identifier": "nwurogb34tnoi3t"
+  }
 }
 ```
 ### Payload
@@ -132,6 +119,18 @@ _website user asks a question_
 | data.instrument.name                             | string  | instrument name                                                                                                                                                                                                                                                                                           |
 | data.type                      | string                            | const (`"AskAction"`) |
 | data.originatingSystem | object | the original system where this item was created.  Can be of type Thing or any sub-type. |
+| agent                                                   | url    | format (`uri`) |
+| originalRecipient                                       | url    | format (`uri`) |
+| data                                                    | object | message payload |
+| data.agent                                             | object | website user details |
+| data.agent.identifier                                  | object | agent identifier |
+| data.agent.additionalProperty                          | object | additional property details |
+| data.object                                            | object | question details |
+| data.recipient                                         | object | recipient details |
+| data.about                                             | object | property listing details |
+| data.about.listingPrice                                | object | listing price details |
+| data.about.listingOriginatingSystem                    | object | listing originating system details |
+| data.about.listingOriginatingSystem.identifier         | object | listing originating system identifier |
                                                 
 
 ### Headers

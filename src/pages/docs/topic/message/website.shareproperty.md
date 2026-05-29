@@ -330,6 +330,27 @@ with the recipient (a Person or Audience).
 | data.leadOwner.name              | string | lead owner name |
 | data.leadOwner.id                | string | format (`uri`) |
 | data.event.subEvents             | array  | array of subEvents |
+| data.object.buyerAgent.identifier                                  | object  | buyer agent identifier |
+| data.object.buyerAgent.type                                        | string  | const (`"RealEstateAgent"`) |
+| data.object.listingAgent.type                                      | string  | const (`"RealEstateAgent"`) |
+| data.object.listingAgent.name                                      | string  | listing agent name |
+| data.object.listingAgent.telephone                                 | string  | listing agent telephone number |
+| data.object.listingAgent.email                                     | string  | format (`email`) |
+| data.object.listingOffice.name                                     | string  | listing office name |
+| data.object.listingOffice.type                                     | string  | const (`"RealEstateOffice"`) |
+| data.object.listingOriginatingSystem.name                          | string  | listing originating system name |
+| data.object.listingOriginatingSystem.type                          | string  | const (`"MultipleListingService"`) |
+| data.object.listingPrice.type                                      | string  | const (`"PriceSpecification"`) |
+| data.object.listingPrice.price                                     | number  | listing price |
+| data.object.listingPrice.priceCurrency                             | string  | use ISO4217 |
+| data.object.livingArea.type                                        | string  | const (`"QuantitativeValue"`) |
+| data.object.livingArea.unitCode                                    | string  | unit code |
+| data.object.livingArea.unitText                                    | string  | unit text |
+| data.object.livingArea.value                                       | number  | living area value |
+| data.object.lotSize.type                                           | string  | const (`"QuantitativeValue"`) |
+| data.object.lotSize.unitCode                                       | string  | unit code |
+| data.object.lotSize.unitText                                       | string  | unit text |
+| data.object.lotSize.value                                          | number  | lot size value |
 
 ### Headers
 

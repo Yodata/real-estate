@@ -251,6 +251,12 @@ website user (agent) saves a property search (object), on a website or mobile ap
 | timestamp                                                         | number              | event timestamp                                                                  |
 | originalRecipient                                                 | string              | format (`uri`)                                                                   |
 | @to                                                               | string              | format (`uri`)                                                                   |
+| data.object.bedrooms                                           | object              | bedroom search criteria                                                          |
+| data.object.bedrooms.type                                      | string              | const (`"QuantitativeValue"`)                                                   |
+| data.object.bedrooms.minValue                                  | number              | minimum bedroom value                                                            |
+| data.object.bathrooms                                          | object              | bathroom search criteria                                                         |
+| data.object.bathrooms.type                                     | string              | const (`"QuantitativeValue"`)                                                   |
+| data.object.bathrooms.minValue                                 | number              | minimum bathroom value                                                           |
 
 ### Headers
 

@@ -12,143 +12,130 @@ website user (data.agent) has viewed a listing (data.object) on a webiste or mob
 {
   "topic": "realestate/website#viewpropertyvaluereport",
   "recipient": "https://bhhs.hsfaffiliates.com/profile/card#me",
-  "time": "2023-02-08T23:34:08.331Z",
-  "agent": "https://3023834.bhhs.hsfaffiliates.com/profile/card#me",
-  "instrument": "https://3023834.bhhs.hsfaffiliates.com/profile/card#me",
-  "source": "https://3023834.bhhs.hsfaffiliates.com/profile/card#me",
-  "originalRecipient": "https://3023834.bhhs.hsfaffiliates.com/profile/card#me",
+  "time": "2025-10-28T23:44:16.153Z",
+  "agent": "https://dev.bhhs.hsfaffiliates.com/profile/card#me",
+  "instrument": "https://aem.dev.bhhs.hsfaffiliates.com/profile/card#me",
+  "source": "https://3028345.dev.bhhs.hsfaffiliates.com/profile/card#me",
+  "originalRecipient": "https://3028345.dev.bhhs.hsfaffiliates.com/profile/card#me",
   "data": {
     "type": "ViewAction",
-    "identifier":"nwurogb34tnoi3t",
+    "identifier": "nwurogb34tnoi3t",
     "agent": {
       "type": "Contact",
-      "name": "Anonymous Visitor",
-      "givenName": "Anonymous",
-      "familyName": "Visitor",
-      "email": "D9952B6A-FCC5-4F5F-BC46-277FD9A365D2@unknownemailaddy.com",
+      "name": "Home Value Estimate Lead",
+      "givenName": "Home Value",
+      "familyName": "Estimate Lead",
+      "email": "13e9b747-ac8a-4941-80a9-02c1efc31216@no-email-provided.com",
       "identifier": {
-        "hsfconsumerid": "D9952B6A-FCC5-4F5F-BC46-277FD9A365D2"
+        "hsfconsumerid": "9dbe571d-7e3e-41ef-8070-6cfe78827c7a"
       },
       "additionalProperty": {
-        "userPath": "%3B404%3BHome%20Value%20|%20Leo%20Shut%20|%20Berkshire%20Hathaway%20HomeServices%3B1",
+        "userPath": "https://www.dev.bhhs.com/northwest-real-estate-or311/netarts/michelle-dienee-carlon/cid-3128345/home-value?address=1924%21Northeast%2171%21Street,%21Lincoln%21City,%21OR,%2197367&agentId=3128345;Home Value | Michelle Dienee Carlon | Berkshire Hathaway HomeServices;1",
         "workingWithAgent": false
       }
     },
     "participant": {
       "type": "RealEstateAgent",
-      "id": "https://3023834.bhhs.hsfaffiliates.com/profile/card#me"
+      "id": "https://3028345.dev.bhhs.hsfaffiliates.com/profile/card#me"
     },
     "instrument": {
       "type": "RealEstateWebsite",
-      "url": "https://3023834.bhhs.hsfaffiliates.com/profile/card#me"
+      "url": "https://3028345.dev.bhhs.hsfaffiliates.com/profile/card#me"
     },
     "object": {
       "type": "PropertyValueReport",
-      "name": "LOT:W BLK:79501 CITY/MUNI/TWP:WEST SPRINGFIELD ",
-      "dateCreated": "2023-02-08T11:34:07",
+      "name": "SEC/TWN/RNG/MER:SEC 27 TWN 06S RNG 11W PROPERTY ID R101811 FOOTHILLS ADDN. TO ROADS END, LOT 28, DOC202104420 ",
+      "dateCreated": "2025-10-28T11:44:15",
       "result": {
         "type": "MonetaryAmount",
-        "minValue": 282900,
-        "maxValue": 407100,
-        "value": 345000,
+        "minValue": 1119700,
+        "maxValue": 1484300,
+        "value": 1302000,
         "currency": "USD"
       },
-      "about":  {
-                "type": "RealEstateProperty",
-                "propertyType": "Single Family Residential",
-                "addressCounty": "ONEIDA",
-                "addressCountry": "USA",
-                "addressLocality": "NEW YORK MILLS",
-                "addressRegion": "NY",
-                "apn": "307007 317.010-1-40",
-                "image": [],
-                "latitude": 43.10099,
-                "livingArea": {
-                    "type": "QuantitativeValue",
-                    "unitCode": "SqFt",
-                    "unitText": "Square Feet",
-                    "value": 2245
-                },
-                "longitude": -75.29613,
-                "lotSize": {
-                    "type": "QuantitativeValue",
-                    "unitCode": "SqFt",
-                    "unitText": "Square Feet",
-                    "value": 15196.5
-                },
-                "numberOfBathrooms": 1,
-                "numberOfBedrooms": 2,
-                "postalCode": "13417",
-                "propertySubType": "Residential",
-                "streetAddress": "484 MAIN ST",
-                "yearBuilt": 1885,
-                "additionalProperty": {
-                    "score": 68,
-                    "parcelId": "307007 317.010-1-40",
-                    "averageSalePrice": {
-                        "type": "PriceSpecification",
-                        "price": 273140,
-                        "priceCurrency": "USD"
-                    },
-                    "nonDisclosureProperty": false,
-                    "taxAssessedValue": {
-                        "type": "MonetaryAmount",
-                        "amount": 70100,
-                        "currency": "USD"
-                    },
-                    "taxAssessedYear": 2025,
-                    "useNeighborhoodDataForCharts": false,
-                    "ownerName": "GEORGE & DOLORES NOMA (LIFE USE); LAWRENCE NOMA;DON NOMA;GEORGE & DOLORES NOMA",
-                    "ownerOccupied": "N",
-                    "ownersEstimatedEquity": {
-                        "@type": "MonetaryAmount",
-                        "amount": 241000,
-                        "currency": "USD"
-                    }
-                },
-                "heating": "Hot Water",
-                "soldPrice": {
-                    "type": "PriceSpecification",
-                    "price": 0,
-                    "priceCurrency": "USD"
-                }
-            }
+      "about": {
+        "type": "RealEstateProperty",
+        "propertyType": "Single Family",
+        "addressCountry": "US",
+        "addressLocality": "LINCOLN CITY",
+        "addressRegion": "OR",
+        "image": [],
+        "latitude": 45.01661,
+        "livingArea": {
+          "type": "QuantitativeValue",
+          "unitCode": "SqFt",
+          "unitText": "Square Feet",
+          "value": 2516
+        },
+        "longitude": -124.00688,
+        "lotSize": {
+          "type": "QuantitativeValue",
+          "unitCode": "SqFt",
+          "unitText": "Square Feet",
+          "value": 6970
+        },
+        "numberOfBathrooms": 2.2,
+        "numberOfBedrooms": 3,
+        "postalCode": "97367",
+        "streetAddress": "1924 NE 71ST ST",
+        "yearBuilt": 2004,
+        "additionalProperty": {
+          "score": 86,
+          "parcelId": "06-11-27-DD-06800-00",
+          "averageSalePrice": {
+            "type": "PriceSpecification",
+            "price": 1097027,
+            "priceCurrency": "USD"
+          },
+          "nonDisclosureProperty": false,
+          "taxAssessedValue": {
+            "type": "MonetaryAmount",
+            "amount": 688830,
+            "currency": "USD"
+          },
+          "taxAssessedYear": 2024,
+          "useNeighborhoodDataForCharts": true,
+          "ownerName": "BUSHMAN GORDON H (TSTEE)",
+          "ownerOccupied": "Y",
+          "ownersEstimatedEquity": {
+            "@type": "MonetaryAmount",
+            "amount": 1302000,
+            "currency": "USD"
+          },
+          "firstLoanPrice": {
+            "@type": "MonetaryAmount",
+            "amount": 0,
+            "currency": "USD"
+          },
+          "secondLoanPrice": {
+            "@type": "MonetaryAmount",
+            "amount": 0,
+            "currency": "USD"
+          },
+          "lastRefinanceLoanVal1": {
+            "@type": "MonetaryAmount",
+            "amount": 0,
+            "currency": "USD"
+          },
+          "lastRefinanceLoanVal2": {
+            "@type": "MonetaryAmount",
+            "amount": 0,
+            "currency": "USD"
+          }
         }
-    },
-    "originatingSystem": {
-        "type": "SoftwareApplication",
-        "name": "RDesk",
-        "description": "User Created.",
-        "url": "http://www.rdeskwebsite.com/"
+      }
     },
     "event": {
       "type": "Event",
-      "name": "Property Showing  64 Buttercup Lane, South Grafton, MA, USA",
+      "name": "Property Showing 1924 Northeast 71 Street, Lincoln City, OR, 97367",
       "description": "",
-      "subEvents": [
-        {
-          "type": "Campaign",
-          "name": "A good campaign name",
-          "id": "ire:1d2995307f2c48ae9543caf586f43f9b",
-          "url": "https://www.bhhspro.com/mentor/steve-baird/cid-356481/oh/889-hartford-drive-44035/pid-338005633",
-          "contactGroup": [
-            {
-              "type": "Collection",
-              "name": "Topic 1"
-            },
-            {
-              "type": "Collection",
-              "name": "Topic 2"
-            }
-          ]
-        }
-      ]
+      "subEvents": []
     },
     "recipient": {}
   },
-  "@id": "https://aem.bhhs.hsfaffiliates.com/publish/1d2995307f2c48ae9543caf586f43f9b",
-  "id": "https://aem.bhhs.hsfaffiliates.com/publish/1d2995307f2c48ae9543caf586f43f9b",
-  "timestamp": 1675899248331
+  "@id": "https://listtrac.dev.bhhs.hsfaffiliates.com/inbox/6c5618953d894d73ad5fbeb981a2a771",
+  "id": "https://aem.dev.bhhs.hsfaffiliates.com/publish/d86bc2873dd844be904f76243344f48d",
+  "timestamp": 1761695056153
 }
 ```
 

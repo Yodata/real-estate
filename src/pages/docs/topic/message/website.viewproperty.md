@@ -11,75 +11,165 @@ website user (data.agent) has viewed a listing (data.object) on a webiste or mob
 ```json
 {
   "topic": "realestate/website#viewproperty",
-  "time": "2020-06-18T18:30:49Z",
-  "agent": "https://bhhs.example.com/profile/card#me",
-  "instrument": "https://smarter-agent.example.com/profile/card#me",
-  "source": "https://{agentid}.example.com/profile/card#me",
+  "recipient": null,
+  "time": "2025-04-14T18:51:30.3922594-05:00",
+  "agent": "Constellation 1",
+  "instrument": "Trio",
+  "source": "https://SC301.dev.bhhs.hsfaffilaites.com/profile/card#me",
   "data": {
     "type": "ViewAction",
-    "identifier":"nwurogb34tnoi3t",
-    "agent": {
-      "type": "Contact",
-      "name": "Bill Bailey",
-      "telephone": "067-419-1230",
-      "email": "user@example.com",
-      "additionalProperty": {
-        "userPath": "xxx"
-      },
-      "identifier": {
-        "sausID": "216bf670-0777-43db-9d73-c3377d280fe4",
-        "redContact_Guid": "201ff92c-e3ad-43b1-8a01-5555168cb0ae"
-      }
-    },
-    "instrument": {
-      "type": "RealEstateWebsite",
-      "url": "http://gotham-city-realestate.example.com"
-    },
     "object": {
       "type": "PropertyListing",
-      "originatingSystemName": "GOTHAM-MLS",
-      "originatingSystemKey": "12345",
-      "url": "https://{company-website-url}/{path-to-listing}",
-      "streetAddress": "1007 Mountain Gate Rd",
-      "addressRegion": "New Jersey",
-      "addressLocality": "Gotham City",
-      "postalCode": "10010",
-      "addressCountry": "USA",
+      "originatingSystemName": "scgga",
+      "originatingSystemKey": "1552529",
+      "streetAddress": "15551 Asheville Highway",
+      "addressLocality": "Campobello",
+      "addressRegion": "SC",
+      "postalCode": "29322",
+      "addressCountry": "US",
+      "propertyType": "RESI",
+      "propertySubType": "SingleFamilyPropertyType",
+      "listingContractDate": "2025-03-29T00:00:00",
+      "closeDate": null,
+      "modificationTimestamp": "2025-04-14T23:51:30",
       "listingPrice": {
         "type": "PriceSpecification",
-        "price": 7500000,
-        "priceCurrency": "USD"
+        "priceCurrency": "USD",
+        "price": 405000
+      },
+      "soldPrice": {
+        "type": "PriceSpecification",
+        "priceCurrency": "USD",
+        "price": 0
+      },
+      "listingStatus": "Contingent",
+      "buyerAgent": {
+        "type": "RealEstateAgent",
+        "name": "",
+        "email": null,
+        "identifier": {
+          "mlsAgentId": null
+        },
+        "additionalProperty": {
+          "agentId": null
+        }
+      },
+      "buyerOffice": {
+        "type": "RealEstateOffice",
+        "name": null,
+        "email": null,
+        "identifier": {
+          "mlsOfficeId": null
+        },
+        "additionalProperty": {
+          "officeId": null
+        }
+      },
+      "latitude": 35.09154,
+      "longitude": -82.14133,
+      "listingAgent": {
+        "type": "RealEstateAgent",
+        "name": "Jill Chapman",
+        "email": "jchapman@cdanjoyner.com",
+        "identifier": {
+          "mlsAgentId": "7084"
+        },
+        "additionalProperty": {
+          "agentId": "228829"
+        }
+      },
+      "listingOffice": {
+        "type": "RealEstateOffice",
+        "name": "BHHS C Dan Joyner - Midtown",
+        "email": "internetmarketing@cdanjoyner.com",
+        "identifier": {
+          "mlsOfficeId": "JOYN01"
+        },
+        "additionalProperty": {
+          "officeId": "SC301-033"
+        }
+      },
+      "coListingAgent": {
+        "type": "RealEstateAgent",
+        "name": "",
+        "email": null,
+        "identifier": {
+          "mlsAgentId": null
+        },
+        "additionalProperty": {
+          "agentId": null
+        }
+      },
+      "listingId": 401087897,
+      "listingOriginatingSystem": {
+        "type": "MultipleListingService",
+        "name": "Greater Greenville MLS",
+        "identifier": {
+          "orgId": "scgga"
+        }
+      },
+      "livingArea": {
+        "type": "QuantitativeValue",
+        "value": null,
+        "unitCode": "FTK",
+        "unitText": "SquareFeet"
+      },
+      "lotSize": {
+        "type": "QuantitativeValue",
+        "value": 2.78,
+        "unitCode": "ACR",
+        "unitText": "Acre"
+      },
+      "numberOfBedrooms": "3",
+      "numberOfBathrooms": "2.5",
+      "numberOfFullBathrooms": "2",
+      "numberOf1/2Bathrooms": "1",
+      "numberOf1/4Bathrooms": "",
+      "numberOf3/4Bathrooms": "",
+      "internetAddressDisplayYN": "Y",
+      "image": [
+        {
+          "type": "ImageObject",
+          "encodingFormat": "image/jpeg",
+          "id": "https://photos.prod.cirrussystem.net/10142/19ea2d1d8d9c01665cee55e621ea206e/2605219266.jpeg"
+        }
+      ],
+      "events": [],
+      "description": "Looking for a Personal Sanctuary in a small town, mountain views, almost three acres just in case you may want to get your own chickens.",
+      "url": "https://www.dev.bhhs.com/c-dan-joyner-realtors-sc301/sc/15551-asheville-highway-campobello-29322/pid-401087897",
+      "about": {
+        "type": "PropertyListing",
+        "url": "https://www.dev.bhhs.com/c-dan-joyner-realtors-sc301/sc/15551-asheville-highway-campobello-29322/pid-401087897"
+      },
+      "brokerAtrribution": null,
+      "yearBuilt": null,
+      "deleted": false
+    },
+    "result": null,
+    "agent": {
+      "type": "Person",
+      "name": null,
+      "telephone": null,
+      "email": null,
+      "additionalProperty": null,
+      "identifier": null,
+      "sameAs": {
+        "hsfSessionId": "00000000-0000-0000-0000-000000000000",
+        "cregContactKey": null
       }
     },
-    "originatingSystem": {
-        "type": "SoftwareApplication",
-        "name": "RDesk",
-        "description": "User Created.",
-        "url": "http://www.rdeskwebsite.com/"
-    },
- "event": {
-      "type": "Event",
-      "name": "Property Showing  64 Buttercup Lane, South Grafton, MA, USA",
-      "description": "",
-      "subEvents": [
-        {
-          "type": "Campaign",
-          "name": "A good campaign name",
-          "id": "ire:1d2995307f2c48ae9543caf586f43f9b",
-          "url":"https://www.bhhspro.com/mentor/steve-baird/cid-356481/oh/889-hartford-drive-44035/pid-338005633",
-          "contactGroup": [
-            {
-              "type": "Collection",
-              "name": "Topic 1"
-            },
-            {
-              "type": "Collection",
-              "name": "Topic 2"
-            }
-          ]
-        }
-      ]
-    },
+    "participant": [
+      {
+        "type": "RealEstateAgent",
+        "id": "228829",
+        "name": "Jill Chapman",
+        "roleName": "ListingAgent"
+      }
+    ],
+    "instrument": {
+      "type": "RealEstateWebsite",
+      "url": "https://dev.bhhs.com/profile/card#me"
+    }
   }
 }
 ```

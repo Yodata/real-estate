@@ -11,58 +11,67 @@ _website user makes a listing offer_
 ```json
 {
   "topic": "realestate/website#listingoffer",
+  "recipient": "https://dev.bhhs.hsfaffiliates.com/profile/card#me",
+  "instrument": "https://aem.dev.bhhs.hsfaffiliates.com/profile/card#me",
+  "@id": "https://aem.dev.bhhs.hsfaffiliates.com/publish/b0aced6fef0a41d5b1f5815fe113d01b",
+  "id": "https://aem.dev.bhhs.hsfaffiliates.com/publish/b0aced6fef0a41d5b1f5815fe113d01b",
+  "time": "2025-02-19T16:56:20.054Z",
+  "timestamp": 1739984180054,
   "data": {
     "type": "ListingOffer",
-    "identifier":"nwurogb34tnoi3t",
+    "identifier": "xnVDTwM1ZPwzU1wJ0hWK9ut1KvHoPYbybjvn6Ijx6T6YM2uBv4LHjfCvIpkc6gRrw6yBxq0/Cq0BBcryzY1UeEdX",
     "agent": {
       "type": "Contact",
-      "name": "Bruce Wayne",
-      "givenName": "Bruce",
-      "familyName": "Wayne",
-      "email": "batman@example.com",
-      "telephone": "1+888-867-5309",
+      "name": "Lindsay Hoffmann",
+      "givenName": "Lindsay",
+      "familyName": "Hoffmann",
+      "email": "hoffmannlindsay@yahoo.com",
+      "telephone": "2035986487",
       "identifier": {
-        "hsfconsumerid": "xxxxxxxxxxxxx"
+        "hsfconsumerid": "e4ef3f10-3916-4a5e-a557-500bf7d07e01"
       },
       "additionalProperty": {
-                "userPath": "https://www.bhhs.com/homes-for-sale/nc/8205-lulworth-drive-stokesdale-27357/pid-427799429|8205 Lulworth Drive, Stokesdale, NC 27357 - MLS 1208275 - Berkshire Hathaway HomeServices|0"
-            },
-       "mortgage": true,
-       "type": "Contact",
+        "userPath": "https%3A%2F%2Fwww.bhhsfloridarealty.com%2Fwindermere%2Fandrew-kincaid%2Fcid-1052163%2Fsearch%3FSearchInput%3DKissimmee%2520FL%26SearchType%3DCity%26MinPrice%3D10000%26MaxPrice%3D20000%26PropertyType%3D5%26ApplicationType%3DFOR_SALE%26ListingStatus%3D1%26NewListing%3Dfalse%26Sort%3DPRICE_ASCENDING%26PageSize%3D32%26Page%3D1%26NorthEastLatitude%3D30.618479114939824%26NorthEastLongitude%3D-74.51860807836056%26SouthWestLatitude%3D24.136170723586538%26SouthWestLongitude%3D-87.37261198461056%26SearchParameter%3DKissimmee%252C%2520FL%26Country%3DUS%26isFranchisePage%3Dtrue%26franchiseeCode%3DFL301|Property+Search+Results+%7C+Andrew+Kincaid+%7C+Berkshire+Hathaway+HomeServices|https%3A%2F%2Fwww.bhhsfloridarealty.com%2Fwindermere%2Fandrew-kincaid%2Fcid-1052163%2Ffl%2Fst-georges-court-kissimmee-34746%2Fpid-397345005|St+George%27S+Court%2C+Kissimmee%2C+FL+34746+-+MLS+A4640270+-+Berkshire+Hathaway+HomeServices|1"
+      },
+      "mortgage": false,
       "sameAs": {
         "amcecrmid": "1234567",
         "salesForceId": "xxxxxxxxxxxxx"
       }
     },
-     "object": {
-            "text": "Name: Mick Mack\nEmail: mc3005@gmail.com\nPhone: 3363376630\nHomeowner did not provide a custom message. - Property Address: 8205 Lulworth Drive\nYes, I am pre-approved for a home mortgage",
-            "type": "Comment"
-        },
+    "object": {
+      "type": "Comment",
+      "text": "Name: Lindsay Hoffmann\nEmail: hoffmannlindsay@yahoo.com\nPhone: 2035986487\nI am ready to buy. I just need the parcel number first to call the Osceola County Zoning department and make sure I can build on this lot. - Property Address: St George'S Court\nNo, I am not pre-approved for a home mortgage"
+    },
+    "recipient": {
+      "type": "RealEstateAgent",
+      "name": "Andrew Kincaid",
+      "id": "https://1052163.dev.bhhs.hsfaffiliates.com/profile/card#me"
+    },
     "offerPrice": {
       "type": "PriceSpecification",
       "minPrice": 75000,
       "maxPrice": 100000,
-      "price": 75000,
+      "price": 15000,
       "priceCurrency": "USD"
     },
     "propertyListing": {
       "type": "PropertyListing",
-      "url": "https://{company-website-url}/{path-to-listing}",
-      "postalCode": "10010",
-      "addressRegion": "New Jersey",
-      "streetAddress": "1007 Mountain Gate Rd",
-      "addressLocality": "Gotham City",
-      "listingId": "427799429",
-       "listingOriginatingSystem": {
-                "type": "MultipleListingService",
-                "name": "Triad MLS (NCTRIAD)",
-                "identifier": {
-                    "orgId": "nctriad-r"
-                },
-                "originatingSystemName": "Triad MLS (NCTRIAD)",
-                "originatingSystemKey": "1208275"
+      "url": "https://www.bhhsfloridarealty.com/windermere/andrew-kincaid/cid-1052163/fl/st-georges-court-kissimmee-34746/pid-397345005",
+      "postalCode": "34746",
+      "addressRegion": "FL",
+      "streetAddress": "St George'S Court",
+      "addressLocality": "Kissimmee",
+      "listingId": "389508403",
+      "listingOriginatingSystem": {
+        "type": "MultipleListingService",
+        "name": "Stellar MLS (My Florida)",
+        "identifier": {
+          "orgId": "flmfr"
         },
-    
+        "originatingSystemName": "Stellar MLS (My Florida)",
+        "originatingSystemKey": "A4640270"
+      },
       "addressCountry": "USA",
       "listingPrice": {
         "type": "PriceSpecification",
@@ -70,16 +79,15 @@ _website user makes a listing offer_
         "priceCurrency": "USD"
       }
     },
-     "instrument": {},
-        "identifier": "xnVDTwM1ZPwzU1wJ0hWK9ut1KvHoPYbybjvn6Ijx6T6YM2uBv4LHjfCvIpkc6gRrw6yBxq0/Cq0BBcryzY1UeEdX",
-        "leadOwner": {
-            "type": "organization",
-            "name": "Carolinas Realty",
-            "id": "https://nc301.bhhs.hsfaffiliates.com/profile/card#me"
-        },
+    "instrument": {},
+    "leadOwner": {
+      "type": "organization",
+      "name": "Carolinas Realty",
+      "id": "https://nc301.bhhs.hsfaffiliates.com/profile/card#me"
+    },
     "event": {
       "type": "Event",
-      "name": "Property Showing  64 Buttercup Lane, South Grafton, MA, USA",
+      "name": "Property Showing 64 Buttercup Lane, South Grafton, MA, USA",
       "description": "",
       "subEvents": [
         {
@@ -101,15 +109,10 @@ _website user makes a listing offer_
       ]
     },
     "originatingSystem": {
-        "type": "SoftwareApplication",
-        "name": "RDesk",
-        "description": "User Created.",
-        "url": "http://www.rdeskwebsite.com/"
-      },
-    "recipient": {
-      "type": "RealEstateAgent",
-      "name": "Randy RealEstateAgent",
-      "id": "https://{agentid}.example.com/profile/card#me"
+      "type": "SoftwareApplication",
+      "name": "RDesk",
+      "description": "User Created.",
+      "url": "http://www.rdeskwebsite.com/"
     }
   }
 }
@@ -132,8 +135,7 @@ _website user makes a listing offer_
 | data.agent.identifier                            | object  | 1 properties                                                                                                                                                                                                                                                                                |
 | data.agent.identifier.hsfconsumerid | string | HSF consumer identifier |
 | data.agent.mortgage | boolean | true or false |
-| data.agent.type                            | object  | agent type                                                                                                                                                                                                                                                                             |
-| data.agent.additionalProperties.userPath | string | userPath                                                                                                                                                                                                                                                                                         |
+| data.agent.additionalProperty.userPath | string | userPath                                                                                                                                                                                                                                                                                         |
 | data.object.text                            | string  | agent info                                                                                                                                                                                                                                                                             |
 | data.object.type                           | string  | object type                                                                                                                                                                                                                                                                            |
 | data.recipient.id                              | string  |  format (`uri`)  |  
@@ -161,12 +163,11 @@ _website user makes a listing offer_
 | data.propertyListing.listingOriginatingSystem.originatingSystemName   | string | originating system name |
 | data.propertyListing.listingOriginatingSystem.originatingSystemKey    | string | originating system listing key |
 | data.instrument      | object | the site, app, or service on which the user action was observed |
-| data.identifier      | string | unique identifier |
 | data.leadOwner       | object | lead owner details |
 | data.leadOwner.type  | string | lead owner type |
 | data.leadOwner.name  | string | lead owner name |
 | data.leadOwner.id    | string | format (`uri`) |
-| data.event.type                                   | object                                | type of the event e.g Campaign                                                                                                                                                                                                                                                              |
+| data.event.type                                   | string                                | type of the event e.g Campaign                                                                                                                                                                                                                                                              |
 | data.event.name                                   | string                                | any string name                                                                                                                                                                                                                                                                             |
 | data.event.id                                     | string                                | format (`uri`)                                                                                                                                                                                                                                                                              |
 | data.event.url                                    | string                                | url of the event                                                                                                                                                                                                                                                                            |
@@ -283,6 +284,28 @@ _website user makes a listing offer_
 | data.recipient.1.telephone                        | string                                | Primary phone number.                                                                                                                                                                                                                                                                       |
 | data.recipient.1.worksFor                         | string                                | Organizations the person works for.                                                                                                                                                                                                                                                         |
 | data.originatingSystem | object | the original system where this item was created.  Can be of type Thing or any sub-type. |
+| data.agent.givenName | string | first name |
+| data.agent.familyName | string | last name |
+| data.agent.sameAs | object | external system identifiers |
+| data.agent.sameAs.amcecrmid | string | AMCE CRM ID |
+| data.agent.sameAs.salesForceId | string | Salesforce ID |
+| data.propertyListing.addressCountry | string | country |
+| data.propertyListing.listingPrice | object | listing price details |
+| data.propertyListing.listingPrice.type | string | const (`"PriceSpecification"`) |
+| data.propertyListing.listingPrice.price | number | listing price |
+| data.propertyListing.listingPrice.priceCurrency | string | currency code |
+| data.event.description | string | event description |
+| data.event.subEvents.type | string | sub-event type |
+| data.event.subEvents.name | string | sub-event name |
+| data.event.subEvents.id | string | sub-event identifier |
+| data.event.subEvents.url | string | sub-event URL |
+| data.event.subEvents.contactGroup | array | contact groups |
+| data.event.subEvents.contactGroup.type | string | contact group type |
+| data.event.subEvents.contactGroup.name | string | contact group name |
+| data.originatingSystem.type | string | originating system type |
+| data.originatingSystem.name | string | originating system name |
+| data.originatingSystem.description | string | originating system description |
+| data.originatingSystem.url | string | originating system URL |
 
 ### Headers
 

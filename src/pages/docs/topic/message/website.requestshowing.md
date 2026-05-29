@@ -13,6 +13,7 @@ _a website visitor has requested a property showing_
   "topic": "realestate/website#requestshowing",
   "time": "2020-06-18T18:30:49Z",
   "agent": "https://bhhs.example.com/profile/card#me",
+  "recipient": "https://dev.bhhs.hsfaffiliates.com/profile/card#me",
   "instrument": "https://smarter-agent.example.com/profile/card#me",
   "source": "https://{agentid}.example.com/profile/card#me",
   "identifier": "46wuVafgZ6/e9kGuyImp2vGJuNqYOF6YUHZU0WnOH5U/x5KDCc3mbV0r4OzJ619ZmMTAb88r7Tp3CmQFeSc2Lz/O",
@@ -213,6 +214,7 @@ _a website visitor has requested a property showing_
 | data.recipient.id                                                     | string  | format (`uri`) |
 | data.recipient.identifier                                             | any     | recipient identifier |
 | data.originatingSystem                                                | object  | the original system where this item was created. Can be of type Thing or any sub-type |
+| recipient                                                            | string  | format (`uri`) |
 
 
 ### Headers

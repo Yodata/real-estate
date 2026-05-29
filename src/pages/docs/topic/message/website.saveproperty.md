@@ -113,7 +113,8 @@ title: website#saveproperty
         "cooling": "Central Air",
         "exteriorFeatures": "Patio",
         "interiorFeatures": "Breakfast Bar, Eat-in Kitchen, Smart Thermostat, Walk-In Closet(s)",
-        "stories": 2
+        "stories": 2,
+        "lotSizeDimensions": "0.00 x 0.00"
       },
       "dateCreated": "2026-05-28T19:16:00.415Z",
       "dateModified": "2026-05-28T19:16:00.415Z"
@@ -264,6 +265,7 @@ title: website#saveproperty
 | data.object.additionalProperty.exteriorFeatures                       | string              | exterior features |
 | data.object.additionalProperty.interiorFeatures                       | string              | interior features |
 | data.object.additionalProperty.stories                                | number              | number of stories |
+| data.object.additionalProperty.lotSizeDimensions                      | string              | lot size dimensions |
 | data.object.dateCreated                                               | string              | date and time the listing was created |
 | data.object.dateModified                                              | string              | date and time the listing was modified |
 | data.leadOwner                                                        | object              | lead owner details |

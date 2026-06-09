@@ -6,7 +6,9 @@ title: profile#add
 
 _an agent, office or organization profile was added_
 
-### Payload Example(s) (generated)
+
+
+### Agent Profile
 
 ```json
 {
@@ -157,6 +159,121 @@ _an agent, office or organization profile was added_
   "id": "https://profile-events-next.bhhs.hsfaffiliates.com/publish/15f451c6c5154b728d51a5c74eb4d64d"
 }
 ```
+
+### Office Profile
+
+```json
+{
+    "topic": "realestate/profile#add",
+    "data": {
+        "type": "AddAction",
+        "object": {
+            "type": "RealEstateOffice",
+            "id": "https://ak999.bhhs.hsfaffiliates.com/profile/card#me",
+            "name": "Grayling Properties Test",
+            "telephone": "(111) 000-0000",
+            "faxNumber": "(111) 000-0000",
+            "email": "test@test.com",
+            "url": "",
+            "identifier": {
+                "OfficeID": "AK999-999"
+            },
+            "availableLanguage": [],
+            "certification": [],
+            "address": {
+                "type": "PostalAddress",
+                "streetAddress": "123 Main Street",
+                "addressLocality": "Grayling",
+                "addressRegion": "AK",
+                "postalCode": "",
+                "addressCountry": "US",
+                "addressCounty": ""
+            },
+            "parentOrganization": [
+                "https://ak99999.bhhs.hsfaffiliates.com/profile/card#me"
+            ],
+            "image": [],
+            "leadershipTeam": {
+                "sectionTitle": "Leadership Team",
+                "teamMember": []
+            },
+            "officeHour": {
+                "message": "",
+                "Monday": {
+                    "availabilityStatus": "",
+                    "startTime": "",
+                    "endTime": ""
+                },
+                "Tuesday": {
+                    "availabilityStatus": "",
+                    "startTime": "",
+                    "endTime": ""
+                },
+                "Wednesday": {
+                    "availabilityStatus": "",
+                    "startTime": "",
+                    "endTime": ""
+                },
+                "Thursday": {
+                    "availabilityStatus": "",
+                    "startTime": "",
+                    "endTime": ""
+                },
+                "Friday": {
+                    "availabilityStatus": "",
+                    "startTime": "",
+                    "endTime": ""
+                },
+                "Saturday": {
+                    "availabilityStatus": "",
+                    "startTime": "",
+                    "endTime": ""
+                },
+                "Sunday": {
+                    "availabilityStatus": "",
+                    "startTime": "",
+                    "endTime": ""
+                }
+            },
+            "additionalProperty": {
+                "OfficeType": "Branch Office",
+                "Status": "Active",
+                "OfficeStatus": "Active",
+                "IsDisplayed": true,
+                "AffiliateID": "AK702",
+                "BrokerID": "AK702",
+                "FullTimeCount": 0,
+                "PartTimeCount": 0,
+                "PublicOffice": "Grayling",
+                "OfficeContact": "https://999999999.bhhs.hsfaffiliates.com/profile/card#me",
+                "IsRelocationOffice": false,
+                "timeZone": "America/Los_Angeles",
+                "testOffice": true,
+                "officePageTitle": "Grayling Properties Test Grayling",
+                "seeAllAgentsButtonLabel": "CLICK HERE TO MEET OUR AGENTS",
+                "suppressPrimaryContactOnOfficePage": false,
+                "displayMap": true,
+                "ancillaryServicesSectionTitle": "About Our Services"
+            },
+            "contactPoint": [
+                {
+                    "type": "ContactPoint",
+                    "name": "Consumer",
+                    "email": "test@test.com",
+                    "telephone": "(111) 111-1111"
+                },
+                {
+                    "type": "ContactPoint",
+                    "name": "TollFreePhone",
+                    "telephone": "(111) 111-1111"
+                }
+            ]
+        }
+    }
+}  
+```
+
+
 
 ### Payload
 

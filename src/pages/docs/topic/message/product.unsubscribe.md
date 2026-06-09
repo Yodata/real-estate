@@ -15,8 +15,8 @@ title: product#unsubscribe
     "type": "UnSubscribeAction",
     "agent": "https://agentid.example.com/profile/card#me",
     "subscription": {
-      "product": "BuildOutShowCase",//"BuildOutRethink"
-      "expiryDate": "07/14/2025",
+      "product": "GenericProduct",
+      "expiryDate": "07-14-2025",
       "changeReason": "Cancel subscription"
     }
   }

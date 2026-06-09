@@ -15,9 +15,9 @@ title: product#subscribe
     "type": "SubscribeAction",
     "agent": "https://agentid.example.com/profile/card#me",
     "subscription": {
-      "product": "BuildOutShowCase",//"BuildOutRethink"
-      "startDate": "07/15/2024",
-      "expiryDate": "07/14/2025",
+      "product": "GenericProduct",
+      "startDate": "07-15-2024",
+      "expiryDate": "07-14-2025",
       "changeReason": "Initial subscription"
     }
   }

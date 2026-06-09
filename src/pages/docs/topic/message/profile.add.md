@@ -106,7 +106,7 @@ title: profile#add
       },
       "contactPoint": {
         "type": "ContactPoint",
-        "name": "Work",
+        "name": "Consumer",
         "telephone": "555-555-5555",
         "faxNumber": "555-555-5555",
         "email": "bob@example.com",
@@ -233,7 +233,7 @@ title: profile#add
 | data.object.0.certification.issuedTo.name | string | - |
 | data.object.0.contactPoint | object | A point of contact for the entity. By convention in the real estate domain, ContactPoints are preferred over telephone, email, and faxNumber so the ContactPoint.name property can be used to label values for example, Work Telephone, Home, as named contactPoint values. >= 3 properties |
 | data.object.0.contactPoint.type | string | const (`"ContactPoint"`)  |
-| data.object.0.contactPoint.name | string | a label for the contactPoint, i.e. 'Work', or 'Home' |
+| data.object.0.contactPoint.name | string | allowed (`"Consumer"`, `"LeadRouting"`, `"MobileLeadNotification"`, `"BHHSWebsiteURL"`, `"BHHSWebsiteVanityURL"`, `"PreferredBHHSWebsiteURL"`) |
 | data.object.0.contactPoint.telephone | string | - |
 | data.object.0.contactPoint.faxNumber | string | - |
 | data.object.0.contactPoint.email | string | an email address for the item. format (`email`) |
@@ -321,7 +321,7 @@ title: profile#add
 | data.object.1.0.0.certification.0.issuedTo.name | string | - |
 | data.object.1.0.0.contactPoint | array<object> | a named point of contact - telephone, email, faxNumber, and/or url for the entity |
 | data.object.1.0.0.contactPoint.type | string | const (`"ContactPoint"`)  |
-| data.object.1.0.0.contactPoint.name | string | a label for the contactPoint, i.e. 'Work', or 'Home' |
+| data.object.1.0.0.contactPoint.name | string | allowed (`"Consumer"`, `"LeadRouting"`, `"MobileLeadNotification"`, `"BHHSWebsiteURL"`, `"BHHSWebsiteVanityURL"`, `"PreferredBHHSWebsiteURL"`) |
 | data.object.1.0.0.contactPoint.telephone | string | - |
 | data.object.1.0.0.contactPoint.faxNumber | string | - |
 | data.object.1.0.0.contactPoint.email | string | an email address for the item. format (`email`) |
@@ -446,7 +446,7 @@ title: profile#add
 | data.object.2.0.certification.0.issuedTo.name | string | - |
 | data.object.2.0.contactPoint | array<object> | a named point of contact - telephone, email, faxNumber, and/or url for the entity |
 | data.object.2.0.contactPoint.type | string | const (`"ContactPoint"`)  |
-| data.object.2.0.contactPoint.name | string | a label for the contactPoint, i.e. 'Work', or 'Home' |
+| data.object.2.0.contactPoint.name | string | allowed (`"Consumer"`, `"LeadRouting"`, `"MobileLeadNotification"`, `"BHHSWebsiteURL"`, `"BHHSWebsiteVanityURL"`, `"PreferredBHHSWebsiteURL"`) |
 | data.object.2.0.contactPoint.telephone | string | - |
 | data.object.2.0.contactPoint.faxNumber | string | - |
 | data.object.2.0.contactPoint.email | string | an email address for the item. format (`email`) |

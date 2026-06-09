@@ -1,6 +1,6 @@
 {
   "$id": "http://realestate.yodata.me/schema/lead.asssign.json",
-  "messageId": "lead#asssign",
+  "messageId": "lead#assign",
   "title": "lead#assign",
   "summary": "a lead was assigned",
   "contentType": "application/json",

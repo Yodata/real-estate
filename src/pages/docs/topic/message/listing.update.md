@@ -19,6 +19,12 @@ _a PropertyListing is created or updated_
       "addressLocality": "Gotham City",
       "addressRegion": "NJ",
       "brokerAttribution": "homes@opendoor.com",
+      "about": {
+        "type": "PropertyListing",
+        "url": ""
+      },
+      "deleted": false,
+      "description": "Listing description/remarks.",
       "buyerAgent": {
         "email": "butch.byers@example.com",
         "identifier": {
@@ -39,7 +45,6 @@ _a PropertyListing is created or updated_
       "image": [
         {
           "type": "ImageObject",
-          "@id": "http://example.com",
           "id": "http://user.example.com/public/logo/image.jpg",
           "name": "image.jpg",
           "encodingFormat": "image/jpeg",
@@ -50,46 +55,46 @@ _a PropertyListing is created or updated_
       "internetAddressDisplayYN": "Y",
       "latitude": 40.75,
       "listingAgent": {
-                "type": "RealEstateAgent",
-                "name": "Carol Sawdey",
-                "email": "carolsawdey@gmail.com",
-                "identifier": {
-                    "mlsAgentId": "CCB-253454"
-                },
-                "additionalProperty": {
-                    "agentId": "123456"
-                }
+        "type": "RealEstateAgent",
+        "name": "Carol Sawdey",
+        "email": "carolsawdey@gmail.com",
+        "identifier": {
+          "mlsAgentId": "CCB-253454"
+        },
+        "additionalProperty": {
+          "agentId": "123456"
+        }
       },
       "listingOffice": {
-                "type": "RealEstateOffice",
-                "name": "BHHS Drysdale Properties",
-                "email": "accounting@bhhsdrysdale.com",
-                "identifier": {
-                    "mlsOfficeId": "CCB-54t254"
-                },
-                "additionalProperty": {}
+        "type": "RealEstateOffice",
+        "name": "BHHS Drysdale Properties",
+        "email": "accounting@bhhsdrysdale.com",
+        "identifier": {
+          "mlsOfficeId": "CCB-54t254"
+        },
+        "additionalProperty": {}
       },
       "listingContractDate": "2019-08-24T14:15:22Z",
-      "listingId": "GOTHAM-MLS+12345",
+      "listingId": 4567890,
       "coListingAgent": {
-                "type": "RealEstateAgent",
-                "name": "",
-                "identifier": {
-                  "mlsAgentId":""
-                },
-                "additionalProperty": {
-                  "agentId":""
-                }
+        "type": "RealEstateAgent",
+        "name": "",
+        "identifier": {
+          "mlsAgentId": ""
+        },
+        "additionalProperty": {
+          "agentId": ""
+        }
       },
       "coListingOffice": {
-                "type": "RealEstateOffice",
-                "name": "",
-                "identifier": {
-                  "mlsOfficeId": "",
-                },
-                "additionalProperty": {
-                  "officeId":""
-                }
+        "type": "RealEstateOffice",
+        "name": "",
+        "identifier": {
+          "mlsOfficeId": ""
+        },
+        "additionalProperty": {
+          "officeId": ""
+        }
       },
       "listingOriginatingSystem": {
         "identifier": {
@@ -125,13 +130,13 @@ _a PropertyListing is created or updated_
       },
       "modificationTimestamp": "2022-11-17T00:00:00",
       "numberOfBathrooms": "8",
-      "numberOfFullBathrooms":"2",
-      "numberOf1/2Bathrooms":"2",
-      "numberOf1/4Bathrooms":"2",
-      "numberOf3/4Bathrooms":"2",
+      "numberOfFullBathrooms": "2",
+      "numberOf1/2Bathrooms": "2",
+      "numberOf1/4Bathrooms": "2",
+      "numberOf3/4Bathrooms": "2",
       "numberOfBedrooms": "3",
       "numberOfRooms": "7",
-      "originatingSystemKey": 12345,
+      "originatingSystemKey": "12345",
       "originatingSystemName": "GOTHAM-MLS",
       "postalCode": "10010",
       "propertySubType": "ApartmentPropertyType",
@@ -207,21 +212,21 @@ _a PropertyListing is created or updated_
 | data.object.listingContractDate          | string                                | The effective date of the agreement between the seller and the seller's broker. format (`date-time`)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | data.object.listingId                    | string                                | the local identifier for the listing                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | data.object.listingOffice                | object                                | the listing office                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| data.object.colistingAgent                | object                                | the colistingAgent                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| data.object.colistingOffice                | object                                | the colistingOffice                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| data.object.colistingAgent               | object                                | the colistingAgent                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| data.object.colistingOffice              | object                                | the colistingOffice                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | data.object.listingOriginatingSystem     | object                                | The place where the item is originally input by the user.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | data.object.listingPrice                 | object                                | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| data.object.soldPrice                 | object                                | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| data.object.soldPrice                    | object                                | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | data.object.listingStatus                | string                                | allowed (`"Active"`, `"Pending"`, `"Sold"`, `"Canceled"`, `"Prelisted"`, `"OffMarket"`, `"Private"`)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | data.object.livingArea                   | object                                | property indoor space                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | data.object.longitude                    | number                                | The longitude of a location.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | data.object.lotSize                      | object                                | outdoor space minValue, maxValue                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | data.object.modificationTimestamp        | string                                | The date when the listing was last modified. format (`date-time`)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| data.object.numberOfBathrooms            | string                                | total  number of bathrooms                                                                                                                                                                                                                                                                                                                                    
-| data.object.numberOfFullBathrooms            | string                                | the number of fullBathrooms                                                                                                                                                                                                                                      
-| data.object.numberOf1/2Bathrooms        | string | the number of 1/2 bathrooms                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| data.object.numberOf1/4Bathrooms        | string | the number of 1/4 bathrooms                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| data.object.numberOf3/4Bathrooms        | string | the number of 3/4 bathrooms                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| data.object.numberOfBathrooms            | string                                | total number of bathrooms                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| data.object.numberOfFullBathrooms        | string                                | the number of fullBathrooms                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| data.object.numberOf1/2Bathrooms         | string                                | the number of 1/2 bathrooms                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| data.object.numberOf1/4Bathrooms         | string                                | the number of 1/4 bathrooms                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| data.object.numberOf3/4Bathrooms         | string                                | the number of 3/4 bathrooms                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | data.object.numberOfBedrooms             | string                                | the number of bedrooms                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | data.object.numberOfRooms                | string                                | the total number of rooms in the building                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | data.object.originatingSystemKey         | string                                | the listing identifier from the original MLS, aka MLSID.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
@@ -235,6 +240,11 @@ _a PropertyListing is created or updated_
 | data.object.universalPropertyId          | string                                | The Universal Property Identifier is a unique identifier for all real property in the US and Canada. It is based on country and local identification methods and is limited to real property. For cases such as shares of real property, units, and other more granular cases, please utilize the UniversalPropertySubId.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | data.object.url                          | string                                | URL of the item. format (`uri`)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | data.object.yearBuilt                    | number                                | the year the structure was created                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| data.object.about | object | Additional listing reference/details. |
+| data.object.about.type | string | allowed (`"PropertyListing"`) |
+| data.object.about.url | string | Listing URL format (`uri`) |
+| data.object.deleted | boolean | Indicates whether the listing is deleted (`true`, `false`). |
+| data.object.description | string | Listing description/remarks. |
 
 ### Headers
 

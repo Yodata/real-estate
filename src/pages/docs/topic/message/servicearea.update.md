@@ -35,6 +35,7 @@ title: servicearea#update
         "weight": 0,
         "officeInPostalCode": true,
         "sortOrder": 0,
+          "sentToMLSESA": true,
         "sentToConsumerSite": true,
         "sentToCompanyLocator": true,
         "sentToReferralSolutions": true,
@@ -76,6 +77,7 @@ title: servicearea#update
 | data.object.additionalProperty.relocationOffice | object | relocation office |
 | data.object.additionalProperty.relocationOffice.type | string | allowed (`"RealEstateOffice"`) The item type (Linked-Data @type) |
 | data.object.additionalProperty.relocationOffice.id | string | - |
+| `data.object.additionalProperty.sentToMLSESA` | boolean | Indicates whether the service area is sent to MLS ESA (`true`, `false`). Description to be confirmed by Tom. |
 | data.object.additionalProperty.weight | integer | weight |
 | data.object.additionalProperty.officeInPostalCode | boolean | true if the service area provider is physically located in the ServiceArea. |
 | data.object.additionalProperty.sortOrder | integer | sort order |

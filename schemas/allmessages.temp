@@ -24,7 +24,7 @@ contact.update.yaml:messageId: contact#update
 franchise.transactionreport.yaml:messageId: franchise#transactionreport
 lead.accept.yaml:messageId: lead#accept
 lead.add.yaml:messageId: lead#add
-lead.assign.yaml:messageId: lead#asssign
+lead.assign.yaml:messageId: lead#assign
 lead.reject.yaml:messageId: lead#reject
 lead.retract.yaml:messageId: lead#retract
 lead.update.yaml:messageId: lead#update

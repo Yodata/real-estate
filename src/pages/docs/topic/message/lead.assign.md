@@ -1,5 +1,5 @@
 ---
-title: lead#asssign
+title: lead#assign
 ---
 ## Message
 

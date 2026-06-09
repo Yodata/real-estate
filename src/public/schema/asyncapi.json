@@ -24336,7 +24336,7 @@
         "x-parser-message-parsed": true
       },
       "lead/assign": {
-        "messageId": "lead#asssign",
+        "messageId": "lead#assign",
         "name": "realestate/lead#assign",
         "summary": "a lead was assigned",
         "headers": {
@@ -39309,7 +39309,7 @@
               "x-parser-message-parsed": true
             },
             {
-              "messageId": "lead#asssign",
+              "messageId": "lead#assign",
               "name": "realestate/lead#assign",
               "summary": "a lead was assigned",
               "headers": {

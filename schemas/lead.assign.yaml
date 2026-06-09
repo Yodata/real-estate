@@ -1,4 +1,4 @@
-messageId: lead#asssign
+messageId: lead#assign
 x-scope: realestate/lead#
 summary: a lead was assigned
 headers:

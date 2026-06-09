@@ -20401,7 +20401,7 @@ channels:
                                 text: Help me I'm trapped inside documentation.
             schemaFormat: application/vnd.aai.asyncapi;version=2.5.0
             x-parser-message-parsed: true
-          - messageId: lead#asssign
+          - messageId: lead#assign
             name: realestate/lead#assign
             summary: a lead was assigned
             headers:

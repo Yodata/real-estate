@@ -9523,7 +9523,7 @@
   },
   "lead/assign": {
     "_json": {
-      "messageId": "lead#asssign",
+      "messageId": "lead#assign",
       "name": "realestate/lead#assign",
       "summary": "a lead was assigned",
       "headers": {

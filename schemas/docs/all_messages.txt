@@ -23,7 +23,7 @@
  franchise#transactionreport
  lead#accept
  lead#add
- lead#asssign
+ lead#assign
  lead#reject
  lead#retract
  lead#update

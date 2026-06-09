@@ -35,6 +35,7 @@ title: servicearea#delete
         "weight": 0,
         "officeInPostalCode": true,
         "sortOrder": 0,
+          "sentToMLSESA": true,
         "sentToConsumerSite": true,
         "sentToCompanyLocator": true,
         "sentToReferralSolutions": true,
@@ -82,6 +83,7 @@ title: servicearea#delete
 | data.object.additionalProperty.weight | integer | weight |
 | data.object.additionalProperty.officeInPostalCode | boolean | true if the service area provider is physically located in the ServiceArea. |
 | data.object.additionalProperty.sortOrder | integer | sort order |
+| `data.object.additionalProperty.sentToMLSESA` | boolean | Indicates whether the service area is sent to MLS ESA (`true`, `false`). Description to be confirmed by Tom. |
 | data.object.additionalProperty.sentToConsumerSite | boolean | sent to consumer site |
 | data.object.additionalProperty.sentToCompanyLocator | boolean | sent to company locator |
 | data.object.additionalProperty.sentToReferralSolutions | boolean | sent to referral solutions |

@@ -33,6 +33,7 @@ _an agent, office or organization profile was updated_
         "streetAddress": "1007 Mountain Gate Rd"
       },
       "additionalProperty": {
+        "messagingComplianceBusinessName":"Business Name",
         "primaryBusinessType": "Residential",
         "displayZillowReviews": false,
         "displayRateMyAgentReviews": false,
@@ -366,6 +367,124 @@ _an agent, office or organization profile was updated_
       "image": [],
       "@id": "https://test.bhhs.hsfaffiliates.com/profile/card",
       "additionalProperty": {
+        "messagingComplianceBusinessName":"Business Name",
+        "isDisplayAVM": true,
+        "alternateEmail": "",
+        "teamLeadsToTeamMembers": true,
+        "tollFreePhone": "",
+        "brand": "Berkshire Hathaway HomeServices",
+        "leadsToTeamMembers": true,
+        "primaryPhone": "(111)000-0000",
+        "listingLeadsToTeamMembers": true,
+        "websiteTheme": "Traditional",
+        "bhhsWebsiteWPHeader": {},
+        "unassignedLeadOwner": "https://3075716.bhhs.hsfaffiliates.com/profile/card#me",
+        "appointmentURL": "",
+        "testAgentTeam": false,
+        "heroshowcaseTitle": "",
+        "Status": "Inactive",
+        "socialWallID": "",
+        "bhhsLeadNotificationPreference": {
+          "timeZone": "America/Los_Angeles",
+          "emailNotification": false,
+          "textNotification": false,
+          "email": "test@test.com",
+          "telephone": "(000)111-0000",
+          "leadNotificationSchedule": [
+            {
+              "type": "Schedule",
+              "name": "Weekday",
+              "byDay": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+            },
+            {
+              "type": "Schedule",
+              "name": "Saturday",
+              "byDay": ["Saturday"]
+            },
+            {
+              "type": "Schedule",
+              "name": "Sunday",
+              "byDay": ["Sunday"]
+            }
+          ]
+        },
+        "biography": "",
+        "wpFooter": [],
+        "BrokerID": "NV301",
+        "isBlogDisplayed": true,
+        "websiteType": "Team Website",
+        "wordpressURL": "",
+        "isLuxury": false,
+        "IsDisplayed": false,
+        "primaryEmail": "test@test.com"
+      },
+      "email": "test@test.com",
+      "parentOrganization": [
+        "https://test-055.bhhs.hsfaffiliates.com/profile/card#me"
+      ]
+    }
+  },
+
+  "id": "https://test.hsfaffiliates.com/event/topic/realestate/profile/b2b1d0regrg45g45g54g"
+}
+```
+
+### Company Profile
+
+```json
+{
+  "topic": "realestate/profile#update",
+  "type": "Notification",
+  "timestamp": 1779400377801,
+  "agent": "https://test.hsfaffiliates.com/profile/card#me",
+  "instrument": "https://test.bhhs.hsfaffiliates.com/profile/card#me",
+  "data": {
+    "type": "UpdateAction",
+    "timestamp": 1779400376978,
+    "instrument": "https://test.bhhs.hsfaffiliates.com/profile/card#me",
+    "agent": "https://test.bhhs.hsfaffiliates.com/profile/card#me",
+    "object": {
+      "availableLanguage": [
+        {
+          "type": "Language",
+          "name": "English"
+        },
+        {
+          "type": "Language",
+          "name": "Spanish"
+        }
+      ],
+      "telephone": "(000)000-0000",
+      "identifier": {
+        "AgentTeamID": "Test"
+      },
+      "name": "Iturrizaga Real Estate",
+      "url": "",
+      "contactPoint": [
+        {
+          "type": "ContactPoint",
+          "name": "BHHSWebsiteURL",
+          "url": "https://www.test.com/arizona-and"
+        }
+      ],
+      "address": {
+        "type": "PostalAddress",
+        "streetAddress": "27291 Newport Road Suite 120",
+        "addressLocality": "Menifee",
+        "addressRegion": "California",
+        "postalCode": "92584",
+        "addressCountry": "United States",
+        "addressCounty": "Riverside"
+      },
+      "certification": [],
+      "member": [
+      ],
+      "type": "RealEstateCompany",
+      "id": "https://test.bhhs.hsfaffiliates.com/profile/card#me",
+      "image": [],
+      "@id": "https://test.bhhs.hsfaffiliates.com/profile/card",
+      "additionalProperty": {
+        "messagingComplianceBusinessName":"Business Name",
         "isDisplayAVM": true,
         "alternateEmail": "",
         "teamLeadsToTeamMembers": true,
@@ -576,6 +695,7 @@ _an agent, office or organization profile was updated_
 | data.object.0.type                                                              | string                                | const (`"RealEstateAgent"`)                                                                                                                                                                                                                                                                 |
 | data.object.0.additionalName                                                    | string                                | any other name(s) associated with the entity, i.e. nickname, middle name, maiden name, etc. For multiple names, use a comma without space as a separator.                                                                                                                                   |
 | data.object.0.address                                                           | object                                | A physical address.                                                                                                                                                                                                                                                                         |
+| data.object.additionalProperty.messagingComplianceBusinessName | string  | Business Name  |
 | data.object.additionalProperty.primaryBusinessType                              | string                                | allowed (`"Commerical"`, `"Residential"`)                                                                                                                                                                                                                                                   |
 | data.object.additionalProperty.displayZillowReviews                             | boolean                               | displayZillowReviews status                                                                                                                                                                                                                                                                 |
 | data.object.additionalProperty.displayRateMyAgentReviews                        | boolean                               | displayRateMyAgentReviews status                                                                                                                                                                                                                                                            |

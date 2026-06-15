@@ -74,6 +74,7 @@ _an agent, office or organization profile was added_
         "https://ca332-006.bhhs.hsfaffiliates.com/profile/card#me"
       ],
       "additionalProperty": {
+        "messagingComplianceBusinessName":"Business Name",
         "UserType": "Part Time Sales Professional",
         "AffiliateID": "CA332",
         "BrokerID": "CA332",
@@ -274,6 +275,82 @@ _an agent, office or organization profile was added_
 ```
 
 
+### Company Profile
+
+```json
+{
+    "topic": "realestate/profile#add",
+    "data": {
+        "type": "AddAction",
+        "object": {
+            "type": "RealEstateCompany",
+            "id": "https://ak999.bhhs.hsfaffiliates.com/profile/card#me",
+            "name": "Grayling Properties Test",
+            "telephone": "(111) 000-0000",
+            "faxNumber": "(111) 000-0000",
+            "email": "test@test.com",
+            "url": "",
+            "identifier": {
+                "OfficeID": "AK999-999"
+            },
+            "availableLanguage": [],
+            "certification": [],
+            "address": {
+                "type": "PostalAddress",
+                "streetAddress": "123 Main Street",
+                "addressLocality": "Grayling",
+                "addressRegion": "AK",
+                "postalCode": "",
+                "addressCountry": "US",
+                "addressCounty": ""
+            },
+            "parentOrganization": [
+                "https://ak99999.bhhs.hsfaffiliates.com/profile/card#me"
+            ],
+            "image": [],
+            "leadershipTeam": {
+                "sectionTitle": "Leadership Team",
+                "teamMember": []
+            },
+            "officeHour": {            },
+            "additionalProperty": {
+                "messagingComplianceBusinessName":"Business Name",
+                "OfficeType": "Branch Office",
+                "Status": "Active",
+                "OfficeStatus": "Active",
+                "IsDisplayed": true,
+                "AffiliateID": "AK702",
+                "BrokerID": "AK702",
+                "FullTimeCount": 0,
+                "PartTimeCount": 0,
+                "PublicOffice": "Grayling",
+                "OfficeContact": "https://999999999.bhhs.hsfaffiliates.com/profile/card#me",
+                "IsRelocationOffice": false,
+                "timeZone": "America/Los_Angeles",
+                "testOffice": true,
+                "officePageTitle": "Grayling Properties Test Grayling",
+                "seeAllAgentsButtonLabel": "CLICK HERE TO MEET OUR AGENTS",
+                "suppressPrimaryContactOnOfficePage": false,
+                "displayMap": true,
+                "ancillaryServicesSectionTitle": "About Our Services"
+            },
+            "contactPoint": [
+                {
+                    "type": "ContactPoint",
+                    "name": "Consumer",
+                    "email": "test@test.com",
+                    "telephone": "(111) 111-1111"
+                },
+                {
+                    "type": "ContactPoint",
+                    "name": "TollFreePhone",
+                    "telephone": "(111) 111-1111"
+                }
+            ]
+        }
+    }
+}  
+```
 
 ### Payload
 
@@ -288,6 +365,7 @@ _an agent, office or organization profile was added_
 | data.object.0.type                                                              | string                                | const (`"RealEstateAgent"`)                                                                                                                                                                                                                                                                 |
 | data.object.0.additionalName                                                    | string                                | any other name(s) associated with the entity, i.e. nickname, middle name, maiden name, etc. For multiple names, use a comma without space as a separator.                                                                                                                                   |
 | data.object.0.address                                                           | object                                | A physical address.                                                                                                                                                                                                                                                                         |
+| data.object.additionalProperty.messagingComplianceBusinessName | string  | Business Name  |
 | data.object.additionalProperty.primaryBusinessType                              | string                                | allowed (`"Commerical"`, `"Residential"`)                                                                                                                                                                                                                                                   |
 | data.object.additionalProperty.displayZillowReviews                             | boolean                               | displayZillowReviews status                                                                                                                                                                                                                                                                 |
 | data.object.additionalProperty.displayRateMyAgentReviews                        | boolean                               | displayRateMyAgentReviews status                                                                                                                                                                                                                                                            |

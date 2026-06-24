@@ -18,7 +18,7 @@
   "author": "Dave Duran <dave@yodata.io> (https://yodata.io/)",
   "license": "MIT",
   "dependencies": {
-    "@asyncapi/cli": "^0.25.4",
+    "@asyncapi/cli": "^0.29.0",
     "@asyncapi/generator-react-sdk": "^0.2.25",
     "@asyncapi/react-component": "1.0.0-next.43",
     "@babel/core": "7.13.16",

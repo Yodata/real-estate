@@ -114,6 +114,11 @@ _an agent, office or organization profile was added_
           "type": "Language",
           "name": "en_US"
         },
+        "hireDate": "2001-01-01",
+        "birthDayMonth": {
+                    "day": "1",
+                    "month": "1"
+         },
         "bhhsLeadNotificationPreference": {
           "timeZone": "America/Los_Angeles",
           "emailNotification": true,
@@ -711,6 +716,10 @@ _an agent, office or organization profile was added_
 | data.object.0.permit.additionalProperty | object | Additional permit properties. |
 | data.object.0.permit.additionalProperty.bhhsDRElicenseId | string | BHHS DRE license id. |
 | data.object.additionalProperty.bhhsLeadNotificationPreference.telephone | string | telephone of bhhsLeadNotificationPreference |
+| data.object.additionalProperty.hireDate | date | hireDate of the agent format (date) |
+| data.object.additionalProperty.birthDayMonth | object | birthDayMonth of the agent |
+| data.object.additionalProperty.birthDayMonth.day | string | birth day of the month for the agent. Example: "1" |
+| data.object.additionalProperty.birthDayMonth.month | string | birth month of the agent. Example: "1" |
 
 
 ### Headers

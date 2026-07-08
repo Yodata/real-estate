@@ -75,6 +75,9 @@ _an agent, office or organization profile was added_
       ],
       "additionalProperty": {
         "messagingComplianceBusinessName":"Business Name",
+        "birthMonth": 2,
+        "birthday": 12,
+        "hireDate": "2024-01-15",
         "UserType": "Part Time Sales Professional",
         "AffiliateID": "CA332",
         "BrokerID": "CA332",
@@ -711,6 +714,10 @@ _an agent, office or organization profile was added_
 | data.object.0.permit.additionalProperty | object | Additional permit properties. |
 | data.object.0.permit.additionalProperty.bhhsDRElicenseId | string | BHHS DRE license id. |
 | data.object.additionalProperty.bhhsLeadNotificationPreference.telephone | string | telephone of bhhsLeadNotificationPreference |
+| data.object.additionalProperty.birthMonth | integer | birthMonth of the agent. Use values `1` through `12`. |
+| data.object.additionalProperty.birthday   | integer | birthday of the agent. Use values `1` through `31`. |
+| data.object.additionalProperty.hireDate   | date    | hireDate of the agent format (`date`) |
+
 
 ### Headers
 

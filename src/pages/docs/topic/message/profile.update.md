@@ -49,9 +49,11 @@ _an agent, office or organization profile was updated_
         "vendorEmailOptout": false,
         "agentWebsiteType": "Agent Showcase",
         "Status": "Active",
-        "birthMonth": 2,
-        "birthday": 12,
-        "hireDate": "2024-01-15",
+        "hireDate": "2001-01-01",
+        "birthDayMonth": {
+                    "day": "1",
+                    "month": "1"
+         },
         "bhhsLeadNotificationPreference": {
           "timeZone": "America/New_York",
           "emailNotification": true,
@@ -730,9 +732,10 @@ _an agent, office or organization profile was updated_
 | data.object.additionalProperty.bhhsLeadNotificationPreference.textNotification  | boolean                               | textNotification (`"true"`, `"false"`)                                                                                                                                                                                                                                                      |
 | data.object.additionalProperty.bhhsLeadNotificationPreference.email             | email                                 | email of bhhsLeadNotificationPreference                                                                                                                                                                                                                                                     |
 | \*.additionalProperty.bhhsLeadNotificationPreference.leadNotificationSchedule   | obj                                   | type , name, byDay (`"Monday"`, `"Tuesday"`,`"Wednesday"`, `"Thursday"`,`"Friday"`, `"Saturday"`, `"Sunday"`)                                                                                                                                                                               |
-| data.object.additionalProperty.birthMonth | integer | birthMonth of the agent. Use values `1` through `12`. |
-| data.object.additionalProperty.birthday   | integer | birthday of the agent. Use values `1` through `31`. |
-| data.object.additionalProperty.hireDate   | date    | hireDate of the agent format (`date`) |
+| data.object.additionalProperty.hireDate | date | hireDate of the agent format (date) |
+| data.object.additionalProperty.birthDayMonth | object | birthDayMonth of the agent |
+| data.object.additionalProperty.birthDayMonth.day | string | birth day of the month for the agent. Example: "1" |
+| data.object.additionalProperty.birthDayMonth.month | string | birth month of the agent. Example: "1" |
 
 | data.object.0.certification                                                     | object                                | A certification issued by an organization to an individual or business.                                                                                                                                                                                                                     |
 | data.object.0.certification.type                                                | string                                | allowed (`"Certification"`) Certification                                                                                                                                                                                                                                                   |

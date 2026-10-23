@@ -23,38 +23,41 @@ and common sense.
 
 We are a community of software developers working to make better real estate software.
 
-- Yodata
-- Home Services of America
-- ActivePipe
-- Adwerks
-- Buyside
-- Chalk Digital
-- Constellation Real Estate Group
-- eRelocation
-- Guru
-- Homespotter
-- Homestory
-- Juwai
-- LiveBy
-- Lone Wolf
-- MoveEasy
-- Moxiworks
-- Orion
-- PhotFy
-- Prospect Converter
-- Rate My Agent
-- Raven 360
-- Real Estate Digital
-- Reliance Network
-- RELOSpec
-- RIS Media
-- RoqLogic
-- Soci
-- SocialBoost
-- Sold.com
-- Testimonial Tree
-- Truelogic
-- Xpressdocs
+- reliance
+- ris-media
+- raven
+- moxiworks
+- juwai
+- liveby
+- move-easy
+- activepipe
+- etm
+- truelogic
+- lead-manager
+- testimonialtree
+- guru
+- roqlogic
+- relospec
+- xpressdocs
+- creg
+- buyside
+- chalkdigital
+- soci
+- socialboost
+- erelocation
+- lonewolf
+- zillow
+- homespotter
+- rentspree
+- buildout
+- realgrader
+- creg-transactions
+- markful
+- ire
+- brokermint
+- listtrac
+- crexi
+- housecanary
 
 ### Are you in?
 

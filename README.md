@@ -50,41 +50,44 @@ The Developer Portal provides all the tools you need to build your APIs, integra
 
 We are a community of software developers working to make better real estate software.
 
-- Yodata
-- Home Services of America
-- ActivePipe
-- Adwerks
-- Buyside
-- Chalk Digital
-- Constellation Real Estate Group
-- eRelocation
-- Guru
-- Homespotter
-- Homestory
-- Juwai
-- LiveBy
-- Lone Wolf
-- MoveEasy
+- Reliance
+- Ris Media
+- Raven
 - Moxiworks
-- Orion
-- PhotFy
-- Prospect Converter
-- Rate My Agent
-- Raven 360
-- Real Estate Digital
-- Reliance Network
-- RELOSpec
-- RIS Media
-- RoqLogic
-- Soci
-- SocialBoost
-- Sold.com
-- Testimonial Tree
+- Juwai
+- Liveby
+- Move Easy
+- Activepipe
+- Etm
 - Truelogic
+- Prospect Converter
+- Testimonialtree
+- Guru
+- Roqlogic
+- Relospec
 - Xpressdocs
+- Creg
+- Buyside
+- Chalkdigital
+- Soci
+- Socialboost
+- Erelocation
+- Lonewolf
+- Zillow
+- Homespotter
+- Rentspree
+- Buildout
+- Realgrader
+- Creg Transactions
+- Markful
+- Ire
+- Brokermint
+- Listtrac
+- Crexi
+- Housecanary
 
 
 ### Are you in?
 
-Contact us dave@yodata.io
+Contact us DanielSchoonover@hsfranchise.com
 

@@ -23,45 +23,45 @@ and common sense.
 
 We are a community of software developers working to make better real estate software.
 
-- reliance
-- ris-media
-- raven
-- moxiworks
-- juwai
-- liveby
-- move-easy
-- activepipe
-- etm
-- truelogic
-- lead-manager
-- testimonialtree
-- guru
-- roqlogic
-- relospec
-- xpressdocs
-- creg
-- buyside
-- chalkdigital
-- soci
-- socialboost
-- erelocation
-- lonewolf
-- zillow
-- homespotter
-- rentspree
-- buildout
-- realgrader
-- creg-transactions
-- markful
-- ire
-- brokermint
-- listtrac
-- crexi
-- housecanary
+- Reliance
+- Ris Media
+- Raven
+- Moxiworks
+- Juwai
+- Liveby
+- Move Easy
+- Activepipe
+- Etm
+- Truelogic
+- Prospect Converter
+- Testimonialtree
+- Guru
+- Roqlogic
+- Relospec
+- Xpressdocs
+- Creg
+- Buyside
+- Chalkdigital
+- Soci
+- Socialboost
+- Erelocation
+- Lonewolf
+- Zillow
+- Homespotter
+- Rentspree
+- Buildout
+- Realgrader
+- Creg Transactions
+- Markful
+- Ire
+- Brokermint
+- Listtrac
+- Crexi
+- Housecanary
 
 ### Are you in?
 
-Contact us dave@yodata.io
+Contact us DanielSchoonover@hsfranchise.com
 
 ## Important Note
 

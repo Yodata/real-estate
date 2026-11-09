@@ -106,7 +106,6 @@ Delete events may happen when a listing has been removed and should not exist in
 | data.object.purchaseContractDate | string | With for-sale listings, the date an offer was accepted and the listing was no longer on market. With lease listings this may represent a meeting of the minds to lease, but some contractual requirements are yet to be fulfilled, such as contract signing or receipt of the deposit. format (`date-time`) |
 | data.object.stories | number | he number of floors in the property |
 | data.object.streetAddress | string | the street address <= 75 characters |
-| data.object.universalPropertyId | string | The Universal Property Identifier is a unique identifier for all real property in the US and Canada.  It is based on country and local identification methods and is limited to real property.  For cases such as shares of real property, units, and other more granular cases, please utilize the UniversalPropertySubId. |
 | data.object.url | string | URL of the item. format (`uri`) |
 | data.object.yearBuilt | number | the year the structure was created |
 
